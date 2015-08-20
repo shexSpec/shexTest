@@ -102,24 +102,20 @@
         "expressions": [
 	  { "type": "tripleConstraint", "predicate": "http://all.example/a", "value": { "type": "valueClass" } },
 	  { "type": "tripleConstraint", "predicate": "http://all.example/prefix", "value": { "type": "valueClass", "datatype": "http://all.example/dt", "length": 2 }, "min":0, "max":1 },
-	  { "type": "oneOf",
+	  { "type": "someOf",
 	    "expressions": [
-	      { "type": "someOf",
+	      { "type": "group",
 		"expressions": [
-		  { "type": "group",
-		    "expressions": [
-		      { "type": "tripleConstraint", "predicate": "http://all.example/base", "value": { "type": "valueClass", "nodeKind": "iri" }, "min":0 },
-		      { "type": "tripleConstraint", "predicate": "http://all.example/PREFIX", "value": { "type": "valueClass", "nodeKind": "iri", "pattern": "^http://", "length": 5 }, "min":1 },
-		      { "id": "http://all.example/id1", "type": "tripleConstraint", "predicate": "http://all.example/BaSe", "value": { "type": "valueClass", "reference": "http://all.example/S5" }, "min":2, "max":2 }
-		      ]
-		  },
-		  { "type": "tripleConstraint", "predicate": "http://all.example/virtual", "value": { "type": "valueClass", "nodeKind": "nonliteral", "reference": "http://all.example/S5" }, "min":2 }
+		  { "type": "tripleConstraint", "predicate": "http://all.example/base", "value": { "type": "valueClass", "nodeKind": "iri" }, "min":0 },
+		  { "type": "tripleConstraint", "predicate": "http://all.example/PREFIX", "value": { "type": "valueClass", "nodeKind": "iri", "pattern": "^http://", "length": 5 }, "min":1 },
+		  { "type": "tripleConstraint", "predicate": "http://all.example/BaSe", "value": { "type": "valueClass", "reference": "http://all.example/S5" }, "min":2, "max":2 }
 		]
 	      },
+	      { "type": "tripleConstraint", "predicate": "http://all.example/virtual", "value": { "type": "valueClass", "nodeKind": "nonliteral", "reference": "http://all.example/S5" }, "min":2 },
 	      { "type": "tripleConstraint", "predicate": "http://all.example/closed", "value": { "type": "valueClass", "nodeKind": "bnode", "reference": { "type": "or", "disjuncts": ["http://all.example/S5", "http://all.example/S5"]}, "minlength": 2, "maxlength": 4 }, "min":2 },
 	      { "type": "group",
 		"expressions": [
-		  { "type": "oneOf",
+		  { "type": "someOf",
 		    "expressions": [
 		      { "type": "group",
 			"expressions": [

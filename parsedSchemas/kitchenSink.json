@@ -119,8 +119,7 @@
         "type": "group",
         "expressions": [
           {
-            "id": "http://ex.example/name",
-            "type": "oneOf",
+            "type": "someOf",
             "expressions": [
               {
                 "type": "tripleConstraint",
