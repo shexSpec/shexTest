@@ -9,7 +9,7 @@
           "type": "valueClass",
           "reference": "T1"
         },
-        "min": 0
+        "min": 0, "max": "*"
       },
       {
         "type": "someOf",
@@ -21,7 +21,7 @@
               "type": "valueClass",
               "reference": "T2"
             },
-            "min": 1
+            "min": 1, "max": "*"
           },
           {
             "type": "tripleConstraint",
