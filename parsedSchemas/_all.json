@@ -322,40 +322,34 @@
 	    }
 	  },
 	  {
-	    "type":"group",
-	    "expressions":[
+	    "type":"wrapper",
+	    "expression":
 	      {
-		"type":"group",
-		"expressions":[
-		  {
-		    "type":"tripleConstraint",
-		    "predicate":"http://all.example/pattern",
-		    "value":{
-		      "type":"valueClass",
-		      "values":[
+		"type":"tripleConstraint",
+		"predicate":"http://all.example/pattern",
+		"value":{
+		  "type":"valueClass",
+		  "values":[
+		    {
+		      "type":"stemRange",
+		      "stem":{
+			"type":"wildcard"
+		      },
+		      "exclusions":[
 			{
-			  "type":"stemRange",
-			  "stem":{
-			    "type":"wildcard"
-			  },
-			  "exclusions":[
-			    {
-			      "type":"stem",
-			      "stem":"http://all.example/a"
-			    },
-			    "http://all.example/b"
-			  ]
-			}
+			  "type":"stem",
+			  "stem":"http://all.example/a"
+			},
+			"http://all.example/b"
 		      ]
 		    }
-		  }
-		],"semAct":{
+		  ]
+	        },"semAct":{
 		  "http://all.example/act1":" code1 "
 		}
+	      },"semAct":{
+	        "http://all.example/act2":" code2 "
 	      }
-	    ],"semAct":{
-	      "http://all.example/act2":" code2 "
-	    }
 	  }
 	]
       },
