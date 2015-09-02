@@ -41,6 +41,13 @@
       "data": "repeated-group.ttl",
       "node": "x",
       "result": "repeated-group.val"
+    },
+    {
+      "schema": "../validations/simple-group.shex",
+      "shape": "S",
+      "data": "simple-group.ttl",
+      "node": "s0",
+      "result": "simple-group.val"
     }
   ]
 }
