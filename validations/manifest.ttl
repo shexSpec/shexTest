@@ -1,0 +1,110 @@
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix mf:     <http://www.w3.org/2001/sw/DataAccess/tests/test-manifest#> .
+@prefix qt:     <http://www.w3.org/2001/sw/DataAccess/tests/test-query#> .
+@prefix shext:   <http://www.w3.org/ns/shextest#> .
+@prefix ex:     <http://example.org/> .
+
+
+<> a mf:Manifest ;
+    rdfs:comment "ShEx tests" ;
+    mf:entries
+    (
+        <#1dot_pass>
+        <#1literalFractiondigits_pass>
+        <#iovka>
+        <#greedy>
+        <#skipped>
+        <#repeated-group>
+        <#simple-group>
+        <#open3groupdotclosecard23Annot3Code2-p1p2p3X2>
+    ) .
+
+<#1dot_pass> a shext:ValidationTest ;
+    mf:name "1dot_pass" ;
+    rdfs:comment "@@ 1dot_pass" ;
+    shext:status mf:proposed ;
+    shext:schema <../schemas/1dot.shex> ;
+    shext:shape <http://a.example/IssueShape> ;
+    shext:data <1dot_pass.ttl> ;
+    shext:focus <http://a.example/Issue1> ;
+    shext:result <1dot_pass.val>
+    .
+
+<#1literalFractiondigits_pass> a shext:ValidationTest ;
+    mf:name "1literalFractiondigits_pass" ;
+    rdfs:comment "@@ 1literalFractiondigits_pass" ;
+    shext:status mf:proposed ;
+    shext:schema <../schemas/1literalFractiondigits.shex> ;
+    shext:shape <http://a.example/IssueShape> ;
+    shext:data <1literalFractiondigits_pass.ttl> ;
+    shext:focus <http://a.example/Issue1> ;
+    shext:result <1literalFractiondigits_pass.val>
+    .
+
+<#iovka> a shext:ValidationTest ;
+    mf:name "iovka" ;
+    rdfs:comment "@@ iovka" ;
+    shext:status mf:proposed ;
+    shext:schema <../validations/iovka.shex> ;
+    shext:shape <S> ;
+    shext:data <iovka.ttl> ;
+    shext:focus <x> ;
+    shext:result <iovka.val>
+    .
+
+<#greedy> a shext:ValidationTest ;
+    mf:name "greedy" ;
+    rdfs:comment "@@ greedy" ;
+    shext:status mf:proposed ;
+    shext:schema <../validations/greedy.shex> ;
+    shext:shape <S> ;
+    shext:data <greedy.ttl> ;
+    shext:focus <x> ;
+    shext:result <greedy.val>
+    .
+
+<#skipped> a shext:ValidationTest ;
+    mf:name "skipped" ;
+    rdfs:comment "@@ skipped" ;
+    shext:status mf:proposed ;
+    shext:schema <../validations/skipped.shex> ;
+    shext:shape <S> ;
+    shext:data <skipped.ttl> ;
+    shext:focus <x> ;
+    shext:result <skipped.val>
+    .
+
+<#repeated-group> a shext:ValidationTest ;
+    mf:name "repeated-group" ;
+    rdfs:comment "@@ repeated-group" ;
+    shext:status mf:proposed ;
+    shext:schema <../validations/repeated-group.shex> ;
+    shext:shape <S> ;
+    shext:data <repeated-group.ttl> ;
+    shext:focus <x> ;
+    shext:result <repeated-group.val>
+    .
+
+<#simple-group> a shext:ValidationTest ;
+    mf:name "simple-group" ;
+    rdfs:comment "@@ simple-group" ;
+    shext:status mf:proposed ;
+    shext:schema <../validations/simple-group.shex> ;
+    shext:shape <S> ;
+    shext:data <simple-group.ttl> ;
+    shext:focus <s0> ;
+    shext:result <simple-group.val>
+    .
+
+<#open3groupdotclosecard23Annot3Code2-p1p2p3X2> a shext:ValidationTest ;
+    mf:name "open3groupdotclosecard23Annot3Code2-p1p2p3X2" ;
+    rdfs:comment "@@ open3groupdotclosecard23Annot3Code2-p1p2p3X2" ;
+    shext:status mf:proposed ;
+    shext:schema <open3groupdotclosecard23Annot3Code2.shex> ;
+    shext:shape <http://a.example/IssueShape> ;
+    shext:data <p1p2p3X2.ttl> ;
+    shext:focus <x> ;
+    shext:result <open3groupdotclosecard23Annot3Code2-p1p2p3X2.val>
+    .
+

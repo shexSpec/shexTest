@@ -1,6 +1,25 @@
 {
-  "tests": [
+  "@context": "https://raw.githubusercontent.com/shexSpec/test-suite/gh-pages/tests/manifest-context.jsonld",
+  "@graph": [
     {
+      "@id": "http://shexspec.github.io/test-suite/tests/manifest.ttl",
+      "@type": "mf:Manifest",
+      "rdfs:comment": "ShEx tests",
+      "mf:entries": [
+        "#1dot_pass",
+        "#1literalFractiondigits_pass",
+        "#iovka",
+        "#greedy",
+        "#skipped",
+        "#repeated-group",
+        "#simple-group",
+        "#open3groupdotclosecard23Annot3Code2-p1p2p3X2"
+      ]
+    },
+    {
+      "@id": "#1dot_pass",
+      "@type": "shext:ValidationTest",
+      "status": "mf:proposed",
       "schema": "../schemas/1dot.shex",
       "shape": "http://a.example/IssueShape",
       "data": "1dot_pass.ttl",
@@ -8,6 +27,9 @@
       "result": "1dot_pass.val"
     },
     {
+      "@id": "#1literalFractiondigits_pass",
+      "@type": "shext:ValidationTest",
+      "status": "mf:proposed",
       "schema": "../schemas/1literalFractiondigits.shex",
       "shape": "http://a.example/IssueShape",
       "data": "1literalFractiondigits_pass.ttl",
@@ -15,6 +37,9 @@
       "result": "1literalFractiondigits_pass.val"
     },
     {
+      "@id": "#iovka",
+      "@type": "shext:ValidationTest",
+      "status": "mf:proposed",
       "schema": "../validations/iovka.shex",
       "shape": "S",
       "data": "iovka.ttl",
@@ -22,6 +47,9 @@
       "result": "iovka.val"
     },
     {
+      "@id": "#greedy",
+      "@type": "shext:ValidationTest",
+      "status": "mf:proposed",
       "schema": "../validations/greedy.shex",
       "shape": "S",
       "data": "greedy.ttl",
@@ -29,6 +57,9 @@
       "result": "greedy.val"
     },
     {
+      "@id": "#skipped",
+      "@type": "shext:ValidationTest",
+      "status": "mf:proposed",
       "schema": "../validations/skipped.shex",
       "shape": "S",
       "data": "skipped.ttl",
@@ -36,6 +67,9 @@
       "result": "skipped.val"
     },
     {
+      "@id": "#repeated-group",
+      "@type": "shext:ValidationTest",
+      "status": "mf:proposed",
       "schema": "../validations/repeated-group.shex",
       "shape": "S",
       "data": "repeated-group.ttl",
@@ -43,6 +77,9 @@
       "result": "repeated-group.val"
     },
     {
+      "@id": "#simple-group",
+      "@type": "shext:ValidationTest",
+      "status": "mf:proposed",
       "schema": "../validations/simple-group.shex",
       "shape": "S",
       "data": "simple-group.ttl",
@@ -50,6 +87,9 @@
       "result": "simple-group.val"
     },
     {
+      "@id": "#open3groupdotclosecard23Annot3Code2-p1p2p3X2",
+      "@type": "shext:ValidationTest",
+      "status": "mf:proposed",
       "schema": "open3groupdotclosecard23Annot3Code2.shex",
       "shape": "http://a.example/IssueShape",
       "data": "p1p2p3X2.ttl",
