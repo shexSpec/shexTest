@@ -1,11 +1,11 @@
-@prefix sh:    &lt;http://www.w3.org/ns/shacl/core#&gt; .
-@prefix xsd:   &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+@prefix sh:    <http://www.w3.org/ns/shacl/core#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 
-&lt;http://a.example/IssueShape&gt;
+<http://a.example/IssueShape>
         sh:property  [ a             sh:PropertyConstraint ;
-                       sh:maxCount   1 ;
-                       sh:minCount   1 ;
-                       sh:predicate  &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt;
+#                       sh:maxCount   1 ;
+#                       sh:minCount   1 ;
+                       sh:predicate  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
                      ] ;
         sh:schema    [ a  sh:Schema ] .
 
