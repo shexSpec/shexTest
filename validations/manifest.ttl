@@ -42,6 +42,11 @@
         <#1cardStar_pass1>
         <#1cardStar_pass2>
         <#1cardStar_pass6>
+        <#1datatypeLength_missing>
+        <#1datatypeLength_wrongDatatype>
+        <#1datatypeLength_short>
+        <#1datatypeLength_pass>
+        <#1datatypeLength_long>
         <#1literalFractiondigits_pass>
         # <#1bnodeLength>
         # <#1bnodeMaxlength>
@@ -394,6 +399,57 @@
     shext:data <IIssue1_Ip1_La,Lb,Lc,Ld,Le,Lf.ttl> ;
     shext:focus <http://a.example/Issue1> ;
     shext:result <1cardStar_pass6.val>
+    .
+
+<#1datatypeLength_missing> a shext:ValidationFailure ;
+    mf:name "1datatypeLength_missing" ;
+    rdfs:comment "<S> { <p1> xs:integer LENGTH 5 } on <s> in { <s> <p2> <o1> }" ;
+    shext:status mf:proposed ;
+    shext:schema <../schemas/1datatypeLength.shex> ;
+    shext:shape <http://a.example/IssueShape> ;
+    shext:data <IIssue1_Ip2_Io1.ttl> ;
+    shext:focus <http://a.example/Issue1>
+    .
+
+<#1datatypeLength_wrongDatatype> a shext:ValidationFailure ;
+    mf:name "1datatypeLength_missing" ;
+    rdfs:comment "<S> { <p1> xs:integer LENGTH 5 } on <s> in { <s> <p2> 1.234 }" ;
+    shext:status mf:proposed ;
+    shext:schema <../schemas/1datatypeLength.shex> ;
+    shext:shape <http://a.example/IssueShape> ;
+    shext:data <IIssue1_Ip1_DEC1.345.ttl> ;
+    shext:focus <http://a.example/Issue1>
+    .
+
+<#1datatypeLength_short> a shext:ValidationFailure ;
+    mf:name "1datatypeLength_pass" ;
+    rdfs:comment "<S> { <p1> xs:integer LENGTH 5 } on <s> in { <s> <p1> 1234 }" ;
+    shext:status mf:proposed ;
+    shext:schema <../schemas/1datatypeLength.shex> ;
+    shext:shape <http://a.example/IssueShape> ;
+    shext:data <IIssue1_Ip1_INT1234.ttl> ;
+    shext:focus <http://a.example/Issue1>
+    .
+
+<#1datatypeLength_pass> a shext:ValidationTest ;
+    mf:name "1datatypeLength_pass" ;
+    rdfs:comment "<S> { <p1> xs:integer LENGTH 5 } on <s> in { <s> <p1> 12345 }" ;
+    shext:status mf:proposed ;
+    shext:schema <../schemas/1datatypeLength.shex> ;
+    shext:shape <http://a.example/IssueShape> ;
+    shext:data <IIssue1_Ip1_INT12345.ttl> ;
+    shext:focus <http://a.example/Issue1> ;
+    shext:result <1datatypeLength_pass.val>
+    .
+
+<#1datatypeLength_long> a shext:ValidationFailure ;
+    mf:name "1datatypeLength_pass" ;
+    rdfs:comment "<S> { <p1> xs:integer LENGTH 5 } on <s> in { <s> <p1> 123456 }" ;
+    shext:status mf:proposed ;
+    shext:schema <../schemas/1datatypeLength.shex> ;
+    shext:shape <http://a.example/IssueShape> ;
+    shext:data <IIssue1_Ip1_INT123456.ttl> ;
+    shext:focus <http://a.example/Issue1>
     .
 
 <#1literalFractiondigits_pass> a shext:ValidationTest ;
