@@ -12,11 +12,13 @@
     (
         <#0_empty>
         <#0_extra>
-        <#1dot_pass>
         <#1dot_empty>
         <#1dot_missing>
+        <#1dot_pass>
         <#1dot_extra_lower>
         <#1dot_extra_higher>
+        <#1dotAnnot3_missing>
+        <#1dotAnnot3_pass>
         <#1Adot_pass>
         <#1card2_fail0>
         <#1card2_fail1>
@@ -86,17 +88,6 @@
     shext:result <0_pass.val>
     .
 
-<#1dot_pass> a shext:ValidationTest ;
-    mf:name "1dot_pass" ;
-    rdfs:comment "<S> { <p1> . } on { <s> <p1> <o1> }" ;
-    shext:status mf:proposed ;
-    shext:schema <../schemas/1dot.shex> ;
-    shext:shape <http://a.example/IssueShape> ;
-    shext:data <IIssue1_Ip1_Io1.ttl> ;
-    shext:focus <http://a.example/Issue1> ;
-    shext:result <1dot_pass.val>
-    .
-
 <#1dot_empty> a shext:ValidationFailure ;
     mf:name "1dot_empty" ;
     rdfs:comment "<S> { <p1> . } on {  }" ;
@@ -115,6 +106,17 @@
     shext:shape <http://a.example/IssueShape> ;
     shext:data <IIssue1_Ip2_Io1.ttl> ;
     shext:focus <http://a.example/Issue1>
+    .
+
+<#1dot_pass> a shext:ValidationTest ;
+    mf:name "1dot_pass" ;
+    rdfs:comment "<S> { <p1> . } on { <s> <p1> <o1> }" ;
+    shext:status mf:proposed ;
+    shext:schema <../schemas/1dot.shex> ;
+    shext:shape <http://a.example/IssueShape> ;
+    shext:data <IIssue1_Ip1_Io1.ttl> ;
+    shext:focus <http://a.example/Issue1> ;
+    shext:result <1dot_pass.val>
     .
 
 <#1dot_extra_lower> a shext:ValidationTest ;
@@ -138,6 +140,29 @@
     shext:focus <http://a.example/Issue1> ;
     shext:result <1dot_pass.val>
     .
+
+<#1dotAnnot3_missing> a shext:ValidationFailure ;
+    mf:name "1dot_missing" ;
+    rdfs:comment "<S> { <p1> . } on { <s> <p2> <o1> ... }" ;
+    shext:status mf:proposed ;
+    shext:schema <../schemas/1dot.shex> ;
+    shext:shape <http://a.example/IssueShape> ;
+    shext:data <IIssue1_Ip2_Io1Annot3.ttl> ;
+    shext:focus <http://a.example/Issue1>
+    .
+
+<#1dotAnnot3_pass> a shext:ValidationTest ;
+    mf:name "1dot_pass" ;
+    rdfs:comment "<S> { <p1> . } on { <s> <p1> <o1> ... }" ;
+    shext:status mf:proposed ;
+    shext:schema <../schemas/1dot.shex> ;
+    shext:shape <http://a.example/IssueShape> ;
+    shext:data <IIssue1_Ip1_Io1Annot3.ttl> ;
+    shext:focus <http://a.example/Issue1> ;
+    shext:result <1dot_pass.val>
+    .
+
+
 
 <#1Adot_pass> a shext:ValidationTest ;
     mf:name "1Adot_pass" ;

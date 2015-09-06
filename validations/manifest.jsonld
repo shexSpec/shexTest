@@ -7,16 +7,16 @@
       "rdfs:comment": "ShEx tests",
       "mf:entries": [
         {
-          "@id": "#1Adot_pass",
+          "@id": "#1dotAnnot3_pass",
           "@type": "shext:ValidationTest",
-          "name": "1Adot_pass",
-          "comment": "<S> { a . } on { <s> a <o1> }",
+          "name": "1dot_pass",
+          "comment": "<S> { <p1> . } on { <s> <p1> <o1> ... }",
           "status": "mf:proposed",
-          "schema": "../schemas/1Adot.shex",
+          "schema": "../schemas/1dot.shex",
           "shape": "http://a.example/IssueShape",
-          "data": "IIssue1_a_Io1.ttl",
+          "data": "IIssue1_Ip1_Io1Annot3.ttl",
           "focus": "http://a.example/Issue1",
-          "result": "1Adot_pass.val"
+          "result": "1dot_pass.val"
         },
         {
           "@id": "#1dot_empty",
@@ -54,18 +54,6 @@
           "result": "0_pass.val"
         },
         {
-          "@id": "#1dot_pass",
-          "@type": "shext:ValidationTest",
-          "name": "1dot_pass",
-          "comment": "<S> { <p1> . } on { <s> <p1> <o1> }",
-          "status": "mf:proposed",
-          "schema": "../schemas/1dot.shex",
-          "shape": "http://a.example/IssueShape",
-          "data": "IIssue1_Ip1_Io1.ttl",
-          "focus": "http://a.example/Issue1",
-          "result": "1dot_pass.val"
-        },
-        {
           "@id": "#1dot_extra_lower",
           "@type": "shext:ValidationTest",
           "name": "1dot_extra",
@@ -78,16 +66,28 @@
           "result": "1dot_pass.val"
         },
         {
-          "@id": "#iovka",
+          "@id": "#greedy",
           "@type": "shext:ValidationTest",
-          "name": "iovka",
-          "comment": "@@ iovka",
+          "name": "greedy",
+          "comment": "@@ greedy",
           "status": "mf:proposed",
-          "schema": "../validations/iovka.shex",
+          "schema": "../validations/greedy.shex",
           "shape": "S",
-          "data": "iovka.ttl",
+          "data": "greedy.ttl",
           "focus": "x",
-          "result": "iovka.val"
+          "result": "greedy.val"
+        },
+        {
+          "@id": "#1literalFractiondigits_pass",
+          "@type": "shext:ValidationTest",
+          "name": "1literalFractiondigits_pass",
+          "comment": "@@ 1literalFractiondigits_pass",
+          "status": "mf:proposed",
+          "schema": "../schemas/1literalFractiondigits.shex",
+          "shape": "http://a.example/IssueShape",
+          "data": "1literalFractiondigits_pass.ttl",
+          "focus": "http://a.example/Issue1",
+          "result": "1literalFractiondigits_pass.val"
         },
         {
           "@id": "#1datatypeLength_pass",
@@ -294,6 +294,18 @@
           "result": "1card2_pass2.val"
         },
         {
+          "@id": "#1Adot_pass",
+          "@type": "shext:ValidationTest",
+          "name": "1Adot_pass",
+          "comment": "<S> { a . } on { <s> a <o1> }",
+          "status": "mf:proposed",
+          "schema": "../schemas/1Adot.shex",
+          "shape": "http://a.example/IssueShape",
+          "data": "IIssue1_a_Io1.ttl",
+          "focus": "http://a.example/Issue1",
+          "result": "1Adot_pass.val"
+        },
+        {
           "@id": "#1dot_missing",
           "@type": "shext:ValidationFailure",
           "name": "1dot_missing",
@@ -317,16 +329,39 @@
           "result": "1dot_pass.val"
         },
         {
-          "@id": "#1literalFractiondigits_pass",
+          "@id": "#iovka",
           "@type": "shext:ValidationTest",
-          "name": "1literalFractiondigits_pass",
-          "comment": "@@ 1literalFractiondigits_pass",
+          "name": "iovka",
+          "comment": "@@ iovka",
           "status": "mf:proposed",
-          "schema": "../schemas/1literalFractiondigits.shex",
+          "schema": "../validations/iovka.shex",
+          "shape": "S",
+          "data": "iovka.ttl",
+          "focus": "x",
+          "result": "iovka.val"
+        },
+        {
+          "@id": "#1dot_pass",
+          "@type": "shext:ValidationTest",
+          "name": "1dot_pass",
+          "comment": "<S> { <p1> . } on { <s> <p1> <o1> }",
+          "status": "mf:proposed",
+          "schema": "../schemas/1dot.shex",
           "shape": "http://a.example/IssueShape",
-          "data": "1literalFractiondigits_pass.ttl",
+          "data": "IIssue1_Ip1_Io1.ttl",
           "focus": "http://a.example/Issue1",
-          "result": "1literalFractiondigits_pass.val"
+          "result": "1dot_pass.val"
+        },
+        {
+          "@id": "#1dotAnnot3_missing",
+          "@type": "shext:ValidationFailure",
+          "name": "1dot_missing",
+          "comment": "<S> { <p1> . } on { <s> <p2> <o1> ... }",
+          "status": "mf:proposed",
+          "schema": "../schemas/1dot.shex",
+          "shape": "http://a.example/IssueShape",
+          "data": "IIssue1_Ip2_Io1Annot3.ttl",
+          "focus": "http://a.example/Issue1"
         },
         {
           "@id": "#1card2_fail0",
@@ -337,28 +372,6 @@
           "schema": "../schemas/1card2.shex",
           "shape": "http://a.example/IssueShape",
           "data": "empty.ttl",
-          "focus": "http://a.example/Issue1"
-        },
-        {
-          "@id": "#1card2_fail1",
-          "@type": "shext:ValidationFailure",
-          "name": "1card2_pass",
-          "comment": "<S> { <p1> .{2} } on { <s> <p1> 'a' }",
-          "status": "mf:proposed",
-          "schema": "../schemas/1card2.shex",
-          "shape": "http://a.example/IssueShape",
-          "data": "IIssue1_Ip1_La.ttl",
-          "focus": "http://a.example/Issue1"
-        },
-        {
-          "@id": "#1card2_fail3",
-          "@type": "shext:ValidationFailure",
-          "name": "1card2_fail3",
-          "comment": "<S> { <p1> .{2} } on { <s> <p1> 'a','b','c' }",
-          "status": "mf:proposed",
-          "schema": "../schemas/1card2.shex",
-          "shape": "http://a.example/IssueShape",
-          "data": "IIssue1_Ip1_La,Lb,Lc.ttl",
           "focus": "http://a.example/Issue1"
         },
         {
@@ -505,16 +518,26 @@
           "focus": "http://a.example/Issue1"
         },
         {
-          "@id": "#greedy",
-          "@type": "shext:ValidationTest",
-          "name": "greedy",
-          "comment": "@@ greedy",
+          "@id": "#1card2_fail3",
+          "@type": "shext:ValidationFailure",
+          "name": "1card2_fail3",
+          "comment": "<S> { <p1> .{2} } on { <s> <p1> 'a','b','c' }",
           "status": "mf:proposed",
-          "schema": "../validations/greedy.shex",
-          "shape": "S",
-          "data": "greedy.ttl",
-          "focus": "x",
-          "result": "greedy.val"
+          "schema": "../schemas/1card2.shex",
+          "shape": "http://a.example/IssueShape",
+          "data": "IIssue1_Ip1_La,Lb,Lc.ttl",
+          "focus": "http://a.example/Issue1"
+        },
+        {
+          "@id": "#1card2_fail1",
+          "@type": "shext:ValidationFailure",
+          "name": "1card2_pass",
+          "comment": "<S> { <p1> .{2} } on { <s> <p1> 'a' }",
+          "status": "mf:proposed",
+          "schema": "../schemas/1card2.shex",
+          "shape": "http://a.example/IssueShape",
+          "data": "IIssue1_Ip1_La.ttl",
+          "focus": "http://a.example/Issue1"
         },
         {
           "@id": "#skipped",
