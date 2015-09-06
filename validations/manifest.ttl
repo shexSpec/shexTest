@@ -21,7 +21,6 @@
         <#1card2_fail0>
         <#1card2_fail1>
         <#1card2_pass2>
-        <#1card2_pass3>
         <#1card2_fail3>
         <#1card25_fail0>
         <#1card25_fail1>
@@ -35,6 +34,14 @@
         <#1card2Star_pass2>
         <#1card2Star_pass3>
         <#1card2Star_pass6>
+        <#1cardPlus_fail0>
+        <#1cardPlus_pass1>
+        <#1cardPlus_pass2>
+        <#1cardPlus_pass6>
+        <#1cardStar_pass0>
+        <#1cardStar_pass1>
+        <#1cardStar_pass2>
+        <#1cardStar_pass6>
         <#1literalFractiondigits_pass>
         # <#1bnodeLength>
         # <#1bnodeMaxlength>
@@ -300,6 +307,93 @@
     shext:data <IIssue1_Ip1_La,Lb,Lc,Ld,Le,Lf.ttl> ;
     shext:focus <http://a.example/Issue1> ;
     shext:result <1card2Star_pass6.val>
+    .
+
+<#1cardPlus_fail0> a shext:ValidationFailure ;
+    mf:name "1cardPlus_fail0" ;
+    rdfs:comment "<S> { <p1> .+ } on {  }" ;
+    shext:status mf:proposed ;
+    shext:schema <../schemas/1cardPlus.shex> ;
+    shext:shape <http://a.example/IssueShape> ;
+    shext:data <empty.ttl> ;
+    shext:focus <http://a.example/Issue1>
+    .
+
+<#1cardPlus_pass1> a shext:ValidationTest ;
+    mf:name "1cardPlus_pass1" ;
+    rdfs:comment "<S> { <p1> .+ } on { <s> <p1> 'a' }" ;
+    shext:status mf:proposed ;
+    shext:schema <../schemas/1cardPlus.shex> ;
+    shext:shape <http://a.example/IssueShape> ;
+    shext:data <IIssue1_Ip1_La.ttl> ;
+    shext:focus <http://a.example/Issue1> ;
+    shext:result <1cardPlus_pass1.val>
+    .
+
+<#1cardPlus_pass2> a shext:ValidationTest ;
+    mf:name "1cardPlus_pass2" ;
+    rdfs:comment "<S> { <p1> .+ } on { <s> <p1> 'a','b' }" ;
+    shext:status mf:proposed ;
+    shext:schema <../schemas/1cardPlus.shex> ;
+    shext:shape <http://a.example/IssueShape> ;
+    shext:data <IIssue1_Ip1_La,Lb.ttl> ;
+    shext:focus <http://a.example/Issue1> ;
+    shext:result <1cardPlus_pass2.val>
+    .
+
+<#1cardPlus_pass6> a shext:ValidationTest ;
+    mf:name "1cardPlus_pass6" ;
+    rdfs:comment "<S> { <p1> .+ } on { <s> <p1> 'a','b','c','d','e','f' }" ;
+    shext:status mf:proposed ;
+    shext:schema <../schemas/1cardPlus.shex> ;
+    shext:shape <http://a.example/IssueShape> ;
+    shext:data <IIssue1_Ip1_La,Lb,Lc,Ld,Le,Lf.ttl> ;
+    shext:focus <http://a.example/Issue1> ;
+    shext:result <1cardPlus_pass6.val>
+    .
+
+<#1cardStar_pass0> a shext:ValidationTest ;
+    mf:name "1cardStar_fail0" ;
+    rdfs:comment "<S> { <p1> .* } on {  }" ;
+    shext:status mf:proposed ;
+    shext:schema <../schemas/1cardStar.shex> ;
+    shext:shape <http://a.example/IssueShape> ;
+    shext:data <empty.ttl> ;
+    shext:focus <http://a.example/Issue1> ;
+    shext:result <1cardStar_pass0.val>
+    .
+
+<#1cardStar_pass1> a shext:ValidationTest ;
+    mf:name "1cardStar_pass1" ;
+    rdfs:comment "<S> { <p1> .* } on { <s> <p1> 'a' }" ;
+    shext:status mf:proposed ;
+    shext:schema <../schemas/1cardStar.shex> ;
+    shext:shape <http://a.example/IssueShape> ;
+    shext:data <IIssue1_Ip1_La.ttl> ;
+    shext:focus <http://a.example/Issue1> ;
+    shext:result <1cardStar_pass1.val>
+    .
+
+<#1cardStar_pass2> a shext:ValidationTest ;
+    mf:name "1cardStar_pass2" ;
+    rdfs:comment "<S> { <p1> .* } on { <s> <p1> 'a','b' }" ;
+    shext:status mf:proposed ;
+    shext:schema <../schemas/1cardStar.shex> ;
+    shext:shape <http://a.example/IssueShape> ;
+    shext:data <IIssue1_Ip1_La,Lb.ttl> ;
+    shext:focus <http://a.example/Issue1> ;
+    shext:result <1cardStar_pass2.val>
+    .
+
+<#1cardStar_pass6> a shext:ValidationTest ;
+    mf:name "1cardStar_pass6" ;
+    rdfs:comment "<S> { <p1> .* } on { <s> <p1> 'a','b','c','d','e','f' }" ;
+    shext:status mf:proposed ;
+    shext:schema <../schemas/1cardStar.shex> ;
+    shext:shape <http://a.example/IssueShape> ;
+    shext:data <IIssue1_Ip1_La,Lb,Lc,Ld,Le,Lf.ttl> ;
+    shext:focus <http://a.example/Issue1> ;
+    shext:result <1cardStar_pass6.val>
     .
 
 <#1literalFractiondigits_pass> a shext:ValidationTest ;
