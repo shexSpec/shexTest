@@ -7,16 +7,16 @@
       "rdfs:comment": "ShEx tests",
       "mf:entries": [
         {
-          "@id": "#1card25_pass2",
+          "@id": "#1Adot_pass",
           "@type": "shext:ValidationTest",
-          "name": "1card25_pass",
-          "comment": "<S> { <p1> .{2,5} } on { <s> <p1> 'a','b' }",
+          "name": "1Adot_pass",
+          "comment": "<S> { a . } on { <s> a <o1> }",
           "status": "mf:proposed",
-          "schema": "../schemas/1card25.shex",
+          "schema": "../schemas/1Adot.shex",
           "shape": "http://a.example/IssueShape",
-          "data": "IIssue1_Ip1_La,Lb.ttl",
+          "data": "IIssue1_a_Io1.ttl",
           "focus": "http://a.example/Issue1",
-          "result": "1card25_pass2.val"
+          "result": "1Adot_pass.val"
         },
         {
           "@id": "#1dot_empty",
@@ -28,6 +28,18 @@
           "shape": "http://a.example/IssueShape",
           "data": "empty.ttl",
           "focus": "http://a.example/Issue1"
+        },
+        {
+          "@id": "#0_extra",
+          "@type": "shext:ValidationTest",
+          "name": "0_extra",
+          "comment": "<S> {  } on { <s> <p1> <o1> }",
+          "status": "mf:proposed",
+          "schema": "../schemas/0.shex",
+          "shape": "http://a.example/IssueShape",
+          "data": "IIssue1_Ip1_Io1.ttl",
+          "focus": "http://a.example/Issue1",
+          "result": "0_pass.val"
         },
         {
           "@id": "#1dot_pass",
@@ -42,40 +54,28 @@
           "result": "1dot_pass.val"
         },
         {
-          "@id": "#1Adot_pass",
+          "@id": "#1dot_extra_lower",
           "@type": "shext:ValidationTest",
-          "name": "1Adot_pass",
-          "comment": "<S> { a . } on { <s> a <o1> }",
+          "name": "1dot_extra",
+          "comment": "<S> { <p1> . } on { <s> <p1> <o1>; <p2> <o1> }",
           "status": "mf:proposed",
-          "schema": "../schemas/1Adot.shex",
+          "schema": "../schemas/1dot.shex",
           "shape": "http://a.example/IssueShape",
-          "data": "IIssue1_a_Io1.ttl",
+          "data": "IIssue1_Ip0_Io0;Ip1_Io1.ttl",
           "focus": "http://a.example/Issue1",
-          "result": "1Adot_pass.val"
+          "result": "1dot_pass.val"
         },
         {
-          "@id": "#skipped",
+          "@id": "#greedy",
           "@type": "shext:ValidationTest",
-          "name": "skipped",
-          "comment": "@@ skipped",
+          "name": "greedy",
+          "comment": "@@ greedy",
           "status": "mf:proposed",
-          "schema": "../validations/skipped.shex",
+          "schema": "../validations/greedy.shex",
           "shape": "S",
-          "data": "skipped.ttl",
+          "data": "greedy.ttl",
           "focus": "x",
-          "result": "skipped.val"
-        },
-        {
-          "@id": "#iovka",
-          "@type": "shext:ValidationTest",
-          "name": "iovka",
-          "comment": "@@ iovka",
-          "status": "mf:proposed",
-          "schema": "../validations/iovka.shex",
-          "shape": "S",
-          "data": "iovka.ttl",
-          "focus": "x",
-          "result": "iovka.val"
+          "result": "greedy.val"
         },
         {
           "@id": "#1literalFractiondigits_pass",
@@ -126,6 +126,30 @@
           "result": "1card25_pass3.val"
         },
         {
+          "@id": "#1card25_pass2",
+          "@type": "shext:ValidationTest",
+          "name": "1card25_pass",
+          "comment": "<S> { <p1> .{2,5} } on { <s> <p1> 'a','b' }",
+          "status": "mf:proposed",
+          "schema": "../schemas/1card25.shex",
+          "shape": "http://a.example/IssueShape",
+          "data": "IIssue1_Ip1_La,Lb.ttl",
+          "focus": "http://a.example/Issue1",
+          "result": "1card25_pass2.val"
+        },
+        {
+          "@id": "#1card2_pass2",
+          "@type": "shext:ValidationTest",
+          "name": "1card2_pass",
+          "comment": "<S> { <p1> .{2} } on { <s> <p1> 'a','b' }",
+          "status": "mf:proposed",
+          "schema": "../schemas/1card2.shex",
+          "shape": "http://a.example/IssueShape",
+          "data": "IIssue1_Ip1_La,Lb.ttl",
+          "focus": "http://a.example/Issue1",
+          "result": "1card2_pass2.val"
+        },
+        {
           "@id": "#1dot_missing",
           "@type": "shext:ValidationFailure",
           "name": "1dot_missing",
@@ -135,18 +159,6 @@
           "shape": "http://a.example/IssueShape",
           "data": "IIssue1_Ip2_Io1.ttl",
           "focus": "http://a.example/Issue1"
-        },
-        {
-          "@id": "#greedy",
-          "@type": "shext:ValidationTest",
-          "name": "greedy",
-          "comment": "@@ greedy",
-          "status": "mf:proposed",
-          "schema": "../validations/greedy.shex",
-          "shape": "S",
-          "data": "greedy.ttl",
-          "focus": "x",
-          "result": "greedy.val"
         },
         {
           "@id": "#1dot_extra_higher",
@@ -161,26 +173,37 @@
           "result": "1dot_pass.val"
         },
         {
-          "@id": "#1dot_extra_lower",
+          "@id": "#iovka",
           "@type": "shext:ValidationTest",
-          "name": "1dot_extra",
-          "comment": "<S> { <p1> . } on { <s> <p1> <o1>; <p2> <o1> }",
+          "name": "iovka",
+          "comment": "@@ iovka",
           "status": "mf:proposed",
-          "schema": "../schemas/1dot.shex",
-          "shape": "http://a.example/IssueShape",
-          "data": "IIssue1_Ip0_Io0;Ip1_Io1.ttl",
-          "focus": "http://a.example/Issue1",
-          "result": "1dot_pass.val"
+          "schema": "../validations/iovka.shex",
+          "shape": "S",
+          "data": "iovka.ttl",
+          "focus": "x",
+          "result": "iovka.val"
         },
         {
-          "@id": "#1card25_fail0",
+          "@id": "#1card2_fail0",
           "@type": "shext:ValidationFailure",
-          "name": "1card25_pass",
-          "comment": "<S> { <p1> .{2,5} } on {  }",
+          "name": "1card2_pass",
+          "comment": "<S> { <p1> .{2} } on {  }",
           "status": "mf:proposed",
-          "schema": "../schemas/1card25.shex",
+          "schema": "../schemas/1card2.shex",
           "shape": "http://a.example/IssueShape",
           "data": "empty.ttl",
+          "focus": "http://a.example/Issue1"
+        },
+        {
+          "@id": "#1card2_fail1",
+          "@type": "shext:ValidationFailure",
+          "name": "1card2_pass",
+          "comment": "<S> { <p1> .{2} } on { <s> <p1> 'a' }",
+          "status": "mf:proposed",
+          "schema": "../schemas/1card2.shex",
+          "shape": "http://a.example/IssueShape",
+          "data": "IIssue1_Ip1_La.ttl",
           "focus": "http://a.example/Issue1"
         },
         {
@@ -204,6 +227,40 @@
           "shape": "http://a.example/IssueShape",
           "data": "IIssue1_Ip1_La.ttl",
           "focus": "http://a.example/Issue1"
+        },
+        {
+          "@id": "#1card25_fail0",
+          "@type": "shext:ValidationFailure",
+          "name": "1card25_pass",
+          "comment": "<S> { <p1> .{2,5} } on {  }",
+          "status": "mf:proposed",
+          "schema": "../schemas/1card25.shex",
+          "shape": "http://a.example/IssueShape",
+          "data": "empty.ttl",
+          "focus": "http://a.example/Issue1"
+        },
+        {
+          "@id": "#1card2_fail3",
+          "@type": "shext:ValidationFailure",
+          "name": "1card2_fail3",
+          "comment": "<S> { <p1> .{2} } on { <s> <p1> 'a','b','c' }",
+          "status": "mf:proposed",
+          "schema": "../schemas/1card2.shex",
+          "shape": "http://a.example/IssueShape",
+          "data": "IIssue1_Ip1_La,Lb,Lc.ttl",
+          "focus": "http://a.example/Issue1"
+        },
+        {
+          "@id": "#skipped",
+          "@type": "shext:ValidationTest",
+          "name": "skipped",
+          "comment": "@@ skipped",
+          "status": "mf:proposed",
+          "schema": "../validations/skipped.shex",
+          "shape": "S",
+          "data": "skipped.ttl",
+          "focus": "x",
+          "result": "skipped.val"
         },
         {
           "@id": "#repeated-group",
