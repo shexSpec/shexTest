@@ -7,16 +7,16 @@
       "rdfs:comment": "ShEx tests",
       "mf:entries": [
         {
-          "@id": "#1card2_pass2",
+          "@id": "#1Adot_pass",
           "@type": "shext:ValidationTest",
-          "name": "1card2_pass",
-          "comment": "<S> { <p1> .{2} } on { <s> <p1> 'a','b' }",
+          "name": "1Adot_pass",
+          "comment": "<S> { a . } on { <s> a <o1> }",
           "status": "mf:proposed",
-          "schema": "../schemas/1card2.shex",
+          "schema": "../schemas/1Adot.shex",
           "shape": "http://a.example/IssueShape",
-          "data": "IIssue1_Ip1_La,Lb.ttl",
+          "data": "IIssue1_a_Io1.ttl",
           "focus": "http://a.example/Issue1",
-          "result": "1card2_pass2.val"
+          "result": "1Adot_pass.val"
         },
         {
           "@id": "#1dot_empty",
@@ -66,14 +66,14 @@
           "result": "1dot_pass.val"
         },
         {
-          "@id": "#1dot_extra_higher",
+          "@id": "#1dot_extra_lower",
           "@type": "shext:ValidationTest",
           "name": "1dot_extra",
           "comment": "<S> { <p1> . } on { <s> <p1> <o1>; <p2> <o1> }",
           "status": "mf:proposed",
           "schema": "../schemas/1dot.shex",
           "shape": "http://a.example/IssueShape",
-          "data": "IIssue1_Ip1_Io1;Ip2_Io2.ttl",
+          "data": "IIssue1_Ip0_Io0;Ip1_Io1.ttl",
           "focus": "http://a.example/Issue1",
           "result": "1dot_pass.val"
         },
@@ -100,6 +100,18 @@
           "data": "IIssue1_Ip1_INT12345.ttl",
           "focus": "http://a.example/Issue1",
           "result": "1datatypeLength_pass.val"
+        },
+        {
+          "@id": "#1datatype_pass",
+          "@type": "shext:ValidationTest",
+          "name": "1datatype_pass",
+          "comment": "<S> { <p1> xs:integer } on <s> in { <s> <p1> 'ab'^^<dt1> }",
+          "status": "mf:proposed",
+          "schema": "../schemas/1datatype.shex",
+          "shape": "http://a.example/IssueShape",
+          "data": "IIssue1_Ip1_dt1.ttl",
+          "focus": "http://a.example/Issue1",
+          "result": "1datatype_pass.val"
         },
         {
           "@id": "#1cardStar_pass6",
@@ -270,6 +282,18 @@
           "result": "1card25_pass2.val"
         },
         {
+          "@id": "#1card2_pass2",
+          "@type": "shext:ValidationTest",
+          "name": "1card2_pass",
+          "comment": "<S> { <p1> .{2} } on { <s> <p1> 'a','b' }",
+          "status": "mf:proposed",
+          "schema": "../schemas/1card2.shex",
+          "shape": "http://a.example/IssueShape",
+          "data": "IIssue1_Ip1_La,Lb.ttl",
+          "focus": "http://a.example/Issue1",
+          "result": "1card2_pass2.val"
+        },
+        {
           "@id": "#1dot_missing",
           "@type": "shext:ValidationFailure",
           "name": "1dot_missing",
@@ -281,16 +305,16 @@
           "focus": "http://a.example/Issue1"
         },
         {
-          "@id": "#1Adot_pass",
+          "@id": "#1dot_extra_higher",
           "@type": "shext:ValidationTest",
-          "name": "1Adot_pass",
-          "comment": "<S> { a . } on { <s> a <o1> }",
+          "name": "1dot_extra",
+          "comment": "<S> { <p1> . } on { <s> <p1> <o1>; <p2> <o1> }",
           "status": "mf:proposed",
-          "schema": "../schemas/1Adot.shex",
+          "schema": "../schemas/1dot.shex",
           "shape": "http://a.example/IssueShape",
-          "data": "IIssue1_a_Io1.ttl",
+          "data": "IIssue1_Ip1_Io1;Ip2_Io2.ttl",
           "focus": "http://a.example/Issue1",
-          "result": "1Adot_pass.val"
+          "result": "1dot_pass.val"
         },
         {
           "@id": "#1literalFractiondigits_pass",
@@ -303,18 +327,6 @@
           "data": "1literalFractiondigits_pass.ttl",
           "focus": "http://a.example/Issue1",
           "result": "1literalFractiondigits_pass.val"
-        },
-        {
-          "@id": "#1dot_extra_lower",
-          "@type": "shext:ValidationTest",
-          "name": "1dot_extra",
-          "comment": "<S> { <p1> . } on { <s> <p1> <o1>; <p2> <o1> }",
-          "status": "mf:proposed",
-          "schema": "../schemas/1dot.shex",
-          "shape": "http://a.example/IssueShape",
-          "data": "IIssue1_Ip0_Io0;Ip1_Io1.ttl",
-          "focus": "http://a.example/Issue1",
-          "result": "1dot_pass.val"
         },
         {
           "@id": "#1card2_fail0",
@@ -375,7 +387,7 @@
           "@id": "#1datatypeLength_wrongDatatype",
           "@type": "shext:ValidationFailure",
           "name": "1datatypeLength_missing",
-          "comment": "<S> { <p1> xs:integer LENGTH 5 } on <s> in { <s> <p2> 1.234 }",
+          "comment": "<S> { <p1> xs:integer LENGTH 5 } on <s> in { <s> <p1> 1.234 }",
           "status": "mf:proposed",
           "schema": "../schemas/1datatypeLength.shex",
           "shape": "http://a.example/IssueShape",
@@ -389,6 +401,39 @@
           "comment": "<S> { <p1> xs:integer LENGTH 5 } on <s> in { <s> <p2> <o1> }",
           "status": "mf:proposed",
           "schema": "../schemas/1datatypeLength.shex",
+          "shape": "http://a.example/IssueShape",
+          "data": "IIssue1_Ip2_Io1.ttl",
+          "focus": "http://a.example/Issue1"
+        },
+        {
+          "@id": "#1datatype_wrongDatatype",
+          "@type": "shext:ValidationFailure",
+          "name": "1datatype_wrongDatatype",
+          "comment": "<S> { <p1> xs:integer } on <s> in { <s> <p1> 1.234 }",
+          "status": "mf:proposed",
+          "schema": "../schemas/1datatype.shex",
+          "shape": "http://a.example/IssueShape",
+          "data": "IIssue1_Ip1_DEC1.345.ttl",
+          "focus": "http://a.example/Issue1"
+        },
+        {
+          "@id": "#1datatype_nonLiteral",
+          "@type": "shext:ValidationFailure",
+          "name": "1datatype_nonLiteral",
+          "comment": "<S> { <p1> xs:integer } on <s> in { <s> <p1> <o1> }",
+          "status": "mf:proposed",
+          "schema": "../schemas/1datatype.shex",
+          "shape": "http://a.example/IssueShape",
+          "data": "IIssue1_Ip1_Io1.ttl",
+          "focus": "http://a.example/Issue1"
+        },
+        {
+          "@id": "#1datatype_missing",
+          "@type": "shext:ValidationFailure",
+          "name": "1datatype_missing",
+          "comment": "<S> { <p1> xs:integer } on <s> in { <s> <p2> <o1> }",
+          "status": "mf:proposed",
+          "schema": "../schemas/1datatype.shex",
           "shape": "http://a.example/IssueShape",
           "data": "IIssue1_Ip2_Io1.ttl",
           "focus": "http://a.example/Issue1"

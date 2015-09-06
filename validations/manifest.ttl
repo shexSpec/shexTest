@@ -42,6 +42,10 @@
         <#1cardStar_pass1>
         <#1cardStar_pass2>
         <#1cardStar_pass6>
+        <#1datatype_missing>
+        <#1datatype_nonLiteral>
+        <#1datatype_wrongDatatype>
+        <#1datatype_pass>
         <#1datatypeLength_missing>
         <#1datatypeLength_wrongDatatype>
         <#1datatypeLength_short>
@@ -401,6 +405,47 @@
     shext:result <1cardStar_pass6.val>
     .
 
+<#1datatype_missing> a shext:ValidationFailure ;
+    mf:name "1datatype_missing" ;
+    rdfs:comment "<S> { <p1> xs:integer } on <s> in { <s> <p2> <o1> }" ;
+    shext:status mf:proposed ;
+    shext:schema <../schemas/1datatype.shex> ;
+    shext:shape <http://a.example/IssueShape> ;
+    shext:data <IIssue1_Ip2_Io1.ttl> ;
+    shext:focus <http://a.example/Issue1>
+    .
+
+<#1datatype_nonLiteral> a shext:ValidationFailure ;
+    mf:name "1datatype_nonLiteral" ;
+    rdfs:comment "<S> { <p1> xs:integer } on <s> in { <s> <p1> <o1> }" ;
+    shext:status mf:proposed ;
+    shext:schema <../schemas/1datatype.shex> ;
+    shext:shape <http://a.example/IssueShape> ;
+    shext:data <IIssue1_Ip1_Io1.ttl> ;
+    shext:focus <http://a.example/Issue1>
+    .
+
+<#1datatype_wrongDatatype> a shext:ValidationFailure ;
+    mf:name "1datatype_wrongDatatype" ;
+    rdfs:comment "<S> { <p1> xs:integer } on <s> in { <s> <p1> 1.234 }" ;
+    shext:status mf:proposed ;
+    shext:schema <../schemas/1datatype.shex> ;
+    shext:shape <http://a.example/IssueShape> ;
+    shext:data <IIssue1_Ip1_DEC1.345.ttl> ;
+    shext:focus <http://a.example/Issue1>
+    .
+
+<#1datatype_pass> a shext:ValidationTest ;
+    mf:name "1datatype_pass" ;
+    rdfs:comment "<S> { <p1> xs:integer } on <s> in { <s> <p1> 'ab'^^<dt1> }" ;
+    shext:status mf:proposed ;
+    shext:schema <../schemas/1datatype.shex> ;
+    shext:shape <http://a.example/IssueShape> ;
+    shext:data <IIssue1_Ip1_dt1.ttl> ;
+    shext:focus <http://a.example/Issue1> ;
+    shext:result <1datatype_pass.val>
+    .
+
 <#1datatypeLength_missing> a shext:ValidationFailure ;
     mf:name "1datatypeLength_missing" ;
     rdfs:comment "<S> { <p1> xs:integer LENGTH 5 } on <s> in { <s> <p2> <o1> }" ;
@@ -413,7 +458,7 @@
 
 <#1datatypeLength_wrongDatatype> a shext:ValidationFailure ;
     mf:name "1datatypeLength_missing" ;
-    rdfs:comment "<S> { <p1> xs:integer LENGTH 5 } on <s> in { <s> <p2> 1.234 }" ;
+    rdfs:comment "<S> { <p1> xs:integer LENGTH 5 } on <s> in { <s> <p1> 1.234 }" ;
     shext:status mf:proposed ;
     shext:schema <../schemas/1datatypeLength.shex> ;
     shext:shape <http://a.example/IssueShape> ;
