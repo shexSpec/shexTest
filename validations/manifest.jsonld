@@ -78,6 +78,18 @@
           "result": "greedy.val"
         },
         {
+          "@id": "#1val2IRIREFExtra1bnode",
+          "@type": "shext:ValidationTest",
+          "name": "1val2IRIREFExtra1bnode",
+          "comment": "<S> EXTRA <p1> { <p1> IRI } on { <s> <p1> <o1>, _:o2 }",
+          "status": "mf:proposed",
+          "schema": "../schemas/1val2IRIREFExtra1.shex",
+          "shape": "http://a.example/IssueShape",
+          "data": "IIssue1_Ip1_Io1,Bo2.ttl",
+          "focus": "http://a.example/Issue1",
+          "result": "1val2IRIREFExtra1bnode_IIssue1_Ip1_Io1,Bo2.val"
+        },
+        {
           "@id": "#1dotClosed_pass",
           "@type": "shext:ValidationTest",
           "name": "1dotClosed_pass",
@@ -396,6 +408,17 @@
           "schema": "../schemas/1card2.shex",
           "shape": "http://a.example/IssueShape",
           "data": "empty.ttl",
+          "focus": "http://a.example/Issue1"
+        },
+        {
+          "@id": "#1val2IRIREFExtra1iri",
+          "@type": "shext:ValidationFailure",
+          "name": "1val2IRIREFExtra1iri",
+          "comment": "<S> EXTRA <p1> { <p1> IRI } on { <s> <p1> <o1>, <o2> }",
+          "status": "mf:proposed",
+          "schema": "../schemas/1val2IRIREFExtra1.shex",
+          "shape": "http://a.example/IssueShape",
+          "data": "IIssue1_Ip1_Io1,Io2.ttl",
           "focus": "http://a.example/Issue1"
         },
         {

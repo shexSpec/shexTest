@@ -60,6 +60,8 @@
         <#1dotClosed_pass>
         <#1dotClosed_fail_lower>
         <#1dotClosed_fail_higher>
+        <#1val2IRIREFExtra1iri>
+        <#1val2IRIREFExtra1bnode>
         # <#1bnodeLength>
         # <#1bnodeMaxlength>
         # <#1bnodeMinlength>
@@ -579,6 +581,27 @@
     shext:shape <http://a.example/IssueShape> ;
     shext:data <IIssue1_Ip1_Io1;Ip2_Io2.ttl> ;
     shext:focus <http://a.example/Issue1>
+    .
+
+<#1val2IRIREFExtra1iri> a shext:ValidationFailure ;
+    mf:name "1val2IRIREFExtra1iri" ;
+    rdfs:comment "<S> EXTRA <p1> { <p1> IRI } on { <s> <p1> <o1>, <o2> }" ;
+    shext:status mf:proposed ;
+    shext:schema <../schemas/1val2IRIREFExtra1.shex> ;
+    shext:shape <http://a.example/IssueShape> ;
+    shext:data <IIssue1_Ip1_Io1,Io2.ttl> ;
+    shext:focus <http://a.example/Issue1>
+    .
+
+<#1val2IRIREFExtra1bnode> a shext:ValidationTest ;
+    mf:name "1val2IRIREFExtra1bnode" ;
+    rdfs:comment "<S> EXTRA <p1> { <p1> IRI } on { <s> <p1> <o1>, _:o2 }" ;
+    shext:status mf:proposed ;
+    shext:schema <../schemas/1val2IRIREFExtra1.shex> ;
+    shext:shape <http://a.example/IssueShape> ;
+    shext:data <IIssue1_Ip1_Io1,Bo2.ttl> ;
+    shext:focus <http://a.example/Issue1> ;
+    shext:result <1val2IRIREFExtra1bnode_IIssue1_Ip1_Io1,Bo2.val>
     .
 
         # <#1bnodeLength>
