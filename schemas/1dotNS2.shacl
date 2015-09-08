@@ -1,12 +1,12 @@
-@prefix p1:    &lt;http://a.example/p1&gt; .
-@prefix IssueShape: &lt;http://a.example/IssueShape&gt; .
-@prefix sh:    &lt;http://www.w3.org/ns/shacl/core#&gt; .
-@prefix xsd:   &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+@prefix p1:    <http://a.example/p1> .
+@prefix IssueShape: <http://a.example/IssueShape> .
+@prefix sh:    <http://www.w3.org/ns/shacl/core#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 
-IssueShape:  sh:property  [ a             sh:PropertyConstraint ;
-                            sh:maxCount   1 ;
-                            sh:minCount   1 ;
+IssueShape: a  sh:Schema;
+             sh:property  [ a             sh:PropertyConstraint ;
+#                            sh:maxCount   1 ;
+#                            sh:minCount   1 ;
                             sh:predicate  p1:
-                          ] ;
-        sh:schema    [ a  sh:Schema ] .
+                          ] .
 

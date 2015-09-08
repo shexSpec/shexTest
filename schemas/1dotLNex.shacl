@@ -1,11 +1,10 @@
-@prefix ex:    &lt;http://a.example/&gt; .
-@prefix sh:    &lt;http://www.w3.org/ns/shacl/core#&gt; .
-@prefix xsd:   &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+@prefix ex:    <http://a.example/> .
+@prefix sh:    <http://www.w3.org/ns/shacl/core#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 
 ex:IssueShape  sh:property  [ a             sh:PropertyConstraint ;
-                              sh:maxCount   1 ;
-                              sh:minCount   1 ;
+#                              sh:maxCount   1 ;
+#                              sh:minCount   1 ;
                               sh:predicate  ex:p1
-                            ] ;
-        sh:schema    [ a  sh:Schema ] .
+                            ] .
 
