@@ -60,6 +60,7 @@
         <#1dotClosed_pass>
         <#1dotClosed_fail_lower>
         <#1dotClosed_fail_higher>
+        <#1literalPlus_IIssue1_Ip1_La,Io1>
         <#1val1IRIREFExtra1iri>
         <#1val2IRIREFExtra1iri>
         <#1val2IRIREFExtra1bnode>
@@ -591,6 +592,16 @@
     sht:schema <../schemas/1dotClosed.shex> ;
     sht:shape <http://a.example/IssueShape> ;
     sht:data <IIssue1_Ip1_Io1;Ip2_Io2.ttl> ;
+    sht:focus <http://a.example/Issue1>
+    .
+
+<#1literalPlus_IIssue1_Ip1_La,Io1> a sht:ValidationFailure ;
+    mf:name "1literal_extra" ;
+    rdfs:comment "<S> { <p1> LITERAL+ } on { <s> <p1> 'a', <o2> }" ;
+    sht:status mf:proposed ;
+    sht:schema <../schemas/1literalPlus.shex> ;
+    sht:shape <http://a.example/IssueShape> ;
+    sht:data <IIssue1_Ip1_La,Io1.ttl> ;
     sht:focus <http://a.example/Issue1>
     .
 
