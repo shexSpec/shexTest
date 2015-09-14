@@ -5,6 +5,10 @@
 @prefix sht:     <http://www.w3.org/ns/shacl/test-suite#> .
 @prefix ex:     <http://example.org/> .
 
+# TODO:
+#   repeated OR
+#   1dotRefOr3 on..
+
 
 <> a mf:Manifest ;
     rdfs:comment "ShEx validation tests" ;
@@ -673,8 +677,8 @@
 	mf:action [
     sht:schema <../schemas/1val2IRIREFExtra1.shex> ;
     sht:shape <http://a.example/IssueShape> ;
-    sht:data <IIssue1_Ip1_Io1,Io2.ttl> ];
-    sht:focus <http://a.example/Issue1>
+    sht:data <IIssue1_Ip1_Io1,Io2.ttl> ;
+    sht:focus <http://a.example/Issue1> ]
     .
 
 <#1val2IRIREFExtra1bnode> a sht:ValidationTest ;
