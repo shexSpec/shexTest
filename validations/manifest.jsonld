@@ -87,7 +87,7 @@
           "shape": "http://a.example/EmployeeShape",
           "data": "In2_Ip2_In1.In1_Ip1_LX.In3_Ip1_LX.ttl",
           "focus": "http://a.example/n2",
-          "result": "In2_Ip2_In1@In1_Ip1_LX.ttl"
+          "result": "In2_Ip2_In1@In1_Ip1_LX.val"
         },
         {
           "@id": "#1dotRef1_referrer,referent",
@@ -99,7 +99,7 @@
           "shape": "http://a.example/EmployeeShape",
           "data": "In2_Ip2_In1.In1_Ip1_LX.ttl",
           "focus": "http://a.example/n2",
-          "result": "In2_Ip2_In1@In1_Ip1_LX.ttl"
+          "result": "In2_Ip2_In1@In1_Ip1_LX.val"
         },
         {
           "@id": "#1dotRef1_referent,referrer",
@@ -111,7 +111,7 @@
           "shape": "http://a.example/EmployeeShape",
           "data": "In1_Ip1_LX.In2_Ip2_In1.ttl",
           "focus": "http://a.example/n2",
-          "result": "In2_Ip2_In1@In1_Ip1_LX.ttl"
+          "result": "In2_Ip2_In1@In1_Ip1_LX.val"
         },
         {
           "@id": "#1val2IRIREFExtra1bnode",
