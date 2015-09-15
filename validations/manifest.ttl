@@ -758,7 +758,7 @@
       sht:data <In1_Ip1_LX.In2_Ip2_In1.ttl> ;
       sht:focus <http://a.example/n2>
     ] ;
-    mf:result <In2_Ip2_In1@In1_Ip1_LX.ttl>
+    mf:result <In2_Ip2_In1@In1_Ip1_LX.val>
     .
 
 <#1dotRef1_referrer,referent> a sht:ValidationTest ;
@@ -771,7 +771,7 @@
       sht:data <In2_Ip2_In1.In1_Ip1_LX.ttl> ;
       sht:focus <http://a.example/n2>
     ] ;
-    mf:result <In2_Ip2_In1@In1_Ip1_LX.ttl>
+    mf:result <In2_Ip2_In1@In1_Ip1_LX.val>
     .
 
 <#1dotRef1_missingReferent> a sht:ValidationFailure ;
@@ -820,7 +820,7 @@
       sht:data <In2_Ip2_In1.In1_Ip1_LX.In3_Ip1_LX.ttl> ;
       sht:focus <http://a.example/n2>
     ] ;
-    mf:result <In2_Ip2_In1@In1_Ip1_LX.ttl>
+    mf:result <In2_Ip2_In1@In1_Ip1_LX.val>
     .
 
 <#iovka> a sht:ValidationTest ;

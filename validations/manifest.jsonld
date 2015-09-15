@@ -101,7 +101,7 @@
           "name": "1dotRef1_extraMatchesReferent",
           "comment": "<n2> in { <n2> <p2> <n1>, <n3> . <n1> <p1> X . <n3> <p1> X } as <S1> in <S1> { <p2> @<S2> } <S2> { <p1> X }",
           "status": "mf:proposed",
-          "result": "In2_Ip2_In1@In1_Ip1_LX.ttl"
+          "result": "In2_Ip2_In1@In1_Ip1_LX.val"
         },
         {
           "@id": "#1dotRef1_referrer,referent",
@@ -115,7 +115,7 @@
           "name": "1dotRef1_referrer,referent",
           "comment": "<n2> in { <n2> <p2> <n1> . <n1> <p1> X } as <S1> in <S1> { <p2> @<S2> } <S2> { <p1> X }",
           "status": "mf:proposed",
-          "result": "In2_Ip2_In1@In1_Ip1_LX.ttl"
+          "result": "In2_Ip2_In1@In1_Ip1_LX.val"
         },
         {
           "@id": "#1dotRef1_referent,referrer",
@@ -129,7 +129,7 @@
           "name": "1dotRef1_referent,referrer",
           "comment": "<n2> in { <n1> <p1> X . <n2> <p2> <n1> } as <S1> in <S1> { <p2> @<S2> } <S2> { <p1> X }",
           "status": "mf:proposed",
-          "result": "In2_Ip2_In1@In1_Ip1_LX.ttl"
+          "result": "In2_Ip2_In1@In1_Ip1_LX.val"
         },
         {
           "@id": "#1val2IRIREFExtra1bnode",
