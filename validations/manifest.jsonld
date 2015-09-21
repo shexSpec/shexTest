@@ -5,7 +5,7 @@
       "@id": "http://shexspec.github.io/test-suite/tests/manifest.ttl",
       "@type": "mf:Manifest",
       "rdfs:comment": "ShEx validation tests",
-      "mf:entries": [
+      "entries": [
         {
           "@id": "#1dotAnnot3_pass",
           "@type": "sht:ValidationTest",
