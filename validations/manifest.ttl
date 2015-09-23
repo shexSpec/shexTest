@@ -96,7 +96,7 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/0.shex> ;
-      sht:shape <http://a.example/IssueShape> ;
+      sht:shape <http://a.example/S1> ;
       sht:data <empty.ttl> ;
       sht:focus <http://a.example/dummy>
     ] ;
@@ -109,7 +109,7 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/0.shex> ;
-      sht:shape <http://a.example/IssueShape> ;
+      sht:shape <http://a.example/S1> ;
       sht:data <IIssue1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/Issue1>
     ] ;
@@ -185,7 +185,7 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1dotAnnot3.shex> ;
-      sht:shape <http://a.example/IssueShape> ;
+      sht:shape <http://a.example/S1> ;
       sht:data <IIssue1_Ip2_Io1Annot3.ttl> ;
       sht:focus <http://a.example/Issue1>
     ]
@@ -197,7 +197,7 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1dotAnnot3.shex> ;
-      sht:shape <http://a.example/IssueShape> ;
+      sht:shape <http://a.example/S1> ;
       sht:data <IIssue1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/Issue1>
     ] ;
@@ -210,7 +210,7 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1dotCode1.shex> ;
-      sht:shape <http://a.example/IssueShape> ;
+      sht:shape <http://a.example/S1> ;
       sht:data <IIssue1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/Issue1>
     ] ;
@@ -223,7 +223,7 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1Adot.shex> ;
-      sht:shape <http://a.example/IssueShape> ;
+      sht:shape <http://a.example/S1> ;
       sht:data <IIssue1_a_Io1.ttl> ;
       sht:focus <http://a.example/Issue1>
     ] ;
@@ -236,7 +236,7 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1card2.shex> ;
-      sht:shape <http://a.example/IssueShape> ;
+      sht:shape <http://a.example/S1> ;
       sht:data <empty.ttl> ;
       sht:focus <http://a.example/Issue1>
     ]
@@ -248,7 +248,7 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1card2.shex> ;
-      sht:shape <http://a.example/IssueShape> ;
+      sht:shape <http://a.example/S1> ;
       sht:data <IIssue1_Ip1_La.ttl> ;
       sht:focus <http://a.example/Issue1>
     ]
@@ -260,7 +260,7 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1card2.shex> ;
-      sht:shape <http://a.example/IssueShape> ;
+      sht:shape <http://a.example/S1> ;
       sht:data <IIssue1_Ip1_La,Lb.ttl> ;
       sht:focus <http://a.example/Issue1>
     ] ;
@@ -273,7 +273,7 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1card2.shex> ;
-      sht:shape <http://a.example/IssueShape> ;
+      sht:shape <http://a.example/S1> ;
       sht:data <IIssue1_Ip1_La,Lb,Lc.ttl> ;
       sht:focus <http://a.example/Issue1>
     ]
@@ -285,7 +285,7 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1card25.shex> ;
-      sht:shape <http://a.example/IssueShape> ;
+      sht:shape <http://a.example/S1> ;
       sht:data <empty.ttl> ;
       sht:focus <http://a.example/Issue1>
     ]
@@ -297,7 +297,7 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1card25.shex> ;
-      sht:shape <http://a.example/IssueShape> ;
+      sht:shape <http://a.example/S1> ;
       sht:data <IIssue1_Ip1_La.ttl> ;
       sht:focus <http://a.example/Issue1>
     ]
@@ -309,7 +309,7 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1card25.shex> ;
-      sht:shape <http://a.example/IssueShape> ;
+      sht:shape <http://a.example/S1> ;
       sht:data <IIssue1_Ip1_La,Lb.ttl> ;
       sht:focus <http://a.example/Issue1>
     ] ;
@@ -322,7 +322,7 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1card25.shex> ;
-      sht:shape <http://a.example/IssueShape> ;
+      sht:shape <http://a.example/S1> ;
       sht:data <IIssue1_Ip1_La,Lb,Lc.ttl> ;
       sht:focus <http://a.example/Issue1>
     ] ;
@@ -335,7 +335,7 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1card25.shex> ;
-      sht:shape <http://a.example/IssueShape> ;
+      sht:shape <http://a.example/S1> ;
       sht:data <IIssue1_Ip1_La,Lb,Lc,Ld.ttl> ;
       sht:focus <http://a.example/Issue1>
     ] ;
@@ -348,7 +348,7 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1card25.shex> ;
-      sht:shape <http://a.example/IssueShape> ;
+      sht:shape <http://a.example/S1> ;
       sht:data <IIssue1_Ip1_La,Lb,Lc,Ld,Le.ttl> ;
       sht:focus <http://a.example/Issue1>
     ] ;
@@ -361,7 +361,7 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1card25.shex> ;
-      sht:shape <http://a.example/IssueShape> ;
+      sht:shape <http://a.example/S1> ;
       sht:data <IIssue1_Ip1_La,Lb,Lc,Ld,Le,Lf.ttl> ;
       sht:focus <http://a.example/Issue1>
     ]
@@ -373,7 +373,7 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1card2Star.shex> ;
-      sht:shape <http://a.example/IssueShape> ;
+      sht:shape <http://a.example/S1> ;
       sht:data <empty.ttl> ;
       sht:focus <http://a.example/Issue1>
     ]
@@ -385,7 +385,7 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1card2Star.shex> ;
-      sht:shape <http://a.example/IssueShape> ;
+      sht:shape <http://a.example/S1> ;
       sht:data <IIssue1_Ip1_La.ttl> ;
       sht:focus <http://a.example/Issue1>
     ]
@@ -397,7 +397,7 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1card2Star.shex> ;
-      sht:shape <http://a.example/IssueShape> ;
+      sht:shape <http://a.example/S1> ;
       sht:data <IIssue1_Ip1_La,Lb.ttl> ;
       sht:focus <http://a.example/Issue1>
     ] ;
@@ -410,7 +410,7 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1card2Star.shex> ;
-      sht:shape <http://a.example/IssueShape> ;
+      sht:shape <http://a.example/S1> ;
       sht:data <IIssue1_Ip1_La,Lb,Lc.ttl> ;
       sht:focus <http://a.example/Issue1>
     ] ;
@@ -423,7 +423,7 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1card2Star.shex> ;
-      sht:shape <http://a.example/IssueShape> ;
+      sht:shape <http://a.example/S1> ;
       sht:data <IIssue1_Ip1_La,Lb,Lc,Ld,Le,Lf.ttl> ;
       sht:focus <http://a.example/Issue1>
     ] ;
@@ -436,7 +436,7 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1cardPlus.shex> ;
-      sht:shape <http://a.example/IssueShape> ;
+      sht:shape <http://a.example/S1> ;
       sht:data <empty.ttl> ;
       sht:focus <http://a.example/Issue1>
     ]
@@ -448,7 +448,7 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1cardPlus.shex> ;
-      sht:shape <http://a.example/IssueShape> ;
+      sht:shape <http://a.example/S1> ;
       sht:data <IIssue1_Ip1_La.ttl> ;
       sht:focus <http://a.example/Issue1>
     ] ;
@@ -461,7 +461,7 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1cardPlus.shex> ;
-      sht:shape <http://a.example/IssueShape> ;
+      sht:shape <http://a.example/S1> ;
       sht:data <IIssue1_Ip1_La,Lb.ttl> ;
       sht:focus <http://a.example/Issue1>
     ] ;
@@ -474,7 +474,7 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1cardPlus.shex> ;
-      sht:shape <http://a.example/IssueShape> ;
+      sht:shape <http://a.example/S1> ;
       sht:data <IIssue1_Ip1_La,Lb,Lc,Ld,Le,Lf.ttl> ;
       sht:focus <http://a.example/Issue1>
     ] ;
@@ -487,7 +487,7 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1cardStar.shex> ;
-      sht:shape <http://a.example/IssueShape> ;
+      sht:shape <http://a.example/S1> ;
       sht:data <empty.ttl> ;
       sht:focus <http://a.example/Issue1>
     ] ;
@@ -500,7 +500,7 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1cardStar.shex> ;
-      sht:shape <http://a.example/IssueShape> ;
+      sht:shape <http://a.example/S1> ;
       sht:data <IIssue1_Ip1_La.ttl> ;
       sht:focus <http://a.example/Issue1>
     ] ;
@@ -513,7 +513,7 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1cardStar.shex> ;
-      sht:shape <http://a.example/IssueShape> ;
+      sht:shape <http://a.example/S1> ;
       sht:data <IIssue1_Ip1_La,Lb.ttl> ;
       sht:focus <http://a.example/Issue1>
     ] ;
@@ -526,7 +526,7 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1cardStar.shex> ;
-      sht:shape <http://a.example/IssueShape> ;
+      sht:shape <http://a.example/S1> ;
       sht:data <IIssue1_Ip1_La,Lb,Lc,Ld,Le,Lf.ttl> ;
       sht:focus <http://a.example/Issue1>
     ] ;
@@ -539,7 +539,7 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1datatype.shex> ;
-      sht:shape <http://a.example/IssueShape> ;
+      sht:shape <http://a.example/S1> ;
       sht:data <IIssue1_Ip2_Io1.ttl> ;
       sht:focus <http://a.example/Issue1>
     ]
@@ -551,7 +551,7 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1datatype.shex> ;
-      sht:shape <http://a.example/IssueShape> ;
+      sht:shape <http://a.example/S1> ;
       sht:data <IIssue1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/Issue1>
     ]
@@ -563,7 +563,7 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1datatype.shex> ;
-      sht:shape <http://a.example/IssueShape> ;
+      sht:shape <http://a.example/S1> ;
       sht:data <IIssue1_Ip1_DEC1.345.ttl> ;
       sht:focus <http://a.example/Issue1>
     ]
@@ -575,7 +575,7 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1datatype.shex> ;
-      sht:shape <http://a.example/IssueShape> ;
+      sht:shape <http://a.example/S1> ;
       sht:data <IIssue1_Ip1_dt1.ttl> ;
       sht:focus <http://a.example/Issue1>
     ] ;
@@ -588,7 +588,7 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1datatypeLength.shex> ;
-      sht:shape <http://a.example/IssueShape> ;
+      sht:shape <http://a.example/S1> ;
       sht:data <IIssue1_Ip2_Io1.ttl> ;
       sht:focus <http://a.example/Issue1>
     ]
@@ -600,7 +600,7 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1datatypeLength.shex> ;
-      sht:shape <http://a.example/IssueShape> ;
+      sht:shape <http://a.example/S1> ;
       sht:data <IIssue1_Ip1_DEC1.345.ttl> ;
       sht:focus <http://a.example/Issue1>
     ]
@@ -612,7 +612,7 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1datatypeLength.shex> ;
-      sht:shape <http://a.example/IssueShape> ;
+      sht:shape <http://a.example/S1> ;
       sht:data <IIssue1_Ip1_INT1234.ttl> ;
       sht:focus <http://a.example/Issue1>
     ]
@@ -624,7 +624,7 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1datatypeLength.shex> ;
-      sht:shape <http://a.example/IssueShape> ;
+      sht:shape <http://a.example/S1> ;
       sht:data <IIssue1_Ip1_INT12345.ttl> ;
       sht:focus <http://a.example/Issue1>
     ] ;
@@ -637,7 +637,7 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1datatypeLength.shex> ;
-      sht:shape <http://a.example/IssueShape> ;
+      sht:shape <http://a.example/S1> ;
       sht:data <IIssue1_Ip1_INT123456.ttl> ;
       sht:focus <http://a.example/Issue1>
     ]
@@ -649,7 +649,7 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1literalFractiondigits.shex> ;
-      sht:shape <http://a.example/IssueShape> ;
+      sht:shape <http://a.example/S1> ;
       sht:data <1literalFractiondigits_pass.ttl> ;
       sht:focus <http://a.example/Issue1>
     ] ;
@@ -699,7 +699,7 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1literalPlus.shex> ;
-      sht:shape <http://a.example/IssueShape> ;
+      sht:shape <http://a.example/S1> ;
       sht:data <IIssue1_Ip1_La,Io1.ttl> ;
       sht:focus <http://a.example/Issue1>
     ]
@@ -711,7 +711,7 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1IRIREFExtra1.shex> ;
-      sht:shape <http://a.example/IssueShape> ;
+      sht:shape <http://a.example/S1> ;
       sht:data <IIssue1_Ip1_Io1,Io2.ttl> ;
       sht:focus <http://a.example/Issue1>
     ] ;
@@ -724,7 +724,7 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val2IRIREFExtra1.shex> ;
-      sht:shape <http://a.example/IssueShape> ;
+      sht:shape <http://a.example/S1> ;
       sht:data <IIssue1_Ip1_Io1,Io2.ttl> ;
       sht:focus <http://a.example/Issue1>
     ]
@@ -736,7 +736,7 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val2IRIREFExtra1.shex> ;
-      sht:shape <http://a.example/IssueShape> ;
+      sht:shape <http://a.example/S1> ;
       sht:data <IIssue1_Ip1_Io1,Bo2.ttl> ;
       sht:focus <http://a.example/Issue1>
     ] ;
@@ -894,7 +894,7 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/open3groupdotclosecard23Annot3Code2.shex> ;
-      sht:shape <http://a.example/IssueShape> ;
+      sht:shape <http://a.example/S1> ;
       sht:data <p1p2p3X2.ttl> ;
       sht:focus <x>
     ] ;

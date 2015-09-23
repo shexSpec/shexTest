@@ -11,7 +11,7 @@
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/1dotAnnot3.shex",
-            "shape": "http://a.example/IssueShape",
+            "shape": "http://a.example/S1",
             "data": "IIssue1_Ip1_Io1.ttl",
             "focus": "http://a.example/Issue1"
           },
@@ -38,7 +38,7 @@
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/0.shex",
-            "shape": "http://a.example/IssueShape",
+            "shape": "http://a.example/S1",
             "data": "empty.ttl",
             "focus": "http://a.example/dummy"
           },
@@ -52,7 +52,7 @@
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/0.shex",
-            "shape": "http://a.example/IssueShape",
+            "shape": "http://a.example/S1",
             "data": "IIssue1_Ip1_Io1.ttl",
             "focus": "http://a.example/Issue1"
           },
@@ -136,7 +136,7 @@
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/1val2IRIREFExtra1.shex",
-            "shape": "http://a.example/IssueShape",
+            "shape": "http://a.example/S1",
             "data": "IIssue1_Ip1_Io1,Bo2.ttl",
             "focus": "http://a.example/Issue1"
           },
@@ -150,7 +150,7 @@
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/1val1IRIREFExtra1.shex",
-            "shape": "http://a.example/IssueShape",
+            "shape": "http://a.example/S1",
             "data": "IIssue1_Ip1_Io1,Io2.ttl",
             "focus": "http://a.example/Issue1"
           },
@@ -178,7 +178,7 @@
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/1literalFractiondigits.shex",
-            "shape": "http://a.example/IssueShape",
+            "shape": "http://a.example/S1",
             "data": "1literalFractiondigits_pass.ttl",
             "focus": "http://a.example/Issue1"
           },
@@ -192,7 +192,7 @@
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/1datatypeLength.shex",
-            "shape": "http://a.example/IssueShape",
+            "shape": "http://a.example/S1",
             "data": "IIssue1_Ip1_INT12345.ttl",
             "focus": "http://a.example/Issue1"
           },
@@ -206,7 +206,7 @@
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/1datatype.shex",
-            "shape": "http://a.example/IssueShape",
+            "shape": "http://a.example/S1",
             "data": "IIssue1_Ip1_dt1.ttl",
             "focus": "http://a.example/Issue1"
           },
@@ -220,7 +220,7 @@
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/1cardStar.shex",
-            "shape": "http://a.example/IssueShape",
+            "shape": "http://a.example/S1",
             "data": "IIssue1_Ip1_La,Lb,Lc,Ld,Le,Lf.ttl",
             "focus": "http://a.example/Issue1"
           },
@@ -234,7 +234,7 @@
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/1cardStar.shex",
-            "shape": "http://a.example/IssueShape",
+            "shape": "http://a.example/S1",
             "data": "IIssue1_Ip1_La,Lb.ttl",
             "focus": "http://a.example/Issue1"
           },
@@ -248,7 +248,7 @@
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/1cardStar.shex",
-            "shape": "http://a.example/IssueShape",
+            "shape": "http://a.example/S1",
             "data": "IIssue1_Ip1_La.ttl",
             "focus": "http://a.example/Issue1"
           },
@@ -262,7 +262,7 @@
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/1cardStar.shex",
-            "shape": "http://a.example/IssueShape",
+            "shape": "http://a.example/S1",
             "data": "empty.ttl",
             "focus": "http://a.example/Issue1"
           },
@@ -276,7 +276,7 @@
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/1cardPlus.shex",
-            "shape": "http://a.example/IssueShape",
+            "shape": "http://a.example/S1",
             "data": "IIssue1_Ip1_La,Lb,Lc,Ld,Le,Lf.ttl",
             "focus": "http://a.example/Issue1"
           },
@@ -290,7 +290,7 @@
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/1cardPlus.shex",
-            "shape": "http://a.example/IssueShape",
+            "shape": "http://a.example/S1",
             "data": "IIssue1_Ip1_La,Lb.ttl",
             "focus": "http://a.example/Issue1"
           },
@@ -304,7 +304,7 @@
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/1cardPlus.shex",
-            "shape": "http://a.example/IssueShape",
+            "shape": "http://a.example/S1",
             "data": "IIssue1_Ip1_La.ttl",
             "focus": "http://a.example/Issue1"
           },
@@ -318,7 +318,7 @@
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/1card2Star.shex",
-            "shape": "http://a.example/IssueShape",
+            "shape": "http://a.example/S1",
             "data": "IIssue1_Ip1_La,Lb,Lc,Ld,Le,Lf.ttl",
             "focus": "http://a.example/Issue1"
           },
@@ -332,7 +332,7 @@
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/1card2Star.shex",
-            "shape": "http://a.example/IssueShape",
+            "shape": "http://a.example/S1",
             "data": "IIssue1_Ip1_La,Lb,Lc.ttl",
             "focus": "http://a.example/Issue1"
           },
@@ -346,7 +346,7 @@
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/1card2Star.shex",
-            "shape": "http://a.example/IssueShape",
+            "shape": "http://a.example/S1",
             "data": "IIssue1_Ip1_La,Lb.ttl",
             "focus": "http://a.example/Issue1"
           },
@@ -360,7 +360,7 @@
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/1card25.shex",
-            "shape": "http://a.example/IssueShape",
+            "shape": "http://a.example/S1",
             "data": "IIssue1_Ip1_La,Lb,Lc,Ld,Le.ttl",
             "focus": "http://a.example/Issue1"
           },
@@ -374,7 +374,7 @@
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/1card25.shex",
-            "shape": "http://a.example/IssueShape",
+            "shape": "http://a.example/S1",
             "data": "IIssue1_Ip1_La,Lb,Lc,Ld.ttl",
             "focus": "http://a.example/Issue1"
           },
@@ -388,7 +388,7 @@
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/1card25.shex",
-            "shape": "http://a.example/IssueShape",
+            "shape": "http://a.example/S1",
             "data": "IIssue1_Ip1_La,Lb,Lc.ttl",
             "focus": "http://a.example/Issue1"
           },
@@ -402,7 +402,7 @@
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/1card25.shex",
-            "shape": "http://a.example/IssueShape",
+            "shape": "http://a.example/S1",
             "data": "IIssue1_Ip1_La,Lb.ttl",
             "focus": "http://a.example/Issue1"
           },
@@ -416,7 +416,7 @@
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/1card2.shex",
-            "shape": "http://a.example/IssueShape",
+            "shape": "http://a.example/S1",
             "data": "IIssue1_Ip1_La,Lb.ttl",
             "focus": "http://a.example/Issue1"
           },
@@ -430,7 +430,7 @@
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/1Adot.shex",
-            "shape": "http://a.example/IssueShape",
+            "shape": "http://a.example/S1",
             "data": "IIssue1_a_Io1.ttl",
             "focus": "http://a.example/Issue1"
           },
@@ -444,7 +444,7 @@
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/1dotCode1.shex",
-            "shape": "http://a.example/IssueShape",
+            "shape": "http://a.example/S1",
             "data": "IIssue1_Ip1_Io1.ttl",
             "focus": "http://a.example/Issue1"
           },
@@ -513,7 +513,7 @@
           "@type": "sht:ValidationFailure",
           "action": {
             "schema": "../schemas/1dotAnnot3.shex",
-            "shape": "http://a.example/IssueShape",
+            "shape": "http://a.example/S1",
             "data": "IIssue1_Ip2_Io1Annot3.ttl",
             "focus": "http://a.example/Issue1"
           },
@@ -526,7 +526,7 @@
           "@type": "sht:ValidationFailure",
           "action": {
             "schema": "../schemas/1card2.shex",
-            "shape": "http://a.example/IssueShape",
+            "shape": "http://a.example/S1",
             "data": "empty.ttl",
             "focus": "http://a.example/Issue1"
           },
@@ -578,7 +578,7 @@
           "@type": "sht:ValidationFailure",
           "action": {
             "schema": "../schemas/1val2IRIREFExtra1.shex",
-            "shape": "http://a.example/IssueShape",
+            "shape": "http://a.example/S1",
             "data": "IIssue1_Ip1_Io1,Io2.ttl",
             "focus": "http://a.example/Issue1"
           },
@@ -591,7 +591,7 @@
           "@type": "sht:ValidationFailure",
           "action": {
             "schema": "../schemas/1literalPlus.shex",
-            "shape": "http://a.example/IssueShape",
+            "shape": "http://a.example/S1",
             "data": "IIssue1_Ip1_La,Io1.ttl",
             "focus": "http://a.example/Issue1"
           },
@@ -630,7 +630,7 @@
           "@type": "sht:ValidationFailure",
           "action": {
             "schema": "../schemas/1datatypeLength.shex",
-            "shape": "http://a.example/IssueShape",
+            "shape": "http://a.example/S1",
             "data": "IIssue1_Ip1_INT123456.ttl",
             "focus": "http://a.example/Issue1"
           },
@@ -643,7 +643,7 @@
           "@type": "sht:ValidationFailure",
           "action": {
             "schema": "../schemas/1datatypeLength.shex",
-            "shape": "http://a.example/IssueShape",
+            "shape": "http://a.example/S1",
             "data": "IIssue1_Ip1_INT1234.ttl",
             "focus": "http://a.example/Issue1"
           },
@@ -656,7 +656,7 @@
           "@type": "sht:ValidationFailure",
           "action": {
             "schema": "../schemas/1datatypeLength.shex",
-            "shape": "http://a.example/IssueShape",
+            "shape": "http://a.example/S1",
             "data": "IIssue1_Ip1_DEC1.345.ttl",
             "focus": "http://a.example/Issue1"
           },
@@ -669,7 +669,7 @@
           "@type": "sht:ValidationFailure",
           "action": {
             "schema": "../schemas/1datatypeLength.shex",
-            "shape": "http://a.example/IssueShape",
+            "shape": "http://a.example/S1",
             "data": "IIssue1_Ip2_Io1.ttl",
             "focus": "http://a.example/Issue1"
           },
@@ -682,7 +682,7 @@
           "@type": "sht:ValidationFailure",
           "action": {
             "schema": "../schemas/1datatype.shex",
-            "shape": "http://a.example/IssueShape",
+            "shape": "http://a.example/S1",
             "data": "IIssue1_Ip1_DEC1.345.ttl",
             "focus": "http://a.example/Issue1"
           },
@@ -695,7 +695,7 @@
           "@type": "sht:ValidationFailure",
           "action": {
             "schema": "../schemas/1datatype.shex",
-            "shape": "http://a.example/IssueShape",
+            "shape": "http://a.example/S1",
             "data": "IIssue1_Ip1_Io1.ttl",
             "focus": "http://a.example/Issue1"
           },
@@ -708,7 +708,7 @@
           "@type": "sht:ValidationFailure",
           "action": {
             "schema": "../schemas/1datatype.shex",
-            "shape": "http://a.example/IssueShape",
+            "shape": "http://a.example/S1",
             "data": "IIssue1_Ip2_Io1.ttl",
             "focus": "http://a.example/Issue1"
           },
@@ -721,7 +721,7 @@
           "@type": "sht:ValidationFailure",
           "action": {
             "schema": "../schemas/1cardPlus.shex",
-            "shape": "http://a.example/IssueShape",
+            "shape": "http://a.example/S1",
             "data": "empty.ttl",
             "focus": "http://a.example/Issue1"
           },
@@ -734,7 +734,7 @@
           "@type": "sht:ValidationFailure",
           "action": {
             "schema": "../schemas/1card2Star.shex",
-            "shape": "http://a.example/IssueShape",
+            "shape": "http://a.example/S1",
             "data": "IIssue1_Ip1_La.ttl",
             "focus": "http://a.example/Issue1"
           },
@@ -747,7 +747,7 @@
           "@type": "sht:ValidationFailure",
           "action": {
             "schema": "../schemas/1card2Star.shex",
-            "shape": "http://a.example/IssueShape",
+            "shape": "http://a.example/S1",
             "data": "empty.ttl",
             "focus": "http://a.example/Issue1"
           },
@@ -760,7 +760,7 @@
           "@type": "sht:ValidationFailure",
           "action": {
             "schema": "../schemas/1card25.shex",
-            "shape": "http://a.example/IssueShape",
+            "shape": "http://a.example/S1",
             "data": "IIssue1_Ip1_La,Lb,Lc,Ld,Le,Lf.ttl",
             "focus": "http://a.example/Issue1"
           },
@@ -773,7 +773,7 @@
           "@type": "sht:ValidationFailure",
           "action": {
             "schema": "../schemas/1card25.shex",
-            "shape": "http://a.example/IssueShape",
+            "shape": "http://a.example/S1",
             "data": "IIssue1_Ip1_La.ttl",
             "focus": "http://a.example/Issue1"
           },
@@ -786,7 +786,7 @@
           "@type": "sht:ValidationFailure",
           "action": {
             "schema": "../schemas/1card25.shex",
-            "shape": "http://a.example/IssueShape",
+            "shape": "http://a.example/S1",
             "data": "empty.ttl",
             "focus": "http://a.example/Issue1"
           },
@@ -799,7 +799,7 @@
           "@type": "sht:ValidationFailure",
           "action": {
             "schema": "../schemas/1card2.shex",
-            "shape": "http://a.example/IssueShape",
+            "shape": "http://a.example/S1",
             "data": "IIssue1_Ip1_La,Lb,Lc.ttl",
             "focus": "http://a.example/Issue1"
           },
@@ -812,7 +812,7 @@
           "@type": "sht:ValidationFailure",
           "action": {
             "schema": "../schemas/1card2.shex",
-            "shape": "http://a.example/IssueShape",
+            "shape": "http://a.example/S1",
             "data": "IIssue1_Ip1_La.ttl",
             "focus": "http://a.example/Issue1"
           },
@@ -867,7 +867,7 @@
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/open3groupdotclosecard23Annot3Code2.shex",
-            "shape": "http://a.example/IssueShape",
+            "shape": "http://a.example/S1",
             "data": "p1p2p3X2.ttl",
             "focus": "x"
           },
