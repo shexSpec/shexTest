@@ -12,9 +12,9 @@
   "startActs": [
     { "name": "http://ex.example/#foo", "contents": " initializer for ignored extension " }
   ],
-  "start": "http://ex.example/IssueShape",
+  "start": "http://ex.example/S1",
   "shapes": {
-    "http://ex.example/IssueShape": {
+    "http://ex.example/S1": {
       "type": "shape",
       "expression": {
         "type": "group",
@@ -106,7 +106,7 @@
             "predicate": "http://ex.example/#related",
             "value": {
               "type": "valueClass",
-              "reference": "http://ex.example/IssueShape"
+              "reference": "http://ex.example/S1"
             },
             "min": 0, "max": "*"
           }
@@ -307,7 +307,7 @@
                 "predicate": "http://ex.example/#issues",
                 "value": {
                   "type": "valueClass",
-                  "reference": "http://ex.example/#IssueShape"
+                  "reference": "http://ex.example/#S1"
                 },
                 "min": 0, "max": "*"
               },
@@ -316,7 +316,7 @@
                 "predicate": "http://ex.example/#seeAlso",
                 "value": {
                   "type": "valueClass",
-                  "reference": "http://ex.example/#IssueShape"
+                  "reference": "http://ex.example/#S1"
                 },
                 "min": 0, "max": "*"
               },

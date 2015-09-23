@@ -1,11 +1,11 @@
 {
   "type": "schema",
   "prefixes": {
-    "IssueShape": "http://a.example/IssueShape",
+    "S1": "http://a.example/S1",
     "p1": "http://a.example/p1"
   },
   "shapes": {
-    "http://a.example/IssueShape": {
+    "http://a.example/S1": {
       "type": "shape",
       "expression": {
         "type": "tripleConstraint",
