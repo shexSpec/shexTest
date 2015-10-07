@@ -16,7 +16,7 @@
         "type": "group",
         "expressions": [
           {
-            "type": "include",
+            "type": "inclusion",
             "include": "http://a.example/PersonShape"
           },
           {

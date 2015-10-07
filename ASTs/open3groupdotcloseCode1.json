@@ -33,7 +33,7 @@
           ]
         },
         "semActs": [
-          { "name": "http://a.example/semAct1", "contents": " code1 "}
+          { "type": "semAct", "name": "http://a.example/semAct1", "code": " code1 "}
         ]
       }
     }

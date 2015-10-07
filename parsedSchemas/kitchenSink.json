@@ -10,7 +10,7 @@
     "rdfs": "http://www.w3.org/2000/01/rdf-schem#"
   },
   "startActs": [
-    { "name": "http://ex.example/#foo", "contents": " initializer for ignored extension " }
+    { "type": "semAct", "name": "http://ex.example/#foo", "code": " initializer for ignored extension " }
   ],
   "start": "http://ex.example/S1",
   "shapes": {
@@ -98,7 +98,7 @@
             "min": 0,
             "max": 1,
             "semActs": [
-              { "name": "http://ex.example/#foo", "contents": " asdfasdf " }
+              { "type": "semAct", "name": "http://ex.example/#foo", "code": " asdfasdf " }
             ]
           },
           {
@@ -267,8 +267,8 @@
                   "nodeKind": "bnode"
                 },
                 "semActs": [
-                  { "name": "http://ex.example/#foo", "contents": " ignored "},
-                  { "name": "http://ex.example/#bar", "contents": " also ignored " }
+                  { "type": "semAct", "name": "http://ex.example/#foo", "code": " ignored "},
+                  { "type": "semAct", "name": "http://ex.example/#bar", "code": " also ignored " }
                 ]
               }
             ]

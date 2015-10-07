@@ -21,8 +21,8 @@
     "":"http://all.example/"
   },
   "startActs": [
-    { "name": "http://all.example/act1", "contents": " START1 "},
-    { "name": "http://all.example/act2", "contents": " START2 "}
+    { "type": "semAct", "name": "http://all.example/act1", "code": " START1 "},
+    { "type": "semAct", "name": "http://all.example/act2", "code": " START2 "}
   ],
   "start":"http://all.example/S3",
   "shapes":{
@@ -229,7 +229,7 @@
 			      "reference":"_:b0"
 			    },
 			    "min":2,"max":3,"semActs": [
-                              { "name": "http://all.example/act1", "contents": " code1 " }
+                              { "type": "semAct", "name": "http://all.example/act1", "code": " code1 " }
                             ]
 			  },
 			  {
@@ -241,7 +241,7 @@
 			    },
 			    "min":1,"max":"*",
 			    "semActs": [
-                              { "name": "http://all.example/act1", "contents": " %{printf(\"品川\\n\");%} " }
+                              { "type": "semAct", "name": "http://all.example/act1", "code": " %{printf(\"品川\\n\");%} " }
                             ],
 			    "annotations":[
 			      [
@@ -269,7 +269,7 @@
 			    },
 			    "min":1,"max":"*",
 			    "semActs": [
-                              { "name": "http://all.example/act1", "contents": " code1 " }
+                              { "type": "semAct", "name": "http://all.example/act1", "code": " code1 " }
                             ]
 			  },
 			  {
@@ -280,7 +280,7 @@
 			    },
 			    "min":1,"max":"*",
 			    "semActs": [
-                              { "name": "http://all.example/act1", "contents": " code1 " }
+                              { "type": "semAct", "name": "http://all.example/act1", "code": " code1 " }
                             ]
 			  }
 			]
@@ -342,8 +342,8 @@
 		    }
 		  ]
 	        },"semActs": [
-                  { "name": "http://all.example/act1", "contents": " code1 " },
-                  { "name": "http://all.example/act2", "contents": " code2 " }
+                  { "type": "semAct", "name": "http://all.example/act1", "code": " code1 " },
+                  { "type": "semAct", "name": "http://all.example/act2", "code": " code2 " }
                 ]
 	  }
 	]
@@ -366,7 +366,7 @@
     "_:AZazÀÖØöø˿ͰͽͿ῿‌‍⁰↏Ⰰ⿯、퟿豈﷏ﷰ�𐀀󯿽":{
       "type":"shape",
       "expression":{
-	"type":"include",
+	"type":"inclusion",
 	"include":"_:a·̀ͯ‿.⁀"
       }
     }
