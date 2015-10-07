@@ -31,8 +31,7 @@
           },
           "name": "1dot_empty",
           "comment": "<S> { <p1> . } on {  }",
-          "status": "mf:proposed",
-          "result": "1dot_empty.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#0_empty",
@@ -455,18 +454,17 @@
           "result": "1dotCode1_pass.val"
         },
         {
-          "@id": "#2dot_missing1",
+          "@id": "#1dot_missing",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/2dot.shex",
+            "schema": "../schemas/1dot.shex",
             "shape": "http://a.example/S1",
-            "data": "IIssue1_Ip1_Io1.ttl",
+            "data": "IIssue1_Ip2_Io1.ttl",
             "focus": "http://a.example/Issue1"
           },
-          "name": "2dot_missing1",
-          "comment": "<S> { <p1> ., <p2> . } on { <s> <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "2dot_missing1.val"
+          "name": "1dot_missing",
+          "comment": "<S> { <p1> . } on { <s> <p2> <o1> }",
+          "status": "mf:proposed"
         },
         {
           "@id": "#1dot_extra_higher",
@@ -832,19 +830,6 @@
           },
           "name": "1card2_fail1",
           "comment": "<S> { <p1> .{2} } on { <s> <p1> 'a' }",
-          "status": "mf:proposed"
-        },
-        {
-          "@id": "#1card2_fail0",
-          "@type": "sht:ValidationFailure",
-          "action": {
-            "schema": "../schemas/1card2.shex",
-            "shape": "http://a.example/S1",
-            "data": "empty.ttl",
-            "focus": "http://a.example/Issue1"
-          },
-          "name": "1card2_fail0",
-          "comment": "<S> { <p1> .{2} } on {  }",
           "status": "mf:proposed"
         },
         {
