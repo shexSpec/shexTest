@@ -514,9 +514,15 @@
           "@id": "#1dot_missing",
           "@type": "sht:ValidationFailure",
           "action": {
+<<<<<<< HEAD
+            "schema": "../schemas/1dotAnnot3.shex",
+            "shape": "http://a.example/S1",
+            "data": "IIssue1_Ip2_Io1Annot3.ttl",
+=======
             "schema": "../schemas/1dot.shex",
             "shape": "http://a.example/S1",
             "data": "IIssue1_Ip2_Io1.ttl",
+>>>>>>> c5f8dfca1298526c0bec34419910422a8f1acd3a
             "focus": "http://a.example/Issue1"
           },
           "name": "1dot_missing",
@@ -527,9 +533,15 @@
           "@id": "#1dotAnnot3_missing",
           "@type": "sht:ValidationFailure",
           "action": {
+<<<<<<< HEAD
+            "schema": "../schemas/1card2.shex",
+            "shape": "http://a.example/S1",
+            "data": "empty.ttl",
+=======
             "schema": "../schemas/1dotAnnot3.shex",
             "shape": "http://a.example/S1",
             "data": "IIssue1_Ip2_Io1Annot3.ttl",
+>>>>>>> c5f8dfca1298526c0bec34419910422a8f1acd3a
             "focus": "http://a.example/Issue1"
           },
           "name": "1dotAnnot3_missing",
