@@ -2,9 +2,9 @@
   "type": "schema",
   "prefixes": {},
   "startActs": [
-    { "name": "http://a.example/semAct1", "contents": " code1 "},
-    { "name": "http://a.example/semAct2", "contents": " code2 "},
-    { "name": "http://a.example/semAct3", "contents": " code3 "}
+    { "type": "semAct", "name": "http://a.example/semAct1", "code": " code1 "},
+    { "type": "semAct", "name": "http://a.example/semAct2", "code": " code2 "},
+    { "type": "semAct", "name": "http://a.example/semAct3", "code": " code3 "}
   ],
   "shapes":{
     "http://a.example/S1": {

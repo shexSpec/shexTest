@@ -30,8 +30,8 @@
            [ "http://a.example/annot3", "\"3\"" ]
         ],
         "semActs": [
-          { "name": "http://a.example/semAct1", "contents": " code1 " },
-          { "name": "http://a.example/semAct2", "contents": " code2 " }
+          { "type": "semAct", "name": "http://a.example/semAct1", "code": " code1 " },
+          { "type": "semAct", "name": "http://a.example/semAct2", "code": " code2 " }
         ]
       }
     }
