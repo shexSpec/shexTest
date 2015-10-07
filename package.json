@@ -13,6 +13,9 @@
   "engines": {
     "node": ">=0.10.0"
   },
+  "dependencies": {
+    "n3": "0.4.3"
+  },
   "file": ["schemas", "negativeSyntax", "parsedSchemas", "validations", "ASTs"],
   "repository": {
     "type": "git",
