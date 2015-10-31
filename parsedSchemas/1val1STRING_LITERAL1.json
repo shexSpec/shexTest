@@ -7,7 +7,7 @@
       "expression": {
         "type": "tripleConstraint",
         "predicate": "http://a.example/p1",
-        "value": { "type": "valueClass", "values": ["\"STRING_LITERAL1\""] }
+        "valueExpr": { "type": "valueClass", "values": ["\"STRING_LITERAL1\""] }
       }
     }
   }

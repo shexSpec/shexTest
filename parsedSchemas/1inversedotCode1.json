@@ -8,7 +8,7 @@
         "type": "tripleConstraint",
         "inverse": true,
         "predicate": "http://a.example/p1",
-        "value": { "type": "valueClass" },
+        "valueExpr": { "type": "valueClass" },
         "semActs": [
           { "type": "semAct", "name": "http://a.example/semAct1", "code": " code1 " }
         ]

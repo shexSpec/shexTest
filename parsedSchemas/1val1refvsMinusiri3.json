@@ -3,7 +3,7 @@
   "prefixes": {},
   "valueClasses": {
     "http://a.example/vs1": {
-      "type": "valueClassDefn", "value": {
+      "type": "valueClassDefn", "valueExpr": {
         "type": "valueClass", "values": [
           { "type": "stemRange",
             "stem": { "type": "wildcard" },
@@ -23,7 +23,7 @@
       "expression": {
         "type": "tripleConstraint",
         "predicate": "http://a.example/p1",
-        "value": { "type": "vcref", "valueClassRef": "http://a.example/vs1" }
+        "valueExpr": { "type": "vcref", "valueClassRef": "http://a.example/vs1" }
       }
     }
   }

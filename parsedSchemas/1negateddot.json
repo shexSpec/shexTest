@@ -8,7 +8,7 @@
         "type": "tripleConstraint",
         "negated": true,
         "predicate": "http://a.example/p1",
-        "value": { "type": "valueClass" }
+        "valueExpr": { "type": "valueClass" }
       }
     }
   }

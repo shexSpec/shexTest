@@ -7,7 +7,7 @@
       "expression": {
         "type": "tripleConstraint",
         "predicate": "scheme:!$%25&amp;'()*+,-./0123456789:/@ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz~?#",
-        "value": { "type": "valueClass" }
+        "valueExpr": { "type": "valueClass" }
       }
     }
   }

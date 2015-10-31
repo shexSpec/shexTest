@@ -4,7 +4,7 @@
   "valueClasses": {
     "http://a.example/vc1": {
       "type": "valueClassDefn",
-      "value": {
+      "valueExpr": {
         "type": "valueClass",
         "nodeKind": "literal",
         "minlength": 4
@@ -12,7 +12,7 @@
     },
     "http://a.example/vc2": {
       "type": "valueClassDefn",
-      "value": {
+      "valueExpr": {
         "type": "valueClass",
         "nodeKind": "literal",
         "maxlength": 5
@@ -20,7 +20,7 @@
     },
     "http://a.example/vc3": {
       "type": "valueClassDefn",
-      "value": {
+      "valueExpr": {
         "type": "valueClass",
         "nodeKind": "literal",
         "pattern": "^(ab)*"
@@ -28,7 +28,7 @@
     },
     "http://a.example/vc4": {
       "type": "valueClassDefn",
-      "value": {
+      "valueExpr": {
         "type": "vcand",
         "valueClasses": [
           {
@@ -53,7 +53,7 @@
       "expression": {
         "type": "tripleConstraint",
         "predicate": "http://a.example/p4",
-        "value": {
+        "valueExpr": {
           "type": "vcref",
           "valueClassRef": "http://a.example/vc4"
         }

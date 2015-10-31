@@ -9,14 +9,14 @@
         "expressions": [
           {
             "type": "tripleConstraintSolutions", "predicate": "http://a.example/a",
-            "value": { "type": "valueClass" },
+            "valueExpr": { "type": "valueClass" },
             "solutions": [
               { "type": "testedTriple", "subject": "s0", "predicate": "http://a.example/a", "object": "\"1\"" }
             ]
           },
           {
             "type": "tripleConstraintSolutions", "predicate": "http://a.example/b",
-            "value": { "type": "valueClass" },
+            "valueExpr": { "type": "valueClass" },
             "solutions": [
               { "type": "testedTriple", "subject": "s0", "predicate": "http://a.example/b", "object": "\"1\"" }
             ]

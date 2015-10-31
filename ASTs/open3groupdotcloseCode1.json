@@ -12,21 +12,21 @@
             {
               "type": "TripleConstraint", "inverse": false, "negated": false,
               "predicate": "http://a.example/p1",
-              "value": {
+              "valueExpr": {
                 "type": "valueClass"
               }
             },
             {
               "type": "TripleConstraint", "inverse": false, "negated": false,
               "predicate": "http://a.example/p2",
-              "value": {
+              "valueExpr": {
                 "type": "valueClass"
               }
             },
             {
               "type": "TripleConstraint", "inverse": false, "negated": false,
               "predicate": "http://a.example/p3",
-              "value": {
+              "valueExpr": {
                 "type": "valueClass"
               }
             }

@@ -7,7 +7,7 @@
       "expression": {
         "type": "tripleConstraint",
         "predicate": "http://a.example/p1",
-        "value": { "type": "valueClass", "values": ["\"\u0000\t\u000B\u000C\u000E&([]\""] }
+        "valueExpr": { "type": "valueClass", "values": ["\"\u0000\t\u000B\u000C\u000E&([]\""] }
       }
     }
   }

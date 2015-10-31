@@ -10,21 +10,21 @@
           {
             "type": "tripleConstraint",
             "predicate": "http://a.example/p1",
-            "value": {
+            "valueExpr": {
               "type": "valueClass"
             }
           },
           {
             "type": "tripleConstraint",
             "predicate": "http://a.example/p2",
-            "value": {
+            "valueExpr": {
               "type": "valueClass"
             }
           },
           {
             "type": "tripleConstraint",
             "predicate": "http://a.example/p3",
-            "value": {
+            "valueExpr": {
               "type": "valueClass"
             }
           }

@@ -34,21 +34,21 @@
 	  {
 	    "type":"tripleConstraint",
 	    "predicate":"http://all.example/p1",
-	    "value":{
+	    "valueExpr":{
 	      "type":"valueClass"
 	    }
 	  },
 	  {
 	    "type":"tripleConstraint",
 	    "predicate":"http://all.example/p2",
-	    "value":{
+	    "valueExpr":{
 	      "type":"valueClass"
 	    }
 	  },
 	  {
 	    "type":"tripleConstraint",
 	    "predicate":"http://all.example/p3",
-	    "value":{
+	    "valueExpr":{
 	      "type":"valueClass"
 	    }
 	  }
@@ -68,21 +68,21 @@
 	  {
 	    "type":"tripleConstraint",
 	    "predicate":"http://all.example/p1-",
-	    "value":{
+	    "valueExpr":{
 	      "type":"valueClass"
 	    }
 	  },
 	  {
 	    "type":"tripleConstraint",
 	    "predicate":"http://all.example/p2",
-	    "value":{
+	    "valueExpr":{
 	      "type":"valueClass"
 	    }
 	  },
 	  {
 	    "type":"tripleConstraint",
 	    "predicate":"http://all.example/p3",
-	    "value":{
+	    "valueExpr":{
 	      "type":"valueClass"
 	    }
 	  }
@@ -99,7 +99,7 @@
       "expression":{
 	"type":"tripleConstraint",
 	"predicate":"http://all.example/p1",
-	"value":{
+	"valueExpr":{
 	  "type":"valueClass",
 	  "values":[
 	    "\"STRING_LITERAL2\"",
@@ -134,14 +134,14 @@
 	  {
 	    "type":"tripleConstraint",
 	    "predicate":"http://all.example/a",
-	    "value":{
+	    "valueExpr":{
 	      "type":"valueClass"
 	    }
 	  },
 	  {
 	    "type":"tripleConstraint",
 	    "predicate":"http://all.example/prefix",
-	    "value":{
+	    "valueExpr":{
 	      "type":"valueClass",
 	      "datatype":"http://all.example/dt",
 	      "length":2
@@ -157,7 +157,7 @@
 		  {
 		    "type":"tripleConstraint",
 		    "predicate":"http://all.example/base",
-		    "value":{
+		    "valueExpr":{
 		      "type":"valueClass",
 		      "nodeKind":"iri"
 		    },
@@ -166,7 +166,7 @@
 		  {
 		    "type":"tripleConstraint",
 		    "predicate":"http://all.example/PREFIX",
-		    "value":{
+		    "valueExpr":{
 		      "type":"valueClass",
 		      "nodeKind":"iri",
 		      "pattern":"^http://",
@@ -177,7 +177,7 @@
 		  {
 		    "type":"tripleConstraint",
 		    "predicate":"http://all.example/BaSe",
-		    "value":{
+		    "valueExpr":{
 		      "type":"valueClass",
 		      "reference":"http://all.example/S5"
 		    },
@@ -188,7 +188,7 @@
 	      {
 		"type":"tripleConstraint",
 		"predicate":"http://all.example/virtual",
-		"value":{
+		"valueExpr":{
 		  "type":"valueClass",
 		  "nodeKind":"nonliteral",
 		  "reference":"http://all.example/S5"
@@ -198,7 +198,7 @@
 	      {
 		"type":"tripleConstraint",
 		"predicate":"http://all.example/closed",
-		"value":{
+		"valueExpr":{
 		  "type":"valueClass",
 		  "nodeKind":"bnode",
 		  "reference":{
@@ -224,7 +224,7 @@
 			  {
 			    "type":"tripleConstraint",
 			    "inverse":true,"predicate":"http://all.example/extra",
-			    "value":{
+			    "valueExpr":{
 			      "type":"valueClass",
 			      "reference":"_:b0"
 			    },
@@ -235,7 +235,7 @@
 			  {
 			    "type":"tripleConstraint",
 			    "negated":true,"predicate":"http://all.example/iri",
-			    "value":{
+			    "valueExpr":{
 			      "type":"valueClass",
 			      "nodeKind":"literal"
 			    },
@@ -264,7 +264,7 @@
 			  {
 			    "type":"tripleConstraint",
 			    "inverse":true,"negated":true,"predicate":"http://all.example/bnode",
-			    "value":{
+			    "valueExpr":{
 			      "type":"valueClass"
 			    },
 			    "min":1,"max":"*",
@@ -275,7 +275,7 @@
 			  {
 			    "type":"tripleConstraint",
 			    "inverse":true,"negated":true,"predicate":"http://all.example/literal",
-			    "value":{
+			    "valueExpr":{
 			      "type":"valueClass"
 			    },
 			    "min":1,"max":"*",
@@ -290,7 +290,7 @@
 		  {
 		    "type":"tripleConstraint",
 		    "predicate":"http://all.example/nonliteral",
-		    "value":{
+		    "valueExpr":{
 		      "type":"valueClass",
 		      "datatype":"http://www.w3.org/2001/XMLSchema#integer",
 		      "mininclusive":5,"maxinclusive":5,"totaldigits":1,"fractiondigits":1
@@ -303,7 +303,7 @@
 	  {
 	    "type":"tripleConstraint",
 	    "predicate":"http://all.example/or",
-	    "value":{
+	    "valueExpr":{
 	      "type":"valueClass",
 	      "values":[
 		"http://a.example/a1",
@@ -324,7 +324,7 @@
 	  {
 		"type":"tripleConstraint",
 		"predicate":"http://all.example/pattern",
-		"value":{
+		"valueExpr":{
 		  "type":"valueClass",
 		  "values":[
 		    {

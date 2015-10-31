@@ -9,7 +9,7 @@
       "expression": {
         "type": "tripleConstraint",
         "predicate": "http://a.example/",
-        "value": { "type": "valueClass" }
+        "valueExpr": { "type": "valueClass" }
       }
     }
   }

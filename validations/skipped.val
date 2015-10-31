@@ -10,7 +10,7 @@
         "expressions": [
           {
             "type": "tripleConstraintSolutions", "predicate": "http://a.example/c",
-            "value": { "type":"valueClass" },
+            "valueExpr": { "type":"valueClass" },
             "solutions":[
               {"type":"testedTriple","subject":"x","predicate":"http://a.example/c","object":"\"1\"^^http://www.w3.org/2001/XMLSchema#integer"}
             ]

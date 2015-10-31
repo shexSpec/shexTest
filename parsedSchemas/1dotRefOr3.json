@@ -7,7 +7,7 @@
       "expression": {
         "type": "tripleConstraint",
         "predicate": "http://a.example/p1",
-        "value": { "type": "valueClass" }
+        "valueExpr": { "type": "valueClass" }
       }
     },
     "http://a.example/PlaceShape": {
@@ -15,7 +15,7 @@
       "expression": {
         "type": "tripleConstraint",
         "predicate": "http://a.example/p2",
-        "value": { "type": "valueClass" }
+        "valueExpr": { "type": "valueClass" }
       }
     },
     "http://a.example/ThingShape": {
@@ -23,7 +23,7 @@
       "expression": {
         "type": "tripleConstraint",
         "predicate": "http://a.example/p3",
-        "value": { "type": "valueClass" }
+        "valueExpr": { "type": "valueClass" }
       }
     },
     "http://a.example/EmployeeShape": {
@@ -31,7 +31,7 @@
       "expression": {
         "type": "tripleConstraint",
         "predicate": "http://a.example/p4",
-        "value": {
+        "valueExpr": {
           "type": "valueClass",
           "reference": {
             "type": "or",
