@@ -1,0 +1,30 @@
+{
+  "type": "schema",
+  "prefixes": {},
+  "valueClasses": {
+    "http://a.example/vs1": {
+      "type": "valueClassDefn", "value": {
+        "type": "valueClass", "values": [
+          { "type": "stemRange",
+            "stem": { "type": "wildcard" },
+            "exclusions": [
+              "http://a.example/v1",
+              "http://a.example/v2",
+              "http://a.example/v3"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "shapes":{
+    "http://a.example/S1": {
+      "type": "shape",
+      "expression": {
+        "type": "tripleConstraint",
+        "predicate": "http://a.example/p1",
+        "value": { "type": "vcref", "valueClassRef": "http://a.example/vs1" }
+      }
+    }
+  }
+}
