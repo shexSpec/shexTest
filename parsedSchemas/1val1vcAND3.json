@@ -1,9 +1,9 @@
 {
   "type": "schema",
   "prefixes": {},
-  "valueClasses": {
+  "valueExprDefns": {
     "http://a.example/vc1": {
-      "type": "valueClassDefn",
+      "type": "valueExprDefn",
       "valueExpr": {
         "type": "valueClass",
         "nodeKind": "literal",
@@ -11,7 +11,7 @@
       }
     },
     "http://a.example/vc2": {
-      "type": "valueClassDefn",
+      "type": "valueExprDefn",
       "valueExpr": {
         "type": "valueClass",
         "nodeKind": "literal",
@@ -19,7 +19,7 @@
       }
     },
     "http://a.example/vc3": {
-      "type": "valueClassDefn",
+      "type": "valueExprDefn",
       "valueExpr": {
         "type": "valueClass",
         "nodeKind": "literal",
@@ -35,18 +35,18 @@
         "predicate": "http://a.example/p4",
         "valueExpr": {
           "type": "vcand",
-          "valueClasses": [
+          "valueExprs": [
             {
               "type": "vcref",
-              "valueClassRef": "http://a.example/vc1"
+              "valueExprRef": "http://a.example/vc1"
             },
             {
               "type": "vcref",
-              "valueClassRef": "http://a.example/vc2"
+              "valueExprRef": "http://a.example/vc2"
             },
             {
               "type": "vcref",
-              "valueClassRef": "http://a.example/vc3"
+              "valueExprRef": "http://a.example/vc3"
             }
           ]
         }

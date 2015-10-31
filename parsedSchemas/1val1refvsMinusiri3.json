@@ -1,9 +1,9 @@
 {
   "type": "schema",
   "prefixes": {},
-  "valueClasses": {
+  "valueExprDefns": {
     "http://a.example/vs1": {
-      "type": "valueClassDefn", "valueExpr": {
+      "type": "valueExprDefn", "valueExpr": {
         "type": "valueClass", "values": [
           { "type": "stemRange",
             "stem": { "type": "wildcard" },
@@ -23,7 +23,7 @@
       "expression": {
         "type": "tripleConstraint",
         "predicate": "http://a.example/p1",
-        "valueExpr": { "type": "vcref", "valueClassRef": "http://a.example/vs1" }
+        "valueExpr": { "type": "vcref", "valueExprRef": "http://a.example/vs1" }
       }
     }
   }
