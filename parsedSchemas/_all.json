@@ -29,7 +29,7 @@
     "http://all.example/S1":{
       "type":"shape",
       "expression":{
-	"type":"group",
+	"type":"eachOf",
 	"expressions":[
 	  {
 	    "type":"tripleConstraint",
@@ -63,7 +63,7 @@
     "http://all.example/S2":{
       "type":"shape",
       "expression":{
-	"type":"group",
+	"type":"eachOf",
 	"expressions":[
 	  {
 	    "type":"tripleConstraint",
@@ -129,7 +129,7 @@
     "http://all.example/S3":{
       "type":"shape",
       "virtual":true,"expression":{
-	"type":"group",
+	"type":"eachOf",
 	"expressions":[
 	  {
 	    "type":"tripleConstraint",
@@ -152,7 +152,7 @@
 	    "type":"someOf",
 	    "expressions":[
 	      {
-		"type":"group",
+		"type":"eachOf",
 		"expressions":[
 		  {
 		    "type":"tripleConstraint",
@@ -213,13 +213,13 @@
 		"min":2,"max":"*"
 	      },
 	      {
-		"type":"group",
+		"type":"eachOf",
 		"expressions":[
 		  {
 		    "type":"someOf",
 		    "expressions":[
 		      {
-			"type":"group",
+			"type":"eachOf",
 			"expressions":[
 			  {
 			    "type":"tripleConstraint",
@@ -259,7 +259,7 @@
 			]
 		      },
 		      {
-			"type":"group",
+			"type":"eachOf",
 			"expressions":[
 			  {
 			    "type":"tripleConstraint",

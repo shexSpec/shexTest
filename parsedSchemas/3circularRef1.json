@@ -5,7 +5,7 @@
     "http://a.example/EntityShape": {
       "type": "shape",
       "expression": {
-        "type": "group",
+        "type": "eachOf",
         "expressions": [
           {
             "type": "tripleConstraint",

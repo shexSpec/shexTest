@@ -13,7 +13,7 @@
     "http://a.example/EmployeeShape": {
       "type": "shape",
       "expression": {
-        "type": "group",
+        "type": "eachOf",
         "expressions": [
           {
             "type": "inclusion",

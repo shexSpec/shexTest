@@ -10,7 +10,7 @@
         "type": "someOf",
         "expressions": [
           {
-            "type": "group",
+            "type": "eachOf",
             "expressions": [
               {
                 "type": "tripleConstraint",

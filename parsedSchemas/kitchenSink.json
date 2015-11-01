@@ -17,7 +17,7 @@
     "http://ex.example/S1": {
       "type": "shape",
       "expression": {
-        "type": "group",
+        "type": "eachOf",
         "expressions": [
           {
             "type": "tripleConstraint",
@@ -75,7 +75,7 @@
             }
           },
           {
-            "type": "group",
+            "type": "eachOf",
             "expressions": [
               {
                 "type": "tripleConstraint",
@@ -116,7 +116,7 @@
     "http://ex.example/#UserShape": {
       "type": "shape",
       "expression": {
-        "type": "group",
+        "type": "eachOf",
         "expressions": [
           {
             "type": "someOf",
@@ -130,7 +130,7 @@
                 }
               },
               {
-                "type": "group",
+                "type": "eachOf",
                 "expressions": [
                   {
                     "type": "tripleConstraint",
@@ -177,7 +177,7 @@
     "http://ex.example/#EmployeeShape": {
       "type": "shape",
       "expression": {
-        "type": "group",
+        "type": "eachOf",
         "expressions": [
           {
             "type": "tripleConstraint",
@@ -225,7 +225,7 @@
         "type": "someOf",
         "expressions": [
           {
-            "type": "group",
+            "type": "eachOf",
             "expressions": [
               {
                 "type": "tripleConstraint",
@@ -274,10 +274,10 @@
             ]
           },
           {
-            "type": "group",
+            "type": "eachOf",
             "expressions": [
               {
-                "type": "group",
+                "type": "eachOf",
                 "expressions": [
                   {
                     "type": "tripleConstraint",

@@ -4,7 +4,7 @@
     "http://a.example/S1": {
       "type": "ASTshape",
       "expression": {
-        "type":"Group", "conjuncts": [
+        "type":"EachOf", "conjuncts": [
           {
             "type": "TripleConstraint", "inverse": false, "negated": false,
             "predicate": "http://a.example/p1",
@@ -22,7 +22,7 @@
           {
             "type":"Choice", "disjuncts": [
               {
-                "type":"Group", "conjuncts": 
+                "type":"EachOf", "conjuncts": 
                 [
                   {
                     "type": "TripleConstraint", "inverse": false, "negated": false,
@@ -34,7 +34,7 @@
                   {
                     "type":"Choice", "disjuncts": [
                       {
-                        "type":"Group", "conjuncts":
+                        "type":"EachOf", "conjuncts":
                         [
                           {
                             "type": "TripleConstraint", "inverse": false, "negated": false,

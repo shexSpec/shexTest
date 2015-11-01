@@ -7,7 +7,7 @@
         "type": "SemActs",
         "expression":
         {
-          "type": "Group",
+          "type": "EachOf",
           "conjuncts": [
             {
               "type": "TripleConstraint", "inverse": false, "negated": false,

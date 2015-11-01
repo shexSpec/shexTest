@@ -5,7 +5,7 @@
     "http://a.example/S1": {
       "type": "shape",
       "expression": {
-        "type": "group",
+        "type": "eachOf",
         "expressions": [
           {
             "type": "tripleConstraint",
