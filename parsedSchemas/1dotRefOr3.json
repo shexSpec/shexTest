@@ -32,15 +32,21 @@
         "type": "tripleConstraint",
         "predicate": "http://a.example/p4",
         "valueExpr": {
-          "type": "valueClass",
-          "reference": {
-            "type": "or",
-            "disjuncts": [
-              "http://a.example/PersonShape",
-              "http://a.example/PlaceShape",
-              "http://a.example/ThingShape"
-            ]
-          }
+          "type": "vcor",
+          "valueExprs": [
+            {
+              "type": "valueClass",
+              "reference": "http://a.example/PersonShape"
+            },
+            {
+              "type": "valueClass",
+              "reference": "http://a.example/PlaceShape"
+            },
+            {
+              "type": "valueClass",
+              "reference": "http://a.example/ThingShape"
+            }
+          ]
         }
       }
     }

@@ -199,16 +199,19 @@
 		"type":"tripleConstraint",
 		"predicate":"http://all.example/closed",
 		"valueExpr":{
-		  "type":"valueClass",
-		  "nodeKind":"bnode",
-		  "reference":{
-		    "type":"or",
-		    "disjuncts":[
-		      "http://all.example/S5",
-		      "http://all.example/S5"
-		    ]
-		  },
-		  "minlength":2,"maxlength":4
+                  "type":"vcor",
+                  "valueExprs":[
+                    {
+		      "type":"valueClass",
+		      "nodeKind":"bnode",
+		      "reference":"http://all.example/S5"
+                    },
+                    {
+                      "type":"valueClass",
+                      "reference":"http://all.example/S5",
+		      "minlength":2,"maxlength":4
+                    }
+                  ]
 		},
 		"min":2,"max":"*"
 	      },
