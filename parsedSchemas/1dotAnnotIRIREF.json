@@ -9,7 +9,7 @@
         "predicate": "http://a.example/p1",
         "valueExpr": { "type": "valueClass" },
         "annotations": [
-           [ "http://a.example/annot", "http://a.example/IRIREF" ]
+           { "type": "annotation", "predicate": "http://a.example/annot", "object": "http://a.example/IRIREF" }
         ]
       }
     }

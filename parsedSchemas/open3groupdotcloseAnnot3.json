@@ -24,9 +24,9 @@
           }
         ],
         "annotations": [
-           [ "http://a.example/annot1", "\"1\"" ],
-           [ "http://a.example/annot2", "\"2\"" ],
-           [ "http://a.example/annot3", "\"3\"" ]
+           { "type": "annotation", "predicate": "http://a.example/annot1", "object": "\"1\"" },
+           { "type": "annotation", "predicate": "http://a.example/annot2", "object": "\"2\"" },
+           { "type": "annotation", "predicate": "http://a.example/annot3", "object": "\"3\"" }
         ]
       }
     }

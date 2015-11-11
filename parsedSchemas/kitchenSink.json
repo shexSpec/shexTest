@@ -47,14 +47,8 @@
               ]
             },
             "annotations": [
-              [
-                "http://www.w3.org/2000/01/rdf-schem#label",
-                "\"State\""
-              ],
-              [
-                "http://www.w3.org/2000/01/rdf-schem#description",
-                "\"the sit\""
-              ]
+              { "type": "annotation", "predicate": "http://www.w3.org/2000/01/rdf-schem#label", "object": "\"State\"" },
+              { "type": "annotation", "predicate": "http://www.w3.org/2000/01/rdf-schem#description", "object": "\"the sit\"" }
             ]
           },
           {
