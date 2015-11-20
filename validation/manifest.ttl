@@ -828,7 +828,7 @@
     rdfs:comment "@@ iovka" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../validations/iovka.shex> ;
+      sht:schema <../validation/iovka.shex> ;
       sht:shape <S> ;
       sht:data <iovka.ttl> ;
       sht:focus <x>
@@ -841,7 +841,7 @@
     rdfs:comment "@@ greedy" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../validations/greedy.shex> ;
+      sht:schema <../validation/greedy.shex> ;
       sht:shape <S> ;
       sht:data <greedy.ttl> ;
       sht:focus <x>
@@ -854,7 +854,7 @@
     rdfs:comment "@@ skipped" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../validations/skipped.shex> ;
+      sht:schema <../validation/skipped.shex> ;
       sht:shape <S> ;
       sht:data <skipped.ttl> ;
       sht:focus <x>
@@ -867,7 +867,7 @@
     rdfs:comment "@@ repeated-group" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../validations/repeated-group.shex> ;
+      sht:schema <../validation/repeated-group.shex> ;
       sht:shape <S> ;
       sht:data <repeated-group.ttl> ;
       sht:focus <x>
@@ -880,7 +880,7 @@
     rdfs:comment "@@ simple-group" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../validations/simple-group.shex> ;
+      sht:schema <../validation/simple-group.shex> ;
       sht:shape <S> ;
       sht:data <simple-group.ttl> ;
       sht:focus <s0>

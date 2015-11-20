@@ -79,7 +79,7 @@
           "@id": "#greedy",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../validations/greedy.shex",
+            "schema": "../validation/greedy.shex",
             "shape": "S",
             "data": "greedy.ttl",
             "focus": "x"
@@ -484,7 +484,7 @@
           "@id": "#iovka",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../validations/iovka.shex",
+            "schema": "../validation/iovka.shex",
             "shape": "S",
             "data": "iovka.ttl",
             "focus": "x"
@@ -824,7 +824,7 @@
           "@id": "#skipped",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../validations/skipped.shex",
+            "schema": "../validation/skipped.shex",
             "shape": "S",
             "data": "skipped.ttl",
             "focus": "x"
@@ -838,7 +838,7 @@
           "@id": "#repeated-group",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../validations/repeated-group.shex",
+            "schema": "../validation/repeated-group.shex",
             "shape": "S",
             "data": "repeated-group.ttl",
             "focus": "x"
@@ -852,7 +852,7 @@
           "@id": "#simple-group",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../validations/simple-group.shex",
+            "schema": "../validation/simple-group.shex",
             "shape": "S",
             "data": "simple-group.ttl",
             "focus": "s0"

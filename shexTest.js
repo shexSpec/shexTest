@@ -1,5 +1,5 @@
 var ret = {};
-['schemas', 'negativeSyntax', 'illDefined', 'validations', "ASTs"].forEach(function (dir) {
+['schemas', 'negativeSyntax', 'illDefined', 'validation', "ASTs"].forEach(function (dir) {
   ret[dir] = __dirname + '/' + dir + '/';
 });
 ret['parsedSchemas'] = __dirname + '/' + 'schemas' + '/';;
