@@ -15,7 +15,7 @@
                 "expressions": [
                   {
                     "type": "tripleConstraintSolutions", "predicate": "http://a.example/a",
-                    "valueExpr": { "type": "valueClass", "reference": "T" },
+                    "valueExpr": { "type": "ValueClass", "reference": "T" },
                     "min": 1, "max": "*",
                     "solutions": [
                       { "type": "testedTriple", "subject": "x", "predicate": "http://a.example/a", "object": "t0",
@@ -30,15 +30,15 @@
                                 "type": "groupSolution",
                                 "expressions": [
                                   {
-                                    "type": "tripleConstraint", "predicate": "http://a.example/d",
-                                    "valueExpr": { "type": "valueClass" },
+                                    "type": "TripleConstraint", "predicate": "http://a.example/d",
+                                    "valueExpr": { "type": "ValueClass" },
                                     "solutions": [
                                       { "type": "testedTriple", "subject": "x", "predicate": "http://a.example/d", "object": "\"d0\"" }
                                     ]
                                   },
                                   {
-                                  "type": "tripleConstraint", "predicate": "http://a.example/e",
-                                    "valueExpr": { "type": "valueClass" },
+                                  "type": "TripleConstraint", "predicate": "http://a.example/e",
+                                    "valueExpr": { "type": "ValueClass" },
                                     "solutions": [
                                       { "type": "testedTriple", "subject": "x", "predicate": "http://a.example/e", "object": "\"e0\"" }
                                     ]
@@ -53,7 +53,7 @@
                   },
                   {
                     "type": "tripleConstraintSolutions", "predicate": "http://a.example/b",
-                    "valueExpr": { "type": "valueClass" },
+                    "valueExpr": { "type": "ValueClass" },
                     "min": 0, "max": "*",
                     "solutions": [
                       { "type": "testedTriple", "subject": "x", "predicate": "http://a.example/b", "object": "\"b0-0\"" },
@@ -67,7 +67,7 @@
                 "expressions": [
                   {
                     "type": "tripleConstraintSolutions", "predicate": "http://a.example/a",
-                    "valueExpr": { "type": "valueClass", "reference": "T" },
+                    "valueExpr": { "type": "ValueClass", "reference": "T" },
                     "min": 1, "max": "*",
                     "solutions": [
                       { "type": "testedTriple", "subject": "x", "predicate": "http://a.example/a", "object": "t1",
@@ -82,15 +82,15 @@
                                 "type": "groupSolution",
                                 "expressions": [
                                   {
-                                    "type": "tripleConstraint", "predicate": "http://a.example/d",
-                                    "valueExpr": { "type": "valueClass" },
+                                    "type": "TripleConstraint", "predicate": "http://a.example/d",
+                                    "valueExpr": { "type": "ValueClass" },
                                     "solutions": [
                                       { "type": "testedTriple", "subject": "x", "predicate": "http://a.example/d", "object": "\"d1\"" }
                                     ]
                                   },
                                   {
-                                    "type": "tripleConstraint", "predicate": "http://a.example/e",
-                                    "valueExpr": { "type": "valueClass" },
+                                    "type": "TripleConstraint", "predicate": "http://a.example/e",
+                                    "valueExpr": { "type": "ValueClass" },
                                     "solutions": [
                                       { "type": "testedTriple", "subject": "x", "predicate": "http://a.example/e", "object": "\"e1\"" }
                                     ]
@@ -105,7 +105,7 @@
                   },
                   {
                     "type": "tripleConstraintSolutions", "predicate": "http://a.example/b",
-                    "valueExpr": { "type": "valueClass" },
+                    "valueExpr": { "type": "ValueClass" },
                     "min": 0, "max": "*",
                     "solutions": [
                       { "type": "testedTriple", "subject": "x", "predicate": "http://a.example/b", "object": "\"b1-0\"" }
@@ -118,7 +118,7 @@
                 "expressions": [
                   {
                     "type": "tripleConstraintSolutions", "predicate": "http://a.example/a",
-                    "valueExpr": { "type": "valueClass", "reference": "T" },
+                    "valueExpr": { "type": "ValueClass", "reference": "T" },
                     "min": 1, "max": "*",
                     "solutions": [
                       { "type": "testedTriple", "subject": "x", "predicate": "http://a.example/a", "object": "t1",
@@ -133,15 +133,15 @@
                                 "type": "groupSolution",
                                 "expressions": [
                                   {
-                                    "type": "tripleConstraint", "predicate": "http://a.example/d",
-                                    "valueExpr": { "type": "valueClass" },
+                                    "type": "TripleConstraint", "predicate": "http://a.example/d",
+                                    "valueExpr": { "type": "ValueClass" },
                                     "solutions": [
                                       { "type": "testedTriple", "subject": "x", "predicate": "http://a.example/d", "object": "\"d2\"" }
                                     ]
                                   },
                                   {
-                                    "type": "tripleConstraint", "predicate": "http://a.example/e",
-                                    "valueExpr": { "type": "valueClass" },
+                                    "type": "TripleConstraint", "predicate": "http://a.example/e",
+                                    "valueExpr": { "type": "ValueClass" },
                                     "solutions": [
                                       { "type": "testedTriple", "subject": "x", "predicate": "http://a.example/e", "object": "\"e2\"" }
                                     ]
@@ -164,15 +164,15 @@
                                 "type": "groupSolution",
                                 "expressions": [
                                   {
-                                    "type": "tripleConstraint", "predicate": "http://a.example/d",
-                                    "valueExpr": { "type": "valueClass" },
+                                    "type": "TripleConstraint", "predicate": "http://a.example/d",
+                                    "valueExpr": { "type": "ValueClass" },
                                     "solutions": [
                                       { "type": "testedTriple", "subject": "x", "predicate": "http://a.example/d", "object": "\"d2b\"" }
                                     ]
                                   },
                                   {
-                                    "type": "tripleConstraint", "predicate": "http://a.example/e",
-                                    "valueExpr": { "type": "valueClass" },
+                                    "type": "TripleConstraint", "predicate": "http://a.example/e",
+                                    "valueExpr": { "type": "ValueClass" },
                                     "solutions": [
                                       { "type": "testedTriple", "subject": "x", "predicate": "http://a.example/e", "object": "\"e2b\"" }
                                     ]
@@ -187,7 +187,7 @@
                   },
                   {
                     "type": "tripleConstraintSolutions", "predicate": "http://a.example/b",
-                    "valueExpr": { "type": "valueClass" },
+                    "valueExpr": { "type": "ValueClass" },
                     "min": 0, "max": "*",
                     "solutions": [ ]
                   }
@@ -199,7 +199,7 @@
           {
             "type": "tripleConstraintSolutions",
             "predicate": "http://a.example/c",
-            "valueExpr": { "type": "valueClass" },
+            "valueExpr": { "type": "ValueClass" },
             "solutions": [
               { "type": "testedTriple", "subject": "x", "predicate": "http://a.example/c", "object": "\"c0\"" }
             ]

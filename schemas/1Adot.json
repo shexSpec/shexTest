@@ -1,13 +1,13 @@
 {
-  "type": "schema",
+  "type": "Schema",
   "prefixes": {},
   "shapes": {
     "http://a.example/S1": {
-      "type": "shape",
+      "type": "Shape",
       "expression": {
-        "type": "tripleConstraint",
+        "type": "TripleConstraint",
         "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-        "valueExpr": { "type": "valueClass" }
+        "valueExpr": { "type": "ValueClass" }
       }
     }
   }

@@ -1,20 +1,20 @@
 {
-  "type": "schema",
+  "type": "Schema",
   "prefixes": {},
   "shapes":{
     "http://a.example/S1": {
-      "type": "shape",
+      "type": "Shape",
       "expression": {
-        "type": "tripleConstraint",
+        "type": "TripleConstraint",
         "predicate": "http://a.example/p1",
         "valueExpr": {
-          "type": "valueClass", "values": [
-            { "type": "stemRange",
+          "type": "ValueClass", "values": [
+            { "type": "StemRange",
               "stem": "http://a.example/v",
               "exclusions": [
-                { "type": "stem", "stem": "http://a.example/v1"},
-                { "type": "stem", "stem": "http://a.example/v2"},
-                { "type": "stem", "stem": "http://a.example/v3"}
+                { "type": "Stem", "stem": "http://a.example/v1"},
+                { "type": "Stem", "stem": "http://a.example/v2"},
+                { "type": "Stem", "stem": "http://a.example/v3"}
               ]
             }
           ]

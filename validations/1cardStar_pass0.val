@@ -4,7 +4,7 @@
   "shape": "http://a.example/S1",
   "solution": { 
     "type":"tripleConstraintSolutions", "predicate":"http://a.example/p1",
-    "valueExpr": { "type":"valueClass" },
+    "valueExpr": { "type":"ValueClass" },
     "solutions":[
     ],
     "min": 0, "max": "*"

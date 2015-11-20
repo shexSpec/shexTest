@@ -1,28 +1,28 @@
 {
-  "type": "schema",
+  "type": "Schema",
   "prefixes": {},
   "shapes":{
     "http://a.example/PersonShape": {
-      "type": "shape",
+      "type": "Shape",
       "expression": {
-        "type": "tripleConstraint",
+        "type": "TripleConstraint",
         "predicate": "http://a.example/p1",
-        "valueExpr": { "type": "valueClass" }
+        "valueExpr": { "type": "ValueClass" }
       }
     },
     "http://a.example/EmployeeShape": {
-      "type": "shape",
+      "type": "Shape",
       "expression": {
-        "type": "eachOf",
+        "type": "EachOf",
         "expressions": [
           {
-            "type": "inclusion",
+            "type": "Inclusion",
             "include": "http://a.example/PersonShape"
           },
           {
-            "type": "tripleConstraint",
+            "type": "TripleConstraint",
             "predicate": "http://a.example/p2",
-            "valueExpr": { "type": "valueClass" }
+            "valueExpr": { "type": "ValueClass" }
           }
         ]
       }

@@ -8,14 +8,14 @@
         "expressions": [
           {
             "type": "tripleConstraintSolutions", "predicate": "http://a.example/a",
-            "valueExpr": { "type": "valueClass", "reference": "T1" },
+            "valueExpr": { "type": "ValueClass", "reference": "T1" },
             "solutions": [
               { "type": "testedTriple", "subject": "x", "predicate": "http://a.example/a", "object": "x1",
                 "referenced": {
                   "type": "test", "node": "x1", "shape": "T1",
                   "solution": {
                     "type": "tripleConstraintSolutions", "predicate": "http://a.example/b",
-                    "valueExpr": { "type": "valueClass", "reference": "T3" },
+                    "valueExpr": { "type": "ValueClass", "reference": "T3" },
                     "solutions": [
                       {
                         "type": "testedTriple", "subject": "x1", "predicate": "http://a.example/b", "object": "y1",
@@ -23,7 +23,7 @@
                           "type": "test", "node": "y1", "shape": "T3",
                           "solution": {
                             "type": "tripleConstraintSolutions", "predicate": "http://a.example/c",
-                            "valueExpr": { "type": "valueClass" },
+                            "valueExpr": { "type": "ValueClass" },
                             "solutions": [
                               { "type": "testedTriple", "subject": "y1", "predicate": "http://a.example/c", "object": "\"1\"^^http://www.w3.org/2001/XMLSchema#integer" }
                             ]
@@ -40,7 +40,7 @@
                   "type": "test", "node": "x3", "shape": "T1",
                   "solution": {
                     "type": "tripleConstraintSolutions", "predicate": "http://a.example/b",
-                    "valueExpr": { "type": "valueClass", "reference": "T3" },
+                    "valueExpr": { "type": "ValueClass", "reference": "T3" },
                     "solutions": [
                       {
                         "type": "testedTriple", "subject": "x3", "predicate": "http://a.example/b", "object": "y3",
@@ -48,7 +48,7 @@
                           "type": "test", "node": "y3", "shape": "T3",
                           "solution": {
                             "type": "tripleConstraintSolutions", "predicate": "http://a.example/c",
-                            "valueExpr": { "type": "valueClass" },
+                            "valueExpr": { "type": "ValueClass" },
                             "solutions": [
                               { "type": "testedTriple", "subject": "y3", "predicate": "http://a.example/c", "object": "\"3\"^^http://www.w3.org/2001/XMLSchema#integer" }
                             ]
@@ -70,7 +70,7 @@
                 "expressions": [
                   {
                     "type": "tripleConstraintSolutions", "predicate": "http://a.example/a",
-                    "valueExpr": { "type": "valueClass", "reference": "T2" },
+                    "valueExpr": { "type": "ValueClass", "reference": "T2" },
                     "solutions": [
                       {
                         "type": "testedTriple", "subject": "x", "predicate": "http://a.example/a", "object": "x2",
@@ -78,7 +78,7 @@
                           "type": "test", "node": "x2", "shape": "T2",
                           "solution": {
                             "type": "tripleConstraintSolutions", "predicate": "http://a.example/b",
-                            "valueExpr": { "type": "valueClass", "reference": "T4" },
+                            "valueExpr": { "type": "ValueClass", "reference": "T4" },
                             "solutions": [
                               {
                                 "type": "testedTriple", "subject": "x2", "predicate": "http://a.example/b", "object": "y2",
@@ -86,7 +86,7 @@
                                   "type": "test", "node": "y2", "shape": "T4",
                                   "solution": {
                                     "type": "tripleConstraintSolutions", "predicate": "http://a.example/d",
-                                    "valueExpr": { "type": "valueClass" },
+                                    "valueExpr": { "type": "ValueClass" },
                                     "solutions": [
                                       { "type": "testedTriple", "subject": "y2", "predicate": "http://a.example/d", "object": "\"2\"^^http://www.w3.org/2001/XMLSchema#integer" }
                                     ]
@@ -106,7 +106,7 @@
           },
           {
             "type": "tripleConstraintSolutions", "predicate": "http://a.example/b",
-            "valueExpr": { "type": "valueClass", "nodeKind": "iri", "pattern": "^x4$" },
+            "valueExpr": { "type": "ValueClass", "nodeKind": "iri", "pattern": "^x4$" },
             "solutions": [
               { "type": "testedTriple", "subject": "x", "predicate": "http://a.example/b", "object": "x4" }
             ]

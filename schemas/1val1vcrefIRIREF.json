@@ -1,11 +1,11 @@
 {
-  "type": "schema",
+  "type": "Schema",
   "prefixes": {},
   "valueExprDefns": {
     "http://a.example/vc1": {
-      "type": "valueExprDefn",
+      "type": "ValueExprDefn",
       "valueExpr": {
-        "type": "valueClass",
+        "type": "ValueClass",
         "nodeKind": "literal",
         "minlength": 4
       }
@@ -13,12 +13,12 @@
   },
   "shapes": {
     "http://a.example/EmployeeShape": {
-      "type": "shape",
+      "type": "Shape",
       "expression": {
-        "type": "tripleConstraint",
+        "type": "TripleConstraint",
         "predicate": "http://a.example/p4",
         "valueExpr": {
-          "type": "valueRef",
+          "type": "ValueRef",
           "valueExprRef": "http://a.example/vc1"
         }
       }

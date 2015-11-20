@@ -1,18 +1,18 @@
 {
-  "type": "schema",
+  "type": "Schema",
   "prefixes": {},
   "startActs": [
-    { "type": "semAct", "name": "http://a.example/semAct1", "code": " code1 "},
-    { "type": "semAct", "name": "http://a.example/semAct2", "code": " code2 "},
-    { "type": "semAct", "name": "http://a.example/semAct3", "code": " code3 "}
+    { "type": "SemAct", "name": "http://a.example/semAct1", "code": " code1 "},
+    { "type": "SemAct", "name": "http://a.example/semAct2", "code": " code2 "},
+    { "type": "SemAct", "name": "http://a.example/semAct3", "code": " code3 "}
   ],
   "shapes":{
     "http://a.example/S1": {
-      "type": "shape",
+      "type": "Shape",
       "expression": {
-        "type": "tripleConstraint",
+        "type": "TripleConstraint",
         "predicate": "http://a.example/p1",
-        "valueExpr": { "type": "valueClass" }
+        "valueExpr": { "type": "ValueClass" }
       }
     }
   }

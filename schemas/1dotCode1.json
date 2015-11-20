@@ -1,15 +1,15 @@
 {
-  "type": "schema",
+  "type": "Schema",
   "prefixes": {},
   "shapes":{
     "http://a.example/S1": {
-      "type": "shape",
+      "type": "Shape",
       "expression": {
-        "type": "tripleConstraint",
+        "type": "TripleConstraint",
         "predicate": "http://a.example/p1",
-        "valueExpr": { "type": "valueClass" },
+        "valueExpr": { "type": "ValueClass" },
         "semActs": [
-          { "type": "semAct", "name": "http://a.example/semAct1", "code": " code1 " }
+          { "type": "SemAct", "name": "http://a.example/semAct1", "code": " code1 " }
         ]
       }
     }

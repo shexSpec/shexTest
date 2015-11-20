@@ -1,13 +1,13 @@
 {
-  "type": "schema",
+  "type": "Schema",
   "prefixes": {},
   "shapes":{
     "http://a.example/S1": {
-      "type": "shape",
+      "type": "Shape",
       "expression": {
-        "type": "tripleConstraint",
+        "type": "TripleConstraint",
         "predicate": "scheme:!$%25&amp;'()*+,-./0123456789:/@ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz~?#",
-        "valueExpr": { "type": "valueClass" }
+        "valueExpr": { "type": "ValueClass" }
       }
     }
   }

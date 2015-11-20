@@ -1,13 +1,13 @@
 {
-  "type": "schema",
+  "type": "Schema",
   "prefixes": {},
   "shapes":{
     "http://a.example/S1": {
-      "type": "shape",
+      "type": "Shape",
       "expression": {
-        "type": "tripleConstraint",
+        "type": "TripleConstraint",
         "predicate": "http://a.example/p1",
-        "valueExpr": { "type": "valueClass", "values": ["\"0\"^^http://www.w3.org/2001/XMLSchema#integer"] }
+        "valueExpr": { "type": "ValueClass", "values": ["\"0\"^^http://www.w3.org/2001/XMLSchema#integer"] }
       }
     }
   }

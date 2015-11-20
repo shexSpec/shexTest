@@ -1,12 +1,12 @@
 {
-  "type": "schema",
+  "type": "Schema",
   "prefixes": {},
   "valueExprDefns": {
     "http://a.example/vs1": {
-      "type": "valueExprDefn", "valueExpr": {
-        "type": "valueClass", "values": [
-          { "type": "stemRange",
-            "stem": { "type": "wildcard" },
+      "type": "ValueExprDefn", "valueExpr": {
+        "type": "ValueClass", "values": [
+          { "type": "StemRange",
+            "stem": { "type": "Wildcard" },
             "exclusions": [
               "http://a.example/v1",
               "http://a.example/v2",
@@ -19,11 +19,11 @@
   },
   "shapes":{
     "http://a.example/S1": {
-      "type": "shape",
+      "type": "Shape",
       "expression": {
-        "type": "tripleConstraint",
+        "type": "TripleConstraint",
         "predicate": "http://a.example/p1",
-        "valueExpr": { "type": "valueRef", "valueExprRef": "http://a.example/vs1" }
+        "valueExpr": { "type": "ValueRef", "valueExprRef": "http://a.example/vs1" }
       }
     }
   }

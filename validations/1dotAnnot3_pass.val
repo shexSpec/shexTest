@@ -4,14 +4,14 @@
   "shape": "http://a.example/S1",
   "solution": { 
     "type":"tripleConstraintSolutions", "predicate":"http://a.example/p1",
-    "valueExpr": { "type":"valueClass" },
+    "valueExpr": { "type":"ValueClass" },
     "solutions":[
       {"type":"testedTriple","subject":"http://a.example/Issue1","predicate":"http://a.example/p1","object":"http://a.example/o1"}
     ],
     "annotations": [
-      { "type": "annotation", "predicate": "http://a.example/annot1", "object": "\"1\"" },
-      { "type": "annotation", "predicate": "http://a.example/annot2", "object": "\"2\"" },
-      { "type": "annotation", "predicate": "http://a.example/annot3", "object": "\"3\"" }
+      { "type": "Annotation", "predicate": "http://a.example/annot1", "object": "\"1\"" },
+      { "type": "Annotation", "predicate": "http://a.example/annot2", "object": "\"2\"" },
+      { "type": "Annotation", "predicate": "http://a.example/annot3", "object": "\"3\"" }
     ]
   }
 }

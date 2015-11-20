@@ -1,27 +1,27 @@
 {
-  "type": "schema",
+  "type": "Schema",
   "prefixes": {},
   "valueExprDefns": {
     "http://a.example/vc1": {
-      "type": "valueExprDefn",
+      "type": "ValueExprDefn",
       "valueExpr": {
-        "type": "valueClass",
+        "type": "ValueClass",
         "nodeKind": "literal",
         "minlength": 4
       }
     },
     "http://a.example/vc2": {
-      "type": "valueExprDefn",
+      "type": "ValueExprDefn",
       "valueExpr": {
-        "type": "valueClass",
+        "type": "ValueClass",
         "nodeKind": "literal",
         "maxlength": 5
       }
     },
     "http://a.example/vc3": {
-      "type": "valueExprDefn",
+      "type": "ValueExprDefn",
       "valueExpr": {
-        "type": "valueClass",
+        "type": "ValueClass",
         "nodeKind": "literal",
         "pattern": "^(ab)*"
       }
@@ -29,23 +29,23 @@
   },
   "shapes": {
     "http://a.example/EmployeeShape": {
-      "type": "shape",
+      "type": "Shape",
       "expression": {
-        "type": "tripleConstraint",
+        "type": "TripleConstraint",
         "predicate": "http://a.example/p4",
         "valueExpr": {
-          "type": "valueAnd",
+          "type": "ValueAnd",
           "valueExprs": [
             {
-              "type": "valueRef",
+              "type": "ValueRef",
               "valueExprRef": "http://a.example/vc1"
             },
             {
-              "type": "valueRef",
+              "type": "ValueRef",
               "valueExprRef": "http://a.example/vc2"
             },
             {
-              "type": "valueRef",
+              "type": "ValueRef",
               "valueExprRef": "http://a.example/vc3"
             }
           ]

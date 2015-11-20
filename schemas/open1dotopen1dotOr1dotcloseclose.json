@@ -1,36 +1,36 @@
 {
-  "type": "schema",
+  "type": "Schema",
   "prefixes": {
     "": "http://a.example/"
   },
   "shapes": {
     "http://a.example/S1": {
-      "type": "shape",
+      "type": "Shape",
       "expression": {
-        "type": "eachOf",
+        "type": "EachOf",
         "expressions": [
           {
-            "type": "tripleConstraint",
+            "type": "TripleConstraint",
             "predicate": "http://a.example/p1",
             "valueExpr": {
-              "type": "valueClass"
+              "type": "ValueClass"
             }
           },
           {
-            "type": "someOf",
+            "type": "SomeOf",
             "expressions": [
               {
-                "type": "tripleConstraint",
+                "type": "TripleConstraint",
                 "predicate": "http://a.example/p2",
                 "valueExpr": {
-                  "type": "valueClass"
+                  "type": "ValueClass"
                 }
               },
               {
-                "type": "tripleConstraint",
+                "type": "TripleConstraint",
                 "predicate": "http://a.example/p3",
                 "valueExpr": {
-                  "type": "valueClass"
+                  "type": "ValueClass"
                 }
               }
             ]

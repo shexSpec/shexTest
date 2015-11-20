@@ -13,27 +13,27 @@
               "type": "TripleConstraint", "inverse": false, "negated": false,
               "predicate": "http://a.example/p1",
               "valueExpr": {
-                "type": "valueClass"
+                "type": "ValueClass"
               }
             },
             {
               "type": "TripleConstraint", "inverse": false, "negated": false,
               "predicate": "http://a.example/p2",
               "valueExpr": {
-                "type": "valueClass"
+                "type": "ValueClass"
               }
             },
             {
               "type": "TripleConstraint", "inverse": false, "negated": false,
               "predicate": "http://a.example/p3",
               "valueExpr": {
-                "type": "valueClass"
+                "type": "ValueClass"
               }
             }
           ]
         },
         "semActs": [
-          { "type": "semAct", "name": "http://a.example/semAct1", "code": " code1 "}
+          { "type": "SemAct", "name": "http://a.example/semAct1", "code": " code1 "}
         ]
       }
     }

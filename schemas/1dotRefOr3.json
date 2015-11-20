@@ -1,49 +1,49 @@
 {
-  "type": "schema",
+  "type": "Schema",
   "prefixes": {},
   "shapes": {
     "http://a.example/PersonShape": {
-      "type": "shape",
+      "type": "Shape",
       "expression": {
-        "type": "tripleConstraint",
+        "type": "TripleConstraint",
         "predicate": "http://a.example/p1",
-        "valueExpr": { "type": "valueClass" }
+        "valueExpr": { "type": "ValueClass" }
       }
     },
     "http://a.example/PlaceShape": {
-      "type": "shape",
+      "type": "Shape",
       "expression": {
-        "type": "tripleConstraint",
+        "type": "TripleConstraint",
         "predicate": "http://a.example/p2",
-        "valueExpr": { "type": "valueClass" }
+        "valueExpr": { "type": "ValueClass" }
       }
     },
     "http://a.example/ThingShape": {
-      "type": "shape",
+      "type": "Shape",
       "expression": {
-        "type": "tripleConstraint",
+        "type": "TripleConstraint",
         "predicate": "http://a.example/p3",
-        "valueExpr": { "type": "valueClass" }
+        "valueExpr": { "type": "ValueClass" }
       }
     },
     "http://a.example/EmployeeShape": {
-      "type": "shape",
+      "type": "Shape",
       "expression": {
-        "type": "tripleConstraint",
+        "type": "TripleConstraint",
         "predicate": "http://a.example/p4",
         "valueExpr": {
-          "type": "valueOr",
+          "type": "ValueOr",
           "valueExprs": [
             {
-              "type": "valueClass",
+              "type": "ValueClass",
               "reference": "http://a.example/PersonShape"
             },
             {
-              "type": "valueClass",
+              "type": "ValueClass",
               "reference": "http://a.example/PlaceShape"
             },
             {
-              "type": "valueClass",
+              "type": "ValueClass",
               "reference": "http://a.example/ThingShape"
             }
           ]

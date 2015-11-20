@@ -1,14 +1,14 @@
 {
-  "type": "schema",
+  "type": "Schema",
   "prefixes": {},
   "start": "_:b0",
   "shapes": {
     "_:b0": {
-      "type": "shape",
+      "type": "Shape",
       "expression": {
-        "type": "tripleConstraint",
+        "type": "TripleConstraint",
         "predicate": "http://a.example/p1",
-        "valueExpr": { "type": "valueClass" }
+        "valueExpr": { "type": "ValueClass" }
       }
     }
   }
