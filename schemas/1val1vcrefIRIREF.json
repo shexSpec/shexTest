@@ -18,7 +18,7 @@
         "type": "tripleConstraint",
         "predicate": "http://a.example/p4",
         "valueExpr": {
-          "type": "vcref",
+          "type": "valueRef",
           "valueExprRef": "http://a.example/vc1"
         }
       }

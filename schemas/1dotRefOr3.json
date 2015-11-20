@@ -32,7 +32,7 @@
         "type": "tripleConstraint",
         "predicate": "http://a.example/p4",
         "valueExpr": {
-          "type": "vcor",
+          "type": "valueOr",
           "valueExprs": [
             {
               "type": "valueClass",

@@ -199,7 +199,7 @@
 		"type":"tripleConstraint",
 		"predicate":"http://all.example/closed",
 		"valueExpr":{
-                  "type":"vcor",
+                  "type":"valueOr",
                   "valueExprs":[
                     {
 		      "type":"valueClass",

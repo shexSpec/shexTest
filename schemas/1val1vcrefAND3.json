@@ -29,18 +29,18 @@
     "http://a.example/vc4": {
       "type": "valueExprDefn",
       "valueExpr": {
-        "type": "vcand",
+        "type": "valueAnd",
         "valueExprs": [
           {
-            "type": "vcref",
+            "type": "valueRef",
             "valueExprRef": "http://a.example/vc1"
           },
           {
-            "type": "vcref",
+            "type": "valueRef",
             "valueExprRef": "http://a.example/vc2"
           },
           {
-            "type": "vcref",
+            "type": "valueRef",
             "valueExprRef": "http://a.example/vc3"
           }
         ]
@@ -54,7 +54,7 @@
         "type": "tripleConstraint",
         "predicate": "http://a.example/p4",
         "valueExpr": {
-          "type": "vcref",
+          "type": "valueRef",
           "valueExprRef": "http://a.example/vc4"
         }
       }

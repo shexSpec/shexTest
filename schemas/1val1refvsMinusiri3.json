@@ -23,7 +23,7 @@
       "expression": {
         "type": "tripleConstraint",
         "predicate": "http://a.example/p1",
-        "valueExpr": { "type": "vcref", "valueExprRef": "http://a.example/vs1" }
+        "valueExpr": { "type": "valueRef", "valueExprRef": "http://a.example/vs1" }
       }
     }
   }
