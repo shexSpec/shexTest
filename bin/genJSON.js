@@ -34,6 +34,21 @@ parser.parse(
       genText();
   });
 
+/** expandCollection - N3.js utility to return an rdf collection's elements.
+*/
+function expandCollection (h) {
+  if (store.find(h.object, "rdf:first", null).length) {
+    var ret = [];
+    while (h.object !== "http://www.w3.org/1999/02/22-rdf-syntax-ns#nil") {
+      ret.push(store.find(h.object, "rdf:first", null)[0].object);
+      h = store.find(h.object, "rdf:rest", null)[0];
+    }
+    return ret;
+  } else {
+    return h.object
+  }
+}
+
 function genText () {
   var g = []; // stuff everything into a JSON-LD @graph
   var ret = {
@@ -66,7 +81,7 @@ function genText () {
     "entries": store.find(null, "rdf:type", null).filter(function (t) {
       var ret = expectedTypes.indexOf(t.object) !== -1;
       if (ret === false &&
-          t.object !== "http://www.w3.org/2001/sw/DataAccess/tests/test-manifest#Manifest") {
+          t.object !== P.mf + "Manifest") {
         console.warn("test " + t.subject + " has unexpected type " + t.object);
       }
       return ret;
@@ -85,25 +100,33 @@ function genText () {
         entries.indexOf(r[0].substr(stripPath, 999));
     }).map(function (st) {
       var s = st[0], t = st[1];
-      var a = store.findByIRI(s, "http://www.w3.org/2001/sw/DataAccess/tests/test-manifest#action", null)[0].object;
+      var a = store.find(s, "mf:action", null)[0].object;
       return [
         //      ["rdf"  , "type"    , function (v) { return v.substr(P.sht.length); }],
-        [s, "mf"   , "name"    , function (v) { return util.getLiteralValue(v); }],
-        [s, "rdfs" , "comment" , function (v) { return util.getLiteralValue(v); }],
-        [s, "mf", "status"  , function (v) { return "mf:"+v.substr(P.mf.length); }],
-        [a, "sht", "schema"  , function (v) { return v.substr(stripPath-8); }],
-        [a, "sht", "shape"   , function (v) { return v.indexOf(__dirname) === 0 ? v.substr(__dirname.length+1) : v; }],
-        [a, "sht", "data"    , function (v) { return v.substr(stripPath-8); }],
-        [a, "sht", "focus"   , function (v) { return v.indexOf(__dirname) === 0 ? v.substr(__dirname.length+1) : v; }],
-        [s, "mf", "result"  , function (v) { return v.substr(stripPath-8); }]
+        [s, "mf"   , "name"    , function (v) { return util.getLiteralValue(v[0]); }],
+        [s, "rdfs" , "comment" , function (v) { return util.getLiteralValue(v[0]); }],
+        [s, "mf", "status"  , function (v) { return "mf:"+v[0].substr(P.mf.length); }],
+        [a, "sht", "schema"  , function (v) { return v[0].substr(stripPath-8); }],
+        [a, "sht", "shape"   , function (v) { return v[0].indexOf(__dirname) === 0 ? v[0].substr(__dirname.length+1) : v[0]; }],
+        [a, "sht", "data"    , function (v) { return v[0].substr(stripPath-8); }],
+        [a, "sht", "focus"   , function (v) { return v[0].indexOf(__dirname) === 0 ? v[0].substr(__dirname.length+1) : v[0]; }],
+        [s, "mf", "result"  , function (v) { return v[0].substr(stripPath-8); }],
+        [s, "mf", "extensionResults"  , function (v) {
+          return v[0].map(function (x) {
+            return {
+              extension: store.find(x, "mf:extension", null)[0].object,
+              prints: util.getLiteralValue(store.find(x, "mf:prints", null)[0].object)
+            };
+          });
+        }]
       ].reduce(function (ret, row) {
-        var found = store.findByIRI(row[0], P[row[1]]+row[2], null);
-        // console.log(found);
-        var target = row[0] === s ? ret : ret.action;
+        var found = store.findByIRI(row[0], P[row[1]]+row[2], null).map(expandCollection);
+        // console.warn(found);
+        var target = row[0] === s ? ret : row[0] === a ? ret.action : ret.extensionResults;
         if (found.length)
-          target[row[2]] = row[3](found[0].object);
+          target[row[2]] = row[3](found);
         return ret;
-      }, {"@id": s.substr(stripPath), "@type": "sht:"+t.substr(P.sht.length), action: {}});
+      }, {"@id": s.substr(stripPath), "@type": "sht:"+t.substr(P.sht.length), action: {}, extensionResults: []});
     })
   });
   var remaining = Object.keys(unmatched);

@@ -8,6 +8,10 @@
     "solutions":[
       {"type":"testedTriple","subject":"http://a.example/Issue1","predicate":"http://a.example/p1","object":"http://a.example/o1"}
     ],
-    "semActs": [ { "type": "SemAct", "name": "http://shex.io/extensions/Test/", "code": " print(o) " } ]
+    "semActs": [
+      { "type": "SemAct", "name": "http://shex.io/extensions/Test/", "code": " print(s) " },
+      { "type": "SemAct", "name": "http://shex.io/extensions/Test/", "code": " print(p) " },
+      { "type": "SemAct", "name": "http://shex.io/extensions/Test/", "code": " print(o) " }
+    ]
   }
 }
