@@ -7,24 +7,19 @@
       "rdfs:comment": "ShEx validation tests",
       "entries": [
         {
-          "@id": "#1dotCode1_pass",
+          "@id": "#1dotAnnot3_pass",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/1dotCode1.shex",
+            "schema": "../schemas/1dotAnnot3.shex",
             "shape": "http://a.example/S1",
             "data": "IIssue1_Ip1_Io1.ttl",
             "focus": "http://a.example/Issue1"
           },
-          "extensionResults": [
-            {
-              "extension": "http://shex.io/extensions/Test/",
-              "prints": "http://a.example/o1"
-            }
-          ],
-          "name": "1dotCode1_pass",
-          "comment": "<S> { <p1> . %<http://shex.io/extensions/Test/>{ print(o) %} } on { <s> <p1> <o1> }",
+          "extensionResults": [],
+          "name": "1dotAnnot3_pass",
+          "comment": "<S> { <p1> . ... } on { <s> <p1> <o1> }",
           "status": "mf:proposed",
-          "result": "1dotCode1_pass.val"
+          "result": "1dotAnnot3_pass.val"
         },
         {
           "@id": "#1dot_empty",
@@ -71,16 +66,16 @@
           "result": "0_pass.val"
         },
         {
-          "@id": "#1dot_extra_higher",
+          "@id": "#1dot_extra_lower",
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/1dot.shex",
             "shape": "http://a.example/S1",
-            "data": "IIssue1_Ip1_Io1;Ip2_Io2.ttl",
+            "data": "IIssue1_Ip0_Io0;Ip1_Io1.ttl",
             "focus": "http://a.example/Issue1"
           },
           "extensionResults": [],
-          "name": "1dot_extra_higher",
+          "name": "1dot_extra_lower",
           "comment": "<S> { <p1> . } on { <s> <p1> <o1>; <p2> <o1> }",
           "status": "mf:proposed",
           "result": "1dot_pass.val"
@@ -499,9 +494,29 @@
             }
           ],
           "name": "1dotCode3_pass",
-          "comment": "<S> { <p1> . %<http://shex.io/extensions/Test/>{ print(o) %} } on { <s> <p1> <o1> }",
+          "comment": "<S> { <p1> . %<http://shex.io/extensions/Test/>{ print(s) %} %<http://shex.io/extensions/Test/>{ print(p) %} %<http://shex.io/extensions/Test/>{ print(o) %} } on { <s> <p1> <o1> }",
           "status": "mf:proposed",
           "result": "1dotCode3_pass.val"
+        },
+        {
+          "@id": "#1dotCode1_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1dotCode1.shex",
+            "shape": "http://a.example/S1",
+            "data": "IIssue1_Ip1_Io1.ttl",
+            "focus": "http://a.example/Issue1"
+          },
+          "extensionResults": [
+            {
+              "extension": "http://shex.io/extensions/Test/",
+              "prints": "http://a.example/o1"
+            }
+          ],
+          "name": "1dotCode1_pass",
+          "comment": "<S> { <p1> . %<http://shex.io/extensions/Test/>{ print(o) %} } on { <s> <p1> <o1> }",
+          "status": "mf:proposed",
+          "result": "1dotCode1_pass.val"
         },
         {
           "@id": "#1dot_missing",
@@ -518,19 +533,19 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#1dotAnnot3_pass",
+          "@id": "#1dot_extra_higher",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/1dotAnnot3.shex",
+            "schema": "../schemas/1dot.shex",
             "shape": "http://a.example/S1",
-            "data": "IIssue1_Ip1_Io1.ttl",
+            "data": "IIssue1_Ip1_Io1;Ip2_Io2.ttl",
             "focus": "http://a.example/Issue1"
           },
           "extensionResults": [],
-          "name": "1dotAnnot3_pass",
-          "comment": "<S> { <p1> . ... } on { <s> <p1> <o1> }",
+          "name": "1dot_extra_higher",
+          "comment": "<S> { <p1> . } on { <s> <p1> <o1>; <p2> <o1> }",
           "status": "mf:proposed",
-          "result": "1dotAnnot3_pass.val"
+          "result": "1dot_pass.val"
         },
         {
           "@id": "#iovka",
@@ -546,21 +561,6 @@
           "comment": "@@ iovka",
           "status": "mf:proposed",
           "result": "iovka.val"
-        },
-        {
-          "@id": "#1dot_extra_lower",
-          "@type": "sht:ValidationTest",
-          "action": {
-            "schema": "../schemas/1dot.shex",
-            "shape": "http://a.example/S1",
-            "data": "IIssue1_Ip0_Io0;Ip1_Io1.ttl",
-            "focus": "http://a.example/Issue1"
-          },
-          "extensionResults": [],
-          "name": "1dot_extra_lower",
-          "comment": "<S> { <p1> . } on { <s> <p1> <o1>; <p2> <o1> }",
-          "status": "mf:proposed",
-          "result": "1dot_pass.val"
         },
         {
           "@id": "#1dot_pass",
@@ -592,17 +592,17 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#1card2_fail0",
+          "@id": "#1dotCode3_abort",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/1card2.shex",
+            "schema": "../schemas/1dotCode3fail.shex",
             "shape": "http://a.example/S1",
-            "data": "empty.ttl",
+            "data": "IIssue1_Ip1_Io1.ttl",
             "focus": "http://a.example/Issue1"
           },
           "extensionResults": [],
-          "name": "1card2_fail0",
-          "comment": "<S> { <p1> .{2} } on {  }",
+          "name": "1dotCode3_abort",
+          "comment": "<S> { <p1> . %<http://shex.io/extensions/Test/>{ print(s) %}%<http://shex.io/extensions/Test/>{ fail(s) %}%<http://shex.io/extensions/Test/>{ print(o) %} } on { <s> <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -911,6 +911,20 @@
           "extensionResults": [],
           "name": "1card2_fail1",
           "comment": "<S> { <p1> .{2} } on { <s> <p1> 'a' }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1card2_fail0",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1card2.shex",
+            "shape": "http://a.example/S1",
+            "data": "empty.ttl",
+            "focus": "http://a.example/Issue1"
+          },
+          "extensionResults": [],
+          "name": "1card2_fail0",
+          "comment": "<S> { <p1> .{2} } on {  }",
           "status": "mf:proposed"
         },
         {
