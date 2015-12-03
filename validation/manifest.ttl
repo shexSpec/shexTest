@@ -91,6 +91,9 @@
         <#open1dotOropen2dotcloseclose_pass_p1>
         <#open1dotOropen2dotcloseclose_pass_p2p3>
         <#open1dotOropen2dotcloseclose_fail_p1p2p3>
+        <#1dotOr2dot_pass_p1>
+        <#1dotOr2dot_pass_p2p3>
+        <#1dotOr2dot_fail_p1p2p3>
 
         # <#1dotComma...>
     ) .
@@ -983,6 +986,44 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/open1dotOropen2dotcloseclose.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <p1p2p3.ttl> ;
+      sht:focus <x>
+    ] ;
+    .
+
+<#1dotOr2dot_pass_p1> a sht:ValidationTest ;
+    mf:name "1dotOr2dot_pass_p1" ;
+    rdfs:comment ":S1 {:p1 .|:p2 .,:p3 .} / { :s1 :p1 \"p1-0\" . }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1dotOr2dot.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <p1.ttl> ;
+      sht:focus <x>
+    ] ;
+    mf:result <open1dotOropen2dotcloseclose_pass_p1.val>
+    .
+
+<#1dotOr2dot_pass_p2p3> a sht:ValidationTest ;
+    mf:name "1dotOr2dot_pass_p2p3" ;
+    rdfs:comment ":S1 {:p1 .|:p2 .,:p3 .} / { :s1 :p2 \"p2-0\"; :p3 \"p3-0\" . }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1dotOr2dot.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <p2p3.ttl> ;
+      sht:focus <x>
+    ] ;
+    mf:result <open1dotOropen2dotcloseclose_pass_p2p3.val>
+    .
+
+<#1dotOr2dot_fail_p1p2p3> a sht:ValidationFailure ;
+    mf:name "1dotOr2dot_fail_p1p2p3" ;
+    rdfs:comment ":S1 {:p1 .|:p2 .,:p3 .} / { :s1 :p1 \"p1-0\"; :p2 \"p2-0\"; :p3 \"p3-0\" . }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1dotOr2dot.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <p1p2p3.ttl> ;
       sht:focus <x>
