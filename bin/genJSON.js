@@ -100,7 +100,11 @@ function genText () {
         entries.indexOf(r[0].substr(stripPath, 999));
     }).map(function (st) {
       var s = st[0], t = st[1];
-      var a = store.find(s, "mf:action", null)[0].object;
+      var actionTriples = store.find(s, "mf:action", null);
+      if (actionTriples.length !== 1) {
+        throw Error("expected 1 action for " + s + " -- got " + actionTriples.length);
+      }
+      var a = actionTriples[0].object;
       return [
         //      ["rdf"  , "type"    , function (v) { return v.substr(P.sht.length); }],
         [s, "mf"   , "name"    , function (v) { return util.getLiteralValue(v[0]); }],
