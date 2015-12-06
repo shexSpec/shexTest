@@ -86,6 +86,21 @@
           "result": "1dot_pass.val"
         },
         {
+          "@id": "#open1dotOropen2dotcloseclose_pass_p2p3",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/open1dotOropen2dotcloseclose.shex",
+            "shape": "http://a.example/S1",
+            "data": "p2p3.ttl",
+            "focus": "x"
+          },
+          "extensionResults": [],
+          "name": "open1dotOropen2dotcloseclose_pass_p2p3",
+          "comment": ":S1 {(:p1 .|(:p2 .,:p3 .))} / { :s1 :p2 \"p2-0\"; :p3 \"p3-0\" . }",
+          "status": "mf:proposed",
+          "result": "open1dotOropen2dotcloseclose_pass_p2p3.val"
+        },
+        {
           "@id": "#open3groupdotclosecard23Annot3Code2-p1p2p3X3",
           "@type": "sht:ValidationTest",
           "action": {
@@ -99,6 +114,21 @@
           "comment": "@@ open3groupdotclosecard23Annot3Code2-p1p2p3X3",
           "status": "mf:proposed",
           "result": "open3groupdotclosecard23Annot3Code2-p1p2p3X3.val"
+        },
+        {
+          "@id": "#simple-group",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../validation/simple-group.shex",
+            "shape": "S",
+            "data": "simple-group.ttl",
+            "focus": "s0"
+          },
+          "extensionResults": [],
+          "name": "simple-group",
+          "comment": "@@ simple-group",
+          "status": "mf:proposed",
+          "result": "simple-group.val"
         },
         {
           "@id": "#repeated-group",
@@ -593,19 +623,19 @@
           "result": "1dotAnnot3_pass.val"
         },
         {
-          "@id": "#simple-group",
+          "@id": "#open1dotOropen2dotcloseclose_pass_p1",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../validation/simple-group.shex",
-            "shape": "S",
-            "data": "simple-group.ttl",
-            "focus": "s0"
+            "schema": "../schemas/open1dotOropen2dotcloseclose.shex",
+            "shape": "http://a.example/S1",
+            "data": "p1.ttl",
+            "focus": "x"
           },
           "extensionResults": [],
-          "name": "simple-group",
-          "comment": "@@ simple-group",
+          "name": "open1dotOropen2dotcloseclose_pass_p1",
+          "comment": ":S1 {(:p1 .|(:p2 .,:p3 .))} / { :s1 :p1 \"p1-0\" . }",
           "status": "mf:proposed",
-          "result": "simple-group.val"
+          "result": "open1dotOropen2dotcloseclose_pass_p1.val"
         },
         {
           "@id": "#1dot_extra_lower",
@@ -691,6 +721,48 @@
           "extensionResults": [],
           "name": "1card2_fail1",
           "comment": "<S> { <p1> .{2} } on { <s> <p1> 'a' }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1card2_fail3",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1card2.shex",
+            "shape": "http://a.example/S1",
+            "data": "IIssue1_Ip1_La,Lb,Lc.ttl",
+            "focus": "http://a.example/Issue1"
+          },
+          "extensionResults": [],
+          "name": "1card2_fail3",
+          "comment": "<S> { <p1> .{2} } on { <s> <p1> 'a','b','c' }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1card25_fail0",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1card25.shex",
+            "shape": "http://a.example/S1",
+            "data": "empty.ttl",
+            "focus": "http://a.example/Issue1"
+          },
+          "extensionResults": [],
+          "name": "1card25_fail0",
+          "comment": "<S> { <p1> .{2,5} } on {  }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1card25_fail1",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1card25.shex",
+            "shape": "http://a.example/S1",
+            "data": "IIssue1_Ip1_La.ttl",
+            "focus": "http://a.example/Issue1"
+          },
+          "extensionResults": [],
+          "name": "1card25_fail1",
+          "comment": "<S> { <p1> .{2,5} } on { <s> <p1> 'a' }",
           "status": "mf:proposed"
         },
         {
@@ -946,78 +1018,6 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#1card25_fail1",
-          "@type": "sht:ValidationFailure",
-          "action": {
-            "schema": "../schemas/1card25.shex",
-            "shape": "http://a.example/S1",
-            "data": "IIssue1_Ip1_La.ttl",
-            "focus": "http://a.example/Issue1"
-          },
-          "extensionResults": [],
-          "name": "1card25_fail1",
-          "comment": "<S> { <p1> .{2,5} } on { <s> <p1> 'a' }",
-          "status": "mf:proposed"
-        },
-        {
-          "@id": "#1card25_fail0",
-          "@type": "sht:ValidationFailure",
-          "action": {
-            "schema": "../schemas/1card25.shex",
-            "shape": "http://a.example/S1",
-            "data": "empty.ttl",
-            "focus": "http://a.example/Issue1"
-          },
-          "extensionResults": [],
-          "name": "1card25_fail0",
-          "comment": "<S> { <p1> .{2,5} } on {  }",
-          "status": "mf:proposed"
-        },
-        {
-          "@id": "#1card2_fail3",
-          "@type": "sht:ValidationFailure",
-          "action": {
-            "schema": "../schemas/1card2.shex",
-            "shape": "http://a.example/S1",
-            "data": "IIssue1_Ip1_La,Lb,Lc.ttl",
-            "focus": "http://a.example/Issue1"
-          },
-          "extensionResults": [],
-          "name": "1card2_fail3",
-          "comment": "<S> { <p1> .{2} } on { <s> <p1> 'a','b','c' }",
-          "status": "mf:proposed"
-        },
-        {
-          "@id": "#open1dotOropen2dotcloseclose_pass_p1",
-          "@type": "sht:ValidationTest",
-          "action": {
-            "schema": "../schemas/open1dotOropen2dotcloseclose.shex",
-            "shape": "http://a.example/S1",
-            "data": "p1.ttl",
-            "focus": "x"
-          },
-          "extensionResults": [],
-          "name": "open1dotOropen2dotcloseclose_pass_p1",
-          "comment": ":S1 {(:p1 .|(:p2 .,:p3 .))} / { :s1 :p1 \"p1-0\" . }",
-          "status": "mf:proposed",
-          "result": "open1dotOropen2dotcloseclose_pass_p1.val"
-        },
-        {
-          "@id": "#open1dotOropen2dotcloseclose_pass_p2p3",
-          "@type": "sht:ValidationTest",
-          "action": {
-            "schema": "../schemas/open1dotOropen2dotcloseclose.shex",
-            "shape": "http://a.example/S1",
-            "data": "p2p3.ttl",
-            "focus": "x"
-          },
-          "extensionResults": [],
-          "name": "open1dotOropen2dotcloseclose_pass_p2p3",
-          "comment": ":S1 {(:p1 .|(:p2 .,:p3 .))} / { :s1 :p2 \"p2-0\"; :p3 \"p3-0\" . }",
-          "status": "mf:proposed",
-          "result": "open1dotOropen2dotcloseclose_pass_p2p3.val"
-        },
-        {
           "@id": "#open1dotOropen2dotcloseclose_fail_p1p2p3",
           "@type": "sht:ValidationFailure",
           "action": {
@@ -1073,6 +1073,78 @@
           "extensionResults": [],
           "name": "1dotOr2dot_fail_p1p2p3",
           "comment": ":S1 {:p1 .|:p2 .,:p3 .} / { :s1 :p1 \"p1-0\"; :p2 \"p2-0\"; :p3 \"p3-0\" . }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#openopen1dotOr1dotclose1dotclose_pass_p1p3",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/openopen1dotOr1dotclose1dotclose.shex",
+            "shape": "http://a.example/S1",
+            "data": "p1p3.ttl",
+            "focus": "x"
+          },
+          "extensionResults": [],
+          "name": "openopen1dotOr1dotclose1dotclose_pass_p1p3",
+          "comment": ":S1 { ((:p1 .| :p2 .), :p3 .) } / { <x> :p1 \"p1-0\"; :p3 \"p3-0\" . }",
+          "status": "mf:proposed",
+          "result": "openopen1dotOr1dotclose1dotclose_pass_p1p3.val"
+        },
+        {
+          "@id": "#openopen1dotOr1dotclose1dotclose_pass_p2p3",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/openopen1dotOr1dotclose1dotclose.shex",
+            "shape": "http://a.example/S1",
+            "data": "p2p3.ttl",
+            "focus": "x"
+          },
+          "extensionResults": [],
+          "name": "openopen1dotOr1dotclose1dotclose_pass_p2p3",
+          "comment": ":S1 { ((:p1 .| :p2 .), :p3 .) } / { <x> :p2 \"p2-0\"; :p3 \"p3-0\" . }",
+          "status": "mf:proposed",
+          "result": "openopen1dotOr1dotclose1dotclose_pass_p2p3.val"
+        },
+        {
+          "@id": "#openopen1dotOr1dotclose1dotclose_fail_p1",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/openopen1dotOr1dotclose1dotclose.shex",
+            "shape": "http://a.example/S1",
+            "data": "p1.ttl",
+            "focus": "x"
+          },
+          "extensionResults": [],
+          "name": "openopen1dotOr1dotclose1dotclose_fail_p1",
+          "comment": ":S1 { ((:p1 .| :p2 .), :p3 .) } / { <x> :p1 \"p1-0\" . }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#openopen1dotOr1dotclose1dotclose_fail_p3",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/openopen1dotOr1dotclose1dotclose.shex",
+            "shape": "http://a.example/S1",
+            "data": "p3.ttl",
+            "focus": "x"
+          },
+          "extensionResults": [],
+          "name": "openopen1dotOr1dotclose1dotclose_fail_p3",
+          "comment": ":S1 { ((:p1 .| :p2 .), :p3 .) } / { <x> :p3 \"p3-0\" . }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#openopen1dotOr1dotclose1dotclose_fail_p1p2",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/openopen1dotOr1dotclose1dotclose.shex",
+            "shape": "http://a.example/S1",
+            "data": "p1p2.ttl",
+            "focus": "x"
+          },
+          "extensionResults": [],
+          "name": "openopen1dotOr1dotclose1dotclose_fail_p1p2",
+          "comment": ":S1 { ((:p1 .| :p2 .), :p3 .) } / { <x> :p1 \"p1-0\"; :p2 \"p2-0\" . }",
           "status": "mf:proposed"
         }
       ]

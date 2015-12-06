@@ -88,16 +88,16 @@ function genText () {
     }).map(function (t) {
       return [t.subject, t.object];
     }).filter(function (t) {
-      var ret = entries.indexOf(t[0].substr(stripPath, 999)) !== -1;
+      var ret = entries.indexOf(t[0]) !== -1;
       if (ret === false) {
         console.warn("unreferenced test: " + t[0]);
       } else {
-        delete unmatched[t[0].substr(stripPath, 999)];
+        delete unmatched[t[0]];
       }
       return ret;
     }).sort(function (l, r) {
-      return entries.indexOf(l[0].substr(stripPath, 999)) >
-        entries.indexOf(r[0].substr(stripPath, 999));
+      return entries.indexOf(l[0]) >
+        entries.indexOf(r[0]);
     }).map(function (st) {
       var s = st[0], t = st[1];
       var actionTriples = store.find(s, "mf:action", null);
@@ -110,7 +110,7 @@ function genText () {
         [s, "mf"   , "name"    , function (v) { return util.getLiteralValue(v[0]); }],
         [s, "rdfs" , "comment" , function (v) { return util.getLiteralValue(v[0]); }],
         [s, "mf", "status"  , function (v) { return "mf:"+v[0].substr(P.mf.length); }],
-        [a, "sht", "schema"  , function (v) { return v[0].substr(stripPath-8); }],
+        [a, "sht", "schema"  , function (v) { return "../" + v[0].substr(stripPath-12); }], // could be more judicious in creating a relative path from an absolute path.
         [a, "sht", "shape"   , function (v) { return v[0].indexOf(__dirname) === 0 ? v[0].substr(__dirname.length+1) : v[0]; }],
         [a, "sht", "data"    , function (v) { return v[0].substr(stripPath-8); }],
         [a, "sht", "focus"   , function (v) { return v[0].indexOf(__dirname) === 0 ? v[0].substr(__dirname.length+1) : v[0]; }],
