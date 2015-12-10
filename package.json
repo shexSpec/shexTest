@@ -1,10 +1,15 @@
 {
   "name": "shex-test",
-  "version": "0.5.6",
+  "version": "0.5.7",
   "description": "Shape Expressions library tests.",
-  "author": {"name":"Eric Prud'hommeaux","email":"eric@w3.org","url":"http://www.w3.org/People/Eric/"},
+  "author": {
+    "name": "Eric Prud'hommeaux",
+    "email": "eric@w3.org",
+    "url": "http://www.w3.org/People/Eric/"
+  },
   "keywords": [
-    "shex", "shape expressions",
+    "shex",
+    "shape expressions",
     "rdf",
     "test"
   ],
@@ -14,9 +19,14 @@
     "node": ">=0.10.0"
   },
   "dependencies": {
-    "n3": "0.4.3"
+    "n3": "^0.4.5"
   },
-  "file": ["schemas", "negativeSyntax", "validation", "ASTs"],
+  "file": [
+    "schemas",
+    "negativeSyntax",
+    "validation",
+    "ASTs"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/shexSpec/shexTest.git"
