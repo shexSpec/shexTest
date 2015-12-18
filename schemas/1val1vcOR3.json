@@ -7,7 +7,7 @@
       "valueExpr": {
         "type": "ValueClass",
         "nodeKind": "literal",
-        "minlength": 4
+        "pattern": "^ab"
       }
     },
     "http://a.example/vc2": {
@@ -15,7 +15,7 @@
       "valueExpr": {
         "type": "ValueClass",
         "nodeKind": "literal",
-        "maxlength": 5
+        "pattern": "cd"
       }
     },
     "http://a.example/vc3": {
@@ -23,7 +23,7 @@
       "valueExpr": {
         "type": "ValueClass",
         "nodeKind": "literal",
-        "pattern": "^(ab)+"
+        "pattern": "ef$"
       }
     }
   },
@@ -34,7 +34,7 @@
         "type": "TripleConstraint",
         "predicate": "http://a.example/p1",
         "valueExpr": {
-          "type": "ValueAnd",
+          "type": "ValueOr",
           "valueExprs": [
             {
               "type": "ValueRef",
