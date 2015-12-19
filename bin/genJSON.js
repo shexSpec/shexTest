@@ -3,11 +3,13 @@
 // Parse arguments
 var args = process.argv.slice(2);
 if (args > 1 || args.indexOf("-help") !== -1 || args.indexOf("--help") !== -1) {
-  console.error('usage: genJSON manifest.ttl > manifest.jsonld');
+  console.error('usage: genJSON manifest.ttl [-w] > manifest.jsonld');
   return process.exit(1);
 }
+var WARN = args[1] === "-w";
 
 var fs = require('fs');
+var path = require("path");
 var N3 = require("n3");
 var parser = N3.Parser();
 var util = N3.Util;
@@ -105,16 +107,23 @@ function genText () {
         throw Error("expected 1 action for " + s + " -- got " + actionTriples.length);
       }
       var a = actionTriples[0].object;
+      function exists (filename) {
+        var filepath = path.join(__dirname, "../validation", filename);
+        if (WARN && !fs.existsSync(filepath)) {
+          console.warn("non-existent file: " + s.substr(apparentBase.length) + " is missing " + filepath.substr(apparentBase.length-1));
+        }
+        return filename;
+      }
       return [
         //      ["rdf"  , "type"    , function (v) { return v.substr(P.sht.length); }],
         [s, "mf"   , "name"    , function (v) { return util.getLiteralValue(v[0]); }],
         [s, "rdfs" , "comment" , function (v) { return util.getLiteralValue(v[0]); }],
         [s, "mf", "status"  , function (v) { return "mf:"+v[0].substr(P.mf.length); }],
-        [a, "sht", "schema"  , function (v) { return "../" + v[0].substr(stripPath-12); }], // could be more judicious in creating a relative path from an absolute path.
+        [a, "sht", "schema"  , function (v) { return exists("../" + v[0].substr(stripPath-12)); }], // could be more judicious in creating a relative path from an absolute path.
         [a, "sht", "shape"   , function (v) { return v[0].indexOf(__dirname) === 0 ? v[0].substr(__dirname.length+1) : v[0]; }],
-        [a, "sht", "data"    , function (v) { return v[0].substr(stripPath-8); }],
+        [a, "sht", "data"    , function (v) { return exists(v[0].substr(stripPath-8)); }],
         [a, "sht", "focus"   , function (v) { return v[0].indexOf(__dirname) === 0 ? v[0].substr(__dirname.length+1) : v[0]; }],
-        [s, "mf", "result"  , function (v) { return v[0].substr(stripPath-8); }],
+        [s, "mf", "result"  , function (v) { return exists(v[0].substr(stripPath-8)); }],
         [s, "mf", "extensionResults"  , function (v) {
           return v[0].map(function (x) {
             return {
