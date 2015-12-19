@@ -99,6 +99,17 @@
 	<#openopen1dotOr1dotclose1dotclose_fail_p1>
 	<#openopen1dotOr1dotclose1dotclose_fail_p3>
 	<#openopen1dotOr1dotclose1dotclose_fail_p1p2>
+
+        # <#1val1dotMinusiri3_pass>
+        # <#1val1dotMinusiri3_v1>
+        # <#1val1dotMinusiri3_v2>
+        # <#1val1dotMinusiri3_v3>
+        # <#1val1dotMinusiriStem3_pass>
+        # <#1val1dotMinusiriStem3_v1>
+        # <#1val1dotMinusiriStem3_v2>
+        # <#1val1dotMinusiriStem3_v3>
+
+
         <#1val1dotMinusiri3_pass>
         <#1val1dotMinusiri3_v1>
         <#1val1dotMinusiri3_v2>
@@ -107,6 +118,25 @@
         <#1val1dotMinusiriStem3_v1>
         <#1val1dotMinusiriStem3_v2>
         <#1val1dotMinusiriStem3_v3>
+        <#1val1dotMinusiriStem3_v1a>
+        <#1val1iriStem_passv1>
+        <#1val1iriStem_passv1a>
+        <#1val1iriStem_fail>
+        <#1val1iriStemMinusiri3_passIv>
+        <#1val1iriStemMinusiri3_passIv4>
+        <#1val1iriStemMinusiri3_v1>
+        <#1val1iriStemMinusiri3_v2>
+        <#1val1iriStemMinusiri3_v3>
+        <#1val1iriStemMinusiri3_passIv1a>
+        <#1val1iriStemMinusiriStem3_passIv>
+        <#1val1iriStemMinusiriStem3_passIv4>
+        <#1val1iriStemMinusiriStem3_v1>
+        <#1val1iriStemMinusiriStem3_v2>
+        <#1val1iriStemMinusiriStem3_v3>
+        <#1val1iriStemMinusiriStem3_v1a>
+
+        <#1val1IRIREF_pass>
+        <#1val1IRIREF_v2>
         <#1val1DOUBLE_pass>
         <#1val1DOUBLE_passUC>
         <#1val1DOUBLE_0_0e0>
@@ -1148,7 +1178,7 @@
 
 <#1val1dotMinusiri3_pass> a sht:ValidationTest ;
     mf:name "1val1dotMinusiri3_pass" ;
-    rdfs:comment "<S> { <p1> . } on { <s> <p1> <o1> }" ;
+    rdfs:comment "<S> { <p1> (.-<v1>-<v2>-<v3>) } on { <s> <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1dotMinusiri3.shex> ;
@@ -1161,7 +1191,7 @@
 
 <#1val1dotMinusiri3_v1> a sht:ValidationFailure ;
     mf:name "1val1dotMinusiri3_v1" ;
-    rdfs:comment "<S> { <p1> . } on { <s1> <p1> <v1> }" ;
+    rdfs:comment "<S> { <p1> (.-<v1>-<v2>-<v3>) } on { <s1> <p1> <v1> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1dotMinusiri3.shex> ;
@@ -1173,7 +1203,7 @@
 
 <#1val1dotMinusiri3_v2> a sht:ValidationFailure ;
     mf:name "1val1dotMinusiri3_v2" ;
-    rdfs:comment "<S> { <p1> . } on { <s1> <p1> <v2> }" ;
+    rdfs:comment "<S> { <p1> (.-<v1>-<v2>-<v3>) } on { <s1> <p1> <v2> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1dotMinusiri3.shex> ;
@@ -1185,7 +1215,7 @@
 
 <#1val1dotMinusiri3_v3> a sht:ValidationFailure ;
     mf:name "1val1dotMinusiri3_v3" ;
-    rdfs:comment "<S> { <p1> . } on { <s> <p1> <v3> }" ;
+    rdfs:comment "<S> { <p1> (.-<v1>-<v2>-<v3>) } on { <s> <p1> <v3> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1dotMinusiri3.shex> ;
@@ -1197,7 +1227,7 @@
 
 <#1val1dotMinusiriStem3_pass> a sht:ValidationTest ;
     mf:name "1val1dotMinusiriStem3_pass" ;
-    rdfs:comment "<S> { <p1> . } on { <s> <p1> <o1> }" ;
+    rdfs:comment "<S> { <p1> (.-<v1>~-<v2>~-<v3>~) } on { <s> <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1dotMinusiriStem3.shex> ;
@@ -1210,7 +1240,7 @@
 
 <#1val1dotMinusiriStem3_v1> a sht:ValidationFailure ;
     mf:name "1val1dotMinusiriStem3_v1" ;
-    rdfs:comment "<S> { <p1> . } on { <s1> <p1> <v1> }" ;
+    rdfs:comment "<S> { <p1> (.-<v1>~-<v2>~-<v3>~) } on { <s1> <p1> <v1> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1dotMinusiriStem3.shex> ;
@@ -1222,7 +1252,7 @@
 
 <#1val1dotMinusiriStem3_v2> a sht:ValidationFailure ;
     mf:name "1val1dotMinusiriStem3_v2" ;
-    rdfs:comment "<S> { <p1> . } on { <s1> <p1> <v2> }" ;
+    rdfs:comment "<S> { <p1> (.-<v1>~-<v2>~-<v3>~) } on { <s1> <p1> <v2> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1dotMinusiriStem3.shex> ;
@@ -1234,12 +1264,239 @@
 
 <#1val1dotMinusiriStem3_v3> a sht:ValidationFailure ;
     mf:name "1val1dotMinusiriStem3_v3" ;
-    rdfs:comment "<S> { <p1> . } on { <s> <p1> <v3> }" ;
+    rdfs:comment "<S> { <p1> (.-<v1>~-<v2>~-<v3>~) } on { <s> <p1> <v3> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1dotMinusiriStem3.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Iv3.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1val1dotMinusiriStem3_v1a> a sht:ValidationFailure ;
+    mf:name "1val1dotMinusiriStem3_v1a" ;
+    rdfs:comment "<S> { <p1> (.-<v1>~-<v2>~-<v3>~) } on { <s1> <p1> <v1a> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1dotMinusiriStem3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Iv1a.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1val1iriStem_passv1> a sht:ValidationTest ;
+    mf:name "1val1iriStem_passv1" ;
+    rdfs:comment "<S> { <p1> (<v1>~) } on { <s> <p1> <v1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1iriStem.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Iv1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1val1iriStem_passv1.val>
+    .
+
+<#1val1iriStem_passv1a> a sht:ValidationTest ;
+    mf:name "1val1iriStem_passv1a" ;
+    rdfs:comment "<S> { <p1> (<v1>~) } on { <s> <p1> <v1a> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1iriStem.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Iv1a.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1val1iriStem_passv1a.val>
+    .
+
+<#1val1iriStem_fail> a sht:ValidationFailure ;
+    mf:name "1val1iriStem_fail" ;
+    rdfs:comment "<S> { <p1> (<v1>~) } on { <s1> <p1> <> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1iriStem.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_I.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1val1iriStemMinusiri3_passIv> a sht:ValidationTest ;
+    mf:name "1val1iriStemMinusiri3_passIv" ;
+    rdfs:comment "<S> { <p1> (<v>-<v1>-<v2>-<v3>) } on { <s> <p1> <v> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1iriStemMinusiri3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Iv.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1val1iriStemMinusiri3_passIv.val>
+    .
+
+<#1val1iriStemMinusiri3_passIv4> a sht:ValidationTest ;
+    mf:name "1val1iriStemMinusiri3_passIv4" ;
+    rdfs:comment "<S> { <p1> (<v>-<v1>-<v2>-<v3>) } on { <s> <p1> <v4> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1iriStemMinusiri3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Iv4.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1val1iriStemMinusiri3_passIv4.val>
+    .
+
+<#1val1iriStemMinusiri3_v1> a sht:ValidationFailure ;
+    mf:name "1val1iriStemMinusiri3_v1" ;
+    rdfs:comment "<S> { <p1> (<v>-<v1>-<v2>-<v3>) } on { <s1> <p1> <v1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1iriStemMinusiri3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Iv1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1val1iriStemMinusiri3_v2> a sht:ValidationFailure ;
+    mf:name "1val1iriStemMinusiri3_v2" ;
+    rdfs:comment "<S> { <p1> (<v>-<v1>-<v2>-<v3>) } on { <s1> <p1> <v2> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1iriStemMinusiri3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Iv2.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1val1iriStemMinusiri3_v3> a sht:ValidationFailure ;
+    mf:name "1val1iriStemMinusiri3_v3" ;
+    rdfs:comment "<S> { <p1> (<v>-<v1>-<v2>-<v3>) } on { <s> <p1> <v3> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1iriStemMinusiri3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Iv3.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1val1iriStemMinusiri3_passIv1a> a sht:ValidationTest ;
+    mf:name "1val1iriStemMinusiri3_passIv1a" ;
+    rdfs:comment "<S> { <p1> (<v>-<v1>-<v2>-<v3>) } on { <s> <p1> <v1a> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1iriStemMinusiri3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Iv1a.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1val1iriStemMinusiri3_passIv1a.val>
+    .
+
+<#1val1iriStemMinusiriStem3_passIv> a sht:ValidationTest ;
+    mf:name "1val1iriStemMinusiriStem3_passIv" ;
+    rdfs:comment "<S> { <p1> (<v>~-<v1>~-<v2>~-<v3>~) } on { <s> <p1> <v> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1iriStemMinusiriStem3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Iv.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1val1iriStemMinusiriStem3_passIv.val>
+    .
+
+<#1val1iriStemMinusiriStem3_passIv4> a sht:ValidationTest ;
+    mf:name "1val1iriStemMinusiriStem3_passIv4" ;
+    rdfs:comment "<S> { <p1> (<v>~-<v1>~-<v2>~-<v3>~) } on { <s> <p1> <v4> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1iriStemMinusiriStem3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Iv4.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1val1iriStemMinusiriStem3_passIv4.val>
+    .
+
+<#1val1iriStemMinusiriStem3_v1> a sht:ValidationFailure ;
+    mf:name "1val1iriStemMinusiriStem3_v1" ;
+    rdfs:comment "<S> { <p1> (<v>~-<v1>~-<v2>~-<v3>~) } on { <s1> <p1> <v1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1iriStemMinusiriStem3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Iv1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1val1iriStemMinusiriStem3_v2> a sht:ValidationFailure ;
+    mf:name "1val1iriStemMinusiriStem3_v2" ;
+    rdfs:comment "<S> { <p1> (<v>~-<v1>~-<v2>~-<v3>~) } on { <s1> <p1> <v2> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1iriStemMinusiriStem3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Iv2.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1val1iriStemMinusiriStem3_v3> a sht:ValidationFailure ;
+    mf:name "1val1iriStemMinusiriStem3_v3" ;
+    rdfs:comment "<S> { <p1> (<v>~-<v1>~-<v2>~-<v3>~) } on { <s> <p1> <v3> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1iriStemMinusiriStem3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Iv3.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1val1iriStemMinusiriStem3_v1a> a sht:ValidationFailure ;
+    mf:name "1val1iriStemMinusiriStem3_v1a" ;
+    rdfs:comment "<S> { <p1> (<v>~-<v1>~-<v2>~-<v3>~) } on { <s1> <p1> <v1a> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1iriStemMinusiriStem3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Iv1a.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+##############################################################################################
+# term equivalence
+
+<#1val1IRIREF_pass> a sht:ValidationTest ;
+    mf:name "1val1IRIREF_pass" ;
+    rdfs:comment "<S> { <p1> (<v1>) } on { <s> <p1> <v1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1IRIREF.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Iv1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1val1IRIREF_pass.val>
+    .
+
+<#1val1IRIREF_v2> a sht:ValidationFailure ;
+    mf:name "1val1IRIREF_v1" ;
+    rdfs:comment "<S> { <p1> (<v1>) } on { <s> <p1> <v2> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1IRIREF.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Iv2.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
     .

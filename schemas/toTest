@@ -92,20 +92,51 @@
   -rw-rw-r--  1 eric www   313 Sep 23 09:38 1refbnode_with_spanning_PN_CHARS_BASE1.shex
   -rw-rw-r--  1 eric www    88 Oct 20 15:51 1val1DECIMAL.shex
   -rw-rw-r--  1 eric www   205 Oct 20 15:51 1val1dotMinusiri3.shex
+|<http://a.example/S1> {
+|   <http://a.example/p1> (.
+|                          - <http://a.example/v1>
+|                          - <http://a.example/v2>
+|                          - <http://a.example/v3>)
+|}
   -rw-rw-r--  1 eric www   208 Oct 20 15:51 1val1dotMinusiriStem3.shex
+|<http://a.example/S1> {
+|   <http://a.example/p1> (.
+|                          - <http://a.example/v1>~
+|                          - <http://a.example/v2>~
+|                          - <http://a.example/v3>~)
+|}
+
+  -rw-rw-r--  1 eric www    75 Oct 20 15:51 1val1iriStem.shex
++<http://a.example/S1> {
++   <http://a.example/p1> (<http://a.example/v>~)
++}
+  -rw-rw-r--  1 eric www   225 Oct 20 15:51 1val1iriStemMinusiri3.shex
++<http://a.example/S1> {
++   <http://a.example/p1> (<http://a.example/v>~
++                          - <http://a.example/v1>
++                          - <http://a.example/v2>
++                          - <http://a.example/v3>)
++}
+  -rw-rw-r--  1 eric www   228 Oct 20 15:51 1val1iriStemMinusiriStem3.shex
++<http://a.example/S1> {
++   <http://a.example/p1> (<http://a.example/v>~
++                          - <http://a.example/v1>~
++                          - <http://a.example/v2>~
++                          - <http://a.example/v3>~)
++}
+
   -rw-rw-r--  1 eric www    87 Oct 20 15:51 1val1DOUBLE.shex
   -rw-rw-r--  1 eric www    87 Oct 20 15:51 1val1DOUBLElowercase.shex
   -rw-rw-r--  1 eric www    58 Oct 20 15:51 1val1true.shex
   -rw-rw-r--  1 eric www    59 Oct 20 15:51 1val1false.shex
   -rw-rw-r--  1 eric www    55 Oct 20 15:51 1val1INTEGER.shex
   -rw-rw-r--  1 eric www   119 Oct 20 15:51 1val1IRIREFDatatype.shex
+  -rw-rw-r--  1 eric www    75 Oct 20 15:51 1val1IRIREF.shex
+
+  -rw-rw-r--  1 eric www   103 Oct 20 15:51 1val1IRIREFExtra1.shex
+  -rw-rw-r--  1 eric www   125 Oct 20 15:51 1val2IRIREFExtra1.shex
 
 HERE
-  -rw-rw-r--  1 eric www   103 Oct 20 15:51 1val1IRIREFExtra1.shex
-  -rw-rw-r--  1 eric www    75 Oct 20 15:51 1val1IRIREF.shex
-  -rw-rw-r--  1 eric www   225 Oct 20 15:51 1val1iriStemMinusiri3.shex
-  -rw-rw-r--  1 eric www   228 Oct 20 15:51 1val1iriStemMinusiriStem3.shex
-  -rw-rw-r--  1 eric www    75 Oct 20 15:51 1val1iriStem.shex
   -rw-rw-r--  1 eric www    64 Oct 20 15:51 1val1LANGTAG.shex
   -rw-rw-r--  1 eric www   142 Oct 20 15:51 1val1LNDatatype.shex
   -rw-rw-r--  1 eric www    94 Oct 20 15:51 1val1STRING_LITERAL1.shex
@@ -121,7 +152,6 @@ HERE
   -rw-rw-r--  1 eric www   113 Oct 20 15:51 1val1STRING_LITERAL_LONG2_with_LANGTAG.shex
   -rw-rw-r--  1 eric www   162 Oct 20 15:51 1val1STRING_LITERAL_LONG2_with_subtag.shex
   -rw-rw-r--  1 eric www   255 Oct 20 15:51 1val1vsMinusiri3.shex
-  -rw-rw-r--  1 eric www   125 Oct 20 15:51 1val2IRIREFExtra1.shex
   -rw-rw-r--  1 eric www    60 Oct 20 15:51 2dotCommaOr1dotComma.shex
   -rw-rw-r--  1 eric www    52 Oct 20 15:51 2dotCommas.shex
   -rw-rw-r--  1 eric www    58 Oct 20 15:51 2dotOr1dot.shex
