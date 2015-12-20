@@ -30,6 +30,10 @@ parser.parse(
   "@base <" + apparentBase + "> .\n"+
   fs.readFileSync(args[0], "utf8"),
   function (error, triple, prefixes) {
+    if (error) {
+      error.message = "Error parsing " + args[0] + ": " + error.message;
+      throw error;
+    }
     if (triple)
       store.addTriple(triple)
     else
