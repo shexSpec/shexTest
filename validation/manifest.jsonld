@@ -7,17 +7,17 @@
       "rdfs:comment": "ShEx validation tests",
       "entries": [
         {
-          "@id": "#1dot_pass",
+          "@id": "#1dot_over_lower",
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/1dot.shex",
             "shape": "http://a.example/S1",
-            "data": "IIssue1_Ip1_Io1.ttl",
+            "data": "IIssue1_Ip0_Io0;Ip1_Io1.ttl",
             "focus": "http://a.example/Issue1"
           },
           "extensionResults": [],
-          "name": "1dot_pass",
-          "comment": "<S> { <p1> . } on { <s> <p1> <o1> }",
+          "name": "1dot_over_lower",
+          "comment": "<S> { <p1> . } on { <s> <p1> <o1>; <p2> <o1> }",
           "status": "mf:proposed",
           "result": "1dot_pass.val"
         },
@@ -66,19 +66,19 @@
           "result": "0_pass.val"
         },
         {
-          "@id": "#skipped",
+          "@id": "#greedy",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../validation/skipped.shex",
+            "schema": "../validation/greedy.shex",
             "shape": "S",
-            "data": "skipped.ttl",
+            "data": "greedy.ttl",
             "focus": "x"
           },
           "extensionResults": [],
-          "name": "skipped",
-          "comment": "@@ skipped",
+          "name": "greedy",
+          "comment": "@@ greedy",
           "status": "mf:proposed",
-          "result": "skipped.val"
+          "result": "greedy.val"
         },
         {
           "@id": "#iovka",
@@ -1086,6 +1086,26 @@
           "result": "open3groupdotclosecard23Annot3Code2-p1p2p3X3.val"
         },
         {
+          "@id": "#1dotShapeCode1_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1dotShapeCode1.shex",
+            "shape": "http://a.example/S1",
+            "data": "IIssue1_Ip1_Io1.ttl",
+            "focus": "http://a.example/Issue1"
+          },
+          "extensionResults": [
+            {
+              "extension": "http://shex.io/extensions/Test/",
+              "prints": "\"shape action\""
+            }
+          ],
+          "name": "1dotShapeCode1_pass",
+          "comment": "<S> { <p1> . } %<http://shex.io/extensions/Test/>{ print(o) %} on { <s> <p1> <o1> }",
+          "status": "mf:proposed",
+          "result": "1dotShapeCode1_pass.val"
+        },
+        {
           "@id": "#1dotCodeWithEscapes1_pass",
           "@type": "sht:ValidationTest",
           "action": {
@@ -1229,21 +1249,6 @@
           "result": "1dot_pass.val"
         },
         {
-          "@id": "#1dot_over_lower",
-          "@type": "sht:ValidationTest",
-          "action": {
-            "schema": "../schemas/1dot.shex",
-            "shape": "http://a.example/S1",
-            "data": "IIssue1_Ip0_Io0;Ip1_Io1.ttl",
-            "focus": "http://a.example/Issue1"
-          },
-          "extensionResults": [],
-          "name": "1dot_over_lower",
-          "comment": "<S> { <p1> . } on { <s> <p1> <o1>; <p2> <o1> }",
-          "status": "mf:proposed",
-          "result": "1dot_pass.val"
-        },
-        {
           "@id": "#1dot_missing",
           "@type": "sht:ValidationFailure",
           "action": {
@@ -1258,18 +1263,19 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#1dotAnnotIRIREF_missing",
-          "@type": "sht:ValidationFailure",
+          "@id": "#1dot_pass",
+          "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/1dotAnnotIRIREF.shex",
+            "schema": "../schemas/1dot.shex",
             "shape": "http://a.example/S1",
-            "data": "Is1_Ip2_Io1.ttl",
-            "focus": "http://a.example/s1"
+            "data": "IIssue1_Ip1_Io1.ttl",
+            "focus": "http://a.example/Issue1"
           },
           "extensionResults": [],
-          "name": "1dotAnnotIRIREF_missing",
-          "comment": "<S> { <p1> .; <annot> <IRIREF> } on { <s> <p2> <o1> }",
-          "status": "mf:proposed"
+          "name": "1dot_pass",
+          "comment": "<S> { <p1> . } on { <s> <p1> <o1> }",
+          "status": "mf:proposed",
+          "result": "1dot_pass.val"
         },
         {
           "@id": "#1val1vExprOR3_passvc1vc2vc3",
@@ -1285,6 +1291,20 @@
           "comment": "<S> { <p1> ~'^ab' OR ~'cd' OR ~'ef$' } on { <s1> <p1> 'abcdef' }",
           "status": "mf:proposed",
           "result": "1val1vExprOR3_passvr1vr2vr3.val"
+        },
+        {
+          "@id": "#1dotAnnotIRIREF_missing",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1dotAnnotIRIREF.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip2_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1dotAnnotIRIREF_missing",
+          "comment": "<S> { <p1> .; <annot> <IRIREF> } on { <s> <p2> <o1> }",
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1vExprOR3_fail",
@@ -2337,19 +2357,19 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#greedy",
+          "@id": "#skipped",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../validation/greedy.shex",
+            "schema": "../validation/skipped.shex",
             "shape": "S",
-            "data": "greedy.ttl",
+            "data": "skipped.ttl",
             "focus": "x"
           },
           "extensionResults": [],
-          "name": "greedy",
-          "comment": "@@ greedy",
+          "name": "skipped",
+          "comment": "@@ skipped",
           "status": "mf:proposed",
-          "result": "greedy.val"
+          "result": "skipped.val"
         },
         {
           "@id": "#repeated-group",

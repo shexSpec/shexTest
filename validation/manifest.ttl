@@ -34,6 +34,7 @@
         <#1dotCode3_pass>
         <#1dotCode3_abort>
         <#1dotCodeWithEscapes1_pass>
+        <#1dotShapeCode1_pass>
 
         # annotations + semantic actions
         <#open3groupdotclosecard23Annot3Code2-p1p2p3X3>
@@ -478,6 +479,25 @@
       [
         mf:extension <http://shex.io/extensions/Test/> ;
         mf:prints "\"%{\\\\%}\""
+      ]
+    )
+    .
+
+<#1dotShapeCode1_pass> a sht:ValidationTest ;
+    mf:name "1dotShapeCode1_pass" ;
+    rdfs:comment "<S> { <p1> . } %<http://shex.io/extensions/Test/>{ print(o) %} on { <s> <p1> <o1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1dotShapeCode1.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <IIssue1_Ip1_Io1.ttl> ;
+      sht:focus <http://a.example/Issue1>
+    ] ;
+    mf:result <1dotShapeCode1_pass.val> ;
+    mf:extensionResults (
+      [
+        mf:extension <http://shex.io/extensions/Test/> ;
+        mf:prints "\"shape action\""
       ]
     )
     .
