@@ -565,8 +565,8 @@
     mf:action [
       sht:schema <../schemas/1card2.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <IIssue1_Ip1_La,Lb.ttl> ;
-      sht:focus <http://a.example/Issue1>
+      sht:data <Is1_Ip1_La,Lb.ttl> ;
+      sht:focus <http://a.example/s1>
     ] ;
     mf:result <1card2_pass2.val>
     .
@@ -578,8 +578,8 @@
     mf:action [
       sht:schema <../schemas/1card2.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <IIssue1_Ip1_La,Lb,Lc.ttl> ;
-      sht:focus <http://a.example/Issue1>
+      sht:data <Is1_Ip1_La,Lb,Lc.ttl> ;
+      sht:focus <http://a.example/s1>
     ]
     .
 
@@ -614,8 +614,8 @@
     mf:action [
       sht:schema <../schemas/1card25.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <IIssue1_Ip1_La,Lb.ttl> ;
-      sht:focus <http://a.example/Issue1>
+      sht:data <Is1_Ip1_La,Lb.ttl> ;
+      sht:focus <http://a.example/s1>
     ] ;
     mf:result <1card25_pass2.val>
     .
@@ -627,8 +627,8 @@
     mf:action [
       sht:schema <../schemas/1card25.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <IIssue1_Ip1_La,Lb,Lc.ttl> ;
-      sht:focus <http://a.example/Issue1>
+      sht:data <Is1_Ip1_La,Lb,Lc.ttl> ;
+      sht:focus <http://a.example/s1>
     ] ;
     mf:result <1card25_pass3.val>
     .
@@ -702,8 +702,8 @@
     mf:action [
       sht:schema <../schemas/1card2Star.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <IIssue1_Ip1_La,Lb.ttl> ;
-      sht:focus <http://a.example/Issue1>
+      sht:data <Is1_Ip1_La,Lb.ttl> ;
+      sht:focus <http://a.example/s1>
     ] ;
     mf:result <1card2Star_pass2.val>
     .
@@ -715,8 +715,8 @@
     mf:action [
       sht:schema <../schemas/1card2Star.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <IIssue1_Ip1_La,Lb,Lc.ttl> ;
-      sht:focus <http://a.example/Issue1>
+      sht:data <Is1_Ip1_La,Lb,Lc.ttl> ;
+      sht:focus <http://a.example/s1>
     ] ;
     mf:result <1card2Star_pass3.val>
     .
@@ -767,8 +767,8 @@
     mf:action [
       sht:schema <../schemas/1cardOpt.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <IIssue1_Ip1_La,Lb.ttl> ;
-      sht:focus <http://a.example/Issue1>
+      sht:data <Is1_Ip1_La,Lb.ttl> ;
+      sht:focus <http://a.example/s1>
     ] ;
     .
 
@@ -816,8 +816,8 @@
     mf:action [
       sht:schema <../schemas/1cardPlus.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <IIssue1_Ip1_La,Lb.ttl> ;
-      sht:focus <http://a.example/Issue1>
+      sht:data <Is1_Ip1_La,Lb.ttl> ;
+      sht:focus <http://a.example/s1>
     ] ;
     mf:result <1cardPlus_pass2.val>
     .
@@ -868,8 +868,8 @@
     mf:action [
       sht:schema <../schemas/1cardStar.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <IIssue1_Ip1_La,Lb.ttl> ;
-      sht:focus <http://a.example/Issue1>
+      sht:data <Is1_Ip1_La,Lb.ttl> ;
+      sht:focus <http://a.example/s1>
     ] ;
     mf:result <1cardStar_pass2.val>
     .
