@@ -851,8 +851,8 @@
           "action": {
             "schema": "../schemas/1cardStar.shex",
             "shape": "http://a.example/S1",
-            "data": "IIssue1_Ip1_La.ttl",
-            "focus": "http://a.example/Issue1"
+            "data": "Is1_Ip1_La.ttl",
+            "focus": "http://a.example/s1"
           },
           "extensionResults": [],
           "name": "1cardStar_pass1",
@@ -911,8 +911,8 @@
           "action": {
             "schema": "../schemas/1cardPlus.shex",
             "shape": "http://a.example/S1",
-            "data": "IIssue1_Ip1_La.ttl",
-            "focus": "http://a.example/Issue1"
+            "data": "Is1_Ip1_La.ttl",
+            "focus": "http://a.example/s1"
           },
           "extensionResults": [],
           "name": "1cardPlus_pass1",
@@ -926,8 +926,8 @@
           "action": {
             "schema": "../schemas/1cardOpt.shex",
             "shape": "http://a.example/S1",
-            "data": "IIssue1_Ip1_La.ttl",
-            "focus": "http://a.example/Issue1"
+            "data": "Is1_Ip1_La.ttl",
+            "focus": "http://a.example/s1"
           },
           "extensionResults": [],
           "name": "1cardOpt_pass1",
@@ -2237,8 +2237,8 @@
           "action": {
             "schema": "../schemas/1card2Star.shex",
             "shape": "http://a.example/S1",
-            "data": "IIssue1_Ip1_La.ttl",
-            "focus": "http://a.example/Issue1"
+            "data": "Is1_Ip1_La.ttl",
+            "focus": "http://a.example/s1"
           },
           "extensionResults": [],
           "name": "1card2Star_fail1",
@@ -2279,8 +2279,8 @@
           "action": {
             "schema": "../schemas/1card25.shex",
             "shape": "http://a.example/S1",
-            "data": "IIssue1_Ip1_La.ttl",
-            "focus": "http://a.example/Issue1"
+            "data": "Is1_Ip1_La.ttl",
+            "focus": "http://a.example/s1"
           },
           "extensionResults": [],
           "name": "1card25_fail1",
@@ -2294,7 +2294,7 @@
             "schema": "../schemas/1card25.shex",
             "shape": "http://a.example/S1",
             "data": "empty.ttl",
-            "focus": "http://a.example/Issue1"
+            "focus": "http://a.example/s1"
           },
           "extensionResults": [],
           "name": "1card25_fail0",
