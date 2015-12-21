@@ -91,7 +91,7 @@
         <#1dotClosed_fail_higher>
 
         # node kinds
-        <#1literalPlus_IIssue1_Ip1_La,Io1>
+        <#1literalPlus_Is1_Ip1_La,Io1>
 
         # extra
         <#1val1IRIREFExtra1_iri>
@@ -640,8 +640,8 @@
     mf:action [
       sht:schema <../schemas/1card25.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <IIssue1_Ip1_La,Lb,Lc,Ld.ttl> ;
-      sht:focus <http://a.example/Issue1>
+      sht:data <Is1_Ip1_La,Lb,Lc,Ld.ttl> ;
+      sht:focus <http://a.example/s1>
     ] ;
     mf:result <1card25_pass4.val>
     .
@@ -653,8 +653,8 @@
     mf:action [
       sht:schema <../schemas/1card25.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <IIssue1_Ip1_La,Lb,Lc,Ld,Le.ttl> ;
-      sht:focus <http://a.example/Issue1>
+      sht:data <Is1_Ip1_La,Lb,Lc,Ld,Le.ttl> ;
+      sht:focus <http://a.example/s1>
     ] ;
     mf:result <1card25_pass5.val>
     .
@@ -666,8 +666,8 @@
     mf:action [
       sht:schema <../schemas/1card25.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <IIssue1_Ip1_La,Lb,Lc,Ld,Le,Lf.ttl> ;
-      sht:focus <http://a.example/Issue1>
+      sht:data <Is1_Ip1_La,Lb,Lc,Ld,Le,Lf.ttl> ;
+      sht:focus <http://a.example/s1>
     ]
     .
 
@@ -679,7 +679,7 @@
       sht:schema <../schemas/1card2Star.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <empty.ttl> ;
-      sht:focus <http://a.example/Issue1>
+      sht:focus <http://a.example/s1>
     ]
     .
 
@@ -728,8 +728,8 @@
     mf:action [
       sht:schema <../schemas/1card2Star.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <IIssue1_Ip1_La,Lb,Lc,Ld,Le,Lf.ttl> ;
-      sht:focus <http://a.example/Issue1>
+      sht:data <Is1_Ip1_La,Lb,Lc,Ld,Le,Lf.ttl> ;
+      sht:focus <http://a.example/s1>
     ] ;
     mf:result <1card2Star_pass6.val>
     .
@@ -742,7 +742,7 @@
       sht:schema <../schemas/1cardOpt.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <empty.ttl> ;
-      sht:focus <http://a.example/Issue1>
+      sht:focus <http://a.example/s1>
     ] ;
     mf:result <1cardOpt_pass0.val>
     .
@@ -779,8 +779,8 @@
     mf:action [
       sht:schema <../schemas/1cardOpt.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <IIssue1_Ip1_La,Lb,Lc,Ld,Le,Lf.ttl> ;
-      sht:focus <http://a.example/Issue1>
+      sht:data <Is1_Ip1_La,Lb,Lc,Ld,Le,Lf.ttl> ;
+      sht:focus <http://a.example/s1>
     ] ;
     .
 
@@ -792,7 +792,7 @@
       sht:schema <../schemas/1cardPlus.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <empty.ttl> ;
-      sht:focus <http://a.example/Issue1>
+      sht:focus <http://a.example/s1>
     ]
     .
 
@@ -829,8 +829,8 @@
     mf:action [
       sht:schema <../schemas/1cardPlus.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <IIssue1_Ip1_La,Lb,Lc,Ld,Le,Lf.ttl> ;
-      sht:focus <http://a.example/Issue1>
+      sht:data <Is1_Ip1_La,Lb,Lc,Ld,Le,Lf.ttl> ;
+      sht:focus <http://a.example/s1>
     ] ;
     mf:result <1cardPlus_pass6.val>
     .
@@ -843,7 +843,7 @@
       sht:schema <../schemas/1cardStar.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <empty.ttl> ;
-      sht:focus <http://a.example/Issue1>
+      sht:focus <http://a.example/s1>
     ] ;
     mf:result <1cardStar_pass0.val>
     .
@@ -881,8 +881,8 @@
     mf:action [
       sht:schema <../schemas/1cardStar.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <IIssue1_Ip1_La,Lb,Lc,Ld,Le,Lf.ttl> ;
-      sht:focus <http://a.example/Issue1>
+      sht:data <Is1_Ip1_La,Lb,Lc,Ld,Le,Lf.ttl> ;
+      sht:focus <http://a.example/s1>
     ] ;
     mf:result <1cardStar_pass6.val>
     .
@@ -892,49 +892,49 @@
 
 <#1datatype_missing> a sht:ValidationFailure ;
     mf:name "1datatype_missing" ;
-    rdfs:comment "<S> { <p1> xs:integer } on <s> in { <s> <p2> <o1> }" ;
+    rdfs:comment "<S> { <p1> <dt1> } on <s> in { <s> <p2> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1datatype.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <IIssue1_Ip2_Io1.ttl> ;
-      sht:focus <http://a.example/Issue1>
+      sht:data <Is1_Ip1_Lab.ttl> ;
+      sht:focus <http://a.example/s1>
     ]
     .
 
 <#1datatype_nonLiteral> a sht:ValidationFailure ;
     mf:name "1datatype_nonLiteral" ;
-    rdfs:comment "<S> { <p1> xs:integer } on <s> in { <s> <p1> <o1> }" ;
+    rdfs:comment "<S> { <p1> <dt1> } on <s> in { <s> <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1datatype.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <IIssue1_Ip1_Io1.ttl> ;
-      sht:focus <http://a.example/Issue1>
+      sht:data <Is1_Ip1_Io1.ttl> ;
+      sht:focus <http://a.example/s1>
     ]
     .
 
 <#1datatype_wrongDatatype> a sht:ValidationFailure ;
     mf:name "1datatype_wrongDatatype" ;
-    rdfs:comment "<S> { <p1> xs:integer } on <s> in { <s> <p1> 1.234 }" ;
+    rdfs:comment "<S> { <p1> <dt1> } on <s> in { <s> <p1> 1.234 }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1datatype.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <IIssue1_Ip1_DEC1.345.ttl> ;
-      sht:focus <http://a.example/Issue1>
+      sht:data <Is1_Ip1_DEC1.345.ttl> ;
+      sht:focus <http://a.example/s1>
     ]
     .
 
 <#1datatype_pass> a sht:ValidationTest ;
     mf:name "1datatype_pass" ;
-    rdfs:comment "<S> { <p1> xs:integer } on <s> in { <s> <p1> 'ab'^^<dt1> }" ;
+    rdfs:comment "<S> { <p1> <dt1> } on <s> in { <s> <p1> 'ab'^^<dt1> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1datatype.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <IIssue1_Ip1_dt1.ttl> ;
-      sht:focus <http://a.example/Issue1>
+      sht:data <Is1_Ip1_dt1.ttl> ;
+      sht:focus <http://a.example/s1>
     ] ;
     mf:result <1datatype_pass.val>
     .
@@ -949,8 +949,8 @@
     mf:action [
       sht:schema <../schemas/1datatypeLength.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <IIssue1_Ip2_Io1.ttl> ;
-      sht:focus <http://a.example/Issue1>
+      sht:data <Is1_Ip1_Lab.ttl> ;
+      sht:focus <http://a.example/s1>
     ]
     .
 
@@ -961,8 +961,8 @@
     mf:action [
       sht:schema <../schemas/1datatypeLength.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <IIssue1_Ip1_DEC1.345.ttl> ;
-      sht:focus <http://a.example/Issue1>
+      sht:data <Is1_Ip1_DEC1.345.ttl> ;
+      sht:focus <http://a.example/s1>
     ]
     .
 
@@ -973,8 +973,8 @@
     mf:action [
       sht:schema <../schemas/1datatypeLength.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <IIssue1_Ip1_INT1234.ttl> ;
-      sht:focus <http://a.example/Issue1>
+      sht:data <Is1_Ip1_INT1234.ttl> ;
+      sht:focus <http://a.example/s1>
     ]
     .
 
@@ -985,8 +985,8 @@
     mf:action [
       sht:schema <../schemas/1datatypeLength.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <IIssue1_Ip1_INT12345.ttl> ;
-      sht:focus <http://a.example/Issue1>
+      sht:data <Is1_Ip1_INT12345.ttl> ;
+      sht:focus <http://a.example/s1>
     ] ;
     mf:result <1datatypeLength_pass.val>
     .
@@ -998,8 +998,8 @@
     mf:action [
       sht:schema <../schemas/1datatypeLength.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <IIssue1_Ip1_INT123456.ttl> ;
-      sht:focus <http://a.example/Issue1>
+      sht:data <Is1_Ip1_INT123456.ttl> ;
+      sht:focus <http://a.example/s1>
     ]
     .
 
@@ -1011,7 +1011,7 @@
       sht:schema <../schemas/1literalFractiondigits.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <1literalFractiondigits_pass.ttl> ;
-      sht:focus <http://a.example/Issue1>
+      sht:focus <http://a.example/s1>
     ] ;
     mf:result <1literalFractiondigits_pass.val>
     .
@@ -1058,15 +1058,15 @@
 # } closed
 # node kinds {
 
-<#1literalPlus_IIssue1_Ip1_La,Io1> a sht:ValidationFailure ;
+<#1literalPlus_Is1_Ip1_La,Io1> a sht:ValidationFailure ;
     mf:name "1literal_extra" ;
     rdfs:comment "<S> { <p1> LITERAL+ } on { <s> <p1> 'a', <o2> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1literalPlus.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <IIssue1_Ip1_La,Io1.ttl> ;
-      sht:focus <http://a.example/Issue1>
+      sht:data <Is1_Ip1_La,Io1.ttl> ;
+      sht:focus <http://a.example/s1>
     ]
     .
 
@@ -1080,10 +1080,10 @@
     mf:action [
       sht:schema <../schemas/1val1IRIREFExtra1.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <IIssue1_Ip1_Io1,Io2.ttl> ;
-      sht:focus <http://a.example/Issue1>
+      sht:data <Is1_Ip1_Io1,Io2.ttl> ;
+      sht:focus <http://a.example/s1>
     ] ;
-    mf:result <1val1IRIREFExtra1bnode_IIssue1_Ip1_Io1.val>
+    mf:result <1val1IRIREFExtra1bnode_Is1_Ip1_Io1.val>
     .
 
 <#1val2IRIREFExtra1_iri> a sht:ValidationFailure ;
@@ -1093,8 +1093,8 @@
     mf:action [
       sht:schema <../schemas/1val2IRIREFExtra1.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <IIssue1_Ip1_Io1,Io2.ttl> ;
-      sht:focus <http://a.example/Issue1>
+      sht:data <Is1_Ip1_Io1,Io2.ttl> ;
+      sht:focus <http://a.example/s1>
     ]
     .
 
@@ -1105,10 +1105,10 @@
     mf:action [
       sht:schema <../schemas/1val2IRIREFExtra1.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <IIssue1_Ip1_Io1,Bo2.ttl> ;
-      sht:focus <http://a.example/Issue1>
+      sht:data <Is1_Ip1_Io1,Bo2.ttl> ;
+      sht:focus <http://a.example/s1>
     ] ;
-    mf:result <1val2IRIREFExtra1_bnode_IIssue1_Ip1_Io1.val>
+    mf:result <1val2IRIREFExtra1_bnode_Is1_Ip1_Io1.val>
     .
 
 # } extra
