@@ -2,16 +2,20 @@
   -rw-rw-r--  1 eric www    26 Oct 20 15:51 0.shex
   -rw-rw-r--  1 eric www    71 Oct 20 15:51 1dot.shex
   -rw-rw-r--  1 eric www    45 Oct 20 15:51 1dotComma.shex ..
+  -rw-rw-r--  1 eric www    54 Oct 20 15:51 1inversedot.shex
   -rw-rw-r--  1 eric www    33 Oct 20 15:51 1Adot.shex
         # annotations
   -rw-rw-r--  1 eric www   112 Oct 20 15:51 1dotAnnotIRIREF.shex
   -rw-rw-r--  1 eric www   104 Oct 20 15:51 1dotAnnotSTRING_LITERAL1.shex
   -rw-rw-r--  1 eric www   167 Oct 20 15:51 1dotAnnot3.shex
+  -rw-rw-r--  1 eric www   168 Oct 20 15:51 1inversedotAnnot3.shex
         # semantic actions
   -rw-rw-r--  1 eric www    96 Oct 20 15:51 1dotCode1.shex
+  -rw-rw-r--  1 eric www    98 Oct 20 15:51 1inversedotCode1.shex
   -rw-rw-r--  1 eric www   182 Oct 20 15:51 1dotCode3.shex
   -rw-rw-r--  1 eric www   103 Oct 20 15:51 1dotCodeWithEscapes1.shex
   -rw-rw-r--  1 eric www    91 Oct 20 15:51 1dotShapeCode1.shex
+  -rw-rw-r--  1 eric www   158 Oct 20 15:51 open3groupdotcloseCode1.shex
         # annotations + semantic actions
   -rw-rw-r--  1 eric www   327 Oct 20 15:51 open3groupdotclosecard23Annot3Code2.shex
         # cardinality
@@ -70,8 +74,10 @@
    1val1vExprRefOR3.shex
    1val1vExprOR3.shex
 
-  -rw-rw-r--  1 eric www    98 Oct 20 15:51 1inversedotCode1.shex
-  -rw-rw-r--  1 eric www   158 Oct 20 15:51 open3groupdotcloseCode1.shex
+  -rw-rw-r--  1 eric www    54 Oct 20 15:51 1negateddot.shex
+  -rw-rw-r--  1 eric www    55 Oct 20 15:51 1negatedinversedot.shex
+  -rw-rw-r--  1 eric www    55 Oct 20 15:51 1inversenegateddot.shex
+
   -rw-rw-r--  1 eric www    91 Oct 20 15:51 startCode1.shex
   -rw-rw-r--  1 eric www   120 Oct 20 15:51 startCode1startRef.shex
   -rw-rw-r--  1 eric www   167 Oct 20 15:51 startCode3.shex
@@ -100,9 +106,6 @@
   -rw-rw-r--  1 eric www   111 Oct 20 15:51 1integerMininclusiveDECIMAL.shex
   -rw-rw-r--  1 eric www   114 Oct 20 15:51 1integerMininclusiveDOUBLE.shex
   -rw-rw-r--  1 eric www   109 Oct 20 15:51 1integerMininclusiveINTEGER.shex
-  -rw-rw-r--  1 eric www   168 Oct 20 15:51 1inversedotAnnot3.shex
-  -rw-rw-r--  1 eric www    54 Oct 20 15:51 1inversedot.shex
-  -rw-rw-r--  1 eric www    55 Oct 20 15:51 1inversenegateddot.shex
   -rw-rw-r--  1 eric www    65 Oct 20 15:51 1iriLength.shex
   -rw-rw-r--  1 eric www    68 Oct 20 15:51 1iriMaxlength.shex
   -rw-rw-r--  1 eric www    68 Oct 20 15:51 1iriMinlength.shex
@@ -123,8 +126,6 @@
   -rw-rw-r--  1 eric www   125 Oct 20 15:51 1val2IRIREFExtra1.shex
 !  -rw-rw-r--  1 eric www    59 Oct 20 15:51 1literal.shex
 !  -rw-rw-r--  1 eric www    73 Oct 20 15:51 1literalTotaldigits.shex
-  -rw-rw-r--  1 eric www    54 Oct 20 15:51 1negateddot.shex
-  -rw-rw-r--  1 eric www    55 Oct 20 15:51 1negatedinversedot.shex
   -rw-rw-r--  1 eric www    72 Oct 20 15:51 1nonliteralLength.shex
   -rw-rw-r--  1 eric www    75 Oct 20 15:51 1nonliteralMaxlength.shex
   -rw-rw-r--  1 eric www    75 Oct 20 15:51 1nonliteralMinlength.shex

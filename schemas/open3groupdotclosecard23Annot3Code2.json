@@ -30,8 +30,8 @@
            { "type": "Annotation", "predicate": "http://a.example/annot3", "object": "\"3\"" }
         ],
         "semActs": [
-          { "type": "SemAct", "name": "http://a.example/semAct1", "code": " code1 " },
-          { "type": "SemAct", "name": "http://a.example/semAct2", "code": " code2 " }
+          { "type": "SemAct", "name": "http://shex.io/extensions/Test/", "code": " print(s) " },
+          { "type": "SemAct", "name": "http://shex.io/extensions/Test/", "code": " print(o) " }
         ]
       }
     }

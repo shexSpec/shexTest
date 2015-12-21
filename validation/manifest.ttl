@@ -17,10 +17,14 @@
         <#1dot_empty>
         <#1dot_missing>
         <#1dot_pass>
-        <#1dot_over_lower>
-        <#1dot_over_higher>
+        <#1dot_over_lexicallyEarlier>
+        <#1dot_over_lexicallyLater>
         # 1dotComma_... same as 1dot
+        <#1inversedot_empty>
+        <#1inversedot_missing>
         <#1inversedot_pass>
+        <#1inversedot_over_lexicallyEarlier>
+        <#1inversedot_over_lexicallyLater>
         <#1Adot_pass>
 
         # annotations
@@ -29,13 +33,17 @@
         <#1dotAnnotSTRING_LITERAL1_pass>
         <#1dotAnnot3_pass>
         <#1dotAnnot3_missing>
+        <#1inversedotAnnot3_pass>
+        <#1inversedotAnnot3_missing>
 
         # semantic actions
         <#1dotCode1_pass>
+        <#1inversedotCode1_pass>
         <#1dotCode3_pass>
         <#1dotCode3_abort>
         <#1dotCodeWithEscapes1_pass>
         <#1dotShapeCode1_pass>
+        <#open3groupdotcloseCode1-p1p2p3>
 
         # annotations + semantic actions
         <#open3groupdotclosecard23Annot3Code2-p1p2p3X3>
@@ -300,8 +308,8 @@
     mf:result <1dot_pass.val>
     .
 
-<#1dot_over_lower> a sht:ValidationTest ;
-    mf:name "1dot_over_lower" ;
+<#1dot_over_lexicallyEarlier> a sht:ValidationTest ;
+    mf:name "1dot_over_lexicallyEarlier" ;
     rdfs:comment "<S> { <p1> . } on { <s> <p0> <o0>; <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -313,8 +321,8 @@
     mf:result <1dot_pass.val>
     .
 
-<#1dot_over_higher> a sht:ValidationTest ;
-    mf:name "1dot_over_higher" ;
+<#1dot_over_lexicallyLater> a sht:ValidationTest ;
+    mf:name "1dot_over_lexicallyLater" ;
     rdfs:comment "<S> { <p1> . } on { <s> <p1> <o1>; <p2> <o2> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -326,6 +334,30 @@
     mf:result <1dot_pass.val>
     .
 
+<#1inversedot_empty> a sht:ValidationFailure ;
+    mf:name "1inversedot_empty" ;
+    rdfs:comment "<S> { <p1> . } on {  }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1inversedot.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <empty.ttl> ;
+      sht:focus <http://a.example/o1>
+    ]
+    .
+
+<#1inversedot_missing> a sht:ValidationFailure ;
+    mf:name "1inversedot_missing" ;
+    rdfs:comment "<S> { <p1> . } on { <s> <p2> <o1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1inversedot.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip2_Io1.ttl> ;
+      sht:focus <http://a.example/o1>
+    ]
+    .
+
 <#1inversedot_pass> a sht:ValidationTest ;
     mf:name "1inversedot_pass" ;
     rdfs:comment "<S> { <p1> . } on { <s> <p1> <o1> }" ;
@@ -334,6 +366,32 @@
       sht:schema <../schemas/1inversedot.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Io1.ttl> ;
+      sht:focus <http://a.example/o1>
+    ] ;
+    mf:result <1inversedot_pass.val>
+    .
+
+<#1inversedot_over_lexicallyEarlier> a sht:ValidationTest ;
+    mf:name "1inversedot_over_lexicallyEarlier" ;
+    rdfs:comment "<S> { <p1> . } on { <s> <p0> <o0>; <p1> <o1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1inversedot.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip0_Io0;Ip1_Io1.ttl> ;
+      sht:focus <http://a.example/o1>
+    ] ;
+    mf:result <1inversedot_pass.val>
+    .
+
+<#1inversedot_over_lexicallyLater> a sht:ValidationTest ;
+    mf:name "1inversedot_over_lexicallyLater" ;
+    rdfs:comment "<S> { <p1> . } on { <s> <p1> <o1>; <p2> <o2> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1inversedot.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1;Ip2_Io2.ttl> ;
       sht:focus <http://a.example/o1>
     ] ;
     mf:result <1inversedot_pass.val>
@@ -417,6 +475,31 @@
     ]
     .
 
+<#1inversedotAnnot3_pass> a sht:ValidationTest ;
+    mf:name "1dotAnnot3_pass" ;
+    rdfs:comment "<S> { <p1> .; <a1> '1'; <a1> '2'; <a1> '3'; } on { <s> <p1> <o1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1inversedotAnnot3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1.ttl> ;
+      sht:focus <http://a.example/o1>
+    ] ;
+    mf:result <1inversedotAnnot3_pass.val>
+    .
+
+<#1inversedotAnnot3_missing> a sht:ValidationFailure ;
+    mf:name "1dotAnnot3_missing" ;
+    rdfs:comment "<S> { <p1> .; <a1> '1'; <a1> '2'; <a1> '3'; } on { <s> <p2> <o1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1inversedotAnnot3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip2_Io1.ttl> ;
+      sht:focus <http://a.example/o1>
+    ]
+    .
+
 # } annotations
 # semantic actions {
 
@@ -431,6 +514,25 @@
       sht:focus <http://a.example/s1>
     ] ;
     mf:result <1dotCode1_pass.val> ;
+    mf:extensionResults (
+      [
+        mf:extension <http://shex.io/extensions/Test/> ;
+        mf:prints "http://a.example/o1"
+      ]
+    )
+    .
+
+<#1inversedotCode1_pass> a sht:ValidationTest ;
+    mf:name "1inversedotCode1_pass" ;
+    rdfs:comment "<S> { <p1> . %<http://shex.io/extensions/Test/>{ print(o) %} } on { <s> <p1> <o1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1inversedotCode1.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1.ttl> ;
+      sht:focus <http://a.example/o1>
+    ] ;
+    mf:result <1inversedotCode1_pass.val> ;
     mf:extensionResults (
       [
         mf:extension <http://shex.io/extensions/Test/> ;
@@ -516,6 +618,25 @@
     )
     .
 
+<#open3groupdotcloseCode1-p1p2p3> a sht:ValidationTest ;
+    mf:name "open3groupdotcloseCode1-p1p2p3" ;
+    rdfs:comment "@@ open3groupdotcloseCode1-p1p2p3" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/open3groupdotcloseCode1.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <p1p2p3.ttl> ;
+      sht:focus <x>
+    ] ;
+# @@    mf:extensionResults (
+# @@      [
+# @@        mf:extension <http://shex.io/extensions/Test/> ;
+# @@        mf:prints "http://a.example/o1"
+# @@      ]
+# @@    ) ;
+    mf:result <open3groupdotcloseCode1-p1p2p3.val>
+    .
+
 # } semantic actions
 # annotations + semantic actions {
 <#open3groupdotclosecard23Annot3Code2-p1p2p3X3> a sht:ValidationTest ;
@@ -528,6 +649,12 @@
       sht:data <p1p2p3X3.ttl> ;
       sht:focus <x>
     ] ;
+# @@    mf:extensionResults (
+# @@      [
+# @@        mf:extension <http://shex.io/extensions/Test/> ;
+# @@        mf:prints "http://a.example/o1"
+# @@      ]
+# @@    ) ;
     mf:result <open3groupdotclosecard23Annot3Code2-p1p2p3X3.val>
     .
 
