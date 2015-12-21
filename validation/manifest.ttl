@@ -19,14 +19,22 @@
         <#1dot_pass>
         <#1dot_extra_lower>
         <#1dot_extra_higher>
-        # <#1dotAnnotIRIREF_...> skipped
-        # <#1dotAnnotSTRING_LITERAL1_...> skipped
-        <#1dotAnnot3_missing>
+        # 1dotComma_... same as 1dot
+        <#1Adot_pass>
+
+        # annotations
+        <#1dotAnnotIRIREF_pass>
+        <#1dotAnnotIRIREF_missing>
+        <#1dotAnnotSTRING_LITERAL1_pass>
         <#1dotAnnot3_pass>
+        <#1dotAnnot3_missing>
+
+        # semantic actions
         <#1dotCode1_pass>
         <#1dotCode3_pass>
         <#1dotCode3_abort>
-        <#1Adot_pass>
+
+        # cardinality
         <#1card2_fail0>
         <#1card2_fail1>
         <#1card2_pass2>
@@ -47,7 +55,6 @@
         <#1cardOpt_pass1>
         <#1cardOpt_fail2>
         <#1cardOpt_pass6>
-
         <#1cardPlus_fail0>
         <#1cardPlus_pass1>
         <#1cardPlus_pass2>
@@ -56,19 +63,26 @@
         <#1cardStar_pass1>
         <#1cardStar_pass2>
         <#1cardStar_pass6>
+
+        # datatype
         <#1datatype_missing>
         <#1datatype_nonLiteral>
         <#1datatype_wrongDatatype>
         <#1datatype_pass>
+
+        # facets
         <#1datatypeLength_missing>
         <#1datatypeLength_wrongDatatype>
         <#1datatypeLength_short>
         <#1datatypeLength_pass>
         <#1datatypeLength_long>
         <#1literalFractiondigits_pass>
+
+        # closed
         <#1dotClosed_pass>
         <#1dotClosed_fail_lower>
         <#1dotClosed_fail_higher>
+
         <#1literalPlus_IIssue1_Ip1_La,Io1>
         <#1val1IRIREFExtra1iri>
         <#1val2IRIREFExtra1iri>
@@ -280,34 +294,86 @@
     mf:result <1dot_pass.val>
     .
 
-# annot {
-
-<#1dotAnnot3_missing> a sht:ValidationFailure ;
-    mf:name "1dotAnnot3_missing" ;
-    rdfs:comment "<S> { <p1> . ... } on { <s> <p2> <o1> }" ;
+<#1Adot_pass> a sht:ValidationTest ;
+    mf:name "1Adot_pass" ;
+    rdfs:comment "<S> { a . } on { <s> a <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1dotAnnot3.shex> ;
+      sht:schema <../schemas/1Adot.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <IIssue1_Ip2_Io1Annot3.ttl> ;
+      sht:data <IIssue1_a_Io1.ttl> ;
       sht:focus <http://a.example/Issue1>
+    ] ;
+    mf:result <1Adot_pass.val>
+    .
+
+# annotations {
+
+<#1dotAnnotIRIREF_pass> a sht:ValidationTest ;
+    mf:name "1dotAnnotIRIREF_pass" ;
+    rdfs:comment "<S> { <p1> .; <annot> <IRIREF> } on { <s> <p1> <o1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1dotAnnotIRIREF.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1dotAnnotIRIREF_pass.val>
+    .
+
+<#1dotAnnotIRIREF_missing> a sht:ValidationFailure ;
+    mf:name "1dotAnnotIRIREF_missing" ;
+    rdfs:comment "<S> { <p1> .; <annot> <IRIREF> } on { <s> <p2> <o1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1dotAnnotIRIREF.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip2_Io1.ttl> ;
+      sht:focus <http://a.example/s1>
     ]
+    .
+
+<#1dotAnnotSTRING_LITERAL1_pass> a sht:ValidationTest ;
+    mf:name "1dotAnnotSTRING_LITERAL1_pass" ;
+    rdfs:comment "<S> { <p1> .; <annot> 'STRING_LITERAL1' } on { <s> <p1> <o1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1dotAnnotSTRING_LITERAL1.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1dotAnnotSTRING_LITERAL1_pass.val>
     .
 
 <#1dotAnnot3_pass> a sht:ValidationTest ;
     mf:name "1dotAnnot3_pass" ;
-    rdfs:comment "<S> { <p1> . ... } on { <s> <p1> <o1> }" ;
+    rdfs:comment "<S> { <p1> .; <a1> '1'; <a1> '2'; <a1> '3'; } on { <s> <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1dotAnnot3.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <IIssue1_Ip1_Io1.ttl> ;
-      sht:focus <http://a.example/Issue1>
+      sht:data <Is1_Ip1_Io1.ttl> ;
+      sht:focus <http://a.example/s1>
     ] ;
     mf:result <1dotAnnot3_pass.val>
     .
 
-# } annot
+<#1dotAnnot3_missing> a sht:ValidationFailure ;
+    mf:name "1dotAnnot3_missing" ;
+    rdfs:comment "<S> { <p1> .; <a1> '1'; <a1> '2'; <a1> '3'; } on { <s> <p2> <o1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1dotAnnot3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip2_Io1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+# } annotations
+# semantic actions {
 
 <#1dotCode1_pass> a sht:ValidationTest ;
     mf:name "1dotCode1_pass" ;
@@ -367,19 +433,7 @@
     ]
     .
 
-<#1Adot_pass> a sht:ValidationTest ;
-    mf:name "1Adot_pass" ;
-    rdfs:comment "<S> { a . } on { <s> a <o1> }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1Adot.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <IIssue1_a_Io1.ttl> ;
-      sht:focus <http://a.example/Issue1>
-    ] ;
-    mf:result <1Adot_pass.val>
-    .
-
+# } semantic actions
 # cardinality {
 
 <#1card2_fail0> a sht:ValidationFailure ;
@@ -787,6 +841,9 @@
     mf:result <1datatype_pass.val>
     .
 
+# } datatype
+# facets {
+
 <#1datatypeLength_missing> a sht:ValidationFailure ;
     mf:name "1datatypeLength_missing" ;
     rdfs:comment "<S> { <p1> xs:integer LENGTH 5 } on <s> in { <s> <p2> <o1> }" ;
@@ -848,8 +905,6 @@
     ]
     .
 
-# } datatype
-
 <#1literalFractiondigits_pass> a sht:ValidationTest ;
     mf:name "1literalFractiondigits_pass" ;
     rdfs:comment "@@ 1literalFractiondigits_pass" ;
@@ -863,6 +918,8 @@
     mf:result <1literalFractiondigits_pass.val>
     .
 
+# } facets
+# closed {
 <#1dotClosed_pass> a sht:ValidationTest ;
     mf:name "1dotClosed_pass" ;
     rdfs:comment "<S> CLOSED { <p1> . } on { <s> <p1> <o1> }" ;
@@ -899,6 +956,8 @@
       sht:focus <http://a.example/Issue1>
     ]
     .
+
+# } closed
 
 <#1literalPlus_IIssue1_Ip1_La,Io1> a sht:ValidationFailure ;
     mf:name "1literal_extra" ;
