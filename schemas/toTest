@@ -10,6 +10,7 @@
         # semantic actions
   -rw-rw-r--  1 eric www    96 Oct 20 15:51 1dotCode1.shex
   -rw-rw-r--  1 eric www   182 Oct 20 15:51 1dotCode3.shex
+  -rw-rw-r--  1 eric www   103 Oct 20 15:51 1dotCodeWithEscapes1.shex
         # annotations + semantic actions
   -rw-rw-r--  1 eric www   327 Oct 20 15:51 open3groupdotclosecard23Annot3Code2.shex
         # cardinality
@@ -68,7 +69,13 @@
    1val1vExprRefOR3.shex
    1val1vExprOR3.shex
 
-  -rw-rw-r--  1 eric www   103 Oct 20 15:51 1dotCodeWithEscapes1.shex
+  -rw-rw-r--  1 eric www    91 Oct 20 15:51 1dotShapeCode1.shex
+  -rw-rw-r--  1 eric www    98 Oct 20 15:51 1inversedotCode1.shex
+  -rw-rw-r--  1 eric www   158 Oct 20 15:51 open3groupdotcloseCode1.shex
+  -rw-rw-r--  1 eric www    91 Oct 20 15:51 startCode1.shex
+  -rw-rw-r--  1 eric www   120 Oct 20 15:51 startCode1startRef.shex
+  -rw-rw-r--  1 eric www   167 Oct 20 15:51 startCode3.shex
+
   -rw-rw-r--  1 eric www    53 Oct 20 15:51 1dotCommaOr1dotComma.shex
   -rw-rw-r--  1 eric www    81 Oct 20 15:51 1dotExtra1.shex
   -rw-rw-r--  1 eric www   100 Sep 23 09:38 1dotInline1.shex
@@ -86,7 +93,6 @@
   -rw-rw-r--  1 eric www   385 Sep 23 09:38 1dotRefOr3.shex
   -rw-rw-r--  1 eric www   175 Sep 23 09:38 1dotRefSpaceLNex.shex
   -rw-rw-r--  1 eric www   193 Sep 23 09:38 1dotRefSpaceNS1.shex
-  -rw-rw-r--  1 eric www    91 Oct 20 15:51 1dotShapeCode1.shex
   -rw-rw-r--  1 eric www    70 Oct 20 15:51 1dotUnlabeledCode1.shex
   -rw-rw-r--  1 eric www    99 Oct 20 15:51 1dotVirtualShapeCode1.shex
   -rw-rw-r--  1 eric www    61 Oct 20 15:51 1dotVirtual.shex
@@ -95,7 +101,6 @@
   -rw-rw-r--  1 eric www   114 Oct 20 15:51 1integerMininclusiveDOUBLE.shex
   -rw-rw-r--  1 eric www   109 Oct 20 15:51 1integerMininclusiveINTEGER.shex
   -rw-rw-r--  1 eric www   168 Oct 20 15:51 1inversedotAnnot3.shex
-  -rw-rw-r--  1 eric www    98 Oct 20 15:51 1inversedotCode1.shex
   -rw-rw-r--  1 eric www    54 Oct 20 15:51 1inversedot.shex
   -rw-rw-r--  1 eric www    55 Oct 20 15:51 1inversenegateddot.shex
   -rw-rw-r--  1 eric www    65 Oct 20 15:51 1iriLength.shex
@@ -167,13 +172,9 @@ HERE
   -rw-rw-r--  1 eric www    63 Oct 20 15:51 open2dotCommasOr1dotCommaclose.shex
   -rw-rw-r--  1 eric www    60 Oct 20 15:51 open2dotOr1dotclose.shex
   -rw-rw-r--  1 eric www   234 Oct 20 15:51 open3groupdotcloseAnnot3.shex
-  -rw-rw-r--  1 eric www   158 Oct 20 15:51 open3groupdotcloseCode1.shex
   -rw-rw-r--  1 eric www   120 Oct 20 15:51 open3groupdotclose.shex
   -rw-rw-r--  1 eric www    62 Oct 20 15:51 openopen2dotcloseOr1dotclose.shex
   -rw-rw-r--  1 eric www    66 Oct 20 15:51 openopen2dotCommascloseOr1dotCommaclose.shex
-  -rw-rw-r--  1 eric www    91 Oct 20 15:51 startCode1.shex
-  -rw-rw-r--  1 eric www   120 Oct 20 15:51 startCode1startRef.shex
-  -rw-rw-r--  1 eric www   167 Oct 20 15:51 startCode3.shex
   -rw-rw-r--  1 eric www    38 Sep 23 09:38 startEqualSpaceInline.shex
   -rw-rw-r--  1 eric www    37 Sep 23 09:38 startInline.shex
   -rw-rw-r--  1 eric www    82 Oct 20 15:51 startRef.shex
