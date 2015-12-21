@@ -12,12 +12,12 @@
           "action": {
             "schema": "../schemas/1dot.shex",
             "shape": "http://a.example/S1",
-            "data": "IIssue1_Ip0_Io0;Ip1_Io1.ttl",
-            "focus": "http://a.example/Issue1"
+            "data": "Is1_Ip0_Io0;Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
           },
           "extensionResults": [],
           "name": "1dot_over_lower",
-          "comment": "<S> { <p1> . } on { <s> <p1> <o1>; <p2> <o1> }",
+          "comment": "<S> { <p1> . } on { <s> <p0> <o0>; <p1> <o1> }",
           "status": "mf:proposed",
           "result": "1dot_pass.val"
         },
@@ -28,7 +28,7 @@
             "schema": "../schemas/1dot.shex",
             "shape": "http://a.example/S1",
             "data": "empty.ttl",
-            "focus": "http://a.example/Issue1"
+            "focus": "http://a.example/s1"
           },
           "extensionResults": [],
           "name": "1dot_empty",
@@ -51,16 +51,16 @@
           "result": "0_dummy.val"
         },
         {
-          "@id": "#0_over",
+          "@id": "#0_other",
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/0.shex",
             "shape": "http://a.example/S1",
-            "data": "IIssue1_Ip1_Io1.ttl",
-            "focus": "http://a.example/Issue1"
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "0_over",
+          "name": "0_other",
           "comment": "<S> {  } on { <s> <p1> <o1> }",
           "status": "mf:proposed",
           "result": "0_pass.val"
@@ -761,8 +761,8 @@
           "action": {
             "schema": "../schemas/1dotClosed.shex",
             "shape": "http://a.example/S1",
-            "data": "IIssue1_Ip1_Io1.ttl",
-            "focus": "http://a.example/Issue1"
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
           },
           "extensionResults": [],
           "name": "1dotClosed_pass",
@@ -1091,8 +1091,8 @@
           "action": {
             "schema": "../schemas/1dotShapeCode1.shex",
             "shape": "http://a.example/S1",
-            "data": "IIssue1_Ip1_Io1.ttl",
-            "focus": "http://a.example/Issue1"
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
           },
           "extensionResults": [
             {
@@ -1111,8 +1111,8 @@
           "action": {
             "schema": "../schemas/1dotCodeWithEscapes1.shex",
             "shape": "http://a.example/S1",
-            "data": "IIssue1_Ip1_Io1.ttl",
-            "focus": "http://a.example/Issue1"
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
           },
           "extensionResults": [
             {
@@ -1131,13 +1131,13 @@
           "action": {
             "schema": "../schemas/1dotCode3.shex",
             "shape": "http://a.example/S1",
-            "data": "IIssue1_Ip1_Io1.ttl",
-            "focus": "http://a.example/Issue1"
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
           },
           "extensionResults": [
             {
               "extension": "http://shex.io/extensions/Test/",
-              "prints": "http://a.example/Issue1"
+              "prints": "http://a.example/s1"
             },
             {
               "extension": "http://shex.io/extensions/Test/",
@@ -1159,8 +1159,8 @@
           "action": {
             "schema": "../schemas/1dotCode1.shex",
             "shape": "http://a.example/S1",
-            "data": "IIssue1_Ip1_Io1.ttl",
-            "focus": "http://a.example/Issue1"
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
           },
           "extensionResults": [
             {
@@ -1224,8 +1224,8 @@
           "action": {
             "schema": "../schemas/1Adot.shex",
             "shape": "http://a.example/S1",
-            "data": "IIssue1_a_Io1.ttl",
-            "focus": "http://a.example/Issue1"
+            "data": "Is1_a_Io1.ttl",
+            "focus": "http://a.example/s1"
           },
           "extensionResults": [],
           "name": "1Adot_pass",
@@ -1234,17 +1234,32 @@
           "result": "1Adot_pass.val"
         },
         {
+          "@id": "#1inversedot_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1inversedot.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/o1"
+          },
+          "extensionResults": [],
+          "name": "1inversedot_pass",
+          "comment": "<S> { <p1> . } on { <s> <p1> <o1> }",
+          "status": "mf:proposed",
+          "result": "1inversedot_pass.val"
+        },
+        {
           "@id": "#1dot_over_higher",
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/1dot.shex",
             "shape": "http://a.example/S1",
-            "data": "IIssue1_Ip1_Io1;Ip2_Io2.ttl",
-            "focus": "http://a.example/Issue1"
+            "data": "Is1_Ip1_Io1;Ip2_Io2.ttl",
+            "focus": "http://a.example/s1"
           },
           "extensionResults": [],
           "name": "1dot_over_higher",
-          "comment": "<S> { <p1> . } on { <s> <p1> <o1>; <p2> <o1> }",
+          "comment": "<S> { <p1> . } on { <s> <p1> <o1>; <p2> <o2> }",
           "status": "mf:proposed",
           "result": "1dot_pass.val"
         },
@@ -1254,8 +1269,8 @@
           "action": {
             "schema": "../schemas/1dot.shex",
             "shape": "http://a.example/S1",
-            "data": "IIssue1_Ip2_Io1.ttl",
-            "focus": "http://a.example/Issue1"
+            "data": "Is1_Ip2_Io1.ttl",
+            "focus": "http://a.example/s1"
           },
           "extensionResults": [],
           "name": "1dot_missing",
@@ -1268,8 +1283,8 @@
           "action": {
             "schema": "../schemas/1dot.shex",
             "shape": "http://a.example/S1",
-            "data": "IIssue1_Ip1_Io1.ttl",
-            "focus": "http://a.example/Issue1"
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
           },
           "extensionResults": [],
           "name": "1dot_pass",
@@ -2054,12 +2069,12 @@
           "action": {
             "schema": "../schemas/1dotClosed.shex",
             "shape": "http://a.example/S1",
-            "data": "IIssue1_Ip1_Io1;Ip2_Io2.ttl",
-            "focus": "http://a.example/Issue1"
+            "data": "Is1_Ip1_Io1;Ip2_Io2.ttl",
+            "focus": "http://a.example/s1"
           },
           "extensionResults": [],
           "name": "1dotClosed_fail_higher",
-          "comment": "<S> { <p1> . } on { <s> <p1> <o1>; <p2> <o1> }",
+          "comment": "<S> { <p1> . } on { <s> <p1> <o1>; <p2> <o2> }",
           "status": "mf:proposed"
         },
         {
@@ -2068,12 +2083,12 @@
           "action": {
             "schema": "../schemas/1dotClosed.shex",
             "shape": "http://a.example/S1",
-            "data": "IIssue1_Ip0_Io0;Ip1_Io1.ttl",
-            "focus": "http://a.example/Issue1"
+            "data": "Is1_Ip0_Io0;Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
           },
           "extensionResults": [],
           "name": "1dotClosed_fail_lower",
-          "comment": "<S> { <p1> . } on { <s> <p1> <o1>; <p2> <o1> }",
+          "comment": "<S> { <p1> . } on { <s> <p1> <o1>; <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -2306,8 +2321,8 @@
           "action": {
             "schema": "../schemas/1card2.shex",
             "shape": "http://a.example/S1",
-            "data": "IIssue1_Ip1_La.ttl",
-            "focus": "http://a.example/Issue1"
+            "data": "Is1_Ip1_La.ttl",
+            "focus": "http://a.example/s1"
           },
           "extensionResults": [],
           "name": "1card2_fail1",
@@ -2321,7 +2336,7 @@
             "schema": "../schemas/1card2.shex",
             "shape": "http://a.example/S1",
             "data": "empty.ttl",
-            "focus": "http://a.example/Issue1"
+            "focus": "http://a.example/s1"
           },
           "extensionResults": [],
           "name": "1card2_fail0",
@@ -2334,8 +2349,8 @@
           "action": {
             "schema": "../schemas/1dotCode3fail.shex",
             "shape": "http://a.example/S1",
-            "data": "IIssue1_Ip1_Io1.ttl",
-            "focus": "http://a.example/Issue1"
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
           },
           "extensionResults": [],
           "name": "1dotCode3_abort",
