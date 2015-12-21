@@ -23,7 +23,7 @@
       "valueExpr": {
         "type": "ValueClass",
         "nodeKind": "literal",
-        "pattern": "^(ab)*"
+        "pattern": "^(ab)+"
       }
     },
     "http://a.example/vc4": {
@@ -48,11 +48,11 @@
     }
   },
   "shapes": {
-    "http://a.example/EmployeeShape": {
+    "http://a.example/S1": {
       "type": "Shape",
       "expression": {
         "type": "TripleConstraint",
-        "predicate": "http://a.example/p4",
+        "predicate": "http://a.example/p1",
         "valueExpr": {
           "type": "ValueRef",
           "valueExprRef": "http://a.example/vc4"
