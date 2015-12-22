@@ -628,12 +628,12 @@
       sht:data <p1p2p3.ttl> ;
       sht:focus <x>
     ] ;
-# @@    mf:extensionResults (
-# @@      [
-# @@        mf:extension <http://shex.io/extensions/Test/> ;
-# @@        mf:prints "http://a.example/o1"
-# @@      ]
-# @@    ) ;
+    mf:extensionResults (
+      [
+        mf:extension <http://shex.io/extensions/Test/> ;
+        mf:prints "\"group semAct\""
+      ]
+    ) ;
     mf:result <open3groupdotcloseCode1-p1p2p3.val>
     .
 
@@ -649,12 +649,16 @@
       sht:data <p1p2p3X3.ttl> ;
       sht:focus <x>
     ] ;
-# @@    mf:extensionResults (
-# @@      [
-# @@        mf:extension <http://shex.io/extensions/Test/> ;
-# @@        mf:prints "http://a.example/o1"
-# @@      ]
-# @@    ) ;
+    mf:extensionResults (
+      [
+        mf:extension <http://shex.io/extensions/Test/> ;
+        mf:prints "\"group semAct 1\""
+      ]
+      [
+        mf:extension <http://shex.io/extensions/Test/> ;
+        mf:prints "\"group semAct 2\""
+      ]
+    ) ;
     mf:result <open3groupdotclosecard23Annot3Code2-p1p2p3X3.val>
     .
 

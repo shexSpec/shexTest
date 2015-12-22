@@ -1079,7 +1079,16 @@
             "data": "p1p2p3X3.ttl",
             "focus": "x"
           },
-          "extensionResults": [],
+          "extensionResults": [
+            {
+              "extension": "http://shex.io/extensions/Test/",
+              "prints": "\"group semAct 1\""
+            },
+            {
+              "extension": "http://shex.io/extensions/Test/",
+              "prints": "\"group semAct 2\""
+            }
+          ],
           "name": "open3groupdotclosecard23Annot3Code2-p1p2p3X3",
           "comment": "@@ open3groupdotclosecard23Annot3Code2-p1p2p3X3",
           "status": "mf:proposed",
@@ -1094,7 +1103,12 @@
             "data": "p1p2p3.ttl",
             "focus": "x"
           },
-          "extensionResults": [],
+          "extensionResults": [
+            {
+              "extension": "http://shex.io/extensions/Test/",
+              "prints": "\"group semAct\""
+            }
+          ],
           "name": "open3groupdotcloseCode1-p1p2p3",
           "comment": "@@ open3groupdotcloseCode1-p1p2p3",
           "status": "mf:proposed",
