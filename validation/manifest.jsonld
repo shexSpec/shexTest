@@ -7,7 +7,7 @@
       "rdfs:comment": "ShEx validation tests",
       "entries": [
         {
-          "@id": "#1dot_over_lexicallyLater",
+          "@id": "#1dot_pass-others_lexicallyLater",
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/1dot.shex",
@@ -16,13 +16,13 @@
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1dot_over_lexicallyLater",
+          "name": "1dot_pass-others_lexicallyLater",
           "comment": "<S> { <p1> . } on { <s> <p1> <o1>; <p2> <o2> }",
           "status": "mf:proposed",
           "result": "1dot_pass.val"
         },
         {
-          "@id": "#1dot_empty",
+          "@id": "#1dot_fail-empty",
           "@type": "sht:ValidationFailure",
           "action": {
             "schema": "../schemas/1dot.shex",
@@ -31,7 +31,7 @@
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1dot_empty",
+          "name": "1dot_fail-empty",
           "comment": "<S> { <p1> . } on {  }",
           "status": "mf:proposed"
         },
@@ -66,7 +66,7 @@
           "result": "0_pass.val"
         },
         {
-          "@id": "#1dot_pass",
+          "@id": "#1dot_pass-noOthers",
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/1dot.shex",
@@ -75,7 +75,7 @@
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1dot_pass",
+          "name": "1dot_pass-noOthers",
           "comment": "<S> { <p1> . } on { <s> <p1> <o1> }",
           "status": "mf:proposed",
           "result": "1dot_pass.val"
@@ -1298,6 +1298,36 @@
           "result": "1Adot_pass.val"
         },
         {
+          "@id": "#1negateddot_pass-missing",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1negateddot.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip2_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1negateddot_fail-missing",
+          "comment": "<S> { !<p1> . } on { <s> <p2> <o1> }",
+          "status": "mf:proposed",
+          "result": "1negateddot_pass.val"
+        },
+        {
+          "@id": "#1negateddot_pass-empty",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1negateddot.shex",
+            "shape": "http://a.example/S1",
+            "data": "empty.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1negateddot_fail-empty",
+          "comment": "<S> { !<p1> . } on {  }",
+          "status": "mf:proposed",
+          "result": "1negateddot_pass.val"
+        },
+        {
           "@id": "#1inversedot_over_lexicallyLater",
           "@type": "sht:ValidationTest",
           "action": {
@@ -1343,7 +1373,7 @@
           "result": "1inversedot_pass.val"
         },
         {
-          "@id": "#1dot_missing",
+          "@id": "#1dot_fail-missing",
           "@type": "sht:ValidationFailure",
           "action": {
             "schema": "../schemas/1dot.shex",
@@ -1352,12 +1382,12 @@
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1dot_missing",
+          "name": "1dot_fail-missing",
           "comment": "<S> { <p1> . } on { <s> <p2> <o1> }",
           "status": "mf:proposed"
         },
         {
-          "@id": "#1dot_over_lexicallyEarlier",
+          "@id": "#1dot_pass-others_lexicallyEarlier",
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/1dot.shex",
@@ -1366,7 +1396,7 @@
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1dot_over_lexicallyEarlier",
+          "name": "1dot_pass-others_lexicallyEarlier",
           "comment": "<S> { <p1> . } on { <s> <p0> <o0>; <p1> <o1> }",
           "status": "mf:proposed",
           "result": "1dot_pass.val"
@@ -2490,6 +2520,48 @@
           "extensionResults": [],
           "name": "1dotAnnotIRIREF_missing",
           "comment": "<S> { <p1> .; <annot> <IRIREF> } on { <s> <p2> <o1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1negateddot_fail-others_lexicallyLater",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1negateddot.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1;Ip2_Io2.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1negateddot_pass-others_lexicallyLater",
+          "comment": "<S> { !<p1> . } on { <s> <p1> <o1>; <p2> <o2> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1negateddot_fail-others_lexicallyEarlier",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1negateddot.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip0_Io0;Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1negateddot_pass-others_lexicallyEarlier",
+          "comment": "<S> { !<p1> . } on { <s> <p0> <o0>; <p1> <o1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1negateddot_fail-noOthers",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1negateddot.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1negateddot_pass-noOthers",
+          "comment": "<S> { !<p1> . } on { <s> <p1> <o1> }",
           "status": "mf:proposed"
         },
         {

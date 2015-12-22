@@ -12,19 +12,29 @@
     rdfs:comment "ShEx validation tests" ;
     mf:entries
     (
+        #empty
         <#0_empty>
         <#0_other>
-        <#1dot_empty>
-        <#1dot_missing>
-        <#1dot_pass>
-        <#1dot_over_lexicallyEarlier>
-        <#1dot_over_lexicallyLater>
+
+        # triple pattern
+        <#1dot_fail-empty>
+        <#1dot_fail-missing>
+        <#1dot_pass-noOthers>
+        <#1dot_pass-others_lexicallyEarlier>
+        <#1dot_pass-others_lexicallyLater>
         # 1dotComma_... same as 1dot
         <#1inversedot_empty>
         <#1inversedot_missing>
         <#1inversedot_pass>
         <#1inversedot_over_lexicallyEarlier>
         <#1inversedot_over_lexicallyLater>
+
+        <#1negateddot_pass-empty>
+        <#1negateddot_pass-missing>
+        <#1negateddot_fail-noOthers>
+        <#1negateddot_fail-others_lexicallyEarlier>
+        <#1negateddot_fail-others_lexicallyLater>
+
         <#1Adot_pass>
 
         # annotations
@@ -245,6 +255,7 @@
         <#simple-group>
     ) .
 
+# empty {
 <#0_empty> a sht:ValidationTest ;
     mf:name "0_empty" ;
     rdfs:comment "<S> {  } on {  }" ;
@@ -270,9 +281,12 @@
     ] ;
     mf:result <0_pass.val>
     .
+# } empty
 
-<#1dot_empty> a sht:ValidationFailure ;
-    mf:name "1dot_empty" ;
+# triple pattern {
+
+<#1dot_fail-empty> a sht:ValidationFailure ;
+    mf:name "1dot_fail-empty" ;
     rdfs:comment "<S> { <p1> . } on {  }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -283,8 +297,8 @@
     ]
     .
 
-<#1dot_missing> a sht:ValidationFailure ;
-    mf:name "1dot_missing" ;
+<#1dot_fail-missing> a sht:ValidationFailure ;
+    mf:name "1dot_fail-missing" ;
     rdfs:comment "<S> { <p1> . } on { <s> <p2> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -295,8 +309,8 @@
     ]
     .
 
-<#1dot_pass> a sht:ValidationTest ;
-    mf:name "1dot_pass" ;
+<#1dot_pass-noOthers> a sht:ValidationTest ;
+    mf:name "1dot_pass-noOthers" ;
     rdfs:comment "<S> { <p1> . } on { <s> <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -308,8 +322,8 @@
     mf:result <1dot_pass.val>
     .
 
-<#1dot_over_lexicallyEarlier> a sht:ValidationTest ;
-    mf:name "1dot_over_lexicallyEarlier" ;
+<#1dot_pass-others_lexicallyEarlier> a sht:ValidationTest ;
+    mf:name "1dot_pass-others_lexicallyEarlier" ;
     rdfs:comment "<S> { <p1> . } on { <s> <p0> <o0>; <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -321,8 +335,8 @@
     mf:result <1dot_pass.val>
     .
 
-<#1dot_over_lexicallyLater> a sht:ValidationTest ;
-    mf:name "1dot_over_lexicallyLater" ;
+<#1dot_pass-others_lexicallyLater> a sht:ValidationTest ;
+    mf:name "1dot_pass-others_lexicallyLater" ;
     rdfs:comment "<S> { <p1> . } on { <s> <p1> <o1>; <p2> <o2> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -397,6 +411,68 @@
     mf:result <1inversedot_pass.val>
     .
 
+<#1negateddot_pass-empty> a sht:ValidationTest ;
+    mf:name "1negateddot_fail-empty" ;
+    rdfs:comment "<S> { !<p1> . } on {  }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1negateddot.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <empty.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1negateddot_pass.val>
+    .
+
+<#1negateddot_pass-missing> a sht:ValidationTest ;
+    mf:name "1negateddot_fail-missing" ;
+    rdfs:comment "<S> { !<p1> . } on { <s> <p2> <o1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1negateddot.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip2_Io1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1negateddot_pass.val>
+    .
+
+<#1negateddot_fail-noOthers> a sht:ValidationFailure ;
+    mf:name "1negateddot_pass-noOthers" ;
+    rdfs:comment "<S> { !<p1> . } on { <s> <p1> <o1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1negateddot.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1negateddot_fail-others_lexicallyEarlier> a sht:ValidationFailure ;
+    mf:name "1negateddot_pass-others_lexicallyEarlier" ;
+    rdfs:comment "<S> { !<p1> . } on { <s> <p0> <o0>; <p1> <o1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1negateddot.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip0_Io0;Ip1_Io1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1negateddot_fail-others_lexicallyLater> a sht:ValidationFailure ;
+    mf:name "1negateddot_pass-others_lexicallyLater" ;
+    rdfs:comment "<S> { !<p1> . } on { <s> <p1> <o1>; <p2> <o2> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1negateddot.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1;Ip2_Io2.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
 <#1Adot_pass> a sht:ValidationTest ;
     mf:name "1Adot_pass" ;
     rdfs:comment "<S> { a . } on { <s> a <o1> }" ;
@@ -410,6 +486,7 @@
     mf:result <1Adot_pass.val>
     .
 
+# } triple pattern
 # annotations {
 
 <#1dotAnnotIRIREF_pass> a sht:ValidationTest ;
