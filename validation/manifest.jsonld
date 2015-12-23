@@ -1095,6 +1095,46 @@
           "result": "open3groupdotclosecard23Annot3Code2-p1p2p3X3.val"
         },
         {
+          "@id": "#startCode1startRef_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/startCode1startRef.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [
+            {
+              "extension": "http://shex.io/extensions/Test/",
+              "prints": "\"startAct\""
+            }
+          ],
+          "name": "startCode1startRef_pass",
+          "comment": "%<http://shex.io/extensions/Test/>{ print('startAct') %} <S> { <p1> . } on { <s> <p1> <o1> }",
+          "status": "mf:proposed",
+          "result": "startCode1_pass.val"
+        },
+        {
+          "@id": "#startCode1_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/startCode1.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [
+            {
+              "extension": "http://shex.io/extensions/Test/",
+              "prints": "\"startAct\""
+            }
+          ],
+          "name": "startCode1_pass",
+          "comment": "%<http://shex.io/extensions/Test/>{ print('startAct') %} <S> { <p1> . } on { <s> <p1> <o1> }",
+          "status": "mf:proposed",
+          "result": "startCode1_pass.val"
+        },
+        {
           "@id": "#open3groupdotcloseCode1-p1p2p3",
           "@type": "sht:ValidationTest",
           "action": {
@@ -2498,7 +2538,45 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#1dotCode3_abort",
+          "@id": "#startCode1startReffail_abort",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/startCode1startReffail.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [
+            {
+              "extension": "http://shex.io/extensions/Test/",
+              "prints": "\"startAct\""
+            }
+          ],
+          "name": "startCode1startReffail_abort",
+          "comment": "%<http://shex.io/extensions/Test/>{ fail('startAct') %} <S> { <p1> . } on { <s> <p1> <o1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#startCode1fail_abort",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/startCode1fail.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [
+            {
+              "extension": "http://shex.io/extensions/Test/",
+              "prints": "\"startAct\""
+            }
+          ],
+          "name": "startCode1fail_abort",
+          "comment": "%<http://shex.io/extensions/Test/>{ fail('startAct') %} <S> { <p1> . } on { <s> <p1> <o1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1dotCode3fail_abort",
           "@type": "sht:ValidationFailure",
           "action": {
             "schema": "../schemas/1dotCode3fail.shex",
@@ -2507,7 +2585,7 @@
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1dotCode3_abort",
+          "name": "1dotCode3fail_abort",
           "comment": "<S> { <p1> . %<http://shex.io/extensions/Test/>{ print(s) %}%<http://shex.io/extensions/Test/>{ fail(s) %}%<http://shex.io/extensions/Test/>{ print(o) %} } on { <s> <p1> <o1> }",
           "status": "mf:proposed"
         },
