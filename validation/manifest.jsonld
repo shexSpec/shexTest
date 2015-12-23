@@ -7,17 +7,17 @@
       "rdfs:comment": "ShEx validation tests",
       "entries": [
         {
-          "@id": "#1dot_pass-others_lexicallyEarlier",
+          "@id": "#1dot_pass-noOthers",
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/1dot.shex",
             "shape": "http://a.example/S1",
-            "data": "Is1_Ip0_Io0;Ip1_Io1.ttl",
+            "data": "Is1_Ip1_Io1.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1dot_pass-others_lexicallyEarlier",
-          "comment": "<S> { <p1> . } on { <s> <p0> <o0>; <p1> <o1> }",
+          "name": "1dot_pass-noOthers",
+          "comment": "<S> { <p1> . } on { <s> <p1> <o1> }",
           "status": "mf:proposed",
           "result": "1dot_pass.val"
         },
@@ -66,19 +66,19 @@
           "result": "0_pass.val"
         },
         {
-          "@id": "#greedy",
+          "@id": "#skipped",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../validation/greedy.shex",
+            "schema": "../validation/skipped.shex",
             "shape": "S",
-            "data": "greedy.ttl",
+            "data": "skipped.ttl",
             "focus": "x"
           },
           "extensionResults": [],
-          "name": "greedy",
-          "comment": "@@ greedy",
+          "name": "skipped",
+          "comment": "@@ skipped",
           "status": "mf:proposed",
-          "result": "greedy.val"
+          "result": "skipped.val"
         },
         {
           "@id": "#iovka",
@@ -341,7 +341,7 @@
           "action": {
             "schema": "../schemas/1val1INTEGER.shex",
             "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_0.ttl",
+            "data": "Is1_Ip1_INT0.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
@@ -386,7 +386,7 @@
           "action": {
             "schema": "../schemas/1val1DOUBLElowercase.shex",
             "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_L0e0.ttl",
+            "data": "Is1_Ip1_DBL0e0.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
@@ -401,7 +401,7 @@
           "action": {
             "schema": "../schemas/1val1DOUBLElowercase.shex",
             "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_L0e0.ttl",
+            "data": "Is1_Ip1_DBL0e0.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
@@ -416,7 +416,7 @@
           "action": {
             "schema": "../schemas/1val1DOUBLE.shex",
             "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_L0e0.ttl",
+            "data": "Is1_Ip1_DBL0e0.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
@@ -431,7 +431,7 @@
           "action": {
             "schema": "../schemas/1val1DOUBLE.shex",
             "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_L0e0.ttl",
+            "data": "Is1_Ip1_DBL0e0.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
@@ -776,12 +776,12 @@
           "action": {
             "schema": "../schemas/1literalFractiondigits.shex",
             "shape": "http://a.example/S1",
-            "data": "1literalFractiondigits_pass.ttl",
+            "data": "Is1_Ip1_DEC1_23456.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
           "name": "1literalFractiondigits_pass",
-          "comment": "@@ 1literalFractiondigits_pass",
+          "comment": "<S1> { <p1> LITERAL FRACTIONDIGITS 5 } / { <s1> <p1> 1.23456 }",
           "status": "mf:proposed",
           "result": "1literalFractiondigits_pass.val"
         },
@@ -1486,6 +1486,21 @@
           "result": "1dot_pass.val"
         },
         {
+          "@id": "#1dot_pass-others_lexicallyEarlier",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1dot.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip0_Io0;Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1dot_pass-others_lexicallyEarlier",
+          "comment": "<S> { <p1> . } on { <s> <p0> <o0>; <p1> <o1> }",
+          "status": "mf:proposed",
+          "result": "1dot_pass.val"
+        },
+        {
           "@id": "#1dot_fail-missing",
           "@type": "sht:ValidationFailure",
           "action": {
@@ -1500,19 +1515,18 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#1dot_pass-noOthers",
-          "@type": "sht:ValidationTest",
+          "@id": "#1inversedot_fail-empty",
+          "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/1dot.shex",
+            "schema": "../schemas/1inversedot.shex",
             "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_Io1.ttl",
-            "focus": "http://a.example/s1"
+            "data": "empty.ttl",
+            "focus": "http://a.example/o1"
           },
           "extensionResults": [],
-          "name": "1dot_pass-noOthers",
-          "comment": "<S> { <p1> . } on { <s> <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "1dot_pass.val"
+          "name": "1inversedot_fail-empty",
+          "comment": "<S> { <p1> . } on {  }",
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1vExprOR3_passvc1vc2vc3",
@@ -1528,20 +1542,6 @@
           "comment": "<S> { <p1> ~'^ab' OR ~'cd' OR ~'ef$' } on { <s1> <p1> 'abcdef' }",
           "status": "mf:proposed",
           "result": "1val1vExprOR3_passvr1vr2vr3.val"
-        },
-        {
-          "@id": "#1inversedot_fail-empty",
-          "@type": "sht:ValidationFailure",
-          "action": {
-            "schema": "../schemas/1inversedot.shex",
-            "shape": "http://a.example/S1",
-            "data": "empty.ttl",
-            "focus": "http://a.example/o1"
-          },
-          "extensionResults": [],
-          "name": "1inversedot_fail-empty",
-          "comment": "<S> { <p1> . } on {  }",
-          "status": "mf:proposed"
         },
         {
           "@id": "#1val1vExprOR3_fail",
@@ -1829,7 +1829,7 @@
           "action": {
             "schema": "../schemas/1val1INTEGER.shex",
             "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_00.ttl",
+            "data": "Is1_Ip1_INT00.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
@@ -1899,7 +1899,7 @@
           "action": {
             "schema": "../schemas/1val1DOUBLElowercase.shex",
             "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_L0_0e0.ttl",
+            "data": "Is1_Ip1_DBL0_0e0.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
@@ -1913,7 +1913,7 @@
           "action": {
             "schema": "../schemas/1val1DOUBLE.shex",
             "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_L0_0e0.ttl",
+            "data": "Is1_Ip1_DBL0_0e0.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
@@ -2314,7 +2314,35 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#1datatypeLength_long",
+          "@id": "#1literalFractiondigits_fail-long",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1literalFractiondigits.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_DEC1_234567.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalFractiondigits_pass",
+          "comment": "<S1> { <p1> LITERAL FRACTIONDIGITS 5 } / { <s1> <p1> 1.234567 }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1literalFractiondigits_fail-short",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1literalFractiondigits.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_DEC1_2345.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalFractiondigits_pass",
+          "comment": "<S1> { <p1> LITERAL FRACTIONDIGITS 5 } / { <s1> <p1> 1.2345 }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1datatypeLength_fail-long",
           "@type": "sht:ValidationFailure",
           "action": {
             "schema": "../schemas/1datatypeLength.shex",
@@ -2323,12 +2351,12 @@
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1datatypeLength_long",
+          "name": "1datatypeLength_fail-long",
           "comment": "<S> { <p1> xs:integer LENGTH 5 } on <s> in { <s> <p1> 123456 }",
           "status": "mf:proposed"
         },
         {
-          "@id": "#1datatypeLength_short",
+          "@id": "#1datatypeLength_fail-short",
           "@type": "sht:ValidationFailure",
           "action": {
             "schema": "../schemas/1datatypeLength.shex",
@@ -2337,12 +2365,12 @@
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1datatypeLength_short",
+          "name": "1datatypeLength_fail-short",
           "comment": "<S> { <p1> xs:integer LENGTH 5 } on <s> in { <s> <p1> 1234 }",
           "status": "mf:proposed"
         },
         {
-          "@id": "#1datatypeLength_wrongDatatype",
+          "@id": "#1datatypeLength_fail-wrongDatatype",
           "@type": "sht:ValidationFailure",
           "action": {
             "schema": "../schemas/1datatypeLength.shex",
@@ -2351,12 +2379,12 @@
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1datatypeLength_wrongDatatype",
+          "name": "1datatypeLength_fail-wrongDatatype",
           "comment": "<S> { <p1> xs:integer LENGTH 5 } on <s> in { <s> <p1> 1.234 }",
           "status": "mf:proposed"
         },
         {
-          "@id": "#1datatypeLength_missing",
+          "@id": "#1datatypeLength_fail-missing",
           "@type": "sht:ValidationFailure",
           "action": {
             "schema": "../schemas/1datatypeLength.shex",
@@ -2365,7 +2393,7 @@
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1datatypeLength_missing",
+          "name": "1datatypeLength_fail-missing",
           "comment": "<S> { <p1> xs:integer LENGTH 5 } on <s> in { <s> <p2> <o1> }",
           "status": "mf:proposed"
         },
@@ -2772,19 +2800,19 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#skipped",
+          "@id": "#greedy",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../validation/skipped.shex",
+            "schema": "../validation/greedy.shex",
             "shape": "S",
-            "data": "skipped.ttl",
+            "data": "greedy.ttl",
             "focus": "x"
           },
           "extensionResults": [],
-          "name": "skipped",
-          "comment": "@@ skipped",
+          "name": "greedy",
+          "comment": "@@ greedy",
           "status": "mf:proposed",
-          "result": "skipped.val"
+          "result": "greedy.val"
         },
         {
           "@id": "#repeated-group",

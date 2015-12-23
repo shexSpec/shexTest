@@ -106,12 +106,15 @@
         <#1datatype_pass>
 
         # facets
-        <#1datatypeLength_missing>
-        <#1datatypeLength_wrongDatatype>
-        <#1datatypeLength_short>
+        <#1datatypeLength_fail-missing>
+        <#1datatypeLength_fail-wrongDatatype>
+        <#1datatypeLength_fail-short>
         <#1datatypeLength_pass>
-        <#1datatypeLength_long>
+        <#1datatypeLength_fail-long>
+        <#1literalFractiondigits_fail-short>
         <#1literalFractiondigits_pass>
+        <#1literalFractiondigits_fail-long>
+        # <#1floatMininclusiveINTEGER_pass>
 
         # closed
         <#1dotClosed_pass>
@@ -1335,8 +1338,8 @@
 # } datatype
 # facets {
 
-<#1datatypeLength_missing> a sht:ValidationFailure ;
-    mf:name "1datatypeLength_missing" ;
+<#1datatypeLength_fail-missing> a sht:ValidationFailure ;
+    mf:name "1datatypeLength_fail-missing" ;
     rdfs:comment "<S> { <p1> xs:integer LENGTH 5 } on <s> in { <s> <p2> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -1347,8 +1350,8 @@
     ]
     .
 
-<#1datatypeLength_wrongDatatype> a sht:ValidationFailure ;
-    mf:name "1datatypeLength_wrongDatatype" ;
+<#1datatypeLength_fail-wrongDatatype> a sht:ValidationFailure ;
+    mf:name "1datatypeLength_fail-wrongDatatype" ;
     rdfs:comment "<S> { <p1> xs:integer LENGTH 5 } on <s> in { <s> <p1> 1.234 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -1359,8 +1362,8 @@
     ]
     .
 
-<#1datatypeLength_short> a sht:ValidationFailure ;
-    mf:name "1datatypeLength_short" ;
+<#1datatypeLength_fail-short> a sht:ValidationFailure ;
+    mf:name "1datatypeLength_fail-short" ;
     rdfs:comment "<S> { <p1> xs:integer LENGTH 5 } on <s> in { <s> <p1> 1234 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -1384,8 +1387,8 @@
     mf:result <1datatypeLength_pass.val>
     .
 
-<#1datatypeLength_long> a sht:ValidationFailure ;
-    mf:name "1datatypeLength_long" ;
+<#1datatypeLength_fail-long> a sht:ValidationFailure ;
+    mf:name "1datatypeLength_fail-long" ;
     rdfs:comment "<S> { <p1> xs:integer LENGTH 5 } on <s> in { <s> <p1> 123456 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -1396,17 +1399,41 @@
     ]
     .
 
-<#1literalFractiondigits_pass> a sht:ValidationTest ;
+<#1literalFractiondigits_fail-short> a sht:ValidationFailure ;
     mf:name "1literalFractiondigits_pass" ;
-    rdfs:comment "@@ 1literalFractiondigits_pass" ;
+    rdfs:comment "<S1> { <p1> LITERAL FRACTIONDIGITS 5 } / { <s1> <p1> 1.2345 }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1literalFractiondigits.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <1literalFractiondigits_pass.ttl> ;
+      sht:data <Is1_Ip1_DEC1_2345.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1literalFractiondigits_pass> a sht:ValidationTest ;
+    mf:name "1literalFractiondigits_pass" ;
+    rdfs:comment "<S1> { <p1> LITERAL FRACTIONDIGITS 5 } / { <s1> <p1> 1.23456 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalFractiondigits.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC1_23456.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
     mf:result <1literalFractiondigits_pass.val>
+    .
+
+<#1literalFractiondigits_fail-long> a sht:ValidationFailure ;
+    mf:name "1literalFractiondigits_pass" ;
+    rdfs:comment "<S1> { <p1> LITERAL FRACTIONDIGITS 5 } / { <s1> <p1> 1.234567 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalFractiondigits.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC1_234567.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
     .
 
 # } facets
@@ -2059,7 +2086,7 @@
     mf:action [
       sht:schema <../schemas/1val1DOUBLE.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_L0e0.ttl> ;
+      sht:data <Is1_Ip1_DBL0e0.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
     mf:result <1val1DOUBLE_pass.val>
@@ -2072,7 +2099,7 @@
     mf:action [
       sht:schema <../schemas/1val1DOUBLE.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_L0e0.ttl> ;
+      sht:data <Is1_Ip1_DBL0e0.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
     mf:result <1val1DOUBLE_pass.val>
@@ -2085,7 +2112,7 @@
     mf:action [
       sht:schema <../schemas/1val1DOUBLE.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_L0_0e0.ttl> ;
+      sht:data <Is1_Ip1_DBL0_0e0.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
     .
@@ -2097,7 +2124,7 @@
     mf:action [
       sht:schema <../schemas/1val1DOUBLElowercase.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_L0e0.ttl> ;
+      sht:data <Is1_Ip1_DBL0e0.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
     mf:result <1val1DOUBLE_pass.val>
@@ -2110,7 +2137,7 @@
     mf:action [
       sht:schema <../schemas/1val1DOUBLElowercase.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_L0e0.ttl> ;
+      sht:data <Is1_Ip1_DBL0e0.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
     mf:result <1val1DOUBLE_pass.val>
@@ -2123,7 +2150,7 @@
     mf:action [
       sht:schema <../schemas/1val1DOUBLElowercase.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_L0_0e0.ttl> ;
+      sht:data <Is1_Ip1_DBL0_0e0.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
     .
@@ -2212,7 +2239,7 @@
     mf:action [
       sht:schema <../schemas/1val1INTEGER.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_0.ttl> ;
+      sht:data <Is1_Ip1_INT0.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
     mf:result <1val1INTEGER_pass.val>
@@ -2237,7 +2264,7 @@
     mf:action [
       sht:schema <../schemas/1val1INTEGER.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_00.ttl> ;
+      sht:data <Is1_Ip1_INT00.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
     .
