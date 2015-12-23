@@ -10,6 +10,8 @@
     ]
   },
   "startActs": [
-    { "type": "SemAct", "name": "http://shex.io/extensions/Test/", "code": " print(\"startAct\") " }
+    { "type": "SemAct", "name": "http://shex.io/extensions/Test/", "code": " print(\"startAct 1\") " },
+    { "type": "SemAct", "name": "http://shex.io/extensions/Test/", "code": " print(\"startAct 2\") " },
+    { "type": "SemAct", "name": "http://shex.io/extensions/Test/", "code": " print(\"startAct 3\") " }
   ]
 }

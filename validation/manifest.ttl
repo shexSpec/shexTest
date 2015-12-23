@@ -62,6 +62,8 @@
         <#startCode1fail_abort>
         <#startCode1startRef_pass>
         <#startCode1startReffail_abort>
+        <#startCode3_pass>
+        <#startCode3fail_abort>
 
         # annotations + semantic actions
         <#open3groupdotclosecard23Annot3Code2-p1p2p3X3>
@@ -652,7 +654,7 @@
 
 <#1dotCode1_pass> a sht:ValidationTest ;
     mf:name "1dotCode1_pass" ;
-    rdfs:comment "<S> { <p1> . %<http://shex.io/extensions/Test/>{ print(o) %} } on { <s> <p1> <o1> }" ;
+    rdfs:comment "<S> { <p1> . %<Test>{ print(o) %} } on { <s> <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1dotCode1.shex> ;
@@ -671,7 +673,7 @@
 
 <#1inversedotCode1_pass> a sht:ValidationTest ;
     mf:name "1inversedotCode1_pass" ;
-    rdfs:comment "<S> { <p1> . %<http://shex.io/extensions/Test/>{ print(o) %} } on { <s> <p1> <o1> }" ;
+    rdfs:comment "<S> { <p1> . %<Test>{ print(o) %} } on { <s> <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1inversedotCode1.shex> ;
@@ -690,7 +692,7 @@
 
 <#1dotCode3_pass> a sht:ValidationTest ;
     mf:name "1dotCode3_pass" ;
-    rdfs:comment "<S> { <p1> . %<http://shex.io/extensions/Test/>{ print(s) %} %<http://shex.io/extensions/Test/>{ print(p) %} %<http://shex.io/extensions/Test/>{ print(o) %} } on { <s> <p1> <o1> }" ;
+    rdfs:comment "<S> { <p1> . %<Test>{ print(s) %} %<Test>{ print(p) %} %<Test>{ print(o) %} } on { <s> <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1dotCode3.shex> ;
@@ -717,7 +719,7 @@
 
 <#1dotCode3fail_abort> a sht:ValidationFailure ;
     mf:name "1dotCode3fail_abort" ;
-    rdfs:comment "<S> { <p1> . %<http://shex.io/extensions/Test/>{ print(s) %}%<http://shex.io/extensions/Test/>{ fail(s) %}%<http://shex.io/extensions/Test/>{ print(o) %} } on { <s> <p1> <o1> }" ;
+    rdfs:comment "<S> { <p1> . %<Test>{ print(s) %}%<Test>{ fail(s) %}%<Test>{ print(o) %} } on { <s> <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1dotCode3fail.shex> ;
@@ -729,7 +731,7 @@
 
 <#1dotCodeWithEscapes1_pass> a sht:ValidationTest ;
     mf:name "1dotCodeWithEscapes1_pass" ;
-    rdfs:comment "<S> { <p1> . %<http://shex.io/extensions/Test/>{ print(o) %} } on { <s> <p1> <o1> }" ;
+    rdfs:comment "<S> { <p1> . %<Test>{ print(o) %} } on { <s> <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1dotCodeWithEscapes1.shex> ;
@@ -748,7 +750,7 @@
 
 <#1dotShapeCode1_pass> a sht:ValidationTest ;
     mf:name "1dotShapeCode1_pass" ;
-    rdfs:comment "<S> { <p1> . } %<http://shex.io/extensions/Test/>{ print(o) %} on { <s> <p1> <o1> }" ;
+    rdfs:comment "<S> { <p1> . } %<Test>{ print(o) %} on { <s> <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1dotShapeCode1.shex> ;
@@ -786,7 +788,7 @@
 
 <#startCode1_pass> a sht:ValidationTest ;
     mf:name "startCode1_pass" ;
-    rdfs:comment "%<http://shex.io/extensions/Test/>{ print('startAct') %} <S> { <p1> . } on { <s> <p1> <o1> }" ;
+    rdfs:comment "%<Test>{print('startAct')%} <S> { <p1> . } on { <s> <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/startCode1.shex> ;
@@ -805,7 +807,7 @@
 
 <#startCode1fail_abort> a sht:ValidationFailure ;
     mf:name "startCode1fail_abort" ;
-    rdfs:comment "%<http://shex.io/extensions/Test/>{ fail('startAct') %} <S> { <p1> . } on { <s> <p1> <o1> }" ;
+    rdfs:comment "%<Test>{ fail('startAct') %} <S> { <p1> . } on { <s> <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/startCode1fail.shex> ;
@@ -823,7 +825,7 @@
 
 <#startCode1startRef_pass> a sht:ValidationTest ;
     mf:name "startCode1startRef_pass" ;
-    rdfs:comment "%<http://shex.io/extensions/Test/>{ print('startAct') %} <S> { <p1> . } on { <s> <p1> <o1> }" ;
+    rdfs:comment "%<Test>{print('startAct')%} <S> { <p1> . } on { <s> <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/startCode1startRef.shex> ;
@@ -842,7 +844,7 @@
 
 <#startCode1startReffail_abort> a sht:ValidationFailure ;
     mf:name "startCode1startReffail_abort" ;
-    rdfs:comment "%<http://shex.io/extensions/Test/>{ fail('startAct') %} <S> { <p1> . } on { <s> <p1> <o1> }" ;
+    rdfs:comment "%<Test>{ fail('startAct') %} <S> { <p1> . } on { <s> <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/startCode1startReffail.shex> ;
@@ -856,6 +858,45 @@
         mf:prints "\"startAct\""
       ]
     )
+    .
+
+<#startCode3_pass> a sht:ValidationTest ;
+    mf:name "startCode3_pass" ;
+    rdfs:comment "%<Test>{print('startAct 1')%} %<Test>{print('startAct 2')%} %<Test>{print('startAct 3')%} <S> { <p1> . } on { <s> <p1> <o1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/startCode3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <startCode3_pass.val> ;
+    mf:extensionResults (
+      [
+        mf:extension <http://shex.io/extensions/Test/> ;
+        mf:prints "\"startAct 1\""
+      ]
+      [
+        mf:extension <http://shex.io/extensions/Test/> ;
+        mf:prints "\"startAct 2\""
+      ]
+      [
+        mf:extension <http://shex.io/extensions/Test/> ;
+        mf:prints "\"startAct 3\""
+      ]
+    )
+    .
+
+<#startCode3fail_abort> a sht:ValidationFailure ;
+    mf:name "startCode3fail_abort" ;
+    rdfs:comment "%<Test>{print('startAct 1')%} %<Test>{ fail('startAct 2') %} %<Test>{print('startAct 3')%} <S> { <p1> . } on { <s> <p1> <o1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/startCode3fail.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
     .
 
 # } semantic actions
