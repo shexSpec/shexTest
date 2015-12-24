@@ -114,7 +114,10 @@
         <#1literalFractiondigits_fail-short>
         <#1literalFractiondigits_pass>
         <#1literalFractiondigits_fail-long>
-        # <#1floatMininclusiveINTEGER_pass>
+        <#1floatMininclusiveINTEGER_fail-low>
+        <#1floatMininclusiveINTEGER_pass-equal>
+        <#1floatMininclusiveINTEGER_pass-equalTrailing>
+        <#1floatMininclusiveINTEGER_pass-high>
 
         # closed
         <#1dotClosed_pass>
@@ -1400,7 +1403,7 @@
     .
 
 <#1literalFractiondigits_fail-short> a sht:ValidationFailure ;
-    mf:name "1literalFractiondigits_pass" ;
+    mf:name "1literalFractiondigits_fail-short" ;
     rdfs:comment "<S1> { <p1> LITERAL FRACTIONDIGITS 5 } / { <s1> <p1> 1.2345 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -1425,7 +1428,7 @@
     .
 
 <#1literalFractiondigits_fail-long> a sht:ValidationFailure ;
-    mf:name "1literalFractiondigits_pass" ;
+    mf:name "1literalFractiondigits_fail-long" ;
     rdfs:comment "<S1> { <p1> LITERAL FRACTIONDIGITS 5 } / { <s1> <p1> 1.234567 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -1434,6 +1437,57 @@
       sht:data <Is1_Ip1_DEC1_234567.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
+    .
+
+<#1floatMininclusiveINTEGER_fail-low> a sht:ValidationFailure ;
+    mf:name "1floatMininclusiveINTEGER_fail-low" ;
+    rdfs:comment "<S1> { <p1> xsd:float MININCLUSIVE 5 } / { <s1> <p1> '4.9'^^xsd:float }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1floatMininclusiveINTEGER.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_FLT4_9.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1floatMininclusiveINTEGER_pass-equal> a sht:ValidationTest ;
+    mf:name "1floatMininclusiveINTEGER_pass-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:float MININCLUSIVE 5 } / { <s1> <p1> '5'^^xsd:float }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1floatMininclusiveINTEGER.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_FLT5.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1floatMininclusiveINTEGER_pass-equal.val>
+    .
+
+<#1floatMininclusiveINTEGER_pass-equalTrailing> a sht:ValidationTest ;
+    mf:name "1floatMininclusiveINTEGER_pass-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:float MININCLUSIVE 5 } / { <s1> <p1> '5.0'^^xsd:float }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1floatMininclusiveINTEGER.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_FLT5_0.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1floatMininclusiveINTEGER_pass-equalTrailing.val>
+    .
+
+<#1floatMininclusiveINTEGER_pass-high> a sht:ValidationTest ;
+    mf:name "1floatMininclusiveINTEGER_pass-high" ;
+    rdfs:comment "<S1> { <p1> xsd:float MININCLUSIVE 5 } / { <s1> <p1> '5.1'^^xsd:float }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1floatMininclusiveINTEGER.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_FLT5_1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1floatMininclusiveINTEGER_pass-high.val>
     .
 
 # } facets

@@ -42,6 +42,8 @@
         # facets
   -rw-rw-r--  1 eric www   103 Oct 20 15:51 1datatypeLength.shex
   -rw-rw-r--  1 eric www    76 Oct 20 15:51 1literalFractiondigits.shex
+  -rw-rw-r--  1 eric www   107 Oct 20 15:51 1floatMininclusiveINTEGER.shex
+
         # closed
   -rw-rw-r--  1 eric www    60 Oct 20 15:51 1dotClosed.shex
         # node kinds
@@ -85,10 +87,39 @@
    1val1vExprRefOR3.shex
    1val1vExprOR3.shex
 
+  -rw-rw-r--  1 eric www   111 Oct 20 15:51 1integerMininclusiveDECIMAL.shex
+  -rw-rw-r--  1 eric www   114 Oct 20 15:51 1integerMininclusiveDOUBLE.shex
+  -rw-rw-r--  1 eric www   109 Oct 20 15:51 1integerMininclusiveINTEGER.shex
+
+  -rw-rw-r--  1 eric www    65 Oct 20 15:51 1iriLength.shex
+  -rw-rw-r--  1 eric www   172 Sep 23 09:38 1iriRefLength1.shex
+  -rw-rw-r--  1 eric www    68 Oct 20 15:51 1iriMinlength.shex
+  -rw-rw-r--  1 eric www    68 Oct 20 15:51 1iriMaxlength.shex
+  -rw-rw-r--  1 eric www    70 Oct 20 15:51 1iriPattern.shex
+
+  -rw-rw-r--  1 eric www    68 Oct 20 15:51 1literalLength.shex
+  -rw-rw-r--  1 eric www    71 Oct 20 15:51 1literalMinlength.shex
+  -rw-rw-r--  1 eric www    71 Oct 20 15:51 1literalMaxlength.shex
+  -rw-rw-r--  1 eric www    74 Oct 20 15:51 1literalMininclusive.shex
+  -rw-rw-r--  1 eric www    74 Oct 20 15:51 1literalMinexclusive.shex
+  -rw-rw-r--  1 eric www    74 Oct 20 15:51 1literalMaxinclusive.shex
+  -rw-rw-r--  1 eric www    74 Oct 20 15:51 1literalMaxexclusive.shex
+  -rw-rw-r--  1 eric www    74 Oct 20 15:51 1literalPattern.shex
+!  -rw-rw-r--  1 eric www    73 Oct 20 15:51 1literalTotaldigits.shex
+
+  -rw-rw-r--  1 eric www    72 Oct 20 15:51 1nonliteralLength.shex
+  -rw-rw-r--  1 eric www    75 Oct 20 15:51 1nonliteralMaxlength.shex
+  -rw-rw-r--  1 eric www    75 Oct 20 15:51 1nonliteralMinlength.shex
+  -rw-rw-r--  1 eric www    77 Oct 20 15:51 1nonliteralPattern.shex
+
+  -rw-rw-r--  1 eric www    67 Oct 20 15:51 1bnodeLength.shex
+  -rw-rw-r--  1 eric www    70 Oct 20 15:51 1bnodeMaxlength.shex
+  -rw-rw-r--  1 eric www    70 Oct 20 15:51 1bnodeMinlength.shex
+  -rw-rw-r--  1 eric www    72 Oct 20 15:51 1bnodePattern.shex
+
   -rw-rw-r--  1 eric www    53 Oct 20 15:51 1dotCommaOr1dotComma.shex
   -rw-rw-r--  1 eric www    81 Oct 20 15:51 1dotExtra1.shex
   -rw-rw-r--  1 eric www   100 Sep 23 09:38 1dotInline1.shex
-
   -rw-rw-r--  1 eric www    84 Oct 20 15:51 1dotLNdefault.shex
   -rw-rw-r--  1 eric www   109 Oct 20 15:51 1dotLNexComment.shex
   -rw-rw-r--  1 eric www    94 Oct 20 15:51 1dotLNex-HYPHEN_MINUS.shex
@@ -105,34 +136,12 @@
   -rw-rw-r--  1 eric www    70 Oct 20 15:51 1dotUnlabeledCode1.shex
   -rw-rw-r--  1 eric www    99 Oct 20 15:51 1dotVirtualShapeCode1.shex
   -rw-rw-r--  1 eric www    61 Oct 20 15:51 1dotVirtual.shex
-  -rw-rw-r--  1 eric www   107 Oct 20 15:51 1floatMininclusiveINTEGER.shex
-  -rw-rw-r--  1 eric www   111 Oct 20 15:51 1integerMininclusiveDECIMAL.shex
-  -rw-rw-r--  1 eric www   114 Oct 20 15:51 1integerMininclusiveDOUBLE.shex
-  -rw-rw-r--  1 eric www   109 Oct 20 15:51 1integerMininclusiveINTEGER.shex
-  -rw-rw-r--  1 eric www    65 Oct 20 15:51 1iriLength.shex
-  -rw-rw-r--  1 eric www    68 Oct 20 15:51 1iriMaxlength.shex
-  -rw-rw-r--  1 eric www    68 Oct 20 15:51 1iriMinlength.shex
-  -rw-rw-r--  1 eric www    70 Oct 20 15:51 1iriPattern.shex
   -rw-rw-r--  1 eric www   162 Sep 23 09:38 1iriRef1.shex
-  -rw-rw-r--  1 eric www   172 Sep 23 09:38 1iriRefLength1.shex
   -rw-rw-r--  1 eric www   169 Oct 20 15:51 1IRI_with_all_punctuationdot.shex
   -rw-rw-r--  1 eric www   108 Oct 20 15:51 1IRI_with_UCHAR.1dot.shex
-  -rw-rw-r--  1 eric www    68 Oct 20 15:51 1literalLength.shex
-  -rw-rw-r--  1 eric www    74 Oct 20 15:51 1literalMaxexclusive.shex
-  -rw-rw-r--  1 eric www    74 Oct 20 15:51 1literalMaxinclusive.shex
-  -rw-rw-r--  1 eric www    71 Oct 20 15:51 1literalMaxlength.shex
-  -rw-rw-r--  1 eric www    74 Oct 20 15:51 1literalMinexclusive.shex
-  -rw-rw-r--  1 eric www    74 Oct 20 15:51 1literalMininclusive.shex
-  -rw-rw-r--  1 eric www    71 Oct 20 15:51 1literalMinlength.shex
-  -rw-rw-r--  1 eric www    74 Oct 20 15:51 1literalPattern.shex
   -rw-rw-r--  1 eric www   103 Oct 20 15:51 1val1IRIREFExtra1.shex
   -rw-rw-r--  1 eric www   125 Oct 20 15:51 1val2IRIREFExtra1.shex
 !  -rw-rw-r--  1 eric www    59 Oct 20 15:51 1literal.shex
-!  -rw-rw-r--  1 eric www    73 Oct 20 15:51 1literalTotaldigits.shex
-  -rw-rw-r--  1 eric www    72 Oct 20 15:51 1nonliteralLength.shex
-  -rw-rw-r--  1 eric www    75 Oct 20 15:51 1nonliteralMaxlength.shex
-  -rw-rw-r--  1 eric www    75 Oct 20 15:51 1nonliteralMinlength.shex
-  -rw-rw-r--  1 eric www    77 Oct 20 15:51 1nonliteralPattern.shex
   -rw-rw-r--  1 eric www   165 Sep 23 09:38 1refbnode1.shex
   -rw-rw-r--  1 eric www   156 Sep 23 09:38 1refbnode_with_leading_digit1.shex
   -rw-rw-r--  1 eric www   161 Sep 23 09:38 1refbnode_with_leading_underscore1.shex
@@ -191,8 +200,4 @@ HERE
   -rw-rw-r--  1 eric www   352 Sep 23 09:38 1dot3Inherit.shex
   -rw-rw-r--  1 eric www   208 Sep 23 09:38 1dot3InheritLN.shex
 
-  -rw-rw-r--  1 eric www    67 Oct 20 15:51 1bnodeLength.shex
-  -rw-rw-r--  1 eric www    70 Oct 20 15:51 1bnodeMaxlength.shex
-  -rw-rw-r--  1 eric www    70 Oct 20 15:51 1bnodeMinlength.shex
-  -rw-rw-r--  1 eric www    72 Oct 20 15:51 1bnodePattern.shex
 
