@@ -3,10 +3,22 @@
 // Parse arguments
 var args = process.argv.slice(2);
 if (args > 1 || args.indexOf("-help") !== -1 || args.indexOf("--help") !== -1) {
-  console.error('usage: genJSON manifest.ttl [-w] > manifest.jsonld');
+  console.error('usage: genJSON manifest.ttl [-o outfile] [-w|-e] > manifest.jsonld');
   return process.exit(1);
 }
-var WARN = args[1] === "-w";
+var OUTFILE = null;
+if (args[1] === "-o") {
+  OUTFILE = args[2];
+  args.splice(1, 2); // git rid of -o outfile
+}
+var errors = 0;
+var WARN = args[1] === "-w" ? "warn" : args[1] === "-e" ? "err" : null;
+function report (msg) {
+  console.warn(msg);
+  if (WARN === "err") {
+    ++errors;
+  }
+}
 
 var fs = require('fs');
 var path = require("path");
@@ -67,6 +79,7 @@ function genText () {
   var manifest = store.find(null, "rdf:type", "mf:Manifest")[0].subject;
   var manifestComment = util.getLiteralValue(store.find(manifest, "rdfs:comment", null)[0].object);
   var entries = [];
+  var knownMissing = {}; // record missing files.
   var head = store.find(manifest, "mf:entries", null)[0].object;
   while (head !== P.rdf + "nil") {
     entries.push(store.find(head, "rdf:first", null)[0].object);
@@ -88,7 +101,7 @@ function genText () {
       var ret = expectedTypes.indexOf(t.object) !== -1;
       if (ret === false &&
           t.object !== P.mf + "Manifest") {
-        console.warn("test " + t.subject + " has unexpected type " + t.object);
+        report("test " + t.subject + " has unexpected type " + t.object);
       }
       return ret;
     }).map(function (t) {
@@ -96,7 +109,7 @@ function genText () {
     }).filter(function (t) {
       var ret = entries.indexOf(t[0]) !== -1;
       if (ret === false) {
-        console.warn("unreferenced test: " + t[0]);
+        report("unreferenced test: " + t[0]);
       } else {
         delete unmatched[t[0]];
       }
@@ -113,8 +126,9 @@ function genText () {
       var a = actionTriples[0].object;
       function exists (filename) {
         var filepath = path.join(__dirname, "../validation", filename);
-        if (WARN && !fs.existsSync(filepath)) {
-          console.warn("non-existent file: " + s.substr(apparentBase.length) + " is missing " + filepath.substr(apparentBase.length-1));
+        if (WARN && !fs.existsSync(filepath) && !(filepath in knownMissing)) {
+          report("non-existent file: " + s.substr(apparentBase.length) + " is missing " + path.relative(process.cwd(), filepath));
+	  knownMissing[filepath] = path.relative(process.cwd(), filepath);
         }
         return filename;
       }
@@ -148,7 +162,13 @@ function genText () {
   });
   var remaining = Object.keys(unmatched);
   if (remaining.length) {
-    console.warn("no definitions for " + remaining.join(", "));
+    report("no definitions for " + remaining.join(", "));
   }
-  console.log(JSON.stringify(ret, null, "  "));
+  if (!errors) {
+    if (OUTFILE) {
+      fs.writeFileSync(OUTFILE, JSON.stringify(ret, null, "  "));
+    } else {
+      console.log(JSON.stringify(ret, null, "  "));
+    }
+  }
 }
