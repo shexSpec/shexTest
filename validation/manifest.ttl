@@ -428,7 +428,7 @@
     .
 
 <#1negateddot_pass-empty> a sht:ValidationTest ;
-    mf:name "1negateddot_fail-empty" ;
+    mf:name "1negateddot_pass-empty" ;
     rdfs:comment "<S> { !<p1> . } on {  }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -441,7 +441,7 @@
     .
 
 <#1negateddot_pass-missing> a sht:ValidationTest ;
-    mf:name "1negateddot_fail-missing" ;
+    mf:name "1negateddot_pass-missing" ;
     rdfs:comment "<S> { !<p1> . } on { <s> <p2> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -454,7 +454,7 @@
     .
 
 <#1negateddot_fail-noOthers> a sht:ValidationFailure ;
-    mf:name "1negateddot_pass-noOthers" ;
+    mf:name "1negateddot_fail-noOthers" ;
     rdfs:comment "<S> { !<p1> . } on { <s> <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -466,7 +466,7 @@
     .
 
 <#1negateddot_fail-others_lexicallyEarlier> a sht:ValidationFailure ;
-    mf:name "1negateddot_pass-others_lexicallyEarlier" ;
+    mf:name "1negateddot_fail-others_lexicallyEarlier" ;
     rdfs:comment "<S> { !<p1> . } on { <s> <p0> <o0>; <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -478,7 +478,7 @@
     .
 
 <#1negateddot_fail-others_lexicallyLater> a sht:ValidationFailure ;
-    mf:name "1negateddot_pass-others_lexicallyLater" ;
+    mf:name "1negateddot_fail-others_lexicallyLater" ;
     rdfs:comment "<S> { !<p1> . } on { <s> <p1> <o1>; <p2> <o2> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -490,7 +490,7 @@
     .
 
 <#1negatedinversedot_pass-empty> a sht:ValidationTest ;
-    mf:name "1negatedinversedot_fail-empty" ;
+    mf:name "1negatedinversedot_pass-empty" ;
     rdfs:comment "<S> { !<p1> . } on {  }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -503,7 +503,7 @@
     .
 
 <#1negatedinversedot_pass-missing> a sht:ValidationTest ;
-    mf:name "1negatedinversedot_fail-missing" ;
+    mf:name "1negatedinversedot_pass-missing" ;
     rdfs:comment "<S> { !<p1> . } on { <s> <p2> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -516,7 +516,7 @@
     .
 
 <#1negatedinversedot_fail-noOthers> a sht:ValidationFailure ;
-    mf:name "1negatedinversedot_pass-noOthers" ;
+    mf:name "1negatedinversedot_fail-noOthers" ;
     rdfs:comment "<S> { !<p1> . } on { <s> <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -528,7 +528,7 @@
     .
 
 <#1negatedinversedot_fail-others_lexicallyEarlier> a sht:ValidationFailure ;
-    mf:name "1negatedinversedot_pass-others_lexicallyEarlier" ;
+    mf:name "1negatedinversedot_fail-others_lexicallyEarlier" ;
     rdfs:comment "<S> { !<p1> . } on { <s> <p0> <o0>; <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -540,7 +540,7 @@
     .
 
 <#1negatedinversedot_fail-others_lexicallyLater> a sht:ValidationFailure ;
-    mf:name "1negatedinversedot_pass-others_lexicallyLater" ;
+    mf:name "1negatedinversedot_fail-others_lexicallyLater" ;
     rdfs:comment "<S> { !<p1> . } on { <s> <p1> <o1>; <p2> <o2> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -631,7 +631,7 @@
     .
 
 <#1inversedotAnnot3_pass> a sht:ValidationTest ;
-    mf:name "1dotAnnot3_pass" ;
+    mf:name "1inversedotAnnot3_pass" ;
     rdfs:comment "<S> { <p1> .; <a1> '1'; <a1> '2'; <a1> '3'; } on { <s> <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -644,7 +644,7 @@
     .
 
 <#1inversedotAnnot3_missing> a sht:ValidationFailure ;
-    mf:name "1dotAnnot3_missing" ;
+    mf:name "1inversedotAnnot3_missing" ;
     rdfs:comment "<S> { <p1> .; <a1> '1'; <a1> '2'; <a1> '3'; } on { <s> <p2> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -1134,7 +1134,7 @@
     .
 
 <#1cardOpt_pass0> a sht:ValidationTest ;
-    mf:name "1cardOpt_fail0" ;
+    mf:name "1cardOpt_pass0" ;
     rdfs:comment "<S> { <p1> .+ } on {  }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -1160,7 +1160,7 @@
     .
 
 <#1cardOpt_fail2> a sht:ValidationFailure ;
-    mf:name "1cardOpt_pass2" ;
+    mf:name "1cardOpt_fail2" ;
     rdfs:comment "<S> { <p1> .+ } on { <s> <p1> 'a','b' }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -1235,7 +1235,7 @@
     .
 
 <#1cardStar_pass0> a sht:ValidationTest ;
-    mf:name "1cardStar_fail0" ;
+    mf:name "1cardStar_pass0" ;
     rdfs:comment "<S> { <p1> .* } on {  }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -1465,7 +1465,7 @@
     .
 
 <#1floatMininclusiveINTEGER_pass-equalTrailing> a sht:ValidationTest ;
-    mf:name "1floatMininclusiveINTEGER_pass-equal" ;
+    mf:name "1floatMininclusiveINTEGER_pass-equalTrailing" ;
     rdfs:comment "<S1> { <p1> xsd:float MININCLUSIVE 5 } / { <s1> <p1> '5.0'^^xsd:float }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -1533,7 +1533,7 @@
 # node kinds {
 
 <#1literalPlus_Is1_Ip1_La,Io1> a sht:ValidationFailure ;
-    mf:name "1literal_extra" ;
+    mf:name "1literalPlus_Is1_Ip1_La,Io1" ;
     rdfs:comment "<S> { <p1> LITERAL+ } on { <s> <p1> 'a', <o2> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2122,7 +2122,7 @@
     .
 
 <#1val1IRIREF_v2> a sht:ValidationFailure ;
-    mf:name "1val1IRIREF_v1" ;
+    mf:name "1val1IRIREF_v2" ;
     rdfs:comment "<S> { <p1> (<v1>) } on { <s> <p1> <v2> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2160,7 +2160,7 @@
     .
 
 <#1val1DOUBLE_0_0e0> a sht:ValidationFailure ;
-    mf:name "1val1DOUBLE_v1" ;
+    mf:name "1val1DOUBLE_0_0e0" ;
     rdfs:comment "<S> { <p1> (0e0) } on { <s> <p1> 0e0.0 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2198,7 +2198,7 @@
     .
 
 <#1val1DOUBLElowercase_0_0e0> a sht:ValidationFailure ;
-    mf:name "1val1DOUBLElowercase_v1" ;
+    mf:name "1val1DOUBLElowercase_0_0e0" ;
     rdfs:comment "<S> { <p1> (0e0) } on { <s> <p1> 0e0.0 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2300,7 +2300,7 @@
     .
 
 <#1val1INTEGER_Lab> a sht:ValidationFailure ;
-    mf:name "1val1INTEGER_true" ;
+    mf:name "1val1INTEGER_Lab" ;
     rdfs:comment "<S> { <p1> (0) } on { <s> <p1> 'ab' }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2312,7 +2312,7 @@
     .
 
 <#1val1INTEGER_00> a sht:ValidationFailure ;
-    mf:name "1val1INTEGER_ab" ;
+    mf:name "1val1INTEGER_00" ;
     rdfs:comment "<S> { <p1> (0) } on { <s> <p1> 00 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2352,7 +2352,7 @@
     .
 
 <#1val1IRIREFDatatype_LabDTbloodType999> a sht:ValidationFailure ;
-    mf:name "1val1IRIREFDatatype_ab" ;
+    mf:name "1val1IRIREFDatatype_LabDTbloodType999" ;
     rdfs:comment "<S> { <p1> ('ab'^^my:bloodType) } on { <s> <p1> 'ab'^^my:bloodType999 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2364,7 +2364,7 @@
     .
 
 <#1val1IRIREFDatatype_LaDTbloodType> a sht:ValidationFailure ;
-    mf:name "1val1IRIREFDatatype_ab" ;
+    mf:name "1val1IRIREFDatatype_LaDTbloodType" ;
     rdfs:comment "<S> { <p1> ('ab'^^my:bloodType) } on { <s> <p1> 'a'^^my:bloodType }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2404,7 +2404,7 @@
     .
 
 <#1val1LANGTAG_LabLTen> a sht:ValidationFailure ;
-    mf:name "1val1LANGTAG_ab" ;
+    mf:name "1val1LANGTAG_LabLTen" ;
     rdfs:comment "<S> { <p1> ('ab'@en-fr) } on { <s> <p1> 'ab'@en }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2416,7 +2416,7 @@
     .
 
 <#1val1LANGTAG_LabLTen-fr-jura> a sht:ValidationFailure ;
-    mf:name "1val1LANGTAG_ab" ;
+    mf:name "1val1LANGTAG_LabLTen-fr-jura" ;
     rdfs:comment "<S> { <p1> ('ab'@en-fr) } on { <s> <p1> 'ab'@en-fr-jura }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2428,7 +2428,7 @@
     .
 
 <#1val1LANGTAG_LaLTen-fr> a sht:ValidationFailure ;
-    mf:name "1val1LANGTAG_ab" ;
+    mf:name "1val1LANGTAG_LaLTen-fr" ;
     rdfs:comment "<S> { <p1> ('ab'@en-fr) } on { <s> <p1> 'a'@en-fr }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2541,7 +2541,7 @@
     .
 
 <#1val1vExprAND3_pass> a sht:ValidationTest ;
-    mf:name "1val1vcAND3_pass" ;
+    mf:name "1val1vExprAND3_pass" ;
     rdfs:comment "<S> { <p1> MINLENGTH 4 AND MAXLENGTH 5 AND ~ '^(ab)+' } on { <s1> <p1> 'abab' }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2554,7 +2554,7 @@
     .
 
 <#1val1vExprAND3_failvc1> a sht:ValidationFailure ;
-    mf:name "1val1vcAND3_failvc1" ;
+    mf:name "1val1vExprAND3_failvc1" ;
     rdfs:comment "<S> { <p1> MINLENGTH 4 AND MAXLENGTH 5 AND ~ '^(ab)+' } on { <s1> <p1> 'ab' }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2566,7 +2566,7 @@
     .
 
 <#1val1vExprAND3_failvc2> a sht:ValidationFailure ;
-    mf:name "1val1vcAND3_failvc2" ;
+    mf:name "1val1vExprAND3_failvc2" ;
     rdfs:comment "<S> { <p1> MINLENGTH 4 AND MAXLENGTH 5 AND ~ '^(ab)+' } on { <s1> <p1> 'ababab' }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2578,7 +2578,7 @@
     .
 
 <#1val1vExprAND3_failvc3> a sht:ValidationFailure ;
-    mf:name "1val1vcAND3_failvc3" ;
+    mf:name "1val1vExprAND3_failvc3" ;
     rdfs:comment "<S> { <p1> MINLENGTH 4 AND MAXLENGTH 5 AND ~ '^(ab)+' } on { <s1> <p1> 'baba' }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2721,7 +2721,7 @@
     .
 
 <#1val1vExprOR3_fail> a sht:ValidationFailure ;
-    mf:name "1val1vcOR3_fail" ;
+    mf:name "1val1vExprOR3_fail" ;
     rdfs:comment "<S> { <p1> ~'^ab' OR ~'cd' OR ~'ef$' } on { <s1> <p1> 'a' }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2733,7 +2733,7 @@
     .
 
 <#1val1vExprOR3_passvc1> a sht:ValidationTest ;
-    mf:name "1val1vcOR3_passvc1" ;
+    mf:name "1val1vExprOR3_passvc1" ;
     rdfs:comment "<S> { <p1> ~'^ab' OR ~'cd' OR ~'ef$' } on { <s1> <p1> 'ab' }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2746,7 +2746,7 @@
     .
 
 <#1val1vExprOR3_passvc2> a sht:ValidationTest ;
-    mf:name "1val1vcOR3_passvc2" ;
+    mf:name "1val1vExprOR3_passvc2" ;
     rdfs:comment "<S> { <p1> ~'^ab' OR ~'cd' OR ~'ef$' } on { <s1> <p1> 'cd' }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2759,7 +2759,7 @@
     .
 
 <#1val1vExprOR3_passvc3> a sht:ValidationTest ;
-    mf:name "1val1vcOR3_passvc3" ;
+    mf:name "1val1vExprOR3_passvc3" ;
     rdfs:comment "<S> { <p1> ~'^ab' OR ~'cd' OR ~'ef$' } on { <s1> <p1> 'ef' }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2772,7 +2772,7 @@
     .
 
 <#1val1vExprOR3_passvc1vc2vc3> a sht:ValidationTest ;
-    mf:name "1val1vcOR3_passvc1vc2vc3" ;
+    mf:name "1val1vExprOR3_passvc1vc2vc3" ;
     rdfs:comment "<S> { <p1> ~'^ab' OR ~'cd' OR ~'ef$' } on { <s1> <p1> 'abcdef' }" ;
     mf:status mf:proposed ;
     mf:action [
