@@ -1,5 +1,15 @@
 #!/usr/bin/env node
 
+/* genJSON - tool to generate JSON-LD version of manifest.ttl
+ * install and run:
+
+git clone git@github.com:shexSpec/shexTest.git
+npm install
+cd validation/
+../bin/genJSON.js manifest.ttl -w
+
+*/
+
 // Parse arguments
 var args = process.argv.slice(2);
 if (args > 1 || args.indexOf("-help") !== -1 || args.indexOf("--help") !== -1) {
