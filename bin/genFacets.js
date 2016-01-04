@@ -1,16 +1,35 @@
 #!/usr/bin/env node
 
-var shexProfiles = {
+var shexMinProfiles = {
   "INTEGER": { "": "5", "Lead": "05" },
   "xsd:integer": { "": "\"5\"^^<http://www.w3.org/2001/XMLSchema#integer>", "Lead": "05" },
   "xsd:decimal": { "": "\"4.5\"^^<http://www.w3.org/2001/XMLSchema#decimal>" },
   "xsd:float": { "": "\"4.5\"^^<http://www.w3.org/2001/XMLSchema#float>" },
   "xsd:double": { "": "\"4.5e0\"^^<http://www.w3.org/2001/XMLSchema#double>" },
-  "xsd:byte": { "": "true" },
+  "xsd:byte": { "": "5" },
   "roman:numeral": { "": "\"V\"^^<http://roman.example/numeral>" },
   "DECIMAL": { "": "4.5", "LeadTrail": "04.50", "int": "5.0", "intLeadTrail": "05.00" },
   "DOUBLE": { "": "4.5e0", "LeadTrail": "04.50e0", "int": "5.0e0", "intLeadTrail": "05.00e0" },
+}
+
+var shexMaxProfiles = {
+  "INTEGER": { "": "5", "Lead": "05" },
+  "xsd:integer": { "": "\"5\"^^<http://www.w3.org/2001/XMLSchema#integer>", "Lead": "05" },
+  "xsd:decimal": { "": "\"5.5\"^^<http://www.w3.org/2001/XMLSchema#decimal>" },
+  "xsd:float": { "": "\"5.5\"^^<http://www.w3.org/2001/XMLSchema#float>" },
+  "xsd:double": { "": "\"5.5e0\"^^<http://www.w3.org/2001/XMLSchema#double>" },
+  "xsd:byte": { "": "5" },
+  "roman:numeral": { "": "\"V\"^^<http://roman.example/numeral>" },
+  "DECIMAL": { "": "5.5", "LeadTrail": "05.50", "int": "5.0", "intLeadTrail": "05.00" },
+  "DOUBLE": { "": "5.5e0", "LeadTrail": "05.50e0", "int": "5.0e0", "intLeadTrail": "05.00e0" },
+}
+
+var shexProfiles = {
+  Mininclusive: shexMinProfiles, Minexclusive: shexMinProfiles,
+  Maxinclusive: shexMaxProfiles, Maxexclusive: shexMaxProfiles,
 };
+var _floatDecMax = {"low": "4.4", "equal": "5.5", "equalLeadTrail": "05.50", "high": "5.6"};
+var _doubleMax = {"low": "4.4e0", "equal": "5.5e0", "equalLeadTrail": "05.50e0", "high": "5.6e0"}
 var dataProfiles = {
   "xsd:integer": {
     label: "INT", 
@@ -18,15 +37,18 @@ var dataProfiles = {
   },
   "xsd:decimal": {
     label: "DEC",
-    values: {"low": "4.4", "equal": "4.5", "equalLeadTrail": "04.50", "high": "5.6"}
+    values: {"low": "4.4", "equal": "4.5", "equalLeadTrail": "04.50", "high": "5.6"},
+    Maxinclusive: _floatDecMax, Maxexclusive: _floatDecMax
   },
   "xsd:float": {
     label: "FLT", datatype: '<http://www.w3.org/2001/XMLSchema#float>',
-    values: {"low": "4.4", "equal": "4.5", "equalLeadTrail": "04.50", "high": "5.6"}
+    values: {"low": "4.4", "equal": "4.5", "equalLeadTrail": "04.50", "high": "5.6"},
+    Maxinclusive: _floatDecMax, Maxexclusive: _floatDecMax
   },
   "xsd:double": {
     label: "DBL",
-    values: {"low": "4.4e0", "equal": "4.5e0", "equalLeadTrail": "04.50e0", "high": "5.6e0"}
+    values: {"low": "4.4e0", "equal": "4.5e0", "equalLeadTrail": "04.50e0", "high": "5.6e0"},
+    Maxinclusive: _doubleMax, Maxexclusive: _doubleMax
   },
   "xsd:byte": {
     label: "BYT", datatype: '<http://www.w3.org/2001/XMLSchema#byte>',
@@ -66,11 +88,12 @@ var checked = {};
  * gen( "O", 3, 4, 1); // ShEs filename, row 3 - row 4, headings in row 1.
  * // returns 5 tests
  */
-function gen (worksheet, shexCol, start, end, headings) {
+function gen (worksheetName, shexCol, start, end, headings) {
+  var worksheet = workbook.Sheets[worksheetName];
   for (var row = start; row <= end; ++row) {
     var testAddress = shexCol + row;                                 // O4
     function warn (msg, obj, key) {
-      var m = testAddress + ": " + msg;
+      var m = worksheetName + '.' + testAddress + ": " + msg;
       console.warn(m);
       return key ? extend(obj, {key: m}) : "[["+m+"]]";
     }
@@ -90,10 +113,10 @@ function gen (worksheet, shexCol, start, end, headings) {
           return contents ? contents.v : "";
         }).join("");                                                 // intLeadTrail
       var testDT = worksheet[colToAddr(addrToCol(m[1])-1)+m[2]].v;   // xsd:integer
-      var shexProfile = shexProfiles[argument] ||
-        warn("undefined feature shexProfiles["+argument+"]", {}, shexFeatures);
+      var shexProfile = shexProfiles[type] && shexProfiles[type][argument] ||
+        warn("undefined feature shexProfiles["+type+"]["+argument+"]", {}, shexFeatures);
       var shexRepresentation = shexProfile[shexFeatures] ||
-        warn("undefined feature shexProfiles["+argument+"]["+shexFeatures+"]");
+        warn("undefined feature shexProfiles["+type+"]["+argument+"]["+shexFeatures+"]");
       var testProfile = dataProfiles[testDT] ||
         warn("undefined feature dataProfiles["+testDT+"]", {values: {}}, "label");
       // scan for enabled tests.
@@ -106,8 +129,10 @@ function gen (worksheet, shexCol, start, end, headings) {
         if (passfail) {
           var testHeading = worksheet[testCol + headings].v;         // equalLead
           var testName = shex.v + "_" + passfail.v + "-" + (testDT.replace(/[a-z]*:/, "")) + "-" + testHeading; // 1integerMininclusiveDECIMALLeadTrail_pass-equalLead
-          var testValue = testHeading in testProfile.values ?
-            testProfile.values[testHeading] :           // 05
+	  var testValues = type in testProfile ? testProfile[type] : testProfile.values;
+          var testValue = 
+	    testHeading in testValues ?
+            testValues[testHeading] :                                // 05
             warn("undefined feature dataProfiles["+testDT+"].values["+testHeading+"]");
           var suffix = testProfile.label+testValue.replace(/\./g, "_"); // INT05, DEC5_5
 	  var dataRepresentation = testProfile.datatype ?
@@ -144,14 +169,14 @@ function gen (worksheet, shexCol, start, end, headings) {
 	    function expand (pname) {
 	      var m = pname.match(/^([a-z]*):(.*?)$/);
 	      if (!m) {
-		throw Error(testAddress + ": expected prefixed name; got " + pname);
+		throw Error(worksheetName + '.' + testAddress + ": expected prefixed name; got " + pname);
 	      }
 	      var exp = {
 		xsd: "http://www.w3.org/2001/XMLSchema#",
 		roman: "http://roman.example/"
 	      }[m[1]];
 	      if (!exp) {
-		throw Error(testAddress + ": unknown prefix: " + pname);
+		throw Error(worksheetName + '.' + testAddress + ": unknown prefix: " + pname);
 	      }
 	      return exp + m[2];
 	    }
@@ -182,7 +207,7 @@ function gen (worksheet, shexCol, start, end, headings) {
 	      if (args[1] === "-c") {
 		(function (testAddress, testName, shexFile, dataFile, resultsFile) {
 		  function warn (msg, obj, key) {
-		    var m = testAddress + ": " + msg;
+		    var m = worksheetName + '.' + testAddress + ": " + msg;
 		    console.warn(m);
 		    return key ? extend(obj, {key: m}) : "[["+m+"]]";
 		  }
@@ -208,10 +233,10 @@ function gen (worksheet, shexCol, start, end, headings) {
 }
 
 
-gen(workbook.Sheets['MinInclusive'], "O", 6, 175, 3);
-gen(workbook.Sheets['MinExclusive'], "O", 6, 175, 3);
-gen(workbook.Sheets['MaxInclusive'], "O", 6, 175, 3);
-gen(workbook.Sheets['MaxExclusive'], "O", 6, 175, 3);
+gen('MinInclusive', "O", 6, 175, 3);
+gen('MinExclusive', "O", 6, 175, 3);
+gen('MaxInclusive', "O", 6, 175, 3);
+gen('MaxExclusive', "O", 6, 175, 3);
 
 testList.forEach(function (test) {
   console.log(args[1] === "-l" ? "        <#" + test + ">" : testDfns[test].dfn);
