@@ -119,6 +119,11 @@ function genText () {
         entries.indexOf(r[0]);
     }).map(function (st) {
       var s = st[0], t = st[1];
+      var testName = util.getLiteralValue(store.find(s, "mf:name", null)[0].object);
+      var expectedName = s.substr(apparentBase.length+1);
+      if (WARN && testName !== expectedName) {
+	report("expected label \"" + expectedName + "\" ; got \"" + testName + "\"");
+      }
       var actionTriples = store.find(s, "mf:action", null);
       if (actionTriples.length !== 1) {
         throw Error("expected 1 action for " + s + " -- got " + actionTriples.length);
