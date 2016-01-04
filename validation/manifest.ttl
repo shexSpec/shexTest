@@ -106,6 +106,7 @@
         <#1datatype_pass>
 
         # facets
+	## manual
         <#1datatypeLength_fail-missing>
         <#1datatypeLength_fail-wrongDatatype>
         <#1datatypeLength_fail-short>
@@ -115,9 +116,239 @@
         <#1literalFractiondigits_pass>
         <#1literalFractiondigits_fail-long>
         <#1floatMininclusiveINTEGER_fail-low>
-        <#1floatMininclusiveINTEGER_pass-equal>
-        <#1floatMininclusiveINTEGER_pass-equalTrailing>
+        <#1floatMininclusiveINTEGER_pass-equalLead>
+        <#1floatMininclusiveINTEGER_pass-equalTrail>
         <#1floatMininclusiveINTEGER_pass-high>
+        <#1floatMininclusiveINTEGERLead_pass-equal>
+        <#1integerMininclusiveINTEGER_fail-low>
+        <#1integerMininclusiveINTEGER_pass-equal>
+        <#1integerMininclusiveINTEGER_pass-equalLead>
+        <#1integerMininclusiveINTEGER_pass-high>
+
+	## generated
+        <#1integerMininclusiveINTEGER_fail-integer-low>
+        <#1integerMininclusiveINTEGER_pass-integer-equal>
+        <#1integerMininclusiveINTEGER_pass-integer-high>
+        <#1integerMininclusiveINTEGERLead_fail-integer-low>
+        <#1integerMininclusiveINTEGERLead_pass-integer-equal>
+        <#1integerMininclusiveINTEGERLead_pass-integer-equalLead>
+        <#1integerMininclusiveINTEGERLead_pass-integer-high>
+        <#1integerMininclusiveDECIMAL_pass-integer-equal>
+        <#1integerMininclusiveDECIMALLeadTrail_fail-integer-low>
+        <#1integerMininclusiveDECIMALLeadTrail_pass-integer-equal>
+        <#1integerMininclusiveDECIMALLeadTrail_pass-integer-equalLead>
+        <#1integerMininclusiveDECIMALLeadTrail_pass-integer-high>
+        <#1integerMininclusiveDECIMALint_fail-integer-low>
+        <#1integerMininclusiveDECIMALint_pass-integer-equal>
+        <#1integerMininclusiveDECIMALint_pass-integer-high>
+        <#1integerMininclusiveDECIMALintLeadTrail_fail-integer-low>
+        <#1integerMininclusiveDECIMALintLeadTrail_pass-integer-equal>
+        <#1integerMininclusiveDECIMALintLeadTrail_pass-integer-equalLead>
+        <#1integerMininclusiveDECIMALintLeadTrail_pass-integer-high>
+        <#1integerMininclusiveDOUBLE_pass-integer-equal>
+        <#1integerMininclusiveDOUBLELeadTrail_fail-integer-low>
+        <#1integerMininclusiveDOUBLELeadTrail_pass-integer-equal>
+        <#1integerMininclusiveDOUBLELeadTrail_pass-integer-equalLead>
+        <#1integerMininclusiveDOUBLELeadTrail_pass-integer-high>
+        <#1integerMininclusiveDOUBLEint_pass-integer-equal>
+        <#1integerMininclusiveDOUBLEintLeadTrail_fail-integer-low>
+        <#1integerMininclusiveDOUBLEintLeadTrail_pass-integer-equal>
+        <#1integerMininclusiveDOUBLEintLeadTrail_pass-integer-equalLead>
+        <#1integerMininclusiveDOUBLEintLeadTrail_pass-integer-high>
+        <#1integerMininclusiveINTEGER_fail-decimal-equal>
+        <#1integerMininclusiveINTEGER_fail-float-equal>
+        <#1integerMininclusiveINTEGER_fail-double-equal>
+        <#1integerMininclusiveINTEGER_fail-dateTime-equal>
+        <#1integerMininclusiveINTEGER_fail-string-equal>
+        <#1integerMininclusiveINTEGER_fail-byte-equal>
+        <#1integerMininclusivexsd-integer_fail-integer-low>
+        <#1integerMininclusivexsd-integer_pass-integer-equal>
+        <#1decimalMininclusiveINTEGER_fail-decimal-low>
+        <#1decimalMininclusiveINTEGER_pass-decimal-high>
+        <#1decimalMininclusiveINTEGERLead_fail-decimal-low>
+        <#1decimalMininclusiveINTEGERLead_pass-decimal-high>
+        <#1decimalMininclusiveDECIMAL_fail-decimal-low>
+        <#1decimalMininclusiveDECIMAL_pass-decimal-equal>
+        <#1decimalMininclusiveDECIMAL_pass-decimal-equalLeadTrail>
+        <#1decimalMininclusiveDECIMAL_pass-decimal-high>
+        <#1decimalMininclusiveDECIMALLeadTrail_fail-decimal-low>
+        <#1decimalMininclusiveDECIMALLeadTrail_pass-decimal-equal>
+        <#1decimalMininclusiveDECIMALLeadTrail_pass-decimal-equalLeadTrail>
+        <#1decimalMininclusiveDECIMALLeadTrail_pass-decimal-high>
+        <#1decimalMininclusiveDECIMALintLeadTrail_fail-decimal-low>
+        <#1decimalMininclusiveDECIMALintLeadTrail_pass-decimal-high>
+        <#1decimalMininclusiveDOUBLE_fail-decimal-low>
+        <#1decimalMininclusiveDOUBLE_pass-decimal-equal>
+        <#1decimalMininclusiveDOUBLE_pass-decimal-equalLeadTrail>
+        <#1decimalMininclusiveDOUBLELeadTrail_fail-decimal-low>
+        <#1decimalMininclusiveDOUBLELeadTrail_pass-decimal-equal>
+        <#1decimalMininclusiveDOUBLELeadTrail_pass-decimal-equalLeadTrail>
+        <#1decimalMininclusiveDOUBLELeadTrail_pass-decimal-high>
+        <#1decimalMininclusiveDOUBLEintLeadTrail_fail-decimal-low>
+        <#1decimalMininclusiveDOUBLEintLeadTrail_pass-decimal-high>
+        <#1decimalMininclusiveDECIMAL_fail-float-equal>
+        <#1decimalMininclusiveDECIMAL_fail-double-equal>
+        <#1decimalMininclusivexsd-decimal_fail-decimal-low>
+        <#1decimalMininclusivexsd-decimal_pass-decimal-equal>
+        <#1floatMininclusiveINTEGERLead_fail-float-low>
+        <#1floatMininclusiveINTEGERLead_pass-float-high>
+        <#1floatMininclusiveDECIMAL_pass-float-equal>
+        <#1floatMininclusiveDECIMAL_pass-float-equalLeadTrail>
+        <#1floatMininclusiveDECIMALLeadTrail_fail-float-low>
+        <#1floatMininclusiveDECIMALLeadTrail_pass-float-equal>
+        <#1floatMininclusiveDECIMALLeadTrail_pass-float-equalLeadTrail>
+        <#1floatMininclusiveDECIMALLeadTrail_pass-float-high>
+        <#1floatMininclusiveDECIMALintLeadTrail_fail-float-low>
+        <#1floatMininclusiveDECIMALintLeadTrail_pass-float-high>
+        <#1floatMininclusiveDOUBLE_pass-float-equal>
+        <#1floatMininclusiveDOUBLE_pass-float-equalLeadTrail>
+        <#1floatMininclusiveDOUBLELeadTrail_fail-float-low>
+        <#1floatMininclusiveDOUBLELeadTrail_pass-float-equal>
+        <#1floatMininclusiveDOUBLELeadTrail_pass-float-equalLeadTrail>
+        <#1floatMininclusiveDOUBLELeadTrail_pass-float-high>
+        <#1floatMininclusiveDOUBLEintLeadTrail_fail-float-low>
+        <#1floatMininclusiveDOUBLEintLeadTrail_pass-float-high>
+        <#1floatMininclusivexsd-float_fail-float-low>
+        <#1floatMininclusivexsd-float_pass-float-equal>
+        <#1doubleMininclusiveINTEGERLead_fail-double-low>
+        <#1doubleMininclusiveINTEGERLead_pass-double-high>
+        <#1doubleMininclusiveDECIMAL_pass-double-equal>
+        <#1doubleMininclusiveDECIMAL_pass-double-equalLeadTrail>
+        <#1doubleMininclusiveDECIMALLeadTrail_fail-double-low>
+        <#1doubleMininclusiveDECIMALLeadTrail_pass-double-equal>
+        <#1doubleMininclusiveDECIMALLeadTrail_pass-double-equalLeadTrail>
+        <#1doubleMininclusiveDECIMALLeadTrail_pass-double-high>
+        <#1doubleMininclusiveDECIMALintLeadTrail_fail-double-low>
+        <#1doubleMininclusiveDECIMALintLeadTrail_pass-double-high>
+        <#1doubleMininclusiveDOUBLE_pass-double-equal>
+        <#1doubleMininclusiveDOUBLE_pass-double-equalLeadTrail>
+        <#1doubleMininclusiveDOUBLELeadTrail_fail-double-low>
+        <#1doubleMininclusiveDOUBLELeadTrail_pass-double-equal>
+        <#1doubleMininclusiveDOUBLELeadTrail_pass-double-equalLeadTrail>
+        <#1doubleMininclusiveDOUBLELeadTrail_pass-double-high>
+        <#1doubleMininclusiveDOUBLEintLeadTrail_fail-double-low>
+        <#1doubleMininclusiveDOUBLEintLeadTrail_pass-double-high>
+        <#1doubleMininclusivexsd-double_fail-double-low>
+        <#1doubleMininclusivexsd-double_pass-double-equal>
+        <#1integerMinexclusiveINTEGER_fail-integer-low>
+        <#1integerMinexclusiveINTEGER_fail-integer-equal>
+        <#1integerMinexclusiveINTEGER_pass-integer-high>
+        <#1integerMinexclusiveDECIMALint_fail-integer-low>
+        <#1integerMinexclusiveDECIMALint_fail-integer-equal>
+        <#1integerMinexclusiveDECIMALint_pass-integer-high>
+        <#1integerMinexclusiveDOUBLEint_fail-integer-low>
+        <#1integerMinexclusiveDOUBLEint_fail-integer-equal>
+        <#1integerMinexclusiveDOUBLEint_pass-integer-high>
+        <#1decimalMinexclusiveINTEGER_fail-decimal-low>
+        <#1decimalMinexclusiveINTEGER_pass-decimal-high>
+        <#1decimalMinexclusiveDECIMAL_fail-decimal-low>
+        <#1decimalMinexclusiveDECIMAL_fail-decimal-equal>
+        <#1decimalMinexclusiveDECIMAL_pass-decimal-high>
+        <#1decimalMinexclusiveDOUBLE_fail-decimal-low>
+        <#1decimalMinexclusiveDOUBLE_fail-decimal-equal>
+        <#1decimalMinexclusiveDOUBLE_pass-decimal-high>
+        <#1decimalMinexclusiveDECIMAL_fail-float-equal>
+        <#1decimalMinexclusiveDECIMAL_fail-double-equal>
+        <#1floatMinexclusiveINTEGER_fail-float-low>
+        <#1floatMinexclusiveINTEGER_pass-float-high>
+        <#1floatMinexclusiveDECIMAL_fail-float-low>
+        <#1floatMinexclusiveDECIMAL_fail-float-equal>
+        <#1floatMinexclusiveDECIMAL_pass-float-high>
+        <#1floatMinexclusiveDOUBLE_fail-float-low>
+        <#1floatMinexclusiveDOUBLE_fail-float-equal>
+        <#1floatMinexclusiveDOUBLE_pass-float-high>
+        <#1floatMinexclusivexsd-float_fail-decimal-equal>
+        <#1floatMinexclusivexsd-float_fail-double-equal>
+        <#1doubleMinexclusiveINTEGER_fail-double-low>
+        <#1doubleMinexclusiveINTEGER_pass-double-high>
+        <#1doubleMinexclusiveDECIMAL_fail-double-low>
+        <#1doubleMinexclusiveDECIMAL_fail-double-equal>
+        <#1doubleMinexclusiveDECIMAL_pass-double-high>
+        <#1doubleMinexclusiveDOUBLE_fail-double-low>
+        <#1doubleMinexclusiveDOUBLE_fail-double-equal>
+        <#1doubleMinexclusiveDOUBLE_pass-double-high>
+        <#1doubleMinexclusiveDECIMAL_fail-float-equal>
+        <#1integerMaxinclusiveINTEGER_pass-integer-low>
+        <#1integerMaxinclusiveINTEGER_pass-integer-equal>
+        <#1integerMaxinclusiveINTEGER_fail-integer-high>
+        <#1integerMaxinclusiveDECIMALint_pass-integer-low>
+        <#1integerMaxinclusiveDECIMALint_pass-integer-equal>
+        <#1integerMaxinclusiveDECIMALint_fail-integer-high>
+        <#1integerMaxinclusiveDOUBLEint_pass-integer-low>
+        <#1integerMaxinclusiveDOUBLEint_pass-integer-equal>
+        <#1integerMaxinclusiveDOUBLEint_fail-integer-high>
+        <#1decimalMaxinclusiveINTEGER_pass-decimal-low>
+        <#1decimalMaxinclusiveINTEGER_fail-decimal-high>
+        <#1decimalMaxinclusiveDECIMAL_pass-decimal-low>
+        <#1decimalMaxinclusiveDECIMAL_pass-decimal-equal>
+        <#1decimalMaxinclusiveDECIMAL_fail-decimal-high>
+        <#1decimalMaxinclusiveDOUBLE_pass-decimal-low>
+        <#1decimalMaxinclusiveDOUBLE_pass-decimal-equal>
+        <#1decimalMaxinclusiveDOUBLE_fail-decimal-high>
+        <#1decimalMaxinclusiveDECIMAL_fail-float-equal>
+        <#1decimalMaxinclusiveDECIMAL_fail-double-equal>
+        <#1floatMaxinclusiveINTEGER_pass-float-low>
+        <#1floatMaxinclusiveINTEGER_fail-float-high>
+        <#1floatMaxinclusiveDECIMAL_pass-float-low>
+        <#1floatMaxinclusiveDECIMAL_pass-float-equal>
+        <#1floatMaxinclusiveDECIMAL_fail-float-high>
+        <#1floatMaxinclusiveDOUBLE_pass-float-low>
+        <#1floatMaxinclusiveDOUBLE_pass-float-equal>
+        <#1floatMaxinclusiveDOUBLE_fail-float-high>
+        <#1floatMaxinclusivexsd-float_fail-decimal-equal>
+        <#1floatMaxinclusivexsd-float_fail-double-equal>
+        <#1doubleMaxinclusiveINTEGER_pass-double-low>
+        <#1doubleMaxinclusiveINTEGER_fail-double-high>
+        <#1doubleMaxinclusiveDECIMAL_pass-double-low>
+        <#1doubleMaxinclusiveDECIMAL_pass-double-equal>
+        <#1doubleMaxinclusiveDECIMAL_fail-double-high>
+        <#1doubleMaxinclusiveDOUBLE_pass-double-low>
+        <#1doubleMaxinclusiveDOUBLE_pass-double-equal>
+        <#1doubleMaxinclusiveDOUBLE_fail-double-high>
+        <#1doubleMaxinclusiveDECIMAL_fail-float-equal>
+        <#1integerMaxexclusiveINTEGER_pass-integer-low>
+        <#1integerMaxexclusiveINTEGER_fail-integer-equal>
+        <#1integerMaxexclusiveINTEGER_fail-integer-high>
+        <#1integerMaxexclusiveDECIMALint_pass-integer-low>
+        <#1integerMaxexclusiveDECIMALint_fail-integer-equal>
+        <#1integerMaxexclusiveDECIMALint_fail-integer-high>
+        <#1integerMaxexclusiveDOUBLEint_pass-integer-low>
+        <#1integerMaxexclusiveDOUBLEint_fail-integer-equal>
+        <#1integerMaxexclusiveDOUBLEint_fail-integer-high>
+        <#1decimalMaxexclusiveINTEGER_pass-decimal-low>
+        <#1decimalMaxexclusiveINTEGER_fail-decimal-high>
+        <#1decimalMaxexclusiveDECIMAL_pass-decimal-low>
+        <#1decimalMaxexclusiveDECIMAL_fail-decimal-equal>
+        <#1decimalMaxexclusiveDECIMAL_fail-decimal-high>
+        <#1decimalMaxexclusiveDOUBLE_pass-decimal-low>
+        <#1decimalMaxexclusiveDOUBLE_fail-decimal-equal>
+        <#1decimalMaxexclusiveDOUBLE_fail-decimal-high>
+        <#1decimalMaxexclusiveDECIMAL_fail-float-equal>
+        <#1decimalMaxexclusiveDECIMAL_fail-double-equal>
+        <#1decimalMaxexclusivexsd-byte_fail-byte-equal>
+        <#1decimalMaxexclusivexsd-decimal_fail-decimal-equal>
+        <#1floatMaxexclusiveINTEGER_pass-float-low>
+        <#1floatMaxexclusiveINTEGER_fail-float-high>
+        <#1floatMaxexclusiveDECIMAL_pass-float-low>
+        <#1floatMaxexclusiveDECIMAL_fail-float-high>
+        <#1floatMaxexclusiveDOUBLE_pass-float-low>
+        <#1floatMaxexclusiveDOUBLE_fail-float-high>
+        <#1doubleMaxexclusiveINTEGER_pass-double-low>
+        <#1doubleMaxexclusiveINTEGER_fail-double-equal>
+        <#1doubleMaxexclusiveINTEGER_fail-double-high>
+        <#1doubleMaxexclusiveINTEGERLead_fail-double-equal>
+        <#1doubleMaxexclusiveDECIMAL_pass-double-low>
+        <#1doubleMaxexclusiveDECIMAL_fail-double-equal>
+        <#1doubleMaxexclusiveDECIMAL_fail-double-high>
+        <#1doubleMaxexclusiveDECIMALLeadTrail_fail-double-equal>
+        <#1doubleMaxexclusiveDECIMALint_fail-double-equal>
+        <#1doubleMaxexclusiveDECIMALintLeadTrail_fail-double-equal>
+        <#1doubleMaxexclusiveDOUBLE_pass-double-low>
+        <#1doubleMaxexclusiveDOUBLE_fail-double-equal>
+        <#1doubleMaxexclusiveDOUBLE_fail-double-high>
+        <#1doubleMaxexclusiveDOUBLELeadTrail_fail-double-equal>
+        <#1doubleMaxexclusiveDOUBLEint_fail-double-equal>
+        <#1doubleMaxexclusiveDOUBLEintLeadTrail_fail-double-equal>
 
         # closed
         <#1dotClosed_pass>
@@ -1340,6 +1571,7 @@
 
 # } datatype
 # facets {
+#   manual {
 
 <#1datatypeLength_fail-missing> a sht:ValidationFailure ;
     mf:name "1datatypeLength_fail-missing" ;
@@ -1451,21 +1683,21 @@
     ] ;
     .
 
-<#1floatMininclusiveINTEGER_pass-equal> a sht:ValidationTest ;
-    mf:name "1floatMininclusiveINTEGER_pass-equal" ;
-    rdfs:comment "<S1> { <p1> xsd:float MININCLUSIVE 5 } / { <s1> <p1> '5'^^xsd:float }" ;
+<#1floatMininclusiveINTEGER_pass-equalLead> a sht:ValidationTest ;
+    mf:name "1floatMininclusiveINTEGER_pass-equalLead" ;
+    rdfs:comment "<S1> { <p1> xsd:float MININCLUSIVE 5 } / { <s1> <p1> '05'^^xsd:float }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1floatMininclusiveINTEGER.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_FLT5.ttl> ;
+      sht:data <Is1_Ip1_FLT05.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
-    mf:result <1floatMininclusiveINTEGER_pass-equal.val>
+    mf:result <1floatMininclusiveINTEGER_pass-equalLead.val>
     .
 
-<#1floatMininclusiveINTEGER_pass-equalTrailing> a sht:ValidationTest ;
-    mf:name "1floatMininclusiveINTEGER_pass-equal" ;
+<#1floatMininclusiveINTEGER_pass-equalTrail> a sht:ValidationTest ;
+    mf:name "1floatMininclusiveINTEGER_pass-equalTrail" ;
     rdfs:comment "<S1> { <p1> xsd:float MININCLUSIVE 5 } / { <s1> <p1> '5.0'^^xsd:float }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -1474,7 +1706,7 @@
       sht:data <Is1_Ip1_FLT5_0.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
-    mf:result <1floatMininclusiveINTEGER_pass-equalTrailing.val>
+    mf:result <1floatMininclusiveINTEGER_pass-equalTrail.val>
     .
 
 <#1floatMininclusiveINTEGER_pass-high> a sht:ValidationTest ;
@@ -1490,6 +1722,2862 @@
     mf:result <1floatMininclusiveINTEGER_pass-high.val>
     .
 
+<#1floatMininclusiveINTEGERLead_pass-equal> a sht:ValidationTest ;
+    mf:name "1floatMininclusiveINTEGERLead_pass-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:float MININCLUSIVE 5 } / { <s1> <p1> '5'^^xsd:float }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1floatMininclusiveINTEGERLead.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_FLT5.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1floatMininclusiveINTEGER_pass-equal.val>
+    .
+
+<#1integerMininclusiveINTEGER_fail-low> a sht:ValidationFailure ;
+    mf:name "1integerMininclusiveINTEGER_fail-low" ;
+    rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 5 } / { <s1> <p1> '4'^^xsd:integer }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1integerMininclusiveINTEGER.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT4.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1integerMininclusiveINTEGER_pass-equalLead> a sht:ValidationTest ;
+    mf:name "1integerMininclusiveINTEGER_pass-equalLead" ;
+    rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 5 } / { <s1> <p1> '05'^^xsd:integer }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1integerMininclusiveINTEGER.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT05.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1integerMininclusiveINTEGER_pass-equalLead.val>
+    .
+
+<#1integerMininclusiveINTEGER_pass-equal> a sht:ValidationTest ;
+    mf:name "1integerMininclusiveINTEGER_pass-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 5 } / { <s1> <p1> '5'^^xsd:integer }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1integerMininclusiveINTEGER.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT5.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1integerMininclusiveINTEGER_pass-equal.val>
+    .
+
+<#1integerMininclusiveINTEGER_pass-high> a sht:ValidationTest ;
+    mf:name "1integerMininclusiveINTEGER_pass-high" ;
+    rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 5 } / { <s1> <p1> '6'^^xsd:integer }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1integerMininclusiveINTEGER.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT6.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1integerMininclusiveINTEGER_pass-high.val>
+    .
+
+#   } manual
+#   generated {
+
+<#1integerMininclusiveINTEGER_fail-integer-low> a sht:ValidationFailure ;
+    mf:name "1integerMininclusiveINTEGER_fail-integer-low" ;
+    rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 5 } / { <s1> <p1> 4 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1integerMininclusiveINTEGER.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT4.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1integerMininclusiveINTEGER_pass-integer-equal> a sht:ValidationTest ;
+    mf:name "1integerMininclusiveINTEGER_pass-integer-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 5 } / { <s1> <p1> 5 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1integerMininclusiveINTEGER.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT5.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1integerMininclusiveINTEGER_pass-integer-equal.val>
+    .
+
+<#1integerMininclusiveINTEGER_pass-integer-high> a sht:ValidationTest ;
+    mf:name "1integerMininclusiveINTEGER_pass-integer-high" ;
+    rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 5 } / { <s1> <p1> 6 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1integerMininclusiveINTEGER.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT6.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1integerMininclusiveINTEGER_pass-integer-high.val>
+    .
+
+<#1integerMininclusiveINTEGERLead_fail-integer-low> a sht:ValidationFailure ;
+    mf:name "1integerMininclusiveINTEGERLead_fail-integer-low" ;
+    rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 05 } / { <s1> <p1> 4 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1integerMininclusiveINTEGERLead.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT4.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1integerMininclusiveINTEGERLead_pass-integer-equal> a sht:ValidationTest ;
+    mf:name "1integerMininclusiveINTEGERLead_pass-integer-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 05 } / { <s1> <p1> 5 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1integerMininclusiveINTEGERLead.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT5.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1integerMininclusiveINTEGERLead_pass-integer-equal.val>
+    .
+
+<#1integerMininclusiveINTEGERLead_pass-integer-equalLead> a sht:ValidationTest ;
+    mf:name "1integerMininclusiveINTEGERLead_pass-integer-equalLead" ;
+    rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 05 } / { <s1> <p1> 05 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1integerMininclusiveINTEGERLead.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT05.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1integerMininclusiveINTEGERLead_pass-integer-equalLead.val>
+    .
+
+<#1integerMininclusiveINTEGERLead_pass-integer-high> a sht:ValidationTest ;
+    mf:name "1integerMininclusiveINTEGERLead_pass-integer-high" ;
+    rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 05 } / { <s1> <p1> 6 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1integerMininclusiveINTEGERLead.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT6.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1integerMininclusiveINTEGERLead_pass-integer-high.val>
+    .
+
+<#1integerMininclusiveDECIMAL_pass-integer-equal> a sht:ValidationTest ;
+    mf:name "1integerMininclusiveDECIMAL_pass-integer-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 4.5 } / { <s1> <p1> 5 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1integerMininclusiveDECIMAL.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT5.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1integerMininclusiveDECIMAL_pass-integer-equal.val>
+    .
+
+<#1integerMininclusiveDECIMALLeadTrail_fail-integer-low> a sht:ValidationFailure ;
+    mf:name "1integerMininclusiveDECIMALLeadTrail_fail-integer-low" ;
+    rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 04.50 } / { <s1> <p1> 4 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1integerMininclusiveDECIMALLeadTrail.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT4.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1integerMininclusiveDECIMALLeadTrail_pass-integer-equal> a sht:ValidationTest ;
+    mf:name "1integerMininclusiveDECIMALLeadTrail_pass-integer-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 04.50 } / { <s1> <p1> 5 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1integerMininclusiveDECIMALLeadTrail.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT5.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1integerMininclusiveDECIMALLeadTrail_pass-integer-equal.val>
+    .
+
+<#1integerMininclusiveDECIMALLeadTrail_pass-integer-equalLead> a sht:ValidationTest ;
+    mf:name "1integerMininclusiveDECIMALLeadTrail_pass-integer-equalLead" ;
+    rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 04.50 } / { <s1> <p1> 05 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1integerMininclusiveDECIMALLeadTrail.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT05.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1integerMininclusiveDECIMALLeadTrail_pass-integer-equalLead.val>
+    .
+
+<#1integerMininclusiveDECIMALLeadTrail_pass-integer-high> a sht:ValidationTest ;
+    mf:name "1integerMininclusiveDECIMALLeadTrail_pass-integer-high" ;
+    rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 04.50 } / { <s1> <p1> 6 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1integerMininclusiveDECIMALLeadTrail.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT6.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1integerMininclusiveDECIMALLeadTrail_pass-integer-high.val>
+    .
+
+<#1integerMininclusiveDECIMALint_fail-integer-low> a sht:ValidationFailure ;
+    mf:name "1integerMininclusiveDECIMALint_fail-integer-low" ;
+    rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 5.0 } / { <s1> <p1> 4 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1integerMininclusiveDECIMALint.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT4.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1integerMininclusiveDECIMALint_pass-integer-equal> a sht:ValidationTest ;
+    mf:name "1integerMininclusiveDECIMALint_pass-integer-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 5.0 } / { <s1> <p1> 5 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1integerMininclusiveDECIMALint.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT5.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1integerMininclusiveDECIMALint_pass-integer-equal.val>
+    .
+
+<#1integerMininclusiveDECIMALint_pass-integer-high> a sht:ValidationTest ;
+    mf:name "1integerMininclusiveDECIMALint_pass-integer-high" ;
+    rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 5.0 } / { <s1> <p1> 6 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1integerMininclusiveDECIMALint.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT6.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1integerMininclusiveDECIMALint_pass-integer-high.val>
+    .
+
+<#1integerMininclusiveDECIMALintLeadTrail_fail-integer-low> a sht:ValidationFailure ;
+    mf:name "1integerMininclusiveDECIMALintLeadTrail_fail-integer-low" ;
+    rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 05.00 } / { <s1> <p1> 4 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1integerMininclusiveDECIMALintLeadTrail.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT4.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1integerMininclusiveDECIMALintLeadTrail_pass-integer-equal> a sht:ValidationTest ;
+    mf:name "1integerMininclusiveDECIMALintLeadTrail_pass-integer-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 05.00 } / { <s1> <p1> 5 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1integerMininclusiveDECIMALintLeadTrail.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT5.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1integerMininclusiveDECIMALintLeadTrail_pass-integer-equal.val>
+    .
+
+<#1integerMininclusiveDECIMALintLeadTrail_pass-integer-equalLead> a sht:ValidationTest ;
+    mf:name "1integerMininclusiveDECIMALintLeadTrail_pass-integer-equalLead" ;
+    rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 05.00 } / { <s1> <p1> 05 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1integerMininclusiveDECIMALintLeadTrail.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT05.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1integerMininclusiveDECIMALintLeadTrail_pass-integer-equalLead.val>
+    .
+
+<#1integerMininclusiveDECIMALintLeadTrail_pass-integer-high> a sht:ValidationTest ;
+    mf:name "1integerMininclusiveDECIMALintLeadTrail_pass-integer-high" ;
+    rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 05.00 } / { <s1> <p1> 6 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1integerMininclusiveDECIMALintLeadTrail.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT6.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1integerMininclusiveDECIMALintLeadTrail_pass-integer-high.val>
+    .
+
+<#1integerMininclusiveDOUBLE_pass-integer-equal> a sht:ValidationTest ;
+    mf:name "1integerMininclusiveDOUBLE_pass-integer-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 4.5e0 } / { <s1> <p1> 5 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1integerMininclusiveDOUBLE.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT5.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1integerMininclusiveDOUBLE_pass-integer-equal.val>
+    .
+
+<#1integerMininclusiveDOUBLELeadTrail_fail-integer-low> a sht:ValidationFailure ;
+    mf:name "1integerMininclusiveDOUBLELeadTrail_fail-integer-low" ;
+    rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 04.50e0 } / { <s1> <p1> 4 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1integerMininclusiveDOUBLELeadTrail.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT4.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1integerMininclusiveDOUBLELeadTrail_pass-integer-equal> a sht:ValidationTest ;
+    mf:name "1integerMininclusiveDOUBLELeadTrail_pass-integer-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 04.50e0 } / { <s1> <p1> 5 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1integerMininclusiveDOUBLELeadTrail.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT5.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1integerMininclusiveDOUBLELeadTrail_pass-integer-equal.val>
+    .
+
+<#1integerMininclusiveDOUBLELeadTrail_pass-integer-equalLead> a sht:ValidationTest ;
+    mf:name "1integerMininclusiveDOUBLELeadTrail_pass-integer-equalLead" ;
+    rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 04.50e0 } / { <s1> <p1> 05 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1integerMininclusiveDOUBLELeadTrail.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT05.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1integerMininclusiveDOUBLELeadTrail_pass-integer-equalLead.val>
+    .
+
+<#1integerMininclusiveDOUBLELeadTrail_pass-integer-high> a sht:ValidationTest ;
+    mf:name "1integerMininclusiveDOUBLELeadTrail_pass-integer-high" ;
+    rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 04.50e0 } / { <s1> <p1> 6 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1integerMininclusiveDOUBLELeadTrail.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT6.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1integerMininclusiveDOUBLELeadTrail_pass-integer-high.val>
+    .
+
+<#1integerMininclusiveDOUBLEint_pass-integer-equal> a sht:ValidationTest ;
+    mf:name "1integerMininclusiveDOUBLEint_pass-integer-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 5.0e0 } / { <s1> <p1> 5 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1integerMininclusiveDOUBLEint.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT5.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1integerMininclusiveDOUBLEint_pass-integer-equal.val>
+    .
+
+<#1integerMininclusiveDOUBLEintLeadTrail_fail-integer-low> a sht:ValidationFailure ;
+    mf:name "1integerMininclusiveDOUBLEintLeadTrail_fail-integer-low" ;
+    rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 05.00e0 } / { <s1> <p1> 4 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1integerMininclusiveDOUBLEintLeadTrail.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT4.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1integerMininclusiveDOUBLEintLeadTrail_pass-integer-equal> a sht:ValidationTest ;
+    mf:name "1integerMininclusiveDOUBLEintLeadTrail_pass-integer-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 05.00e0 } / { <s1> <p1> 5 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1integerMininclusiveDOUBLEintLeadTrail.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT5.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1integerMininclusiveDOUBLEintLeadTrail_pass-integer-equal.val>
+    .
+
+<#1integerMininclusiveDOUBLEintLeadTrail_pass-integer-equalLead> a sht:ValidationTest ;
+    mf:name "1integerMininclusiveDOUBLEintLeadTrail_pass-integer-equalLead" ;
+    rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 05.00e0 } / { <s1> <p1> 05 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1integerMininclusiveDOUBLEintLeadTrail.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT05.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1integerMininclusiveDOUBLEintLeadTrail_pass-integer-equalLead.val>
+    .
+
+<#1integerMininclusiveDOUBLEintLeadTrail_pass-integer-high> a sht:ValidationTest ;
+    mf:name "1integerMininclusiveDOUBLEintLeadTrail_pass-integer-high" ;
+    rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 05.00e0 } / { <s1> <p1> 6 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1integerMininclusiveDOUBLEintLeadTrail.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT6.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1integerMininclusiveDOUBLEintLeadTrail_pass-integer-high.val>
+    .
+
+<#1integerMininclusiveINTEGER_fail-decimal-equal> a sht:ValidationFailure ;
+    mf:name "1integerMininclusiveINTEGER_fail-decimal-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 5 } / { <s1> <p1> 4.5 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1integerMininclusiveINTEGER.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC4_5.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1integerMininclusiveINTEGER_fail-float-equal> a sht:ValidationFailure ;
+    mf:name "1integerMininclusiveINTEGER_fail-float-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 5 } / { <s1> <p1> '4.5'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1integerMininclusiveINTEGER.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_FLT4_5.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1integerMininclusiveINTEGER_fail-double-equal> a sht:ValidationFailure ;
+    mf:name "1integerMininclusiveINTEGER_fail-double-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 5 } / { <s1> <p1> 4.5e0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1integerMininclusiveINTEGER.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DBL4_5e0.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1integerMininclusiveINTEGER_fail-dateTime-equal> a sht:ValidationFailure ;
+    mf:name "1integerMininclusiveINTEGER_fail-dateTime-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 5 } / { <s1> <p1> '2015-12-25T01:23:45Z'^^<http://www.w3.org/2001/XMLSchema#dateTime> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1integerMininclusiveINTEGER.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DT2015-12-25T01:23:45Z.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1integerMininclusiveINTEGER_fail-string-equal> a sht:ValidationFailure ;
+    mf:name "1integerMininclusiveINTEGER_fail-string-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 5 } / { <s1> <p1> 'ab'^^<http://www.w3.org/2001/XMLSchema#string> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1integerMininclusiveINTEGER.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_STRab.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1integerMininclusiveINTEGER_fail-byte-equal> a sht:ValidationFailure ;
+    mf:name "1integerMininclusiveINTEGER_fail-byte-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 5 } / { <s1> <p1> '5'^^<http://www.w3.org/2001/XMLSchema#byte> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1integerMininclusiveINTEGER.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_BYT5.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1integerMininclusivexsd-integer_fail-integer-low> a sht:ValidationFailure ;
+    mf:name "1integerMininclusivexsd-integer_fail-integer-low" ;
+    rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE \"5\"^^<http://www.w3.org/2001/XMLSchema#integer> } / { <s1> <p1> 4 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1integerMininclusivexsd-integer.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT4.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1integerMininclusivexsd-integer_pass-integer-equal> a sht:ValidationTest ;
+    mf:name "1integerMininclusivexsd-integer_pass-integer-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE \"5\"^^<http://www.w3.org/2001/XMLSchema#integer> } / { <s1> <p1> 5 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1integerMininclusivexsd-integer.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT5.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1integerMininclusivexsd-integer_pass-integer-equal.val>
+    .
+
+<#1decimalMininclusiveINTEGER_fail-decimal-low> a sht:ValidationFailure ;
+    mf:name "1decimalMininclusiveINTEGER_fail-decimal-low" ;
+    rdfs:comment "<S1> { <p1> xsd:decimal MININCLUSIVE 5 } / { <s1> <p1> 4.4 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1decimalMininclusiveINTEGER.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC4_4.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1decimalMininclusiveINTEGER_pass-decimal-high> a sht:ValidationTest ;
+    mf:name "1decimalMininclusiveINTEGER_pass-decimal-high" ;
+    rdfs:comment "<S1> { <p1> xsd:decimal MININCLUSIVE 5 } / { <s1> <p1> 5.6 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1decimalMininclusiveINTEGER.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC5_6.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1decimalMininclusiveINTEGER_pass-decimal-high.val>
+    .
+
+<#1decimalMininclusiveINTEGERLead_fail-decimal-low> a sht:ValidationFailure ;
+    mf:name "1decimalMininclusiveINTEGERLead_fail-decimal-low" ;
+    rdfs:comment "<S1> { <p1> xsd:decimal MININCLUSIVE 05 } / { <s1> <p1> 4.4 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1decimalMininclusiveINTEGERLead.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC4_4.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1decimalMininclusiveINTEGERLead_pass-decimal-high> a sht:ValidationTest ;
+    mf:name "1decimalMininclusiveINTEGERLead_pass-decimal-high" ;
+    rdfs:comment "<S1> { <p1> xsd:decimal MININCLUSIVE 05 } / { <s1> <p1> 5.6 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1decimalMininclusiveINTEGERLead.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC5_6.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1decimalMininclusiveINTEGERLead_pass-decimal-high.val>
+    .
+
+<#1decimalMininclusiveDECIMAL_fail-decimal-low> a sht:ValidationFailure ;
+    mf:name "1decimalMininclusiveDECIMAL_fail-decimal-low" ;
+    rdfs:comment "<S1> { <p1> xsd:decimal MININCLUSIVE 4.5 } / { <s1> <p1> 4.4 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1decimalMininclusiveDECIMAL.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC4_4.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1decimalMininclusiveDECIMAL_pass-decimal-equal> a sht:ValidationTest ;
+    mf:name "1decimalMininclusiveDECIMAL_pass-decimal-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:decimal MININCLUSIVE 4.5 } / { <s1> <p1> 4.5 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1decimalMininclusiveDECIMAL.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC4_5.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1decimalMininclusiveDECIMAL_pass-decimal-equal.val>
+    .
+
+<#1decimalMininclusiveDECIMAL_pass-decimal-equalLeadTrail> a sht:ValidationTest ;
+    mf:name "1decimalMininclusiveDECIMAL_pass-decimal-equalLeadTrail" ;
+    rdfs:comment "<S1> { <p1> xsd:decimal MININCLUSIVE 4.5 } / { <s1> <p1> 04.50 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1decimalMininclusiveDECIMAL.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC04_50.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1decimalMininclusiveDECIMAL_pass-decimal-equalLeadTrail.val>
+    .
+
+<#1decimalMininclusiveDECIMAL_pass-decimal-high> a sht:ValidationTest ;
+    mf:name "1decimalMininclusiveDECIMAL_pass-decimal-high" ;
+    rdfs:comment "<S1> { <p1> xsd:decimal MININCLUSIVE 4.5 } / { <s1> <p1> 5.6 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1decimalMininclusiveDECIMAL.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC5_6.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1decimalMininclusiveDECIMAL_pass-decimal-high.val>
+    .
+
+<#1decimalMininclusiveDECIMALLeadTrail_fail-decimal-low> a sht:ValidationFailure ;
+    mf:name "1decimalMininclusiveDECIMALLeadTrail_fail-decimal-low" ;
+    rdfs:comment "<S1> { <p1> xsd:decimal MININCLUSIVE 04.50 } / { <s1> <p1> 4.4 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1decimalMininclusiveDECIMALLeadTrail.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC4_4.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1decimalMininclusiveDECIMALLeadTrail_pass-decimal-equal> a sht:ValidationTest ;
+    mf:name "1decimalMininclusiveDECIMALLeadTrail_pass-decimal-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:decimal MININCLUSIVE 04.50 } / { <s1> <p1> 4.5 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1decimalMininclusiveDECIMALLeadTrail.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC4_5.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1decimalMininclusiveDECIMALLeadTrail_pass-decimal-equal.val>
+    .
+
+<#1decimalMininclusiveDECIMALLeadTrail_pass-decimal-equalLeadTrail> a sht:ValidationTest ;
+    mf:name "1decimalMininclusiveDECIMALLeadTrail_pass-decimal-equalLeadTrail" ;
+    rdfs:comment "<S1> { <p1> xsd:decimal MININCLUSIVE 04.50 } / { <s1> <p1> 04.50 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1decimalMininclusiveDECIMALLeadTrail.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC04_50.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1decimalMininclusiveDECIMALLeadTrail_pass-decimal-equalLeadTrail.val>
+    .
+
+<#1decimalMininclusiveDECIMALLeadTrail_pass-decimal-high> a sht:ValidationTest ;
+    mf:name "1decimalMininclusiveDECIMALLeadTrail_pass-decimal-high" ;
+    rdfs:comment "<S1> { <p1> xsd:decimal MININCLUSIVE 04.50 } / { <s1> <p1> 5.6 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1decimalMininclusiveDECIMALLeadTrail.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC5_6.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1decimalMininclusiveDECIMALLeadTrail_pass-decimal-high.val>
+    .
+
+<#1decimalMininclusiveDECIMALintLeadTrail_fail-decimal-low> a sht:ValidationFailure ;
+    mf:name "1decimalMininclusiveDECIMALintLeadTrail_fail-decimal-low" ;
+    rdfs:comment "<S1> { <p1> xsd:decimal MININCLUSIVE 05.00 } / { <s1> <p1> 4.4 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1decimalMininclusiveDECIMALintLeadTrail.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC4_4.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1decimalMininclusiveDECIMALintLeadTrail_pass-decimal-high> a sht:ValidationTest ;
+    mf:name "1decimalMininclusiveDECIMALintLeadTrail_pass-decimal-high" ;
+    rdfs:comment "<S1> { <p1> xsd:decimal MININCLUSIVE 05.00 } / { <s1> <p1> 5.6 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1decimalMininclusiveDECIMALintLeadTrail.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC5_6.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1decimalMininclusiveDECIMALintLeadTrail_pass-decimal-high.val>
+    .
+
+<#1decimalMininclusiveDOUBLE_fail-decimal-low> a sht:ValidationFailure ;
+    mf:name "1decimalMininclusiveDOUBLE_fail-decimal-low" ;
+    rdfs:comment "<S1> { <p1> xsd:decimal MININCLUSIVE 4.5e0 } / { <s1> <p1> 4.4 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1decimalMininclusiveDOUBLE.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC4_4.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1decimalMininclusiveDOUBLE_pass-decimal-equal> a sht:ValidationTest ;
+    mf:name "1decimalMininclusiveDOUBLE_pass-decimal-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:decimal MININCLUSIVE 4.5e0 } / { <s1> <p1> 4.5 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1decimalMininclusiveDOUBLE.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC4_5.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1decimalMininclusiveDOUBLE_pass-decimal-equal.val>
+    .
+
+<#1decimalMininclusiveDOUBLE_pass-decimal-equalLeadTrail> a sht:ValidationTest ;
+    mf:name "1decimalMininclusiveDOUBLE_pass-decimal-equalLeadTrail" ;
+    rdfs:comment "<S1> { <p1> xsd:decimal MININCLUSIVE 4.5e0 } / { <s1> <p1> 04.50 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1decimalMininclusiveDOUBLE.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC04_50.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1decimalMininclusiveDOUBLE_pass-decimal-equalLeadTrail.val>
+    .
+
+<#1decimalMininclusiveDOUBLELeadTrail_fail-decimal-low> a sht:ValidationFailure ;
+    mf:name "1decimalMininclusiveDOUBLELeadTrail_fail-decimal-low" ;
+    rdfs:comment "<S1> { <p1> xsd:decimal MININCLUSIVE 04.50e0 } / { <s1> <p1> 4.4 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1decimalMininclusiveDOUBLELeadTrail.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC4_4.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1decimalMininclusiveDOUBLELeadTrail_pass-decimal-equal> a sht:ValidationTest ;
+    mf:name "1decimalMininclusiveDOUBLELeadTrail_pass-decimal-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:decimal MININCLUSIVE 04.50e0 } / { <s1> <p1> 4.5 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1decimalMininclusiveDOUBLELeadTrail.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC4_5.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1decimalMininclusiveDOUBLELeadTrail_pass-decimal-equal.val>
+    .
+
+<#1decimalMininclusiveDOUBLELeadTrail_pass-decimal-equalLeadTrail> a sht:ValidationTest ;
+    mf:name "1decimalMininclusiveDOUBLELeadTrail_pass-decimal-equalLeadTrail" ;
+    rdfs:comment "<S1> { <p1> xsd:decimal MININCLUSIVE 04.50e0 } / { <s1> <p1> 04.50 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1decimalMininclusiveDOUBLELeadTrail.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC04_50.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1decimalMininclusiveDOUBLELeadTrail_pass-decimal-equalLeadTrail.val>
+    .
+
+<#1decimalMininclusiveDOUBLELeadTrail_pass-decimal-high> a sht:ValidationTest ;
+    mf:name "1decimalMininclusiveDOUBLELeadTrail_pass-decimal-high" ;
+    rdfs:comment "<S1> { <p1> xsd:decimal MININCLUSIVE 04.50e0 } / { <s1> <p1> 5.6 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1decimalMininclusiveDOUBLELeadTrail.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC5_6.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1decimalMininclusiveDOUBLELeadTrail_pass-decimal-high.val>
+    .
+
+<#1decimalMininclusiveDOUBLEintLeadTrail_fail-decimal-low> a sht:ValidationFailure ;
+    mf:name "1decimalMininclusiveDOUBLEintLeadTrail_fail-decimal-low" ;
+    rdfs:comment "<S1> { <p1> xsd:decimal MININCLUSIVE 05.00e0 } / { <s1> <p1> 4.4 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1decimalMininclusiveDOUBLEintLeadTrail.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC4_4.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1decimalMininclusiveDOUBLEintLeadTrail_pass-decimal-high> a sht:ValidationTest ;
+    mf:name "1decimalMininclusiveDOUBLEintLeadTrail_pass-decimal-high" ;
+    rdfs:comment "<S1> { <p1> xsd:decimal MININCLUSIVE 05.00e0 } / { <s1> <p1> 5.6 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1decimalMininclusiveDOUBLEintLeadTrail.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC5_6.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1decimalMininclusiveDOUBLEintLeadTrail_pass-decimal-high.val>
+    .
+
+<#1decimalMininclusiveDECIMAL_fail-float-equal> a sht:ValidationFailure ;
+    mf:name "1decimalMininclusiveDECIMAL_fail-float-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:decimal MININCLUSIVE 4.5 } / { <s1> <p1> '4.5'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1decimalMininclusiveDECIMAL.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_FLT4_5.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1decimalMininclusiveDECIMAL_fail-double-equal> a sht:ValidationFailure ;
+    mf:name "1decimalMininclusiveDECIMAL_fail-double-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:decimal MININCLUSIVE 4.5 } / { <s1> <p1> 4.5e0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1decimalMininclusiveDECIMAL.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DBL4_5e0.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1decimalMininclusivexsd-decimal_fail-decimal-low> a sht:ValidationFailure ;
+    mf:name "1decimalMininclusivexsd-decimal_fail-decimal-low" ;
+    rdfs:comment "<S1> { <p1> xsd:decimal MININCLUSIVE \"4.5\"^^<http://www.w3.org/2001/XMLSchema#decimal> } / { <s1> <p1> 4.4 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1decimalMininclusivexsd-decimal.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC4_4.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1decimalMininclusivexsd-decimal_pass-decimal-equal> a sht:ValidationTest ;
+    mf:name "1decimalMininclusivexsd-decimal_pass-decimal-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:decimal MININCLUSIVE \"4.5\"^^<http://www.w3.org/2001/XMLSchema#decimal> } / { <s1> <p1> 4.5 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1decimalMininclusivexsd-decimal.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC4_5.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1decimalMininclusivexsd-decimal_pass-decimal-equal.val>
+    .
+
+<#1floatMininclusiveINTEGERLead_fail-float-low> a sht:ValidationFailure ;
+    mf:name "1floatMininclusiveINTEGERLead_fail-float-low" ;
+    rdfs:comment "<S1> { <p1> xsd:float MININCLUSIVE 05 } / { <s1> <p1> '4.4'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1floatMininclusiveINTEGERLead.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_FLT4_4.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1floatMininclusiveINTEGERLead_pass-float-high> a sht:ValidationTest ;
+    mf:name "1floatMininclusiveINTEGERLead_pass-float-high" ;
+    rdfs:comment "<S1> { <p1> xsd:float MININCLUSIVE 05 } / { <s1> <p1> '5.6'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1floatMininclusiveINTEGERLead.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_FLT5_6.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1floatMininclusiveINTEGERLead_pass-float-high.val>
+    .
+
+<#1floatMininclusiveDECIMAL_pass-float-equal> a sht:ValidationTest ;
+    mf:name "1floatMininclusiveDECIMAL_pass-float-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:float MININCLUSIVE 4.5 } / { <s1> <p1> '4.5'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1floatMininclusiveDECIMAL.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_FLT4_5.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1floatMininclusiveDECIMAL_pass-float-equal.val>
+    .
+
+<#1floatMininclusiveDECIMAL_pass-float-equalLeadTrail> a sht:ValidationTest ;
+    mf:name "1floatMininclusiveDECIMAL_pass-float-equalLeadTrail" ;
+    rdfs:comment "<S1> { <p1> xsd:float MININCLUSIVE 4.5 } / { <s1> <p1> '04.50'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1floatMininclusiveDECIMAL.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_FLT04_50.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1floatMininclusiveDECIMAL_pass-float-equalLeadTrail.val>
+    .
+
+<#1floatMininclusiveDECIMALLeadTrail_fail-float-low> a sht:ValidationFailure ;
+    mf:name "1floatMininclusiveDECIMALLeadTrail_fail-float-low" ;
+    rdfs:comment "<S1> { <p1> xsd:float MININCLUSIVE 04.50 } / { <s1> <p1> '4.4'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1floatMininclusiveDECIMALLeadTrail.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_FLT4_4.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1floatMininclusiveDECIMALLeadTrail_pass-float-equal> a sht:ValidationTest ;
+    mf:name "1floatMininclusiveDECIMALLeadTrail_pass-float-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:float MININCLUSIVE 04.50 } / { <s1> <p1> '4.5'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1floatMininclusiveDECIMALLeadTrail.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_FLT4_5.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1floatMininclusiveDECIMALLeadTrail_pass-float-equal.val>
+    .
+
+<#1floatMininclusiveDECIMALLeadTrail_pass-float-equalLeadTrail> a sht:ValidationTest ;
+    mf:name "1floatMininclusiveDECIMALLeadTrail_pass-float-equalLeadTrail" ;
+    rdfs:comment "<S1> { <p1> xsd:float MININCLUSIVE 04.50 } / { <s1> <p1> '04.50'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1floatMininclusiveDECIMALLeadTrail.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_FLT04_50.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1floatMininclusiveDECIMALLeadTrail_pass-float-equalLeadTrail.val>
+    .
+
+<#1floatMininclusiveDECIMALLeadTrail_pass-float-high> a sht:ValidationTest ;
+    mf:name "1floatMininclusiveDECIMALLeadTrail_pass-float-high" ;
+    rdfs:comment "<S1> { <p1> xsd:float MININCLUSIVE 04.50 } / { <s1> <p1> '5.6'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1floatMininclusiveDECIMALLeadTrail.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_FLT5_6.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1floatMininclusiveDECIMALLeadTrail_pass-float-high.val>
+    .
+
+<#1floatMininclusiveDECIMALintLeadTrail_fail-float-low> a sht:ValidationFailure ;
+    mf:name "1floatMininclusiveDECIMALintLeadTrail_fail-float-low" ;
+    rdfs:comment "<S1> { <p1> xsd:float MININCLUSIVE 05.00 } / { <s1> <p1> '4.4'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1floatMininclusiveDECIMALintLeadTrail.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_FLT4_4.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1floatMininclusiveDECIMALintLeadTrail_pass-float-high> a sht:ValidationTest ;
+    mf:name "1floatMininclusiveDECIMALintLeadTrail_pass-float-high" ;
+    rdfs:comment "<S1> { <p1> xsd:float MININCLUSIVE 05.00 } / { <s1> <p1> '5.6'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1floatMininclusiveDECIMALintLeadTrail.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_FLT5_6.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1floatMininclusiveDECIMALintLeadTrail_pass-float-high.val>
+    .
+
+<#1floatMininclusiveDOUBLE_pass-float-equal> a sht:ValidationTest ;
+    mf:name "1floatMininclusiveDOUBLE_pass-float-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:float MININCLUSIVE 4.5e0 } / { <s1> <p1> '4.5'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1floatMininclusiveDOUBLE.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_FLT4_5.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1floatMininclusiveDOUBLE_pass-float-equal.val>
+    .
+
+<#1floatMininclusiveDOUBLE_pass-float-equalLeadTrail> a sht:ValidationTest ;
+    mf:name "1floatMininclusiveDOUBLE_pass-float-equalLeadTrail" ;
+    rdfs:comment "<S1> { <p1> xsd:float MININCLUSIVE 4.5e0 } / { <s1> <p1> '04.50'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1floatMininclusiveDOUBLE.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_FLT04_50.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1floatMininclusiveDOUBLE_pass-float-equalLeadTrail.val>
+    .
+
+<#1floatMininclusiveDOUBLELeadTrail_fail-float-low> a sht:ValidationFailure ;
+    mf:name "1floatMininclusiveDOUBLELeadTrail_fail-float-low" ;
+    rdfs:comment "<S1> { <p1> xsd:float MININCLUSIVE 04.50e0 } / { <s1> <p1> '4.4'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1floatMininclusiveDOUBLELeadTrail.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_FLT4_4.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1floatMininclusiveDOUBLELeadTrail_pass-float-equal> a sht:ValidationTest ;
+    mf:name "1floatMininclusiveDOUBLELeadTrail_pass-float-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:float MININCLUSIVE 04.50e0 } / { <s1> <p1> '4.5'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1floatMininclusiveDOUBLELeadTrail.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_FLT4_5.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1floatMininclusiveDOUBLELeadTrail_pass-float-equal.val>
+    .
+
+<#1floatMininclusiveDOUBLELeadTrail_pass-float-equalLeadTrail> a sht:ValidationTest ;
+    mf:name "1floatMininclusiveDOUBLELeadTrail_pass-float-equalLeadTrail" ;
+    rdfs:comment "<S1> { <p1> xsd:float MININCLUSIVE 04.50e0 } / { <s1> <p1> '04.50'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1floatMininclusiveDOUBLELeadTrail.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_FLT04_50.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1floatMininclusiveDOUBLELeadTrail_pass-float-equalLeadTrail.val>
+    .
+
+<#1floatMininclusiveDOUBLELeadTrail_pass-float-high> a sht:ValidationTest ;
+    mf:name "1floatMininclusiveDOUBLELeadTrail_pass-float-high" ;
+    rdfs:comment "<S1> { <p1> xsd:float MININCLUSIVE 04.50e0 } / { <s1> <p1> '5.6'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1floatMininclusiveDOUBLELeadTrail.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_FLT5_6.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1floatMininclusiveDOUBLELeadTrail_pass-float-high.val>
+    .
+
+<#1floatMininclusiveDOUBLEintLeadTrail_fail-float-low> a sht:ValidationFailure ;
+    mf:name "1floatMininclusiveDOUBLEintLeadTrail_fail-float-low" ;
+    rdfs:comment "<S1> { <p1> xsd:float MININCLUSIVE 05.00e0 } / { <s1> <p1> '4.4'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1floatMininclusiveDOUBLEintLeadTrail.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_FLT4_4.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1floatMininclusiveDOUBLEintLeadTrail_pass-float-high> a sht:ValidationTest ;
+    mf:name "1floatMininclusiveDOUBLEintLeadTrail_pass-float-high" ;
+    rdfs:comment "<S1> { <p1> xsd:float MININCLUSIVE 05.00e0 } / { <s1> <p1> '5.6'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1floatMininclusiveDOUBLEintLeadTrail.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_FLT5_6.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1floatMininclusiveDOUBLEintLeadTrail_pass-float-high.val>
+    .
+
+<#1floatMininclusivexsd-float_fail-float-low> a sht:ValidationFailure ;
+    mf:name "1floatMininclusivexsd-float_fail-float-low" ;
+    rdfs:comment "<S1> { <p1> xsd:float MININCLUSIVE \"4.5\"^^<http://www.w3.org/2001/XMLSchema#float> } / { <s1> <p1> '4.4'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1floatMininclusivexsd-float.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_FLT4_4.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1floatMininclusivexsd-float_pass-float-equal> a sht:ValidationTest ;
+    mf:name "1floatMininclusivexsd-float_pass-float-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:float MININCLUSIVE \"4.5\"^^<http://www.w3.org/2001/XMLSchema#float> } / { <s1> <p1> '4.5'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1floatMininclusivexsd-float.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_FLT4_5.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1floatMininclusivexsd-float_pass-float-equal.val>
+    .
+
+<#1doubleMininclusiveINTEGERLead_fail-double-low> a sht:ValidationFailure ;
+    mf:name "1doubleMininclusiveINTEGERLead_fail-double-low" ;
+    rdfs:comment "<S1> { <p1> xsd:double MININCLUSIVE 05 } / { <s1> <p1> 4.4e0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1doubleMininclusiveINTEGERLead.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DBL4_4e0.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1doubleMininclusiveINTEGERLead_pass-double-high> a sht:ValidationTest ;
+    mf:name "1doubleMininclusiveINTEGERLead_pass-double-high" ;
+    rdfs:comment "<S1> { <p1> xsd:double MININCLUSIVE 05 } / { <s1> <p1> 5.6e0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1doubleMininclusiveINTEGERLead.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DBL5_6e0.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1doubleMininclusiveINTEGERLead_pass-double-high.val>
+    .
+
+<#1doubleMininclusiveDECIMAL_pass-double-equal> a sht:ValidationTest ;
+    mf:name "1doubleMininclusiveDECIMAL_pass-double-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:double MININCLUSIVE 4.5 } / { <s1> <p1> 4.5e0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1doubleMininclusiveDECIMAL.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DBL4_5e0.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1doubleMininclusiveDECIMAL_pass-double-equal.val>
+    .
+
+<#1doubleMininclusiveDECIMAL_pass-double-equalLeadTrail> a sht:ValidationTest ;
+    mf:name "1doubleMininclusiveDECIMAL_pass-double-equalLeadTrail" ;
+    rdfs:comment "<S1> { <p1> xsd:double MININCLUSIVE 4.5 } / { <s1> <p1> 04.50e0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1doubleMininclusiveDECIMAL.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DBL04_50e0.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1doubleMininclusiveDECIMAL_pass-double-equalLeadTrail.val>
+    .
+
+<#1doubleMininclusiveDECIMALLeadTrail_fail-double-low> a sht:ValidationFailure ;
+    mf:name "1doubleMininclusiveDECIMALLeadTrail_fail-double-low" ;
+    rdfs:comment "<S1> { <p1> xsd:double MININCLUSIVE 04.50 } / { <s1> <p1> 4.4e0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1doubleMininclusiveDECIMALLeadTrail.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DBL4_4e0.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1doubleMininclusiveDECIMALLeadTrail_pass-double-equal> a sht:ValidationTest ;
+    mf:name "1doubleMininclusiveDECIMALLeadTrail_pass-double-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:double MININCLUSIVE 04.50 } / { <s1> <p1> 4.5e0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1doubleMininclusiveDECIMALLeadTrail.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DBL4_5e0.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1doubleMininclusiveDECIMALLeadTrail_pass-double-equal.val>
+    .
+
+<#1doubleMininclusiveDECIMALLeadTrail_pass-double-equalLeadTrail> a sht:ValidationTest ;
+    mf:name "1doubleMininclusiveDECIMALLeadTrail_pass-double-equalLeadTrail" ;
+    rdfs:comment "<S1> { <p1> xsd:double MININCLUSIVE 04.50 } / { <s1> <p1> 04.50e0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1doubleMininclusiveDECIMALLeadTrail.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DBL04_50e0.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1doubleMininclusiveDECIMALLeadTrail_pass-double-equalLeadTrail.val>
+    .
+
+<#1doubleMininclusiveDECIMALLeadTrail_pass-double-high> a sht:ValidationTest ;
+    mf:name "1doubleMininclusiveDECIMALLeadTrail_pass-double-high" ;
+    rdfs:comment "<S1> { <p1> xsd:double MININCLUSIVE 04.50 } / { <s1> <p1> 5.6e0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1doubleMininclusiveDECIMALLeadTrail.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DBL5_6e0.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1doubleMininclusiveDECIMALLeadTrail_pass-double-high.val>
+    .
+
+<#1doubleMininclusiveDECIMALintLeadTrail_fail-double-low> a sht:ValidationFailure ;
+    mf:name "1doubleMininclusiveDECIMALintLeadTrail_fail-double-low" ;
+    rdfs:comment "<S1> { <p1> xsd:double MININCLUSIVE 05.00 } / { <s1> <p1> 4.4e0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1doubleMininclusiveDECIMALintLeadTrail.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DBL4_4e0.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1doubleMininclusiveDECIMALintLeadTrail_pass-double-high> a sht:ValidationTest ;
+    mf:name "1doubleMininclusiveDECIMALintLeadTrail_pass-double-high" ;
+    rdfs:comment "<S1> { <p1> xsd:double MININCLUSIVE 05.00 } / { <s1> <p1> 5.6e0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1doubleMininclusiveDECIMALintLeadTrail.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DBL5_6e0.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1doubleMininclusiveDECIMALintLeadTrail_pass-double-high.val>
+    .
+
+<#1doubleMininclusiveDOUBLE_pass-double-equal> a sht:ValidationTest ;
+    mf:name "1doubleMininclusiveDOUBLE_pass-double-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:double MININCLUSIVE 4.5e0 } / { <s1> <p1> 4.5e0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1doubleMininclusiveDOUBLE.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DBL4_5e0.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1doubleMininclusiveDOUBLE_pass-double-equal.val>
+    .
+
+<#1doubleMininclusiveDOUBLE_pass-double-equalLeadTrail> a sht:ValidationTest ;
+    mf:name "1doubleMininclusiveDOUBLE_pass-double-equalLeadTrail" ;
+    rdfs:comment "<S1> { <p1> xsd:double MININCLUSIVE 4.5e0 } / { <s1> <p1> 04.50e0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1doubleMininclusiveDOUBLE.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DBL04_50e0.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1doubleMininclusiveDOUBLE_pass-double-equalLeadTrail.val>
+    .
+
+<#1doubleMininclusiveDOUBLELeadTrail_fail-double-low> a sht:ValidationFailure ;
+    mf:name "1doubleMininclusiveDOUBLELeadTrail_fail-double-low" ;
+    rdfs:comment "<S1> { <p1> xsd:double MININCLUSIVE 04.50e0 } / { <s1> <p1> 4.4e0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1doubleMininclusiveDOUBLELeadTrail.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DBL4_4e0.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1doubleMininclusiveDOUBLELeadTrail_pass-double-equal> a sht:ValidationTest ;
+    mf:name "1doubleMininclusiveDOUBLELeadTrail_pass-double-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:double MININCLUSIVE 04.50e0 } / { <s1> <p1> 4.5e0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1doubleMininclusiveDOUBLELeadTrail.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DBL4_5e0.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1doubleMininclusiveDOUBLELeadTrail_pass-double-equal.val>
+    .
+
+<#1doubleMininclusiveDOUBLELeadTrail_pass-double-equalLeadTrail> a sht:ValidationTest ;
+    mf:name "1doubleMininclusiveDOUBLELeadTrail_pass-double-equalLeadTrail" ;
+    rdfs:comment "<S1> { <p1> xsd:double MININCLUSIVE 04.50e0 } / { <s1> <p1> 04.50e0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1doubleMininclusiveDOUBLELeadTrail.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DBL04_50e0.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1doubleMininclusiveDOUBLELeadTrail_pass-double-equalLeadTrail.val>
+    .
+
+<#1doubleMininclusiveDOUBLELeadTrail_pass-double-high> a sht:ValidationTest ;
+    mf:name "1doubleMininclusiveDOUBLELeadTrail_pass-double-high" ;
+    rdfs:comment "<S1> { <p1> xsd:double MININCLUSIVE 04.50e0 } / { <s1> <p1> 5.6e0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1doubleMininclusiveDOUBLELeadTrail.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DBL5_6e0.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1doubleMininclusiveDOUBLELeadTrail_pass-double-high.val>
+    .
+
+<#1doubleMininclusiveDOUBLEintLeadTrail_fail-double-low> a sht:ValidationFailure ;
+    mf:name "1doubleMininclusiveDOUBLEintLeadTrail_fail-double-low" ;
+    rdfs:comment "<S1> { <p1> xsd:double MININCLUSIVE 05.00e0 } / { <s1> <p1> 4.4e0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1doubleMininclusiveDOUBLEintLeadTrail.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DBL4_4e0.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1doubleMininclusiveDOUBLEintLeadTrail_pass-double-high> a sht:ValidationTest ;
+    mf:name "1doubleMininclusiveDOUBLEintLeadTrail_pass-double-high" ;
+    rdfs:comment "<S1> { <p1> xsd:double MININCLUSIVE 05.00e0 } / { <s1> <p1> 5.6e0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1doubleMininclusiveDOUBLEintLeadTrail.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DBL5_6e0.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1doubleMininclusiveDOUBLEintLeadTrail_pass-double-high.val>
+    .
+
+<#1doubleMininclusivexsd-double_fail-double-low> a sht:ValidationFailure ;
+    mf:name "1doubleMininclusivexsd-double_fail-double-low" ;
+    rdfs:comment "<S1> { <p1> xsd:double MININCLUSIVE \"4.5e0\"^^<http://www.w3.org/2001/XMLSchema#double> } / { <s1> <p1> 4.4e0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1doubleMininclusivexsd-double.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DBL4_4e0.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1doubleMininclusivexsd-double_pass-double-equal> a sht:ValidationTest ;
+    mf:name "1doubleMininclusivexsd-double_pass-double-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:double MININCLUSIVE \"4.5e0\"^^<http://www.w3.org/2001/XMLSchema#double> } / { <s1> <p1> 4.5e0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1doubleMininclusivexsd-double.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DBL4_5e0.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1doubleMininclusivexsd-double_pass-double-equal.val>
+    .
+
+<#1integerMinexclusiveINTEGER_fail-integer-low> a sht:ValidationFailure ;
+    mf:name "1integerMinexclusiveINTEGER_fail-integer-low" ;
+    rdfs:comment "<S1> { <p1> xsd:integer MINEXCLUSIVE 5 } / { <s1> <p1> 4 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1integerMinexclusiveINTEGER.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT4.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1integerMinexclusiveINTEGER_fail-integer-equal> a sht:ValidationFailure ;
+    mf:name "1integerMinexclusiveINTEGER_fail-integer-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:integer MINEXCLUSIVE 5 } / { <s1> <p1> 5 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1integerMinexclusiveINTEGER.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT5.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1integerMinexclusiveINTEGER_pass-integer-high> a sht:ValidationTest ;
+    mf:name "1integerMinexclusiveINTEGER_pass-integer-high" ;
+    rdfs:comment "<S1> { <p1> xsd:integer MINEXCLUSIVE 5 } / { <s1> <p1> 6 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1integerMinexclusiveINTEGER.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT6.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1integerMinexclusiveINTEGER_pass-integer-high.val>
+    .
+
+<#1integerMinexclusiveDECIMALint_fail-integer-low> a sht:ValidationFailure ;
+    mf:name "1integerMinexclusiveDECIMALint_fail-integer-low" ;
+    rdfs:comment "<S1> { <p1> xsd:integer MINEXCLUSIVE 5.0 } / { <s1> <p1> 4 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1integerMinexclusiveDECIMALint.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT4.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1integerMinexclusiveDECIMALint_fail-integer-equal> a sht:ValidationFailure ;
+    mf:name "1integerMinexclusiveDECIMALint_fail-integer-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:integer MINEXCLUSIVE 5.0 } / { <s1> <p1> 5 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1integerMinexclusiveDECIMALint.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT5.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1integerMinexclusiveDECIMALint_pass-integer-high> a sht:ValidationTest ;
+    mf:name "1integerMinexclusiveDECIMALint_pass-integer-high" ;
+    rdfs:comment "<S1> { <p1> xsd:integer MINEXCLUSIVE 5.0 } / { <s1> <p1> 6 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1integerMinexclusiveDECIMALint.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT6.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1integerMinexclusiveDECIMALint_pass-integer-high.val>
+    .
+
+<#1integerMinexclusiveDOUBLEint_fail-integer-low> a sht:ValidationFailure ;
+    mf:name "1integerMinexclusiveDOUBLEint_fail-integer-low" ;
+    rdfs:comment "<S1> { <p1> xsd:integer MINEXCLUSIVE 5.0e0 } / { <s1> <p1> 4 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1integerMinexclusiveDOUBLEint.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT4.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1integerMinexclusiveDOUBLEint_fail-integer-equal> a sht:ValidationFailure ;
+    mf:name "1integerMinexclusiveDOUBLEint_fail-integer-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:integer MINEXCLUSIVE 5.0e0 } / { <s1> <p1> 5 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1integerMinexclusiveDOUBLEint.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT5.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1integerMinexclusiveDOUBLEint_pass-integer-high> a sht:ValidationTest ;
+    mf:name "1integerMinexclusiveDOUBLEint_pass-integer-high" ;
+    rdfs:comment "<S1> { <p1> xsd:integer MINEXCLUSIVE 5.0e0 } / { <s1> <p1> 6 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1integerMinexclusiveDOUBLEint.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT6.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1integerMinexclusiveDOUBLEint_pass-integer-high.val>
+    .
+
+<#1decimalMinexclusiveINTEGER_fail-decimal-low> a sht:ValidationFailure ;
+    mf:name "1decimalMinexclusiveINTEGER_fail-decimal-low" ;
+    rdfs:comment "<S1> { <p1> xsd:decimal MINEXCLUSIVE 5 } / { <s1> <p1> 4.4 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1decimalMinexclusiveINTEGER.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC4_4.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1decimalMinexclusiveINTEGER_pass-decimal-high> a sht:ValidationTest ;
+    mf:name "1decimalMinexclusiveINTEGER_pass-decimal-high" ;
+    rdfs:comment "<S1> { <p1> xsd:decimal MINEXCLUSIVE 5 } / { <s1> <p1> 5.6 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1decimalMinexclusiveINTEGER.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC5_6.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1decimalMinexclusiveINTEGER_pass-decimal-high.val>
+    .
+
+<#1decimalMinexclusiveDECIMAL_fail-decimal-low> a sht:ValidationFailure ;
+    mf:name "1decimalMinexclusiveDECIMAL_fail-decimal-low" ;
+    rdfs:comment "<S1> { <p1> xsd:decimal MINEXCLUSIVE 4.5 } / { <s1> <p1> 4.4 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1decimalMinexclusiveDECIMAL.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC4_4.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1decimalMinexclusiveDECIMAL_fail-decimal-equal> a sht:ValidationFailure ;
+    mf:name "1decimalMinexclusiveDECIMAL_fail-decimal-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:decimal MINEXCLUSIVE 4.5 } / { <s1> <p1> 4.5 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1decimalMinexclusiveDECIMAL.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC4_5.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1decimalMinexclusiveDECIMAL_pass-decimal-high> a sht:ValidationTest ;
+    mf:name "1decimalMinexclusiveDECIMAL_pass-decimal-high" ;
+    rdfs:comment "<S1> { <p1> xsd:decimal MINEXCLUSIVE 4.5 } / { <s1> <p1> 5.6 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1decimalMinexclusiveDECIMAL.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC5_6.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1decimalMinexclusiveDECIMAL_pass-decimal-high.val>
+    .
+
+<#1decimalMinexclusiveDOUBLE_fail-decimal-low> a sht:ValidationFailure ;
+    mf:name "1decimalMinexclusiveDOUBLE_fail-decimal-low" ;
+    rdfs:comment "<S1> { <p1> xsd:decimal MINEXCLUSIVE 4.5e0 } / { <s1> <p1> 4.4 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1decimalMinexclusiveDOUBLE.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC4_4.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1decimalMinexclusiveDOUBLE_fail-decimal-equal> a sht:ValidationFailure ;
+    mf:name "1decimalMinexclusiveDOUBLE_fail-decimal-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:decimal MINEXCLUSIVE 4.5e0 } / { <s1> <p1> 4.5 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1decimalMinexclusiveDOUBLE.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC4_5.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1decimalMinexclusiveDOUBLE_pass-decimal-high> a sht:ValidationTest ;
+    mf:name "1decimalMinexclusiveDOUBLE_pass-decimal-high" ;
+    rdfs:comment "<S1> { <p1> xsd:decimal MINEXCLUSIVE 4.5e0 } / { <s1> <p1> 5.6 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1decimalMinexclusiveDOUBLE.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC5_6.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1decimalMinexclusiveDOUBLE_pass-decimal-high.val>
+    .
+
+<#1decimalMinexclusiveDECIMAL_fail-float-equal> a sht:ValidationFailure ;
+    mf:name "1decimalMinexclusiveDECIMAL_fail-float-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:decimal MINEXCLUSIVE 4.5 } / { <s1> <p1> '4.5'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1decimalMinexclusiveDECIMAL.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_FLT4_5.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1decimalMinexclusiveDECIMAL_fail-double-equal> a sht:ValidationFailure ;
+    mf:name "1decimalMinexclusiveDECIMAL_fail-double-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:decimal MINEXCLUSIVE 4.5 } / { <s1> <p1> 4.5e0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1decimalMinexclusiveDECIMAL.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DBL4_5e0.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1floatMinexclusiveINTEGER_fail-float-low> a sht:ValidationFailure ;
+    mf:name "1floatMinexclusiveINTEGER_fail-float-low" ;
+    rdfs:comment "<S1> { <p1> xsd:float MINEXCLUSIVE 5 } / { <s1> <p1> '4.4'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1floatMinexclusiveINTEGER.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_FLT4_4.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1floatMinexclusiveINTEGER_pass-float-high> a sht:ValidationTest ;
+    mf:name "1floatMinexclusiveINTEGER_pass-float-high" ;
+    rdfs:comment "<S1> { <p1> xsd:float MINEXCLUSIVE 5 } / { <s1> <p1> '5.6'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1floatMinexclusiveINTEGER.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_FLT5_6.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1floatMinexclusiveINTEGER_pass-float-high.val>
+    .
+
+<#1floatMinexclusiveDECIMAL_fail-float-low> a sht:ValidationFailure ;
+    mf:name "1floatMinexclusiveDECIMAL_fail-float-low" ;
+    rdfs:comment "<S1> { <p1> xsd:float MINEXCLUSIVE 4.5 } / { <s1> <p1> '4.4'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1floatMinexclusiveDECIMAL.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_FLT4_4.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1floatMinexclusiveDECIMAL_fail-float-equal> a sht:ValidationFailure ;
+    mf:name "1floatMinexclusiveDECIMAL_fail-float-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:float MINEXCLUSIVE 4.5 } / { <s1> <p1> '4.5'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1floatMinexclusiveDECIMAL.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_FLT4_5.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1floatMinexclusiveDECIMAL_pass-float-high> a sht:ValidationTest ;
+    mf:name "1floatMinexclusiveDECIMAL_pass-float-high" ;
+    rdfs:comment "<S1> { <p1> xsd:float MINEXCLUSIVE 4.5 } / { <s1> <p1> '5.6'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1floatMinexclusiveDECIMAL.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_FLT5_6.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1floatMinexclusiveDECIMAL_pass-float-high.val>
+    .
+
+<#1floatMinexclusiveDOUBLE_fail-float-low> a sht:ValidationFailure ;
+    mf:name "1floatMinexclusiveDOUBLE_fail-float-low" ;
+    rdfs:comment "<S1> { <p1> xsd:float MINEXCLUSIVE 4.5e0 } / { <s1> <p1> '4.4'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1floatMinexclusiveDOUBLE.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_FLT4_4.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1floatMinexclusiveDOUBLE_fail-float-equal> a sht:ValidationFailure ;
+    mf:name "1floatMinexclusiveDOUBLE_fail-float-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:float MINEXCLUSIVE 4.5e0 } / { <s1> <p1> '4.5'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1floatMinexclusiveDOUBLE.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_FLT4_5.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1floatMinexclusiveDOUBLE_pass-float-high> a sht:ValidationTest ;
+    mf:name "1floatMinexclusiveDOUBLE_pass-float-high" ;
+    rdfs:comment "<S1> { <p1> xsd:float MINEXCLUSIVE 4.5e0 } / { <s1> <p1> '5.6'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1floatMinexclusiveDOUBLE.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_FLT5_6.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1floatMinexclusiveDOUBLE_pass-float-high.val>
+    .
+
+<#1floatMinexclusivexsd-float_fail-decimal-equal> a sht:ValidationFailure ;
+    mf:name "1floatMinexclusivexsd-float_fail-decimal-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:float MINEXCLUSIVE \"4.5\"^^<http://www.w3.org/2001/XMLSchema#float> } / { <s1> <p1> 4.5 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1floatMinexclusivexsd-float.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC4_5.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1floatMinexclusivexsd-float_fail-double-equal> a sht:ValidationFailure ;
+    mf:name "1floatMinexclusivexsd-float_fail-double-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:float MINEXCLUSIVE \"4.5\"^^<http://www.w3.org/2001/XMLSchema#float> } / { <s1> <p1> 4.5e0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1floatMinexclusivexsd-float.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DBL4_5e0.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1doubleMinexclusiveINTEGER_fail-double-low> a sht:ValidationFailure ;
+    mf:name "1doubleMinexclusiveINTEGER_fail-double-low" ;
+    rdfs:comment "<S1> { <p1> xsd:double MINEXCLUSIVE 5 } / { <s1> <p1> 4.4e0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1doubleMinexclusiveINTEGER.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DBL4_4e0.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1doubleMinexclusiveINTEGER_pass-double-high> a sht:ValidationTest ;
+    mf:name "1doubleMinexclusiveINTEGER_pass-double-high" ;
+    rdfs:comment "<S1> { <p1> xsd:double MINEXCLUSIVE 5 } / { <s1> <p1> 5.6e0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1doubleMinexclusiveINTEGER.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DBL5_6e0.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1doubleMinexclusiveINTEGER_pass-double-high.val>
+    .
+
+<#1doubleMinexclusiveDECIMAL_fail-double-low> a sht:ValidationFailure ;
+    mf:name "1doubleMinexclusiveDECIMAL_fail-double-low" ;
+    rdfs:comment "<S1> { <p1> xsd:double MINEXCLUSIVE 4.5 } / { <s1> <p1> 4.4e0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1doubleMinexclusiveDECIMAL.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DBL4_4e0.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1doubleMinexclusiveDECIMAL_fail-double-equal> a sht:ValidationFailure ;
+    mf:name "1doubleMinexclusiveDECIMAL_fail-double-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:double MINEXCLUSIVE 4.5 } / { <s1> <p1> 4.5e0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1doubleMinexclusiveDECIMAL.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DBL4_5e0.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1doubleMinexclusiveDECIMAL_pass-double-high> a sht:ValidationTest ;
+    mf:name "1doubleMinexclusiveDECIMAL_pass-double-high" ;
+    rdfs:comment "<S1> { <p1> xsd:double MINEXCLUSIVE 4.5 } / { <s1> <p1> 5.6e0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1doubleMinexclusiveDECIMAL.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DBL5_6e0.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1doubleMinexclusiveDECIMAL_pass-double-high.val>
+    .
+
+<#1doubleMinexclusiveDOUBLE_fail-double-low> a sht:ValidationFailure ;
+    mf:name "1doubleMinexclusiveDOUBLE_fail-double-low" ;
+    rdfs:comment "<S1> { <p1> xsd:double MINEXCLUSIVE 4.5e0 } / { <s1> <p1> 4.4e0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1doubleMinexclusiveDOUBLE.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DBL4_4e0.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1doubleMinexclusiveDOUBLE_fail-double-equal> a sht:ValidationFailure ;
+    mf:name "1doubleMinexclusiveDOUBLE_fail-double-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:double MINEXCLUSIVE 4.5e0 } / { <s1> <p1> 4.5e0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1doubleMinexclusiveDOUBLE.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DBL4_5e0.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1doubleMinexclusiveDOUBLE_pass-double-high> a sht:ValidationTest ;
+    mf:name "1doubleMinexclusiveDOUBLE_pass-double-high" ;
+    rdfs:comment "<S1> { <p1> xsd:double MINEXCLUSIVE 4.5e0 } / { <s1> <p1> 5.6e0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1doubleMinexclusiveDOUBLE.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DBL5_6e0.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1doubleMinexclusiveDOUBLE_pass-double-high.val>
+    .
+
+<#1doubleMinexclusiveDECIMAL_fail-float-equal> a sht:ValidationFailure ;
+    mf:name "1doubleMinexclusiveDECIMAL_fail-float-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:double MINEXCLUSIVE 4.5 } / { <s1> <p1> '4.5'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1doubleMinexclusiveDECIMAL.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_FLT4_5.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1integerMaxinclusiveINTEGER_pass-integer-low> a sht:ValidationTest ;
+    mf:name "1integerMaxinclusiveINTEGER_pass-integer-low" ;
+    rdfs:comment "<S1> { <p1> xsd:integer MAXINCLUSIVE 5 } / { <s1> <p1> 4 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1integerMaxinclusiveINTEGER.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT4.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1integerMaxinclusiveINTEGER_pass-integer-low.val>
+    .
+
+<#1integerMaxinclusiveINTEGER_pass-integer-equal> a sht:ValidationTest ;
+    mf:name "1integerMaxinclusiveINTEGER_pass-integer-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:integer MAXINCLUSIVE 5 } / { <s1> <p1> 5 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1integerMaxinclusiveINTEGER.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT5.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1integerMaxinclusiveINTEGER_pass-integer-equal.val>
+    .
+
+<#1integerMaxinclusiveINTEGER_fail-integer-high> a sht:ValidationFailure ;
+    mf:name "1integerMaxinclusiveINTEGER_fail-integer-high" ;
+    rdfs:comment "<S1> { <p1> xsd:integer MAXINCLUSIVE 5 } / { <s1> <p1> 6 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1integerMaxinclusiveINTEGER.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT6.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1integerMaxinclusiveDECIMALint_pass-integer-low> a sht:ValidationTest ;
+    mf:name "1integerMaxinclusiveDECIMALint_pass-integer-low" ;
+    rdfs:comment "<S1> { <p1> xsd:integer MAXINCLUSIVE 5.0 } / { <s1> <p1> 4 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1integerMaxinclusiveDECIMALint.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT4.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1integerMaxinclusiveDECIMALint_pass-integer-low.val>
+    .
+
+<#1integerMaxinclusiveDECIMALint_pass-integer-equal> a sht:ValidationTest ;
+    mf:name "1integerMaxinclusiveDECIMALint_pass-integer-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:integer MAXINCLUSIVE 5.0 } / { <s1> <p1> 5 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1integerMaxinclusiveDECIMALint.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT5.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1integerMaxinclusiveDECIMALint_pass-integer-equal.val>
+    .
+
+<#1integerMaxinclusiveDECIMALint_fail-integer-high> a sht:ValidationFailure ;
+    mf:name "1integerMaxinclusiveDECIMALint_fail-integer-high" ;
+    rdfs:comment "<S1> { <p1> xsd:integer MAXINCLUSIVE 5.0 } / { <s1> <p1> 6 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1integerMaxinclusiveDECIMALint.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT6.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1integerMaxinclusiveDOUBLEint_pass-integer-low> a sht:ValidationTest ;
+    mf:name "1integerMaxinclusiveDOUBLEint_pass-integer-low" ;
+    rdfs:comment "<S1> { <p1> xsd:integer MAXINCLUSIVE 5.0e0 } / { <s1> <p1> 4 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1integerMaxinclusiveDOUBLEint.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT4.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1integerMaxinclusiveDOUBLEint_pass-integer-low.val>
+    .
+
+<#1integerMaxinclusiveDOUBLEint_pass-integer-equal> a sht:ValidationTest ;
+    mf:name "1integerMaxinclusiveDOUBLEint_pass-integer-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:integer MAXINCLUSIVE 5.0e0 } / { <s1> <p1> 5 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1integerMaxinclusiveDOUBLEint.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT5.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1integerMaxinclusiveDOUBLEint_pass-integer-equal.val>
+    .
+
+<#1integerMaxinclusiveDOUBLEint_fail-integer-high> a sht:ValidationFailure ;
+    mf:name "1integerMaxinclusiveDOUBLEint_fail-integer-high" ;
+    rdfs:comment "<S1> { <p1> xsd:integer MAXINCLUSIVE 5.0e0 } / { <s1> <p1> 6 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1integerMaxinclusiveDOUBLEint.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT6.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1decimalMaxinclusiveINTEGER_pass-decimal-low> a sht:ValidationTest ;
+    mf:name "1decimalMaxinclusiveINTEGER_pass-decimal-low" ;
+    rdfs:comment "<S1> { <p1> xsd:decimal MAXINCLUSIVE 5 } / { <s1> <p1> 4.4 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1decimalMaxinclusiveINTEGER.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC4_4.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1decimalMaxinclusiveINTEGER_pass-decimal-low.val>
+    .
+
+<#1decimalMaxinclusiveINTEGER_fail-decimal-high> a sht:ValidationFailure ;
+    mf:name "1decimalMaxinclusiveINTEGER_fail-decimal-high" ;
+    rdfs:comment "<S1> { <p1> xsd:decimal MAXINCLUSIVE 5 } / { <s1> <p1> 5.6 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1decimalMaxinclusiveINTEGER.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC5_6.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1decimalMaxinclusiveDECIMAL_pass-decimal-low> a sht:ValidationTest ;
+    mf:name "1decimalMaxinclusiveDECIMAL_pass-decimal-low" ;
+    rdfs:comment "<S1> { <p1> xsd:decimal MAXINCLUSIVE 5.5 } / { <s1> <p1> 4.4 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1decimalMaxinclusiveDECIMAL.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC4_4.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1decimalMaxinclusiveDECIMAL_pass-decimal-low.val>
+    .
+
+<#1decimalMaxinclusiveDECIMAL_pass-decimal-equal> a sht:ValidationTest ;
+    mf:name "1decimalMaxinclusiveDECIMAL_pass-decimal-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:decimal MAXINCLUSIVE 5.5 } / { <s1> <p1> 5.5 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1decimalMaxinclusiveDECIMAL.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC5_5.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1decimalMaxinclusiveDECIMAL_pass-decimal-equal.val>
+    .
+
+<#1decimalMaxinclusiveDECIMAL_fail-decimal-high> a sht:ValidationFailure ;
+    mf:name "1decimalMaxinclusiveDECIMAL_fail-decimal-high" ;
+    rdfs:comment "<S1> { <p1> xsd:decimal MAXINCLUSIVE 5.5 } / { <s1> <p1> 5.6 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1decimalMaxinclusiveDECIMAL.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC5_6.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1decimalMaxinclusiveDOUBLE_pass-decimal-low> a sht:ValidationTest ;
+    mf:name "1decimalMaxinclusiveDOUBLE_pass-decimal-low" ;
+    rdfs:comment "<S1> { <p1> xsd:decimal MAXINCLUSIVE 5.5e0 } / { <s1> <p1> 4.4 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1decimalMaxinclusiveDOUBLE.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC4_4.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1decimalMaxinclusiveDOUBLE_pass-decimal-low.val>
+    .
+
+<#1decimalMaxinclusiveDOUBLE_pass-decimal-equal> a sht:ValidationTest ;
+    mf:name "1decimalMaxinclusiveDOUBLE_pass-decimal-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:decimal MAXINCLUSIVE 5.5e0 } / { <s1> <p1> 5.5 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1decimalMaxinclusiveDOUBLE.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC5_5.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1decimalMaxinclusiveDOUBLE_pass-decimal-equal.val>
+    .
+
+<#1decimalMaxinclusiveDOUBLE_fail-decimal-high> a sht:ValidationFailure ;
+    mf:name "1decimalMaxinclusiveDOUBLE_fail-decimal-high" ;
+    rdfs:comment "<S1> { <p1> xsd:decimal MAXINCLUSIVE 5.5e0 } / { <s1> <p1> 5.6 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1decimalMaxinclusiveDOUBLE.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC5_6.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1decimalMaxinclusiveDECIMAL_fail-float-equal> a sht:ValidationFailure ;
+    mf:name "1decimalMaxinclusiveDECIMAL_fail-float-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:decimal MAXINCLUSIVE 5.5 } / { <s1> <p1> '5.5'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1decimalMaxinclusiveDECIMAL.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_FLT5_5.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1decimalMaxinclusiveDECIMAL_fail-double-equal> a sht:ValidationFailure ;
+    mf:name "1decimalMaxinclusiveDECIMAL_fail-double-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:decimal MAXINCLUSIVE 5.5 } / { <s1> <p1> 5.5e0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1decimalMaxinclusiveDECIMAL.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DBL5_5e0.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1floatMaxinclusiveINTEGER_pass-float-low> a sht:ValidationTest ;
+    mf:name "1floatMaxinclusiveINTEGER_pass-float-low" ;
+    rdfs:comment "<S1> { <p1> xsd:float MAXINCLUSIVE 5 } / { <s1> <p1> '4.4'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1floatMaxinclusiveINTEGER.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_FLT4_4.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1floatMaxinclusiveINTEGER_pass-float-low.val>
+    .
+
+<#1floatMaxinclusiveINTEGER_fail-float-high> a sht:ValidationFailure ;
+    mf:name "1floatMaxinclusiveINTEGER_fail-float-high" ;
+    rdfs:comment "<S1> { <p1> xsd:float MAXINCLUSIVE 5 } / { <s1> <p1> '5.6'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1floatMaxinclusiveINTEGER.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_FLT5_6.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1floatMaxinclusiveDECIMAL_pass-float-low> a sht:ValidationTest ;
+    mf:name "1floatMaxinclusiveDECIMAL_pass-float-low" ;
+    rdfs:comment "<S1> { <p1> xsd:float MAXINCLUSIVE 5.5 } / { <s1> <p1> '4.4'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1floatMaxinclusiveDECIMAL.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_FLT4_4.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1floatMaxinclusiveDECIMAL_pass-float-low.val>
+    .
+
+<#1floatMaxinclusiveDECIMAL_pass-float-equal> a sht:ValidationTest ;
+    mf:name "1floatMaxinclusiveDECIMAL_pass-float-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:float MAXINCLUSIVE 5.5 } / { <s1> <p1> '5.5'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1floatMaxinclusiveDECIMAL.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_FLT5_5.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1floatMaxinclusiveDECIMAL_pass-float-equal.val>
+    .
+
+<#1floatMaxinclusiveDECIMAL_fail-float-high> a sht:ValidationFailure ;
+    mf:name "1floatMaxinclusiveDECIMAL_fail-float-high" ;
+    rdfs:comment "<S1> { <p1> xsd:float MAXINCLUSIVE 5.5 } / { <s1> <p1> '5.6'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1floatMaxinclusiveDECIMAL.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_FLT5_6.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1floatMaxinclusiveDOUBLE_pass-float-low> a sht:ValidationTest ;
+    mf:name "1floatMaxinclusiveDOUBLE_pass-float-low" ;
+    rdfs:comment "<S1> { <p1> xsd:float MAXINCLUSIVE 5.5e0 } / { <s1> <p1> '4.4'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1floatMaxinclusiveDOUBLE.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_FLT4_4.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1floatMaxinclusiveDOUBLE_pass-float-low.val>
+    .
+
+<#1floatMaxinclusiveDOUBLE_pass-float-equal> a sht:ValidationTest ;
+    mf:name "1floatMaxinclusiveDOUBLE_pass-float-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:float MAXINCLUSIVE 5.5e0 } / { <s1> <p1> '5.5'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1floatMaxinclusiveDOUBLE.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_FLT5_5.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1floatMaxinclusiveDOUBLE_pass-float-equal.val>
+    .
+
+<#1floatMaxinclusiveDOUBLE_fail-float-high> a sht:ValidationFailure ;
+    mf:name "1floatMaxinclusiveDOUBLE_fail-float-high" ;
+    rdfs:comment "<S1> { <p1> xsd:float MAXINCLUSIVE 5.5e0 } / { <s1> <p1> '5.6'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1floatMaxinclusiveDOUBLE.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_FLT5_6.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1floatMaxinclusivexsd-float_fail-decimal-equal> a sht:ValidationFailure ;
+    mf:name "1floatMaxinclusivexsd-float_fail-decimal-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:float MAXINCLUSIVE \"5.5\"^^<http://www.w3.org/2001/XMLSchema#float> } / { <s1> <p1> 5.5 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1floatMaxinclusivexsd-float.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC5_5.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1floatMaxinclusivexsd-float_fail-double-equal> a sht:ValidationFailure ;
+    mf:name "1floatMaxinclusivexsd-float_fail-double-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:float MAXINCLUSIVE \"5.5\"^^<http://www.w3.org/2001/XMLSchema#float> } / { <s1> <p1> 5.5e0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1floatMaxinclusivexsd-float.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DBL5_5e0.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1doubleMaxinclusiveINTEGER_pass-double-low> a sht:ValidationTest ;
+    mf:name "1doubleMaxinclusiveINTEGER_pass-double-low" ;
+    rdfs:comment "<S1> { <p1> xsd:double MAXINCLUSIVE 5 } / { <s1> <p1> 4.4e0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1doubleMaxinclusiveINTEGER.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DBL4_4e0.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1doubleMaxinclusiveINTEGER_pass-double-low.val>
+    .
+
+<#1doubleMaxinclusiveINTEGER_fail-double-high> a sht:ValidationFailure ;
+    mf:name "1doubleMaxinclusiveINTEGER_fail-double-high" ;
+    rdfs:comment "<S1> { <p1> xsd:double MAXINCLUSIVE 5 } / { <s1> <p1> 5.6e0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1doubleMaxinclusiveINTEGER.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DBL5_6e0.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1doubleMaxinclusiveDECIMAL_pass-double-low> a sht:ValidationTest ;
+    mf:name "1doubleMaxinclusiveDECIMAL_pass-double-low" ;
+    rdfs:comment "<S1> { <p1> xsd:double MAXINCLUSIVE 5.5 } / { <s1> <p1> 4.4e0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1doubleMaxinclusiveDECIMAL.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DBL4_4e0.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1doubleMaxinclusiveDECIMAL_pass-double-low.val>
+    .
+
+<#1doubleMaxinclusiveDECIMAL_pass-double-equal> a sht:ValidationTest ;
+    mf:name "1doubleMaxinclusiveDECIMAL_pass-double-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:double MAXINCLUSIVE 5.5 } / { <s1> <p1> 5.5e0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1doubleMaxinclusiveDECIMAL.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DBL5_5e0.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1doubleMaxinclusiveDECIMAL_pass-double-equal.val>
+    .
+
+<#1doubleMaxinclusiveDECIMAL_fail-double-high> a sht:ValidationFailure ;
+    mf:name "1doubleMaxinclusiveDECIMAL_fail-double-high" ;
+    rdfs:comment "<S1> { <p1> xsd:double MAXINCLUSIVE 5.5 } / { <s1> <p1> 5.6e0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1doubleMaxinclusiveDECIMAL.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DBL5_6e0.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1doubleMaxinclusiveDOUBLE_pass-double-low> a sht:ValidationTest ;
+    mf:name "1doubleMaxinclusiveDOUBLE_pass-double-low" ;
+    rdfs:comment "<S1> { <p1> xsd:double MAXINCLUSIVE 5.5e0 } / { <s1> <p1> 4.4e0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1doubleMaxinclusiveDOUBLE.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DBL4_4e0.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1doubleMaxinclusiveDOUBLE_pass-double-low.val>
+    .
+
+<#1doubleMaxinclusiveDOUBLE_pass-double-equal> a sht:ValidationTest ;
+    mf:name "1doubleMaxinclusiveDOUBLE_pass-double-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:double MAXINCLUSIVE 5.5e0 } / { <s1> <p1> 5.5e0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1doubleMaxinclusiveDOUBLE.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DBL5_5e0.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1doubleMaxinclusiveDOUBLE_pass-double-equal.val>
+    .
+
+<#1doubleMaxinclusiveDOUBLE_fail-double-high> a sht:ValidationFailure ;
+    mf:name "1doubleMaxinclusiveDOUBLE_fail-double-high" ;
+    rdfs:comment "<S1> { <p1> xsd:double MAXINCLUSIVE 5.5e0 } / { <s1> <p1> 5.6e0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1doubleMaxinclusiveDOUBLE.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DBL5_6e0.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1doubleMaxinclusiveDECIMAL_fail-float-equal> a sht:ValidationFailure ;
+    mf:name "1doubleMaxinclusiveDECIMAL_fail-float-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:double MAXINCLUSIVE 5.5 } / { <s1> <p1> '5.5'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1doubleMaxinclusiveDECIMAL.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_FLT5_5.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1integerMaxexclusiveINTEGER_pass-integer-low> a sht:ValidationTest ;
+    mf:name "1integerMaxexclusiveINTEGER_pass-integer-low" ;
+    rdfs:comment "<S1> { <p1> xsd:integer MAXEXCLUSIVE 5 } / { <s1> <p1> 4 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1integerMaxexclusiveINTEGER.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT4.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1integerMaxexclusiveINTEGER_pass-integer-low.val>
+    .
+
+<#1integerMaxexclusiveINTEGER_fail-integer-equal> a sht:ValidationFailure ;
+    mf:name "1integerMaxexclusiveINTEGER_fail-integer-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:integer MAXEXCLUSIVE 5 } / { <s1> <p1> 5 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1integerMaxexclusiveINTEGER.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT5.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1integerMaxexclusiveINTEGER_fail-integer-high> a sht:ValidationFailure ;
+    mf:name "1integerMaxexclusiveINTEGER_fail-integer-high" ;
+    rdfs:comment "<S1> { <p1> xsd:integer MAXEXCLUSIVE 5 } / { <s1> <p1> 6 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1integerMaxexclusiveINTEGER.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT6.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1integerMaxexclusiveDECIMALint_pass-integer-low> a sht:ValidationTest ;
+    mf:name "1integerMaxexclusiveDECIMALint_pass-integer-low" ;
+    rdfs:comment "<S1> { <p1> xsd:integer MAXEXCLUSIVE 5.0 } / { <s1> <p1> 4 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1integerMaxexclusiveDECIMALint.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT4.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1integerMaxexclusiveDECIMALint_pass-integer-low.val>
+    .
+
+<#1integerMaxexclusiveDECIMALint_fail-integer-equal> a sht:ValidationFailure ;
+    mf:name "1integerMaxexclusiveDECIMALint_fail-integer-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:integer MAXEXCLUSIVE 5.0 } / { <s1> <p1> 5 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1integerMaxexclusiveDECIMALint.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT5.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1integerMaxexclusiveDECIMALint_fail-integer-high> a sht:ValidationFailure ;
+    mf:name "1integerMaxexclusiveDECIMALint_fail-integer-high" ;
+    rdfs:comment "<S1> { <p1> xsd:integer MAXEXCLUSIVE 5.0 } / { <s1> <p1> 6 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1integerMaxexclusiveDECIMALint.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT6.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1integerMaxexclusiveDOUBLEint_pass-integer-low> a sht:ValidationTest ;
+    mf:name "1integerMaxexclusiveDOUBLEint_pass-integer-low" ;
+    rdfs:comment "<S1> { <p1> xsd:integer MAXEXCLUSIVE 5.0e0 } / { <s1> <p1> 4 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1integerMaxexclusiveDOUBLEint.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT4.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1integerMaxexclusiveDOUBLEint_pass-integer-low.val>
+    .
+
+<#1integerMaxexclusiveDOUBLEint_fail-integer-equal> a sht:ValidationFailure ;
+    mf:name "1integerMaxexclusiveDOUBLEint_fail-integer-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:integer MAXEXCLUSIVE 5.0e0 } / { <s1> <p1> 5 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1integerMaxexclusiveDOUBLEint.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT5.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1integerMaxexclusiveDOUBLEint_fail-integer-high> a sht:ValidationFailure ;
+    mf:name "1integerMaxexclusiveDOUBLEint_fail-integer-high" ;
+    rdfs:comment "<S1> { <p1> xsd:integer MAXEXCLUSIVE 5.0e0 } / { <s1> <p1> 6 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1integerMaxexclusiveDOUBLEint.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT6.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1decimalMaxexclusiveINTEGER_pass-decimal-low> a sht:ValidationTest ;
+    mf:name "1decimalMaxexclusiveINTEGER_pass-decimal-low" ;
+    rdfs:comment "<S1> { <p1> xsd:decimal MAXEXCLUSIVE 5 } / { <s1> <p1> 4.4 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1decimalMaxexclusiveINTEGER.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC4_4.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1decimalMaxexclusiveINTEGER_pass-decimal-low.val>
+    .
+
+<#1decimalMaxexclusiveINTEGER_fail-decimal-high> a sht:ValidationFailure ;
+    mf:name "1decimalMaxexclusiveINTEGER_fail-decimal-high" ;
+    rdfs:comment "<S1> { <p1> xsd:decimal MAXEXCLUSIVE 5 } / { <s1> <p1> 5.6 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1decimalMaxexclusiveINTEGER.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC5_6.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1decimalMaxexclusiveDECIMAL_pass-decimal-low> a sht:ValidationTest ;
+    mf:name "1decimalMaxexclusiveDECIMAL_pass-decimal-low" ;
+    rdfs:comment "<S1> { <p1> xsd:decimal MAXEXCLUSIVE 5.5 } / { <s1> <p1> 4.4 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1decimalMaxexclusiveDECIMAL.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC4_4.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1decimalMaxexclusiveDECIMAL_pass-decimal-low.val>
+    .
+
+<#1decimalMaxexclusiveDECIMAL_fail-decimal-equal> a sht:ValidationFailure ;
+    mf:name "1decimalMaxexclusiveDECIMAL_fail-decimal-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:decimal MAXEXCLUSIVE 5.5 } / { <s1> <p1> 5.5 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1decimalMaxexclusiveDECIMAL.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC5_5.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1decimalMaxexclusiveDECIMAL_fail-decimal-high> a sht:ValidationFailure ;
+    mf:name "1decimalMaxexclusiveDECIMAL_fail-decimal-high" ;
+    rdfs:comment "<S1> { <p1> xsd:decimal MAXEXCLUSIVE 5.5 } / { <s1> <p1> 5.6 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1decimalMaxexclusiveDECIMAL.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC5_6.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1decimalMaxexclusiveDOUBLE_pass-decimal-low> a sht:ValidationTest ;
+    mf:name "1decimalMaxexclusiveDOUBLE_pass-decimal-low" ;
+    rdfs:comment "<S1> { <p1> xsd:decimal MAXEXCLUSIVE 5.5e0 } / { <s1> <p1> 4.4 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1decimalMaxexclusiveDOUBLE.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC4_4.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1decimalMaxexclusiveDOUBLE_pass-decimal-low.val>
+    .
+
+<#1decimalMaxexclusiveDOUBLE_fail-decimal-equal> a sht:ValidationFailure ;
+    mf:name "1decimalMaxexclusiveDOUBLE_fail-decimal-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:decimal MAXEXCLUSIVE 5.5e0 } / { <s1> <p1> 5.5 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1decimalMaxexclusiveDOUBLE.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC5_5.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1decimalMaxexclusiveDOUBLE_fail-decimal-high> a sht:ValidationFailure ;
+    mf:name "1decimalMaxexclusiveDOUBLE_fail-decimal-high" ;
+    rdfs:comment "<S1> { <p1> xsd:decimal MAXEXCLUSIVE 5.5e0 } / { <s1> <p1> 5.6 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1decimalMaxexclusiveDOUBLE.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC5_6.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1decimalMaxexclusiveDECIMAL_fail-float-equal> a sht:ValidationFailure ;
+    mf:name "1decimalMaxexclusiveDECIMAL_fail-float-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:decimal MAXEXCLUSIVE 5.5 } / { <s1> <p1> '5.5'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1decimalMaxexclusiveDECIMAL.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_FLT5_5.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1decimalMaxexclusiveDECIMAL_fail-double-equal> a sht:ValidationFailure ;
+    mf:name "1decimalMaxexclusiveDECIMAL_fail-double-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:decimal MAXEXCLUSIVE 5.5 } / { <s1> <p1> 5.5e0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1decimalMaxexclusiveDECIMAL.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DBL5_5e0.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1decimalMaxexclusivexsd-byte_fail-byte-equal> a sht:ValidationFailure ;
+    mf:name "1decimalMaxexclusivexsd-byte_fail-byte-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:decimal MAXEXCLUSIVE 5 } / { <s1> <p1> '5'^^<http://www.w3.org/2001/XMLSchema#byte> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1decimalMaxexclusivexsd-byte.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_BYT5.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1decimalMaxexclusivexsd-decimal_fail-decimal-equal> a sht:ValidationFailure ;
+    mf:name "1decimalMaxexclusivexsd-decimal_fail-decimal-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:decimal MAXEXCLUSIVE \"5.5\"^^<http://www.w3.org/2001/XMLSchema#decimal> } / { <s1> <p1> 5.5 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1decimalMaxexclusivexsd-decimal.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC5_5.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1floatMaxexclusiveINTEGER_pass-float-low> a sht:ValidationTest ;
+    mf:name "1floatMaxexclusiveINTEGER_pass-float-low" ;
+    rdfs:comment "<S1> { <p1> xsd:float MAXEXCLUSIVE 5 } / { <s1> <p1> '4.4'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1floatMaxexclusiveINTEGER.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_FLT4_4.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1floatMaxexclusiveINTEGER_pass-float-low.val>
+    .
+
+<#1floatMaxexclusiveINTEGER_fail-float-high> a sht:ValidationFailure ;
+    mf:name "1floatMaxexclusiveINTEGER_fail-float-high" ;
+    rdfs:comment "<S1> { <p1> xsd:float MAXEXCLUSIVE 5 } / { <s1> <p1> '5.6'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1floatMaxexclusiveINTEGER.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_FLT5_6.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1floatMaxexclusiveDECIMAL_pass-float-low> a sht:ValidationTest ;
+    mf:name "1floatMaxexclusiveDECIMAL_pass-float-low" ;
+    rdfs:comment "<S1> { <p1> xsd:float MAXEXCLUSIVE 5.5 } / { <s1> <p1> '4.4'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1floatMaxexclusiveDECIMAL.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_FLT4_4.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1floatMaxexclusiveDECIMAL_pass-float-low.val>
+    .
+
+<#1floatMaxexclusiveDECIMAL_fail-float-high> a sht:ValidationFailure ;
+    mf:name "1floatMaxexclusiveDECIMAL_fail-float-high" ;
+    rdfs:comment "<S1> { <p1> xsd:float MAXEXCLUSIVE 5.5 } / { <s1> <p1> '5.6'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1floatMaxexclusiveDECIMAL.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_FLT5_6.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1floatMaxexclusiveDOUBLE_pass-float-low> a sht:ValidationTest ;
+    mf:name "1floatMaxexclusiveDOUBLE_pass-float-low" ;
+    rdfs:comment "<S1> { <p1> xsd:float MAXEXCLUSIVE 5.5e0 } / { <s1> <p1> '4.4'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1floatMaxexclusiveDOUBLE.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_FLT4_4.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1floatMaxexclusiveDOUBLE_pass-float-low.val>
+    .
+
+<#1floatMaxexclusiveDOUBLE_fail-float-high> a sht:ValidationFailure ;
+    mf:name "1floatMaxexclusiveDOUBLE_fail-float-high" ;
+    rdfs:comment "<S1> { <p1> xsd:float MAXEXCLUSIVE 5.5e0 } / { <s1> <p1> '5.6'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1floatMaxexclusiveDOUBLE.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_FLT5_6.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1doubleMaxexclusiveINTEGER_pass-double-low> a sht:ValidationTest ;
+    mf:name "1doubleMaxexclusiveINTEGER_pass-double-low" ;
+    rdfs:comment "<S1> { <p1> xsd:double MAXEXCLUSIVE 5 } / { <s1> <p1> 4.4e0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1doubleMaxexclusiveINTEGER.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DBL4_4e0.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1doubleMaxexclusiveINTEGER_pass-double-low.val>
+    .
+
+<#1doubleMaxexclusiveINTEGER_fail-double-equal> a sht:ValidationFailure ;
+    mf:name "1doubleMaxexclusiveINTEGER_fail-double-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:double MAXEXCLUSIVE 5 } / { <s1> <p1> 5.5e0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1doubleMaxexclusiveINTEGER.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DBL5_5e0.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1doubleMaxexclusiveINTEGER_fail-double-high> a sht:ValidationFailure ;
+    mf:name "1doubleMaxexclusiveINTEGER_fail-double-high" ;
+    rdfs:comment "<S1> { <p1> xsd:double MAXEXCLUSIVE 5 } / { <s1> <p1> 5.6e0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1doubleMaxexclusiveINTEGER.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DBL5_6e0.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1doubleMaxexclusiveINTEGERLead_fail-double-equal> a sht:ValidationFailure ;
+    mf:name "1doubleMaxexclusiveINTEGERLead_fail-double-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:double MAXEXCLUSIVE 05 } / { <s1> <p1> 5.5e0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1doubleMaxexclusiveINTEGERLead.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DBL5_5e0.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1doubleMaxexclusiveDECIMAL_pass-double-low> a sht:ValidationTest ;
+    mf:name "1doubleMaxexclusiveDECIMAL_pass-double-low" ;
+    rdfs:comment "<S1> { <p1> xsd:double MAXEXCLUSIVE 5.5 } / { <s1> <p1> 4.4e0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1doubleMaxexclusiveDECIMAL.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DBL4_4e0.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1doubleMaxexclusiveDECIMAL_pass-double-low.val>
+    .
+
+<#1doubleMaxexclusiveDECIMAL_fail-double-equal> a sht:ValidationFailure ;
+    mf:name "1doubleMaxexclusiveDECIMAL_fail-double-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:double MAXEXCLUSIVE 5.5 } / { <s1> <p1> 5.5e0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1doubleMaxexclusiveDECIMAL.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DBL5_5e0.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1doubleMaxexclusiveDECIMAL_fail-double-high> a sht:ValidationFailure ;
+    mf:name "1doubleMaxexclusiveDECIMAL_fail-double-high" ;
+    rdfs:comment "<S1> { <p1> xsd:double MAXEXCLUSIVE 5.5 } / { <s1> <p1> 5.6e0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1doubleMaxexclusiveDECIMAL.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DBL5_6e0.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1doubleMaxexclusiveDECIMALLeadTrail_fail-double-equal> a sht:ValidationFailure ;
+    mf:name "1doubleMaxexclusiveDECIMALLeadTrail_fail-double-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:double MAXEXCLUSIVE 05.50 } / { <s1> <p1> 5.5e0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1doubleMaxexclusiveDECIMALLeadTrail.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DBL5_5e0.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1doubleMaxexclusiveDECIMALint_fail-double-equal> a sht:ValidationFailure ;
+    mf:name "1doubleMaxexclusiveDECIMALint_fail-double-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:double MAXEXCLUSIVE 5.0 } / { <s1> <p1> 5.5e0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1doubleMaxexclusiveDECIMALint.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DBL5_5e0.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1doubleMaxexclusiveDECIMALintLeadTrail_fail-double-equal> a sht:ValidationFailure ;
+    mf:name "1doubleMaxexclusiveDECIMALintLeadTrail_fail-double-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:double MAXEXCLUSIVE 05.00 } / { <s1> <p1> 5.5e0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1doubleMaxexclusiveDECIMALintLeadTrail.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DBL5_5e0.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1doubleMaxexclusiveDOUBLE_pass-double-low> a sht:ValidationTest ;
+    mf:name "1doubleMaxexclusiveDOUBLE_pass-double-low" ;
+    rdfs:comment "<S1> { <p1> xsd:double MAXEXCLUSIVE 5.5e0 } / { <s1> <p1> 4.4e0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1doubleMaxexclusiveDOUBLE.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DBL4_4e0.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1doubleMaxexclusiveDOUBLE_pass-double-low.val>
+    .
+
+<#1doubleMaxexclusiveDOUBLE_fail-double-equal> a sht:ValidationFailure ;
+    mf:name "1doubleMaxexclusiveDOUBLE_fail-double-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:double MAXEXCLUSIVE 5.5e0 } / { <s1> <p1> 5.5e0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1doubleMaxexclusiveDOUBLE.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DBL5_5e0.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1doubleMaxexclusiveDOUBLE_fail-double-high> a sht:ValidationFailure ;
+    mf:name "1doubleMaxexclusiveDOUBLE_fail-double-high" ;
+    rdfs:comment "<S1> { <p1> xsd:double MAXEXCLUSIVE 5.5e0 } / { <s1> <p1> 5.6e0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1doubleMaxexclusiveDOUBLE.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DBL5_6e0.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1doubleMaxexclusiveDOUBLELeadTrail_fail-double-equal> a sht:ValidationFailure ;
+    mf:name "1doubleMaxexclusiveDOUBLELeadTrail_fail-double-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:double MAXEXCLUSIVE 05.50e0 } / { <s1> <p1> 5.5e0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1doubleMaxexclusiveDOUBLELeadTrail.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DBL5_5e0.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1doubleMaxexclusiveDOUBLEint_fail-double-equal> a sht:ValidationFailure ;
+    mf:name "1doubleMaxexclusiveDOUBLEint_fail-double-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:double MAXEXCLUSIVE 5.0e0 } / { <s1> <p1> 5.5e0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1doubleMaxexclusiveDOUBLEint.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DBL5_5e0.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1doubleMaxexclusiveDOUBLEintLeadTrail_fail-double-equal> a sht:ValidationFailure ;
+    mf:name "1doubleMaxexclusiveDOUBLEintLeadTrail_fail-double-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:double MAXEXCLUSIVE 05.00e0 } / { <s1> <p1> 5.5e0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1doubleMaxexclusiveDOUBLEintLeadTrail.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DBL5_5e0.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+#   } generated
 # } facets
 # closed {
 <#1dotClosed_pass> a sht:ValidationTest ;
