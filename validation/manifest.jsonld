@@ -105,7 +105,7 @@
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1val1vcOR3_passvc3",
+          "name": "1val1vExprOR3_passvc3",
           "comment": "<S> { <p1> ~'^ab' OR ~'cd' OR ~'ef$' } on { <s1> <p1> 'ef' }",
           "status": "mf:proposed",
           "result": "1val1vExprOR3_passvc3.val"
@@ -120,7 +120,7 @@
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1val1vcOR3_passvc2",
+          "name": "1val1vExprOR3_passvc2",
           "comment": "<S> { <p1> ~'^ab' OR ~'cd' OR ~'ef$' } on { <s1> <p1> 'cd' }",
           "status": "mf:proposed",
           "result": "1val1vExprOR3_passvc2.val"
@@ -135,7 +135,7 @@
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1val1vcOR3_passvc1",
+          "name": "1val1vExprOR3_passvc1",
           "comment": "<S> { <p1> ~'^ab' OR ~'cd' OR ~'ef$' } on { <s1> <p1> 'ab' }",
           "status": "mf:proposed",
           "result": "1val1vExprOR3_passvc1.val"
@@ -270,7 +270,7 @@
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1val1vcAND3_pass",
+          "name": "1val1vExprAND3_pass",
           "comment": "<S> { <p1> MINLENGTH 4 AND MAXLENGTH 5 AND ~ '^(ab)+' } on { <s1> <p1> 'abab' }",
           "status": "mf:proposed",
           "result": "1val1vExprAND3_pass.val"
@@ -2655,7 +2655,7 @@
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1cardStar_fail0",
+          "name": "1cardStar_pass0",
           "comment": "<S> { <p1> .* } on {  }",
           "status": "mf:proposed",
           "result": "1cardStar_pass0.val"
@@ -2730,7 +2730,7 @@
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1cardOpt_fail0",
+          "name": "1cardOpt_pass0",
           "comment": "<S> { <p1> .+ } on {  }",
           "status": "mf:proposed",
           "result": "1cardOpt_pass0.val"
@@ -3085,7 +3085,7 @@
             "focus": "http://a.example/o1"
           },
           "extensionResults": [],
-          "name": "1dotAnnot3_pass",
+          "name": "1inversedotAnnot3_pass",
           "comment": "<S> { <p1> .; <a1> '1'; <a1> '2'; <a1> '3'; } on { <s> <p1> <o1> }",
           "status": "mf:proposed",
           "result": "1inversedotAnnot3_pass.val"
@@ -3160,7 +3160,7 @@
             "focus": "http://a.example/o1"
           },
           "extensionResults": [],
-          "name": "1negatedinversedot_fail-missing",
+          "name": "1negatedinversedot_pass-missing",
           "comment": "<S> { !<p1> . } on { <s> <p2> <o1> }",
           "status": "mf:proposed",
           "result": "1negatedinversedot_pass.val"
@@ -3175,7 +3175,7 @@
             "focus": "http://a.example/o1"
           },
           "extensionResults": [],
-          "name": "1negatedinversedot_fail-empty",
+          "name": "1negatedinversedot_pass-empty",
           "comment": "<S> { !<p1> . } on {  }",
           "status": "mf:proposed",
           "result": "1negatedinversedot_pass.val"
@@ -3190,7 +3190,7 @@
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1negateddot_fail-missing",
+          "name": "1negateddot_pass-missing",
           "comment": "<S> { !<p1> . } on { <s> <p2> <o1> }",
           "status": "mf:proposed",
           "result": "1negateddot_pass.val"
@@ -3205,7 +3205,7 @@
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1negateddot_fail-empty",
+          "name": "1negateddot_pass-empty",
           "comment": "<S> { !<p1> . } on {  }",
           "status": "mf:proposed",
           "result": "1negateddot_pass.val"
@@ -3279,7 +3279,7 @@
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1val1vcOR3_passvc1vc2vc3",
+          "name": "1val1vExprOR3_passvc1vc2vc3",
           "comment": "<S> { <p1> ~'^ab' OR ~'cd' OR ~'ef$' } on { <s1> <p1> 'abcdef' }",
           "status": "mf:proposed",
           "result": "1val1vExprOR3_passvr1vr2vr3.val"
@@ -3337,7 +3337,7 @@
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1val1vcOR3_fail",
+          "name": "1val1vExprOR3_fail",
           "comment": "<S> { <p1> ~'^ab' OR ~'cd' OR ~'ef$' } on { <s1> <p1> 'a' }",
           "status": "mf:proposed"
         },
@@ -3379,7 +3379,7 @@
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1val1vcAND3_failvc3",
+          "name": "1val1vExprAND3_failvc3",
           "comment": "<S> { <p1> MINLENGTH 4 AND MAXLENGTH 5 AND ~ '^(ab)+' } on { <s1> <p1> 'baba' }",
           "status": "mf:proposed"
         },
@@ -3393,7 +3393,7 @@
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1val1vcAND3_failvc2",
+          "name": "1val1vExprAND3_failvc2",
           "comment": "<S> { <p1> MINLENGTH 4 AND MAXLENGTH 5 AND ~ '^(ab)+' } on { <s1> <p1> 'ababab' }",
           "status": "mf:proposed"
         },
@@ -3407,7 +3407,7 @@
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1val1vcAND3_failvc1",
+          "name": "1val1vExprAND3_failvc1",
           "comment": "<S> { <p1> MINLENGTH 4 AND MAXLENGTH 5 AND ~ '^(ab)+' } on { <s1> <p1> 'ab' }",
           "status": "mf:proposed"
         },
@@ -3505,7 +3505,7 @@
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1val1LANGTAG_ab",
+          "name": "1val1LANGTAG_LaLTen-fr",
           "comment": "<S> { <p1> ('ab'@en-fr) } on { <s> <p1> 'a'@en-fr }",
           "status": "mf:proposed"
         },
@@ -3519,7 +3519,7 @@
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1val1LANGTAG_ab",
+          "name": "1val1LANGTAG_LabLTen-fr-jura",
           "comment": "<S> { <p1> ('ab'@en-fr) } on { <s> <p1> 'ab'@en-fr-jura }",
           "status": "mf:proposed"
         },
@@ -3533,7 +3533,7 @@
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1val1LANGTAG_ab",
+          "name": "1val1LANGTAG_LabLTen",
           "comment": "<S> { <p1> ('ab'@en-fr) } on { <s> <p1> 'ab'@en }",
           "status": "mf:proposed"
         },
@@ -3561,7 +3561,7 @@
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1val1IRIREFDatatype_ab",
+          "name": "1val1IRIREFDatatype_LaDTbloodType",
           "comment": "<S> { <p1> ('ab'^^my:bloodType) } on { <s> <p1> 'a'^^my:bloodType }",
           "status": "mf:proposed"
         },
@@ -3575,7 +3575,7 @@
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1val1IRIREFDatatype_ab",
+          "name": "1val1IRIREFDatatype_LabDTbloodType999",
           "comment": "<S> { <p1> ('ab'^^my:bloodType) } on { <s> <p1> 'ab'^^my:bloodType999 }",
           "status": "mf:proposed"
         },
@@ -3603,7 +3603,7 @@
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1val1INTEGER_true",
+          "name": "1val1INTEGER_Lab",
           "comment": "<S> { <p1> (0) } on { <s> <p1> 'ab' }",
           "status": "mf:proposed"
         },
@@ -3617,7 +3617,7 @@
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1val1INTEGER_ab",
+          "name": "1val1INTEGER_00",
           "comment": "<S> { <p1> (0) } on { <s> <p1> 00 }",
           "status": "mf:proposed"
         },
@@ -3687,7 +3687,7 @@
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1val1DOUBLElowercase_v1",
+          "name": "1val1DOUBLElowercase_0_0e0",
           "comment": "<S> { <p1> (0e0) } on { <s> <p1> 0e0.0 }",
           "status": "mf:proposed"
         },
@@ -3701,7 +3701,7 @@
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1val1DOUBLE_v1",
+          "name": "1val1DOUBLE_0_0e0",
           "comment": "<S> { <p1> (0e0) } on { <s> <p1> 0e0.0 }",
           "status": "mf:proposed"
         },
@@ -3715,7 +3715,7 @@
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1val1IRIREF_v1",
+          "name": "1val1IRIREF_v2",
           "comment": "<S> { <p1> (<v1>) } on { <s> <p1> <v2> }",
           "status": "mf:proposed"
         },
@@ -4065,7 +4065,7 @@
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1literal_extra",
+          "name": "1literalPlus_Is1_Ip1_La,Io1",
           "comment": "<S> { <p1> LITERAL+ } on { <s> <p1> 'a', <o2> }",
           "status": "mf:proposed"
         },
@@ -5843,7 +5843,7 @@
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1cardOpt_pass2",
+          "name": "1cardOpt_fail2",
           "comment": "<S> { <p1> .+ } on { <s> <p1> 'a','b' }",
           "status": "mf:proposed"
         },
@@ -6035,7 +6035,7 @@
             "focus": "http://a.example/o1"
           },
           "extensionResults": [],
-          "name": "1dotAnnot3_missing",
+          "name": "1inversedotAnnot3_missing",
           "comment": "<S> { <p1> .; <a1> '1'; <a1> '2'; <a1> '3'; } on { <s> <p2> <o1> }",
           "status": "mf:proposed"
         },
@@ -6077,7 +6077,7 @@
             "focus": "http://a.example/o1"
           },
           "extensionResults": [],
-          "name": "1negatedinversedot_pass-others_lexicallyLater",
+          "name": "1negatedinversedot_fail-others_lexicallyLater",
           "comment": "<S> { !<p1> . } on { <s> <p1> <o1>; <p2> <o2> }",
           "status": "mf:proposed"
         },
@@ -6091,7 +6091,7 @@
             "focus": "http://a.example/o1"
           },
           "extensionResults": [],
-          "name": "1negatedinversedot_pass-others_lexicallyEarlier",
+          "name": "1negatedinversedot_fail-others_lexicallyEarlier",
           "comment": "<S> { !<p1> . } on { <s> <p0> <o0>; <p1> <o1> }",
           "status": "mf:proposed"
         },
@@ -6105,7 +6105,7 @@
             "focus": "http://a.example/o1"
           },
           "extensionResults": [],
-          "name": "1negatedinversedot_pass-noOthers",
+          "name": "1negatedinversedot_fail-noOthers",
           "comment": "<S> { !<p1> . } on { <s> <p1> <o1> }",
           "status": "mf:proposed"
         },
@@ -6119,7 +6119,7 @@
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1negateddot_pass-others_lexicallyLater",
+          "name": "1negateddot_fail-others_lexicallyLater",
           "comment": "<S> { !<p1> . } on { <s> <p1> <o1>; <p2> <o2> }",
           "status": "mf:proposed"
         },
@@ -6133,7 +6133,7 @@
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1negateddot_pass-others_lexicallyEarlier",
+          "name": "1negateddot_fail-others_lexicallyEarlier",
           "comment": "<S> { !<p1> . } on { <s> <p0> <o0>; <p1> <o1> }",
           "status": "mf:proposed"
         },
@@ -6147,7 +6147,7 @@
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1negateddot_pass-noOthers",
+          "name": "1negateddot_fail-noOthers",
           "comment": "<S> { !<p1> . } on { <s> <p1> <o1> }",
           "status": "mf:proposed"
         },
