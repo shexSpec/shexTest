@@ -2,6 +2,7 @@
 @prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix mf:     <http://www.w3.org/2001/sw/DataAccess/tests/test-manifest#> .
 @prefix sht:     <http://www.w3.org/ns/shacl/test-suite#> .
+@prefix prov:   <http://www.w3.org/ns/prov#> .
 
 # TODO:
 #   repeated OR
@@ -119,11 +120,11 @@
         <#1floatMininclusiveINTEGER_pass-equalLead>
         <#1floatMininclusiveINTEGER_pass-equalTrail>
         <#1floatMininclusiveINTEGER_pass-high>
-        <#1floatMininclusiveINTEGERLead_pass-equal>
         <#1integerMininclusiveINTEGER_fail-low>
         <#1integerMininclusiveINTEGER_pass-equal>
         <#1integerMininclusiveINTEGER_pass-equalLead>
         <#1integerMininclusiveINTEGER_pass-high>
+        <#1floatMininclusiveINTEGERLead_pass-equal>
 
 	## generated
         <#1integerMininclusiveINTEGER_fail-integer-low>
@@ -1722,19 +1723,6 @@
     mf:result <1floatMininclusiveINTEGER_pass-high.val>
     .
 
-<#1floatMininclusiveINTEGERLead_pass-equal> a sht:ValidationTest ;
-    mf:name "1floatMininclusiveINTEGERLead_pass-equal" ;
-    rdfs:comment "<S1> { <p1> xsd:float MININCLUSIVE 5 } / { <s1> <p1> '5'^^xsd:float }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1floatMininclusiveINTEGERLead.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_FLT5.ttl> ;
-      sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1floatMininclusiveINTEGER_pass-equal.val>
-    .
-
 <#1integerMininclusiveINTEGER_fail-low> a sht:ValidationFailure ;
     mf:name "1integerMininclusiveINTEGER_fail-low" ;
     rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 5 } / { <s1> <p1> '4'^^xsd:integer }" ;
@@ -1786,11 +1774,25 @@
     mf:result <1integerMininclusiveINTEGER_pass-high.val>
     .
 
+<#1floatMininclusiveINTEGERLead_pass-equal> a sht:ValidationTest ;
+    mf:name "1floatMininclusiveINTEGERLead_pass-equal" ;
+    rdfs:comment "<S1> { <p1> xsd:float MININCLUSIVE 5 } / { <s1> <p1> '5'^^xsd:float }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1floatMininclusiveINTEGERLead.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_FLT5.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1floatMininclusiveINTEGER_pass-equal.val>
+    .
+
 #   } manual
 #   generated {
 
 <#1integerMininclusiveINTEGER_fail-integer-low> a sht:ValidationFailure ;
     mf:name "1integerMininclusiveINTEGER_fail-integer-low" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.J6> ;
     rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 5 } / { <s1> <p1> 4 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -1803,6 +1805,7 @@
 
 <#1integerMininclusiveINTEGER_pass-integer-equal> a sht:ValidationTest ;
     mf:name "1integerMininclusiveINTEGER_pass-integer-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.K6> ;
     rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 5 } / { <s1> <p1> 5 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -1816,6 +1819,7 @@
 
 <#1integerMininclusiveINTEGER_pass-integer-high> a sht:ValidationTest ;
     mf:name "1integerMininclusiveINTEGER_pass-integer-high" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.N6> ;
     rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 5 } / { <s1> <p1> 6 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -1829,6 +1833,7 @@
 
 <#1integerMininclusiveINTEGERLead_fail-integer-low> a sht:ValidationFailure ;
     mf:name "1integerMininclusiveINTEGERLead_fail-integer-low" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.J7> ;
     rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 05 } / { <s1> <p1> 4 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -1841,6 +1846,7 @@
 
 <#1integerMininclusiveINTEGERLead_pass-integer-equal> a sht:ValidationTest ;
     mf:name "1integerMininclusiveINTEGERLead_pass-integer-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.K7> ;
     rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 05 } / { <s1> <p1> 5 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -1854,6 +1860,7 @@
 
 <#1integerMininclusiveINTEGERLead_pass-integer-equalLead> a sht:ValidationTest ;
     mf:name "1integerMininclusiveINTEGERLead_pass-integer-equalLead" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.L7> ;
     rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 05 } / { <s1> <p1> 05 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -1867,6 +1874,7 @@
 
 <#1integerMininclusiveINTEGERLead_pass-integer-high> a sht:ValidationTest ;
     mf:name "1integerMininclusiveINTEGERLead_pass-integer-high" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.N7> ;
     rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 05 } / { <s1> <p1> 6 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -1880,6 +1888,7 @@
 
 <#1integerMininclusiveDECIMAL_pass-integer-equal> a sht:ValidationTest ;
     mf:name "1integerMininclusiveDECIMAL_pass-integer-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.K8> ;
     rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 4.5 } / { <s1> <p1> 5 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -1893,6 +1902,7 @@
 
 <#1integerMininclusiveDECIMALLeadTrail_fail-integer-low> a sht:ValidationFailure ;
     mf:name "1integerMininclusiveDECIMALLeadTrail_fail-integer-low" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.J9> ;
     rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 04.50 } / { <s1> <p1> 4 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -1905,6 +1915,7 @@
 
 <#1integerMininclusiveDECIMALLeadTrail_pass-integer-equal> a sht:ValidationTest ;
     mf:name "1integerMininclusiveDECIMALLeadTrail_pass-integer-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.K9> ;
     rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 04.50 } / { <s1> <p1> 5 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -1918,6 +1929,7 @@
 
 <#1integerMininclusiveDECIMALLeadTrail_pass-integer-equalLead> a sht:ValidationTest ;
     mf:name "1integerMininclusiveDECIMALLeadTrail_pass-integer-equalLead" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.L9> ;
     rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 04.50 } / { <s1> <p1> 05 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -1931,6 +1943,7 @@
 
 <#1integerMininclusiveDECIMALLeadTrail_pass-integer-high> a sht:ValidationTest ;
     mf:name "1integerMininclusiveDECIMALLeadTrail_pass-integer-high" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.N9> ;
     rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 04.50 } / { <s1> <p1> 6 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -1944,6 +1957,7 @@
 
 <#1integerMininclusiveDECIMALint_fail-integer-low> a sht:ValidationFailure ;
     mf:name "1integerMininclusiveDECIMALint_fail-integer-low" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.J10> ;
     rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 5.0 } / { <s1> <p1> 4 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -1956,6 +1970,7 @@
 
 <#1integerMininclusiveDECIMALint_pass-integer-equal> a sht:ValidationTest ;
     mf:name "1integerMininclusiveDECIMALint_pass-integer-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.K10> ;
     rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 5.0 } / { <s1> <p1> 5 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -1969,6 +1984,7 @@
 
 <#1integerMininclusiveDECIMALint_pass-integer-high> a sht:ValidationTest ;
     mf:name "1integerMininclusiveDECIMALint_pass-integer-high" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.N10> ;
     rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 5.0 } / { <s1> <p1> 6 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -1982,6 +1998,7 @@
 
 <#1integerMininclusiveDECIMALintLeadTrail_fail-integer-low> a sht:ValidationFailure ;
     mf:name "1integerMininclusiveDECIMALintLeadTrail_fail-integer-low" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.J11> ;
     rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 05.00 } / { <s1> <p1> 4 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -1994,6 +2011,7 @@
 
 <#1integerMininclusiveDECIMALintLeadTrail_pass-integer-equal> a sht:ValidationTest ;
     mf:name "1integerMininclusiveDECIMALintLeadTrail_pass-integer-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.K11> ;
     rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 05.00 } / { <s1> <p1> 5 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2007,6 +2025,7 @@
 
 <#1integerMininclusiveDECIMALintLeadTrail_pass-integer-equalLead> a sht:ValidationTest ;
     mf:name "1integerMininclusiveDECIMALintLeadTrail_pass-integer-equalLead" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.L11> ;
     rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 05.00 } / { <s1> <p1> 05 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2020,6 +2039,7 @@
 
 <#1integerMininclusiveDECIMALintLeadTrail_pass-integer-high> a sht:ValidationTest ;
     mf:name "1integerMininclusiveDECIMALintLeadTrail_pass-integer-high" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.N11> ;
     rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 05.00 } / { <s1> <p1> 6 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2033,6 +2053,7 @@
 
 <#1integerMininclusiveDOUBLE_pass-integer-equal> a sht:ValidationTest ;
     mf:name "1integerMininclusiveDOUBLE_pass-integer-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.K12> ;
     rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 4.5e0 } / { <s1> <p1> 5 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2046,6 +2067,7 @@
 
 <#1integerMininclusiveDOUBLELeadTrail_fail-integer-low> a sht:ValidationFailure ;
     mf:name "1integerMininclusiveDOUBLELeadTrail_fail-integer-low" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.J13> ;
     rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 04.50e0 } / { <s1> <p1> 4 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2058,6 +2080,7 @@
 
 <#1integerMininclusiveDOUBLELeadTrail_pass-integer-equal> a sht:ValidationTest ;
     mf:name "1integerMininclusiveDOUBLELeadTrail_pass-integer-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.K13> ;
     rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 04.50e0 } / { <s1> <p1> 5 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2071,6 +2094,7 @@
 
 <#1integerMininclusiveDOUBLELeadTrail_pass-integer-equalLead> a sht:ValidationTest ;
     mf:name "1integerMininclusiveDOUBLELeadTrail_pass-integer-equalLead" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.L13> ;
     rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 04.50e0 } / { <s1> <p1> 05 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2084,6 +2108,7 @@
 
 <#1integerMininclusiveDOUBLELeadTrail_pass-integer-high> a sht:ValidationTest ;
     mf:name "1integerMininclusiveDOUBLELeadTrail_pass-integer-high" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.N13> ;
     rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 04.50e0 } / { <s1> <p1> 6 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2097,6 +2122,7 @@
 
 <#1integerMininclusiveDOUBLEint_pass-integer-equal> a sht:ValidationTest ;
     mf:name "1integerMininclusiveDOUBLEint_pass-integer-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.K14> ;
     rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 5.0e0 } / { <s1> <p1> 5 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2110,6 +2136,7 @@
 
 <#1integerMininclusiveDOUBLEintLeadTrail_fail-integer-low> a sht:ValidationFailure ;
     mf:name "1integerMininclusiveDOUBLEintLeadTrail_fail-integer-low" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.J15> ;
     rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 05.00e0 } / { <s1> <p1> 4 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2122,6 +2149,7 @@
 
 <#1integerMininclusiveDOUBLEintLeadTrail_pass-integer-equal> a sht:ValidationTest ;
     mf:name "1integerMininclusiveDOUBLEintLeadTrail_pass-integer-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.K15> ;
     rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 05.00e0 } / { <s1> <p1> 5 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2135,6 +2163,7 @@
 
 <#1integerMininclusiveDOUBLEintLeadTrail_pass-integer-equalLead> a sht:ValidationTest ;
     mf:name "1integerMininclusiveDOUBLEintLeadTrail_pass-integer-equalLead" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.L15> ;
     rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 05.00e0 } / { <s1> <p1> 05 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2148,6 +2177,7 @@
 
 <#1integerMininclusiveDOUBLEintLeadTrail_pass-integer-high> a sht:ValidationTest ;
     mf:name "1integerMininclusiveDOUBLEintLeadTrail_pass-integer-high" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.N15> ;
     rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 05.00e0 } / { <s1> <p1> 6 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2161,6 +2191,7 @@
 
 <#1integerMininclusiveINTEGER_fail-decimal-equal> a sht:ValidationFailure ;
     mf:name "1integerMininclusiveINTEGER_fail-decimal-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.K16> ;
     rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 5 } / { <s1> <p1> 4.5 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2173,6 +2204,7 @@
 
 <#1integerMininclusiveINTEGER_fail-float-equal> a sht:ValidationFailure ;
     mf:name "1integerMininclusiveINTEGER_fail-float-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.K17> ;
     rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 5 } / { <s1> <p1> '4.5'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2185,6 +2217,7 @@
 
 <#1integerMininclusiveINTEGER_fail-double-equal> a sht:ValidationFailure ;
     mf:name "1integerMininclusiveINTEGER_fail-double-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.K18> ;
     rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 5 } / { <s1> <p1> 4.5e0 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2197,6 +2230,7 @@
 
 <#1integerMininclusiveINTEGER_fail-dateTime-equal> a sht:ValidationFailure ;
     mf:name "1integerMininclusiveINTEGER_fail-dateTime-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.K19> ;
     rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 5 } / { <s1> <p1> '2015-12-25T01:23:45Z'^^<http://www.w3.org/2001/XMLSchema#dateTime> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2209,6 +2243,7 @@
 
 <#1integerMininclusiveINTEGER_fail-string-equal> a sht:ValidationFailure ;
     mf:name "1integerMininclusiveINTEGER_fail-string-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.K20> ;
     rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 5 } / { <s1> <p1> 'ab'^^<http://www.w3.org/2001/XMLSchema#string> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2221,6 +2256,7 @@
 
 <#1integerMininclusiveINTEGER_fail-byte-equal> a sht:ValidationFailure ;
     mf:name "1integerMininclusiveINTEGER_fail-byte-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.K21> ;
     rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE 5 } / { <s1> <p1> '5'^^<http://www.w3.org/2001/XMLSchema#byte> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2233,6 +2269,7 @@
 
 <#1integerMininclusivexsd-integer_fail-integer-low> a sht:ValidationFailure ;
     mf:name "1integerMininclusivexsd-integer_fail-integer-low" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.J23> ;
     rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE \"5\"^^<http://www.w3.org/2001/XMLSchema#integer> } / { <s1> <p1> 4 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2245,6 +2282,7 @@
 
 <#1integerMininclusivexsd-integer_pass-integer-equal> a sht:ValidationTest ;
     mf:name "1integerMininclusivexsd-integer_pass-integer-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.K23> ;
     rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE \"5\"^^<http://www.w3.org/2001/XMLSchema#integer> } / { <s1> <p1> 5 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2258,6 +2296,7 @@
 
 <#1decimalMininclusiveINTEGER_fail-decimal-low> a sht:ValidationFailure ;
     mf:name "1decimalMininclusiveINTEGER_fail-decimal-low" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.J27> ;
     rdfs:comment "<S1> { <p1> xsd:decimal MININCLUSIVE 5 } / { <s1> <p1> 4.4 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2270,6 +2309,7 @@
 
 <#1decimalMininclusiveINTEGER_pass-decimal-high> a sht:ValidationTest ;
     mf:name "1decimalMininclusiveINTEGER_pass-decimal-high" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.N27> ;
     rdfs:comment "<S1> { <p1> xsd:decimal MININCLUSIVE 5 } / { <s1> <p1> 5.6 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2283,6 +2323,7 @@
 
 <#1decimalMininclusiveINTEGERLead_fail-decimal-low> a sht:ValidationFailure ;
     mf:name "1decimalMininclusiveINTEGERLead_fail-decimal-low" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.J28> ;
     rdfs:comment "<S1> { <p1> xsd:decimal MININCLUSIVE 05 } / { <s1> <p1> 4.4 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2295,6 +2336,7 @@
 
 <#1decimalMininclusiveINTEGERLead_pass-decimal-high> a sht:ValidationTest ;
     mf:name "1decimalMininclusiveINTEGERLead_pass-decimal-high" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.N28> ;
     rdfs:comment "<S1> { <p1> xsd:decimal MININCLUSIVE 05 } / { <s1> <p1> 5.6 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2308,6 +2350,7 @@
 
 <#1decimalMininclusiveDECIMAL_fail-decimal-low> a sht:ValidationFailure ;
     mf:name "1decimalMininclusiveDECIMAL_fail-decimal-low" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.J29> ;
     rdfs:comment "<S1> { <p1> xsd:decimal MININCLUSIVE 4.5 } / { <s1> <p1> 4.4 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2320,6 +2363,7 @@
 
 <#1decimalMininclusiveDECIMAL_pass-decimal-equal> a sht:ValidationTest ;
     mf:name "1decimalMininclusiveDECIMAL_pass-decimal-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.K29> ;
     rdfs:comment "<S1> { <p1> xsd:decimal MININCLUSIVE 4.5 } / { <s1> <p1> 4.5 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2333,6 +2377,7 @@
 
 <#1decimalMininclusiveDECIMAL_pass-decimal-equalLeadTrail> a sht:ValidationTest ;
     mf:name "1decimalMininclusiveDECIMAL_pass-decimal-equalLeadTrail" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.M29> ;
     rdfs:comment "<S1> { <p1> xsd:decimal MININCLUSIVE 4.5 } / { <s1> <p1> 04.50 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2346,6 +2391,7 @@
 
 <#1decimalMininclusiveDECIMAL_pass-decimal-high> a sht:ValidationTest ;
     mf:name "1decimalMininclusiveDECIMAL_pass-decimal-high" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.N29> ;
     rdfs:comment "<S1> { <p1> xsd:decimal MININCLUSIVE 4.5 } / { <s1> <p1> 5.6 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2359,6 +2405,7 @@
 
 <#1decimalMininclusiveDECIMALLeadTrail_fail-decimal-low> a sht:ValidationFailure ;
     mf:name "1decimalMininclusiveDECIMALLeadTrail_fail-decimal-low" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.J30> ;
     rdfs:comment "<S1> { <p1> xsd:decimal MININCLUSIVE 04.50 } / { <s1> <p1> 4.4 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2371,6 +2418,7 @@
 
 <#1decimalMininclusiveDECIMALLeadTrail_pass-decimal-equal> a sht:ValidationTest ;
     mf:name "1decimalMininclusiveDECIMALLeadTrail_pass-decimal-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.K30> ;
     rdfs:comment "<S1> { <p1> xsd:decimal MININCLUSIVE 04.50 } / { <s1> <p1> 4.5 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2384,6 +2432,7 @@
 
 <#1decimalMininclusiveDECIMALLeadTrail_pass-decimal-equalLeadTrail> a sht:ValidationTest ;
     mf:name "1decimalMininclusiveDECIMALLeadTrail_pass-decimal-equalLeadTrail" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.M30> ;
     rdfs:comment "<S1> { <p1> xsd:decimal MININCLUSIVE 04.50 } / { <s1> <p1> 04.50 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2397,6 +2446,7 @@
 
 <#1decimalMininclusiveDECIMALLeadTrail_pass-decimal-high> a sht:ValidationTest ;
     mf:name "1decimalMininclusiveDECIMALLeadTrail_pass-decimal-high" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.N30> ;
     rdfs:comment "<S1> { <p1> xsd:decimal MININCLUSIVE 04.50 } / { <s1> <p1> 5.6 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2410,6 +2460,7 @@
 
 <#1decimalMininclusiveDECIMALintLeadTrail_fail-decimal-low> a sht:ValidationFailure ;
     mf:name "1decimalMininclusiveDECIMALintLeadTrail_fail-decimal-low" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.J32> ;
     rdfs:comment "<S1> { <p1> xsd:decimal MININCLUSIVE 05.00 } / { <s1> <p1> 4.4 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2422,6 +2473,7 @@
 
 <#1decimalMininclusiveDECIMALintLeadTrail_pass-decimal-high> a sht:ValidationTest ;
     mf:name "1decimalMininclusiveDECIMALintLeadTrail_pass-decimal-high" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.N32> ;
     rdfs:comment "<S1> { <p1> xsd:decimal MININCLUSIVE 05.00 } / { <s1> <p1> 5.6 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2435,6 +2487,7 @@
 
 <#1decimalMininclusiveDOUBLE_fail-decimal-low> a sht:ValidationFailure ;
     mf:name "1decimalMininclusiveDOUBLE_fail-decimal-low" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.J33> ;
     rdfs:comment "<S1> { <p1> xsd:decimal MININCLUSIVE 4.5e0 } / { <s1> <p1> 4.4 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2447,6 +2500,7 @@
 
 <#1decimalMininclusiveDOUBLE_pass-decimal-equal> a sht:ValidationTest ;
     mf:name "1decimalMininclusiveDOUBLE_pass-decimal-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.K33> ;
     rdfs:comment "<S1> { <p1> xsd:decimal MININCLUSIVE 4.5e0 } / { <s1> <p1> 4.5 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2460,6 +2514,7 @@
 
 <#1decimalMininclusiveDOUBLE_pass-decimal-equalLeadTrail> a sht:ValidationTest ;
     mf:name "1decimalMininclusiveDOUBLE_pass-decimal-equalLeadTrail" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.M33> ;
     rdfs:comment "<S1> { <p1> xsd:decimal MININCLUSIVE 4.5e0 } / { <s1> <p1> 04.50 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2473,6 +2528,7 @@
 
 <#1decimalMininclusiveDOUBLELeadTrail_fail-decimal-low> a sht:ValidationFailure ;
     mf:name "1decimalMininclusiveDOUBLELeadTrail_fail-decimal-low" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.J34> ;
     rdfs:comment "<S1> { <p1> xsd:decimal MININCLUSIVE 04.50e0 } / { <s1> <p1> 4.4 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2485,6 +2541,7 @@
 
 <#1decimalMininclusiveDOUBLELeadTrail_pass-decimal-equal> a sht:ValidationTest ;
     mf:name "1decimalMininclusiveDOUBLELeadTrail_pass-decimal-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.K34> ;
     rdfs:comment "<S1> { <p1> xsd:decimal MININCLUSIVE 04.50e0 } / { <s1> <p1> 4.5 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2498,6 +2555,7 @@
 
 <#1decimalMininclusiveDOUBLELeadTrail_pass-decimal-equalLeadTrail> a sht:ValidationTest ;
     mf:name "1decimalMininclusiveDOUBLELeadTrail_pass-decimal-equalLeadTrail" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.M34> ;
     rdfs:comment "<S1> { <p1> xsd:decimal MININCLUSIVE 04.50e0 } / { <s1> <p1> 04.50 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2511,6 +2569,7 @@
 
 <#1decimalMininclusiveDOUBLELeadTrail_pass-decimal-high> a sht:ValidationTest ;
     mf:name "1decimalMininclusiveDOUBLELeadTrail_pass-decimal-high" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.N34> ;
     rdfs:comment "<S1> { <p1> xsd:decimal MININCLUSIVE 04.50e0 } / { <s1> <p1> 5.6 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2524,6 +2583,7 @@
 
 <#1decimalMininclusiveDOUBLEintLeadTrail_fail-decimal-low> a sht:ValidationFailure ;
     mf:name "1decimalMininclusiveDOUBLEintLeadTrail_fail-decimal-low" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.J36> ;
     rdfs:comment "<S1> { <p1> xsd:decimal MININCLUSIVE 05.00e0 } / { <s1> <p1> 4.4 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2536,6 +2596,7 @@
 
 <#1decimalMininclusiveDOUBLEintLeadTrail_pass-decimal-high> a sht:ValidationTest ;
     mf:name "1decimalMininclusiveDOUBLEintLeadTrail_pass-decimal-high" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.N36> ;
     rdfs:comment "<S1> { <p1> xsd:decimal MININCLUSIVE 05.00e0 } / { <s1> <p1> 5.6 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2549,6 +2610,7 @@
 
 <#1decimalMininclusiveDECIMAL_fail-float-equal> a sht:ValidationFailure ;
     mf:name "1decimalMininclusiveDECIMAL_fail-float-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.K37> ;
     rdfs:comment "<S1> { <p1> xsd:decimal MININCLUSIVE 4.5 } / { <s1> <p1> '4.5'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2561,6 +2623,7 @@
 
 <#1decimalMininclusiveDECIMAL_fail-double-equal> a sht:ValidationFailure ;
     mf:name "1decimalMininclusiveDECIMAL_fail-double-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.K39> ;
     rdfs:comment "<S1> { <p1> xsd:decimal MININCLUSIVE 4.5 } / { <s1> <p1> 4.5e0 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2573,6 +2636,7 @@
 
 <#1decimalMininclusivexsd-decimal_fail-decimal-low> a sht:ValidationFailure ;
     mf:name "1decimalMininclusivexsd-decimal_fail-decimal-low" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.J44> ;
     rdfs:comment "<S1> { <p1> xsd:decimal MININCLUSIVE \"4.5\"^^<http://www.w3.org/2001/XMLSchema#decimal> } / { <s1> <p1> 4.4 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2585,6 +2649,7 @@
 
 <#1decimalMininclusivexsd-decimal_pass-decimal-equal> a sht:ValidationTest ;
     mf:name "1decimalMininclusivexsd-decimal_pass-decimal-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.K44> ;
     rdfs:comment "<S1> { <p1> xsd:decimal MININCLUSIVE \"4.5\"^^<http://www.w3.org/2001/XMLSchema#decimal> } / { <s1> <p1> 4.5 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2598,6 +2663,7 @@
 
 <#1floatMininclusiveINTEGERLead_fail-float-low> a sht:ValidationFailure ;
     mf:name "1floatMininclusiveINTEGERLead_fail-float-low" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.J49> ;
     rdfs:comment "<S1> { <p1> xsd:float MININCLUSIVE 05 } / { <s1> <p1> '4.4'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2610,6 +2676,7 @@
 
 <#1floatMininclusiveINTEGERLead_pass-float-high> a sht:ValidationTest ;
     mf:name "1floatMininclusiveINTEGERLead_pass-float-high" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.N49> ;
     rdfs:comment "<S1> { <p1> xsd:float MININCLUSIVE 05 } / { <s1> <p1> '5.6'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2623,6 +2690,7 @@
 
 <#1floatMininclusiveDECIMAL_pass-float-equal> a sht:ValidationTest ;
     mf:name "1floatMininclusiveDECIMAL_pass-float-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.K50> ;
     rdfs:comment "<S1> { <p1> xsd:float MININCLUSIVE 4.5 } / { <s1> <p1> '4.5'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2636,6 +2704,7 @@
 
 <#1floatMininclusiveDECIMAL_pass-float-equalLeadTrail> a sht:ValidationTest ;
     mf:name "1floatMininclusiveDECIMAL_pass-float-equalLeadTrail" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.M50> ;
     rdfs:comment "<S1> { <p1> xsd:float MININCLUSIVE 4.5 } / { <s1> <p1> '04.50'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2649,6 +2718,7 @@
 
 <#1floatMininclusiveDECIMALLeadTrail_fail-float-low> a sht:ValidationFailure ;
     mf:name "1floatMininclusiveDECIMALLeadTrail_fail-float-low" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.J51> ;
     rdfs:comment "<S1> { <p1> xsd:float MININCLUSIVE 04.50 } / { <s1> <p1> '4.4'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2661,6 +2731,7 @@
 
 <#1floatMininclusiveDECIMALLeadTrail_pass-float-equal> a sht:ValidationTest ;
     mf:name "1floatMininclusiveDECIMALLeadTrail_pass-float-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.K51> ;
     rdfs:comment "<S1> { <p1> xsd:float MININCLUSIVE 04.50 } / { <s1> <p1> '4.5'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2674,6 +2745,7 @@
 
 <#1floatMininclusiveDECIMALLeadTrail_pass-float-equalLeadTrail> a sht:ValidationTest ;
     mf:name "1floatMininclusiveDECIMALLeadTrail_pass-float-equalLeadTrail" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.M51> ;
     rdfs:comment "<S1> { <p1> xsd:float MININCLUSIVE 04.50 } / { <s1> <p1> '04.50'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2687,6 +2759,7 @@
 
 <#1floatMininclusiveDECIMALLeadTrail_pass-float-high> a sht:ValidationTest ;
     mf:name "1floatMininclusiveDECIMALLeadTrail_pass-float-high" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.N51> ;
     rdfs:comment "<S1> { <p1> xsd:float MININCLUSIVE 04.50 } / { <s1> <p1> '5.6'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2700,6 +2773,7 @@
 
 <#1floatMininclusiveDECIMALintLeadTrail_fail-float-low> a sht:ValidationFailure ;
     mf:name "1floatMininclusiveDECIMALintLeadTrail_fail-float-low" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.J53> ;
     rdfs:comment "<S1> { <p1> xsd:float MININCLUSIVE 05.00 } / { <s1> <p1> '4.4'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2712,6 +2786,7 @@
 
 <#1floatMininclusiveDECIMALintLeadTrail_pass-float-high> a sht:ValidationTest ;
     mf:name "1floatMininclusiveDECIMALintLeadTrail_pass-float-high" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.N53> ;
     rdfs:comment "<S1> { <p1> xsd:float MININCLUSIVE 05.00 } / { <s1> <p1> '5.6'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2725,6 +2800,7 @@
 
 <#1floatMininclusiveDOUBLE_pass-float-equal> a sht:ValidationTest ;
     mf:name "1floatMininclusiveDOUBLE_pass-float-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.K54> ;
     rdfs:comment "<S1> { <p1> xsd:float MININCLUSIVE 4.5e0 } / { <s1> <p1> '4.5'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2738,6 +2814,7 @@
 
 <#1floatMininclusiveDOUBLE_pass-float-equalLeadTrail> a sht:ValidationTest ;
     mf:name "1floatMininclusiveDOUBLE_pass-float-equalLeadTrail" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.M54> ;
     rdfs:comment "<S1> { <p1> xsd:float MININCLUSIVE 4.5e0 } / { <s1> <p1> '04.50'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2751,6 +2828,7 @@
 
 <#1floatMininclusiveDOUBLELeadTrail_fail-float-low> a sht:ValidationFailure ;
     mf:name "1floatMininclusiveDOUBLELeadTrail_fail-float-low" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.J55> ;
     rdfs:comment "<S1> { <p1> xsd:float MININCLUSIVE 04.50e0 } / { <s1> <p1> '4.4'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2763,6 +2841,7 @@
 
 <#1floatMininclusiveDOUBLELeadTrail_pass-float-equal> a sht:ValidationTest ;
     mf:name "1floatMininclusiveDOUBLELeadTrail_pass-float-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.K55> ;
     rdfs:comment "<S1> { <p1> xsd:float MININCLUSIVE 04.50e0 } / { <s1> <p1> '4.5'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2776,6 +2855,7 @@
 
 <#1floatMininclusiveDOUBLELeadTrail_pass-float-equalLeadTrail> a sht:ValidationTest ;
     mf:name "1floatMininclusiveDOUBLELeadTrail_pass-float-equalLeadTrail" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.M55> ;
     rdfs:comment "<S1> { <p1> xsd:float MININCLUSIVE 04.50e0 } / { <s1> <p1> '04.50'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2789,6 +2869,7 @@
 
 <#1floatMininclusiveDOUBLELeadTrail_pass-float-high> a sht:ValidationTest ;
     mf:name "1floatMininclusiveDOUBLELeadTrail_pass-float-high" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.N55> ;
     rdfs:comment "<S1> { <p1> xsd:float MININCLUSIVE 04.50e0 } / { <s1> <p1> '5.6'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2802,6 +2883,7 @@
 
 <#1floatMininclusiveDOUBLEintLeadTrail_fail-float-low> a sht:ValidationFailure ;
     mf:name "1floatMininclusiveDOUBLEintLeadTrail_fail-float-low" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.J57> ;
     rdfs:comment "<S1> { <p1> xsd:float MININCLUSIVE 05.00e0 } / { <s1> <p1> '4.4'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2814,6 +2896,7 @@
 
 <#1floatMininclusiveDOUBLEintLeadTrail_pass-float-high> a sht:ValidationTest ;
     mf:name "1floatMininclusiveDOUBLEintLeadTrail_pass-float-high" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.N57> ;
     rdfs:comment "<S1> { <p1> xsd:float MININCLUSIVE 05.00e0 } / { <s1> <p1> '5.6'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2827,6 +2910,7 @@
 
 <#1floatMininclusivexsd-float_fail-float-low> a sht:ValidationFailure ;
     mf:name "1floatMininclusivexsd-float_fail-float-low" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.J65> ;
     rdfs:comment "<S1> { <p1> xsd:float MININCLUSIVE \"4.5\"^^<http://www.w3.org/2001/XMLSchema#float> } / { <s1> <p1> '4.4'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2839,6 +2923,7 @@
 
 <#1floatMininclusivexsd-float_pass-float-equal> a sht:ValidationTest ;
     mf:name "1floatMininclusivexsd-float_pass-float-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.K65> ;
     rdfs:comment "<S1> { <p1> xsd:float MININCLUSIVE \"4.5\"^^<http://www.w3.org/2001/XMLSchema#float> } / { <s1> <p1> '4.5'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2852,6 +2937,7 @@
 
 <#1doubleMininclusiveINTEGERLead_fail-double-low> a sht:ValidationFailure ;
     mf:name "1doubleMininclusiveINTEGERLead_fail-double-low" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.J70> ;
     rdfs:comment "<S1> { <p1> xsd:double MININCLUSIVE 05 } / { <s1> <p1> 4.4e0 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2864,6 +2950,7 @@
 
 <#1doubleMininclusiveINTEGERLead_pass-double-high> a sht:ValidationTest ;
     mf:name "1doubleMininclusiveINTEGERLead_pass-double-high" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.N70> ;
     rdfs:comment "<S1> { <p1> xsd:double MININCLUSIVE 05 } / { <s1> <p1> 5.6e0 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2877,6 +2964,7 @@
 
 <#1doubleMininclusiveDECIMAL_pass-double-equal> a sht:ValidationTest ;
     mf:name "1doubleMininclusiveDECIMAL_pass-double-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.K71> ;
     rdfs:comment "<S1> { <p1> xsd:double MININCLUSIVE 4.5 } / { <s1> <p1> 4.5e0 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2890,6 +2978,7 @@
 
 <#1doubleMininclusiveDECIMAL_pass-double-equalLeadTrail> a sht:ValidationTest ;
     mf:name "1doubleMininclusiveDECIMAL_pass-double-equalLeadTrail" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.M71> ;
     rdfs:comment "<S1> { <p1> xsd:double MININCLUSIVE 4.5 } / { <s1> <p1> 04.50e0 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2903,6 +2992,7 @@
 
 <#1doubleMininclusiveDECIMALLeadTrail_fail-double-low> a sht:ValidationFailure ;
     mf:name "1doubleMininclusiveDECIMALLeadTrail_fail-double-low" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.J72> ;
     rdfs:comment "<S1> { <p1> xsd:double MININCLUSIVE 04.50 } / { <s1> <p1> 4.4e0 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2915,6 +3005,7 @@
 
 <#1doubleMininclusiveDECIMALLeadTrail_pass-double-equal> a sht:ValidationTest ;
     mf:name "1doubleMininclusiveDECIMALLeadTrail_pass-double-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.K72> ;
     rdfs:comment "<S1> { <p1> xsd:double MININCLUSIVE 04.50 } / { <s1> <p1> 4.5e0 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2928,6 +3019,7 @@
 
 <#1doubleMininclusiveDECIMALLeadTrail_pass-double-equalLeadTrail> a sht:ValidationTest ;
     mf:name "1doubleMininclusiveDECIMALLeadTrail_pass-double-equalLeadTrail" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.M72> ;
     rdfs:comment "<S1> { <p1> xsd:double MININCLUSIVE 04.50 } / { <s1> <p1> 04.50e0 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2941,6 +3033,7 @@
 
 <#1doubleMininclusiveDECIMALLeadTrail_pass-double-high> a sht:ValidationTest ;
     mf:name "1doubleMininclusiveDECIMALLeadTrail_pass-double-high" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.N72> ;
     rdfs:comment "<S1> { <p1> xsd:double MININCLUSIVE 04.50 } / { <s1> <p1> 5.6e0 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2954,6 +3047,7 @@
 
 <#1doubleMininclusiveDECIMALintLeadTrail_fail-double-low> a sht:ValidationFailure ;
     mf:name "1doubleMininclusiveDECIMALintLeadTrail_fail-double-low" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.J74> ;
     rdfs:comment "<S1> { <p1> xsd:double MININCLUSIVE 05.00 } / { <s1> <p1> 4.4e0 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2966,6 +3060,7 @@
 
 <#1doubleMininclusiveDECIMALintLeadTrail_pass-double-high> a sht:ValidationTest ;
     mf:name "1doubleMininclusiveDECIMALintLeadTrail_pass-double-high" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.N74> ;
     rdfs:comment "<S1> { <p1> xsd:double MININCLUSIVE 05.00 } / { <s1> <p1> 5.6e0 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2979,6 +3074,7 @@
 
 <#1doubleMininclusiveDOUBLE_pass-double-equal> a sht:ValidationTest ;
     mf:name "1doubleMininclusiveDOUBLE_pass-double-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.K75> ;
     rdfs:comment "<S1> { <p1> xsd:double MININCLUSIVE 4.5e0 } / { <s1> <p1> 4.5e0 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2992,6 +3088,7 @@
 
 <#1doubleMininclusiveDOUBLE_pass-double-equalLeadTrail> a sht:ValidationTest ;
     mf:name "1doubleMininclusiveDOUBLE_pass-double-equalLeadTrail" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.M75> ;
     rdfs:comment "<S1> { <p1> xsd:double MININCLUSIVE 4.5e0 } / { <s1> <p1> 04.50e0 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3005,6 +3102,7 @@
 
 <#1doubleMininclusiveDOUBLELeadTrail_fail-double-low> a sht:ValidationFailure ;
     mf:name "1doubleMininclusiveDOUBLELeadTrail_fail-double-low" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.J76> ;
     rdfs:comment "<S1> { <p1> xsd:double MININCLUSIVE 04.50e0 } / { <s1> <p1> 4.4e0 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3017,6 +3115,7 @@
 
 <#1doubleMininclusiveDOUBLELeadTrail_pass-double-equal> a sht:ValidationTest ;
     mf:name "1doubleMininclusiveDOUBLELeadTrail_pass-double-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.K76> ;
     rdfs:comment "<S1> { <p1> xsd:double MININCLUSIVE 04.50e0 } / { <s1> <p1> 4.5e0 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3030,6 +3129,7 @@
 
 <#1doubleMininclusiveDOUBLELeadTrail_pass-double-equalLeadTrail> a sht:ValidationTest ;
     mf:name "1doubleMininclusiveDOUBLELeadTrail_pass-double-equalLeadTrail" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.M76> ;
     rdfs:comment "<S1> { <p1> xsd:double MININCLUSIVE 04.50e0 } / { <s1> <p1> 04.50e0 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3043,6 +3143,7 @@
 
 <#1doubleMininclusiveDOUBLELeadTrail_pass-double-high> a sht:ValidationTest ;
     mf:name "1doubleMininclusiveDOUBLELeadTrail_pass-double-high" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.N76> ;
     rdfs:comment "<S1> { <p1> xsd:double MININCLUSIVE 04.50e0 } / { <s1> <p1> 5.6e0 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3056,6 +3157,7 @@
 
 <#1doubleMininclusiveDOUBLEintLeadTrail_fail-double-low> a sht:ValidationFailure ;
     mf:name "1doubleMininclusiveDOUBLEintLeadTrail_fail-double-low" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.J78> ;
     rdfs:comment "<S1> { <p1> xsd:double MININCLUSIVE 05.00e0 } / { <s1> <p1> 4.4e0 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3068,6 +3170,7 @@
 
 <#1doubleMininclusiveDOUBLEintLeadTrail_pass-double-high> a sht:ValidationTest ;
     mf:name "1doubleMininclusiveDOUBLEintLeadTrail_pass-double-high" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.N78> ;
     rdfs:comment "<S1> { <p1> xsd:double MININCLUSIVE 05.00e0 } / { <s1> <p1> 5.6e0 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3081,6 +3184,7 @@
 
 <#1doubleMininclusivexsd-double_fail-double-low> a sht:ValidationFailure ;
     mf:name "1doubleMininclusivexsd-double_fail-double-low" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.J86> ;
     rdfs:comment "<S1> { <p1> xsd:double MININCLUSIVE \"4.5e0\"^^<http://www.w3.org/2001/XMLSchema#double> } / { <s1> <p1> 4.4e0 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3093,6 +3197,7 @@
 
 <#1doubleMininclusivexsd-double_pass-double-equal> a sht:ValidationTest ;
     mf:name "1doubleMininclusivexsd-double_pass-double-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.K86> ;
     rdfs:comment "<S1> { <p1> xsd:double MININCLUSIVE \"4.5e0\"^^<http://www.w3.org/2001/XMLSchema#double> } / { <s1> <p1> 4.5e0 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3106,6 +3211,7 @@
 
 <#1integerMinexclusiveINTEGER_fail-integer-low> a sht:ValidationFailure ;
     mf:name "1integerMinexclusiveINTEGER_fail-integer-low" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinExclusive.J6> ;
     rdfs:comment "<S1> { <p1> xsd:integer MINEXCLUSIVE 5 } / { <s1> <p1> 4 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3118,6 +3224,7 @@
 
 <#1integerMinexclusiveINTEGER_fail-integer-equal> a sht:ValidationFailure ;
     mf:name "1integerMinexclusiveINTEGER_fail-integer-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinExclusive.K6> ;
     rdfs:comment "<S1> { <p1> xsd:integer MINEXCLUSIVE 5 } / { <s1> <p1> 5 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3130,6 +3237,7 @@
 
 <#1integerMinexclusiveINTEGER_pass-integer-high> a sht:ValidationTest ;
     mf:name "1integerMinexclusiveINTEGER_pass-integer-high" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinExclusive.N6> ;
     rdfs:comment "<S1> { <p1> xsd:integer MINEXCLUSIVE 5 } / { <s1> <p1> 6 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3143,6 +3251,7 @@
 
 <#1integerMinexclusiveDECIMALint_fail-integer-low> a sht:ValidationFailure ;
     mf:name "1integerMinexclusiveDECIMALint_fail-integer-low" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinExclusive.J10> ;
     rdfs:comment "<S1> { <p1> xsd:integer MINEXCLUSIVE 5.0 } / { <s1> <p1> 4 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3155,6 +3264,7 @@
 
 <#1integerMinexclusiveDECIMALint_fail-integer-equal> a sht:ValidationFailure ;
     mf:name "1integerMinexclusiveDECIMALint_fail-integer-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinExclusive.K10> ;
     rdfs:comment "<S1> { <p1> xsd:integer MINEXCLUSIVE 5.0 } / { <s1> <p1> 5 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3167,6 +3277,7 @@
 
 <#1integerMinexclusiveDECIMALint_pass-integer-high> a sht:ValidationTest ;
     mf:name "1integerMinexclusiveDECIMALint_pass-integer-high" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinExclusive.N10> ;
     rdfs:comment "<S1> { <p1> xsd:integer MINEXCLUSIVE 5.0 } / { <s1> <p1> 6 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3180,6 +3291,7 @@
 
 <#1integerMinexclusiveDOUBLEint_fail-integer-low> a sht:ValidationFailure ;
     mf:name "1integerMinexclusiveDOUBLEint_fail-integer-low" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinExclusive.J14> ;
     rdfs:comment "<S1> { <p1> xsd:integer MINEXCLUSIVE 5.0e0 } / { <s1> <p1> 4 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3192,6 +3304,7 @@
 
 <#1integerMinexclusiveDOUBLEint_fail-integer-equal> a sht:ValidationFailure ;
     mf:name "1integerMinexclusiveDOUBLEint_fail-integer-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinExclusive.K14> ;
     rdfs:comment "<S1> { <p1> xsd:integer MINEXCLUSIVE 5.0e0 } / { <s1> <p1> 5 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3204,6 +3317,7 @@
 
 <#1integerMinexclusiveDOUBLEint_pass-integer-high> a sht:ValidationTest ;
     mf:name "1integerMinexclusiveDOUBLEint_pass-integer-high" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinExclusive.N14> ;
     rdfs:comment "<S1> { <p1> xsd:integer MINEXCLUSIVE 5.0e0 } / { <s1> <p1> 6 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3217,6 +3331,7 @@
 
 <#1decimalMinexclusiveINTEGER_fail-decimal-low> a sht:ValidationFailure ;
     mf:name "1decimalMinexclusiveINTEGER_fail-decimal-low" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinExclusive.J27> ;
     rdfs:comment "<S1> { <p1> xsd:decimal MINEXCLUSIVE 5 } / { <s1> <p1> 4.4 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3229,6 +3344,7 @@
 
 <#1decimalMinexclusiveINTEGER_pass-decimal-high> a sht:ValidationTest ;
     mf:name "1decimalMinexclusiveINTEGER_pass-decimal-high" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinExclusive.N27> ;
     rdfs:comment "<S1> { <p1> xsd:decimal MINEXCLUSIVE 5 } / { <s1> <p1> 5.6 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3242,6 +3358,7 @@
 
 <#1decimalMinexclusiveDECIMAL_fail-decimal-low> a sht:ValidationFailure ;
     mf:name "1decimalMinexclusiveDECIMAL_fail-decimal-low" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinExclusive.J29> ;
     rdfs:comment "<S1> { <p1> xsd:decimal MINEXCLUSIVE 4.5 } / { <s1> <p1> 4.4 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3254,6 +3371,7 @@
 
 <#1decimalMinexclusiveDECIMAL_fail-decimal-equal> a sht:ValidationFailure ;
     mf:name "1decimalMinexclusiveDECIMAL_fail-decimal-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinExclusive.K29> ;
     rdfs:comment "<S1> { <p1> xsd:decimal MINEXCLUSIVE 4.5 } / { <s1> <p1> 4.5 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3266,6 +3384,7 @@
 
 <#1decimalMinexclusiveDECIMAL_pass-decimal-high> a sht:ValidationTest ;
     mf:name "1decimalMinexclusiveDECIMAL_pass-decimal-high" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinExclusive.N29> ;
     rdfs:comment "<S1> { <p1> xsd:decimal MINEXCLUSIVE 4.5 } / { <s1> <p1> 5.6 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3279,6 +3398,7 @@
 
 <#1decimalMinexclusiveDOUBLE_fail-decimal-low> a sht:ValidationFailure ;
     mf:name "1decimalMinexclusiveDOUBLE_fail-decimal-low" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinExclusive.J33> ;
     rdfs:comment "<S1> { <p1> xsd:decimal MINEXCLUSIVE 4.5e0 } / { <s1> <p1> 4.4 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3291,6 +3411,7 @@
 
 <#1decimalMinexclusiveDOUBLE_fail-decimal-equal> a sht:ValidationFailure ;
     mf:name "1decimalMinexclusiveDOUBLE_fail-decimal-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinExclusive.K33> ;
     rdfs:comment "<S1> { <p1> xsd:decimal MINEXCLUSIVE 4.5e0 } / { <s1> <p1> 4.5 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3303,6 +3424,7 @@
 
 <#1decimalMinexclusiveDOUBLE_pass-decimal-high> a sht:ValidationTest ;
     mf:name "1decimalMinexclusiveDOUBLE_pass-decimal-high" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinExclusive.N33> ;
     rdfs:comment "<S1> { <p1> xsd:decimal MINEXCLUSIVE 4.5e0 } / { <s1> <p1> 5.6 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3316,6 +3438,7 @@
 
 <#1decimalMinexclusiveDECIMAL_fail-float-equal> a sht:ValidationFailure ;
     mf:name "1decimalMinexclusiveDECIMAL_fail-float-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinExclusive.K37> ;
     rdfs:comment "<S1> { <p1> xsd:decimal MINEXCLUSIVE 4.5 } / { <s1> <p1> '4.5'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3328,6 +3451,7 @@
 
 <#1decimalMinexclusiveDECIMAL_fail-double-equal> a sht:ValidationFailure ;
     mf:name "1decimalMinexclusiveDECIMAL_fail-double-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinExclusive.K39> ;
     rdfs:comment "<S1> { <p1> xsd:decimal MINEXCLUSIVE 4.5 } / { <s1> <p1> 4.5e0 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3340,6 +3464,7 @@
 
 <#1floatMinexclusiveINTEGER_fail-float-low> a sht:ValidationFailure ;
     mf:name "1floatMinexclusiveINTEGER_fail-float-low" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinExclusive.J48> ;
     rdfs:comment "<S1> { <p1> xsd:float MINEXCLUSIVE 5 } / { <s1> <p1> '4.4'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3352,6 +3477,7 @@
 
 <#1floatMinexclusiveINTEGER_pass-float-high> a sht:ValidationTest ;
     mf:name "1floatMinexclusiveINTEGER_pass-float-high" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinExclusive.N48> ;
     rdfs:comment "<S1> { <p1> xsd:float MINEXCLUSIVE 5 } / { <s1> <p1> '5.6'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3365,6 +3491,7 @@
 
 <#1floatMinexclusiveDECIMAL_fail-float-low> a sht:ValidationFailure ;
     mf:name "1floatMinexclusiveDECIMAL_fail-float-low" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinExclusive.J50> ;
     rdfs:comment "<S1> { <p1> xsd:float MINEXCLUSIVE 4.5 } / { <s1> <p1> '4.4'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3377,6 +3504,7 @@
 
 <#1floatMinexclusiveDECIMAL_fail-float-equal> a sht:ValidationFailure ;
     mf:name "1floatMinexclusiveDECIMAL_fail-float-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinExclusive.K50> ;
     rdfs:comment "<S1> { <p1> xsd:float MINEXCLUSIVE 4.5 } / { <s1> <p1> '4.5'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3389,6 +3517,7 @@
 
 <#1floatMinexclusiveDECIMAL_pass-float-high> a sht:ValidationTest ;
     mf:name "1floatMinexclusiveDECIMAL_pass-float-high" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinExclusive.N50> ;
     rdfs:comment "<S1> { <p1> xsd:float MINEXCLUSIVE 4.5 } / { <s1> <p1> '5.6'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3402,6 +3531,7 @@
 
 <#1floatMinexclusiveDOUBLE_fail-float-low> a sht:ValidationFailure ;
     mf:name "1floatMinexclusiveDOUBLE_fail-float-low" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinExclusive.J54> ;
     rdfs:comment "<S1> { <p1> xsd:float MINEXCLUSIVE 4.5e0 } / { <s1> <p1> '4.4'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3414,6 +3544,7 @@
 
 <#1floatMinexclusiveDOUBLE_fail-float-equal> a sht:ValidationFailure ;
     mf:name "1floatMinexclusiveDOUBLE_fail-float-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinExclusive.K54> ;
     rdfs:comment "<S1> { <p1> xsd:float MINEXCLUSIVE 4.5e0 } / { <s1> <p1> '4.5'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3426,6 +3557,7 @@
 
 <#1floatMinexclusiveDOUBLE_pass-float-high> a sht:ValidationTest ;
     mf:name "1floatMinexclusiveDOUBLE_pass-float-high" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinExclusive.N54> ;
     rdfs:comment "<S1> { <p1> xsd:float MINEXCLUSIVE 4.5e0 } / { <s1> <p1> '5.6'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3439,6 +3571,7 @@
 
 <#1floatMinexclusivexsd-float_fail-decimal-equal> a sht:ValidationFailure ;
     mf:name "1floatMinexclusivexsd-float_fail-decimal-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinExclusive.K58> ;
     rdfs:comment "<S1> { <p1> xsd:float MINEXCLUSIVE \"4.5\"^^<http://www.w3.org/2001/XMLSchema#float> } / { <s1> <p1> 4.5 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3451,6 +3584,7 @@
 
 <#1floatMinexclusivexsd-float_fail-double-equal> a sht:ValidationFailure ;
     mf:name "1floatMinexclusivexsd-float_fail-double-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinExclusive.K60> ;
     rdfs:comment "<S1> { <p1> xsd:float MINEXCLUSIVE \"4.5\"^^<http://www.w3.org/2001/XMLSchema#float> } / { <s1> <p1> 4.5e0 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3463,6 +3597,7 @@
 
 <#1doubleMinexclusiveINTEGER_fail-double-low> a sht:ValidationFailure ;
     mf:name "1doubleMinexclusiveINTEGER_fail-double-low" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinExclusive.J69> ;
     rdfs:comment "<S1> { <p1> xsd:double MINEXCLUSIVE 5 } / { <s1> <p1> 4.4e0 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3475,6 +3610,7 @@
 
 <#1doubleMinexclusiveINTEGER_pass-double-high> a sht:ValidationTest ;
     mf:name "1doubleMinexclusiveINTEGER_pass-double-high" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinExclusive.N69> ;
     rdfs:comment "<S1> { <p1> xsd:double MINEXCLUSIVE 5 } / { <s1> <p1> 5.6e0 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3488,6 +3624,7 @@
 
 <#1doubleMinexclusiveDECIMAL_fail-double-low> a sht:ValidationFailure ;
     mf:name "1doubleMinexclusiveDECIMAL_fail-double-low" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinExclusive.J71> ;
     rdfs:comment "<S1> { <p1> xsd:double MINEXCLUSIVE 4.5 } / { <s1> <p1> 4.4e0 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3500,6 +3637,7 @@
 
 <#1doubleMinexclusiveDECIMAL_fail-double-equal> a sht:ValidationFailure ;
     mf:name "1doubleMinexclusiveDECIMAL_fail-double-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinExclusive.K71> ;
     rdfs:comment "<S1> { <p1> xsd:double MINEXCLUSIVE 4.5 } / { <s1> <p1> 4.5e0 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3512,6 +3650,7 @@
 
 <#1doubleMinexclusiveDECIMAL_pass-double-high> a sht:ValidationTest ;
     mf:name "1doubleMinexclusiveDECIMAL_pass-double-high" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinExclusive.N71> ;
     rdfs:comment "<S1> { <p1> xsd:double MINEXCLUSIVE 4.5 } / { <s1> <p1> 5.6e0 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3525,6 +3664,7 @@
 
 <#1doubleMinexclusiveDOUBLE_fail-double-low> a sht:ValidationFailure ;
     mf:name "1doubleMinexclusiveDOUBLE_fail-double-low" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinExclusive.J75> ;
     rdfs:comment "<S1> { <p1> xsd:double MINEXCLUSIVE 4.5e0 } / { <s1> <p1> 4.4e0 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3537,6 +3677,7 @@
 
 <#1doubleMinexclusiveDOUBLE_fail-double-equal> a sht:ValidationFailure ;
     mf:name "1doubleMinexclusiveDOUBLE_fail-double-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinExclusive.K75> ;
     rdfs:comment "<S1> { <p1> xsd:double MINEXCLUSIVE 4.5e0 } / { <s1> <p1> 4.5e0 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3549,6 +3690,7 @@
 
 <#1doubleMinexclusiveDOUBLE_pass-double-high> a sht:ValidationTest ;
     mf:name "1doubleMinexclusiveDOUBLE_pass-double-high" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinExclusive.N75> ;
     rdfs:comment "<S1> { <p1> xsd:double MINEXCLUSIVE 4.5e0 } / { <s1> <p1> 5.6e0 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3562,6 +3704,7 @@
 
 <#1doubleMinexclusiveDECIMAL_fail-float-equal> a sht:ValidationFailure ;
     mf:name "1doubleMinexclusiveDECIMAL_fail-float-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MinExclusive.K79> ;
     rdfs:comment "<S1> { <p1> xsd:double MINEXCLUSIVE 4.5 } / { <s1> <p1> '4.5'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3574,6 +3717,7 @@
 
 <#1integerMaxinclusiveINTEGER_pass-integer-low> a sht:ValidationTest ;
     mf:name "1integerMaxinclusiveINTEGER_pass-integer-low" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxInclusive.J6> ;
     rdfs:comment "<S1> { <p1> xsd:integer MAXINCLUSIVE 5 } / { <s1> <p1> 4 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3587,6 +3731,7 @@
 
 <#1integerMaxinclusiveINTEGER_pass-integer-equal> a sht:ValidationTest ;
     mf:name "1integerMaxinclusiveINTEGER_pass-integer-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxInclusive.K6> ;
     rdfs:comment "<S1> { <p1> xsd:integer MAXINCLUSIVE 5 } / { <s1> <p1> 5 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3600,6 +3745,7 @@
 
 <#1integerMaxinclusiveINTEGER_fail-integer-high> a sht:ValidationFailure ;
     mf:name "1integerMaxinclusiveINTEGER_fail-integer-high" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxInclusive.N6> ;
     rdfs:comment "<S1> { <p1> xsd:integer MAXINCLUSIVE 5 } / { <s1> <p1> 6 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3612,6 +3758,7 @@
 
 <#1integerMaxinclusiveDECIMALint_pass-integer-low> a sht:ValidationTest ;
     mf:name "1integerMaxinclusiveDECIMALint_pass-integer-low" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxInclusive.J10> ;
     rdfs:comment "<S1> { <p1> xsd:integer MAXINCLUSIVE 5.0 } / { <s1> <p1> 4 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3625,6 +3772,7 @@
 
 <#1integerMaxinclusiveDECIMALint_pass-integer-equal> a sht:ValidationTest ;
     mf:name "1integerMaxinclusiveDECIMALint_pass-integer-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxInclusive.K10> ;
     rdfs:comment "<S1> { <p1> xsd:integer MAXINCLUSIVE 5.0 } / { <s1> <p1> 5 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3638,6 +3786,7 @@
 
 <#1integerMaxinclusiveDECIMALint_fail-integer-high> a sht:ValidationFailure ;
     mf:name "1integerMaxinclusiveDECIMALint_fail-integer-high" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxInclusive.N10> ;
     rdfs:comment "<S1> { <p1> xsd:integer MAXINCLUSIVE 5.0 } / { <s1> <p1> 6 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3650,6 +3799,7 @@
 
 <#1integerMaxinclusiveDOUBLEint_pass-integer-low> a sht:ValidationTest ;
     mf:name "1integerMaxinclusiveDOUBLEint_pass-integer-low" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxInclusive.J14> ;
     rdfs:comment "<S1> { <p1> xsd:integer MAXINCLUSIVE 5.0e0 } / { <s1> <p1> 4 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3663,6 +3813,7 @@
 
 <#1integerMaxinclusiveDOUBLEint_pass-integer-equal> a sht:ValidationTest ;
     mf:name "1integerMaxinclusiveDOUBLEint_pass-integer-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxInclusive.K14> ;
     rdfs:comment "<S1> { <p1> xsd:integer MAXINCLUSIVE 5.0e0 } / { <s1> <p1> 5 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3676,6 +3827,7 @@
 
 <#1integerMaxinclusiveDOUBLEint_fail-integer-high> a sht:ValidationFailure ;
     mf:name "1integerMaxinclusiveDOUBLEint_fail-integer-high" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxInclusive.N14> ;
     rdfs:comment "<S1> { <p1> xsd:integer MAXINCLUSIVE 5.0e0 } / { <s1> <p1> 6 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3688,6 +3840,7 @@
 
 <#1decimalMaxinclusiveINTEGER_pass-decimal-low> a sht:ValidationTest ;
     mf:name "1decimalMaxinclusiveINTEGER_pass-decimal-low" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxInclusive.J27> ;
     rdfs:comment "<S1> { <p1> xsd:decimal MAXINCLUSIVE 5 } / { <s1> <p1> 4.4 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3701,6 +3854,7 @@
 
 <#1decimalMaxinclusiveINTEGER_fail-decimal-high> a sht:ValidationFailure ;
     mf:name "1decimalMaxinclusiveINTEGER_fail-decimal-high" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxInclusive.N27> ;
     rdfs:comment "<S1> { <p1> xsd:decimal MAXINCLUSIVE 5 } / { <s1> <p1> 5.6 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3713,6 +3867,7 @@
 
 <#1decimalMaxinclusiveDECIMAL_pass-decimal-low> a sht:ValidationTest ;
     mf:name "1decimalMaxinclusiveDECIMAL_pass-decimal-low" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxInclusive.J29> ;
     rdfs:comment "<S1> { <p1> xsd:decimal MAXINCLUSIVE 5.5 } / { <s1> <p1> 4.4 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3726,6 +3881,7 @@
 
 <#1decimalMaxinclusiveDECIMAL_pass-decimal-equal> a sht:ValidationTest ;
     mf:name "1decimalMaxinclusiveDECIMAL_pass-decimal-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxInclusive.K29> ;
     rdfs:comment "<S1> { <p1> xsd:decimal MAXINCLUSIVE 5.5 } / { <s1> <p1> 5.5 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3739,6 +3895,7 @@
 
 <#1decimalMaxinclusiveDECIMAL_fail-decimal-high> a sht:ValidationFailure ;
     mf:name "1decimalMaxinclusiveDECIMAL_fail-decimal-high" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxInclusive.N29> ;
     rdfs:comment "<S1> { <p1> xsd:decimal MAXINCLUSIVE 5.5 } / { <s1> <p1> 5.6 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3751,6 +3908,7 @@
 
 <#1decimalMaxinclusiveDOUBLE_pass-decimal-low> a sht:ValidationTest ;
     mf:name "1decimalMaxinclusiveDOUBLE_pass-decimal-low" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxInclusive.J33> ;
     rdfs:comment "<S1> { <p1> xsd:decimal MAXINCLUSIVE 5.5e0 } / { <s1> <p1> 4.4 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3764,6 +3922,7 @@
 
 <#1decimalMaxinclusiveDOUBLE_pass-decimal-equal> a sht:ValidationTest ;
     mf:name "1decimalMaxinclusiveDOUBLE_pass-decimal-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxInclusive.K33> ;
     rdfs:comment "<S1> { <p1> xsd:decimal MAXINCLUSIVE 5.5e0 } / { <s1> <p1> 5.5 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3777,6 +3936,7 @@
 
 <#1decimalMaxinclusiveDOUBLE_fail-decimal-high> a sht:ValidationFailure ;
     mf:name "1decimalMaxinclusiveDOUBLE_fail-decimal-high" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxInclusive.N33> ;
     rdfs:comment "<S1> { <p1> xsd:decimal MAXINCLUSIVE 5.5e0 } / { <s1> <p1> 5.6 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3789,6 +3949,7 @@
 
 <#1decimalMaxinclusiveDECIMAL_fail-float-equal> a sht:ValidationFailure ;
     mf:name "1decimalMaxinclusiveDECIMAL_fail-float-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxInclusive.K37> ;
     rdfs:comment "<S1> { <p1> xsd:decimal MAXINCLUSIVE 5.5 } / { <s1> <p1> '5.5'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3801,6 +3962,7 @@
 
 <#1decimalMaxinclusiveDECIMAL_fail-double-equal> a sht:ValidationFailure ;
     mf:name "1decimalMaxinclusiveDECIMAL_fail-double-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxInclusive.K39> ;
     rdfs:comment "<S1> { <p1> xsd:decimal MAXINCLUSIVE 5.5 } / { <s1> <p1> 5.5e0 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3813,6 +3975,7 @@
 
 <#1floatMaxinclusiveINTEGER_pass-float-low> a sht:ValidationTest ;
     mf:name "1floatMaxinclusiveINTEGER_pass-float-low" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxInclusive.J48> ;
     rdfs:comment "<S1> { <p1> xsd:float MAXINCLUSIVE 5 } / { <s1> <p1> '4.4'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3826,6 +3989,7 @@
 
 <#1floatMaxinclusiveINTEGER_fail-float-high> a sht:ValidationFailure ;
     mf:name "1floatMaxinclusiveINTEGER_fail-float-high" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxInclusive.N48> ;
     rdfs:comment "<S1> { <p1> xsd:float MAXINCLUSIVE 5 } / { <s1> <p1> '5.6'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3838,6 +4002,7 @@
 
 <#1floatMaxinclusiveDECIMAL_pass-float-low> a sht:ValidationTest ;
     mf:name "1floatMaxinclusiveDECIMAL_pass-float-low" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxInclusive.J50> ;
     rdfs:comment "<S1> { <p1> xsd:float MAXINCLUSIVE 5.5 } / { <s1> <p1> '4.4'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3851,6 +4016,7 @@
 
 <#1floatMaxinclusiveDECIMAL_pass-float-equal> a sht:ValidationTest ;
     mf:name "1floatMaxinclusiveDECIMAL_pass-float-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxInclusive.K50> ;
     rdfs:comment "<S1> { <p1> xsd:float MAXINCLUSIVE 5.5 } / { <s1> <p1> '5.5'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3864,6 +4030,7 @@
 
 <#1floatMaxinclusiveDECIMAL_fail-float-high> a sht:ValidationFailure ;
     mf:name "1floatMaxinclusiveDECIMAL_fail-float-high" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxInclusive.N50> ;
     rdfs:comment "<S1> { <p1> xsd:float MAXINCLUSIVE 5.5 } / { <s1> <p1> '5.6'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3876,6 +4043,7 @@
 
 <#1floatMaxinclusiveDOUBLE_pass-float-low> a sht:ValidationTest ;
     mf:name "1floatMaxinclusiveDOUBLE_pass-float-low" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxInclusive.J54> ;
     rdfs:comment "<S1> { <p1> xsd:float MAXINCLUSIVE 5.5e0 } / { <s1> <p1> '4.4'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3889,6 +4057,7 @@
 
 <#1floatMaxinclusiveDOUBLE_pass-float-equal> a sht:ValidationTest ;
     mf:name "1floatMaxinclusiveDOUBLE_pass-float-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxInclusive.K54> ;
     rdfs:comment "<S1> { <p1> xsd:float MAXINCLUSIVE 5.5e0 } / { <s1> <p1> '5.5'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3902,6 +4071,7 @@
 
 <#1floatMaxinclusiveDOUBLE_fail-float-high> a sht:ValidationFailure ;
     mf:name "1floatMaxinclusiveDOUBLE_fail-float-high" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxInclusive.N54> ;
     rdfs:comment "<S1> { <p1> xsd:float MAXINCLUSIVE 5.5e0 } / { <s1> <p1> '5.6'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3914,6 +4084,7 @@
 
 <#1floatMaxinclusivexsd-float_fail-decimal-equal> a sht:ValidationFailure ;
     mf:name "1floatMaxinclusivexsd-float_fail-decimal-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxInclusive.K58> ;
     rdfs:comment "<S1> { <p1> xsd:float MAXINCLUSIVE \"5.5\"^^<http://www.w3.org/2001/XMLSchema#float> } / { <s1> <p1> 5.5 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3926,6 +4097,7 @@
 
 <#1floatMaxinclusivexsd-float_fail-double-equal> a sht:ValidationFailure ;
     mf:name "1floatMaxinclusivexsd-float_fail-double-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxInclusive.K60> ;
     rdfs:comment "<S1> { <p1> xsd:float MAXINCLUSIVE \"5.5\"^^<http://www.w3.org/2001/XMLSchema#float> } / { <s1> <p1> 5.5e0 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3938,6 +4110,7 @@
 
 <#1doubleMaxinclusiveINTEGER_pass-double-low> a sht:ValidationTest ;
     mf:name "1doubleMaxinclusiveINTEGER_pass-double-low" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxInclusive.J69> ;
     rdfs:comment "<S1> { <p1> xsd:double MAXINCLUSIVE 5 } / { <s1> <p1> 4.4e0 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3951,6 +4124,7 @@
 
 <#1doubleMaxinclusiveINTEGER_fail-double-high> a sht:ValidationFailure ;
     mf:name "1doubleMaxinclusiveINTEGER_fail-double-high" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxInclusive.N69> ;
     rdfs:comment "<S1> { <p1> xsd:double MAXINCLUSIVE 5 } / { <s1> <p1> 5.6e0 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3963,6 +4137,7 @@
 
 <#1doubleMaxinclusiveDECIMAL_pass-double-low> a sht:ValidationTest ;
     mf:name "1doubleMaxinclusiveDECIMAL_pass-double-low" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxInclusive.J71> ;
     rdfs:comment "<S1> { <p1> xsd:double MAXINCLUSIVE 5.5 } / { <s1> <p1> 4.4e0 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3976,6 +4151,7 @@
 
 <#1doubleMaxinclusiveDECIMAL_pass-double-equal> a sht:ValidationTest ;
     mf:name "1doubleMaxinclusiveDECIMAL_pass-double-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxInclusive.K71> ;
     rdfs:comment "<S1> { <p1> xsd:double MAXINCLUSIVE 5.5 } / { <s1> <p1> 5.5e0 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -3989,6 +4165,7 @@
 
 <#1doubleMaxinclusiveDECIMAL_fail-double-high> a sht:ValidationFailure ;
     mf:name "1doubleMaxinclusiveDECIMAL_fail-double-high" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxInclusive.N71> ;
     rdfs:comment "<S1> { <p1> xsd:double MAXINCLUSIVE 5.5 } / { <s1> <p1> 5.6e0 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -4001,6 +4178,7 @@
 
 <#1doubleMaxinclusiveDOUBLE_pass-double-low> a sht:ValidationTest ;
     mf:name "1doubleMaxinclusiveDOUBLE_pass-double-low" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxInclusive.J75> ;
     rdfs:comment "<S1> { <p1> xsd:double MAXINCLUSIVE 5.5e0 } / { <s1> <p1> 4.4e0 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -4014,6 +4192,7 @@
 
 <#1doubleMaxinclusiveDOUBLE_pass-double-equal> a sht:ValidationTest ;
     mf:name "1doubleMaxinclusiveDOUBLE_pass-double-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxInclusive.K75> ;
     rdfs:comment "<S1> { <p1> xsd:double MAXINCLUSIVE 5.5e0 } / { <s1> <p1> 5.5e0 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -4027,6 +4206,7 @@
 
 <#1doubleMaxinclusiveDOUBLE_fail-double-high> a sht:ValidationFailure ;
     mf:name "1doubleMaxinclusiveDOUBLE_fail-double-high" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxInclusive.N75> ;
     rdfs:comment "<S1> { <p1> xsd:double MAXINCLUSIVE 5.5e0 } / { <s1> <p1> 5.6e0 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -4039,6 +4219,7 @@
 
 <#1doubleMaxinclusiveDECIMAL_fail-float-equal> a sht:ValidationFailure ;
     mf:name "1doubleMaxinclusiveDECIMAL_fail-float-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxInclusive.K79> ;
     rdfs:comment "<S1> { <p1> xsd:double MAXINCLUSIVE 5.5 } / { <s1> <p1> '5.5'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -4051,6 +4232,7 @@
 
 <#1integerMaxexclusiveINTEGER_pass-integer-low> a sht:ValidationTest ;
     mf:name "1integerMaxexclusiveINTEGER_pass-integer-low" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxExclusive.J6> ;
     rdfs:comment "<S1> { <p1> xsd:integer MAXEXCLUSIVE 5 } / { <s1> <p1> 4 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -4064,6 +4246,7 @@
 
 <#1integerMaxexclusiveINTEGER_fail-integer-equal> a sht:ValidationFailure ;
     mf:name "1integerMaxexclusiveINTEGER_fail-integer-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxExclusive.K6> ;
     rdfs:comment "<S1> { <p1> xsd:integer MAXEXCLUSIVE 5 } / { <s1> <p1> 5 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -4076,6 +4259,7 @@
 
 <#1integerMaxexclusiveINTEGER_fail-integer-high> a sht:ValidationFailure ;
     mf:name "1integerMaxexclusiveINTEGER_fail-integer-high" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxExclusive.N6> ;
     rdfs:comment "<S1> { <p1> xsd:integer MAXEXCLUSIVE 5 } / { <s1> <p1> 6 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -4088,6 +4272,7 @@
 
 <#1integerMaxexclusiveDECIMALint_pass-integer-low> a sht:ValidationTest ;
     mf:name "1integerMaxexclusiveDECIMALint_pass-integer-low" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxExclusive.J10> ;
     rdfs:comment "<S1> { <p1> xsd:integer MAXEXCLUSIVE 5.0 } / { <s1> <p1> 4 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -4101,6 +4286,7 @@
 
 <#1integerMaxexclusiveDECIMALint_fail-integer-equal> a sht:ValidationFailure ;
     mf:name "1integerMaxexclusiveDECIMALint_fail-integer-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxExclusive.K10> ;
     rdfs:comment "<S1> { <p1> xsd:integer MAXEXCLUSIVE 5.0 } / { <s1> <p1> 5 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -4113,6 +4299,7 @@
 
 <#1integerMaxexclusiveDECIMALint_fail-integer-high> a sht:ValidationFailure ;
     mf:name "1integerMaxexclusiveDECIMALint_fail-integer-high" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxExclusive.N10> ;
     rdfs:comment "<S1> { <p1> xsd:integer MAXEXCLUSIVE 5.0 } / { <s1> <p1> 6 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -4125,6 +4312,7 @@
 
 <#1integerMaxexclusiveDOUBLEint_pass-integer-low> a sht:ValidationTest ;
     mf:name "1integerMaxexclusiveDOUBLEint_pass-integer-low" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxExclusive.J14> ;
     rdfs:comment "<S1> { <p1> xsd:integer MAXEXCLUSIVE 5.0e0 } / { <s1> <p1> 4 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -4138,6 +4326,7 @@
 
 <#1integerMaxexclusiveDOUBLEint_fail-integer-equal> a sht:ValidationFailure ;
     mf:name "1integerMaxexclusiveDOUBLEint_fail-integer-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxExclusive.K14> ;
     rdfs:comment "<S1> { <p1> xsd:integer MAXEXCLUSIVE 5.0e0 } / { <s1> <p1> 5 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -4150,6 +4339,7 @@
 
 <#1integerMaxexclusiveDOUBLEint_fail-integer-high> a sht:ValidationFailure ;
     mf:name "1integerMaxexclusiveDOUBLEint_fail-integer-high" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxExclusive.N14> ;
     rdfs:comment "<S1> { <p1> xsd:integer MAXEXCLUSIVE 5.0e0 } / { <s1> <p1> 6 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -4162,6 +4352,7 @@
 
 <#1decimalMaxexclusiveINTEGER_pass-decimal-low> a sht:ValidationTest ;
     mf:name "1decimalMaxexclusiveINTEGER_pass-decimal-low" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxExclusive.J27> ;
     rdfs:comment "<S1> { <p1> xsd:decimal MAXEXCLUSIVE 5 } / { <s1> <p1> 4.4 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -4175,6 +4366,7 @@
 
 <#1decimalMaxexclusiveINTEGER_fail-decimal-high> a sht:ValidationFailure ;
     mf:name "1decimalMaxexclusiveINTEGER_fail-decimal-high" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxExclusive.N27> ;
     rdfs:comment "<S1> { <p1> xsd:decimal MAXEXCLUSIVE 5 } / { <s1> <p1> 5.6 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -4187,6 +4379,7 @@
 
 <#1decimalMaxexclusiveDECIMAL_pass-decimal-low> a sht:ValidationTest ;
     mf:name "1decimalMaxexclusiveDECIMAL_pass-decimal-low" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxExclusive.J29> ;
     rdfs:comment "<S1> { <p1> xsd:decimal MAXEXCLUSIVE 5.5 } / { <s1> <p1> 4.4 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -4200,6 +4393,7 @@
 
 <#1decimalMaxexclusiveDECIMAL_fail-decimal-equal> a sht:ValidationFailure ;
     mf:name "1decimalMaxexclusiveDECIMAL_fail-decimal-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxExclusive.K29> ;
     rdfs:comment "<S1> { <p1> xsd:decimal MAXEXCLUSIVE 5.5 } / { <s1> <p1> 5.5 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -4212,6 +4406,7 @@
 
 <#1decimalMaxexclusiveDECIMAL_fail-decimal-high> a sht:ValidationFailure ;
     mf:name "1decimalMaxexclusiveDECIMAL_fail-decimal-high" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxExclusive.N29> ;
     rdfs:comment "<S1> { <p1> xsd:decimal MAXEXCLUSIVE 5.5 } / { <s1> <p1> 5.6 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -4224,6 +4419,7 @@
 
 <#1decimalMaxexclusiveDOUBLE_pass-decimal-low> a sht:ValidationTest ;
     mf:name "1decimalMaxexclusiveDOUBLE_pass-decimal-low" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxExclusive.J33> ;
     rdfs:comment "<S1> { <p1> xsd:decimal MAXEXCLUSIVE 5.5e0 } / { <s1> <p1> 4.4 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -4237,6 +4433,7 @@
 
 <#1decimalMaxexclusiveDOUBLE_fail-decimal-equal> a sht:ValidationFailure ;
     mf:name "1decimalMaxexclusiveDOUBLE_fail-decimal-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxExclusive.K33> ;
     rdfs:comment "<S1> { <p1> xsd:decimal MAXEXCLUSIVE 5.5e0 } / { <s1> <p1> 5.5 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -4249,6 +4446,7 @@
 
 <#1decimalMaxexclusiveDOUBLE_fail-decimal-high> a sht:ValidationFailure ;
     mf:name "1decimalMaxexclusiveDOUBLE_fail-decimal-high" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxExclusive.N33> ;
     rdfs:comment "<S1> { <p1> xsd:decimal MAXEXCLUSIVE 5.5e0 } / { <s1> <p1> 5.6 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -4261,6 +4459,7 @@
 
 <#1decimalMaxexclusiveDECIMAL_fail-float-equal> a sht:ValidationFailure ;
     mf:name "1decimalMaxexclusiveDECIMAL_fail-float-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxExclusive.K37> ;
     rdfs:comment "<S1> { <p1> xsd:decimal MAXEXCLUSIVE 5.5 } / { <s1> <p1> '5.5'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -4273,6 +4472,7 @@
 
 <#1decimalMaxexclusiveDECIMAL_fail-double-equal> a sht:ValidationFailure ;
     mf:name "1decimalMaxexclusiveDECIMAL_fail-double-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxExclusive.K39> ;
     rdfs:comment "<S1> { <p1> xsd:decimal MAXEXCLUSIVE 5.5 } / { <s1> <p1> 5.5e0 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -4285,6 +4485,7 @@
 
 <#1decimalMaxexclusivexsd-byte_fail-byte-equal> a sht:ValidationFailure ;
     mf:name "1decimalMaxexclusivexsd-byte_fail-byte-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxExclusive.K43> ;
     rdfs:comment "<S1> { <p1> xsd:decimal MAXEXCLUSIVE 5 } / { <s1> <p1> '5'^^<http://www.w3.org/2001/XMLSchema#byte> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -4297,6 +4498,7 @@
 
 <#1decimalMaxexclusivexsd-decimal_fail-decimal-equal> a sht:ValidationFailure ;
     mf:name "1decimalMaxexclusivexsd-decimal_fail-decimal-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxExclusive.K44> ;
     rdfs:comment "<S1> { <p1> xsd:decimal MAXEXCLUSIVE \"5.5\"^^<http://www.w3.org/2001/XMLSchema#decimal> } / { <s1> <p1> 5.5 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -4309,6 +4511,7 @@
 
 <#1floatMaxexclusiveINTEGER_pass-float-low> a sht:ValidationTest ;
     mf:name "1floatMaxexclusiveINTEGER_pass-float-low" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxExclusive.J48> ;
     rdfs:comment "<S1> { <p1> xsd:float MAXEXCLUSIVE 5 } / { <s1> <p1> '4.4'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -4322,6 +4525,7 @@
 
 <#1floatMaxexclusiveINTEGER_fail-float-high> a sht:ValidationFailure ;
     mf:name "1floatMaxexclusiveINTEGER_fail-float-high" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxExclusive.N48> ;
     rdfs:comment "<S1> { <p1> xsd:float MAXEXCLUSIVE 5 } / { <s1> <p1> '5.6'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -4334,6 +4538,7 @@
 
 <#1floatMaxexclusiveDECIMAL_pass-float-low> a sht:ValidationTest ;
     mf:name "1floatMaxexclusiveDECIMAL_pass-float-low" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxExclusive.J50> ;
     rdfs:comment "<S1> { <p1> xsd:float MAXEXCLUSIVE 5.5 } / { <s1> <p1> '4.4'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -4347,6 +4552,7 @@
 
 <#1floatMaxexclusiveDECIMAL_fail-float-high> a sht:ValidationFailure ;
     mf:name "1floatMaxexclusiveDECIMAL_fail-float-high" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxExclusive.N50> ;
     rdfs:comment "<S1> { <p1> xsd:float MAXEXCLUSIVE 5.5 } / { <s1> <p1> '5.6'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -4359,6 +4565,7 @@
 
 <#1floatMaxexclusiveDOUBLE_pass-float-low> a sht:ValidationTest ;
     mf:name "1floatMaxexclusiveDOUBLE_pass-float-low" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxExclusive.J54> ;
     rdfs:comment "<S1> { <p1> xsd:float MAXEXCLUSIVE 5.5e0 } / { <s1> <p1> '4.4'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -4372,6 +4579,7 @@
 
 <#1floatMaxexclusiveDOUBLE_fail-float-high> a sht:ValidationFailure ;
     mf:name "1floatMaxexclusiveDOUBLE_fail-float-high" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxExclusive.N54> ;
     rdfs:comment "<S1> { <p1> xsd:float MAXEXCLUSIVE 5.5e0 } / { <s1> <p1> '5.6'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -4384,6 +4592,7 @@
 
 <#1doubleMaxexclusiveINTEGER_pass-double-low> a sht:ValidationTest ;
     mf:name "1doubleMaxexclusiveINTEGER_pass-double-low" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxExclusive.J69> ;
     rdfs:comment "<S1> { <p1> xsd:double MAXEXCLUSIVE 5 } / { <s1> <p1> 4.4e0 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -4397,6 +4606,7 @@
 
 <#1doubleMaxexclusiveINTEGER_fail-double-equal> a sht:ValidationFailure ;
     mf:name "1doubleMaxexclusiveINTEGER_fail-double-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxExclusive.K69> ;
     rdfs:comment "<S1> { <p1> xsd:double MAXEXCLUSIVE 5 } / { <s1> <p1> 5.5e0 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -4409,6 +4619,7 @@
 
 <#1doubleMaxexclusiveINTEGER_fail-double-high> a sht:ValidationFailure ;
     mf:name "1doubleMaxexclusiveINTEGER_fail-double-high" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxExclusive.N69> ;
     rdfs:comment "<S1> { <p1> xsd:double MAXEXCLUSIVE 5 } / { <s1> <p1> 5.6e0 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -4421,6 +4632,7 @@
 
 <#1doubleMaxexclusiveINTEGERLead_fail-double-equal> a sht:ValidationFailure ;
     mf:name "1doubleMaxexclusiveINTEGERLead_fail-double-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxExclusive.K70> ;
     rdfs:comment "<S1> { <p1> xsd:double MAXEXCLUSIVE 05 } / { <s1> <p1> 5.5e0 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -4433,6 +4645,7 @@
 
 <#1doubleMaxexclusiveDECIMAL_pass-double-low> a sht:ValidationTest ;
     mf:name "1doubleMaxexclusiveDECIMAL_pass-double-low" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxExclusive.J71> ;
     rdfs:comment "<S1> { <p1> xsd:double MAXEXCLUSIVE 5.5 } / { <s1> <p1> 4.4e0 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -4446,6 +4659,7 @@
 
 <#1doubleMaxexclusiveDECIMAL_fail-double-equal> a sht:ValidationFailure ;
     mf:name "1doubleMaxexclusiveDECIMAL_fail-double-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxExclusive.K71> ;
     rdfs:comment "<S1> { <p1> xsd:double MAXEXCLUSIVE 5.5 } / { <s1> <p1> 5.5e0 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -4458,6 +4672,7 @@
 
 <#1doubleMaxexclusiveDECIMAL_fail-double-high> a sht:ValidationFailure ;
     mf:name "1doubleMaxexclusiveDECIMAL_fail-double-high" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxExclusive.N71> ;
     rdfs:comment "<S1> { <p1> xsd:double MAXEXCLUSIVE 5.5 } / { <s1> <p1> 5.6e0 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -4470,6 +4685,7 @@
 
 <#1doubleMaxexclusiveDECIMALLeadTrail_fail-double-equal> a sht:ValidationFailure ;
     mf:name "1doubleMaxexclusiveDECIMALLeadTrail_fail-double-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxExclusive.K72> ;
     rdfs:comment "<S1> { <p1> xsd:double MAXEXCLUSIVE 05.50 } / { <s1> <p1> 5.5e0 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -4482,6 +4698,7 @@
 
 <#1doubleMaxexclusiveDECIMALint_fail-double-equal> a sht:ValidationFailure ;
     mf:name "1doubleMaxexclusiveDECIMALint_fail-double-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxExclusive.K73> ;
     rdfs:comment "<S1> { <p1> xsd:double MAXEXCLUSIVE 5.0 } / { <s1> <p1> 5.5e0 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -4494,6 +4711,7 @@
 
 <#1doubleMaxexclusiveDECIMALintLeadTrail_fail-double-equal> a sht:ValidationFailure ;
     mf:name "1doubleMaxexclusiveDECIMALintLeadTrail_fail-double-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxExclusive.K74> ;
     rdfs:comment "<S1> { <p1> xsd:double MAXEXCLUSIVE 05.00 } / { <s1> <p1> 5.5e0 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -4506,6 +4724,7 @@
 
 <#1doubleMaxexclusiveDOUBLE_pass-double-low> a sht:ValidationTest ;
     mf:name "1doubleMaxexclusiveDOUBLE_pass-double-low" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxExclusive.J75> ;
     rdfs:comment "<S1> { <p1> xsd:double MAXEXCLUSIVE 5.5e0 } / { <s1> <p1> 4.4e0 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -4519,6 +4738,7 @@
 
 <#1doubleMaxexclusiveDOUBLE_fail-double-equal> a sht:ValidationFailure ;
     mf:name "1doubleMaxexclusiveDOUBLE_fail-double-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxExclusive.K75> ;
     rdfs:comment "<S1> { <p1> xsd:double MAXEXCLUSIVE 5.5e0 } / { <s1> <p1> 5.5e0 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -4531,6 +4751,7 @@
 
 <#1doubleMaxexclusiveDOUBLE_fail-double-high> a sht:ValidationFailure ;
     mf:name "1doubleMaxexclusiveDOUBLE_fail-double-high" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxExclusive.N75> ;
     rdfs:comment "<S1> { <p1> xsd:double MAXEXCLUSIVE 5.5e0 } / { <s1> <p1> 5.6e0 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -4543,6 +4764,7 @@
 
 <#1doubleMaxexclusiveDOUBLELeadTrail_fail-double-equal> a sht:ValidationFailure ;
     mf:name "1doubleMaxexclusiveDOUBLELeadTrail_fail-double-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxExclusive.K76> ;
     rdfs:comment "<S1> { <p1> xsd:double MAXEXCLUSIVE 05.50e0 } / { <s1> <p1> 5.5e0 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -4555,6 +4777,7 @@
 
 <#1doubleMaxexclusiveDOUBLEint_fail-double-equal> a sht:ValidationFailure ;
     mf:name "1doubleMaxexclusiveDOUBLEint_fail-double-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxExclusive.K77> ;
     rdfs:comment "<S1> { <p1> xsd:double MAXEXCLUSIVE 5.0e0 } / { <s1> <p1> 5.5e0 }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -4567,6 +4790,7 @@
 
 <#1doubleMaxexclusiveDOUBLEintLeadTrail_fail-double-equal> a sht:ValidationFailure ;
     mf:name "1doubleMaxexclusiveDOUBLEintLeadTrail_fail-double-equal" ;
+    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxExclusive.K78> ;
     rdfs:comment "<S1> { <p1> xsd:double MAXEXCLUSIVE 05.00e0 } / { <s1> <p1> 5.5e0 }" ;
     mf:status mf:proposed ;
     mf:action [
