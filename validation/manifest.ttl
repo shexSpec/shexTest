@@ -107,8 +107,7 @@
         <#1datatype_pass>
 
         # facets
-	## manual
-	### length
+	## length
         <#1datatypeLength_fail-missing>
         <#1datatypeLength_fail-wrongDatatype>
         <#1datatypeLength_fail-short>
@@ -128,7 +127,7 @@
 	<#1literalFractiondigits_fail-malformedxsd_integer-1_2345>
 	<#1literalFractiondigits_fail-iri>
 	<#1literalFractiondigits_fail-bnode>
-	### totalDigits
+	## totalDigits
         <#1literalTotaldigits_fail-decimal-short>
 	# <#1literalTotaldigitsxsd-integer_fail-decimal-short> # for numericFacet ::= (numericFacet | numericLength) INTEGER (numericLiteral | string '^^' datatype )
         <#1literalTotaldigits_pass-decimal-equal>
@@ -142,7 +141,8 @@
 	<#1literalTotaldigits_fail-malformedxsd_integer-1_2345>
 	<#1literalTotaldigits_fail-iri>
 	<#1literalTotaldigits_fail-bnode>
-	### comparators
+	## comparators
+	### manual
         <#1floatMininclusiveINTEGER_fail-low>
         <#1floatMininclusiveINTEGER_pass-equalLead>
         <#1floatMininclusiveINTEGER_pass-equalTrail>
@@ -152,8 +152,7 @@
         <#1integerMininclusiveINTEGER_pass-equalLead>
         <#1integerMininclusiveINTEGER_pass-high>
         <#1floatMininclusiveINTEGERLead_pass-equal>
-
-	## generated
+	### generated
         <#1integerMininclusiveINTEGER_fail-integer-low>
         <#1integerMininclusiveINTEGER_pass-integer-equal>
         <#1integerMininclusiveINTEGER_pass-integer-high>
@@ -377,6 +376,64 @@
         <#1doubleMaxexclusiveDOUBLELeadTrail_fail-double-equal>
         <#1doubleMaxexclusiveDOUBLEint_fail-double-equal>
         <#1doubleMaxexclusiveDOUBLEintLeadTrail_fail-double-equal>
+	## lengths
+        <#1literalLength_fail-lit-short>
+        <#1literalLength_pass-lit-equal>
+        <#1literalLength_fail-lit-long>
+        <#1literalLength_fail-iri-equal>
+        <#1literalLength_fail-bnode-equal>
+        <#1iriLength_fail-iri-short>
+        <#1iriLength_pass-iri-equal>
+        <#1iriLength_fail-iri-long>
+        <#1iriLength_fail-lit-equal>
+        <#1iriLength_fail-bnode-equal>
+        <#1iriRefLength1_fail-iri-short>
+        <#1iriRefLength1_pass-iri-equal>
+        <#1iriRefLength1_fail-iri-long>
+        <#1iriRefLength1_fail-lit-equal>
+        <#1iriRefLength1_fail-bnode-equal>
+        <#1bnodeLength_fail-bnode-short>
+        <#1bnodeLength_pass-bnode-equal>
+        <#1bnodeLength_fail-bnode-long>
+        <#1bnodeLength_fail-lit-equal>
+        <#1bnodeLength_fail-iri-equal>
+        <#1nonliteralLength_fail-iri-short>
+        <#1nonliteralLength_pass-iri-equal>
+        <#1nonliteralLength_fail-iri-long>
+        <#1nonliteralLength_fail-lit-equal>
+        <#1nonliteralLength_fail-bnode-short>
+        <#1nonliteralLength_pass-bnode-equal>
+        <#1nonliteralLength_fail-bnode-long>
+        <#1literalMinlength_fail-lit-short>
+        <#1literalMinlength_pass-lit-equal>
+        <#1literalMinlength_pass-lit-long>
+        <#1iriMinlength_fail-iri-short>
+        <#1iriMinlength_pass-iri-equal>
+        <#1iriMinlength_pass-iri-long>
+        <#1bnodeMinlength_fail-bnode-short>
+        <#1bnodeMinlength_pass-bnode-equal>
+        <#1bnodeMinlength_pass-bnode-long>
+        <#1nonliteralMinlength_fail-iri-short>
+        <#1nonliteralMinlength_pass-iri-equal>
+        <#1nonliteralMinlength_pass-iri-long>
+        <#1nonliteralMinlength_fail-bnode-short>
+        <#1nonliteralMinlength_pass-bnode-equal>
+        <#1nonliteralMinlength_pass-bnode-long>
+        <#1literalMaxlength_pass-lit-short>
+        <#1literalMaxlength_pass-lit-equal>
+        <#1literalMaxlength_fail-lit-long>
+        <#1iriMaxlength_pass-iri-short>
+        <#1iriMaxlength_pass-iri-equal>
+        <#1iriMaxlength_fail-iri-long>
+        <#1bnodeMaxlength_pass-bnode-short>
+        <#1bnodeMaxlength_pass-bnode-equal>
+        <#1bnodeMaxlength_fail-bnode-long>
+        <#1nonliteralMaxlength_pass-iri-short>
+        <#1nonliteralMaxlength_pass-iri-equal>
+        <#1nonliteralMaxlength_fail-iri-long>
+        <#1nonliteralMaxlength_pass-bnode-short>
+        <#1nonliteralMaxlength_pass-bnode-equal>
+        <#1nonliteralMaxlength_fail-bnode-long>
 
         # closed
         <#1dotClosed_pass>
@@ -1599,8 +1656,7 @@
 
 # } datatype
 # facets {
-#   manual {
-#     length {
+#   length {
 
 <#1datatypeLength_fail-missing> a sht:ValidationFailure ;
     mf:name "1datatypeLength_fail-missing" ;
@@ -1663,8 +1719,8 @@
     ]
     .
 
-#     } length
-#     fractionDigits {
+#   } length
+#   fractionDigits {
 
 <#1literalFractiondigits_fail-decimal-short> a sht:ValidationFailure ;
     mf:name "1literalFractiondigits_fail-decimal-short" ;
@@ -1827,8 +1883,8 @@
     ] ;
     .
 
-#     } fractionDigits
-#     totalDigits {
+#   } fractionDigits
+#   totalDigits {
 
 <#1literalTotaldigits_fail-decimal-short> a sht:ValidationFailure ;
     mf:name "1literalTotaldigits_fail-decimal-short" ;
@@ -1992,8 +2048,9 @@
     ] ;
     .
 
-#     } totalDigits
-#     comparators {
+#   } totalDigits
+#   comparators {
+#     manual {
 
 <#1floatMininclusiveINTEGER_fail-low> a sht:ValidationFailure ;
     mf:name "1floatMininclusiveINTEGER_fail-low" ;
@@ -2110,9 +2167,8 @@
     mf:result <1floatMininclusiveINTEGER_pass-equal.val>
     .
 
-#     } comparators
-#   } manual
-#   generated {
+#     } manual
+#     generated {
 
 <#1integerMininclusiveINTEGER_fail-integer-low> a sht:ValidationFailure ;
     mf:name "1integerMininclusiveINTEGER_fail-integer-low" ;
@@ -5125,9 +5181,759 @@
     ] ;
     .
 
-#   } generated
+#     } generated
+#   } comparators
+#   lengths {
+<#1literalLength_fail-lit-short> a sht:ValidationFailure ;
+    mf:name "1literalLength_fail-lit-short" ;
+    mf:comment "<S1> { <p1> LITERAL LENGTH 5 } on { <s1> <p1> \"abcd\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalLength.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Labcd.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1literalLength_pass-lit-equal> a sht:ValidationTest ;
+    mf:name "1literalLength_pass-lit-equal" ;
+    rdfs:comment "<S1> { <p1> LITERAL LENGTH 5 } on { <s1> <p1> \"abcde\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalLength.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Labcde.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1literalLength_pass-lit-equal.val>
+    .
+
+<#1literalLength_fail-lit-long> a sht:ValidationFailure ;
+    mf:name "1literalLength_fail-lit-long" ;
+    mf:comment "<S1> { <p1> LITERAL LENGTH 5 } on { <s1> <p1> \"abcdef\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalLength.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Labcdef.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1literalLength_fail-iri-equal> a sht:ValidationFailure ;
+    mf:name "1literalLength_fail-iri-equal" ;
+    mf:comment "<S1> { <p1> LITERAL LENGTH 19 } on { <s1> <p1> <http://a.example/o1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalLength19.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1literalLength_fail-bnode-equal> a sht:ValidationFailure ;
+    mf:name "1literalLength_fail-bnode-equal" ;
+    sht:trait sht:LexicalBnode ;
+    mf:comment "<S1> { <p1> LITERAL LENGTH 5 } on { <s1> <p1> _:abcde }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalLength.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Babcde.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+
+<#1iriLength_fail-iri-short> a sht:ValidationFailure ;
+    mf:name "1iriLength_fail-iri-short" ;
+    mf:comment "<S1> { <p1> IRI LENGTH 19 } on { <s1> <p1> <http://a.example/o> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1iriLength.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1iriLength_pass-iri-equal> a sht:ValidationTest ;
+    mf:name "1iriLength_pass-iri-equal" ;
+    rdfs:comment "<S1> { <p1> IRI LENGTH 19 } on { <s1> <p1> <http://a.example/o1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1iriLength.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1iriLength_pass-iri-equal.val>
+    .
+
+<#1iriLength_fail-iri-long> a sht:ValidationFailure ;
+    mf:name "1iriLength_fail-iri-long" ;
+    mf:comment "<S1> { <p1> IRI LENGTH 19 } on { <s1> <p1> <http://a.example/o1a> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1iriLength.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1a.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1iriLength_fail-lit-equal> a sht:ValidationFailure ;
+    mf:name "1iriLength_fail-lit-equal" ;
+    mf:comment "<S1> { <p1> IRI LENGTH 19 } on { <s1> <p1> \"abcde\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1iriLength.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Labcde.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1iriLength_fail-bnode-equal> a sht:ValidationFailure ;
+    mf:name "1iriLength_fail-bnode-equal" ;
+    sht:trait sht:LexicalBnode ;
+    mf:comment "<S1> { <p1> IRI LENGTH 19 } on { <s1> <p1> _:abcde }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1iriLength.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Babcde.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+
+<#1iriRefLength1_fail-iri-short> a sht:ValidationFailure ;
+    mf:name "1iriRefLength1_fail-iri-short" ;
+    mf:comment "<PersonShape> { <p1> . } <EmployeeShape> { <p2> IRI @<PersonShape> LENGTH 19 } on { <s1> <p1> <http://a.example/o> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1iriRefLength1.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1iriRefLength1_pass-iri-equal> a sht:ValidationTest ;
+    mf:name "1iriRefLength1_pass-iri-equal" ;
+    rdfs:comment "<PersonShape> { <p1> . } <EmployeeShape> { <p2> IRI @<PersonShape> LENGTH 19 } on { <s1> <p1> <http://a.example/o1> . <http://a.example/o1> <p2>  <o2> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1iriRefLength1.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1-Io1_Ip2_Io2.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1iriRefLength1_pass-iri-equal.val>
+    .
+
+<#1iriRefLength1_fail-iri-long> a sht:ValidationFailure ;
+    mf:name "1iriRefLength1_fail-iri-long" ;
+    mf:comment "<PersonShape> { <p1> . } <EmployeeShape> { <p2> IRI @<PersonShape> LENGTH 19 } on { <s1> <p1> <http://a.example/o1a> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1iriRefLength1.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1a.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1iriRefLength1_fail-lit-equal> a sht:ValidationFailure ;
+    mf:name "1iriRefLength1_fail-lit-equal" ;
+    mf:comment "<PersonShape> { <p1> . } <EmployeeShape> { <p2> IRI @<PersonShape> LENGTH 19 } on { <s1> <p1> \"abcde\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1iriRefLength1.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Labcde.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1iriRefLength1_fail-bnode-equal> a sht:ValidationFailure ;
+    mf:name "1iriRefLength1_fail-bnode-equal" ;
+    mf:comment "<PersonShape> { <p1> . } <EmployeeShape> { <p2> IRI @<PersonShape> LENGTH 5 } on { <s1> <p1> _:abcde }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1iriRefLength1.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Babcde.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+
+<#1bnodeLength_fail-bnode-short> a sht:ValidationFailure ;
+    mf:name "1bnodeLength_fail-bnode-short" ;
+    sht:trait sht:LexicalBnode ;
+    mf:comment "<S1> { <p1> BNODE LENGTH 5 } on { <s1> <p1> _:abcd }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1bnodeLength.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Babcd.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1bnodeLength_pass-bnode-equal> a sht:ValidationTest ;
+    mf:name "1bnodeLength_pass-bnode-equal" ;
+    sht:trait sht:LexicalBnode ;
+    rdfs:comment "<S1> { <p1> BNODE LENGTH 5 } on { <s1> <p1> _:abcde }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1bnodeLength.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Babcde.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1bnodeLength_pass-bnode-equal.val>
+    .
+
+<#1bnodeLength_fail-bnode-long> a sht:ValidationFailure ;
+    mf:name "1bnodeLength_fail-bnode-long" ;
+    sht:trait sht:LexicalBnode ;
+    mf:comment "<S1> { <p1> BNODE LENGTH 5 } on { <s1> <p1> _:abcdef }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1bnodeLength.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Babcdef.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1bnodeLength_fail-lit-equal> a sht:ValidationFailure ;
+    mf:name "1bnodeLength_fail-lit-equal" ;
+    mf:comment "<S1> { <p1> BNODE LENGTH 19 } on { <s1> <p1> \"abcde\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1bnodeLength.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Labcde.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1bnodeLength_fail-iri-equal> a sht:ValidationFailure ;
+    mf:name "1bnodeLength_fail-iri-equal" ;
+    mf:comment "<S1> { <p1> BNODE LENGTH 19 } on { <s1> <p1> <http://a.example/o1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1bnodeLength.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+
+<#1nonliteralLength_fail-iri-short> a sht:ValidationFailure ;
+    mf:name "1nonliteralLength_fail-iri-short" ;
+    mf:comment "<S1> { <p1> NONLITERAL LENGTH 19 } on { <s1> <p1> <http://a.example/o> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1nonliteralLength.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1nonliteralLength_pass-iri-equal> a sht:ValidationTest ;
+    mf:name "1nonliteralLength_pass-iri-equal" ;
+    rdfs:comment "<S1> { <p1> NONLITERAL LENGT19 2 } on { <s1> <p1> <http://a.example/o1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1nonliteralLength.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1nonliteralLength_pass-iri-equal.val>
+    .
+
+<#1nonliteralLength_fail-iri-long> a sht:ValidationFailure ;
+    mf:name "1nonliteralLength_fail-iri-long" ;
+    mf:comment "<S1> { <p1> NONLITERAL LENGTH 19 } on { <s1> <p1> <http://a.example/o1a> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1nonliteralLength.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1a.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1nonliteralLength_fail-lit-equal> a sht:ValidationFailure ;
+    mf:name "1nonliteralLength_fail-lit-equal" ;
+    mf:comment "<S1> { <p1> NONLITERAL LENGTH 19 } on { <s1> <p1> \"abcde\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1nonliteralLength.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Labcde.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1nonliteralLength_fail-bnode-short> a sht:ValidationFailure ;
+    mf:name "1nonliteralLength_fail-bnode-short" ;
+    sht:trait sht:LexicalBnode ;
+    mf:comment "<S1> { <p1> NONLITERAL LENGTH 19 } on { <s1> <p1> _:abcd }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1nonliteralLength.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Babcd.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1nonliteralLength_pass-bnode-equal> a sht:ValidationTest ;
+    mf:name "1nonliteralLength_pass-bnode-equal" ;
+    sht:trait sht:LexicalBnode ;
+    rdfs:comment "<S1> { <p1> NONLITERAL LENGTH 19 } on { <s1> <p1> _:abcdefghijklmnopqrs }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1nonliteralLength.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Babcdefghijklmnopqrs.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1nonliteralLength_pass-bnode-equal.val>
+    .
+
+<#1nonliteralLength_fail-bnode-long> a sht:ValidationFailure ;
+    mf:name "1nonliteralLength_fail-bnode-long" ;
+    sht:trait sht:LexicalBnode ;
+    mf:comment "<S1> { <p1> NONLITERAL LENGTH 19 } on { <s1> <p1> _:abcdefghijklmnopqrst }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1nonliteralLength.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Babcdefghijklmnopqrst.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+
+
+<#1literalMinlength_fail-lit-short> a sht:ValidationFailure ;
+    mf:name "1literalMinlength_fail-lit-short" ;
+    mf:comment "<S1> { <p1> LITERAL MINLENGTH 5 } on { <s1> <p1> \"abcd\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalMinlength.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Labcd.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1literalMinlength_pass-lit-equal> a sht:ValidationTest ;
+    mf:name "1literalMinlength_pass-lit-equal" ;
+    rdfs:comment "<S1> { <p1> LITERAL MINLENGTH 5 } on { <s1> <p1> \"abcde\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalMinlength.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Labcde.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1literalMinlength_pass-lit-equal.val>
+    .
+
+<#1literalMinlength_pass-lit-long> a sht:ValidationTest ;
+    mf:name "1literalMinlength_pass-lit-long" ;
+    rdfs:comment "<S1> { <p1> LITERAL MINLENGTH 5 } on { <s1> <p1> \"abcdef\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalMinlength.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Labcdef.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1literalMinlength_pass-lit-long.val>
+    .
+
+
+<#1iriMinlength_fail-iri-short> a sht:ValidationFailure ;
+    mf:name "1iriMinlength_fail-iri-short" ;
+    mf:comment "<S1> { <p1> IRI MINLENGTH 19 } on { <s1> <p1> <http://a.example/o> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1iriMinlength.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1iriMinlength_pass-iri-equal> a sht:ValidationTest ;
+    mf:name "1iriMinlength_pass-iri-equal" ;
+    rdfs:comment "<S1> { <p1> IRI MINLENGTH 19 } on { <s1> <p1> <http://a.example/o1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1iriMinlength.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1iriMinlength_pass-iri-equal.val>
+    .
+
+<#1iriMinlength_pass-iri-long> a sht:ValidationTest ;
+    mf:name "1iriMinlength_pass-iri-long" ;
+    rdfs:comment "<S1> { <p1> IRI MINLENGTH 19 } on { <s1> <p1> <http://a.example/o1a> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1iriMinlength.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1a.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1iriMinlength_pass-iri-long.val>
+    .
+
+
+<#1bnodeMinlength_fail-bnode-short> a sht:ValidationFailure ;
+    mf:name "1bnodeMinlength_fail-bnode-short" ;
+    sht:trait sht:LexicalBnode ;
+    mf:comment "<S1> { <p1> BNODE MINLENGTH 5 } on { <s1> <p1> _:abcd }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1bnodeMinlength.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Babcd.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1bnodeMinlength_pass-bnode-equal> a sht:ValidationTest ;
+    mf:name "1bnodeMinlength_pass-bnode-equal" ;
+    sht:trait sht:LexicalBnode ;
+    rdfs:comment "<S1> { <p1> BNODE MINLENGTH 5 } on { <s1> <p1> _:abcde }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1bnodeMinlength.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Babcde.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1bnodeMinlength_pass-bnode-equal.val>
+    .
+
+<#1bnodeMinlength_pass-bnode-long> a sht:ValidationTest ;
+    mf:name "1bnodeMinlength_pass-bnode-long" ;
+    sht:trait sht:LexicalBnode ;
+    rdfs:comment "<S1> { <p1> BNODE MINLENGTH 5 } on { <s1> <p1> _:abcdef }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1bnodeMinlength.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Babcdef.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1bnodeMinlength_pass-bnode-long.val>
+    .
+
+
+<#1nonliteralMinlength_fail-iri-short> a sht:ValidationFailure ;
+    mf:name "1nonliteralMinlength_fail-iri-short" ;
+    mf:comment "<S1> { <p1> NONLITERAL MINLENGTH 19 } on { <s1> <p1> <http://a.example/o> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1nonliteralMinlength.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1nonliteralMinlength_pass-iri-equal> a sht:ValidationTest ;
+    mf:name "1nonliteralMinlength_pass-iri-equal" ;
+    rdfs:comment "<S1> { <p1> NONLITERAL MINLENGTH 19 } on { <s1> <p1> <http://a.example/o1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1nonliteralMinlength.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1nonliteralMinlength_pass-iri-equal.val>
+    .
+
+<#1nonliteralMinlength_pass-iri-long> a sht:ValidationTest ;
+    mf:name "1nonliteralMinlength_pass-iri-long" ;
+    rdfs:comment "<S1> { <p1> NONLITERAL MINLENGTH 19 } on { <s1> <p1> <http://a.example/o1a> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1nonliteralMinlength.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1a.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1nonliteralMinlength_pass-iri-long.val>
+    .
+
+<#1nonliteralMinlength_fail-bnode-short> a sht:ValidationFailure ;
+    mf:name "1nonliteralMinlength_fail-bnode-short" ;
+    sht:trait sht:LexicalBnode ;
+    mf:comment "<S1> { <p1> NONLITERAL MINLENGTH 19 } on { <s1> <p1> _:abcd }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1nonliteralMinlength.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Babcd.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1nonliteralMinlength_pass-bnode-equal> a sht:ValidationTest ;
+    mf:name "1nonliteralMinlength_pass-bnode-equal" ;
+    sht:trait sht:LexicalBnode ;
+    rdfs:comment "<S1> { <p1> NONLITERAL MINLENGTH 19 } on { <s1> <p1> _:abcdefghijklmnopqrs }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1nonliteralMinlength.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Babcdefghijklmnopqrs.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1nonliteralMinlength_pass-bnode-equal.val>
+    .
+
+<#1nonliteralMinlength_pass-bnode-long> a sht:ValidationTest ;
+    mf:name "1nonliteralMinlength_pass-bnode-long" ;
+    sht:trait sht:LexicalBnode ;
+    rdfs:comment "<S1> { <p1> NONLITERAL MINLENGTH 19 } on { <s1> <p1> _:abcdefghijklmnopqrst }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1nonliteralMinlength.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Babcdefghijklmnopqrs.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1nonliteralMinlength_pass-bnode-long.val>
+    .
+
+
+
+<#1literalMaxlength_pass-lit-short> a sht:ValidationTest ;
+    mf:name "1literalMaxlength_pass-lit-short" ;
+    rdfs:comment "<S1> { <p1> LITERAL MAXLENGTH 5 } on { <s1> <p1> \"abcd\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalMaxlength.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Labcd.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1literalMaxlength_pass-lit-short.val>
+    .
+
+<#1literalMaxlength_pass-lit-equal> a sht:ValidationTest ;
+    mf:name "1literalMaxlength_pass-lit-equal" ;
+    rdfs:comment "<S1> { <p1> LITERAL MAXLENGTH 5 } on { <s1> <p1> \"abcde\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalMaxlength.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Labcde.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1literalMaxlength_pass-lit-equal.val>
+    .
+
+<#1literalMaxlength_fail-lit-long> a sht:ValidationFailure ;
+    mf:name "1literalMaxlength_fail-lit-long" ;
+    mf:comment "<S1> { <p1> LITERAL MAXLENGTH 5 } on { <s1> <p1> \"abcdef\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalMaxlength.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Labcdef.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+
+<#1iriMaxlength_pass-iri-short> a sht:ValidationTest ;
+    mf:name "1iriMaxlength_pass-iri-short" ;
+    rdfs:comment "<S1> { <p1> IRI MAXLENGTH 19 } on { <s1> <p1> <http://a.example/o> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1iriMaxlength.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1iriMaxlength_pass-iri-short.val>
+    .
+
+<#1iriMaxlength_pass-iri-equal> a sht:ValidationTest ;
+    mf:name "1iriMaxlength_pass-iri-equal" ;
+    rdfs:comment "<S1> { <p1> IRI MAXLENGTH 19 } on { <s1> <p1> <http://a.example/o1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1iriMaxlength.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1iriMaxlength_pass-iri-equal.val>
+    .
+
+<#1iriMaxlength_fail-iri-long> a sht:ValidationFailure ;
+    mf:name "1iriMaxlength_fail-iri-long" ;
+    mf:comment "<S1> { <p1> IRI MAXLENGTH 19 } on { <s1> <p1> <http://a.example/o1a> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1iriMaxlength.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1a.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+
+<#1bnodeMaxlength_pass-bnode-short> a sht:ValidationTest ;
+    mf:name "1bnodeMaxlength_pass-bnode-short" ;
+    sht:trait sht:LexicalBnode ;
+    rdfs:comment "<S1> { <p1> BNODE MAXLENGTH 5 } on { <s1> <p1> _:abcd }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1bnodeMaxlength.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Babcd.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1bnodeMaxlength_pass-bnode-short.val>
+    .
+
+<#1bnodeMaxlength_pass-bnode-equal> a sht:ValidationTest ;
+    mf:name "1bnodeMaxlength_pass-bnode-equal" ;
+    sht:trait sht:LexicalBnode ;
+    rdfs:comment "<S1> { <p1> BNODE MAXLENGTH 5 } on { <s1> <p1> _:abcde }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1bnodeMaxlength.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Babcde.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1bnodeMaxlength_pass-bnode-equal.val>
+    .
+
+<#1bnodeMaxlength_fail-bnode-long> a sht:ValidationFailure ;
+    mf:name "1bnodeMaxlength_fail-bnode-long" ;
+    sht:trait sht:LexicalBnode ;
+    mf:comment "<S1> { <p1> BNODE MAXLENGTH 5 } on { <s1> <p1> _:abcdef }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1bnodeMaxlength.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Babcdef.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+
+<#1nonliteralMaxlength_pass-iri-short> a sht:ValidationTest ;
+    mf:name "1nonliteralMaxlength_pass-iri-short" ;
+    rdfs:comment "<S1> { <p1> NONLITERAL MAXLENGTH 19 } on { <s1> <p1> <http://a.example/o> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1nonliteralMaxlength.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1nonliteralMaxlength_pass-iri-short.val>
+    .
+
+<#1nonliteralMaxlength_pass-iri-equal> a sht:ValidationTest ;
+    mf:name "1nonliteralMaxlength_pass-iri-equal" ;
+    rdfs:comment "<S1> { <p1> NONLITERAL MAXLENGTH 19 } on { <s1> <p1> <http://a.example/o1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1nonliteralMaxlength.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1nonliteralMaxlength_pass-iri-equal.val>
+    .
+
+<#1nonliteralMaxlength_fail-iri-long> a sht:ValidationFailure ;
+    mf:name "1nonliteralMaxlength_fail-iri-long" ;
+    mf:comment "<S1> { <p1> NONLITERAL MAXLENGTH 19 } on { <s1> <p1> <http://a.example/o1a> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1nonliteralMaxlength.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1a.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1nonliteralMaxlength_pass-bnode-short> a sht:ValidationTest ;
+    mf:name "1nonliteralMaxlength_pass-bnode-short" ;
+    sht:trait sht:LexicalBnode ;
+    rdfs:comment "<S1> { <p1> NONLITERAL MAXLENGTH 19 } on { <s1> <p1> _:abcd }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1nonliteralMaxlength.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Babcd.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1nonliteralMaxlength_pass-bnode-short.val>
+    .
+
+<#1nonliteralMaxlength_pass-bnode-equal> a sht:ValidationTest ;
+    mf:name "1nonliteralMaxlength_pass-bnode-equal" ;
+    sht:trait sht:LexicalBnode ;
+    rdfs:comment "<S1> { <p1> NONLITERAL MAXLENGTH 19 } on { <s1> <p1> _:abcdefghijklmnopqrs }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1nonliteralMaxlength.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Babcdefghijklmnopqrs.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1nonliteralMaxlength_pass-bnode-equal.val>
+    .
+
+<#1nonliteralMaxlength_fail-bnode-long> a sht:ValidationFailure ;
+    mf:name "1nonliteralMaxlength_fail-bnode-long" ;
+    sht:trait sht:LexicalBnode ;
+    mf:comment "<S1> { <p1> NONLITERAL MAXLENGTH 5 } on { <s1> <p1> _:abcdefghijklmnopqrst }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1nonliteralMaxlength.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Babcdefghijklmnopqrst.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+#   } lengths
+#   pattern {
+#   } pattern
 # } facets
 # closed {
+
 <#1dotClosed_pass> a sht:ValidationTest ;
     mf:name "1dotClosed_pass" ;
     rdfs:comment "<S> CLOSED { <p1> . } on { <s> <p1> <o1> }" ;
