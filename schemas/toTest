@@ -43,6 +43,9 @@
   -rw-rw-r--  1 eric www   103 Oct 20 15:51 1datatypeLength.shex
   -rw-rw-r--  1 eric www    76 Oct 20 15:51 1literalFractiondigits.shex
   -rw-rw-r--  1 eric www   107 Oct 20 15:51 1floatMininclusiveINTEGER.shex
+                                            1floatMininclusiveINTEGERLead.shex			      new
+  -rw-rw-r--  1 eric www   109 Oct 20 15:51 1integerMininclusiveINTEGER.shex
+! -rw-rw-r--  1 eric www    73 Oct 20 15:51 1literalTotaldigits.shex
 
         # closed
   -rw-rw-r--  1 eric www    60 Oct 20 15:51 1dotClosed.shex
@@ -87,38 +90,57 @@
    1val1vExprRefOR3.shex
    1val1vExprOR3.shex
 
-  -rw-rw-r--  1 eric www   111 Oct 20 15:51 1integerMininclusiveDECIMAL.shex
-  -rw-rw-r--  1 eric www   114 Oct 20 15:51 1integerMininclusiveDOUBLE.shex
-  -rw-rw-r--  1 eric www   109 Oct 20 15:51 1integerMininclusiveINTEGER.shex
-
-  -rw-rw-r--  1 eric www    65 Oct 20 15:51 1iriLength.shex
-  -rw-rw-r--  1 eric www   172 Sep 23 09:38 1iriRefLength1.shex
-  -rw-rw-r--  1 eric www    68 Oct 20 15:51 1iriMinlength.shex
-  -rw-rw-r--  1 eric www    68 Oct 20 15:51 1iriMaxlength.shex
-  -rw-rw-r--  1 eric www    70 Oct 20 15:51 1iriPattern.shex
 
   -rw-rw-r--  1 eric www    68 Oct 20 15:51 1literalLength.shex
-  -rw-rw-r--  1 eric www    71 Oct 20 15:51 1literalMinlength.shex
-  -rw-rw-r--  1 eric www    71 Oct 20 15:51 1literalMaxlength.shex
-  -rw-rw-r--  1 eric www    74 Oct 20 15:51 1literalMininclusive.shex
-  -rw-rw-r--  1 eric www    74 Oct 20 15:51 1literalMinexclusive.shex
-  -rw-rw-r--  1 eric www    74 Oct 20 15:51 1literalMaxinclusive.shex
-  -rw-rw-r--  1 eric www    74 Oct 20 15:51 1literalMaxexclusive.shex
-  -rw-rw-r--  1 eric www    74 Oct 20 15:51 1literalPattern.shex
-!  -rw-rw-r--  1 eric www    73 Oct 20 15:51 1literalTotaldigits.shex
-
+  -rw-rw-r--  1 eric www    65 Oct 20 15:51 1iriLength.shex
+  -rw-rw-r--  1 eric www   172 Sep 23 09:38 1iriRefLength1.shex
+  -rw-rw-r--  1 eric www    67 Oct 20 15:51 1bnodeLength.shex
   -rw-rw-r--  1 eric www    72 Oct 20 15:51 1nonliteralLength.shex
+
+  -rw-rw-r--  1 eric www    71 Oct 20 15:51 1literalMinlength.shex
+  -rw-rw-r--  1 eric www    68 Oct 20 15:51 1iriMinlength.shex
+  -rw-rw-r--  1 eric www    70 Oct 20 15:51 1bnodeMinlength.shex
   -rw-rw-r--  1 eric www    75 Oct 20 15:51 1nonliteralMaxlength.shex
+
+  -rw-rw-r--  1 eric www    71 Oct 20 15:51 1literalMaxlength.shex
+  -rw-rw-r--  1 eric www    68 Oct 20 15:51 1iriMaxlength.shex
+  -rw-rw-r--  1 eric www    70 Oct 20 15:51 1bnodeMaxlength.shex
   -rw-rw-r--  1 eric www    75 Oct 20 15:51 1nonliteralMinlength.shex
+
+  -rw-rw-r--  1 eric www    74 Oct 20 15:51 1literalPattern.shex
+  -rw-rw-r--  1 eric www    70 Oct 20 15:51 1iriPattern.shex
+  -rw-rw-r--  1 eric www    72 Oct 20 15:51 1bnodePattern.shex
   -rw-rw-r--  1 eric www    77 Oct 20 15:51 1nonliteralPattern.shex
 
-  -rw-rw-r--  1 eric www    67 Oct 20 15:51 1bnodeLength.shex
-  -rw-rw-r--  1 eric www    70 Oct 20 15:51 1bnodeMaxlength.shex
-  -rw-rw-r--  1 eric www    70 Oct 20 15:51 1bnodeMinlength.shex
-  -rw-rw-r--  1 eric www    72 Oct 20 15:51 1bnodePattern.shex
 
+
+  -rw-rw-r--  1 eric www    51 Oct 20 15:51 1dotOr1dot.shex
   -rw-rw-r--  1 eric www    53 Oct 20 15:51 1dotCommaOr1dotComma.shex
+  -rw-rw-r--  1 eric www    60 Oct 20 15:51 2dotCommaOr1dotComma.shex
+  -rw-rw-r--  1 eric www    52 Oct 20 15:51 2dotCommas.shex
+  -rw-rw-r--  1 eric www    58 Oct 20 15:51 2dotOr1dot.shex
+  -rw-rw-r--  1 eric www    78 Oct 20 15:51 2dot.shex
+  -rw-rw-r--  1 eric www    56 Oct 20 15:51 open1dotCommaOr1dotCommacloseComma.shex
+  -rw-rw-r--  1 eric www    66 Oct 20 15:51 open1dotopen1dotCommaOr1dotCommacloseCommacloseComma.shex
+  -rw-rw-r--  1 eric www    62 Oct 20 15:51 open1dotopen1dotOr1dotcloseclose.shex
+  -rw-rw-r--  1 eric www    53 Oct 20 15:51 open1dotOr1dotclose.shex
+  -rw-rw-r--  1 eric www    53 Oct 20 15:51 open2dotclose.shex
+  -rw-rw-r--  1 eric www    55 Oct 20 15:51 open2dotcommasclose.shex
+  -rw-rw-r--  1 eric www    63 Oct 20 15:51 open2dotCommasOr1dotCommaclose.shex
+  -rw-rw-r--  1 eric www    60 Oct 20 15:51 open2dotOr1dotclose.shex
+  -rw-rw-r--  1 eric www    62 Oct 20 15:51 openopen2dotcloseOr1dotclose.shex
+  -rw-rw-r--  1 eric www    66 Oct 20 15:51 openopen2dotCommascloseOr1dotCommaclose.shex
+  -rw-rw-r--  1 eric www   109 Oct 20 15:51 3groupdot.shex
+  -rw-rw-r--  1 eric www   234 Oct 20 15:51 open3groupdotcloseAnnot3.shex
+  -rw-rw-r--  1 eric www   120 Oct 20 15:51 open3groupdotclose.shex
+
   -rw-rw-r--  1 eric www    81 Oct 20 15:51 1dotExtra1.shex
+  -rw-rw-r--  1 eric www   103 Oct 20 15:51 1val1IRIREFExtra1.shex
+  -rw-rw-r--  1 eric www   125 Oct 20 15:51 1val2IRIREFExtra1.shex
+  -rw-rw-r--  1 eric www   193 Oct 20 15:51 3groupdot3Extra.shex
+  -rw-rw-r--  1 eric www   165 Oct 20 15:51 3groupdotExtra3NLex.shex
+  -rw-rw-r--  1 eric www   181 Oct 20 15:51 3groupdotExtra3.shex
+
   -rw-rw-r--  1 eric www   100 Sep 23 09:38 1dotInline1.shex
   -rw-rw-r--  1 eric www    84 Oct 20 15:51 1dotLNdefault.shex
   -rw-rw-r--  1 eric www   109 Oct 20 15:51 1dotLNexComment.shex
@@ -127,20 +149,15 @@
   -rw-rw-r--  1 eric www   139 Oct 20 15:51 1dotNS2Comment.shex
   -rw-rw-r--  1 eric www    84 Oct 20 15:51 1dotNS2.shex
   -rw-rw-r--  1 eric www    43 Sep 23 09:38 1dotNSdefault.shex
-  -rw-rw-r--  1 eric www    51 Oct 20 15:51 1dotOr1dot.shex
   -rw-rw-r--  1 eric www   174 Sep 23 09:38 1dotRefLNex.shex
   -rw-rw-r--  1 eric www   192 Sep 23 09:38 1dotRefNS1.shex
   -rw-rw-r--  1 eric www   385 Sep 23 09:38 1dotRefOr3.shex
   -rw-rw-r--  1 eric www   175 Sep 23 09:38 1dotRefSpaceLNex.shex
   -rw-rw-r--  1 eric www   193 Sep 23 09:38 1dotRefSpaceNS1.shex
   -rw-rw-r--  1 eric www    70 Oct 20 15:51 1dotUnlabeledCode1.shex
-  -rw-rw-r--  1 eric www    99 Oct 20 15:51 1dotVirtualShapeCode1.shex
-  -rw-rw-r--  1 eric www    61 Oct 20 15:51 1dotVirtual.shex
   -rw-rw-r--  1 eric www   162 Sep 23 09:38 1iriRef1.shex
   -rw-rw-r--  1 eric www   169 Oct 20 15:51 1IRI_with_all_punctuationdot.shex
   -rw-rw-r--  1 eric www   108 Oct 20 15:51 1IRI_with_UCHAR.1dot.shex
-  -rw-rw-r--  1 eric www   103 Oct 20 15:51 1val1IRIREFExtra1.shex
-  -rw-rw-r--  1 eric www   125 Oct 20 15:51 1val2IRIREFExtra1.shex
 !  -rw-rw-r--  1 eric www    59 Oct 20 15:51 1literal.shex
   -rw-rw-r--  1 eric www   165 Sep 23 09:38 1refbnode1.shex
   -rw-rw-r--  1 eric www   156 Sep 23 09:38 1refbnode_with_leading_digit1.shex
@@ -149,7 +166,6 @@
   -rw-rw-r--  1 eric www   313 Sep 23 09:38 1refbnode_with_spanning_PN_CHARS_BASE1.shex
   -rw-rw-r--  1 eric www    88 Oct 20 15:51 1val1DECIMAL.shex
 
-HERE
   -rw-rw-r--  1 eric www    94 Oct 20 15:51 1val1STRING_LITERAL1.shex
   -rw-rw-r--  1 eric www   122 Oct 20 15:51 1val1STRING_LITERAL1_with_all_controls.shex
   -rw-rw-r--  1 eric www   120 Oct 20 15:51 1val1STRING_LITERAL1_with_all_punctuation.shex
@@ -162,32 +178,12 @@ HERE
   -rw-rw-r--  1 eric www    80 Oct 20 15:51 1val1STRING_LITERAL_LONG2.shex
   -rw-rw-r--  1 eric www   113 Oct 20 15:51 1val1STRING_LITERAL_LONG2_with_LANGTAG.shex
   -rw-rw-r--  1 eric www   162 Oct 20 15:51 1val1STRING_LITERAL_LONG2_with_subtag.shex
-  -rw-rw-r--  1 eric www   255 Oct 20 15:51 1val1vsMinusiri3.shex
-  -rw-rw-r--  1 eric www    60 Oct 20 15:51 2dotCommaOr1dotComma.shex
-  -rw-rw-r--  1 eric www    52 Oct 20 15:51 2dotCommas.shex
-  -rw-rw-r--  1 eric www    58 Oct 20 15:51 2dotOr1dot.shex
-  -rw-rw-r--  1 eric www    78 Oct 20 15:51 2dot.shex
+
   -rw-rw-r--  1 eric www   164 Sep 23 09:38 2groupInclude1.shex
+
   -rw-rw-r--  1 eric www   374 Sep 23 09:38 3circularRef1.shex
-  -rw-rw-r--  1 eric www   193 Oct 20 15:51 3groupdot3Extra.shex
-  -rw-rw-r--  1 eric www   165 Oct 20 15:51 3groupdotExtra3NLex.shex
-  -rw-rw-r--  1 eric www   181 Oct 20 15:51 3groupdotExtra3.shex
-  -rw-rw-r--  1 eric www   109 Oct 20 15:51 3groupdot.shex
-  -rw-rw-r--  1 eric www  3339 Sep 23 10:08 _all.shex
   -rw-rw-r--  1 eric www    77 Oct 20 15:51 bnode1dot.shex
-  -rw-rw-r--  1 eric www  2363 Oct 20 15:51 kitchenSink.shex
-  -rw-rw-r--  1 eric www    56 Oct 20 15:51 open1dotCommaOr1dotCommacloseComma.shex
-  -rw-rw-r--  1 eric www    66 Oct 20 15:51 open1dotopen1dotCommaOr1dotCommacloseCommacloseComma.shex
-  -rw-rw-r--  1 eric www    62 Oct 20 15:51 open1dotopen1dotOr1dotcloseclose.shex
-  -rw-rw-r--  1 eric www    53 Oct 20 15:51 open1dotOr1dotclose.shex
-  -rw-rw-r--  1 eric www    53 Oct 20 15:51 open2dotclose.shex
-  -rw-rw-r--  1 eric www    55 Oct 20 15:51 open2dotcommasclose.shex
-  -rw-rw-r--  1 eric www    63 Oct 20 15:51 open2dotCommasOr1dotCommaclose.shex
-  -rw-rw-r--  1 eric www    60 Oct 20 15:51 open2dotOr1dotclose.shex
-  -rw-rw-r--  1 eric www   234 Oct 20 15:51 open3groupdotcloseAnnot3.shex
-  -rw-rw-r--  1 eric www   120 Oct 20 15:51 open3groupdotclose.shex
-  -rw-rw-r--  1 eric www    62 Oct 20 15:51 openopen2dotcloseOr1dotclose.shex
-  -rw-rw-r--  1 eric www    66 Oct 20 15:51 openopen2dotCommascloseOr1dotCommaclose.shex
+
   -rw-rw-r--  1 eric www    38 Sep 23 09:38 startEqualSpaceInline.shex
   -rw-rw-r--  1 eric www    37 Sep 23 09:38 startInline.shex
   -rw-rw-r--  1 eric www    82 Oct 20 15:51 startRef.shex
@@ -200,4 +196,9 @@ HERE
   -rw-rw-r--  1 eric www   352 Sep 23 09:38 1dot3Inherit.shex
   -rw-rw-r--  1 eric www   208 Sep 23 09:38 1dot3InheritLN.shex
 
+  -rw-rw-r--  1 eric www    99 Oct 20 15:51 1dotVirtualShapeCode1.shex
+  -rw-rw-r--  1 eric www    61 Oct 20 15:51 1dotVirtual.shex
+
+  -rw-rw-r--  1 eric www  3339 Sep 23 10:08 _all.shex
+  -rw-rw-r--  1 eric www  2363 Oct 20 15:51 kitchenSink.shex
 

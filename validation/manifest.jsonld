@@ -7,19 +7,18 @@
       "rdfs:comment": "ShEx validation tests",
       "entries": [
         {
-          "@id": "#1inversedot_pass-noOthers",
-          "@type": "sht:ValidationTest",
+          "@id": "#1val1vExprOR3_fail",
+          "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/1inversedot.shex",
+            "schema": "../schemas/1val1vExprOR3.shex",
             "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_Io1.ttl",
-            "focus": "http://a.example/o1"
+            "data": "Is1_Ip1_La.ttl",
+            "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1inversedot_pass-noOthers",
-          "comment": "<S> { <p1> . } on { <s> <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "1inversedot_pass.val"
+          "name": "1val1vExprOR3_fail",
+          "comment": "<S> { <p1> ~'^ab' OR ~'cd' OR ~'ef$' } on { <s1> <p1> 'a' }",
+          "status": "mf:proposed"
         },
         {
           "@id": "#1dot_fail-empty",
@@ -66,19 +65,18 @@
           "result": "0_pass.val"
         },
         {
-          "@id": "#1dot_pass-others_lexicallyEarlier",
-          "@type": "sht:ValidationTest",
+          "@id": "#1val1vExprORRef3_fail",
+          "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/1dot.shex",
+            "schema": "../schemas/1val1vExprORRef3.shex",
             "shape": "http://a.example/S1",
-            "data": "Is1_Ip0_Io0;Ip1_Io1.ttl",
+            "data": "Is1_Ip1_La.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1dot_pass-others_lexicallyEarlier",
-          "comment": "<S> { <p1> . } on { <s> <p0> <o0>; <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "1dot_pass.val"
+          "name": "1val1vExprORRef3_fail",
+          "comment": "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> OR ... $<vc3> } on { <s1> <p1> 'a' }",
+          "status": "mf:proposed"
         },
         {
           "@id": "#iovka",
@@ -2451,6 +2449,21 @@
           "result": "1integerMininclusiveINTEGER_pass-integer-equal.val"
         },
         {
+          "@id": "#1floatMininclusiveINTEGERLead_pass-equal",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1floatMininclusiveINTEGERLead.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_FLT5.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1floatMininclusiveINTEGERLead_pass-equal",
+          "comment": "<S1> { <p1> xsd:float MININCLUSIVE 5 } / { <s1> <p1> '5'^^xsd:float }",
+          "status": "mf:proposed",
+          "result": "1floatMininclusiveINTEGER_pass-equal.val"
+        },
+        {
           "@id": "#1integerMininclusiveINTEGER_pass-high",
           "@type": "sht:ValidationTest",
           "action": {
@@ -2494,21 +2507,6 @@
           "comment": "<S1> { <p1> xsd:integer MININCLUSIVE 5 } / { <s1> <p1> '5'^^xsd:integer }",
           "status": "mf:proposed",
           "result": "1integerMininclusiveINTEGER_pass-equal.val"
-        },
-        {
-          "@id": "#1floatMininclusiveINTEGERLead_pass-equal",
-          "@type": "sht:ValidationTest",
-          "action": {
-            "schema": "../schemas/1floatMininclusiveINTEGERLead.shex",
-            "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_FLT5.ttl",
-            "focus": "http://a.example/s1"
-          },
-          "extensionResults": [],
-          "name": "1floatMininclusiveINTEGERLead_pass-equal",
-          "comment": "<S1> { <p1> xsd:float MININCLUSIVE 5 } / { <s1> <p1> '5'^^xsd:float }",
-          "status": "mf:proposed",
-          "result": "1floatMininclusiveINTEGER_pass-equal.val"
         },
         {
           "@id": "#1floatMininclusiveINTEGER_pass-high",
@@ -2556,7 +2554,52 @@
           "result": "1floatMininclusiveINTEGER_pass-equalLead.val"
         },
         {
-          "@id": "#1literalFractiondigits_pass",
+          "@id": "#1literalTotaldigits_pass-float-equal",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1literalTotaldigits.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_FLT1_2345.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalTotaldigits_pass-float-equal",
+          "comment": "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> \"1.2345\"^^xsd:float }",
+          "status": "mf:proposed",
+          "result": "1literalTotaldigits_pass-float-equal.val"
+        },
+        {
+          "@id": "#1literalTotaldigits_pass-decimal-equal",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1literalTotaldigits.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_DEC1_2345.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalTotaldigits_pass-decimal-equal",
+          "comment": "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> 1.2345 }",
+          "status": "mf:proposed",
+          "result": "1literalTotaldigits_pass-decimal-equal.val"
+        },
+        {
+          "@id": "#1literalFractiondigits_pass-float-equal",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1literalFractiondigits.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_FLT1_23456.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalFractiondigits_pass-float-equal",
+          "comment": "<S1> { <p1> LITERAL FRACTIONDIGITS 5 } / { <s1> <p1> \"1.23456\"^^xsd:floag }",
+          "status": "mf:proposed",
+          "result": "1literalFractiondigits_pass-float-equal.val"
+        },
+        {
+          "@id": "#1literalFractiondigits_pass-decimal-equal",
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/1literalFractiondigits.shex",
@@ -2565,10 +2608,10 @@
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1literalFractiondigits_pass",
+          "name": "1literalFractiondigits_pass-decimal-equal",
           "comment": "<S1> { <p1> LITERAL FRACTIONDIGITS 5 } / { <s1> <p1> 1.23456 }",
           "status": "mf:proposed",
-          "result": "1literalFractiondigits_pass.val"
+          "result": "1literalFractiondigits_pass-decimal-equal.val"
         },
         {
           "@id": "#1datatypeLength_pass",
@@ -3241,18 +3284,19 @@
           "result": "1inversedot_pass.val"
         },
         {
-          "@id": "#1dot_fail-missing",
-          "@type": "sht:ValidationFailure",
+          "@id": "#1inversedot_pass-noOthers",
+          "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/1dot.shex",
+            "schema": "../schemas/1inversedot.shex",
             "shape": "http://a.example/S1",
-            "data": "Is1_Ip2_Io1.ttl",
-            "focus": "http://a.example/s1"
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/o1"
           },
           "extensionResults": [],
-          "name": "1dot_fail-missing",
-          "comment": "<S> { <p1> . } on { <s> <p2> <o1> }",
-          "status": "mf:proposed"
+          "name": "1inversedot_pass-noOthers",
+          "comment": "<S> { <p1> . } on { <s> <p1> <o1> }",
+          "status": "mf:proposed",
+          "result": "1inversedot_pass.val"
         },
         {
           "@id": "#1dot_pass-others_lexicallyLater",
@@ -3270,19 +3314,19 @@
           "result": "1dot_pass.val"
         },
         {
-          "@id": "#1val1vExprOR3_passvc1vc2vc3",
+          "@id": "#1dot_pass-others_lexicallyEarlier",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/1val1vExprOR3.shex",
+            "schema": "../schemas/1dot.shex",
             "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_Labcdef.ttl",
+            "data": "Is1_Ip0_Io0;Ip1_Io1.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1val1vExprOR3_passvc1vc2vc3",
-          "comment": "<S> { <p1> ~'^ab' OR ~'cd' OR ~'ef$' } on { <s1> <p1> 'abcdef' }",
+          "name": "1dot_pass-others_lexicallyEarlier",
+          "comment": "<S> { <p1> . } on { <s> <p0> <o0>; <p1> <o1> }",
           "status": "mf:proposed",
-          "result": "1val1vExprOR3_passvr1vr2vr3.val"
+          "result": "1dot_pass.val"
         },
         {
           "@id": "#1dot_pass-noOthers",
@@ -3298,6 +3342,20 @@
           "comment": "<S> { <p1> . } on { <s> <p1> <o1> }",
           "status": "mf:proposed",
           "result": "1dot_pass.val"
+        },
+        {
+          "@id": "#1dot_fail-missing",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1dot.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip2_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1dot_fail-missing",
+          "comment": "<S> { <p1> . } on { <s> <p2> <o1> }",
+          "status": "mf:proposed"
         },
         {
           "@id": "#1inversedot_fail-empty",
@@ -3328,20 +3386,6 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#1val1vExprOR3_fail",
-          "@type": "sht:ValidationFailure",
-          "action": {
-            "schema": "../schemas/1val1vExprOR3.shex",
-            "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_La.ttl",
-            "focus": "http://a.example/s1"
-          },
-          "extensionResults": [],
-          "name": "1val1vExprOR3_fail",
-          "comment": "<S> { <p1> ~'^ab' OR ~'cd' OR ~'ef$' } on { <s1> <p1> 'a' }",
-          "status": "mf:proposed"
-        },
-        {
           "@id": "#1val1vExprRefOR3_fail",
           "@type": "sht:ValidationFailure",
           "action": {
@@ -3356,18 +3400,19 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#1val1vExprORRef3_fail",
-          "@type": "sht:ValidationFailure",
+          "@id": "#1val1vExprOR3_passvc1vc2vc3",
+          "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/1val1vExprORRef3.shex",
+            "schema": "../schemas/1val1vExprOR3.shex",
             "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_La.ttl",
+            "data": "Is1_Ip1_Labcdef.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1val1vExprORRef3_fail",
-          "comment": "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> OR ... $<vc3> } on { <s1> <p1> 'a' }",
-          "status": "mf:proposed"
+          "name": "1val1vExprOR3_passvc1vc2vc3",
+          "comment": "<S> { <p1> ~'^ab' OR ~'cd' OR ~'ef$' } on { <s1> <p1> 'abcdef' }",
+          "status": "mf:proposed",
+          "result": "1val1vExprOR3_passvr1vr2vr3.val"
         },
         {
           "@id": "#1val1vExprAND3_failvc3",
@@ -5680,7 +5725,232 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#1literalFractiondigits_fail-long",
+          "@id": "#1literalTotaldigits_fail-bnode",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1literalTotaldigits.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_B12345.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalTotaldigits_fail-bnode",
+          "comment": "<S1> { <p1> LITERAL TOTALDIGITS 5 } / BASE <http://a.example/> { <s1> <p1> _:12345 }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1literalTotaldigits_fail-iri",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1literalTotaldigits.shex",
+            "shape": "http://a.example/S1",
+            "data": "BASE_Is1_Ip1_I12345.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalTotaldigits_fail-iri",
+          "comment": "<S1> { <p1> LITERAL TOTALDIGITS 5 } / BASE <http://a.example/> { <s1> <p1> <1.2345> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1literalTotaldigits_fail-malformedxsd_integer-1_2345",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1literalTotaldigits.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_malformedxsd-integer1_2345.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalTotaldigits_fail-malformedxsd_integer-1_2345",
+          "comment": "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> \"1.2345\"^^xsd:integer }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1literalTotaldigits_fail-malformedxsd_decimal-1_2345ab",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1literalTotaldigits.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_malformedxsd-decimal1_2345ab.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalTotaldigits_fail-malformedxsd_decimal-1_2345ab",
+          "comment": "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> \"1.2345ab\"^^xsd:decimal }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1literalTotaldigits_fail-malformedxsd_decimal-1_23ab",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1literalTotaldigits.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_malformedxsd-decimal1_23ab.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalTotaldigits_fail-malformedxsd_decimal-1_23ab",
+          "comment": "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> \"1.23ab\"^^xsd:decimal }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1literalTotaldigits_fail-xsd_integer-short",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1literalTotaldigits.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_xsd-integer1234.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalTotaldigits_fail-xsd_integer-short",
+          "comment": "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> \"1234\"^^xsd:integer }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1literalTotaldigits_pass-integer-equal",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1literalTotaldigits.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_INT12345.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalTotaldigits_pass-integer-equal",
+          "comment": "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> 12345 }",
+          "status": "mf:proposed",
+          "result": "1literalTotaldigits_pass-integer-equal.val"
+        },
+        {
+          "@id": "#1literalTotaldigits_fail-decimal-long",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1literalTotaldigits.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_DEC1_23456.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalTotaldigits_fail-decimal-long",
+          "comment": "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> 1.23456 }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1literalTotaldigits_fail-decimal-short",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1literalTotaldigits.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_DEC1_234.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalTotaldigits_fail-decimal-short",
+          "comment": "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> 1.2345 }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1literalFractiondigits_fail-bnode",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1literalFractiondigits.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_B12345.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalFractiondigits_fail-bnode",
+          "comment": "<S1> { <p1> LITERAL FRACTIONDIGITS 5 } / BASE <http://a.example/> { <s1> <p1> _:12345 }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1literalFractiondigits_fail-iri",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1literalFractiondigits.shex",
+            "shape": "http://a.example/S1",
+            "data": "BASE_Is1_Ip1_I12345.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalFractiondigits_fail-iri",
+          "comment": "<S1> { <p1> LITERAL FRACTIONDIGITS 5 } / BASE <http://a.example/> { <s1> <p1> <1.2345> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1literalFractiondigits_fail-malformedxsd_integer-1_2345",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1literalFractiondigits.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_malformedxsd-integer1_2345.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalFractiondigits_fail-malformedxsd_integer-1_2345",
+          "comment": "<S1> { <p1> LITERAL FRACTIONDIGITS 5 } / { <s1> <p1> \"1.2345\"^^xsd:integer }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1literalFractiondigits_fail-malformedxsd_decimal-1_2345ab",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1literalFractiondigits.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_malformedxsd-decimal1_2345ab.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalFractiondigits_fail-malformedxsd_decimal-1_2345ab",
+          "comment": "<S1> { <p1> LITERAL FRACTIONDIGITS 5 } / { <s1> <p1> \"1.2345ab\"^^xsd:decimal }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1literalFractiondigits_fail-malformedxsd_decimal-1_23ab",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1literalFractiondigits.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_malformedxsd-decimal1_23ab.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalFractiondigits_fail-malformedxsd_decimal-1_23ab",
+          "comment": "<S1> { <p1> LITERAL FRACTIONDIGITS 5 } / { <s1> <p1> \"1.23ab\"^^xsd:decimal }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1literalFractiondigits_fail-xsd_integer-short",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1literalFractiondigits.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_xsd-integer12345.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalFractiondigits_fail-xsd_integer-short",
+          "comment": "<S1> { <p1> LITERAL FRACTIONDIGITS 5 } / { <s1> <p1> \"12345\"^^xsd:integer }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1literalFractiondigits_fail-integer-short",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1literalFractiondigits.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_INT12345.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalFractiondigits_fail-integer-short",
+          "comment": "<S1> { <p1> LITERAL FRACTIONDIGITS 5 } / { <s1> <p1> 12345 }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1literalFractiondigits_fail-decimal-long",
           "@type": "sht:ValidationFailure",
           "action": {
             "schema": "../schemas/1literalFractiondigits.shex",
@@ -5689,12 +5959,12 @@
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1literalFractiondigits_fail-long",
+          "name": "1literalFractiondigits_fail-decimal-long",
           "comment": "<S1> { <p1> LITERAL FRACTIONDIGITS 5 } / { <s1> <p1> 1.234567 }",
           "status": "mf:proposed"
         },
         {
-          "@id": "#1literalFractiondigits_fail-short",
+          "@id": "#1literalFractiondigits_fail-decimal-short",
           "@type": "sht:ValidationFailure",
           "action": {
             "schema": "../schemas/1literalFractiondigits.shex",
@@ -5703,7 +5973,7 @@
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1literalFractiondigits_fail-short",
+          "name": "1literalFractiondigits_fail-decimal-short",
           "comment": "<S1> { <p1> LITERAL FRACTIONDIGITS 5 } / { <s1> <p1> 1.2345 }",
           "status": "mf:proposed"
         },
