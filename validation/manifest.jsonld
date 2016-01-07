@@ -7,17 +7,17 @@
       "rdfs:comment": "ShEx validation tests",
       "entries": [
         {
-          "@id": "#1val1vExprAND3_failvc3",
+          "@id": "#1val1vExprANDRef3_failvc3",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/1val1vExprAND3.shex",
+            "schema": "../schemas/1val1vExprANDRef3.shex",
             "shape": "http://a.example/S1",
             "data": "Is1_Ip1_Lbaba.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1val1vExprAND3_failvc3",
-          "comment": "<S> { <p1> MINLENGTH 4 AND MAXLENGTH 5 AND ~ '^(ab)+' } on { <s1> <p1> 'baba' }",
+          "name": "1val1vExprANDRef3_failvc3",
+          "comment": "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> AND ... $<vc3> } on { <s1> <p1> 'baba' }",
           "status": "mf:proposed"
         },
         {
@@ -65,17 +65,17 @@
           "result": "0_pass.val"
         },
         {
-          "@id": "#1val1vExprAND3_failvc1",
+          "@id": "#1val1vExprANDRef3_failvc1",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/1val1vExprAND3.shex",
+            "schema": "../schemas/1val1vExprANDRef3.shex",
             "shape": "http://a.example/S1",
             "data": "Is1_Ip1_Lab.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1val1vExprAND3_failvc1",
-          "comment": "<S> { <p1> MINLENGTH 4 AND MAXLENGTH 5 AND ~ '^(ab)+' } on { <s1> <p1> 'ab' }",
+          "name": "1val1vExprANDRef3_failvc1",
+          "comment": "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> AND ... $<vc3> } on { <s1> <p1> 'ab' }",
           "status": "mf:proposed"
         },
         {
@@ -767,6 +767,81 @@
           "comment": "<S> CLOSED { <p1> . } on { <s> <p1> <o1> }",
           "status": "mf:proposed",
           "result": "1dot_pass.val"
+        },
+        {
+          "@id": "#1nonliteralPattern_pass-bnode-match",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1nonliteralPattern.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Bab.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1nonliteralPattern_pass-bnode-match",
+          "comment": "<S1> { <p1> NONLITERAL PATTERN \"ab$\" } on { <s1> <p1> _:ab }",
+          "status": "mf:proposed",
+          "result": "1nonliteralPattern_pass-bnode-match.val"
+        },
+        {
+          "@id": "#1nonliteralPattern_pass-iri-match",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1nonliteralPattern.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iab.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1nonliteralPattern_pass-iri-match",
+          "comment": "<S1> { <p1> NONLITERAL PATTERN \"ab$\" } on { <s1> <p1> <ab> }",
+          "status": "mf:proposed",
+          "result": "1nonliteralPattern_pass-iri-match.val"
+        },
+        {
+          "@id": "#1bnodePattern_pass-bnode-match",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1bnodePattern.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Bab.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1bnodePattern_pass-bnode-match",
+          "comment": "<S1> { <p1> BNODE PATTERN \"^ab$\" } on { <s1> <p1> _:ab }",
+          "status": "mf:proposed",
+          "result": "1bnodePattern_pass-bnode-match.val"
+        },
+        {
+          "@id": "#1iriPattern_pass-iri-match",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1iriPattern.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1iriPattern_pass-iri-match",
+          "comment": "<S1> { <p1> IRI PATTERN \"^http://a.example/o1$\" } on { <s1> <p1> <o1> }",
+          "status": "mf:proposed",
+          "result": "1iriPattern_pass-iri-match.val"
+        },
+        {
+          "@id": "#1literalPattern_pass-lit-match",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1literalPattern.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Lab.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalPattern_pass-lit-match",
+          "comment": "<S1> { <p1> LITERAL PATTERN \"^ab$\"} on { <s1> <p1> \"ab\" }",
+          "status": "mf:proposed",
+          "result": "1literalPattern_fail-lit-match.val"
         },
         {
           "@id": "#1nonliteralMaxlength_pass-bnode-equal",
@@ -3834,17 +3909,17 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#1inversedot_fail-missing",
+          "@id": "#1val1vExprAND3_failvc3",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/1inversedot.shex",
+            "schema": "../schemas/1val1vExprAND3.shex",
             "shape": "http://a.example/S1",
-            "data": "Is1_Ip2_Io1.ttl",
-            "focus": "http://a.example/o1"
+            "data": "Is1_Ip1_Lbaba.ttl",
+            "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1inversedot_fail-missing",
-          "comment": "<S> { <p1> . } on { <s> <p2> <o1> }",
+          "name": "1val1vExprAND3_failvc3",
+          "comment": "<S> { <p1> MINLENGTH 4 AND MAXLENGTH 5 AND ~ '^(ab)+' } on { <s1> <p1> 'baba' }",
           "status": "mf:proposed"
         },
         {
@@ -3862,19 +3937,18 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#1val1vExprOR3_passvc1vc2vc3",
-          "@type": "sht:ValidationTest",
+          "@id": "#1val1vExprAND3_failvc1",
+          "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/1val1vExprOR3.shex",
+            "schema": "../schemas/1val1vExprAND3.shex",
             "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_Labcdef.ttl",
+            "data": "Is1_Ip1_Lab.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1val1vExprOR3_passvc1vc2vc3",
-          "comment": "<S> { <p1> ~'^ab' OR ~'cd' OR ~'ef$' } on { <s1> <p1> 'abcdef' }",
-          "status": "mf:proposed",
-          "result": "1val1vExprOR3_passvr1vr2vr3.val"
+          "name": "1val1vExprAND3_failvc1",
+          "comment": "<S> { <p1> MINLENGTH 4 AND MAXLENGTH 5 AND ~ '^(ab)+' } on { <s1> <p1> 'ab' }",
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1vExprRefAND3_failvc1",
@@ -3919,17 +3993,17 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#1val1vExprANDRef3_failvc3",
+          "@id": "#1inversedot_fail-missing",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/1val1vExprANDRef3.shex",
+            "schema": "../schemas/1inversedot.shex",
             "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_Lbaba.ttl",
-            "focus": "http://a.example/s1"
+            "data": "Is1_Ip2_Io1.ttl",
+            "focus": "http://a.example/o1"
           },
           "extensionResults": [],
-          "name": "1val1vExprANDRef3_failvc3",
-          "comment": "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> AND ... $<vc3> } on { <s1> <p1> 'baba' }",
+          "name": "1inversedot_fail-missing",
+          "comment": "<S> { <p1> . } on { <s> <p2> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -3947,18 +4021,19 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#1val1vExprANDRef3_failvc1",
-          "@type": "sht:ValidationFailure",
+          "@id": "#1val1vExprOR3_passvc1vc2vc3",
+          "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/1val1vExprANDRef3.shex",
+            "schema": "../schemas/1val1vExprOR3.shex",
             "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_Lab.ttl",
+            "data": "Is1_Ip1_Labcdef.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1val1vExprANDRef3_failvc1",
-          "comment": "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> AND ... $<vc3> } on { <s1> <p1> 'ab' }",
-          "status": "mf:proposed"
+          "name": "1val1vExprOR3_passvc1vc2vc3",
+          "comment": "<S> { <p1> ~'^ab' OR ~'cd' OR ~'ef$' } on { <s1> <p1> 'abcdef' }",
+          "status": "mf:proposed",
+          "result": "1val1vExprOR3_passvr1vr2vr3.val"
         },
         {
           "@id": "#1val1LANGTAG_LaLTen-fr",
@@ -4560,6 +4635,258 @@
           "extensionResults": [],
           "name": "1dotClosed_fail_lower",
           "comment": "<S> { <p1> . } on { <s> <p1> <o1>; <p1> <o1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1nonliteralPattern_fail-bnode-long",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1nonliteralPattern.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Babc.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1nonliteralPattern_fail-bnode-long",
+          "comment": "<S1> { <p1> NONLITERAL PATTERN \"ab$\" } on { <s1> <p1> _:abc }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1nonliteralPattern_fail-bnode-short",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1nonliteralPattern.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Ba.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1nonliteralPattern_fail-bnode-short",
+          "comment": "<S1> { <p1> NONLITERAL PATTERN \"ab$\" } on { <s1> <p1> _:a }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1nonliteralPattern_fail-lit-match",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1nonliteralPattern.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Lab.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1nonliteralPattern_fail-lit-match",
+          "comment": "<S1> { <p1> NONLITERAL PATTERN \"ab$\" } on { <s1> <p1> \"ab\" }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1nonliteralPattern_fail-iri-long",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1nonliteralPattern.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iabc.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1nonliteralPattern_fail-iri-long",
+          "comment": "<S1> { <p1> NONLITERAL PATTERN \"ab$\" } on { <s1> <p1> <abc> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1nonliteralPattern_fail-iri-short",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1nonliteralPattern.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Ia.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1nonliteralPattern_fail-iri-short",
+          "comment": "<S1> { <p1> NONLITERAL PATTERN \"ab$\" } on { <s1> <p1> <a> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1bnodePattern_fail-iri-match",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1bnodePattern.shex",
+            "shape": "http://a.example/S1",
+            "data": "BASE_Is1_Ip1_Iab.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1bnodePattern_fail-iri-match",
+          "comment": "<S1> { <p1> BNODE PATTERN \"^ab$\" } on { BASE <http://a.example/> <s1> <p1> <ab> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1bnodePattern_fail-lit-match",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1bnodePattern.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Lab.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1bnodePattern_fail-lit-match",
+          "comment": "<S1> { <p1> BNODE PATTERN \"^ab$\" } on { <s1> <p1> \"ab\" }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1bnodePattern_fail-bnode-long",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1bnodePattern.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Babc.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1bnodePattern_fail-bnode-long",
+          "comment": "<S1> { <p1> BNODE PATTERN \"^ab$\" } on { <s1> <p1> _:abc }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1bnodePattern_fail-bnode-short",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1bnodePattern.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Ba.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1bnodePattern_fail-bnode-short",
+          "comment": "<S1> { <p1> BNODE PATTERN \"^ab$\" } on { <s1> <p1> _:a }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1iriPattern_fail-bnode-match",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1iriPatternab.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Bab.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1iriPattern_fail-bnode-match",
+          "comment": "<S1> { <p1> IRI PATTERN \"^ab$\" } on { <s1> <p1> _:ab }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1iriPattern_fail-lit-match",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1iriPattern.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_L19.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1iriPattern_fail-lit-match",
+          "comment": "<S1> { <p1> IRI PATTERN \"^http://a.example/o1$\" } on { <s1> <p1> \"o1\" }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1iriPattern_fail-iri-long",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1iriPattern.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1a.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1iriPattern_fail-iri-long",
+          "comment": "<S1> { <p1> IRI PATTERN \"^http://a.example/o1$\" } on { <s1> <p1> <o1a> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1iriPattern_fail-iri-short",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1iriPattern.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1iriPattern_fail-iri-short",
+          "comment": "<S1> { <p1> IRI PATTERN \"^http://a.example/o1$\" } on { <s1> <p1> <o> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1literalPatternabEnd_fail-bnode-match",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1literalPatternabEnd.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Bab.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalPatternabEnd_fail-bnode-match",
+          "comment": "<S1> { <p1> LITERAL PATTERN \"ab$\" } on { <s1> <p1> _:ab }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1literalPattern_fail-bnode-match",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1literalPattern.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Bab.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalPattern_fail-bnode-match",
+          "comment": "<S1> { <p1> LITERAL PATTERN \"^ab$\" } on { <s1> <p1> _:ab }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1literalPattern19_fail-iri-match",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1literalPattern19.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalPattern19_fail-iri-match",
+          "comment": "<S1> { <p1> LITERAL PATTERN \"^http://a.example/o1$\" } on { <s1> <p1> <http://a.example/o1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1literalPattern_fail-lit-long",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1literalPattern.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Labc.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalPattern_fail-lit-long",
+          "comment": "<S1> { <p1> LITERAL PATTERN \"^ab$\" } on { <s1> <p1> \"abc\" }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1literalPattern_fail-lit-short",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1literalPattern.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_La.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalPattern_fail-lit-short",
+          "comment": "<S1> { <p1> LITERAL PATTERN \"^ab$\" } on { <s1> <p1> \"a\" }",
           "status": "mf:proposed"
         },
         {
