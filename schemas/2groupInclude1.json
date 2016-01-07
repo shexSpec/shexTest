@@ -2,29 +2,29 @@
   "type": "Schema",
   "prefixes": {},
   "shapes":{
-    "http://a.example/PersonShape": {
-      "type": "Shape",
-      "expression": {
-        "type": "TripleConstraint",
-        "predicate": "http://a.example/p1",
-        "valueExpr": { "type": "ValueClass" }
-      }
-    },
-    "http://a.example/EmployeeShape": {
+    "http://a.example/S1": {
       "type": "Shape",
       "expression": {
         "type": "EachOf",
         "expressions": [
           {
             "type": "Inclusion",
-            "include": "http://a.example/PersonShape"
+            "include": "http://a.example/S2"
           },
           {
             "type": "TripleConstraint",
-            "predicate": "http://a.example/p2",
+            "predicate": "http://a.example/p1",
             "valueExpr": { "type": "ValueClass" }
           }
         ]
+      }
+    },
+    "http://a.example/S2": {
+      "type": "Shape",
+      "expression": {
+        "type": "TripleConstraint",
+        "predicate": "http://a.example/p2",
+        "valueExpr": { "type": "ValueClass" }
       }
     }
   }

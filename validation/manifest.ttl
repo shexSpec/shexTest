@@ -6324,9 +6324,9 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1dotRef1.shex> ;
-      sht:shape <http://a.example/EmployeeShape> ;
-      sht:data <In1_Ip1_LX.In2_Ip2_In1.ttl> ;
-      sht:focus <http://a.example/n2>
+      sht:shape <http://a.example/S1> ;
+      sht:data <In2_Ip2_LX.In1_Ip1_In2.ttl> ;
+      sht:focus <http://a.example/n1>
     ] ;
     mf:result <In2_Ip2_In1@In1_Ip1_LX.val>
     .
@@ -6337,9 +6337,9 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1dotRef1.shex> ;
-      sht:shape <http://a.example/EmployeeShape> ;
-      sht:data <In2_Ip2_In1.In1_Ip1_LX.ttl> ;
-      sht:focus <http://a.example/n2>
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip1_In1.In2_Ip2_LX.ttl> ;
+      sht:focus <http://a.example/n1>
     ] ;
     mf:result <In2_Ip2_In1@In1_Ip1_LX.val>
     .
@@ -6350,9 +6350,9 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1dotRef1.shex> ;
-      sht:shape <http://a.example/EmployeeShape> ;
-      sht:data <In2_Ip2_In1.ttl> ;
-      sht:focus <http://a.example/n2>
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip1_In2.ttl> ;
+      sht:focus <http://a.example/n1>
     ]
     .
 
@@ -6362,9 +6362,9 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1dotRef1.shex> ;
-      sht:shape <http://a.example/EmployeeShape> ;
-      sht:data <In2_Ip2_In1.In2_Ip2_In3.In1_Ip1_LX.ttl> ;
-      sht:focus <http://a.example/n2>
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip1_In2.In1_Ip1_In3.In2_Ip2_LX.ttl> ;
+      sht:focus <http://a.example/n1>
     ]
     .
 
@@ -6374,9 +6374,9 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1dotRef1.shex> ;
-      sht:shape <http://a.example/EmployeeShape> ;
-      sht:data <In2_Ip2_In1.In2_Ip2_In3.In1_Ip1_LX.In3_Ip1_LX.ttl> ;
-      sht:focus <http://a.example/n2>
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip1_In2.In1_Ip1_In3.In2_Ip2_LX.In3_Ip2_LX.ttl> ;
+      sht:focus <http://a.example/n1>
     ]
     .
 
@@ -6386,9 +6386,9 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1dotRef1.shex> ;
-      sht:shape <http://a.example/EmployeeShape> ;
-      sht:data <In2_Ip2_In1.In1_Ip1_LX.In3_Ip1_LX.ttl> ;
-      sht:focus <http://a.example/n2>
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip1_In2.In2_Ip2_LX.In3_Ip1_LX.ttl> ;
+      sht:focus <http://a.example/n1>
     ] ;
     mf:result <In2_Ip2_In1@In1_Ip1_LX.val>
     .

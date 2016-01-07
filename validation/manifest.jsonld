@@ -683,9 +683,9 @@
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/1dotRef1.shex",
-            "shape": "http://a.example/EmployeeShape",
-            "data": "In2_Ip2_In1.In1_Ip1_LX.In3_Ip1_LX.ttl",
-            "focus": "http://a.example/n2"
+            "shape": "http://a.example/S1",
+            "data": "In1_Ip1_In2.In2_Ip2_LX.In3_Ip1_LX.ttl",
+            "focus": "http://a.example/n1"
           },
           "extensionResults": [],
           "name": "1dotRef1_overMatchesReferent",
@@ -698,9 +698,9 @@
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/1dotRef1.shex",
-            "shape": "http://a.example/EmployeeShape",
-            "data": "In2_Ip2_In1.In1_Ip1_LX.ttl",
-            "focus": "http://a.example/n2"
+            "shape": "http://a.example/S1",
+            "data": "In1_Ip1_In1.In2_Ip2_LX.ttl",
+            "focus": "http://a.example/n1"
           },
           "extensionResults": [],
           "name": "1dotRef1_referrer,referent",
@@ -713,9 +713,9 @@
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/1dotRef1.shex",
-            "shape": "http://a.example/EmployeeShape",
-            "data": "In1_Ip1_LX.In2_Ip2_In1.ttl",
-            "focus": "http://a.example/n2"
+            "shape": "http://a.example/S1",
+            "data": "In2_Ip2_LX.In1_Ip1_In2.ttl",
+            "focus": "http://a.example/n1"
           },
           "extensionResults": [],
           "name": "1dotRef1_referent,referrer",
@@ -4544,9 +4544,9 @@
           "@type": "sht:ValidationFailure",
           "action": {
             "schema": "../schemas/1dotRef1.shex",
-            "shape": "http://a.example/EmployeeShape",
-            "data": "In2_Ip2_In1.In2_Ip2_In3.In1_Ip1_LX.In3_Ip1_LX.ttl",
-            "focus": "http://a.example/n2"
+            "shape": "http://a.example/S1",
+            "data": "In1_Ip1_In2.In1_Ip1_In3.In2_Ip2_LX.In3_Ip2_LX.ttl",
+            "focus": "http://a.example/n1"
           },
           "extensionResults": [],
           "name": "1dotRef1_overReferrer,overReferent",
@@ -4558,9 +4558,9 @@
           "@type": "sht:ValidationFailure",
           "action": {
             "schema": "../schemas/1dotRef1.shex",
-            "shape": "http://a.example/EmployeeShape",
-            "data": "In2_Ip2_In1.In2_Ip2_In3.In1_Ip1_LX.ttl",
-            "focus": "http://a.example/n2"
+            "shape": "http://a.example/S1",
+            "data": "In1_Ip1_In2.In1_Ip1_In3.In2_Ip2_LX.ttl",
+            "focus": "http://a.example/n1"
           },
           "extensionResults": [],
           "name": "1dotRef1_overReferrer",
@@ -4572,9 +4572,9 @@
           "@type": "sht:ValidationFailure",
           "action": {
             "schema": "../schemas/1dotRef1.shex",
-            "shape": "http://a.example/EmployeeShape",
-            "data": "In2_Ip2_In1.ttl",
-            "focus": "http://a.example/n2"
+            "shape": "http://a.example/S1",
+            "data": "In1_Ip1_In2.ttl",
+            "focus": "http://a.example/n1"
           },
           "extensionResults": [],
           "name": "1dotRef1_missingReferent",
