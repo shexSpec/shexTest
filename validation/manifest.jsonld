@@ -7,17 +7,17 @@
       "rdfs:comment": "ShEx validation tests",
       "entries": [
         {
-          "@id": "#1val1vExprANDRef3_failvc3",
+          "@id": "#1val1vExprAND3_failvc1",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/1val1vExprANDRef3.shex",
+            "schema": "../schemas/1val1vExprAND3.shex",
             "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_Lbaba.ttl",
+            "data": "Is1_Ip1_Lab.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1val1vExprANDRef3_failvc3",
-          "comment": "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> AND ... $<vc3> } on { <s1> <p1> 'baba' }",
+          "name": "1val1vExprAND3_failvc1",
+          "comment": "<S> { <p1> MINLENGTH 4 AND MAXLENGTH 5 AND ~ '^(ab)+' } on { <s1> <p1> 'ab' }",
           "status": "mf:proposed"
         },
         {
@@ -65,17 +65,17 @@
           "result": "0_pass.val"
         },
         {
-          "@id": "#1val1vExprANDRef3_failvc1",
+          "@id": "#1val1vExprRefAND3_failvc2",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/1val1vExprANDRef3.shex",
+            "schema": "../schemas/1val1vExprRefAND3.shex",
             "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_Lab.ttl",
+            "data": "Is1_Ip1_Lababab.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1val1vExprANDRef3_failvc1",
-          "comment": "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> AND ... $<vc3> } on { <s1> <p1> 'ab' }",
+          "name": "1val1vExprRefAND3_failvc2",
+          "comment": "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> AND ... $<vc3> } on { <s1> <p1> 'ababab' }",
           "status": "mf:proposed"
         },
         {
@@ -3824,6 +3824,126 @@
           "result": "1dot_pass.val"
         },
         {
+          "@id": "#1dotLNex-HYPHEN_MINUS_pass-noOthers",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1dotLNex-HYPHEN_MINUS.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1HYPHEN_MINUS_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1dotLNex-HYPHEN_MINUS_pass-noOthers",
+          "comment": "PREFIX ex: <http://a.example/> ex:S1 { ex:p1- . } on { <s> <p1-> <o1> }",
+          "status": "mf:proposed",
+          "result": "1HYPHEN_MINUSdot_pass.val"
+        },
+        {
+          "@id": "#1dotNSdefault_pass-noOthers",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1dotNSdefault.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1dotNSdefault_pass-noOthers",
+          "comment": "PREFIX : <http://a.example/p1> <S1> { : . } on { <s> :p1 <o1> }",
+          "status": "mf:proposed",
+          "result": "1dot_pass.val"
+        },
+        {
+          "@id": "#1dotLNdefault_pass-noOthers",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1dotLNdefault.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1dotLNdefault_pass-noOthers",
+          "comment": "PREFIX : <http://a.example/> :S1 { :p1 . } on { <s> <p1> <o1> }",
+          "status": "mf:proposed",
+          "result": "1dot_pass.val"
+        },
+        {
+          "@id": "#1dotLNexComment_pass-noOthers",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1dotLNexComment.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1dotLNexComment_pass-noOthers",
+          "comment": "PREFIX ex: <http://a.example/> ex:S1 { ex:p1/*comment*/ . } on { <s> <p1> <o1> }",
+          "status": "mf:proposed",
+          "result": "1dot_pass.val"
+        },
+        {
+          "@id": "#1dotNS2Comment_pass-noOthers",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1dotNS2Comment.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1dotNS2Comment_pass-noOthers",
+          "comment": "PREFIX S1: <http://a.example/S1> PREFIX p1: <http://a.example/p1> S1: { p1:/*comment*/ . } on { <s> <p1> <o1> }",
+          "status": "mf:proposed",
+          "result": "1dot_pass.val"
+        },
+        {
+          "@id": "#1dotNS2_pass-noOthers",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1dotNS2.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1dotNS2_pass-noOthers",
+          "comment": "PREFIX S1: <http://a.example/S1> PREFIX p1: <http://a.example/p1> S1: { p1: . } on { <s> <p1> <o1> }",
+          "status": "mf:proposed",
+          "result": "1dot_pass.val"
+        },
+        {
+          "@id": "#1dotLNex_pass-noOthers",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1dotLNex.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1dotLNex_pass-noOthers",
+          "comment": "PREFIX ex: <http://a.example/> ex:S1 { ex:p1 . } on { <s> <p1> <o1> }",
+          "status": "mf:proposed",
+          "result": "1dot_pass.val"
+        },
+        {
+          "@id": "#1dotComma_pass-noOthers",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1dotComma.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1dotComma_pass-noOthers",
+          "comment": "PREFIX : <http://a.example/> <S> { :p1 ., } on { <s> <p1> <o1> }",
+          "status": "mf:proposed",
+          "result": "1dot_pass.val"
+        },
+        {
           "@id": "#1dot_pass-noOthers",
           "@type": "sht:ValidationTest",
           "action": {
@@ -3937,17 +4057,17 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#1val1vExprAND3_failvc1",
+          "@id": "#1inversedot_fail-missing",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/1val1vExprAND3.shex",
+            "schema": "../schemas/1inversedot.shex",
             "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_Lab.ttl",
-            "focus": "http://a.example/s1"
+            "data": "Is1_Ip2_Io1.ttl",
+            "focus": "http://a.example/o1"
           },
           "extensionResults": [],
-          "name": "1val1vExprAND3_failvc1",
-          "comment": "<S> { <p1> MINLENGTH 4 AND MAXLENGTH 5 AND ~ '^(ab)+' } on { <s1> <p1> 'ab' }",
+          "name": "1inversedot_fail-missing",
+          "comment": "<S> { <p1> . } on { <s> <p2> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -3965,18 +4085,19 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#1val1vExprRefAND3_failvc2",
-          "@type": "sht:ValidationFailure",
+          "@id": "#1val1vExprOR3_passvc1vc2vc3",
+          "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/1val1vExprRefAND3.shex",
+            "schema": "../schemas/1val1vExprOR3.shex",
             "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_Lababab.ttl",
+            "data": "Is1_Ip1_Labcdef.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1val1vExprRefAND3_failvc2",
-          "comment": "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> AND ... $<vc3> } on { <s1> <p1> 'ababab' }",
-          "status": "mf:proposed"
+          "name": "1val1vExprOR3_passvc1vc2vc3",
+          "comment": "<S> { <p1> ~'^ab' OR ~'cd' OR ~'ef$' } on { <s1> <p1> 'abcdef' }",
+          "status": "mf:proposed",
+          "result": "1val1vExprOR3_passvr1vr2vr3.val"
         },
         {
           "@id": "#1val1vExprRefAND3_failvc3",
@@ -3993,17 +4114,17 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#1inversedot_fail-missing",
+          "@id": "#1val1vExprANDRef3_failvc3",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/1inversedot.shex",
+            "schema": "../schemas/1val1vExprANDRef3.shex",
             "shape": "http://a.example/S1",
-            "data": "Is1_Ip2_Io1.ttl",
-            "focus": "http://a.example/o1"
+            "data": "Is1_Ip1_Lbaba.ttl",
+            "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1inversedot_fail-missing",
-          "comment": "<S> { <p1> . } on { <s> <p2> <o1> }",
+          "name": "1val1vExprANDRef3_failvc3",
+          "comment": "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> AND ... $<vc3> } on { <s1> <p1> 'baba' }",
           "status": "mf:proposed"
         },
         {
@@ -4021,19 +4142,18 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#1val1vExprOR3_passvc1vc2vc3",
-          "@type": "sht:ValidationTest",
+          "@id": "#1val1vExprANDRef3_failvc1",
+          "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/1val1vExprOR3.shex",
+            "schema": "../schemas/1val1vExprANDRef3.shex",
             "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_Labcdef.ttl",
+            "data": "Is1_Ip1_Lab.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1val1vExprOR3_passvc1vc2vc3",
-          "comment": "<S> { <p1> ~'^ab' OR ~'cd' OR ~'ef$' } on { <s1> <p1> 'abcdef' }",
-          "status": "mf:proposed",
-          "result": "1val1vExprOR3_passvr1vr2vr3.val"
+          "name": "1val1vExprANDRef3_failvc1",
+          "comment": "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> AND ... $<vc3> } on { <s1> <p1> 'ab' }",
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1LANGTAG_LaLTen-fr",

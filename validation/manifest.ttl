@@ -20,7 +20,7 @@
         # triple pattern
         <#1dot_fail-empty>
         <#1dot_fail-missing>
-        <#1dot_pass-noOthers>
+        <#1dot_pass-noOthers> <#1dotComma_pass-noOthers> <#1dotLNex_pass-noOthers> <#1dotNS2_pass-noOthers> <#1dotNS2Comment_pass-noOthers> <#1dotLNexComment_pass-noOthers> <#1dotLNdefault_pass-noOthers> <#1dotNSdefault_pass-noOthers> <#1dotLNex-HYPHEN_MINUS_pass-noOthers>
         <#1dot_pass-others_lexicallyEarlier>
         <#1dot_pass-others_lexicallyLater>
         # 1dotComma_... same as 1dot
@@ -676,6 +676,118 @@
       sht:focus <http://a.example/s1>
     ] ;
     mf:result <1dot_pass.val>
+    .
+
+<#1dotComma_pass-noOthers> a sht:ValidationTest ;
+    mf:name "1dotComma_pass-noOthers" ;
+    sht:sameAbstractSyntaxAs <#1dot_pass-noOthers> ;
+    rdfs:comment "PREFIX : <http://a.example/> <S> { :p1 ., } on { <s> <p1> <o1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1dotComma.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1dot_pass.val>
+    .
+
+<#1dotLNex_pass-noOthers> a sht:ValidationTest ;
+    mf:name "1dotLNex_pass-noOthers" ;
+    sht:sameAbstractSyntaxAs <#1dot_pass-noOthers> ;
+    rdfs:comment "PREFIX ex: <http://a.example/> ex:S1 { ex:p1 . } on { <s> <p1> <o1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1dotLNex.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1dot_pass.val>
+    .
+
+<#1dotNS2_pass-noOthers> a sht:ValidationTest ;
+    mf:name "1dotNS2_pass-noOthers" ;
+    sht:sameAbstractSyntaxAs <#1dot_pass-noOthers> ;
+    rdfs:comment "PREFIX S1: <http://a.example/S1> PREFIX p1: <http://a.example/p1> S1: { p1: . } on { <s> <p1> <o1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1dotNS2.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1dot_pass.val>
+    .
+
+<#1dotNS2Comment_pass-noOthers> a sht:ValidationTest ;
+    mf:name "1dotNS2Comment_pass-noOthers" ;
+    sht:sameAbstractSyntaxAs <#1dot_pass-noOthers> ;
+    rdfs:comment "PREFIX S1: <http://a.example/S1> PREFIX p1: <http://a.example/p1> S1: { p1:/*comment*/ . } on { <s> <p1> <o1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1dotNS2Comment.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1dot_pass.val>
+    .
+
+<#1dotLNexComment_pass-noOthers> a sht:ValidationTest ;
+    mf:name "1dotLNexComment_pass-noOthers" ;
+    sht:sameAbstractSyntaxAs <#1dot_pass-noOthers> ;
+    rdfs:comment "PREFIX ex: <http://a.example/> ex:S1 { ex:p1/*comment*/ . } on { <s> <p1> <o1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1dotLNexComment.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1dot_pass.val>
+    .
+
+<#1dotLNdefault_pass-noOthers> a sht:ValidationTest ;
+    mf:name "1dotLNdefault_pass-noOthers" ;
+    sht:sameAbstractSyntaxAs <#1dot_pass-noOthers> ;
+    rdfs:comment "PREFIX : <http://a.example/> :S1 { :p1 . } on { <s> <p1> <o1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1dotLNdefault.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1dot_pass.val>
+    .
+
+<#1dotNSdefault_pass-noOthers> a sht:ValidationTest ;
+    mf:name "1dotNSdefault_pass-noOthers" ;
+    sht:sameAbstractSyntaxAs <#1dot_pass-noOthers> ;
+    rdfs:comment "PREFIX : <http://a.example/p1> <S1> { : . } on { <s> :p1 <o1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1dotNSdefault.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1dot_pass.val>
+    .
+
+<#1dotLNex-HYPHEN_MINUS_pass-noOthers> a sht:ValidationTest ;
+    mf:name "1dotLNex-HYPHEN_MINUS_pass-noOthers" ;
+    sht:similarAbstractSyntaxAs <#1dot_pass-noOthers> ;
+    rdfs:comment "PREFIX ex: <http://a.example/> ex:S1 { ex:p1- . } on { <s> <p1-> <o1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1dotLNex-HYPHEN_MINUS.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1HYPHEN_MINUS_Io1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1HYPHEN_MINUSdot_pass.val>
     .
 
 <#1dot_pass-others_lexicallyEarlier> a sht:ValidationTest ;
