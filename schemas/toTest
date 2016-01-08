@@ -176,10 +176,11 @@
 ! extra of non-mentioned predicate
 ! extra of deeply-nested predicate
         # start
-!  -rw-rw-r--  1 eric www    37 Sep 23 09:38 startInline.shex                    start={ <p1> . }
-!  -rw-rw-r--  1 eric www    38 Sep 23 09:38 startEqualSpaceInline.shex [startInline.shex]
-!  -rw-rw-r--  1 eric www    38 Sep 23 09:38 startSpaceEqualInline.shex [startInline.shex]
-!  -rw-rw-r--  1 eric www    82 Oct 20 15:51 startRef.shex                       start=<S1> <S1> { <p1> . }
+  -rw-rw-r--  1 eric www    82 Oct 20 15:51 startRefIRIREF.shex                       start=<S1> <S1> { <p1> . }
+  -rw-rw-r--  1 eric www    82 Oct 20 15:51 startRefbnode.shex                        start=_:S1 _:S1 { <p1> . }
+  -rw-rw-r--  1 eric www    37 Sep 23 09:38 startInline.shex                          start={ <p1> . }
+  -rw-rw-r--  1 eric www    38 Sep 23 09:38 startEqualSpaceInline.shex [startInline.shex]
+  -rw-rw-r--  1 eric www    38 Sep 23 09:38 startSpaceEqualInline.shex [startInline.shex]
 
 
 # Deferred

@@ -601,6 +601,15 @@
 	<#3groupdotExtra3_pass-iri2> <#3groupdot3Extra_pass-iri2> <#3groupdotExtra3NLex_pass-iri2>
 
 	# start
+	<#startRefIRIREF_pass-noOthers>
+	<#startRefIRIREF_pass-others_lexicallyEarlier>
+	<#startRefIRIREF_fail-missing>
+	<#startRefbnode_pass-noOthers>
+	<#startRefbnode_fail-missing>
+	<#startInline_pass-noOthers>
+	<#startEqualSpaceInline_pass-noOthers>
+	<#startSpaceEqualInline_pass-noOthers>
+	<#startInline_fail-missing>
 
         # <#*Inherit*>
         # <#*Inline*>
@@ -7771,6 +7780,124 @@
 
 # } extra
 # start {
+
+<#startRefIRIREF_pass-noOthers> a sht:ValidationTest ;
+    mf:name "startRefIRIREF_pass-noOthers" ;
+    rdfs:comment "start=<S> <S> { <p1> . } on { <s> <p1> <o1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/startRefIRIREF.shex> ;
+      # sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1dot_pass.val>
+    .
+
+<#startRefIRIREF_pass-others_lexicallyEarlier> a sht:ValidationTest ;
+    mf:name "startRefIRIREF_pass-others_lexicallyEarlier" ;
+    rdfs:comment "start=<S> <S> { <p1> . } on { <s> <p0> <o0>; <p1> <o1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/startRefIRIREF.shex> ;
+      # sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip0_Io0;Ip1_Io1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1dot_pass.val>
+    .
+
+<#startRefIRIREF_fail-missing> a sht:ValidationFailure ;
+    mf:name "startRefIRIREF_fail-missing" ;
+    rdfs:comment "start=<S> <S> { <p1> . } on { <s> <p2> <o1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/startRefIRIREF.shex> ;
+      # sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip2_Io1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#startRefbnode_pass-noOthers> a sht:ValidationTest ;
+    mf:name "startRefbnode_pass-noOthers" ;
+    rdfs:comment "start=_:S _:S { <p1> . } on { <s> <p1> <o1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/startRefbnode.shex> ;
+      # sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <bnode1dot_pass.val>
+    .
+
+<#startRefbnode_fail-missing> a sht:ValidationFailure ;
+    mf:name "startRefbnode_fail-missing" ;
+    rdfs:comment "start=_:S _S { <p1> . } on { <s> <p2> <o1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/startRefbnode.shex> ;
+      # sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip2_Io1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#startInline_pass-noOthers> a sht:ValidationTest ;
+    mf:name "startInline_pass-noOthers" ;
+    rdfs:comment "start={ <p1> . } on { <s> <p1> <o1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/startInline.shex> ;
+      # sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <startInline_pass.val>
+    .
+
+<#startEqualSpaceInline_pass-noOthers> a sht:ValidationTest ;
+    mf:name "startEqualSpaceInline_pass-noOthers" ;
+    sht:sameAbstractSyntaxAs <#startInline_pass-noOthers> ;
+    rdfs:comment "start= { <p1> . } on { <s> <p1> <o1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/startEqualSpaceInline.shex> ;
+      # sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <startInline_pass.val>
+    .
+
+<#startSpaceEqualInline_pass-noOthers> a sht:ValidationTest ;
+    mf:name "startSpaceEqualInline_pass-noOthers" ;
+    sht:sameAbstractSyntaxAs <#startInline_pass-noOthers> ;
+    rdfs:comment "start= { <p1> . } on { <s> <p1> <o1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/startSpaceEqualInline.shex> ;
+      # sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <startInline_pass.val>
+    .
+
+<#startInline_fail-missing> a sht:ValidationFailure ;
+    mf:name "startInline_fail-missing" ;
+    rdfs:comment "start={ <p1> . } on { <s> <p2> <o1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/startInline.shex> ;
+      # sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip2_Io1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+
 # } start
 
 
