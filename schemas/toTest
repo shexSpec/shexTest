@@ -94,8 +94,6 @@
   -rw-rw-r--  1 eric www    70 Oct 20 15:51 1iriPattern.shex
   -rw-rw-r--  1 eric www    72 Oct 20 15:51 1bnodePattern.shex
   -rw-rw-r--  1 eric www    77 Oct 20 15:51 1nonliteralPattern.shex
-        # closed
-  -rw-rw-r--  1 eric www    60 Oct 20 15:51 1dotClosed.shex
         # node kinds
 !  -rw-rw-r--  1 eric www   169 Oct 20 15:51 1IRI_with_all_punctuationdot.shex   <S1> { <p1@#$> . }
 !  -rw-rw-r--  1 eric www   108 Oct 20 15:51 1IRI_with_UCHAR.1dot.shex
@@ -128,13 +126,6 @@
 #  -rw-rw-r--  1 eric www   142 Oct 20 15:51 1val1LNDatatype.shex
         # language tags
   -rw-rw-r--  1 eric www    64 Oct 20 15:51 1val1LANGTAG.shex
-        # extra
-  -rw-rw-r--  1 eric www   103 Oct 20 15:51 1val1IRIREFExtra1.shex
-  -rw-rw-r--  1 eric www   125 Oct 20 15:51 1val2IRIREFExtra1.shex
-!  -rw-rw-r--  1 eric www    81 Oct 20 15:51 1dotExtra1.shex
-!  -rw-rw-r--  1 eric www   193 Oct 20 15:51 3groupdot3Extra.shex
-!  -rw-rw-r--  1 eric www   181 Oct 20 15:51 3groupdotExtra3.shex [3groupdot3Extra.shex]
-!  -rw-rw-r--  1 eric www   165 Oct 20 15:51 3groupdotExtra3NLex.shex
         # shape reference
   -rw-rw-r--  1 eric www   158 Sep 23 09:38 1dotRef1.shex                       <S1> { <p1> @<S2> } <S2> { <p2> . }
 !  -rw-rw-r--  1 eric www   162 Sep 23 09:38 1iriRef1.shex                       <S1> { <p1> IRI @<S2> } <S2> { <p2> . }
@@ -173,6 +164,15 @@
    1val1vExprRefOR3.shex
    1val1vExprOR3.shex
 !  -rw-rw-r--  1 eric www   385 Sep 23 09:38 1dotRefOr3.shex <p1> @a OR @b OR @c
+        # closed
+  -rw-rw-r--  1 eric www    60 Oct 20 15:51 1dotClosed.shex
+        # extra
+!  -rw-rw-r--  1 eric www    81 Oct 20 15:51 1dotExtra1.shex
+  -rw-rw-r--  1 eric www   103 Oct 20 15:51 1val1IRIREFExtra1.shex
+  -rw-rw-r--  1 eric www   125 Oct 20 15:51 1val2IRIREFExtra1.shex
+!  -rw-rw-r--  1 eric www   193 Oct 20 15:51 3groupdot3Extra.shex
+!  -rw-rw-r--  1 eric www   181 Oct 20 15:51 3groupdotExtra3.shex [3groupdot3Extra.shex]
+!  -rw-rw-r--  1 eric www   165 Oct 20 15:51 3groupdotExtra3NLex.shex
         # start
 !  -rw-rw-r--  1 eric www    37 Sep 23 09:38 startInline.shex                    start={ <p1> . }
 !  -rw-rw-r--  1 eric www    38 Sep 23 09:38 startEqualSpaceInline.shex [startInline.shex]

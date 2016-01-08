@@ -7,17 +7,17 @@
       "rdfs:comment": "ShEx validation tests",
       "entries": [
         {
-          "@id": "#1val1vExprAND3_failvc1",
+          "@id": "#1val1vExprORRef3_fail",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/1val1vExprAND3.shex",
+            "schema": "../schemas/1val1vExprORRef3.shex",
             "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_Lab.ttl",
+            "data": "Is1_Ip1_La.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1val1vExprAND3_failvc1",
-          "comment": "<S> { <p1> MINLENGTH 4 AND MAXLENGTH 5 AND ~ '^(ab)+' } on { <s1> <p1> 'ab' }",
+          "name": "1val1vExprORRef3_fail",
+          "comment": "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> OR ... $<vc3> } on { <s1> <p1> 'a' }",
           "status": "mf:proposed"
         },
         {
@@ -65,17 +65,17 @@
           "result": "0_pass.val"
         },
         {
-          "@id": "#1val1vExprRefAND3_failvc2",
+          "@id": "#1val1vExprAND3_failvc2",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/1val1vExprRefAND3.shex",
+            "schema": "../schemas/1val1vExprAND3.shex",
             "shape": "http://a.example/S1",
             "data": "Is1_Ip1_Lababab.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1val1vExprRefAND3_failvc2",
-          "comment": "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> AND ... $<vc3> } on { <s1> <p1> 'ababab' }",
+          "name": "1val1vExprAND3_failvc2",
+          "comment": "<S> { <p1> MINLENGTH 4 AND MAXLENGTH 5 AND ~ '^(ab)+' } on { <s1> <p1> 'ababab' }",
           "status": "mf:proposed"
         },
         {
@@ -92,6 +92,51 @@
           "comment": "@@ iovka",
           "status": "mf:proposed",
           "result": "iovka.val"
+        },
+        {
+          "@id": "#1val1IRIREFExtra1_iri",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1val1IRIREFExtra1.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1,Io2.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1IRIREFExtra1_iri",
+          "comment": "<S> EXTRA <p1> { <p1> [<o1>] } on { <s> <p1> <o1>, <o2> }",
+          "status": "mf:proposed",
+          "result": "1val1IRIREFExtra1bnode_Is1_Ip1_Io1.val"
+        },
+        {
+          "@id": "#1dotClosed_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1dotClosed.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1dotClosed_pass",
+          "comment": "<S> CLOSED { <p1> . } on { <s> <p1> <o1> }",
+          "status": "mf:proposed",
+          "result": "1dot_pass.val"
+        },
+        {
+          "@id": "#1val1vExprOR3_passvc1vc2vc3",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1val1vExprOR3.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Labcdef.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1vExprOR3_passvc1vc2vc3",
+          "comment": "<S> { <p1> ~'^ab' OR ~'cd' OR ~'ef$' } on { <s1> <p1> 'abcdef' }",
+          "status": "mf:proposed",
+          "result": "1val1vExprOR3_passvr1vr2vr3.val"
         },
         {
           "@id": "#1val1vExprOR3_passvc3",
@@ -314,7 +359,7 @@
           },
           "extensionResults": [],
           "name": "1val1LANGTAG_pass",
-          "comment": "<S> { <p1> ('ab'@en-fr) } on { <s> <p1> 'ab'@en-fr }",
+          "comment": "<S> { <p1> ['ab'@en-fr] } on { <s> <p1> 'ab'@en-fr }",
           "status": "mf:proposed",
           "result": "1val1LANGTAG_pass.val"
         },
@@ -329,7 +374,7 @@
           },
           "extensionResults": [],
           "name": "1val1IRIREFDatatype_pass",
-          "comment": "<S> { <p1> ('ab'^^my:bloodType) } on { <s> <p1> 'ab'^^my:bloodType }",
+          "comment": "<S> { <p1> ['ab'^^my:bloodType] } on { <s> <p1> 'ab'^^my:bloodType }",
           "status": "mf:proposed",
           "result": "1val1IRIREFDatatype_pass.val"
         },
@@ -344,7 +389,7 @@
           },
           "extensionResults": [],
           "name": "1val1INTEGER_pass",
-          "comment": "<S> { <p1> (0) } on { <s> <p1> 0 }",
+          "comment": "<S> { <p1> [0] } on { <s> <p1> 0 }",
           "status": "mf:proposed",
           "result": "1val1INTEGER_pass.val"
         },
@@ -359,7 +404,7 @@
           },
           "extensionResults": [],
           "name": "1val1false_pass",
-          "comment": "<S> { <p1> (false) } on { <s> <p1> true }",
+          "comment": "<S> { <p1> [false] } on { <s> <p1> true }",
           "status": "mf:proposed",
           "result": "1val1false_pass.val"
         },
@@ -374,7 +419,7 @@
           },
           "extensionResults": [],
           "name": "1val1true_pass",
-          "comment": "<S> { <p1> (true) } on { <s> <p1> true }",
+          "comment": "<S> { <p1> [true] } on { <s> <p1> true }",
           "status": "mf:proposed",
           "result": "1val1true_pass.val"
         },
@@ -389,7 +434,7 @@
           },
           "extensionResults": [],
           "name": "1val1DOUBLElowercase_passUC",
-          "comment": "<S> { <p1> (0e0) } on { <s> <p1> 0E0 }",
+          "comment": "<S> { <p1> [0e0] } on { <s> <p1> 0E0 }",
           "status": "mf:proposed",
           "result": "1val1DOUBLE_pass.val"
         },
@@ -404,7 +449,7 @@
           },
           "extensionResults": [],
           "name": "1val1DOUBLElowercase_pass",
-          "comment": "<S> { <p1> (0e0) } on { <s> <p1> 0e0 }",
+          "comment": "<S> { <p1> [0e0] } on { <s> <p1> 0e0 }",
           "status": "mf:proposed",
           "result": "1val1DOUBLE_pass.val"
         },
@@ -419,7 +464,7 @@
           },
           "extensionResults": [],
           "name": "1val1DOUBLE_passUC",
-          "comment": "<S> { <p1> (0e0) } on { <s> <p1> 0E0 }",
+          "comment": "<S> { <p1> [0e0] } on { <s> <p1> 0E0 }",
           "status": "mf:proposed",
           "result": "1val1DOUBLE_pass.val"
         },
@@ -434,7 +479,7 @@
           },
           "extensionResults": [],
           "name": "1val1DOUBLE_pass",
-          "comment": "<S> { <p1> (0e0) } on { <s> <p1> 0e0 }",
+          "comment": "<S> { <p1> [0e0] } on { <s> <p1> 0e0 }",
           "status": "mf:proposed",
           "result": "1val1DOUBLE_pass.val"
         },
@@ -449,7 +494,7 @@
           },
           "extensionResults": [],
           "name": "1val1IRIREF_pass",
-          "comment": "<S> { <p1> (<v1>) } on { <s> <p1> <v1> }",
+          "comment": "<S> { <p1> [<v1>] } on { <s> <p1> <v1> }",
           "status": "mf:proposed",
           "result": "1val1IRIREF_pass.val"
         },
@@ -464,7 +509,7 @@
           },
           "extensionResults": [],
           "name": "1val1iriStemMinusiriStem3_passIv4",
-          "comment": "<S> { <p1> (<v>~-<v1>~-<v2>~-<v3>~) } on { <s> <p1> <v4> }",
+          "comment": "<S> { <p1> [<v>~-<v1>~-<v2>~-<v3>~] } on { <s> <p1> <v4> }",
           "status": "mf:proposed",
           "result": "1val1iriStemMinusiriStem3_passIv4.val"
         },
@@ -479,7 +524,7 @@
           },
           "extensionResults": [],
           "name": "1val1iriStemMinusiriStem3_passIv",
-          "comment": "<S> { <p1> (<v>~-<v1>~-<v2>~-<v3>~) } on { <s> <p1> <v> }",
+          "comment": "<S> { <p1> [<v>~-<v1>~-<v2>~-<v3>~] } on { <s> <p1> <v> }",
           "status": "mf:proposed",
           "result": "1val1iriStemMinusiriStem3_passIv.val"
         },
@@ -494,7 +539,7 @@
           },
           "extensionResults": [],
           "name": "1val1iriStemMinusiri3_passIv1a",
-          "comment": "<S> { <p1> (<v>-<v1>-<v2>-<v3>) } on { <s> <p1> <v1a> }",
+          "comment": "<S> { <p1> [<v>-<v1>-<v2>-<v3>] } on { <s> <p1> <v1a> }",
           "status": "mf:proposed",
           "result": "1val1iriStemMinusiri3_passIv1a.val"
         },
@@ -509,7 +554,7 @@
           },
           "extensionResults": [],
           "name": "1val1iriStemMinusiri3_passIv4",
-          "comment": "<S> { <p1> (<v>-<v1>-<v2>-<v3>) } on { <s> <p1> <v4> }",
+          "comment": "<S> { <p1> [<v>-<v1>-<v2>-<v3>] } on { <s> <p1> <v4> }",
           "status": "mf:proposed",
           "result": "1val1iriStemMinusiri3_passIv4.val"
         },
@@ -524,7 +569,7 @@
           },
           "extensionResults": [],
           "name": "1val1iriStemMinusiri3_passIv",
-          "comment": "<S> { <p1> (<v>-<v1>-<v2>-<v3>) } on { <s> <p1> <v> }",
+          "comment": "<S> { <p1> [<v>-<v1>-<v2>-<v3>] } on { <s> <p1> <v> }",
           "status": "mf:proposed",
           "result": "1val1iriStemMinusiri3_passIv.val"
         },
@@ -539,7 +584,7 @@
           },
           "extensionResults": [],
           "name": "1val1iriStem_passv1a",
-          "comment": "<S> { <p1> (<v1>~) } on { <s> <p1> <v1a> }",
+          "comment": "<S> { <p1> [<v1>~] } on { <s> <p1> <v1a> }",
           "status": "mf:proposed",
           "result": "1val1iriStem_passv1a.val"
         },
@@ -554,7 +599,7 @@
           },
           "extensionResults": [],
           "name": "1val1iriStem_passv1",
-          "comment": "<S> { <p1> (<v1>~) } on { <s> <p1> <v1> }",
+          "comment": "<S> { <p1> [<v1>~] } on { <s> <p1> <v1> }",
           "status": "mf:proposed",
           "result": "1val1iriStem_passv1.val"
         },
@@ -569,7 +614,7 @@
           },
           "extensionResults": [],
           "name": "1val1dotMinusiriStem3_pass",
-          "comment": "<S> { <p1> (.-<v1>~-<v2>~-<v3>~) } on { <s> <p1> <o1> }",
+          "comment": "<S> { <p1> [.-<v1>~-<v2>~-<v3>~] } on { <s> <p1> <o1> }",
           "status": "mf:proposed",
           "result": "1val1dotMinusiriStem3_pass.val"
         },
@@ -584,7 +629,7 @@
           },
           "extensionResults": [],
           "name": "1val1dotMinusiri3_pass",
-          "comment": "<S> { <p1> (.-<v1>-<v2>-<v3>) } on { <s> <p1> <o1> }",
+          "comment": "<S> { <p1> [.-<v1>-<v2>-<v3>] } on { <s> <p1> <o1> }",
           "status": "mf:proposed",
           "result": "1val1dotMinusiri3_pass.val"
         },
@@ -722,51 +767,6 @@
           "comment": "<n2> in { <n1> <p1> X . <n2> <p2> <n1> } as <S1> in <S1> { <p2> @<S2> } <S2> { <p1> X }",
           "status": "mf:proposed",
           "result": "In2_Ip2_In1@In1_Ip1_LX.val"
-        },
-        {
-          "@id": "#1val2IRIREFExtra1_bnode",
-          "@type": "sht:ValidationTest",
-          "action": {
-            "schema": "../schemas/1val2IRIREFExtra1.shex",
-            "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_Io1,Bo2.ttl",
-            "focus": "http://a.example/s1"
-          },
-          "extensionResults": [],
-          "name": "1val2IRIREFExtra1_bnode",
-          "comment": "<S> EXTRA <p1> { <p1> (<o1> <o2> } on { <s> <p1> <o1>, _:o2 }",
-          "status": "mf:proposed",
-          "result": "1val2IRIREFExtra1_bnode_Is1_Ip1_Io1.val"
-        },
-        {
-          "@id": "#1val1IRIREFExtra1_iri",
-          "@type": "sht:ValidationTest",
-          "action": {
-            "schema": "../schemas/1val1IRIREFExtra1.shex",
-            "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_Io1,Io2.ttl",
-            "focus": "http://a.example/s1"
-          },
-          "extensionResults": [],
-          "name": "1val1IRIREFExtra1_iri",
-          "comment": "<S> EXTRA <p1> { <p1> (<o1>) } on { <s> <p1> <o1>, <o2> }",
-          "status": "mf:proposed",
-          "result": "1val1IRIREFExtra1bnode_Is1_Ip1_Io1.val"
-        },
-        {
-          "@id": "#1dotClosed_pass",
-          "@type": "sht:ValidationTest",
-          "action": {
-            "schema": "../schemas/1dotClosed.shex",
-            "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_Io1.ttl",
-            "focus": "http://a.example/s1"
-          },
-          "extensionResults": [],
-          "name": "1dotClosed_pass",
-          "comment": "<S> CLOSED { <p1> . } on { <s> <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "1dot_pass.val"
         },
         {
           "@id": "#1nonliteralPattern_pass-bnode-match",
@@ -3987,6 +3987,48 @@
           "status": "mf:proposed"
         },
         {
+          "@id": "#1val2IRIREFExtra1_iri",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1val2IRIREFExtra1.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1,Io2.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val2IRIREFExtra1_iri",
+          "comment": "<S> EXTRA <p1> { <p1> [<o1> <o2>] } on { <s> <p1> <o1>, <o2> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1dotClosed_fail_higher",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1dotClosed.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1;Ip2_Io2.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1dotClosed_fail_higher",
+          "comment": "<S> { <p1> . } on { <s> <p1> <o1>; <p2> <o2> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1dotClosed_fail_lower",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1dotClosed.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip0_Io0;Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1dotClosed_fail_lower",
+          "comment": "<S> { <p1> . } on { <s> <p1> <o1>; <p1> <o1> }",
+          "status": "mf:proposed"
+        },
+        {
           "@id": "#1val1vExprOR3_fail",
           "@type": "sht:ValidationFailure",
           "action": {
@@ -4015,17 +4057,17 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#1val1vExprORRef3_fail",
+          "@id": "#1inversedot_fail-missing",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/1val1vExprORRef3.shex",
+            "schema": "../schemas/1inversedot.shex",
             "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_La.ttl",
-            "focus": "http://a.example/s1"
+            "data": "Is1_Ip2_Io1.ttl",
+            "focus": "http://a.example/o1"
           },
           "extensionResults": [],
-          "name": "1val1vExprORRef3_fail",
-          "comment": "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> OR ... $<vc3> } on { <s1> <p1> 'a' }",
+          "name": "1inversedot_fail-missing",
+          "comment": "<S> { <p1> . } on { <s> <p2> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -4043,31 +4085,32 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#1val1vExprAND3_failvc2",
+          "@id": "#1val2IRIREFExtra1_bnode",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1val2IRIREFExtra1.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1,Bo2.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val2IRIREFExtra1_bnode",
+          "comment": "<S> EXTRA <p1> { <p1> [<o1> <o2>] on { <s> <p1> <o1>, _:o2 }",
+          "status": "mf:proposed",
+          "result": "1val2IRIREFExtra1_bnode_Is1_Ip1_Io1.val"
+        },
+        {
+          "@id": "#1val1vExprAND3_failvc1",
           "@type": "sht:ValidationFailure",
           "action": {
             "schema": "../schemas/1val1vExprAND3.shex",
             "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_Lababab.ttl",
+            "data": "Is1_Ip1_Lab.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1val1vExprAND3_failvc2",
-          "comment": "<S> { <p1> MINLENGTH 4 AND MAXLENGTH 5 AND ~ '^(ab)+' } on { <s1> <p1> 'ababab' }",
-          "status": "mf:proposed"
-        },
-        {
-          "@id": "#1inversedot_fail-missing",
-          "@type": "sht:ValidationFailure",
-          "action": {
-            "schema": "../schemas/1inversedot.shex",
-            "shape": "http://a.example/S1",
-            "data": "Is1_Ip2_Io1.ttl",
-            "focus": "http://a.example/o1"
-          },
-          "extensionResults": [],
-          "name": "1inversedot_fail-missing",
-          "comment": "<S> { <p1> . } on { <s> <p2> <o1> }",
+          "name": "1val1vExprAND3_failvc1",
+          "comment": "<S> { <p1> MINLENGTH 4 AND MAXLENGTH 5 AND ~ '^(ab)+' } on { <s1> <p1> 'ab' }",
           "status": "mf:proposed"
         },
         {
@@ -4085,19 +4128,18 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#1val1vExprOR3_passvc1vc2vc3",
-          "@type": "sht:ValidationTest",
+          "@id": "#1val1vExprRefAND3_failvc2",
+          "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/1val1vExprOR3.shex",
+            "schema": "../schemas/1val1vExprRefAND3.shex",
             "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_Labcdef.ttl",
+            "data": "Is1_Ip1_Lababab.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1val1vExprOR3_passvc1vc2vc3",
-          "comment": "<S> { <p1> ~'^ab' OR ~'cd' OR ~'ef$' } on { <s1> <p1> 'abcdef' }",
-          "status": "mf:proposed",
-          "result": "1val1vExprOR3_passvr1vr2vr3.val"
+          "name": "1val1vExprRefAND3_failvc2",
+          "comment": "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> AND ... $<vc3> } on { <s1> <p1> 'ababab' }",
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1vExprRefAND3_failvc3",
@@ -4166,7 +4208,7 @@
           },
           "extensionResults": [],
           "name": "1val1LANGTAG_LaLTen-fr",
-          "comment": "<S> { <p1> ('ab'@en-fr) } on { <s> <p1> 'a'@en-fr }",
+          "comment": "<S> { <p1> ['ab'@en-fr] } on { <s> <p1> 'a'@en-fr }",
           "status": "mf:proposed"
         },
         {
@@ -4180,7 +4222,7 @@
           },
           "extensionResults": [],
           "name": "1val1LANGTAG_LabLTen-fr-jura",
-          "comment": "<S> { <p1> ('ab'@en-fr) } on { <s> <p1> 'ab'@en-fr-jura }",
+          "comment": "<S> { <p1> ['ab'@en-fr] } on { <s> <p1> 'ab'@en-fr-jura }",
           "status": "mf:proposed"
         },
         {
@@ -4194,7 +4236,7 @@
           },
           "extensionResults": [],
           "name": "1val1LANGTAG_LabLTen",
-          "comment": "<S> { <p1> ('ab'@en-fr) } on { <s> <p1> 'ab'@en }",
+          "comment": "<S> { <p1> ['ab'@en-fr] } on { <s> <p1> 'ab'@en }",
           "status": "mf:proposed"
         },
         {
@@ -4208,7 +4250,7 @@
           },
           "extensionResults": [],
           "name": "1val1LANGTAG_Lab",
-          "comment": "<S> { <p1> ('ab'@en-fr) } on { <s> <p1> 'ab' }",
+          "comment": "<S> { <p1> ['ab'@en-fr] } on { <s> <p1> 'ab' }",
           "status": "mf:proposed"
         },
         {
@@ -4222,7 +4264,7 @@
           },
           "extensionResults": [],
           "name": "1val1IRIREFDatatype_LaDTbloodType",
-          "comment": "<S> { <p1> ('ab'^^my:bloodType) } on { <s> <p1> 'a'^^my:bloodType }",
+          "comment": "<S> { <p1> ['ab'^^my:bloodType] } on { <s> <p1> 'a'^^my:bloodType }",
           "status": "mf:proposed"
         },
         {
@@ -4236,7 +4278,7 @@
           },
           "extensionResults": [],
           "name": "1val1IRIREFDatatype_LabDTbloodType999",
-          "comment": "<S> { <p1> ('ab'^^my:bloodType) } on { <s> <p1> 'ab'^^my:bloodType999 }",
+          "comment": "<S> { <p1> ['ab'^^my:bloodType] } on { <s> <p1> 'ab'^^my:bloodType999 }",
           "status": "mf:proposed"
         },
         {
@@ -4250,7 +4292,7 @@
           },
           "extensionResults": [],
           "name": "1val1IRIREFDatatype_Lab",
-          "comment": "<S> { <p1> ('ab'^^my:bloodType) } on { <s> <p1> 'ab' }",
+          "comment": "<S> { <p1> ['ab'^^my:bloodType] } on { <s> <p1> 'ab' }",
           "status": "mf:proposed"
         },
         {
@@ -4264,7 +4306,7 @@
           },
           "extensionResults": [],
           "name": "1val1INTEGER_Lab",
-          "comment": "<S> { <p1> (0) } on { <s> <p1> 'ab' }",
+          "comment": "<S> { <p1> [0] } on { <s> <p1> 'ab' }",
           "status": "mf:proposed"
         },
         {
@@ -4278,7 +4320,7 @@
           },
           "extensionResults": [],
           "name": "1val1INTEGER_00",
-          "comment": "<S> { <p1> (0) } on { <s> <p1> 00 }",
+          "comment": "<S> { <p1> [0] } on { <s> <p1> 00 }",
           "status": "mf:proposed"
         },
         {
@@ -4292,7 +4334,7 @@
           },
           "extensionResults": [],
           "name": "1val1false_ab",
-          "comment": "<S> { <p1> (false) } on { <s> <p1> ab }",
+          "comment": "<S> { <p1> [false] } on { <s> <p1> ab }",
           "status": "mf:proposed"
         },
         {
@@ -4306,7 +4348,7 @@
           },
           "extensionResults": [],
           "name": "1val1false_true",
-          "comment": "<S> { <p1> (false) } on { <s> <p1> false }",
+          "comment": "<S> { <p1> [false] } on { <s> <p1> false }",
           "status": "mf:proposed"
         },
         {
@@ -4320,7 +4362,7 @@
           },
           "extensionResults": [],
           "name": "1val1true_ab",
-          "comment": "<S> { <p1> (true) } on { <s> <p1> ab }",
+          "comment": "<S> { <p1> [true] } on { <s> <p1> ab }",
           "status": "mf:proposed"
         },
         {
@@ -4334,7 +4376,7 @@
           },
           "extensionResults": [],
           "name": "1val1true_false",
-          "comment": "<S> { <p1> (true) } on { <s> <p1> false }",
+          "comment": "<S> { <p1> [true] } on { <s> <p1> false }",
           "status": "mf:proposed"
         },
         {
@@ -4348,7 +4390,7 @@
           },
           "extensionResults": [],
           "name": "1val1DOUBLElowercase_0_0e0",
-          "comment": "<S> { <p1> (0e0) } on { <s> <p1> 0e0.0 }",
+          "comment": "<S> { <p1> [0e0] } on { <s> <p1> 0e0.0 }",
           "status": "mf:proposed"
         },
         {
@@ -4362,7 +4404,7 @@
           },
           "extensionResults": [],
           "name": "1val1DOUBLE_0_0e0",
-          "comment": "<S> { <p1> (0e0) } on { <s> <p1> 0e0.0 }",
+          "comment": "<S> { <p1> [0e0] } on { <s> <p1> 0e0.0 }",
           "status": "mf:proposed"
         },
         {
@@ -4376,7 +4418,7 @@
           },
           "extensionResults": [],
           "name": "1val1IRIREF_v2",
-          "comment": "<S> { <p1> (<v1>) } on { <s> <p1> <v2> }",
+          "comment": "<S> { <p1> [<v1>] } on { <s> <p1> <v2> }",
           "status": "mf:proposed"
         },
         {
@@ -4390,7 +4432,7 @@
           },
           "extensionResults": [],
           "name": "1val1iriStemMinusiriStem3_v1a",
-          "comment": "<S> { <p1> (<v>~-<v1>~-<v2>~-<v3>~) } on { <s1> <p1> <v1a> }",
+          "comment": "<S> { <p1> [<v>~-<v1>~-<v2>~-<v3>~] } on { <s1> <p1> <v1a> }",
           "status": "mf:proposed"
         },
         {
@@ -4404,7 +4446,7 @@
           },
           "extensionResults": [],
           "name": "1val1iriStemMinusiriStem3_v3",
-          "comment": "<S> { <p1> (<v>~-<v1>~-<v2>~-<v3>~) } on { <s> <p1> <v3> }",
+          "comment": "<S> { <p1> [<v>~-<v1>~-<v2>~-<v3>~] } on { <s> <p1> <v3> }",
           "status": "mf:proposed"
         },
         {
@@ -4418,7 +4460,7 @@
           },
           "extensionResults": [],
           "name": "1val1iriStemMinusiriStem3_v2",
-          "comment": "<S> { <p1> (<v>~-<v1>~-<v2>~-<v3>~) } on { <s1> <p1> <v2> }",
+          "comment": "<S> { <p1> [<v>~-<v1>~-<v2>~-<v3>~] } on { <s1> <p1> <v2> }",
           "status": "mf:proposed"
         },
         {
@@ -4432,7 +4474,7 @@
           },
           "extensionResults": [],
           "name": "1val1iriStemMinusiriStem3_v1",
-          "comment": "<S> { <p1> (<v>~-<v1>~-<v2>~-<v3>~) } on { <s1> <p1> <v1> }",
+          "comment": "<S> { <p1> [<v>~-<v1>~-<v2>~-<v3>~] } on { <s1> <p1> <v1> }",
           "status": "mf:proposed"
         },
         {
@@ -4446,7 +4488,7 @@
           },
           "extensionResults": [],
           "name": "1val1iriStemMinusiri3_v3",
-          "comment": "<S> { <p1> (<v>-<v1>-<v2>-<v3>) } on { <s> <p1> <v3> }",
+          "comment": "<S> { <p1> [<v>-<v1>-<v2>-<v3>] } on { <s> <p1> <v3> }",
           "status": "mf:proposed"
         },
         {
@@ -4460,7 +4502,7 @@
           },
           "extensionResults": [],
           "name": "1val1iriStemMinusiri3_v2",
-          "comment": "<S> { <p1> (<v>-<v1>-<v2>-<v3>) } on { <s1> <p1> <v2> }",
+          "comment": "<S> { <p1> [<v>-<v1>-<v2>-<v3>] } on { <s1> <p1> <v2> }",
           "status": "mf:proposed"
         },
         {
@@ -4474,7 +4516,7 @@
           },
           "extensionResults": [],
           "name": "1val1iriStemMinusiri3_v1",
-          "comment": "<S> { <p1> (<v>-<v1>-<v2>-<v3>) } on { <s1> <p1> <v1> }",
+          "comment": "<S> { <p1> [<v>-<v1>-<v2>-<v3>] } on { <s1> <p1> <v1> }",
           "status": "mf:proposed"
         },
         {
@@ -4488,7 +4530,7 @@
           },
           "extensionResults": [],
           "name": "1val1iriStem_fail",
-          "comment": "<S> { <p1> (<v1>~) } on { <s1> <p1> <> }",
+          "comment": "<S> { <p1> [<v1>~] } on { <s1> <p1> <> }",
           "status": "mf:proposed"
         },
         {
@@ -4502,7 +4544,7 @@
           },
           "extensionResults": [],
           "name": "1val1dotMinusiriStem3_v1a",
-          "comment": "<S> { <p1> (.-<v1>~-<v2>~-<v3>~) } on { <s1> <p1> <v1a> }",
+          "comment": "<S> { <p1> [.-<v1>~-<v2>~-<v3>~] } on { <s1> <p1> <v1a> }",
           "status": "mf:proposed"
         },
         {
@@ -4516,7 +4558,7 @@
           },
           "extensionResults": [],
           "name": "1val1dotMinusiriStem3_v3",
-          "comment": "<S> { <p1> (.-<v1>~-<v2>~-<v3>~) } on { <s> <p1> <v3> }",
+          "comment": "<S> { <p1> [.-<v1>~-<v2>~-<v3>~] } on { <s> <p1> <v3> }",
           "status": "mf:proposed"
         },
         {
@@ -4530,7 +4572,7 @@
           },
           "extensionResults": [],
           "name": "1val1dotMinusiriStem3_v2",
-          "comment": "<S> { <p1> (.-<v1>~-<v2>~-<v3>~) } on { <s1> <p1> <v2> }",
+          "comment": "<S> { <p1> [.-<v1>~-<v2>~-<v3>~] } on { <s1> <p1> <v2> }",
           "status": "mf:proposed"
         },
         {
@@ -4544,7 +4586,7 @@
           },
           "extensionResults": [],
           "name": "1val1dotMinusiriStem3_v1",
-          "comment": "<S> { <p1> (.-<v1>~-<v2>~-<v3>~) } on { <s1> <p1> <v1> }",
+          "comment": "<S> { <p1> [.-<v1>~-<v2>~-<v3>~] } on { <s1> <p1> <v1> }",
           "status": "mf:proposed"
         },
         {
@@ -4558,7 +4600,7 @@
           },
           "extensionResults": [],
           "name": "1val1dotMinusiri3_v3",
-          "comment": "<S> { <p1> (.-<v1>-<v2>-<v3>) } on { <s> <p1> <v3> }",
+          "comment": "<S> { <p1> [.-<v1>-<v2>-<v3>] } on { <s> <p1> <v3> }",
           "status": "mf:proposed"
         },
         {
@@ -4572,7 +4614,7 @@
           },
           "extensionResults": [],
           "name": "1val1dotMinusiri3_v2",
-          "comment": "<S> { <p1> (.-<v1>-<v2>-<v3>) } on { <s1> <p1> <v2> }",
+          "comment": "<S> { <p1> [.-<v1>-<v2>-<v3>] } on { <s1> <p1> <v2> }",
           "status": "mf:proposed"
         },
         {
@@ -4586,7 +4628,7 @@
           },
           "extensionResults": [],
           "name": "1val1dotMinusiri3_v1",
-          "comment": "<S> { <p1> (.-<v1>-<v2>-<v3>) } on { <s1> <p1> <v1> }",
+          "comment": "<S> { <p1> [.-<v1>-<v2>-<v3>] } on { <s1> <p1> <v1> }",
           "status": "mf:proposed"
         },
         {
@@ -4699,62 +4741,6 @@
           "extensionResults": [],
           "name": "1dotRef1_missingReferent",
           "comment": "<n2> in { <n2> <p2> <n1> } as <S1> in <S1> { <p2> @<S2> } <S2> { <p1> X }",
-          "status": "mf:proposed"
-        },
-        {
-          "@id": "#1val2IRIREFExtra1_iri",
-          "@type": "sht:ValidationFailure",
-          "action": {
-            "schema": "../schemas/1val2IRIREFExtra1.shex",
-            "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_Io1,Io2.ttl",
-            "focus": "http://a.example/s1"
-          },
-          "extensionResults": [],
-          "name": "1val2IRIREFExtra1_iri",
-          "comment": "<S> EXTRA <p1> { <p1> (<o1> <o2>) } on { <s> <p1> <o1>, <o2> }",
-          "status": "mf:proposed"
-        },
-        {
-          "@id": "#1literalPlus_Is1_Ip1_La,Io1",
-          "@type": "sht:ValidationFailure",
-          "action": {
-            "schema": "../schemas/1literalPlus.shex",
-            "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_La,Io1.ttl",
-            "focus": "http://a.example/s1"
-          },
-          "extensionResults": [],
-          "name": "1literalPlus_Is1_Ip1_La,Io1",
-          "comment": "<S> { <p1> LITERAL+ } on { <s> <p1> 'a', <o2> }",
-          "status": "mf:proposed"
-        },
-        {
-          "@id": "#1dotClosed_fail_higher",
-          "@type": "sht:ValidationFailure",
-          "action": {
-            "schema": "../schemas/1dotClosed.shex",
-            "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_Io1;Ip2_Io2.ttl",
-            "focus": "http://a.example/s1"
-          },
-          "extensionResults": [],
-          "name": "1dotClosed_fail_higher",
-          "comment": "<S> { <p1> . } on { <s> <p1> <o1>; <p2> <o2> }",
-          "status": "mf:proposed"
-        },
-        {
-          "@id": "#1dotClosed_fail_lower",
-          "@type": "sht:ValidationFailure",
-          "action": {
-            "schema": "../schemas/1dotClosed.shex",
-            "shape": "http://a.example/S1",
-            "data": "Is1_Ip0_Io0;Ip1_Io1.ttl",
-            "focus": "http://a.example/s1"
-          },
-          "extensionResults": [],
-          "name": "1dotClosed_fail_lower",
-          "comment": "<S> { <p1> . } on { <s> <p1> <o1>; <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -7373,6 +7359,20 @@
           "extensionResults": [],
           "name": "1datatype_missing",
           "comment": "<S> { <p1> <dt1> } on <s> in { <s> <p2> <o1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1literalPlus_Is1_Ip1_La,Io1",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1literalPlus.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_La,Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalPlus_Is1_Ip1_La,Io1",
+          "comment": "<S> { <p1> LITERAL+ } on { <s> <p1> 'a', <o2> }",
           "status": "mf:proposed"
         },
         {

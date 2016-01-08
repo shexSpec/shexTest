@@ -100,6 +100,9 @@
         <#1cardStar_pass2>
         <#1cardStar_pass6>
 
+        # node kinds
+        <#1literalPlus_Is1_Ip1_La,Io1>
+
         # datatype
         <#1datatype_missing>
         <#1datatype_nonLiteral>
@@ -459,19 +462,6 @@
 	<#1nonliteralPattern_fail-bnode-short>
 	<#1nonliteralPattern_fail-bnode-long>
 
-        # closed
-        <#1dotClosed_pass>
-        <#1dotClosed_fail_lower>
-        <#1dotClosed_fail_higher>
-
-        # node kinds
-        <#1literalPlus_Is1_Ip1_La,Io1>
-
-        # extra
-        <#1val1IRIREFExtra1_iri>
-        <#1val2IRIREFExtra1_iri>
-        <#1val2IRIREFExtra1_bnode>
-
         # shape reference
         <#1dotRef1_referent,referrer>
         <#1dotRef1_referrer,referent>
@@ -593,6 +583,18 @@
         <#1val1vExprOR3_passvc2>
         <#1val1vExprOR3_passvc3>
         <#1val1vExprOR3_passvc1vc2vc3>
+
+        # closed
+        <#1dotClosed_pass>
+        <#1dotClosed_fail_lower>
+        <#1dotClosed_fail_higher>
+
+        # extra
+        <#1val1IRIREFExtra1_iri>
+        <#1val2IRIREFExtra1_iri>
+        <#1val2IRIREFExtra1_bnode>
+
+	# start
 
         # <#*Inherit*>
         # <#*Inline*>
@@ -1739,6 +1741,21 @@
     .
 
 # } cardinality
+# node kinds {
+
+<#1literalPlus_Is1_Ip1_La,Io1> a sht:ValidationFailure ;
+    mf:name "1literalPlus_Is1_Ip1_La,Io1" ;
+    rdfs:comment "<S> { <p1> LITERAL+ } on { <s> <p1> 'a', <o2> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalPlus.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_La,Io1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+# } node kinds
 # datatype {
 
 <#1datatype_missing> a sht:ValidationFailure ;
@@ -6332,102 +6349,6 @@
 
 #   } pattern
 # } facets
-# closed {
-
-<#1dotClosed_pass> a sht:ValidationTest ;
-    mf:name "1dotClosed_pass" ;
-    rdfs:comment "<S> CLOSED { <p1> . } on { <s> <p1> <o1> }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1dotClosed.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_Io1.ttl> ;
-      sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1dot_pass.val>
-    .
-
-<#1dotClosed_fail_lower> a sht:ValidationFailure ;
-    mf:name "1dotClosed_fail_lower" ;
-    rdfs:comment "<S> { <p1> . } on { <s> <p1> <o1>; <p1> <o1> }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1dotClosed.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip0_Io0;Ip1_Io1.ttl> ;
-      sht:focus <http://a.example/s1>
-    ]
-    .
-
-<#1dotClosed_fail_higher> a sht:ValidationFailure ;
-    mf:name "1dotClosed_fail_higher" ;
-    rdfs:comment "<S> { <p1> . } on { <s> <p1> <o1>; <p2> <o2> }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1dotClosed.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_Io1;Ip2_Io2.ttl> ;
-      sht:focus <http://a.example/s1>
-    ]
-    .
-
-# } closed
-# node kinds {
-
-<#1literalPlus_Is1_Ip1_La,Io1> a sht:ValidationFailure ;
-    mf:name "1literalPlus_Is1_Ip1_La,Io1" ;
-    rdfs:comment "<S> { <p1> LITERAL+ } on { <s> <p1> 'a', <o2> }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1literalPlus.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_La,Io1.ttl> ;
-      sht:focus <http://a.example/s1>
-    ]
-    .
-
-# } node kinds
-# extra {
-
-<#1val1IRIREFExtra1_iri> a sht:ValidationTest ;
-    mf:name "1val1IRIREFExtra1_iri" ;
-    rdfs:comment "<S> EXTRA <p1> { <p1> (<o1>) } on { <s> <p1> <o1>, <o2> }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1val1IRIREFExtra1.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_Io1,Io2.ttl> ;
-      sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1IRIREFExtra1bnode_Is1_Ip1_Io1.val>
-    .
-
-<#1val2IRIREFExtra1_iri> a sht:ValidationFailure ;
-    mf:name "1val2IRIREFExtra1_iri" ;
-    rdfs:comment "<S> EXTRA <p1> { <p1> (<o1> <o2>) } on { <s> <p1> <o1>, <o2> }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1val2IRIREFExtra1.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_Io1,Io2.ttl> ;
-      sht:focus <http://a.example/s1>
-    ]
-    .
-
-<#1val2IRIREFExtra1_bnode> a sht:ValidationTest ;
-    mf:name "1val2IRIREFExtra1_bnode" ;
-    rdfs:comment "<S> EXTRA <p1> { <p1> (<o1> <o2> } on { <s> <p1> <o1>, _:o2 }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1val2IRIREFExtra1.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_Io1,Bo2.ttl> ;
-      sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val2IRIREFExtra1_bnode_Is1_Ip1_Io1.val>
-    .
-
-# } extra
 # shape reference {
 
 <#1dotRef1_referent,referrer> a sht:ValidationTest ;
@@ -6652,7 +6573,7 @@
 
 <#1val1dotMinusiri3_pass> a sht:ValidationTest ;
     mf:name "1val1dotMinusiri3_pass" ;
-    rdfs:comment "<S> { <p1> (.-<v1>-<v2>-<v3>) } on { <s> <p1> <o1> }" ;
+    rdfs:comment "<S> { <p1> [.-<v1>-<v2>-<v3>] } on { <s> <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1dotMinusiri3.shex> ;
@@ -6665,7 +6586,7 @@
 
 <#1val1dotMinusiri3_v1> a sht:ValidationFailure ;
     mf:name "1val1dotMinusiri3_v1" ;
-    rdfs:comment "<S> { <p1> (.-<v1>-<v2>-<v3>) } on { <s1> <p1> <v1> }" ;
+    rdfs:comment "<S> { <p1> [.-<v1>-<v2>-<v3>] } on { <s1> <p1> <v1> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1dotMinusiri3.shex> ;
@@ -6677,7 +6598,7 @@
 
 <#1val1dotMinusiri3_v2> a sht:ValidationFailure ;
     mf:name "1val1dotMinusiri3_v2" ;
-    rdfs:comment "<S> { <p1> (.-<v1>-<v2>-<v3>) } on { <s1> <p1> <v2> }" ;
+    rdfs:comment "<S> { <p1> [.-<v1>-<v2>-<v3>] } on { <s1> <p1> <v2> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1dotMinusiri3.shex> ;
@@ -6689,7 +6610,7 @@
 
 <#1val1dotMinusiri3_v3> a sht:ValidationFailure ;
     mf:name "1val1dotMinusiri3_v3" ;
-    rdfs:comment "<S> { <p1> (.-<v1>-<v2>-<v3>) } on { <s> <p1> <v3> }" ;
+    rdfs:comment "<S> { <p1> [.-<v1>-<v2>-<v3>] } on { <s> <p1> <v3> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1dotMinusiri3.shex> ;
@@ -6701,7 +6622,7 @@
 
 <#1val1dotMinusiriStem3_pass> a sht:ValidationTest ;
     mf:name "1val1dotMinusiriStem3_pass" ;
-    rdfs:comment "<S> { <p1> (.-<v1>~-<v2>~-<v3>~) } on { <s> <p1> <o1> }" ;
+    rdfs:comment "<S> { <p1> [.-<v1>~-<v2>~-<v3>~] } on { <s> <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1dotMinusiriStem3.shex> ;
@@ -6714,7 +6635,7 @@
 
 <#1val1dotMinusiriStem3_v1> a sht:ValidationFailure ;
     mf:name "1val1dotMinusiriStem3_v1" ;
-    rdfs:comment "<S> { <p1> (.-<v1>~-<v2>~-<v3>~) } on { <s1> <p1> <v1> }" ;
+    rdfs:comment "<S> { <p1> [.-<v1>~-<v2>~-<v3>~] } on { <s1> <p1> <v1> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1dotMinusiriStem3.shex> ;
@@ -6726,7 +6647,7 @@
 
 <#1val1dotMinusiriStem3_v2> a sht:ValidationFailure ;
     mf:name "1val1dotMinusiriStem3_v2" ;
-    rdfs:comment "<S> { <p1> (.-<v1>~-<v2>~-<v3>~) } on { <s1> <p1> <v2> }" ;
+    rdfs:comment "<S> { <p1> [.-<v1>~-<v2>~-<v3>~] } on { <s1> <p1> <v2> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1dotMinusiriStem3.shex> ;
@@ -6738,7 +6659,7 @@
 
 <#1val1dotMinusiriStem3_v3> a sht:ValidationFailure ;
     mf:name "1val1dotMinusiriStem3_v3" ;
-    rdfs:comment "<S> { <p1> (.-<v1>~-<v2>~-<v3>~) } on { <s> <p1> <v3> }" ;
+    rdfs:comment "<S> { <p1> [.-<v1>~-<v2>~-<v3>~] } on { <s> <p1> <v3> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1dotMinusiriStem3.shex> ;
@@ -6750,7 +6671,7 @@
 
 <#1val1dotMinusiriStem3_v1a> a sht:ValidationFailure ;
     mf:name "1val1dotMinusiriStem3_v1a" ;
-    rdfs:comment "<S> { <p1> (.-<v1>~-<v2>~-<v3>~) } on { <s1> <p1> <v1a> }" ;
+    rdfs:comment "<S> { <p1> [.-<v1>~-<v2>~-<v3>~] } on { <s1> <p1> <v1a> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1dotMinusiriStem3.shex> ;
@@ -6762,7 +6683,7 @@
 
 <#1val1iriStem_passv1> a sht:ValidationTest ;
     mf:name "1val1iriStem_passv1" ;
-    rdfs:comment "<S> { <p1> (<v1>~) } on { <s> <p1> <v1> }" ;
+    rdfs:comment "<S> { <p1> [<v1>~] } on { <s> <p1> <v1> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1iriStem.shex> ;
@@ -6775,7 +6696,7 @@
 
 <#1val1iriStem_passv1a> a sht:ValidationTest ;
     mf:name "1val1iriStem_passv1a" ;
-    rdfs:comment "<S> { <p1> (<v1>~) } on { <s> <p1> <v1a> }" ;
+    rdfs:comment "<S> { <p1> [<v1>~] } on { <s> <p1> <v1a> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1iriStem.shex> ;
@@ -6788,7 +6709,7 @@
 
 <#1val1iriStem_fail> a sht:ValidationFailure ;
     mf:name "1val1iriStem_fail" ;
-    rdfs:comment "<S> { <p1> (<v1>~) } on { <s1> <p1> <> }" ;
+    rdfs:comment "<S> { <p1> [<v1>~] } on { <s1> <p1> <> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1iriStem.shex> ;
@@ -6800,7 +6721,7 @@
 
 <#1val1iriStemMinusiri3_passIv> a sht:ValidationTest ;
     mf:name "1val1iriStemMinusiri3_passIv" ;
-    rdfs:comment "<S> { <p1> (<v>-<v1>-<v2>-<v3>) } on { <s> <p1> <v> }" ;
+    rdfs:comment "<S> { <p1> [<v>-<v1>-<v2>-<v3>] } on { <s> <p1> <v> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1iriStemMinusiri3.shex> ;
@@ -6813,7 +6734,7 @@
 
 <#1val1iriStemMinusiri3_passIv4> a sht:ValidationTest ;
     mf:name "1val1iriStemMinusiri3_passIv4" ;
-    rdfs:comment "<S> { <p1> (<v>-<v1>-<v2>-<v3>) } on { <s> <p1> <v4> }" ;
+    rdfs:comment "<S> { <p1> [<v>-<v1>-<v2>-<v3>] } on { <s> <p1> <v4> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1iriStemMinusiri3.shex> ;
@@ -6826,7 +6747,7 @@
 
 <#1val1iriStemMinusiri3_v1> a sht:ValidationFailure ;
     mf:name "1val1iriStemMinusiri3_v1" ;
-    rdfs:comment "<S> { <p1> (<v>-<v1>-<v2>-<v3>) } on { <s1> <p1> <v1> }" ;
+    rdfs:comment "<S> { <p1> [<v>-<v1>-<v2>-<v3>] } on { <s1> <p1> <v1> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1iriStemMinusiri3.shex> ;
@@ -6838,7 +6759,7 @@
 
 <#1val1iriStemMinusiri3_v2> a sht:ValidationFailure ;
     mf:name "1val1iriStemMinusiri3_v2" ;
-    rdfs:comment "<S> { <p1> (<v>-<v1>-<v2>-<v3>) } on { <s1> <p1> <v2> }" ;
+    rdfs:comment "<S> { <p1> [<v>-<v1>-<v2>-<v3>] } on { <s1> <p1> <v2> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1iriStemMinusiri3.shex> ;
@@ -6850,7 +6771,7 @@
 
 <#1val1iriStemMinusiri3_v3> a sht:ValidationFailure ;
     mf:name "1val1iriStemMinusiri3_v3" ;
-    rdfs:comment "<S> { <p1> (<v>-<v1>-<v2>-<v3>) } on { <s> <p1> <v3> }" ;
+    rdfs:comment "<S> { <p1> [<v>-<v1>-<v2>-<v3>] } on { <s> <p1> <v3> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1iriStemMinusiri3.shex> ;
@@ -6862,7 +6783,7 @@
 
 <#1val1iriStemMinusiri3_passIv1a> a sht:ValidationTest ;
     mf:name "1val1iriStemMinusiri3_passIv1a" ;
-    rdfs:comment "<S> { <p1> (<v>-<v1>-<v2>-<v3>) } on { <s> <p1> <v1a> }" ;
+    rdfs:comment "<S> { <p1> [<v>-<v1>-<v2>-<v3>] } on { <s> <p1> <v1a> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1iriStemMinusiri3.shex> ;
@@ -6875,7 +6796,7 @@
 
 <#1val1iriStemMinusiriStem3_passIv> a sht:ValidationTest ;
     mf:name "1val1iriStemMinusiriStem3_passIv" ;
-    rdfs:comment "<S> { <p1> (<v>~-<v1>~-<v2>~-<v3>~) } on { <s> <p1> <v> }" ;
+    rdfs:comment "<S> { <p1> [<v>~-<v1>~-<v2>~-<v3>~] } on { <s> <p1> <v> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1iriStemMinusiriStem3.shex> ;
@@ -6888,7 +6809,7 @@
 
 <#1val1iriStemMinusiriStem3_passIv4> a sht:ValidationTest ;
     mf:name "1val1iriStemMinusiriStem3_passIv4" ;
-    rdfs:comment "<S> { <p1> (<v>~-<v1>~-<v2>~-<v3>~) } on { <s> <p1> <v4> }" ;
+    rdfs:comment "<S> { <p1> [<v>~-<v1>~-<v2>~-<v3>~] } on { <s> <p1> <v4> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1iriStemMinusiriStem3.shex> ;
@@ -6901,7 +6822,7 @@
 
 <#1val1iriStemMinusiriStem3_v1> a sht:ValidationFailure ;
     mf:name "1val1iriStemMinusiriStem3_v1" ;
-    rdfs:comment "<S> { <p1> (<v>~-<v1>~-<v2>~-<v3>~) } on { <s1> <p1> <v1> }" ;
+    rdfs:comment "<S> { <p1> [<v>~-<v1>~-<v2>~-<v3>~] } on { <s1> <p1> <v1> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1iriStemMinusiriStem3.shex> ;
@@ -6913,7 +6834,7 @@
 
 <#1val1iriStemMinusiriStem3_v2> a sht:ValidationFailure ;
     mf:name "1val1iriStemMinusiriStem3_v2" ;
-    rdfs:comment "<S> { <p1> (<v>~-<v1>~-<v2>~-<v3>~) } on { <s1> <p1> <v2> }" ;
+    rdfs:comment "<S> { <p1> [<v>~-<v1>~-<v2>~-<v3>~] } on { <s1> <p1> <v2> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1iriStemMinusiriStem3.shex> ;
@@ -6925,7 +6846,7 @@
 
 <#1val1iriStemMinusiriStem3_v3> a sht:ValidationFailure ;
     mf:name "1val1iriStemMinusiriStem3_v3" ;
-    rdfs:comment "<S> { <p1> (<v>~-<v1>~-<v2>~-<v3>~) } on { <s> <p1> <v3> }" ;
+    rdfs:comment "<S> { <p1> [<v>~-<v1>~-<v2>~-<v3>~] } on { <s> <p1> <v3> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1iriStemMinusiriStem3.shex> ;
@@ -6937,7 +6858,7 @@
 
 <#1val1iriStemMinusiriStem3_v1a> a sht:ValidationFailure ;
     mf:name "1val1iriStemMinusiriStem3_v1a" ;
-    rdfs:comment "<S> { <p1> (<v>~-<v1>~-<v2>~-<v3>~) } on { <s1> <p1> <v1a> }" ;
+    rdfs:comment "<S> { <p1> [<v>~-<v1>~-<v2>~-<v3>~] } on { <s1> <p1> <v1a> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1iriStemMinusiriStem3.shex> ;
@@ -6952,7 +6873,7 @@
 
 <#1val1IRIREF_pass> a sht:ValidationTest ;
     mf:name "1val1IRIREF_pass" ;
-    rdfs:comment "<S> { <p1> (<v1>) } on { <s> <p1> <v1> }" ;
+    rdfs:comment "<S> { <p1> [<v1>] } on { <s> <p1> <v1> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1IRIREF.shex> ;
@@ -6965,7 +6886,7 @@
 
 <#1val1IRIREF_v2> a sht:ValidationFailure ;
     mf:name "1val1IRIREF_v2" ;
-    rdfs:comment "<S> { <p1> (<v1>) } on { <s> <p1> <v2> }" ;
+    rdfs:comment "<S> { <p1> [<v1>] } on { <s> <p1> <v2> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1IRIREF.shex> ;
@@ -6977,7 +6898,7 @@
 
 <#1val1DOUBLE_pass> a sht:ValidationTest ;
     mf:name "1val1DOUBLE_pass" ;
-    rdfs:comment "<S> { <p1> (0e0) } on { <s> <p1> 0e0 }" ;
+    rdfs:comment "<S> { <p1> [0e0] } on { <s> <p1> 0e0 }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1DOUBLE.shex> ;
@@ -6990,7 +6911,7 @@
 
 <#1val1DOUBLE_passUC> a sht:ValidationTest ;
     mf:name "1val1DOUBLE_passUC" ;
-    rdfs:comment "<S> { <p1> (0e0) } on { <s> <p1> 0E0 }" ;
+    rdfs:comment "<S> { <p1> [0e0] } on { <s> <p1> 0E0 }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1DOUBLE.shex> ;
@@ -7003,7 +6924,7 @@
 
 <#1val1DOUBLE_0_0e0> a sht:ValidationFailure ;
     mf:name "1val1DOUBLE_0_0e0" ;
-    rdfs:comment "<S> { <p1> (0e0) } on { <s> <p1> 0e0.0 }" ;
+    rdfs:comment "<S> { <p1> [0e0] } on { <s> <p1> 0e0.0 }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1DOUBLE.shex> ;
@@ -7015,7 +6936,7 @@
 
 <#1val1DOUBLElowercase_pass> a sht:ValidationTest ;
     mf:name "1val1DOUBLElowercase_pass" ;
-    rdfs:comment "<S> { <p1> (0e0) } on { <s> <p1> 0e0 }" ;
+    rdfs:comment "<S> { <p1> [0e0] } on { <s> <p1> 0e0 }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1DOUBLElowercase.shex> ;
@@ -7028,7 +6949,7 @@
 
 <#1val1DOUBLElowercase_passUC> a sht:ValidationTest ;
     mf:name "1val1DOUBLElowercase_passUC" ;
-    rdfs:comment "<S> { <p1> (0e0) } on { <s> <p1> 0E0 }" ;
+    rdfs:comment "<S> { <p1> [0e0] } on { <s> <p1> 0E0 }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1DOUBLElowercase.shex> ;
@@ -7041,7 +6962,7 @@
 
 <#1val1DOUBLElowercase_0_0e0> a sht:ValidationFailure ;
     mf:name "1val1DOUBLElowercase_0_0e0" ;
-    rdfs:comment "<S> { <p1> (0e0) } on { <s> <p1> 0e0.0 }" ;
+    rdfs:comment "<S> { <p1> [0e0] } on { <s> <p1> 0e0.0 }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1DOUBLElowercase.shex> ;
@@ -7053,7 +6974,7 @@
 
 <#1val1true_pass> a sht:ValidationTest ;
     mf:name "1val1true_pass" ;
-    rdfs:comment "<S> { <p1> (true) } on { <s> <p1> true }" ;
+    rdfs:comment "<S> { <p1> [true] } on { <s> <p1> true }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1true.shex> ;
@@ -7066,7 +6987,7 @@
 
 <#1val1true_false> a sht:ValidationFailure ;
     mf:name "1val1true_false" ;
-    rdfs:comment "<S> { <p1> (true) } on { <s> <p1> false }" ;
+    rdfs:comment "<S> { <p1> [true] } on { <s> <p1> false }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1true.shex> ;
@@ -7078,7 +6999,7 @@
 
 <#1val1true_ab> a sht:ValidationFailure ;
     mf:name "1val1true_ab" ;
-    rdfs:comment "<S> { <p1> (true) } on { <s> <p1> ab }" ;
+    rdfs:comment "<S> { <p1> [true] } on { <s> <p1> ab }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1true.shex> ;
@@ -7090,7 +7011,7 @@
 
 <#1val1false_pass> a sht:ValidationTest ;
     mf:name "1val1false_pass" ;
-    rdfs:comment "<S> { <p1> (false) } on { <s> <p1> true }" ;
+    rdfs:comment "<S> { <p1> [false] } on { <s> <p1> true }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1false.shex> ;
@@ -7103,7 +7024,7 @@
 
 <#1val1false_true> a sht:ValidationFailure ;
     mf:name "1val1false_true" ;
-    rdfs:comment "<S> { <p1> (false) } on { <s> <p1> false }" ;
+    rdfs:comment "<S> { <p1> [false] } on { <s> <p1> false }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1false.shex> ;
@@ -7115,7 +7036,7 @@
 
 <#1val1false_ab> a sht:ValidationFailure ;
     mf:name "1val1false_ab" ;
-    rdfs:comment "<S> { <p1> (false) } on { <s> <p1> ab }" ;
+    rdfs:comment "<S> { <p1> [false] } on { <s> <p1> ab }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1false.shex> ;
@@ -7130,7 +7051,7 @@
 
 <#1val1INTEGER_pass> a sht:ValidationTest ;
     mf:name "1val1INTEGER_pass" ;
-    rdfs:comment "<S> { <p1> (0) } on { <s> <p1> 0 }" ;
+    rdfs:comment "<S> { <p1> [0] } on { <s> <p1> 0 }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1INTEGER.shex> ;
@@ -7143,7 +7064,7 @@
 
 <#1val1INTEGER_Lab> a sht:ValidationFailure ;
     mf:name "1val1INTEGER_Lab" ;
-    rdfs:comment "<S> { <p1> (0) } on { <s> <p1> 'ab' }" ;
+    rdfs:comment "<S> { <p1> [0] } on { <s> <p1> 'ab' }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1INTEGER.shex> ;
@@ -7155,7 +7076,7 @@
 
 <#1val1INTEGER_00> a sht:ValidationFailure ;
     mf:name "1val1INTEGER_00" ;
-    rdfs:comment "<S> { <p1> (0) } on { <s> <p1> 00 }" ;
+    rdfs:comment "<S> { <p1> [0] } on { <s> <p1> 00 }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1INTEGER.shex> ;
@@ -7170,7 +7091,7 @@
 
 <#1val1IRIREFDatatype_pass> a sht:ValidationTest ;
     mf:name "1val1IRIREFDatatype_pass" ;
-    rdfs:comment "<S> { <p1> ('ab'^^my:bloodType) } on { <s> <p1> 'ab'^^my:bloodType }" ;
+    rdfs:comment "<S> { <p1> ['ab'^^my:bloodType] } on { <s> <p1> 'ab'^^my:bloodType }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1IRIREFDatatype.shex> ;
@@ -7183,7 +7104,7 @@
 
 <#1val1IRIREFDatatype_Lab> a sht:ValidationFailure ;
     mf:name "1val1IRIREFDatatype_Lab" ;
-    rdfs:comment "<S> { <p1> ('ab'^^my:bloodType) } on { <s> <p1> 'ab' }" ;
+    rdfs:comment "<S> { <p1> ['ab'^^my:bloodType] } on { <s> <p1> 'ab' }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1IRIREFDatatype.shex> ;
@@ -7195,7 +7116,7 @@
 
 <#1val1IRIREFDatatype_LabDTbloodType999> a sht:ValidationFailure ;
     mf:name "1val1IRIREFDatatype_LabDTbloodType999" ;
-    rdfs:comment "<S> { <p1> ('ab'^^my:bloodType) } on { <s> <p1> 'ab'^^my:bloodType999 }" ;
+    rdfs:comment "<S> { <p1> ['ab'^^my:bloodType] } on { <s> <p1> 'ab'^^my:bloodType999 }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1IRIREFDatatype.shex> ;
@@ -7207,7 +7128,7 @@
 
 <#1val1IRIREFDatatype_LaDTbloodType> a sht:ValidationFailure ;
     mf:name "1val1IRIREFDatatype_LaDTbloodType" ;
-    rdfs:comment "<S> { <p1> ('ab'^^my:bloodType) } on { <s> <p1> 'a'^^my:bloodType }" ;
+    rdfs:comment "<S> { <p1> ['ab'^^my:bloodType] } on { <s> <p1> 'a'^^my:bloodType }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1IRIREFDatatype.shex> ;
@@ -7222,7 +7143,7 @@
 
 <#1val1LANGTAG_pass> a sht:ValidationTest ;
     mf:name "1val1LANGTAG_pass" ;
-    rdfs:comment "<S> { <p1> ('ab'@en-fr) } on { <s> <p1> 'ab'@en-fr }" ;
+    rdfs:comment "<S> { <p1> ['ab'@en-fr] } on { <s> <p1> 'ab'@en-fr }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1LANGTAG.shex> ;
@@ -7235,7 +7156,7 @@
 
 <#1val1LANGTAG_Lab> a sht:ValidationFailure ;
     mf:name "1val1LANGTAG_Lab" ;
-    rdfs:comment "<S> { <p1> ('ab'@en-fr) } on { <s> <p1> 'ab' }" ;
+    rdfs:comment "<S> { <p1> ['ab'@en-fr] } on { <s> <p1> 'ab' }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1LANGTAG.shex> ;
@@ -7247,7 +7168,7 @@
 
 <#1val1LANGTAG_LabLTen> a sht:ValidationFailure ;
     mf:name "1val1LANGTAG_LabLTen" ;
-    rdfs:comment "<S> { <p1> ('ab'@en-fr) } on { <s> <p1> 'ab'@en }" ;
+    rdfs:comment "<S> { <p1> ['ab'@en-fr] } on { <s> <p1> 'ab'@en }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1LANGTAG.shex> ;
@@ -7259,7 +7180,7 @@
 
 <#1val1LANGTAG_LabLTen-fr-jura> a sht:ValidationFailure ;
     mf:name "1val1LANGTAG_LabLTen-fr-jura" ;
-    rdfs:comment "<S> { <p1> ('ab'@en-fr) } on { <s> <p1> 'ab'@en-fr-jura }" ;
+    rdfs:comment "<S> { <p1> ['ab'@en-fr] } on { <s> <p1> 'ab'@en-fr-jura }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1LANGTAG.shex> ;
@@ -7271,7 +7192,7 @@
 
 <#1val1LANGTAG_LaLTen-fr> a sht:ValidationFailure ;
     mf:name "1val1LANGTAG_LaLTen-fr" ;
-    rdfs:comment "<S> { <p1> ('ab'@en-fr) } on { <s> <p1> 'a'@en-fr }" ;
+    rdfs:comment "<S> { <p1> ['ab'@en-fr] } on { <s> <p1> 'a'@en-fr }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1LANGTAG.shex> ;
@@ -7627,6 +7548,89 @@
     .
 
 # } OR valueExpr
+# closed {
+
+<#1dotClosed_pass> a sht:ValidationTest ;
+    mf:name "1dotClosed_pass" ;
+    rdfs:comment "<S> CLOSED { <p1> . } on { <s> <p1> <o1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1dotClosed.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1dot_pass.val>
+    .
+
+<#1dotClosed_fail_lower> a sht:ValidationFailure ;
+    mf:name "1dotClosed_fail_lower" ;
+    rdfs:comment "<S> { <p1> . } on { <s> <p1> <o1>; <p1> <o1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1dotClosed.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip0_Io0;Ip1_Io1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1dotClosed_fail_higher> a sht:ValidationFailure ;
+    mf:name "1dotClosed_fail_higher" ;
+    rdfs:comment "<S> { <p1> . } on { <s> <p1> <o1>; <p2> <o2> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1dotClosed.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1;Ip2_Io2.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+# } closed
+# extra {
+
+<#1val1IRIREFExtra1_iri> a sht:ValidationTest ;
+    mf:name "1val1IRIREFExtra1_iri" ;
+    rdfs:comment "<S> EXTRA <p1> { <p1> [<o1>] } on { <s> <p1> <o1>, <o2> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1IRIREFExtra1.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1,Io2.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1val1IRIREFExtra1bnode_Is1_Ip1_Io1.val>
+    .
+
+<#1val2IRIREFExtra1_iri> a sht:ValidationFailure ;
+    mf:name "1val2IRIREFExtra1_iri" ;
+    rdfs:comment "<S> EXTRA <p1> { <p1> [<o1> <o2>] } on { <s> <p1> <o1>, <o2> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val2IRIREFExtra1.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1,Io2.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1val2IRIREFExtra1_bnode> a sht:ValidationTest ;
+    mf:name "1val2IRIREFExtra1_bnode" ;
+    rdfs:comment "<S> EXTRA <p1> { <p1> [<o1> <o2>] on { <s> <p1> <o1>, _:o2 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val2IRIREFExtra1.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1,Bo2.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1val2IRIREFExtra1_bnode_Is1_Ip1_Io1.val>
+    .
+
+# } extra
+# start {
+# } start
 
 
 # manual schemas {
