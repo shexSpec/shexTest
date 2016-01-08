@@ -7,17 +7,17 @@
       "rdfs:comment": "ShEx validation tests",
       "entries": [
         {
-          "@id": "#1val1vExprORRef3_fail",
+          "@id": "#1val2IRIREFExtra1_pass-iri2",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/1val1vExprORRef3.shex",
+            "schema": "../schemas/1val2IRIREFExtra1.shex",
             "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_La.ttl",
+            "data": "Is1_Ip1_Io1,Io2.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1val1vExprORRef3_fail",
-          "comment": "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> OR ... $<vc3> } on { <s1> <p1> 'a' }",
+          "name": "1val2IRIREFExtra1_pass-iri2",
+          "comment": "<S> EXTRA <p1> { <p1> [<o1> <o2>] } on { <s> <p1> <o1>, <o2> }",
           "status": "mf:proposed"
         },
         {
@@ -65,17 +65,17 @@
           "result": "0_pass.val"
         },
         {
-          "@id": "#1val1vExprAND3_failvc2",
+          "@id": "#1dotClosed_fail_lower",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/1val1vExprAND3.shex",
+            "schema": "../schemas/1dotClosed.shex",
             "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_Lababab.ttl",
+            "data": "Is1_Ip0_Io0;Ip1_Io1.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1val1vExprAND3_failvc2",
-          "comment": "<S> { <p1> MINLENGTH 4 AND MAXLENGTH 5 AND ~ '^(ab)+' } on { <s1> <p1> 'ababab' }",
+          "name": "1dotClosed_fail_lower",
+          "comment": "<S> { <p1> . } on { <s> <p1> <o1>; <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -94,7 +94,130 @@
           "result": "iovka.val"
         },
         {
-          "@id": "#1val1IRIREFExtra1_iri",
+          "@id": "#3groupdot3Extra_pass-iri2",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/3groupdot3Extra.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is_Ipn_IonX3.Is_Ipn_IonaX3.ttl",
+            "focus": "http://a.example/s"
+          },
+          "extensionResults": [],
+          "name": "3groupdot3Extra_pass-iri2",
+          "comment": "<S> EXTRA <p1> EXTRA <p2> EXTRA <p3> { <p1> [<o1>] <p2> [<o2>] <p3> [<o3>] } on { <s> <p1> <o1>, <o1a>; <p2> <o2>, <o2a>; <p3> <o3>, <o3a> }",
+          "status": "mf:proposed",
+          "result": "3groupdotExtra3_Is_Ipn_IonX3.val"
+        },
+        {
+          "@id": "#3groupdotExtra3_pass-iri2",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/3groupdotExtra3.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is_Ipn_IonX3.Is_Ipn_IonaX3.ttl",
+            "focus": "http://a.example/s"
+          },
+          "extensionResults": [],
+          "name": "3groupdotExtra3_pass-iri2",
+          "comment": "<S> EXTRA <p1> <p2> <p3> { <p1> [<o1>] <p2> [<o2>] <p3> [<o3>] } on { <s> <p1> <o1>, <o1a>; <p2> <o2>, <o2a>; <p3> <o3>, <o3a> }",
+          "status": "mf:proposed",
+          "result": "3groupdotExtra3_Is_Ipn_IonX3.val"
+        },
+        {
+          "@id": "#3groupdotExtra3NLex_pass-iri1",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/3groupdotExtra3NLex.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is_Ipn_IonX3.ttl",
+            "focus": "http://a.example/s"
+          },
+          "extensionResults": [],
+          "name": "3groupdotExtra3NLex_pass-iri1",
+          "comment": "PREFIX ex: <http://a.example/> <S> EXTRA ex:p1 ex:p2 ex:p3 { <p1> [<o1>] <p2> [<o2>] <p3> [<o3>] } on { <s> <p1> <o1>; <p2> <o2>; <p3> <o3> }",
+          "status": "mf:proposed",
+          "result": "3groupdotExtra3_Is_Ipn_IonX3.val"
+        },
+        {
+          "@id": "#3groupdot3Extra_pass-iri1",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/3groupdot3Extra.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is_Ipn_IonX3.ttl",
+            "focus": "http://a.example/s"
+          },
+          "extensionResults": [],
+          "name": "3groupdot3Extra_pass-iri1",
+          "comment": "<S> EXTRA <p1> EXTRA <p2> EXTRA <p3> { <p1> [<o1>] <p2> [<o2>] <p3> [<o3>] } on { <s> <p1> <o1>; <p2> <o2>; <p3> <o3> }",
+          "status": "mf:proposed",
+          "result": "3groupdotExtra3_Is_Ipn_IonX3.val"
+        },
+        {
+          "@id": "#3groupdotExtra3_pass-iri1",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/3groupdotExtra3.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is_Ipn_IonX3.ttl",
+            "focus": "http://a.example/s"
+          },
+          "extensionResults": [],
+          "name": "3groupdotExtra3_pass-iri1",
+          "comment": "<S> EXTRA <p1> <p2> <p3> { <p1> [<o1>] <p2> [<o2>] <p3> [<o3>] } on { <s> <p1> <o1>; <p2> <o2>; <p3> <o3> }",
+          "status": "mf:proposed",
+          "result": "3groupdotExtra3_Is_Ipn_IonX3.val"
+        },
+        {
+          "@id": "#1dotExtra1_pass-iri1",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1dotExtra1.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1dotExtra1_pass-iri1",
+          "trait": [
+            "VapidExtra"
+          ],
+          "comment": "<S> EXTRA <p1> { <p1> . } on { <s> <p1> <o1> }",
+          "status": "mf:proposed",
+          "result": "1dot_pass.val"
+        },
+        {
+          "@id": "#1val2IRIREFExtra1_pass-iri-bnode",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1val2IRIREFExtra1.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1,Bo2.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val2IRIREFExtra1_pass-iri-bnode",
+          "comment": "<S> EXTRA <p1> { <p1> [<o1> <o2>] on { <s> <p1> <o1>, _:o2 }",
+          "status": "mf:proposed",
+          "result": "1val2IRIREFExtra1_bnode_Is1_Ip1_Io1.val"
+        },
+        {
+          "@id": "#1val2IRIREFPlusExtra1_pass-iri2",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1val2IRIREFPlusExtra1.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1,Io2.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val2IRIREFPlusExtra1_pass-iri2",
+          "comment": "<S> EXTRA <p1> { <p1> [<o1> <o2>]+ } on { <s> <p1> <o1>, <o2> }",
+          "status": "mf:proposed",
+          "result": "1val2IRIREFPlusExtra1_Is1_Ip1_Io1,Io2.val"
+        },
+        {
+          "@id": "#1val1IRIREFExtra1_pass-iri2",
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/1val1IRIREFExtra1.shex",
@@ -103,10 +226,25 @@
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1val1IRIREFExtra1_iri",
+          "name": "1val1IRIREFExtra1_pass-iri2",
           "comment": "<S> EXTRA <p1> { <p1> [<o1>] } on { <s> <p1> <o1>, <o2> }",
           "status": "mf:proposed",
-          "result": "1val1IRIREFExtra1bnode_Is1_Ip1_Io1.val"
+          "result": "1val1IRIREFExtra1_Is1_Ip1_Io1.val"
+        },
+        {
+          "@id": "#1val1IRIREFExtra1_pass-iri1",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1val1IRIREFExtra1.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1IRIREFExtra1_pass-iri1",
+          "comment": "<S> EXTRA <p1> { <p1> [<o1>] } on { <s> <p1> <o1> }",
+          "status": "mf:proposed",
+          "result": "1val1IRIREFExtra1_Is1_Ip1_Io1.val"
         },
         {
           "@id": "#1dotClosed_pass",
@@ -3987,17 +4125,34 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#1val2IRIREFExtra1_iri",
+          "@id": "#1dotExtra1_pass-iri2",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/1val2IRIREFExtra1.shex",
+            "schema": "../schemas/1dotExtra1.shex",
             "shape": "http://a.example/S1",
             "data": "Is1_Ip1_Io1,Io2.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1val2IRIREFExtra1_iri",
-          "comment": "<S> EXTRA <p1> { <p1> [<o1> <o2>] } on { <s> <p1> <o1>, <o2> }",
+          "name": "1dotExtra1_pass-iri2",
+          "trait": [
+            "VapidExtra"
+          ],
+          "comment": "<S> EXTRA <p1> { <p1> . } on { <s> <p1> <o1>, <o2> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1inversedot_fail-missing",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1inversedot.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip2_Io1.ttl",
+            "focus": "http://a.example/o1"
+          },
+          "extensionResults": [],
+          "name": "1inversedot_fail-missing",
+          "comment": "<S> { <p1> . } on { <s> <p2> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -4015,18 +4170,19 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#1dotClosed_fail_lower",
-          "@type": "sht:ValidationFailure",
+          "@id": "#3groupdotExtra3NLex_pass-iri2",
+          "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/1dotClosed.shex",
+            "schema": "../schemas/3groupdotExtra3NLex.shex",
             "shape": "http://a.example/S1",
-            "data": "Is1_Ip0_Io0;Ip1_Io1.ttl",
-            "focus": "http://a.example/s1"
+            "data": "Is_Ipn_IonX3.Is_Ipn_IonaX3.ttl",
+            "focus": "http://a.example/s"
           },
           "extensionResults": [],
-          "name": "1dotClosed_fail_lower",
-          "comment": "<S> { <p1> . } on { <s> <p1> <o1>; <p1> <o1> }",
-          "status": "mf:proposed"
+          "name": "3groupdotExtra3NLex_pass-iri2",
+          "comment": "PREFIX ex: <http://a.example/> <S> EXTRA ex:p1 ex:p2 ex:p3 { <p1> [<o1>] <p2> [<o2>] <p3> [<o3>] } on { <s> <p1> <o1>, <o1a>; <p2> <o2>, <o2a>; <p3> <o3>, <o3a> }",
+          "status": "mf:proposed",
+          "result": "3groupdotExtra3_Is_Ipn_IonX3.val"
         },
         {
           "@id": "#1val1vExprOR3_fail",
@@ -4057,17 +4213,17 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#1inversedot_fail-missing",
+          "@id": "#1val1vExprORRef3_fail",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/1inversedot.shex",
+            "schema": "../schemas/1val1vExprORRef3.shex",
             "shape": "http://a.example/S1",
-            "data": "Is1_Ip2_Io1.ttl",
-            "focus": "http://a.example/o1"
+            "data": "Is1_Ip1_La.ttl",
+            "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1inversedot_fail-missing",
-          "comment": "<S> { <p1> . } on { <s> <p2> <o1> }",
+          "name": "1val1vExprORRef3_fail",
+          "comment": "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> OR ... $<vc3> } on { <s1> <p1> 'a' }",
           "status": "mf:proposed"
         },
         {
@@ -4085,19 +4241,18 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#1val2IRIREFExtra1_bnode",
-          "@type": "sht:ValidationTest",
+          "@id": "#1val1vExprAND3_failvc2",
+          "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/1val2IRIREFExtra1.shex",
+            "schema": "../schemas/1val1vExprAND3.shex",
             "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_Io1,Bo2.ttl",
+            "data": "Is1_Ip1_Lababab.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1val2IRIREFExtra1_bnode",
-          "comment": "<S> EXTRA <p1> { <p1> [<o1> <o2>] on { <s> <p1> <o1>, _:o2 }",
-          "status": "mf:proposed",
-          "result": "1val2IRIREFExtra1_bnode_Is1_Ip1_Io1.val"
+          "name": "1val1vExprAND3_failvc2",
+          "comment": "<S> { <p1> MINLENGTH 4 AND MAXLENGTH 5 AND ~ '^(ab)+' } on { <s1> <p1> 'ababab' }",
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1vExprAND3_failvc1",

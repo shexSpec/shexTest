@@ -167,12 +167,14 @@
         # closed
   -rw-rw-r--  1 eric www    60 Oct 20 15:51 1dotClosed.shex
         # extra
-!  -rw-rw-r--  1 eric www    81 Oct 20 15:51 1dotExtra1.shex
   -rw-rw-r--  1 eric www   103 Oct 20 15:51 1val1IRIREFExtra1.shex
   -rw-rw-r--  1 eric www   125 Oct 20 15:51 1val2IRIREFExtra1.shex
-!  -rw-rw-r--  1 eric www   193 Oct 20 15:51 3groupdot3Extra.shex
-!  -rw-rw-r--  1 eric www   181 Oct 20 15:51 3groupdotExtra3.shex [3groupdot3Extra.shex]
-!  -rw-rw-r--  1 eric www   165 Oct 20 15:51 3groupdotExtra3NLex.shex
+  -rw-rw-r--  1 eric www    81 Oct 20 15:51 1dotExtra1.shex
+  -rw-rw-r--  1 eric www   181 Oct 20 15:51 3groupdotExtra3.shex
+  -rw-rw-r--  1 eric www   193 Oct 20 15:51 3groupdot3Extra.shex     [3groupdotExtra3.shex]
+  -rw-rw-r--  1 eric www   165 Oct 20 15:51 3groupdotExtra3NLex.shex [3groupdotExtra3.shex]
+! extra of non-mentioned predicate
+! extra of deeply-nested predicate
         # start
 !  -rw-rw-r--  1 eric www    37 Sep 23 09:38 startInline.shex                    start={ <p1> . }
 !  -rw-rw-r--  1 eric www    38 Sep 23 09:38 startEqualSpaceInline.shex [startInline.shex]
