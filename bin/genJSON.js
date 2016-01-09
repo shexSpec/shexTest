@@ -33,7 +33,7 @@ function report (msg) {
 var fs = require('fs');
 var path = require("path");
 var N3 = require("n3");
-var parser = N3.Parser();
+var parser = N3.Parser({blankNodePrefix: ""});
 var util = N3.Util;
 var store = N3.Store();
 //var json = fs.readFileSync(args[0]).toString();

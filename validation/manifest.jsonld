@@ -4015,6 +4015,24 @@
           "result": "1inversedot_pass.val"
         },
         {
+          "@id": "#bnode1dot_pass-others_lexicallyEarlier",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/bnode1dot.shex",
+            "shape": "_:S1",
+            "data": "Is1_Ip0_Io0;Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "bnode1dot_pass-others_lexicallyEarlier",
+          "trait": [
+            "ToldBNode"
+          ],
+          "comment": "<S> { <p1> . } on { <s> <p0> <o0>; <p1> <o1> }",
+          "status": "mf:proposed",
+          "result": "bnode1dot_pass.val"
+        },
+        {
           "@id": "#1dot_pass-others_lexicallyLater",
           "@type": "sht:ValidationTest",
           "action": {
@@ -4194,6 +4212,23 @@
           "status": "mf:proposed"
         },
         {
+          "@id": "#bnode1dot_fail-missing",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/bnode1dot.shex",
+            "shape": "_:S1",
+            "data": "Is1_Ip2_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "bnode1dot_fail-missing",
+          "trait": [
+            "ToldBNode"
+          ],
+          "comment": "<S> { <p1> . } on { <s> <p2> <o1> }",
+          "status": "mf:proposed"
+        },
+        {
           "@id": "#1inversedot_fail-empty",
           "@type": "sht:ValidationFailure",
           "action": {
@@ -4205,20 +4240,6 @@
           "extensionResults": [],
           "name": "1inversedot_fail-empty",
           "comment": "<S> { <p1> . } on {  }",
-          "status": "mf:proposed"
-        },
-        {
-          "@id": "#1inversedot_fail-missing",
-          "@type": "sht:ValidationFailure",
-          "action": {
-            "schema": "../schemas/1inversedot.shex",
-            "shape": "http://a.example/S1",
-            "data": "Is1_Ip2_Io1.ttl",
-            "focus": "http://a.example/o1"
-          },
-          "extensionResults": [],
-          "name": "1inversedot_fail-missing",
-          "comment": "<S> { <p1> . } on { <s> <p2> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -7997,6 +8018,20 @@
           "extensionResults": [],
           "name": "1negateddot_fail-noOthers",
           "comment": "<S> { !<p1> . } on { <s> <p1> <o1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1inversedot_fail-missing",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1inversedot.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip2_Io1.ttl",
+            "focus": "http://a.example/o1"
+          },
+          "extensionResults": [],
+          "name": "1inversedot_fail-missing",
+          "comment": "<S> { <p1> . } on { <s> <p2> <o1> }",
           "status": "mf:proposed"
         },
         {

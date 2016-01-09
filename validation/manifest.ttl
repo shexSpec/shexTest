@@ -23,7 +23,8 @@
         <#1dot_pass-noOthers> <#1dotComma_pass-noOthers> <#1dotLNex_pass-noOthers> <#1dotNS2_pass-noOthers> <#1dotNS2Comment_pass-noOthers> <#1dotLNexComment_pass-noOthers> <#1dotLNdefault_pass-noOthers> <#1dotNSdefault_pass-noOthers> <#1dotLNex-HYPHEN_MINUS_pass-noOthers>
         <#1dot_pass-others_lexicallyEarlier>
         <#1dot_pass-others_lexicallyLater>
-        # 1dotComma_... same as 1dot
+	<#bnode1dot_fail-missing>
+	<#bnode1dot_pass-others_lexicallyEarlier>
         <#1inversedot_fail-empty>
         <#1inversedot_fail-missing>
         <#1inversedot_pass-noOthers>
@@ -831,6 +832,33 @@
       sht:focus <http://a.example/s1>
     ] ;
     mf:result <1dot_pass.val>
+    .
+
+<#bnode1dot_fail-missing> a sht:ValidationFailure ;
+    mf:name "bnode1dot_fail-missing" ;
+    sht:trait sht:ToldBNode ;
+    rdfs:comment "<S> { <p1> . } on { <s> <p2> <o1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/bnode1dot.shex> ;
+      sht:shape _:S1 ;
+      sht:data <Is1_Ip2_Io1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#bnode1dot_pass-others_lexicallyEarlier> a sht:ValidationTest ;
+    mf:name "bnode1dot_pass-others_lexicallyEarlier" ;
+    sht:trait sht:ToldBNode ;
+    rdfs:comment "<S> { <p1> . } on { <s> <p0> <o0>; <p1> <o1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/bnode1dot.shex> ;
+      sht:shape _:S1 ;
+      sht:data <Is1_Ip0_Io0;Ip1_Io1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <bnode1dot_pass.val>
     .
 
 <#1inversedot_fail-empty> a sht:ValidationFailure ;
