@@ -1,0 +1,25 @@
+# syntax-only tests:
+# sparql -d validation/manifest.ttl -d schemas/meta.ttl -e '
+#    PREFIX sht: <http://www.w3.org/ns/shacl/test-suite#>
+#    PREFIX mf: <http://www.w3.org/2001/sw/DataAccess/tests/test-manifest#>
+#    SELECT ?t { { ?x1 sht:sameAbstractSyntaxAs ?x0 }
+#                UNION
+#                { ?x1 sht:similarAbstractSyntaxAs ?x0 }
+#                { ?t mf:action [ sht:schema ?x1 ] } }
+# '
+
+
+PREFIX sht:     <http://www.w3.org/ns/shacl/test-suite#>
+
+            <1dotComma.shex> sht:sameAbstractSyntaxAs                   <1dot.shex> .
+             <1dotLNex.shex> sht:sameAbstractSyntaxAs                   <1dot.shex> .
+              <1dotNS2.shex> sht:sameAbstractSyntaxAs                   <1dot.shex> .
+       <1dotNS2Comment.shex> sht:sameAbstractSyntaxAs                   <1dot.shex> .
+      <1dotLNexComment.shex> sht:sameAbstractSyntaxAs                   <1dot.shex> .
+        <1dotLNdefault.shex> sht:sameAbstractSyntaxAs                   <1dot.shex> .
+        <1dotNSdefault.shex> sht:sameAbstractSyntaxAs                   <1dot.shex> .
+  <3groupdotExtra3NLex.shex> sht:sameAbstractSyntaxAs    <3groupdotExtra3NLex.shex> .
+<startEqualSpaceInline.shex> sht:sameAbstractSyntaxAs            <startInline.shex> .
+      <3groupdot3Extra.shex> sht:sameAbstractSyntaxAs        <3groupdotExtra3.shex> .
+<startSpaceEqualInline.shex> sht:sameAbstractSyntaxAs            <startInline.shex> .
+<1dotLNex-HYPHEN_MINUS.shex> sht:similarAbstractSyntaxAs                <1dot.shex> .
