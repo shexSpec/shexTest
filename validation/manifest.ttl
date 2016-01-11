@@ -1,30 +1,32 @@
+# prefixes
 @prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix mf:     <http://www.w3.org/2001/sw/DataAccess/tests/test-manifest#> .
 @prefix sht:     <http://www.w3.org/ns/shacl/test-suite#> .
 @prefix prov:   <http://www.w3.org/ns/prov#> .
 
-# TODO:
-#   repeated OR
-#   1dotRefOr3 on..
+ # TODO:
+ #   repeated OR
+ #   1dotRefOr3 on..
 
 
+# entries
 <> a mf:Manifest ;
     rdfs:comment "ShEx validation tests" ;
     mf:entries
     (
-        #empty
+## empty
         <#0_empty>
         <#0_other>
 
-        # triple pattern
+## triple pattern
         <#1dot_fail-empty>
         <#1dot_fail-missing>
         <#1dot_pass-noOthers> <#1dotComma_pass-noOthers> <#1dotLNex_pass-noOthers> <#1dotNS2_pass-noOthers> <#1dotNS2Comment_pass-noOthers> <#1dotLNexComment_pass-noOthers> <#1dotLNdefault_pass-noOthers> <#1dotNSdefault_pass-noOthers> <#1dotLNex-HYPHEN_MINUS_pass-noOthers>
         <#1dot_pass-others_lexicallyEarlier>
         <#1dot_pass-others_lexicallyLater>
-	<#bnode1dot_fail-missing>
-	<#bnode1dot_pass-others_lexicallyEarlier>
+        <#bnode1dot_fail-missing>
+        <#bnode1dot_pass-others_lexicallyEarlier>
         <#1inversedot_fail-empty>
         <#1inversedot_fail-missing>
         <#1inversedot_pass-noOthers>
@@ -43,7 +45,7 @@
         # 1inversenegateddot_... same as 1negatedinversedot
         <#1Adot_pass>
 
-        # cardinality
+## cardinality
         <#1card2_fail0>
         <#1card2_fail1>
         <#1card2_pass2>
@@ -74,52 +76,52 @@
         <#1cardStar_pass2>
         <#1cardStar_pass6>
 
-        # node kinds
+## node kinds
         <#1literalPlus_Is1_Ip1_La,Io1>
 
-        # datatype
+## datatype
         <#1datatype_missing>
         <#1datatype_nonLiteral>
         <#1datatype_wrongDatatype>
         <#1datatype_pass>
 
-        # facets
-	## length
+## facets
+### length
         <#1datatypeLength_fail-missing>
         <#1datatypeLength_fail-wrongDatatype>
         <#1datatypeLength_fail-short>
         <#1datatypeLength_pass>
         <#1datatypeLength_fail-long>
-	### fractionDigits
+### fractionDigits
         <#1literalFractiondigits_fail-decimal-short>
-	# <#1literalFractiondigitsxsd-integer_fail-decimal-short> # for numericFacet ::= (numericFacet | numericLength) INTEGER (numericLiteral | string '^^' datatype )
+        # <#1literalFractiondigitsxsd-integer_fail-decimal-short> # for numericFacet ::= (numericFacet | numericLength) INTEGER (numericLiteral | string '^^' datatype )
         <#1literalFractiondigits_pass-decimal-equal>
-	#  <#1literalFractiondigitsxsd-integer_pass-decimal-equal> # for numericFacet ::= (numericFacet | numericLength) INTEGER (numericLiteral | string '^^' datatype )
+        #  <#1literalFractiondigitsxsd-integer_pass-decimal-equal> # for numericFacet ::= (numericFacet | numericLength) INTEGER (numericLiteral | string '^^' datatype )
         <#1literalFractiondigits_pass-float-equal>
         <#1literalFractiondigits_fail-decimal-long>
-	<#1literalFractiondigits_fail-integer-short>
-	<#1literalFractiondigits_fail-xsd_integer-short>
-	<#1literalFractiondigits_fail-malformedxsd_decimal-1_23ab>
-	<#1literalFractiondigits_fail-malformedxsd_decimal-1_2345ab>
-	<#1literalFractiondigits_fail-malformedxsd_integer-1_2345>
-	<#1literalFractiondigits_fail-iri>
-	<#1literalFractiondigits_fail-bnode>
-	## totalDigits
+        <#1literalFractiondigits_fail-integer-short>
+        <#1literalFractiondigits_fail-xsd_integer-short>
+        <#1literalFractiondigits_fail-malformedxsd_decimal-1_23ab>
+        <#1literalFractiondigits_fail-malformedxsd_decimal-1_2345ab>
+        <#1literalFractiondigits_fail-malformedxsd_integer-1_2345>
+        <#1literalFractiondigits_fail-iri>
+        <#1literalFractiondigits_fail-bnode>
+### totalDigits
         <#1literalTotaldigits_fail-decimal-short>
-	# <#1literalTotaldigitsxsd-integer_fail-decimal-short> # for numericFacet ::= (numericFacet | numericLength) INTEGER (numericLiteral | string '^^' datatype )
+        # <#1literalTotaldigitsxsd-integer_fail-decimal-short> # for numericFacet ::= (numericFacet | numericLength) INTEGER (numericLiteral | string '^^' datatype )
         <#1literalTotaldigits_pass-decimal-equal>
-	#  <#1literalTotaldigitsxsd-integer_pass-decimal-equal> # for numericFacet ::= (numericFacet | numericLength) INTEGER (numericLiteral | string '^^' datatype )
+        #  <#1literalTotaldigitsxsd-integer_pass-decimal-equal> # for numericFacet ::= (numericFacet | numericLength) INTEGER (numericLiteral | string '^^' datatype )
         <#1literalTotaldigits_pass-float-equal>
         <#1literalTotaldigits_fail-decimal-long>
-	<#1literalTotaldigits_pass-integer-equal>
-	<#1literalTotaldigits_fail-xsd_integer-short>
-	<#1literalTotaldigits_fail-malformedxsd_decimal-1_23ab>
-	<#1literalTotaldigits_fail-malformedxsd_decimal-1_2345ab>
-	<#1literalTotaldigits_fail-malformedxsd_integer-1_2345>
-	<#1literalTotaldigits_fail-iri>
-	<#1literalTotaldigits_fail-bnode>
-	## comparators
-	### manual
+        <#1literalTotaldigits_pass-integer-equal>
+        <#1literalTotaldigits_fail-xsd_integer-short>
+        <#1literalTotaldigits_fail-malformedxsd_decimal-1_23ab>
+        <#1literalTotaldigits_fail-malformedxsd_decimal-1_2345ab>
+        <#1literalTotaldigits_fail-malformedxsd_integer-1_2345>
+        <#1literalTotaldigits_fail-iri>
+        <#1literalTotaldigits_fail-bnode>
+### comparators
+#### manual
         <#1floatMininclusiveINTEGER_fail-low>
         <#1floatMininclusiveINTEGER_pass-equalLead>
         <#1floatMininclusiveINTEGER_pass-equalTrail>
@@ -129,7 +131,7 @@
         <#1integerMininclusiveINTEGER_pass-equalLead>
         <#1integerMininclusiveINTEGER_pass-high>
         <#1floatMininclusiveINTEGERLead_pass-equal>
-	### generated
+#### generated
         <#1integerMininclusiveINTEGER_fail-integer-low>
         <#1integerMininclusiveINTEGER_pass-integer-equal>
         <#1integerMininclusiveINTEGER_pass-integer-high>
@@ -353,7 +355,7 @@
         <#1doubleMaxexclusiveDOUBLELeadTrail_fail-double-equal>
         <#1doubleMaxexclusiveDOUBLEint_fail-double-equal>
         <#1doubleMaxexclusiveDOUBLEintLeadTrail_fail-double-equal>
-	## lengths
+### lengths
         <#1literalLength_fail-lit-short>
         <#1literalLength_pass-lit-equal>
         <#1literalLength_fail-lit-long>
@@ -411,32 +413,32 @@
         <#1nonliteralMaxlength_pass-bnode-short>
         <#1nonliteralMaxlength_pass-bnode-equal>
         <#1nonliteralMaxlength_fail-bnode-long>
-	## pattern
-	<#1literalPattern_pass-lit-match>
-	<#1literalPattern_fail-lit-short>
-	<#1literalPattern_fail-lit-long>
-	<#1literalPattern19_fail-iri-match>
-	<#1literalPattern_fail-bnode-match>
-	<#1literalPatternabEnd_fail-bnode-match>
-	<#1iriPattern_pass-iri-match>
-	<#1iriPattern_fail-iri-short>
-	<#1iriPattern_fail-iri-long>
-	<#1iriPattern_fail-lit-match>
-	<#1iriPattern_fail-bnode-match>
-	<#1bnodePattern_pass-bnode-match>
-	<#1bnodePattern_fail-bnode-short>
-	<#1bnodePattern_fail-bnode-long>
-	<#1bnodePattern_fail-lit-match>
-	<#1bnodePattern_fail-iri-match>
-	<#1nonliteralPattern_pass-iri-match>
-	<#1nonliteralPattern_fail-iri-short>
-	<#1nonliteralPattern_fail-iri-long>
-	<#1nonliteralPattern_fail-lit-match>
-	<#1nonliteralPattern_pass-bnode-match>
-	<#1nonliteralPattern_fail-bnode-short>
-	<#1nonliteralPattern_fail-bnode-long>
+### pattern
+        <#1literalPattern_pass-lit-match>
+        <#1literalPattern_fail-lit-short>
+        <#1literalPattern_fail-lit-long>
+        <#1literalPattern19_fail-iri-match>
+        <#1literalPattern_fail-bnode-match>
+        <#1literalPatternabEnd_fail-bnode-match>
+        <#1iriPattern_pass-iri-match>
+        <#1iriPattern_fail-iri-short>
+        <#1iriPattern_fail-iri-long>
+        <#1iriPattern_fail-lit-match>
+        <#1iriPattern_fail-bnode-match>
+        <#1bnodePattern_pass-bnode-match>
+        <#1bnodePattern_fail-bnode-short>
+        <#1bnodePattern_fail-bnode-long>
+        <#1bnodePattern_fail-lit-match>
+        <#1bnodePattern_fail-iri-match>
+        <#1nonliteralPattern_pass-iri-match>
+        <#1nonliteralPattern_fail-iri-short>
+        <#1nonliteralPattern_fail-iri-long>
+        <#1nonliteralPattern_fail-lit-match>
+        <#1nonliteralPattern_pass-bnode-match>
+        <#1nonliteralPattern_fail-bnode-short>
+        <#1nonliteralPattern_fail-bnode-long>
 
-        # shape reference
+## shape reference
         <#1dotRef1_referent,referrer>
         <#1dotRef1_referrer,referent>
         <#1dotRef1_missingReferent>
@@ -444,7 +446,7 @@
         <#1dotRef1_overReferrer,overReferent>
         <#1dotRef1_overMatchesReferent>
 
-        # algebraic operations
+## algebraic operations
         <#1dotOr2dot_pass_p1>
         <#1dotOr2dot_pass_p2p3>
         <#1dotOr2dot_fail_p1p2p3>
@@ -457,14 +459,14 @@
         # open1dotCommaOr2dotcommasclose_... same as 1dotOr2dot
         # open1dotCommaOropen2dotCommascloseclose_... same as 1dotOr2dot
         # open1dotOr2dotclose_... same as 1dotOr2dot
-	<#openopen1dotOr1dotclose1dotclose_pass_p1p3>
-	<#openopen1dotOr1dotclose1dotclose_pass_p2p3>
-	<#openopen1dotOr1dotclose1dotclose_fail_p1>
-	<#openopen1dotOr1dotclose1dotclose_fail_p3>
-	<#openopen1dotOr1dotclose1dotclose_fail_p1p2>
+        <#openopen1dotOr1dotclose1dotclose_pass_p1p3>
+        <#openopen1dotOr1dotclose1dotclose_pass_p2p3>
+        <#openopen1dotOr1dotclose1dotclose_fail_p1>
+        <#openopen1dotOr1dotclose1dotclose_fail_p3>
+        <#openopen1dotOr1dotclose1dotclose_fail_p1p2>
         # openopen1dotCommaOr1dotCommaclose1dotCommacloseComma_... same as openopen1dotOr1dotclose1dotclose
 
-        # value sets
+## value sets
         <#1val1dotMinusiri3_pass>
         <#1val1dotMinusiri3_v1>
         <#1val1dotMinusiri3_v2>
@@ -490,7 +492,7 @@
         <#1val1iriStemMinusiriStem3_v3>
         <#1val1iriStemMinusiriStem3_v1a>
 
-        # term equivalence
+## term equivalence
         <#1val1IRIREF_pass>
         <#1val1IRIREF_v2>
         <#1val1DOUBLE_pass>
@@ -508,86 +510,86 @@
         <#1val1false_true>
         <#1val1false_ab>
 
-        # numerics
+## numerics
         <#1val1INTEGER_pass>
         <#1val1INTEGER_00>
         <#1val1INTEGER_Lab>
 
-        # datatypes
+## datatypes
         <#1val1IRIREFDatatype_pass>
         <#1val1IRIREFDatatype_Lab>
         <#1val1IRIREFDatatype_LabDTbloodType999>
         <#1val1IRIREFDatatype_LaDTbloodType>
         # 1val1LNDatatype_... same as 1val1IRIREFDatatype except prefixes
 
-        # language tags
+## language tags
         <#1val1LANGTAG_pass>
         <#1val1LANGTAG_Lab>
         <#1val1LANGTAG_LabLTen>
         <#1val1LANGTAG_LabLTen-fr-jura>
         <#1val1LANGTAG_LaLTen-fr>
 
-        # AND valueExpr
-	<#1val1vExprANDRef3_pass>
-	<#1val1vExprANDRef3_failvc1>
-	<#1val1vExprANDRef3_failvc2>
-	<#1val1vExprANDRef3_failvc3>
-	<#1val1vExprRefAND3_pass>
-	<#1val1vExprRefAND3_failvc3>
-	<#1val1vExprRefAND3_failvc2>
-	<#1val1vExprRefAND3_failvc1>
-	<#1val1vExprAND3_pass>
-	<#1val1vExprAND3_failvc1>
-	<#1val1vExprAND3_failvc2>
-	<#1val1vExprAND3_failvc3>
+## AND valueExpr
+        <#1val1vExprANDRef3_pass>
+        <#1val1vExprANDRef3_failvc1>
+        <#1val1vExprANDRef3_failvc2>
+        <#1val1vExprANDRef3_failvc3>
+        <#1val1vExprRefAND3_pass>
+        <#1val1vExprRefAND3_failvc3>
+        <#1val1vExprRefAND3_failvc2>
+        <#1val1vExprRefAND3_failvc1>
+        <#1val1vExprAND3_pass>
+        <#1val1vExprAND3_failvc1>
+        <#1val1vExprAND3_failvc2>
+        <#1val1vExprAND3_failvc3>
 
-        # OR valueExpr
+## OR valueExpr
         <#1val1vExprORRef3_fail>
         <#1val1vExprORRef3_passvc1>
         <#1val1vExprORRef3_passvc2>
         <#1val1vExprORRef3_passvc3>
         <#1val1vExprORRef3_passvc1vc2vc3>
-	<#1val1vExprRefOR3_passvc1vc2vc3>
-	<#1val1vExprRefOR3_passvc3>
-	<#1val1vExprRefOR3_passvc2>
-	<#1val1vExprRefOR3_passvc1>
-	<#1val1vExprRefOR3_fail>
+        <#1val1vExprRefOR3_passvc1vc2vc3>
+        <#1val1vExprRefOR3_passvc3>
+        <#1val1vExprRefOR3_passvc2>
+        <#1val1vExprRefOR3_passvc1>
+        <#1val1vExprRefOR3_fail>
         <#1val1vExprOR3_fail>
         <#1val1vExprOR3_passvc1>
         <#1val1vExprOR3_passvc2>
         <#1val1vExprOR3_passvc3>
         <#1val1vExprOR3_passvc1vc2vc3>
 
-        # closed
+## closed
         <#1dotClosed_pass>
         <#1dotClosed_fail_lower>
         <#1dotClosed_fail_higher>
 
-        # extra
+## extra
         <#1val1IRIREFExtra1_pass-iri1>
         <#1val1IRIREFExtra1_pass-iri2>
         <#1val2IRIREFExtra1_pass-iri2>
-	<#1val2IRIREFPlusExtra1_pass-iri2>
+        <#1val2IRIREFPlusExtra1_pass-iri2>
         <#1val2IRIREFExtra1_pass-iri-bnode>
-	<#1dotExtra1_pass-iri1>
-	<#1dotExtra1_pass-iri2>
-	<#3groupdotExtra3_pass-iri1> <#3groupdot3Extra_pass-iri1> <#3groupdotExtra3NLex_pass-iri1>
-	<#3groupdotExtra3_pass-iri2> <#3groupdot3Extra_pass-iri2> <#3groupdotExtra3NLex_pass-iri2>
+        <#1dotExtra1_pass-iri1>
+        <#1dotExtra1_pass-iri2>
+        <#3groupdotExtra3_pass-iri1> <#3groupdot3Extra_pass-iri1> <#3groupdotExtra3NLex_pass-iri1>
+        <#3groupdotExtra3_pass-iri2> <#3groupdot3Extra_pass-iri2> <#3groupdotExtra3NLex_pass-iri2>
 
-	# start
-	<#startRefIRIREF_pass-noOthers>
-	<#startRefIRIREF_pass-others_lexicallyEarlier>
-	<#startRefIRIREF_fail-missing>
-	<#startRefbnode_pass-noOthers>
-	<#startRefbnode_fail-missing>
-	<#startInline_pass-noOthers>
-	<#startEqualSpaceInline_pass-noOthers>
-	<#startSpaceEqualInline_pass-noOthers>
-	<#startInline_fail-missing>
+## start
+        <#startRefIRIREF_pass-noOthers>
+        <#startRefIRIREF_pass-others_lexicallyEarlier>
+        <#startRefIRIREF_fail-missing>
+        <#startRefbnode_pass-noOthers>
+        <#startRefbnode_fail-missing>
+        <#startInline_pass-noOthers>
+        <#startEqualSpaceInline_pass-noOthers>
+        <#startSpaceEqualInline_pass-noOthers>
+        <#startInline_fail-missing>
 
-	# include
+## include
 
-        # annotations
+## annotations
         <#1dotAnnotIRIREF_pass>
         <#1dotAnnotIRIREF_missing>
         <#1dotAnnotSTRING_LITERAL1_pass>
@@ -596,7 +598,7 @@
         <#1inversedotAnnot3_pass>
         <#1inversedotAnnot3_missing>
 
-        # semantic actions
+## semantic actions
         <#1dotCode1_pass>
         <#1inversedotCode1_pass>
         <#1dotCode3_pass>
@@ -611,10 +613,10 @@
         <#startCode3_pass>
         <#startCode3fail_abort>
 
-        # annotations + semantic actions
+## annotations + semantic actions
         <#open3groupdotclosecard23Annot3Code2-p1p2p3X3>
 
-        # manual schemas
+## manual schemas
         <#iovka>
         <#greedy>
         <#skipped>
@@ -622,7 +624,8 @@
         <#simple-group>
     ) .
 
-# empty {
+# definitions
+## empty {
 <#0_empty> a sht:ValidationTest ;
     mf:name "0_empty" ;
     rdfs:comment "<S> {  } on {  }" ;
@@ -648,9 +651,8 @@
     ] ;
     mf:result <0_pass.val>
     .
-# } empty
-
-# triple pattern {
+## } empty
+## triple pattern {
 
 <#1dot_fail-empty> a sht:ValidationFailure ;
     mf:name "1dot_fail-empty" ;
@@ -1046,8 +1048,8 @@
     mf:result <1Adot_pass.val>
     .
 
-# } triple pattern
-# cardinality {
+## } triple pattern
+## cardinality {
 
 <#1card2_fail0> a sht:ValidationFailure ;
     mf:name "1card2_fail0" ;
@@ -1402,8 +1404,8 @@
     mf:result <1cardStar_pass6.val>
     .
 
-# } cardinality
-# node kinds {
+## } cardinality
+## node kinds {
 
 <#1literalPlus_Is1_Ip1_La,Io1> a sht:ValidationFailure ;
     mf:name "1literalPlus_Is1_Ip1_La,Io1" ;
@@ -1417,8 +1419,8 @@
     ]
     .
 
-# } node kinds
-# datatype {
+## } node kinds
+## datatype {
 
 <#1datatype_missing> a sht:ValidationFailure ;
     mf:name "1datatype_missing" ;
@@ -1469,9 +1471,9 @@
     mf:result <1datatype_pass.val>
     .
 
-# } datatype
-# facets {
-#   length {
+## } datatype
+## facets {
+###   length {
 
 <#1datatypeLength_fail-missing> a sht:ValidationFailure ;
     mf:name "1datatypeLength_fail-missing" ;
@@ -1534,8 +1536,8 @@
     ]
     .
 
-#   } length
-#   fractionDigits {
+###   } length
+###   fractionDigits {
 
 <#1literalFractiondigits_fail-decimal-short> a sht:ValidationFailure ;
     mf:name "1literalFractiondigits_fail-decimal-short" ;
@@ -1549,18 +1551,18 @@
     ] ;
     .
 
-# for # for numericFacet ::= (numericFacet | numericLength) INTEGER (numericLiteral | string '^^' datatype )
-# <#1literalFractiondigitsxsd-integer_fail-decimal-short> a sht:ValidationFailure ;
-#     mf:name "1literalFractiondigitsxsd-integer_fail-decimal-short" ;
-#     rdfs:comment "<S1> { <p1> LITERAL FRACTIONDIGITS 5 } / { <s1> <p1> 1.2345 }" ;
-#     mf:status mf:proposed ;
-#     mf:action [
-#       sht:schema <../schemas/1literalFractiondigitsxsd-integer.shex> ;
-#       sht:shape <http://a.example/S1> ;
-#       sht:data <Is1_Ip1_DEC1_2345.ttl> ;
-#       sht:focus <http://a.example/s1>
-#     ] ;
-#     .
+ # for # for numericFacet ::= (numericFacet | numericLength) INTEGER (numericLiteral | string '^^' datatype )
+ # <#1literalFractiondigitsxsd-integer_fail-decimal-short> a sht:ValidationFailure ;
+ #     mf:name "1literalFractiondigitsxsd-integer_fail-decimal-short" ;
+ #     rdfs:comment "<S1> { <p1> LITERAL FRACTIONDIGITS 5 } / { <s1> <p1> 1.2345 }" ;
+ #     mf:status mf:proposed ;
+ #     mf:action [
+ #       sht:schema <../schemas/1literalFractiondigitsxsd-integer.shex> ;
+ #       sht:shape <http://a.example/S1> ;
+ #       sht:data <Is1_Ip1_DEC1_2345.ttl> ;
+ #       sht:focus <http://a.example/s1>
+ #     ] ;
+ #     .
 
 <#1literalFractiondigits_pass-decimal-equal> a sht:ValidationTest ;
     mf:name "1literalFractiondigits_pass-decimal-equal" ;
@@ -1575,19 +1577,19 @@
     mf:result <1literalFractiondigits_pass-decimal-equal.val>
     .
 
-# # for numericFacet ::= (numericFacet | numericLength) INTEGER (numericLiteral | string '^^' datatype )
-# <#1literalFractiondigitsxsd-integer_pass-decimal-equal> a sht:ValidationTest ;
-#     mf:name "1literalFractiondigitsxsd-integer_pass-decimal-equal" ;
-#     rdfs:comment "<S1> { <p1> LITERAL FRACTIONDIGITS \"5\"^^<http://www.w3.org/2001/XMLSchema#integer> } / { <s1> <p1> 1.23456 }" ;
-#     mf:status mf:proposed ;
-#     mf:action [
-#       sht:schema <../schemas/1literalFractiondigitsxsd-integer.shex> ;
-#       sht:shape <http://a.example/S1> ;
-#       sht:data <Is1_Ip1_DEC1_23456.ttl> ;
-#       sht:focus <http://a.example/s1>
-#     ] ;
-#     mf:result <1literalFractiondigits_pass-decimal-equal.val>
-#     .
+ # # for numericFacet ::= (numericFacet | numericLength) INTEGER (numericLiteral | string '^^' datatype )
+ # <#1literalFractiondigitsxsd-integer_pass-decimal-equal> a sht:ValidationTest ;
+ #     mf:name "1literalFractiondigitsxsd-integer_pass-decimal-equal" ;
+ #     rdfs:comment "<S1> { <p1> LITERAL FRACTIONDIGITS \"5\"^^<http://www.w3.org/2001/XMLSchema#integer> } / { <s1> <p1> 1.23456 }" ;
+ #     mf:status mf:proposed ;
+ #     mf:action [
+ #       sht:schema <../schemas/1literalFractiondigitsxsd-integer.shex> ;
+ #       sht:shape <http://a.example/S1> ;
+ #       sht:data <Is1_Ip1_DEC1_23456.ttl> ;
+ #       sht:focus <http://a.example/s1>
+ #     ] ;
+ #     mf:result <1literalFractiondigits_pass-decimal-equal.val>
+ #     .
 
 <#1literalFractiondigits_pass-float-equal> a sht:ValidationTest ;
     mf:name "1literalFractiondigits_pass-float-equal" ;
@@ -1698,8 +1700,8 @@
     ] ;
     .
 
-#   } fractionDigits
-#   totalDigits {
+###   } fractionDigits
+###   totalDigits {
 
 <#1literalTotaldigits_fail-decimal-short> a sht:ValidationFailure ;
     mf:name "1literalTotaldigits_fail-decimal-short" ;
@@ -1713,18 +1715,18 @@
     ] ;
     .
 
-# for # for numericFacet ::= (numericFacet | numericLength) INTEGER (numericLiteral | string '^^' datatype )
-# <#1literalTotaldigitsxsd-integer_fail-decimal-short> a sht:ValidationFailure ;
-#     mf:name "1literalTotaldigitsxsd-integer_fail-decimal-short" ;
-#     rdfs:comment "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> 1.234 }" ;
-#     mf:status mf:proposed ;
-#     mf:action [
-#       sht:schema <../schemas/1literalTotaldigitsxsd-integer.shex> ;
-#       sht:shape <http://a.example/S1> ;
-#       sht:data <Is1_Ip1_DEC1_234.ttl> ;
-#       sht:focus <http://a.example/s1>
-#     ] ;
-#     .
+ # for # for numericFacet ::= (numericFacet | numericLength) INTEGER (numericLiteral | string '^^' datatype )
+ # <#1literalTotaldigitsxsd-integer_fail-decimal-short> a sht:ValidationFailure ;
+ #     mf:name "1literalTotaldigitsxsd-integer_fail-decimal-short" ;
+ #     rdfs:comment "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> 1.234 }" ;
+ #     mf:status mf:proposed ;
+ #     mf:action [
+ #       sht:schema <../schemas/1literalTotaldigitsxsd-integer.shex> ;
+ #       sht:shape <http://a.example/S1> ;
+ #       sht:data <Is1_Ip1_DEC1_234.ttl> ;
+ #       sht:focus <http://a.example/s1>
+ #     ] ;
+ #     .
 
 <#1literalTotaldigits_pass-decimal-equal> a sht:ValidationTest ;
     mf:name "1literalTotaldigits_pass-decimal-equal" ;
@@ -1739,19 +1741,19 @@
     mf:result <1literalTotaldigits_pass-decimal-equal.val>
     .
 
-# # for numericFacet ::= (numericFacet | numericLength) INTEGER (numericLiteral | string '^^' datatype )
-# <#1literalTotaldigitsxsd-integer_pass-decimal-equal> a sht:ValidationTest ;
-#     mf:name "1literalTotaldigitsxsd-integer_pass-decimal-equal" ;
-#     rdfs:comment "<S1> { <p1> LITERAL TOTALDIGITS \"5\"^^<http://www.w3.org/2001/XMLSchema#integer> } / { <s1> <p1> 1.2345 }" ;
-#     mf:status mf:proposed ;
-#     mf:action [
-#       sht:schema <../schemas/1literalTotaldigitsxsd-integer.shex> ;
-#       sht:shape <http://a.example/S1> ;
-#       sht:data <Is1_Ip1_DEC1_2345.ttl> ;
-#       sht:focus <http://a.example/s1>
-#     ] ;
-#     mf:result <1literalTotaldigits_pass-decimal-equal.val>
-#     .
+ # # for numericFacet ::= (numericFacet | numericLength) INTEGER (numericLiteral | string '^^' datatype )
+ # <#1literalTotaldigitsxsd-integer_pass-decimal-equal> a sht:ValidationTest ;
+ #     mf:name "1literalTotaldigitsxsd-integer_pass-decimal-equal" ;
+ #     rdfs:comment "<S1> { <p1> LITERAL TOTALDIGITS \"5\"^^<http://www.w3.org/2001/XMLSchema#integer> } / { <s1> <p1> 1.2345 }" ;
+ #     mf:status mf:proposed ;
+ #     mf:action [
+ #       sht:schema <../schemas/1literalTotaldigitsxsd-integer.shex> ;
+ #       sht:shape <http://a.example/S1> ;
+ #       sht:data <Is1_Ip1_DEC1_2345.ttl> ;
+ #       sht:focus <http://a.example/s1>
+ #     ] ;
+ #     mf:result <1literalTotaldigits_pass-decimal-equal.val>
+ #     .
 
 <#1literalTotaldigits_pass-float-equal> a sht:ValidationTest ;
     mf:name "1literalTotaldigits_pass-float-equal" ;
@@ -1863,9 +1865,9 @@
     ] ;
     .
 
-#   } totalDigits
-#   comparators {
-#     manual {
+###   } totalDigits
+###   comparators {
+####     manual {
 
 <#1floatMininclusiveINTEGER_fail-low> a sht:ValidationFailure ;
     mf:name "1floatMininclusiveINTEGER_fail-low" ;
@@ -1982,8 +1984,8 @@
     mf:result <1floatMininclusiveINTEGER_pass-equal.val>
     .
 
-#     } manual
-#     generated {
+####     } manual
+####     generated {
 
 <#1integerMininclusiveINTEGER_fail-integer-low> a sht:ValidationFailure ;
     mf:name "1integerMininclusiveINTEGER_fail-integer-low" ;
@@ -4996,9 +4998,9 @@
     ] ;
     .
 
-#     } generated
-#   } comparators
-#   lengths {
+####     } generated
+###   } comparators
+###   lengths {
 <#1literalLength_fail-lit-short> a sht:ValidationFailure ;
     mf:name "1literalLength_fail-lit-short" ;
     mf:comment "<S1> { <p1> LITERAL LENGTH 5 } on { <s1> <p1> \"abcd\" }" ;
@@ -5743,8 +5745,8 @@
     ]
     .
 
-#   } lengths
-#   pattern {
+###   } lengths
+###   pattern {
 
 <#1literalPattern_pass-lit-match> a sht:ValidationTest ;
     mf:name "1literalPattern_pass-lit-match" ;
@@ -6009,9 +6011,9 @@
       sht:focus <http://a.example/s1>
     ].
 
-#   } pattern
-# } facets
-# shape reference {
+###   } pattern
+## } facets
+## shape reference {
 
 <#1dotRef1_referent,referrer> a sht:ValidationTest ;
     mf:name "1dotRef1_referent,referrer" ;
@@ -6088,8 +6090,8 @@
     mf:result <In2_Ip2_In1@In1_Ip1_LX.val>
     .
 
-# } shape reference
-# algebraic operations {
+## } shape reference
+## algebraic operations {
 
 <#1dotOr2dot_pass_p1> a sht:ValidationTest ;
     mf:name "1dotOr2dot_pass_p1" ;
@@ -6230,8 +6232,8 @@
     ] ;
     .
 
-# } algebraic operations
-# value sets {
+## } algebraic operations
+## value sets {
 
 <#1val1dotMinusiri3_pass> a sht:ValidationTest ;
     mf:name "1val1dotMinusiri3_pass" ;
@@ -6530,8 +6532,8 @@
     ] ;
     .
 
-# } value sets
-# term equivalence {
+## } value sets
+## term equivalence {
 
 <#1val1IRIREF_pass> a sht:ValidationTest ;
     mf:name "1val1IRIREF_pass" ;
@@ -6708,8 +6710,8 @@
     ] ;
     .
 
-# } term equivalence
-# numerics {
+## } term equivalence
+## numerics {
 
 <#1val1INTEGER_pass> a sht:ValidationTest ;
     mf:name "1val1INTEGER_pass" ;
@@ -6748,8 +6750,8 @@
     ] ;
     .
 
-# } numerics
-# datatypes {
+## } numerics
+## datatypes {
 
 <#1val1IRIREFDatatype_pass> a sht:ValidationTest ;
     mf:name "1val1IRIREFDatatype_pass" ;
@@ -6800,8 +6802,8 @@
     ] ;
     .
 
-# } datatypes
-# language tags {
+## } datatypes
+## language tags {
 
 <#1val1LANGTAG_pass> a sht:ValidationTest ;
     mf:name "1val1LANGTAG_pass" ;
@@ -6864,8 +6866,8 @@
     ] ;
     .
 
-# } language tags
-# AND valueExpr {
+## } language tags
+## AND valueExpr {
 
 <#1val1vExprANDRef3_pass> a sht:ValidationTest ;
     mf:name "1val1vExprANDRef3_pass" ;
@@ -7014,8 +7016,8 @@
     ] ;
     .
 
-# } AND valueExpr
-# OR valueExpr {
+## } AND valueExpr
+## OR valueExpr {
 
 <#1val1vExprORRef3_fail> a sht:ValidationFailure ;
     mf:name "1val1vExprORRef3_fail" ;
@@ -7209,8 +7211,8 @@
     mf:result <1val1vExprOR3_passvr1vr2vr3.val>
     .
 
-# } OR valueExpr
-# closed {
+## } OR valueExpr
+## closed {
 
 <#1dotClosed_pass> a sht:ValidationTest ;
     mf:name "1dotClosed_pass" ;
@@ -7249,8 +7251,8 @@
     ]
     .
 
-# } closed
-# extra {
+## } closed
+## extra {
 
 <#1val1IRIREFExtra1_pass-iri1> a sht:ValidationTest ;
     mf:name "1val1IRIREFExtra1_pass-iri1" ;
@@ -7421,8 +7423,8 @@
     mf:result <3groupdotExtra3_Is_Ipn_IonX3.val>
     .
 
-# } extra
-# start {
+## } extra
+## start {
 
 <#startRefIRIREF_pass-noOthers> a sht:ValidationTest ;
     mf:name "startRefIRIREF_pass-noOthers" ;
@@ -7539,10 +7541,10 @@
     .
 
 
-# } start
-# include {
-# } include
-# annotations {
+## } start
+## include {
+## } include
+## annotations {
 
 <#1dotAnnotIRIREF_pass> a sht:ValidationTest ;
     mf:name "1dotAnnotIRIREF_pass" ;
@@ -7632,8 +7634,8 @@
     ]
     .
 
-# } annotations
-# semantic actions {
+## } annotations
+## semantic actions {
 
 <#1dotCode1_pass> a sht:ValidationTest ;
     mf:name "1dotCode1_pass" ;
@@ -7882,8 +7884,8 @@
     ]
     .
 
-# } semantic actions
-# annotations + semantic actions {
+## } semantic actions
+## annotations + semantic actions {
 <#open3groupdotclosecard23Annot3Code2-p1p2p3X3> a sht:ValidationTest ;
     mf:name "open3groupdotclosecard23Annot3Code2-p1p2p3X3" ;
     rdfs:comment "@@ open3groupdotclosecard23Annot3Code2-p1p2p3X3" ;
@@ -7907,9 +7909,8 @@
     mf:result <open3groupdotclosecard23Annot3Code2-p1p2p3X3.val>
     .
 
-# } annotations + semantic actions
-
-# manual schemas {
+## } annotations + semantic actions
+## manual schemas {
 
 <#iovka> a sht:ValidationTest ;
     mf:name "iovka" ;
@@ -7976,4 +7977,4 @@
     mf:result <simple-group.val>
     .
 
-# } manual schemas
+## } manual schemas
