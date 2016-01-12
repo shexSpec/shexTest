@@ -5133,7 +5133,7 @@
 
 <#1iriRefLength1_fail-iri-short> a sht:ValidationFailure ;
     mf:name "1iriRefLength1_fail-iri-short" ;
-    mf:comment "<PersonShape> { <p1> . } <EmployeeShape> { <p2> IRI @<PersonShape> LENGTH 19 } on { <s1> <p1> <http://a.example/o> }" ;
+    mf:comment "<S1> { <p1> IRI @<S2> LENGTH 19 } <S2> { <p2> . } on { <s1> <p1> <http://a.example/o> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1iriRefLength1.shex> ;
@@ -5145,7 +5145,7 @@
 
 <#1iriRefLength1_pass-iri-equal> a sht:ValidationTest ;
     mf:name "1iriRefLength1_pass-iri-equal" ;
-    rdfs:comment "<PersonShape> { <p1> . } <EmployeeShape> { <p2> IRI @<PersonShape> LENGTH 19 } on { <s1> <p1> <http://a.example/o1> . <http://a.example/o1> <p2>  <o2> }" ;
+    rdfs:comment "<S1> { <p1> IRI @<S2> LENGTH 19 } <S2> { <p2> . } on { <s1> <p1> <http://a.example/o1> . <http://a.example/o1> <p2>  <o2> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1iriRefLength1.shex> ;
@@ -5158,7 +5158,7 @@
 
 <#1iriRefLength1_fail-iri-long> a sht:ValidationFailure ;
     mf:name "1iriRefLength1_fail-iri-long" ;
-    mf:comment "<PersonShape> { <p1> . } <EmployeeShape> { <p2> IRI @<PersonShape> LENGTH 19 } on { <s1> <p1> <http://a.example/o1a> }" ;
+    mf:comment "<S1> { <p1> IRI @<S2> LENGTH 19 } <S2> { <p2> . } on { <s1> <p1> <http://a.example/o1a> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1iriRefLength1.shex> ;
@@ -5170,7 +5170,7 @@
 
 <#1iriRefLength1_fail-lit-equal> a sht:ValidationFailure ;
     mf:name "1iriRefLength1_fail-lit-equal" ;
-    mf:comment "<PersonShape> { <p1> . } <EmployeeShape> { <p2> IRI @<PersonShape> LENGTH 19 } on { <s1> <p1> \"abcde\" }" ;
+    mf:comment "<S1> { <p1> IRI @<S2> LENGTH 19 } <S2> { <p2> . } on { <s1> <p1> \"abcde\" }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1iriRefLength1.shex> ;
@@ -5182,7 +5182,7 @@
 
 <#1iriRefLength1_fail-bnode-equal> a sht:ValidationFailure ;
     mf:name "1iriRefLength1_fail-bnode-equal" ;
-    mf:comment "<PersonShape> { <p1> . } <EmployeeShape> { <p2> IRI @<PersonShape> LENGTH 5 } on { <s1> <p1> _:abcde }" ;
+    mf:comment "<S1> { <p1> IRI @<S2> LENGTH 19 } <S2> { <p2> . } on { <s1> <p1> _:abcde }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1iriRefLength1.shex> ;
