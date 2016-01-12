@@ -109,6 +109,11 @@
         <#1dotRef1_overReferrer>
         <#1dotRef1_overReferrer,overReferent>
         <#1dotRef1_overMatchesReferent>
+	<#1refbnode1_pass>
+	<#1refbnode1_fail-g1-arc>
+	<#1refbnode1_fail-g2-arc>
+	<#3circularRef1_pass-open>
+	<#3circularRef1_pass-closed>
 
 ## inline
 
@@ -1732,12 +1737,75 @@
  # !../schemas/1dotRefSpaceLNex.shex [1dotRefLNex.shex]
  # !../schemas/1dotRefNS1.shex
  # !../schemas/1dotRefSpaceNS1.shex [1dotRefNS1.shex]
- # !../schemas/1refbnode1.shex
+
+<#1refbnode1_pass> a sht:ValidationTest ;
+    mf:name "1refbnode1_pass" ;
+    rdfs:comment "<S1> { <p1> @_:S2 } _:S2 { <p2> . } on { <n1> <p1> <n2> . <n2> <p2> \"X\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1refbnode1.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip1_In2.In2_Ip2_LX.ttl> ;
+      sht:focus <http://a.example/n1>
+    ] ;
+    mf:result <1refbnode1_pass.val>
+    .
+
+<#1refbnode1_fail-g1-arc> a sht:ValidationFailure ;
+    mf:name "1refbnode1_fail-g1-arc" ;
+    rdfs:comment "<S1> { <p1> @_:S2 } _:S2 { <p2> . } on { <n1> <p2> <n2> . <n2> <p2> \"X\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1refbnode1.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip2_In2.In2_Ip2_LX.ttl> ;
+      sht:focus <http://a.example/n1>
+    ]
+    .
+
+<#1refbnode1_fail-g2-arc> a sht:ValidationFailure ;
+    mf:name "1refbnode1_fail-g2-arc" ;
+    rdfs:comment "<S1> { <p1> @_:S2 } _:S2 { <p2> . } on { <n1> <p1> <n2> . <n2> <p1> \"X\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1refbnode1.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip1_In2.In2_Ip1_LX.ttl> ;
+      sht:focus <http://a.example/n1>
+    ]
+    .
+
  # !../schemas/1refbnode_with_leading_digit1.shex
  # !../schemas/1refbnode_with_leading_underscore1.shex
  # !../schemas/1refbnode_with_spanning_PN_CHARS1.shex
  # !../schemas/1refbnode_with_spanning_PN_CHARS_BASE1.shex
- # !../schemas/3circularRef1.shex          <S1> { <p1> ., <p2> @<S2>? } <S2> { <p3> @<S3> } <S3> { <p4> @<S1> } <S4> { <p5> . }
+
+<#3circularRef1_pass-open> a sht:ValidationTest ;
+    mf:name "3circularRef1_pass-open" ;
+    rdfs:comment "<S1> { <p1> ., <p2> @<S2>? } <S2> { <p3> @<S3> } <S3> { <p4> @<S1> } <S4> { <p5> . } on { <n1> <p1> \"X\" ; <p2> <n2> . <n2> <p3> <n3> . <n3> <p4> <n5> . <n5> <p1> \"X\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/3circularRef1.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <3circularRef1_pass-open.ttl> ;
+      sht:focus <http://a.example/n1>
+    ] ;
+    mf:result <3circularRef1_pass-open.val>
+    .
+
+<#3circularRef1_pass-closed> a sht:ValidationTest ;
+    mf:name "3circularRef1_pass-closed" ;
+    rdfs:comment "<S1> { <p1> ., <p2> @<S2>? } <S2> { <p3> @<S3> } <S3> { <p4> @<S1> } <S4> { <p5> . } on { <n1> <p1> \"X\" ; <p2> <n2> . <n2> <p3> <n3> . <n3> <p4> <n1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/3circularRef1.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <3circularRef1_pass-closed.ttl> ;
+      sht:focus <http://a.example/n1>
+    ] ;
+    mf:result <3circularRef1_pass-closed.val>
+    .
+
  # !../schemas/1iriRef1.shex               <S1> { <p1> IRI @<S2> } <S2> { <p2> . }
 
 ## } shape reference
@@ -5616,7 +5684,7 @@
 ###   lengths {
 <#1literalLength_fail-lit-short> a sht:ValidationFailure ;
     mf:name "1literalLength_fail-lit-short" ;
-<    mf:comment "<S1> { <p1> LITERAL LENGTH 5 } on { <s1> <p1> \"abcd\" }" ;
+    mf:comment "<S1> { <p1> LITERAL LENGTH 5 } on { <s1> <p1> \"abcd\" }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1literalLength.shex> ;
