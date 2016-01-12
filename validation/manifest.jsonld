@@ -7,17 +7,22 @@
       "rdfs:comment": "ShEx validation tests",
       "entries": [
         {
-          "@id": "#startCode3fail_abort",
+          "@id": "#startCode1startReffail_abort",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/startCode3fail.shex",
+            "schema": "../schemas/startCode1startReffail.shex",
             "shape": "http://a.example/S1",
             "data": "Is1_Ip1_Io1.ttl",
             "focus": "http://a.example/s1"
           },
-          "extensionResults": [],
-          "name": "startCode3fail_abort",
-          "comment": "%<Test>{print('startAct 1')%} %<Test>{ fail('startAct 2') %} %<Test>{print('startAct 3')%} <S> { <p1> . } on { <s> <p1> <o1> }",
+          "extensionResults": [
+            {
+              "extension": "http://shex.io/extensions/Test/",
+              "prints": "\"startAct\""
+            }
+          ],
+          "name": "startCode1startReffail_abort",
+          "comment": "%<Test>{ fail('startAct') %} <S> { <p1> . } on { <s> <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -65,22 +70,17 @@
           "result": "0_pass.val"
         },
         {
-          "@id": "#startCode1fail_abort",
+          "@id": "#1dotCode3fail_abort",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/startCode1fail.shex",
+            "schema": "../schemas/1dotCode3fail.shex",
             "shape": "http://a.example/S1",
             "data": "Is1_Ip1_Io1.ttl",
             "focus": "http://a.example/s1"
           },
-          "extensionResults": [
-            {
-              "extension": "http://shex.io/extensions/Test/",
-              "prints": "\"startAct\""
-            }
-          ],
-          "name": "startCode1fail_abort",
-          "comment": "%<Test>{ fail('startAct') %} <S> { <p1> . } on { <s> <p1> <o1> }",
+          "extensionResults": [],
+          "name": "1dotCode3fail_abort",
+          "comment": "<S> { <p1> . %<Test>{ print(s) %}%<Test>{ fail(s) %}%<Test>{ print(o) %} } on { <s> <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -3892,6 +3892,76 @@
           "result": "1datatype_pass.val"
         },
         {
+          "@id": "#1nonliteral_pass-bnode",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1nonliteral.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Bab.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1nonliteral_pass-bnode",
+          "status": "mf:proposed",
+          "result": "1nonliteral_pass-bnode.val"
+        },
+        {
+          "@id": "#1nonliteral_pass-iri",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1nonliteral.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1nonliteral_pass-iri",
+          "status": "mf:proposed",
+          "result": "1nonliteral_pass-iri.val"
+        },
+        {
+          "@id": "#1literal_pass-literal",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1literal.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Lab.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literal_pass-literal",
+          "status": "mf:proposed",
+          "result": "1literal_pass-literal.val"
+        },
+        {
+          "@id": "#1bnode_pass-bnode",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1bnode.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Bab.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1bnode_pass-bnode",
+          "status": "mf:proposed",
+          "result": "1bnode_pass-bnode.val"
+        },
+        {
+          "@id": "#1iri_pass-iri",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1iri.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1iri_pass-iri",
+          "status": "mf:proposed",
+          "result": "1iri_pass-iri.val"
+        },
+        {
           "@id": "#1Adot_pass",
           "@type": "sht:ValidationTest",
           "action": {
@@ -4226,6 +4296,20 @@
           "status": "mf:proposed"
         },
         {
+          "@id": "#startCode3fail_abort",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/startCode3fail.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "startCode3fail_abort",
+          "comment": "%<Test>{print('startAct 1')%} %<Test>{ fail('startAct 2') %} %<Test>{print('startAct 3')%} <S> { <p1> . } on { <s> <p1> <o1> }",
+          "status": "mf:proposed"
+        },
+        {
           "@id": "#1inversedot_fail-empty",
           "@type": "sht:ValidationFailure",
           "action": {
@@ -4240,10 +4324,10 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#startCode1startReffail_abort",
+          "@id": "#startCode1fail_abort",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/startCode1startReffail.shex",
+            "schema": "../schemas/startCode1fail.shex",
             "shape": "http://a.example/S1",
             "data": "Is1_Ip1_Io1.ttl",
             "focus": "http://a.example/s1"
@@ -4254,7 +4338,7 @@
               "prints": "\"startAct\""
             }
           ],
-          "name": "startCode1startReffail_abort",
+          "name": "startCode1fail_abort",
           "comment": "%<Test>{ fail('startAct') %} <S> { <p1> . } on { <s> <p1> <o1> }",
           "status": "mf:proposed"
         },
@@ -4281,20 +4365,6 @@
           "comment": "@@ open3groupdotclosecard23Annot3Code2-p1p2p3X3",
           "status": "mf:proposed",
           "result": "open3groupdotclosecard23Annot3Code2-p1p2p3X3.val"
-        },
-        {
-          "@id": "#1dotCode3fail_abort",
-          "@type": "sht:ValidationFailure",
-          "action": {
-            "schema": "../schemas/1dotCode3fail.shex",
-            "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_Io1.ttl",
-            "focus": "http://a.example/s1"
-          },
-          "extensionResults": [],
-          "name": "1dotCode3fail_abort",
-          "comment": "<S> { <p1> . %<Test>{ print(s) %}%<Test>{ fail(s) %}%<Test>{ print(o) %} } on { <s> <p1> <o1> }",
-          "status": "mf:proposed"
         },
         {
           "@id": "#1inversedotAnnot3_missing",
@@ -7934,6 +8004,97 @@
           "extensionResults": [],
           "name": "1datatype_missing",
           "comment": "<S> { <p1> <dt1> } on <s> in { <s> <p2> <o1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1nonliteral_fail-literal",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1nonliteral.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Lab.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1nonliteral_fail-literal",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1literal_fail-bnode",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1literal.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Bab.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literal_fail-bnode",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1literal_fail-iri",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1literal.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literal_fail-iri",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1bnode_fail-literal",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1bnode.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Lab.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1bnode_fail-literal",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1bnode_fail-iri",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1bnode.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1bnode_fail-iri",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1iri_fail-literal",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1iri.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Lab.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1iri_fail-literal",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1iri_fail-bnode",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1iri.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Bab.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1iri_fail-bnode",
           "status": "mf:proposed"
         },
         {

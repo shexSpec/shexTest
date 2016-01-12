@@ -1,3 +1,5 @@
+# -*- mode: n3; outline-regexp: "[#]+ "; -*-
+
 # prefixes
 @prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
@@ -46,6 +48,19 @@
         <#1Adot_pass>
 
 ## node kinds
+        <#1iri_pass-iri>
+        <#1iri_fail-bnode>
+        <#1iri_fail-literal>
+        <#1bnode_fail-iri>
+        <#1bnode_pass-bnode>
+        <#1bnode_fail-literal>
+        <#1literal_fail-iri>
+        <#1literal_fail-bnode>
+        <#1literal_pass-literal>
+        <#1nonliteral_pass-iri>
+        <#1nonliteral_pass-bnode>
+        <#1nonliteral_fail-literal>
+
 ## datatype
         <#1datatype_missing>
         <#1datatype_nonLiteral>
@@ -1063,10 +1078,154 @@
 ## } triple pattern
 ## node kinds {
 
- # !1iri.shex
- # !1literal.shex
- # !1bnode.shex
- # !1nonliteral.shex
+<#1iri_pass-iri> a sht:ValidationTest ;
+    mf:name "1iri_pass-iri" ;
+    mf:comment "<S1> { <p1> IRI } on { <s1> <p1> <o1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1iri.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1iri_pass-iri.val>
+    .
+
+<#1iri_fail-bnode> a sht:ValidationFailure ;
+    mf:name "1iri_fail-bnode" ;
+    mf:comment "<S1> { <p1> IRI } on { <s1> <p1> _:ab }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1iri.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Bab.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1iri_fail-literal> a sht:ValidationFailure ;
+    mf:name "1iri_fail-literal" ;
+    mf:comment "<S1> { <p1> IRI } on { <s1> <p1> \"ab\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1iri.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Lab.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1bnode_fail-iri> a sht:ValidationFailure ;
+    mf:name "1bnode_fail-iri" ;
+    mf:comment "<S1> { <p1> BNODE } on { <s1> <p1> <o1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1bnode.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1bnode_pass-bnode> a sht:ValidationTest ;
+    mf:name "1bnode_pass-bnode" ;
+    mf:comment "<S1> { <p1> BNODE } on { <s1> <p1> _:ab }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1bnode.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Bab.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1bnode_pass-bnode.val>
+    .
+
+<#1bnode_fail-literal> a sht:ValidationFailure ;
+    mf:name "1bnode_fail-literal" ;
+    mf:comment "<S1> { <p1> BNODE } on { <s1> <p1> \"ab\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1bnode.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Lab.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1literal_fail-iri> a sht:ValidationFailure ;
+    mf:name "1literal_fail-iri" ;
+    mf:comment "<S1> { <p1> LITERAL } on { <s1> <p1> <o1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literal.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1literal_fail-bnode> a sht:ValidationFailure ;
+    mf:name "1literal_fail-bnode" ;
+    mf:comment "<S1> { <p1> LITERAL } on { <s1> <p1> _:ab }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literal.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Bab.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1literal_pass-literal> a sht:ValidationTest ;
+    mf:name "1literal_pass-literal" ;
+    mf:comment "<S1> { <p1> LITERAL } on { <s1> <p1> \"ab\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literal.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Lab.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1literal_pass-literal.val>
+    .
+
+<#1nonliteral_pass-iri> a sht:ValidationTest ;
+    mf:name "1nonliteral_pass-iri" ;
+    mf:comment "<S1> { <p1> NONLITERAL } on { <s1> <p1> <o1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1nonliteral.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1nonliteral_pass-iri.val>
+    .
+
+<#1nonliteral_pass-bnode> a sht:ValidationTest ;
+    mf:name "1nonliteral_pass-bnode" ;
+    mf:comment "<S1> { <p1> NONLITERAL } on { <s1> <p1> _:ab }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1nonliteral.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Bab.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1nonliteral_pass-bnode.val>
+    .
+
+<#1nonliteral_fail-literal> a sht:ValidationFailure ;
+    mf:name "1nonliteral_fail-literal" ;
+    mf:comment "<S1> { <p1> NONLITERAL } on { <s1> <p1> \"ab\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1nonliteral.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Lab.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
 
 ## } node kinds
 ## datatype {
@@ -5457,7 +5616,7 @@
 ###   lengths {
 <#1literalLength_fail-lit-short> a sht:ValidationFailure ;
     mf:name "1literalLength_fail-lit-short" ;
-    mf:comment "<S1> { <p1> LITERAL LENGTH 5 } on { <s1> <p1> \"abcd\" }" ;
+<    mf:comment "<S1> { <p1> LITERAL LENGTH 5 } on { <s1> <p1> \"abcd\" }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1literalLength.shex> ;
