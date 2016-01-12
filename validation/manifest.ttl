@@ -446,6 +446,8 @@
         <#1dotRef1_overReferrer,overReferent>
         <#1dotRef1_overMatchesReferent>
 
+## inline
+
 ## value sets
         <#1val1dotMinusiri3_pass>
         <#1val1dotMinusiri3_v1>
@@ -6094,20 +6096,22 @@
     mf:result <In2_Ip2_In1@In1_Ip1_LX.val>
     .
 
- # !1iriRef1.shex               <S1> { <p1> IRI @<S2> } <S2> { <p2> . }
- # !1dotInline1.shex
- # !1refbnode1.shex
- # !3circularRef1.shex          <S1> { <p1> ., <p2> @<S2>? } <S2> { <p3> @<S3> } <S3> { <p4> @<S1> } <S4> { <p5> . }
- # !1dotRefLNex.shex
- # !1dotRefSpaceLNex.shex [1dotRefLNex.shex]
- # !1dotRefNS1.shex
- # !1dotRefSpaceNS1.shex [1dotRefNS1.shex]
- # !1refbnode_with_leading_digit1.shex
- # !1refbnode_with_leading_underscore1.shex
- # !1refbnode_with_spanning_PN_CHARS1.shex
- # !1refbnode_with_spanning_PN_CHARS_BASE1.shex
+ # !../schemas/1dotRefLNex.shex
+ # !../schemas/1dotRefSpaceLNex.shex [1dotRefLNex.shex]
+ # !../schemas/1dotRefNS1.shex
+ # !../schemas/1dotRefSpaceNS1.shex [1dotRefNS1.shex]
+ # !../schemas/1refbnode1.shex
+ # !../schemas/1refbnode_with_leading_digit1.shex
+ # !../schemas/1refbnode_with_leading_underscore1.shex
+ # !../schemas/1refbnode_with_spanning_PN_CHARS1.shex
+ # !../schemas/1refbnode_with_spanning_PN_CHARS_BASE1.shex
+ # !../schemas/3circularRef1.shex          <S1> { <p1> ., <p2> @<S2>? } <S2> { <p3> @<S3> } <S3> { <p4> @<S1> } <S4> { <p5> . }
+ # !../schemas/1iriRef1.shex               <S1> { <p1> IRI @<S2> } <S2> { <p2> . }
 
 ## } shape reference
+## inline }
+ # !../schemas/1dotInline1.shex
+## } inline
 ## value sets {
 
 <#1val1dotMinusiri3_pass> a sht:ValidationTest ;
@@ -6744,28 +6748,28 @@
 ## } language tags
 ## triple expressions {
 ###   AND tripleExpr {
- # !2dot.shex
- # !2dotCommas.shex          [2dotCommas.shex]
- # !open2dotclose.shex       [2dotCommas.shex]
- # !open2dotcommasclose.shex [2dotCommas.shex]
- # !3groupdot.shex
- # !open3groupdotclose.shex [3groupdot.shex]
+ # !../schemas/2dot.shex
+ # !../schemas/2dotCommas.shex          [2dotCommas.shex]
+ # !../schemas/open2dotclose.shex       [2dotCommas.shex]
+ # !../schemas/open2dotcommasclose.shex [2dotCommas.shex]
+ # !../schemas/3groupdot.shex
+ # !../schemas/open3groupdotclose.shex [3groupdot.shex]
 
 ###   } AND tripleExpr
 ###   OR tripleExpr {
 
- # !1dotOr1dot.shex
- # !1dotCommaOr1dotComma.shex
- # !open1dotOr1dotclose.shex                [1dotCommaOr1dotComma.shex]
- # !open1dotCommaOr1dotCommacloseComma.shex [1dotCommaOr1dotComma.shex]
- # !2dotOr1dot.shex
- # !2dotCommaOr1dotComma.shex                    [2dotOr1dot.shex]
- # !open2dotOr1dotclose.shex                     [2dotOr1dot.shex]
- # !open2dotCommasOr1dotCommaclose.shex          [2dotOr1dot.shex]
- # !openopen2dotcloseOr1dotclose.shex            [2dotOr1dot.shex]
- # !openopen2dotCommascloseOr1dotCommaclose.shex [2dotOr1dot.shex]
- # !open1dotopen1dotOr1dotcloseclose.shex
- # !open1dotopen1dotCommaOr1dotCommacloseCommacloseComma.shex [open1dotopen1dotOr1dotcloseclose.shex]
+ # !../schemas/1dotOr1dot.shex
+ # !../schemas/1dotCommaOr1dotComma.shex
+ # !../schemas/open1dotOr1dotclose.shex                [1dotCommaOr1dotComma.shex]
+ # !../schemas/open1dotCommaOr1dotCommacloseComma.shex [1dotCommaOr1dotComma.shex]
+ # !../schemas/2dotOr1dot.shex
+ # !../schemas/2dotCommaOr1dotComma.shex                    [2dotOr1dot.shex]
+ # !../schemas/open2dotOr1dotclose.shex                     [2dotOr1dot.shex]
+ # !../schemas/open2dotCommasOr1dotCommaclose.shex          [2dotOr1dot.shex]
+ # !../schemas/openopen2dotcloseOr1dotclose.shex            [2dotOr1dot.shex]
+ # !../schemas/openopen2dotCommascloseOr1dotCommaclose.shex [2dotOr1dot.shex]
+ # !../schemas/open1dotopen1dotOr1dotcloseclose.shex
+ # !../schemas/open1dotopen1dotCommaOr1dotCommacloseCommacloseComma.shex [open1dotopen1dotOr1dotcloseclose.shex]
 
 <#1dotOr2dot_pass_p1> a sht:ValidationTest ;
     mf:name "1dotOr2dot_pass_p1" ;
@@ -7253,7 +7257,7 @@
     mf:result <1val1vExprOR3_passvr1vr2vr3.val>
     .
 
- # !1dotRefOr3.shex <p1> @a OR @b OR @c
+ # !../schemas/1dotRefOr3.shex <p1> @a OR @b OR @c
 
 
 ###   } OR valueExpr
@@ -7593,7 +7597,7 @@
 ## } start
 ## include {
 
- # !2groupInclude1.shex                 <S1> { &<S2>, <p1> . } <S2> { <p2> . }
+ # !../schemas/2groupInclude1.shex                 <S1> { &<S2>, <p1> . } <S2> { <p2> . }
 
 ## } include
 ## annotations {
@@ -7686,7 +7690,7 @@
     ]
     .
 
- # !open3groupdotcloseAnnot3.shex
+ # !../schemas/open3groupdotcloseAnnot3.shex
 
 ## } annotations
 ## semantic actions {
