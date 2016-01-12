@@ -45,7 +45,15 @@
         # 1inversenegateddot_... same as 1negatedinversedot
         <#1Adot_pass>
 
+## node kinds
+## datatype
+        <#1datatype_missing>
+        <#1datatype_nonLiteral>
+        <#1datatype_wrongDatatype>
+        <#1datatype_pass>
+
 ## cardinality
+###   dot cardinality
         <#1card2_fail0>
         <#1card2_fail1>
         <#1card2_pass2>
@@ -76,23 +84,68 @@
         <#1cardStar_pass2>
         <#1cardStar_pass6>
 
-## node kinds
+###   non-dot cardinality
         <#1literalPlus_Is1_Ip1_La,Io1>
 
-## datatype
-        <#1datatype_missing>
-        <#1datatype_nonLiteral>
-        <#1datatype_wrongDatatype>
-        <#1datatype_pass>
+## shape reference
+        <#1dotRef1_referent,referrer>
+        <#1dotRef1_referrer,referent>
+        <#1dotRef1_missingReferent>
+        <#1dotRef1_overReferrer>
+        <#1dotRef1_overReferrer,overReferent>
+        <#1dotRef1_overMatchesReferent>
+
+## inline
+
+## term equivalence
+###   iri equivalence
+        <#1val1IRIREF_pass>             # <S> { <p1> [<v1>] }
+        <#1val1IRIREF_v2>
+
+###   literal equivalence
+####     numeric equivalence
+        <#1val1INTEGER_pass>            # <S> { <p1> [0] }
+        <#1val1INTEGER_00>
+        <#1val1INTEGER_Lab>
+        <#1val1DOUBLE_pass>             # <S> { <p1> [0e0] }
+        <#1val1DOUBLE_passUC>
+        <#1val1DOUBLE_0_0e0>
+        # 1val1DOUBLElowercase_... same as 1val1DOUBLE
+        # @@ eliminate as duplicate?
+        <#1val1DOUBLElowercase_pass>    # <S> { <p1> [0e0] }
+        <#1val1DOUBLElowercase_passUC>
+        <#1val1DOUBLElowercase_0_0e0>
+
+####     language tag equivalence
+        <#1val1LANGTAG_pass>            # <S> { <p1> ['ab'@en-fr] }
+        <#1val1LANGTAG_Lab>
+        <#1val1LANGTAG_LabLTen>
+        <#1val1LANGTAG_LabLTen-fr-jura>
+        <#1val1LANGTAG_LaLTen-fr>
+
+####     datatyped literal equivalence
+        <#1val1IRIREFDatatype_pass>    # <S> { <p1> ['ab'^^my:bloodType] }
+        <#1val1IRIREFDatatype_Lab>
+        <#1val1IRIREFDatatype_LabDTbloodType999>
+        <#1val1IRIREFDatatype_LaDTbloodType>
+        # 1val1LNDatatype_... same as 1val1IRIREFDatatype except prefixes
+
+####     boolean equivalence
+        <#1val1true_pass>               # <S> { <p1> [true] }
+        <#1val1true_false>
+        <#1val1true_ab>
+        <#1val1false_pass>              # <S> { <p1> [false] }
+        <#1val1false_true>
+        <#1val1false_ab>
 
 ## facets
-### length
+###   length
         <#1datatypeLength_fail-missing>
         <#1datatypeLength_fail-wrongDatatype>
         <#1datatypeLength_fail-short>
         <#1datatypeLength_pass>
         <#1datatypeLength_fail-long>
-### fractionDigits
+###   fractionDigits
         <#1literalFractiondigits_fail-decimal-short>
         # <#1literalFractiondigitsxsd-integer_fail-decimal-short> # for numericFacet ::= (numericFacet | numericLength) INTEGER (numericLiteral | string '^^' datatype )
         <#1literalFractiondigits_pass-decimal-equal>
@@ -106,7 +159,7 @@
         <#1literalFractiondigits_fail-malformedxsd_integer-1_2345>
         <#1literalFractiondigits_fail-iri>
         <#1literalFractiondigits_fail-bnode>
-### totalDigits
+###   totalDigits
         <#1literalTotaldigits_fail-decimal-short>
         # <#1literalTotaldigitsxsd-integer_fail-decimal-short> # for numericFacet ::= (numericFacet | numericLength) INTEGER (numericLiteral | string '^^' datatype )
         <#1literalTotaldigits_pass-decimal-equal>
@@ -120,8 +173,8 @@
         <#1literalTotaldigits_fail-malformedxsd_integer-1_2345>
         <#1literalTotaldigits_fail-iri>
         <#1literalTotaldigits_fail-bnode>
-### comparators
-#### manual
+###   comparators
+####     manual
         <#1floatMininclusiveINTEGER_fail-low>
         <#1floatMininclusiveINTEGER_pass-equalLead>
         <#1floatMininclusiveINTEGER_pass-equalTrail>
@@ -131,7 +184,7 @@
         <#1integerMininclusiveINTEGER_pass-equalLead>
         <#1integerMininclusiveINTEGER_pass-high>
         <#1floatMininclusiveINTEGERLead_pass-equal>
-#### generated
+####     generated
         <#1integerMininclusiveINTEGER_fail-integer-low>
         <#1integerMininclusiveINTEGER_pass-integer-equal>
         <#1integerMininclusiveINTEGER_pass-integer-high>
@@ -355,7 +408,7 @@
         <#1doubleMaxexclusiveDOUBLELeadTrail_fail-double-equal>
         <#1doubleMaxexclusiveDOUBLEint_fail-double-equal>
         <#1doubleMaxexclusiveDOUBLEintLeadTrail_fail-double-equal>
-### lengths
+###   lengths
         <#1literalLength_fail-lit-short>
         <#1literalLength_pass-lit-equal>
         <#1literalLength_fail-lit-long>
@@ -413,7 +466,7 @@
         <#1nonliteralMaxlength_pass-bnode-short>
         <#1nonliteralMaxlength_pass-bnode-equal>
         <#1nonliteralMaxlength_fail-bnode-long>
-### pattern
+###   pattern
         <#1literalPattern_pass-lit-match>
         <#1literalPattern_fail-lit-short>
         <#1literalPattern_fail-lit-long>
@@ -437,16 +490,6 @@
         <#1nonliteralPattern_pass-bnode-match>
         <#1nonliteralPattern_fail-bnode-short>
         <#1nonliteralPattern_fail-bnode-long>
-
-## shape reference
-        <#1dotRef1_referent,referrer>
-        <#1dotRef1_referrer,referent>
-        <#1dotRef1_missingReferent>
-        <#1dotRef1_overReferrer>
-        <#1dotRef1_overReferrer,overReferent>
-        <#1dotRef1_overMatchesReferent>
-
-## inline
 
 ## value sets
         <#1val1dotMinusiri3_pass>
@@ -474,47 +517,10 @@
         <#1val1iriStemMinusiriStem3_v3>
         <#1val1iriStemMinusiriStem3_v1a>
 
-## term equivalence
-        <#1val1IRIREF_pass>
-        <#1val1IRIREF_v2>
-        <#1val1DOUBLE_pass>
-        <#1val1DOUBLE_passUC>
-        <#1val1DOUBLE_0_0e0>
-        # 1val1DOUBLElowercase_... same as 1val1DOUBLE
-        # @@ eliminate as duplicate?
-        <#1val1DOUBLElowercase_pass>
-        <#1val1DOUBLElowercase_passUC>
-        <#1val1DOUBLElowercase_0_0e0>
-        <#1val1true_pass>
-        <#1val1true_false>
-        <#1val1true_ab>
-        <#1val1false_pass>
-        <#1val1false_true>
-        <#1val1false_ab>
-
-## numerics
-        <#1val1INTEGER_pass>
-        <#1val1INTEGER_00>
-        <#1val1INTEGER_Lab>
-
-## datatypes
-        <#1val1IRIREFDatatype_pass>
-        <#1val1IRIREFDatatype_Lab>
-        <#1val1IRIREFDatatype_LabDTbloodType999>
-        <#1val1IRIREFDatatype_LaDTbloodType>
-        # 1val1LNDatatype_... same as 1val1IRIREFDatatype except prefixes
-
-## language tags
-        <#1val1LANGTAG_pass>
-        <#1val1LANGTAG_Lab>
-        <#1val1LANGTAG_LabLTen>
-        <#1val1LANGTAG_LabLTen-fr-jura>
-        <#1val1LANGTAG_LaLTen-fr>
-
 ## triple expressions
-### AND tripleExpr
+###   AND tripleExpr
 
-### OR tripleExpr
+###   OR tripleExpr
         <#1dotOr2dot_pass_p1>
         <#1dotOr2dot_pass_p2p3>
         <#1dotOr2dot_fail_p1p2p3>
@@ -535,7 +541,7 @@
         # openopen1dotCommaOr1dotCommaclose1dotCommacloseComma_... same as openopen1dotOr1dotclose1dotclose
 
 ## value expressions
-### AND valueExpr
+###   AND valueExpr
         <#1val1vExprANDRef3_pass>
         <#1val1vExprANDRef3_failvc1>
         <#1val1vExprANDRef3_failvc2>
@@ -549,7 +555,7 @@
         <#1val1vExprAND3_failvc2>
         <#1val1vExprAND3_failvc3>
 
-### OR valueExpr
+###   OR valueExpr
         <#1val1vExprORRef3_fail>
         <#1val1vExprORRef3_passvc1>
         <#1val1vExprORRef3_passvc2>
@@ -1055,7 +1061,68 @@
     .
 
 ## } triple pattern
+## node kinds {
+
+ # !1iri.shex
+ # !1literal.shex
+ # !1bnode.shex
+ # !1nonliteral.shex
+
+## } node kinds
+## datatype {
+
+<#1datatype_missing> a sht:ValidationFailure ;
+    mf:name "1datatype_missing" ;
+    rdfs:comment "<S> { <p1> <dt1> } on <s> in { <s> <p2> <o1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1datatype.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Lab.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1datatype_nonLiteral> a sht:ValidationFailure ;
+    mf:name "1datatype_nonLiteral" ;
+    rdfs:comment "<S> { <p1> <dt1> } on <s> in { <s> <p1> <o1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1datatype.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1datatype_wrongDatatype> a sht:ValidationFailure ;
+    mf:name "1datatype_wrongDatatype" ;
+    rdfs:comment "<S> { <p1> <dt1> } on <s> in { <s> <p1> 1.234 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1datatype.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC1.345.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1datatype_pass> a sht:ValidationTest ;
+    mf:name "1datatype_pass" ;
+    rdfs:comment "<S> { <p1> <dt1> } on <s> in { <s> <p1> 'ab'^^<dt1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1datatype.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_dt1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1datatype_pass.val>
+    .
+
+## } datatype
 ## cardinality {
+###   dot cardinality {
 
 <#1card2_fail0> a sht:ValidationFailure ;
     mf:name "1card2_fail0" ;
@@ -1409,10 +1476,8 @@
     ] ;
     mf:result <1cardStar_pass6.val>
     .
-
-## } cardinality
-## node kinds {
-
+###   } dot cardinality
+###   non-dot cardinality {
 <#1literalPlus_Is1_Ip1_La,Io1> a sht:ValidationFailure ;
     mf:name "1literalPlus_Is1_Ip1_La,Io1" ;
     rdfs:comment "<S> { <p1> LITERAL+ } on { <s> <p1> 'a', <o2> }" ;
@@ -1425,59 +1490,442 @@
     ]
     .
 
-## } node kinds
-## datatype {
+###   } non-dot cardinality
+## } cardinality
+## shape reference {
 
-<#1datatype_missing> a sht:ValidationFailure ;
-    mf:name "1datatype_missing" ;
-    rdfs:comment "<S> { <p1> <dt1> } on <s> in { <s> <p2> <o1> }" ;
+<#1dotRef1_referent,referrer> a sht:ValidationTest ;
+    mf:name "1dotRef1_referent,referrer" ;
+    rdfs:comment "<n2> in { <n1> <p1> X . <n2> <p2> <n1> } as <S1> in <S1> { <p2> @<S2> } <S2> { <p1> X }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1datatype.shex> ;
+      sht:schema <../schemas/1dotRef1.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In2_Ip2_LX.In1_Ip1_In2.ttl> ;
+      sht:focus <http://a.example/n1>
+    ] ;
+    mf:result <In2_Ip2_In1@In1_Ip1_LX.val>
+    .
+
+<#1dotRef1_referrer,referent> a sht:ValidationTest ;
+    mf:name "1dotRef1_referrer,referent" ;
+    rdfs:comment "<n2> in { <n2> <p2> <n1> . <n1> <p1> X } as <S1> in <S1> { <p2> @<S2> } <S2> { <p1> X }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1dotRef1.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip1_In1.In2_Ip2_LX.ttl> ;
+      sht:focus <http://a.example/n1>
+    ] ;
+    mf:result <In2_Ip2_In1@In1_Ip1_LX.val>
+    .
+
+<#1dotRef1_missingReferent> a sht:ValidationFailure ;
+    mf:name "1dotRef1_missingReferent" ;
+    rdfs:comment "<n2> in { <n2> <p2> <n1> } as <S1> in <S1> { <p2> @<S2> } <S2> { <p1> X }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1dotRef1.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip1_In2.ttl> ;
+      sht:focus <http://a.example/n1>
+    ]
+    .
+
+<#1dotRef1_overReferrer> a sht:ValidationFailure ;
+    mf:name "1dotRef1_overReferrer" ;
+    rdfs:comment "<n2> in { <n2> <p2> <n1>, <n3> . <n1> <p1> X } as <S1> in <S1> { <p2> @<S2> } <S2> { <p1> X }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1dotRef1.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip1_In2.In1_Ip1_In3.In2_Ip2_LX.ttl> ;
+      sht:focus <http://a.example/n1>
+    ]
+    .
+
+<#1dotRef1_overReferrer,overReferent> a sht:ValidationFailure ;
+    mf:name "1dotRef1_overReferrer,overReferent" ;
+    rdfs:comment "<n2> in { <n2> <p2> <n1>, <n3> . <n1> <p1> X . <n3> <p1> X } as <S1> in <S1> { <p2> @<S2> } <S2> { <p1> X }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1dotRef1.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip1_In2.In1_Ip1_In3.In2_Ip2_LX.In3_Ip2_LX.ttl> ;
+      sht:focus <http://a.example/n1>
+    ]
+    .
+
+<#1dotRef1_overMatchesReferent> a sht:ValidationTest ;
+    mf:name "1dotRef1_overMatchesReferent" ;
+    rdfs:comment "<n2> in { <n2> <p2> <n1>, <n3> . <n1> <p1> X . <n3> <p1> X } as <S1> in <S1> { <p2> @<S2> } <S2> { <p1> X }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1dotRef1.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip1_In2.In2_Ip2_LX.In3_Ip1_LX.ttl> ;
+      sht:focus <http://a.example/n1>
+    ] ;
+    mf:result <In2_Ip2_In1@In1_Ip1_LX.val>
+    .
+
+ # !../schemas/1dotRefLNex.shex
+ # !../schemas/1dotRefSpaceLNex.shex [1dotRefLNex.shex]
+ # !../schemas/1dotRefNS1.shex
+ # !../schemas/1dotRefSpaceNS1.shex [1dotRefNS1.shex]
+ # !../schemas/1refbnode1.shex
+ # !../schemas/1refbnode_with_leading_digit1.shex
+ # !../schemas/1refbnode_with_leading_underscore1.shex
+ # !../schemas/1refbnode_with_spanning_PN_CHARS1.shex
+ # !../schemas/1refbnode_with_spanning_PN_CHARS_BASE1.shex
+ # !../schemas/3circularRef1.shex          <S1> { <p1> ., <p2> @<S2>? } <S2> { <p3> @<S3> } <S3> { <p4> @<S1> } <S4> { <p5> . }
+ # !../schemas/1iriRef1.shex               <S1> { <p1> IRI @<S2> } <S2> { <p2> . }
+
+## } shape reference
+## inline {
+ # !../schemas/1dotInline1.shex
+## } inline
+## term equivalence {
+###   iri equivalence {
+
+<#1val1IRIREF_pass> a sht:ValidationTest ;
+    mf:name "1val1IRIREF_pass" ;
+    rdfs:comment "<S> { <p1> [<v1>] } on { <s> <p1> <v1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1IRIREF.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Iv1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1val1IRIREF_pass.val>
+    .
+
+<#1val1IRIREF_v2> a sht:ValidationFailure ;
+    mf:name "1val1IRIREF_v2" ;
+    rdfs:comment "<S> { <p1> [<v1>] } on { <s> <p1> <v2> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1IRIREF.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Iv2.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+###   } iri equivalence
+###   literal equivalence {
+####     numeric equivalence {
+
+<#1val1INTEGER_pass> a sht:ValidationTest ;
+    mf:name "1val1INTEGER_pass" ;
+    rdfs:comment "<S> { <p1> [0] } on { <s> <p1> 0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1INTEGER.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT0.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1val1INTEGER_pass.val>
+    .
+
+<#1val1INTEGER_Lab> a sht:ValidationFailure ;
+    mf:name "1val1INTEGER_Lab" ;
+    rdfs:comment "<S> { <p1> [0] } on { <s> <p1> 'ab' }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1INTEGER.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Lab.ttl> ;
       sht:focus <http://a.example/s1>
-    ]
+    ] ;
     .
 
-<#1datatype_nonLiteral> a sht:ValidationFailure ;
-    mf:name "1datatype_nonLiteral" ;
-    rdfs:comment "<S> { <p1> <dt1> } on <s> in { <s> <p1> <o1> }" ;
+<#1val1INTEGER_00> a sht:ValidationFailure ;
+    mf:name "1val1INTEGER_00" ;
+    rdfs:comment "<S> { <p1> [0] } on { <s> <p1> 00 }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1datatype.shex> ;
+      sht:schema <../schemas/1val1INTEGER.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_Io1.ttl> ;
-      sht:focus <http://a.example/s1>
-    ]
-    .
-
-<#1datatype_wrongDatatype> a sht:ValidationFailure ;
-    mf:name "1datatype_wrongDatatype" ;
-    rdfs:comment "<S> { <p1> <dt1> } on <s> in { <s> <p1> 1.234 }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1datatype.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_DEC1.345.ttl> ;
-      sht:focus <http://a.example/s1>
-    ]
-    .
-
-<#1datatype_pass> a sht:ValidationTest ;
-    mf:name "1datatype_pass" ;
-    rdfs:comment "<S> { <p1> <dt1> } on <s> in { <s> <p1> 'ab'^^<dt1> }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1datatype.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_dt1.ttl> ;
+      sht:data <Is1_Ip1_INT00.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
-    mf:result <1datatype_pass.val>
     .
 
-## } datatype
+<#1val1DOUBLE_pass> a sht:ValidationTest ;
+    mf:name "1val1DOUBLE_pass" ;
+    rdfs:comment "<S> { <p1> [0e0] } on { <s> <p1> 0e0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1DOUBLE.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DBL0e0.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1val1DOUBLE_pass.val>
+    .
+
+<#1val1DOUBLE_passUC> a sht:ValidationTest ;
+    mf:name "1val1DOUBLE_passUC" ;
+    rdfs:comment "<S> { <p1> [0e0] } on { <s> <p1> 0E0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1DOUBLE.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DBL0e0.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1val1DOUBLE_pass.val>
+    .
+
+<#1val1DOUBLE_0_0e0> a sht:ValidationFailure ;
+    mf:name "1val1DOUBLE_0_0e0" ;
+    rdfs:comment "<S> { <p1> [0e0] } on { <s> <p1> 0e0.0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1DOUBLE.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DBL0_0e0.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1val1DOUBLElowercase_pass> a sht:ValidationTest ;
+    mf:name "1val1DOUBLElowercase_pass" ;
+    rdfs:comment "<S> { <p1> [0e0] } on { <s> <p1> 0e0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1DOUBLElowercase.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DBL0e0.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1val1DOUBLE_pass.val>
+    .
+
+<#1val1DOUBLElowercase_passUC> a sht:ValidationTest ;
+    mf:name "1val1DOUBLElowercase_passUC" ;
+    rdfs:comment "<S> { <p1> [0e0] } on { <s> <p1> 0E0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1DOUBLElowercase.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DBL0e0.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1val1DOUBLE_pass.val>
+    .
+
+<#1val1DOUBLElowercase_0_0e0> a sht:ValidationFailure ;
+    mf:name "1val1DOUBLElowercase_0_0e0" ;
+    rdfs:comment "<S> { <p1> [0e0] } on { <s> <p1> 0e0.0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1DOUBLElowercase.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DBL0_0e0.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+####     } numeric equivalence
+####     language tag equivalence {
+
+<#1val1LANGTAG_pass> a sht:ValidationTest ;
+    mf:name "1val1LANGTAG_pass" ;
+    rdfs:comment "<S> { <p1> ['ab'@en-fr] } on { <s> <p1> 'ab'@en-fr }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1LANGTAG.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LabLTen-fr.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1val1LANGTAG_pass.val>
+    .
+
+<#1val1LANGTAG_Lab> a sht:ValidationFailure ;
+    mf:name "1val1LANGTAG_Lab" ;
+    rdfs:comment "<S> { <p1> ['ab'@en-fr] } on { <s> <p1> 'ab' }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1LANGTAG.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Lab.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1val1LANGTAG_LabLTen> a sht:ValidationFailure ;
+    mf:name "1val1LANGTAG_LabLTen" ;
+    rdfs:comment "<S> { <p1> ['ab'@en-fr] } on { <s> <p1> 'ab'@en }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1LANGTAG.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LabLTen.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1val1LANGTAG_LabLTen-fr-jura> a sht:ValidationFailure ;
+    mf:name "1val1LANGTAG_LabLTen-fr-jura" ;
+    rdfs:comment "<S> { <p1> ['ab'@en-fr] } on { <s> <p1> 'ab'@en-fr-jura }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1LANGTAG.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LabLTen-fr-jura.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1val1LANGTAG_LaLTen-fr> a sht:ValidationFailure ;
+    mf:name "1val1LANGTAG_LaLTen-fr" ;
+    rdfs:comment "<S> { <p1> ['ab'@en-fr] } on { <s> <p1> 'a'@en-fr }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1LANGTAG.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LaLTen-fr.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+####     } language tag equivalence
+####     datatyped literal equivalence {
+
+<#1val1IRIREFDatatype_pass> a sht:ValidationTest ;
+    mf:name "1val1IRIREFDatatype_pass" ;
+    rdfs:comment "<S> { <p1> ['ab'^^my:bloodType] } on { <s> <p1> 'ab'^^my:bloodType }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1IRIREFDatatype.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LabDTbloodType.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1val1IRIREFDatatype_pass.val>
+    .
+
+<#1val1IRIREFDatatype_Lab> a sht:ValidationFailure ;
+    mf:name "1val1IRIREFDatatype_Lab" ;
+    rdfs:comment "<S> { <p1> ['ab'^^my:bloodType] } on { <s> <p1> 'ab' }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1IRIREFDatatype.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Lab.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1val1IRIREFDatatype_LabDTbloodType999> a sht:ValidationFailure ;
+    mf:name "1val1IRIREFDatatype_LabDTbloodType999" ;
+    rdfs:comment "<S> { <p1> ['ab'^^my:bloodType] } on { <s> <p1> 'ab'^^my:bloodType999 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1IRIREFDatatype.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LabDTbloodType999.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1val1IRIREFDatatype_LaDTbloodType> a sht:ValidationFailure ;
+    mf:name "1val1IRIREFDatatype_LaDTbloodType" ;
+    rdfs:comment "<S> { <p1> ['ab'^^my:bloodType] } on { <s> <p1> 'a'^^my:bloodType }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1IRIREFDatatype.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LaDTbloodType.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+####     } datatyped literal equivalence
+####     boolean equivalence {
+
+<#1val1true_pass> a sht:ValidationTest ;
+    mf:name "1val1true_pass" ;
+    rdfs:comment "<S> { <p1> [true] } on { <s> <p1> true }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1true.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_true.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1val1true_pass.val>
+    .
+
+<#1val1true_false> a sht:ValidationFailure ;
+    mf:name "1val1true_false" ;
+    rdfs:comment "<S> { <p1> [true] } on { <s> <p1> false }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1true.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_false.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1val1true_ab> a sht:ValidationFailure ;
+    mf:name "1val1true_ab" ;
+    rdfs:comment "<S> { <p1> [true] } on { <s> <p1> ab }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1true.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Lab.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1val1false_pass> a sht:ValidationTest ;
+    mf:name "1val1false_pass" ;
+    rdfs:comment "<S> { <p1> [false] } on { <s> <p1> true }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1false.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_false.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1val1false_pass.val>
+    .
+
+<#1val1false_true> a sht:ValidationFailure ;
+    mf:name "1val1false_true" ;
+    rdfs:comment "<S> { <p1> [false] } on { <s> <p1> false }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1false.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_true.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1val1false_ab> a sht:ValidationFailure ;
+    mf:name "1val1false_ab" ;
+    rdfs:comment "<S> { <p1> [false] } on { <s> <p1> ab }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1false.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Lab.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+####     } boolean equivalence
+###   } literal equivalence
+## } term equivalence
 ## facets {
 ###   length {
 
@@ -6019,99 +6467,6 @@
 
 ###   } pattern
 ## } facets
-## shape reference {
-
-<#1dotRef1_referent,referrer> a sht:ValidationTest ;
-    mf:name "1dotRef1_referent,referrer" ;
-    rdfs:comment "<n2> in { <n1> <p1> X . <n2> <p2> <n1> } as <S1> in <S1> { <p2> @<S2> } <S2> { <p1> X }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1dotRef1.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <In2_Ip2_LX.In1_Ip1_In2.ttl> ;
-      sht:focus <http://a.example/n1>
-    ] ;
-    mf:result <In2_Ip2_In1@In1_Ip1_LX.val>
-    .
-
-<#1dotRef1_referrer,referent> a sht:ValidationTest ;
-    mf:name "1dotRef1_referrer,referent" ;
-    rdfs:comment "<n2> in { <n2> <p2> <n1> . <n1> <p1> X } as <S1> in <S1> { <p2> @<S2> } <S2> { <p1> X }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1dotRef1.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <In1_Ip1_In1.In2_Ip2_LX.ttl> ;
-      sht:focus <http://a.example/n1>
-    ] ;
-    mf:result <In2_Ip2_In1@In1_Ip1_LX.val>
-    .
-
-<#1dotRef1_missingReferent> a sht:ValidationFailure ;
-    mf:name "1dotRef1_missingReferent" ;
-    rdfs:comment "<n2> in { <n2> <p2> <n1> } as <S1> in <S1> { <p2> @<S2> } <S2> { <p1> X }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1dotRef1.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <In1_Ip1_In2.ttl> ;
-      sht:focus <http://a.example/n1>
-    ]
-    .
-
-<#1dotRef1_overReferrer> a sht:ValidationFailure ;
-    mf:name "1dotRef1_overReferrer" ;
-    rdfs:comment "<n2> in { <n2> <p2> <n1>, <n3> . <n1> <p1> X } as <S1> in <S1> { <p2> @<S2> } <S2> { <p1> X }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1dotRef1.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <In1_Ip1_In2.In1_Ip1_In3.In2_Ip2_LX.ttl> ;
-      sht:focus <http://a.example/n1>
-    ]
-    .
-
-<#1dotRef1_overReferrer,overReferent> a sht:ValidationFailure ;
-    mf:name "1dotRef1_overReferrer,overReferent" ;
-    rdfs:comment "<n2> in { <n2> <p2> <n1>, <n3> . <n1> <p1> X . <n3> <p1> X } as <S1> in <S1> { <p2> @<S2> } <S2> { <p1> X }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1dotRef1.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <In1_Ip1_In2.In1_Ip1_In3.In2_Ip2_LX.In3_Ip2_LX.ttl> ;
-      sht:focus <http://a.example/n1>
-    ]
-    .
-
-<#1dotRef1_overMatchesReferent> a sht:ValidationTest ;
-    mf:name "1dotRef1_overMatchesReferent" ;
-    rdfs:comment "<n2> in { <n2> <p2> <n1>, <n3> . <n1> <p1> X . <n3> <p1> X } as <S1> in <S1> { <p2> @<S2> } <S2> { <p1> X }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1dotRef1.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <In1_Ip1_In2.In2_Ip2_LX.In3_Ip1_LX.ttl> ;
-      sht:focus <http://a.example/n1>
-    ] ;
-    mf:result <In2_Ip2_In1@In1_Ip1_LX.val>
-    .
-
- # !../schemas/1dotRefLNex.shex
- # !../schemas/1dotRefSpaceLNex.shex [1dotRefLNex.shex]
- # !../schemas/1dotRefNS1.shex
- # !../schemas/1dotRefSpaceNS1.shex [1dotRefNS1.shex]
- # !../schemas/1refbnode1.shex
- # !../schemas/1refbnode_with_leading_digit1.shex
- # !../schemas/1refbnode_with_leading_underscore1.shex
- # !../schemas/1refbnode_with_spanning_PN_CHARS1.shex
- # !../schemas/1refbnode_with_spanning_PN_CHARS_BASE1.shex
- # !../schemas/3circularRef1.shex          <S1> { <p1> ., <p2> @<S2>? } <S2> { <p3> @<S3> } <S3> { <p4> @<S1> } <S4> { <p5> . }
- # !../schemas/1iriRef1.shex               <S1> { <p1> IRI @<S2> } <S2> { <p2> . }
-
-## } shape reference
-## inline }
- # !../schemas/1dotInline1.shex
-## } inline
 ## value sets {
 
 <#1val1dotMinusiri3_pass> a sht:ValidationTest ;
@@ -6412,340 +6767,6 @@
     .
 
 ## } value sets
-## term equivalence {
-
-<#1val1IRIREF_pass> a sht:ValidationTest ;
-    mf:name "1val1IRIREF_pass" ;
-    rdfs:comment "<S> { <p1> [<v1>] } on { <s> <p1> <v1> }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1val1IRIREF.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_Iv1.ttl> ;
-      sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1IRIREF_pass.val>
-    .
-
-<#1val1IRIREF_v2> a sht:ValidationFailure ;
-    mf:name "1val1IRIREF_v2" ;
-    rdfs:comment "<S> { <p1> [<v1>] } on { <s> <p1> <v2> }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1val1IRIREF.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_Iv2.ttl> ;
-      sht:focus <http://a.example/s1>
-    ] ;
-    .
-
-<#1val1DOUBLE_pass> a sht:ValidationTest ;
-    mf:name "1val1DOUBLE_pass" ;
-    rdfs:comment "<S> { <p1> [0e0] } on { <s> <p1> 0e0 }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1val1DOUBLE.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_DBL0e0.ttl> ;
-      sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1DOUBLE_pass.val>
-    .
-
-<#1val1DOUBLE_passUC> a sht:ValidationTest ;
-    mf:name "1val1DOUBLE_passUC" ;
-    rdfs:comment "<S> { <p1> [0e0] } on { <s> <p1> 0E0 }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1val1DOUBLE.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_DBL0e0.ttl> ;
-      sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1DOUBLE_pass.val>
-    .
-
-<#1val1DOUBLE_0_0e0> a sht:ValidationFailure ;
-    mf:name "1val1DOUBLE_0_0e0" ;
-    rdfs:comment "<S> { <p1> [0e0] } on { <s> <p1> 0e0.0 }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1val1DOUBLE.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_DBL0_0e0.ttl> ;
-      sht:focus <http://a.example/s1>
-    ] ;
-    .
-
-<#1val1DOUBLElowercase_pass> a sht:ValidationTest ;
-    mf:name "1val1DOUBLElowercase_pass" ;
-    rdfs:comment "<S> { <p1> [0e0] } on { <s> <p1> 0e0 }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1val1DOUBLElowercase.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_DBL0e0.ttl> ;
-      sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1DOUBLE_pass.val>
-    .
-
-<#1val1DOUBLElowercase_passUC> a sht:ValidationTest ;
-    mf:name "1val1DOUBLElowercase_passUC" ;
-    rdfs:comment "<S> { <p1> [0e0] } on { <s> <p1> 0E0 }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1val1DOUBLElowercase.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_DBL0e0.ttl> ;
-      sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1DOUBLE_pass.val>
-    .
-
-<#1val1DOUBLElowercase_0_0e0> a sht:ValidationFailure ;
-    mf:name "1val1DOUBLElowercase_0_0e0" ;
-    rdfs:comment "<S> { <p1> [0e0] } on { <s> <p1> 0e0.0 }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1val1DOUBLElowercase.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_DBL0_0e0.ttl> ;
-      sht:focus <http://a.example/s1>
-    ] ;
-    .
-
-<#1val1true_pass> a sht:ValidationTest ;
-    mf:name "1val1true_pass" ;
-    rdfs:comment "<S> { <p1> [true] } on { <s> <p1> true }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1val1true.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_true.ttl> ;
-      sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1true_pass.val>
-    .
-
-<#1val1true_false> a sht:ValidationFailure ;
-    mf:name "1val1true_false" ;
-    rdfs:comment "<S> { <p1> [true] } on { <s> <p1> false }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1val1true.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_false.ttl> ;
-      sht:focus <http://a.example/s1>
-    ] ;
-    .
-
-<#1val1true_ab> a sht:ValidationFailure ;
-    mf:name "1val1true_ab" ;
-    rdfs:comment "<S> { <p1> [true] } on { <s> <p1> ab }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1val1true.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_Lab.ttl> ;
-      sht:focus <http://a.example/s1>
-    ] ;
-    .
-
-<#1val1false_pass> a sht:ValidationTest ;
-    mf:name "1val1false_pass" ;
-    rdfs:comment "<S> { <p1> [false] } on { <s> <p1> true }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1val1false.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_false.ttl> ;
-      sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1false_pass.val>
-    .
-
-<#1val1false_true> a sht:ValidationFailure ;
-    mf:name "1val1false_true" ;
-    rdfs:comment "<S> { <p1> [false] } on { <s> <p1> false }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1val1false.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_true.ttl> ;
-      sht:focus <http://a.example/s1>
-    ] ;
-    .
-
-<#1val1false_ab> a sht:ValidationFailure ;
-    mf:name "1val1false_ab" ;
-    rdfs:comment "<S> { <p1> [false] } on { <s> <p1> ab }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1val1false.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_Lab.ttl> ;
-      sht:focus <http://a.example/s1>
-    ] ;
-    .
-
-## } term equivalence
-## numerics {
-
-<#1val1INTEGER_pass> a sht:ValidationTest ;
-    mf:name "1val1INTEGER_pass" ;
-    rdfs:comment "<S> { <p1> [0] } on { <s> <p1> 0 }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1val1INTEGER.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_INT0.ttl> ;
-      sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1INTEGER_pass.val>
-    .
-
-<#1val1INTEGER_Lab> a sht:ValidationFailure ;
-    mf:name "1val1INTEGER_Lab" ;
-    rdfs:comment "<S> { <p1> [0] } on { <s> <p1> 'ab' }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1val1INTEGER.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_Lab.ttl> ;
-      sht:focus <http://a.example/s1>
-    ] ;
-    .
-
-<#1val1INTEGER_00> a sht:ValidationFailure ;
-    mf:name "1val1INTEGER_00" ;
-    rdfs:comment "<S> { <p1> [0] } on { <s> <p1> 00 }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1val1INTEGER.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_INT00.ttl> ;
-      sht:focus <http://a.example/s1>
-    ] ;
-    .
-
-## } numerics
-## datatypes {
-
-<#1val1IRIREFDatatype_pass> a sht:ValidationTest ;
-    mf:name "1val1IRIREFDatatype_pass" ;
-    rdfs:comment "<S> { <p1> ['ab'^^my:bloodType] } on { <s> <p1> 'ab'^^my:bloodType }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1val1IRIREFDatatype.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_LabDTbloodType.ttl> ;
-      sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1IRIREFDatatype_pass.val>
-    .
-
-<#1val1IRIREFDatatype_Lab> a sht:ValidationFailure ;
-    mf:name "1val1IRIREFDatatype_Lab" ;
-    rdfs:comment "<S> { <p1> ['ab'^^my:bloodType] } on { <s> <p1> 'ab' }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1val1IRIREFDatatype.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_Lab.ttl> ;
-      sht:focus <http://a.example/s1>
-    ] ;
-    .
-
-<#1val1IRIREFDatatype_LabDTbloodType999> a sht:ValidationFailure ;
-    mf:name "1val1IRIREFDatatype_LabDTbloodType999" ;
-    rdfs:comment "<S> { <p1> ['ab'^^my:bloodType] } on { <s> <p1> 'ab'^^my:bloodType999 }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1val1IRIREFDatatype.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_LabDTbloodType999.ttl> ;
-      sht:focus <http://a.example/s1>
-    ] ;
-    .
-
-<#1val1IRIREFDatatype_LaDTbloodType> a sht:ValidationFailure ;
-    mf:name "1val1IRIREFDatatype_LaDTbloodType" ;
-    rdfs:comment "<S> { <p1> ['ab'^^my:bloodType] } on { <s> <p1> 'a'^^my:bloodType }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1val1IRIREFDatatype.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_LaDTbloodType.ttl> ;
-      sht:focus <http://a.example/s1>
-    ] ;
-    .
-
-## } datatypes
-## language tags {
-
-<#1val1LANGTAG_pass> a sht:ValidationTest ;
-    mf:name "1val1LANGTAG_pass" ;
-    rdfs:comment "<S> { <p1> ['ab'@en-fr] } on { <s> <p1> 'ab'@en-fr }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1val1LANGTAG.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_LabLTen-fr.ttl> ;
-      sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1LANGTAG_pass.val>
-    .
-
-<#1val1LANGTAG_Lab> a sht:ValidationFailure ;
-    mf:name "1val1LANGTAG_Lab" ;
-    rdfs:comment "<S> { <p1> ['ab'@en-fr] } on { <s> <p1> 'ab' }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1val1LANGTAG.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_Lab.ttl> ;
-      sht:focus <http://a.example/s1>
-    ] ;
-    .
-
-<#1val1LANGTAG_LabLTen> a sht:ValidationFailure ;
-    mf:name "1val1LANGTAG_LabLTen" ;
-    rdfs:comment "<S> { <p1> ['ab'@en-fr] } on { <s> <p1> 'ab'@en }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1val1LANGTAG.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_LabLTen.ttl> ;
-      sht:focus <http://a.example/s1>
-    ] ;
-    .
-
-<#1val1LANGTAG_LabLTen-fr-jura> a sht:ValidationFailure ;
-    mf:name "1val1LANGTAG_LabLTen-fr-jura" ;
-    rdfs:comment "<S> { <p1> ['ab'@en-fr] } on { <s> <p1> 'ab'@en-fr-jura }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1val1LANGTAG.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_LabLTen-fr-jura.ttl> ;
-      sht:focus <http://a.example/s1>
-    ] ;
-    .
-
-<#1val1LANGTAG_LaLTen-fr> a sht:ValidationFailure ;
-    mf:name "1val1LANGTAG_LaLTen-fr" ;
-    rdfs:comment "<S> { <p1> ['ab'@en-fr] } on { <s> <p1> 'a'@en-fr }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1val1LANGTAG.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_LaLTen-fr.ttl> ;
-      sht:focus <http://a.example/s1>
-    ] ;
-    .
-
-## } language tags
 ## triple expressions {
 ###   AND tripleExpr {
  # !../schemas/2dot.shex
@@ -8039,22 +8060,22 @@
 # deferred {
 ## inherit {
 
-  -rw-rw-r--  1 eric www   133 Sep 23 09:38 0Inherit1.shex
-  -rw-rw-r--  1 eric www   160 Sep 23 09:38 1dotInherit1.shex
-  -rw-rw-r--  1 eric www   350 Sep 23 09:38 1dotInherit3.shex
-  -rw-rw-r--  1 eric www   352 Sep 23 09:38 1dot3Inherit.shex [1dotInherit3.shex]
-  -rw-rw-r--  1 eric www   208 Sep 23 09:38 1dot3InheritLN.shex
+ # !../schemas/0Inherit1.shex
+ # !../schemas/1dotInherit1.shex
+ # !../schemas/1dotInherit3.shex
+ # !../schemas/1dot3Inherit.shex [1dotInherit3.shex]
+ # !../schemas/1dot3InheritLN.shex
 
 ### virtual {
-  -rw-rw-r--  1 eric www    99 Oct 20 15:51 1dotVirtualShapeCode1.shex
-  -rw-rw-r--  1 eric www    61 Oct 20 15:51 1dotVirtual.shex
+ # !../schemas/1dotVirtualShapeCode1.shex
+ # !../schemas/1dotVirtual.shex
 ### } virtual
 ## } inherit
 ## unlabeled semantic actions {
-  -rw-rw-r--  1 eric www    70 Oct 20 15:51 1dotUnlabeledCode1.shex
+ # !../schemas/1dotUnlabeledCode1.shex
 ## } unlabeled semantic actions
 ## everything {
-  -rw-rw-r--  1 eric www  3339 Sep 23 10:08 _all.shex
-  -rw-rw-r--  1 eric www  2363 Oct 20 15:51 kitchenSink.shex
+ # !../schemas/_all.shex
+ # !../schemas/kitchenSink.shex
 ## } everything
 # } deferred

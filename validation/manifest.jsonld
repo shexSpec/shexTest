@@ -937,156 +937,6 @@
           "result": "open1dotOropen2dotcloseclose_pass_p1.val"
         },
         {
-          "@id": "#1val1LANGTAG_pass",
-          "@type": "sht:ValidationTest",
-          "action": {
-            "schema": "../schemas/1val1LANGTAG.shex",
-            "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_LabLTen-fr.ttl",
-            "focus": "http://a.example/s1"
-          },
-          "extensionResults": [],
-          "name": "1val1LANGTAG_pass",
-          "comment": "<S> { <p1> ['ab'@en-fr] } on { <s> <p1> 'ab'@en-fr }",
-          "status": "mf:proposed",
-          "result": "1val1LANGTAG_pass.val"
-        },
-        {
-          "@id": "#1val1IRIREFDatatype_pass",
-          "@type": "sht:ValidationTest",
-          "action": {
-            "schema": "../schemas/1val1IRIREFDatatype.shex",
-            "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_LabDTbloodType.ttl",
-            "focus": "http://a.example/s1"
-          },
-          "extensionResults": [],
-          "name": "1val1IRIREFDatatype_pass",
-          "comment": "<S> { <p1> ['ab'^^my:bloodType] } on { <s> <p1> 'ab'^^my:bloodType }",
-          "status": "mf:proposed",
-          "result": "1val1IRIREFDatatype_pass.val"
-        },
-        {
-          "@id": "#1val1INTEGER_pass",
-          "@type": "sht:ValidationTest",
-          "action": {
-            "schema": "../schemas/1val1INTEGER.shex",
-            "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_INT0.ttl",
-            "focus": "http://a.example/s1"
-          },
-          "extensionResults": [],
-          "name": "1val1INTEGER_pass",
-          "comment": "<S> { <p1> [0] } on { <s> <p1> 0 }",
-          "status": "mf:proposed",
-          "result": "1val1INTEGER_pass.val"
-        },
-        {
-          "@id": "#1val1false_pass",
-          "@type": "sht:ValidationTest",
-          "action": {
-            "schema": "../schemas/1val1false.shex",
-            "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_false.ttl",
-            "focus": "http://a.example/s1"
-          },
-          "extensionResults": [],
-          "name": "1val1false_pass",
-          "comment": "<S> { <p1> [false] } on { <s> <p1> true }",
-          "status": "mf:proposed",
-          "result": "1val1false_pass.val"
-        },
-        {
-          "@id": "#1val1true_pass",
-          "@type": "sht:ValidationTest",
-          "action": {
-            "schema": "../schemas/1val1true.shex",
-            "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_true.ttl",
-            "focus": "http://a.example/s1"
-          },
-          "extensionResults": [],
-          "name": "1val1true_pass",
-          "comment": "<S> { <p1> [true] } on { <s> <p1> true }",
-          "status": "mf:proposed",
-          "result": "1val1true_pass.val"
-        },
-        {
-          "@id": "#1val1DOUBLElowercase_passUC",
-          "@type": "sht:ValidationTest",
-          "action": {
-            "schema": "../schemas/1val1DOUBLElowercase.shex",
-            "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_DBL0e0.ttl",
-            "focus": "http://a.example/s1"
-          },
-          "extensionResults": [],
-          "name": "1val1DOUBLElowercase_passUC",
-          "comment": "<S> { <p1> [0e0] } on { <s> <p1> 0E0 }",
-          "status": "mf:proposed",
-          "result": "1val1DOUBLE_pass.val"
-        },
-        {
-          "@id": "#1val1DOUBLElowercase_pass",
-          "@type": "sht:ValidationTest",
-          "action": {
-            "schema": "../schemas/1val1DOUBLElowercase.shex",
-            "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_DBL0e0.ttl",
-            "focus": "http://a.example/s1"
-          },
-          "extensionResults": [],
-          "name": "1val1DOUBLElowercase_pass",
-          "comment": "<S> { <p1> [0e0] } on { <s> <p1> 0e0 }",
-          "status": "mf:proposed",
-          "result": "1val1DOUBLE_pass.val"
-        },
-        {
-          "@id": "#1val1DOUBLE_passUC",
-          "@type": "sht:ValidationTest",
-          "action": {
-            "schema": "../schemas/1val1DOUBLE.shex",
-            "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_DBL0e0.ttl",
-            "focus": "http://a.example/s1"
-          },
-          "extensionResults": [],
-          "name": "1val1DOUBLE_passUC",
-          "comment": "<S> { <p1> [0e0] } on { <s> <p1> 0E0 }",
-          "status": "mf:proposed",
-          "result": "1val1DOUBLE_pass.val"
-        },
-        {
-          "@id": "#1val1DOUBLE_pass",
-          "@type": "sht:ValidationTest",
-          "action": {
-            "schema": "../schemas/1val1DOUBLE.shex",
-            "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_DBL0e0.ttl",
-            "focus": "http://a.example/s1"
-          },
-          "extensionResults": [],
-          "name": "1val1DOUBLE_pass",
-          "comment": "<S> { <p1> [0e0] } on { <s> <p1> 0e0 }",
-          "status": "mf:proposed",
-          "result": "1val1DOUBLE_pass.val"
-        },
-        {
-          "@id": "#1val1IRIREF_pass",
-          "@type": "sht:ValidationTest",
-          "action": {
-            "schema": "../schemas/1val1IRIREF.shex",
-            "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_Iv1.ttl",
-            "focus": "http://a.example/s1"
-          },
-          "extensionResults": [],
-          "name": "1val1IRIREF_pass",
-          "comment": "<S> { <p1> [<v1>] } on { <s> <p1> <v1> }",
-          "status": "mf:proposed",
-          "result": "1val1IRIREF_pass.val"
-        },
-        {
           "@id": "#1val1iriStemMinusiriStem3_passIv4",
           "@type": "sht:ValidationTest",
           "action": {
@@ -1220,51 +1070,6 @@
           "comment": "<S> { <p1> [.-<v1>-<v2>-<v3>] } on { <s> <p1> <o1> }",
           "status": "mf:proposed",
           "result": "1val1dotMinusiri3_pass.val"
-        },
-        {
-          "@id": "#1dotRef1_overMatchesReferent",
-          "@type": "sht:ValidationTest",
-          "action": {
-            "schema": "../schemas/1dotRef1.shex",
-            "shape": "http://a.example/S1",
-            "data": "In1_Ip1_In2.In2_Ip2_LX.In3_Ip1_LX.ttl",
-            "focus": "http://a.example/n1"
-          },
-          "extensionResults": [],
-          "name": "1dotRef1_overMatchesReferent",
-          "comment": "<n2> in { <n2> <p2> <n1>, <n3> . <n1> <p1> X . <n3> <p1> X } as <S1> in <S1> { <p2> @<S2> } <S2> { <p1> X }",
-          "status": "mf:proposed",
-          "result": "In2_Ip2_In1@In1_Ip1_LX.val"
-        },
-        {
-          "@id": "#1dotRef1_referrer,referent",
-          "@type": "sht:ValidationTest",
-          "action": {
-            "schema": "../schemas/1dotRef1.shex",
-            "shape": "http://a.example/S1",
-            "data": "In1_Ip1_In1.In2_Ip2_LX.ttl",
-            "focus": "http://a.example/n1"
-          },
-          "extensionResults": [],
-          "name": "1dotRef1_referrer,referent",
-          "comment": "<n2> in { <n2> <p2> <n1> . <n1> <p1> X } as <S1> in <S1> { <p2> @<S2> } <S2> { <p1> X }",
-          "status": "mf:proposed",
-          "result": "In2_Ip2_In1@In1_Ip1_LX.val"
-        },
-        {
-          "@id": "#1dotRef1_referent,referrer",
-          "@type": "sht:ValidationTest",
-          "action": {
-            "schema": "../schemas/1dotRef1.shex",
-            "shape": "http://a.example/S1",
-            "data": "In2_Ip2_LX.In1_Ip1_In2.ttl",
-            "focus": "http://a.example/n1"
-          },
-          "extensionResults": [],
-          "name": "1dotRef1_referent,referrer",
-          "comment": "<n2> in { <n1> <p1> X . <n2> <p2> <n1> } as <S1> in <S1> { <p2> @<S2> } <S2> { <p1> X }",
-          "status": "mf:proposed",
-          "result": "In2_Ip2_In1@In1_Ip1_LX.val"
         },
         {
           "@id": "#1nonliteralPattern_pass-bnode-match",
@@ -1727,7 +1532,7 @@
           },
           "extensionResults": [],
           "name": "1iriRefLength1_pass-iri-equal",
-          "comment": "<PersonShape> { <p1> . } <EmployeeShape> { <p2> IRI @<PersonShape> LENGTH 19 } on { <s1> <p1> <http://a.example/o1> . <http://a.example/o1> <p2>  <o2> }",
+          "comment": "<S1> { <p1> IRI @<S2> LENGTH 19 } <S2> { <p2> . } on { <s1> <p1> <http://a.example/o1> . <http://a.example/o1> <p2>  <o2> }",
           "status": "mf:proposed",
           "result": "1iriRefLength1_pass-iri-equal.val"
         },
@@ -3622,19 +3427,199 @@
           "result": "1datatypeLength_pass.val"
         },
         {
-          "@id": "#1datatype_pass",
+          "@id": "#1val1false_pass",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/1datatype.shex",
+            "schema": "../schemas/1val1false.shex",
             "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_dt1.ttl",
+            "data": "Is1_Ip1_false.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1datatype_pass",
-          "comment": "<S> { <p1> <dt1> } on <s> in { <s> <p1> 'ab'^^<dt1> }",
+          "name": "1val1false_pass",
+          "comment": "<S> { <p1> [false] } on { <s> <p1> true }",
           "status": "mf:proposed",
-          "result": "1datatype_pass.val"
+          "result": "1val1false_pass.val"
+        },
+        {
+          "@id": "#1val1true_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1val1true.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_true.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1true_pass",
+          "comment": "<S> { <p1> [true] } on { <s> <p1> true }",
+          "status": "mf:proposed",
+          "result": "1val1true_pass.val"
+        },
+        {
+          "@id": "#1val1IRIREFDatatype_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1val1IRIREFDatatype.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_LabDTbloodType.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1IRIREFDatatype_pass",
+          "comment": "<S> { <p1> ['ab'^^my:bloodType] } on { <s> <p1> 'ab'^^my:bloodType }",
+          "status": "mf:proposed",
+          "result": "1val1IRIREFDatatype_pass.val"
+        },
+        {
+          "@id": "#1val1LANGTAG_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1val1LANGTAG.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_LabLTen-fr.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1LANGTAG_pass",
+          "comment": "<S> { <p1> ['ab'@en-fr] } on { <s> <p1> 'ab'@en-fr }",
+          "status": "mf:proposed",
+          "result": "1val1LANGTAG_pass.val"
+        },
+        {
+          "@id": "#1val1DOUBLElowercase_passUC",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1val1DOUBLElowercase.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_DBL0e0.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1DOUBLElowercase_passUC",
+          "comment": "<S> { <p1> [0e0] } on { <s> <p1> 0E0 }",
+          "status": "mf:proposed",
+          "result": "1val1DOUBLE_pass.val"
+        },
+        {
+          "@id": "#1val1DOUBLElowercase_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1val1DOUBLElowercase.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_DBL0e0.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1DOUBLElowercase_pass",
+          "comment": "<S> { <p1> [0e0] } on { <s> <p1> 0e0 }",
+          "status": "mf:proposed",
+          "result": "1val1DOUBLE_pass.val"
+        },
+        {
+          "@id": "#1val1DOUBLE_passUC",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1val1DOUBLE.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_DBL0e0.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1DOUBLE_passUC",
+          "comment": "<S> { <p1> [0e0] } on { <s> <p1> 0E0 }",
+          "status": "mf:proposed",
+          "result": "1val1DOUBLE_pass.val"
+        },
+        {
+          "@id": "#1val1DOUBLE_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1val1DOUBLE.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_DBL0e0.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1DOUBLE_pass",
+          "comment": "<S> { <p1> [0e0] } on { <s> <p1> 0e0 }",
+          "status": "mf:proposed",
+          "result": "1val1DOUBLE_pass.val"
+        },
+        {
+          "@id": "#1val1INTEGER_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1val1INTEGER.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_INT0.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1INTEGER_pass",
+          "comment": "<S> { <p1> [0] } on { <s> <p1> 0 }",
+          "status": "mf:proposed",
+          "result": "1val1INTEGER_pass.val"
+        },
+        {
+          "@id": "#1val1IRIREF_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1val1IRIREF.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1IRIREF_pass",
+          "comment": "<S> { <p1> [<v1>] } on { <s> <p1> <v1> }",
+          "status": "mf:proposed",
+          "result": "1val1IRIREF_pass.val"
+        },
+        {
+          "@id": "#1dotRef1_overMatchesReferent",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1dotRef1.shex",
+            "shape": "http://a.example/S1",
+            "data": "In1_Ip1_In2.In2_Ip2_LX.In3_Ip1_LX.ttl",
+            "focus": "http://a.example/n1"
+          },
+          "extensionResults": [],
+          "name": "1dotRef1_overMatchesReferent",
+          "comment": "<n2> in { <n2> <p2> <n1>, <n3> . <n1> <p1> X . <n3> <p1> X } as <S1> in <S1> { <p2> @<S2> } <S2> { <p1> X }",
+          "status": "mf:proposed",
+          "result": "In2_Ip2_In1@In1_Ip1_LX.val"
+        },
+        {
+          "@id": "#1dotRef1_referrer,referent",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1dotRef1.shex",
+            "shape": "http://a.example/S1",
+            "data": "In1_Ip1_In1.In2_Ip2_LX.ttl",
+            "focus": "http://a.example/n1"
+          },
+          "extensionResults": [],
+          "name": "1dotRef1_referrer,referent",
+          "comment": "<n2> in { <n2> <p2> <n1> . <n1> <p1> X } as <S1> in <S1> { <p2> @<S2> } <S2> { <p1> X }",
+          "status": "mf:proposed",
+          "result": "In2_Ip2_In1@In1_Ip1_LX.val"
+        },
+        {
+          "@id": "#1dotRef1_referent,referrer",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1dotRef1.shex",
+            "shape": "http://a.example/S1",
+            "data": "In2_Ip2_LX.In1_Ip1_In2.ttl",
+            "focus": "http://a.example/n1"
+          },
+          "extensionResults": [],
+          "name": "1dotRef1_referent,referrer",
+          "comment": "<n2> in { <n1> <p1> X . <n2> <p2> <n1> } as <S1> in <S1> { <p2> @<S2> } <S2> { <p1> X }",
+          "status": "mf:proposed",
+          "result": "In2_Ip2_In1@In1_Ip1_LX.val"
         },
         {
           "@id": "#1cardStar_pass6",
@@ -3890,6 +3875,21 @@
           "comment": "<S> { <p1> .{2} } on { <s> <p1> 'a','b' }",
           "status": "mf:proposed",
           "result": "1card2_pass2.val"
+        },
+        {
+          "@id": "#1datatype_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1datatype.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_dt1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1datatype_pass",
+          "comment": "<S> { <p1> <dt1> } on <s> in { <s> <p1> 'ab'^^<dt1> }",
+          "status": "mf:proposed",
+          "result": "1datatype_pass.val"
         },
         {
           "@id": "#1Adot_pass",
@@ -4675,230 +4675,6 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#1val1LANGTAG_LaLTen-fr",
-          "@type": "sht:ValidationFailure",
-          "action": {
-            "schema": "../schemas/1val1LANGTAG.shex",
-            "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_LaLTen-fr.ttl",
-            "focus": "http://a.example/s1"
-          },
-          "extensionResults": [],
-          "name": "1val1LANGTAG_LaLTen-fr",
-          "comment": "<S> { <p1> ['ab'@en-fr] } on { <s> <p1> 'a'@en-fr }",
-          "status": "mf:proposed"
-        },
-        {
-          "@id": "#1val1LANGTAG_LabLTen-fr-jura",
-          "@type": "sht:ValidationFailure",
-          "action": {
-            "schema": "../schemas/1val1LANGTAG.shex",
-            "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_LabLTen-fr-jura.ttl",
-            "focus": "http://a.example/s1"
-          },
-          "extensionResults": [],
-          "name": "1val1LANGTAG_LabLTen-fr-jura",
-          "comment": "<S> { <p1> ['ab'@en-fr] } on { <s> <p1> 'ab'@en-fr-jura }",
-          "status": "mf:proposed"
-        },
-        {
-          "@id": "#1val1LANGTAG_LabLTen",
-          "@type": "sht:ValidationFailure",
-          "action": {
-            "schema": "../schemas/1val1LANGTAG.shex",
-            "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_LabLTen.ttl",
-            "focus": "http://a.example/s1"
-          },
-          "extensionResults": [],
-          "name": "1val1LANGTAG_LabLTen",
-          "comment": "<S> { <p1> ['ab'@en-fr] } on { <s> <p1> 'ab'@en }",
-          "status": "mf:proposed"
-        },
-        {
-          "@id": "#1val1LANGTAG_Lab",
-          "@type": "sht:ValidationFailure",
-          "action": {
-            "schema": "../schemas/1val1LANGTAG.shex",
-            "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_Lab.ttl",
-            "focus": "http://a.example/s1"
-          },
-          "extensionResults": [],
-          "name": "1val1LANGTAG_Lab",
-          "comment": "<S> { <p1> ['ab'@en-fr] } on { <s> <p1> 'ab' }",
-          "status": "mf:proposed"
-        },
-        {
-          "@id": "#1val1IRIREFDatatype_LaDTbloodType",
-          "@type": "sht:ValidationFailure",
-          "action": {
-            "schema": "../schemas/1val1IRIREFDatatype.shex",
-            "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_LaDTbloodType.ttl",
-            "focus": "http://a.example/s1"
-          },
-          "extensionResults": [],
-          "name": "1val1IRIREFDatatype_LaDTbloodType",
-          "comment": "<S> { <p1> ['ab'^^my:bloodType] } on { <s> <p1> 'a'^^my:bloodType }",
-          "status": "mf:proposed"
-        },
-        {
-          "@id": "#1val1IRIREFDatatype_LabDTbloodType999",
-          "@type": "sht:ValidationFailure",
-          "action": {
-            "schema": "../schemas/1val1IRIREFDatatype.shex",
-            "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_LabDTbloodType999.ttl",
-            "focus": "http://a.example/s1"
-          },
-          "extensionResults": [],
-          "name": "1val1IRIREFDatatype_LabDTbloodType999",
-          "comment": "<S> { <p1> ['ab'^^my:bloodType] } on { <s> <p1> 'ab'^^my:bloodType999 }",
-          "status": "mf:proposed"
-        },
-        {
-          "@id": "#1val1IRIREFDatatype_Lab",
-          "@type": "sht:ValidationFailure",
-          "action": {
-            "schema": "../schemas/1val1IRIREFDatatype.shex",
-            "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_Lab.ttl",
-            "focus": "http://a.example/s1"
-          },
-          "extensionResults": [],
-          "name": "1val1IRIREFDatatype_Lab",
-          "comment": "<S> { <p1> ['ab'^^my:bloodType] } on { <s> <p1> 'ab' }",
-          "status": "mf:proposed"
-        },
-        {
-          "@id": "#1val1INTEGER_Lab",
-          "@type": "sht:ValidationFailure",
-          "action": {
-            "schema": "../schemas/1val1INTEGER.shex",
-            "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_Lab.ttl",
-            "focus": "http://a.example/s1"
-          },
-          "extensionResults": [],
-          "name": "1val1INTEGER_Lab",
-          "comment": "<S> { <p1> [0] } on { <s> <p1> 'ab' }",
-          "status": "mf:proposed"
-        },
-        {
-          "@id": "#1val1INTEGER_00",
-          "@type": "sht:ValidationFailure",
-          "action": {
-            "schema": "../schemas/1val1INTEGER.shex",
-            "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_INT00.ttl",
-            "focus": "http://a.example/s1"
-          },
-          "extensionResults": [],
-          "name": "1val1INTEGER_00",
-          "comment": "<S> { <p1> [0] } on { <s> <p1> 00 }",
-          "status": "mf:proposed"
-        },
-        {
-          "@id": "#1val1false_ab",
-          "@type": "sht:ValidationFailure",
-          "action": {
-            "schema": "../schemas/1val1false.shex",
-            "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_Lab.ttl",
-            "focus": "http://a.example/s1"
-          },
-          "extensionResults": [],
-          "name": "1val1false_ab",
-          "comment": "<S> { <p1> [false] } on { <s> <p1> ab }",
-          "status": "mf:proposed"
-        },
-        {
-          "@id": "#1val1false_true",
-          "@type": "sht:ValidationFailure",
-          "action": {
-            "schema": "../schemas/1val1false.shex",
-            "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_true.ttl",
-            "focus": "http://a.example/s1"
-          },
-          "extensionResults": [],
-          "name": "1val1false_true",
-          "comment": "<S> { <p1> [false] } on { <s> <p1> false }",
-          "status": "mf:proposed"
-        },
-        {
-          "@id": "#1val1true_ab",
-          "@type": "sht:ValidationFailure",
-          "action": {
-            "schema": "../schemas/1val1true.shex",
-            "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_Lab.ttl",
-            "focus": "http://a.example/s1"
-          },
-          "extensionResults": [],
-          "name": "1val1true_ab",
-          "comment": "<S> { <p1> [true] } on { <s> <p1> ab }",
-          "status": "mf:proposed"
-        },
-        {
-          "@id": "#1val1true_false",
-          "@type": "sht:ValidationFailure",
-          "action": {
-            "schema": "../schemas/1val1true.shex",
-            "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_false.ttl",
-            "focus": "http://a.example/s1"
-          },
-          "extensionResults": [],
-          "name": "1val1true_false",
-          "comment": "<S> { <p1> [true] } on { <s> <p1> false }",
-          "status": "mf:proposed"
-        },
-        {
-          "@id": "#1val1DOUBLElowercase_0_0e0",
-          "@type": "sht:ValidationFailure",
-          "action": {
-            "schema": "../schemas/1val1DOUBLElowercase.shex",
-            "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_DBL0_0e0.ttl",
-            "focus": "http://a.example/s1"
-          },
-          "extensionResults": [],
-          "name": "1val1DOUBLElowercase_0_0e0",
-          "comment": "<S> { <p1> [0e0] } on { <s> <p1> 0e0.0 }",
-          "status": "mf:proposed"
-        },
-        {
-          "@id": "#1val1DOUBLE_0_0e0",
-          "@type": "sht:ValidationFailure",
-          "action": {
-            "schema": "../schemas/1val1DOUBLE.shex",
-            "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_DBL0_0e0.ttl",
-            "focus": "http://a.example/s1"
-          },
-          "extensionResults": [],
-          "name": "1val1DOUBLE_0_0e0",
-          "comment": "<S> { <p1> [0e0] } on { <s> <p1> 0e0.0 }",
-          "status": "mf:proposed"
-        },
-        {
-          "@id": "#1val1IRIREF_v2",
-          "@type": "sht:ValidationFailure",
-          "action": {
-            "schema": "../schemas/1val1IRIREF.shex",
-            "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_Iv2.ttl",
-            "focus": "http://a.example/s1"
-          },
-          "extensionResults": [],
-          "name": "1val1IRIREF_v2",
-          "comment": "<S> { <p1> [<v1>] } on { <s> <p1> <v2> }",
-          "status": "mf:proposed"
-        },
-        {
           "@id": "#1val1iriStemMinusiriStem3_v1a",
           "@type": "sht:ValidationFailure",
           "action": {
@@ -5106,48 +4882,6 @@
           "extensionResults": [],
           "name": "1val1dotMinusiri3_v1",
           "comment": "<S> { <p1> [.-<v1>-<v2>-<v3>] } on { <s1> <p1> <v1> }",
-          "status": "mf:proposed"
-        },
-        {
-          "@id": "#1dotRef1_overReferrer,overReferent",
-          "@type": "sht:ValidationFailure",
-          "action": {
-            "schema": "../schemas/1dotRef1.shex",
-            "shape": "http://a.example/S1",
-            "data": "In1_Ip1_In2.In1_Ip1_In3.In2_Ip2_LX.In3_Ip2_LX.ttl",
-            "focus": "http://a.example/n1"
-          },
-          "extensionResults": [],
-          "name": "1dotRef1_overReferrer,overReferent",
-          "comment": "<n2> in { <n2> <p2> <n1>, <n3> . <n1> <p1> X . <n3> <p1> X } as <S1> in <S1> { <p2> @<S2> } <S2> { <p1> X }",
-          "status": "mf:proposed"
-        },
-        {
-          "@id": "#1dotRef1_overReferrer",
-          "@type": "sht:ValidationFailure",
-          "action": {
-            "schema": "../schemas/1dotRef1.shex",
-            "shape": "http://a.example/S1",
-            "data": "In1_Ip1_In2.In1_Ip1_In3.In2_Ip2_LX.ttl",
-            "focus": "http://a.example/n1"
-          },
-          "extensionResults": [],
-          "name": "1dotRef1_overReferrer",
-          "comment": "<n2> in { <n2> <p2> <n1>, <n3> . <n1> <p1> X } as <S1> in <S1> { <p2> @<S2> } <S2> { <p1> X }",
-          "status": "mf:proposed"
-        },
-        {
-          "@id": "#1dotRef1_missingReferent",
-          "@type": "sht:ValidationFailure",
-          "action": {
-            "schema": "../schemas/1dotRef1.shex",
-            "shape": "http://a.example/S1",
-            "data": "In1_Ip1_In2.ttl",
-            "focus": "http://a.example/n1"
-          },
-          "extensionResults": [],
-          "name": "1dotRef1_missingReferent",
-          "comment": "<n2> in { <n2> <p2> <n1> } as <S1> in <S1> { <p2> @<S2> } <S2> { <p1> X }",
           "status": "mf:proposed"
         },
         {
@@ -7727,45 +7461,269 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#1datatype_wrongDatatype",
+          "@id": "#1val1false_ab",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/1datatype.shex",
-            "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_DEC1.345.ttl",
-            "focus": "http://a.example/s1"
-          },
-          "extensionResults": [],
-          "name": "1datatype_wrongDatatype",
-          "comment": "<S> { <p1> <dt1> } on <s> in { <s> <p1> 1.234 }",
-          "status": "mf:proposed"
-        },
-        {
-          "@id": "#1datatype_nonLiteral",
-          "@type": "sht:ValidationFailure",
-          "action": {
-            "schema": "../schemas/1datatype.shex",
-            "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_Io1.ttl",
-            "focus": "http://a.example/s1"
-          },
-          "extensionResults": [],
-          "name": "1datatype_nonLiteral",
-          "comment": "<S> { <p1> <dt1> } on <s> in { <s> <p1> <o1> }",
-          "status": "mf:proposed"
-        },
-        {
-          "@id": "#1datatype_missing",
-          "@type": "sht:ValidationFailure",
-          "action": {
-            "schema": "../schemas/1datatype.shex",
+            "schema": "../schemas/1val1false.shex",
             "shape": "http://a.example/S1",
             "data": "Is1_Ip1_Lab.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1datatype_missing",
-          "comment": "<S> { <p1> <dt1> } on <s> in { <s> <p2> <o1> }",
+          "name": "1val1false_ab",
+          "comment": "<S> { <p1> [false] } on { <s> <p1> ab }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1val1false_true",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1val1false.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_true.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1false_true",
+          "comment": "<S> { <p1> [false] } on { <s> <p1> false }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1val1true_ab",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1val1true.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Lab.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1true_ab",
+          "comment": "<S> { <p1> [true] } on { <s> <p1> ab }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1val1true_false",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1val1true.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_false.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1true_false",
+          "comment": "<S> { <p1> [true] } on { <s> <p1> false }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1val1IRIREFDatatype_LaDTbloodType",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1val1IRIREFDatatype.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_LaDTbloodType.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1IRIREFDatatype_LaDTbloodType",
+          "comment": "<S> { <p1> ['ab'^^my:bloodType] } on { <s> <p1> 'a'^^my:bloodType }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1val1IRIREFDatatype_LabDTbloodType999",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1val1IRIREFDatatype.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_LabDTbloodType999.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1IRIREFDatatype_LabDTbloodType999",
+          "comment": "<S> { <p1> ['ab'^^my:bloodType] } on { <s> <p1> 'ab'^^my:bloodType999 }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1val1IRIREFDatatype_Lab",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1val1IRIREFDatatype.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Lab.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1IRIREFDatatype_Lab",
+          "comment": "<S> { <p1> ['ab'^^my:bloodType] } on { <s> <p1> 'ab' }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1val1LANGTAG_LaLTen-fr",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1val1LANGTAG.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_LaLTen-fr.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1LANGTAG_LaLTen-fr",
+          "comment": "<S> { <p1> ['ab'@en-fr] } on { <s> <p1> 'a'@en-fr }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1val1LANGTAG_LabLTen-fr-jura",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1val1LANGTAG.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_LabLTen-fr-jura.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1LANGTAG_LabLTen-fr-jura",
+          "comment": "<S> { <p1> ['ab'@en-fr] } on { <s> <p1> 'ab'@en-fr-jura }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1val1LANGTAG_LabLTen",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1val1LANGTAG.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_LabLTen.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1LANGTAG_LabLTen",
+          "comment": "<S> { <p1> ['ab'@en-fr] } on { <s> <p1> 'ab'@en }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1val1LANGTAG_Lab",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1val1LANGTAG.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Lab.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1LANGTAG_Lab",
+          "comment": "<S> { <p1> ['ab'@en-fr] } on { <s> <p1> 'ab' }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1val1DOUBLElowercase_0_0e0",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1val1DOUBLElowercase.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_DBL0_0e0.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1DOUBLElowercase_0_0e0",
+          "comment": "<S> { <p1> [0e0] } on { <s> <p1> 0e0.0 }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1val1DOUBLE_0_0e0",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1val1DOUBLE.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_DBL0_0e0.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1DOUBLE_0_0e0",
+          "comment": "<S> { <p1> [0e0] } on { <s> <p1> 0e0.0 }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1val1INTEGER_Lab",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1val1INTEGER.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Lab.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1INTEGER_Lab",
+          "comment": "<S> { <p1> [0] } on { <s> <p1> 'ab' }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1val1INTEGER_00",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1val1INTEGER.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_INT00.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1INTEGER_00",
+          "comment": "<S> { <p1> [0] } on { <s> <p1> 00 }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1val1IRIREF_v2",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1val1IRIREF.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv2.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1IRIREF_v2",
+          "comment": "<S> { <p1> [<v1>] } on { <s> <p1> <v2> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1dotRef1_overReferrer,overReferent",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1dotRef1.shex",
+            "shape": "http://a.example/S1",
+            "data": "In1_Ip1_In2.In1_Ip1_In3.In2_Ip2_LX.In3_Ip2_LX.ttl",
+            "focus": "http://a.example/n1"
+          },
+          "extensionResults": [],
+          "name": "1dotRef1_overReferrer,overReferent",
+          "comment": "<n2> in { <n2> <p2> <n1>, <n3> . <n1> <p1> X . <n3> <p1> X } as <S1> in <S1> { <p2> @<S2> } <S2> { <p1> X }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1dotRef1_overReferrer",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1dotRef1.shex",
+            "shape": "http://a.example/S1",
+            "data": "In1_Ip1_In2.In1_Ip1_In3.In2_Ip2_LX.ttl",
+            "focus": "http://a.example/n1"
+          },
+          "extensionResults": [],
+          "name": "1dotRef1_overReferrer",
+          "comment": "<n2> in { <n2> <p2> <n1>, <n3> . <n1> <p1> X } as <S1> in <S1> { <p2> @<S2> } <S2> { <p1> X }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1dotRef1_missingReferent",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1dotRef1.shex",
+            "shape": "http://a.example/S1",
+            "data": "In1_Ip1_In2.ttl",
+            "focus": "http://a.example/n1"
+          },
+          "extensionResults": [],
+          "name": "1dotRef1_missingReferent",
+          "comment": "<n2> in { <n2> <p2> <n1> } as <S1> in <S1> { <p2> @<S2> } <S2> { <p1> X }",
           "status": "mf:proposed"
         },
         {
@@ -7934,6 +7892,48 @@
           "extensionResults": [],
           "name": "1card2_fail0",
           "comment": "<S> { <p1> .{2} } on {  }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1datatype_wrongDatatype",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1datatype.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_DEC1.345.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1datatype_wrongDatatype",
+          "comment": "<S> { <p1> <dt1> } on <s> in { <s> <p1> 1.234 }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1datatype_nonLiteral",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1datatype.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1datatype_nonLiteral",
+          "comment": "<S> { <p1> <dt1> } on <s> in { <s> <p1> <o1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1datatype_missing",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1datatype.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Lab.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1datatype_missing",
+          "comment": "<S> { <p1> <dt1> } on <s> in { <s> <p2> <o1> }",
           "status": "mf:proposed"
         },
         {
