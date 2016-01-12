@@ -16,26 +16,6 @@
   -rw-rw-r--  1 eric www    55 Oct 20 15:51 1negatedinversedot.shex
   -rw-rw-r--  1 eric www    55 Oct 20 15:51 1inversenegateddot.shex [1negatedinversedot.shex]
   -rw-rw-r--  1 eric www    33 Oct 20 15:51 1Adot.shex
-        ## conjunction
-!  -rw-rw-r--  1 eric www    78 Oct 20 15:51 2dot.shex
-!  -rw-rw-r--  1 eric www    52 Oct 20 15:51 2dotCommas.shex          [2dotCommas.shex]
-!  -rw-rw-r--  1 eric www    53 Oct 20 15:51 open2dotclose.shex       [2dotCommas.shex]
-!  -rw-rw-r--  1 eric www    55 Oct 20 15:51 open2dotcommasclose.shex [2dotCommas.shex]
-!  -rw-rw-r--  1 eric www   109 Oct 20 15:51 3groupdot.shex
-!  -rw-rw-r--  1 eric www   120 Oct 20 15:51 open3groupdotclose.shex [3groupdot.shex]
-        # OR shapeExpr
-!  -rw-rw-r--  1 eric www    51 Oct 20 15:51 1dotOr1dot.shex
-!  -rw-rw-r--  1 eric www    53 Oct 20 15:51 1dotCommaOr1dotComma.shex
-!  -rw-rw-r--  1 eric www    53 Oct 20 15:51 open1dotOr1dotclose.shex                [1dotCommaOr1dotComma.shex]
-!  -rw-rw-r--  1 eric www    56 Oct 20 15:51 open1dotCommaOr1dotCommacloseComma.shex [1dotCommaOr1dotComma.shex]
-!  -rw-rw-r--  1 eric www    58 Oct 20 15:51 2dotOr1dot.shex
-!  -rw-rw-r--  1 eric www    60 Oct 20 15:51 2dotCommaOr1dotComma.shex                    [2dotOr1dot.shex]
-!  -rw-rw-r--  1 eric www    60 Oct 20 15:51 open2dotOr1dotclose.shex                     [2dotOr1dot.shex]
-!  -rw-rw-r--  1 eric www    63 Oct 20 15:51 open2dotCommasOr1dotCommaclose.shex          [2dotOr1dot.shex]
-!  -rw-rw-r--  1 eric www    62 Oct 20 15:51 openopen2dotcloseOr1dotclose.shex            [2dotOr1dot.shex]
-!  -rw-rw-r--  1 eric www    66 Oct 20 15:51 openopen2dotCommascloseOr1dotCommaclose.shex [2dotOr1dot.shex]
-!  -rw-rw-r--  1 eric www    62 Oct 20 15:51 open1dotopen1dotOr1dotcloseclose.shex
-!  -rw-rw-r--  1 eric www    66 Oct 20 15:51 open1dotopen1dotCommaOr1dotCommacloseCommacloseComma.shex [open1dotopen1dotOr1dotcloseclose.shex]
         # cardinality
   -rw-rw-r--  1 eric www    56 Oct 20 15:51 1card2.shex
   -rw-rw-r--  1 eric www    58 Oct 20 15:51 1card25.shex
@@ -105,19 +85,39 @@
 
         # shape reference
   -rw-rw-r--  1 eric www   158 Sep 23 09:38 1dotRef1.shex                       <S1> { <p1> @<S2> } <S2> { <p2> . }
-!  -rw-rw-r--  1 eric www   162 Sep 23 09:38 1iriRef1.shex                       <S1> { <p1> IRI @<S2> } <S2> { <p2> . }
-!  -rw-rw-r--  1 eric www   100 Sep 23 09:38 1dotInline1.shex
-!  -rw-rw-r--  1 eric www   165 Sep 23 09:38 1refbnode1.shex
-!  -rw-rw-r--  1 eric www   374 Sep 23 09:38 3circularRef1.shex                 <S1> { <p1> ., <p2> @<S2>? } <S2> { <p3> @<S3> } <S3> { <p4> @<S1> } <S4> { <p5> . }
-!  -rw-rw-r--  1 eric www   174 Sep 23 09:38 1dotRefLNex.shex
-!  -rw-rw-r--  1 eric www   175 Sep 23 09:38 1dotRefSpaceLNex.shex [1dotRefLNex.shex]
-!  -rw-rw-r--  1 eric www   192 Sep 23 09:38 1dotRefNS1.shex
-!  -rw-rw-r--  1 eric www   193 Sep 23 09:38 1dotRefSpaceNS1.shex [1dotRefNS1.shex]
-!  -rw-rw-r--  1 eric www   156 Sep 23 09:38 1refbnode_with_leading_digit1.shex
-!  -rw-rw-r--  1 eric www   161 Sep 23 09:38 1refbnode_with_leading_underscore1.shex
-!  -rw-rw-r--  1 eric www   187 Sep 23 09:38 1refbnode_with_spanning_PN_CHARS1.shex
-!  -rw-rw-r--  1 eric www   313 Sep 23 09:38 1refbnode_with_spanning_PN_CHARS_BASE1.shex
+t  -rw-rw-r--  1 eric www   162 Sep 23 09:38 1iriRef1.shex                       <S1> { <p1> IRI @<S2> } <S2> { <p2> . }
+t  -rw-rw-r--  1 eric www   100 Sep 23 09:38 1dotInline1.shex
+t  -rw-rw-r--  1 eric www   165 Sep 23 09:38 1refbnode1.shex
+t  -rw-rw-r--  1 eric www   374 Sep 23 09:38 3circularRef1.shex                 <S1> { <p1> ., <p2> @<S2>? } <S2> { <p3> @<S3> } <S3> { <p4> @<S1> } <S4> { <p5> . }
+t  -rw-rw-r--  1 eric www   174 Sep 23 09:38 1dotRefLNex.shex
+t  -rw-rw-r--  1 eric www   175 Sep 23 09:38 1dotRefSpaceLNex.shex [1dotRefLNex.shex]
+t  -rw-rw-r--  1 eric www   192 Sep 23 09:38 1dotRefNS1.shex
+t  -rw-rw-r--  1 eric www   193 Sep 23 09:38 1dotRefSpaceNS1.shex [1dotRefNS1.shex]
+t  -rw-rw-r--  1 eric www   156 Sep 23 09:38 1refbnode_with_leading_digit1.shex
+t  -rw-rw-r--  1 eric www   161 Sep 23 09:38 1refbnode_with_leading_underscore1.shex
+t  -rw-rw-r--  1 eric www   187 Sep 23 09:38 1refbnode_with_spanning_PN_CHARS1.shex
+t  -rw-rw-r--  1 eric www   313 Sep 23 09:38 1refbnode_with_spanning_PN_CHARS_BASE1.shex
         # algebraic operations
+        ## conjunction
+t  -rw-rw-r--  1 eric www    78 Oct 20 15:51 2dot.shex
+t  -rw-rw-r--  1 eric www    52 Oct 20 15:51 2dotCommas.shex          [2dotCommas.shex]
+t  -rw-rw-r--  1 eric www    53 Oct 20 15:51 open2dotclose.shex       [2dotCommas.shex]
+t  -rw-rw-r--  1 eric www    55 Oct 20 15:51 open2dotcommasclose.shex [2dotCommas.shex]
+t  -rw-rw-r--  1 eric www   109 Oct 20 15:51 3groupdot.shex
+t  -rw-rw-r--  1 eric www   120 Oct 20 15:51 open3groupdotclose.shex [3groupdot.shex]
+        # OR shapeExpr
+t  -rw-rw-r--  1 eric www    51 Oct 20 15:51 1dotOr1dot.shex
+t  -rw-rw-r--  1 eric www    53 Oct 20 15:51 1dotCommaOr1dotComma.shex
+t  -rw-rw-r--  1 eric www    53 Oct 20 15:51 open1dotOr1dotclose.shex                [1dotCommaOr1dotComma.shex]
+t  -rw-rw-r--  1 eric www    56 Oct 20 15:51 open1dotCommaOr1dotCommacloseComma.shex [1dotCommaOr1dotComma.shex]
+t  -rw-rw-r--  1 eric www    58 Oct 20 15:51 2dotOr1dot.shex
+t  -rw-rw-r--  1 eric www    60 Oct 20 15:51 2dotCommaOr1dotComma.shex                    [2dotOr1dot.shex]
+t  -rw-rw-r--  1 eric www    60 Oct 20 15:51 open2dotOr1dotclose.shex                     [2dotOr1dot.shex]
+t  -rw-rw-r--  1 eric www    63 Oct 20 15:51 open2dotCommasOr1dotCommaclose.shex          [2dotOr1dot.shex]
+t  -rw-rw-r--  1 eric www    62 Oct 20 15:51 openopen2dotcloseOr1dotclose.shex            [2dotOr1dot.shex]
+t  -rw-rw-r--  1 eric www    66 Oct 20 15:51 openopen2dotCommascloseOr1dotCommaclose.shex [2dotOr1dot.shex]
+t  -rw-rw-r--  1 eric www    62 Oct 20 15:51 open1dotopen1dotOr1dotcloseclose.shex
+t  -rw-rw-r--  1 eric www    66 Oct 20 15:51 open1dotopen1dotCommaOr1dotCommacloseCommacloseComma.shex [open1dotopen1dotOr1dotcloseclose.shex]
   -rw-rw-r--  1 eric www    58 Oct 20 15:51 1dotOr2dot.shex
   -rw-rw-r--  1 eric www    62 Oct 20 15:51 open1dotOropen2dotcloseclose.shex            [1dotOr2dot.shex]
   -rw-rw-r--  1 eric www    60 Oct 20 15:51 1dotCommaOr2dotCommas.shex                   [1dotOr2dot.shex]
@@ -140,7 +140,7 @@
    1val1vExprORRef3.shex
    1val1vExprRefOR3.shex
    1val1vExprOR3.shex
-!  -rw-rw-r--  1 eric www   385 Sep 23 09:38 1dotRefOr3.shex <p1> @a OR @b OR @c
+t  -rw-rw-r--  1 eric www   385 Sep 23 09:38 1dotRefOr3.shex <p1> @a OR @b OR @c
         # closed
   -rw-rw-r--  1 eric www    60 Oct 20 15:51 1dotClosed.shex
         # extra
@@ -150,8 +150,8 @@
   -rw-rw-r--  1 eric www   181 Oct 20 15:51 3groupdotExtra3.shex
   -rw-rw-r--  1 eric www   193 Oct 20 15:51 3groupdot3Extra.shex     [3groupdotExtra3.shex]
   -rw-rw-r--  1 eric www   165 Oct 20 15:51 3groupdotExtra3NLex.shex [3groupdotExtra3.shex]
-! extra of non-mentioned predicate
-! extra of deeply-nested predicate
+t extra of non-mentioned predicate
+t extra of deeply-nested predicate
         # start
   -rw-rw-r--  1 eric www    82 Oct 20 15:51 startRefIRIREF.shex                       start=<S1> <S1> { <p1> . }
   -rw-rw-r--  1 eric www    82 Oct 20 15:51 startRefbnode.shex                        start=_:S1 _:S1 { <p1> . }
@@ -159,13 +159,13 @@
   -rw-rw-r--  1 eric www    38 Sep 23 09:38 startEqualSpaceInline.shex [startInline.shex]
   -rw-rw-r--  1 eric www    38 Sep 23 09:38 startSpaceEqualInline.shex [startInline.shex]
         ## include!!
-!  -rw-rw-r--  1 eric www   164 Sep 23 09:38 2groupInclude1.shex                 <S1> { &<S2>, <p1> . } <S2> { <p2> . }
+t  -rw-rw-r--  1 eric www   164 Sep 23 09:38 2groupInclude1.shex                 <S1> { &<S2>, <p1> . } <S2> { <p2> . }
         # annotations
   -rw-rw-r--  1 eric www   112 Oct 20 15:51 1dotAnnotIRIREF.shex
   -rw-rw-r--  1 eric www   104 Oct 20 15:51 1dotAnnotSTRING_LITERAL1.shex
   -rw-rw-r--  1 eric www   167 Oct 20 15:51 1dotAnnot3.shex
   -rw-rw-r--  1 eric www   168 Oct 20 15:51 1inversedotAnnot3.shex
-!  -rw-rw-r--  1 eric www   234 Oct 20 15:51 open3groupdotcloseAnnot3.shex
+t  -rw-rw-r--  1 eric www   234 Oct 20 15:51 open3groupdotcloseAnnot3.shex
         # semantic actions
   -rw-rw-r--  1 eric www    96 Oct 20 15:51 1dotCode1.shex
   -rw-rw-r--  1 eric www    98 Oct 20 15:51 1inversedotCode1.shex
@@ -180,7 +180,6 @@
   startCode1startReffail.shex
   -rw-rw-r--  1 eric www   167 Oct 20 15:51 startCode3.shex
   startCode3fail.shex
-!!  -rw-rw-r--  1 eric www   234 Oct 20 15:51 open3groupdotcloseCode.shex
         # annotations + semantic actions
   -rw-rw-r--  1 eric www   327 Oct 20 15:51 open3groupdotclosecard23Annot3Code2.shex
 

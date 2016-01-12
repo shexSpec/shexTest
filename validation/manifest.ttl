@@ -446,26 +446,6 @@
         <#1dotRef1_overReferrer,overReferent>
         <#1dotRef1_overMatchesReferent>
 
-## algebraic operations
-        <#1dotOr2dot_pass_p1>
-        <#1dotOr2dot_pass_p2p3>
-        <#1dotOr2dot_fail_p1p2p3>
-        # open1dotOropen2dotcloseclose_... same as 1dotOr2dot
-        # @@ eliminate as duplicate?
-        <#open1dotOropen2dotcloseclose_pass_p1>
-        <#open1dotOropen2dotcloseclose_pass_p2p3>
-        <#open1dotOropen2dotcloseclose_fail_p1p2p3>
-        # 1dotCommaOr2dotCommas_... same as 1dotOr2dot
-        # open1dotCommaOr2dotcommasclose_... same as 1dotOr2dot
-        # open1dotCommaOropen2dotCommascloseclose_... same as 1dotOr2dot
-        # open1dotOr2dotclose_... same as 1dotOr2dot
-        <#openopen1dotOr1dotclose1dotclose_pass_p1p3>
-        <#openopen1dotOr1dotclose1dotclose_pass_p2p3>
-        <#openopen1dotOr1dotclose1dotclose_fail_p1>
-        <#openopen1dotOr1dotclose1dotclose_fail_p3>
-        <#openopen1dotOr1dotclose1dotclose_fail_p1p2>
-        # openopen1dotCommaOr1dotCommaclose1dotCommacloseComma_... same as openopen1dotOr1dotclose1dotclose
-
 ## value sets
         <#1val1dotMinusiri3_pass>
         <#1val1dotMinusiri3_v1>
@@ -529,7 +509,31 @@
         <#1val1LANGTAG_LabLTen-fr-jura>
         <#1val1LANGTAG_LaLTen-fr>
 
-## AND valueExpr
+## triple expressions
+### AND tripleExpr
+
+### OR tripleExpr
+        <#1dotOr2dot_pass_p1>
+        <#1dotOr2dot_pass_p2p3>
+        <#1dotOr2dot_fail_p1p2p3>
+        # open1dotOropen2dotcloseclose_... same as 1dotOr2dot
+        # @@ eliminate as duplicate?
+        <#open1dotOropen2dotcloseclose_pass_p1>
+        <#open1dotOropen2dotcloseclose_pass_p2p3>
+        <#open1dotOropen2dotcloseclose_fail_p1p2p3>
+        # 1dotCommaOr2dotCommas_... same as 1dotOr2dot
+        # open1dotCommaOr2dotcommasclose_... same as 1dotOr2dot
+        # open1dotCommaOropen2dotCommascloseclose_... same as 1dotOr2dot
+        # open1dotOr2dotclose_... same as 1dotOr2dot
+        <#openopen1dotOr1dotclose1dotclose_pass_p1p3>
+        <#openopen1dotOr1dotclose1dotclose_pass_p2p3>
+        <#openopen1dotOr1dotclose1dotclose_fail_p1>
+        <#openopen1dotOr1dotclose1dotclose_fail_p3>
+        <#openopen1dotOr1dotclose1dotclose_fail_p1p2>
+        # openopen1dotCommaOr1dotCommaclose1dotCommacloseComma_... same as openopen1dotOr1dotclose1dotclose
+
+## value expressions
+### AND valueExpr
         <#1val1vExprANDRef3_pass>
         <#1val1vExprANDRef3_failvc1>
         <#1val1vExprANDRef3_failvc2>
@@ -543,7 +547,7 @@
         <#1val1vExprAND3_failvc2>
         <#1val1vExprAND3_failvc3>
 
-## OR valueExpr
+### OR valueExpr
         <#1val1vExprORRef3_fail>
         <#1val1vExprORRef3_passvc1>
         <#1val1vExprORRef3_passvc2>
@@ -6090,149 +6094,20 @@
     mf:result <In2_Ip2_In1@In1_Ip1_LX.val>
     .
 
+ # !1iriRef1.shex               <S1> { <p1> IRI @<S2> } <S2> { <p2> . }
+ # !1dotInline1.shex
+ # !1refbnode1.shex
+ # !3circularRef1.shex          <S1> { <p1> ., <p2> @<S2>? } <S2> { <p3> @<S3> } <S3> { <p4> @<S1> } <S4> { <p5> . }
+ # !1dotRefLNex.shex
+ # !1dotRefSpaceLNex.shex [1dotRefLNex.shex]
+ # !1dotRefNS1.shex
+ # !1dotRefSpaceNS1.shex [1dotRefNS1.shex]
+ # !1refbnode_with_leading_digit1.shex
+ # !1refbnode_with_leading_underscore1.shex
+ # !1refbnode_with_spanning_PN_CHARS1.shex
+ # !1refbnode_with_spanning_PN_CHARS_BASE1.shex
+
 ## } shape reference
-## algebraic operations {
-
-<#1dotOr2dot_pass_p1> a sht:ValidationTest ;
-    mf:name "1dotOr2dot_pass_p1" ;
-    rdfs:comment ":S1 {:p1 .|:p2 .,:p3 .} / { :s1 :p1 \"p1-0\" . }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1dotOr2dot.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <p1.ttl> ;
-      sht:focus <x>
-    ] ;
-    mf:result <open1dotOropen2dotcloseclose_pass_p1.val>
-    .
-
-<#1dotOr2dot_pass_p2p3> a sht:ValidationTest ;
-    mf:name "1dotOr2dot_pass_p2p3" ;
-    rdfs:comment ":S1 {:p1 .|:p2 .,:p3 .} / { :s1 :p2 \"p2-0\"; :p3 \"p3-0\" . }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1dotOr2dot.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <p2p3.ttl> ;
-      sht:focus <x>
-    ] ;
-    mf:result <open1dotOropen2dotcloseclose_pass_p2p3.val>
-    .
-
-<#1dotOr2dot_fail_p1p2p3> a sht:ValidationFailure ;
-    mf:name "1dotOr2dot_fail_p1p2p3" ;
-    rdfs:comment ":S1 {:p1 .|:p2 .,:p3 .} / { :s1 :p1 \"p1-0\"; :p2 \"p2-0\"; :p3 \"p3-0\" . }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1dotOr2dot.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <p1p2p3.ttl> ;
-      sht:focus <x>
-    ] ;
-    .
-
-<#open1dotOropen2dotcloseclose_pass_p1> a sht:ValidationTest ;
-    mf:name "open1dotOropen2dotcloseclose_pass_p1" ;
-    rdfs:comment ":S1 {(:p1 .|(:p2 .,:p3 .))} / { :s1 :p1 \"p1-0\" . }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/open1dotOropen2dotcloseclose.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <p1.ttl> ;
-      sht:focus <x>
-    ] ;
-    mf:result <open1dotOropen2dotcloseclose_pass_p1.val>
-    .
-
-<#open1dotOropen2dotcloseclose_pass_p2p3> a sht:ValidationTest ;
-    mf:name "open1dotOropen2dotcloseclose_pass_p2p3" ;
-    rdfs:comment ":S1 {(:p1 .|(:p2 .,:p3 .))} / { :s1 :p2 \"p2-0\"; :p3 \"p3-0\" . }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/open1dotOropen2dotcloseclose.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <p2p3.ttl> ;
-      sht:focus <x>
-    ] ;
-    mf:result <open1dotOropen2dotcloseclose_pass_p2p3.val>
-    .
-
-<#open1dotOropen2dotcloseclose_fail_p1p2p3> a sht:ValidationFailure ;
-    mf:name "open1dotOropen2dotcloseclose_fail_p1p2p3" ;
-    rdfs:comment ":S1 {(:p1 .|(:p2 .,:p3 .))} / { :s1 :p1 \"p1-0\"; :p2 \"p2-0\"; :p3 \"p3-0\" . }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/open1dotOropen2dotcloseclose.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <p1p2p3.ttl> ;
-      sht:focus <x>
-    ] ;
-    .
-
-<#openopen1dotOr1dotclose1dotclose_pass_p1p3> a sht:ValidationTest ;
-    mf:name "openopen1dotOr1dotclose1dotclose_pass_p1p3" ;
-    rdfs:comment ":S1 { ((:p1 .| :p2 .), :p3 .) } / { <x> :p1 \"p1-0\"; :p3 \"p3-0\" . }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/openopen1dotOr1dotclose1dotclose.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <p1p3.ttl> ;
-      sht:focus <x>
-    ] ;
-    mf:result <openopen1dotOr1dotclose1dotclose_pass_p1p3.val>
-    .
-
-<#openopen1dotOr1dotclose1dotclose_pass_p2p3> a sht:ValidationTest ;
-    mf:name "openopen1dotOr1dotclose1dotclose_pass_p2p3" ;
-    rdfs:comment ":S1 { ((:p1 .| :p2 .), :p3 .) } / { <x> :p2 \"p2-0\"; :p3 \"p3-0\" . }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/openopen1dotOr1dotclose1dotclose.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <p2p3.ttl> ;
-      sht:focus <x>
-    ] ;
-    mf:result <openopen1dotOr1dotclose1dotclose_pass_p2p3.val>
-    .
-
-
-<#openopen1dotOr1dotclose1dotclose_fail_p1> a sht:ValidationFailure ;
-    mf:name "openopen1dotOr1dotclose1dotclose_fail_p1" ;
-    rdfs:comment ":S1 { ((:p1 .| :p2 .), :p3 .) } / { <x> :p1 \"p1-0\" . }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/openopen1dotOr1dotclose1dotclose.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <p1.ttl> ;
-      sht:focus <x>
-    ] ;
-    .
-
-<#openopen1dotOr1dotclose1dotclose_fail_p3> a sht:ValidationFailure ;
-    mf:name "openopen1dotOr1dotclose1dotclose_fail_p3" ;
-    rdfs:comment ":S1 { ((:p1 .| :p2 .), :p3 .) } / { <x> :p3 \"p3-0\" . }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/openopen1dotOr1dotclose1dotclose.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <p3.ttl> ;
-      sht:focus <x>
-    ] ;
-    .
-
-<#openopen1dotOr1dotclose1dotclose_fail_p1p2> a sht:ValidationFailure ;
-    mf:name "openopen1dotOr1dotclose1dotclose_fail_p1p2" ;
-    rdfs:comment ":S1 { ((:p1 .| :p2 .), :p3 .) } / { <x> :p1 \"p1-0\"; :p2 \"p2-0\" . }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/openopen1dotOr1dotclose1dotclose.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <p1p2.ttl> ;
-      sht:focus <x>
-    ] ;
-    .
-
-## } algebraic operations
 ## value sets {
 
 <#1val1dotMinusiri3_pass> a sht:ValidationTest ;
@@ -6867,7 +6742,174 @@
     .
 
 ## } language tags
-## AND valueExpr {
+## triple expressions {
+###   AND tripleExpr {
+ # !2dot.shex
+ # !2dotCommas.shex          [2dotCommas.shex]
+ # !open2dotclose.shex       [2dotCommas.shex]
+ # !open2dotcommasclose.shex [2dotCommas.shex]
+ # !3groupdot.shex
+ # !open3groupdotclose.shex [3groupdot.shex]
+
+###   } AND tripleExpr
+###   OR tripleExpr {
+
+ # !1dotOr1dot.shex
+ # !1dotCommaOr1dotComma.shex
+ # !open1dotOr1dotclose.shex                [1dotCommaOr1dotComma.shex]
+ # !open1dotCommaOr1dotCommacloseComma.shex [1dotCommaOr1dotComma.shex]
+ # !2dotOr1dot.shex
+ # !2dotCommaOr1dotComma.shex                    [2dotOr1dot.shex]
+ # !open2dotOr1dotclose.shex                     [2dotOr1dot.shex]
+ # !open2dotCommasOr1dotCommaclose.shex          [2dotOr1dot.shex]
+ # !openopen2dotcloseOr1dotclose.shex            [2dotOr1dot.shex]
+ # !openopen2dotCommascloseOr1dotCommaclose.shex [2dotOr1dot.shex]
+ # !open1dotopen1dotOr1dotcloseclose.shex
+ # !open1dotopen1dotCommaOr1dotCommacloseCommacloseComma.shex [open1dotopen1dotOr1dotcloseclose.shex]
+
+<#1dotOr2dot_pass_p1> a sht:ValidationTest ;
+    mf:name "1dotOr2dot_pass_p1" ;
+    rdfs:comment ":S1 {:p1 .|:p2 .,:p3 .} / { :s1 :p1 \"p1-0\" . }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1dotOr2dot.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <p1.ttl> ;
+      sht:focus <x>
+    ] ;
+    mf:result <open1dotOropen2dotcloseclose_pass_p1.val>
+    .
+
+<#1dotOr2dot_pass_p2p3> a sht:ValidationTest ;
+    mf:name "1dotOr2dot_pass_p2p3" ;
+    rdfs:comment ":S1 {:p1 .|:p2 .,:p3 .} / { :s1 :p2 \"p2-0\"; :p3 \"p3-0\" . }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1dotOr2dot.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <p2p3.ttl> ;
+      sht:focus <x>
+    ] ;
+    mf:result <open1dotOropen2dotcloseclose_pass_p2p3.val>
+    .
+
+<#1dotOr2dot_fail_p1p2p3> a sht:ValidationFailure ;
+    mf:name "1dotOr2dot_fail_p1p2p3" ;
+    rdfs:comment ":S1 {:p1 .|:p2 .,:p3 .} / { :s1 :p1 \"p1-0\"; :p2 \"p2-0\"; :p3 \"p3-0\" . }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1dotOr2dot.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <p1p2p3.ttl> ;
+      sht:focus <x>
+    ] ;
+    .
+
+<#open1dotOropen2dotcloseclose_pass_p1> a sht:ValidationTest ;
+    mf:name "open1dotOropen2dotcloseclose_pass_p1" ;
+    rdfs:comment ":S1 {(:p1 .|(:p2 .,:p3 .))} / { :s1 :p1 \"p1-0\" . }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/open1dotOropen2dotcloseclose.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <p1.ttl> ;
+      sht:focus <x>
+    ] ;
+    mf:result <open1dotOropen2dotcloseclose_pass_p1.val>
+    .
+
+<#open1dotOropen2dotcloseclose_pass_p2p3> a sht:ValidationTest ;
+    mf:name "open1dotOropen2dotcloseclose_pass_p2p3" ;
+    rdfs:comment ":S1 {(:p1 .|(:p2 .,:p3 .))} / { :s1 :p2 \"p2-0\"; :p3 \"p3-0\" . }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/open1dotOropen2dotcloseclose.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <p2p3.ttl> ;
+      sht:focus <x>
+    ] ;
+    mf:result <open1dotOropen2dotcloseclose_pass_p2p3.val>
+    .
+
+<#open1dotOropen2dotcloseclose_fail_p1p2p3> a sht:ValidationFailure ;
+    mf:name "open1dotOropen2dotcloseclose_fail_p1p2p3" ;
+    rdfs:comment ":S1 {(:p1 .|(:p2 .,:p3 .))} / { :s1 :p1 \"p1-0\"; :p2 \"p2-0\"; :p3 \"p3-0\" . }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/open1dotOropen2dotcloseclose.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <p1p2p3.ttl> ;
+      sht:focus <x>
+    ] ;
+    .
+
+<#openopen1dotOr1dotclose1dotclose_pass_p1p3> a sht:ValidationTest ;
+    mf:name "openopen1dotOr1dotclose1dotclose_pass_p1p3" ;
+    rdfs:comment ":S1 { ((:p1 .| :p2 .), :p3 .) } / { <x> :p1 \"p1-0\"; :p3 \"p3-0\" . }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/openopen1dotOr1dotclose1dotclose.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <p1p3.ttl> ;
+      sht:focus <x>
+    ] ;
+    mf:result <openopen1dotOr1dotclose1dotclose_pass_p1p3.val>
+    .
+
+<#openopen1dotOr1dotclose1dotclose_pass_p2p3> a sht:ValidationTest ;
+    mf:name "openopen1dotOr1dotclose1dotclose_pass_p2p3" ;
+    rdfs:comment ":S1 { ((:p1 .| :p2 .), :p3 .) } / { <x> :p2 \"p2-0\"; :p3 \"p3-0\" . }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/openopen1dotOr1dotclose1dotclose.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <p2p3.ttl> ;
+      sht:focus <x>
+    ] ;
+    mf:result <openopen1dotOr1dotclose1dotclose_pass_p2p3.val>
+    .
+
+
+<#openopen1dotOr1dotclose1dotclose_fail_p1> a sht:ValidationFailure ;
+    mf:name "openopen1dotOr1dotclose1dotclose_fail_p1" ;
+    rdfs:comment ":S1 { ((:p1 .| :p2 .), :p3 .) } / { <x> :p1 \"p1-0\" . }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/openopen1dotOr1dotclose1dotclose.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <p1.ttl> ;
+      sht:focus <x>
+    ] ;
+    .
+
+<#openopen1dotOr1dotclose1dotclose_fail_p3> a sht:ValidationFailure ;
+    mf:name "openopen1dotOr1dotclose1dotclose_fail_p3" ;
+    rdfs:comment ":S1 { ((:p1 .| :p2 .), :p3 .) } / { <x> :p3 \"p3-0\" . }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/openopen1dotOr1dotclose1dotclose.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <p3.ttl> ;
+      sht:focus <x>
+    ] ;
+    .
+
+<#openopen1dotOr1dotclose1dotclose_fail_p1p2> a sht:ValidationFailure ;
+    mf:name "openopen1dotOr1dotclose1dotclose_fail_p1p2" ;
+    rdfs:comment ":S1 { ((:p1 .| :p2 .), :p3 .) } / { <x> :p1 \"p1-0\"; :p2 \"p2-0\" . }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/openopen1dotOr1dotclose1dotclose.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <p1p2.ttl> ;
+      sht:focus <x>
+    ] ;
+    .
+
+###   } OR tripleExpr
+## } triple expressions
+## value expressions {
+###   AND valueExpr {
 
 <#1val1vExprANDRef3_pass> a sht:ValidationTest ;
     mf:name "1val1vExprANDRef3_pass" ;
@@ -7016,8 +7058,8 @@
     ] ;
     .
 
-## } AND valueExpr
-## OR valueExpr {
+###   } AND valueExpr
+###   OR valueExpr {
 
 <#1val1vExprORRef3_fail> a sht:ValidationFailure ;
     mf:name "1val1vExprORRef3_fail" ;
@@ -7211,7 +7253,11 @@
     mf:result <1val1vExprOR3_passvr1vr2vr3.val>
     .
 
-## } OR valueExpr
+ # !1dotRefOr3.shex <p1> @a OR @b OR @c
+
+
+###   } OR valueExpr
+## } value expressions
 ## closed {
 
 <#1dotClosed_pass> a sht:ValidationTest ;
@@ -7423,6 +7469,9 @@
     mf:result <3groupdotExtra3_Is_Ipn_IonX3.val>
     .
 
+ # ! extra of non-mentioned predicate
+ # ! extra of deeply-nested predicate
+
 ## } extra
 ## start {
 
@@ -7543,6 +7592,9 @@
 
 ## } start
 ## include {
+
+ # !2groupInclude1.shex                 <S1> { &<S2>, <p1> . } <S2> { <p2> . }
+
 ## } include
 ## annotations {
 
@@ -7633,6 +7685,8 @@
       sht:focus <http://a.example/o1>
     ]
     .
+
+ # !open3groupdotcloseAnnot3.shex
 
 ## } annotations
 ## semantic actions {
@@ -7978,3 +8032,25 @@
     .
 
 ## } manual schemas
+# deferred {
+## inherit {
+
+  -rw-rw-r--  1 eric www   133 Sep 23 09:38 0Inherit1.shex
+  -rw-rw-r--  1 eric www   160 Sep 23 09:38 1dotInherit1.shex
+  -rw-rw-r--  1 eric www   350 Sep 23 09:38 1dotInherit3.shex
+  -rw-rw-r--  1 eric www   352 Sep 23 09:38 1dot3Inherit.shex [1dotInherit3.shex]
+  -rw-rw-r--  1 eric www   208 Sep 23 09:38 1dot3InheritLN.shex
+
+### virtual {
+  -rw-rw-r--  1 eric www    99 Oct 20 15:51 1dotVirtualShapeCode1.shex
+  -rw-rw-r--  1 eric www    61 Oct 20 15:51 1dotVirtual.shex
+### } virtual
+## } inherit
+## unlabeled semantic actions {
+  -rw-rw-r--  1 eric www    70 Oct 20 15:51 1dotUnlabeledCode1.shex
+## } unlabeled semantic actions
+## everything {
+  -rw-rw-r--  1 eric www  3339 Sep 23 10:08 _all.shex
+  -rw-rw-r--  1 eric www  2363 Oct 20 15:51 kitchenSink.shex
+## } everything
+# } deferred
