@@ -122,6 +122,13 @@
 	<#1dotRef1_missingSelfReference>
 
 ## inline
+	<#1dotInline1_referrer,referent>
+	<#1dotInline1_missingReferent>
+	<#1dotInline1_selfReference>
+	<#1dotInline1_missingSelfReference>
+	<#1dotInline1_overReferrer>
+	<#1dotInline1_overReferrer,overReferent>
+	<#1dotInline1_overMatchesReferent>
 
 ## term equivalence
 ###   iri equivalence
@@ -1983,7 +1990,101 @@
 
 ## } shape reference
 ## inline {
- # !../schemas/1dotInline1.shex
+
+<#1dotInline1_referrer,referent> a sht:ValidationTest ;
+    mf:name "1dotInline1_referrer,referent" ;
+    sht:trait sht:ShapeReference ;
+    rdfs:comment "<n2> in { <n1> <p1> <n2> . <n2> <p2> \"X\" } as <S1> in <S1> { <p1> { <p2> . } }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1dotInline1.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip1_In2.In2_Ip2_LX.ttl> ;
+      sht:focus <http://a.example/n1>
+    ] ;
+    mf:result <1dotInline1_In1_Ip1_In2.In2_Ip2_LX.val>
+    .
+
+<#1dotInline1_missingReferent> a sht:ValidationFailure ;
+    mf:name "1dotInline1_missingReferent" ;
+    sht:trait sht:ShapeReference ;
+    rdfs:comment "<n2> in { <n1> <p1> <n2> } as <S1> in <S1> { <p1> { <p2> . } }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1dotInline1.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip1_In2.ttl> ;
+      sht:focus <http://a.example/n1>
+    ]
+    .
+
+<#1dotInline1_selfReference> a sht:ValidationTest ;
+    mf:name "1dotInline1_selfReference" ;
+    sht:trait sht:ShapeReference ;
+    rdfs:comment "<n2> in { <n1> <p1> <n1> . <n1> <p2> \"X\" } as <S1> in <S1> { <p1> { <p2> . } }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1dotInline1.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip1_In1.In1_Ip2_LX.ttl> ;
+      sht:focus <http://a.example/n1>
+    ] ;
+    mf:result <1dotInline1_In1_Ip1_In1.In1_Ip2_LX.val>
+    .
+
+<#1dotInline1_missingSelfReference> a sht:ValidationFailure ;
+    mf:name "1dotInline1_missingSelfReference" ;
+    sht:trait sht:ShapeReference ;
+    rdfs:comment "<n2> in { <n1> <p1> <n1> . <n2> <p2> \"X\" } as <S1> in <S1> { <p1> { <p2> . } }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1dotInline1.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip1_In1.In2_Ip2_LX.ttl> ;
+      sht:focus <http://a.example/n1>
+    ]
+    .
+
+<#1dotInline1_overReferrer> a sht:ValidationFailure ;
+    mf:name "1dotInline1_overReferrer" ;
+    sht:trait sht:ShapeReference ;
+    rdfs:comment "<n2> in { <n1> <p1> <n2>, <n3> . <n2> <p2> \"X\" } as <S1> in <S1> { <p1> { <p2> . } }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1dotInline1.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip1_In2.In1_Ip1_In3.In2_Ip2_LX.ttl> ;
+      sht:focus <http://a.example/n1>
+    ]
+    .
+
+<#1dotInline1_overReferrer,overReferent> a sht:ValidationFailure ;
+    mf:name "1dotInline1_overReferrer,overReferent" ;
+    sht:trait sht:ShapeReference ;
+    rdfs:comment "<n2> in { <n1> <p1> <n2>, <n3> . <n2> <p2> \"X\" . <n3> <p2> \"X\" } as <S1> in <S1> { <p1> { <p2> . } }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1dotInline1.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip1_In2.In1_Ip1_In3.In2_Ip2_LX.In3_Ip2_LX.ttl> ;
+      sht:focus <http://a.example/n1>
+    ]
+    .
+
+<#1dotInline1_overMatchesReferent> a sht:ValidationTest ;
+    mf:name "1dotInline1_overMatchesReferent" ;
+    sht:trait sht:ShapeReference ;
+    rdfs:comment "<n2> in { <n1> <p1> <n2> . <n2> <p2> \"X\" . <n3> <p1> \"X\" } as <S1> in <S1> { <p1> { <p2> . } }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1dotInline1.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip1_In2.In2_Ip2_LX.In3_Ip1_LX.ttl> ;
+      sht:focus <http://a.example/n1>
+    ] ;
+    mf:result <1dotInline1_In1_Ip1_In2.In2_Ip2_LX.val>
+    .
+
 ## } inline
 ## term equivalence {
 ###   iri equivalence {

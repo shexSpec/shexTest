@@ -7,20 +7,25 @@
       "rdfs:comment": "ShEx validation tests",
       "entries": [
         {
-          "@id": "#startCode3fail_abort",
+          "@id": "#startCode1startReffail_abort",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/startCode3fail.shex",
+            "schema": "../schemas/startCode1startReffail.shex",
             "shape": "http://a.example/S1",
             "data": "Is1_Ip1_Io1.ttl",
             "focus": "http://a.example/s1"
           },
-          "extensionResults": [],
-          "name": "startCode3fail_abort",
+          "extensionResults": [
+            {
+              "extension": "http://shex.io/extensions/Test/",
+              "prints": "\"startAct\""
+            }
+          ],
+          "name": "startCode1startReffail_abort",
           "trait": [
             "SemanticAction"
           ],
-          "comment": "%<Test>{print('startAct 1')%} %<Test>{ fail('startAct 2') %} %<Test>{print('startAct 3')%} <S> { <p1> . } on { <s> <p1> <o1> }",
+          "comment": "%<Test>{ fail('startAct') %} <S> { <p1> . } on { <s> <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -77,25 +82,20 @@
           "result": "0_pass.val"
         },
         {
-          "@id": "#startCode1fail_abort",
+          "@id": "#1dotCode3fail_abort",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/startCode1fail.shex",
+            "schema": "../schemas/1dotCode3fail.shex",
             "shape": "http://a.example/S1",
             "data": "Is1_Ip1_Io1.ttl",
             "focus": "http://a.example/s1"
           },
-          "extensionResults": [
-            {
-              "extension": "http://shex.io/extensions/Test/",
-              "prints": "\"startAct\""
-            }
-          ],
-          "name": "startCode1fail_abort",
+          "extensionResults": [],
+          "name": "1dotCode3fail_abort",
           "trait": [
             "SemanticAction"
           ],
-          "comment": "%<Test>{ fail('startAct') %} <S> { <p1> . } on { <s> <p1> <o1> }",
+          "comment": "<S> { <p1> . %<Test>{ print(s) %}%<Test>{ fail(s) %}%<Test>{ print(o) %} } on { <s> <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -4248,6 +4248,60 @@
           "result": "1val1IRIREF_pass.val"
         },
         {
+          "@id": "#1dotInline1_overMatchesReferent",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1dotInline1.shex",
+            "shape": "http://a.example/S1",
+            "data": "In1_Ip1_In2.In2_Ip2_LX.In3_Ip1_LX.ttl",
+            "focus": "http://a.example/n1"
+          },
+          "extensionResults": [],
+          "name": "1dotInline1_overMatchesReferent",
+          "trait": [
+            "ShapeReference"
+          ],
+          "comment": "<n2> in { <n1> <p1> <n2> . <n2> <p2> \"X\" . <n3> <p1> \"X\" } as <S1> in <S1> { <p1> { <p2> . } }",
+          "status": "mf:proposed",
+          "result": "1dotInline1_In1_Ip1_In2.In2_Ip2_LX.val"
+        },
+        {
+          "@id": "#1dotInline1_selfReference",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1dotInline1.shex",
+            "shape": "http://a.example/S1",
+            "data": "In1_Ip1_In1.In1_Ip2_LX.ttl",
+            "focus": "http://a.example/n1"
+          },
+          "extensionResults": [],
+          "name": "1dotInline1_selfReference",
+          "trait": [
+            "ShapeReference"
+          ],
+          "comment": "<n2> in { <n1> <p1> <n1> . <n1> <p2> \"X\" } as <S1> in <S1> { <p1> { <p2> . } }",
+          "status": "mf:proposed",
+          "result": "1dotInline1_In1_Ip1_In1.In1_Ip2_LX.val"
+        },
+        {
+          "@id": "#1dotInline1_referrer,referent",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1dotInline1.shex",
+            "shape": "http://a.example/S1",
+            "data": "In1_Ip1_In2.In2_Ip2_LX.ttl",
+            "focus": "http://a.example/n1"
+          },
+          "extensionResults": [],
+          "name": "1dotInline1_referrer,referent",
+          "trait": [
+            "ShapeReference"
+          ],
+          "comment": "<n2> in { <n1> <p1> <n2> . <n2> <p2> \"X\" } as <S1> in <S1> { <p1> { <p2> . } }",
+          "status": "mf:proposed",
+          "result": "1dotInline1_In1_Ip1_In2.In2_Ip2_LX.val"
+        },
+        {
           "@id": "#1dotRef1_selfReference",
           "@type": "sht:ValidationTest",
           "action": {
@@ -5222,6 +5276,23 @@
           "status": "mf:proposed"
         },
         {
+          "@id": "#startCode3fail_abort",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/startCode3fail.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "startCode3fail_abort",
+          "trait": [
+            "SemanticAction"
+          ],
+          "comment": "%<Test>{print('startAct 1')%} %<Test>{ fail('startAct 2') %} %<Test>{print('startAct 3')%} <S> { <p1> . } on { <s> <p1> <o1> }",
+          "status": "mf:proposed"
+        },
+        {
           "@id": "#1inversedot_fail-empty",
           "@type": "sht:ValidationFailure",
           "action": {
@@ -5239,10 +5310,10 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#startCode1startReffail_abort",
+          "@id": "#startCode1fail_abort",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/startCode1startReffail.shex",
+            "schema": "../schemas/startCode1fail.shex",
             "shape": "http://a.example/S1",
             "data": "Is1_Ip1_Io1.ttl",
             "focus": "http://a.example/s1"
@@ -5253,7 +5324,7 @@
               "prints": "\"startAct\""
             }
           ],
-          "name": "startCode1startReffail_abort",
+          "name": "startCode1fail_abort",
           "trait": [
             "SemanticAction"
           ],
@@ -5287,23 +5358,6 @@
           "comment": "@@ open3groupdotclosecard23Annot3Code2-p1p2p3X3",
           "status": "mf:proposed",
           "result": "open3groupdotclosecard23Annot3Code2-p1p2p3X3.val"
-        },
-        {
-          "@id": "#1dotCode3fail_abort",
-          "@type": "sht:ValidationFailure",
-          "action": {
-            "schema": "../schemas/1dotCode3fail.shex",
-            "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_Io1.ttl",
-            "focus": "http://a.example/s1"
-          },
-          "extensionResults": [],
-          "name": "1dotCode3fail_abort",
-          "trait": [
-            "SemanticAction"
-          ],
-          "comment": "<S> { <p1> . %<Test>{ print(s) %}%<Test>{ fail(s) %}%<Test>{ print(o) %} } on { <s> <p1> <o1> }",
-          "status": "mf:proposed"
         },
         {
           "@id": "#1inversedotAnnot3_missing",
@@ -9426,6 +9480,74 @@
             "IriEquivalence"
           ],
           "comment": "<S> { <p1> [<v1>] } on { <s> <p1> <v2> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1dotInline1_overReferrer,overReferent",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1dotInline1.shex",
+            "shape": "http://a.example/S1",
+            "data": "In1_Ip1_In2.In1_Ip1_In3.In2_Ip2_LX.In3_Ip2_LX.ttl",
+            "focus": "http://a.example/n1"
+          },
+          "extensionResults": [],
+          "name": "1dotInline1_overReferrer,overReferent",
+          "trait": [
+            "ShapeReference"
+          ],
+          "comment": "<n2> in { <n1> <p1> <n2>, <n3> . <n2> <p2> \"X\" . <n3> <p2> \"X\" } as <S1> in <S1> { <p1> { <p2> . } }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1dotInline1_overReferrer",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1dotInline1.shex",
+            "shape": "http://a.example/S1",
+            "data": "In1_Ip1_In2.In1_Ip1_In3.In2_Ip2_LX.ttl",
+            "focus": "http://a.example/n1"
+          },
+          "extensionResults": [],
+          "name": "1dotInline1_overReferrer",
+          "trait": [
+            "ShapeReference"
+          ],
+          "comment": "<n2> in { <n1> <p1> <n2>, <n3> . <n2> <p2> \"X\" } as <S1> in <S1> { <p1> { <p2> . } }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1dotInline1_missingSelfReference",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1dotInline1.shex",
+            "shape": "http://a.example/S1",
+            "data": "In1_Ip1_In1.In2_Ip2_LX.ttl",
+            "focus": "http://a.example/n1"
+          },
+          "extensionResults": [],
+          "name": "1dotInline1_missingSelfReference",
+          "trait": [
+            "ShapeReference"
+          ],
+          "comment": "<n2> in { <n1> <p1> <n1> . <n2> <p2> \"X\" } as <S1> in <S1> { <p1> { <p2> . } }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1dotInline1_missingReferent",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1dotInline1.shex",
+            "shape": "http://a.example/S1",
+            "data": "In1_Ip1_In2.ttl",
+            "focus": "http://a.example/n1"
+          },
+          "extensionResults": [],
+          "name": "1dotInline1_missingReferent",
+          "trait": [
+            "ShapeReference"
+          ],
+          "comment": "<n2> in { <n1> <p1> <n2> } as <S1> in <S1> { <p1> { <p2> . } }",
           "status": "mf:proposed"
         },
         {
