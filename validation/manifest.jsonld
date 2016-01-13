@@ -4248,6 +4248,62 @@
           "result": "1val1IRIREF_pass.val"
         },
         {
+          "@id": "#1dotRef1_selfReference",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1dotRef1.shex",
+            "shape": "http://a.example/S1",
+            "data": "In1_Ip1_In1.In1_Ip2_LX.ttl",
+            "focus": "http://a.example/n1"
+          },
+          "extensionResults": [],
+          "name": "1dotRef1_selfReference",
+          "trait": [
+            "ShapeReference"
+          ],
+          "comment": "<n2> in { <n1> <p1> <n1> . <n1> <p2> \"X\" } as <S1> in <S1> { <p1> @<S2> } <S2> { <p2> . }",
+          "status": "mf:proposed",
+          "result": "1dotRef1_selfReference.val"
+        },
+        {
+          "@id": "#1bnodeRef1_pass-bnode",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1bnodeRef1.shex",
+            "shape": "http://a.example/S1",
+            "data": "In1_Ip1_Bn2.Bn2_Ip2_LX.ttl",
+            "focus": "http://a.example/n1"
+          },
+          "extensionResults": [],
+          "name": "1bnodeRef1_pass-bnode",
+          "trait": [
+            "ShapeReference",
+            "NodeKind"
+          ],
+          "comment": "<n2> in { <n1> <p1> _:n1 . _:n1 <p2> \"X\" } as <S1> in <S1> { <p1> BNODE @<S2> } <S2> { <p2> . }",
+          "status": "mf:proposed",
+          "result": "1bnodeRef1_pass-bnode.val"
+        },
+        {
+          "@id": "#1iriRef1_pass-iri",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1iriRef1.shex",
+            "shape": "http://a.example/S1",
+            "data": "In1_Ip1_In2.In2_Ip2_LX.ttl",
+            "focus": "http://a.example/n1"
+          },
+          "extensionResults": [],
+          "name": "1iriRef1_pass-iri",
+          "trait": [
+            "ShapeReference",
+            "NodeKind"
+          ],
+          "comment": "<n2> in { <n1> <p1> <n2> . <n2> <p2> \"X\" } as <S1> in <S1> { <p1> IRI @<S2> } <S2> { <p2> . }",
+          "status": "mf:proposed",
+          "result": "1iriRef1_pass-iri.val"
+        },
+        {
           "@id": "#3circularRef1_pass-closed",
           "@type": "sht:ValidationTest",
           "action": {
@@ -4315,7 +4371,7 @@
           "trait": [
             "ShapeReference"
           ],
-          "comment": "<n2> in { <n2> <p2> <n1>, <n3> . <n1> <p1> X . <n3> <p1> X } as <S1> in <S1> { <p2> @<S2> } <S2> { <p1> X }",
+          "comment": "<n2> in { <n1> <p1> <n2> . <n2> <p2> \"X\" . <n3> <p1> \"X\" } as <S1> in <S1> { <p1> @<S2> } <S2> { <p2> . }",
           "status": "mf:proposed",
           "result": "In2_Ip2_In1@In1_Ip1_LX.val"
         },
@@ -4325,7 +4381,7 @@
           "action": {
             "schema": "../schemas/1dotRef1.shex",
             "shape": "http://a.example/S1",
-            "data": "In1_Ip1_In1.In2_Ip2_LX.ttl",
+            "data": "In1_Ip1_In2.In2_Ip2_LX.ttl",
             "focus": "http://a.example/n1"
           },
           "extensionResults": [],
@@ -4333,7 +4389,7 @@
           "trait": [
             "ShapeReference"
           ],
-          "comment": "<n2> in { <n2> <p2> <n1> . <n1> <p1> X } as <S1> in <S1> { <p2> @<S2> } <S2> { <p1> X }",
+          "comment": "<n2> in { <n1> <p1> <n2> . <n2> <p2> \"X\" } as <S1> in <S1> { <p1> @<S2> } <S2> { <p2> . }",
           "status": "mf:proposed",
           "result": "In2_Ip2_In1@In1_Ip1_LX.val"
         },
@@ -4351,7 +4407,7 @@
           "trait": [
             "ShapeReference"
           ],
-          "comment": "<n2> in { <n1> <p1> X . <n2> <p2> <n1> } as <S1> in <S1> { <p2> @<S2> } <S2> { <p1> X }",
+          "comment": "<n2> in { <n2> <p2> \"X\" . <n1> <p1> <n2> } as <S1> in <S1> { <p1> @<S2> } <S2> { <p2> . }",
           "status": "mf:proposed",
           "result": "In2_Ip2_In1@In1_Ip1_LX.val"
         },
@@ -9373,6 +9429,59 @@
           "status": "mf:proposed"
         },
         {
+          "@id": "#1dotRef1_missingSelfReference",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1dotRef1.shex",
+            "shape": "http://a.example/S1",
+            "data": "In1_Ip1_In1.In2_Ip2_LX.ttl",
+            "focus": "http://a.example/n1"
+          },
+          "extensionResults": [],
+          "name": "1dotRef1_missingSelfReference",
+          "trait": [
+            "ShapeReference"
+          ],
+          "comment": "<n2> in { <n1> <p1> <n1> . <n2> <p2> \"X\" } as <S1> in <S1> { <p1> @<S2> } <S2> { <p2> . }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1bnodeRef1_fail-iri",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1bnodeRef1.shex",
+            "shape": "http://a.example/S1",
+            "data": "In1_Ip1_In2.In2_Ip2_LX.ttl",
+            "focus": "http://a.example/n1"
+          },
+          "extensionResults": [],
+          "name": "1bnodeRef1_fail-iri",
+          "trait": [
+            "ShapeReference",
+            "NodeKind"
+          ],
+          "comment": "<n2> in { <n1> <p1> <n2> . <n2> <p2> \"X\" } as <S1> in <S1> { <p1> BNODE @<S2> } <S2> { <p2> . }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1iriRef1_fail-bnode",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1iriRef1.shex",
+            "shape": "http://a.example/S1",
+            "data": "In1_Ip1_Bn2.Bn2_Ip2_LX.ttl",
+            "focus": "http://a.example/n1"
+          },
+          "extensionResults": [],
+          "name": "1iriRef1_fail-bnode",
+          "trait": [
+            "ShapeReference",
+            "NodeKind"
+          ],
+          "comment": "<n2> in { <n1> <p1> _:n1 . _:n1 <p2> \"X\" } as <S1> in <S1> { <p1> IRI @<S2> } <S2> { <p2> . }",
+          "status": "mf:proposed"
+        },
+        {
           "@id": "#1refbnode1_fail-g2-arc",
           "@type": "sht:ValidationFailure",
           "action": {
@@ -9420,7 +9529,7 @@
           "trait": [
             "ShapeReference"
           ],
-          "comment": "<n2> in { <n2> <p2> <n1>, <n3> . <n1> <p1> X . <n3> <p1> X } as <S1> in <S1> { <p2> @<S2> } <S2> { <p1> X }",
+          "comment": "<n2> in { <n1> <p1> <n2>, <n3> . <n2> <p2> \"X\" . <n3> <p2> \"X\" } as <S1> in <S1> { <p1> @<S2> } <S2> { <p2> . }",
           "status": "mf:proposed"
         },
         {
@@ -9437,7 +9546,7 @@
           "trait": [
             "ShapeReference"
           ],
-          "comment": "<n2> in { <n2> <p2> <n1>, <n3> . <n1> <p1> X } as <S1> in <S1> { <p2> @<S2> } <S2> { <p1> X }",
+          "comment": "<n2> in { <n1> <p1> <n2>, <n3> . <n2> <p2> \"X\" } as <S1> in <S1> { <p1> @<S2> } <S2> { <p2> . }",
           "status": "mf:proposed"
         },
         {
@@ -9454,7 +9563,7 @@
           "trait": [
             "ShapeReference"
           ],
-          "comment": "<n2> in { <n2> <p2> <n1> } as <S1> in <S1> { <p2> @<S2> } <S2> { <p1> X }",
+          "comment": "<n2> in { <n1> <p1> <n2> } as <S1> in <S1> { <p1> @<S2> } <S2> { <p2> . }",
           "status": "mf:proposed"
         },
         {
