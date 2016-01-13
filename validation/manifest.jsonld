@@ -998,6 +998,44 @@
           "result": "1val1vExprANDRef3_pass.val"
         },
         {
+          "@id": "#1val1vExprRefbnode1_pass-lit-equal",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1val1vExprRefbnode1.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Labcde.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1vExprRefbnode1_pass-lit-equal",
+          "trait": [
+            "ValueReference",
+            "LengthFacet"
+          ],
+          "comment": "$_:vc1 = LITERAL MINLENGTH 5 <S1> { <p1> $_:vc1 } on { <s1> <p1> \"abcde\" }",
+          "status": "mf:proposed",
+          "result": "1val1vExprRefbnode1_pass-lit-equal.val"
+        },
+        {
+          "@id": "#1val1vExprRefIRIREF1_pass-lit-equal",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1val1vExprRefIRIREF1.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Labcde.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1vExprRefIRIREF1_pass-lit-equal",
+          "trait": [
+            "ValueReference",
+            "LengthFacet"
+          ],
+          "comment": "$<vc1> = LITERAL MINLENGTH 5 <S1> { <p1> $<vc1> } on { <s1> <p1> \"abcde\" }",
+          "status": "mf:proposed",
+          "result": "1val1vExprRefIRIREF1_pass-lit-equal.val"
+        },
+        {
           "@id": "#openopen1dotOr1dotclose1dotclose_pass_p2p3",
           "@type": "sht:ValidationTest",
           "action": {
@@ -5729,6 +5767,42 @@
             "AndValueExpression"
           ],
           "comment": "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> AND ... $<vc3> } on { <s1> <p1> 'ab' }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1val1vExprRefbnode1_fail-lit-short",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1val1vExprRefbnode1.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Labcd.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1vExprRefbnode1_fail-lit-short",
+          "trait": [
+            "ValueReference",
+            "LengthFacet"
+          ],
+          "comment": "$_:vc1 = LITERAL MINLENGTH 5 <S1> { <p1> $_:vc1 } on { <s1> <p1> \"abcd\" }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1val1vExprRefIRIREF1_fail-lit-short",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1val1vExprRefIRIREF1.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Labcd.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1vExprRefIRIREF1_fail-lit-short",
+          "trait": [
+            "ValueReference",
+            "LengthFacet"
+          ],
+          "comment": "$<vc1> = LITERAL MINLENGTH 5 <S1> { <p1> $<vc1> } on { <s1> <p1> \"abcd\" }",
           "status": "mf:proposed"
         },
         {

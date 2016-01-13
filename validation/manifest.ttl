@@ -574,6 +574,11 @@
         # openopen1dotCommaOr1dotCommaclose1dotCommacloseComma_... same as openopen1dotOr1dotclose1dotclose
 
 ## value expressions
+###   value reference
+        <#1val1vExprRefIRIREF1_fail-lit-short>
+	<#1val1vExprRefIRIREF1_pass-lit-equal>
+	<#1val1vExprRefbnode1_fail-lit-short>
+	<#1val1vExprRefbnode1_pass-lit-equal>
 ###   AND valueExpr
         <#1val1vExprANDRef3_pass>
         <#1val1vExprANDRef3_failvc1>
@@ -7815,6 +7820,63 @@
 ###   } OR tripleExpr
 ## } triple expressions
 ## value expressions {
+###   value reference {
+
+<#1val1vExprRefIRIREF1_fail-lit-short> a sht:ValidationFailure ;
+    mf:name "1val1vExprRefIRIREF1_fail-lit-short" ;
+    sht:trait sht:ValueReference , sht:LengthFacet ;
+    rdfs:comment "$<vc1> = LITERAL MINLENGTH 5 <S1> { <p1> $<vc1> } on { <s1> <p1> \"abcd\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1vExprRefIRIREF1.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Labcd.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1val1vExprRefIRIREF1_pass-lit-equal> a sht:ValidationTest ;
+    mf:name "1val1vExprRefIRIREF1_pass-lit-equal" ;
+    sht:trait sht:ValueReference , sht:LengthFacet ;
+    rdfs:comment "$<vc1> = LITERAL MINLENGTH 5 <S1> { <p1> $<vc1> } on { <s1> <p1> \"abcde\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1vExprRefIRIREF1.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Labcde.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1val1vExprRefIRIREF1_pass-lit-equal.val>
+    .
+
+<#1val1vExprRefbnode1_fail-lit-short> a sht:ValidationFailure ;
+    mf:name "1val1vExprRefbnode1_fail-lit-short" ;
+    sht:trait sht:ValueReference , sht:LengthFacet ;
+    rdfs:comment "$_:vc1 = LITERAL MINLENGTH 5 <S1> { <p1> $_:vc1 } on { <s1> <p1> \"abcd\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1vExprRefbnode1.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Labcd.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1val1vExprRefbnode1_pass-lit-equal> a sht:ValidationTest ;
+    mf:name "1val1vExprRefbnode1_pass-lit-equal" ;
+    sht:trait sht:ValueReference , sht:LengthFacet ;
+    rdfs:comment "$_:vc1 = LITERAL MINLENGTH 5 <S1> { <p1> $_:vc1 } on { <s1> <p1> \"abcde\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1vExprRefbnode1.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Labcde.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1val1vExprRefbnode1_pass-lit-equal.val>
+    .
+
+###   } value reference
 ###   AND valueExpr {
 
 <#1val1vExprANDRef3_pass> a sht:ValidationTest ;

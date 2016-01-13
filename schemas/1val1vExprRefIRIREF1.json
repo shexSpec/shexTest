@@ -2,12 +2,12 @@
   "type": "Schema",
   "prefixes": {},
   "valueExprDefns": {
-    "_:vc1": {
+    "http://a.example/vc1": {
       "type": "ValueExprDefn",
       "valueExpr": {
         "type": "ValueClass",
         "nodeKind": "literal",
-        "minlength": 4
+        "minlength": 5
       }
     }
   },
@@ -16,10 +16,10 @@
       "type": "Shape",
       "expression": {
         "type": "TripleConstraint",
-        "predicate": "http://a.example/p4",
+        "predicate": "http://a.example/p1",
         "valueExpr": {
           "type": "ValueRef",
-          "valueExprRef": "_:vc1"
+          "valueExprRef": "http://a.example/vc1"
         }
       }
     }
