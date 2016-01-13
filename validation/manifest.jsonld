@@ -4261,7 +4261,7 @@
           "trait": [
             "ShapeReference"
           ],
-          "comment": "<n2> in { <n1> <p1> <n1> . <n1> <p2> \"X\" } as <S1> in <S1> { <p1> @<S2> } <S2> { <p2> . }",
+          "comment": "<n1> in { <n1> <p1> <n1> . <n1> <p2> \"X\" } as <S1> in <S1> { <p1> @<S2> } <S2> { <p2> . }",
           "status": "mf:proposed",
           "result": "1dotRef1_selfReference.val"
         },
@@ -4280,7 +4280,7 @@
             "ShapeReference",
             "NodeKind"
           ],
-          "comment": "<n2> in { <n1> <p1> _:n1 . _:n1 <p2> \"X\" } as <S1> in <S1> { <p1> BNODE @<S2> } <S2> { <p2> . }",
+          "comment": "<n1> in { <n1> <p1> _:n1 . _:n1 <p2> \"X\" } as <S1> in <S1> { <p1> BNODE @<S2> } <S2> { <p2> . }",
           "status": "mf:proposed",
           "result": "1bnodeRef1_pass-bnode.val"
         },
@@ -4299,7 +4299,7 @@
             "ShapeReference",
             "NodeKind"
           ],
-          "comment": "<n2> in { <n1> <p1> <n2> . <n2> <p2> \"X\" } as <S1> in <S1> { <p1> IRI @<S2> } <S2> { <p2> . }",
+          "comment": "<n1> in { <n1> <p1> <n2> . <n2> <p2> \"X\" } as <S1> in <S1> { <p1> IRI @<S2> } <S2> { <p2> . }",
           "status": "mf:proposed",
           "result": "1iriRef1_pass-iri.val"
         },
@@ -4371,7 +4371,7 @@
           "trait": [
             "ShapeReference"
           ],
-          "comment": "<n2> in { <n1> <p1> <n2> . <n2> <p2> \"X\" . <n3> <p1> \"X\" } as <S1> in <S1> { <p1> @<S2> } <S2> { <p2> . }",
+          "comment": "<n1> in { <n1> <p1> <n2> . <n2> <p2> \"X\" . <n3> <p1> \"X\" } as <S1> in <S1> { <p1> @<S2> } <S2> { <p2> . }",
           "status": "mf:proposed",
           "result": "In2_Ip2_In1@In1_Ip1_LX.val"
         },
@@ -4389,7 +4389,7 @@
           "trait": [
             "ShapeReference"
           ],
-          "comment": "<n2> in { <n1> <p1> <n2> . <n2> <p2> \"X\" } as <S1> in <S1> { <p1> @<S2> } <S2> { <p2> . }",
+          "comment": "<n1> in { <n1> <p1> <n2> . <n2> <p2> \"X\" } as <S1> in <S1> { <p1> @<S2> } <S2> { <p2> . }",
           "status": "mf:proposed",
           "result": "In2_Ip2_In1@In1_Ip1_LX.val"
         },
@@ -9442,7 +9442,7 @@
           "trait": [
             "ShapeReference"
           ],
-          "comment": "<n2> in { <n1> <p1> <n1> . <n2> <p2> \"X\" } as <S1> in <S1> { <p1> @<S2> } <S2> { <p2> . }",
+          "comment": "<n1> in { <n1> <p1> <n1> . <n2> <p2> \"X\" } as <S1> in <S1> { <p1> @<S2> } <S2> { <p2> . }",
           "status": "mf:proposed"
         },
         {
@@ -9460,7 +9460,7 @@
             "ShapeReference",
             "NodeKind"
           ],
-          "comment": "<n2> in { <n1> <p1> <n2> . <n2> <p2> \"X\" } as <S1> in <S1> { <p1> BNODE @<S2> } <S2> { <p2> . }",
+          "comment": "<n1> in { <n1> <p1> <n2> . <n2> <p2> \"X\" } as <S1> in <S1> { <p1> BNODE @<S2> } <S2> { <p2> . }",
           "status": "mf:proposed"
         },
         {
@@ -9478,7 +9478,7 @@
             "ShapeReference",
             "NodeKind"
           ],
-          "comment": "<n2> in { <n1> <p1> _:n1 . _:n1 <p2> \"X\" } as <S1> in <S1> { <p1> IRI @<S2> } <S2> { <p2> . }",
+          "comment": "<n1> in { <n1> <p1> _:n1 . _:n1 <p2> \"X\" } as <S1> in <S1> { <p1> IRI @<S2> } <S2> { <p2> . }",
           "status": "mf:proposed"
         },
         {
@@ -9529,7 +9529,7 @@
           "trait": [
             "ShapeReference"
           ],
-          "comment": "<n2> in { <n1> <p1> <n2>, <n3> . <n2> <p2> \"X\" . <n3> <p2> \"X\" } as <S1> in <S1> { <p1> @<S2> } <S2> { <p2> . }",
+          "comment": "<n1> in { <n1> <p1> <n2>, <n3> . <n2> <p2> \"X\" . <n3> <p2> \"X\" } as <S1> in <S1> { <p1> @<S2> } <S2> { <p2> . }",
           "status": "mf:proposed"
         },
         {
@@ -9546,7 +9546,7 @@
           "trait": [
             "ShapeReference"
           ],
-          "comment": "<n2> in { <n1> <p1> <n2>, <n3> . <n2> <p2> \"X\" } as <S1> in <S1> { <p1> @<S2> } <S2> { <p2> . }",
+          "comment": "<n1> in { <n1> <p1> <n2>, <n3> . <n2> <p2> \"X\" } as <S1> in <S1> { <p1> @<S2> } <S2> { <p2> . }",
           "status": "mf:proposed"
         },
         {
@@ -9563,7 +9563,7 @@
           "trait": [
             "ShapeReference"
           ],
-          "comment": "<n2> in { <n1> <p1> <n2> } as <S1> in <S1> { <p1> @<S2> } <S2> { <p2> . }",
+          "comment": "<n1> in { <n1> <p1> <n2> } as <S1> in <S1> { <p1> @<S2> } <S2> { <p2> . }",
           "status": "mf:proposed"
         },
         {
