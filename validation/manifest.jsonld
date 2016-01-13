@@ -7,10 +7,10 @@
       "rdfs:comment": "ShEx validation tests",
       "entries": [
         {
-          "@id": "#startCode1startReffail_abort",
+          "@id": "#startCode1fail_abort",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/startCode1startReffail.shex",
+            "schema": "../schemas/startCode1fail.shex",
             "shape": "http://a.example/S1",
             "data": "Is1_Ip1_Io1.ttl",
             "focus": "http://a.example/s1"
@@ -21,7 +21,7 @@
               "prints": "\"startAct\""
             }
           ],
-          "name": "startCode1startReffail_abort",
+          "name": "startCode1fail_abort",
           "trait": [
             "SemanticAction"
           ],
@@ -82,20 +82,20 @@
           "result": "0_pass.val"
         },
         {
-          "@id": "#1dotCode3fail_abort",
+          "@id": "#1inversedotAnnot3_missing",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/1dotCode3fail.shex",
+            "schema": "../schemas/1inversedotAnnot3.shex",
             "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_Io1.ttl",
-            "focus": "http://a.example/s1"
+            "data": "Is1_Ip2_Io1.ttl",
+            "focus": "http://a.example/o1"
           },
           "extensionResults": [],
-          "name": "1dotCode3fail_abort",
+          "name": "1inversedotAnnot3_missing",
           "trait": [
-            "SemanticAction"
+            "Annotation"
           ],
-          "comment": "<S> { <p1> . %<Test>{ print(s) %}%<Test>{ fail(s) %}%<Test>{ print(o) %} } on { <s> <p1> <o1> }",
+          "comment": "<S> { <p1> .; <a1> '1'; <a1> '2'; <a1> '3'; } on { <s> <p2> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -811,7 +811,8 @@
           "extensionResults": [],
           "name": "1val1vExprRefOR3_passvc1",
           "trait": [
-            "OrValueExpression"
+            "OrValueExpression",
+            "ValueReference"
           ],
           "comment": "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> OR ... $<vc3> } on { <s1> <p1> 'ab' }",
           "status": "mf:proposed",
@@ -829,7 +830,8 @@
           "extensionResults": [],
           "name": "1val1vExprRefOR3_passvc2",
           "trait": [
-            "OrValueExpression"
+            "OrValueExpression",
+            "ValueReference"
           ],
           "comment": "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> OR ... $<vc3> } on { <s1> <p1> 'cd' }",
           "status": "mf:proposed",
@@ -847,7 +849,8 @@
           "extensionResults": [],
           "name": "1val1vExprRefOR3_passvc3",
           "trait": [
-            "OrValueExpression"
+            "OrValueExpression",
+            "ValueReference"
           ],
           "comment": "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> OR ... $<vc3> } on { <s1> <p1> 'ef' }",
           "status": "mf:proposed",
@@ -865,7 +868,8 @@
           "extensionResults": [],
           "name": "1val1vExprRefOR3_passvc1vc2vc3",
           "trait": [
-            "OrValueExpression"
+            "OrValueExpression",
+            "ValueReference"
           ],
           "comment": "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> OR ... $<vc3> } on { <s1> <p1> 'abcdef' }",
           "status": "mf:proposed",
@@ -883,7 +887,8 @@
           "extensionResults": [],
           "name": "1val1vExprORRef3_passvc1vc2vc3",
           "trait": [
-            "OrValueExpression"
+            "OrValueExpression",
+            "ValueReference"
           ],
           "comment": "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> OR ... $<vc3> } on { <s1> <p1> 'abcdef' }",
           "status": "mf:proposed",
@@ -901,7 +906,8 @@
           "extensionResults": [],
           "name": "1val1vExprORRef3_passvc3",
           "trait": [
-            "OrValueExpression"
+            "OrValueExpression",
+            "ValueReference"
           ],
           "comment": "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> OR ... $<vc3> } on { <s1> <p1> 'ef' }",
           "status": "mf:proposed",
@@ -919,7 +925,8 @@
           "extensionResults": [],
           "name": "1val1vExprORRef3_passvc2",
           "trait": [
-            "OrValueExpression"
+            "OrValueExpression",
+            "ValueReference"
           ],
           "comment": "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> OR ... $<vc3> } on { <s1> <p1> 'cd' }",
           "status": "mf:proposed",
@@ -937,7 +944,8 @@
           "extensionResults": [],
           "name": "1val1vExprORRef3_passvc1",
           "trait": [
-            "OrValueExpression"
+            "OrValueExpression",
+            "ValueReference"
           ],
           "comment": "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> OR ... $<vc3> } on { <s1> <p1> 'ab' }",
           "status": "mf:proposed",
@@ -973,7 +981,8 @@
           "extensionResults": [],
           "name": "1val1vExprRefAND3_pass",
           "trait": [
-            "AndValueExpression"
+            "AndValueExpression",
+            "ValueReference"
           ],
           "comment": "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> AND ... $<vc3> } on { <s1> <p1> 'abab' }",
           "status": "mf:proposed",
@@ -991,7 +1000,8 @@
           "extensionResults": [],
           "name": "1val1vExprANDRef3_pass",
           "trait": [
-            "AndValueExpression"
+            "AndValueExpression",
+            "ValueReference"
           ],
           "comment": "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> AND ... $<vc3> } on { <s1> <p1> 'abab' }",
           "status": "mf:proposed",
@@ -1286,6 +1296,24 @@
           "comment": "<S> { <p1> [.-<v1>~-<v2>~-<v3>~] } on { <s> <p1> <o1> }",
           "status": "mf:proposed",
           "result": "1val1dotMinusiriStem3_pass.val"
+        },
+        {
+          "@id": "#1val1refvsMinusiri3_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1val1refvsMinusiri3.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1refvsMinusiri3_pass",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "$<vs1> = [.-<v1>-<v2>-<v3>] <S> { <p1> $<vs1> } on { <s> <p1> <o1> }",
+          "status": "mf:proposed",
+          "result": "1val1refvsMinusiri3_pass.val"
         },
         {
           "@id": "#1val1dotMinusiri3_pass",
@@ -5331,6 +5359,28 @@
           "status": "mf:proposed"
         },
         {
+          "@id": "#startCode1startReffail_abort",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/startCode1startReffail.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [
+            {
+              "extension": "http://shex.io/extensions/Test/",
+              "prints": "\"startAct\""
+            }
+          ],
+          "name": "startCode1startReffail_abort",
+          "trait": [
+            "SemanticAction"
+          ],
+          "comment": "%<Test>{ fail('startAct') %} <S> { <p1> . } on { <s> <p1> <o1> }",
+          "status": "mf:proposed"
+        },
+        {
           "@id": "#1inversedot_fail-empty",
           "@type": "sht:ValidationFailure",
           "action": {
@@ -5348,25 +5398,20 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#startCode1fail_abort",
+          "@id": "#1dotCode3fail_abort",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/startCode1fail.shex",
+            "schema": "../schemas/1dotCode3fail.shex",
             "shape": "http://a.example/S1",
             "data": "Is1_Ip1_Io1.ttl",
             "focus": "http://a.example/s1"
           },
-          "extensionResults": [
-            {
-              "extension": "http://shex.io/extensions/Test/",
-              "prints": "\"startAct\""
-            }
-          ],
-          "name": "startCode1fail_abort",
+          "extensionResults": [],
+          "name": "1dotCode3fail_abort",
           "trait": [
             "SemanticAction"
           ],
-          "comment": "%<Test>{ fail('startAct') %} <S> { <p1> . } on { <s> <p1> <o1> }",
+          "comment": "<S> { <p1> . %<Test>{ print(s) %}%<Test>{ fail(s) %}%<Test>{ print(o) %} } on { <s> <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -5396,23 +5441,6 @@
           "comment": "@@ open3groupdotclosecard23Annot3Code2-p1p2p3X3",
           "status": "mf:proposed",
           "result": "open3groupdotclosecard23Annot3Code2-p1p2p3X3.val"
-        },
-        {
-          "@id": "#1inversedotAnnot3_missing",
-          "@type": "sht:ValidationFailure",
-          "action": {
-            "schema": "../schemas/1inversedotAnnot3.shex",
-            "shape": "http://a.example/S1",
-            "data": "Is1_Ip2_Io1.ttl",
-            "focus": "http://a.example/o1"
-          },
-          "extensionResults": [],
-          "name": "1inversedotAnnot3_missing",
-          "trait": [
-            "Annotation"
-          ],
-          "comment": "<S> { <p1> .; <a1> '1'; <a1> '2'; <a1> '3'; } on { <s> <p2> <o1> }",
-          "status": "mf:proposed"
         },
         {
           "@id": "#1dotAnnot3_missing",
@@ -5594,7 +5622,8 @@
           "extensionResults": [],
           "name": "1val1vExprRefOR3_fail",
           "trait": [
-            "OrValueExpression"
+            "OrValueExpression",
+            "ValueReference"
           ],
           "comment": "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> OR ... $<vc3> } on { <s1> <p1> 'a' }",
           "status": "mf:proposed"
@@ -5611,7 +5640,8 @@
           "extensionResults": [],
           "name": "1val1vExprORRef3_fail",
           "trait": [
-            "OrValueExpression"
+            "OrValueExpression",
+            "ValueReference"
           ],
           "comment": "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> OR ... $<vc3> } on { <s1> <p1> 'a' }",
           "status": "mf:proposed"
@@ -5679,7 +5709,8 @@
           "extensionResults": [],
           "name": "1val1vExprRefAND3_failvc1",
           "trait": [
-            "AndValueExpression"
+            "AndValueExpression",
+            "ValueReference"
           ],
           "comment": "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> AND ... $<vc3> } on { <s1> <p1> 'ab' }",
           "status": "mf:proposed"
@@ -5696,7 +5727,8 @@
           "extensionResults": [],
           "name": "1val1vExprRefAND3_failvc2",
           "trait": [
-            "AndValueExpression"
+            "AndValueExpression",
+            "ValueReference"
           ],
           "comment": "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> AND ... $<vc3> } on { <s1> <p1> 'ababab' }",
           "status": "mf:proposed"
@@ -5713,7 +5745,8 @@
           "extensionResults": [],
           "name": "1val1vExprRefAND3_failvc3",
           "trait": [
-            "AndValueExpression"
+            "AndValueExpression",
+            "ValueReference"
           ],
           "comment": "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> AND ... $<vc3> } on { <s1> <p1> 'baba' }",
           "status": "mf:proposed"
@@ -5730,7 +5763,8 @@
           "extensionResults": [],
           "name": "1val1vExprANDRef3_failvc3",
           "trait": [
-            "AndValueExpression"
+            "AndValueExpression",
+            "ValueReference"
           ],
           "comment": "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> AND ... $<vc3> } on { <s1> <p1> 'baba' }",
           "status": "mf:proposed"
@@ -5747,7 +5781,8 @@
           "extensionResults": [],
           "name": "1val1vExprANDRef3_failvc2",
           "trait": [
-            "AndValueExpression"
+            "AndValueExpression",
+            "ValueReference"
           ],
           "comment": "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> AND ... $<vc3> } on { <s1> <p1> 'ababab' }",
           "status": "mf:proposed"
@@ -5764,7 +5799,8 @@
           "extensionResults": [],
           "name": "1val1vExprANDRef3_failvc1",
           "trait": [
-            "AndValueExpression"
+            "AndValueExpression",
+            "ValueReference"
           ],
           "comment": "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> AND ... $<vc3> } on { <s1> <p1> 'ab' }",
           "status": "mf:proposed"
@@ -6092,6 +6128,57 @@
             "ValueSet"
           ],
           "comment": "<S> { <p1> [.-<v1>~-<v2>~-<v3>~] } on { <s1> <p1> <v1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1val1refvsMinusiri3_v3",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1val1refvsMinusiri3.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv3.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1refvsMinusiri3_v3",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "$<vs1> = [.-<v1>-<v2>-<v3>] <S> { <p1> $<vs1> } on { <s> <p1> <v3> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1val1refvsMinusiri3_v2",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1val1refvsMinusiri3.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv2.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1refvsMinusiri3_v2",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "$<vs1> = [.-<v1>-<v2>-<v3>] <S> { <p1> $<vs1> } on { <s1> <p1> <v2> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1val1refvsMinusiri3_v1",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1val1refvsMinusiri3.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1refvsMinusiri3_v1",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "$<vs1> = [.-<v1>-<v2>-<v3>] <S> { <p1> $<vs1> } on { <s1> <p1> <v1> }",
           "status": "mf:proposed"
         },
         {
