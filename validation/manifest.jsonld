@@ -7,20 +7,25 @@
       "rdfs:comment": "ShEx validation tests",
       "entries": [
         {
-          "@id": "#startCode3fail_abort",
+          "@id": "#startCode1fail_abort",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/startCode3fail.shex",
+            "schema": "../schemas/startCode1fail.shex",
             "shape": "http://a.example/S1",
             "data": "Is1_Ip1_Io1.ttl",
             "focus": "http://a.example/s1"
           },
-          "extensionResults": [],
-          "name": "startCode3fail_abort",
+          "extensionResults": [
+            {
+              "extension": "http://shex.io/extensions/Test/",
+              "prints": "\"startAct\""
+            }
+          ],
+          "name": "startCode1fail_abort",
           "trait": [
             "SemanticAction"
           ],
-          "comment": "%<Test>{print('startAct 1')%} %<Test>{ fail('startAct 2') %} %<Test>{print('startAct 3')%} <S> { <p1> . } on { <s> <p1> <o1> }",
+          "comment": "%<Test>{ fail('startAct') %} <S> { <p1> . } on { <s> <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -77,25 +82,20 @@
           "result": "0_pass.val"
         },
         {
-          "@id": "#startCode1fail_abort",
+          "@id": "#1inversedotAnnot3_missing",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/startCode1fail.shex",
+            "schema": "../schemas/1inversedotAnnot3.shex",
             "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_Io1.ttl",
-            "focus": "http://a.example/s1"
+            "data": "Is1_Ip2_Io1.ttl",
+            "focus": "http://a.example/o1"
           },
-          "extensionResults": [
-            {
-              "extension": "http://shex.io/extensions/Test/",
-              "prints": "\"startAct\""
-            }
-          ],
-          "name": "startCode1fail_abort",
+          "extensionResults": [],
+          "name": "1inversedotAnnot3_missing",
           "trait": [
-            "SemanticAction"
+            "Annotation"
           ],
-          "comment": "%<Test>{ fail('startAct') %} <S> { <p1> . } on { <s> <p1> <o1> }",
+          "comment": "<S> { <p1> .; <a1> '1'; <a1> '2'; <a1> '3'; } on { <s> <p2> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -1082,6 +1082,25 @@
           "comment": "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> AND ... $<vc3> } on { <s1> <p1> 'abab' }",
           "status": "mf:proposed",
           "result": "1val1vExprANDRef3_pass.val"
+        },
+        {
+          "@id": "#1dotRefAnd3_passShape1Shape2Shape3",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1dotRefAnd3.shex",
+            "shape": "http://a.example/S1",
+            "data": "In1_Ip1_In2.In2_Ipx_LXX3.ttl",
+            "focus": "http://a.example/n1"
+          },
+          "extensionResults": [],
+          "name": "1dotRefAnd3_passShape1Shape2Shape3",
+          "trait": [
+            "OrValueExpression",
+            "ValueReference"
+          ],
+          "comment": "<S1> { <p1> @<S2> AND @<S3> AND @<S4> } <S2> { <p2> . } <S3> { <p3> . } <S4> { <p4> . } on { <s1> <p1> <s2>, <s3>, <s4> . <s2> <p2> \"X\" . <s3> <p3> \"X\" . <s4> <p4> \"X\" }",
+          "status": "mf:proposed",
+          "result": "1dotRefAnd3_passShape1Shape2Shape3.val"
         },
         {
           "@id": "#1val1vExprRefbnode1_pass-lit-equal",
@@ -5418,20 +5437,20 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#1inversedot_fail-empty",
+          "@id": "#startCode3fail_abort",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/1inversedot.shex",
+            "schema": "../schemas/startCode3fail.shex",
             "shape": "http://a.example/S1",
-            "data": "empty.ttl",
-            "focus": "http://a.example/o1"
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1inversedot_fail-empty",
+          "name": "startCode3fail_abort",
           "trait": [
-            "TriplePattern"
+            "SemanticAction"
           ],
-          "comment": "<S> { <p1> . } on {  }",
+          "comment": "%<Test>{print('startAct 1')%} %<Test>{ fail('startAct 2') %} %<Test>{print('startAct 3')%} <S> { <p1> . } on { <s> <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -5454,6 +5473,40 @@
             "SemanticAction"
           ],
           "comment": "%<Test>{ fail('startAct') %} <S> { <p1> . } on { <s> <p1> <o1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1inversedot_fail-empty",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1inversedot.shex",
+            "shape": "http://a.example/S1",
+            "data": "empty.ttl",
+            "focus": "http://a.example/o1"
+          },
+          "extensionResults": [],
+          "name": "1inversedot_fail-empty",
+          "trait": [
+            "TriplePattern"
+          ],
+          "comment": "<S> { <p1> . } on {  }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1dotCode3fail_abort",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1dotCode3fail.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1dotCode3fail_abort",
+          "trait": [
+            "SemanticAction"
+          ],
+          "comment": "<S> { <p1> . %<Test>{ print(s) %}%<Test>{ fail(s) %}%<Test>{ print(o) %} } on { <s> <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -5483,40 +5536,6 @@
           "comment": "@@ open3groupdotclosecard23Annot3Code2-p1p2p3X3",
           "status": "mf:proposed",
           "result": "open3groupdotclosecard23Annot3Code2-p1p2p3X3.val"
-        },
-        {
-          "@id": "#1dotCode3fail_abort",
-          "@type": "sht:ValidationFailure",
-          "action": {
-            "schema": "../schemas/1dotCode3fail.shex",
-            "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_Io1.ttl",
-            "focus": "http://a.example/s1"
-          },
-          "extensionResults": [],
-          "name": "1dotCode3fail_abort",
-          "trait": [
-            "SemanticAction"
-          ],
-          "comment": "<S> { <p1> . %<Test>{ print(s) %}%<Test>{ fail(s) %}%<Test>{ print(o) %} } on { <s> <p1> <o1> }",
-          "status": "mf:proposed"
-        },
-        {
-          "@id": "#1inversedotAnnot3_missing",
-          "@type": "sht:ValidationFailure",
-          "action": {
-            "schema": "../schemas/1inversedotAnnot3.shex",
-            "shape": "http://a.example/S1",
-            "data": "Is1_Ip2_Io1.ttl",
-            "focus": "http://a.example/o1"
-          },
-          "extensionResults": [],
-          "name": "1inversedotAnnot3_missing",
-          "trait": [
-            "Annotation"
-          ],
-          "comment": "<S> { <p1> .; <a1> '1'; <a1> '2'; <a1> '3'; } on { <s> <p2> <o1> }",
-          "status": "mf:proposed"
         },
         {
           "@id": "#1dotAnnot3_missing",
@@ -5897,6 +5916,78 @@
             "ValueReference"
           ],
           "comment": "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> AND ... $<vc3> } on { <s1> <p1> 'ab' }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1dotRefAnd3_failShape1Shape2",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1dotRefAnd3.shex",
+            "shape": "http://a.example/S1",
+            "data": "In1_Ip1_In4.In4_Ip4_LX.ttl",
+            "focus": "http://a.example/n1"
+          },
+          "extensionResults": [],
+          "name": "1dotRefAnd3_failShape1Shape2",
+          "trait": [
+            "OrValueExpression",
+            "ValueReference"
+          ],
+          "comment": "<S1> { <p1> @<S2> AND @<S3> AND @<S4> } <S2> { <p2> . } <S3> { <p3> . } <S4> { <p4> . } on { <s1> <p1> <n4> . <n4> <p4> \"X\" }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1dotRefAnd3_failShape1Shape3",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1dotRefAnd3.shex",
+            "shape": "http://a.example/S1",
+            "data": "In1_Ip1_In3.In3_Ip3_LX.ttl",
+            "focus": "http://a.example/n1"
+          },
+          "extensionResults": [],
+          "name": "1dotRefAnd3_failShape1Shape3",
+          "trait": [
+            "OrValueExpression",
+            "ValueReference"
+          ],
+          "comment": "<S1> { <p1> @<S2> AND @<S3> AND @<S4> } <S2> { <p2> . } <S3> { <p3> . } <S4> { <p4> . } on { <s1> <p1> <n3> . <n3> <p3> \"X\" }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1dotRefAnd3_failShape2Shape3",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1dotRefAnd3.shex",
+            "shape": "http://a.example/S1",
+            "data": "In1_Ip1_In2.In2_Ip2_LX.ttl",
+            "focus": "http://a.example/n1"
+          },
+          "extensionResults": [],
+          "name": "1dotRefAnd3_failShape2Shape3",
+          "trait": [
+            "OrValueExpression",
+            "ValueReference"
+          ],
+          "comment": "<S1> { <p1> @<S2> AND @<S3> AND @<S4> } <S2> { <p2> . } <S3> { <p3> . } <S4> { <p4> . } on { <s1> <p1> <n2> . <n2> <p2> \"X\" }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1dotRefAnd3_failAll",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1dotRefAnd3.shex",
+            "shape": "http://a.example/S1",
+            "data": "In1_Ip1_In2.ttl",
+            "focus": "http://a.example/n1"
+          },
+          "extensionResults": [],
+          "name": "1dotRefAnd3_failAll",
+          "trait": [
+            "OrValueExpression",
+            "ValueReference"
+          ],
+          "comment": "<S1> { <p1> @<S2> AND @<S3> AND @<S4> } <S2> { <p2> . } <S3> { <p3> . } <S4> { <p4> . } on { <n1> <p1> <n2> }",
           "status": "mf:proposed"
         },
         {

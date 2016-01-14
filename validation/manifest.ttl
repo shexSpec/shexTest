@@ -584,6 +584,11 @@
 	<#1val1vExprRefbnode1_fail-lit-short>
 	<#1val1vExprRefbnode1_pass-lit-equal>
 ###   AND valueExpr
+	<#1dotRefAnd3_failAll>
+	<#1dotRefAnd3_failShape2Shape3>
+	<#1dotRefAnd3_failShape1Shape3>
+	<#1dotRefAnd3_failShape1Shape2>
+	<#1dotRefAnd3_passShape1Shape2Shape3>
         <#1val1vExprANDRef3_pass>
         <#1val1vExprANDRef3_failvc1>
         <#1val1vExprANDRef3_failvc2>
@@ -7940,6 +7945,72 @@
 
 ###   } value reference
 ###   AND valueExpr {
+
+<#1dotRefAnd3_failAll> a sht:ValidationFailure ;
+    mf:name "1dotRefAnd3_failAll" ;
+    sht:trait sht:OrValueExpression , sht:ValueReference ;
+    rdfs:comment "<S1> { <p1> @<S2> AND @<S3> AND @<S4> } <S2> { <p2> . } <S3> { <p3> . } <S4> { <p4> . } on { <n1> <p1> <n2> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1dotRefAnd3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip1_In2.ttl> ;
+      sht:focus <http://a.example/n1>
+    ] ;
+    .
+
+<#1dotRefAnd3_failShape2Shape3> a sht:ValidationFailure ;
+    mf:name "1dotRefAnd3_failShape2Shape3" ;
+    sht:trait sht:OrValueExpression , sht:ValueReference ;
+    rdfs:comment "<S1> { <p1> @<S2> AND @<S3> AND @<S4> } <S2> { <p2> . } <S3> { <p3> . } <S4> { <p4> . } on { <s1> <p1> <n2> . <n2> <p2> \"X\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1dotRefAnd3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip1_In2.In2_Ip2_LX.ttl> ;
+      sht:focus <http://a.example/n1>
+    ]
+    .
+
+<#1dotRefAnd3_failShape1Shape3> a sht:ValidationFailure ;
+    mf:name "1dotRefAnd3_failShape1Shape3" ;
+    sht:trait sht:OrValueExpression , sht:ValueReference ;
+    rdfs:comment "<S1> { <p1> @<S2> AND @<S3> AND @<S4> } <S2> { <p2> . } <S3> { <p3> . } <S4> { <p4> . } on { <s1> <p1> <n3> . <n3> <p3> \"X\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1dotRefAnd3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip1_In3.In3_Ip3_LX.ttl> ;
+      sht:focus <http://a.example/n1>
+    ]
+    .
+
+<#1dotRefAnd3_failShape1Shape2> a sht:ValidationFailure ;
+    mf:name "1dotRefAnd3_failShape1Shape2" ;
+    sht:trait sht:OrValueExpression , sht:ValueReference ;
+    rdfs:comment "<S1> { <p1> @<S2> AND @<S3> AND @<S4> } <S2> { <p2> . } <S3> { <p3> . } <S4> { <p4> . } on { <s1> <p1> <n4> . <n4> <p4> \"X\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1dotRefAnd3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip1_In4.In4_Ip4_LX.ttl> ;
+      sht:focus <http://a.example/n1>
+    ]
+    .
+
+<#1dotRefAnd3_passShape1Shape2Shape3> a sht:ValidationTest ;
+    mf:name "1dotRefAnd3_passShape1Shape2Shape3" ;
+    sht:trait sht:OrValueExpression , sht:ValueReference ;
+    rdfs:comment "<S1> { <p1> @<S2> AND @<S3> AND @<S4> } <S2> { <p2> . } <S3> { <p3> . } <S4> { <p4> . } on { <s1> <p1> <s2>, <s3>, <s4> . <s2> <p2> \"X\" . <s3> <p3> \"X\" . <s4> <p4> \"X\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1dotRefAnd3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip1_In2.In2_Ipx_LXX3.ttl> ;
+      sht:focus <http://a.example/n1>
+    ] ;
+    mf:result <1dotRefAnd3_passShape1Shape2Shape3.val>
+    .
 
 <#1val1vExprANDRef3_pass> a sht:ValidationTest ;
     mf:name "1val1vExprANDRef3_pass" ;
