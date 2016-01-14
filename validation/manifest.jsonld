@@ -968,7 +968,7 @@
           ],
           "comment": "<S1> { <p1> @<S2> OR @<S3> OR @<S4> } <S2> { <p2> . } <S3> { <p3> . } <S4> { <p4> . } on { <s1> <p1> <s2>, <s3>, <s4> . <s2> <p2> \"X\" . <s3> <p3> \"X\" . <s4> <p4> \"X\" }",
           "status": "mf:proposed",
-          "result": "1dotRefOr3_passShape1Shape2Shape3.val"
+          "result": "1dotRefOr3_passShape1.val"
         },
         {
           "@id": "#1dotRefOr3_passShape3",
