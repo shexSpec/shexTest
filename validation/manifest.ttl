@@ -134,6 +134,7 @@
 ###   iri equivalence
         <#1val1IRIREF_pass>             # <S> { <p1> [<v1>] }
         <#1val1IRIREF_v2>
+        <#1val1IRIREF_v1v2>
 
 ###   literal equivalence
 ####     numeric equivalence
@@ -632,11 +633,15 @@
 ## extra
         <#1val1IRIREFExtra1_pass-iri1>
         <#1val1IRIREFExtra1_pass-iri2>
-        <#1val2IRIREFExtra1_pass-iri2>
+        <#1val2IRIREFExtra1_fail-iri2>
         <#1val2IRIREFPlusExtra1_pass-iri2>
         <#1val2IRIREFExtra1_pass-iri-bnode>
+        <#1val1IRIREFExtra1p2_pass-iri1>
+        <#1val1IRIREFExtra1p2_pass-iri2>
+        <#1val1IRIREFExtra1Or_pass-iri1>
+        <#1val1IRIREFExtra1Or_pass-iri2>
         <#1dotExtra1_pass-iri1>
-        <#1dotExtra1_pass-iri2>
+        <#1dotExtra1_fail-iri2>
         <#3groupdotExtra3_pass-iri1> <#3groupdot3Extra_pass-iri1> <#3groupdotExtra3NLex_pass-iri1>
         <#3groupdotExtra3_pass-iri2> <#3groupdot3Extra_pass-iri2> <#3groupdotExtra3NLex_pass-iri2>
 
@@ -2131,6 +2136,19 @@
       sht:schema <../schemas/1val1IRIREF.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Iv2.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1val1IRIREF_v1v2> a sht:ValidationFailure ;
+    mf:name "1val1IRIREF_v1v2" ;
+    sht:trait sht:IriEquivalence ;
+    rdfs:comment "<S> { <p1> [<v1>] } on { <s> <p1> <v1>, <v2> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1IRIREF.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Iv1,Iv2.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
     .
@@ -8499,7 +8517,8 @@
 
 <#1val1IRIREFExtra1_pass-iri1> a sht:ValidationTest ;
     mf:name "1val1IRIREFExtra1_pass-iri1" ;
-    sht:trait sht:Extra ;
+    sht:trait sht:Extra , sht:IriEquivalence ;
+    rdfs:seeAlso <#1val1IRIREF_pass>, <#1val1IRIREF_v2>, <#1val1IRIREF_pass> ;
     rdfs:comment "<S> EXTRA <p1> { <p1> [<o1>] } on { <s> <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -8513,7 +8532,7 @@
 
 <#1val1IRIREFExtra1_pass-iri2> a sht:ValidationTest ;
     mf:name "1val1IRIREFExtra1_pass-iri2" ;
-    sht:trait sht:Extra ;
+    sht:trait sht:Extra , sht:IriEquivalence ;
     rdfs:comment "<S> EXTRA <p1> { <p1> [<o1>] } on { <s> <p1> <o1>, <o2> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -8525,9 +8544,9 @@
     mf:result <1val1IRIREFExtra1_Is1_Ip1_Io1.val>
     .
 
-<#1val2IRIREFExtra1_pass-iri2> a sht:ValidationFailure ;
-    mf:name "1val2IRIREFExtra1_pass-iri2" ;
-    sht:trait sht:Extra ;
+<#1val2IRIREFExtra1_fail-iri2> a sht:ValidationFailure ;
+    mf:name "1val2IRIREFExtra1_fail-iri2" ;
+    sht:trait sht:Extra , sht:ValueSet;
     rdfs:comment "<S> EXTRA <p1> { <p1> [<o1> <o2>] } on { <s> <p1> <o1>, <o2> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -8540,7 +8559,7 @@
 
 <#1val2IRIREFPlusExtra1_pass-iri2> a sht:ValidationTest ;
     mf:name "1val2IRIREFPlusExtra1_pass-iri2" ;
-    sht:trait sht:Extra ;
+    sht:trait sht:Extra , sht:ValueSet ;
     rdfs:comment "<S> EXTRA <p1> { <p1> [<o1> <o2>]+ } on { <s> <p1> <o1>, <o2> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -8554,8 +8573,8 @@
 
 <#1val2IRIREFExtra1_pass-iri-bnode> a sht:ValidationTest ;
     mf:name "1val2IRIREFExtra1_pass-iri-bnode" ;
-    sht:trait sht:Extra ;
-    rdfs:comment "<S> EXTRA <p1> { <p1> [<o1> <o2>] on { <s> <p1> <o1>, _:o2 }" ;
+    sht:trait sht:Extra , sht:ValueSet ;
+    rdfs:comment "<S> EXTRA <p1> { <p1> [<o1> <o2>] } on { <s> <p1> <o1>, _:o2 }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val2IRIREFExtra1.shex> ;
@@ -8564,6 +8583,63 @@
       sht:focus <http://a.example/s1>
     ] ;
     mf:result <1val2IRIREFExtra1_bnode_Is1_Ip1_Io1.val>
+    .
+
+<#1val1IRIREFExtra1p2_pass-iri1> a sht:ValidationTest ;
+    mf:name "1val1IRIREFExtra1p2_pass-iri1" ;
+    sht:trait sht:Extra , sht:IriEquivalence ;
+    rdfs:seeAlso <#1val1IRIREF_pass>, <#1val1IRIREF_v2>, <#1val1IRIREF_pass> ;
+    rdfs:comment "<S> EXTRA <p2> { <p1> [<o1>] } on { <s> <p1> <o1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1IRIREFExtra1p2.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1val1IRIREFExtra1p2_Is1_Ip1_Io1.val>
+    .
+
+<#1val1IRIREFExtra1p2_pass-iri2> a sht:ValidationFailure ;
+    mf:name "1val1IRIREFExtra1p2_pass-iri2" ;
+    sht:trait sht:Extra , sht:IriEquivalence ;
+    rdfs:comment "<S> EXTRA <p2> { <p1> [<o1>] } on { <s> <p1> <o1>, <o2> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1IRIREFExtra1p2.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1,Io2.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1val1IRIREFExtra1Or_pass-iri1> a sht:ValidationTest ;
+    mf:name "1val1IRIREFExtra1Or_pass-iri1" ;
+    sht:trait sht:Extra , sht:IriEquivalence ;
+    rdfs:seeAlso <#1val1IRIREF_pass>, <#1val1IRIREF_v2>, <#1val1IRIREF_pass> ;
+    rdfs:comment "<S> EXTRA <p1> { <p0> . | <p1> [<o1>], <p2> .? } on { <s> <p1> <o1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1IRIREFExtra1Or.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1val1IRIREFExtra1Or_Is1_Ip1_Io1.val>
+    .
+
+<#1val1IRIREFExtra1Or_pass-iri2> a sht:ValidationTest ;
+    mf:name "1val1IRIREFExtra1Or_pass-iri2" ;
+    sht:trait sht:Extra , sht:IriEquivalence ;
+    rdfs:comment "<S> EXTRA <p1> { <p0> . | <p1> [<o1>], <p2> .? } on { <s> <p1> <o1>, <o2> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1IRIREFExtra1Or.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1,Io2.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1val1IRIREFExtra1Or_Is1_Ip1_Io1.val>
     .
 
 <#1dotExtra1_pass-iri1> a sht:ValidationTest ;
@@ -8580,8 +8656,8 @@
     mf:result <1dot_pass.val>
     .
 
-<#1dotExtra1_pass-iri2> a sht:ValidationFailure ;
-    mf:name "1dotExtra1_pass-iri2" ;
+<#1dotExtra1_fail-iri2> a sht:ValidationFailure ;
+    mf:name "1dotExtra1_fail-iri2" ;
     sht:trait sht:VapidExtra , sht:Extra ;
     rdfs:comment "<S> EXTRA <p1> { <p1> . } on { <s> <p1> <o1>, <o2> }" ;
     mf:status mf:proposed ;
@@ -8595,7 +8671,7 @@
 
 <#3groupdotExtra3_pass-iri1> a sht:ValidationTest ;
     mf:name "3groupdotExtra3_pass-iri1" ;
-    sht:trait sht:Extra ;
+    sht:trait sht:Extra , sht:IriEquivalence ;
     rdfs:comment "<S> EXTRA <p1> <p2> <p3> { <p1> [<o1>] <p2> [<o2>] <p3> [<o3>] } on { <s> <p1> <o1>; <p2> <o2>; <p3> <o3> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -8609,7 +8685,7 @@
 
 <#3groupdot3Extra_pass-iri1> a sht:ValidationTest ;
     mf:name "3groupdot3Extra_pass-iri1" ;
-    sht:trait sht:Extra ;
+    sht:trait sht:Extra , sht:IriEquivalence ;
     rdfs:comment "<S> EXTRA <p1> EXTRA <p2> EXTRA <p3> { <p1> [<o1>] <p2> [<o2>] <p3> [<o3>] } on { <s> <p1> <o1>; <p2> <o2>; <p3> <o3> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -8623,7 +8699,7 @@
 
 <#3groupdotExtra3NLex_pass-iri1> a sht:ValidationTest ;
     mf:name "3groupdotExtra3NLex_pass-iri1" ;
-    sht:trait sht:Extra ;
+    sht:trait sht:Extra , sht:IriEquivalence ;
     rdfs:comment "PREFIX ex: <http://a.example/> <S> EXTRA ex:p1 ex:p2 ex:p3 { <p1> [<o1>] <p2> [<o2>] <p3> [<o3>] } on { <s> <p1> <o1>; <p2> <o2>; <p3> <o3> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -8637,7 +8713,7 @@
 
 <#3groupdotExtra3_pass-iri2> a sht:ValidationTest ;
     mf:name "3groupdotExtra3_pass-iri2" ;
-    sht:trait sht:Extra ;
+    sht:trait sht:Extra , sht:IriEquivalence ;
     rdfs:comment "<S> EXTRA <p1> <p2> <p3> { <p1> [<o1>] <p2> [<o2>] <p3> [<o3>] } on { <s> <p1> <o1>, <o1a>; <p2> <o2>, <o2a>; <p3> <o3>, <o3a> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -8651,7 +8727,7 @@
 
 <#3groupdot3Extra_pass-iri2> a sht:ValidationTest ;
     mf:name "3groupdot3Extra_pass-iri2" ;
-    sht:trait sht:Extra ;
+    sht:trait sht:Extra , sht:IriEquivalence ;
     rdfs:comment "<S> EXTRA <p1> EXTRA <p2> EXTRA <p3> { <p1> [<o1>] <p2> [<o2>] <p3> [<o3>] } on { <s> <p1> <o1>, <o1a>; <p2> <o2>, <o2a>; <p3> <o3>, <o3a> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -8665,7 +8741,7 @@
 
 <#3groupdotExtra3NLex_pass-iri2> a sht:ValidationTest ;
     mf:name "3groupdotExtra3NLex_pass-iri2" ;
-    sht:trait sht:Extra ;
+    sht:trait sht:Extra , sht:IriEquivalence ;
     rdfs:comment "PREFIX ex: <http://a.example/> <S> EXTRA ex:p1 ex:p2 ex:p3 { <p1> [<o1>] <p2> [<o2>] <p3> [<o3>] } on { <s> <p1> <o1>, <o1a>; <p2> <o2>, <o2a>; <p3> <o3>, <o3a> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -8676,9 +8752,6 @@
     ] ;
     mf:result <3groupdotExtra3_Is_Ipn_IonX3.val>
     .
-
- # ! extra of non-mentioned predicate
- # ! extra of deeply-nested predicate
 
 ## } extra
 ## start {
