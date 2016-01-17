@@ -60,25 +60,20 @@
           "result": "0_pass.val"
         },
         {
-          "@id": "#startCode1startReffail_abort",
+          "@id": "#startCode3fail_abort",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/startCode1startReffail.shex",
+            "schema": "../schemas/startCode3fail.shex",
             "shape": "http://a.example/S1",
             "data": "Is1_Ip1_Io1.ttl",
             "focus": "http://a.example/s1"
           },
-          "extensionResults": [
-            {
-              "extension": "http://shex.io/extensions/Test/",
-              "prints": "\"startAct\""
-            }
-          ],
-          "name": "startCode1startReffail_abort",
+          "extensionResults": [],
+          "name": "startCode3fail_abort",
           "trait": [
             "SemanticAction"
           ],
-          "comment": "%<Test>{ fail('startAct') %} <S> { <p1> . } on { <s> <p1> <o1> }",
+          "comment": "%<Test>{print('startAct 1')%} %<Test>{ fail('startAct 2') %} %<Test>{print('startAct 3')%} <S> { <p1> . } on { <s> <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -432,7 +427,7 @@
           "name": "2someInclude1-after_pass",
           "trait": [
             "Include",
-            "SomeExpression"
+            "SomeOf"
           ],
           "comment": "<S1> { <p1> . | &<S2> } <S2> { <p2> . } on { <n1> <p1> \"X\" }",
           "status": "mf:proposed",
@@ -451,7 +446,7 @@
           "name": "2someInclude1_pass",
           "trait": [
             "Include",
-            "SomeExpression"
+            "SomeOf"
           ],
           "comment": "<S1> { &<S2> | <p1> . } <S2> { <p2> . } on { <n1> <p1> \"X\" }",
           "status": "mf:proposed",
@@ -1306,7 +1301,7 @@
           "extensionResults": [],
           "name": "openopen1dotOr1dotclose1dotclose_pass_p2p3",
           "trait": [
-            "SomeExpression"
+            "SomeOf"
           ],
           "comment": ":S1 { ((:p1 .| :p2 .), :p3 .) } / { <x> :p2 \"p2-0\"; :p3 \"p3-0\" . }",
           "status": "mf:proposed",
@@ -1324,7 +1319,7 @@
           "extensionResults": [],
           "name": "openopen1dotOr1dotclose1dotclose_pass_p1p3",
           "trait": [
-            "SomeExpression"
+            "SomeOf"
           ],
           "comment": ":S1 { ((:p1 .| :p2 .), :p3 .) } / { <x> :p1 \"p1-0\"; :p3 \"p3-0\" . }",
           "status": "mf:proposed",
@@ -1342,7 +1337,7 @@
           "extensionResults": [],
           "name": "open1dotOropen2dotcloseclose_pass_p2p3",
           "trait": [
-            "SomeExpression"
+            "SomeOf"
           ],
           "comment": ":S1 {(:p1 .|(:p2 .,:p3 .))} / { :s1 :p2 \"p2-0\"; :p3 \"p3-0\" . }",
           "status": "mf:proposed",
@@ -1360,11 +1355,29 @@
           "extensionResults": [],
           "name": "open1dotOropen2dotcloseclose_pass_p1",
           "trait": [
-            "SomeExpression"
+            "SomeOf"
           ],
           "comment": ":S1 {(:p1 .|(:p2 .,:p3 .))} / { :s1 :p1 \"p1-0\" . }",
           "status": "mf:proposed",
           "result": "open1dotOropen2dotcloseclose_pass_p1.val"
+        },
+        {
+          "@id": "#1dotOr2dot-someOf_pass_p1p2p3",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1dotOr2dot.shex",
+            "shape": "http://a.example/S1",
+            "data": "p1p2p3.ttl",
+            "focus": "x"
+          },
+          "extensionResults": [],
+          "name": "1dotOr2dot-someOf_pass_p1p2p3",
+          "trait": [
+            "SomeOf"
+          ],
+          "comment": ":S1 {:p1 .|:p2 .,:p3 .} / { :s1 :p1 \"p1-0\"; :p2 \"p2-0\"; :p3 \"p3-0\" . }",
+          "status": "mf:proposed",
+          "result": "1dotOr2dot-someOf_pass_p2p3.val"
         },
         {
           "@id": "#1dotOr2dot_pass_p2p3",
@@ -1378,7 +1391,7 @@
           "extensionResults": [],
           "name": "1dotOr2dot_pass_p2p3",
           "trait": [
-            "SomeExpression"
+            "SomeOf"
           ],
           "comment": ":S1 {:p1 .|:p2 .,:p3 .} / { :s1 :p2 \"p2-0\"; :p3 \"p3-0\" . }",
           "status": "mf:proposed",
@@ -1396,7 +1409,7 @@
           "extensionResults": [],
           "name": "1dotOr2dot_pass_p1",
           "trait": [
-            "SomeExpression"
+            "SomeOf"
           ],
           "comment": ":S1 {:p1 .|:p2 .,:p3 .} / { :s1 :p1 \"p1-0\" . }",
           "status": "mf:proposed",
@@ -5591,23 +5604,6 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#startCode3fail_abort",
-          "@type": "sht:ValidationFailure",
-          "action": {
-            "schema": "../schemas/startCode3fail.shex",
-            "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_Io1.ttl",
-            "focus": "http://a.example/s1"
-          },
-          "extensionResults": [],
-          "name": "startCode3fail_abort",
-          "trait": [
-            "SemanticAction"
-          ],
-          "comment": "%<Test>{print('startAct 1')%} %<Test>{ fail('startAct 2') %} %<Test>{print('startAct 3')%} <S> { <p1> . } on { <s> <p1> <o1> }",
-          "status": "mf:proposed"
-        },
-        {
           "@id": "#iovka",
           "@type": "sht:ValidationTest",
           "action": {
@@ -5621,6 +5617,28 @@
           "comment": "@@ iovka",
           "status": "mf:proposed",
           "result": "iovka.val"
+        },
+        {
+          "@id": "#startCode1startReffail_abort",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/startCode1startReffail.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [
+            {
+              "extension": "http://shex.io/extensions/Test/",
+              "prints": "\"startAct\""
+            }
+          ],
+          "name": "startCode1startReffail_abort",
+          "trait": [
+            "SemanticAction"
+          ],
+          "comment": "%<Test>{ fail('startAct') %} <S> { <p1> . } on { <s> <p1> <o1> }",
+          "status": "mf:proposed"
         },
         {
           "@id": "#startCode1fail_abort",
@@ -6198,7 +6216,7 @@
           "extensionResults": [],
           "name": "openopen1dotOr1dotclose1dotclose_fail_p1p2",
           "trait": [
-            "SomeExpression"
+            "SomeOf"
           ],
           "comment": ":S1 { ((:p1 .| :p2 .), :p3 .) } / { <x> :p1 \"p1-0\"; :p2 \"p2-0\" . }",
           "status": "mf:proposed"
@@ -6215,7 +6233,7 @@
           "extensionResults": [],
           "name": "openopen1dotOr1dotclose1dotclose_fail_p3",
           "trait": [
-            "SomeExpression"
+            "SomeOf"
           ],
           "comment": ":S1 { ((:p1 .| :p2 .), :p3 .) } / { <x> :p3 \"p3-0\" . }",
           "status": "mf:proposed"
@@ -6232,7 +6250,7 @@
           "extensionResults": [],
           "name": "openopen1dotOr1dotclose1dotclose_fail_p1",
           "trait": [
-            "SomeExpression"
+            "SomeOf"
           ],
           "comment": ":S1 { ((:p1 .| :p2 .), :p3 .) } / { <x> :p1 \"p1-0\" . }",
           "status": "mf:proposed"
@@ -6249,13 +6267,13 @@
           "extensionResults": [],
           "name": "open1dotOropen2dotcloseclose_fail_p1p2p3",
           "trait": [
-            "SomeExpression"
+            "OneOf"
           ],
           "comment": ":S1 {(:p1 .|(:p2 .,:p3 .))} / { :s1 :p1 \"p1-0\"; :p2 \"p2-0\"; :p3 \"p3-0\" . }",
           "status": "mf:proposed"
         },
         {
-          "@id": "#1dotOr2dot_fail_p1p2p3",
+          "@id": "#1dotOr2dot-oneOf_fail_p1p2p3",
           "@type": "sht:ValidationFailure",
           "action": {
             "schema": "../schemas/1dotOr2dot.shex",
@@ -6264,9 +6282,9 @@
             "focus": "x"
           },
           "extensionResults": [],
-          "name": "1dotOr2dot_fail_p1p2p3",
+          "name": "1dotOr2dot-oneOf_fail_p1p2p3",
           "trait": [
-            "SomeExpression"
+            "OneOf"
           ],
           "comment": ":S1 {:p1 .|:p2 .,:p3 .} / { :s1 :p1 \"p1-0\"; :p2 \"p2-0\"; :p3 \"p3-0\" . }",
           "status": "mf:proposed"
