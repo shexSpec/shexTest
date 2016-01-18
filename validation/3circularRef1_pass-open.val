@@ -3,10 +3,10 @@
   "node": "http://a.example/n1",
   "shape": "http://a.example/S1",
   "solution": {
-    "type": "groupSolutions",
+    "type": "eachOfSolutions",
     "solutions": [
       {
-        "type": "groupSolution",
+        "type": "eachOfSolution",
         "expressions": [
           {
             "type": "tripleConstraintSolutions",
@@ -75,10 +75,10 @@
                                   "node": "http://a.example/n5",
                                   "shape": "http://a.example/S1",
                                   "solution": {
-                                    "type": "groupSolutions",
+                                    "type": "eachOfSolutions",
                                     "solutions": [
                                       {
-                                        "type": "groupSolution",
+                                        "type": "eachOfSolution",
                                         "expressions": [
                                           {
                                             "type": "tripleConstraintSolutions",

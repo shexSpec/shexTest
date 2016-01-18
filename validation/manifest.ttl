@@ -1938,7 +1938,7 @@
 
 <#3circularRef1_pass-open> a sht:ValidationTest ;
     mf:name "3circularRef1_pass-open" ;
-    sht:trait sht:ShapeReference ;
+    sht:trait sht:ShapeReference , sht:eachOf ;
     rdfs:comment "<S1> { <p1> ., <p2> @<S2>? } <S2> { <p3> @<S3> } <S3> { <p4> @<S1> } <S4> { <p5> . } on { <n1> <p1> \"X\" ; <p2> <n2> . <n2> <p3> <n3> . <n3> <p4> <n5> . <n5> <p1> \"X\" }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -1952,7 +1952,7 @@
 
 <#3circularRef1_pass-closed> a sht:ValidationTest ;
     mf:name "3circularRef1_pass-closed" ;
-    sht:trait sht:ShapeReference ;
+    sht:trait sht:ShapeReference , sht:eachOf ;
     rdfs:comment "<S1> { <p1> ., <p2> @<S2>? } <S2> { <p3> @<S3> } <S3> { <p4> @<S1> } <S4> { <p5> . } on { <n1> <p1> \"X\" ; <p2> <n2> . <n2> <p3> <n3> . <n3> <p4> <n1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -7760,7 +7760,7 @@
 
 <#1dotOr2dot_pass_p1> a sht:ValidationTest ;
     mf:name "1dotOr2dot_pass_p1" ;
-    sht:trait sht:SomeOf ;
+    sht:trait sht:SomeOf , sht:eachOf-unvisited ;
     rdfs:comment ":S1 {:p1 .|:p2 .,:p3 .} / { :s1 :p1 \"p1-0\" . }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -7774,7 +7774,7 @@
 
 <#1dotOr2dot_pass_p2p3> a sht:ValidationTest ;
     mf:name "1dotOr2dot_pass_p2p3" ;
-    sht:trait sht:SomeOf ;
+    sht:trait sht:SomeOf , sht:eachOf ;
     rdfs:comment ":S1 {:p1 .|:p2 .,:p3 .} / { :s1 :p2 \"p2-0\"; :p3 \"p3-0\" . }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -7783,12 +7783,12 @@
       sht:data <p2p3.ttl> ;
       sht:focus <x>
     ] ;
-    mf:result <open1dotOropen2dotcloseclose_pass_p2p3.val>
+    mf:result <1dotOr2dot_pass_p2p3.val>
     .
 
 <#1dotOr2dot-oneOf_fail_p1p2p3> a sht:ValidationFailure ;
     mf:name "1dotOr2dot-oneOf_fail_p1p2p3" ;
-    sht:trait sht:OneOf ;
+    sht:trait sht:OneOf , sht:eachOf-unvisited ;
     rdfs:comment ":S1 {:p1 .|:p2 .,:p3 .} / { :s1 :p1 \"p1-0\"; :p2 \"p2-0\"; :p3 \"p3-0\" . }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -7801,7 +7801,7 @@
 
 <#1dotOr2dot-someOf_pass_p1p2p3> a sht:ValidationTest ;
     mf:name "1dotOr2dot-someOf_pass_p1p2p3" ;
-    sht:trait sht:SomeOf ;
+    sht:trait sht:SomeOf , sht:eachOf ;
     rdfs:comment ":S1 {:p1 .|:p2 .,:p3 .} / { :s1 :p1 \"p1-0\"; :p2 \"p2-0\"; :p3 \"p3-0\" . }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -7815,7 +7815,7 @@
 
 <#open1dotOropen2dotcloseclose_pass_p1> a sht:ValidationTest ;
     mf:name "open1dotOropen2dotcloseclose_pass_p1" ;
-    sht:trait sht:SomeOf ;
+    sht:trait sht:SomeOf  , sht:eachOf-unvisited ;
     rdfs:comment ":S1 {(:p1 .|(:p2 .,:p3 .))} / { :s1 :p1 \"p1-0\" . }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -7829,7 +7829,7 @@
 
 <#open1dotOropen2dotcloseclose_pass_p2p3> a sht:ValidationTest ;
     mf:name "open1dotOropen2dotcloseclose_pass_p2p3" ;
-    sht:trait sht:SomeOf ;
+    sht:trait sht:SomeOf , sht:eachOf ;
     rdfs:comment ":S1 {(:p1 .|(:p2 .,:p3 .))} / { :s1 :p2 \"p2-0\"; :p3 \"p3-0\" . }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -7838,12 +7838,12 @@
       sht:data <p2p3.ttl> ;
       sht:focus <x>
     ] ;
-    mf:result <open1dotOropen2dotcloseclose_pass_p2p3.val>
+    mf:result <1dotOr2dot_pass_p2p3.val>
     .
 
 <#open1dotOropen2dotcloseclose_fail_p1p2p3> a sht:ValidationFailure ;
     mf:name "open1dotOropen2dotcloseclose_fail_p1p2p3" ;
-    sht:trait sht:OneOf ;
+    sht:trait sht:OneOf  , sht:eachOf-unvisited ;
     rdfs:comment ":S1 {(:p1 .|(:p2 .,:p3 .))} / { :s1 :p1 \"p1-0\"; :p2 \"p2-0\"; :p3 \"p3-0\" . }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -7856,7 +7856,7 @@
 
 <#openopen1dotOr1dotclose1dotclose_pass_p1p3> a sht:ValidationTest ;
     mf:name "openopen1dotOr1dotclose1dotclose_pass_p1p3" ;
-    sht:trait sht:SomeOf ;
+    sht:trait sht:SomeOf , sht:eachOf ;
     rdfs:comment ":S1 { ((:p1 .| :p2 .), :p3 .) } / { <x> :p1 \"p1-0\"; :p3 \"p3-0\" . }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -7870,7 +7870,7 @@
 
 <#openopen1dotOr1dotclose1dotclose_pass_p2p3> a sht:ValidationTest ;
     mf:name "openopen1dotOr1dotclose1dotclose_pass_p2p3" ;
-    sht:trait sht:SomeOf ;
+    sht:trait sht:SomeOf , sht:eachOf ;
     rdfs:comment ":S1 { ((:p1 .| :p2 .), :p3 .) } / { <x> :p2 \"p2-0\"; :p3 \"p3-0\" . }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -7885,7 +7885,7 @@
 
 <#openopen1dotOr1dotclose1dotclose_fail_p1> a sht:ValidationFailure ;
     mf:name "openopen1dotOr1dotclose1dotclose_fail_p1" ;
-    sht:trait sht:SomeOf ;
+    sht:trait sht:SomeOf  , sht:eachOf-unvisited ;
     rdfs:comment ":S1 { ((:p1 .| :p2 .), :p3 .) } / { <x> :p1 \"p1-0\" . }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -7898,7 +7898,7 @@
 
 <#openopen1dotOr1dotclose1dotclose_fail_p3> a sht:ValidationFailure ;
     mf:name "openopen1dotOr1dotclose1dotclose_fail_p3" ;
-    sht:trait sht:SomeOf ;
+    sht:trait sht:SomeOf  , sht:eachOf ;
     rdfs:comment ":S1 { ((:p1 .| :p2 .), :p3 .) } / { <x> :p3 \"p3-0\" . }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -7911,7 +7911,7 @@
 
 <#openopen1dotOr1dotclose1dotclose_fail_p1p2> a sht:ValidationFailure ;
     mf:name "openopen1dotOr1dotclose1dotclose_fail_p1p2" ;
-    sht:trait sht:SomeOf ;
+    sht:trait sht:SomeOf  , sht:eachOf ;
     rdfs:comment ":S1 { ((:p1 .| :p2 .), :p3 .) } / { <x> :p1 \"p1-0\"; :p2 \"p2-0\" . }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -8635,7 +8635,7 @@
 
 <#1val1IRIREFExtra1Or_pass-iri1> a sht:ValidationTest ;
     mf:name "1val1IRIREFExtra1Or_pass-iri1" ;
-    sht:trait sht:Extra , sht:IriEquivalence ;
+    sht:trait sht:Extra , sht:IriEquivalence , sht:eachOf ;
     rdfs:seeAlso <#1val1IRIREF_pass>, <#1val1IRIREF_v2>, <#1val1IRIREF_pass> ;
     rdfs:comment "<S> EXTRA <p1> { <p0> . | <p1> [<o1>], <p2> .? } on { <s> <p1> <o1> }" ;
     mf:status mf:proposed ;
@@ -8650,7 +8650,7 @@
 
 <#1val1IRIREFExtra1Or_pass-iri2> a sht:ValidationTest ;
     mf:name "1val1IRIREFExtra1Or_pass-iri2" ;
-    sht:trait sht:Extra , sht:IriEquivalence ;
+    sht:trait sht:Extra , sht:IriEquivalence , sht:eachOf;
     rdfs:comment "<S> EXTRA <p1> { <p0> . | <p1> [<o1>], <p2> .? } on { <s> <p1> <o1>, <o2> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -8691,8 +8691,8 @@
 
 <#3groupdotExtra3_pass-iri1> a sht:ValidationTest ;
     mf:name "3groupdotExtra3_pass-iri1" ;
-    sht:trait sht:Extra , sht:IriEquivalence ;
-    rdfs:comment "<S> EXTRA <p1> <p2> <p3> { <p1> [<o1>] <p2> [<o2>] <p3> [<o3>] } on { <s> <p1> <o1>; <p2> <o2>; <p3> <o3> }" ;
+    sht:trait sht:Extra , sht:IriEquivalence , sht:eachOf ;
+    rdfs:comment "<S> EXTRA <p1> <p2> <p3> { <p1> [<o1>], <p2> [<o2>], <p3> [<o3>] } on { <s> <p1> <o1>; <p2> <o2>; <p3> <o3> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/3groupdotExtra3.shex> ;
@@ -8705,8 +8705,8 @@
 
 <#3groupdot3Extra_pass-iri1> a sht:ValidationTest ;
     mf:name "3groupdot3Extra_pass-iri1" ;
-    sht:trait sht:Extra , sht:IriEquivalence ;
-    rdfs:comment "<S> EXTRA <p1> EXTRA <p2> EXTRA <p3> { <p1> [<o1>] <p2> [<o2>] <p3> [<o3>] } on { <s> <p1> <o1>; <p2> <o2>; <p3> <o3> }" ;
+    sht:trait sht:Extra , sht:IriEquivalence , sht:eachOf;
+    rdfs:comment "<S> EXTRA <p1> EXTRA <p2> EXTRA <p3> { <p1> [<o1>], <p2> [<o2>], <p3> [<o3>] } on { <s> <p1> <o1>; <p2> <o2>; <p3> <o3> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/3groupdot3Extra.shex> ;
@@ -8719,8 +8719,8 @@
 
 <#3groupdotExtra3NLex_pass-iri1> a sht:ValidationTest ;
     mf:name "3groupdotExtra3NLex_pass-iri1" ;
-    sht:trait sht:Extra , sht:IriEquivalence ;
-    rdfs:comment "PREFIX ex: <http://a.example/> <S> EXTRA ex:p1 ex:p2 ex:p3 { <p1> [<o1>] <p2> [<o2>] <p3> [<o3>] } on { <s> <p1> <o1>; <p2> <o2>; <p3> <o3> }" ;
+    sht:trait sht:Extra , sht:IriEquivalence , sht:eachOf ;
+    rdfs:comment "PREFIX ex: <http://a.example/> <S> EXTRA ex:p1 ex:p2 ex:p3 { <p1> [<o1>], <p2> [<o2>], <p3> [<o3>] } on { <s> <p1> <o1>; <p2> <o2>; <p3> <o3> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/3groupdotExtra3NLex.shex> ;
@@ -8733,8 +8733,8 @@
 
 <#3groupdotExtra3_pass-iri2> a sht:ValidationTest ;
     mf:name "3groupdotExtra3_pass-iri2" ;
-    sht:trait sht:Extra , sht:IriEquivalence ;
-    rdfs:comment "<S> EXTRA <p1> <p2> <p3> { <p1> [<o1>] <p2> [<o2>] <p3> [<o3>] } on { <s> <p1> <o1>, <o1a>; <p2> <o2>, <o2a>; <p3> <o3>, <o3a> }" ;
+    sht:trait sht:Extra , sht:IriEquivalence , sht:eachOf ;
+    rdfs:comment "<S> EXTRA <p1> <p2> <p3> { <p1> [<o1>], <p2> [<o2>], <p3> [<o3>] } on { <s> <p1> <o1>, <o1a>; <p2> <o2>, <o2a>; <p3> <o3>, <o3a> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/3groupdotExtra3.shex> ;
@@ -8747,8 +8747,8 @@
 
 <#3groupdot3Extra_pass-iri2> a sht:ValidationTest ;
     mf:name "3groupdot3Extra_pass-iri2" ;
-    sht:trait sht:Extra , sht:IriEquivalence ;
-    rdfs:comment "<S> EXTRA <p1> EXTRA <p2> EXTRA <p3> { <p1> [<o1>] <p2> [<o2>] <p3> [<o3>] } on { <s> <p1> <o1>, <o1a>; <p2> <o2>, <o2a>; <p3> <o3>, <o3a> }" ;
+    sht:trait sht:Extra , sht:IriEquivalence , sht:eachOf ;
+    rdfs:comment "<S> EXTRA <p1> EXTRA <p2> EXTRA <p3> { <p1> [<o1>], <p2> [<o2>], <p3> [<o3>] } on { <s> <p1> <o1>, <o1a>; <p2> <o2>, <o2a>; <p3> <o3>, <o3a> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/3groupdot3Extra.shex> ;
@@ -8761,8 +8761,8 @@
 
 <#3groupdotExtra3NLex_pass-iri2> a sht:ValidationTest ;
     mf:name "3groupdotExtra3NLex_pass-iri2" ;
-    sht:trait sht:Extra , sht:IriEquivalence ;
-    rdfs:comment "PREFIX ex: <http://a.example/> <S> EXTRA ex:p1 ex:p2 ex:p3 { <p1> [<o1>] <p2> [<o2>] <p3> [<o3>] } on { <s> <p1> <o1>, <o1a>; <p2> <o2>, <o2a>; <p3> <o3>, <o3a> }" ;
+    sht:trait sht:Extra , sht:IriEquivalence , sht:eachOf ;
+    rdfs:comment "PREFIX ex: <http://a.example/> <S> EXTRA ex:p1 ex:p2 ex:p3 { <p1> [<o1>], <p2> [<o2>], <p3> [<o3>] } on { <s> <p1> <o1>, <o1a>; <p2> <o2>, <o2a>; <p3> <o3>, <o3a> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/3groupdotExtra3NLex.shex> ;
@@ -8905,7 +8905,7 @@
 
 <#2eachInclude1_pass> a sht:ValidationTest ;
     mf:name "2eachInclude1_pass" ;
-    sht:trait sht:Include , sht:EachExpression ;
+    sht:trait sht:Include , sht:EachExpression , sht:eachOf ;
     rdfs:comment "<S1> { &<S2>, <p1> . } <S2> { <p2> . } on { <n1> <p1> \"X\" ; <p2> \"Y\" }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -8919,7 +8919,7 @@
 
 <#2eachInclude1-after_pass> a sht:ValidationTest ;
     mf:name "2eachInclude1-after_pass" ;
-    sht:trait sht:Include , sht:EachExpression ;
+    sht:trait sht:Include , sht:EachExpression , sht:eachOf ;
     rdfs:comment "<S1> { <p1> ., &<S2> } <S2> { <p2> . } on { <n1> <p1> \"X\" ; <p2> \"Y\" }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -9185,8 +9185,8 @@
 
 <#open3groupdotcloseCode1-p1p2p3> a sht:ValidationTest ;
     mf:name "open3groupdotcloseCode1-p1p2p3" ;
-    sht:trait sht:SemanticAction ;
-    rdfs:comment "@@ open3groupdotcloseCode1-p1p2p3" ;
+    sht:trait sht:SemanticAction , sht:eachOf ;
+    rdfs:comment "<S1> { ( <p1> ., <p2> ., <p3> . ) %<Test/>{ print(\"group semAct\") %} } / { :s1 :p1 \"p1-0\"; :p2 \"p2-0\"; :p3 \"p3-0\" . }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/open3groupdotcloseCode1.shex> ;
@@ -9326,8 +9326,8 @@
 ## annotations + semantic actions {
 <#open3groupdotclosecard23Annot3Code2-p1p2p3X3> a sht:ValidationTest ;
     mf:name "open3groupdotclosecard23Annot3Code2-p1p2p3X3" ;
-    sht:trait sht:Annotation, sht:SemanticAction ;
-    rdfs:comment "@@ open3groupdotclosecard23Annot3Code2-p1p2p3X3" ;
+    sht:trait sht:Annotation , sht:SemanticAction , sht:eachOf ;
+    rdfs:comment "<S1> { ( <p1> ., <p2> ., <p3> . ){2,3} ; <annot1> \"1\" ; <annot2> \"2\" ; <annot3> \"3\" %<Test/>{ p(\"...1\") %} %<Test/>{ p(\"...2\") %} } / { <s> <p1> \"p1-n\"; <p2> \"p2-n\"; <p3> \"p3-n\" }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/open3groupdotclosecard23Annot3Code2.shex> ;
@@ -9353,6 +9353,7 @@
 
 <#iovka> a sht:ValidationTest ;
     mf:name "iovka" ;
+    sht:trait sht:eachOf ;
     rdfs:comment "@@ iovka" ;
     mf:status mf:proposed ;
     mf:action [
@@ -9366,7 +9367,8 @@
 
 <#greedy> a sht:ValidationTest ;
     mf:name "greedy" ;
-    rdfs:comment "@@ greedy" ;
+    sht:trait sht:eachOf ;
+    rdfs:comment "<S> { :a .*, (:a .+ | :a .), :a . } / { <x> :a 1, 3 }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../validation/greedy.shex> ;
@@ -9379,6 +9381,7 @@
 
 <#skipped> a sht:ValidationTest ;
     mf:name "skipped" ;
+    sht:trait sht:eachOf ;
     rdfs:comment "@@ skipped" ;
     mf:status mf:proposed ;
     mf:action [
@@ -9392,6 +9395,7 @@
 
 <#repeated-group> a sht:ValidationTest ;
     mf:name "repeated-group" ;
+    sht:trait sht:eachOf ;
     rdfs:comment "@@ repeated-group" ;
     mf:status mf:proposed ;
     mf:action [
@@ -9405,6 +9409,7 @@
 
 <#simple-group> a sht:ValidationTest ;
     mf:name "simple-group" ;
+    sht:trait sht:eachOf ;
     rdfs:comment "@@ simple-group" ;
     mf:status mf:proposed ;
     mf:action [

@@ -87,7 +87,10 @@
           },
           "extensionResults": [],
           "name": "greedy",
-          "comment": "@@ greedy",
+          "trait": [
+            "eachOf"
+          ],
+          "comment": "<S> { :a .*, (:a .+ | :a .), :a . } / { <x> :a 1, 3 }",
           "status": "mf:proposed",
           "result": "greedy.val"
         },
@@ -113,9 +116,10 @@
           "name": "open3groupdotclosecard23Annot3Code2-p1p2p3X3",
           "trait": [
             "SemanticAction",
-            "Annotation"
+            "Annotation",
+            "eachOf"
           ],
-          "comment": "@@ open3groupdotclosecard23Annot3Code2-p1p2p3X3",
+          "comment": "<S1> { ( <p1> ., <p2> ., <p3> . ){2,3} ; <annot1> \"1\" ; <annot2> \"2\" ; <annot3> \"3\" %<Test/>{ p(\"...1\") %} %<Test/>{ p(\"...2\") %} } / { <s> <p1> \"p1-n\"; <p2> \"p2-n\"; <p3> \"p3-n\" }",
           "status": "mf:proposed",
           "result": "open3groupdotclosecard23Annot3Code2-p1p2p3X3.val"
         },
@@ -213,9 +217,10 @@
           ],
           "name": "open3groupdotcloseCode1-p1p2p3",
           "trait": [
-            "SemanticAction"
+            "SemanticAction",
+            "eachOf"
           ],
-          "comment": "@@ open3groupdotcloseCode1-p1p2p3",
+          "comment": "<S1> { ( <p1> ., <p2> ., <p3> . ) %<Test/>{ print(\"group semAct\") %} } / { :s1 :p1 \"p1-0\"; :p2 \"p2-0\"; :p3 \"p3-0\" . }",
           "status": "mf:proposed",
           "result": "open3groupdotcloseCode1-p1p2p3.val"
         },
@@ -465,7 +470,8 @@
           "name": "2eachInclude1-after_pass",
           "trait": [
             "EachExpression",
-            "Include"
+            "Include",
+            "eachOf"
           ],
           "comment": "<S1> { <p1> ., &<S2> } <S2> { <p2> . } on { <n1> <p1> \"X\" ; <p2> \"Y\" }",
           "status": "mf:proposed",
@@ -484,7 +490,8 @@
           "name": "2eachInclude1_pass",
           "trait": [
             "EachExpression",
-            "Include"
+            "Include",
+            "eachOf"
           ],
           "comment": "<S1> { &<S2>, <p1> . } <S2> { <p2> . } on { <n1> <p1> \"X\" ; <p2> \"Y\" }",
           "status": "mf:proposed",
@@ -605,9 +612,10 @@
           "name": "3groupdotExtra3NLex_pass-iri2",
           "trait": [
             "Extra",
-            "IriEquivalence"
+            "IriEquivalence",
+            "eachOf"
           ],
-          "comment": "PREFIX ex: <http://a.example/> <S> EXTRA ex:p1 ex:p2 ex:p3 { <p1> [<o1>] <p2> [<o2>] <p3> [<o3>] } on { <s> <p1> <o1>, <o1a>; <p2> <o2>, <o2a>; <p3> <o3>, <o3a> }",
+          "comment": "PREFIX ex: <http://a.example/> <S> EXTRA ex:p1 ex:p2 ex:p3 { <p1> [<o1>], <p2> [<o2>], <p3> [<o3>] } on { <s> <p1> <o1>, <o1a>; <p2> <o2>, <o2a>; <p3> <o3>, <o3a> }",
           "status": "mf:proposed",
           "result": "3groupdotExtra3_Is_Ipn_IonX3.val"
         },
@@ -624,9 +632,10 @@
           "name": "3groupdot3Extra_pass-iri2",
           "trait": [
             "Extra",
-            "IriEquivalence"
+            "IriEquivalence",
+            "eachOf"
           ],
-          "comment": "<S> EXTRA <p1> EXTRA <p2> EXTRA <p3> { <p1> [<o1>] <p2> [<o2>] <p3> [<o3>] } on { <s> <p1> <o1>, <o1a>; <p2> <o2>, <o2a>; <p3> <o3>, <o3a> }",
+          "comment": "<S> EXTRA <p1> EXTRA <p2> EXTRA <p3> { <p1> [<o1>], <p2> [<o2>], <p3> [<o3>] } on { <s> <p1> <o1>, <o1a>; <p2> <o2>, <o2a>; <p3> <o3>, <o3a> }",
           "status": "mf:proposed",
           "result": "3groupdotExtra3_Is_Ipn_IonX3.val"
         },
@@ -643,9 +652,10 @@
           "name": "3groupdotExtra3_pass-iri2",
           "trait": [
             "Extra",
-            "IriEquivalence"
+            "IriEquivalence",
+            "eachOf"
           ],
-          "comment": "<S> EXTRA <p1> <p2> <p3> { <p1> [<o1>] <p2> [<o2>] <p3> [<o3>] } on { <s> <p1> <o1>, <o1a>; <p2> <o2>, <o2a>; <p3> <o3>, <o3a> }",
+          "comment": "<S> EXTRA <p1> <p2> <p3> { <p1> [<o1>], <p2> [<o2>], <p3> [<o3>] } on { <s> <p1> <o1>, <o1a>; <p2> <o2>, <o2a>; <p3> <o3>, <o3a> }",
           "status": "mf:proposed",
           "result": "3groupdotExtra3_Is_Ipn_IonX3.val"
         },
@@ -662,9 +672,10 @@
           "name": "3groupdotExtra3NLex_pass-iri1",
           "trait": [
             "Extra",
-            "IriEquivalence"
+            "IriEquivalence",
+            "eachOf"
           ],
-          "comment": "PREFIX ex: <http://a.example/> <S> EXTRA ex:p1 ex:p2 ex:p3 { <p1> [<o1>] <p2> [<o2>] <p3> [<o3>] } on { <s> <p1> <o1>; <p2> <o2>; <p3> <o3> }",
+          "comment": "PREFIX ex: <http://a.example/> <S> EXTRA ex:p1 ex:p2 ex:p3 { <p1> [<o1>], <p2> [<o2>], <p3> [<o3>] } on { <s> <p1> <o1>; <p2> <o2>; <p3> <o3> }",
           "status": "mf:proposed",
           "result": "3groupdotExtra3_Is_Ipn_IonX3.val"
         },
@@ -681,9 +692,10 @@
           "name": "3groupdot3Extra_pass-iri1",
           "trait": [
             "Extra",
-            "IriEquivalence"
+            "IriEquivalence",
+            "eachOf"
           ],
-          "comment": "<S> EXTRA <p1> EXTRA <p2> EXTRA <p3> { <p1> [<o1>] <p2> [<o2>] <p3> [<o3>] } on { <s> <p1> <o1>; <p2> <o2>; <p3> <o3> }",
+          "comment": "<S> EXTRA <p1> EXTRA <p2> EXTRA <p3> { <p1> [<o1>], <p2> [<o2>], <p3> [<o3>] } on { <s> <p1> <o1>; <p2> <o2>; <p3> <o3> }",
           "status": "mf:proposed",
           "result": "3groupdotExtra3_Is_Ipn_IonX3.val"
         },
@@ -700,9 +712,10 @@
           "name": "3groupdotExtra3_pass-iri1",
           "trait": [
             "Extra",
-            "IriEquivalence"
+            "IriEquivalence",
+            "eachOf"
           ],
-          "comment": "<S> EXTRA <p1> <p2> <p3> { <p1> [<o1>] <p2> [<o2>] <p3> [<o3>] } on { <s> <p1> <o1>; <p2> <o2>; <p3> <o3> }",
+          "comment": "<S> EXTRA <p1> <p2> <p3> { <p1> [<o1>], <p2> [<o2>], <p3> [<o3>] } on { <s> <p1> <o1>; <p2> <o2>; <p3> <o3> }",
           "status": "mf:proposed",
           "result": "3groupdotExtra3_Is_Ipn_IonX3.val"
         },
@@ -738,7 +751,8 @@
           "name": "1val1IRIREFExtra1Or_pass-iri2",
           "trait": [
             "Extra",
-            "IriEquivalence"
+            "IriEquivalence",
+            "eachOf"
           ],
           "comment": "<S> EXTRA <p1> { <p0> . | <p1> [<o1>], <p2> .? } on { <s> <p1> <o1>, <o2> }",
           "status": "mf:proposed",
@@ -757,7 +771,8 @@
           "name": "1val1IRIREFExtra1Or_pass-iri1",
           "trait": [
             "Extra",
-            "IriEquivalence"
+            "IriEquivalence",
+            "eachOf"
           ],
           "comment": "<S> EXTRA <p1> { <p0> . | <p1> [<o1>], <p2> .? } on { <s> <p1> <o1> }",
           "status": "mf:proposed",
@@ -1301,7 +1316,8 @@
           "extensionResults": [],
           "name": "openopen1dotOr1dotclose1dotclose_pass_p2p3",
           "trait": [
-            "SomeOf"
+            "SomeOf",
+            "eachOf"
           ],
           "comment": ":S1 { ((:p1 .| :p2 .), :p3 .) } / { <x> :p2 \"p2-0\"; :p3 \"p3-0\" . }",
           "status": "mf:proposed",
@@ -1319,7 +1335,8 @@
           "extensionResults": [],
           "name": "openopen1dotOr1dotclose1dotclose_pass_p1p3",
           "trait": [
-            "SomeOf"
+            "SomeOf",
+            "eachOf"
           ],
           "comment": ":S1 { ((:p1 .| :p2 .), :p3 .) } / { <x> :p1 \"p1-0\"; :p3 \"p3-0\" . }",
           "status": "mf:proposed",
@@ -1337,11 +1354,12 @@
           "extensionResults": [],
           "name": "open1dotOropen2dotcloseclose_pass_p2p3",
           "trait": [
-            "SomeOf"
+            "SomeOf",
+            "eachOf"
           ],
           "comment": ":S1 {(:p1 .|(:p2 .,:p3 .))} / { :s1 :p2 \"p2-0\"; :p3 \"p3-0\" . }",
           "status": "mf:proposed",
-          "result": "open1dotOropen2dotcloseclose_pass_p2p3.val"
+          "result": "1dotOr2dot_pass_p2p3.val"
         },
         {
           "@id": "#open1dotOropen2dotcloseclose_pass_p1",
@@ -1373,7 +1391,8 @@
           "extensionResults": [],
           "name": "1dotOr2dot-someOf_pass_p1p2p3",
           "trait": [
-            "SomeOf"
+            "SomeOf",
+            "eachOf"
           ],
           "comment": ":S1 {:p1 .|:p2 .,:p3 .} / { :s1 :p1 \"p1-0\"; :p2 \"p2-0\"; :p3 \"p3-0\" . }",
           "status": "mf:proposed",
@@ -1391,11 +1410,12 @@
           "extensionResults": [],
           "name": "1dotOr2dot_pass_p2p3",
           "trait": [
-            "SomeOf"
+            "SomeOf",
+            "eachOf"
           ],
           "comment": ":S1 {:p1 .|:p2 .,:p3 .} / { :s1 :p2 \"p2-0\"; :p3 \"p3-0\" . }",
           "status": "mf:proposed",
-          "result": "open1dotOropen2dotcloseclose_pass_p2p3.val"
+          "result": "1dotOr2dot_pass_p2p3.val"
         },
         {
           "@id": "#1dotOr2dot_pass_p1",
@@ -4697,6 +4717,7 @@
           "extensionResults": [],
           "name": "3circularRef1_pass-closed",
           "trait": [
+            "eachOf",
             "ShapeReference"
           ],
           "comment": "<S1> { <p1> ., <p2> @<S2>? } <S2> { <p3> @<S3> } <S3> { <p4> @<S1> } <S4> { <p5> . } on { <n1> <p1> \"X\" ; <p2> <n2> . <n2> <p3> <n3> . <n3> <p4> <n1> }",
@@ -4715,6 +4736,7 @@
           "extensionResults": [],
           "name": "3circularRef1_pass-open",
           "trait": [
+            "eachOf",
             "ShapeReference"
           ],
           "comment": "<S1> { <p1> ., <p2> @<S2>? } <S2> { <p3> @<S3> } <S3> { <p4> @<S1> } <S4> { <p5> . } on { <n1> <p1> \"X\" ; <p2> <n2> . <n2> <p3> <n3> . <n3> <p4> <n5> . <n5> <p1> \"X\" }",
@@ -5614,6 +5636,9 @@
           },
           "extensionResults": [],
           "name": "iovka",
+          "trait": [
+            "eachOf"
+          ],
           "comment": "@@ iovka",
           "status": "mf:proposed",
           "result": "iovka.val"
@@ -10750,6 +10775,9 @@
           },
           "extensionResults": [],
           "name": "skipped",
+          "trait": [
+            "eachOf"
+          ],
           "comment": "@@ skipped",
           "status": "mf:proposed",
           "result": "skipped.val"
@@ -10765,6 +10793,9 @@
           },
           "extensionResults": [],
           "name": "repeated-group",
+          "trait": [
+            "eachOf"
+          ],
           "comment": "@@ repeated-group",
           "status": "mf:proposed",
           "result": "repeated-group.val"
@@ -10780,6 +10811,9 @@
           },
           "extensionResults": [],
           "name": "simple-group",
+          "trait": [
+            "eachOf"
+          ],
           "comment": "@@ simple-group",
           "status": "mf:proposed",
           "result": "simple-group.val"
