@@ -7,22 +7,22 @@
       "rdfs:comment": "ShEx validation tests",
       "entries": [
         {
-          "@id": "#0_empty",
+          "@id": "#1dot_pass-noOthers",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/0.shex",
+            "schema": "../schemas/1dot.shex",
             "shape": "http://a.example/S1",
-            "data": "empty.ttl",
-            "focus": "http://a.example/dummy"
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "0_empty",
+          "name": "1dot_pass-noOthers",
           "trait": [
-            "Empty"
+            "TriplePattern"
           ],
-          "comment": "<S> {  } on {  }",
+          "comment": "<S> { <p1> . } on { <s> <p1> <o1> }",
           "status": "mf:proposed",
-          "result": "0_dummy.val"
+          "result": "1dot_pass.val"
         },
         {
           "@id": "#1dot_fail-empty",
@@ -40,6 +40,24 @@
           ],
           "comment": "<S> { <p1> . } on {  }",
           "status": "mf:proposed"
+        },
+        {
+          "@id": "#0_empty",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/0.shex",
+            "shape": "http://a.example/S1",
+            "data": "empty.ttl",
+            "focus": "http://a.example/dummy"
+          },
+          "extensionResults": [],
+          "name": "0_empty",
+          "trait": [
+            "Empty"
+          ],
+          "comment": "<S> {  } on {  }",
+          "status": "mf:proposed",
+          "result": "0_dummy.val"
         },
         {
           "@id": "#0_other",
@@ -60,21 +78,58 @@
           "result": "0_pass.val"
         },
         {
-          "@id": "#startCode3fail_abort",
-          "@type": "sht:ValidationFailure",
+          "@id": "#PTstar",
+          "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/startCode3fail.shex",
-            "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_Io1.ttl",
-            "focus": "http://a.example/s1"
+            "schema": "../validation/apt.shex",
+            "shape": "S2",
+            "data": "apt.ttl",
+            "focus": "n"
           },
           "extensionResults": [],
-          "name": "startCode3fail_abort",
+          "name": "PTstar",
           "trait": [
-            "SemanticAction"
+            "EachOf"
           ],
-          "comment": "%<Test>{print('startAct 1')%} %<Test>{ fail('startAct 2') %} %<Test>{print('startAct 3')%} <S> { <p1> . } on { <s> <p1> <o1> }",
-          "status": "mf:proposed"
+          "comment": "<S2> {:a $<P>, :a $<T>*} / { <n> :a <pt1>,  <pt2>,  <p>,  <t>}",
+          "status": "mf:proposed",
+          "result": "PTstar.val"
+        },
+        {
+          "@id": "#simple-group",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../validation/simple-group.shex",
+            "shape": "S",
+            "data": "simple-group.ttl",
+            "focus": "s0"
+          },
+          "extensionResults": [],
+          "name": "simple-group",
+          "trait": [
+            "EachOf"
+          ],
+          "comment": "@@ simple-group",
+          "status": "mf:proposed",
+          "result": "simple-group.val"
+        },
+        {
+          "@id": "#skipped",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../validation/skipped.shex",
+            "shape": "S",
+            "data": "skipped.ttl",
+            "focus": "x"
+          },
+          "extensionResults": [],
+          "name": "skipped",
+          "trait": [
+            "EachOf"
+          ],
+          "comment": "@@ skipped",
+          "status": "mf:proposed",
+          "result": "skipped.val"
         },
         {
           "@id": "#greedy",
@@ -88,11 +143,29 @@
           "extensionResults": [],
           "name": "greedy",
           "trait": [
-            "eachOf"
+            "EachOf"
           ],
           "comment": "<S> { :a .*, (:a .+ | :a .), :a . } / { <x> :a 1, 3 }",
           "status": "mf:proposed",
           "result": "greedy.val"
+        },
+        {
+          "@id": "#iovka",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../validation/iovka.shex",
+            "shape": "S",
+            "data": "iovka.ttl",
+            "focus": "x"
+          },
+          "extensionResults": [],
+          "name": "iovka",
+          "trait": [
+            "EachOf"
+          ],
+          "comment": "@@ iovka",
+          "status": "mf:proposed",
+          "result": "iovka.val"
         },
         {
           "@id": "#open3groupdotclosecard23Annot3Code2-p1p2p3X3",
@@ -117,7 +190,7 @@
           "trait": [
             "SemanticAction",
             "Annotation",
-            "eachOf"
+            "EachOf"
           ],
           "comment": "<S1> { ( <p1> ., <p2> ., <p3> . ){2,3} ; <annot1> \"1\" ; <annot2> \"2\" ; <annot3> \"3\" %<Test/>{ p(\"...1\") %} %<Test/>{ p(\"...2\") %} } / { <s> <p1> \"p1-n\"; <p2> \"p2-n\"; <p3> \"p3-n\" }",
           "status": "mf:proposed",
@@ -218,7 +291,7 @@
           "name": "open3groupdotcloseCode1-p1p2p3",
           "trait": [
             "SemanticAction",
-            "eachOf"
+            "EachOf"
           ],
           "comment": "<S1> { ( <p1> ., <p2> ., <p3> . ) %<Test/>{ print(\"group semAct\") %} } / { :s1 :p1 \"p1-0\"; :p2 \"p2-0\"; :p3 \"p3-0\" . }",
           "status": "mf:proposed",
@@ -471,7 +544,7 @@
           "trait": [
             "EachExpression",
             "Include",
-            "eachOf"
+            "EachOf"
           ],
           "comment": "<S1> { <p1> ., &<S2> } <S2> { <p2> . } on { <n1> <p1> \"X\" ; <p2> \"Y\" }",
           "status": "mf:proposed",
@@ -491,7 +564,7 @@
           "trait": [
             "EachExpression",
             "Include",
-            "eachOf"
+            "EachOf"
           ],
           "comment": "<S1> { &<S2>, <p1> . } <S2> { <p2> . } on { <n1> <p1> \"X\" ; <p2> \"Y\" }",
           "status": "mf:proposed",
@@ -613,7 +686,7 @@
           "trait": [
             "Extra",
             "IriEquivalence",
-            "eachOf"
+            "EachOf"
           ],
           "comment": "PREFIX ex: <http://a.example/> <S> EXTRA ex:p1 ex:p2 ex:p3 { <p1> [<o1>], <p2> [<o2>], <p3> [<o3>] } on { <s> <p1> <o1>, <o1a>; <p2> <o2>, <o2a>; <p3> <o3>, <o3a> }",
           "status": "mf:proposed",
@@ -633,7 +706,7 @@
           "trait": [
             "Extra",
             "IriEquivalence",
-            "eachOf"
+            "EachOf"
           ],
           "comment": "<S> EXTRA <p1> EXTRA <p2> EXTRA <p3> { <p1> [<o1>], <p2> [<o2>], <p3> [<o3>] } on { <s> <p1> <o1>, <o1a>; <p2> <o2>, <o2a>; <p3> <o3>, <o3a> }",
           "status": "mf:proposed",
@@ -653,7 +726,7 @@
           "trait": [
             "Extra",
             "IriEquivalence",
-            "eachOf"
+            "EachOf"
           ],
           "comment": "<S> EXTRA <p1> <p2> <p3> { <p1> [<o1>], <p2> [<o2>], <p3> [<o3>] } on { <s> <p1> <o1>, <o1a>; <p2> <o2>, <o2a>; <p3> <o3>, <o3a> }",
           "status": "mf:proposed",
@@ -673,7 +746,7 @@
           "trait": [
             "Extra",
             "IriEquivalence",
-            "eachOf"
+            "EachOf"
           ],
           "comment": "PREFIX ex: <http://a.example/> <S> EXTRA ex:p1 ex:p2 ex:p3 { <p1> [<o1>], <p2> [<o2>], <p3> [<o3>] } on { <s> <p1> <o1>; <p2> <o2>; <p3> <o3> }",
           "status": "mf:proposed",
@@ -693,7 +766,7 @@
           "trait": [
             "Extra",
             "IriEquivalence",
-            "eachOf"
+            "EachOf"
           ],
           "comment": "<S> EXTRA <p1> EXTRA <p2> EXTRA <p3> { <p1> [<o1>], <p2> [<o2>], <p3> [<o3>] } on { <s> <p1> <o1>; <p2> <o2>; <p3> <o3> }",
           "status": "mf:proposed",
@@ -713,7 +786,7 @@
           "trait": [
             "Extra",
             "IriEquivalence",
-            "eachOf"
+            "EachOf"
           ],
           "comment": "<S> EXTRA <p1> <p2> <p3> { <p1> [<o1>], <p2> [<o2>], <p3> [<o3>] } on { <s> <p1> <o1>; <p2> <o2>; <p3> <o3> }",
           "status": "mf:proposed",
@@ -752,7 +825,7 @@
           "trait": [
             "Extra",
             "IriEquivalence",
-            "eachOf"
+            "EachOf"
           ],
           "comment": "<S> EXTRA <p1> { <p0> . | <p1> [<o1>], <p2> .? } on { <s> <p1> <o1>, <o2> }",
           "status": "mf:proposed",
@@ -772,7 +845,7 @@
           "trait": [
             "Extra",
             "IriEquivalence",
-            "eachOf"
+            "EachOf"
           ],
           "comment": "<S> EXTRA <p1> { <p0> . | <p1> [<o1>], <p2> .? } on { <s> <p1> <o1> }",
           "status": "mf:proposed",
@@ -1317,7 +1390,7 @@
           "name": "openopen1dotOr1dotclose1dotclose_pass_p2p3",
           "trait": [
             "SomeOf",
-            "eachOf"
+            "EachOf"
           ],
           "comment": ":S1 { ((:p1 .| :p2 .), :p3 .) } / { <x> :p2 \"p2-0\"; :p3 \"p3-0\" . }",
           "status": "mf:proposed",
@@ -1336,7 +1409,7 @@
           "name": "openopen1dotOr1dotclose1dotclose_pass_p1p3",
           "trait": [
             "SomeOf",
-            "eachOf"
+            "EachOf"
           ],
           "comment": ":S1 { ((:p1 .| :p2 .), :p3 .) } / { <x> :p1 \"p1-0\"; :p3 \"p3-0\" . }",
           "status": "mf:proposed",
@@ -1355,7 +1428,7 @@
           "name": "open1dotOropen2dotcloseclose_pass_p2p3",
           "trait": [
             "SomeOf",
-            "eachOf"
+            "EachOf"
           ],
           "comment": ":S1 {(:p1 .|(:p2 .,:p3 .))} / { :s1 :p2 \"p2-0\"; :p3 \"p3-0\" . }",
           "status": "mf:proposed",
@@ -1373,6 +1446,7 @@
           "extensionResults": [],
           "name": "open1dotOropen2dotcloseclose_pass_p1",
           "trait": [
+            "EachOf-unvisited",
             "SomeOf"
           ],
           "comment": ":S1 {(:p1 .|(:p2 .,:p3 .))} / { :s1 :p1 \"p1-0\" . }",
@@ -1392,7 +1466,7 @@
           "name": "1dotOr2dot-someOf_pass_p1p2p3",
           "trait": [
             "SomeOf",
-            "eachOf"
+            "EachOf"
           ],
           "comment": ":S1 {:p1 .|:p2 .,:p3 .} / { :s1 :p1 \"p1-0\"; :p2 \"p2-0\"; :p3 \"p3-0\" . }",
           "status": "mf:proposed",
@@ -1411,7 +1485,7 @@
           "name": "1dotOr2dot_pass_p2p3",
           "trait": [
             "SomeOf",
-            "eachOf"
+            "EachOf"
           ],
           "comment": ":S1 {:p1 .|:p2 .,:p3 .} / { :s1 :p2 \"p2-0\"; :p3 \"p3-0\" . }",
           "status": "mf:proposed",
@@ -1429,6 +1503,7 @@
           "extensionResults": [],
           "name": "1dotOr2dot_pass_p1",
           "trait": [
+            "EachOf-unvisited",
             "SomeOf"
           ],
           "comment": ":S1 {:p1 .|:p2 .,:p3 .} / { :s1 :p1 \"p1-0\" . }",
@@ -4717,7 +4792,7 @@
           "extensionResults": [],
           "name": "3circularRef1_pass-closed",
           "trait": [
-            "eachOf",
+            "EachOf",
             "ShapeReference"
           ],
           "comment": "<S1> { <p1> ., <p2> @<S2>? } <S2> { <p3> @<S3> } <S3> { <p4> @<S1> } <S4> { <p5> . } on { <n1> <p1> \"X\" ; <p2> <n2> . <n2> <p3> <n3> . <n3> <p4> <n1> }",
@@ -4736,7 +4811,7 @@
           "extensionResults": [],
           "name": "3circularRef1_pass-open",
           "trait": [
-            "eachOf",
+            "EachOf",
             "ShapeReference"
           ],
           "comment": "<S1> { <p1> ., <p2> @<S2>? } <S2> { <p3> @<S3> } <S3> { <p4> @<S1> } <S4> { <p5> . } on { <n1> <p1> \"X\" ; <p2> <n2> . <n2> <p3> <n3> . <n3> <p4> <n5> . <n5> <p1> \"X\" }",
@@ -5573,24 +5648,6 @@
           "result": "1dot_pass.val"
         },
         {
-          "@id": "#1dot_pass-noOthers",
-          "@type": "sht:ValidationTest",
-          "action": {
-            "schema": "../schemas/1dot.shex",
-            "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_Io1.ttl",
-            "focus": "http://a.example/s1"
-          },
-          "extensionResults": [],
-          "name": "1dot_pass-noOthers",
-          "trait": [
-            "TriplePattern"
-          ],
-          "comment": "<S> { <p1> . } on { <s> <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "1dot_pass.val"
-        },
-        {
           "@id": "#1dot_fail-missing",
           "@type": "sht:ValidationFailure",
           "action": {
@@ -5626,22 +5683,39 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#iovka",
+          "@id": "#repeated-group",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../validation/iovka.shex",
+            "schema": "../validation/repeated-group.shex",
             "shape": "S",
-            "data": "iovka.ttl",
+            "data": "repeated-group.ttl",
             "focus": "x"
           },
           "extensionResults": [],
-          "name": "iovka",
+          "name": "repeated-group",
           "trait": [
-            "eachOf"
+            "EachOf"
           ],
-          "comment": "@@ iovka",
+          "comment": "@@ repeated-group",
           "status": "mf:proposed",
-          "result": "iovka.val"
+          "result": "repeated-group.val"
+        },
+        {
+          "@id": "#startCode3fail_abort",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/startCode3fail.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "startCode3fail_abort",
+          "trait": [
+            "SemanticAction"
+          ],
+          "comment": "%<Test>{print('startAct 1')%} %<Test>{ fail('startAct 2') %} %<Test>{print('startAct 3')%} <S> { <p1> . } on { <s> <p1> <o1> }",
+          "status": "mf:proposed"
         },
         {
           "@id": "#startCode1startReffail_abort",
@@ -6241,7 +6315,8 @@
           "extensionResults": [],
           "name": "openopen1dotOr1dotclose1dotclose_fail_p1p2",
           "trait": [
-            "SomeOf"
+            "SomeOf",
+            "EachOf"
           ],
           "comment": ":S1 { ((:p1 .| :p2 .), :p3 .) } / { <x> :p1 \"p1-0\"; :p2 \"p2-0\" . }",
           "status": "mf:proposed"
@@ -6258,7 +6333,8 @@
           "extensionResults": [],
           "name": "openopen1dotOr1dotclose1dotclose_fail_p3",
           "trait": [
-            "SomeOf"
+            "SomeOf",
+            "EachOf"
           ],
           "comment": ":S1 { ((:p1 .| :p2 .), :p3 .) } / { <x> :p3 \"p3-0\" . }",
           "status": "mf:proposed"
@@ -6275,6 +6351,7 @@
           "extensionResults": [],
           "name": "openopen1dotOr1dotclose1dotclose_fail_p1",
           "trait": [
+            "EachOf-unvisited",
             "SomeOf"
           ],
           "comment": ":S1 { ((:p1 .| :p2 .), :p3 .) } / { <x> :p1 \"p1-0\" . }",
@@ -6292,7 +6369,8 @@
           "extensionResults": [],
           "name": "open1dotOropen2dotcloseclose_fail_p1p2p3",
           "trait": [
-            "OneOf"
+            "OneOf",
+            "EachOf-unvisited"
           ],
           "comment": ":S1 {(:p1 .|(:p2 .,:p3 .))} / { :s1 :p1 \"p1-0\"; :p2 \"p2-0\"; :p3 \"p3-0\" . }",
           "status": "mf:proposed"
@@ -6309,7 +6387,8 @@
           "extensionResults": [],
           "name": "1dotOr2dot-oneOf_fail_p1p2p3",
           "trait": [
-            "OneOf"
+            "OneOf",
+            "EachOf-unvisited"
           ],
           "comment": ":S1 {:p1 .|:p2 .,:p3 .} / { :s1 :p1 \"p1-0\"; :p2 \"p2-0\"; :p3 \"p3-0\" . }",
           "status": "mf:proposed"
@@ -10765,58 +10844,58 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#skipped",
+          "@id": "#PstarT",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../validation/skipped.shex",
-            "shape": "S",
-            "data": "skipped.ttl",
-            "focus": "x"
+            "schema": "../validation/apt.shex",
+            "shape": "S1",
+            "data": "apt.ttl",
+            "focus": "n"
           },
           "extensionResults": [],
-          "name": "skipped",
+          "name": "PstarT",
           "trait": [
-            "eachOf"
+            "EachOf"
           ],
-          "comment": "@@ skipped",
+          "comment": "<S1> {:a $<P>*, :a $<T>} / { <n> :a <pt1>,  <pt2>,  <p>,  <t>}",
           "status": "mf:proposed",
-          "result": "skipped.val"
+          "result": "PstarT.val"
         },
         {
-          "@id": "#repeated-group",
+          "@id": "#PstarTstar",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../validation/repeated-group.shex",
-            "shape": "S",
-            "data": "repeated-group.ttl",
-            "focus": "x"
+            "schema": "../validation/apt.shex",
+            "shape": "S3",
+            "data": "apt.ttl",
+            "focus": "n"
           },
           "extensionResults": [],
-          "name": "repeated-group",
+          "name": "PstarTstar",
           "trait": [
-            "eachOf"
+            "EachOf"
           ],
-          "comment": "@@ repeated-group",
+          "comment": "<S3> {:a $<P>*, :a $<T>*} / { <n> :a <pt1>,  <pt2>,  <p>,  <t>}",
           "status": "mf:proposed",
-          "result": "repeated-group.val"
+          "result": "PstarTstar.val"
         },
         {
-          "@id": "#simple-group",
+          "@id": "#P2T2",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../validation/simple-group.shex",
-            "shape": "S",
-            "data": "simple-group.ttl",
-            "focus": "s0"
+            "schema": "../validation/apt.shex",
+            "shape": "S4",
+            "data": "apt.ttl",
+            "focus": "n"
           },
           "extensionResults": [],
-          "name": "simple-group",
+          "name": "P2T2",
           "trait": [
-            "eachOf"
+            "EachOf"
           ],
-          "comment": "@@ simple-group",
+          "comment": "<S4> {:a $<P>{2}, :a $<T>{2}} / { <n> :a <pt1>,  <pt2>,  <p>,  <t>}",
           "status": "mf:proposed",
-          "result": "simple-group.val"
+          "result": "P2T2.val"
         }
       ]
     }

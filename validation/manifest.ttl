@@ -697,6 +697,10 @@
         <#skipped>
         <#repeated-group>
         <#simple-group>
+        <#PstarT>
+        <#PTstar>
+        <#PstarTstar>
+        <#P2T2>
     ) .
 
 # definitions
@@ -9419,6 +9423,62 @@
       sht:focus <s0>
     ] ;
     mf:result <simple-group.val>
+    .
+
+<#PstarT> a sht:ValidationTest ;
+    mf:name "PstarT" ;
+    sht:trait sht:EachOf ;
+    rdfs:comment "<S1> {:a $<P>*, :a $<T>} / { <n> :a <pt1>,  <pt2>,  <p>,  <t>}" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../validation/apt.shex> ;
+      sht:shape <S1> ;
+      sht:data <apt.ttl> ;
+      sht:focus <n>
+    ] ;
+    mf:result <PstarT.val>
+    .
+
+<#PTstar> a sht:ValidationTest ;
+    mf:name "PTstar" ;
+    sht:trait sht:EachOf ;
+    rdfs:comment "<S2> {:a $<P>, :a $<T>*} / { <n> :a <pt1>,  <pt2>,  <p>,  <t>}" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../validation/apt.shex> ;
+      sht:shape <S2> ;
+      sht:data <apt.ttl> ;
+      sht:focus <n>
+    ] ;
+    mf:result <PTstar.val>
+    .
+
+<#PstarTstar> a sht:ValidationTest ;
+    mf:name "PstarTstar" ;
+    sht:trait sht:EachOf ;
+    rdfs:comment "<S3> {:a $<P>*, :a $<T>*} / { <n> :a <pt1>,  <pt2>,  <p>,  <t>}" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../validation/apt.shex> ;
+      sht:shape <S3> ;
+      sht:data <apt.ttl> ;
+      sht:focus <n>
+    ] ;
+    mf:result <PstarTstar.val>
+    .
+
+<#P2T2> a sht:ValidationTest ;
+    mf:name "P2T2" ;
+    sht:trait sht:EachOf ;
+    rdfs:comment "<S4> {:a $<P>{2}, :a $<T>{2}} / { <n> :a <pt1>,  <pt2>,  <p>,  <t>}" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../validation/apt.shex> ;
+      sht:shape <S4> ;
+      sht:data <apt.ttl> ;
+      sht:focus <n>
+    ] ;
+    mf:result <P2T2.val>
     .
 
 ## } manual schemas
