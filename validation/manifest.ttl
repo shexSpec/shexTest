@@ -693,12 +693,15 @@
 
 ## manual schemas
         <#iovka>
-        <#greedy>
+        <#nPlus1>
+	<#nPlus1-greedy_fail>
         <#skipped>
         <#repeated-group>
         <#simple-group>
         <#PstarT>
+        <#PstarT-greedy>
         <#PTstar>
+        <#PTstar-greedy-fail>
         <#PstarTstar>
         <#P2T2>
     ) .
@@ -2828,7 +2831,7 @@
     ] ;
     .
 
-<#1literalTotaldigits_pass-integer-equal> a sht:ValidationFailure ;
+<#1literalTotaldigits_pass-integer-equal> a sht:ValidationTest ;
     mf:name "1literalTotaldigits_pass-integer-equal" ;
     sht:trait sht:TotalDigitsFacet ;
     rdfs:comment "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> 12345 }" ;
@@ -9358,7 +9361,7 @@
 <#iovka> a sht:ValidationTest ;
     mf:name "iovka" ;
     sht:trait sht:EachOf ;
-    rdfs:comment "@@ iovka" ;
+    rdfs:comment "<S> { :a @<T1>*, (:a @<T2>+ | :b int), :b} <T1>{:b @<T3>} <T2>{:b @<T4>} <T3>{:c .} <T4>{:d .}" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../validation/iovka.shex> ;
@@ -9369,18 +9372,31 @@
     mf:result <iovka.val>
     .
 
-<#greedy> a sht:ValidationTest ;
-    mf:name "greedy" ;
-    sht:trait sht:EachOf ;
+<#nPlus1> a sht:ValidationTest ;
+    mf:name "nPlus1" ;
+    sht:trait sht:EachOf , sht:Exhaustive ;
     rdfs:comment "<S> { :a .*, (:a .+ | :a .), :a . } / { <x> :a 1, 3 }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../validation/greedy.shex> ;
+      sht:schema <../validation/nPlus1.shex> ;
       sht:shape <S> ;
-      sht:data <greedy.ttl> ;
+      sht:data <nPlus1.ttl> ;
       sht:focus <x>
     ] ;
-    mf:result <greedy.val>
+    mf:result <nPlus1.val>
+    .
+
+<#nPlus1-greedy_fail> a sht:ValidationFailure ;
+    mf:name "nPlus1-greedy_fail" ;
+    sht:trait sht:EachOf , sht:Greedy ;
+    rdfs:comment "<S> { :a .*, (:a .+ | :a .), :a . } / { <x> :a 1, 3 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../validation/nPlus1.shex> ;
+      sht:shape <S> ;
+      sht:data <nPlus1.ttl> ;
+      sht:focus <x>
+    ]
     .
 
 <#skipped> a sht:ValidationTest ;
@@ -9439,9 +9455,23 @@
     mf:result <PstarT.val>
     .
 
+<#PstarT-greedy> a sht:ValidationTest ;
+    mf:name "PstarT-greedy" ;
+    sht:trait sht:EachOf , sht:Greedy ;
+    rdfs:comment "<S1> {:a $<P>*, :a $<T>} / { <n> :a <pt1>,  <pt2>,  <p>,  <t>}" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../validation/apt.shex> ;
+      sht:shape <S1> ;
+      sht:data <apt.ttl> ;
+      sht:focus <n>
+    ] ;
+    mf:result <PstarT.val>
+    .
+
 <#PTstar> a sht:ValidationTest ;
     mf:name "PTstar" ;
-    sht:trait sht:EachOf ;
+    sht:trait sht:EachOf , sht:Exhaustive ;
     rdfs:comment "<S2> {:a $<P>, :a $<T>*} / { <n> :a <pt1>,  <pt2>,  <p>,  <t>}" ;
     mf:status mf:proposed ;
     mf:action [
@@ -9451,6 +9481,19 @@
       sht:focus <n>
     ] ;
     mf:result <PTstar.val>
+    .
+
+<#PTstar-greedy-fail> a sht:ValidationFailure ;
+    mf:name "PTstar-greedy-fail" ;
+    sht:trait sht:EachOf , sht:Greedy ;
+    rdfs:comment "<S2> {:a $<P>, :a $<T>*} / { <n> :a <pt1>,  <pt2>,  <p>,  <t>}" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../validation/apt.shex> ;
+      sht:shape <S2> ;
+      sht:data <apt.ttl> ;
+      sht:focus <n>
+    ]
     .
 
 <#PstarTstar> a sht:ValidationTest ;
@@ -9469,7 +9512,7 @@
 
 <#P2T2> a sht:ValidationTest ;
     mf:name "P2T2" ;
-    sht:trait sht:EachOf ;
+    sht:trait sht:EachOf , sht:Exhaustive ;
     rdfs:comment "<S4> {:a $<P>{2}, :a $<T>{2}} / { <n> :a <pt1>,  <pt2>,  <p>,  <t>}" ;
     mf:status mf:proposed ;
     mf:action [
