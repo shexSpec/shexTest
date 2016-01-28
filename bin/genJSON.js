@@ -161,6 +161,7 @@ function genText () {
         [a, "sht", "shape"   , function (v) { return v[0].indexOf(__dirname) === 0 ? v[0].substr(__dirname.length+1) : v[0]; }],
         [a, "sht", "data"    , function (v) { return exists(v[0].substr(stripPath-8)); }],
         [a, "sht", "focus"   , function (v) { return v[0].indexOf(__dirname) === 0 ? v[0].substr(__dirname.length+1) : v[0]; }],
+        [a, "sht", "semActs" , function (v) { return exists("../" + v[0].substr(stripPath-12)); }], // could be more judicious in creating a relative path from an absolute path.
         [s, "mf", "result"  , function (v) { return exists(v[0].substr(stripPath-8)); }],
         [s, "mf", "extensionResults"  , function (v) {
           return v[0].map(function (x) {
