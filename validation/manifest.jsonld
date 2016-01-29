@@ -7,20 +7,20 @@
       "rdfs:comment": "ShEx validation tests",
       "entries": [
         {
-          "@id": "#1dotLNex_pass-noOthers",
+          "@id": "#1dotNS2_pass-noOthers",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/1dotLNex.shex",
+            "schema": "../schemas/1dotNS2.shex",
             "shape": "http://a.example/S1",
             "data": "Is1_Ip1_Io1.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1dotLNex_pass-noOthers",
+          "name": "1dotNS2_pass-noOthers",
           "trait": [
             "TriplePattern"
           ],
-          "comment": "PREFIX ex: <http://a.example/> ex:S1 { ex:p1 . } on { <s> <p1> <o1> }",
+          "comment": "PREFIX S1: <http://a.example/S1> PREFIX p1: <http://a.example/p1> S1: { p1: . } on { <s> <p1> <o1> }",
           "status": "mf:proposed",
           "result": "1dot_pass.val"
         },
@@ -78,20 +78,20 @@
           "result": "0_pass.val"
         },
         {
-          "@id": "#1dot_pass-noOthers",
+          "@id": "#1dotComma_pass-noOthers",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/1dot.shex",
+            "schema": "../schemas/1dotComma.shex",
             "shape": "http://a.example/S1",
             "data": "Is1_Ip1_Io1.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1dot_pass-noOthers",
+          "name": "1dotComma_pass-noOthers",
           "trait": [
             "TriplePattern"
           ],
-          "comment": "<S> { <p1> . } on { <s> <p1> <o1> }",
+          "comment": "PREFIX : <http://a.example/> <S> { :p1 ., } on { <s> <p1> <o1> }",
           "status": "mf:proposed",
           "result": "1dot_pass.val"
         },
@@ -287,9 +287,10 @@
           ],
           "name": "startNoCode1_pass",
           "trait": [
+            "ExternalSemanticAction",
             "SemanticAction"
           ],
-          "comment": "%<Test>{print(\"startAct\")%} <S> { <p1> . } on { <s> <p1> <o1> }",
+          "comment": "%<Test>% <S> { <p1> . } + %<Test>{print(\"startAct\")%} on { <s> <p1> <o1> }",
           "status": "mf:proposed",
           "result": "startNoCode1_pass.val"
         },
@@ -358,6 +359,7 @@
           ],
           "name": "1dotShapeNoCode1_pass",
           "trait": [
+            "ExternalSemanticAction",
             "SemanticAction"
           ],
           "comment": "<S> { <p1> . } %<Test>% + %<Test>{ print(o) %} on { <s> <p1> <o1> }",
@@ -411,6 +413,39 @@
           "result": "1dotCodeWithEscapes1_pass.val"
         },
         {
+          "@id": "#1dotNoCode3_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1dotNoCode3.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1",
+            "semActs": "../schemas/1dotNoCode3.semact"
+          },
+          "extensionResults": [
+            {
+              "extension": "http://shex.io/extensions/Test/#a",
+              "prints": "http://a.example/s1"
+            },
+            {
+              "extension": "http://shex.io/extensions/Test/#b",
+              "prints": "http://a.example/p1"
+            },
+            {
+              "extension": "http://shex.io/extensions/Test/#c",
+              "prints": "http://a.example/o1"
+            }
+          ],
+          "name": "1dotNoCode3_pass",
+          "trait": [
+            "ExternalSemanticAction",
+            "SemanticAction"
+          ],
+          "comment": "<S> { <p1> . %<Test#a>% %<Test#b>% %<Test#c>% } + %<Test/#a>{ print(s) %} %<Test/#b>{ print(p) %} %<Test/#c>{ print(o) %} on { <s> <p1> <o1> }",
+          "status": "mf:proposed",
+          "result": "1dotNoCode3_pass.val"
+        },
+        {
           "@id": "#1dotCode3_pass",
           "@type": "sht:ValidationTest",
           "action": {
@@ -435,6 +470,7 @@
           ],
           "name": "1dotCode3_pass",
           "trait": [
+            "OrderedSemanticActions",
             "SemanticAction"
           ],
           "comment": "<S> { <p1> . %<Test>{ print(s) %} %<Test>{ print(p) %} %<Test>{ print(o) %} } on { <s> <p1> <o1> }",
@@ -482,6 +518,7 @@
           ],
           "name": "1dotNoCode1_pass",
           "trait": [
+            "ExternalSemanticAction",
             "SemanticAction"
           ],
           "comment": "<S> { <p1> . %<Test>% } + %<Test>{ print(o) %} on { <s> <p1> <o1> }",
@@ -5703,24 +5740,6 @@
           "result": "1dot_pass.val"
         },
         {
-          "@id": "#1dotNS2_pass-noOthers",
-          "@type": "sht:ValidationTest",
-          "action": {
-            "schema": "../schemas/1dotNS2.shex",
-            "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_Io1.ttl",
-            "focus": "http://a.example/s1"
-          },
-          "extensionResults": [],
-          "name": "1dotNS2_pass-noOthers",
-          "trait": [
-            "TriplePattern"
-          ],
-          "comment": "PREFIX S1: <http://a.example/S1> PREFIX p1: <http://a.example/p1> S1: { p1: . } on { <s> <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "1dot_pass.val"
-        },
-        {
           "@id": "#1dot_fail-missing",
           "@type": "sht:ValidationFailure",
           "action": {
@@ -5738,20 +5757,20 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#1dotComma_pass-noOthers",
+          "@id": "#1dotLNex_pass-noOthers",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/1dotComma.shex",
+            "schema": "../schemas/1dotLNex.shex",
             "shape": "http://a.example/S1",
             "data": "Is1_Ip1_Io1.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1dotComma_pass-noOthers",
+          "name": "1dotLNex_pass-noOthers",
           "trait": [
             "TriplePattern"
           ],
-          "comment": "PREFIX : <http://a.example/> <S> { :p1 ., } on { <s> <p1> <o1> }",
+          "comment": "PREFIX ex: <http://a.example/> ex:S1 { ex:p1 . } on { <s> <p1> <o1> }",
           "status": "mf:proposed",
           "result": "1dot_pass.val"
         },
@@ -5772,6 +5791,24 @@
           "comment": "@@ simple-group",
           "status": "mf:proposed",
           "result": "simple-group.val"
+        },
+        {
+          "@id": "#1dot_pass-noOthers",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1dot.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1dot_pass-noOthers",
+          "trait": [
+            "TriplePattern"
+          ],
+          "comment": "<S> { <p1> . } on { <s> <p1> <o1> }",
+          "status": "mf:proposed",
+          "result": "1dot_pass.val"
         },
         {
           "@id": "#bnode1dot_fail-missing",
