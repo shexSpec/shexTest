@@ -7,33 +7,33 @@
         "type": "SemActs",
         "expression":
         {
-          "type": "Group",
+          "type": "EachOf",
           "conjuncts": [
             {
               "type": "TripleConstraint", "inverse": false, "negated": false,
               "predicate": "http://a.example/p1",
-              "value": {
-                "type": "valueClass"
+              "valueExpr": {
+                "type": "ValueClass"
               }
             },
             {
               "type": "TripleConstraint", "inverse": false, "negated": false,
               "predicate": "http://a.example/p2",
-              "value": {
-                "type": "valueClass"
+              "valueExpr": {
+                "type": "ValueClass"
               }
             },
             {
               "type": "TripleConstraint", "inverse": false, "negated": false,
               "predicate": "http://a.example/p3",
-              "value": {
-                "type": "valueClass"
+              "valueExpr": {
+                "type": "ValueClass"
               }
             }
           ]
         },
         "semActs": [
-          { "type": "semAct", "name": "http://a.example/semAct1", "code": " code1 "}
+          { "type": "SemAct", "name": "http://shex.io/extensions/Test/", "code": " print(\"group semAct\") "}
         ]
       }
     }
