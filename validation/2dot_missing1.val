@@ -1,8 +1,8 @@
 {
-  "type": "test",
-  "node": "http://a.example/Issue1",
+  "type": "failure",
+  "node": "http://a.example/s1",
   "shape": "http://a.example/S1",
   "errors": [
-    { "type": "MissingProperty", "property": "http://a.example/p2", "value": { "type": "valueClass" } }
+    { "type": "MissingProperty", "property": "http://a.example/p2", "valueExpr": { "type": "ValueClass" } }
   ]
 }
