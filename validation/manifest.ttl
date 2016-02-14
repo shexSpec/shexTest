@@ -7785,7 +7785,7 @@
       sht:data <p1.ttl> ;
       sht:focus <x>
     ] ;
-    mf:result <open1dotOropen2dotcloseclose_pass_p1.val>
+    mf:result <1dotOr2dot_pass_p1.val>
     .
 
 <#1dotOr2dot_pass_p2p3> a sht:ValidationTest ;
@@ -7840,7 +7840,7 @@
       sht:data <p1.ttl> ;
       sht:focus <x>
     ] ;
-    mf:result <open1dotOropen2dotcloseclose_pass_p1.val>
+    mf:result <1dotOr2dot_pass_p1.val>
     .
 
 <#open1dotOropen2dotcloseclose_pass_p2p3> a sht:ValidationTest ;
