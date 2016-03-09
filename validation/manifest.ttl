@@ -7477,7 +7477,7 @@
 
 <#1val1dotMinusiriStem3_pass> a sht:ValidationTest ;
     mf:name "1val1dotMinusiriStem3_pass" ;
-    sht:trait sht:ValueSet ;
+    sht:trait sht:ValueSet, sht:Stem ;
     rdfs:comment "<S> { <p1> [.-<v1>~-<v2>~-<v3>~] } on { <s> <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -7491,7 +7491,7 @@
 
 <#1val1dotMinusiriStem3_v1> a sht:ValidationFailure ;
     mf:name "1val1dotMinusiriStem3_v1" ;
-    sht:trait sht:ValueSet ;
+    sht:trait sht:ValueSet, sht:Stem ;
     rdfs:comment "<S> { <p1> [.-<v1>~-<v2>~-<v3>~] } on { <s1> <p1> <v1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -7504,7 +7504,7 @@
 
 <#1val1dotMinusiriStem3_v2> a sht:ValidationFailure ;
     mf:name "1val1dotMinusiriStem3_v2" ;
-    sht:trait sht:ValueSet ;
+    sht:trait sht:ValueSet, sht:Stem ;
     rdfs:comment "<S> { <p1> [.-<v1>~-<v2>~-<v3>~] } on { <s1> <p1> <v2> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -7517,7 +7517,7 @@
 
 <#1val1dotMinusiriStem3_v3> a sht:ValidationFailure ;
     mf:name "1val1dotMinusiriStem3_v3" ;
-    sht:trait sht:ValueSet ;
+    sht:trait sht:ValueSet, sht:Stem ;
     rdfs:comment "<S> { <p1> [.-<v1>~-<v2>~-<v3>~] } on { <s> <p1> <v3> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -7530,7 +7530,7 @@
 
 <#1val1dotMinusiriStem3_v1a> a sht:ValidationFailure ;
     mf:name "1val1dotMinusiriStem3_v1a" ;
-    sht:trait sht:ValueSet ;
+    sht:trait sht:ValueSet, sht:Stem ;
     rdfs:comment "<S> { <p1> [.-<v1>~-<v2>~-<v3>~] } on { <s1> <p1> <v1a> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -7543,7 +7543,7 @@
 
 <#1val1iriStem_passv1> a sht:ValidationTest ;
     mf:name "1val1iriStem_passv1" ;
-    sht:trait sht:ValueSet ;
+    sht:trait sht:ValueSet, sht:Stem ;
     rdfs:comment "<S> { <p1> [<v1>~] } on { <s> <p1> <v1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -7557,7 +7557,7 @@
 
 <#1val1iriStem_passv1a> a sht:ValidationTest ;
     mf:name "1val1iriStem_passv1a" ;
-    sht:trait sht:ValueSet ;
+    sht:trait sht:ValueSet, sht:Stem ;
     rdfs:comment "<S> { <p1> [<v1>~] } on { <s> <p1> <v1a> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -7571,7 +7571,7 @@
 
 <#1val1iriStem_fail> a sht:ValidationFailure ;
     mf:name "1val1iriStem_fail" ;
-    sht:trait sht:ValueSet ;
+    sht:trait sht:ValueSet, sht:Stem ;
     rdfs:comment "<S> { <p1> [<v1>~] } on { <s1> <p1> <> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -7584,7 +7584,7 @@
 
 <#1val1iriStemMinusiri3_passIv> a sht:ValidationTest ;
     mf:name "1val1iriStemMinusiri3_passIv" ;
-    sht:trait sht:ValueSet ;
+    sht:trait sht:ValueSet, sht:Stem ;
     rdfs:comment "<S> { <p1> [<v>-<v1>-<v2>-<v3>] } on { <s> <p1> <v> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -7598,7 +7598,7 @@
 
 <#1val1iriStemMinusiri3_passIv4> a sht:ValidationTest ;
     mf:name "1val1iriStemMinusiri3_passIv4" ;
-    sht:trait sht:ValueSet ;
+    sht:trait sht:ValueSet, sht:Stem ;
     rdfs:comment "<S> { <p1> [<v>-<v1>-<v2>-<v3>] } on { <s> <p1> <v4> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -7612,7 +7612,7 @@
 
 <#1val1iriStemMinusiri3_v1> a sht:ValidationFailure ;
     mf:name "1val1iriStemMinusiri3_v1" ;
-    sht:trait sht:ValueSet ;
+    sht:trait sht:ValueSet, sht:Stem ;
     rdfs:comment "<S> { <p1> [<v>-<v1>-<v2>-<v3>] } on { <s1> <p1> <v1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -7625,7 +7625,7 @@
 
 <#1val1iriStemMinusiri3_v2> a sht:ValidationFailure ;
     mf:name "1val1iriStemMinusiri3_v2" ;
-    sht:trait sht:ValueSet ;
+    sht:trait sht:ValueSet, sht:Stem ;
     rdfs:comment "<S> { <p1> [<v>-<v1>-<v2>-<v3>] } on { <s1> <p1> <v2> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -7638,7 +7638,7 @@
 
 <#1val1iriStemMinusiri3_v3> a sht:ValidationFailure ;
     mf:name "1val1iriStemMinusiri3_v3" ;
-    sht:trait sht:ValueSet ;
+    sht:trait sht:ValueSet, sht:Stem ;
     rdfs:comment "<S> { <p1> [<v>-<v1>-<v2>-<v3>] } on { <s> <p1> <v3> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -7651,7 +7651,7 @@
 
 <#1val1iriStemMinusiri3_passIv1a> a sht:ValidationTest ;
     mf:name "1val1iriStemMinusiri3_passIv1a" ;
-    sht:trait sht:ValueSet ;
+    sht:trait sht:ValueSet, sht:Stem ;
     rdfs:comment "<S> { <p1> [<v>-<v1>-<v2>-<v3>] } on { <s> <p1> <v1a> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -7665,7 +7665,7 @@
 
 <#1val1iriStemMinusiriStem3_passIv> a sht:ValidationTest ;
     mf:name "1val1iriStemMinusiriStem3_passIv" ;
-    sht:trait sht:ValueSet ;
+    sht:trait sht:ValueSet, sht:Stem ;
     rdfs:comment "<S> { <p1> [<v>~-<v1>~-<v2>~-<v3>~] } on { <s> <p1> <v> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -7679,7 +7679,7 @@
 
 <#1val1iriStemMinusiriStem3_passIv4> a sht:ValidationTest ;
     mf:name "1val1iriStemMinusiriStem3_passIv4" ;
-    sht:trait sht:ValueSet ;
+    sht:trait sht:ValueSet, sht:Stem ;
     rdfs:comment "<S> { <p1> [<v>~-<v1>~-<v2>~-<v3>~] } on { <s> <p1> <v4> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -7693,7 +7693,7 @@
 
 <#1val1iriStemMinusiriStem3_v1> a sht:ValidationFailure ;
     mf:name "1val1iriStemMinusiriStem3_v1" ;
-    sht:trait sht:ValueSet ;
+    sht:trait sht:ValueSet, sht:Stem ;
     rdfs:comment "<S> { <p1> [<v>~-<v1>~-<v2>~-<v3>~] } on { <s1> <p1> <v1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -7706,7 +7706,7 @@
 
 <#1val1iriStemMinusiriStem3_v2> a sht:ValidationFailure ;
     mf:name "1val1iriStemMinusiriStem3_v2" ;
-    sht:trait sht:ValueSet ;
+    sht:trait sht:ValueSet, sht:Stem ;
     rdfs:comment "<S> { <p1> [<v>~-<v1>~-<v2>~-<v3>~] } on { <s1> <p1> <v2> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -7719,7 +7719,7 @@
 
 <#1val1iriStemMinusiriStem3_v3> a sht:ValidationFailure ;
     mf:name "1val1iriStemMinusiriStem3_v3" ;
-    sht:trait sht:ValueSet ;
+    sht:trait sht:ValueSet, sht:Stem ;
     rdfs:comment "<S> { <p1> [<v>~-<v1>~-<v2>~-<v3>~] } on { <s> <p1> <v3> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -7732,7 +7732,7 @@
 
 <#1val1iriStemMinusiriStem3_v1a> a sht:ValidationFailure ;
     mf:name "1val1iriStemMinusiriStem3_v1a" ;
-    sht:trait sht:ValueSet ;
+    sht:trait sht:ValueSet, sht:Stem ;
     rdfs:comment "<S> { <p1> [<v>~-<v1>~-<v2>~-<v3>~] } on { <s1> <p1> <v1a> }" ;
     mf:status mf:proposed ;
     mf:action [
