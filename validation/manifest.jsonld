@@ -1650,6 +1650,7 @@
           "extensionResults": [],
           "name": "1val1iriStemMinusiriStem3_passIv4",
           "trait": [
+            "Stem",
             "ValueSet"
           ],
           "comment": "<S> { <p1> [<v>~-<v1>~-<v2>~-<v3>~] } on { <s> <p1> <v4> }",
@@ -1668,6 +1669,7 @@
           "extensionResults": [],
           "name": "1val1iriStemMinusiriStem3_passIv",
           "trait": [
+            "Stem",
             "ValueSet"
           ],
           "comment": "<S> { <p1> [<v>~-<v1>~-<v2>~-<v3>~] } on { <s> <p1> <v> }",
@@ -1686,6 +1688,7 @@
           "extensionResults": [],
           "name": "1val1iriStemMinusiri3_passIv1a",
           "trait": [
+            "Stem",
             "ValueSet"
           ],
           "comment": "<S> { <p1> [<v>-<v1>-<v2>-<v3>] } on { <s> <p1> <v1a> }",
@@ -1704,6 +1707,7 @@
           "extensionResults": [],
           "name": "1val1iriStemMinusiri3_passIv4",
           "trait": [
+            "Stem",
             "ValueSet"
           ],
           "comment": "<S> { <p1> [<v>-<v1>-<v2>-<v3>] } on { <s> <p1> <v4> }",
@@ -1722,6 +1726,7 @@
           "extensionResults": [],
           "name": "1val1iriStemMinusiri3_passIv",
           "trait": [
+            "Stem",
             "ValueSet"
           ],
           "comment": "<S> { <p1> [<v>-<v1>-<v2>-<v3>] } on { <s> <p1> <v> }",
@@ -1740,6 +1745,7 @@
           "extensionResults": [],
           "name": "1val1iriStem_passv1a",
           "trait": [
+            "Stem",
             "ValueSet"
           ],
           "comment": "<S> { <p1> [<v1>~] } on { <s> <p1> <v1a> }",
@@ -1758,6 +1764,7 @@
           "extensionResults": [],
           "name": "1val1iriStem_passv1",
           "trait": [
+            "Stem",
             "ValueSet"
           ],
           "comment": "<S> { <p1> [<v1>~] } on { <s> <p1> <v1> }",
@@ -1776,6 +1783,7 @@
           "extensionResults": [],
           "name": "1val1dotMinusiriStem3_pass",
           "trait": [
+            "Stem",
             "ValueSet"
           ],
           "comment": "<S> { <p1> [.-<v1>~-<v2>~-<v3>~] } on { <s> <p1> <o1> }",
@@ -6585,6 +6593,7 @@
           "extensionResults": [],
           "name": "1val1iriStemMinusiriStem3_v1a",
           "trait": [
+            "Stem",
             "ValueSet"
           ],
           "comment": "<S> { <p1> [<v>~-<v1>~-<v2>~-<v3>~] } on { <s1> <p1> <v1a> }",
@@ -6602,6 +6611,7 @@
           "extensionResults": [],
           "name": "1val1iriStemMinusiriStem3_v3",
           "trait": [
+            "Stem",
             "ValueSet"
           ],
           "comment": "<S> { <p1> [<v>~-<v1>~-<v2>~-<v3>~] } on { <s> <p1> <v3> }",
@@ -6619,6 +6629,7 @@
           "extensionResults": [],
           "name": "1val1iriStemMinusiriStem3_v2",
           "trait": [
+            "Stem",
             "ValueSet"
           ],
           "comment": "<S> { <p1> [<v>~-<v1>~-<v2>~-<v3>~] } on { <s1> <p1> <v2> }",
@@ -6636,6 +6647,7 @@
           "extensionResults": [],
           "name": "1val1iriStemMinusiriStem3_v1",
           "trait": [
+            "Stem",
             "ValueSet"
           ],
           "comment": "<S> { <p1> [<v>~-<v1>~-<v2>~-<v3>~] } on { <s1> <p1> <v1> }",
@@ -6653,6 +6665,7 @@
           "extensionResults": [],
           "name": "1val1iriStemMinusiri3_v3",
           "trait": [
+            "Stem",
             "ValueSet"
           ],
           "comment": "<S> { <p1> [<v>-<v1>-<v2>-<v3>] } on { <s> <p1> <v3> }",
@@ -6670,6 +6683,7 @@
           "extensionResults": [],
           "name": "1val1iriStemMinusiri3_v2",
           "trait": [
+            "Stem",
             "ValueSet"
           ],
           "comment": "<S> { <p1> [<v>-<v1>-<v2>-<v3>] } on { <s1> <p1> <v2> }",
@@ -6687,6 +6701,7 @@
           "extensionResults": [],
           "name": "1val1iriStemMinusiri3_v1",
           "trait": [
+            "Stem",
             "ValueSet"
           ],
           "comment": "<S> { <p1> [<v>-<v1>-<v2>-<v3>] } on { <s1> <p1> <v1> }",
@@ -6704,6 +6719,7 @@
           "extensionResults": [],
           "name": "1val1iriStem_fail",
           "trait": [
+            "Stem",
             "ValueSet"
           ],
           "comment": "<S> { <p1> [<v1>~] } on { <s1> <p1> <> }",
@@ -6721,6 +6737,7 @@
           "extensionResults": [],
           "name": "1val1dotMinusiriStem3_v1a",
           "trait": [
+            "Stem",
             "ValueSet"
           ],
           "comment": "<S> { <p1> [.-<v1>~-<v2>~-<v3>~] } on { <s1> <p1> <v1a> }",
@@ -6738,6 +6755,7 @@
           "extensionResults": [],
           "name": "1val1dotMinusiriStem3_v3",
           "trait": [
+            "Stem",
             "ValueSet"
           ],
           "comment": "<S> { <p1> [.-<v1>~-<v2>~-<v3>~] } on { <s> <p1> <v3> }",
@@ -6755,6 +6773,7 @@
           "extensionResults": [],
           "name": "1val1dotMinusiriStem3_v2",
           "trait": [
+            "Stem",
             "ValueSet"
           ],
           "comment": "<S> { <p1> [.-<v1>~-<v2>~-<v3>~] } on { <s1> <p1> <v2> }",
@@ -6772,6 +6791,7 @@
           "extensionResults": [],
           "name": "1val1dotMinusiriStem3_v1",
           "trait": [
+            "Stem",
             "ValueSet"
           ],
           "comment": "<S> { <p1> [.-<v1>~-<v2>~-<v3>~] } on { <s1> <p1> <v1> }",
