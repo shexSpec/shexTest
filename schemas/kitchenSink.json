@@ -331,9 +331,10 @@
     "http://ex.example/#FooID": {
       "type": "Shape",
       "closed": true,
-      "inherit": [
-        "_:IDshape"
-      ],
+      "expression": {
+        "type": "Inclusion",
+        "include": "_:IDshape"
+      },
       "extra": [
         "http://ex.example/#code",
         "http://ex.example/#system"
