@@ -46,7 +46,12 @@ PREFIX S5: <http://all.example/S5>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX : <http://all.example/>
 
-VIRTUAL prefix1:S3 EXTRA a:a prefix:prefix base:base &a:S1 {
+$:IRI = IRI
+$:vs1 = [<http://a.example/a1> prefix:~ - prefix:a~ - prefix:b] AND $:IRI
+
+VIRTUAL prefix1:S3 EXTRA a:a prefix:prefix base:base # &a:S1
+{
+   &a:S1,
    a:a .,
    prefix:prefix prefix:dt LENGTH 2?,
    (  base:base IRI*,
@@ -76,11 +81,14 @@ VIRTUAL prefix1:S3 EXTRA a:a prefix:prefix base:base &a:S1 {
       ),
       nonliteral:nonliteral xsd:integer MININCLUSIVE 5 MAXINCLUSIVE 5 TOTALDIGITS 1 FRACTIONDIGITS 1
    ),
-   or:or [<http://a.example/a1> prefix:~ - prefix:a~ - prefix:b],
+   or:or $:vs1,
    pattern:pattern [. - prefix:a~ - prefix:b] %prefix1:act1{ code1 %} %prefix1:act2{ code2 %},
 }
 
-_:a·̀ͯ‿.⁀ CLOSED &_:a·̀ͯ‿.⁀ &<http://all.example/S2> {
+_:a·̀ͯ‿.⁀ CLOSED # &_:a·̀ͯ‿.⁀ &<http://all.example/S2>
+{
+   &_:a·̀ͯ‿.⁀,
+   &<http://all.example/S2>
 }
 
 _:AZazÀÖØöø˿ͰͽͿ῿‌‍⁰↏Ⰰ⿯、퟿豈﷏ﷰ�𐀀󯿽 {
