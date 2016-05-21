@@ -7,16 +7,16 @@
       "rdfs:comment": "ShEx validation tests",
       "entries": [
         {
-          "@id": "#1dotComma_pass-noOthers",
+          "@id": "#1dotSemi_pass-noOthers",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/1dotComma.shex",
+            "schema": "../schemas/1dotSemi.shex",
             "shape": "http://a.example/S1",
             "data": "Is1_Ip1_Io1.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1dotComma_pass-noOthers",
+          "name": "1dotSemi_pass-noOthers",
           "trait": [
             "TriplePattern"
           ],

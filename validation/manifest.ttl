@@ -24,7 +24,7 @@
 ## triple pattern
         <#1dot_fail-empty>
         <#1dot_fail-missing>
-        <#1dot_pass-noOthers> <#1dotComma_pass-noOthers> <#1dotLNex_pass-noOthers> <#1dotNS2_pass-noOthers> <#1dotNS2Comment_pass-noOthers> <#1dotLNexComment_pass-noOthers> <#1dotLNdefault_pass-noOthers> <#1dotNSdefault_pass-noOthers> <#1dotLNex-HYPHEN_MINUS_pass-noOthers>
+        <#1dot_pass-noOthers> <#1dotSemi_pass-noOthers> <#1dotLNex_pass-noOthers> <#1dotNS2_pass-noOthers> <#1dotNS2Comment_pass-noOthers> <#1dotLNexComment_pass-noOthers> <#1dotLNdefault_pass-noOthers> <#1dotNSdefault_pass-noOthers> <#1dotLNex-HYPHEN_MINUS_pass-noOthers>
         <#1dot_pass-others_lexicallyEarlier>
         <#1dot_pass-others_lexicallyLater>
         <#bnode1dot_fail-missing>
@@ -569,16 +569,16 @@
         <#open1dotOropen2dotcloseclose_pass_p1>
         <#open1dotOropen2dotcloseclose_pass_p2p3>
         <#open1dotOropen2dotcloseclose_fail_p1p2p3>
-        # 1dotCommaOr2dotCommas_... same as 1dotOr2dot
-        # open1dotCommaOr2dotcommasclose_... same as 1dotOr2dot
-        # open1dotCommaOropen2dotCommascloseclose_... same as 1dotOr2dot
+        # 1dotSemiOr2dotSemis_... same as 1dotOr2dot
+        # open1dotSemiOr2dotsemisclose_... same as 1dotOr2dot
+        # open1dotSemiOropen2dotSemiscloseclose_... same as 1dotOr2dot
         # open1dotOr2dotclose_... same as 1dotOr2dot
         <#openopen1dotOr1dotclose1dotclose_pass_p1p3>
         <#openopen1dotOr1dotclose1dotclose_pass_p2p3>
         <#openopen1dotOr1dotclose1dotclose_fail_p1>
         <#openopen1dotOr1dotclose1dotclose_fail_p3>
         <#openopen1dotOr1dotclose1dotclose_fail_p1p2>
-        # openopen1dotCommaOr1dotCommaclose1dotCommacloseComma_... same as openopen1dotOr1dotclose1dotclose
+        # openopen1dotSemiOr1dotSemiclose1dotSemicloseSemi_... same as openopen1dotOr1dotclose1dotclose
 
 ## value expressions
 ###   value reference
@@ -834,13 +834,13 @@
     mf:result <1dot_pass.val>
     .
 
-<#1dotComma_pass-noOthers> a sht:ValidationTest ;
-    mf:name "1dotComma_pass-noOthers" ;
+<#1dotSemi_pass-noOthers> a sht:ValidationTest ;
+    mf:name "1dotSemi_pass-noOthers" ;
     sht:trait sht:TriplePattern ;
     rdfs:comment "PREFIX : <http://a.example/> <S> { :p1 ., } on { <s> <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1dotComma.shex> ;
+      sht:schema <../schemas/1dotSemi.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
@@ -7798,9 +7798,9 @@
 ## triple expressions {
 ###   AND tripleExpr {
  # !../schemas/2dot.shex
- # !../schemas/2dotCommas.shex          [2dotCommas.shex]
- # !../schemas/open2dotclose.shex       [2dotCommas.shex]
- # !../schemas/open2dotcommasclose.shex [2dotCommas.shex]
+ # !../schemas/2dotSemis.shex          [2dotSemis.shex]
+ # !../schemas/open2dotclose.shex       [2dotSemis.shex]
+ # !../schemas/open2dotsemisclose.shex [2dotSemis.shex]
  # !../schemas/3groupdot.shex
  # !../schemas/open3groupdotclose.shex [3groupdot.shex]
 
@@ -7808,17 +7808,17 @@
 ###   OR tripleExpr {
 
  # !../schemas/1dotOr1dot.shex
- # !../schemas/1dotCommaOr1dotComma.shex
- # !../schemas/open1dotOr1dotclose.shex                [1dotCommaOr1dotComma.shex]
- # !../schemas/open1dotCommaOr1dotCommacloseComma.shex [1dotCommaOr1dotComma.shex]
+ # !../schemas/1dotSemiOr1dotSemi.shex
+ # !../schemas/open1dotOr1dotclose.shex                [1dotSemiOr1dotSemi.shex]
+ # !../schemas/open1dotSemiOr1dotSemicloseSemi.shex [1dotSemiOr1dotSemi.shex]
  # !../schemas/2dotOr1dot.shex
- # !../schemas/2dotCommaOr1dotComma.shex                    [2dotOr1dot.shex]
+ # !../schemas/2dotSemiOr1dotSemi.shex                    [2dotOr1dot.shex]
  # !../schemas/open2dotOr1dotclose.shex                     [2dotOr1dot.shex]
- # !../schemas/open2dotCommasOr1dotCommaclose.shex          [2dotOr1dot.shex]
+ # !../schemas/open2dotSemisOr1dotSemiclose.shex          [2dotOr1dot.shex]
  # !../schemas/openopen2dotcloseOr1dotclose.shex            [2dotOr1dot.shex]
- # !../schemas/openopen2dotCommascloseOr1dotCommaclose.shex [2dotOr1dot.shex]
+ # !../schemas/openopen2dotSemiscloseOr1dotSemiclose.shex [2dotOr1dot.shex]
  # !../schemas/open1dotopen1dotOr1dotcloseclose.shex
- # !../schemas/open1dotopen1dotCommaOr1dotCommacloseCommacloseComma.shex [open1dotopen1dotOr1dotcloseclose.shex]
+ # !../schemas/open1dotopen1dotSemiOr1dotSemicloseSemicloseSemi.shex [open1dotopen1dotOr1dotcloseclose.shex]
 
 <#1dotOr2dot_pass_p1> a sht:ValidationTest ;
     mf:name "1dotOr2dot_pass_p1" ;
