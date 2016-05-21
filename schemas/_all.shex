@@ -73,9 +73,9 @@ prefix1:S3 EXTRA a:a prefix:prefix base:base # &a:S1
 	      "𝟘𝟙𝟚𝟛𝟜𝟝𝟞𝟟𝟠𝟡" # outside of BMP
 	      """STRING_LITERAL_LONG2"""@en-UK
             ] }{2,3} %prefix1:act1{ code1 %},
-         !iri:iri LITERAL+ ;
-      <http://a.example/annot1> <http://a.example/IRIREF> ;
-      <http://a.example/annot2> "STRING_LITERAL2" ;
+         !iri:iri LITERAL+ //
+      <http://a.example/annot1> <http://a.example/IRIREF> //
+      <http://a.example/annot2> "STRING_LITERAL2" //
       <http://a.example/annot3> 3 %prefix1:act1{ \%{printf("品川\\n")\u003b\%} %},
        | ^!bnode:bnode .+ %prefix1:act1{ code1 %},
          !^literal:literal .+ %prefix1:act1{ code1 %}

@@ -13,8 +13,8 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schem#>
 start = <S1>  # Issue validation starts with <IssueShape>
 
 <S1> { a [ex:Issue]?,            # An <IssueShape> has:
-    ex:state [ex:state~ - ex:state_resolved]; # a state starting with "state-"
-      rdfs:label "State"; rdfs:description "the sit",
+    ex:state [ex:state~ - ex:state_resolved]// # a state starting with "state-"
+      rdfs:label "State"// rdfs:description "the sit",
     ex:reportedBy IRI @UserShape:,        # reported by a <UserShape>.
     ex:reportedOn xsd:dateTime,           # reported some date/time.
     (                                     # optionally
