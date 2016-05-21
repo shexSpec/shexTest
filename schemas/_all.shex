@@ -49,7 +49,8 @@ PREFIX : <http://all.example/>
 $:IRI = IRI
 $:vs1 = [<http://a.example/a1> prefix:~ - prefix:a~ - prefix:b] AND $:IRI
 
-VIRTUAL prefix1:S3 EXTRA a:a prefix:prefix base:base # &a:S1
+#VIRTUAL
+prefix1:S3 EXTRA a:a prefix:prefix base:base # &a:S1
 {
    &a:S1,
    a:a .,

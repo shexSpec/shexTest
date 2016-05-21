@@ -166,7 +166,7 @@
     },
     "http://all.example/S3":{
       "type":"Shape",
-      "virtual":true,"expression":{
+      "expression":{
 	"type":"EachOf",
 	"expressions":[
           {
