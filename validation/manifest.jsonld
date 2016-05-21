@@ -7,20 +7,20 @@
       "rdfs:comment": "ShEx validation tests",
       "entries": [
         {
-          "@id": "#1dotNS2_pass-noOthers",
+          "@id": "#1dotComma_pass-noOthers",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/1dotNS2.shex",
+            "schema": "../schemas/1dotComma.shex",
             "shape": "http://a.example/S1",
             "data": "Is1_Ip1_Io1.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1dotNS2_pass-noOthers",
+          "name": "1dotComma_pass-noOthers",
           "trait": [
             "TriplePattern"
           ],
-          "comment": "PREFIX S1: <http://a.example/S1> PREFIX p1: <http://a.example/p1> S1: { p1: . } on { <s> <p1> <o1> }",
+          "comment": "PREFIX : <http://a.example/> <S> { :p1 ., } on { <s> <p1> <o1> }",
           "status": "mf:proposed",
           "result": "1dot_pass.val"
         },
@@ -78,22 +78,23 @@
           "result": "0_pass.val"
         },
         {
-          "@id": "#1dotComma_pass-noOthers",
+          "@id": "#PstarT-greedy",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/1dotComma.shex",
-            "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_Io1.ttl",
-            "focus": "http://a.example/s1"
+            "schema": "../validation/apt.shex",
+            "shape": "S1",
+            "data": "apt.ttl",
+            "focus": "n"
           },
           "extensionResults": [],
-          "name": "1dotComma_pass-noOthers",
+          "name": "PstarT-greedy",
           "trait": [
-            "TriplePattern"
+            "Greedy",
+            "EachOf"
           ],
-          "comment": "PREFIX : <http://a.example/> <S> { :p1 ., } on { <s> <p1> <o1> }",
+          "comment": "<S1> {:a $<P>*, :a $<T>} / { <n> :a <pt1>,  <pt2>,  <p>,  <t>}",
           "status": "mf:proposed",
-          "result": "1dot_pass.val"
+          "result": "PstarT.val"
         },
         {
           "@id": "#PstarT",
@@ -185,6 +186,348 @@
           "comment": "<S> { :a @<T1>*, (:a @<T2>+ | :b int), :b} <T1>{:b @<T3>} <T2>{:b @<T4>} <T3>{:c .} <T4>{:d .}",
           "status": "mf:proposed",
           "result": "iovka.val"
+        },
+        {
+          "@id": "#1focusnonLiteralLength-dot_pass-iri-equal",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1focusnonLiteralLength-dot.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1focusnonLiteralLength-dot_pass-iri-equal",
+          "trait": [
+            "FocusConstraint",
+            "LengthFacet"
+          ],
+          "comment": "<S1> NONLITERAL LENGTH 19 { <p1> . } on { <s1> <p1> <o1> }",
+          "status": "mf:proposed",
+          "result": "1dot_pass.val"
+        },
+        {
+          "@id": "#1focusBNODELength_dot_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1focusBNODELength_dot.shex",
+            "shape": "http://a.example/S1",
+            "data": "Babcdefghijklmnopqrs_Ip1_Io1.ttl",
+            "focus": "_:abcdefghijklmnopqrs"
+          },
+          "extensionResults": [],
+          "name": "1focusBNODELength_dot_pass",
+          "trait": [
+            "ToldBNODE",
+            "FocusConstraint",
+            "LengthFacet"
+          ],
+          "comment": "<S> BNODE LENGTH 19 { <p1> . } on <s> in { _:abcdefghijklmnopqrs <p1> <o1> }",
+          "status": "mf:proposed",
+          "result": "1focusBNODE_dot_pass.val"
+        },
+        {
+          "@id": "#1focusIRILength_dot_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1focusIRILength_dot.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1focusIRILength_dot_pass",
+          "trait": [
+            "FocusConstraint",
+            "LengthFacet"
+          ],
+          "comment": "<S> IRI LENGTH 19 { <p1> . } on <s> in { <s1> <p1> <o1> }",
+          "status": "mf:proposed",
+          "result": "1dot_pass.val"
+        },
+        {
+          "@id": "#1focusPatternB-dot_pass-bnode-match",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1focusPatternB-dot.shex",
+            "shape": "http://a.example/S1",
+            "data": "Babcdefghijklmnopqrs_Ip1_Io1.ttl",
+            "focus": "_:abcdefghijklmnopqrs"
+          },
+          "extensionResults": [],
+          "name": "1focusPatternB-dot_pass-bnode-match",
+          "trait": [
+            "PaternFacet"
+          ],
+          "comment": "<S1> PATTERN \"^abcdefghijklmnopqrs$\" { <p1> } on { _:abcdefghijklmnopqrs <p1> <o1> }",
+          "status": "mf:proposed",
+          "result": "1focusBNODE_dot_pass.val"
+        },
+        {
+          "@id": "#1focusPattern-dot_pass-iri-match",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1focusPattern-dot.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1focusPattern-dot_pass-iri-match",
+          "trait": [
+            "PaternFacet"
+          ],
+          "comment": "<S1> PATTERN \"^http://a.example/s1$\" { <p1> } on { <s1> <p1> <o1> }",
+          "status": "mf:proposed",
+          "result": "1dot_pass.val"
+        },
+        {
+          "@id": "#1focusMaxLength-dot_pass-bnode-equal",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1focusMaxLength-dot.shex",
+            "shape": "http://a.example/S1",
+            "data": "Babcdefghijklmnopqrs_Ip1_Io1.ttl",
+            "focus": "_:abcdefghijklmnopqrs"
+          },
+          "extensionResults": [],
+          "name": "1focusMaxLength-dot_pass-bnode-equal",
+          "trait": [
+            "FocusConstraint",
+            "LengthFacet"
+          ],
+          "comment": "<S1> MINLENGTH 19 { <p1> . } on { _:abcdefghijklmnopqrs <p1> <o1> }",
+          "status": "mf:proposed",
+          "result": "1focusBNODE_dot_pass.val"
+        },
+        {
+          "@id": "#1focusMaxLength-dot_pass-bnode-short",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1focusMaxLength-dot.shex",
+            "shape": "http://a.example/S1",
+            "data": "Babcd_Ip1_Io1.ttl",
+            "focus": "_:abcd"
+          },
+          "extensionResults": [],
+          "name": "1focusMaxLength-dot_pass-bnode-short",
+          "trait": [
+            "FocusConstraint",
+            "LengthFacet"
+          ],
+          "comment": "<S1> MINLENGTH 19 { <p1> . } on { _:abcd <p1> <o1> }",
+          "status": "mf:proposed",
+          "result": "1abcd_pass.val"
+        },
+        {
+          "@id": "#1focusMaxLength-dot_pass-iri-equal",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1focusMaxLength-dot.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1focusMaxLength-dot_pass-iri-equal",
+          "trait": [
+            "FocusConstraint",
+            "LengthFacet"
+          ],
+          "comment": "<S1> MINLENGTH 19 { <p1> . } on { <s1> <p1> <o1> }",
+          "status": "mf:proposed",
+          "result": "1dot_pass.val"
+        },
+        {
+          "@id": "#1focusMaxLength-dot_pass-iri-short",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1focusMaxLength-dot.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is_Ip1_Io1.ttl",
+            "focus": "http://a.example/s"
+          },
+          "extensionResults": [],
+          "name": "1focusMaxLength-dot_pass-iri-short",
+          "trait": [
+            "FocusConstraint",
+            "LengthFacet"
+          ],
+          "comment": "<S1> MINLENGTH 19 { <p1> . } on { <s> <p1> <o1> }",
+          "status": "mf:proposed",
+          "result": "1s_pass.val"
+        },
+        {
+          "@id": "#1focusMinLength-dot_pass-bnode-long",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1focusMinLength-dot.shex",
+            "shape": "http://a.example/S1",
+            "data": "Babcdefghijklmnopqrst_Ip1_Io1.ttl",
+            "focus": "_:abcdefghijklmnopqrst"
+          },
+          "extensionResults": [],
+          "name": "1focusMinLength-dot_pass-bnode-long",
+          "trait": [
+            "FocusConstraint",
+            "LengthFacet"
+          ],
+          "comment": "<S1> MINLENGTH 19 { <p1> . } on { <s1a> <p1> <o1> }",
+          "status": "mf:proposed",
+          "result": "1abcdefghijklmnopqrst_pass.val"
+        },
+        {
+          "@id": "#1focusMinLength-dot_pass-bnode-equal",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1focusMinLength-dot.shex",
+            "shape": "http://a.example/S1",
+            "data": "Babcdefghijklmnopqrs_Ip1_Io1.ttl",
+            "focus": "_:abcdefghijklmnopqrs"
+          },
+          "extensionResults": [],
+          "name": "1focusMinLength-dot_pass-bnode-equal",
+          "trait": [
+            "FocusConstraint",
+            "LengthFacet"
+          ],
+          "comment": "<S1> MINLENGTH 19 { <p1> . } on { _:abcdefghijklmnopqrs <p1> <o1> }",
+          "status": "mf:proposed",
+          "result": "1focusBNODE_dot_pass.val"
+        },
+        {
+          "@id": "#1focusMinLength-dot_pass-iri-long",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1focusMinLength-dot.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1a_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1a"
+          },
+          "extensionResults": [],
+          "name": "1focusMinLength-dot_pass-iri-long",
+          "trait": [
+            "FocusConstraint",
+            "LengthFacet"
+          ],
+          "comment": "<S1> MINLENGTH 19 { <p1> . } on { <s1a> <p1> <o1> }",
+          "status": "mf:proposed",
+          "result": "1s1a_pass.val"
+        },
+        {
+          "@id": "#1focusMinLength-dot_pass-iri-equal",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1focusMinLength-dot.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1focusMinLength-dot_pass-iri-equal",
+          "trait": [
+            "FocusConstraint",
+            "LengthFacet"
+          ],
+          "comment": "<S1> MINLENGTH 19 { <p1> . } on { <s1> <p1> <o1> }",
+          "status": "mf:proposed",
+          "result": "1dot_pass.val"
+        },
+        {
+          "@id": "#1focusLength-dot_pass-bnode-equal",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1focusLength-dot.shex",
+            "shape": "http://a.example/S1",
+            "data": "Babcdefghijklmnopqrs_Ip1_Io1.ttl",
+            "focus": "_:abcdefghijklmnopqrs"
+          },
+          "extensionResults": [],
+          "name": "1focusLength-dot_pass-bnode-equal",
+          "trait": [
+            "FocusConstraint",
+            "LexicalBnode",
+            "LengthFacet",
+            "ToldBNode"
+          ],
+          "comment": "<S1> LENGTH 19 { <p1> . } on { _:abcdefghijklmnopqrs <p1> <o1> }",
+          "status": "mf:proposed",
+          "result": "1focusBNODE_dot_pass.val"
+        },
+        {
+          "@id": "#1focusLength-dot_pass-iri-equal",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1focusLength-dot.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1focusLength-dot_pass-iri-equal",
+          "trait": [
+            "FocusConstraint",
+            "LengthFacet"
+          ],
+          "comment": "<S1> LENGTH 19 { <p1> . } on { <s1> <p1> <o1> }",
+          "status": "mf:proposed",
+          "result": "1dot_pass.val"
+        },
+        {
+          "@id": "#1focusnonLiteral-dot_pass-iri-equal",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1focusnonLiteral-dot.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1focusnonLiteral-dot_pass-iri-equal",
+          "trait": [
+            "FocusConstraint",
+            "LengthFacet"
+          ],
+          "comment": "<S1> NONLITERAL { <p1> . } on { <s1> <p1> <o1> }",
+          "status": "mf:proposed",
+          "result": "1dot_pass.val"
+        },
+        {
+          "@id": "#1focusBNODE_dot_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1focusBNODE_dot.shex",
+            "shape": "http://a.example/S1",
+            "data": "Babcdefghijklmnopqrs_Ip1_Io1.ttl",
+            "focus": "_:abcdefghijklmnopqrs"
+          },
+          "extensionResults": [],
+          "name": "1focusBNODE_dot_pass",
+          "trait": [
+            "ToldBNODE",
+            "FocusConstraint"
+          ],
+          "comment": "<S> BNODE { <p1> . } on <s> in { _:abcdefghijklmnopqrs <p1> <o1> }",
+          "status": "mf:proposed",
+          "result": "1focusBNODE_dot_pass.val"
+        },
+        {
+          "@id": "#1focusIRI_dot_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1focusIRI_dot.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1focusIRI_dot_pass",
+          "trait": [
+            "FocusConstraint"
+          ],
+          "comment": "<S> IRI { <p1> . } on <s> in { <s1> <p1> <o1> }",
+          "status": "mf:proposed",
+          "result": "1dot_pass.val"
         },
         {
           "@id": "#open3groupdotclosecard23Annot3Code2-p1p2p3X3",
@@ -1968,7 +2311,7 @@
           "trait": [
             "LengthFacet"
           ],
-          "comment": "<S1> { <p1> NONLITERAL MAXLENGTH 19 } on { <s1> <p1> <http://a.example/o1> }",
+          "comment": "<S1> { <p1> NONLITERAL MAXLENGTH 19 } on { <s1> <p1> <o1> }",
           "status": "mf:proposed",
           "result": "1nonliteralMaxlength_pass-iri-equal.val"
         },
@@ -1986,7 +2329,7 @@
           "trait": [
             "LengthFacet"
           ],
-          "comment": "<S1> { <p1> NONLITERAL MAXLENGTH 19 } on { <s1> <p1> <http://a.example/o> }",
+          "comment": "<S1> { <p1> NONLITERAL MAXLENGTH 19 } on { <s1> <p1> <o> }",
           "status": "mf:proposed",
           "result": "1nonliteralMaxlength_pass-iri-short.val"
         },
@@ -2042,7 +2385,7 @@
           "trait": [
             "LengthFacet"
           ],
-          "comment": "<S1> { <p1> IRI MAXLENGTH 19 } on { <s1> <p1> <http://a.example/o1> }",
+          "comment": "<S1> { <p1> IRI MAXLENGTH 19 } on { <s1> <p1> <o1> }",
           "status": "mf:proposed",
           "result": "1iriMaxlength_pass-iri-equal.val"
         },
@@ -2060,7 +2403,7 @@
           "trait": [
             "LengthFacet"
           ],
-          "comment": "<S1> { <p1> IRI MAXLENGTH 19 } on { <s1> <p1> <http://a.example/o> }",
+          "comment": "<S1> { <p1> IRI MAXLENGTH 19 } on { <s1> <p1> <o> }",
           "status": "mf:proposed",
           "result": "1iriMaxlength_pass-iri-short.val"
         },
@@ -2152,7 +2495,7 @@
           "trait": [
             "LengthFacet"
           ],
-          "comment": "<S1> { <p1> NONLITERAL MINLENGTH 19 } on { <s1> <p1> <http://a.example/o1a> }",
+          "comment": "<S1> { <p1> NONLITERAL MINLENGTH 19 } on { <s1> <p1> <o1a> }",
           "status": "mf:proposed",
           "result": "1nonliteralMinlength_pass-iri-long.val"
         },
@@ -2170,7 +2513,7 @@
           "trait": [
             "LengthFacet"
           ],
-          "comment": "<S1> { <p1> NONLITERAL MINLENGTH 19 } on { <s1> <p1> <http://a.example/o1> }",
+          "comment": "<S1> { <p1> NONLITERAL MINLENGTH 19 } on { <s1> <p1> <o1> }",
           "status": "mf:proposed",
           "result": "1nonliteralMinlength_pass-iri-equal.val"
         },
@@ -2226,7 +2569,7 @@
           "trait": [
             "LengthFacet"
           ],
-          "comment": "<S1> { <p1> IRI MINLENGTH 19 } on { <s1> <p1> <http://a.example/o1a> }",
+          "comment": "<S1> { <p1> IRI MINLENGTH 19 } on { <s1> <p1> <o1a> }",
           "status": "mf:proposed",
           "result": "1iriMinlength_pass-iri-long.val"
         },
@@ -2244,7 +2587,7 @@
           "trait": [
             "LengthFacet"
           ],
-          "comment": "<S1> { <p1> IRI MINLENGTH 19 } on { <s1> <p1> <http://a.example/o1> }",
+          "comment": "<S1> { <p1> IRI MINLENGTH 19 } on { <s1> <p1> <o1> }",
           "status": "mf:proposed",
           "result": "1iriMinlength_pass-iri-equal.val"
         },
@@ -2317,7 +2660,7 @@
           "trait": [
             "LengthFacet"
           ],
-          "comment": "<S1> { <p1> NONLITERAL LENGT19 2 } on { <s1> <p1> <http://a.example/o1> }",
+          "comment": "<S1> { <p1> NONLITERAL LENGTH 19 } on { <s1> <p1> <o1> }",
           "status": "mf:proposed",
           "result": "1nonliteralLength_pass-iri-equal.val"
         },
@@ -2354,7 +2697,7 @@
           "trait": [
             "LengthFacet"
           ],
-          "comment": "<S1> { <p1> IRI @<S2> LENGTH 19 } <S2> { <p2> . } on { <s1> <p1> <http://a.example/o1> . <http://a.example/o1> <p2>  <o2> }",
+          "comment": "<S1> { <p1> IRI @<S2> LENGTH 19 } <S2> { <p2> . } on { <s1> <p1> <o1> . <o1> <p2>  <o2> }",
           "status": "mf:proposed",
           "result": "1iriRefLength1_pass-iri-equal.val"
         },
@@ -2372,7 +2715,7 @@
           "trait": [
             "LengthFacet"
           ],
-          "comment": "<S1> { <p1> IRI LENGTH 19 } on { <s1> <p1> <http://a.example/o1> }",
+          "comment": "<S1> { <p1> IRI LENGTH 19 } on { <s1> <p1> <o1> }",
           "status": "mf:proposed",
           "result": "1iriLength_pass-iri-equal.val"
         },
@@ -5748,21 +6091,22 @@
           "result": "1dot_pass.val"
         },
         {
-          "@id": "#1dot_fail-missing",
-          "@type": "sht:ValidationFailure",
+          "@id": "#1dotNS2_pass-noOthers",
+          "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/1dot.shex",
+            "schema": "../schemas/1dotNS2.shex",
             "shape": "http://a.example/S1",
-            "data": "Is1_Ip2_Io1.ttl",
+            "data": "Is1_Ip1_Io1.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1dot_fail-missing",
+          "name": "1dotNS2_pass-noOthers",
           "trait": [
             "TriplePattern"
           ],
-          "comment": "<S> { <p1> . } on { <s> <p2> <o1> }",
-          "status": "mf:proposed"
+          "comment": "PREFIX S1: <http://a.example/S1> PREFIX p1: <http://a.example/p1> S1: { p1: . } on { <s> <p1> <o1> }",
+          "status": "mf:proposed",
+          "result": "1dot_pass.val"
         },
         {
           "@id": "#1dotLNex_pass-noOthers",
@@ -5783,22 +6127,21 @@
           "result": "1dot_pass.val"
         },
         {
-          "@id": "#simple-group",
-          "@type": "sht:ValidationTest",
+          "@id": "#1dot_fail-missing",
+          "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../validation/simple-group.shex",
-            "shape": "S",
-            "data": "simple-group.ttl",
-            "focus": "s0"
+            "schema": "../schemas/1dot.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip2_Io1.ttl",
+            "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "simple-group",
+          "name": "1dot_fail-missing",
           "trait": [
-            "EachOf"
+            "TriplePattern"
           ],
-          "comment": "@@ simple-group",
-          "status": "mf:proposed",
-          "result": "simple-group.val"
+          "comment": "<S> { <p1> . } on { <s> <p2> <o1> }",
+          "status": "mf:proposed"
         },
         {
           "@id": "#1dot_pass-noOthers",
@@ -5817,6 +6160,24 @@
           "comment": "<S> { <p1> . } on { <s> <p1> <o1> }",
           "status": "mf:proposed",
           "result": "1dot_pass.val"
+        },
+        {
+          "@id": "#simple-group",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../validation/simple-group.shex",
+            "shape": "S",
+            "data": "simple-group.ttl",
+            "focus": "s0"
+          },
+          "extensionResults": [],
+          "name": "simple-group",
+          "trait": [
+            "EachOf"
+          ],
+          "comment": "@@ simple-group",
+          "status": "mf:proposed",
+          "result": "simple-group.val"
         },
         {
           "@id": "#bnode1dot_fail-missing",
@@ -5854,23 +6215,6 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#1inversedot_fail-missing",
-          "@type": "sht:ValidationFailure",
-          "action": {
-            "schema": "../schemas/1inversedot.shex",
-            "shape": "http://a.example/S1",
-            "data": "Is1_Ip2_Io1.ttl",
-            "focus": "http://a.example/o1"
-          },
-          "extensionResults": [],
-          "name": "1inversedot_fail-missing",
-          "trait": [
-            "TriplePattern"
-          ],
-          "comment": "<S> { <p1> . } on { <s> <p2> <o1> }",
-          "status": "mf:proposed"
-        },
-        {
           "@id": "#nPlus1-greedy_fail",
           "@type": "sht:ValidationFailure",
           "action": {
@@ -5886,6 +6230,405 @@
             "EachOf"
           ],
           "comment": "<S> { :a .*, (:a .+ | :a .), :a . } / { <x> :a 1, 3 }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1focusBNODELength_dot_fail-long",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1focusBNODELength_dot.shex",
+            "shape": "http://a.example/S1",
+            "data": "Babcdefghijklmnopqrst_Ip1_Io1.ttl",
+            "focus": "_:abcdefghijklmnopqrst"
+          },
+          "extensionResults": [],
+          "name": "1focusBNODELength_dot_fail-long",
+          "trait": [
+            "ToldBNODE",
+            "FocusConstraint",
+            "LengthFacet"
+          ],
+          "comment": "<S> BNODE LENGTH 19 { <p1> . } on <s> in { _:abcdefghijklmnopqrst <p1> <o1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1focusBNODELength_dot_fail-short",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1focusBNODELength_dot.shex",
+            "shape": "http://a.example/S1",
+            "data": "Babcd_Ip1_Io1.ttl",
+            "focus": "_:abcd"
+          },
+          "extensionResults": [],
+          "name": "1focusBNODELength_dot_fail-short",
+          "trait": [
+            "ToldBNODE",
+            "FocusConstraint",
+            "LengthFacet"
+          ],
+          "comment": "<S> BNODE LENGTH 19 { <p1> . } on <s> in { _:abcd <p1> <o1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1focusBNODELength_dot_fail-iriFocusLabel-equal",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1focusBNODELength_dot.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1focusBNODELength_dot_fail-iriFocusLabel-equal",
+          "trait": [
+            "LexicalBnode",
+            "LengthFacet"
+          ],
+          "comment": "<S> BNODE LENGTH 19 { <p1> . } on <s> in { <s1> <p1> <o1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1focusIRILength_dot_fail-long",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1focusIRILength_dot.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1a_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1a"
+          },
+          "extensionResults": [],
+          "name": "1focusIRILength_dot_fail-long",
+          "trait": [
+            "FocusConstraint",
+            "LengthFacet"
+          ],
+          "comment": "<S> IRI LENGTH 19 { <p1> . } on <s> in { <s1a> <p1> <o1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1focusIRILength_dot_fail-short",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1focusIRILength_dot.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is_Ip1_Io1.ttl",
+            "focus": "http://a.example/s"
+          },
+          "extensionResults": [],
+          "name": "1focusIRILength_dot_fail-short",
+          "trait": [
+            "FocusConstraint",
+            "LengthFacet"
+          ],
+          "comment": "<S> IRI LENGTH 19 { <p1> . } on <s> in { <s> <p1> <o1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1focusIRILength_dot_fail-bnodeFocusLabel-equal",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1focusIRILength_dot.shex",
+            "shape": "http://a.example/S1",
+            "data": "Babcdefghijklmnopqrs_Ip1_Io1.ttl",
+            "focus": "_:abcdefghijklmnopqrs"
+          },
+          "extensionResults": [],
+          "name": "1focusIRILength_dot_fail-bnodeFocusLabel-equal",
+          "trait": [
+            "FocusConstraint",
+            "LexicalBnode",
+            "LengthFacet",
+            "ToldBNode"
+          ],
+          "comment": "<S> IRI LENGTH 19 { <p1> . } on <s> in { _:abcdefghijklmnopqrs <p1> <o1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1focusPatternB-dot_fail-bnode-long",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1focusPatternB-dot.shex",
+            "shape": "http://a.example/S1",
+            "data": "Babcdefghijklmnopqrst_Ip1_Io1.ttl",
+            "focus": "_:abcdefghijklmnopqrst"
+          },
+          "extensionResults": [],
+          "name": "1focusPatternB-dot_fail-bnode-long",
+          "trait": [
+            "PaternFacet"
+          ],
+          "comment": "<S1> PATTERN \"^abcdefghijklmnopqrs$\" { <p1> } on { _:abcdefghijklmnopqrst <p1> <o1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1focusPatternB-dot_fail-bnode-short",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1focusPatternB-dot.shex",
+            "shape": "http://a.example/S1",
+            "data": "Babcd_Ip1_Io1.ttl",
+            "focus": "_:abcd"
+          },
+          "extensionResults": [],
+          "name": "1focusPatternB-dot_fail-bnode-short",
+          "trait": [
+            "PaternFacet"
+          ],
+          "comment": "<S1> PATTERN \"^abcdefghijklmnopqrs$\" { <p1> } on { _:abcd <p1> <o1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1focusPatternB-dot_fail-iri-match",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1focusPatternB-dot.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is2_Ip1_Io.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1focusPatternB-dot_fail-iri-match",
+          "trait": [
+            "PaternFacet"
+          ],
+          "comment": "<S1> PATTERN \"^http://a.example/s1$\" { <p1> } on { <s2> <p1> <o> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1focusPattern-dot_fail-iri-long",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1focusPattern-dot.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1a_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1focusPattern-dot_fail-iri-long",
+          "trait": [
+            "PaternFacet"
+          ],
+          "comment": "<S1> PATTERN \"^http://a.example/s1$\" { <p1> } on { <s1a> <p1> <o1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1focusPattern-dot_fail-iri-short",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1focusPattern-dot.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1focusPattern-dot_fail-iri-short",
+          "trait": [
+            "PaternFacet"
+          ],
+          "comment": "<S1> PATTERN \"^http://a.example/s1$\" { <p1> } on { <s> <p1> <o1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1focusPattern-dot_fail-iri-match",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1focusPattern-dot.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is2_Ip1_Io.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1focusPattern-dot_fail-iri-match",
+          "trait": [
+            "PaternFacet"
+          ],
+          "comment": "<S1> PATTERN \"^http://a.example/s1$\" { <p1> } on { <s2> <p1> <o> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1focusMaxLength-dot_fail-bnode-long",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1focusMaxLength-dot.shex",
+            "shape": "http://a.example/S1",
+            "data": "Babcdefghijklmnopqrst_Ip1_Io1.ttl",
+            "focus": "_:abcdefghijklmnopqrst"
+          },
+          "extensionResults": [],
+          "name": "1focusMaxLength-dot_fail-bnode-long",
+          "trait": [
+            "FocusConstraint",
+            "LengthFacet"
+          ],
+          "comment": "<S1> MINLENGTH 19 { <p1> . } on { <s1a> <p1> <o1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1focusMaxLength-dot_fail-iri-long",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1focusMaxLength-dot.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1a_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1a"
+          },
+          "extensionResults": [],
+          "name": "1focusMaxLength-dot_fail-iri-long",
+          "trait": [
+            "FocusConstraint",
+            "LengthFacet"
+          ],
+          "comment": "<S1> MINLENGTH 19 { <p1> . } on { <s1a> <p1> <o1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1focusMinLength-dot_fail-bnode-short",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1focusMinLength-dot.shex",
+            "shape": "http://a.example/S1",
+            "data": "Babcd_Ip1_Io1.ttl",
+            "focus": "_:abcd"
+          },
+          "extensionResults": [],
+          "name": "1focusMinLength-dot_fail-bnode-short",
+          "trait": [
+            "FocusConstraint",
+            "LengthFacet"
+          ],
+          "comment": "<S1> MINLENGTH 19 { <p1> . } on { _:abcd <p1> <o1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1focusMinLength-dot_fail-iri-short",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1focusMinLength-dot.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is_Ip1_Io1.ttl",
+            "focus": "http://a.example/s"
+          },
+          "extensionResults": [],
+          "name": "1focusMinLength-dot_fail-iri-short",
+          "trait": [
+            "FocusConstraint",
+            "LengthFacet"
+          ],
+          "comment": "<S1> MINLENGTH 19 { <p1> . } on { <s> <p1> <o1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1focusLength-dot_fail-bnode-long",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1focusLength-dot.shex",
+            "shape": "http://a.example/S1",
+            "data": "Babcdefghijklmnopqrst_Ip1_Io1.ttl",
+            "focus": "_:abcdefghijklmnopqrst"
+          },
+          "extensionResults": [],
+          "name": "1focusLength-dot_fail-bnode-long",
+          "trait": [
+            "FocusConstraint",
+            "LexicalBnode",
+            "LengthFacet",
+            "ToldBNode"
+          ],
+          "comment": "<S1> LENGTH 19 { <p1> . } on { _:abcdefghijklmnopqrst <p1> <o1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1focusLength-dot_fail-bnode-short",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1focusLength-dot.shex",
+            "shape": "http://a.example/S1",
+            "data": "Babcd_Ip1_Io1.ttl",
+            "focus": "_:abcd"
+          },
+          "extensionResults": [],
+          "name": "1focusLength-dot_fail-bnode-short",
+          "trait": [
+            "FocusConstraint",
+            "LexicalBnode",
+            "LengthFacet",
+            "ToldBNode"
+          ],
+          "comment": "<S1> LENGTH 19 { <p1> . } on { _:abcd <p1> <o1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1focusLength-dot_fail-iri-long",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1focusLength-dot.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1a_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1a"
+          },
+          "extensionResults": [],
+          "name": "1focusLength-dot_fail-iri-long",
+          "trait": [
+            "FocusConstraint",
+            "LengthFacet"
+          ],
+          "comment": "<S1> LENGTH 19 { <p1> . } on { <s1a> <p1> <o1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1focusLength-dot_fail-iri-short",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1focusLength-dot.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is_Ip1_Io1.ttl",
+            "focus": "http://a.example/s"
+          },
+          "extensionResults": [],
+          "name": "1focusLength-dot_fail-iri-short",
+          "trait": [
+            "FocusConstraint",
+            "LengthFacet"
+          ],
+          "comment": "<S1> LENGTH 19 { <p1> . } on { <s> <p1> <o1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1focusBNODE_dot_fail-iriFocusLabel-equal",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1focusBNODE_dot.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1focusBNODE_dot_fail-iriFocusLabel-equal",
+          "trait": [
+            "FocusConstraint",
+            "LexicalBnode"
+          ],
+          "comment": "<S> BNODE { <p1> . } on <s> in { <s1> <p1> <o1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1focusIRI_dot_fail-bnodeFocusLabel",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1focusIRI_dot.shex",
+            "shape": "http://a.example/S1",
+            "data": "Babcd_Ip1_Io1.ttl",
+            "focus": "_:abcd"
+          },
+          "extensionResults": [],
+          "name": "1focusIRI_dot_fail-bnodeFocusLabel",
+          "trait": [
+            "FocusConstraint",
+            "LexicalBnode",
+            "ToldBNode"
+          ],
+          "comment": "<S> IRI { <p1> . } on <s> in { _:abcd <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -7168,7 +7911,7 @@
           "trait": [
             "PaternFacet"
           ],
-          "comment": "<S1> { <p1> LITERAL PATTERN \"^http://a.example/o1$\" } on { <s1> <p1> <http://a.example/o1> }",
+          "comment": "<S1> { <p1> LITERAL PATTERN \"^http://a.example/o1$\" } on { <s1> <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -7237,7 +7980,7 @@
           "trait": [
             "LengthFacet"
           ],
-          "comment": "<S1> { <p1> NONLITERAL MAXLENGTH 19 } on { <s1> <p1> <http://a.example/o1a> }",
+          "comment": "<S1> { <p1> NONLITERAL MAXLENGTH 19 } on { <s1> <p1> <o1a> }",
           "status": "mf:proposed"
         },
         {
@@ -7272,7 +8015,7 @@
           "trait": [
             "LengthFacet"
           ],
-          "comment": "<S1> { <p1> IRI MAXLENGTH 19 } on { <s1> <p1> <http://a.example/o1a> }",
+          "comment": "<S1> { <p1> IRI MAXLENGTH 19 } on { <s1> <p1> <o1a> }",
           "status": "mf:proposed"
         },
         {
@@ -7324,7 +8067,7 @@
           "trait": [
             "LengthFacet"
           ],
-          "comment": "<S1> { <p1> NONLITERAL MINLENGTH 19 } on { <s1> <p1> <http://a.example/o> }",
+          "comment": "<S1> { <p1> NONLITERAL MINLENGTH 19 } on { <s1> <p1> <o> }",
           "status": "mf:proposed"
         },
         {
@@ -7359,7 +8102,7 @@
           "trait": [
             "LengthFacet"
           ],
-          "comment": "<S1> { <p1> IRI MINLENGTH 19 } on { <s1> <p1> <http://a.example/o> }",
+          "comment": "<S1> { <p1> IRI MINLENGTH 19 } on { <s1> <p1> <o> }",
           "status": "mf:proposed"
         },
         {
@@ -7446,7 +8189,7 @@
           "trait": [
             "LengthFacet"
           ],
-          "comment": "<S1> { <p1> NONLITERAL LENGTH 19 } on { <s1> <p1> <http://a.example/o1a> }",
+          "comment": "<S1> { <p1> NONLITERAL LENGTH 19 } on { <s1> <p1> <o1a> }",
           "status": "mf:proposed"
         },
         {
@@ -7463,7 +8206,7 @@
           "trait": [
             "LengthFacet"
           ],
-          "comment": "<S1> { <p1> NONLITERAL LENGTH 19 } on { <s1> <p1> <http://a.example/o> }",
+          "comment": "<S1> { <p1> NONLITERAL LENGTH 19 } on { <s1> <p1> <o> }",
           "status": "mf:proposed"
         },
         {
@@ -7480,7 +8223,7 @@
           "trait": [
             "LengthFacet"
           ],
-          "comment": "<S1> { <p1> BNODE LENGTH 19 } on { <s1> <p1> <http://a.example/o1> }",
+          "comment": "<S1> { <p1> BNODE LENGTH 19 } on { <s1> <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -7584,7 +8327,7 @@
           "trait": [
             "LengthFacet"
           ],
-          "comment": "<S1> { <p1> IRI @<S2> LENGTH 19 } <S2> { <p2> . } on { <s1> <p1> <http://a.example/o1a> }",
+          "comment": "<S1> { <p1> IRI @<S2> LENGTH 19 } <S2> { <p2> . } on { <s1> <p1> <o1a> }",
           "status": "mf:proposed"
         },
         {
@@ -7601,7 +8344,7 @@
           "trait": [
             "LengthFacet"
           ],
-          "comment": "<S1> { <p1> IRI @<S2> LENGTH 19 } <S2> { <p2> . } on { <s1> <p1> <http://a.example/o> }",
+          "comment": "<S1> { <p1> IRI @<S2> LENGTH 19 } <S2> { <p2> . } on { <s1> <p1> <o> }",
           "status": "mf:proposed"
         },
         {
@@ -7653,7 +8396,7 @@
           "trait": [
             "LengthFacet"
           ],
-          "comment": "<S1> { <p1> IRI LENGTH 19 } on { <s1> <p1> <http://a.example/o1a> }",
+          "comment": "<S1> { <p1> IRI LENGTH 19 } on { <s1> <p1> <o1a> }",
           "status": "mf:proposed"
         },
         {
@@ -7670,7 +8413,7 @@
           "trait": [
             "LengthFacet"
           ],
-          "comment": "<S1> { <p1> IRI LENGTH 19 } on { <s1> <p1> <http://a.example/o> }",
+          "comment": "<S1> { <p1> IRI LENGTH 19 } on { <s1> <p1> <o> }",
           "status": "mf:proposed"
         },
         {
@@ -7705,7 +8448,7 @@
           "trait": [
             "LengthFacet"
           ],
-          "comment": "<S1> { <p1> LITERAL LENGTH 19 } on { <s1> <p1> <http://a.example/o1> }",
+          "comment": "<S1> { <p1> LITERAL LENGTH 19 } on { <s1> <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -10992,23 +11735,21 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#PstarT-greedy",
-          "@type": "sht:ValidationTest",
+          "@id": "#1inversedot_fail-missing",
+          "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../validation/apt.shex",
-            "shape": "S1",
-            "data": "apt.ttl",
-            "focus": "n"
+            "schema": "../schemas/1inversedot.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip2_Io1.ttl",
+            "focus": "http://a.example/o1"
           },
           "extensionResults": [],
-          "name": "PstarT-greedy",
+          "name": "1inversedot_fail-missing",
           "trait": [
-            "Greedy",
-            "EachOf"
+            "TriplePattern"
           ],
-          "comment": "<S1> {:a $<P>*, :a $<T>} / { <n> :a <pt1>,  <pt2>,  <p>,  <t>}",
-          "status": "mf:proposed",
-          "result": "PstarT.val"
+          "comment": "<S> { <p1> . } on { <s> <p2> <o1> }",
+          "status": "mf:proposed"
         },
         {
           "@id": "#PTstar",
