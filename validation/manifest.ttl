@@ -20,6 +20,7 @@
 ## empty
         <#0_empty>
         <#0_other>
+	<#0_otherbnode>
 
 ## triple pattern
         <#1dot_fail-empty>
@@ -698,6 +699,14 @@
         <#open3groupdotclosecard23Annot3Code2-p1p2p3X3>
 
 ## shapeKind
+	<#0focusIRI_other>
+	<#0focusIRI_other_fail-bnodeFocusLabel>
+	<#0focusIRI_empty>
+	<#0focusIRI_empty_fail-bnodeFocusLabel>
+	<#0focusBNODE_empty_fail-iriFocusLabel>
+	<#0focusBNODE_empty>
+	<#0focusBNODE_other_fail-iriFocusLabel>
+	<#0focusBNODE_other>
         <#1focusIRI_dot_fail-bnodeFocusLabel>
         <#1focusIRI_dot_pass>
         <#1focusBNODE_dot_fail-iriFocusLabel-equal>
@@ -793,6 +802,21 @@
     ] ;
     mf:result <0_pass.val>
     .
+
+<#0_otherbnode> a sht:ValidationTest ;
+    mf:name "0_otherbnode" ;
+    sht:trait sht:Empty ;
+    rdfs:comment "<S> {  } on { _:abcd <p1> <o1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/0.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Babcd_Ip1_Io1.ttl> ;
+      sht:focus _:abcd
+    ] ;
+    mf:result <0abcd_pass.val>
+    .
+
 ## } empty
 ## triple pattern {
 
@@ -9546,6 +9570,114 @@
 
 ## } annotations + semantic actions
 ## shapeKind {
+
+<#0focusIRI_empty_fail-bnodeFocusLabel> a sht:ValidationFailure ;
+    mf:name "0focusIRI_empty_fail-bnodeFocusLabel" ;
+    sht:trait sht:Empty ;
+    rdfs:comment "<S> IRI {  } on { }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/0focusIRI.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <empty.ttl> ;
+      sht:focus _:s1
+    ]
+    .
+
+<#0focusIRI_empty> a sht:ValidationTest ;
+    mf:name "0focusIRI_empty" ;
+    sht:trait sht:Empty ;
+    rdfs:comment "<S> IRI {  } on { }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/0focusIRI.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <empty.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <0_pass.val>
+    .
+
+<#0focusIRI_other_fail-bnodeFocusLabel> a sht:ValidationFailure ;
+    mf:name "0focusIRI_other_fail-bnodeFocusLabel" ;
+    sht:trait sht:Empty ;
+    rdfs:comment "<S> IRI {  } on { }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/0focusIRI.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Babcd_Ip1_Io1.ttl> ;
+      sht:focus _:abcd
+    ]
+    .
+
+<#0focusIRI_other> a sht:ValidationTest ;
+    mf:name "0focusIRI_other" ;
+    sht:trait sht:Empty ;
+    rdfs:comment "<S> IRI {  } on { <s1> <p1> <o1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/0focusIRI.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <0_pass.val>
+    .
+
+<#0focusBNODE_empty_fail-iriFocusLabel> a sht:ValidationFailure ;
+    mf:name "0focusBNODE_empty_fail-iriFocusLabel" ;
+    sht:trait sht:Empty ;
+    rdfs:comment "<S> BNODE {  } on { }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/0focusBNODE.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <empty.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#0focusBNODE_empty> a sht:ValidationTest ;
+    mf:name "0focusBNODE_empty" ;
+    sht:trait sht:Empty ;
+    rdfs:comment "<S> BNODE {  } on { }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/0focusBNODE.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <empty.ttl> ;
+      sht:focus _:abcd
+    ] ;
+    mf:result <0abcd_pass.val>
+    .
+
+<#0focusBNODE_other_fail-iriFocusLabel> a sht:ValidationFailure ;
+    mf:name "0focusBNODE_other_fail-iriFocusLabel" ;
+    sht:trait sht:Empty ;
+    rdfs:comment "<S> BNODE {  } on { }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/0focusBNODE.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#0focusBNODE_other> a sht:ValidationTest ;
+    mf:name "0focusBNODE_other" ;
+    sht:trait sht:Empty ;
+    rdfs:comment "<S> BNODE {  } on { _:abcd <p1> <o1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/0focusBNODE.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Babcd_Ip1_Io1.ttl> ;
+      sht:focus _:abcd
+    ] ;
+    mf:result <0abcd_pass.val>
+    .
 
 <#1focusIRI_dot_fail-bnodeFocusLabel> a sht:ValidationFailure ;
     mf:name "1focusIRI_dot_fail-bnodeFocusLabel" ;
