@@ -23,8 +23,10 @@
 
 ## triple pattern
         <#1dot_fail-empty>
+        <#1dot-base_fail-empty>
         <#1dot_fail-missing>
-        <#1dot_pass-noOthers> <#1dotSemi_pass-noOthers> <#1dotLNex_pass-noOthers> <#1dotNS2_pass-noOthers> <#1dotNS2Comment_pass-noOthers> <#1dotLNexComment_pass-noOthers> <#1dotLNdefault_pass-noOthers> <#1dotNSdefault_pass-noOthers> <#1dotLNex-HYPHEN_MINUS_pass-noOthers>
+        <#1dot-base_fail-missing>
+        <#1dot_pass-noOthers> <#1dot-base_pass-noOthers> <#1dotSemi_pass-noOthers> <#1dotLNex_pass-noOthers> <#1dotNS2_pass-noOthers> <#1dotNS2Comment_pass-noOthers> <#1dotLNexComment_pass-noOthers> <#1dotLNdefault_pass-noOthers> <#1dotNSdefault_pass-noOthers> <#1dotLNex-HYPHEN_MINUS_pass-noOthers>
         <#1dot_pass-others_lexicallyEarlier>
         <#1dot_pass-others_lexicallyLater>
         <#bnode1dot_fail-missing>
@@ -807,6 +809,19 @@
     ]
     .
 
+<#1dot-base_fail-empty> a sht:ValidationFailure ;
+    mf:name "1dot-base_fail-empty" ;
+    sht:trait sht:TriplePattern ;
+    rdfs:comment "<S> { <p1> . } on {  }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1dot-base.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <empty.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
 <#1dot_fail-missing> a sht:ValidationFailure ;
     mf:name "1dot_fail-missing" ;
     sht:trait sht:TriplePattern ;
@@ -820,6 +835,19 @@
     ]
     .
 
+<#1dot-base_fail-missing> a sht:ValidationFailure ;
+    mf:name "1dot-base_fail-missing" ;
+    sht:trait sht:TriplePattern ;
+    rdfs:comment "<S> { <p1> . } on { <s> <p2> <o1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1dot-base.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip2_Io1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
 <#1dot_pass-noOthers> a sht:ValidationTest ;
     mf:name "1dot_pass-noOthers" ;
     sht:trait sht:TriplePattern ;
@@ -827,6 +855,20 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1dot.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1dot_pass.val>
+    .
+
+<#1dot-base_pass-noOthers> a sht:ValidationTest ;
+    mf:name "1dot-base_pass-noOthers" ;
+    sht:trait sht:TriplePattern ;
+    rdfs:comment "<S> { <p1> . } on { <s> <p1> <o1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1dot-base.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
@@ -990,7 +1032,7 @@
 <#bnode1dot_pass-others_lexicallyEarlier> a sht:ValidationTest ;
     mf:name "bnode1dot_pass-others_lexicallyEarlier" ;
     sht:trait sht:ToldBNode , sht:TriplePattern ;
-    rdfs:comment "<S> { <p1> . } on { <s> <p0> <o0>; <p1> <o1> }" ;
+    rdfs:comment "_:S1 { <p1> . } on { <s> <p0> <o0>; <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/bnode1dot.shex> ;
@@ -2028,7 +2070,7 @@
 
 <#1iriRef1_pass-iri> a sht:ValidationTest ;
     mf:name "1iriRef1_pass-iri" ;
-    sht:trait sht:ShapeReference, sht:NodeKind ;
+    sht:trait sht:ShapeReference , sht:NodeKind ;
     rdfs:comment "<n1> in { <n1> <p1> <n2> . <n2> <p2> \"X\" } as <S1> in <S1> { <p1> IRI @<S2> } <S2> { <p2> . }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2042,7 +2084,7 @@
 
 <#1iriRef1_fail-bnode> a sht:ValidationFailure ;
     mf:name "1iriRef1_fail-bnode" ;
-    sht:trait sht:ShapeReference, sht:NodeKind ;
+    sht:trait sht:ShapeReference , sht:NodeKind ;
     rdfs:comment "<n1> in { <n1> <p1> _:n1 . _:n1 <p2> \"X\" } as <S1> in <S1> { <p1> IRI @<S2> } <S2> { <p2> . }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2055,7 +2097,7 @@
 
 <#1bnodeRef1_fail-iri> a sht:ValidationFailure ;
     mf:name "1bnodeRef1_fail-iri" ;
-    sht:trait sht:ShapeReference, sht:NodeKind ;
+    sht:trait sht:ShapeReference , sht:NodeKind ;
     rdfs:comment "<n1> in { <n1> <p1> <n2> . <n2> <p2> \"X\" } as <S1> in <S1> { <p1> BNODE @<S2> } <S2> { <p2> . }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -2068,7 +2110,7 @@
 
 <#1bnodeRef1_pass-bnode> a sht:ValidationTest ;
     mf:name "1bnodeRef1_pass-bnode" ;
-    sht:trait sht:ShapeReference, sht:NodeKind ;
+    sht:trait sht:ShapeReference , sht:NodeKind ;
     rdfs:comment "<n1> in { <n1> <p1> _:n1 . _:n1 <p2> \"X\" } as <S1> in <S1> { <p1> BNODE @<S2> } <S2> { <p2> . }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -7133,7 +7175,7 @@
 <#1literalPattern_pass-lit-match> a sht:ValidationTest ;
     mf:name "1literalPattern_pass-lit-match" ;
     sht:trait sht:PaternFacet ;
-    rdfs:comment "<S1> { <p1> LITERAL PATTERN \"^ab$\"} on { <s1> <p1> \"ab\" }" ;
+    rdfs:comment "<S1> { <p1> LITERAL PATTERN \"^ab$\" } on { <s1> <p1> \"ab\" }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1literalPattern.shex> ;
@@ -7831,7 +7873,7 @@
       sht:data <p1.ttl> ;
       sht:focus <x>
     ] ;
-    mf:result <open1dotOropen2dotcloseclose_pass_p1.val>
+    mf:result <1dotOr2dot_pass_p1.val>
     .
 
 <#1dotOr2dot_pass_p2p3> a sht:ValidationTest ;
@@ -7877,7 +7919,7 @@
 
 <#open1dotOropen2dotcloseclose_pass_p1> a sht:ValidationTest ;
     mf:name "open1dotOropen2dotcloseclose_pass_p1" ;
-    sht:trait sht:SomeOf  , sht:EachOf-unvisited ;
+    sht:trait sht:SomeOf , sht:EachOf-unvisited ;
     rdfs:comment ":S1 {(:p1 .|(:p2 .,:p3 .))} / { :s1 :p1 \"p1-0\" . }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -7886,7 +7928,7 @@
       sht:data <p1.ttl> ;
       sht:focus <x>
     ] ;
-    mf:result <open1dotOropen2dotcloseclose_pass_p1.val>
+    mf:result <1dotOr2dot_pass_p1.val>
     .
 
 <#open1dotOropen2dotcloseclose_pass_p2p3> a sht:ValidationTest ;
@@ -7905,7 +7947,7 @@
 
 <#open1dotOropen2dotcloseclose_fail_p1p2p3> a sht:ValidationFailure ;
     mf:name "open1dotOropen2dotcloseclose_fail_p1p2p3" ;
-    sht:trait sht:OneOf  , sht:EachOf-unvisited ;
+    sht:trait sht:OneOf , sht:EachOf-unvisited ;
     rdfs:comment ":S1 {(:p1 .|(:p2 .,:p3 .))} / { :s1 :p1 \"p1-0\"; :p2 \"p2-0\"; :p3 \"p3-0\" . }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -7947,7 +7989,7 @@
 
 <#openopen1dotOr1dotclose1dotclose_fail_p1> a sht:ValidationFailure ;
     mf:name "openopen1dotOr1dotclose1dotclose_fail_p1" ;
-    sht:trait sht:SomeOf  , sht:EachOf-unvisited ;
+    sht:trait sht:SomeOf , sht:EachOf-unvisited ;
     rdfs:comment ":S1 { ((:p1 .| :p2 .), :p3 .) } / { <x> :p1 \"p1-0\" . }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -7960,7 +8002,7 @@
 
 <#openopen1dotOr1dotclose1dotclose_fail_p3> a sht:ValidationFailure ;
     mf:name "openopen1dotOr1dotclose1dotclose_fail_p3" ;
-    sht:trait sht:SomeOf  , sht:EachOf ;
+    sht:trait sht:SomeOf , sht:EachOf ;
     rdfs:comment ":S1 { ((:p1 .| :p2 .), :p3 .) } / { <x> :p3 \"p3-0\" . }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -7973,7 +8015,7 @@
 
 <#openopen1dotOr1dotclose1dotclose_fail_p1p2> a sht:ValidationFailure ;
     mf:name "openopen1dotOr1dotclose1dotclose_fail_p1p2" ;
-    sht:trait sht:SomeOf  , sht:EachOf ;
+    sht:trait sht:SomeOf , sht:EachOf ;
     rdfs:comment ":S1 { ((:p1 .| :p2 .), :p3 .) } / { <x> :p1 \"p1-0\"; :p2 \"p2-0\" . }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -8628,7 +8670,7 @@
 
 <#1val2IRIREFExtra1_fail-iri2> a sht:ValidationFailure ;
     mf:name "1val2IRIREFExtra1_fail-iri2" ;
-    sht:trait sht:Extra , sht:ValueSet;
+    sht:trait sht:Extra , sht:ValueSet ;
     rdfs:comment "<S> EXTRA <p1> { <p1> [<o1> <o2>] } on { <s> <p1> <o1>, <o2> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -8712,7 +8754,7 @@
 
 <#1val1IRIREFExtra1Or_pass-iri2> a sht:ValidationTest ;
     mf:name "1val1IRIREFExtra1Or_pass-iri2" ;
-    sht:trait sht:Extra , sht:IriEquivalence , sht:EachOf;
+    sht:trait sht:Extra , sht:IriEquivalence , sht:EachOf ;
     rdfs:comment "<S> EXTRA <p1> { <p0> . | <p1> [<o1>], <p2> .? } on { <s> <p1> <o1>, <o2> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -8767,7 +8809,7 @@
 
 <#3groupdot3Extra_pass-iri1> a sht:ValidationTest ;
     mf:name "3groupdot3Extra_pass-iri1" ;
-    sht:trait sht:Extra , sht:IriEquivalence , sht:EachOf;
+    sht:trait sht:Extra , sht:IriEquivalence , sht:EachOf ;
     rdfs:comment "<S> EXTRA <p1> EXTRA <p2> EXTRA <p3> { <p1> [<o1>], <p2> [<o2>], <p3> [<o3>] } on { <s> <p1> <o1>; <p2> <o2>; <p3> <o3> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -8967,7 +9009,7 @@
 
 <#2eachInclude1_pass> a sht:ValidationTest ;
     mf:name "2eachInclude1_pass" ;
-    sht:trait sht:Include , sht:EachExpression , sht:EachOf ;
+    sht:trait sht:Include , sht:EachOf ;
     rdfs:comment "<S1> { &<S2>, <p1> . } <S2> { <p2> . } on { <n1> <p1> \"X\" ; <p2> \"Y\" }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -8981,7 +9023,7 @@
 
 <#2eachInclude1-after_pass> a sht:ValidationTest ;
     mf:name "2eachInclude1-after_pass" ;
-    sht:trait sht:Include , sht:EachExpression , sht:EachOf ;
+    sht:trait sht:Include , sht:EachOf ;
     rdfs:comment "<S1> { <p1> ., &<S2> } <S2> { <p2> . } on { <n1> <p1> \"X\" ; <p2> \"Y\" }" ;
     mf:status mf:proposed ;
     mf:action [
