@@ -7,22 +7,22 @@
       "rdfs:comment": "ShEx validation tests",
       "entries": [
         {
-          "@id": "#0_other",
+          "@id": "#0_otherbnode",
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/0.shex",
             "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_Io1.ttl",
-            "focus": "http://a.example/s1"
+            "data": "Babcd_Ip1_Io1.ttl",
+            "focus": "_:abcd"
           },
           "extensionResults": [],
-          "name": "0_other",
+          "name": "0_otherbnode",
           "trait": [
             "Empty"
           ],
-          "comment": "<S> {  } on { <s> <p1> <o1> }",
+          "comment": "<S> {  } on { _:abcd <p1> <o1> }",
           "status": "mf:proposed",
-          "result": "0_pass.val"
+          "result": "0abcd_pass.val"
         },
         {
           "@id": "#1dot_fail-empty",
@@ -60,6 +60,24 @@
           "result": "0_dummy.val"
         },
         {
+          "@id": "#0_other",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/0.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "0_other",
+          "trait": [
+            "Empty"
+          ],
+          "comment": "<S> {  } on { <s1> <p1> <o1> }",
+          "status": "mf:proposed",
+          "result": "0_pass.val"
+        },
+        {
           "@id": "#PTstar",
           "@type": "sht:ValidationTest",
           "action": {
@@ -79,7 +97,7 @@
           "result": "PTstar.val"
         },
         {
-          "@id": "#PstarT-greedy",
+          "@id": "#PstarT",
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../validation/apt.shex",
@@ -88,32 +106,13 @@
             "focus": "n"
           },
           "extensionResults": [],
-          "name": "PstarT-greedy",
+          "name": "PstarT",
           "trait": [
-            "Greedy",
             "EachOf"
           ],
           "comment": "<S1> {:a $<P>*, :a $<T>} / { <n> :a <pt1>,  <pt2>,  <p>,  <t>}",
           "status": "mf:proposed",
           "result": "PstarT.val"
-        },
-        {
-          "@id": "#simple-group",
-          "@type": "sht:ValidationTest",
-          "action": {
-            "schema": "../validation/simple-group.shex",
-            "shape": "S",
-            "data": "simple-group.ttl",
-            "focus": "s0"
-          },
-          "extensionResults": [],
-          "name": "simple-group",
-          "trait": [
-            "EachOf"
-          ],
-          "comment": "@@ simple-group",
-          "status": "mf:proposed",
-          "result": "simple-group.val"
         },
         {
           "@id": "#repeated-group",
@@ -531,6 +530,78 @@
           "result": "1dot_pass.val"
         },
         {
+          "@id": "#0focusBNODE_other",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/0focusBNODE.shex",
+            "shape": "http://a.example/S1",
+            "data": "Babcd_Ip1_Io1.ttl",
+            "focus": "_:abcd"
+          },
+          "extensionResults": [],
+          "name": "0focusBNODE_other",
+          "trait": [
+            "Empty"
+          ],
+          "comment": "<S> BNODE {  } on { _:abcd <p1> <o1> }",
+          "status": "mf:proposed",
+          "result": "0abcd_pass.val"
+        },
+        {
+          "@id": "#0focusBNODE_empty",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/0focusBNODE.shex",
+            "shape": "http://a.example/S1",
+            "data": "empty.ttl",
+            "focus": "_:abcd"
+          },
+          "extensionResults": [],
+          "name": "0focusBNODE_empty",
+          "trait": [
+            "Empty"
+          ],
+          "comment": "<S> BNODE {  } on { }",
+          "status": "mf:proposed",
+          "result": "0abcd_pass.val"
+        },
+        {
+          "@id": "#0focusIRI_empty",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/0focusIRI.shex",
+            "shape": "http://a.example/S1",
+            "data": "empty.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "0focusIRI_empty",
+          "trait": [
+            "Empty"
+          ],
+          "comment": "<S> IRI {  } on { }",
+          "status": "mf:proposed",
+          "result": "0_pass.val"
+        },
+        {
+          "@id": "#0focusIRI_other",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/0focusIRI.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "0focusIRI_other",
+          "trait": [
+            "Empty"
+          ],
+          "comment": "<S> IRI {  } on { <s1> <p1> <o1> }",
+          "status": "mf:proposed",
+          "result": "0_pass.val"
+        },
+        {
           "@id": "#open3groupdotclosecard23Annot3Code2-p1p2p3X3",
           "@type": "sht:ValidationTest",
           "action": {
@@ -586,7 +657,7 @@
           "trait": [
             "SemanticAction"
           ],
-          "comment": "%<Test>{print('startAct 1')%} %<Test>{print('startAct 2')%} %<Test>{print('startAct 3')%} <S> { <p1> . } on { <s> <p1> <o1> }",
+          "comment": "%<Test>{print('startAct 1')%} %<Test>{print('startAct 2')%} %<Test>{print('startAct 3')%} <S> { <p1> . } on { <s1> <p1> <o1> }",
           "status": "mf:proposed",
           "result": "startCode3_pass.val"
         },
@@ -609,7 +680,7 @@
           "trait": [
             "SemanticAction"
           ],
-          "comment": "%<Test>{print('startAct')%} <S> { <p1> . } on { <s> <p1> <o1> }",
+          "comment": "%<Test>{print('startAct')%} <S> { <p1> . } on { <s1> <p1> <o1> }",
           "status": "mf:proposed",
           "result": "startCode1_pass.val"
         },
@@ -634,7 +705,7 @@
             "ExternalSemanticAction",
             "SemanticAction"
           ],
-          "comment": "%<Test>% <S> { <p1> . } + %<Test>{print(\"startAct\")%} on { <s> <p1> <o1> }",
+          "comment": "%<Test>% <S> { <p1> . } + %<Test>{print(\"startAct\")%} on { <s1> <p1> <o1> }",
           "status": "mf:proposed",
           "result": "startNoCode1_pass.val"
         },
@@ -657,7 +728,7 @@
           "trait": [
             "SemanticAction"
           ],
-          "comment": "%<Test>{print('startAct')%} <S> { <p1> . } on { <s> <p1> <o1> }",
+          "comment": "%<Test>{print('startAct')%} <S> { <p1> . } on { <s1> <p1> <o1> }",
           "status": "mf:proposed",
           "result": "startCode1_pass.val"
         },
@@ -706,7 +777,7 @@
             "ExternalSemanticAction",
             "SemanticAction"
           ],
-          "comment": "<S> { <p1> . } %<Test>% + %<Test>{ print(o) %} on { <s> <p1> <o1> }",
+          "comment": "<S> { <p1> . } %<Test>% + %<Test>{ print(o) %} on { <s1> <p1> <o1> }",
           "status": "mf:proposed",
           "result": "1dotShapeNoCode1_pass.val"
         },
@@ -729,7 +800,7 @@
           "trait": [
             "SemanticAction"
           ],
-          "comment": "<S> { <p1> . } %<Test>{ print(\"shape action\") %} on { <s> <p1> <o1> }",
+          "comment": "<S> { <p1> . } %<Test>{ print(\"shape action\") %} on { <s1> <p1> <o1> }",
           "status": "mf:proposed",
           "result": "1dotShapeCode1_pass.val"
         },
@@ -752,7 +823,7 @@
           "trait": [
             "SemanticAction"
           ],
-          "comment": "<S> { <p1> . %<Test>{ print(o) %} } on { <s> <p1> <o1> }",
+          "comment": "<S> { <p1> . %<Test>{ print(o) %} } on { <s1> <p1> <o1> }",
           "status": "mf:proposed",
           "result": "1dotCodeWithEscapes1_pass.val"
         },
@@ -785,7 +856,7 @@
             "ExternalSemanticAction",
             "SemanticAction"
           ],
-          "comment": "<S> { <p1> . %<Test#a>% %<Test#b>% %<Test#c>% } + %<Test/#a>{ print(s) %} %<Test/#b>{ print(p) %} %<Test/#c>{ print(o) %} on { <s> <p1> <o1> }",
+          "comment": "<S> { <p1> . %<Test#a>% %<Test#b>% %<Test#c>% } + %<Test/#a>{ print(s) %} %<Test/#b>{ print(p) %} %<Test/#c>{ print(o) %} on { <s1> <p1> <o1> }",
           "status": "mf:proposed",
           "result": "1dotNoCode3_pass.val"
         },
@@ -817,7 +888,7 @@
             "OrderedSemanticActions",
             "SemanticAction"
           ],
-          "comment": "<S> { <p1> . %<Test>{ print(s) %} %<Test>{ print(p) %} %<Test>{ print(o) %} } on { <s> <p1> <o1> }",
+          "comment": "<S> { <p1> . %<Test>{ print(s) %} %<Test>{ print(p) %} %<Test>{ print(o) %} } on { <s1> <p1> <o1> }",
           "status": "mf:proposed",
           "result": "1dotCode3_pass.val"
         },
@@ -840,7 +911,7 @@
           "trait": [
             "SemanticAction"
           ],
-          "comment": "<S> { <p1> . %<Test>{ print(o) %} } on { <s> <p1> <o1> }",
+          "comment": "<S> { <p1> . %<Test>{ print(o) %} } on { <s1> <p1> <o1> }",
           "status": "mf:proposed",
           "result": "1inversedotCode1_pass.val"
         },
@@ -865,7 +936,7 @@
             "ExternalSemanticAction",
             "SemanticAction"
           ],
-          "comment": "<S> { <p1> . %<Test>% } + %<Test>{ print(o) %} on { <s> <p1> <o1> }",
+          "comment": "<S> { <p1> . %<Test>% } + %<Test>{ print(o) %} on { <s1> <p1> <o1> }",
           "status": "mf:proposed",
           "result": "1dotNoCode1_pass.val"
         },
@@ -888,7 +959,7 @@
           "trait": [
             "SemanticAction"
           ],
-          "comment": "<S> { <p1> . %<Test>{ print(o) %} } on { <s> <p1> <o1> }",
+          "comment": "<S> { <p1> . %<Test>{ print(o) %} } on { <s1> <p1> <o1> }",
           "status": "mf:proposed",
           "result": "1dotCode1_pass.val"
         },
@@ -906,7 +977,7 @@
           "trait": [
             "Annotation"
           ],
-          "comment": "<S> { <p1> .; <a1> '1'; <a1> '2'; <a1> '3'; } on { <s> <p1> <o1> }",
+          "comment": "<S> { <p1> .; <a1> '1'; <a1> '2'; <a1> '3'; } on { <s1> <p1> <o1> }",
           "status": "mf:proposed",
           "result": "1inversedotAnnot3_pass.val"
         },
@@ -924,7 +995,7 @@
           "trait": [
             "Annotation"
           ],
-          "comment": "<S> { <p1> .; <a1> '1'; <a1> '2'; <a1> '3'; } on { <s> <p1> <o1> }",
+          "comment": "<S> { <p1> .; <a1> '1'; <a1> '2'; <a1> '3'; } on { <s1> <p1> <o1> }",
           "status": "mf:proposed",
           "result": "1dotAnnot3_pass.val"
         },
@@ -942,7 +1013,7 @@
           "trait": [
             "Annotation"
           ],
-          "comment": "<S> { <p1> .; <annot> 'STRING_LITERAL1' } on { <s> <p1> <o1> }",
+          "comment": "<S> { <p1> .; <annot> 'STRING_LITERAL1' } on { <s1> <p1> <o1> }",
           "status": "mf:proposed",
           "result": "1dotAnnotSTRING_LITERAL1_pass.val"
         },
@@ -960,7 +1031,7 @@
           "trait": [
             "Annotation"
           ],
-          "comment": "<S> { <p1> .; <annot> <IRIREF> } on { <s> <p1> <o1> }",
+          "comment": "<S> { <p1> .; <annot> <IRIREF> } on { <s1> <p1> <o1> }",
           "status": "mf:proposed",
           "result": "1dotAnnotIRIREF_pass.val"
         },
@@ -1277,7 +1348,7 @@
             "VapidExtra",
             "Extra"
           ],
-          "comment": "<S> EXTRA <p1> { <p1> . } on { <s> <p1> <o1> }",
+          "comment": "<S> EXTRA <p1> { <p1> . } on { <s1> <p1> <o1> }",
           "status": "mf:proposed",
           "result": "1dot_pass.val"
         },
@@ -1317,7 +1388,7 @@
             "IriEquivalence",
             "EachOf"
           ],
-          "comment": "<S> EXTRA <p1> { <p0> . | <p1> [<o1>], <p2> .? } on { <s> <p1> <o1> }",
+          "comment": "<S> EXTRA <p1> { <p0> . | <p1> [<o1>], <p2> .? } on { <s1> <p1> <o1> }",
           "status": "mf:proposed",
           "result": "1val1IRIREFExtra1Or_Is1_Ip1_Io1.val"
         },
@@ -1336,7 +1407,7 @@
             "Extra",
             "IriEquivalence"
           ],
-          "comment": "<S> EXTRA <p2> { <p1> [<o1>] } on { <s> <p1> <o1> }",
+          "comment": "<S> EXTRA <p2> { <p1> [<o1>] } on { <s1> <p1> <o1> }",
           "status": "mf:proposed",
           "result": "1val1IRIREFExtra1p2_Is1_Ip1_Io1.val"
         },
@@ -1412,7 +1483,7 @@
             "Extra",
             "IriEquivalence"
           ],
-          "comment": "<S> EXTRA <p1> { <p1> [<o1>] } on { <s> <p1> <o1> }",
+          "comment": "<S> EXTRA <p1> { <p1> [<o1>] } on { <s1> <p1> <o1> }",
           "status": "mf:proposed",
           "result": "1val1IRIREFExtra1_Is1_Ip1_Io1.val"
         },
@@ -1430,7 +1501,7 @@
           "trait": [
             "Closed"
           ],
-          "comment": "<S> CLOSED { <p1> . } on { <s> <p1> <o1> }",
+          "comment": "<S> CLOSED { <p1> . } on { <s1> <p1> <o1> }",
           "status": "mf:proposed",
           "result": "1dot_pass.val"
         },
@@ -2128,7 +2199,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> [.-<v1>~-<v2>~-<v3>~] } on { <s> <p1> <o1> }",
+          "comment": "<S> { <p1> [.-<v1>~-<v2>~-<v3>~] } on { <s1> <p1> <o1> }",
           "status": "mf:proposed",
           "result": "1val1dotMinusiriStem3_pass.val"
         },
@@ -2146,7 +2217,7 @@
           "trait": [
             "ValueSet"
           ],
-          "comment": "$<vs1> = [.-<v1>-<v2>-<v3>] <S> { <p1> $<vs1> } on { <s> <p1> <o1> }",
+          "comment": "$<vs1> = [.-<v1>-<v2>-<v3>] <S> { <p1> $<vs1> } on { <s1> <p1> <o1> }",
           "status": "mf:proposed",
           "result": "1val1refvsMinusiri3_pass.val"
         },
@@ -2164,7 +2235,7 @@
           "trait": [
             "ValueSet"
           ],
-          "comment": "<S> { <p1> [.-<v1>-<v2>-<v3>] } on { <s> <p1> <o1> }",
+          "comment": "<S> { <p1> [.-<v1>-<v2>-<v3>] } on { <s1> <p1> <o1> }",
           "status": "mf:proposed",
           "result": "1val1dotMinusiri3_pass.val"
         },
@@ -5940,7 +6011,7 @@
           "trait": [
             "TriplePattern"
           ],
-          "comment": "<S> { <p1> . } on { <s> <p1> <o1> }",
+          "comment": "<S> { <p1> . } on { <sr> <p1> <o1> }",
           "status": "mf:proposed",
           "result": "1inversedot_pass.val"
         },
@@ -6049,7 +6120,7 @@
           "trait": [
             "TriplePattern"
           ],
-          "comment": "PREFIX : <http://a.example/> :S1 { :p1 . } on { <s> <p1> <o1> }",
+          "comment": "PREFIX : <http://a.example/> :S1 { :p1 . } on { <s1> <p1> <o1> }",
           "status": "mf:proposed",
           "result": "1dot_pass.val"
         },
@@ -6067,7 +6138,7 @@
           "trait": [
             "TriplePattern"
           ],
-          "comment": "PREFIX ex: <http://a.example/> ex:S1 { ex:p1/*comment*/ . } on { <s> <p1> <o1> }",
+          "comment": "PREFIX ex: <http://a.example/> ex:S1 { ex:p1/*comment*/ . } on { <s1> <p1> <o1> }",
           "status": "mf:proposed",
           "result": "1dot_pass.val"
         },
@@ -6085,7 +6156,7 @@
           "trait": [
             "TriplePattern"
           ],
-          "comment": "PREFIX S1: <http://a.example/S1> PREFIX p1: <http://a.example/p1> S1: { p1:/*comment*/ . } on { <s> <p1> <o1> }",
+          "comment": "PREFIX S1: <http://a.example/S1> PREFIX p1: <http://a.example/p1> S1: { p1:/*comment*/ . } on { <s1> <p1> <o1> }",
           "status": "mf:proposed",
           "result": "1dot_pass.val"
         },
@@ -6103,7 +6174,7 @@
           "trait": [
             "TriplePattern"
           ],
-          "comment": "PREFIX S1: <http://a.example/S1> PREFIX p1: <http://a.example/p1> S1: { p1: . } on { <s> <p1> <o1> }",
+          "comment": "PREFIX S1: <http://a.example/S1> PREFIX p1: <http://a.example/p1> S1: { p1: . } on { <s1> <p1> <o1> }",
           "status": "mf:proposed",
           "result": "1dot_pass.val"
         },
@@ -6121,7 +6192,7 @@
           "trait": [
             "TriplePattern"
           ],
-          "comment": "PREFIX ex: <http://a.example/> ex:S1 { ex:p1 . } on { <s> <p1> <o1> }",
+          "comment": "PREFIX ex: <http://a.example/> ex:S1 { ex:p1 . } on { <s1> <p1> <o1> }",
           "status": "mf:proposed",
           "result": "1dot_pass.val"
         },
@@ -6139,7 +6210,7 @@
           "trait": [
             "TriplePattern"
           ],
-          "comment": "PREFIX : <http://a.example/> <S> { :p1 ., } on { <s> <p1> <o1> }",
+          "comment": "PREFIX : <http://a.example/> <S> { :p1 ., } on { <s1> <p1> <o1> }",
           "status": "mf:proposed",
           "result": "1dot_pass.val"
         },
@@ -6157,7 +6228,7 @@
           "trait": [
             "TriplePattern"
           ],
-          "comment": "<S> { <p1> . } on { <s> <p1> <o1> }",
+          "comment": "<S> { <p1> . } on { <s1> <p1> <o1> }",
           "status": "mf:proposed",
           "result": "1dot_pass.val"
         },
@@ -6175,7 +6246,7 @@
           "trait": [
             "TriplePattern"
           ],
-          "comment": "<S> { <p1> . } on { <s> <p1> <o1> }",
+          "comment": "<S> { <p1> . } on { <s1> <p1> <o1> }",
           "status": "mf:proposed",
           "result": "1dot_pass.val"
         },
@@ -6197,24 +6268,6 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#PstarT",
-          "@type": "sht:ValidationTest",
-          "action": {
-            "schema": "../validation/apt.shex",
-            "shape": "S1",
-            "data": "apt.ttl",
-            "focus": "n"
-          },
-          "extensionResults": [],
-          "name": "PstarT",
-          "trait": [
-            "EachOf"
-          ],
-          "comment": "<S1> {:a $<P>*, :a $<T>} / { <n> :a <pt1>,  <pt2>,  <p>,  <t>}",
-          "status": "mf:proposed",
-          "result": "PstarT.val"
-        },
-        {
           "@id": "#1dot_fail-missing",
           "@type": "sht:ValidationFailure",
           "action": {
@@ -6230,6 +6283,24 @@
           ],
           "comment": "<S> { <p1> . } on { <s> <p2> <o1> }",
           "status": "mf:proposed"
+        },
+        {
+          "@id": "#simple-group",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../validation/simple-group.shex",
+            "shape": "S",
+            "data": "simple-group.ttl",
+            "focus": "s0"
+          },
+          "extensionResults": [],
+          "name": "simple-group",
+          "trait": [
+            "EachOf"
+          ],
+          "comment": "@@ simple-group",
+          "status": "mf:proposed",
+          "result": "simple-group.val"
         },
         {
           "@id": "#1dot-base_fail-missing",
@@ -6264,6 +6335,23 @@
             "TriplePattern"
           ],
           "comment": "<S> { <p1> . } on { <s> <p2> <o1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1inversedot_fail-empty",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1inversedot.shex",
+            "shape": "http://a.example/S1",
+            "data": "empty.ttl",
+            "focus": "http://a.example/o1"
+          },
+          "extensionResults": [],
+          "name": "1inversedot_fail-empty",
+          "trait": [
+            "TriplePattern"
+          ],
+          "comment": "<S> { <p1> . } on {  }",
           "status": "mf:proposed"
         },
         {
@@ -6684,6 +6772,74 @@
           "status": "mf:proposed"
         },
         {
+          "@id": "#0focusBNODE_other_fail-iriFocusLabel",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/0focusBNODE.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "0focusBNODE_other_fail-iriFocusLabel",
+          "trait": [
+            "Empty"
+          ],
+          "comment": "<S> BNODE {  } on { }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#0focusBNODE_empty_fail-iriFocusLabel",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/0focusBNODE.shex",
+            "shape": "http://a.example/S1",
+            "data": "empty.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "0focusBNODE_empty_fail-iriFocusLabel",
+          "trait": [
+            "Empty"
+          ],
+          "comment": "<S> BNODE {  } on { }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#0focusIRI_empty_fail-bnodeFocusLabel",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/0focusIRI.shex",
+            "shape": "http://a.example/S1",
+            "data": "empty.ttl",
+            "focus": "_:s1"
+          },
+          "extensionResults": [],
+          "name": "0focusIRI_empty_fail-bnodeFocusLabel",
+          "trait": [
+            "Empty"
+          ],
+          "comment": "<S> IRI {  } on { }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#0focusIRI_other_fail-bnodeFocusLabel",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/0focusIRI.shex",
+            "shape": "http://a.example/S1",
+            "data": "Babcd_Ip1_Io1.ttl",
+            "focus": "_:abcd"
+          },
+          "extensionResults": [],
+          "name": "0focusIRI_other_fail-bnodeFocusLabel",
+          "trait": [
+            "Empty"
+          ],
+          "comment": "<S> IRI {  } on { }",
+          "status": "mf:proposed"
+        },
+        {
           "@id": "#startCode3fail_abort",
           "@type": "sht:ValidationFailure",
           "action": {
@@ -6697,7 +6853,7 @@
           "trait": [
             "SemanticAction"
           ],
-          "comment": "%<Test>{print('startAct 1')%} %<Test>{ fail('startAct 2') %} %<Test>{print('startAct 3')%} <S> { <p1> . } on { <s> <p1> <o1> }",
+          "comment": "%<Test>{print('startAct 1')%} %<Test>{ fail('startAct 2') %} %<Test>{print('startAct 3')%} <S> { <p1> . } on { <s1> <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -6719,7 +6875,7 @@
           "trait": [
             "SemanticAction"
           ],
-          "comment": "%<Test>{ fail('startAct') %} <S> { <p1> . } on { <s> <p1> <o1> }",
+          "comment": "%<Test>{ fail('startAct') %} <S> { <p1> . } on { <s1> <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -6741,7 +6897,7 @@
           "trait": [
             "SemanticAction"
           ],
-          "comment": "%<Test>{ fail('startAct') %} <S> { <p1> . } on { <s> <p1> <o1> }",
+          "comment": "%<Test>{ fail('startAct') %} <S> { <p1> . } on { <s1> <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -6758,7 +6914,7 @@
           "trait": [
             "SemanticAction"
           ],
-          "comment": "<S> { <p1> . %<Test>{ print(s) %}%<Test>{ fail(s) %}%<Test>{ print(o) %} } on { <s> <p1> <o1> }",
+          "comment": "<S> { <p1> . %<Test>{ print(s) %}%<Test>{ fail(s) %}%<Test>{ print(o) %} } on { <s1> <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -11545,7 +11701,7 @@
           "trait": [
             "Datatype"
           ],
-          "comment": "<S> { <p1> <dt1> } on <s> in { <s> <p1> <o1> }",
+          "comment": "<S> { <p1> <dt1> } on <s> in { <s1> <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -11732,7 +11888,7 @@
           "trait": [
             "TriplePattern"
           ],
-          "comment": "<S> { !<p1> . } on { <s> <p1> <o1> }",
+          "comment": "<S> { !<p1> . } on { <s1> <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -11783,7 +11939,7 @@
           "trait": [
             "TriplePattern"
           ],
-          "comment": "<S> { !<p1> . } on { <s> <p1> <o1> }",
+          "comment": "<S> { !<p1> . } on { <s1> <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -11804,21 +11960,23 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#1inversedot_fail-empty",
-          "@type": "sht:ValidationFailure",
+          "@id": "#PstarT-greedy",
+          "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/1inversedot.shex",
-            "shape": "http://a.example/S1",
-            "data": "empty.ttl",
-            "focus": "http://a.example/o1"
+            "schema": "../validation/apt.shex",
+            "shape": "S1",
+            "data": "apt.ttl",
+            "focus": "n"
           },
           "extensionResults": [],
-          "name": "1inversedot_fail-empty",
+          "name": "PstarT-greedy",
           "trait": [
-            "TriplePattern"
+            "Greedy",
+            "EachOf"
           ],
-          "comment": "<S> { <p1> . } on {  }",
-          "status": "mf:proposed"
+          "comment": "<S1> {:a $<P>*, :a $<T>} / { <n> :a <pt1>,  <pt2>,  <p>,  <t>}",
+          "status": "mf:proposed",
+          "result": "PstarT.val"
         },
         {
           "@id": "#PTstar-greedy-fail",
