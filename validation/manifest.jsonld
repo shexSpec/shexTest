@@ -128,7 +128,7 @@
           "trait": [
             "EachOf"
           ],
-          "comment": "@@ repeated-group",
+          "comment": "<S> { ( :a ., :b . ){2,5}, :c . }",
           "status": "mf:proposed",
           "result": "repeated-group.val"
         },
@@ -146,7 +146,7 @@
           "trait": [
             "EachOf"
           ],
-          "comment": "@@ skipped",
+          "comment": "<S> { ( :a ., :b . )?, :c . } on { <x> :c 1 }",
           "status": "mf:proposed",
           "result": "skipped.val"
         },
@@ -5597,7 +5597,7 @@
           "trait": [
             "DotCardinality"
           ],
-          "comment": "<S> { <p1> .+ } on { <s> <p1> 'a' }",
+          "comment": "<S> { <p1> .? } on { <s> <p1> 'a' }",
           "status": "mf:proposed",
           "result": "1cardOpt_pass1.val"
         },
@@ -5615,7 +5615,7 @@
           "trait": [
             "DotCardinality"
           ],
-          "comment": "<S> { <p1> .+ } on {  }",
+          "comment": "<S> { <p1> .? } on {  }",
           "status": "mf:proposed",
           "result": "1cardOpt_pass0.val"
         },
@@ -11274,7 +11274,7 @@
           "trait": [
             "ShapeReference"
           ],
-          "comment": "<n2> in { <n1> <p1> <n2>, <n3> . <n2> <p2> \"X\" . <n3> <p2> \"X\" } as <S1> in <S1> { <p1> { <p2> . } }",
+          "comment": "<S1> { <p1> { <p2> . } } on { <n1> <p1> <n2>, <n3> . <n2> <p2> \"X\" . <n3> <p2> \"X\" }",
           "status": "mf:proposed"
         },
         {
@@ -11514,7 +11514,7 @@
           "trait": [
             "DotCardinality"
           ],
-          "comment": "<S> { <p1> .+ } on { <s> <p1> 'a','b','c','d','e','f' }",
+          "comment": "<S> { <p1> .? } on { <s> <p1> 'a','b','c','d','e','f' }",
           "status": "mf:proposed"
         },
         {
@@ -11531,7 +11531,7 @@
           "trait": [
             "DotCardinality"
           ],
-          "comment": "<S> { <p1> .+ } on { <s> <p1> 'a','b' }",
+          "comment": "<S> { <p1> .? } on { <s> <p1> 'a','b' }",
           "status": "mf:proposed"
         },
         {

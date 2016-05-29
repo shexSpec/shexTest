@@ -9,6 +9,16 @@
         "type": "eachOfSolution",
         "expressions": [
           {
+            "type": "tripleConstraintSolutions",
+            "min": 0,
+            "max": "*",
+            "predicate": "http://a.example/a",
+            "valueExpr": {
+              "type": "ValueClass"
+            },
+            "solutions": []
+          },
+          {
             "type": "someOfSolutions",
             "solutions":[
               {

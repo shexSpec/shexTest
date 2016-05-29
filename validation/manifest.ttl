@@ -1731,7 +1731,7 @@
 <#1cardOpt_pass0> a sht:ValidationTest ;
     mf:name "1cardOpt_pass0" ;
     sht:trait sht:DotCardinality ;
-    rdfs:comment "<S> { <p1> .+ } on {  }" ;
+    rdfs:comment "<S> { <p1> .? } on {  }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1cardOpt.shex> ;
@@ -1745,7 +1745,7 @@
 <#1cardOpt_pass1> a sht:ValidationTest ;
     mf:name "1cardOpt_pass1" ;
     sht:trait sht:DotCardinality ;
-    rdfs:comment "<S> { <p1> .+ } on { <s> <p1> 'a' }" ;
+    rdfs:comment "<S> { <p1> .? } on { <s> <p1> 'a' }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1cardOpt.shex> ;
@@ -1759,7 +1759,7 @@
 <#1cardOpt_fail2> a sht:ValidationFailure ;
     mf:name "1cardOpt_fail2" ;
     sht:trait sht:DotCardinality ;
-    rdfs:comment "<S> { <p1> .+ } on { <s> <p1> 'a','b' }" ;
+    rdfs:comment "<S> { <p1> .? } on { <s> <p1> 'a','b' }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1cardOpt.shex> ;
@@ -1772,7 +1772,7 @@
 <#1cardOpt_pass6> a sht:ValidationFailure ;
     mf:name "1cardOpt_pass6" ;
     sht:trait sht:DotCardinality ;
-    rdfs:comment "<S> { <p1> .+ } on { <s> <p1> 'a','b','c','d','e','f' }" ;
+    rdfs:comment "<S> { <p1> .? } on { <s> <p1> 'a','b','c','d','e','f' }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1cardOpt.shex> ;
@@ -2224,7 +2224,7 @@
 <#1dotInline1_overReferrer,overReferent> a sht:ValidationFailure ;
     mf:name "1dotInline1_overReferrer,overReferent" ;
     sht:trait sht:ShapeReference ;
-    rdfs:comment "<n2> in { <n1> <p1> <n2>, <n3> . <n2> <p2> \"X\" . <n3> <p2> \"X\" } as <S1> in <S1> { <p1> { <p2> . } }" ;
+    rdfs:comment "<S1> { <p1> { <p2> . } } on { <n1> <p1> <n2>, <n3> . <n2> <p2> \"X\" . <n3> <p2> \"X\" }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1dotInline1.shex> ;
@@ -10275,7 +10275,7 @@
 <#skipped> a sht:ValidationTest ;
     mf:name "skipped" ;
     sht:trait sht:EachOf ;
-    rdfs:comment "@@ skipped" ;
+    rdfs:comment "<S> { ( :a ., :b . )?, :c . } on { <x> :c 1 }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../validation/skipped.shex> ;
@@ -10289,7 +10289,7 @@
 <#repeated-group> a sht:ValidationTest ;
     mf:name "repeated-group" ;
     sht:trait sht:EachOf ;
-    rdfs:comment "@@ repeated-group" ;
+    rdfs:comment "<S> { ( :a ., :b . ){2,5}, :c . }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../validation/repeated-group.shex> ;
@@ -10414,7 +10414,7 @@
     mf:result <1dot_empty.val>
     .
 
-<#2dot_fail-empty-err> a sht:ValidationFailure ;
+<#2dot_fail-empty-err> a sht:ValidationFailure ; # 2dot_fail-missing-err
     mf:name "2dot_fail-empty-err" ;
     sht:trait sht:ErrorReport ;
     rdfs:comment "<S> { <p1> ., <p2> . } on { <s> <p1> <o1> }" ;
