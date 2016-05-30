@@ -1506,6 +1506,24 @@
           "result": "1dot_pass.val"
         },
         {
+          "@id": "#1val1vShapeANDRef3_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1val1vShapeANDRef3.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Labab.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1vShapeANDRef3_pass",
+          "trait": [
+            "AndShapeShapeession"
+          ],
+          "comment": "<S1> { <p1> minlength 4 } AND { <p1> maxlength 5 } AND { <p1> pattern '^(ab)+' } on { <s1> <p1> 'abab' }",
+          "status": "mf:proposed",
+          "result": "1val1vShapeANDRef3_pass.val"
+        },
+        {
           "@id": "#1val1vExprOR3_passvc1vc2vc3",
           "@type": "sht:ValidationTest",
           "action": {

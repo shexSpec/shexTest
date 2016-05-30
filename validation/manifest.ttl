@@ -630,6 +630,10 @@
         <#1val1vExprOR3_passvc3>
         <#1val1vExprOR3_passvc1vc2vc3>
 
+## shape expressions
+###   AND shapeExpr
+        <#1val1vShapeANDRef3_pass>
+
 ## closed
         <#1dotClosed_pass>
         <#1dotClosed_fail_lower>
@@ -8623,6 +8627,25 @@
 
 ###   } OR valueExpr
 ## } value expressions
+## shape expressions {
+###   AND shapeExpr {
+
+<#1val1vShapeANDRef3_pass> a sht:ValidationTest ;
+    mf:name "1val1vShapeANDRef3_pass" ;
+    sht:trait sht:AndShapeShapeession ;
+    rdfs:comment "<S1> { <p1> minlength 4 } AND { <p1> maxlength 5 } AND { <p1> pattern '^(ab)+' } on { <s1> <p1> 'abab' }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1vShapeANDRef3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Labab.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1val1vShapeANDRef3_pass.val>
+    .
+
+###   } AND shapeExpr
+## } shape expressions
 ## closed {
 
 <#1dotClosed_pass> a sht:ValidationTest ;
