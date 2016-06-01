@@ -96,7 +96,7 @@
           "result": "0abcd_pass.val"
         },
         {
-          "@id": "#PstarT-greedy",
+          "@id": "#PstarT",
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../validation/apt.shex",
@@ -105,9 +105,8 @@
             "focus": "n"
           },
           "extensionResults": [],
-          "name": "PstarT-greedy",
+          "name": "PstarT",
           "trait": [
-            "Greedy",
             "EachOf"
           ],
           "comment": "<S1> {:a $<P>*, :a $<T>} / { <n> :a <pt1>,  <pt2>,  <p>,  <t>}",
@@ -1505,6 +1504,24 @@
           "comment": "<S> CLOSED { <p1> . } on { <s1> <p1> <o1> }",
           "status": "mf:proposed",
           "result": "1dot_pass.val"
+        },
+        {
+          "@id": "#1val1vShapeANDRef3_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1val1vShapeANDRef3.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Labab.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1vShapeANDRef3_pass",
+          "trait": [
+            "AndShapeShapeession"
+          ],
+          "comment": "<S1> { <p1> minlength 4 } AND { <p1> maxlength 5 } AND { <p1> pattern '^(ab)+' } on { <s1> <p1> 'abab' }",
+          "status": "mf:proposed",
+          "result": "1val1vShapeANDRef3_pass.val"
         },
         {
           "@id": "#open3groupdotclosecard23_pass-p1p2p3X3",
@@ -6460,23 +6477,6 @@
           "result": "1dot_pass.val"
         },
         {
-          "@id": "#1dot_fail-missing",
-          "@type": "sht:ValidationFailure",
-          "action": {
-            "schema": "../schemas/1dot.shex",
-            "shape": "http://a.example/S1",
-            "data": "Is1_Ip2_Io1.ttl",
-            "focus": "http://a.example/s1"
-          },
-          "extensionResults": [],
-          "name": "1dot_fail-missing",
-          "trait": [
-            "TriplePattern"
-          ],
-          "comment": "<S> { <p1> . } on { <s> <p2> <o1> }",
-          "status": "mf:proposed"
-        },
-        {
           "@id": "#repeated-group",
           "@type": "sht:ValidationTest",
           "action": {
@@ -6493,6 +6493,23 @@
           "comment": "<S> { ( :a ., :b . ){2,5}, :c . }",
           "status": "mf:proposed",
           "result": "repeated-group.val"
+        },
+        {
+          "@id": "#1dot_fail-missing",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1dot.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip2_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1dot_fail-missing",
+          "trait": [
+            "TriplePattern"
+          ],
+          "comment": "<S> { <p1> . } on { <s> <p2> <o1> }",
+          "status": "mf:proposed"
         },
         {
           "@id": "#1dot-base_fail-missing",
@@ -12278,7 +12295,7 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#PstarT",
+          "@id": "#PstarT-greedy",
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../validation/apt.shex",
@@ -12287,8 +12304,9 @@
             "focus": "n"
           },
           "extensionResults": [],
-          "name": "PstarT",
+          "name": "PstarT-greedy",
           "trait": [
+            "Greedy",
             "EachOf"
           ],
           "comment": "<S1> {:a $<P>*, :a $<T>} / { <n> :a <pt1>,  <pt2>,  <p>,  <t>}",
