@@ -1,4 +1,8 @@
 # -*- mode: n3; outline-regexp: "[#]+ "; -*-
+# handy bits from outline mode:
+#   C-c @ C-l	hide-leaves - on prefixes, entries, definitions
+#   C-c @ C-s	show-subtree - on anything you're hacking
+#  Note that incremental search opens leaves for the duration of the search.
 
 # prefixes
 @prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -629,6 +633,27 @@
         <#1val1vExprOR3_passvc2>
         <#1val1vExprOR3_passvc3>
         <#1val1vExprOR3_passvc1vc2vc3>
+
+## repetitions
+	<#open3Ordotclosecard2_fail-p1>
+	<#open3Ordotclosecard2_pass-p1X2> #
+	<#open3Ordotclosecard2_fail-p1X3>
+	<#open3Ordotclosecard2_fail-p1X4>
+	<#open3Ordotclosecard2_pass-p1p2>
+	<#open3Ordotclosecard2_pass-p1p3>
+	<#open3Ordotclosecard2_pass-p2p3>
+	<#open3Ordotclosecard2_fail-p1p2p3> #
+
+	<#open3Ordotclosecard23_fail-p1>
+	<#open3Ordotclosecard23_pass-p1X2> #
+	<#open3Ordotclosecard23_pass-p1X3> #
+	<#open3Ordotclosecard23_fail-p1X4>
+	<#open3Ordotclosecard23_pass-p1p2>
+	<#open3Ordotclosecard23_pass-p1p3>
+	<#open3Ordotclosecard23_pass-p2p3>
+	<#open3Ordotclosecard23_pass-p1p2p3>
+	<#open4Ordotclosecard23_fail-p1p2p3p4> #
+	<#open3groupdotclosecard23_pass-p1p2p3X3>
 
 ## closed
         <#1dotClosed_pass>
@@ -8623,6 +8648,256 @@
 
 ###   } OR valueExpr
 ## } value expressions
+## repetitions {
+
+ # sht:RepeatedGroup e.g. <S> { (:fname .; :lname .){2} }
+
+<#open3Ordotclosecard2_fail-p1> a sht:ValidationFailure ;
+    mf:name "open3Ordotclosecard2_fail-p1" ;
+    sht:trait sht:EachOf , sht:RepeatedSomeOf ;
+    rdfs:comment "<S1> { ( <p1> .| <p2> .| <p3> . ){2} } / { <s> <p1> \"p1-0\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/open3Ordotclosecard2.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <p1.ttl> ;
+      sht:focus <x>
+    ]
+    .
+
+<#open3Ordotclosecard2_pass-p1X2> a sht:ValidationTest ;
+    mf:name "open3Ordotclosecard2_pass-p1X2" ;
+    sht:trait sht:EachOf , sht:RepeatedSomeOf ;
+    rdfs:comment "<S1> { ( <p1> .| <p2> .| <p3> . ){2} } / { <s> <p1> \"p1-n\" }X2" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/open3Ordotclosecard2.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <p1X2.ttl> ;
+      sht:focus <x>
+    ] ;
+    mf:result <open3Ordotclosecard2-p1X2.val>
+    .
+
+<#open3Ordotclosecard2_fail-p1X3> a sht:ValidationFailure ;
+    mf:name "open3Ordotclosecard2_fail-p1X3" ;
+    sht:trait sht:EachOf , sht:RepeatedSomeOf ;
+    rdfs:comment "<S1> { ( <p1> .| <p2> .| <p3> . ){2} } / { <s> <p1> \"p1-n\" }X3" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/open3Ordotclosecard2.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <p1X3.ttl> ;
+      sht:focus <x>
+    ]
+    .
+
+<#open3Ordotclosecard2_fail-p1X4> a sht:ValidationFailure ;
+    mf:name "open3Ordotclosecard2_fail-p1X4" ;
+    sht:trait sht:EachOf , sht:RepeatedSomeOf ;
+    rdfs:comment "<S1> { ( <p1> .| <p2> .| <p3> . ){2} } / { <s> <p1> \"p1-n\" }X4" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/open3Ordotclosecard2.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <p1X4.ttl> ;
+      sht:focus <x>
+    ]
+    .
+
+<#open3Ordotclosecard2_pass-p1p2> a sht:ValidationTest ;
+    mf:name "open3Ordotclosecard2_pass-p1p2" ;
+    sht:trait sht:EachOf , sht:RepeatedSomeOf ;
+    rdfs:comment "<S1> { ( <p1> .| <p2> .| <p3> . ){2} } / { <s> <p1> \"p1-0\"; <p2> \"p2-0\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/open3Ordotclosecard2.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <p1p2.ttl> ;
+      sht:focus <x>
+    ] ;
+    mf:result <open3Ordotclosecard2-p1p2.val>
+    .
+
+<#open3Ordotclosecard2_pass-p1p3> a sht:ValidationTest ;
+    mf:name "open3Ordotclosecard2_pass-p1p3" ;
+    sht:trait sht:EachOf , sht:RepeatedSomeOf ;
+    rdfs:comment "<S1> { ( <p1> .| <p2> .| <p3> . ){2} } / { <s> <p1> \"p1-0\"; <p3> \"p3-0\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/open3Ordotclosecard2.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <p1p3.ttl> ;
+      sht:focus <x>
+    ] ;
+    mf:result <open3Ordotclosecard2-p1p3.val>
+    .
+
+<#open3Ordotclosecard2_pass-p2p3> a sht:ValidationTest ;
+    mf:name "open3Ordotclosecard2_pass-p2p3" ;
+    sht:trait sht:EachOf , sht:RepeatedSomeOf ;
+    rdfs:comment "<S1> { ( <p1> .| <p2> .| <p3> . ){2} } / { <s> <p2> \"p2-0\"; <p3> \"p3-0\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/open3Ordotclosecard2.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <p2p3.ttl> ;
+      sht:focus <x>
+    ] ;
+    mf:result <open3Ordotclosecard2-p2p3.val>
+    .
+
+<#open3Ordotclosecard2_fail-p1p2p3> a sht:ValidationFailure ;
+    mf:name "open3Ordotclosecard2_fail-p1p2p3" ;
+    sht:trait sht:EachOf , sht:RepeatedSomeOf ;
+    rdfs:comment "<S1> { ( <p1> .| <p2> .| <p3> . ){2} } / { <s> <p1> \"p1-0\"; <p2> \"p2-0\"; <p3> \"p3-0\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/open3Ordotclosecard2.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <p1p2p3.ttl> ;
+      sht:focus <x>
+    ]
+    .
+
+<#open3Ordotclosecard23_fail-p1> a sht:ValidationFailure ;
+    mf:name "open3Ordotclosecard23_fail-p1" ;
+    sht:trait sht:EachOf , sht:RepeatedSomeOf ;
+    rdfs:comment "<S1> { ( <p1> .| <p2> .| <p3> . ){2,3} } / { <s> <p1> \"p1-0\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/open3Ordotclosecard23.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <p1.ttl> ;
+      sht:focus <x>
+    ]
+    .
+
+<#open3Ordotclosecard23_pass-p1X2> a sht:ValidationTest ;
+    mf:name "open3Ordotclosecard23_pass-p1X2" ;
+    sht:trait sht:EachOf , sht:RepeatedSomeOf ;
+    rdfs:comment "<S1> { ( <p1> .| <p2> .| <p3> . ){2,3} } / { <s> <p1> \"p1-n\" }X2" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/open3Ordotclosecard23.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <p1X2.ttl> ;
+      sht:focus <x>
+    ] ;
+    mf:result <open3Ordotclosecard23-p1X2.val>
+    .
+
+<#open3Ordotclosecard23_pass-p1X3> a sht:ValidationTest ;
+    mf:name "open3Ordotclosecard23_pass-p1X3" ;
+    sht:trait sht:EachOf , sht:RepeatedSomeOf ;
+    rdfs:comment "<S1> { ( <p1> .| <p2> .| <p3> . ){2,3} } / { <s> <p1> \"p1-n\" }X3" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/open3Ordotclosecard23.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <p1X3.ttl> ;
+      sht:focus <x>
+    ] ;
+    mf:result <open3Ordotclosecard23-p1X3.val>
+    .
+
+<#open3Ordotclosecard23_fail-p1X4> a sht:ValidationFailure ;
+    mf:name "open3Ordotclosecard23_fail-p1X4" ;
+    sht:trait sht:EachOf , sht:RepeatedSomeOf ;
+    rdfs:comment "<S1> { ( <p1> .| <p2> .| <p3> . ){2,3} } / { <s> <p1> \"p1-n\" }X4" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/open3Ordotclosecard23.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <p1X4.ttl> ;
+      sht:focus <x>
+    ]
+    .
+
+<#open3Ordotclosecard23_pass-p1p2> a sht:ValidationTest ;
+    mf:name "open3Ordotclosecard23_pass-p1p2" ;
+    sht:trait sht:EachOf , sht:RepeatedSomeOf ;
+    rdfs:comment "<S1> { ( <p1> .| <p2> .| <p3> . ){2,3} } / { <s> <p1> \"p1-0\"; <p2> \"p2-0\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/open3Ordotclosecard23.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <p1p2.ttl> ;
+      sht:focus <x>
+    ] ;
+    mf:result <open3Ordotclosecard23-p1p2.val>
+    .
+
+<#open3Ordotclosecard23_pass-p1p3> a sht:ValidationTest ;
+    mf:name "open3Ordotclosecard23_pass-p1p3" ;
+    sht:trait sht:EachOf , sht:RepeatedSomeOf ;
+    rdfs:comment "<S1> { ( <p1> .| <p2> .| <p3> . ){2,3} } / { <s> <p1> \"p1-0\"; <p3> \"p3-0\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/open3Ordotclosecard23.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <p1p3.ttl> ;
+      sht:focus <x>
+    ] ;
+    mf:result <open3Ordotclosecard23-p1p3.val>
+    .
+
+<#open3Ordotclosecard23_pass-p2p3> a sht:ValidationTest ;
+    mf:name "open3Ordotclosecard23_pass-p2p3" ;
+    sht:trait sht:EachOf , sht:RepeatedSomeOf ;
+    rdfs:comment "<S1> { ( <p1> .| <p2> .| <p3> . ){2,3} } / { <s> <p2> \"p2-0\"; <p3> \"p3-0\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/open3Ordotclosecard23.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <p2p3.ttl> ;
+      sht:focus <x>
+    ] ;
+    mf:result <open3Ordotclosecard23-p2p3.val>
+    .
+
+<#open3Ordotclosecard23_pass-p1p2p3> a sht:ValidationTest ;
+    mf:name "open3Ordotclosecard23_pass-p1p2p3" ;
+    sht:trait sht:EachOf , sht:RepeatedSomeOf ;
+    rdfs:comment "<S1> { ( <p1> .| <p2> .| <p3> . ){2,3} } / { <s> <p1> \"p1-0\"; <p2> \"p2-0\"; <p3> \"p3-0\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/open3Ordotclosecard23.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <p1p2p3.ttl> ;
+      sht:focus <x>
+    ] ;
+    mf:result <open3Ordotclosecard23-p1p2p3.val>
+    .
+
+<#open4Ordotclosecard23_fail-p1p2p3p4> a sht:ValidationFailure ;
+    mf:name "open4Ordotclosecard23_fail-p1p2p3p4" ;
+    sht:trait sht:EachOf , sht:RepeatedSomeOf ;
+    rdfs:comment "<S1> { ( <p1> .| <p2> .| <p3> .| <p4> . ){2,3} } / { <s> <p1> \"p1-n\"; <p2> \"p2-n\"; <p3> \"p3-n\" ; <p4> \"p4-n\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/open4Ordotclosecard23.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <p1p2p3p4.ttl> ;
+      sht:focus <x>
+    ]
+    .
+
+<#open3groupdotclosecard23_pass-p1p2p3X3> a sht:ValidationTest ;
+    mf:name "open3groupdotclosecard23_pass-p1p2p3X3" ;
+    sht:trait sht:EachOf , sht:RepeatedGroup ;
+    rdfs:comment "<S1> { ( <p1> .; <p2> .; <p3> . ){2,3} } / { <s> <p1> \"p1-n\"; <p2> \"p2-n\"; <p3> \"p3-n\" }X3" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/open3groupdotclosecard23.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <p1p2p3X3.ttl> ;
+      sht:focus <x>
+    ] ;
+    mf:result <open3groupdotclosecard23-p1p2p3X3.val>
+    .
+
+## } repetitions
 ## closed {
 
 <#1dotClosed_pass> a sht:ValidationTest ;
@@ -9551,8 +9826,8 @@
 ## annotations + semantic actions {
 <#open3groupdotclosecard23Annot3Code2-p1p2p3X3> a sht:ValidationTest ;
     mf:name "open3groupdotclosecard23Annot3Code2-p1p2p3X3" ;
-    sht:trait sht:Annotation , sht:SemanticAction , sht:EachOf ;
-    rdfs:comment "<S1> { ( <p1> ., <p2> ., <p3> . ){2,3} ; <annot1> \"1\" ; <annot2> \"2\" ; <annot3> \"3\" %<Test/>{ p(\"...1\") %} %<Test/>{ p(\"...2\") %} } / { <s> <p1> \"p1-n\"; <p2> \"p2-n\"; <p3> \"p3-n\" }" ;
+    sht:trait sht:Annotation , sht:SemanticAction , sht:EachOf , sht:RepeatedGroup ;
+    rdfs:comment "<S1> { ( <p1> .; <p2> .; <p3> . ){2,3} // <annot1> \"1\" // <annot2> \"2\" // <annot3> \"3\" %<Test/>{ p(\"...1\") %} %<Test/>{ p(\"...2\") %} } / { <s> <p1> \"p1-n\"; <p2> \"p2-n\"; <p3> \"p3-n\" }X3" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/open3groupdotclosecard23Annot3Code2.shex> ;
@@ -10429,6 +10704,7 @@
     .
 
 ## } errors
+# futureWork {
 ## inherit {
 
  # !../schemas/0Inherit1.shex
@@ -10449,4 +10725,4 @@
  # !../schemas/_all.shex
  # !../schemas/kitchenSink.shex
 ## } everything
-# } deferred
+# } futureWork
