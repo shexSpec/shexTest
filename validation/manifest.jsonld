@@ -1406,7 +1406,7 @@
           "name": "1dotOr2dotExtra-someOf_pass_p1p2p3",
           "trait": [
             "Extra",
-            "Greediness",
+            "Greedy",
             "SomeOf",
             "EachOf"
           ],
@@ -1576,7 +1576,7 @@
           "extensionResults": [],
           "name": "open3Ordotclosecard23_pass-p1p2p3",
           "trait": [
-            "Greediness",
+            "Greedy",
             "RepeatedSomeOf",
             "EachOf"
           ],
