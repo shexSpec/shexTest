@@ -7964,7 +7964,7 @@
 
 <#1dotOr2dot-someOf_fail_p1p2p3> a sht:ValidationFailure ;
     mf:name "1dotOr2dot-someOf_fail_p1p2p3" ;
-    sht:trait sht:SomeOf , sht:EachOf , sht:NonExtra ;
+    sht:trait sht:SomeOf , sht:EachOf , sht:MissedMatchables ;
     rdfs:comment ":S1 {:p1 .|:p2 .,:p3 .} / { :s1 :p1 \"p1-0\"; :p2 \"p2-0\"; :p3 \"p3-0\" . }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -9064,9 +9064,9 @@
     ]
     .
 
-<#1dotOr2dotExtra-someOf_pass_p1p2p3> a sht:ValidationTest ;
+<#1dotOr2dotExtra-someOf_pass_p1p2p3> a sht:ValidationFailure ;
     mf:name "1dotOr2dotExtra-someOf_pass_p1p2p3" ;
-    sht:trait sht:SomeOf , sht:EachOf , sht:Extra , sht:Greedy ;
+    sht:trait sht:SomeOf , sht:EachOf , sht:Extra , sht:MissedMatchables ;
     rdfs:comment ":S1 EXTRA <p1> <p2> <p3> {:p1 .|:p2 .,:p3 .} / { :s1 :p1 \"p1-0\"; :p2 \"p2-0\"; :p3 \"p3-0\" . }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -9074,8 +9074,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <p1p2p3.ttl> ;
       sht:focus <x>
-    ] ;
-    mf:result <1dotOr2dot-someOf_pass_p2p3.val> ;
+    ]
     .
 
 <#1val1IRIREFExtra1Or_pass-iri1> a sht:ValidationTest ;
