@@ -7,16 +7,16 @@
       "rdfs:comment": "ShEx validation tests",
       "entries": [
         {
-          "@id": "#1dot-base_pass-noOthers",
+          "@id": "#1dot_pass-noOthers",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/1dot-base.shex",
+            "schema": "../schemas/1dot.shex",
             "shape": "http://a.example/S1",
             "data": "Is1_Ip1_Io1.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1dot-base_pass-noOthers",
+          "name": "1dot_pass-noOthers",
           "trait": [
             "TriplePattern"
           ],
@@ -96,22 +96,23 @@
           "result": "0abcd_pass.val"
         },
         {
-          "@id": "#PstarT",
+          "@id": "#PTstar",
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../validation/apt.shex",
-            "shape": "S1",
+            "shape": "S2",
             "data": "apt.ttl",
             "focus": "n"
           },
           "extensionResults": [],
-          "name": "PstarT",
+          "name": "PTstar",
           "trait": [
+            "Exhaustive",
             "EachOf"
           ],
-          "comment": "<S1> {:a $<P>*, :a $<T>} / { <n> :a <pt1>,  <pt2>,  <p>,  <t>}",
+          "comment": "<S2> {:a $<P>, :a $<T>*} / { <n> :a <pt1>,  <pt2>,  <p>,  <t>}",
           "status": "mf:proposed",
-          "result": "PstarT.val"
+          "result": "PTstar.val"
         },
         {
           "@id": "#simple-group",
@@ -1554,6 +1555,7 @@
           "extensionResults": [],
           "name": "open3Ordotclosecard23_pass-p1p2p3",
           "trait": [
+            "Greedy",
             "RepeatedSomeOf",
             "EachOf"
           ],
@@ -2220,25 +2222,6 @@
           "comment": ":S1 {(:p1 .|(:p2 .,:p3 .))} / { :s1 :p1 \"p1-0\" . }",
           "status": "mf:proposed",
           "result": "1dotOr2dot_pass_p1.val"
-        },
-        {
-          "@id": "#1dotOr2dot-someOf_pass_p1p2p3",
-          "@type": "sht:ValidationTest",
-          "action": {
-            "schema": "../schemas/1dotOr2dot.shex",
-            "shape": "http://a.example/S1",
-            "data": "p1p2p3.ttl",
-            "focus": "x"
-          },
-          "extensionResults": [],
-          "name": "1dotOr2dot-someOf_pass_p1p2p3",
-          "trait": [
-            "SomeOf",
-            "EachOf"
-          ],
-          "comment": ":S1 {:p1 .|:p2 .,:p3 .} / { :s1 :p1 \"p1-0\"; :p2 \"p2-0\"; :p3 \"p3-0\" . }",
-          "status": "mf:proposed",
-          "result": "1dotOr2dot-someOf_pass_p2p3.val"
         },
         {
           "@id": "#1dotOr2dot_pass_p2p3",
@@ -6442,6 +6425,24 @@
           "result": "1dot_pass.val"
         },
         {
+          "@id": "#1dot-base_pass-noOthers",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1dot-base.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1dot-base_pass-noOthers",
+          "trait": [
+            "TriplePattern"
+          ],
+          "comment": "<S> { <p1> . } on { <s1> <p1> <o1> }",
+          "status": "mf:proposed",
+          "result": "1dot_pass.val"
+        },
+        {
           "@id": "#1dot-base_fail-empty",
           "@type": "sht:ValidationFailure",
           "action": {
@@ -6457,42 +6458,6 @@
           ],
           "comment": "<S> { <p1> . } on {  }",
           "status": "mf:proposed"
-        },
-        {
-          "@id": "#1dot_pass-noOthers",
-          "@type": "sht:ValidationTest",
-          "action": {
-            "schema": "../schemas/1dot.shex",
-            "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_Io1.ttl",
-            "focus": "http://a.example/s1"
-          },
-          "extensionResults": [],
-          "name": "1dot_pass-noOthers",
-          "trait": [
-            "TriplePattern"
-          ],
-          "comment": "<S> { <p1> . } on { <s1> <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "1dot_pass.val"
-        },
-        {
-          "@id": "#repeated-group",
-          "@type": "sht:ValidationTest",
-          "action": {
-            "schema": "../validation/repeated-group.shex",
-            "shape": "S",
-            "data": "repeated-group.ttl",
-            "focus": "x"
-          },
-          "extensionResults": [],
-          "name": "repeated-group",
-          "trait": [
-            "EachOf"
-          ],
-          "comment": "<S> { ( :a ., :b . ){2,5}, :c . }",
-          "status": "mf:proposed",
-          "result": "repeated-group.val"
         },
         {
           "@id": "#1dot_fail-missing",
@@ -6527,6 +6492,24 @@
           ],
           "comment": "<S> { <p1> . } on { <s> <p2> <o1> }",
           "status": "mf:proposed"
+        },
+        {
+          "@id": "#repeated-group",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../validation/repeated-group.shex",
+            "shape": "S",
+            "data": "repeated-group.ttl",
+            "focus": "x"
+          },
+          "extensionResults": [],
+          "name": "repeated-group",
+          "trait": [
+            "EachOf"
+          ],
+          "comment": "<S> { ( :a ., :b . ){2,5}, :c . }",
+          "status": "mf:proposed",
+          "result": "repeated-group.val"
         },
         {
           "@id": "#bnode1dot_fail-missing",
@@ -7261,6 +7244,26 @@
           "status": "mf:proposed"
         },
         {
+          "@id": "#1dotOr2dotExtra-someOf_pass_p1p2p3",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1dotOr2dot.shex",
+            "shape": "http://a.example/S1",
+            "data": "p1p2p3.ttl",
+            "focus": "x"
+          },
+          "extensionResults": [],
+          "name": "1dotOr2dotExtra-someOf_pass_p1p2p3",
+          "trait": [
+            "Extra",
+            "Greedy",
+            "SomeOf",
+            "EachOf"
+          ],
+          "comment": ":S1 EXTRA <p1> <p2> <p3> {:p1 .|:p2 .,:p3 .} / { :s1 :p1 \"p1-0\"; :p2 \"p2-0\"; :p3 \"p3-0\" . }",
+          "status": "mf:proposed"
+        },
+        {
           "@id": "#1val1IRIREFExtra1p2_pass-iri2",
           "@type": "sht:ValidationFailure",
           "action": {
@@ -7864,6 +7867,25 @@
             "EachOf-unvisited"
           ],
           "comment": ":S1 {(:p1 .|(:p2 .,:p3 .))} / { :s1 :p1 \"p1-0\"; :p2 \"p2-0\"; :p3 \"p3-0\" . }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1dotOr2dot-someOf_fail_p1p2p3",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1dotOr2dot.shex",
+            "shape": "http://a.example/S1",
+            "data": "p1p2p3.ttl",
+            "focus": "x"
+          },
+          "extensionResults": [],
+          "name": "1dotOr2dot-someOf_fail_p1p2p3",
+          "trait": [
+            "NonExtra",
+            "SomeOf",
+            "EachOf"
+          ],
+          "comment": ":S1 {:p1 .|:p2 .,:p3 .} / { :s1 :p1 \"p1-0\"; :p2 \"p2-0\"; :p3 \"p3-0\" . }",
           "status": "mf:proposed"
         },
         {
@@ -12295,6 +12317,24 @@
           "status": "mf:proposed"
         },
         {
+          "@id": "#PstarT",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../validation/apt.shex",
+            "shape": "S1",
+            "data": "apt.ttl",
+            "focus": "n"
+          },
+          "extensionResults": [],
+          "name": "PstarT",
+          "trait": [
+            "EachOf"
+          ],
+          "comment": "<S1> {:a $<P>*, :a $<T>} / { <n> :a <pt1>,  <pt2>,  <p>,  <t>}",
+          "status": "mf:proposed",
+          "result": "PstarT.val"
+        },
+        {
           "@id": "#PstarT-greedy",
           "@type": "sht:ValidationTest",
           "action": {
@@ -12312,25 +12352,6 @@
           "comment": "<S1> {:a $<P>*, :a $<T>} / { <n> :a <pt1>,  <pt2>,  <p>,  <t>}",
           "status": "mf:proposed",
           "result": "PstarT.val"
-        },
-        {
-          "@id": "#PTstar",
-          "@type": "sht:ValidationTest",
-          "action": {
-            "schema": "../validation/apt.shex",
-            "shape": "S2",
-            "data": "apt.ttl",
-            "focus": "n"
-          },
-          "extensionResults": [],
-          "name": "PTstar",
-          "trait": [
-            "Exhaustive",
-            "EachOf"
-          ],
-          "comment": "<S2> {:a $<P>, :a $<T>*} / { <n> :a <pt1>,  <pt2>,  <p>,  <t>}",
-          "status": "mf:proposed",
-          "result": "PTstar.val"
         },
         {
           "@id": "#PTstar-greedy-fail",
