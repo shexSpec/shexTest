@@ -125,8 +125,9 @@ function genText () {
       }
       return ret;
     }).sort(function (l, r) {
-      return entries.indexOf(l[0]) >
-        entries.indexOf(r[0]);
+      return l[0] === r[0] ? 0 :
+        entries.indexOf(l[0]) > entries.indexOf(r[0]) ? 1 :
+        -1;
     }).map(function (st) {
       var s = st[0], t = st[1];
       var testName = util.getLiteralValue(store.find(s, "mf:name", null)[0].object);
