@@ -7,7 +7,7 @@
       "expression": {
         "type": "TripleConstraint",
         "predicate": "http://a.example/p1",
-        "valueExpr": { "type": "ValueClass",
+        "valueExpr": { "type": "Shape",
                    "nodeKind": "nonliteral",
                    "minlength": 19
                  }

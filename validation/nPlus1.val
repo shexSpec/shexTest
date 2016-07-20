@@ -13,9 +13,6 @@
             "min": 0,
             "max": "*",
             "predicate": "http://a.example/a",
-            "valueExpr": {
-              "type": "ValueClass"
-            },
             "solutions": []
           },
           {
@@ -26,7 +23,6 @@
                 "expressions": [
                   {
                     "type": "tripleConstraintSolutions", "predicate":"http://a.example/a",
-                    "valueExpr":{ "type": "ValueClass" },
                     "min": 1, "max": "*",
                     "solutions":[
                       {"type":"testedTriple","subject":"x","predicate":"http://a.example/a","object":"\"1\"^^http://www.w3.org/2001/XMLSchema#integer"}
@@ -38,7 +34,6 @@
           },
           {
             "type": "tripleConstraintSolutions", "predicate": "http://a.example/a",
-            "valueExpr": { "type":"ValueClass" },
             "solutions": [
               { "type":"testedTriple","subject":"x","predicate":"http://a.example/a","object":"\"3\"^^http://www.w3.org/2001/XMLSchema#integer" }
             ]

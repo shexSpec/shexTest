@@ -7,15 +7,14 @@
       "expression": {
         "type": "TripleConstraint",
         "predicate": "http://a.example/p1",
-        "valueExpr": { "type": "ValueClass", "reference": "_:a·̀ͯ‿.⁀" }
+        "valueExpr": { "type": "ShapeRef", "reference": "_:a·̀ͯ‿.⁀" }
       }
     },
     "_:a·̀ͯ‿.⁀": {
       "type": "Shape",
       "expression": {
         "type": "TripleConstraint",
-        "predicate": "http://a.example/p2",
-        "valueExpr": { "type": "ValueClass" }
+        "predicate": "http://a.example/p2"
       }
     }
   }

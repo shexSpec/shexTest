@@ -8,8 +8,7 @@
       "type": "Shape",
       "expression": {
         "type": "TripleConstraint",
-        "predicate": "http://a.example/p1",
-        "valueExpr": { "type": "ValueClass" }
+        "predicate": "http://a.example/p1"
       }
     }
   }

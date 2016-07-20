@@ -6,18 +6,18 @@
     "type": "tripleConstraintSolutions",
     "predicate": "http://a.example/p1",
     "valueExpr": {
-      "type": "ValueOr",
-      "valueExprs": [
+      "type": "ShapeOr",
+      "shapeExprs": [
         {
-          "type": "ValueClass",
+          "type": "ShapeRef",
           "reference": "http://a.example/S2"
         },
         {
-          "type": "ValueClass",
+          "type": "ShapeRef",
           "reference": "http://a.example/S3"
         },
         {
-          "type": "ValueClass",
+          "type": "ShapeRef",
           "reference": "http://a.example/S4"
         }
       ]
@@ -35,9 +35,6 @@
           "solution": {
             "type": "tripleConstraintSolutions",
             "predicate": "http://a.example/p3",
-            "valueExpr": {
-              "type": "ValueClass"
-            },
             "solutions": [
               {
                 "type": "testedTriple",

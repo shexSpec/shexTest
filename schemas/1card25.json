@@ -7,7 +7,6 @@
       "expression": {
         "type": "TripleConstraint",
         "predicate": "http://a.example/p1",
-        "valueExpr": { "type": "ValueClass" },
         "min": 2, "max": 5
       }
     }

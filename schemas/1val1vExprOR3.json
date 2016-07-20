@@ -8,20 +8,20 @@
         "type": "TripleConstraint",
         "predicate": "http://a.example/p1",
         "valueExpr": {
-          "type": "ValueOr",
-          "valueExprs": [
+          "type": "ShapeOr",
+          "shapeExprs": [
             {
-              "type": "ValueClass",
+              "type": "Shape",
               "nodeKind": "literal",
               "pattern": "^ab"
             },
             {
-              "type": "ValueClass",
+              "type": "Shape",
               "nodeKind": "literal",
               "pattern": "cd"
             },
             {
-              "type": "ValueClass",
+              "type": "Shape",
               "nodeKind": "literal",
               "pattern": "ef$"
             }

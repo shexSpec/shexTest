@@ -7,7 +7,7 @@
       "expression": {
         "type": "TripleConstraint",
         "predicate": "http://a.example/p1",
-        "valueExpr": { "type": "ValueClass", "values": ["\" !\"#$%&():;<=>?@[]^_`{|}~\""] }
+        "valueExpr": { "type": "Shape", "values": ["\" !\"#$%&():;<=>?@[]^_`{|}~\""] }
       }
     }
   }

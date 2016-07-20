@@ -11,9 +11,6 @@
           {
             "type": "tripleConstraintSolutions",
             "predicate": "http://a.example/p1",
-            "valueExpr": {
-              "type": "ValueClass"
-            },
             "solutions": [
               {
                 "type": "testedTriple",
@@ -27,7 +24,7 @@
             "type": "tripleConstraintSolutions",
             "predicate": "http://a.example/p2",
             "valueExpr": {
-              "type": "ValueClass",
+              "type": "ShapeRef",
               "reference": "http://a.example/S2"
             },
             "solutions": [
@@ -44,7 +41,7 @@
                     "type": "tripleConstraintSolutions",
                     "predicate": "http://a.example/p3",
                     "valueExpr": {
-                      "type": "ValueClass",
+                      "type": "ShapeRef",
                       "reference": "http://a.example/S3"
                     },
                     "solutions": [
@@ -61,7 +58,7 @@
                             "type": "tripleConstraintSolutions",
                             "predicate": "http://a.example/p4",
                             "valueExpr": {
-                              "type": "ValueClass",
+                              "type": "ShapeRef",
                               "reference": "http://a.example/S1"
                             },
                             "solutions": [

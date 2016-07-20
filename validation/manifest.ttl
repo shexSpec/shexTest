@@ -8536,7 +8536,7 @@
       sht:data <Is1_Ip1_Lab.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
-    mf:result <1val1vExprRefOR3_passvc1.val>
+    mf:result <1val1vExprRefOR3_passvc1.val> # !! ShapeOrResults with no solutions.
     .
 
 <#1val1vExprRefOR3_passvc2> a sht:ValidationTest ;
@@ -8550,7 +8550,7 @@
       sht:data <Is1_Ip1_Lcd.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
-    mf:result <1val1vExprRefOR3_passvc2.val>
+    mf:result <1val1vExprRefOR3_passvc2.val> # !! ShapeOrResults with no solutions.
     .
 
 <#1val1vExprRefOR3_passvc3> a sht:ValidationTest ;
@@ -8564,7 +8564,7 @@
       sht:data <Is1_Ip1_Lef.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
-    mf:result <1val1vExprRefOR3_passvc3.val>
+    mf:result <1val1vExprRefOR3_passvc3.val> # !! ShapeOrResults with no solutions.
     .
 
 <#1val1vExprRefOR3_passvc1vc2vc3> a sht:ValidationTest ;
@@ -8578,7 +8578,7 @@
       sht:data <Is1_Ip1_Labcdef.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
-    mf:result <1val1vExprRefOR3_passvc1vc2vc3.val>
+    mf:result <1val1vExprRefOR3_passvc1vc2vc3.val> # !! ShapeOrResults with no solutions.
     .
 
 <#1val1vExprOR3_fail> a sht:ValidationFailure ;

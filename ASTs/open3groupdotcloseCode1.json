@@ -11,24 +11,15 @@
           "conjuncts": [
             {
               "type": "TripleConstraint", "inverse": false, "negated": false,
-              "predicate": "http://a.example/p1",
-              "valueExpr": {
-                "type": "ValueClass"
-              }
+              "predicate": "http://a.example/p1"
             },
             {
               "type": "TripleConstraint", "inverse": false, "negated": false,
-              "predicate": "http://a.example/p2",
-              "valueExpr": {
-                "type": "ValueClass"
-              }
+              "predicate": "http://a.example/p2"
             },
             {
               "type": "TripleConstraint", "inverse": false, "negated": false,
-              "predicate": "http://a.example/p3",
-              "valueExpr": {
-                "type": "ValueClass"
-              }
+              "predicate": "http://a.example/p3"
             }
           ]
         },

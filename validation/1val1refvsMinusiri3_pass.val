@@ -6,8 +6,8 @@
     "type": "tripleConstraintSolutions",
     "predicate": "http://a.example/p1",
     "valueExpr": {
-      "type": "ValueRef",
-      "valueExprRef": "http://a.example/vs1"
+      "type": "ShapeRef",
+      "reference": "http://a.example/vs1"
     },
     "solutions": [
       {

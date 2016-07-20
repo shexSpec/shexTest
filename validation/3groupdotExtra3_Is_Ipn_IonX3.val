@@ -12,7 +12,7 @@
             "type": "tripleConstraintSolutions",
             "predicate": "http://a.example/p1",
             "valueExpr": {
-              "type": "ValueClass",
+              "type": "Shape",
               "values": [
                 "http://a.example/o1"
               ]
@@ -30,7 +30,7 @@
             "type": "tripleConstraintSolutions",
             "predicate": "http://a.example/p2",
             "valueExpr": {
-              "type": "ValueClass",
+              "type": "Shape",
               "values": [
                 "http://a.example/o2"
               ]
@@ -48,7 +48,7 @@
             "type": "tripleConstraintSolutions",
             "predicate": "http://a.example/p3",
             "valueExpr": {
-              "type": "ValueClass",
+              "type": "Shape",
               "values": [
                 "http://a.example/o3"
               ]

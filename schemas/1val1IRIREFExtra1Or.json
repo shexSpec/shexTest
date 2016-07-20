@@ -9,10 +9,7 @@
         "expressions": [
           {
             "type": "TripleConstraint",
-            "predicate": "http://a.example/p0",
-            "valueExpr": {
-              "type": "ValueClass"
-            }
+            "predicate": "http://a.example/p0"
           },
           {
             "type": "EachOf",
@@ -21,7 +18,7 @@
                 "type": "TripleConstraint",
                 "predicate": "http://a.example/p1",
                 "valueExpr": {
-                  "type": "ValueClass",
+                  "type": "Shape",
                   "values": [
                     "http://a.example/o1"
                   ]
@@ -30,9 +27,6 @@
               {
                 "type": "TripleConstraint",
                 "predicate": "http://a.example/p2",
-                "valueExpr": {
-                  "type": "ValueClass"
-                },
                 "min": 0,
                 "max": 1
               }

@@ -8,18 +8,18 @@
         "type": "TripleConstraint",
         "predicate": "http://a.example/p1",
         "valueExpr": {
-          "type": "ValueAnd",
-          "valueExprs": [
+          "type": "ShapeAnd",
+          "shapeExprs": [
             {
-              "type": "ValueClass",
+              "type": "ShapeRef",
               "reference": "http://a.example/S2"
             },
             {
-              "type": "ValueClass",
+              "type": "ShapeRef",
               "reference": "http://a.example/S3"
             },
             {
-              "type": "ValueClass",
+              "type": "ShapeRef",
               "reference": "http://a.example/S4"
             }
           ]
@@ -30,24 +30,21 @@
       "type": "Shape",
       "expression": {
         "type": "TripleConstraint",
-        "predicate": "http://a.example/p2",
-        "valueExpr": { "type": "ValueClass" }
+        "predicate": "http://a.example/p2"
       }
     },
     "http://a.example/S3": {
       "type": "Shape",
       "expression": {
         "type": "TripleConstraint",
-        "predicate": "http://a.example/p3",
-        "valueExpr": { "type": "ValueClass" }
+        "predicate": "http://a.example/p3"
       }
     },
     "http://a.example/S4": {
       "type": "Shape",
       "expression": {
         "type": "TripleConstraint",
-        "predicate": "http://a.example/p4",
-        "valueExpr": { "type": "ValueClass" }
+        "predicate": "http://a.example/p4"
       }
     }
   }

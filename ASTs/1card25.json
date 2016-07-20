@@ -7,17 +7,11 @@
         "type":"EachOf", "conjuncts": [
           {
             "type": "TripleConstraint", "inverse": false, "negated": false,
-            "predicate": "http://a.example/p1",
-            "valueExpr": {
-              "type": "ValueClass"
-            }
+            "predicate": "http://a.example/p1"
           },
           {
             "type": "TripleConstraint", "inverse": false, "negated": false,
-            "predicate": "http://a.example/p1",
-            "valueExpr": {
-              "type": "ValueClass"
-            }
+            "predicate": "http://a.example/p1"
           },
           {
             "type":"Choice", "disjuncts": [
@@ -26,10 +20,7 @@
                 [
                   {
                     "type": "TripleConstraint", "inverse": false, "negated": false,
-                    "predicate": "http://a.example/p1",
-                    "valueExpr": {
-                      "type": "ValueClass"
-                    }
+                    "predicate": "http://a.example/p1"
                   },
                   {
                     "type":"Choice", "disjuncts": [
@@ -38,19 +29,13 @@
                         [
                           {
                             "type": "TripleConstraint", "inverse": false, "negated": false,
-                            "predicate": "http://a.example/p1",
-                            "valueExpr": {
-                              "type": "ValueClass"
-                            }
+                            "predicate": "http://a.example/p1"
                           },
                           {
                             "type":"Choice", "disjuncts": [
                               {
                                 "type": "TripleConstraint", "inverse": false, "negated": false,
-                                "predicate": "http://a.example/p1",
-                                "valueExpr": {
-                                  "type": "ValueClass"
-                                }
+                                "predicate": "http://a.example/p1"
                               }, { "type": "Epsilon" }
                             ]
                           }

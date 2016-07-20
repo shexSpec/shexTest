@@ -9,13 +9,12 @@
         "expressions": [
           {
             "type": "TripleConstraint",
-            "predicate": "http://a.example/p1",
-            "valueExpr": { "type": "ValueClass" }
+            "predicate": "http://a.example/p1"
           },
           {
             "type": "TripleConstraint",
             "predicate": "http://a.example/p2",
-            "valueExpr": { "type": "ValueClass", "reference": "http://a.example/S2" },
+            "valueExpr": { "type": "ShapeRef", "reference": "http://a.example/S2" },
             "min": 0, "max": 1
           }
         ]
@@ -26,7 +25,7 @@
       "expression": {
         "type": "TripleConstraint",
         "predicate": "http://a.example/p3",
-        "valueExpr": { "type": "ValueClass", "reference": "http://a.example/S3" }
+        "valueExpr": { "type": "ShapeRef", "reference": "http://a.example/S3" }
       }
     },
     "http://a.example/S3": {
@@ -34,15 +33,14 @@
       "expression": {
         "type": "TripleConstraint",
         "predicate": "http://a.example/p4",
-        "valueExpr": { "type": "ValueClass", "reference": "http://a.example/S1" }
+        "valueExpr": { "type": "ShapeRef", "reference": "http://a.example/S1" }
       }
     },
     "http://a.example/S4": {
       "type": "Shape",
       "expression": {
         "type": "TripleConstraint",
-        "predicate": "http://a.example/p5",
-        "valueExpr": { "type": "ValueClass" }
+        "predicate": "http://a.example/p5"
       }
     }
   }

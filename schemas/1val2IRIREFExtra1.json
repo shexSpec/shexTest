@@ -8,7 +8,7 @@
         "type": "TripleConstraint",
         "predicate": "http://a.example/p1",
         "valueExpr": {
-          "type": "ValueClass",
+          "type": "Shape",
           "values": [ "http://a.example/o1",
                       "http://a.example/o2" ]
         }

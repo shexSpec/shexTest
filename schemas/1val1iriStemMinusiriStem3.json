@@ -8,7 +8,7 @@
         "type": "TripleConstraint",
         "predicate": "http://a.example/p1",
         "valueExpr": {
-          "type": "ValueClass", "values": [
+          "type": "Shape", "values": [
             { "type": "StemRange",
               "stem": "http://a.example/v",
               "exclusions": [

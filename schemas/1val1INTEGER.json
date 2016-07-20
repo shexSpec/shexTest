@@ -7,7 +7,7 @@
       "expression": {
         "type": "TripleConstraint",
         "predicate": "http://a.example/p1",
-        "valueExpr": { "type": "ValueClass", "values": ["\"0\"^^http://www.w3.org/2001/XMLSchema#integer"] }
+        "valueExpr": { "type": "Shape", "values": ["\"0\"^^http://www.w3.org/2001/XMLSchema#integer"] }
       }
     }
   }

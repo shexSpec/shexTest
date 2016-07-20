@@ -6,15 +6,38 @@
     "type": "tripleConstraintSolutions",
     "predicate": "http://a.example/p1",
     "valueExpr": {
-      "type": "ValueRef",
-      "valueExprRef": "http://a.example/vc4"
+      "type": "ShapeRef",
+      "reference": "http://a.example/vc4"
     },
     "solutions": [
       {
         "type": "testedTriple",
         "subject": "http://a.example/s1",
         "predicate": "http://a.example/p1",
-        "object": "\"abab\""
+        "object": "\"abab\"",
+        "referenced": {
+          "type": "ShapeAndResults",
+          "solutions": [
+            {
+              "type": "test",
+              "node": "\"abab\"",
+              "shape": "http://a.example/vc1",
+              "solution": {}
+            },
+            {
+              "type": "test",
+              "node": "\"abab\"",
+              "shape": "http://a.example/vc2",
+              "solution": {}
+            },
+            {
+              "type": "test",
+              "node": "\"abab\"",
+              "shape": "http://a.example/vc3",
+              "solution": {}
+            }
+          ]
+        }
       }
     ]
   }

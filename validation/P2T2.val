@@ -12,8 +12,8 @@
             "type": "tripleConstraintSolutions",
             "predicate": "http://a.example/a",
             "valueExpr": {
-              "type": "ValueRef",
-              "valueExprRef": "P"
+              "type": "ShapeRef",
+              "reference": "P"
             },
             "solutions": [
               {
@@ -36,8 +36,8 @@
             "type": "tripleConstraintSolutions",
             "predicate": "http://a.example/a",
             "valueExpr": {
-              "type": "ValueRef",
-              "valueExprRef": "T"
+              "type": "ShapeRef",
+              "reference": "T"
             },
             "solutions": [
               {

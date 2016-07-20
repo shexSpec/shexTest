@@ -15,7 +15,7 @@
                 "expressions": [
                   {
                     "type": "tripleConstraintSolutions", "predicate": "http://a.example/a",
-                    "valueExpr": { "type": "ValueClass", "reference": "T" },
+                    "valueExpr": { "type": "Shape", "reference": "T" },
                     "min": 1, "max": "*",
                     "solutions": [
                       { "type": "testedTriple", "subject": "x", "predicate": "http://a.example/a", "object": "t0",
@@ -31,14 +31,14 @@
                                 "expressions": [
                                   {
                                     "type": "TripleConstraint", "predicate": "http://a.example/d",
-                                    "valueExpr": { "type": "ValueClass" },
+                                    "valueExpr": { "type": "Shape" },
                                     "solutions": [
                                       { "type": "testedTriple", "subject": "x", "predicate": "http://a.example/d", "object": "\"d0\"" }
                                     ]
                                   },
                                   {
                                   "type": "TripleConstraint", "predicate": "http://a.example/e",
-                                    "valueExpr": { "type": "ValueClass" },
+                                    "valueExpr": { "type": "Shape" },
                                     "solutions": [
                                       { "type": "testedTriple", "subject": "x", "predicate": "http://a.example/e", "object": "\"e0\"" }
                                     ]
@@ -53,7 +53,7 @@
                   },
                   {
                     "type": "tripleConstraintSolutions", "predicate": "http://a.example/b",
-                    "valueExpr": { "type": "ValueClass" },
+                    "valueExpr": { "type": "Shape" },
                     "min": 0, "max": "*",
                     "solutions": [
                       { "type": "testedTriple", "subject": "x", "predicate": "http://a.example/b", "object": "\"b0-0\"" },
@@ -67,7 +67,7 @@
                 "expressions": [
                   {
                     "type": "tripleConstraintSolutions", "predicate": "http://a.example/a",
-                    "valueExpr": { "type": "ValueClass", "reference": "T" },
+                    "valueExpr": { "type": "Shape", "reference": "T" },
                     "min": 1, "max": "*",
                     "solutions": [
                       { "type": "testedTriple", "subject": "x", "predicate": "http://a.example/a", "object": "t1",
@@ -83,14 +83,14 @@
                                 "expressions": [
                                   {
                                     "type": "TripleConstraint", "predicate": "http://a.example/d",
-                                    "valueExpr": { "type": "ValueClass" },
+                                    "valueExpr": { "type": "Shape" },
                                     "solutions": [
                                       { "type": "testedTriple", "subject": "x", "predicate": "http://a.example/d", "object": "\"d1\"" }
                                     ]
                                   },
                                   {
                                     "type": "TripleConstraint", "predicate": "http://a.example/e",
-                                    "valueExpr": { "type": "ValueClass" },
+                                    "valueExpr": { "type": "Shape" },
                                     "solutions": [
                                       { "type": "testedTriple", "subject": "x", "predicate": "http://a.example/e", "object": "\"e1\"" }
                                     ]
@@ -105,7 +105,7 @@
                   },
                   {
                     "type": "tripleConstraintSolutions", "predicate": "http://a.example/b",
-                    "valueExpr": { "type": "ValueClass" },
+                    "valueExpr": { "type": "Shape" },
                     "min": 0, "max": "*",
                     "solutions": [
                       { "type": "testedTriple", "subject": "x", "predicate": "http://a.example/b", "object": "\"b1-0\"" }
@@ -118,7 +118,7 @@
                 "expressions": [
                   {
                     "type": "tripleConstraintSolutions", "predicate": "http://a.example/a",
-                    "valueExpr": { "type": "ValueClass", "reference": "T" },
+                    "valueExpr": { "type": "Shape", "reference": "T" },
                     "min": 1, "max": "*",
                     "solutions": [
                       { "type": "testedTriple", "subject": "x", "predicate": "http://a.example/a", "object": "t1",
@@ -134,14 +134,14 @@
                                 "expressions": [
                                   {
                                     "type": "TripleConstraint", "predicate": "http://a.example/d",
-                                    "valueExpr": { "type": "ValueClass" },
+                                    "valueExpr": { "type": "Shape" },
                                     "solutions": [
                                       { "type": "testedTriple", "subject": "x", "predicate": "http://a.example/d", "object": "\"d2\"" }
                                     ]
                                   },
                                   {
                                     "type": "TripleConstraint", "predicate": "http://a.example/e",
-                                    "valueExpr": { "type": "ValueClass" },
+                                    "valueExpr": { "type": "Shape" },
                                     "solutions": [
                                       { "type": "testedTriple", "subject": "x", "predicate": "http://a.example/e", "object": "\"e2\"" }
                                     ]
@@ -165,14 +165,14 @@
                                 "expressions": [
                                   {
                                     "type": "TripleConstraint", "predicate": "http://a.example/d",
-                                    "valueExpr": { "type": "ValueClass" },
+                                    "valueExpr": { "type": "Shape" },
                                     "solutions": [
                                       { "type": "testedTriple", "subject": "x", "predicate": "http://a.example/d", "object": "\"d2b\"" }
                                     ]
                                   },
                                   {
                                     "type": "TripleConstraint", "predicate": "http://a.example/e",
-                                    "valueExpr": { "type": "ValueClass" },
+                                    "valueExpr": { "type": "Shape" },
                                     "solutions": [
                                       { "type": "testedTriple", "subject": "x", "predicate": "http://a.example/e", "object": "\"e2b\"" }
                                     ]
@@ -187,7 +187,7 @@
                   },
                   {
                     "type": "tripleConstraintSolutions", "predicate": "http://a.example/b",
-                    "valueExpr": { "type": "ValueClass" },
+                    "valueExpr": { "type": "Shape" },
                     "min": 0, "max": "*",
                     "solutions": [ ]
                   }
@@ -199,7 +199,7 @@
           {
             "type": "tripleConstraintSolutions",
             "predicate": "http://a.example/c",
-            "valueExpr": { "type": "ValueClass" },
+            "valueExpr": { "type": "Shape" },
             "solutions": [
               { "type": "testedTriple", "subject": "x", "predicate": "http://a.example/c", "object": "\"c0\"" }
             ]

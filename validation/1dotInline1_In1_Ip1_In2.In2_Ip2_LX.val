@@ -6,8 +6,11 @@
     "type": "tripleConstraintSolutions",
     "predicate": "http://a.example/p1",
     "valueExpr": {
-      "type": "ValueClass",
-      "reference": "_:b0"
+      "type": "Shape",
+      "expression": {
+        "type": "TripleConstraint",
+        "predicate": "http://a.example/p2"
+      }
     },
     "solutions": [
       {
@@ -18,13 +21,10 @@
         "referenced": {
           "type": "test",
           "node": "http://a.example/n2",
-          "shape": "_:b0",
+          "shape": "http://a.example/S1",
           "solution": {
             "type": "tripleConstraintSolutions",
             "predicate": "http://a.example/p2",
-            "valueExpr": {
-              "type": "ValueClass"
-            },
             "solutions": [
               {
                 "type": "testedTriple",

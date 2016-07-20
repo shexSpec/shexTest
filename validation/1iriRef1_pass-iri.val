@@ -6,9 +6,17 @@
     "type": "tripleConstraintSolutions",
     "predicate": "http://a.example/p1",
     "valueExpr": {
-      "type": "ValueClass",
-      "nodeKind": "iri",
-      "reference": "http://a.example/S2"
+      "type": "ShapeAnd",
+      "shapeExprs": [
+        {
+          "type": "Shape",
+          "nodeKind": "iri"
+        },
+        {
+          "type": "ShapeRef",
+          "reference": "http://a.example/S2"
+        }
+      ]
     },
     "solutions": [
       {
@@ -23,9 +31,6 @@
           "solution": {
             "type": "tripleConstraintSolutions",
             "predicate": "http://a.example/p2",
-            "valueExpr": {
-              "type": "ValueClass"
-            },
             "solutions": [
               {
                 "type": "testedTriple",
