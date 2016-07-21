@@ -9087,16 +9087,16 @@
           "result": "1val1vExprRefbnode1_pass-lit-equal.val"
         },
         {
-          "@id": "#1dotRefAnd3_failAll",
+          "@id": "#1dotRefAND3_failAll",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/1dotRefAnd3.shex",
+            "schema": "../schemas/1dotRefAND3.shex",
             "shape": "http://a.example/S1",
             "data": "In1_Ip1_In2.ttl",
             "focus": "http://a.example/n1"
           },
           "extensionResults": [],
-          "name": "1dotRefAnd3_failAll",
+          "name": "1dotRefAND3_failAll",
           "trait": [
             "OrValueExpression",
             "ValueReference"
@@ -9105,16 +9105,16 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#1dotRefAnd3_failShape2Shape3",
+          "@id": "#1dotRefAND3_failShape2Shape3",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/1dotRefAnd3.shex",
+            "schema": "../schemas/1dotRefAND3.shex",
             "shape": "http://a.example/S1",
             "data": "In1_Ip1_In2.In2_Ip2_LX.ttl",
             "focus": "http://a.example/n1"
           },
           "extensionResults": [],
-          "name": "1dotRefAnd3_failShape2Shape3",
+          "name": "1dotRefAND3_failShape2Shape3",
           "trait": [
             "OrValueExpression",
             "ValueReference"
@@ -9123,16 +9123,16 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#1dotRefAnd3_failShape1Shape3",
+          "@id": "#1dotRefAND3_failShape1Shape3",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/1dotRefAnd3.shex",
+            "schema": "../schemas/1dotRefAND3.shex",
             "shape": "http://a.example/S1",
             "data": "In1_Ip1_In3.In3_Ip3_LX.ttl",
             "focus": "http://a.example/n1"
           },
           "extensionResults": [],
-          "name": "1dotRefAnd3_failShape1Shape3",
+          "name": "1dotRefAND3_failShape1Shape3",
           "trait": [
             "OrValueExpression",
             "ValueReference"
@@ -9141,16 +9141,16 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#1dotRefAnd3_failShape1Shape2",
+          "@id": "#1dotRefAND3_failShape1Shape2",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/1dotRefAnd3.shex",
+            "schema": "../schemas/1dotRefAND3.shex",
             "shape": "http://a.example/S1",
             "data": "In1_Ip1_In4.In4_Ip4_LX.ttl",
             "focus": "http://a.example/n1"
           },
           "extensionResults": [],
-          "name": "1dotRefAnd3_failShape1Shape2",
+          "name": "1dotRefAND3_failShape1Shape2",
           "trait": [
             "OrValueExpression",
             "ValueReference"
@@ -9159,23 +9159,23 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#1dotRefAnd3_passShape1Shape2Shape3",
+          "@id": "#1dotRefAND3_passShape1Shape2Shape3",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/1dotRefAnd3.shex",
+            "schema": "../schemas/1dotRefAND3.shex",
             "shape": "http://a.example/S1",
             "data": "In1_Ip1_In2.In2_Ipx_LXX3.ttl",
             "focus": "http://a.example/n1"
           },
           "extensionResults": [],
-          "name": "1dotRefAnd3_passShape1Shape2Shape3",
+          "name": "1dotRefAND3_passShape1Shape2Shape3",
           "trait": [
             "OrValueExpression",
             "ValueReference"
           ],
           "comment": "<S1> { <p1> @<S2> AND @<S3> AND @<S4> } <S2> { <p2> . } <S3> { <p3> . } <S4> { <p4> . } on { <s1> <p1> <s2>, <s3>, <s4> . <s2> <p2> \"X\" . <s3> <p3> \"X\" . <s4> <p4> \"X\" }",
           "status": "mf:proposed",
-          "result": "1dotRefAnd3_passShape1Shape2Shape3.val"
+          "result": "1dotRefAND3_passShape1Shape2Shape3.val"
         },
         {
           "@id": "#1val1vExprANDRef3_pass",
@@ -9393,16 +9393,16 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#1dotRefOr3_fail",
+          "@id": "#1dotRefOR3_fail",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/1dotRefOr3.shex",
+            "schema": "../schemas/1dotRefOR3.shex",
             "shape": "http://a.example/S1",
             "data": "In1_Ip1_In2.ttl",
             "focus": "http://a.example/n1"
           },
           "extensionResults": [],
-          "name": "1dotRefOr3_fail",
+          "name": "1dotRefOR3_fail",
           "trait": [
             "OrValueExpression",
             "ValueReference"
@@ -9411,80 +9411,80 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#1dotRefOr3_passShape1",
+          "@id": "#1dotRefOR3_passShape1",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/1dotRefOr3.shex",
+            "schema": "../schemas/1dotRefOR3.shex",
             "shape": "http://a.example/S1",
             "data": "In1_Ip1_In2.In2_Ip2_LX.ttl",
             "focus": "http://a.example/n1"
           },
           "extensionResults": [],
-          "name": "1dotRefOr3_passShape1",
+          "name": "1dotRefOR3_passShape1",
           "trait": [
             "OrValueExpression",
             "ValueReference"
           ],
           "comment": "<S1> { <p1> @<S2> OR @<S3> OR @<S4> } <S2> { <p2> . } <S3> { <p3> . } <S4> { <p4> . } on { <s1> <p1> <n2> . <n2> <p2> \"X\" }",
           "status": "mf:proposed",
-          "result": "1dotRefOr3_passShape1.val"
+          "result": "1dotRefOR3_passShape1.val"
         },
         {
-          "@id": "#1dotRefOr3_passShape2",
+          "@id": "#1dotRefOR3_passShape2",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/1dotRefOr3.shex",
+            "schema": "../schemas/1dotRefOR3.shex",
             "shape": "http://a.example/S1",
             "data": "In1_Ip1_In3.In3_Ip3_LX.ttl",
             "focus": "http://a.example/n1"
           },
           "extensionResults": [],
-          "name": "1dotRefOr3_passShape2",
+          "name": "1dotRefOR3_passShape2",
           "trait": [
             "OrValueExpression",
             "ValueReference"
           ],
           "comment": "<S1> { <p1> @<S2> OR @<S3> OR @<S4> } <S2> { <p2> . } <S3> { <p3> . } <S4> { <p4> . } on { <s1> <p1> <n3> . <n3> <p3> \"X\" }",
           "status": "mf:proposed",
-          "result": "1dotRefOr3_passShape2.val"
+          "result": "1dotRefOR3_passShape2.val"
         },
         {
-          "@id": "#1dotRefOr3_passShape3",
+          "@id": "#1dotRefOR3_passShape3",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/1dotRefOr3.shex",
+            "schema": "../schemas/1dotRefOR3.shex",
             "shape": "http://a.example/S1",
             "data": "In1_Ip1_In4.In4_Ip4_LX.ttl",
             "focus": "http://a.example/n1"
           },
           "extensionResults": [],
-          "name": "1dotRefOr3_passShape3",
+          "name": "1dotRefOR3_passShape3",
           "trait": [
             "OrValueExpression",
             "ValueReference"
           ],
           "comment": "<S1> { <p1> @<S2> OR @<S3> OR @<S4> } <S2> { <p2> . } <S3> { <p3> . } <S4> { <p4> . } on { <s1> <p1> <n4> . <n4> <p4> \"X\" }",
           "status": "mf:proposed",
-          "result": "1dotRefOr3_passShape3.val"
+          "result": "1dotRefOR3_passShape3.val"
         },
         {
-          "@id": "#1dotRefOr3_passShape1Shape2Shape3",
+          "@id": "#1dotRefOR3_passShape1Shape2Shape3",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/1dotRefOr3.shex",
+            "schema": "../schemas/1dotRefOR3.shex",
             "shape": "http://a.example/S1",
             "data": "In1_Ip1_In2.In2_Ipx_LXX3.ttl",
             "focus": "http://a.example/n1"
           },
           "extensionResults": [],
-          "name": "1dotRefOr3_passShape1Shape2Shape3",
+          "name": "1dotRefOR3_passShape1Shape2Shape3",
           "trait": [
             "OrValueExpression",
             "ValueReference"
           ],
           "comment": "<S1> { <p1> @<S2> OR @<S3> OR @<S4> } <S2> { <p2> . } <S3> { <p3> . } <S4> { <p4> . } on { <s1> <p1> <s2>, <s3>, <s4> . <s2> <p2> \"X\" . <s3> <p3> \"X\" . <s4> <p4> \"X\" }",
           "status": "mf:proposed",
-          "result": "1dotRefOr3_passShape1.val"
+          "result": "1dotRefOR3_passShape1.val"
         },
         {
           "@id": "#1val1vExprORRef3_fail",
