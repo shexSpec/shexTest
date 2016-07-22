@@ -9764,6 +9764,228 @@
           "result": "1val1vExprOR3_passvr1vr2vr3.val"
         },
         {
+          "@id": "#1val1vExpr1AND1OR1Ref3_pass-vc1vc2",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1val1vExpr1AND1OR1Ref3.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Labcd.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1vExpr1AND1OR1Ref3_pass-vc1vc2",
+          "trait": [
+            "AndValueExpression",
+            "ValueReference"
+          ],
+          "comment": "<vc1> ... <vc3> ... <S> { <p1> @<vc1> AND @<vc2> OR @<vc3> } on { <s1> <p1> 'abcd' }",
+          "status": "mf:proposed",
+          "result": "1val1vExpr1AND1OR1Ref3_pass-vc1vc2.val"
+        },
+        {
+          "@id": "#1val1vExpr1AND1OR1Ref3_pass-vc1vc2vc3",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1val1vExpr1AND1OR1Ref3.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Labab.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1vExpr1AND1OR1Ref3_pass-vc1vc2vc3",
+          "trait": [
+            "AndValueExpression",
+            "ValueReference"
+          ],
+          "comment": "<vc1> ... <vc3> ... <S> { <p1> @<vc1> AND @<vc2> OR @<vc3> } on { <s1> <p1> 'abab' }",
+          "status": "mf:proposed",
+          "result": "1val1vExpr1AND1OR1Ref3_pass-vc1vc2vc3.val"
+        },
+        {
+          "@id": "#1val1vExpr1AND1OR1Ref3_pass-vc1vc3",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1val1vExpr1AND1OR1Ref3.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Lababab.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1vExpr1AND1OR1Ref3_pass-vc1vc3",
+          "trait": [
+            "AndValueExpression",
+            "ValueReference"
+          ],
+          "comment": "<vc1> ... <vc3> ... <S> { <p1> @<vc1> AND @<vc2> OR @<vc3> } on { <s1> <p1> 'ababab' }",
+          "status": "mf:proposed",
+          "result": "1val1vExpr1AND1OR1Ref3_pass-vc1vc3.val"
+        },
+        {
+          "@id": "#1val1vExpr1AND1OR1Ref3_failvc1vc3",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1val1vExpr1AND1OR1Ref3.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Labc.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1vExpr1AND1OR1Ref3_failvc1vc3",
+          "trait": [
+            "AndValueExpression",
+            "ValueReference"
+          ],
+          "comment": "<vc1> ... <vc3> ... <S> { <p1> @<vc1> AND ... @<vc3> } on { <s1> <p1> 'abc' }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1val1vExpr1AND1OR1Ref3_failvc2vc3",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1val1vExpr1AND1OR1Ref3.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Labcdef.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1vExpr1AND1OR1Ref3_failvc2vc3",
+          "trait": [
+            "AndValueExpression",
+            "ValueReference"
+          ],
+          "comment": "<vc1> ... <vc3> ... <S> { <p1> @<vc1> AND ... @<vc3> } on { <s1> <p1> 'abcdef' }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1val1vExpr1AND1OR1Ref3_failvc1vc2vc3",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1val1vExpr1AND1OR1Ref3.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_La.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1vExpr1AND1OR1Ref3_failvc1vc2vc3",
+          "trait": [
+            "AndValueExpression",
+            "ValueReference"
+          ],
+          "comment": "<vc1> ... <vc3> ... <S> { <p1> @<vc1> AND ... @<vc3> } on { <s1> <p1> 'a' }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1val1vExpr1OR1AND1Ref3_pass-vc1",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1val1vExpr1OR1AND1Ref3.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Labcdef.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1vExpr1OR1AND1Ref3_pass-vc1",
+          "trait": [
+            "AndValueExpression",
+            "ValueReference"
+          ],
+          "comment": "<vc1> ... <vc3> ... <S> { <p1> @<vc1> AND @<vc2> OR @<vc3> } on { <s1> <p1> 'abcdef' }",
+          "status": "mf:proposed",
+          "result": "1val1vExpr1OR1AND1Ref3_pass-vc1.val"
+        },
+        {
+          "@id": "#1val1vExpr1OR1AND1Ref3_pass-vc1vc3",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1val1vExpr1OR1AND1Ref3.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Lababab.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1vExpr1OR1AND1Ref3_pass-vc1vc3",
+          "trait": [
+            "AndValueExpression",
+            "ValueReference"
+          ],
+          "comment": "<vc1> ... <vc3> ... <S> { <p1> @<vc1> AND @<vc2> OR @<vc3> } on { <s1> <p1> 'ababab' }",
+          "status": "mf:proposed",
+          "result": "1val1vExpr1OR1AND1Ref3_pass-vc1vc3.val"
+        },
+        {
+          "@id": "#1val1vExpr1OR1AND1Ref3_pass-vc2vc3",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1val1vExpr1OR1AND1Ref3.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Lab.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1vExpr1OR1AND1Ref3_pass-vc2vc3",
+          "trait": [
+            "AndValueExpression",
+            "ValueReference"
+          ],
+          "comment": "<vc1> ... <vc3> ... <S> { <p1> @<vc1> AND @<vc2> OR @<vc3> } on { <s1> <p1> 'ab' }",
+          "status": "mf:proposed",
+          "result": "1val1vExpr1OR1AND1Ref3_pass-vc2vc3.val"
+        },
+        {
+          "@id": "#1val1vExpr1OR1AND1Ref3_failvc1vc2",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1val1vExpr1OR1AND1Ref3.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Labab.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1vExpr1OR1AND1Ref3_failvc1vc2",
+          "trait": [
+            "AndValueExpression",
+            "ValueReference"
+          ],
+          "comment": "<vc1> ... <vc3> ... <S> { <p1> @<vc1> AND ... @<vc3> } on { <s1> <p1> 'abab' }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1val1vExpr1OR1AND1Ref3_failvc1vc3",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1val1vExpr1OR1AND1Ref3.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Lcd.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1vExpr1OR1AND1Ref3_failvc1vc3",
+          "trait": [
+            "AndValueExpression",
+            "ValueReference"
+          ],
+          "comment": "<vc1> ... <vc3> ... <S> { <p1> @<vc1> AND ... @<vc3> } on { <s1> <p1> 'cd' }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1val1vExpr1OR1AND1Ref3_failvc1vc2vc3",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1val1vExpr1OR1AND1Ref3.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Labcd.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1vExpr1OR1AND1Ref3_failvc1vc2vc3",
+          "trait": [
+            "AndValueExpression",
+            "ValueReference"
+          ],
+          "comment": "<vc1> ... <vc3> ... <S> { <p1> @<vc1> AND ... @<vc3> } on { <s1> <p1> 'abcd' }",
+          "status": "mf:proposed"
+        },
+        {
           "@id": "#open3Ordotclosecard2_fail-p1",
           "@type": "sht:ValidationFailure",
           "action": {
@@ -10283,7 +10505,7 @@
           "result": "1val1IRIREFExtra1p2_Is1_Ip1_Io1.val"
         },
         {
-          "@id": "#1val1IRIREFExtra1p2_pass-iri2",
+          "@id": "#1val1IRIREFExtra1p2_fail-iri2",
           "@type": "sht:ValidationFailure",
           "action": {
             "schema": "../schemas/1val1IRIREFExtra1p2.shex",
@@ -10292,7 +10514,7 @@
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1val1IRIREFExtra1p2_pass-iri2",
+          "name": "1val1IRIREFExtra1p2_fail-iri2",
           "trait": [
             "Extra",
             "IriEquivalence"

@@ -1,0 +1,39 @@
+{
+  "type": "test",
+  "node": "http://a.example/s1",
+  "shape": "http://a.example/S1",
+  "solution": {
+    "type": "tripleConstraintSolutions",
+    "predicate": "http://a.example/p1",
+    "solutions": [
+      {
+        "type": "testedTriple",
+        "subject": "http://a.example/s1",
+        "predicate": "http://a.example/p1",
+        "object": "\"abcdef\""
+      }
+    ],
+    "valueExpr": {
+      "type": "ShapeOr",
+      "shapeExprs": [
+        {
+          "type": "ShapeRef",
+          "reference": "http://a.example/vc1"
+        },
+        {
+          "type": "ShapeAnd",
+          "shapeExprs": [
+            {
+              "type": "ShapeRef",
+              "reference": "http://a.example/vc2"
+            },
+            {
+              "type": "ShapeRef",
+              "reference": "http://a.example/vc3"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
