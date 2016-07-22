@@ -8795,10 +8795,10 @@
     mf:result <1val1vExpr1OR1AND1Ref3_pass-vc2vc3.val>
     .
 
-# <5 | ( >3 & /^(ab)*$/ )
-# 12    abab
-# 13    cd
-# 123   abcd
+# >5 | ( <3 & /^(ab)*$/ )
+# !1!2    abab
+# !1!3    cd
+# !1!2!3  abcd
 <#1val1vExpr1OR1AND1Ref3_failvc1vc2> a sht:ValidationFailure ;
     mf:name "1val1vExpr1OR1AND1Ref3_failvc1vc2" ;
     sht:trait sht:AndValueExpression , sht:ValueReference ;
