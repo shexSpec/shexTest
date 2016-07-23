@@ -1,6 +1,7 @@
 # Issue-simple-annotated.shex - Issue representation in Turtle
 
 BASE <http://ex.example/>
+PREFIX e: <http://ex.example/>
 PREFIX ex: <http://ex.example/#>
 PREFIX UserShape: <http://ex.example/#UserShape>
 PREFIX : <http://ex.example/#>
@@ -51,9 +52,9 @@ _:IDshape {
     !ex:misc BNODE %ex:foo{ ignored %} %ex:bar{ also ignored %}
     | (^ex:ref [true false];
         !^ex:miscRef .);
-    ex:issues @ex:S1*;
+    ex:issues @e:S1*;
     ex:seeAlso @ # interjection!
-                 ex:S1*;
+                 e:S1*;
     ex:says @ # interjection2!
                  :EmployeeShape*;
 }

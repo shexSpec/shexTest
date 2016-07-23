@@ -1,6 +1,7 @@
 {
   "type": "Schema",
   "prefixes": {
+    "e": "http://ex.example/",
     "ex": "http://ex.example/#",
     "UserShape": "http://ex.example/#UserShape",
     "": "http://ex.example/#",
@@ -322,7 +323,7 @@
                 "predicate": "http://ex.example/#issues",
                 "valueExpr": {
                   "type": "ShapeRef",
-                  "reference": "http://ex.example/#S1"
+                  "reference": "http://ex.example/S1"
                 },
                 "min": 0, "max": "*"
               },
@@ -331,7 +332,7 @@
                 "predicate": "http://ex.example/#seeAlso",
                 "valueExpr": {
                   "type": "ShapeRef",
-                  "reference": "http://ex.example/#S1"
+                  "reference": "http://ex.example/S1"
                 },
                 "min": 0, "max": "*"
               },
