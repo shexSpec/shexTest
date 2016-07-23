@@ -54,7 +54,7 @@
         # 1inversenegateddot_... same as 1negatedinversedot
         <#1Adot_pass>
 
-## node kinds
+## node kind
         <#1iri_pass-iri>
         <#1iri_fail-bnode>
         <#1iri_fail-literal>
@@ -179,7 +179,7 @@
         <#1val1false_true>
         <#1val1false_ab>
 
-## facets
+## facet
 ###   length
         <#1datatypeLength_fail-missing>
         <#1datatypeLength_fail-wrongDatatype>
@@ -742,7 +742,8 @@
 ## annotations + semantic actions
         <#open3groupdotclosecard23Annot3Code2-p1p2p3X3>
 
-## shapeKind
+## focus constraint
+### kind
 	<#0focusIRI_other>
 	<#0focusIRI_other_fail-bnodeFocusLabel>
 	<#0focusIRI_empty>
@@ -757,8 +758,8 @@
         <#1focusBNODE_dot_pass>
         <#1focusnonLiteral-dot_pass-iri-equal>
 
-## focusFacet
-###   lengths
+### facet
+#### length
         <#1focusLength-dot_fail-iri-short>
         <#1focusLength-dot_pass-iri-equal>
         <#1focusLength-dot_fail-iri-long>
@@ -780,7 +781,7 @@
         <#1focusMaxLength-dot_pass-bnode-equal>
         <#1focusMaxLength-dot_fail-bnode-long>
 
-###   pattern
+#### pattern
         <#1focusPattern-dot_fail-iri-match>
         <#1focusPattern-dot_fail-iri-short>
         <#1focusPattern-dot_pass-iri-match>
@@ -790,7 +791,7 @@
         <#1focusPatternB-dot_pass-bnode-match>
         <#1focusPatternB-dot_fail-bnode-long>
 
-## shapeKind + length facet
+### kind + length facet
         <#1focusIRILength_dot_fail-bnodeFocusLabel-equal>
         <#1focusIRILength_dot_fail-short>
         <#1focusIRILength_dot_pass>
@@ -10073,7 +10074,8 @@
     .
 
 ## } annotations + semantic actions
-## shapeKind {
+## focus constraint {
+###  kind {
 
 <#0focusIRI_empty_fail-bnodeFocusLabel> a sht:ValidationFailure ;
     mf:name "0focusIRI_empty_fail-bnodeFocusLabel" ;
@@ -10251,9 +10253,9 @@
     mf:result <1dot_pass.val>
     .
 
-## } shapeKind
-## focusFacet {
-###   lengths {
+###  } kind
+###  focusFacet {
+####    lengths {
 
 <#1focusLength-dot_fail-iri-short> a sht:ValidationFailure ;
     mf:name "1focusLength-dot_fail-iri-short" ;
@@ -10501,8 +10503,8 @@
     ]
     .
 
-###   } lengths
-###   pattern {
+####    } lengths
+####    pattern {
 <#1focusPattern-dot_fail-iri-match> a sht:ValidationFailure ;
     mf:name "1focusPattern-dot_fail-iri-match" ;
     sht:trait sht:PaternFacet ;
@@ -10603,9 +10605,9 @@
       sht:focus _:abcdefghijklmnopqrst
     ].
 
-###   } pattern
-## } focusFacet
-## shapeKind + length facet {
+####    } pattern
+###  } focusFacet
+###  kind + length facet {
 
 <#1focusIRILength_dot_fail-bnodeFocusLabel-equal> a sht:ValidationFailure ;
     mf:name "1focusIRILength_dot_fail-bnodeFocusLabel-equal" ;
@@ -10727,7 +10729,9 @@
     mf:result <1dot_pass.val>
     .
 
-## } shapeKind + length facet
+###  } kind + length facet
+## } node constraint
+## node constraint + {
 ## manual schemas {
 
 <#iovka> a sht:ValidationTest ;
