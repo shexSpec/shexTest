@@ -19,7 +19,7 @@ The name tells us that the tested shape has:
 * and has leading and trailing '0's ("05.00")
 
 An RDF **term type** is represented as either:
-* Turtle shorthand syntax: [https://www.w3.org/TR/turtle/#abbrev](numbers) ("decimal", "double", "integer") or [https://www.w3.org/TR/turtle/#h4_booleans](booleans) ("true", "false")
+* Turtle shorthand syntax: [numbers](https://www.w3.org/TR/turtle/#abbrev) ("decimal", "double", "integer") or [booleans](https://www.w3.org/TR/turtle/#h4_booleans) ("true", "false")
 * Turtle typed literal: xsd:byte, xsd:decimal
 
 When representing a supplied value, shorthand numbers are capitolized ("DECIMAL", "DOUBLE", "INTEGER").
@@ -37,7 +37,7 @@ When representing a supplied value, shorthand numbers are capitolized ("DECIMAL"
 
 #### SE - Shape expression operators
 
-* **AND**: ShapeExpr conjunctions are reprented by "AND" in ShExC: `@\<S1\> AND @\<S2\>`, e.g. [1dotRefAND3.shex](1dotRefAND3) in node constraints in both value constraints and focus constraints.
+* **AND**: ShapeExpr conjunctions are reprented by "AND" in ShExC: `@\<S1\> AND @\<S2\>`, e.g. [1dotRefAND3](1dotRefAND3.shex) in node constraints in both value constraints and focus constraints.
 
 #### filename components
 * Ref₍ₙ₎ - ₍ₙ₎references to labeled shapes
