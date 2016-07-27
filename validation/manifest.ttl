@@ -599,10 +599,10 @@
 	<#1dotRefAND3_failShape1Shape3>
 	<#1dotRefAND3_failShape1Shape2>
 	<#1dotRefAND3_passShape1Shape2Shape3>
-        <#1val1vExprANDRef3_pass>
-        <#1val1vExprANDRef3_failvc1>
-        <#1val1vExprANDRef3_failvc2>
-        <#1val1vExprANDRef3_failvc3>
+        <#1val1vExpr1AND1AND1Ref3_pass>
+        <#1val1vExpr1AND1AND1Ref3_failvc1>
+        <#1val1vExpr1AND1AND1Ref3_failvc2>
+        <#1val1vExpr1AND1AND1Ref3_failvc3>
         <#1val1vExprRefAND3_pass>
         <#1val1vExprRefAND3_failvc3>
         <#1val1vExprRefAND3_failvc2>
@@ -618,11 +618,11 @@
 	<#1dotRefOR3_passShape2>
 	<#1dotRefOR3_passShape3>
 	<#1dotRefOR3_passShape1Shape2Shape3>
-        <#1val1vExprORRef3_fail>
-        <#1val1vExprORRef3_passvc1>
-        <#1val1vExprORRef3_passvc2>
-        <#1val1vExprORRef3_passvc3>
-        <#1val1vExprORRef3_passvc1vc2vc3>
+        <#1val1vExpr1OR1OR1Ref3_fail>
+        <#1val1vExpr1OR1OR1Ref3_passvc1>
+        <#1val1vExpr1OR1OR1Ref3_passvc2>
+        <#1val1vExpr1OR1OR1Ref3_passvc3>
+        <#1val1vExpr1OR1OR1Ref3_passvc1vc2vc3>
         <#1val1vExprRefOR3_passvc1vc2vc3>
         <#1val1vExprRefOR3_passvc3>
         <#1val1vExprRefOR3_passvc2>
@@ -2064,8 +2064,8 @@
     mf:result <In2_Ip2_In1@In1_Ip1_LX.val>
     .
 
- # !../schemas/1dotRefLNex.shex
- # !../schemas/1dotRefSpaceLNex.shex [1dotRefLNex.shex]
+ # !../schemas/1dotRefLNex1.shex
+ # !../schemas/1dotRefSpaceLNex1.shex [1dotRefLNex1.shex]
  # !../schemas/1dotRefNS1.shex
  # !../schemas/1dotRefSpaceNS1.shex [1dotRefNS1.shex]
 
@@ -8227,53 +8227,53 @@
     mf:result <1dotRefAND3_passShape1Shape2Shape3.val>
     .
 
-<#1val1vExprANDRef3_pass> a sht:ValidationTest ;
-    mf:name "1val1vExprANDRef3_pass" ;
+<#1val1vExpr1AND1AND1Ref3_pass> a sht:ValidationTest ;
+    mf:name "1val1vExpr1AND1AND1Ref3_pass" ;
     sht:trait sht:AndValueExpression , sht:ValueReference ;
     rdfs:comment "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> AND ... $<vc3> } on { <s1> <p1> 'abab' }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1val1vExprANDRef3.shex> ;
+      sht:schema <../schemas/1val1vExpr1AND1AND1Ref3.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Labab.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
-    mf:result <1val1vExprANDRef3_pass.val>
+    mf:result <1val1vExpr1AND1AND1Ref3_pass.val>
     .
 
-<#1val1vExprANDRef3_failvc1> a sht:ValidationFailure ;
-    mf:name "1val1vExprANDRef3_failvc1" ;
+<#1val1vExpr1AND1AND1Ref3_failvc1> a sht:ValidationFailure ;
+    mf:name "1val1vExpr1AND1AND1Ref3_failvc1" ;
     sht:trait sht:AndValueExpression , sht:ValueReference ;
     rdfs:comment "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> AND ... $<vc3> } on { <s1> <p1> 'ab' }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1val1vExprANDRef3.shex> ;
+      sht:schema <../schemas/1val1vExpr1AND1AND1Ref3.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Lab.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
     .
 
-<#1val1vExprANDRef3_failvc2> a sht:ValidationFailure ;
-    mf:name "1val1vExprANDRef3_failvc2" ;
+<#1val1vExpr1AND1AND1Ref3_failvc2> a sht:ValidationFailure ;
+    mf:name "1val1vExpr1AND1AND1Ref3_failvc2" ;
     sht:trait sht:AndValueExpression , sht:ValueReference ;
     rdfs:comment "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> AND ... $<vc3> } on { <s1> <p1> 'ababab' }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1val1vExprANDRef3.shex> ;
+      sht:schema <../schemas/1val1vExpr1AND1AND1Ref3.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Lababab.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
     .
 
-<#1val1vExprANDRef3_failvc3> a sht:ValidationFailure ;
-    mf:name "1val1vExprANDRef3_failvc3" ;
+<#1val1vExpr1AND1AND1Ref3_failvc3> a sht:ValidationFailure ;
+    mf:name "1val1vExpr1AND1AND1Ref3_failvc3" ;
     sht:trait sht:AndValueExpression , sht:ValueReference ;
     rdfs:comment "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> AND ... $<vc3> } on { <s1> <p1> 'baba' }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1val1vExprANDRef3.shex> ;
+      sht:schema <../schemas/1val1vExpr1AND1AND1Ref3.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Lbaba.ttl> ;
       sht:focus <http://a.example/s1>
@@ -8458,73 +8458,73 @@
     mf:result <1dotRefOR3_passShape1.val>
     .
 
-<#1val1vExprORRef3_fail> a sht:ValidationFailure ;
-    mf:name "1val1vExprORRef3_fail" ;
+<#1val1vExpr1OR1OR1Ref3_fail> a sht:ValidationFailure ;
+    mf:name "1val1vExpr1OR1OR1Ref3_fail" ;
     sht:trait sht:OrValueExpression , sht:ValueReference ;
     rdfs:comment "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> OR ... $<vc3> } on { <s1> <p1> 'a' }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1val1vExprORRef3.shex> ;
+      sht:schema <../schemas/1val1vExpr1OR1OR1Ref3.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_La.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
     .
 
-<#1val1vExprORRef3_passvc1> a sht:ValidationTest ;
-    mf:name "1val1vExprORRef3_passvc1" ;
+<#1val1vExpr1OR1OR1Ref3_passvc1> a sht:ValidationTest ;
+    mf:name "1val1vExpr1OR1OR1Ref3_passvc1" ;
     sht:trait sht:OrValueExpression , sht:ValueReference ;
     rdfs:comment "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> OR ... $<vc3> } on { <s1> <p1> 'ab' }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1val1vExprORRef3.shex> ;
+      sht:schema <../schemas/1val1vExpr1OR1OR1Ref3.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Lab.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
-    mf:result <1val1vExprORRef3_passvc1.val>
+    mf:result <1val1vExpr1OR1OR1Ref3_passvc1.val>
     .
 
-<#1val1vExprORRef3_passvc2> a sht:ValidationTest ;
-    mf:name "1val1vExprORRef3_passvc2" ;
+<#1val1vExpr1OR1OR1Ref3_passvc2> a sht:ValidationTest ;
+    mf:name "1val1vExpr1OR1OR1Ref3_passvc2" ;
     sht:trait sht:OrValueExpression , sht:ValueReference ;
     rdfs:comment "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> OR ... $<vc3> } on { <s1> <p1> 'cd' }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1val1vExprORRef3.shex> ;
+      sht:schema <../schemas/1val1vExpr1OR1OR1Ref3.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Lcd.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
-    mf:result <1val1vExprORRef3_passvc2.val>
+    mf:result <1val1vExpr1OR1OR1Ref3_passvc2.val>
     .
 
-<#1val1vExprORRef3_passvc3> a sht:ValidationTest ;
-    mf:name "1val1vExprORRef3_passvc3" ;
+<#1val1vExpr1OR1OR1Ref3_passvc3> a sht:ValidationTest ;
+    mf:name "1val1vExpr1OR1OR1Ref3_passvc3" ;
     sht:trait sht:OrValueExpression , sht:ValueReference ;
     rdfs:comment "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> OR ... $<vc3> } on { <s1> <p1> 'ef' }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1val1vExprORRef3.shex> ;
+      sht:schema <../schemas/1val1vExpr1OR1OR1Ref3.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Lef.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
-    mf:result <1val1vExprORRef3_passvc3.val>
+    mf:result <1val1vExpr1OR1OR1Ref3_passvc3.val>
     .
 
-<#1val1vExprORRef3_passvc1vc2vc3> a sht:ValidationTest ;
-    mf:name "1val1vExprORRef3_passvc1vc2vc3" ;
+<#1val1vExpr1OR1OR1Ref3_passvc1vc2vc3> a sht:ValidationTest ;
+    mf:name "1val1vExpr1OR1OR1Ref3_passvc1vc2vc3" ;
     sht:trait sht:OrValueExpression , sht:ValueReference ;
     rdfs:comment "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> OR ... $<vc3> } on { <s1> <p1> 'abcdef' }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1val1vExprORRef3.shex> ;
+      sht:schema <../schemas/1val1vExpr1OR1OR1Ref3.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Labcdef.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
-    mf:result <1val1vExprORRef3_passvc1vc2vc3.val>
+    mf:result <1val1vExpr1OR1OR1Ref3_passvc1vc2vc3.val>
     .
 
 <#1val1vExprRefOR3_fail> a sht:ValidationFailure ;
