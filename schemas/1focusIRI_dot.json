@@ -3,7 +3,7 @@
   "shapes": {
     "http://a.example/S1": {
       "nodeKind": "iri",
-      "type": "Shape",
+      "type": "NodeConstraint",
       "expression": {
         "type": "TripleConstraint",
         "predicate": "http://a.example/p1"

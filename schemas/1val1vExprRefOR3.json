@@ -2,17 +2,17 @@
   "type": "Schema",
   "shapes": {
     "http://a.example/vc1": {
-      "type": "Shape",
+      "type": "NodeConstraint",
       "nodeKind": "literal",
       "pattern": "^ab"
     },
     "http://a.example/vc2": {
-      "type": "Shape",
+      "type": "NodeConstraint",
       "nodeKind": "literal",
       "pattern": "cd"
     },
     "http://a.example/vc3": {
-      "type": "Shape",
+      "type": "NodeConstraint",
       "nodeKind": "literal",
       "pattern": "ef$"
     },
@@ -25,7 +25,7 @@
       ]
     },
     "http://a.example/S1": {
-      "type": "Shape",
+      "type": "NodeConstraint",
       "expression": {
         "type": "TripleConstraint",
         "predicate": "http://a.example/p1",

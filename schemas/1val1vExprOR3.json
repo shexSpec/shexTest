@@ -2,7 +2,7 @@
   "type": "Schema",
   "shapes": {
     "http://a.example/S1": {
-      "type": "Shape",
+      "type": "NodeConstraint",
       "expression": {
         "type": "TripleConstraint",
         "predicate": "http://a.example/p1",
@@ -10,17 +10,17 @@
           "type": "ShapeOr",
           "shapeExprs": [
             {
-              "type": "Shape",
+              "type": "NodeConstraint",
               "nodeKind": "literal",
               "pattern": "^ab"
             },
             {
-              "type": "Shape",
+              "type": "NodeConstraint",
               "nodeKind": "literal",
               "pattern": "cd"
             },
             {
-              "type": "Shape",
+              "type": "NodeConstraint",
               "nodeKind": "literal",
               "pattern": "ef$"
             }

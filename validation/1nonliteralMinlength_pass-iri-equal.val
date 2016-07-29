@@ -6,7 +6,7 @@
     "type": "tripleConstraintSolutions",
     "predicate": "http://a.example/p1",
     "valueExpr": {
-      "type": "Shape",
+      "type": "NodeConstraint",
       "nodeKind": "nonliteral",
       "minlength": 19
     },

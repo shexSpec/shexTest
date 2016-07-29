@@ -2,24 +2,24 @@
   "type": "Schema",
   "shapes": {
     "http://a.example/S1": {
-      "type": "Shape",
+      "type": "NodeConstraint",
       "expression": {
         "type": "EachOf",
         "expressions": [
           {
             "type": "TripleConstraint",
             "predicate": "http://a.example/p1",
-            "valueExpr": { "type": "Shape", "values": [ "http://a.example/o1" ] }
+            "valueExpr": { "type": "NodeConstraint", "values": [ "http://a.example/o1" ] }
           },
           {
             "type": "TripleConstraint",
             "predicate": "http://a.example/p2",
-            "valueExpr": { "type": "Shape", "values": [ "http://a.example/o2" ] }
+            "valueExpr": { "type": "NodeConstraint", "values": [ "http://a.example/o2" ] }
           },
           {
             "type": "TripleConstraint",
             "predicate": "http://a.example/p3",
-            "valueExpr": { "type": "Shape", "values": [ "http://a.example/o3" ] }
+            "valueExpr": { "type": "NodeConstraint", "values": [ "http://a.example/o3" ] }
           }
         ]
       },

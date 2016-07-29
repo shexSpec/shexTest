@@ -5,7 +5,7 @@
   "solution": { 
     "type":"tripleConstraintSolutions", "predicate":"http://a.example/p1",
     "valueExpr": {
-      "type":"Shape",
+      "type":"NodeConstraint",
       "values": [
         {
           "type": "StemRange",

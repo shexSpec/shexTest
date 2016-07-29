@@ -9,17 +9,17 @@
       "type": "ShapeOr",
       "shapeExprs": [
         {
-          "type": "Shape",
+          "type": "NodeConstraint",
           "nodeKind": "literal",
           "pattern": "^ab"
         },
         {
-          "type": "Shape",
+          "type": "NodeConstraint",
           "nodeKind": "literal",
           "pattern": "cd"
         },
         {
-          "type": "Shape",
+          "type": "NodeConstraint",
           "nodeKind": "literal",
           "pattern": "ef$"
         }

@@ -2,7 +2,7 @@
   "type": "Schema",
   "shapes":{
     "http://a.example/S1": {
-      "type": "Shape",
+      "type": "NodeConstraint",
       "expression": {
         "type": "EachOf",
         "expressions": [
@@ -18,7 +18,7 @@
       }
     },
     "http://a.example/S2": {
-      "type": "Shape",
+      "type": "NodeConstraint",
       "expression": {
         "type": "TripleConstraint",
         "predicate": "http://a.example/p2"

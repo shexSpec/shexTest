@@ -2,7 +2,7 @@
   "type": "Schema",
   "shapes":{
     "http://a.example/vs1": {
-      "type": "Shape", "values": [
+      "type": "NodeConstraint", "values": [
         { "type": "StemRange",
           "stem": { "type": "Wildcard" },
           "exclusions": [
@@ -14,7 +14,7 @@
       ]
     },
     "http://a.example/S1": {
-      "type": "Shape",
+      "type": "NodeConstraint",
       "expression": {
         "type": "TripleConstraint",
         "predicate": "http://a.example/p1",

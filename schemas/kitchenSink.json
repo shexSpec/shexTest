@@ -17,7 +17,7 @@
   "start": "http://ex.example/S1",
   "shapes": {
     "http://ex.example/S1": {
-      "type": "Shape",
+      "type": "NodeConstraint",
       "expression": {
         "type": "EachOf",
         "expressions": [
@@ -25,7 +25,7 @@
             "type": "TripleConstraint",
             "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
             "valueExpr": {
-              "type": "Shape",
+              "type": "NodeConstraint",
               "values": [
                 "http://ex.example/#Issue"
               ]
@@ -37,7 +37,7 @@
             "type": "TripleConstraint",
             "predicate": "http://ex.example/#state",
             "valueExpr": {
-              "type": "Shape",
+              "type": "NodeConstraint",
               "values": [
                 {
                   "type": "StemRange",
@@ -60,7 +60,7 @@
               "type": "ShapeAnd",
               "shapeExprs": [
                 {
-                  "type": "Shape",
+                  "type": "NodeConstraint",
                   "nodeKind": "iri"
                 },
                 {
@@ -74,7 +74,7 @@
             "type": "TripleConstraint",
             "predicate": "http://ex.example/#reportedOn",
             "valueExpr": {
-              "type": "Shape",
+              "type": "NodeConstraint",
               "datatype": "http://www.w3.org/2001/XMLSchema#dateTime"
             }
           },
@@ -88,7 +88,7 @@
                   "type": "ShapeAnd",
                   "shapeExprs": [
                     {
-                      "type": "Shape",
+                      "type": "NodeConstraint",
                       "nodeKind": "nonliteral"
                     },
                     {
@@ -102,7 +102,7 @@
                 "type": "TripleConstraint",
                 "predicate": "http://ex.example/#reproducedOn",
                 "valueExpr": {
-                  "type": "Shape",
+                  "type": "NodeConstraint",
                   "datatype": "http://www.w3.org/2001/XMLSchema#dateTime"
                 }
               }
@@ -126,7 +126,7 @@
       }
     },
     "http://ex.example/#UserShape": {
-      "type": "Shape",
+      "type": "NodeConstraint",
       "expression": {
         "type": "EachOf",
         "expressions": [
@@ -137,7 +137,7 @@
                 "type": "TripleConstraint",
                 "predicate": "http://xmlns.com/foaf/name",
                 "valueExpr": {
-                  "type": "Shape",
+                  "type": "NodeConstraint",
                   "datatype": "http://www.w3.org/2001/XMLSchema#string"
                 }
               },
@@ -148,7 +148,7 @@
                     "type": "TripleConstraint",
                     "predicate": "http://xmlns.com/foaf/givenName",
                     "valueExpr": {
-                      "type": "Shape",
+                      "type": "NodeConstraint",
                       "datatype": "http://www.w3.org/2001/XMLSchema#string"
                     },
                     "min": 1, "max": "*"
@@ -157,7 +157,7 @@
                     "type": "TripleConstraint",
                     "predicate": "http://xmlns.com/foaf/familyName",
                     "valueExpr": {
-                      "type": "Shape",
+                      "type": "NodeConstraint",
                       "datatype": "http://www.w3.org/2001/XMLSchema#string"
                     }
                   }
@@ -169,7 +169,7 @@
             "type": "TripleConstraint",
             "predicate": "http://xmlns.com/foaf/mbox",
             "valueExpr": {
-              "type": "Shape",
+              "type": "NodeConstraint",
               "nodeKind": "iri",
               "pattern": "^mailto:"
             }
@@ -181,7 +181,7 @@
               "type": "ShapeAnd",
               "shapeExprs": [
                 {
-                  "type": "Shape",
+                  "type": "NodeConstraint",
                   "nodeKind": "bnode"
                 },
                 {
@@ -195,7 +195,7 @@
       }
     },
     "http://ex.example/#EmployeeShape": {
-      "type": "Shape",
+      "type": "NodeConstraint",
       "expression": {
         "type": "EachOf",
         "expressions": [
@@ -203,7 +203,7 @@
             "type": "TripleConstraint",
             "predicate": "http://xmlns.com/foaf/givenName",
             "valueExpr": {
-              "type": "Shape",
+              "type": "NodeConstraint",
               "datatype": "http://www.w3.org/2001/XMLSchema#string"
             },
             "min": 1, "max": "*"
@@ -212,7 +212,7 @@
             "type": "TripleConstraint",
             "predicate": "http://xmlns.com/foaf/familyName",
             "valueExpr": {
-              "type": "Shape",
+              "type": "NodeConstraint",
               "datatype": "http://www.w3.org/2001/XMLSchema#string"
             }
           },
@@ -220,7 +220,7 @@
             "type": "TripleConstraint",
             "predicate": "http://xmlns.com/foaf/phone",
             "valueExpr": {
-              "type": "Shape",
+              "type": "NodeConstraint",
               "nodeKind": "iri"
             },
             "min": 0, "max": "*"
@@ -229,7 +229,7 @@
             "type": "TripleConstraint",
             "predicate": "http://xmlns.com/foaf/mbox",
             "valueExpr": {
-              "type": "Shape",
+              "type": "NodeConstraint",
               "nodeKind": "iri"
             },
             "min": 0,
@@ -239,7 +239,7 @@
       }
     },
     "_:IDshape": {
-      "type": "Shape",
+      "type": "NodeConstraint",
       "expression": {
         "type": "SomeOf",
         "expressions": [
@@ -250,7 +250,7 @@
                 "type": "TripleConstraint",
                 "predicate": "http://ex.example/#code",
                 "valueExpr": {
-                  "type": "Shape",
+                  "type": "NodeConstraint",
                   "nodeKind": "literal"
                 }
               },
@@ -258,7 +258,7 @@
                 "type": "TripleConstraint",
                 "predicate": "http://ex.example/#system",
                 "valueExpr": {
-                  "type": "Shape",
+                  "type": "NodeConstraint",
                   "nodeKind": "iri"
                 }
               },
@@ -266,7 +266,7 @@
                 "type": "TripleConstraint",
                 "predicate": "http://ex.example/#literal",
                 "valueExpr": {
-                  "type": "Shape",
+                  "type": "NodeConstraint",
                   "values": [
                     "\"a\"",
                     "\"b\"^^http://ex.example/#c",
@@ -282,7 +282,7 @@
                 "negated": true,
                 "predicate": "http://ex.example/#misc",
                 "valueExpr": {
-                  "type": "Shape",
+                  "type": "NodeConstraint",
                   "nodeKind": "bnode"
                 },
                 "semActs": [
@@ -303,7 +303,7 @@
                     "inverse": true,
                     "predicate": "http://ex.example/#ref",
                     "valueExpr": {
-                      "type": "Shape",
+                      "type": "NodeConstraint",
                       "values": [
                         "\"true\"^^http://www.w3.org/2001/XMLSchema#boolean",
                         "\"false\"^^http://www.w3.org/2001/XMLSchema#boolean"
@@ -351,7 +351,7 @@
       }
     },
     "http://ex.example/#FooID": {
-      "type": "Shape",
+      "type": "NodeConstraint",
       "closed": true,
       "expression": {
         "type": "Inclusion",

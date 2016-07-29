@@ -9,17 +9,17 @@
       "type": "ShapeAnd",
       "shapeExprs": [
         {
-          "type": "Shape",
+          "type": "NodeConstraint",
           "nodeKind": "literal",
           "minlength": 4
         },
         {
-          "type": "Shape",
+          "type": "NodeConstraint",
           "nodeKind": "literal",
           "maxlength": 5
         },
         {
-          "type": "Shape",
+          "type": "NodeConstraint",
           "nodeKind": "literal",
           "pattern": "^(ab)+"
         }

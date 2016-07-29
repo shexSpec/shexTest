@@ -2,7 +2,7 @@
   "type": "Schema",
   "shapes": {
     "http://a.example/S1": {
-      "type": "Shape",
+      "type": "NodeConstraint",
       "expression": {
         "type": "TripleConstraint",
         "predicate": "http://a.example/p1",
@@ -10,7 +10,7 @@
       }
     },
     "_:a·̀ͯ‿.⁀": {
-      "type": "Shape",
+      "type": "NodeConstraint",
       "expression": {
         "type": "TripleConstraint",
         "predicate": "http://a.example/p2"

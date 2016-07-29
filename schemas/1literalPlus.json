@@ -2,12 +2,12 @@
   "type": "Schema",
   "shapes": {
     "http://a.example/S1": {
-      "type": "Shape",
+      "type": "NodeConstraint",
       "expression": {
         "type": "TripleConstraint",
         "predicate": "http://a.example/p1",
         "valueExpr": {
-          "type": "Shape",
+          "type": "NodeConstraint",
           "nodeKind": "literal"
         },
         "min": 1,

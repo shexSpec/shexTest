@@ -18,7 +18,7 @@
                     "type": "tripleConstraintSolutions",
                     "predicate": "http://a.example/p1",
                     "valueExpr": {
-                      "type": "Shape",
+                      "type": "NodeConstraint",
                       "values": [
                         "http://a.example/o1"
                       ]

@@ -9,7 +9,7 @@
       "type": "ShapeAnd",
       "shapeExprs": [
         {
-          "type": "Shape",
+          "type": "NodeConstraint",
           "nodeKind": "bnode"
         },
         {

@@ -2,12 +2,12 @@
   "type": "Schema",
   "shapes":{
     "http://a.example/S1": {
-      "type": "Shape",
+      "type": "NodeConstraint",
       "expression": {
         "type": "TripleConstraint",
         "predicate": "http://a.example/p1",
         "valueExpr": {
-          "type": "Shape", "values": [
+          "type": "NodeConstraint", "values": [
             { "type": "StemRange",
               "stem": "http://a.example/v"
             }

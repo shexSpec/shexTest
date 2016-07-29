@@ -2,14 +2,14 @@
   "type": "Schema",
   "shapes": {
     "http://a.example/S1": {
-      "type": "Shape",
+      "type": "NodeConstraint",
       "expression": {
         "type": "TripleConstraint",
         "predicate": "http://a.example/p1",
         "valueExpr": {
 	  "type": "ShapeAnd",
           "shapeExprs": [
-	    { "type": "Shape",
+	    { "type": "NodeConstraint",
               "nodeKind": "iri",
               "length": 19
             },
@@ -21,7 +21,7 @@
       }
     },
     "http://a.example/S2": {
-      "type": "Shape",
+      "type": "NodeConstraint",
       "expression": {
         "type": "TripleConstraint",
         "predicate": "http://a.example/p2"
