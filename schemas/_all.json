@@ -57,7 +57,7 @@
       ]
     },
     "http://all.example/S1":{
-      "type":"NodeConstraint",
+      "type":"Shape",
       "expression":{
 	"type":"EachOf",
 	"expressions":[
@@ -82,7 +82,7 @@
       ]
     },
     "http://all.example/S2":{
-      "type":"NodeConstraint",
+      "type":"Shape",
       "expression":{
 	"type":"EachOf",
 	"expressions":[
@@ -107,7 +107,7 @@
       ]
     },
     "http://all.example/S3":{
-      "type":"NodeConstraint",
+      "type":"Shape",
       "expression":{
 	"type":"EachOf",
 	"expressions":[
@@ -233,7 +233,7 @@
 			    "type":"TripleConstraint",
 			    "inverse":true,"predicate":"http://all.example/extra",
 			    "valueExpr":{
-			      "type":"NodeConstraint",
+			      "type":"Shape",
                               "expression":{
 	                        "type":"TripleConstraint",
 	                        "predicate":"http://all.example/p1",
@@ -369,7 +369,7 @@
       "nodeKind": "iri"
     },
     "_:a·̀ͯ‿.⁀":{
-      "type":"NodeConstraint",
+      "type":"Shape",
       "closed":true,
       "expression": {
         "type": "EachOf",
@@ -380,7 +380,7 @@
       }
     },
     "_:AZazÀÖØöø˿ͰͽͿ῿‌‍⁰↏Ⰰ⿯、퟿豈﷏ﷰ�𐀀󯿽":{
-      "type":"NodeConstraint",
+      "type":"Shape",
       "expression":{
 	"type":"Inclusion",
 	"include":"_:a·̀ͯ‿.⁀"

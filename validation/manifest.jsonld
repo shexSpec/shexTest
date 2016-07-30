@@ -11704,7 +11704,7 @@
           ],
           "comment": "<S> IRI { <p1> . } on <s> in { <s1> <p1> <o1> }",
           "status": "mf:proposed",
-          "result": "1dot_pass.val"
+          "result": "1focus_dot_pass.val"
         },
         {
           "@id": "#1focusBNODE_dot_fail-iriFocusLabel-equal",
@@ -11760,7 +11760,7 @@
           ],
           "comment": "<S1> NONLITERAL { <p1> . } on { <s1> <p1> <o1> }",
           "status": "mf:proposed",
-          "result": "1dot_pass.val"
+          "result": "1focus_dot_pass.val"
         },
         {
           "@id": "#1focusLength-dot_fail-iri-short",
@@ -11797,7 +11797,7 @@
           ],
           "comment": "<S1> LENGTH 19 { <p1> . } on { <s1> <p1> <o1> }",
           "status": "mf:proposed",
-          "result": "1dot_pass.val"
+          "result": "1focus_dot_pass.val"
         },
         {
           "@id": "#1focusLength-dot_fail-iri-long",
@@ -11913,7 +11913,7 @@
           ],
           "comment": "<S1> MINLENGTH 19 { <p1> . } on { <s1> <p1> <o1> }",
           "status": "mf:proposed",
-          "result": "1dot_pass.val"
+          "result": "1focus_dot_pass.val"
         },
         {
           "@id": "#1focusMinLength-dot_pass-iri-long",
@@ -12026,7 +12026,7 @@
           ],
           "comment": "<S1> MINLENGTH 19 { <p1> . } on { <s1> <p1> <o1> }",
           "status": "mf:proposed",
-          "result": "1dot_pass.val"
+          "result": "1focus_dot_pass.val"
         },
         {
           "@id": "#1focusMaxLength-dot_fail-iri-long",
@@ -12152,7 +12152,7 @@
           ],
           "comment": "<S1> PATTERN \"^http://a.example/s1$\" { <p1> } on { <s1> <p1> <o1> }",
           "status": "mf:proposed",
-          "result": "1dot_pass.val"
+          "result": "1focus_dot_pass.val"
         },
         {
           "@id": "#1focusPattern-dot_fail-iri-long",
@@ -12295,7 +12295,7 @@
           ],
           "comment": "<S> IRI LENGTH 19 { <p1> . } on <s> in { <s1> <p1> <o1> }",
           "status": "mf:proposed",
-          "result": "1dot_pass.val"
+          "result": "1focus_dot_pass.val"
         },
         {
           "@id": "#1focusIRILength_dot_fail-long",
@@ -12408,7 +12408,7 @@
           ],
           "comment": "<S1> NONLITERAL LENGTH 19 { <p1> . } on { <s1> <p1> <o1> }",
           "status": "mf:proposed",
-          "result": "1dot_pass.val"
+          "result": "1focus_dot_pass.val"
         },
         {
           "@id": "#iovka",

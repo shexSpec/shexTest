@@ -2,12 +2,20 @@
   "type": "Schema",
   "shapes": {
     "http://a.example/S1": {
-      "minlength": 19,
-      "type": "NodeConstraint",
-      "expression": {
-        "type": "TripleConstraint",
-        "predicate": "http://a.example/p1"
-      }
+      "type": "ShapeAnd",
+      "shapeExprs": [
+        {
+          "type": "NodeConstraint",
+          "minlength": 19
+        },
+        {
+          "type": "Shape",
+          "expression": {
+            "type": "TripleConstraint",
+            "predicate": "http://a.example/p1"
+          }
+        }
+      ]
     }
   }
 }

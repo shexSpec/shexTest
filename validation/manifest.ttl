@@ -10209,7 +10209,7 @@
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
-    mf:result <1dot_pass.val>
+    mf:result <1focus_dot_pass.val>
     .
 
 <#1focusBNODE_dot_fail-iriFocusLabel-equal> a sht:ValidationFailure ;
@@ -10250,7 +10250,7 @@
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
-    mf:result <1dot_pass.val>
+    mf:result <1focus_dot_pass.val>
     .
 
 ###  } kind
@@ -10281,7 +10281,7 @@
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
-    mf:result <1dot_pass.val>
+    mf:result <1focus_dot_pass.val>
     .
 
 <#1focusLength-dot_fail-iri-long> a sht:ValidationFailure ;
@@ -10362,7 +10362,7 @@
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
-    mf:result <1dot_pass.val>
+    mf:result <1focus_dot_pass.val>
     .
 
 <#1focusMinLength-dot_pass-iri-long> a sht:ValidationTest ;
@@ -10446,7 +10446,7 @@
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
-    mf:result <1dot_pass.val>
+    mf:result <1focus_dot_pass.val>
     .
 
 <#1focusMaxLength-dot_fail-iri-long> a sht:ValidationFailure ;
@@ -10540,7 +10540,7 @@
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
-    mf:result <1dot_pass.val>
+    mf:result <1focus_dot_pass.val>
     .
 
 <#1focusPattern-dot_fail-iri-long> a sht:ValidationFailure ;
@@ -10646,7 +10646,7 @@
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
-    mf:result <1dot_pass.val>
+    mf:result <1focus_dot_pass.val>
     .
 
 <#1focusIRILength_dot_fail-long> a sht:ValidationFailure ;
@@ -10726,7 +10726,7 @@
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
-    mf:result <1dot_pass.val>
+    mf:result <1focus_dot_pass.val>
     .
 
 ###  } kind + length facet

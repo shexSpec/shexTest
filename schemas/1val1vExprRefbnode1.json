@@ -7,7 +7,7 @@
       "minlength": 5
     },
     "http://a.example/S1": {
-      "type": "NodeConstraint",
+      "type": "Shape",
       "expression": {
         "type": "TripleConstraint",
         "predicate": "http://a.example/p1",

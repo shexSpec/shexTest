@@ -2,12 +2,20 @@
   "type": "Schema",
   "shapes": {
     "http://a.example/S1": {
-      "nodeKind": "nonliteral",
-      "type": "NodeConstraint",
-      "expression": {
-        "type": "TripleConstraint",
-        "predicate": "http://a.example/p1"
-      }
+      "type": "ShapeAnd",
+      "shapeExprs": [
+        {
+          "type": "NodeConstraint",
+          "nodeKind": "nonliteral"
+        },
+        {
+          "type": "Shape",
+          "expression": {
+            "type": "TripleConstraint",
+            "predicate": "http://a.example/p1"
+          }
+        }
+      ]
     }
   }
 }

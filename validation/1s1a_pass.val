@@ -1,4 +1,13 @@
 {
+  "type": "ShapeAndResults",
+  "solutions": [
+    {
+      "type": "test",
+      "node": "http://a.example/s1a",
+      "shape": "http://a.example/S1",
+      "solution": {}
+    },
+{
   "type": "test",
   "node": "http://a.example/s1a",
   "shape": "http://a.example/S1",
@@ -14,4 +23,6 @@
       }
     ]
   }
+}
+  ]
 }

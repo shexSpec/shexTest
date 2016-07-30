@@ -17,7 +17,7 @@
   "start": "http://ex.example/S1",
   "shapes": {
     "http://ex.example/S1": {
-      "type": "NodeConstraint",
+      "type": "Shape",
       "expression": {
         "type": "EachOf",
         "expressions": [
@@ -126,7 +126,7 @@
       }
     },
     "http://ex.example/#UserShape": {
-      "type": "NodeConstraint",
+      "type": "Shape",
       "expression": {
         "type": "EachOf",
         "expressions": [
@@ -195,7 +195,7 @@
       }
     },
     "http://ex.example/#EmployeeShape": {
-      "type": "NodeConstraint",
+      "type": "Shape",
       "expression": {
         "type": "EachOf",
         "expressions": [
@@ -239,7 +239,7 @@
       }
     },
     "_:IDshape": {
-      "type": "NodeConstraint",
+      "type": "Shape",
       "expression": {
         "type": "SomeOf",
         "expressions": [
@@ -351,7 +351,7 @@
       }
     },
     "http://ex.example/#FooID": {
-      "type": "NodeConstraint",
+      "type": "Shape",
       "closed": true,
       "expression": {
         "type": "Inclusion",
