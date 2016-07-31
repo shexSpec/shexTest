@@ -12,5 +12,13 @@
   "empty shape": { "rq": "..|select((.type==\"Shape\") and (.expression | not))?", "expect": [
     "0"] },
   "NC AND Shape": { "rq": "..|select(.type==\"ShapeAnd\"? and (.shapeExprs[].type==\"NodeConstraint\") and (.shapeExprs[].type==\"Shape\"))", "expect": [
-    "1focusBNODELength_dot", "1focusBNODE_dot", "1focusIRILength_dot", "1focusIRI_dot", "1focusLength-dot", "1focusMaxLength-dot", "1focusMinLength-dot", "1focusPattern-dot", "1focusPatternB-dot", "1focusnonLiteral-dot", "1focusnonLiteralLength-dot", "1focusnonLiteralLength-nonLiteralLength", "FocusIRI2groupBnodeNested2groupIRIRef", "FocusIRI2groupBnodeNested2groupIRIRef", "FocusIRI2groupBnodeNested2groupIRIRef" ]}
+    "1focusBNODELength_dot", "1focusBNODE_dot", "1focusIRILength_dot", "1focusIRI_dot", "1focusLength-dot", "1focusMaxLength-dot", "1focusMinLength-dot", "1focusPattern-dot", "1focusPatternB-dot", "1focusnonLiteral-dot", "1focusnonLiteralLength-dot", "1focusnonLiteralLength-nonLiteralLength", "FocusIRI2groupBnodeNested2groupIRIRef", "FocusIRI2groupBnodeNested2groupIRIRef", "FocusIRI2groupBnodeNested2groupIRIRef" ]},
+  "NC AND Shape": { "rq": "..|select(.type==\"ShapeAnd\"? and (.shapeExprs[].type==\"ShapeRef\") and (.shapeExprs[].nodeKind==\"bnode\"))", "expect": [
+    "1bnodeRef1", "1bnodeRefORRefMinlength",     "_all", "kitchenSink" ] },
+  "NC with 0 constraints": { "rq": "..|select(.type==\"NodeConstraint\")? | length == 1", "expect": 0},
+  "NC with 1 constraints": { "rq": "..|select(.type==\"NodeConstraint\")? | length == 2", "expect": 96},
+  "NC with 2 constraints": { "rq": "..|select(.type==\"NodeConstraint\")? | length == 3", "expect": 151},
+  "NC with 3 constraints": { "rq": "..|select(.type==\"NodeConstraint\")? | length == 4", "expect": 1},
+  "NC with 4 constraints": { "rq": "..|select(.type==\"NodeConstraint\")? | length == 5", "expect": 0},
 }
+// "datatype","fractiondigits","length","maxexclusive","maxinclusive","maxlength","minexclusive","mininclusive","minlength","nodeKind","pattern","totaldigits","values"
