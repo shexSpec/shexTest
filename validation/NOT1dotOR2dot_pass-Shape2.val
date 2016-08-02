@@ -1,0 +1,42 @@
+{
+  "type": "ShapeOrResults",
+  "solutions": {
+    "type": "test",
+    "node": "http://a.example/n1",
+    "shape": "http://a.example/S1",
+    "solution": {
+      "type": "eachOfSolutions",
+      "solutions": [
+        {
+          "type": "eachOfSolution",
+          "expressions": [
+            {
+              "type": "tripleConstraintSolutions",
+              "predicate": "http://a.example/p1",
+              "solutions": [
+                {
+                  "type": "testedTriple",
+                  "subject": "http://a.example/n1",
+                  "predicate": "http://a.example/p1",
+                  "object": "http://a.example/n1"
+                }
+              ]
+            },
+            {
+              "type": "tripleConstraintSolutions",
+              "predicate": "http://a.example/p2",
+              "solutions": [
+                {
+                  "type": "testedTriple",
+                  "subject": "http://a.example/n1",
+                  "predicate": "http://a.example/p2",
+                  "object": "\"X\""
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
