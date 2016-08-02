@@ -802,6 +802,10 @@
         <#1focusBNODELength_dot_fail-long>
         <#1focusnonLiteralLength-dot_pass-iri-equal>
 
+### AND OR NOT
+        <#NOT1dotOR2dot_pass-NoShape1>
+        <#NOT1dotOR2dot_pass-Shape2>
+
 ## manual schemas
         <#iovka>
         <#nPlus1>
@@ -10730,6 +10734,37 @@
     .
 
 ###  } kind + length facet
+###  AND OR NOT {
+
+<#NOT1dotOR2dot_pass-NoShape1> a sht:ValidationTest ;
+    mf:name "NOT1dotOR2dot_pass-NoShape1" ;
+    sht:trait sht:OrValueExpression , sht:NotValueExpression ;
+    rdfs:comment "@@" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/NOT1dotOR2dot.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip2_In2.In2_Ip2_LX.ttl> ;
+      sht:focus <http://a.example/n1>
+    ] ;
+    mf:result <NOT1dotOR2dot_pass-NoShape1.val>
+    .
+
+<#NOT1dotOR2dot_pass-Shape2> a sht:ValidationTest ;
+    mf:name "NOT1dotOR2dot_pass-Shape2" ;
+    sht:trait sht:OrValueExpression , sht:NotValueExpression ;
+    rdfs:comment "@@" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/NOT1dotOR2dot.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip1_In1.In1_Ip2_LX.ttl> ;
+      sht:focus <http://a.example/n1>
+    ] ;
+    mf:result <NOT1dotOR2dot_pass-Shape2.val>
+    .
+
+###  } AND OR NOT
 ## } node constraint
 ## node constraint + {
 ## manual schemas {
