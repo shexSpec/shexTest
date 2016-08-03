@@ -3,7 +3,7 @@
   "solutions": [
     {
       "type": "ShapeOrResults",
-      "solutions": {
+      "solution": {
         "type": "test",
         "node": "http://a.example/n1",
         "shape": "http://a.example/S1",
@@ -45,7 +45,7 @@
     },
     {
       "type": "ShapeOrResults",
-      "solutions": {
+      "solution": {
         "type": "ShapeNotResults",
         "solution": {
           "type": "failure",
@@ -62,7 +62,7 @@
     },
     {
       "type": "ShapeOrResults",
-      "solutions": {
+      "solution": {
         "type": "ShapeNotResults",
         "solution": {
           "type": "failure",
@@ -79,7 +79,7 @@
     },
     {
       "type": "ShapeOrResults",
-      "solutions": {
+      "solution": {
         "type": "test",
         "node": "http://a.example/n1",
         "shape": "http://a.example/S1",
