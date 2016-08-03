@@ -12411,6 +12411,25 @@
           "result": "1focus_dot_pass.val"
         },
         {
+          "@id": "#NOT1dotOR2dot_pass-empty",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/NOT1dotOR2dot.shex",
+            "shape": "http://a.example/S1",
+            "data": "empty.ttl",
+            "focus": "http://a.example/n1"
+          },
+          "extensionResults": [],
+          "name": "NOT1dotOR2dot_pass-empty",
+          "trait": [
+            "NotValueExpression",
+            "OrValueExpression"
+          ],
+          "comment": "@@",
+          "status": "mf:proposed",
+          "result": "NOT1dotOR2dot_pass-empty.val"
+        },
+        {
           "@id": "#NOT1dotOR2dot_pass-NoShape1",
           "@type": "sht:ValidationTest",
           "action": {
@@ -12427,7 +12446,7 @@
           ],
           "comment": "@@",
           "status": "mf:proposed",
-          "result": "NOT1dotOR2dot_pass-NoShape1.val"
+          "result": "NOT1dotOR2dot_pass-empty.val"
         },
         {
           "@id": "#NOT1dotOR2dot_pass-Shape2",
@@ -12447,6 +12466,43 @@
           "comment": "@@",
           "status": "mf:proposed",
           "result": "NOT1dotOR2dot_pass-Shape2.val"
+        },
+        {
+          "@id": "#NOT1dotOR2dot_fail-Shape2",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/NOT1dotOR2dot.shex",
+            "shape": "http://a.example/S1",
+            "data": "In1_Ip1_In2.ttl",
+            "focus": "http://a.example/n1"
+          },
+          "extensionResults": [],
+          "name": "NOT1dotOR2dot_fail-Shape2",
+          "trait": [
+            "NotValueExpression",
+            "OrValueExpression"
+          ],
+          "comment": "@@",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#NOT1dotOR2dotX3_pass-empty",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/NOT1dotOR2dotX3.shex",
+            "shape": "http://a.example/S1",
+            "data": "empty.ttl",
+            "focus": "http://a.example/n1"
+          },
+          "extensionResults": [],
+          "name": "NOT1dotOR2dotX3_pass-empty",
+          "trait": [
+            "NotValueExpression",
+            "OrValueExpression"
+          ],
+          "comment": "@@",
+          "status": "mf:proposed",
+          "result": "NOT1dotOR2dotX3_pass-NoShape1.val"
         },
         {
           "@id": "#NOT1dotOR2dotX3_pass-NoShape1",
@@ -12487,6 +12543,42 @@
           "result": "NOT1dotOR2dotX3_pass-Shape2.val"
         },
         {
+          "@id": "#NOT1dotOR2dotX3_fail-Shape2",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/NOT1dotOR2dotX3.shex",
+            "shape": "http://a.example/S1",
+            "data": "In1_Ip1_In2.ttl",
+            "focus": "http://a.example/n1"
+          },
+          "extensionResults": [],
+          "name": "NOT1dotOR2dotX3_fail-Shape2",
+          "trait": [
+            "NotValueExpression",
+            "OrValueExpression"
+          ],
+          "comment": "@@",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#NOT1dotOR2dotX3AND1_fail-empty",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/NOT1dotOR2dotX3AND1.shex",
+            "shape": "http://a.example/S1",
+            "data": "In1_Ip2_In2.ttl",
+            "focus": "http://a.example/n1"
+          },
+          "extensionResults": [],
+          "name": "NOT1dotOR2dotX3AND1_fail-empty",
+          "trait": [
+            "NotValueExpression",
+            "OrValueExpression"
+          ],
+          "comment": "@@",
+          "status": "mf:proposed"
+        },
+        {
           "@id": "#NOT1dotOR2dotX3AND1_fail-NoShape1",
           "@type": "sht:ValidationFailure",
           "action": {
@@ -12522,6 +12614,24 @@
           "comment": "@@",
           "status": "mf:proposed",
           "result": "NOT1dotOR2dotX3AND1_pass-Shape2.val"
+        },
+        {
+          "@id": "#NOT1dotOR2dotX3AND1_fail-Shape2",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/NOT1dotOR2dotX3AND1.shex",
+            "shape": "http://a.example/S1",
+            "data": "In1_Ip1_In2.ttl",
+            "focus": "http://a.example/n1"
+          },
+          "extensionResults": [],
+          "name": "NOT1dotOR2dotX3AND1_fail-Shape2",
+          "trait": [
+            "NotValueExpression",
+            "OrValueExpression"
+          ],
+          "comment": "@@",
+          "status": "mf:proposed"
         },
         {
           "@id": "#iovka",

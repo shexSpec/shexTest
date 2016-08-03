@@ -1,0 +1,56 @@
+{
+  "type": "ShapeAndResults",
+  "solutions": [
+    {
+      "type": "ShapeOrResults",
+      "solutions": {
+        "type": "ShapeNotResults",
+        "solution": {
+          "type": "failure",
+          "node": "http://a.example/n1",
+          "shape": "http://a.example/S1",
+          "errors": [
+            {
+              "type": "MissingProperty",
+              "property": "http://a.example/p1"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "ShapeOrResults",
+      "solutions": {
+        "type": "ShapeNotResults",
+        "solution": {
+          "type": "failure",
+          "node": "http://a.example/n1",
+          "shape": "http://a.example/S1",
+          "errors": [
+            {
+              "type": "MissingProperty",
+              "property": "http://a.example/p3"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "ShapeOrResults",
+      "solutions": {
+        "type": "ShapeNotResults",
+        "solution": {
+          "type": "failure",
+          "node": "http://a.example/n1",
+          "shape": "http://a.example/S1",
+          "errors": [
+            {
+              "type": "MissingProperty",
+              "property": "http://a.example/p5"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "type": "ShapeAndResults",
+  "solutions": [
+    {
+      "type": "ShapeOrResults",
+      "solutions": {
+        "type": "test",
+        "node": "http://a.example/n1",
+        "shape": "http://a.example/S1",
+        "solution": {
+          "type": "eachOfSolutions",
+          "solutions": [
+            {
+              "type": "eachOfSolution",
+              "expressions": [
+                {
+                  "type": "tripleConstraintSolutions",
+                  "predicate": "http://a.example/p1",
+                  "solutions": [
+                    {
+                      "type": "testedTriple",
+                      "subject": "http://a.example/n1",
+                      "predicate": "http://a.example/p1",
+                      "object": "http://a.example/n2"
+                    }
+                  ]
+                },
+                {
+                  "type": "tripleConstraintSolutions",
+                  "predicate": "http://a.example/p2",
+                  "solutions": [
+                    {
+                      "type": "testedTriple",
+                      "subject": "http://a.example/n1",
+                      "predicate": "http://a.example/p2",
+                      "object": "http://a.example/n3"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "ShapeOrResults",
+      "solutions": {
+        "type": "ShapeNotResults",
+        "solution": {
+          "type": "failure",
+          "node": "http://a.example/n1",
+          "shape": "http://a.example/S1",
+          "errors": [
+            {
+              "type": "MissingProperty",
+              "property": "http://a.example/p3"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "ShapeOrResults",
+      "solutions": {
+        "type": "ShapeNotResults",
+        "solution": {
+          "type": "failure",
+          "node": "http://a.example/n1",
+          "shape": "http://a.example/S1",
+          "errors": [
+            {
+              "type": "MissingProperty",
+              "property": "http://a.example/p5"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
