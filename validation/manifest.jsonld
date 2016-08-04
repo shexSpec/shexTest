@@ -12411,22 +12411,22 @@
           "result": "1dot_pass.val"
         },
         {
-          "@id": "#iovka",
+          "@id": "#false-lead-excluding-value-shape",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../validation/iovka.shex",
+            "schema": "../validation/false-lead-excluding-value-shape.shex",
             "shape": "S",
-            "data": "iovka.ttl",
+            "data": "false-lead-excluding-value-shape.ttl",
             "focus": "x"
           },
           "extensionResults": [],
-          "name": "iovka",
+          "name": "false-lead-excluding-value-shape",
           "trait": [
             "EachOf"
           ],
           "comment": "<S> { :a @<T1>*, (:a @<T2>+ | :b int), :b} <T1>{:b @<T3>} <T2>{:b @<T4>} <T3>{:c .} <T4>{:d .}",
           "status": "mf:proposed",
-          "result": "iovka.val"
+          "result": "false-lead-excluding-value-shape.val"
         },
         {
           "@id": "#nPlus1",
