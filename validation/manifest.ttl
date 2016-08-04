@@ -817,7 +817,7 @@
 	<#NOT1dotOR2dotX3AND1_fail-Shape2>
 
 ## manual schemas
-        <#iovka>
+        <#false-lead-excluding-value-shape>
         <#nPlus1>
 	<#nPlus1-greedy_fail>
         <#skipped>
@@ -10916,18 +10916,18 @@
 ## node constraint + {
 ## manual schemas {
 
-<#iovka> a sht:ValidationTest ;
-    mf:name "iovka" ;
+<#false-lead-excluding-value-shape> a sht:ValidationTest ;
+    mf:name "false-lead-excluding-value-shape" ;
     sht:trait sht:EachOf ;
     rdfs:comment "<S> { :a @<T1>*, (:a @<T2>+ | :b int), :b} <T1>{:b @<T3>} <T2>{:b @<T4>} <T3>{:c .} <T4>{:d .}" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../validation/iovka.shex> ;
+      sht:schema <../validation/false-lead-excluding-value-shape.shex> ;
       sht:shape <S> ;
-      sht:data <iovka.ttl> ;
+      sht:data <false-lead-excluding-value-shape.ttl> ;
       sht:focus <x>
     ] ;
-    mf:result <iovka.val>
+    mf:result <false-lead-excluding-value-shape.val>
     .
 
 <#nPlus1> a sht:ValidationTest ;
