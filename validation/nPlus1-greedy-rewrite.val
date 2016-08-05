@@ -11,7 +11,7 @@
           {
             "type": "tripleConstraintSolutions", "predicate": "http://a.example/a",
             "valueExpr": {
-              "type": "ValueClass",
+              "type": "Shape",
               "values": [ "\"1\"^^http://www.w3.org/2001/XMLSchema#integer" ]
             },
             "solutions": [
@@ -27,7 +27,7 @@
                   {
                     "type": "tripleConstraintSolutions", "predicate": "http://a.example/a",
                     "valueExpr": {
-                      "type": "ValueClass",
+                      "type": "Shape",
                       "values": [ "\"3\"^^http://www.w3.org/2001/XMLSchema#integer" ]
                     },
                     "solutions": [
@@ -42,7 +42,7 @@
             "type": "tripleConstraintSolutions", "predicate": "http://a.example/a",
             "min": 0, "max": "*",
             "valueExpr": {
-              "type": "ValueClass",
+              "type": "Shape",
               "values": [ "\"4\"^^http://www.w3.org/2001/XMLSchema#integer" ]
             },
             "solutions": []
