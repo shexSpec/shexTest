@@ -12390,6 +12390,25 @@
           "status": "mf:proposed"
         },
         {
+          "@id": "#PTstar-greedy-rewrite",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../validation/Pstar-greedy-rewrite.shex",
+            "shape": "S2",
+            "data": "Pstar.ttl",
+            "focus": "n"
+          },
+          "extensionResults": [],
+          "name": "PTstar-greedy-rewrite",
+          "trait": [
+            "Greedy",
+            "EachOf"
+          ],
+          "comment": "<S2> {:a $<P>, :a $<T>*} / { <n> :a <pt1>,  <pt2>,  <p>,  <t>}",
+          "status": "mf:proposed",
+          "result": "Pstar-greedy-rewrite.val"
+        },
+        {
           "@id": "#PstarTstar",
           "@type": "sht:ValidationTest",
           "action": {
