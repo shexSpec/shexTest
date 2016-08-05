@@ -8,7 +8,7 @@
         "expressions": [
           {
             "type": "tripleConstraintSolutions", "predicate": "http://a.example/a",
-	    "valueExpr": { "type": "ShapeRef", "reference": "T" },
+	    "valueExpr": { "type": "ValueRef", "valueExprRef": "T" },
             "min": 0, "max": "*",
             "solutions": [
               { "type": "testedTriple", "subject": "n", "predicate": "http://a.example/a", "object": "pt1" },
@@ -18,7 +18,7 @@
           },
           {
             "type": "tripleConstraintSolutions", "predicate": "http://a.example/a",
-            "valueExpr": { "type": "ShapeRef", "reference": "P" },
+            "valueExpr": { "type": "ValueRef", "valueExprRef": "P" },
             "solutions": [
               { "type": "testedTriple", "subject": "n", "predicate": "http://a.example/a", "object": "p" }
             ]
