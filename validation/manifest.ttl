@@ -803,8 +803,18 @@
         <#1focusnonLiteralLength-dot_pass-iri-equal>
 
 ### AND OR NOT
+        <#NOT1dotOR2dot_pass-empty>
         <#NOT1dotOR2dot_pass-NoShape1>
         <#NOT1dotOR2dot_pass-Shape2>
+        <#NOT1dotOR2dot_fail-Shape2>
+        <#NOT1dotOR2dotX3_pass-empty>
+        <#NOT1dotOR2dotX3_pass-NoShape1>
+        <#NOT1dotOR2dotX3_pass-Shape2>
+        <#NOT1dotOR2dotX3_fail-Shape2>
+	<#NOT1dotOR2dotX3AND1_fail-empty>
+	<#NOT1dotOR2dotX3AND1_fail-NoShape1>
+	<#NOT1dotOR2dotX3AND1_pass-Shape2>
+	<#NOT1dotOR2dotX3AND1_fail-Shape2>
 
 ## manual schemas
         <#false-lead-excluding-value-shape>
@@ -10736,6 +10746,22 @@
 ###  } kind + length facet
 ###  AND OR NOT {
 
+# @@ In1_Ip1_In2.ttl failure tests
+
+<#NOT1dotOR2dot_pass-empty> a sht:ValidationTest ;
+    mf:name "NOT1dotOR2dot_pass-empty" ;
+    sht:trait sht:OrValueExpression , sht:NotValueExpression ;
+    rdfs:comment "@@" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/NOT1dotOR2dot.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <empty.ttl> ;
+      sht:focus <http://a.example/n1>
+    ] ;
+    mf:result <NOT1dotOR2dot_pass-empty.val>
+    .
+
 <#NOT1dotOR2dot_pass-NoShape1> a sht:ValidationTest ;
     mf:name "NOT1dotOR2dot_pass-NoShape1" ;
     sht:trait sht:OrValueExpression , sht:NotValueExpression ;
@@ -10744,10 +10770,10 @@
     mf:action [
       sht:schema <../schemas/NOT1dotOR2dot.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <In1_Ip2_In2.In2_Ip2_LX.ttl> ;
+      sht:data <In1_Ip2_In2.ttl> ;
       sht:focus <http://a.example/n1>
     ] ;
-    mf:result <NOT1dotOR2dot_pass-NoShape1.val>
+    mf:result <NOT1dotOR2dot_pass-empty.val>
     .
 
 <#NOT1dotOR2dot_pass-Shape2> a sht:ValidationTest ;
@@ -10758,10 +10784,131 @@
     mf:action [
       sht:schema <../schemas/NOT1dotOR2dot.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <In1_Ip1_In1.In1_Ip2_LX.ttl> ;
+      sht:data <In1_Ip1_In2.In1_Ip2_In3.ttl> ;
       sht:focus <http://a.example/n1>
     ] ;
     mf:result <NOT1dotOR2dot_pass-Shape2.val>
+    .
+
+<#NOT1dotOR2dot_fail-Shape2> a sht:ValidationFailure ;
+    mf:name "NOT1dotOR2dot_fail-Shape2" ;
+    sht:trait sht:OrValueExpression , sht:NotValueExpression ;
+    rdfs:comment "@@" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/NOT1dotOR2dot.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip1_In2.ttl> ;
+      sht:focus <http://a.example/n1>
+    ]
+    .
+
+<#NOT1dotOR2dotX3_pass-empty> a sht:ValidationTest ;
+    mf:name "NOT1dotOR2dotX3_pass-empty" ;
+    sht:trait sht:OrValueExpression , sht:NotValueExpression ;
+    rdfs:comment "@@" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/NOT1dotOR2dotX3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <empty.ttl> ;
+      sht:focus <http://a.example/n1>
+    ] ;
+    mf:result <NOT1dotOR2dotX3_pass-empty.val>
+    .
+
+<#NOT1dotOR2dotX3_pass-NoShape1> a sht:ValidationTest ;
+    mf:name "NOT1dotOR2dotX3_pass-NoShape1" ;
+    sht:trait sht:OrValueExpression , sht:NotValueExpression ;
+    rdfs:comment "@@" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/NOT1dotOR2dotX3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip2_In2.ttl> ;
+      sht:focus <http://a.example/n1>
+    ] ;
+    mf:result <NOT1dotOR2dotX3_pass-empty.val>
+    .
+
+<#NOT1dotOR2dotX3_pass-Shape2> a sht:ValidationTest ;
+    mf:name "NOT1dotOR2dotX3_pass-Shape2" ;
+    sht:trait sht:OrValueExpression , sht:NotValueExpression ;
+    rdfs:comment "@@" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/NOT1dotOR2dotX3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip1_In2.In1_Ip2_In3.ttl> ;
+      sht:focus <http://a.example/n1>
+    ] ;
+    mf:result <NOT1dotOR2dotX3_pass-Shape2.val>
+    .
+
+<#NOT1dotOR2dotX3_fail-Shape2> a sht:ValidationFailure ;
+    mf:name "NOT1dotOR2dotX3_fail-Shape2" ;
+    sht:trait sht:OrValueExpression , sht:NotValueExpression ;
+    rdfs:comment "@@" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/NOT1dotOR2dotX3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip1_In2.ttl> ;
+      sht:focus <http://a.example/n1>
+    ]
+    .
+
+<#NOT1dotOR2dotX3AND1_fail-empty> a sht:ValidationFailure ;
+    mf:name "NOT1dotOR2dotX3AND1_fail-empty" ;
+    sht:trait sht:OrValueExpression , sht:NotValueExpression ;
+    rdfs:comment "@@" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/NOT1dotOR2dotX3AND1.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip2_In2.ttl> ;
+      sht:focus <http://a.example/n1>
+    ]
+    .
+
+<#NOT1dotOR2dotX3AND1_fail-NoShape1> a sht:ValidationFailure ;
+    mf:name "NOT1dotOR2dotX3AND1_fail-NoShape1" ;
+    sht:trait sht:OrValueExpression , sht:NotValueExpression ;
+    rdfs:comment "@@" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/NOT1dotOR2dotX3AND1.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip2_In2.ttl> ;
+      sht:focus <http://a.example/n1>
+    ]
+    .
+
+<#NOT1dotOR2dotX3AND1_pass-Shape2> a sht:ValidationTest ;
+    mf:name "NOT1dotOR2dotX3AND1_pass-Shape2" ;
+    sht:trait sht:OrValueExpression , sht:NotValueExpression ;
+    rdfs:comment "@@" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/NOT1dotOR2dotX3AND1.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip1_In2.In1_Ip2_In3.ttl> ;
+      sht:focus <http://a.example/n1>
+    ] ;
+    mf:result <NOT1dotOR2dotX3AND1_pass-Shape2.val>
+    .
+
+<#NOT1dotOR2dotX3AND1_fail-Shape2> a sht:ValidationFailure ;
+    mf:name "NOT1dotOR2dotX3AND1_fail-Shape2" ;
+    sht:trait sht:OrValueExpression , sht:NotValueExpression ;
+    rdfs:comment "@@" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/NOT1dotOR2dotX3AND1.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip1_In2.ttl> ;
+      sht:focus <http://a.example/n1>
+    ]
     .
 
 ###  } AND OR NOT
