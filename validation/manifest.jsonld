@@ -12689,6 +12689,24 @@
           "status": "mf:proposed"
         },
         {
+          "@id": "#nPlus1-greedy-rewrite",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../validation/nPlus1-greedy-rewrite.shex",
+            "shape": "S",
+            "data": "nPlus1.ttl",
+            "focus": "x"
+          },
+          "extensionResults": [],
+          "name": "nPlus1-greedy-rewrite",
+          "trait": [
+            "EachOf"
+          ],
+          "comment": "<S> { :a [1], (:a [2]+ | :a [3]), :a [4]* } / { <x> :a 1, 3 }",
+          "status": "mf:proposed",
+          "result": "nPlus1-greedy-rewrite.val"
+        },
+        {
           "@id": "#skipped",
           "@type": "sht:ValidationTest",
           "action": {
@@ -12815,6 +12833,25 @@
           ],
           "comment": "<S2> {:a $<P>, :a $<T>*} / { <n> :a <pt1>,  <pt2>,  <p>,  <t>}",
           "status": "mf:proposed"
+        },
+        {
+          "@id": "#PTstar-greedy-rewrite",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../validation/Pstar-greedy-rewrite.shex",
+            "shape": "S2",
+            "data": "Pstar.ttl",
+            "focus": "n"
+          },
+          "extensionResults": [],
+          "name": "PTstar-greedy-rewrite",
+          "trait": [
+            "Greedy",
+            "EachOf"
+          ],
+          "comment": "<S2> {:a $<P>, :a $<T>*} / { <n> :a <pt1>,  <pt2>,  <p>,  <t>}",
+          "status": "mf:proposed",
+          "result": "Pstar-greedy-rewrite.val"
         },
         {
           "@id": "#PstarTstar",
