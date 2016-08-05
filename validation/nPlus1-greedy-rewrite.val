@@ -1,0 +1,54 @@
+{
+  "type": "test",
+  "node": "x",
+  "shape": "S",
+  "solution": {
+    "type": "eachOfSolutions",
+    "solutions": [
+      {
+        "type": "eachOfSolution",
+        "expressions": [
+          {
+            "type": "tripleConstraintSolutions", "predicate": "http://a.example/a",
+            "valueExpr": {
+              "type": "ValueClass",
+              "values": [ "\"1\"^^http://www.w3.org/2001/XMLSchema#integer" ]
+            },
+            "solutions": [
+              { "type": "testedTriple", "subject": "x", "predicate": "http://a.example/a", "object": "\"1\"^^http://www.w3.org/2001/XMLSchema#integer" }
+            ]
+          },
+          {
+            "type": "someOfSolutions",
+            "solutions": [
+              {
+                "type": "someOfSolution",
+                "expressions": [
+                  {
+                    "type": "tripleConstraintSolutions", "predicate": "http://a.example/a",
+                    "valueExpr": {
+                      "type": "ValueClass",
+                      "values": [ "\"3\"^^http://www.w3.org/2001/XMLSchema#integer" ]
+                    },
+                    "solutions": [
+                      { "type": "testedTriple", "subject": "x", "predicate": "http://a.example/a", "object": "\"3\"^^http://www.w3.org/2001/XMLSchema#integer" }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "tripleConstraintSolutions", "predicate": "http://a.example/a",
+            "min": 0, "max": "*",
+            "valueExpr": {
+              "type": "ValueClass",
+              "values": [ "\"4\"^^http://www.w3.org/2001/XMLSchema#integer" ]
+            },
+            "solutions": []
+          }
+        ]
+      }
+    ]
+  }
+}

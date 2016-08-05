@@ -791,6 +791,7 @@
         <#false-lead-excluding-value-shape>
         <#nPlus1>
 	<#nPlus1-greedy_fail>
+	<#nPlus1-greedy-rewrite>
         <#skipped>
         <#repeated-group>
         <#simple-group>
@@ -798,6 +799,7 @@
         <#PstarT-greedy>
         <#PTstar>
         <#PTstar-greedy-fail>
+        <#PTstar-greedy-rewrite>
         <#PstarTstar>
         <#P2T2>
 
@@ -10583,6 +10585,20 @@
     ]
     .
 
+<#nPlus1-greedy-rewrite> a sht:ValidationTest ;
+    mf:name "nPlus1-greedy-rewrite" ;
+    sht:trait sht:EachOf ;
+    rdfs:comment "<S> { :a [1], (:a [2]+ | :a [3]), :a [4]* } / { <x> :a 1, 3 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../validation/nPlus1-greedy-rewrite.shex> ;
+      sht:shape <S> ;
+      sht:data <nPlus1.ttl> ;
+      sht:focus <x>
+    ] ;
+    mf:result <nPlus1-greedy-rewrite.val>
+    .
+
 <#skipped> a sht:ValidationTest ;
     mf:name "skipped" ;
     sht:trait sht:EachOf ;
@@ -10678,6 +10694,20 @@
       sht:data <Pstar.ttl> ;
       sht:focus <n>
     ]
+    .
+
+<#PTstar-greedy-rewrite> a sht:ValidationTest ;
+    mf:name "PTstar-greedy-rewrite" ;
+    sht:trait sht:EachOf , sht:Greedy ;
+    rdfs:comment "<S2> {:a $<P>, :a $<T>*} / { <n> :a <pt1>,  <pt2>,  <p>,  <t>}" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../validation/Pstar-greedy-rewrite.shex> ;
+      sht:shape <S2> ;
+      sht:data <Pstar.ttl> ;
+      sht:focus <n>
+    ] ;
+    mf:result <PTstar-greedy-rewrite.val>
     .
 
 <#PstarTstar> a sht:ValidationTest ;
