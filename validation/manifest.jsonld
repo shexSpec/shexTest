@@ -12449,22 +12449,22 @@
           "result": "NOT1dotOR2dot_pass-Shape2.val"
         },
         {
-          "@id": "#iovka",
+          "@id": "#false-lead-excluding-value-shape",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../validation/iovka.shex",
+            "schema": "../validation/false-lead-excluding-value-shape.shex",
             "shape": "S",
-            "data": "iovka.ttl",
+            "data": "false-lead-excluding-value-shape.ttl",
             "focus": "x"
           },
           "extensionResults": [],
-          "name": "iovka",
+          "name": "false-lead-excluding-value-shape",
           "trait": [
             "EachOf"
           ],
           "comment": "<S> { :a @<T1>*, (:a @<T2>+ | :b int), :b} <T1>{:b @<T3>} <T2>{:b @<T4>} <T3>{:c .} <T4>{:d .}",
           "status": "mf:proposed",
-          "result": "iovka.val"
+          "result": "false-lead-excluding-value-shape.val"
         },
         {
           "@id": "#nPlus1",
@@ -12561,9 +12561,9 @@
           "@id": "#PstarT",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../validation/apt.shex",
+            "schema": "../validation/Pstar.shex",
             "shape": "S1",
-            "data": "apt.ttl",
+            "data": "Pstar.ttl",
             "focus": "n"
           },
           "extensionResults": [],
@@ -12579,9 +12579,9 @@
           "@id": "#PstarT-greedy",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../validation/apt.shex",
+            "schema": "../validation/Pstar.shex",
             "shape": "S1",
-            "data": "apt.ttl",
+            "data": "Pstar.ttl",
             "focus": "n"
           },
           "extensionResults": [],
@@ -12598,9 +12598,9 @@
           "@id": "#PTstar",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../validation/apt.shex",
+            "schema": "../validation/Pstar.shex",
             "shape": "S2",
-            "data": "apt.ttl",
+            "data": "Pstar.ttl",
             "focus": "n"
           },
           "extensionResults": [],
@@ -12617,9 +12617,9 @@
           "@id": "#PTstar-greedy-fail",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../validation/apt.shex",
+            "schema": "../validation/Pstar.shex",
             "shape": "S2",
-            "data": "apt.ttl",
+            "data": "Pstar.ttl",
             "focus": "n"
           },
           "extensionResults": [],
@@ -12635,9 +12635,9 @@
           "@id": "#PstarTstar",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../validation/apt.shex",
+            "schema": "../validation/Pstar.shex",
             "shape": "S3",
-            "data": "apt.ttl",
+            "data": "Pstar.ttl",
             "focus": "n"
           },
           "extensionResults": [],
@@ -12653,9 +12653,9 @@
           "@id": "#P2T2",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../validation/apt.shex",
+            "schema": "../validation/Pstar.shex",
             "shape": "S4",
-            "data": "apt.ttl",
+            "data": "Pstar.ttl",
             "focus": "n"
           },
           "extensionResults": [],

@@ -807,7 +807,7 @@
         <#NOT1dotOR2dot_pass-Shape2>
 
 ## manual schemas
-        <#iovka>
+        <#false-lead-excluding-value-shape>
         <#nPlus1>
 	<#nPlus1-greedy_fail>
         <#skipped>
@@ -10769,18 +10769,18 @@
 ## node constraint + {
 ## manual schemas {
 
-<#iovka> a sht:ValidationTest ;
-    mf:name "iovka" ;
+<#false-lead-excluding-value-shape> a sht:ValidationTest ;
+    mf:name "false-lead-excluding-value-shape" ;
     sht:trait sht:EachOf ;
     rdfs:comment "<S> { :a @<T1>*, (:a @<T2>+ | :b int), :b} <T1>{:b @<T3>} <T2>{:b @<T4>} <T3>{:c .} <T4>{:d .}" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../validation/iovka.shex> ;
+      sht:schema <../validation/false-lead-excluding-value-shape.shex> ;
       sht:shape <S> ;
-      sht:data <iovka.ttl> ;
+      sht:data <false-lead-excluding-value-shape.ttl> ;
       sht:focus <x>
     ] ;
-    mf:result <iovka.val>
+    mf:result <false-lead-excluding-value-shape.val>
     .
 
 <#nPlus1> a sht:ValidationTest ;
@@ -10858,9 +10858,9 @@
     rdfs:comment "<S1> {:a $<P>*, :a $<T>} / { <n> :a <pt1>,  <pt2>,  <p>,  <t>}" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../validation/apt.shex> ;
+      sht:schema <../validation/Pstar.shex> ;
       sht:shape <S1> ;
-      sht:data <apt.ttl> ;
+      sht:data <Pstar.ttl> ;
       sht:focus <n>
     ] ;
     mf:result <PstarT.val>
@@ -10872,9 +10872,9 @@
     rdfs:comment "<S1> {:a $<P>*, :a $<T>} / { <n> :a <pt1>,  <pt2>,  <p>,  <t>}" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../validation/apt.shex> ;
+      sht:schema <../validation/Pstar.shex> ;
       sht:shape <S1> ;
-      sht:data <apt.ttl> ;
+      sht:data <Pstar.ttl> ;
       sht:focus <n>
     ] ;
     mf:result <PstarT.val>
@@ -10886,9 +10886,9 @@
     rdfs:comment "<S2> {:a $<P>, :a $<T>*} / { <n> :a <pt1>,  <pt2>,  <p>,  <t>}" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../validation/apt.shex> ;
+      sht:schema <../validation/Pstar.shex> ;
       sht:shape <S2> ;
-      sht:data <apt.ttl> ;
+      sht:data <Pstar.ttl> ;
       sht:focus <n>
     ] ;
     mf:result <PTstar.val>
@@ -10900,9 +10900,9 @@
     rdfs:comment "<S2> {:a $<P>, :a $<T>*} / { <n> :a <pt1>,  <pt2>,  <p>,  <t>}" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../validation/apt.shex> ;
+      sht:schema <../validation/Pstar.shex> ;
       sht:shape <S2> ;
-      sht:data <apt.ttl> ;
+      sht:data <Pstar.ttl> ;
       sht:focus <n>
     ]
     .
@@ -10913,9 +10913,9 @@
     rdfs:comment "<S3> {:a $<P>*, :a $<T>*} / { <n> :a <pt1>,  <pt2>,  <p>,  <t>}" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../validation/apt.shex> ;
+      sht:schema <../validation/Pstar.shex> ;
       sht:shape <S3> ;
-      sht:data <apt.ttl> ;
+      sht:data <Pstar.ttl> ;
       sht:focus <n>
     ] ;
     mf:result <PstarTstar.val>
@@ -10927,9 +10927,9 @@
     rdfs:comment "<S4> {:a $<P>{2}, :a $<T>{2}} / { <n> :a <pt1>,  <pt2>,  <p>,  <t>}" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../validation/apt.shex> ;
+      sht:schema <../validation/Pstar.shex> ;
       sht:shape <S4> ;
-      sht:data <apt.ttl> ;
+      sht:data <Pstar.ttl> ;
       sht:focus <n>
     ] ;
     mf:result <P2T2.val>
