@@ -12301,9 +12301,9 @@
           "@id": "#PstarT",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../validation/apt.shex",
+            "schema": "../validation/Pstar.shex",
             "shape": "S1",
-            "data": "apt.ttl",
+            "data": "Pstar.ttl",
             "focus": "n"
           },
           "extensionResults": [],
@@ -12319,9 +12319,9 @@
           "@id": "#PstarT-greedy",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../validation/apt.shex",
+            "schema": "../validation/Pstar.shex",
             "shape": "S1",
-            "data": "apt.ttl",
+            "data": "Pstar.ttl",
             "focus": "n"
           },
           "extensionResults": [],
@@ -12338,9 +12338,9 @@
           "@id": "#PTstar",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../validation/apt.shex",
+            "schema": "../validation/Pstar.shex",
             "shape": "S2",
-            "data": "apt.ttl",
+            "data": "Pstar.ttl",
             "focus": "n"
           },
           "extensionResults": [],
@@ -12357,9 +12357,9 @@
           "@id": "#PTstar-greedy-fail",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../validation/apt.shex",
+            "schema": "../validation/Pstar.shex",
             "shape": "S2",
-            "data": "apt.ttl",
+            "data": "Pstar.ttl",
             "focus": "n"
           },
           "extensionResults": [],
@@ -12375,9 +12375,9 @@
           "@id": "#PstarTstar",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../validation/apt.shex",
+            "schema": "../validation/Pstar.shex",
             "shape": "S3",
-            "data": "apt.ttl",
+            "data": "Pstar.ttl",
             "focus": "n"
           },
           "extensionResults": [],
@@ -12393,9 +12393,9 @@
           "@id": "#P2T2",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../validation/apt.shex",
+            "schema": "../validation/Pstar.shex",
             "shape": "S4",
-            "data": "apt.ttl",
+            "data": "Pstar.ttl",
             "focus": "n"
           },
           "extensionResults": [],

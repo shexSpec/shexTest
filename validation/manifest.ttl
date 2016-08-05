@@ -10631,9 +10631,9 @@
     rdfs:comment "<S1> {:a $<P>*, :a $<T>} / { <n> :a <pt1>,  <pt2>,  <p>,  <t>}" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../validation/apt.shex> ;
+      sht:schema <../validation/Pstar.shex> ;
       sht:shape <S1> ;
-      sht:data <apt.ttl> ;
+      sht:data <Pstar.ttl> ;
       sht:focus <n>
     ] ;
     mf:result <PstarT.val>
@@ -10645,9 +10645,9 @@
     rdfs:comment "<S1> {:a $<P>*, :a $<T>} / { <n> :a <pt1>,  <pt2>,  <p>,  <t>}" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../validation/apt.shex> ;
+      sht:schema <../validation/Pstar.shex> ;
       sht:shape <S1> ;
-      sht:data <apt.ttl> ;
+      sht:data <Pstar.ttl> ;
       sht:focus <n>
     ] ;
     mf:result <PstarT.val>
@@ -10659,9 +10659,9 @@
     rdfs:comment "<S2> {:a $<P>, :a $<T>*} / { <n> :a <pt1>,  <pt2>,  <p>,  <t>}" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../validation/apt.shex> ;
+      sht:schema <../validation/Pstar.shex> ;
       sht:shape <S2> ;
-      sht:data <apt.ttl> ;
+      sht:data <Pstar.ttl> ;
       sht:focus <n>
     ] ;
     mf:result <PTstar.val>
@@ -10673,9 +10673,9 @@
     rdfs:comment "<S2> {:a $<P>, :a $<T>*} / { <n> :a <pt1>,  <pt2>,  <p>,  <t>}" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../validation/apt.shex> ;
+      sht:schema <../validation/Pstar.shex> ;
       sht:shape <S2> ;
-      sht:data <apt.ttl> ;
+      sht:data <Pstar.ttl> ;
       sht:focus <n>
     ]
     .
@@ -10686,9 +10686,9 @@
     rdfs:comment "<S3> {:a $<P>*, :a $<T>*} / { <n> :a <pt1>,  <pt2>,  <p>,  <t>}" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../validation/apt.shex> ;
+      sht:schema <../validation/Pstar.shex> ;
       sht:shape <S3> ;
-      sht:data <apt.ttl> ;
+      sht:data <Pstar.ttl> ;
       sht:focus <n>
     ] ;
     mf:result <PstarTstar.val>
@@ -10700,9 +10700,9 @@
     rdfs:comment "<S4> {:a $<P>{2}, :a $<T>{2}} / { <n> :a <pt1>,  <pt2>,  <p>,  <t>}" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../validation/apt.shex> ;
+      sht:schema <../validation/Pstar.shex> ;
       sht:shape <S4> ;
-      sht:data <apt.ttl> ;
+      sht:data <Pstar.ttl> ;
       sht:focus <n>
     ] ;
     mf:result <P2T2.val>
