@@ -1,5 +1,5 @@
 {
-  "type": "test",
+  "type": "ShapeTest",
   "node": "http://a.example/n1",
   "shape": "http://a.example/S1",
   "solution": {
@@ -25,7 +25,7 @@
         "predicate": "http://a.example/p1",
         "object": "_:n2",
         "referenced": {
-          "type": "test",
+          "type": "ShapeTest",
           "node": "_:n2",
           "shape": "http://a.example/S2",
           "solution": {

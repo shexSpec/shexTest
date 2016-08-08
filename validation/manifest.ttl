@@ -10117,7 +10117,7 @@
       sht:data <empty.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
-    mf:result <0_pass.val>
+    mf:result <0_pass-focus.val>
     .
 
 <#0focusIRI_other_fail-bnodeFocusLabel> a sht:ValidationFailure ;
@@ -10144,7 +10144,7 @@
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
-    mf:result <0_pass.val>
+    mf:result <0_pass-focus.val>
     .
 
 <#0focusBNODE_empty_fail-iriFocusLabel> a sht:ValidationFailure ;
@@ -10171,7 +10171,7 @@
       sht:data <empty.ttl> ;
       sht:focus _:abcd
     ] ;
-    mf:result <0abcd_pass.val>
+    mf:result <0abcd_pass-focus.val>
     .
 
 <#0focusBNODE_other_fail-iriFocusLabel> a sht:ValidationFailure ;
@@ -10198,7 +10198,7 @@
       sht:data <Babcd_Ip1_Io1.ttl> ;
       sht:focus _:abcd
     ] ;
-    mf:result <0abcd_pass.val>
+    mf:result <0abcd_pass-focus.val>
     .
 
 <#1focusIRI_dot_fail-bnodeFocusLabel> a sht:ValidationFailure ;

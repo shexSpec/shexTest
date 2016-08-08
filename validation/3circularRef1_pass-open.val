@@ -1,5 +1,5 @@
 {
-  "type": "test",
+  "type": "ShapeTest",
   "node": "http://a.example/n1",
   "shape": "http://a.example/S1",
   "solution": {
@@ -36,7 +36,7 @@
                 "predicate": "http://a.example/p2",
                 "object": "http://a.example/n2",
                 "referenced": {
-                  "type": "test",
+                  "type": "ShapeTest",
                   "node": "http://a.example/n2",
                   "shape": "http://a.example/S2",
                   "solution": {
@@ -53,7 +53,7 @@
                         "predicate": "http://a.example/p3",
                         "object": "http://a.example/n3",
                         "referenced": {
-                          "type": "test",
+                          "type": "ShapeTest",
                           "node": "http://a.example/n3",
                           "shape": "http://a.example/S3",
                           "solution": {
@@ -70,7 +70,7 @@
                                 "predicate": "http://a.example/p4",
                                 "object": "http://a.example/n5",
                                 "referenced": {
-                                  "type": "test",
+                                  "type": "ShapeTest",
                                   "node": "http://a.example/n5",
                                   "shape": "http://a.example/S1",
                                   "solution": {

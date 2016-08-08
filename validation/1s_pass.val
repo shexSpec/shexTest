@@ -2,13 +2,13 @@
   "type": "ShapeAndResults",
   "solutions": [
     {
-      "type": "test",
+      "type": "NodeTest",
       "node": "http://a.example/s",
       "shape": "http://a.example/S1",
       "solution": {}
     },
 {
-  "type": "test",
+  "type": "ShapeTest",
   "node": "http://a.example/s",
   "shape": "http://a.example/S1",
   "solution": {

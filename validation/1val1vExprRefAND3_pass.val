@@ -1,5 +1,5 @@
 {
-  "type": "test",
+  "type": "ShapeTest",
   "node": "http://a.example/s1",
   "shape": "http://a.example/S1",
   "solution": {
@@ -19,19 +19,19 @@
           "type": "ShapeAndResults",
           "solutions": [
             {
-              "type": "test",
+              "type": "NodeTest",
               "node": "\"abab\"",
               "shape": "http://a.example/vc1",
               "solution": {}
             },
             {
-              "type": "test",
+              "type": "NodeTest",
               "node": "\"abab\"",
               "shape": "http://a.example/vc2",
               "solution": {}
             },
             {
-              "type": "test",
+              "type": "NodeTest",
               "node": "\"abab\"",
               "shape": "http://a.example/vc3",
               "solution": {}
