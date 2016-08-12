@@ -40,7 +40,7 @@ PREFIX or: <http://all.example/>
 prefix pattern: <http://all.example/>
 
 PREfIX prefix1: <http://all.example/S>
-stArt = prefix1:3
+stArt = @prefix1:3
 PREFIX prefix1: <http://all.example/>
 PREFIX S5: <http://all.example/S5>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
