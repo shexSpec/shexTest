@@ -24,7 +24,7 @@
     { "type": "SemAct", "name": "http://all.example/act1", "code": " START1 "},
     { "type": "SemAct", "name": "http://all.example/act2", "code": " START2 "}
   ],
-  "start":"http://all.example/S3",
+  "start": { "type": "ShapeRef", "reference": "http://all.example/S3" },
   "shapes":{
     "http://all.example/IRI": {
       "type": "NodeConstraint",
