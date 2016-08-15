@@ -14,7 +14,7 @@
   "startActs": [
     { "type": "SemAct", "name": "http://ex.example/#foo", "code": " initializer for ignored extension " }
   ],
-  "start": "http://ex.example/S1",
+  "start": { "type": "ShapeRef", "reference": "http://ex.example/S1" },
   "shapes": {
     "http://ex.example/S1": {
       "type": "Shape",

@@ -1,13 +1,10 @@
 {
   "type": "Schema",
-  "start": "_:b0",
-  "shapes": {
-    "_:b0": {
-      "type": "Shape",
-      "expression": {
-        "type": "TripleConstraint",
-        "predicate": "http://a.example/p1"
-      }
+  "start": {
+    "type": "Shape",
+    "expression": {
+      "type": "TripleConstraint",
+      "predicate": "http://a.example/p1"
     }
   }
 }
