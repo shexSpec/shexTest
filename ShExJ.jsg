@@ -2,7 +2,7 @@ Schema           { prefixes:{PREFIX->IRI}? base:IRI? startActs:[SemAct]? start:s
 shapeExpr        = ShapeOr | ShapeAnd | ShapeNot | NodeConstraint | Shape | ShapeRef;
 ShapeAnd         { shapeExprs:[shapeExpr] }
 ShapeOr          { shapeExprs:[shapeExpr] }
-ShapeNot         { shape:shapeExpr }
+ShapeNot         { shapeExpr:shapeExpr }
 Shape            { shapeAtom xsFacet* virtual:BOOL? closed:BOOL? extra:[IRI]? expression:expr? inherit:[shapeLabel]? semActs:[SemAct]? }
 ShapeRef         { reference:IRI } # should be a TERM or some such
 SemAct           { name:IRI code:STRING? }
