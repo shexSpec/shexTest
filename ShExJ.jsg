@@ -1,0 +1,46 @@
+Schema           { prefixes:{PREFIX->IRI}? base:IRI? valueExprDefns:{IRI->ValueExprDefn}? startActs:[SemAct]? start:shapeLabel? shapes:{shapeLabel->shapeExpr}? }
+shapeExpr        = ShapeOr | ShapeAnd | Shape ;
+ShapeAnd         { shapeExprs:[shapeExpr] }
+ShapeOr          { shapeExprs:[shapeExpr] }
+Shape            { nodeKind:("iri"|"bnode"|"nonliteral")? stringFacet* virtual:BOOL? closed:BOOL? extra:[IRI]? expression:expr? inherit:[shapeLabel]? semActs:[SemAct]? }
+SemAct           { name:IRI code:STRING? }
+expr             = EachOf | SomeOf | TripleConstraint | Inclusion ;
+EachOf           { expressions:[expr] min:INTEGER? max:(INTEGER|"*")? semActs:[SemAct]? annotations:[Annotation]? }
+SomeOf           {  expressions:[expr] min:INTEGER? max:(INTEGER|"*")? semActs:[SemAct]? annotations:[Annotation]? }
+Inclusion        { include:shapeLabel }
+TripleConstraint { inverse:BOOL? negated:BOOL? predicate:IRI valueExpr:valueExpr min:INTEGER? max:(INTEGER|"*")? semActs:[SemAct]? annotations:[Annotation]? }
+ValueExprDefn    { valueExpr:valueExpr semActs:[SemAct]? annotations:[Annotation]? }
+valueClassOrRef  = ValueClass | ValueRef ;
+valueExpr        = valueClassOrRef | ValueOr | ValueAnd ;
+ValueClass       { nodeKind:"literal" xsFacet*
+                 | nodeKind:("iri"|"bnode"|"nonliteral") reference:shapeLabel? stringFacet*
+                 | datatype:IRI xsFacet*
+                 | reference:shapeLabel stringFacet*
+                 | values:[valueSetValue]
+                 | } # empty
+ValueRef         { valueExprRef:shapeLabel }
+ValueOr          { valueExprs:[valueClassOrRef] }
+ValueAnd         { valueExprs:[valueClassOrRef] }
+# and              { disjuncts:[expr] }
+Annotation       { predicate:IRI object:IRI }
+
+xsFacet          = stringFacet | numericFacet ;
+stringFacet      = (length|minlength|maxlength):INTEGER | pattern:STRING ;
+numericFacet     = (mininclusive|minexclusive|maxinclusive|maxexclusive):numericLiteral
+                 | (totaldigits|fractiondigits):INTEGER ;
+valueClassLabel  = IRI|BNODE ;
+shapeLabel       = IRI|BNODE ;
+numericLiteral   = INTEGER|DECIMAL|DOUBLE ;
+valueSetValue    = IRI|STRING|DATATYPE_STRING|LANG_STRING|stemRange ;
+stemRange        { stem:IRI exclusions:[stemRange] }
+
+PREFIX           : "^.*$" # <http://www.w3.org/TR/turtle/#grammar-production-PNAME_NS>
+IRI              : "^.*$" # <http://www.w3.org/TR/turtle/#grammar-production-IRIREF>
+BNODE            : "^.*$" # <http://www.w3.org/TR/turtle/#grammar-production-BLANK_NODE_LABEL>
+BOOL             : "^(true"+"|false)$" # JSON boolean tokens
+INTEGER          : "^.*$" # <http://www.w3.org/TR/turtle/#grammar-production-INTEGER>
+DECIMAL          : "^.*$" # <http://www.w3.org/TR/turtle/#grammar-production-DECIMAL>
+DOUBLE           : "^.*$" # <http://www.w3.org/TR/turtle/#grammar-production-DOUBLE>
+STRING           : "^.*$" # '"' ([^"] | '\\' '"')* '"' # JSON string with '"' at beginning and end
+DATATYPE_STRING  : "^.*$" # '"' ([^"] | '\\' '"')* '"' '^^' IRI # JSON string with '"' at beginning, an unescaped '"' followed by '^^' and an IRI
+LANG_STRING      : "^.*$" # '"' ([^"] | '\\' '"')* '"' '@' "^.*$" # <http://www.w3.org/TR/turtle/#grammar-production-LANGTAG> # JSON string with '"' at beginning, an unescaped '"' followed by '@' and a Turtle LANGTAG
