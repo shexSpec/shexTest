@@ -11,7 +11,7 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schem#>
 
 %ex:foo{ initializer for ignored extension %}
-start = <S1>  # Issue validation starts with <IssueShape>
+start = @<S1>  # Issue validation starts with <IssueShape>
 
 <S1> { a [ex:Issue]?;            # An <IssueShape> has:
     ex:state [ex:state~ - ex:state_resolved]// # a state starting with "state-"

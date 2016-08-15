@@ -1,6 +1,6 @@
 {
   "type": "Schema",
-  "start": "_:S1",
+  "start": { "type": "ShapeRef", "reference": "_:S1" },
   "shapes": {
     "_:S1": {
       "type": "Shape",
