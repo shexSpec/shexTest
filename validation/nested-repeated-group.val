@@ -1,4 +1,4 @@
-{ "type": "test",
+{ "type": "ShapeTest",
   "node": "s0",
   "shape": "S",
   "solution": {
@@ -20,7 +20,7 @@
                     "solutions": [
                       { "type": "testedTriple", "subject": "x", "predicate": "http://a.example/a", "object": "t0",
                         "referenced": {
-                          "type": "test",
+                          "type": "ShapeTest",
                           "node": "t0",
                           "shape": "T",
                           "solution": {
@@ -72,7 +72,7 @@
                     "solutions": [
                       { "type": "testedTriple", "subject": "x", "predicate": "http://a.example/a", "object": "t1",
                         "referenced": {
-                          "type": "test",
+                          "type": "ShapeTest",
                           "node": "t1",
                           "shape": "T",
                           "solution": {
@@ -123,7 +123,7 @@
                     "solutions": [
                       { "type": "testedTriple", "subject": "x", "predicate": "http://a.example/a", "object": "t1",
                         "referenced": {
-                          "type": "test",
+                          "type": "ShapeTest",
                           "node": "t2",
                           "shape": "T",
                           "solution": {
@@ -154,7 +154,7 @@
                       },
                       { "type": "testedTriple", "subject": "x", "predicate": "http://a.example/a", "object": "t1",
                         "referenced": {
-                          "type": "test",
+                          "type": "ShapeTest",
                           "node": "t2b",
                           "shape": "T",
                           "solution": {

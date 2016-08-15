@@ -11545,7 +11545,7 @@
           ],
           "comment": "<S> IRI {  } on { <s1> <p1> <o1> }",
           "status": "mf:proposed",
-          "result": "0_pass.val"
+          "result": "0_pass-focus.val"
         },
         {
           "@id": "#0focusIRI_other_fail-bnodeFocusLabel",
@@ -11580,7 +11580,7 @@
           ],
           "comment": "<S> IRI {  } on { }",
           "status": "mf:proposed",
-          "result": "0_pass.val"
+          "result": "0_pass-focus.val"
         },
         {
           "@id": "#0focusIRI_empty_fail-bnodeFocusLabel",
@@ -11632,7 +11632,7 @@
           ],
           "comment": "<S> BNODE {  } on { }",
           "status": "mf:proposed",
-          "result": "0abcd_pass.val"
+          "result": "0abcd_pass-focus.val"
         },
         {
           "@id": "#0focusBNODE_other_fail-iriFocusLabel",
@@ -11667,7 +11667,7 @@
           ],
           "comment": "<S> BNODE {  } on { _:abcd <p1> <o1> }",
           "status": "mf:proposed",
-          "result": "0abcd_pass.val"
+          "result": "0abcd_pass-focus.val"
         },
         {
           "@id": "#1focusIRI_dot_fail-bnodeFocusLabel",
