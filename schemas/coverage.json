@@ -20,5 +20,6 @@
   "NC with 2 constraints": { "rq": "..|select(.type==\"NodeConstraint\")? | length == 3", "expect": 151},
   "NC with 3 constraints": { "rq": "..|select(.type==\"NodeConstraint\")? | length == 4", "expect": 1},
   "NC with 4 constraints": { "rq": "..|select(.type==\"NodeConstraint\")? | length == 5", "expect": 0},
+  ".junk": [ "datatype","fractiondigits","length","maxexclusive","maxinclusive","maxlength","minexclusive","mininclusive","minlength","nodeKind","pattern","totaldigits","values" ]
+
 }
-// "datatype","fractiondigits","length","maxexclusive","maxinclusive","maxlength","minexclusive","mininclusive","minlength","nodeKind","pattern","totaldigits","values"

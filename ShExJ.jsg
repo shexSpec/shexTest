@@ -1,7 +1,8 @@
 Schema           { prefixes:{PREFIX->IRI}? base:IRI? startActs:[SemAct]? start:shapeLabel? shapes:{shapeLabel->shapeExpr}? }
-shapeExpr        = ShapeOr | ShapeAnd | Shape | ShapeRef;
+shapeExpr        = ShapeOr | ShapeAnd | ShapeNot | NodeConstraint | Shape | ShapeRef;
 ShapeAnd         { shapeExprs:[shapeExpr] }
 ShapeOr          { shapeExprs:[shapeExpr] }
+ShapeNot         { shape:shapeExpr }
 Shape            { shapeAtom xsFacet* virtual:BOOL? closed:BOOL? extra:[IRI]? expression:expr? inherit:[shapeLabel]? semActs:[SemAct]? }
 ShapeRef         { reference:IRI } # should be a TERM or some such
 SemAct           { name:IRI code:STRING? }
@@ -10,6 +11,7 @@ EachOf           { expressions:[expr] min:INTEGER? max:(INTEGER|"*")? semActs:[S
 SomeOf           {  expressions:[expr] min:INTEGER? max:(INTEGER|"*")? semActs:[SemAct]? annotations:[Annotation]? }
 Inclusion        { include:shapeLabel }
 TripleConstraint { inverse:BOOL? negated:BOOL? predicate:IRI valueExpr:shapeExpr? min:INTEGER? max:(INTEGER|"*")? semActs:[SemAct]? annotations:[Annotation]? }
+NodeConstraint   { nodeKind:("iri"|"bnode"|"nonliteral"|"literal")? datatype:IRI? xsFacet* values:[valueSetValue]? }
 shapeAtom        = nodeKind:"literal" xsFacet*
                  | nodeKind:("iri"|"bnode"|"nonliteral") reference:shapeLabel? stringFacet*
                  | datatype:IRI xsFacet*
