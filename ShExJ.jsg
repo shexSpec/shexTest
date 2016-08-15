@@ -17,8 +17,7 @@ shapeAtom        = nodeKind:"literal" xsFacet*
                  | datatype:IRI xsFacet*
                  | reference:shapeLabel stringFacet*
                  | values:[valueSetValue]
-                 | ; # } # empty
-# and              { disjuncts:[expr] }
+                 | ; # empty
 Annotation       { predicate:IRI object:IRI }
 
 xsFacet          = stringFacet | numericFacet ;
