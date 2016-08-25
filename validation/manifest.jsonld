@@ -12634,6 +12634,41 @@
           "status": "mf:proposed"
         },
         {
+          "@id": "#1dotPlusLt1dotPlus_pass-p1p2X2",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1dotPlusLt1dotPlus.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is_Ip1_1comma2.Is_Ip2_3comma4.ttl",
+            "focus": "http://a.example/s"
+          },
+          "extensionResults": [],
+          "name": "1dotPlusLt1dotPlus_pass-p1p2X2",
+          "trait": [
+            "EachOf"
+          ],
+          "comment": "<S1> { $<l1> <p1> .; $<l2> <p2> .;  $<l1> < $<l2> } / { <s> <p1> 1,2; <p2> 3,4 }",
+          "status": "mf:proposed",
+          "result": "1dotPlusLt1dotPlus_pass-p1p2X2.val"
+        },
+        {
+          "@id": "#1dotPlusLt1dotPlus_fail-p1p2X2",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1dotPlusLt1dotPlus.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is_Ip1_1comma3.Is_Ip2_2comma4.ttl",
+            "focus": "http://a.example/s"
+          },
+          "extensionResults": [],
+          "name": "1dotPlusLt1dotPlus_fail-p1p2X2",
+          "trait": [
+            "EachOf"
+          ],
+          "comment": "<S1> { $<l1> <p1> .; $<l2> <p2> .;  $<l1> < $<l2> } / { <s> <p1> 1,3; <p2> 2,4 }",
+          "status": "mf:proposed"
+        },
+        {
           "@id": "#false-lead-excluding-value-shape",
           "@type": "sht:ValidationTest",
           "action": {

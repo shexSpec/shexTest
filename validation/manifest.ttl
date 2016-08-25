@@ -816,6 +816,10 @@
 	<#NOT1dotOR2dotX3AND1_pass-Shape2>
 	<#NOT1dotOR2dotX3AND1_fail-Shape2>
 
+## accessors
+        <#1dotPlusLt1dotPlus_pass-p1p2X2>
+        <#1dotPlusLt1dotPlus_fail-p1p2X2>
+
 ## manual schemas
         <#false-lead-excluding-value-shape>
         <#nPlus1>
@@ -10916,6 +10920,37 @@
 ###  } AND OR NOT
 ## } node constraint
 ## node constraint + {
+## } node constraint +
+## accessors {
+
+<#1dotPlusLt1dotPlus_pass-p1p2X2> a sht:ValidationTest ;
+    mf:name "1dotPlusLt1dotPlus_pass-p1p2X2" ;
+    sht:trait sht:EachOf ;
+    rdfs:comment "<S1> { $<l1> <p1> .; $<l2> <p2> .;  $<l1> < $<l2> } / { <s> <p1> 1,2; <p2> 3,4 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1dotPlusLt1dotPlus.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is_Ip1_1comma2.Is_Ip2_3comma4.ttl> ;
+      sht:focus <http://a.example/s>
+    ] ;
+    mf:result <1dotPlusLt1dotPlus_pass-p1p2X2.val>
+    .
+
+<#1dotPlusLt1dotPlus_fail-p1p2X2> a sht:ValidationFailure ;
+    mf:name "1dotPlusLt1dotPlus_fail-p1p2X2" ;
+    sht:trait sht:EachOf ;
+    rdfs:comment "<S1> { $<l1> <p1> .; $<l2> <p2> .;  $<l1> < $<l2> } / { <s> <p1> 1,3; <p2> 2,4 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1dotPlusLt1dotPlus.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is_Ip1_1comma3.Is_Ip2_2comma4.ttl> ;
+      sht:focus <http://a.example/s>
+    ]
+    .
+
+## } accessors
 ## manual schemas {
 
 <#false-lead-excluding-value-shape> a sht:ValidationTest ;
