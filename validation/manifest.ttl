@@ -836,7 +836,7 @@
         <#PstarTstar>
         <#P2T2>
 
-## errors
+## error reporting
 	<#1dot_fail-empty-err>
 	<#2dot_fail-empty-err>
 
@@ -11149,7 +11149,7 @@
 
 ## } manual schemas
 # deferred {
-## errors {
+## error reporting {
 <#1dot_fail-empty-err> a sht:ValidationFailure ;
     mf:name "1dot_fail-empty-err" ;
     sht:trait sht:ErrorReport ;
@@ -11178,7 +11178,7 @@
     mf:result <2dot_missing1.val>
     .
 
-## } errors
+## } error reporting
 # futureWork {
 ## inherit {
 
