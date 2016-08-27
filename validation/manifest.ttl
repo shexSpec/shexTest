@@ -816,6 +816,13 @@
 	<#NOT1dotOR2dotX3AND1_pass-Shape2>
 	<#NOT1dotOR2dotX3AND1_fail-Shape2>
 
+## shape extern
+
+        <#shapeExtern_pass>
+        <#shapeExtern_fail>
+        <#shapeExternRef_pass>
+        <#shapeExternRef_fail>
+
 ## manual schemas
         <#false-lead-excluding-value-shape>
         <#nPlus1>
@@ -10914,8 +10921,68 @@
     .
 
 ###  } AND OR NOT
-## } node constraint
-## node constraint + {
+## } focus constraint
+## shape extern {
+
+<#shapeExtern_pass> a sht:ValidationTest ;
+    mf:name "shapeExtern_pass" ;
+    sht:trait sht:SemanticAction , sht:ExternalShape ;
+    rdfs:comment "<Sext> EXTERNAL + <Sext> { <p2> . } on { <s1> <p1> <n2> . <n2> <p2> \"X\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/shapeExtern.shex> ;
+      sht:shape <http://a.example/Sext> ;
+      sht:data <In1_Ip1_In2.In2_Ip2_LX.ttl> ;
+      sht:focus <http://a.example/n2> ;
+      sht:shapeExterns <../schemas/shapeExtern.shextern>
+    ] ;
+    mf:result <shapeExtern_pass.val>
+    .
+
+<#shapeExtern_fail> a sht:ValidationFailure ;
+    mf:name "shapeExtern_fail" ;
+    sht:trait sht:SemanticAction , sht:ExternalShape ;
+    rdfs:comment "<Sext> EXTERNAL + <Sext> { <p2> . } on { <s1> <p1> <n2> . <n2> <p2> \"X\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/shapeExtern.shex> ;
+      sht:shape <http://a.example/Sext> ;
+      sht:data <In1_Ip1_In2.In2_Ip2_LX.ttl> ;
+      sht:focus <http://a.example/n1> ;
+      sht:shapeExterns <../schemas/shapeExtern.shextern>
+    ]
+    .
+
+<#shapeExternRef_pass> a sht:ValidationTest ;
+    mf:name "shapeExternRef_pass" ;
+    sht:trait sht:SemanticAction , sht:ExternalShape ;
+    rdfs:comment "<S> { <p1> @<Sext> } <Sext> EXTERNAL + <S> { <p2> . } on { <s1> <p1> <n2> . <n2> <p2> \"X\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/shapeExternRef.shex> ;
+      sht:shape <http://a.example/S> ;
+      sht:data <In1_Ip1_In2.In2_Ip2_LX.ttl> ;
+      sht:focus <http://a.example/n1> ;
+      sht:shapeExterns <../schemas/shapeExtern.shextern>
+    ] ;
+    mf:result <shapeExternRef_pass.val>
+    .
+
+<#shapeExternRef_fail> a sht:ValidationFailure ;
+    mf:name "shapeExternRef_fail" ;
+    sht:trait sht:SemanticAction , sht:ExternalShape ;
+    rdfs:comment "<S> { <p1> @<Sext> } <Sext> EXTERNAL + <S> { <p2> . } on { <s1> <p1> <n2> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/shapeExternRef.shex> ;
+      sht:shape <http://a.example/S> ;
+      sht:data <In1_Ip1_In2.ttl> ;
+      sht:focus <http://a.example/n1> ;
+      sht:shapeExterns <../schemas/shapeExtern.shextern>
+    ]
+    .
+
+## } shape extern 
 ## manual schemas {
 
 <#false-lead-excluding-value-shape> a sht:ValidationTest ;
