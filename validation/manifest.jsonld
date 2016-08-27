@@ -12669,6 +12669,84 @@
           "status": "mf:proposed"
         },
         {
+          "@id": "#shapeExtern_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/shapeExtern.shex",
+            "shape": "http://a.example/Sext",
+            "data": "In1_Ip1_In2.In2_Ip2_LX.ttl",
+            "focus": "http://a.example/n2",
+            "shapeExterns": "../schemas/shapeExtern.shextern"
+          },
+          "extensionResults": [],
+          "name": "shapeExtern_pass",
+          "trait": [
+            "ExternalShape",
+            "SemanticAction"
+          ],
+          "comment": "<Sext> EXTERNAL + <Sext> { <p2> . } on { <s1> <p1> <n2> . <n2> <p2> \"X\" }",
+          "status": "mf:proposed",
+          "result": "shapeExtern_pass.val"
+        },
+        {
+          "@id": "#shapeExtern_fail",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/shapeExtern.shex",
+            "shape": "http://a.example/Sext",
+            "data": "In1_Ip1_In2.In2_Ip2_LX.ttl",
+            "focus": "http://a.example/n1",
+            "shapeExterns": "../schemas/shapeExtern.shextern"
+          },
+          "extensionResults": [],
+          "name": "shapeExtern_fail",
+          "trait": [
+            "ExternalShape",
+            "SemanticAction"
+          ],
+          "comment": "<Sext> EXTERNAL + <Sext> { <p2> . } on { <s1> <p1> <n2> . <n2> <p2> \"X\" }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#shapeExternRef_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/shapeExternRef.shex",
+            "shape": "http://a.example/S",
+            "data": "In1_Ip1_In2.In2_Ip2_LX.ttl",
+            "focus": "http://a.example/n1",
+            "shapeExterns": "../schemas/shapeExtern.shextern"
+          },
+          "extensionResults": [],
+          "name": "shapeExternRef_pass",
+          "trait": [
+            "ExternalShape",
+            "SemanticAction"
+          ],
+          "comment": "<S> { <p1> @<Sext> } <Sext> EXTERNAL + <S> { <p2> . } on { <s1> <p1> <n2> . <n2> <p2> \"X\" }",
+          "status": "mf:proposed",
+          "result": "shapeExternRef_pass.val"
+        },
+        {
+          "@id": "#shapeExternRef_fail",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/shapeExternRef.shex",
+            "shape": "http://a.example/S",
+            "data": "In1_Ip1_In2.ttl",
+            "focus": "http://a.example/n1",
+            "shapeExterns": "../schemas/shapeExtern.shextern"
+          },
+          "extensionResults": [],
+          "name": "shapeExternRef_fail",
+          "trait": [
+            "ExternalShape",
+            "SemanticAction"
+          ],
+          "comment": "<S> { <p1> @<Sext> } <Sext> EXTERNAL + <S> { <p2> . } on { <s1> <p1> <n2> }",
+          "status": "mf:proposed"
+        },
+        {
           "@id": "#false-lead-excluding-value-shape",
           "@type": "sht:ValidationTest",
           "action": {
