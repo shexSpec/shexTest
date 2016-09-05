@@ -16,11 +16,12 @@ tripleConstraintSolutions { predicate:IRI valueExpr:shapeExpr? min:INTEGER? max:
 testedTriple     { subject:(IRI|BNode) predicate:IRI object:(IRI|BNode|STRING|DATATYPE_STRING|LANG_STRING) referenced:(shapeExprTest|Recursion)? }
 Recursion        { node:(IRI|BNode) shape:(IRI|BNode) }
 
-shapeExpr        = ShapeOr | ShapeAnd | ShapeNot | NodeConstraint | Shape | ShapeRef;
+shapeExpr        = ShapeOr | ShapeAnd | ShapeNot | NodeConstraint | Shape | ShapeRef | ShapeExternal;
 ShapeAnd         { shapeExprs:[shapeExpr] }
 ShapeOr          { shapeExprs:[shapeExpr] }
 ShapeNot         { shapeExpr:shapeExpr }
 Shape            { virtual:BOOL? closed:BOOL? extra:[IRI]? expression:tripleExpr? inherit:[shapeLabel]? semActs:[SemAct]? }
+ShapeExternal    {  }
 ShapeRef         { reference:IRI } # should be a TERM or some such
 SemAct           { name:IRI code:STRING? }
 tripleExpr       = EachOf | SomeOf | TripleConstraint | Inclusion ;
@@ -37,8 +38,10 @@ numericFacet     = (mininclusive|minexclusive|maxinclusive|maxexclusive):numeric
                  | (totaldigits|fractiondigits):INTEGER ;
 shapeLabel       = IRI|BNODE ;
 numericLiteral   = INTEGER|DECIMAL|DOUBLE ;
-valueSetValue    = IRI|STRING|DATATYPE_STRING|LANG_STRING|stemRange ;
-stemRange        { stem:IRI exclusions:[stemRange] }
+valueSetValue    = IRI|STRING|DATATYPE_STRING|LANG_STRING|Stem|StemRange ;
+Stem             { stem:IRI } # !! obselete -- use StemRange
+StemRange        { stem:(IRI|Wildcard) exclusions:[valueSetValue]? }
+Wildcard         {  }
 
 PREFIX           : "^.*$" # <http://www.w3.org/TR/turtle/#grammar-production-PNAME_NS>
 IRI              : "^.*$" # <http://www.w3.org/TR/turtle/#grammar-production-IRIREF>
