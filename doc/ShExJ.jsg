@@ -21,7 +21,6 @@ ValueClass       { nodeKind:"literal" xsFacet*
 ValueRef         { valueExprRef:shapeLabel }
 ValueOr          { valueExprs:[valueClassOrRef] }
 ValueAnd         { valueExprs:[valueClassOrRef] }
-# and              { disjuncts:[expr] }
 Annotation       { predicate:IRI object:IRI }
 
 xsFacet          = stringFacet | numericFacet ;
@@ -31,8 +30,10 @@ numericFacet     = (mininclusive|minexclusive|maxinclusive|maxexclusive):numeric
 valueClassLabel  = IRI|BNODE ;
 shapeLabel       = IRI|BNODE ;
 numericLiteral   = INTEGER|DECIMAL|DOUBLE ;
-valueSetValue    = IRI|STRING|DATATYPE_STRING|LANG_STRING|stemRange ;
-stemRange        { stem:IRI exclusions:[stemRange] }
+valueSetValue    = IRI|STRING|DATATYPE_STRING|LANG_STRING|Stem|StemRange ;
+Stem             { stem:IRI } # !! obselete -- use StemRange
+StemRange        { stem:(IRI|Wildcard) exclusions:[valueSetValue]? }
+Wildcard         {  }
 
 PREFIX           : "^.*$" # <http://www.w3.org/TR/turtle/#grammar-production-PNAME_NS>
 IRI              : "^.*$" # <http://www.w3.org/TR/turtle/#grammar-production-IRIREF>
