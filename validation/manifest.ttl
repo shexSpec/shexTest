@@ -11193,7 +11193,7 @@
       sht:data <empty.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
-    mf:result <1dot_empty.val>
+    mf:result <1dot_empty.err>
     .
 
 <#2dot_fail-empty-err> a sht:ValidationFailure ; # 2dot_fail-missing-err
@@ -11207,7 +11207,7 @@
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
-    mf:result <2dot_missing1.val>
+    mf:result <2dot_missing1.err>
     .
 
 ## } error reporting
