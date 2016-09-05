@@ -3,23 +3,23 @@
   "node": "http://a.example/s",
   "shape": "http://a.example/S1",
   "solution": {
-    "type": "eachOfSolutions",
+    "type": "EachOfSolutions",
     "solutions": [
       {
-        "type": "eachOfSolution",
+        "type": "EachOfSolution",
         "expressions": [
           {
-            "type": "tripleConstraintSolutions",
+            "type": "TripleConstraintSolutions",
             "predicate": "http://a.example/p1",
             "solutions": [
               {
-                "type": "testedTriple",
+                "type": "TestedTriple",
                 "subject": "http://a.example/s",
                 "predicate": "http://a.example/p1",
                 "object": "\"1\"^^http://www.w3.org/2001/XMLSchema#integer"
               },
               {
-                "type": "testedTriple",
+                "type": "TestedTriple",
                 "subject": "http://a.example/s",
                 "predicate": "http://a.example/p1",
                 "object": "\"2\"^^http://www.w3.org/2001/XMLSchema#integer"
@@ -30,17 +30,17 @@
             "max": "*"
           },
           {
-            "type": "tripleConstraintSolutions",
+            "type": "TripleConstraintSolutions",
             "predicate": "http://a.example/p2",
             "solutions": [
               {
-                "type": "testedTriple",
+                "type": "TestedTriple",
                 "subject": "http://a.example/s",
                 "predicate": "http://a.example/p2",
                 "object": "\"3\"^^http://www.w3.org/2001/XMLSchema#integer"
               },
               {
-                "type": "testedTriple",
+                "type": "TestedTriple",
                 "subject": "http://a.example/s",
                 "predicate": "http://a.example/p2",
                 "object": "\"4\"^^http://www.w3.org/2001/XMLSchema#integer"
