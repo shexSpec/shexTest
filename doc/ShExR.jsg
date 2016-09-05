@@ -7,10 +7,10 @@ error            = MissingProperty ;
 MissingProperty  { property:IRI }
 NodeTest         { node:(IRI|BNode) shape:(IRI|BNode) }
 ShapeTest        { node:(IRI|BNode) shape:IRI solution:tripleExprSolutions? startActs:[SemAct]? }
-tripleExprSolutions   = eachOfSolutions | someOfSolutions | tripleConstraintSolutions ;
-eachOfSolutions       { solutions:[eachOfSolution] min:INTEGER? max:(INTEGER|"*")? annotations:[Annotation]? semActs:[SemAct]? }
+tripleExprSolutions = eachOfSolutions | someOfSolutions | tripleConstraintSolutions ;
+eachOfSolutions  { solutions:[eachOfSolution] min:INTEGER? max:(INTEGER|"*")? annotations:[Annotation]? semActs:[SemAct]? }
 eachOfSolution   { expressions:[tripleExprSolutions] }
-someOfSolutions       { solutions:[someOfSolution] min:INTEGER? max:(INTEGER|"*")? annotations:[Annotation]? semActs:[SemAct]? }
+someOfSolutions  { solutions:[someOfSolution] min:INTEGER? max:(INTEGER|"*")? annotations:[Annotation]? semActs:[SemAct]? }
 someOfSolution   { expressions:[tripleExprSolutions] }
 tripleConstraintSolutions { predicate:IRI valueExpr:shapeExpr? min:INTEGER? max:(INTEGER|"*")? solutions:[testedTriple] annotations:[Annotation]? semActs:[SemAct]? }
 testedTriple     { subject:(IRI|BNode) predicate:IRI object:(IRI|BNode|STRING|DATATYPE_STRING|LANG_STRING) referenced:(shapeExprTest|Recursion)? }
