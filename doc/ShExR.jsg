@@ -1,0 +1,55 @@
+shapeExprTest    = ShapeOrResults | ShapeAndResults | ShapeNotResults | ShapeTest | NodeTest ;
+ShapeOrResults   { solution:shapeExprTest }
+ShapeAndResults  { solutions:[shapeExprTest] }
+ShapeNotResults  { solution:failure }
+failure          { node:(IRI|BNode) shape:(IRI|BNode) errors:[error] }
+error            = MissingProperty ;
+MissingProperty  { property:IRI }
+NodeTest         { node:(IRI|BNode) shape:(IRI|BNode) }
+ShapeTest        { node:(IRI|BNode) shape:IRI solution:tripleExprSolutions? startActs:[SemAct]? }
+tripleExprSolutions   = eachOfSolutions | someOfSolutions | tripleConstraintSolutions ;
+eachOfSolutions       { solutions:[eachOfSolution] min:INTEGER? max:(INTEGER|"*")? annotations:[Annotation]? semActs:[SemAct]? }
+eachOfSolution   { expressions:[tripleExprSolutions] }
+someOfSolutions       { solutions:[someOfSolution] min:INTEGER? max:(INTEGER|"*")? annotations:[Annotation]? semActs:[SemAct]? }
+someOfSolution   { expressions:[tripleExprSolutions] }
+tripleConstraintSolutions { predicate:IRI valueExpr:shapeExpr? min:INTEGER? max:(INTEGER|"*")? solutions:[testedTriple] annotations:[Annotation]? semActs:[SemAct]? }
+testedTriple     { subject:(IRI|BNode) predicate:IRI object:(IRI|BNode|STRING|DATATYPE_STRING|LANG_STRING) referenced:(shapeExprTest|Recursion)? }
+Recursion        { node:(IRI|BNode) shape:(IRI|BNode) }
+
+shapeExpr        = ShapeOr | ShapeAnd | ShapeNot | NodeConstraint | Shape | ShapeRef | ShapeExternal;
+ShapeAnd         { shapeExprs:[shapeExpr] }
+ShapeOr          { shapeExprs:[shapeExpr] }
+ShapeNot         { shapeExpr:shapeExpr }
+Shape            { virtual:BOOL? closed:BOOL? extra:[IRI]? expression:tripleExpr? inherit:[shapeLabel]? semActs:[SemAct]? }
+ShapeExternal    {  }
+ShapeRef         { reference:IRI } # should be a TERM or some such
+SemAct           { name:IRI code:STRING? }
+tripleExpr       = EachOf | SomeOf | TripleConstraint | Inclusion ;
+EachOf           { expressions:[tripleExpr] min:INTEGER? max:(INTEGER|"*")? semActs:[SemAct]? annotations:[Annotation]? }
+SomeOf           {  expressions:[tripleExpr] min:INTEGER? max:(INTEGER|"*")? semActs:[SemAct]? annotations:[Annotation]? }
+Inclusion        { include:shapeLabel }
+TripleConstraint { inverse:BOOL? negated:BOOL? predicate:IRI valueExpr:shapeExpr? min:INTEGER? max:(INTEGER|"*")? semActs:[SemAct]? annotations:[Annotation]? }
+NodeConstraint   { nodeKind:("iri"|"bnode"|"nonliteral"|"literal")? datatype:IRI? xsFacet* values:[valueSetValue]? }
+Annotation       { predicate:IRI object:IRI }
+
+xsFacet          = stringFacet | numericFacet ;
+stringFacet      = (length|minlength|maxlength):INTEGER | pattern:STRING ;
+numericFacet     = (mininclusive|minexclusive|maxinclusive|maxexclusive):numericLiteral
+                 | (totaldigits|fractiondigits):INTEGER ;
+shapeLabel       = IRI|BNODE ;
+numericLiteral   = INTEGER|DECIMAL|DOUBLE ;
+valueSetValue    = IRI|STRING|DATATYPE_STRING|LANG_STRING|Stem|StemRange ;
+Stem             { stem:IRI } # !! obselete -- use StemRange
+StemRange        { stem:(IRI|Wildcard) exclusions:[valueSetValue]? }
+Wildcard         {  }
+
+PREFIX           : "^.*$" # <http://www.w3.org/TR/turtle/#grammar-production-PNAME_NS>
+IRI              : "^.*$" # <http://www.w3.org/TR/turtle/#grammar-production-IRIREF>
+BNODE            : "^.*$" # <http://www.w3.org/TR/turtle/#grammar-production-BLANK_NODE_LABEL>
+BOOL             : "^(true"+"|false)$" # JSON boolean tokens
+INTEGER          : "^.*$" # <http://www.w3.org/TR/turtle/#grammar-production-INTEGER>
+DECIMAL          : "^.*$" # <http://www.w3.org/TR/turtle/#grammar-production-DECIMAL>
+DOUBLE           : "^.*$" # <http://www.w3.org/TR/turtle/#grammar-production-DOUBLE>
+STRING           : "^.*$" # '"' ([^"] | '\\' '"')* '"' # JSON string with '"' at beginning and end
+DATATYPE_STRING  : "^.*$" # '"' ([^"] | '\\' '"')* '"' '^^' IRI # JSON string with '"' at beginning, an unescaped '"' followed by '^^' and an IRI
+LANG_STRING      : "^.*$" # '"' ([^"] | '\\' '"')* '"' '@' "^.*$" # <http://www.w3.org/TR/turtle/#grammar-production-LANGTAG> # JSON string with '"' at beginning, an unescaped '"' followed by '@' and a Turtle LANGTAG

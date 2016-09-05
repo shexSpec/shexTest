@@ -1,14 +1,15 @@
-Schema           { prefixes:{PREFIX->IRI}? base:IRI? startActs:[SemAct]? start:shapeLabel? shapes:{shapeLabel->shapeExpr}? }
-shapeExpr        = ShapeOr | ShapeAnd | ShapeNot | NodeConstraint | Shape | ShapeRef;
+Schema           { prefixes:{PREFIX->IRI}? base:IRI? startActs:[SemAct]? start:shapeExpr? shapes:{shapeLabel->shapeExpr}? }
+shapeExpr        = ShapeOr | ShapeAnd | ShapeNot | NodeConstraint | Shape | ShapeRef | ShapeExternal;
 ShapeAnd         { shapeExprs:[shapeExpr] }
 ShapeOr          { shapeExprs:[shapeExpr] }
 ShapeNot         { shapeExpr:shapeExpr }
-Shape            { virtual:BOOL? closed:BOOL? extra:[IRI]? expression:expr? inherit:[shapeLabel]? semActs:[SemAct]? }
+Shape            { virtual:BOOL? closed:BOOL? extra:[IRI]? expression:tripleExpr? inherit:[shapeLabel]? semActs:[SemAct]? }
+ShapeExternal    {  }
 ShapeRef         { reference:IRI } # should be a TERM or some such
 SemAct           { name:IRI code:STRING? }
-expr             = EachOf | SomeOf | TripleConstraint | Inclusion ;
-EachOf           { expressions:[expr] min:INTEGER? max:(INTEGER|"*")? semActs:[SemAct]? annotations:[Annotation]? }
-SomeOf           {  expressions:[expr] min:INTEGER? max:(INTEGER|"*")? semActs:[SemAct]? annotations:[Annotation]? }
+tripleExpr       = EachOf | SomeOf | TripleConstraint | Inclusion ;
+EachOf           { expressions:[tripleExpr] min:INTEGER? max:(INTEGER|"*")? semActs:[SemAct]? annotations:[Annotation]? }
+SomeOf           { expressions:[tripleExpr] min:INTEGER? max:(INTEGER|"*")? semActs:[SemAct]? annotations:[Annotation]? }
 Inclusion        { include:shapeLabel }
 TripleConstraint { inverse:BOOL? negated:BOOL? predicate:IRI valueExpr:shapeExpr? min:INTEGER? max:(INTEGER|"*")? semActs:[SemAct]? annotations:[Annotation]? }
 NodeConstraint   { nodeKind:("iri"|"bnode"|"nonliteral"|"literal")? datatype:IRI? xsFacet* values:[valueSetValue]? }
@@ -20,8 +21,10 @@ numericFacet     = (mininclusive|minexclusive|maxinclusive|maxexclusive):numeric
                  | (totaldigits|fractiondigits):INTEGER ;
 shapeLabel       = IRI|BNODE ;
 numericLiteral   = INTEGER|DECIMAL|DOUBLE ;
-valueSetValue    = IRI|STRING|DATATYPE_STRING|LANG_STRING|stemRange ;
-stemRange        { stem:IRI exclusions:[stemRange] }
+valueSetValue    = IRI|STRING|DATATYPE_STRING|LANG_STRING|Stem|StemRange ;
+Stem             { stem:IRI } # !! obselete -- use StemRange
+StemRange        { stem:(IRI|Wildcard) exclusions:[valueSetValue]? }
+Wildcard         {  }
 
 PREFIX           : "^.*$" # <http://www.w3.org/TR/turtle/#grammar-production-PNAME_NS>
 IRI              : "^.*$" # <http://www.w3.org/TR/turtle/#grammar-production-IRIREF>
