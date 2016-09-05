@@ -6,7 +6,7 @@
       "node": "http://a.example/s1",
       "shape": "http://a.example/S1",
       "solution": {
-        "type": "tripleConstraintSolutions",
+        "type": "TripleConstraintSolutions",
         "predicate": "http://a.example/p1",
         "valueExpr": {
           "type": "NodeConstraint",
@@ -15,7 +15,7 @@
         },
         "solutions": [
           {
-            "type": "testedTriple",
+            "type": "TestedTriple",
             "subject": "http://a.example/s1",
             "predicate": "http://a.example/p1",
             "object": "\"abab\""
@@ -28,7 +28,7 @@
       "node": "http://a.example/s1",
       "shape": "http://a.example/S1",
       "solution": {
-        "type": "tripleConstraintSolutions",
+        "type": "TripleConstraintSolutions",
         "predicate": "http://a.example/p1",
         "valueExpr": {
           "type": "NodeConstraint",
@@ -37,7 +37,7 @@
         },
         "solutions": [
           {
-            "type": "testedTriple",
+            "type": "TestedTriple",
             "subject": "http://a.example/s1",
             "predicate": "http://a.example/p1",
             "object": "\"abab\""
@@ -50,7 +50,7 @@
       "node": "http://a.example/s1",
       "shape": "http://a.example/S1",
       "solution": {
-        "type": "tripleConstraintSolutions",
+        "type": "TripleConstraintSolutions",
         "predicate": "http://a.example/p1",
         "valueExpr": {
           "type": "NodeConstraint",
@@ -59,7 +59,7 @@
         },
         "solutions": [
           {
-            "type": "testedTriple",
+            "type": "TestedTriple",
             "subject": "http://a.example/s1",
             "predicate": "http://a.example/p1",
             "object": "\"abab\""

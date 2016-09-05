@@ -3,19 +3,19 @@
   "node": "http://a.example/s1",
   "shape": "http://a.example/S1",
   "solution": {
-    "type": "someOfSolutions",
+    "type": "SomeOfSolutions",
     "solutions": [
       {
-        "type": "someOfSolution",
+        "type": "SomeOfSolution",
         "expressions": [
           {
-            "type": "eachOfSolutions",
+            "type": "EachOfSolutions",
             "solutions": [
               {
-                "type": "eachOfSolution",
+                "type": "EachOfSolution",
                 "expressions": [
                   {
-                    "type": "tripleConstraintSolutions",
+                    "type": "TripleConstraintSolutions",
                     "predicate": "http://a.example/p1",
                     "valueExpr": {
                       "type": "NodeConstraint",
@@ -25,7 +25,7 @@
                     },
                     "solutions": [
                       {
-                        "type": "testedTriple",
+                        "type": "TestedTriple",
                         "subject": "http://a.example/s1",
                         "predicate": "http://a.example/p1",
                         "object": "http://a.example/o1"
@@ -33,7 +33,7 @@
                     ]
                   },
                   {
-                    "type": "tripleConstraintSolutions",
+                    "type": "TripleConstraintSolutions",
                     "min": 0,
                     "max": 1,
                     "predicate": "http://a.example/p2",

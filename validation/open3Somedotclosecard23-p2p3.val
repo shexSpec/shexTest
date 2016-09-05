@@ -3,17 +3,17 @@
   "node": "x",
   "shape": "http://a.example/S1",
   "solution": {
-    "type": "someOfSolutions",
+    "type": "SomeOfSolutions",
     "solutions": [
       {
-        "type": "someOfSolution",
+        "type": "SomeOfSolution",
         "expressions": [
           {
-            "type": "tripleConstraintSolutions",
+            "type": "TripleConstraintSolutions",
             "predicate": "http://a.example/p2",
             "solutions": [
               {
-                "type": "testedTriple",
+                "type": "TestedTriple",
                 "subject": "x",
                 "predicate": "http://a.example/p2",
                 "object": "\"p2-0\""
@@ -23,14 +23,14 @@
         ]
       },
       {
-        "type": "someOfSolution",
+        "type": "SomeOfSolution",
         "expressions": [
           {
-            "type": "tripleConstraintSolutions",
+            "type": "TripleConstraintSolutions",
             "predicate": "http://a.example/p3",
             "solutions": [
               {
-                "type": "testedTriple",
+                "type": "TestedTriple",
                 "subject": "x",
                 "predicate": "http://a.example/p3",
                 "object": "\"p3-0\""

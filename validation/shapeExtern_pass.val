@@ -3,9 +3,9 @@
   "node": "http://a.example/n2",
   "shape": "http://a.example/Sext",
   "solution": { 
-    "type":"tripleConstraintSolutions", "predicate":"http://a.example/p2",
+    "type":"TripleConstraintSolutions", "predicate":"http://a.example/p2",
     "solutions":[
-      {"type":"testedTriple","subject":"http://a.example/n2","predicate":"http://a.example/p2","object":"\"X\""}
+      {"type":"TestedTriple","subject":"http://a.example/n2","predicate":"http://a.example/p2","object":"\"X\""}
     ]
   }
 }

@@ -3,19 +3,19 @@
   "node": "x",
   "shape": "http://a.example/S1",
   "solution": {
-    "type": "someOfSolutions",
+    "type": "SomeOfSolutions",
     "min": 2,
     "max": 3,
     "solutions": [
       {
-        "type": "someOfSolution",
+        "type": "SomeOfSolution",
         "expressions": [
           {
-            "type": "tripleConstraintSolutions",
+            "type": "TripleConstraintSolutions",
             "predicate": "http://a.example/p1",
             "solutions": [
               {
-                "type": "testedTriple",
+                "type": "TestedTriple",
                 "subject": "x",
                 "predicate": "http://a.example/p1",
                 "object": "\"p1-0\""
@@ -25,14 +25,14 @@
         ]
       },
       {
-        "type": "someOfSolution",
+        "type": "SomeOfSolution",
         "expressions": [
           {
-            "type": "tripleConstraintSolutions",
+            "type": "TripleConstraintSolutions",
             "predicate": "http://a.example/p1",
             "solutions": [
               {
-                "type": "testedTriple",
+                "type": "TestedTriple",
                 "subject": "x",
                 "predicate": "http://a.example/p1",
                 "object": "\"p1-1\""
@@ -42,14 +42,14 @@
         ]
       },
       {
-        "type": "someOfSolution",
+        "type": "SomeOfSolution",
         "expressions": [
           {
-            "type": "tripleConstraintSolutions",
+            "type": "TripleConstraintSolutions",
             "predicate": "http://a.example/p1",
             "solutions": [
               {
-                "type": "testedTriple",
+                "type": "TestedTriple",
                 "subject": "x",
                 "predicate": "http://a.example/p1",
                 "object": "\"p1-2\""

@@ -11,11 +11,11 @@
   "node": "_:abcdefghijklmnopqrst",
   "shape": "http://a.example/S1",
   "solution": {
-    "type": "tripleConstraintSolutions",
+    "type": "TripleConstraintSolutions",
     "predicate": "http://a.example/p1",
     "solutions": [
       {
-        "type": "testedTriple",
+        "type": "TestedTriple",
         "subject": "_:abcdefghijklmnopqrst",
         "predicate": "http://a.example/p1",
         "object": "http://a.example/o1"
