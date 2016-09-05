@@ -3,35 +3,35 @@
   "node": "x",
   "shape": "S",
   "solution": {
-    "type": "eachOfSolutions",
+    "type": "EachOfSolutions",
     "solutions": [
       {
-        "type": "eachOfSolution",
+        "type": "EachOfSolution",
         "expressions": [
           {
-            "type": "tripleConstraintSolutions", "predicate": "http://a.example/a",
+            "type": "TripleConstraintSolutions", "predicate": "http://a.example/a",
             "valueExpr": {
               "type": "NodeConstraint",
               "values": [ "\"1\"^^http://www.w3.org/2001/XMLSchema#integer" ]
             },
             "solutions": [
-              { "type": "testedTriple", "subject": "x", "predicate": "http://a.example/a", "object": "\"1\"^^http://www.w3.org/2001/XMLSchema#integer" }
+              { "type": "TestedTriple", "subject": "x", "predicate": "http://a.example/a", "object": "\"1\"^^http://www.w3.org/2001/XMLSchema#integer" }
             ]
           },
           {
-            "type": "someOfSolutions",
+            "type": "SomeOfSolutions",
             "solutions": [
               {
-                "type": "someOfSolution",
+                "type": "SomeOfSolution",
                 "expressions": [
                   {
-                    "type": "tripleConstraintSolutions", "predicate": "http://a.example/a",
+                    "type": "TripleConstraintSolutions", "predicate": "http://a.example/a",
                     "valueExpr": {
                       "type": "NodeConstraint",
                       "values": [ "\"3\"^^http://www.w3.org/2001/XMLSchema#integer" ]
                     },
                     "solutions": [
-                      { "type": "testedTriple", "subject": "x", "predicate": "http://a.example/a", "object": "\"3\"^^http://www.w3.org/2001/XMLSchema#integer" }
+                      { "type": "TestedTriple", "subject": "x", "predicate": "http://a.example/a", "object": "\"3\"^^http://www.w3.org/2001/XMLSchema#integer" }
                     ]
                   }
                 ]
@@ -39,7 +39,7 @@
             ]
           },
           {
-            "type": "tripleConstraintSolutions", "predicate": "http://a.example/a",
+            "type": "TripleConstraintSolutions", "predicate": "http://a.example/a",
             "min": 0, "max": "*",
             "valueExpr": {
               "type": "NodeConstraint",

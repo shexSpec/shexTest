@@ -3,7 +3,7 @@
   "node": "http://a.example/n1",
   "shape": "http://a.example/S1",
   "solution": {
-    "type": "tripleConstraintSolutions",
+    "type": "TripleConstraintSolutions",
     "predicate": "http://a.example/p1",
     "valueExpr": {
       "type": "ShapeRef",
@@ -11,7 +11,7 @@
     },
     "solutions": [
       {
-        "type": "testedTriple",
+        "type": "TestedTriple",
         "subject": "http://a.example/n1",
         "predicate": "http://a.example/p1",
         "object": "http://a.example/n1",
@@ -20,11 +20,11 @@
           "node": "http://a.example/n1",
           "shape": "http://a.example/S2",
           "solution": {
-            "type": "tripleConstraintSolutions",
+            "type": "TripleConstraintSolutions",
             "predicate": "http://a.example/p2",
             "solutions": [
               {
-                "type": "testedTriple",
+                "type": "TestedTriple",
                 "subject": "http://a.example/n1",
                 "predicate": "http://a.example/p2",
                 "object": "\"X\""

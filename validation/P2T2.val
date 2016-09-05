@@ -3,13 +3,13 @@
   "node": "n",
   "shape": "S4",
   "solution": {
-    "type": "eachOfSolutions",
+    "type": "EachOfSolutions",
     "solutions": [
       {
-        "type": "eachOfSolution",
+        "type": "EachOfSolution",
         "expressions": [
           {
-            "type": "tripleConstraintSolutions",
+            "type": "TripleConstraintSolutions",
             "predicate": "http://a.example/a",
             "valueExpr": {
               "type": "ShapeRef",
@@ -17,13 +17,13 @@
             },
             "solutions": [
               {
-                "type": "testedTriple",
+                "type": "TestedTriple",
                 "subject": "n",
                 "predicate": "http://a.example/a",
                 "object": "p"
               },
               {
-                "type": "testedTriple",
+                "type": "TestedTriple",
                 "subject": "n",
                 "predicate": "http://a.example/a",
                 "object": "pt1"
@@ -33,7 +33,7 @@
             "max": 2
           },
           {
-            "type": "tripleConstraintSolutions",
+            "type": "TripleConstraintSolutions",
             "predicate": "http://a.example/a",
             "valueExpr": {
               "type": "ShapeRef",
@@ -41,13 +41,13 @@
             },
             "solutions": [
               {
-                "type": "testedTriple",
+                "type": "TestedTriple",
                 "subject": "n",
                 "predicate": "http://a.example/a",
                 "object": "pt2"
               },
               {
-                "type": "testedTriple",
+                "type": "TestedTriple",
                 "subject": "n",
                 "predicate": "http://a.example/a",
                 "object": "t"

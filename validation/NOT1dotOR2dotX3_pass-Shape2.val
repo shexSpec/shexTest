@@ -8,17 +8,17 @@
         "node": "http://a.example/n1",
         "shape": "http://a.example/S1",
         "solution": {
-          "type": "eachOfSolutions",
+          "type": "EachOfSolutions",
           "solutions": [
             {
-              "type": "eachOfSolution",
+              "type": "EachOfSolution",
               "expressions": [
                 {
-                  "type": "tripleConstraintSolutions",
+                  "type": "TripleConstraintSolutions",
                   "predicate": "http://a.example/p1",
                   "solutions": [
                     {
-                      "type": "testedTriple",
+                      "type": "TestedTriple",
                       "subject": "http://a.example/n1",
                       "predicate": "http://a.example/p1",
                       "object": "http://a.example/n2"
@@ -26,11 +26,11 @@
                   ]
                 },
                 {
-                  "type": "tripleConstraintSolutions",
+                  "type": "TripleConstraintSolutions",
                   "predicate": "http://a.example/p2",
                   "solutions": [
                     {
-                      "type": "testedTriple",
+                      "type": "TestedTriple",
                       "subject": "http://a.example/n1",
                       "predicate": "http://a.example/p2",
                       "object": "http://a.example/n3"
@@ -48,7 +48,7 @@
       "solution": {
         "type": "ShapeNotResults",
         "solution": {
-          "type": "failure",
+          "type": "Failure",
           "node": "http://a.example/n1",
           "shape": "http://a.example/S1",
           "errors": [
@@ -65,7 +65,7 @@
       "solution": {
         "type": "ShapeNotResults",
         "solution": {
-          "type": "failure",
+          "type": "Failure",
           "node": "http://a.example/n1",
           "shape": "http://a.example/S1",
           "errors": [

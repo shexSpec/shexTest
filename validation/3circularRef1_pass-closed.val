@@ -3,17 +3,17 @@
   "node": "http://a.example/n1",
   "shape": "http://a.example/S1",
   "solution": {
-    "type": "eachOfSolutions",
+    "type": "EachOfSolutions",
     "solutions": [
       {
-        "type": "eachOfSolution",
+        "type": "EachOfSolution",
         "expressions": [
           {
-            "type": "tripleConstraintSolutions",
+            "type": "TripleConstraintSolutions",
             "predicate": "http://a.example/p1",
             "solutions": [
               {
-                "type": "testedTriple",
+                "type": "TestedTriple",
                 "subject": "http://a.example/n1",
                 "predicate": "http://a.example/p1",
                 "object": "\"X\""
@@ -21,7 +21,7 @@
             ]
           },
           {
-            "type": "tripleConstraintSolutions",
+            "type": "TripleConstraintSolutions",
             "predicate": "http://a.example/p2",
             "valueExpr": {
               "type": "ShapeRef",
@@ -29,7 +29,7 @@
             },
             "solutions": [
               {
-                "type": "testedTriple",
+                "type": "TestedTriple",
                 "subject": "http://a.example/n1",
                 "predicate": "http://a.example/p2",
                 "object": "http://a.example/n2",
@@ -38,7 +38,7 @@
                   "node": "http://a.example/n2",
                   "shape": "http://a.example/S2",
                   "solution": {
-                    "type": "tripleConstraintSolutions",
+                    "type": "TripleConstraintSolutions",
                     "predicate": "http://a.example/p3",
                     "valueExpr": {
                       "type": "ShapeRef",
@@ -46,7 +46,7 @@
                     },
                     "solutions": [
                       {
-                        "type": "testedTriple",
+                        "type": "TestedTriple",
                         "subject": "http://a.example/n2",
                         "predicate": "http://a.example/p3",
                         "object": "http://a.example/n3",
@@ -55,7 +55,7 @@
                           "node": "http://a.example/n3",
                           "shape": "http://a.example/S3",
                           "solution": {
-                            "type": "tripleConstraintSolutions",
+                            "type": "TripleConstraintSolutions",
                             "predicate": "http://a.example/p4",
                             "valueExpr": {
                               "type": "ShapeRef",
@@ -63,7 +63,7 @@
                             },
                             "solutions": [
                               {
-                                "type": "testedTriple",
+                                "type": "TestedTriple",
                                 "subject": "http://a.example/n3",
                                 "predicate": "http://a.example/p4",
                                 "object": "http://a.example/n1",
