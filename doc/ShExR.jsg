@@ -1,4 +1,21 @@
-Schema           { prefixes:{PREFIX->IRI}? base:IRI? startActs:[SemAct]? start:shapeLabel? shapes:{shapeLabel->shapeExpr}? }
+shapeExprTest    = ShapeOrResults | ShapeAndResults | ShapeNotResults | ShapeTest | NodeTest ;
+ShapeOrResults   { solution:shapeExprTest }
+ShapeAndResults  { solutions:[shapeExprTest] }
+ShapeNotResults  { solution:failure }
+failure          { node:(IRI|BNode) shape:(IRI|BNode) errors:[error] }
+error            = MissingProperty ;
+MissingProperty  { property:IRI }
+NodeTest         { node:(IRI|BNode) shape:(IRI|BNode) }
+ShapeTest        { node:(IRI|BNode) shape:IRI solution:tripleExprSolutions? startActs:[SemAct]? }
+tripleExprSolutions   = eachOfSolutions | someOfSolutions | tripleConstraintSolutions ;
+eachOfSolutions       { solutions:[eachOfSolution] min:INTEGER? max:(INTEGER|"*")? annotations:[Annotation]? semActs:[SemAct]? }
+eachOfSolution   { expressions:[tripleExprSolutions] }
+someOfSolutions       { solutions:[someOfSolution] min:INTEGER? max:(INTEGER|"*")? annotations:[Annotation]? semActs:[SemAct]? }
+someOfSolution   { expressions:[tripleExprSolutions] }
+tripleConstraintSolutions { predicate:IRI valueExpr:shapeExpr? min:INTEGER? max:(INTEGER|"*")? solutions:[testedTriple] annotations:[Annotation]? semActs:[SemAct]? }
+testedTriple     { subject:(IRI|BNode) predicate:IRI object:(IRI|BNode|STRING|DATATYPE_STRING|LANG_STRING) referenced:(shapeExprTest|Recursion)? }
+Recursion        { node:(IRI|BNode) shape:(IRI|BNode) }
+
 shapeExpr        = ShapeOr | ShapeAnd | ShapeNot | NodeConstraint | Shape | ShapeRef;
 ShapeAnd         { shapeExprs:[shapeExpr] }
 ShapeOr          { shapeExprs:[shapeExpr] }
@@ -8,7 +25,7 @@ ShapeRef         { reference:IRI } # should be a TERM or some such
 SemAct           { name:IRI code:STRING? }
 tripleExpr       = EachOf | SomeOf | TripleConstraint | Inclusion ;
 EachOf           { expressions:[tripleExpr] min:INTEGER? max:(INTEGER|"*")? semActs:[SemAct]? annotations:[Annotation]? }
-SomeOf           { expressions:[tripleExpr] min:INTEGER? max:(INTEGER|"*")? semActs:[SemAct]? annotations:[Annotation]? }
+SomeOf           {  expressions:[tripleExpr] min:INTEGER? max:(INTEGER|"*")? semActs:[SemAct]? annotations:[Annotation]? }
 Inclusion        { include:shapeLabel }
 TripleConstraint { inverse:BOOL? negated:BOOL? predicate:IRI valueExpr:shapeExpr? min:INTEGER? max:(INTEGER|"*")? semActs:[SemAct]? annotations:[Annotation]? }
 NodeConstraint   { nodeKind:("iri"|"bnode"|"nonliteral"|"literal")? datatype:IRI? xsFacet* values:[valueSetValue]? }
