@@ -1,3 +1,15 @@
+# This is a JSON Grammar (JSG) file for the ShEx Results format.
+# The form "OBJNAME  { property:PROPTYPE ... }" matches an object of type OBJTYPE
+# The form "RULENAME = NAME1 | NAME2 ..." matches any of NAMEn.
+# the form "TERMNAME : "RegExp" matches any literal matching RegExp
+# A PROPETYPE can be:
+#   TERMINAL - a terminal, all caps in this example.
+#   [PROPTYPE] - an array of PROPTYPE.
+#   {TERMINAL->PROPTYPE} - a map from TERMINAL to PROPTYPE.
+#   (PROPTYPE1|PROPTYPE2...) - any of PROPTYPEn.
+
+.TYPE type; # All objects have a type property corresponding to the production name, e.g. "ShapeTest"
+
 shapeExprTest    = ShapeOrResults | ShapeAndResults | ShapeNotResults | ShapeTest | NodeTest ;
 ShapeOrResults   { solution:shapeExprTest }
 ShapeAndResults  { solutions:[shapeExprTest] }
