@@ -24,7 +24,7 @@ EachOfSolutions  { solutions:[EachOfSolution] min:INTEGER? max:(INTEGER|"*")? an
 EachOfSolution   { expressions:[tripleExprSolutions] }
 SomeOfSolutions  { solutions:[SomeOfSolution] min:INTEGER? max:(INTEGER|"*")? annotations:[Annotation]? semActs:[SemAct]? }
 SomeOfSolution   { expressions:[tripleExprSolutions] }
-TripleConstraintSolutions { predicate:IRI valueExpr:shapeExpr? min:INTEGER? max:(INTEGER|"*")? solutions:[TestedTriple] annotations:[Annotation]? semActs:[SemAct]? }
+TripleConstraintSolutions { name:(IRI|BNode)? predicate:IRI valueExpr:shapeExpr? min:INTEGER? max:(INTEGER|"*")? solutions:[TestedTriple] annotations:[Annotation]? semActs:[SemAct]? }
 TestedTriple     { subject:(IRI|BNode) predicate:IRI object:(IRI|BNode|STRING|DATATYPE_STRING|LANG_STRING) referenced:(shapeExprTest|Recursion)? }
 Recursion        { node:(IRI|BNode) shape:(IRI|BNode) }
 
