@@ -25,7 +25,7 @@ SomeOf           { expressions:[tripleExpr] min:INTEGER? max:(INTEGER|"*")? semA
 Inclusion        { include:shapeLabel }
 TripleConstraint { inverse:BOOL? negated:BOOL? predicate:IRI valueExpr:shapeExpr? min:INTEGER? max:(INTEGER|"*")? semActs:[SemAct]? annotations:[Annotation]? }
 NodeConstraint   { nodeKind:("iri"|"bnode"|"nonliteral"|"literal")? datatype:IRI? xsFacet* values:[valueSetValue]? }
-Annotation       { predicate:IRI object:IRI }
+Annotation       { predicate:IRI object:objectValue }
 
 xsFacet          = stringFacet | numericFacet ;
 stringFacet      = (length|minlength|maxlength):INTEGER | pattern:STRING ;
@@ -33,13 +33,14 @@ numericFacet     = (mininclusive|minexclusive|maxinclusive|maxexclusive):numeric
                  | (totaldigits|fractiondigits):INTEGER ;
 shapeLabel       = IRI|BNODE ;
 numericLiteral   = INTEGER|DECIMAL|DOUBLE ;
-valueSetValue    = IRI|STRING|DATATYPE_STRING|LANG_STRING|Stem|StemRange ;
-Stem             { stem:IRI } # !! obselete -- use StemRange
+valueSetValue    = objectValue|Stem|StemRange ;
+objectValue      = IRI|STRING|DATATYPE_STRING|LANG_STRING ;
+Stem             { stem:IRI } # StemRange with exclusions
 StemRange        { stem:(IRI|Wildcard) exclusions:[valueSetValue]? }
 Wildcard         {  }
 
-PREFIX           : "^.*$" # <http://www.w3.org/TR/turtle/#grammar-production-PNAME_NS>
-IRI              : "^.*$" # <http://www.w3.org/TR/turtle/#grammar-production-IRIREF>
+PREFIX           : "^.*$" # <http://www.w3.org/TR/turtle/#grammar-production-PNAME_NS> - ":"
+IRI              : "^.*$" # <http://www.w3.org/TR/turtle/#grammar-production-IRIREF> - "<>"s
 BNODE            : "^.*$" # <http://www.w3.org/TR/turtle/#grammar-production-BLANK_NODE_LABEL>
 BOOL             : "^(true"+"|false)$" # JSON boolean tokens
 INTEGER          : "^.*$" # <http://www.w3.org/TR/turtle/#grammar-production-INTEGER>
