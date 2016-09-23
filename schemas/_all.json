@@ -207,12 +207,12 @@
                       "type": "ShapeAnd",
                       "shapeExprs": [
                         {
-                          "type":"ShapeRef",
-                          "reference":"http://all.example/S5"
-                        },
-                        {
 		          "type":"NodeConstraint",
                           "minlength":2,"maxlength":4
+                        },
+                        {
+                          "type":"ShapeRef",
+                          "reference":"http://all.example/S5"
                         }
                       ]
                     }
