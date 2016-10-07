@@ -6540,7 +6540,7 @@
 
 <#1literalLength_fail-bnode-equal> a sht:ValidationFailure ;
     mf:name "1literalLength_fail-bnode-equal" ;
-    sht:trait sht:LexicalBnode , sht:LengthFacet ;
+    sht:trait sht:LexicalBNode , sht:LengthFacet ;
     rdfs:comment "<S1> { <p1> LITERAL LENGTH 5 } on { <s1> <p1> _:abcde }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -6607,7 +6607,7 @@
 
 <#1iriLength_fail-bnode-equal> a sht:ValidationFailure ;
     mf:name "1iriLength_fail-bnode-equal" ;
-    sht:trait sht:LexicalBnode , sht:LengthFacet ;
+    sht:trait sht:LexicalBNode , sht:LengthFacet ;
     rdfs:comment "<S1> { <p1> IRI LENGTH 19 } on { <s1> <p1> _:abcde }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -6688,7 +6688,7 @@
 
 <#1bnodeLength_fail-bnode-short> a sht:ValidationFailure ;
     mf:name "1bnodeLength_fail-bnode-short" ;
-    sht:trait sht:LexicalBnode , sht:LengthFacet ;
+    sht:trait sht:LexicalBNode , sht:LengthFacet ;
     rdfs:comment "<S1> { <p1> BNODE LENGTH 5 } on { <s1> <p1> _:abcd }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -6701,7 +6701,7 @@
 
 <#1bnodeLength_pass-bnode-equal> a sht:ValidationTest ;
     mf:name "1bnodeLength_pass-bnode-equal" ;
-    sht:trait sht:LexicalBnode , sht:LengthFacet ;
+    sht:trait sht:LexicalBNode , sht:LengthFacet ;
     rdfs:comment "<S1> { <p1> BNODE LENGTH 5 } on { <s1> <p1> _:abcde }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -6715,7 +6715,7 @@
 
 <#1bnodeLength_fail-bnode-long> a sht:ValidationFailure ;
     mf:name "1bnodeLength_fail-bnode-long" ;
-    sht:trait sht:LexicalBnode , sht:LengthFacet ;
+    sht:trait sht:LexicalBNode , sht:LengthFacet ;
     rdfs:comment "<S1> { <p1> BNODE LENGTH 5 } on { <s1> <p1> _:abcdef }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -6808,7 +6808,7 @@
 
 <#1nonliteralLength_fail-bnode-short> a sht:ValidationFailure ;
     mf:name "1nonliteralLength_fail-bnode-short" ;
-    sht:trait sht:LexicalBnode , sht:LengthFacet ;
+    sht:trait sht:LexicalBNode , sht:LengthFacet ;
     rdfs:comment "<S1> { <p1> NONLITERAL LENGTH 19 } on { <s1> <p1> _:abcd }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -6821,7 +6821,7 @@
 
 <#1nonliteralLength_pass-bnode-equal> a sht:ValidationTest ;
     mf:name "1nonliteralLength_pass-bnode-equal" ;
-    sht:trait sht:LexicalBnode , sht:LengthFacet ;
+    sht:trait sht:LexicalBNode , sht:LengthFacet ;
     rdfs:comment "<S1> { <p1> NONLITERAL LENGTH 19 } on { <s1> <p1> _:abcdefghijklmnopqrs }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -6835,7 +6835,7 @@
 
 <#1nonliteralLength_fail-bnode-long> a sht:ValidationFailure ;
     mf:name "1nonliteralLength_fail-bnode-long" ;
-    sht:trait sht:LexicalBnode , sht:LengthFacet ;
+    sht:trait sht:LexicalBNode , sht:LengthFacet ;
     rdfs:comment "<S1> { <p1> NONLITERAL LENGTH 19 } on { <s1> <p1> _:abcdefghijklmnopqrst }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -6934,7 +6934,7 @@
 
 <#1bnodeMinlength_fail-bnode-short> a sht:ValidationFailure ;
     mf:name "1bnodeMinlength_fail-bnode-short" ;
-    sht:trait sht:LexicalBnode , sht:LengthFacet ;
+    sht:trait sht:LexicalBNode , sht:LengthFacet ;
     rdfs:comment "<S1> { <p1> BNODE MINLENGTH 5 } on { <s1> <p1> _:abcd }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -6947,7 +6947,7 @@
 
 <#1bnodeMinlength_pass-bnode-equal> a sht:ValidationTest ;
     mf:name "1bnodeMinlength_pass-bnode-equal" ;
-    sht:trait sht:LexicalBnode , sht:LengthFacet ;
+    sht:trait sht:LexicalBNode , sht:LengthFacet ;
     rdfs:comment "<S1> { <p1> BNODE MINLENGTH 5 } on { <s1> <p1> _:abcde }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -6961,7 +6961,7 @@
 
 <#1bnodeMinlength_pass-bnode-long> a sht:ValidationTest ;
     mf:name "1bnodeMinlength_pass-bnode-long" ;
-    sht:trait sht:LexicalBnode , sht:LengthFacet ;
+    sht:trait sht:LexicalBNode , sht:LengthFacet ;
     rdfs:comment "<S1> { <p1> BNODE MINLENGTH 5 } on { <s1> <p1> _:abcdef }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -7017,7 +7017,7 @@
 
 <#1nonliteralMinlength_fail-bnode-short> a sht:ValidationFailure ;
     mf:name "1nonliteralMinlength_fail-bnode-short" ;
-    sht:trait sht:LexicalBnode , sht:LengthFacet ;
+    sht:trait sht:LexicalBNode , sht:LengthFacet ;
     rdfs:comment "<S1> { <p1> NONLITERAL MINLENGTH 19 } on { <s1> <p1> _:abcd }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -7030,7 +7030,7 @@
 
 <#1nonliteralMinlength_pass-bnode-equal> a sht:ValidationTest ;
     mf:name "1nonliteralMinlength_pass-bnode-equal" ;
-    sht:trait sht:LexicalBnode , sht:LengthFacet ;
+    sht:trait sht:LexicalBNode , sht:LengthFacet ;
     rdfs:comment "<S1> { <p1> NONLITERAL MINLENGTH 19 } on { <s1> <p1> _:abcdefghijklmnopqrs }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -7044,7 +7044,7 @@
 
 <#1nonliteralMinlength_pass-bnode-long> a sht:ValidationTest ;
     mf:name "1nonliteralMinlength_pass-bnode-long" ;
-    sht:trait sht:LexicalBnode , sht:LengthFacet ;
+    sht:trait sht:LexicalBNode , sht:LengthFacet ;
     rdfs:comment "<S1> { <p1> NONLITERAL MINLENGTH 19 } on { <s1> <p1> _:abcdefghijklmnopqrst }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -7144,7 +7144,7 @@
 
 <#1bnodeMaxlength_pass-bnode-short> a sht:ValidationTest ;
     mf:name "1bnodeMaxlength_pass-bnode-short" ;
-    sht:trait sht:LexicalBnode , sht:LengthFacet ;
+    sht:trait sht:LexicalBNode , sht:LengthFacet ;
     rdfs:comment "<S1> { <p1> BNODE MAXLENGTH 5 } on { <s1> <p1> _:abcd }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -7158,7 +7158,7 @@
 
 <#1bnodeMaxlength_pass-bnode-equal> a sht:ValidationTest ;
     mf:name "1bnodeMaxlength_pass-bnode-equal" ;
-    sht:trait sht:LexicalBnode , sht:LengthFacet ;
+    sht:trait sht:LexicalBNode , sht:LengthFacet ;
     rdfs:comment "<S1> { <p1> BNODE MAXLENGTH 5 } on { <s1> <p1> _:abcde }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -7172,7 +7172,7 @@
 
 <#1bnodeMaxlength_fail-bnode-long> a sht:ValidationFailure ;
     mf:name "1bnodeMaxlength_fail-bnode-long" ;
-    sht:trait sht:LexicalBnode , sht:LengthFacet ;
+    sht:trait sht:LexicalBNode , sht:LengthFacet ;
     rdfs:comment "<S1> { <p1> BNODE MAXLENGTH 5 } on { <s1> <p1> _:abcdef }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -7227,7 +7227,7 @@
 
 <#1nonliteralMaxlength_pass-bnode-short> a sht:ValidationTest ;
     mf:name "1nonliteralMaxlength_pass-bnode-short" ;
-    sht:trait sht:LexicalBnode , sht:LengthFacet ;
+    sht:trait sht:LexicalBNode , sht:LengthFacet ;
     rdfs:comment "<S1> { <p1> NONLITERAL MAXLENGTH 19 } on { <s1> <p1> _:abcd }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -7241,7 +7241,7 @@
 
 <#1nonliteralMaxlength_pass-bnode-equal> a sht:ValidationTest ;
     mf:name "1nonliteralMaxlength_pass-bnode-equal" ;
-    sht:trait sht:LexicalBnode , sht:LengthFacet ;
+    sht:trait sht:LexicalBNode , sht:LengthFacet ;
     rdfs:comment "<S1> { <p1> NONLITERAL MAXLENGTH 19 } on { <s1> <p1> _:abcdefghijklmnopqrs }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -7255,7 +7255,7 @@
 
 <#1nonliteralMaxlength_fail-bnode-long> a sht:ValidationFailure ;
     mf:name "1nonliteralMaxlength_fail-bnode-long" ;
-    sht:trait sht:LexicalBnode , sht:LengthFacet ;
+    sht:trait sht:LexicalBNode , sht:LengthFacet ;
     rdfs:comment "<S1> { <p1> NONLITERAL MAXLENGTH 5 } on { <s1> <p1> _:abcdefghijklmnopqrst }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -10210,7 +10210,7 @@
 
 <#1focusIRI_dot_fail-bnodeFocusLabel> a sht:ValidationFailure ;
     mf:name "1focusIRI_dot_fail-bnodeFocusLabel" ;
-    sht:trait sht:FocusConstraint , sht:LexicalBnode , sht:ToldBNode ;
+    sht:trait sht:FocusConstraint , sht:LexicalBNode , sht:ToldBNode ;
     rdfs:comment "<S> IRI { <p1> . } on <s> in { _:abcd <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -10237,7 +10237,7 @@
 
 <#1focusBNODE_dot_fail-iriFocusLabel-equal> a sht:ValidationFailure ;
     mf:name "1focusBNODE_dot_fail-iriFocusLabel-equal" ;
-    sht:trait sht:FocusConstraint , sht:LexicalBnode ;
+    sht:trait sht:FocusConstraint , sht:LexicalBNode ;
     rdfs:comment "<S> BNODE { <p1> . } on <s> in { <s1> <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -10250,7 +10250,7 @@
 
 <#1focusBNODE_dot_pass> a sht:ValidationTest ;
     mf:name "1focusBNODE_dot_pass" ;
-    sht:trait sht:FocusConstraint , sht:ToldBNODE ;
+    sht:trait sht:FocusConstraint , sht:ToldBNode ;
     rdfs:comment "<S> BNODE { <p1> . } on <s> in { _:abcdefghijklmnopqrs <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -10322,7 +10322,7 @@
 
 <#1focusLength-dot_fail-bnode-short> a sht:ValidationFailure ;
     mf:name "1focusLength-dot_fail-bnode-short" ;
-    sht:trait sht:FocusConstraint , sht:LexicalBnode , sht:LengthFacet , sht:ToldBNode ;
+    sht:trait sht:FocusConstraint , sht:LexicalBNode , sht:LengthFacet , sht:ToldBNode ;
     rdfs:comment "<S1> LENGTH 19 { <p1> . } on { _:abcd <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -10335,7 +10335,7 @@
 
 <#1focusLength-dot_pass-bnode-equal> a sht:ValidationTest ;
     mf:name "1focusLength-dot_pass-bnode-equal" ;
-    sht:trait sht:FocusConstraint , sht:LexicalBnode , sht:LengthFacet , sht:ToldBNode ;
+    sht:trait sht:FocusConstraint , sht:LexicalBNode , sht:LengthFacet , sht:ToldBNode ;
     rdfs:comment "<S1> LENGTH 19 { <p1> . } on { _:abcdefghijklmnopqrs <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -10349,7 +10349,7 @@
 
 <#1focusLength-dot_fail-bnode-long> a sht:ValidationFailure ;
     mf:name "1focusLength-dot_fail-bnode-long" ;
-    sht:trait sht:FocusConstraint , sht:LexicalBnode , sht:LengthFacet , sht:ToldBNode ;
+    sht:trait sht:FocusConstraint , sht:LexicalBNode , sht:LengthFacet , sht:ToldBNode ;
     rdfs:comment "<S1> LENGTH 19 { <p1> . } on { _:abcdefghijklmnopqrst <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -10634,7 +10634,7 @@
 
 <#1focusIRILength_dot_fail-bnodeFocusLabel-equal> a sht:ValidationFailure ;
     mf:name "1focusIRILength_dot_fail-bnodeFocusLabel-equal" ;
-    sht:trait sht:FocusConstraint , sht:LexicalBnode , sht:LengthFacet , sht:ToldBNode ;
+    sht:trait sht:FocusConstraint , sht:LexicalBNode , sht:LengthFacet , sht:ToldBNode ;
     rdfs:comment "<S> IRI LENGTH 19 { <p1> . } on <s> in { _:abcdefghijklmnopqrs <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -10687,7 +10687,7 @@
 
 <#1focusBNODELength_dot_fail-iriFocusLabel-equal> a sht:ValidationFailure ;
     mf:name "1focusBNODELength_dot_fail-iriFocusLabel-equal" ;
-    sht:trait sht:LexicalBnode , sht:LengthFacet ;
+    sht:trait sht:LexicalBNode , sht:LengthFacet ;
     rdfs:comment "<S> BNODE LENGTH 19 { <p1> . } on <s> in { <s1> <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -10700,7 +10700,7 @@
 
 <#1focusBNODELength_dot_fail-short> a sht:ValidationFailure ;
     mf:name "1focusBNODELength_dot_fail-short" ;
-    sht:trait sht:FocusConstraint , sht:LengthFacet , sht:ToldBNODE ;
+    sht:trait sht:FocusConstraint , sht:LengthFacet , sht:ToldBNode ;
     rdfs:comment "<S> BNODE LENGTH 19 { <p1> . } on <s> in { _:abcd <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -10713,7 +10713,7 @@
 
 <#1focusBNODELength_dot_pass> a sht:ValidationTest ;
     mf:name "1focusBNODELength_dot_pass" ;
-    sht:trait sht:FocusConstraint , sht:LengthFacet , sht:ToldBNODE ;
+    sht:trait sht:FocusConstraint , sht:LengthFacet , sht:ToldBNode ;
     rdfs:comment "<S> BNODE LENGTH 19 { <p1> . } on <s> in { _:abcdefghijklmnopqrs <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -10727,7 +10727,7 @@
 
 <#1focusBNODELength_dot_fail-long> a sht:ValidationFailure ;
     mf:name "1focusBNODELength_dot_fail-long" ;
-    sht:trait sht:FocusConstraint , sht:LengthFacet , sht:ToldBNODE ;
+    sht:trait sht:FocusConstraint , sht:LengthFacet , sht:ToldBNode ;
     rdfs:comment "<S> BNODE LENGTH 19 { <p1> . } on <s> in { _:abcdefghijklmnopqrst <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
