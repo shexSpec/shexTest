@@ -6953,7 +6953,7 @@
           "extensionResults": [],
           "name": "1literalLength_fail-bnode-equal",
           "trait": [
-            "LexicalBnode",
+            "LexicalBNode",
             "LengthFacet"
           ],
           "comment": "<S1> { <p1> LITERAL LENGTH 5 } on { <s1> <p1> _:abcde }",
@@ -7040,7 +7040,7 @@
           "extensionResults": [],
           "name": "1iriLength_fail-bnode-equal",
           "trait": [
-            "LexicalBnode",
+            "LexicalBNode",
             "LengthFacet"
           ],
           "comment": "<S1> { <p1> IRI LENGTH 19 } on { <s1> <p1> _:abcde }",
@@ -7144,7 +7144,7 @@
           "extensionResults": [],
           "name": "1bnodeLength_fail-bnode-short",
           "trait": [
-            "LexicalBnode",
+            "LexicalBNode",
             "LengthFacet"
           ],
           "comment": "<S1> { <p1> BNODE LENGTH 5 } on { <s1> <p1> _:abcd }",
@@ -7162,7 +7162,7 @@
           "extensionResults": [],
           "name": "1bnodeLength_pass-bnode-equal",
           "trait": [
-            "LexicalBnode",
+            "LexicalBNode",
             "LengthFacet"
           ],
           "comment": "<S1> { <p1> BNODE LENGTH 5 } on { <s1> <p1> _:abcde }",
@@ -7181,7 +7181,7 @@
           "extensionResults": [],
           "name": "1bnodeLength_fail-bnode-long",
           "trait": [
-            "LexicalBnode",
+            "LexicalBNode",
             "LengthFacet"
           ],
           "comment": "<S1> { <p1> BNODE LENGTH 5 } on { <s1> <p1> _:abcdef }",
@@ -7302,7 +7302,7 @@
           "extensionResults": [],
           "name": "1nonliteralLength_fail-bnode-short",
           "trait": [
-            "LexicalBnode",
+            "LexicalBNode",
             "LengthFacet"
           ],
           "comment": "<S1> { <p1> NONLITERAL LENGTH 19 } on { <s1> <p1> _:abcd }",
@@ -7320,7 +7320,7 @@
           "extensionResults": [],
           "name": "1nonliteralLength_pass-bnode-equal",
           "trait": [
-            "LexicalBnode",
+            "LexicalBNode",
             "LengthFacet"
           ],
           "comment": "<S1> { <p1> NONLITERAL LENGTH 19 } on { <s1> <p1> _:abcdefghijklmnopqrs }",
@@ -7339,7 +7339,7 @@
           "extensionResults": [],
           "name": "1nonliteralLength_fail-bnode-long",
           "trait": [
-            "LexicalBnode",
+            "LexicalBNode",
             "LengthFacet"
           ],
           "comment": "<S1> { <p1> NONLITERAL LENGTH 19 } on { <s1> <p1> _:abcdefghijklmnopqrst }",
@@ -7463,7 +7463,7 @@
           "extensionResults": [],
           "name": "1bnodeMinlength_fail-bnode-short",
           "trait": [
-            "LexicalBnode",
+            "LexicalBNode",
             "LengthFacet"
           ],
           "comment": "<S1> { <p1> BNODE MINLENGTH 5 } on { <s1> <p1> _:abcd }",
@@ -7481,7 +7481,7 @@
           "extensionResults": [],
           "name": "1bnodeMinlength_pass-bnode-equal",
           "trait": [
-            "LexicalBnode",
+            "LexicalBNode",
             "LengthFacet"
           ],
           "comment": "<S1> { <p1> BNODE MINLENGTH 5 } on { <s1> <p1> _:abcde }",
@@ -7500,7 +7500,7 @@
           "extensionResults": [],
           "name": "1bnodeMinlength_pass-bnode-long",
           "trait": [
-            "LexicalBnode",
+            "LexicalBNode",
             "LengthFacet"
           ],
           "comment": "<S1> { <p1> BNODE MINLENGTH 5 } on { <s1> <p1> _:abcdef }",
@@ -7572,7 +7572,7 @@
           "extensionResults": [],
           "name": "1nonliteralMinlength_fail-bnode-short",
           "trait": [
-            "LexicalBnode",
+            "LexicalBNode",
             "LengthFacet"
           ],
           "comment": "<S1> { <p1> NONLITERAL MINLENGTH 19 } on { <s1> <p1> _:abcd }",
@@ -7590,7 +7590,7 @@
           "extensionResults": [],
           "name": "1nonliteralMinlength_pass-bnode-equal",
           "trait": [
-            "LexicalBnode",
+            "LexicalBNode",
             "LengthFacet"
           ],
           "comment": "<S1> { <p1> NONLITERAL MINLENGTH 19 } on { <s1> <p1> _:abcdefghijklmnopqrs }",
@@ -7609,7 +7609,7 @@
           "extensionResults": [],
           "name": "1nonliteralMinlength_pass-bnode-long",
           "trait": [
-            "LexicalBnode",
+            "LexicalBNode",
             "LengthFacet"
           ],
           "comment": "<S1> { <p1> NONLITERAL MINLENGTH 19 } on { <s1> <p1> _:abcdefghijklmnopqrst }",
@@ -7734,7 +7734,7 @@
           "extensionResults": [],
           "name": "1bnodeMaxlength_pass-bnode-short",
           "trait": [
-            "LexicalBnode",
+            "LexicalBNode",
             "LengthFacet"
           ],
           "comment": "<S1> { <p1> BNODE MAXLENGTH 5 } on { <s1> <p1> _:abcd }",
@@ -7753,7 +7753,7 @@
           "extensionResults": [],
           "name": "1bnodeMaxlength_pass-bnode-equal",
           "trait": [
-            "LexicalBnode",
+            "LexicalBNode",
             "LengthFacet"
           ],
           "comment": "<S1> { <p1> BNODE MAXLENGTH 5 } on { <s1> <p1> _:abcde }",
@@ -7772,7 +7772,7 @@
           "extensionResults": [],
           "name": "1bnodeMaxlength_fail-bnode-long",
           "trait": [
-            "LexicalBnode",
+            "LexicalBNode",
             "LengthFacet"
           ],
           "comment": "<S1> { <p1> BNODE MAXLENGTH 5 } on { <s1> <p1> _:abcdef }",
@@ -7843,7 +7843,7 @@
           "extensionResults": [],
           "name": "1nonliteralMaxlength_pass-bnode-short",
           "trait": [
-            "LexicalBnode",
+            "LexicalBNode",
             "LengthFacet"
           ],
           "comment": "<S1> { <p1> NONLITERAL MAXLENGTH 19 } on { <s1> <p1> _:abcd }",
@@ -7862,7 +7862,7 @@
           "extensionResults": [],
           "name": "1nonliteralMaxlength_pass-bnode-equal",
           "trait": [
-            "LexicalBnode",
+            "LexicalBNode",
             "LengthFacet"
           ],
           "comment": "<S1> { <p1> NONLITERAL MAXLENGTH 19 } on { <s1> <p1> _:abcdefghijklmnopqrs }",
@@ -7881,7 +7881,7 @@
           "extensionResults": [],
           "name": "1nonliteralMaxlength_fail-bnode-long",
           "trait": [
-            "LexicalBnode",
+            "LexicalBNode",
             "LengthFacet"
           ],
           "comment": "<S1> { <p1> NONLITERAL MAXLENGTH 5 } on { <s1> <p1> _:abcdefghijklmnopqrst }",
@@ -11838,7 +11838,7 @@
           "name": "1focusIRI_dot_fail-bnodeFocusLabel",
           "trait": [
             "FocusConstraint",
-            "LexicalBnode",
+            "LexicalBNode",
             "ToldBNode"
           ],
           "comment": "<S> IRI { <p1> . } on <s> in { _:abcd <p1> <o1> }",
@@ -11875,7 +11875,7 @@
           "name": "1focusBNODE_dot_fail-iriFocusLabel-equal",
           "trait": [
             "FocusConstraint",
-            "LexicalBnode"
+            "LexicalBNode"
           ],
           "comment": "<S> BNODE { <p1> . } on <s> in { <s1> <p1> <o1> }",
           "status": "mf:proposed"
@@ -11892,8 +11892,8 @@
           "extensionResults": [],
           "name": "1focusBNODE_dot_pass",
           "trait": [
-            "ToldBNODE",
-            "FocusConstraint"
+            "FocusConstraint",
+            "ToldBNode"
           ],
           "comment": "<S> BNODE { <p1> . } on <s> in { _:abcdefghijklmnopqrs <p1> <o1> }",
           "status": "mf:proposed",
@@ -11986,7 +11986,7 @@
           "name": "1focusLength-dot_fail-bnode-short",
           "trait": [
             "FocusConstraint",
-            "LexicalBnode",
+            "LexicalBNode",
             "LengthFacet",
             "ToldBNode"
           ],
@@ -12006,7 +12006,7 @@
           "name": "1focusLength-dot_pass-bnode-equal",
           "trait": [
             "FocusConstraint",
-            "LexicalBnode",
+            "LexicalBNode",
             "LengthFacet",
             "ToldBNode"
           ],
@@ -12027,7 +12027,7 @@
           "name": "1focusLength-dot_fail-bnode-long",
           "trait": [
             "FocusConstraint",
-            "LexicalBnode",
+            "LexicalBNode",
             "LengthFacet",
             "ToldBNode"
           ],
@@ -12409,7 +12409,7 @@
           "name": "1focusIRILength_dot_fail-bnodeFocusLabel-equal",
           "trait": [
             "FocusConstraint",
-            "LexicalBnode",
+            "LexicalBNode",
             "LengthFacet",
             "ToldBNode"
           ],
@@ -12483,7 +12483,7 @@
           "extensionResults": [],
           "name": "1focusBNODELength_dot_fail-iriFocusLabel-equal",
           "trait": [
-            "LexicalBnode",
+            "LexicalBNode",
             "LengthFacet"
           ],
           "comment": "<S> BNODE LENGTH 19 { <p1> . } on <s> in { <s1> <p1> <o1> }",
@@ -12501,9 +12501,9 @@
           "extensionResults": [],
           "name": "1focusBNODELength_dot_fail-short",
           "trait": [
-            "ToldBNODE",
             "FocusConstraint",
-            "LengthFacet"
+            "LengthFacet",
+            "ToldBNode"
           ],
           "comment": "<S> BNODE LENGTH 19 { <p1> . } on <s> in { _:abcd <p1> <o1> }",
           "status": "mf:proposed"
@@ -12520,9 +12520,9 @@
           "extensionResults": [],
           "name": "1focusBNODELength_dot_pass",
           "trait": [
-            "ToldBNODE",
             "FocusConstraint",
-            "LengthFacet"
+            "LengthFacet",
+            "ToldBNode"
           ],
           "comment": "<S> BNODE LENGTH 19 { <p1> . } on <s> in { _:abcdefghijklmnopqrs <p1> <o1> }",
           "status": "mf:proposed",
@@ -12540,9 +12540,9 @@
           "extensionResults": [],
           "name": "1focusBNODELength_dot_fail-long",
           "trait": [
-            "ToldBNODE",
             "FocusConstraint",
-            "LengthFacet"
+            "LengthFacet",
+            "ToldBNode"
           ],
           "comment": "<S> BNODE LENGTH 19 { <p1> . } on <s> in { _:abcdefghijklmnopqrst <p1> <o1> }",
           "status": "mf:proposed"
