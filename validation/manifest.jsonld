@@ -7901,9 +7901,9 @@
           "trait": [
             "PaternFacet"
           ],
-          "comment": "<S1> { <p1> LITERAL PATTERN \"^ab$\" } on { <s1> <p1> \"ab\" }",
+          "comment": "<S1> { <p1> LITERAL PATTERN \"ab\" } on { <s1> <p1> \"ab\" }",
           "status": "mf:proposed",
-          "result": "1literalPattern_fail-lit-match.val"
+          "result": "1literalPattern_pass-lit-match.val"
         },
         {
           "@id": "#1literalPattern_fail-lit-short",
@@ -7919,7 +7919,7 @@
           "trait": [
             "PaternFacet"
           ],
-          "comment": "<S1> { <p1> LITERAL PATTERN \"^ab$\" } on { <s1> <p1> \"a\" }",
+          "comment": "<S1> { <p1> LITERAL PATTERN \"ab\" } on { <s1> <p1> \"a\" }",
           "status": "mf:proposed"
         },
         {
@@ -7936,7 +7936,7 @@
           "trait": [
             "PaternFacet"
           ],
-          "comment": "<S1> { <p1> LITERAL PATTERN \"^ab$\" } on { <s1> <p1> \"abc\" }",
+          "comment": "<S1> { <p1> LITERAL PATTERN \"ab\" } on { <s1> <p1> \"abc\" }",
           "status": "mf:proposed"
         },
         {
@@ -7953,7 +7953,7 @@
           "trait": [
             "PaternFacet"
           ],
-          "comment": "<S1> { <p1> LITERAL PATTERN \"^http://a.example/o1$\" } on { <s1> <p1> <o1> }",
+          "comment": "<S1> { <p1> LITERAL PATTERN \"http://a.example/o1\" } on { <s1> <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -7970,8 +7970,44 @@
           "trait": [
             "PaternFacet"
           ],
-          "comment": "<S1> { <p1> LITERAL PATTERN \"^ab$\" } on { <s1> <p1> _:ab }",
+          "comment": "<S1> { <p1> LITERAL PATTERN \"ab\" } on { <s1> <p1> _:ab }",
           "status": "mf:proposed"
+        },
+        {
+          "@id": "#1literalPattern_pass-litEnd-match",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1literalPatternEnd.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_LabEnd.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalPattern_pass-litEnd-match",
+          "trait": [
+            "PaternFacet"
+          ],
+          "comment": "<S1> { <p1> LITERAL PATTERN \"^ab$\" } on { <s1> <p1> \"^ab$\" }",
+          "status": "mf:proposed",
+          "result": "1literalPattern_pass-litEnd-match.val"
+        },
+        {
+          "@id": "#1literalPattern_pass-StartlitEnd-match",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1literalStartPatternEnd.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_LStartabEnd.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalPattern_pass-StartlitEnd-match",
+          "trait": [
+            "PaternFacet"
+          ],
+          "comment": "<S1> { <p1> LITERAL PATTERN \"^ab$\" } on { <s1> <p1> \"^ab$\" }",
+          "status": "mf:proposed",
+          "result": "1literalPattern_pass-StartlitEnd-match.val"
         },
         {
           "@id": "#1literalPatternabEnd_fail-bnode-match",
@@ -7991,6 +8027,126 @@
           "status": "mf:proposed"
         },
         {
+          "@id": "#1literalPattern_pass-Startlit-match",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1literalStartPattern.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_LStartab.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalPattern_pass-Startlit-match",
+          "trait": [
+            "PaternFacet"
+          ],
+          "comment": "<S1> { <p1> LITERAL PATTERN \"^ab\" } on { <s1> <p1> \"^ab\" }",
+          "status": "mf:proposed",
+          "result": "1literalPattern_pass-Startlit-match.val"
+        },
+        {
+          "@id": "#1literalPattern_fail-Startlit-lit",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1literalStartPattern.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Lab.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalPattern_fail-Startlit-lit",
+          "trait": [
+            "PaternFacet"
+          ],
+          "comment": "<S1> { <p1> LITERAL PATTERN \"^ab\" } on { <s1> <p1> \"ab\" }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1literalPattern_fail-lit-Startlit",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1literalPattern.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_LStartab.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalPattern_fail-lit-Startlit",
+          "trait": [
+            "PaternFacet"
+          ],
+          "comment": "<S1> { <p1> LITERAL PATTERN \"ab\" } on { <s1> <p1> \"^ab\" }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1literalPattern_fail-litEnd-lit",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1literalPatternEnd.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Lab.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalPattern_fail-litEnd-lit",
+          "trait": [
+            "PaternFacet"
+          ],
+          "comment": "<S1> { <p1> LITERAL PATTERN \"ab$\" } on { <s1> <p1> \"ab\" }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1literalPattern_fail-lit-litEnd",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1literalPattern.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_LabEnd.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalPattern_fail-lit-litEnd",
+          "trait": [
+            "PaternFacet"
+          ],
+          "comment": "<S1> { <p1> LITERAL PATTERN \"ab\" } on { <s1> <p1> \"ab$\" }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1literalPattern_fail-StartlitEnd-lit",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1literalStartPatternEnd.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Lab.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalPattern_fail-StartlitEnd-lit",
+          "trait": [
+            "PaternFacet"
+          ],
+          "comment": "<S1> { <p1> LITERAL PATTERN \"^ab$\" } on { <s1> <p1> \"ab\" }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1literalPattern_fail-lit-StartlitEnd",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1literalPattern.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_LStartabEnd.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalPattern_fail-lit-StartlitEnd",
+          "trait": [
+            "PaternFacet"
+          ],
+          "comment": "<S1> { <p1> LITERAL PATTERN \"ab\" } on { <s1> <p1> \"^ab$\" }",
+          "status": "mf:proposed"
+        },
+        {
           "@id": "#1iriPattern_pass-iri-match",
           "@type": "sht:ValidationTest",
           "action": {
@@ -8004,7 +8160,7 @@
           "trait": [
             "PaternFacet"
           ],
-          "comment": "<S1> { <p1> IRI PATTERN \"^http://a.example/o1$\" } on { <s1> <p1> <o1> }",
+          "comment": "<S1> { <p1> IRI PATTERN \"http://a.example/o1\" } on { <s1> <p1> <o1> }",
           "status": "mf:proposed",
           "result": "1iriPattern_pass-iri-match.val"
         },
@@ -8022,7 +8178,7 @@
           "trait": [
             "PaternFacet"
           ],
-          "comment": "<S1> { <p1> IRI PATTERN \"^http://a.example/o1$\" } on { <s1> <p1> <o> }",
+          "comment": "<S1> { <p1> IRI PATTERN \"http://a.example/o1\" } on { <s1> <p1> <o> }",
           "status": "mf:proposed"
         },
         {
@@ -8039,7 +8195,7 @@
           "trait": [
             "PaternFacet"
           ],
-          "comment": "<S1> { <p1> IRI PATTERN \"^http://a.example/o1$\" } on { <s1> <p1> <o1a> }",
+          "comment": "<S1> { <p1> IRI PATTERN \"http://a.example/o1\" } on { <s1> <p1> <o1a> }",
           "status": "mf:proposed"
         },
         {
@@ -8056,7 +8212,7 @@
           "trait": [
             "PaternFacet"
           ],
-          "comment": "<S1> { <p1> IRI PATTERN \"^http://a.example/o1$\" } on { <s1> <p1> \"o1\" }",
+          "comment": "<S1> { <p1> IRI PATTERN \"http://a.example/o1\" } on { <s1> <p1> \"o1\" }",
           "status": "mf:proposed"
         },
         {
@@ -8090,7 +8246,7 @@
           "trait": [
             "PaternFacet"
           ],
-          "comment": "<S1> { <p1> BNODE PATTERN \"^ab$\" } on { <s1> <p1> _:ab }",
+          "comment": "<S1> { <p1> BNODE PATTERN \"ab\" } on { <s1> <p1> _:ab }",
           "status": "mf:proposed",
           "result": "1bnodePattern_pass-bnode-match.val"
         },
@@ -8108,7 +8264,7 @@
           "trait": [
             "PaternFacet"
           ],
-          "comment": "<S1> { <p1> BNODE PATTERN \"^ab$\" } on { <s1> <p1> _:a }",
+          "comment": "<S1> { <p1> BNODE PATTERN \"ab\" } on { <s1> <p1> _:a }",
           "status": "mf:proposed"
         },
         {
@@ -8125,7 +8281,7 @@
           "trait": [
             "PaternFacet"
           ],
-          "comment": "<S1> { <p1> BNODE PATTERN \"^ab$\" } on { <s1> <p1> _:abc }",
+          "comment": "<S1> { <p1> BNODE PATTERN \"ab\" } on { <s1> <p1> _:abc }",
           "status": "mf:proposed"
         },
         {
@@ -8142,7 +8298,7 @@
           "trait": [
             "PaternFacet"
           ],
-          "comment": "<S1> { <p1> BNODE PATTERN \"^ab$\" } on { <s1> <p1> \"ab\" }",
+          "comment": "<S1> { <p1> BNODE PATTERN \"ab\" } on { <s1> <p1> \"ab\" }",
           "status": "mf:proposed"
         },
         {
@@ -8159,7 +8315,7 @@
           "trait": [
             "PaternFacet"
           ],
-          "comment": "<S1> { <p1> BNODE PATTERN \"^ab$\" } on { BASE <http://a.example/> <s1> <p1> <ab> }",
+          "comment": "<S1> { <p1> BNODE PATTERN \"ab\" } on { BASE <http://a.example/> <s1> <p1> <ab> }",
           "status": "mf:proposed"
         },
         {
@@ -8176,7 +8332,7 @@
           "trait": [
             "PaternFacet"
           ],
-          "comment": "<S1> { <p1> NONLITERAL PATTERN \"ab$\" } on { <s1> <p1> <ab> }",
+          "comment": "<S1> { <p1> NONLITERAL PATTERN \".*ab\" } on { <s1> <p1> <ab> }",
           "status": "mf:proposed",
           "result": "1nonliteralPattern_pass-iri-match.val"
         },
@@ -8194,7 +8350,7 @@
           "trait": [
             "PaternFacet"
           ],
-          "comment": "<S1> { <p1> NONLITERAL PATTERN \"ab$\" } on { <s1> <p1> <a> }",
+          "comment": "<S1> { <p1> NONLITERAL PATTERN \".*ab\" } on { <s1> <p1> <a> }",
           "status": "mf:proposed"
         },
         {
@@ -8211,7 +8367,7 @@
           "trait": [
             "PaternFacet"
           ],
-          "comment": "<S1> { <p1> NONLITERAL PATTERN \"ab$\" } on { <s1> <p1> <abc> }",
+          "comment": "<S1> { <p1> NONLITERAL PATTERN \".*ab\" } on { <s1> <p1> <abc> }",
           "status": "mf:proposed"
         },
         {
@@ -8228,7 +8384,7 @@
           "trait": [
             "PaternFacet"
           ],
-          "comment": "<S1> { <p1> NONLITERAL PATTERN \"ab$\" } on { <s1> <p1> \"ab\" }",
+          "comment": "<S1> { <p1> NONLITERAL PATTERN \".*ab\" } on { <s1> <p1> \"ab\" }",
           "status": "mf:proposed"
         },
         {
@@ -8245,7 +8401,7 @@
           "trait": [
             "PaternFacet"
           ],
-          "comment": "<S1> { <p1> NONLITERAL PATTERN \"ab$\" } on { <s1> <p1> _:ab }",
+          "comment": "<S1> { <p1> NONLITERAL PATTERN \".*ab\" } on { <s1> <p1> _:ab }",
           "status": "mf:proposed",
           "result": "1nonliteralPattern_pass-bnode-match.val"
         },
@@ -8263,7 +8419,7 @@
           "trait": [
             "PaternFacet"
           ],
-          "comment": "<S1> { <p1> NONLITERAL PATTERN \"ab$\" } on { <s1> <p1> _:a }",
+          "comment": "<S1> { <p1> NONLITERAL PATTERN \".*ab\" } on { <s1> <p1> _:a }",
           "status": "mf:proposed"
         },
         {
@@ -8280,7 +8436,7 @@
           "trait": [
             "PaternFacet"
           ],
-          "comment": "<S1> { <p1> NONLITERAL PATTERN \"ab$\" } on { <s1> <p1> _:abc }",
+          "comment": "<S1> { <p1> NONLITERAL PATTERN \".*ab\" } on { <s1> <p1> _:abc }",
           "status": "mf:proposed"
         },
         {
@@ -9337,7 +9493,7 @@
           "trait": [
             "AndValueExpression"
           ],
-          "comment": "<S> { <p1> MINLENGTH 4 AND MAXLENGTH 5 AND ~ '^(ab)+' } on { <s1> <p1> 'abab' }",
+          "comment": "<S> { <p1> MINLENGTH 4 AND MAXLENGTH 5 AND ~ '(ab)+' } on { <s1> <p1> 'abab' }",
           "status": "mf:proposed",
           "result": "1val1vExprAND3_pass.val"
         },
@@ -9355,7 +9511,7 @@
           "trait": [
             "AndValueExpression"
           ],
-          "comment": "<S> { <p1> MINLENGTH 4 AND MAXLENGTH 5 AND ~ '^(ab)+' } on { <s1> <p1> 'ab' }",
+          "comment": "<S> { <p1> MINLENGTH 4 AND MAXLENGTH 5 AND ~ '(ab)+' } on { <s1> <p1> 'ab' }",
           "status": "mf:proposed"
         },
         {
@@ -9372,7 +9528,7 @@
           "trait": [
             "AndValueExpression"
           ],
-          "comment": "<S> { <p1> MINLENGTH 4 AND MAXLENGTH 5 AND ~ '^(ab)+' } on { <s1> <p1> 'ababab' }",
+          "comment": "<S> { <p1> MINLENGTH 4 AND MAXLENGTH 5 AND ~ '(ab)+' } on { <s1> <p1> 'ababab' }",
           "status": "mf:proposed"
         },
         {
@@ -9389,7 +9545,7 @@
           "trait": [
             "AndValueExpression"
           ],
-          "comment": "<S> { <p1> MINLENGTH 4 AND MAXLENGTH 5 AND ~ '^(ab)+' } on { <s1> <p1> 'baba' }",
+          "comment": "<S> { <p1> MINLENGTH 4 AND MAXLENGTH 5 AND ~ '(ab)+' } on { <s1> <p1> 'baba' }",
           "status": "mf:proposed"
         },
         {
@@ -10335,7 +10491,7 @@
           "trait": [
             "AndShapeShapeession"
           ],
-          "comment": "<S1> { <p1> minlength 4 } AND { <p1> maxlength 5 } AND { <p1> pattern '^(ab)+' } on { <s1> <p1> 'abab' }",
+          "comment": "<S1> { <p1> minlength 4 } AND { <p1> maxlength 5 } AND { <p1> pattern '(ab)+' } on { <s1> <p1> 'abab' }",
           "status": "mf:proposed",
           "result": "1val1vShapeANDRef3_pass.val"
         },
@@ -12150,7 +12306,7 @@
           "trait": [
             "PaternFacet"
           ],
-          "comment": "<S1> PATTERN \"^http://a.example/s1$\" { <p1> } on { <s1> <p1> <o1> }",
+          "comment": "<S1> PATTERN \"http://a.example/s1\" { <p1> } on { <s1> <p1> <o1> }",
           "status": "mf:proposed",
           "result": "1focus_dot_pass.val"
         },
@@ -12219,7 +12375,7 @@
           "trait": [
             "PaternFacet"
           ],
-          "comment": "<S1> PATTERN \"^abcdefghijklmnopqrs$\" { <p1> } on { _:abcdefghijklmnopqrs <p1> <o1> }",
+          "comment": "<S1> PATTERN \"abcdefghijklmnopqrs\" { <p1> } on { _:abcdefghijklmnopqrs <p1> <o1> }",
           "status": "mf:proposed",
           "result": "1focusBNODE_dot_pass.val"
         },
