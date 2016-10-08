@@ -1220,7 +1220,7 @@
 <#1negateddot_pass-empty> a sht:ValidationTest ;
     mf:name "1negateddot_pass-empty" ;
     sht:trait sht:TriplePattern ;
-    rdfs:comment "<S> { !<p1> . } on {  }" ;
+    rdfs:comment "<S1> { !<p1> . } on {  }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1negateddot.shex> ;
@@ -2416,7 +2416,7 @@
 <#1val1DOUBLE_pass> a sht:ValidationTest ;
     mf:name "1val1DOUBLE_pass" ;
     sht:trait sht:NumericEquivalence ;
-    rdfs:comment "<S> { <p1> [0e0] } on { <s> <p1> 0e0 }" ;
+    rdfs:comment "<S1> { <p1> [0e0] } on { <s> <p1> 0e0 }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1DOUBLE.shex> ;
@@ -7436,7 +7436,7 @@
 <#1literalPattern_pass-litEnd-match> a sht:ValidationTest ;
     mf:name "1literalPattern_pass-litEnd-match" ;
     sht:trait sht:PaternFacet ;
-    rdfs:comment "<S1> { <p1> LITERAL PATTERN \"^ab$\" } on { <s1> <p1> \"^ab$\" }" ;
+    rdfs:comment "<S1> { <p1> LITERAL PATTERN \"ab$\" } on { <s1> <p1> \"ab$\" }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1literalPatternEnd.shex> ;
