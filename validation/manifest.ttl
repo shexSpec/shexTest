@@ -851,7 +851,7 @@
 <#0_empty> a sht:ValidationTest ;
     mf:name "0_empty" ;
     sht:trait sht:Empty ;
-    rdfs:comment "<S> {  } on {  }" ;
+    rdfs:comment "<S1> {  } on {  }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/0.shex> ;
@@ -865,7 +865,7 @@
 <#0_other> a sht:ValidationTest ;
     mf:name "0_other" ;
     sht:trait sht:Empty ;
-    rdfs:comment "<S> {  } on { <s1> <p1> <o1> }" ;
+    rdfs:comment "<S1> {  } on { <s1> <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/0.shex> ;
@@ -879,7 +879,7 @@
 <#0_otherbnode> a sht:ValidationTest ;
     mf:name "0_otherbnode" ;
     sht:trait sht:Empty ;
-    rdfs:comment "<S> {  } on { _:abcd <p1> <o1> }" ;
+    rdfs:comment "<S1> {  } on { _:abcd <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/0.shex> ;
@@ -896,7 +896,7 @@
 <#1dot_fail-empty> a sht:ValidationFailure ;
     mf:name "1dot_fail-empty" ;
     sht:trait sht:TriplePattern ;
-    rdfs:comment "<S> { <p1> . } on {  }" ;
+    rdfs:comment "<S1> { <p1> . } on {  }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1dot.shex> ;
@@ -909,7 +909,7 @@
 <#1dot-base_fail-empty> a sht:ValidationFailure ;
     mf:name "1dot-base_fail-empty" ;
     sht:trait sht:TriplePattern ;
-    rdfs:comment "<S> { <p1> . } on {  }" ;
+    rdfs:comment "<S1> { <p1> . } on {  }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1dot-base.shex> ;
@@ -922,7 +922,7 @@
 <#1dot_fail-missing> a sht:ValidationFailure ;
     mf:name "1dot_fail-missing" ;
     sht:trait sht:TriplePattern ;
-    rdfs:comment "<S> { <p1> . } on { <s> <p2> <o1> }" ;
+    rdfs:comment "<S1> { <p1> . } on { <s> <p2> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1dot.shex> ;
@@ -935,7 +935,7 @@
 <#1dot-base_fail-missing> a sht:ValidationFailure ;
     mf:name "1dot-base_fail-missing" ;
     sht:trait sht:TriplePattern ;
-    rdfs:comment "<S> { <p1> . } on { <s> <p2> <o1> }" ;
+    rdfs:comment "<S1> { <p1> . } on { <s> <p2> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1dot-base.shex> ;
@@ -948,7 +948,7 @@
 <#1dot_pass-noOthers> a sht:ValidationTest ;
     mf:name "1dot_pass-noOthers" ;
     sht:trait sht:TriplePattern ;
-    rdfs:comment "<S> { <p1> . } on { <s1> <p1> <o1> }" ;
+    rdfs:comment "<S1> { <p1> . } on { <s1> <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1dot.shex> ;
@@ -962,7 +962,7 @@
 <#1dot-base_pass-noOthers> a sht:ValidationTest ;
     mf:name "1dot-base_pass-noOthers" ;
     sht:trait sht:TriplePattern ;
-    rdfs:comment "<S> { <p1> . } on { <s1> <p1> <o1> }" ;
+    rdfs:comment "<S1> { <p1> . } on { <s1> <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1dot-base.shex> ;
@@ -976,7 +976,7 @@
 <#1dotSemi_pass-noOthers> a sht:ValidationTest ;
     mf:name "1dotSemi_pass-noOthers" ;
     sht:trait sht:TriplePattern ;
-    rdfs:comment "PREFIX : <http://a.example/> <S> { :p1 ., } on { <s1> <p1> <o1> }" ;
+    rdfs:comment "PREFIX : <http://a.example/> <S1> { :p1 ., } on { <s1> <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1dotSemi.shex> ;
@@ -10116,7 +10116,7 @@
 <#0focusIRI_empty> a sht:ValidationTest ;
     mf:name "0focusIRI_empty" ;
     sht:trait sht:Empty ;
-    rdfs:comment "<S> IRI {  } on { }" ;
+    rdfs:comment "<S1> IRI {  } on { }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/0focusIRI.shex> ;
@@ -10404,7 +10404,7 @@
 
 <#1focusMinLength-dot_fail-bnode-short> a sht:ValidationFailure ;
     mf:name "1focusMinLength-dot_fail-bnode-short" ;
-    sht:trait sht:FocusConstraint , sht:LengthFacet ;
+    sht:trait sht:FocusConstraint , sht:LengthFacet , sht:ToldBNode ;
     rdfs:comment "<S1> MINLENGTH 19 { <p1> . } on { _:abcd <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -10417,7 +10417,7 @@
 
 <#1focusMinLength-dot_pass-bnode-equal> a sht:ValidationTest ;
     mf:name "1focusMinLength-dot_pass-bnode-equal" ;
-    sht:trait sht:FocusConstraint , sht:LengthFacet ;
+    sht:trait sht:FocusConstraint , sht:LengthFacet, sht:LexicalBNode , sht:ToldBNode ;
     rdfs:comment "<S1> MINLENGTH 19 { <p1> . } on { _:abcdefghijklmnopqrs <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -10431,7 +10431,7 @@
 
 <#1focusMinLength-dot_pass-bnode-long> a sht:ValidationTest ;
     mf:name "1focusMinLength-dot_pass-bnode-long" ;
-    sht:trait sht:FocusConstraint , sht:LengthFacet ;
+    sht:trait sht:FocusConstraint , sht:LengthFacet , sht:ToldBNode ;
     rdfs:comment "<S1> MINLENGTH 19 { <p1> . } on { <s1a> <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
