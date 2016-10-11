@@ -450,6 +450,9 @@
         <#1doubleMaxexclusiveDOUBLEint_fail-double-equal>
         <#1doubleMaxexclusiveDOUBLEintLeadTrail_fail-double-equal>
 ###   lengths
+        <#1Length_fail-lit-short>
+        <#1Length_pass-lit-equal>
+        <#1Length_fail-lit-long>
         <#1literalLength_fail-lit-short>
         <#1literalLength_pass-lit-equal>
         <#1literalLength_fail-lit-long>
@@ -6494,6 +6497,46 @@
 ####     } generated
 ###   } comparators
 ###   lengths {
+<#1Length_fail-lit-short> a sht:ValidationFailure ;
+    mf:name "1Length_fail-lit-short" ;
+    sht:trait sht:LengthFacet ;
+    rdfs:comment "<S1> { <p1> LENGTH 5 } on { <s1> <p1> \"abcd\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1Length.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Labcd.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1Length_pass-lit-equal> a sht:ValidationTest ;
+    mf:name "1Length_pass-lit-equal" ;
+    sht:trait sht:LengthFacet ;
+    rdfs:comment "<S1> { <p1> LENGTH 5 } on { <s1> <p1> \"abcde\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1Length.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Labcde.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1Length_pass-lit-equal.val>
+    .
+
+<#1Length_fail-lit-long> a sht:ValidationFailure ;
+    mf:name "1Length_fail-lit-long" ;
+    sht:trait sht:LengthFacet ;
+    rdfs:comment "<S1> { <p1> LENGTH 5 } on { <s1> <p1> \"abcdef\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1Length.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Labcdef.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
 <#1literalLength_fail-lit-short> a sht:ValidationFailure ;
     mf:name "1literalLength_fail-lit-short" ;
     sht:trait sht:LengthFacet ;

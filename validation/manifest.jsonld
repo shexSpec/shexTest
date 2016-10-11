@@ -6873,6 +6873,58 @@
           "status": "mf:proposed"
         },
         {
+          "@id": "#1Length_fail-lit-short",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1Length.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Labcd.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1Length_fail-lit-short",
+          "trait": [
+            "LengthFacet"
+          ],
+          "comment": "<S1> { <p1> LENGTH 5 } on { <s1> <p1> \"abcd\" }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1Length_pass-lit-equal",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1Length.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Labcde.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1Length_pass-lit-equal",
+          "trait": [
+            "LengthFacet"
+          ],
+          "comment": "<S1> { <p1> LENGTH 5 } on { <s1> <p1> \"abcde\" }",
+          "status": "mf:proposed",
+          "result": "1Length_pass-lit-equal.val"
+        },
+        {
+          "@id": "#1Length_fail-lit-long",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1Length.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Labcdef.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1Length_fail-lit-long",
+          "trait": [
+            "LengthFacet"
+          ],
+          "comment": "<S1> { <p1> LENGTH 5 } on { <s1> <p1> \"abcdef\" }",
+          "status": "mf:proposed"
+        },
+        {
           "@id": "#1literalLength_fail-lit-short",
           "@type": "sht:ValidationFailure",
           "action": {
