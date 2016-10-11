@@ -36,7 +36,7 @@ numericLiteral   = INTEGER|DECIMAL|DOUBLE ;
 valueSetValue    = objectValue|Stem|StemRange ;
 objectValue      = IRI|RDFLiteral ;
 Stem             { stem:IRI } # StemRange with exclusions
-StemRange        { stem:(IRI|Wildcard) exclusions:[valueSetValue]? }
+StemRange        { stem:(IRI|Wildcard) exclusions:[objectValue|Stem]? }
 Wildcard         {  }
 RDFLiteral       = SIMPLE_LITERAL|DATATYPE_LITERAL|LANG_LITERAL ;
 
