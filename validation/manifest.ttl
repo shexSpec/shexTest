@@ -71,8 +71,10 @@
 ## datatype
         <#1datatype_missing>
         <#1datatype_nonLiteral>
+	<#1datatype_langString>
         <#1datatype_wrongDatatype>
         <#1datatype_pass>
+	<#1datatypelangString_pass>
 
 ## cardinality
 ###   dot cardinality
@@ -1551,12 +1553,25 @@
 <#1datatype_nonLiteral> a sht:ValidationFailure ;
     mf:name "1datatype_nonLiteral" ;
     sht:trait sht:Datatype ;
-    rdfs:comment "<S> { <p1> <dt1> } on <s> in { <s1> <p1> <o1> }" ;
+    rdfs:comment "<S> { <p1> <dt1> } on <s> in { <s1> <p1> <dt1> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1datatype.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_Io1.ttl> ;
+      sht:data <Is1_Ip1_Idt1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1datatype_langString> a sht:ValidationFailure ;
+    mf:name "1datatype_langString" ;
+    sht:trait sht:Datatype ;
+    rdfs:comment "<S> { <p1> <dt1> } on <s> in { <s1> <p1> 'ab'@en }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1datatype.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LabLTen.ttl> ;
       sht:focus <http://a.example/s1>
     ]
     .
@@ -1586,6 +1601,20 @@
       sht:focus <http://a.example/s1>
     ] ;
     mf:result <1datatype_pass.val>
+    .
+
+<#1datatypelangString_pass> a sht:ValidationTest ;
+    mf:name "1datatypelangString_pass" ;
+    sht:trait sht:Datatype ;
+    rdfs:comment "<S> { <p1> rdf:langString } on <s> in { <s> <p1> 'ab'@en }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1datatypelangString.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LabLTen.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1datatypelangString_pass.val>
     .
 
 ## } datatype

@@ -20,7 +20,7 @@
           "trait": [
             "Empty"
           ],
-          "comment": "<S> {  } on {  }",
+          "comment": "<S1> {  } on {  }",
           "status": "mf:proposed",
           "result": "0_dummy.val"
         },
@@ -38,7 +38,7 @@
           "trait": [
             "Empty"
           ],
-          "comment": "<S> {  } on { <s1> <p1> <o1> }",
+          "comment": "<S1> {  } on { <s1> <p1> <o1> }",
           "status": "mf:proposed",
           "result": "0_pass.val"
         },
@@ -56,7 +56,7 @@
           "trait": [
             "Empty"
           ],
-          "comment": "<S> {  } on { _:abcd <p1> <o1> }",
+          "comment": "<S1> {  } on { _:abcd <p1> <o1> }",
           "status": "mf:proposed",
           "result": "0abcd_pass.val"
         },
@@ -74,7 +74,7 @@
           "trait": [
             "TriplePattern"
           ],
-          "comment": "<S> { <p1> . } on {  }",
+          "comment": "<S1> { <p1> . } on {  }",
           "status": "mf:proposed"
         },
         {
@@ -91,7 +91,7 @@
           "trait": [
             "TriplePattern"
           ],
-          "comment": "<S> { <p1> . } on {  }",
+          "comment": "<S1> { <p1> . } on {  }",
           "status": "mf:proposed"
         },
         {
@@ -108,7 +108,7 @@
           "trait": [
             "TriplePattern"
           ],
-          "comment": "<S> { <p1> . } on { <s> <p2> <o1> }",
+          "comment": "<S1> { <p1> . } on { <s> <p2> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -125,7 +125,7 @@
           "trait": [
             "TriplePattern"
           ],
-          "comment": "<S> { <p1> . } on { <s> <p2> <o1> }",
+          "comment": "<S1> { <p1> . } on { <s> <p2> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -142,7 +142,7 @@
           "trait": [
             "TriplePattern"
           ],
-          "comment": "<S> { <p1> . } on { <s1> <p1> <o1> }",
+          "comment": "<S1> { <p1> . } on { <s1> <p1> <o1> }",
           "status": "mf:proposed",
           "result": "1dot_pass.val"
         },
@@ -160,7 +160,7 @@
           "trait": [
             "TriplePattern"
           ],
-          "comment": "<S> { <p1> . } on { <s1> <p1> <o1> }",
+          "comment": "<S1> { <p1> . } on { <s1> <p1> <o1> }",
           "status": "mf:proposed",
           "result": "1dot_pass.val"
         },
@@ -178,7 +178,7 @@
           "trait": [
             "TriplePattern"
           ],
-          "comment": "PREFIX : <http://a.example/> <S> { :p1 ., } on { <s1> <p1> <o1> }",
+          "comment": "PREFIX : <http://a.example/> <S1> { :p1 ., } on { <s1> <p1> <o1> }",
           "status": "mf:proposed",
           "result": "1dot_pass.val"
         },
@@ -483,7 +483,7 @@
           "trait": [
             "TriplePattern"
           ],
-          "comment": "<S> { !<p1> . } on {  }",
+          "comment": "<S1> { !<p1> . } on {  }",
           "status": "mf:proposed",
           "result": "1negateddot_pass.val"
         },
@@ -893,7 +893,7 @@
           "action": {
             "schema": "../schemas/1datatype.shex",
             "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_Io1.ttl",
+            "data": "Is1_Ip1_Idt1.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
@@ -901,7 +901,24 @@
           "trait": [
             "Datatype"
           ],
-          "comment": "<S> { <p1> <dt1> } on <s> in { <s1> <p1> <o1> }",
+          "comment": "<S> { <p1> <dt1> } on <s> in { <s1> <p1> <dt1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1datatype_langString",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1datatype.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_LabLTen.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1datatype_langString",
+          "trait": [
+            "Datatype"
+          ],
+          "comment": "<S> { <p1> <dt1> } on <s> in { <s1> <p1> 'ab'@en }",
           "status": "mf:proposed"
         },
         {
@@ -938,6 +955,24 @@
           "comment": "<S> { <p1> <dt1> } on <s> in { <s> <p1> 'ab'^^<dt1> }",
           "status": "mf:proposed",
           "result": "1datatype_pass.val"
+        },
+        {
+          "@id": "#1datatypelangString_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1datatypelangString.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_LabLTen.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1datatypelangString_pass",
+          "trait": [
+            "Datatype"
+          ],
+          "comment": "<S> { <p1> rdf:langString } on <s> in { <s> <p1> 'ab'@en }",
+          "status": "mf:proposed",
+          "result": "1datatypelangString_pass.val"
         },
         {
           "@id": "#1card2_fail0",
@@ -1993,7 +2028,7 @@
           "trait": [
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> [0e0] } on { <s> <p1> 0e0 }",
+          "comment": "<S1> { <p1> [0e0] } on { <s> <p1> 0e0 }",
           "status": "mf:proposed",
           "result": "1val1DOUBLE_pass.val"
         },
@@ -8039,7 +8074,7 @@
           "trait": [
             "PaternFacet"
           ],
-          "comment": "<S1> { <p1> LITERAL PATTERN \"^ab$\" } on { <s1> <p1> \"^ab$\" }",
+          "comment": "<S1> { <p1> LITERAL PATTERN \"ab$\" } on { <s1> <p1> \"ab$\" }",
           "status": "mf:proposed",
           "result": "1literalPattern_pass-litEnd-match.val"
         },
@@ -11786,7 +11821,7 @@
           "trait": [
             "Empty"
           ],
-          "comment": "<S> IRI {  } on { }",
+          "comment": "<S1> IRI {  } on { }",
           "status": "mf:proposed",
           "result": "0_pass-focus.val"
         },
@@ -12155,7 +12190,8 @@
           "name": "1focusMinLength-dot_fail-bnode-short",
           "trait": [
             "FocusConstraint",
-            "LengthFacet"
+            "LengthFacet",
+            "ToldBNode"
           ],
           "comment": "<S1> MINLENGTH 19 { <p1> . } on { _:abcd <p1> <o1> }",
           "status": "mf:proposed"
@@ -12173,7 +12209,9 @@
           "name": "1focusMinLength-dot_pass-bnode-equal",
           "trait": [
             "FocusConstraint",
-            "LengthFacet"
+            "LexicalBNode",
+            "LengthFacet",
+            "ToldBNode"
           ],
           "comment": "<S1> MINLENGTH 19 { <p1> . } on { _:abcdefghijklmnopqrs <p1> <o1> }",
           "status": "mf:proposed",
@@ -12192,7 +12230,8 @@
           "name": "1focusMinLength-dot_pass-bnode-long",
           "trait": [
             "FocusConstraint",
-            "LengthFacet"
+            "LengthFacet",
+            "ToldBNode"
           ],
           "comment": "<S1> MINLENGTH 19 { <p1> . } on { <s1a> <p1> <o1> }",
           "status": "mf:proposed",
