@@ -927,7 +927,7 @@
           "action": {
             "schema": "../schemas/1datatype.shex",
             "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_DEC1.345.ttl",
+            "data": "Is1_Ip1_DEC1_234.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
@@ -2402,7 +2402,7 @@
           "action": {
             "schema": "../schemas/1datatypeLength.shex",
             "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_DEC1.345.ttl",
+            "data": "Is1_Ip1_DEC1_234.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
@@ -2466,27 +2466,28 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#1literalFractiondigits_fail-decimal-short",
-          "@type": "sht:ValidationFailure",
+          "@id": "#1literalFractiondigits_pass-decimal-short",
+          "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/1literalFractiondigits.shex",
+            "schema": "../schemas/1literalFractiondigits5.shex",
             "shape": "http://a.example/S1",
             "data": "Is1_Ip1_DEC1_2345.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1literalFractiondigits_fail-decimal-short",
+          "name": "1literalFractiondigits_pass-decimal-short",
           "trait": [
             "FractionDigitsFacet"
           ],
           "comment": "<S1> { <p1> LITERAL FRACTIONDIGITS 5 } / { <s1> <p1> 1.2345 }",
-          "status": "mf:proposed"
+          "status": "mf:proposed",
+          "result": "1literalFractiondigits_pass-decimal-short.val"
         },
         {
           "@id": "#1literalFractiondigits_pass-decimal-equal",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/1literalFractiondigits.shex",
+            "schema": "../schemas/1literalFractiondigits5.shex",
             "shape": "http://a.example/S1",
             "data": "Is1_Ip1_DEC1_23456.ttl",
             "focus": "http://a.example/s1"
@@ -2501,28 +2502,10 @@
           "result": "1literalFractiondigits_pass-decimal-equal.val"
         },
         {
-          "@id": "#1literalFractiondigits_pass-float-equal",
-          "@type": "sht:ValidationTest",
-          "action": {
-            "schema": "../schemas/1literalFractiondigits.shex",
-            "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_FLT1_23456.ttl",
-            "focus": "http://a.example/s1"
-          },
-          "extensionResults": [],
-          "name": "1literalFractiondigits_pass-float-equal",
-          "trait": [
-            "FractionDigitsFacet"
-          ],
-          "comment": "<S1> { <p1> LITERAL FRACTIONDIGITS 5 } / { <s1> <p1> \"1.23456\"^^xsd:floag }",
-          "status": "mf:proposed",
-          "result": "1literalFractiondigits_pass-float-equal.val"
-        },
-        {
           "@id": "#1literalFractiondigits_fail-decimal-long",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/1literalFractiondigits.shex",
+            "schema": "../schemas/1literalFractiondigits5.shex",
             "shape": "http://a.example/S1",
             "data": "Is1_Ip1_DEC1_234567.ttl",
             "focus": "http://a.example/s1"
@@ -2536,44 +2519,185 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#1literalFractiondigits_fail-integer-short",
+          "@id": "#1literalFractiondigits_pass-decimal-equalLead",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1literalFractiondigits4.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_DEC01_2345.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalFractiondigits_pass-decimal-equalLead",
+          "trait": [
+            "FractionDigitsFacet"
+          ],
+          "comment": "<S1> { <p1> LITERAL FRACTIONDIGITS 4 } / { <s1> <p1> 01.2345 }",
+          "status": "mf:proposed",
+          "result": "1literalFractiondigits_pass-decimal-equalLead.val"
+        },
+        {
+          "@id": "#1literalFractiondigits_fail-decimal-longLead",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/1literalFractiondigits.shex",
+            "schema": "../schemas/1literalFractiondigits4.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_DEC01_23456.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalFractiondigits_fail-decimal-longLead",
+          "trait": [
+            "FractionDigitsFacet"
+          ],
+          "comment": "<S1> { <p1> LITERAL FRACTIONDIGITS 4 } / { <s1> <p1> 01.23456 }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1literalFractiondigits_pass-decimal-equalTrail",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1literalFractiondigits4.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_DEC1_23450.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalFractiondigits_pass-decimal-equalTrail",
+          "trait": [
+            "FractionDigitsFacet"
+          ],
+          "comment": "<S1> { <p1> LITERAL FRACTIONDIGITS 4 } / { <s1> <p1> 1.23450 }",
+          "status": "mf:proposed",
+          "result": "1literalFractiondigits_pass-decimal-equalTrail.val"
+        },
+        {
+          "@id": "#1literalFractiondigits_fail-decimal-longTrail",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1literalFractiondigits4.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_DEC1_234560.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalFractiondigits_fail-decimal-longTrail",
+          "trait": [
+            "FractionDigitsFacet"
+          ],
+          "comment": "<S1> { <p1> LITERAL FRACTIONDIGITS 4 } / { <s1> <p1> 1.234560 }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1literalFractiondigits_pass-decimal-equalLeadTrail",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1literalFractiondigits4.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_DEC01_23450.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalFractiondigits_pass-decimal-equalLeadTrail",
+          "trait": [
+            "FractionDigitsFacet"
+          ],
+          "comment": "<S1> { <p1> LITERAL FRACTIONDIGITS 4 } / { <s1> <p1> 01.23450 }",
+          "status": "mf:proposed",
+          "result": "1literalFractiondigits_pass-decimal-equalLeadTrail.val"
+        },
+        {
+          "@id": "#1literalFractiondigits_fail-decimal-longLeadTrail",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1literalFractiondigits4.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_DEC1_234560.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalFractiondigits_fail-decimal-longLeadTrail",
+          "trait": [
+            "FractionDigitsFacet"
+          ],
+          "comment": "<S1> { <p1> LITERAL FRACTIONDIGITS 4 } / { <s1> <p1> 01.234560 }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1literalFractiondigits_pass-integer-short",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1literalFractiondigits5.shex",
             "shape": "http://a.example/S1",
             "data": "Is1_Ip1_INT12345.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1literalFractiondigits_fail-integer-short",
+          "name": "1literalFractiondigits_pass-integer-short",
           "trait": [
             "FractionDigitsFacet"
           ],
           "comment": "<S1> { <p1> LITERAL FRACTIONDIGITS 5 } / { <s1> <p1> 12345 }",
-          "status": "mf:proposed"
+          "status": "mf:proposed",
+          "result": "1fractionTotaldigits_pass-integer-equal.val"
         },
         {
-          "@id": "#1literalFractiondigits_fail-xsd_integer-short",
-          "@type": "sht:ValidationFailure",
+          "@id": "#1literalFractiondigits_pass-xsd_integer-short",
+          "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/1literalFractiondigits.shex",
+            "schema": "../schemas/1literalFractiondigits5.shex",
             "shape": "http://a.example/S1",
             "data": "Is1_Ip1_xsd-integer12345.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1literalFractiondigits_fail-xsd_integer-short",
+          "name": "1literalFractiondigits_pass-xsd_integer-short",
           "trait": [
             "FractionDigitsFacet"
           ],
           "comment": "<S1> { <p1> LITERAL FRACTIONDIGITS 5 } / { <s1> <p1> \"12345\"^^xsd:integer }",
+          "status": "mf:proposed",
+          "result": "1fractionTotaldigits_pass-integer-equal.val"
+        },
+        {
+          "@id": "#1literalFractiondigits_fail-float-equal",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1literalFractiondigits5.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_FLT1_23456.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalFractiondigits_fail-float-equal",
+          "trait": [
+            "FractionDigitsFacet"
+          ],
+          "comment": "<S1> { <p1> LITERAL FRACTIONDIGITS 5 } / { <s1> <p1> \"1.23456\"^^xsd:float }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1literalFractiondigits_fail-double-equal",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1literalFractiondigits5.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_DBL4_5e0.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalFractiondigits_fail-double-equal",
+          "trait": [
+            "FractionDigitsFacet"
+          ],
+          "comment": "<S1> { <p1> LITERAL FRACTIONDIGITS 5 } / { <s1> <p1> 4.5e0 }",
           "status": "mf:proposed"
         },
         {
           "@id": "#1literalFractiondigits_fail-malformedxsd_decimal-1_23ab",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/1literalFractiondigits.shex",
+            "schema": "../schemas/1literalFractiondigits5.shex",
             "shape": "http://a.example/S1",
             "data": "Is1_Ip1_malformedxsd-decimal1_23ab.ttl",
             "focus": "http://a.example/s1"
@@ -2590,7 +2714,7 @@
           "@id": "#1literalFractiondigits_fail-malformedxsd_decimal-1_2345ab",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/1literalFractiondigits.shex",
+            "schema": "../schemas/1literalFractiondigits5.shex",
             "shape": "http://a.example/S1",
             "data": "Is1_Ip1_malformedxsd-decimal1_2345ab.ttl",
             "focus": "http://a.example/s1"
@@ -2607,7 +2731,7 @@
           "@id": "#1literalFractiondigits_fail-malformedxsd_integer-1_2345",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/1literalFractiondigits.shex",
+            "schema": "../schemas/1literalFractiondigits5.shex",
             "shape": "http://a.example/S1",
             "data": "Is1_Ip1_malformedxsd-integer1_2345.ttl",
             "focus": "http://a.example/s1"
@@ -2624,7 +2748,7 @@
           "@id": "#1literalFractiondigits_fail-iri",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/1literalFractiondigits.shex",
+            "schema": "../schemas/1literalFractiondigits5.shex",
             "shape": "http://a.example/S1",
             "data": "BASE_Is1_Ip1_I12345.ttl",
             "focus": "http://a.example/s1"
@@ -2641,7 +2765,7 @@
           "@id": "#1literalFractiondigits_fail-bnode",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/1literalFractiondigits.shex",
+            "schema": "../schemas/1literalFractiondigits5.shex",
             "shape": "http://a.example/S1",
             "data": "Is1_Ip1_B12345.ttl",
             "focus": "http://a.example/s1"
@@ -2655,27 +2779,28 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#1literalTotaldigits_fail-decimal-short",
-          "@type": "sht:ValidationFailure",
+          "@id": "#1literalTotaldigits_pass-decimal-short",
+          "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/1literalTotaldigits.shex",
+            "schema": "../schemas/1literalTotaldigits5.shex",
             "shape": "http://a.example/S1",
             "data": "Is1_Ip1_DEC1_234.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1literalTotaldigits_fail-decimal-short",
+          "name": "1literalTotaldigits_pass-decimal-short",
           "trait": [
             "TotalDigitsFacet"
           ],
-          "comment": "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> 1.2345 }",
-          "status": "mf:proposed"
+          "comment": "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> 1.234 }",
+          "status": "mf:proposed",
+          "result": "1literalTotaldigits_pass-decimal-short.val"
         },
         {
           "@id": "#1literalTotaldigits_pass-decimal-equal",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/1literalTotaldigits.shex",
+            "schema": "../schemas/1literalTotaldigits5.shex",
             "shape": "http://a.example/S1",
             "data": "Is1_Ip1_DEC1_2345.ttl",
             "focus": "http://a.example/s1"
@@ -2690,28 +2815,10 @@
           "result": "1literalTotaldigits_pass-decimal-equal.val"
         },
         {
-          "@id": "#1literalTotaldigits_pass-float-equal",
-          "@type": "sht:ValidationTest",
-          "action": {
-            "schema": "../schemas/1literalTotaldigits.shex",
-            "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_FLT1_2345.ttl",
-            "focus": "http://a.example/s1"
-          },
-          "extensionResults": [],
-          "name": "1literalTotaldigits_pass-float-equal",
-          "trait": [
-            "TotalDigitsFacet"
-          ],
-          "comment": "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> \"1.2345\"^^xsd:float }",
-          "status": "mf:proposed",
-          "result": "1literalTotaldigits_pass-float-equal.val"
-        },
-        {
           "@id": "#1literalTotaldigits_fail-decimal-long",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/1literalTotaldigits.shex",
+            "schema": "../schemas/1literalTotaldigits5.shex",
             "shape": "http://a.example/S1",
             "data": "Is1_Ip1_DEC1_23456.ttl",
             "focus": "http://a.example/s1"
@@ -2725,10 +2832,115 @@
           "status": "mf:proposed"
         },
         {
+          "@id": "#1literalTotaldigits_pass-decimal-equalLead",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1literalTotaldigits5.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_DEC01_2345.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalTotaldigits_pass-decimal-equalLead",
+          "trait": [
+            "TotalDigitsFacet"
+          ],
+          "comment": "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> 01.2345 }",
+          "status": "mf:proposed",
+          "result": "1literalTotaldigits_pass-decimal-equalLead.val"
+        },
+        {
+          "@id": "#1literalTotaldigits_fail-decimal-longLead",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1literalTotaldigits5.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_DEC01_23456.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalTotaldigits_fail-decimal-longLead",
+          "trait": [
+            "TotalDigitsFacet"
+          ],
+          "comment": "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> 01.23456 }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1literalTotaldigits_pass-decimal-equalTrail",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1literalTotaldigits5.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_DEC1_23450.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalTotaldigits_pass-decimal-equalTrail",
+          "trait": [
+            "TotalDigitsFacet"
+          ],
+          "comment": "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> 1.23450 }",
+          "status": "mf:proposed",
+          "result": "1literalTotaldigits_pass-decimal-equalTrail.val"
+        },
+        {
+          "@id": "#1literalTotaldigits_fail-decimal-longTrail",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1literalTotaldigits5.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_DEC1_234560.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalTotaldigits_fail-decimal-longTrail",
+          "trait": [
+            "TotalDigitsFacet"
+          ],
+          "comment": "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> 1.234560 }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1literalTotaldigits_pass-decimal-equalLeadTrail",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1literalTotaldigits5.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_DEC01_23450.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalTotaldigits_pass-decimal-equalLeadTrail",
+          "trait": [
+            "TotalDigitsFacet"
+          ],
+          "comment": "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> 01.23450 }",
+          "status": "mf:proposed",
+          "result": "1literalTotaldigits_pass-decimal-equalLeadTrail.val"
+        },
+        {
+          "@id": "#1literalTotaldigits_fail-decimal-longLeadTrail",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1literalTotaldigits5.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_DEC1_234560.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalTotaldigits_fail-decimal-longLeadTrail",
+          "trait": [
+            "TotalDigitsFacet"
+          ],
+          "comment": "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> 01.234560 }",
+          "status": "mf:proposed"
+        },
+        {
           "@id": "#1literalTotaldigits_pass-integer-equal",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/1literalTotaldigits.shex",
+            "schema": "../schemas/1literalTotaldigits5.shex",
             "shape": "http://a.example/S1",
             "data": "Is1_Ip1_INT12345.ttl",
             "focus": "http://a.example/s1"
@@ -2743,27 +2955,220 @@
           "result": "1literalTotaldigits_pass-integer-equal.val"
         },
         {
-          "@id": "#1literalTotaldigits_fail-xsd_integer-short",
-          "@type": "sht:ValidationFailure",
+          "@id": "#1literalTotaldigits_pass-xsd_integer-short",
+          "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/1literalTotaldigits.shex",
+            "schema": "../schemas/1literalTotaldigits5.shex",
             "shape": "http://a.example/S1",
             "data": "Is1_Ip1_xsd-integer1234.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1literalTotaldigits_fail-xsd_integer-short",
+          "name": "1literalTotaldigits_pass-xsd_integer-short",
           "trait": [
             "TotalDigitsFacet"
           ],
           "comment": "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> \"1234\"^^xsd:integer }",
+          "status": "mf:proposed",
+          "result": "1literalTotaldigits_pass-integer-short.val"
+        },
+        {
+          "@id": "#1literalTotaldigits_pass-integer-equalLead",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1literalTotaldigits5.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_INT012345.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalTotaldigits_pass-integer-equalLead",
+          "trait": [
+            "TotalDigitsFacet"
+          ],
+          "comment": "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> 012345 }",
+          "status": "mf:proposed",
+          "result": "1literalTotaldigits_pass-integer-equalLead.val"
+        },
+        {
+          "@id": "#1literalTotaldigits_fail-integer-longLead",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1literalTotaldigits5.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_INT0123456.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalTotaldigits_fail-integer-longLead",
+          "trait": [
+            "TotalDigitsFacet"
+          ],
+          "comment": "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> 0123456 }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1literalTotaldigits_pass-integer-equalTrail",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1literalTotaldigits6.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_INT123450.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalTotaldigits_pass-integer-equalTrail",
+          "trait": [
+            "TotalDigitsFacet"
+          ],
+          "comment": "<S1> { <p1> LITERAL TOTALDIGITS 6 } / { <s1> <p1> 123450 }",
+          "status": "mf:proposed",
+          "result": "1literalTotaldigits_pass-integer-equalTrail.val"
+        },
+        {
+          "@id": "#1literalTotaldigits_fail-integer-longTrail",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1literalTotaldigits6.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_INT1234560.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalTotaldigits_fail-integer-longTrail",
+          "trait": [
+            "TotalDigitsFacet"
+          ],
+          "comment": "<S1> { <p1> LITERAL TOTALDIGITS 6 } / { <s1> <p1> 1234560 }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1literalTotaldigits_pass-integer-equalLeadTrail",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1literalTotaldigits6.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_INT0123450.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalTotaldigits_pass-integer-equalLeadTrail",
+          "trait": [
+            "TotalDigitsFacet"
+          ],
+          "comment": "<S1> { <p1> LITERAL TOTALDIGITS 6 } / { <s1> <p1> 0123450 }",
+          "status": "mf:proposed",
+          "result": "1literalTotaldigits_pass-integer-equalLeadTrail.val"
+        },
+        {
+          "@id": "#1literalTotaldigits_fail-integer-longLeadTrail",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1literalTotaldigits6.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_INT01234560.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalTotaldigits_fail-integer-longLeadTrail",
+          "trait": [
+            "TotalDigitsFacet"
+          ],
+          "comment": "<S1> { <p1> LITERAL TOTALDIGITS 6 } / { <s1> <p1> 01234560 }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1literalTotaldigits_pass-byte-short",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1literalTotaldigits2.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_BYT5.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalTotaldigits_pass-byte-short",
+          "trait": [
+            "TotalDigitsFacet"
+          ],
+          "comment": "<S1> { <p1> LITERAL TOTALDIGITS 2 } / { <s1> <p1> 5^^xsd:byte }",
+          "status": "mf:proposed",
+          "result": "1literalTotaldigits_pass-byte-short.val"
+        },
+        {
+          "@id": "#1literalTotaldigits_pass-byte-equal",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1literalTotaldigits2.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_BYT64.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalTotaldigits_pass-byte-equal",
+          "trait": [
+            "TotalDigitsFacet"
+          ],
+          "comment": "<S1> { <p1> LITERAL TOTALDIGITS 2 } / { <s1> <p1> 64^^xsd:byte }",
+          "status": "mf:proposed",
+          "result": "1literalTotaldigits_pass-byte-equal.val"
+        },
+        {
+          "@id": "#1literalTotaldigits_fail-byte-long",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1literalTotaldigits2.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_BYT128.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalTotaldigits_fail-byte-long",
+          "trait": [
+            "TotalDigitsFacet"
+          ],
+          "comment": "<S1> { <p1> LITERAL TOTALDIGITS 2 } / { <s1> <p1> 128^^xsd:byte }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1literalTotaldigits_fail-float-equal",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1literalTotaldigits5.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_FLT1_2345.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalTotaldigits_fail-float-equal",
+          "trait": [
+            "TotalDigitsFacet"
+          ],
+          "comment": "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> \"1.2345\"^^xsd:float }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1literalTotaldigits_fail-double-equal",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1literalTotaldigits5.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_DBL4_5e0.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalTotaldigits_fail-double-equal",
+          "trait": [
+            "TotalDigitsFacet"
+          ],
+          "comment": "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> 4.5e0 }",
           "status": "mf:proposed"
         },
         {
           "@id": "#1literalTotaldigits_fail-malformedxsd_decimal-1_23ab",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/1literalTotaldigits.shex",
+            "schema": "../schemas/1literalTotaldigits5.shex",
             "shape": "http://a.example/S1",
             "data": "Is1_Ip1_malformedxsd-decimal1_23ab.ttl",
             "focus": "http://a.example/s1"
@@ -2780,7 +3185,7 @@
           "@id": "#1literalTotaldigits_fail-malformedxsd_decimal-1_2345ab",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/1literalTotaldigits.shex",
+            "schema": "../schemas/1literalTotaldigits5.shex",
             "shape": "http://a.example/S1",
             "data": "Is1_Ip1_malformedxsd-decimal1_2345ab.ttl",
             "focus": "http://a.example/s1"
@@ -2797,7 +3202,7 @@
           "@id": "#1literalTotaldigits_fail-malformedxsd_integer-1_2345",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/1literalTotaldigits.shex",
+            "schema": "../schemas/1literalTotaldigits5.shex",
             "shape": "http://a.example/S1",
             "data": "Is1_Ip1_malformedxsd-integer1_2345.ttl",
             "focus": "http://a.example/s1"
@@ -2814,7 +3219,7 @@
           "@id": "#1literalTotaldigits_fail-iri",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/1literalTotaldigits.shex",
+            "schema": "../schemas/1literalTotaldigits5.shex",
             "shape": "http://a.example/S1",
             "data": "BASE_Is1_Ip1_I12345.ttl",
             "focus": "http://a.example/s1"
@@ -2831,7 +3236,7 @@
           "@id": "#1literalTotaldigits_fail-bnode",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/1literalTotaldigits.shex",
+            "schema": "../schemas/1literalTotaldigits5.shex",
             "shape": "http://a.example/S1",
             "data": "Is1_Ip1_B12345.ttl",
             "focus": "http://a.example/s1"

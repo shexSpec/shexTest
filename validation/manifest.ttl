@@ -189,28 +189,51 @@
         <#1datatypeLength_pass>
         <#1datatypeLength_fail-long>
 ###   fractionDigits
-        <#1literalFractiondigits_fail-decimal-short>
+        <#1literalFractiondigits_pass-decimal-short>
         # <#1literalFractiondigitsxsd-integer_fail-decimal-short> # for numericFacet ::= (numericFacet | numericLength) INTEGER (numericLiteral | string '^^' datatype )
         <#1literalFractiondigits_pass-decimal-equal>
         #  <#1literalFractiondigitsxsd-integer_pass-decimal-equal> # for numericFacet ::= (numericFacet | numericLength) INTEGER (numericLiteral | string '^^' datatype )
-        <#1literalFractiondigits_pass-float-equal>
         <#1literalFractiondigits_fail-decimal-long>
-        <#1literalFractiondigits_fail-integer-short>
-        <#1literalFractiondigits_fail-xsd_integer-short>
+        <#1literalFractiondigits_pass-decimal-equalLead>
+        <#1literalFractiondigits_fail-decimal-longLead>
+        <#1literalFractiondigits_pass-decimal-equalTrail>
+        <#1literalFractiondigits_fail-decimal-longTrail>
+        <#1literalFractiondigits_pass-decimal-equalLeadTrail>
+        <#1literalFractiondigits_fail-decimal-longLeadTrail>
+        <#1literalFractiondigits_pass-integer-short>
+        <#1literalFractiondigits_pass-xsd_integer-short>
+        <#1literalFractiondigits_fail-float-equal>
+        <#1literalFractiondigits_fail-double-equal>
         <#1literalFractiondigits_fail-malformedxsd_decimal-1_23ab>
         <#1literalFractiondigits_fail-malformedxsd_decimal-1_2345ab>
         <#1literalFractiondigits_fail-malformedxsd_integer-1_2345>
         <#1literalFractiondigits_fail-iri>
         <#1literalFractiondigits_fail-bnode>
 ###   totalDigits
-        <#1literalTotaldigits_fail-decimal-short>
+        <#1literalTotaldigits_pass-decimal-short>
         # <#1literalTotaldigitsxsd-integer_fail-decimal-short> # for numericFacet ::= (numericFacet | numericLength) INTEGER (numericLiteral | string '^^' datatype )
         <#1literalTotaldigits_pass-decimal-equal>
         #  <#1literalTotaldigitsxsd-integer_pass-decimal-equal> # for numericFacet ::= (numericFacet | numericLength) INTEGER (numericLiteral | string '^^' datatype )
-        <#1literalTotaldigits_pass-float-equal>
         <#1literalTotaldigits_fail-decimal-long>
+        <#1literalTotaldigits_pass-decimal-equalLead>
+        <#1literalTotaldigits_fail-decimal-longLead>
+        <#1literalTotaldigits_pass-decimal-equalTrail>
+        <#1literalTotaldigits_fail-decimal-longTrail>
+        <#1literalTotaldigits_pass-decimal-equalLeadTrail>
+        <#1literalTotaldigits_fail-decimal-longLeadTrail>
         <#1literalTotaldigits_pass-integer-equal>
-        <#1literalTotaldigits_fail-xsd_integer-short>
+        <#1literalTotaldigits_pass-xsd_integer-short>
+        <#1literalTotaldigits_pass-integer-equalLead>
+        <#1literalTotaldigits_fail-integer-longLead>
+        <#1literalTotaldigits_pass-integer-equalTrail>
+        <#1literalTotaldigits_fail-integer-longTrail>
+        <#1literalTotaldigits_pass-integer-equalLeadTrail>
+        <#1literalTotaldigits_fail-integer-longLeadTrail>
+        <#1literalTotaldigits_pass-byte-short>
+        <#1literalTotaldigits_pass-byte-equal>
+        <#1literalTotaldigits_fail-byte-long>
+        <#1literalTotaldigits_fail-float-equal>
+        <#1literalTotaldigits_fail-double-equal>
         <#1literalTotaldigits_fail-malformedxsd_decimal-1_23ab>
         <#1literalTotaldigits_fail-malformedxsd_decimal-1_2345ab>
         <#1literalTotaldigits_fail-malformedxsd_integer-1_2345>
@@ -1588,7 +1611,7 @@
     mf:action [
       sht:schema <../schemas/1datatype.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_DEC1.345.ttl> ;
+      sht:data <Is1_Ip1_DEC1_234.ttl> ;
       sht:focus <http://a.example/s1>
     ]
     .
@@ -2766,7 +2789,7 @@
     mf:action [
       sht:schema <../schemas/1datatypeLength.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_DEC1.345.ttl> ;
+      sht:data <Is1_Ip1_DEC1_234.ttl> ;
       sht:focus <http://a.example/s1>
     ]
     .
@@ -2814,17 +2837,18 @@
 ###   } length
 ###   fractionDigits {
 
-<#1literalFractiondigits_fail-decimal-short> a sht:ValidationFailure ;
-    mf:name "1literalFractiondigits_fail-decimal-short" ;
+<#1literalFractiondigits_pass-decimal-short> a sht:ValidationTest ;
+    mf:name "1literalFractiondigits_pass-decimal-short" ;
     sht:trait sht:FractionDigitsFacet ;
     rdfs:comment "<S1> { <p1> LITERAL FRACTIONDIGITS 5 } / { <s1> <p1> 1.2345 }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1literalFractiondigits.shex> ;
+      sht:schema <../schemas/1literalFractiondigits5.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DEC1_2345.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
+    mf:result <1literalFractiondigits_pass-decimal-short.val>
     .
 
  # for # for numericFacet ::= (numericFacet | numericLength) INTEGER (numericLiteral | string '^^' datatype )
@@ -2846,7 +2870,7 @@
     rdfs:comment "<S1> { <p1> LITERAL FRACTIONDIGITS 5 } / { <s1> <p1> 1.23456 }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1literalFractiondigits.shex> ;
+      sht:schema <../schemas/1literalFractiondigits5.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DEC1_23456.ttl> ;
       sht:focus <http://a.example/s1>
@@ -2868,55 +2892,152 @@
  #     mf:result <1literalFractiondigits_pass-decimal-equal.val>
  #     .
 
-<#1literalFractiondigits_pass-float-equal> a sht:ValidationTest ;
-    mf:name "1literalFractiondigits_pass-float-equal" ;
-    sht:trait sht:FractionDigitsFacet ;
-    rdfs:comment "<S1> { <p1> LITERAL FRACTIONDIGITS 5 } / { <s1> <p1> \"1.23456\"^^xsd:floag }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1literalFractiondigits.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_FLT1_23456.ttl> ;
-      sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1literalFractiondigits_pass-float-equal.val>
-    .
-
 <#1literalFractiondigits_fail-decimal-long> a sht:ValidationFailure ;
     mf:name "1literalFractiondigits_fail-decimal-long" ;
     sht:trait sht:FractionDigitsFacet ;
     rdfs:comment "<S1> { <p1> LITERAL FRACTIONDIGITS 5 } / { <s1> <p1> 1.234567 }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1literalFractiondigits.shex> ;
+      sht:schema <../schemas/1literalFractiondigits5.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DEC1_234567.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
     .
 
-<#1literalFractiondigits_fail-integer-short> a sht:ValidationFailure ;
-    mf:name "1literalFractiondigits_fail-integer-short" ;
+<#1literalFractiondigits_pass-decimal-equalLead> a sht:ValidationTest ;
+    mf:name "1literalFractiondigits_pass-decimal-equalLead" ;
     sht:trait sht:FractionDigitsFacet ;
-    rdfs:comment "<S1> { <p1> LITERAL FRACTIONDIGITS 5 } / { <s1> <p1> 12345 }" ;
+    rdfs:comment "<S1> { <p1> LITERAL FRACTIONDIGITS 4 } / { <s1> <p1> 01.2345 }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1literalFractiondigits.shex> ;
+      sht:schema <../schemas/1literalFractiondigits4.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_INT12345.ttl> ;
+      sht:data <Is1_Ip1_DEC01_2345.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1literalFractiondigits_pass-decimal-equalLead.val>
+    .
+
+<#1literalFractiondigits_fail-decimal-longLead> a sht:ValidationFailure ;
+    mf:name "1literalFractiondigits_fail-decimal-longLead" ;
+    sht:trait sht:FractionDigitsFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL FRACTIONDIGITS 4 } / { <s1> <p1> 01.23456 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalFractiondigits4.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC01_23456.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
     .
 
-<#1literalFractiondigits_fail-xsd_integer-short> a sht:ValidationFailure ;
-    mf:name "1literalFractiondigits_fail-xsd_integer-short" ;
+<#1literalFractiondigits_pass-decimal-equalTrail> a sht:ValidationTest ;
+    mf:name "1literalFractiondigits_pass-decimal-equalTrail" ;
+    sht:trait sht:FractionDigitsFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL FRACTIONDIGITS 4 } / { <s1> <p1> 1.23450 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalFractiondigits4.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC1_23450.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1literalFractiondigits_pass-decimal-equalTrail.val>
+    .
+
+<#1literalFractiondigits_fail-decimal-longTrail> a sht:ValidationFailure ;
+    mf:name "1literalFractiondigits_fail-decimal-longTrail" ;
+    sht:trait sht:FractionDigitsFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL FRACTIONDIGITS 4 } / { <s1> <p1> 1.234560 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalFractiondigits4.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC1_234560.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1literalFractiondigits_pass-decimal-equalLeadTrail> a sht:ValidationTest ;
+    mf:name "1literalFractiondigits_pass-decimal-equalLeadTrail" ;
+    sht:trait sht:FractionDigitsFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL FRACTIONDIGITS 4 } / { <s1> <p1> 01.23450 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalFractiondigits4.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC01_23450.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1literalFractiondigits_pass-decimal-equalLeadTrail.val>
+    .
+
+<#1literalFractiondigits_fail-decimal-longLeadTrail> a sht:ValidationFailure ;
+    mf:name "1literalFractiondigits_fail-decimal-longLeadTrail" ;
+    sht:trait sht:FractionDigitsFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL FRACTIONDIGITS 4 } / { <s1> <p1> 01.234560 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalFractiondigits4.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC1_234560.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+# !! Note: xs:integer restricted to fractionDigits="0"
+<#1literalFractiondigits_pass-integer-short> a sht:ValidationTest ;
+    mf:name "1literalFractiondigits_pass-integer-short" ;
+    sht:trait sht:FractionDigitsFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL FRACTIONDIGITS 5 } / { <s1> <p1> 12345 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalFractiondigits5.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT12345.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1fractionTotaldigits_pass-integer-equal.val>
+    .
+
+<#1literalFractiondigits_pass-xsd_integer-short> a sht:ValidationTest ;
+    mf:name "1literalFractiondigits_pass-xsd_integer-short" ;
     sht:trait sht:FractionDigitsFacet ;
     rdfs:comment "<S1> { <p1> LITERAL FRACTIONDIGITS 5 } / { <s1> <p1> \"12345\"^^xsd:integer }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1literalFractiondigits.shex> ;
+      sht:schema <../schemas/1literalFractiondigits5.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_xsd-integer12345.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1fractionTotaldigits_pass-integer-equal.val>
+    .
+
+# Note: fractionDigits restricted to decimal-derived datatypes.
+<#1literalFractiondigits_fail-float-equal> a sht:ValidationFailure ;
+    mf:name "1literalFractiondigits_fail-float-equal" ;
+    sht:trait sht:FractionDigitsFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL FRACTIONDIGITS 5 } / { <s1> <p1> \"1.23456\"^^xsd:float }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalFractiondigits5.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_FLT1_23456.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1literalFractiondigits_fail-double-equal> a sht:ValidationFailure ;
+    mf:name "1literalFractiondigits_fail-double-equal" ;
+    sht:trait sht:FractionDigitsFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL FRACTIONDIGITS 5 } / { <s1> <p1> 4.5e0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalFractiondigits5.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DBL4_5e0.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
     .
@@ -2927,7 +3048,7 @@
     rdfs:comment "<S1> { <p1> LITERAL FRACTIONDIGITS 5 } / { <s1> <p1> \"1.23ab\"^^xsd:decimal }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1literalFractiondigits.shex> ;
+      sht:schema <../schemas/1literalFractiondigits5.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_malformedxsd-decimal1_23ab.ttl> ;
       sht:focus <http://a.example/s1>
@@ -2940,7 +3061,7 @@
     rdfs:comment "<S1> { <p1> LITERAL FRACTIONDIGITS 5 } / { <s1> <p1> \"1.2345ab\"^^xsd:decimal }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1literalFractiondigits.shex> ;
+      sht:schema <../schemas/1literalFractiondigits5.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_malformedxsd-decimal1_2345ab.ttl> ;
       sht:focus <http://a.example/s1>
@@ -2953,7 +3074,7 @@
     rdfs:comment "<S1> { <p1> LITERAL FRACTIONDIGITS 5 } / { <s1> <p1> \"1.2345\"^^xsd:integer }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1literalFractiondigits.shex> ;
+      sht:schema <../schemas/1literalFractiondigits5.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_malformedxsd-integer1_2345.ttl> ;
       sht:focus <http://a.example/s1>
@@ -2966,7 +3087,7 @@
     rdfs:comment "<S1> { <p1> LITERAL FRACTIONDIGITS 5 } / BASE <http://a.example/> { <s1> <p1> <1.2345> }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1literalFractiondigits.shex> ;
+      sht:schema <../schemas/1literalFractiondigits5.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <BASE_Is1_Ip1_I12345.ttl> ;
       sht:focus <http://a.example/s1>
@@ -2979,7 +3100,7 @@
     rdfs:comment "<S1> { <p1> LITERAL FRACTIONDIGITS 5 } / BASE <http://a.example/> { <s1> <p1> _:12345 }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1literalFractiondigits.shex> ;
+      sht:schema <../schemas/1literalFractiondigits5.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_B12345.ttl> ;
       sht:focus <http://a.example/s1>
@@ -2989,17 +3110,18 @@
 ###   } fractionDigits
 ###   totalDigits {
 
-<#1literalTotaldigits_fail-decimal-short> a sht:ValidationFailure ;
-    mf:name "1literalTotaldigits_fail-decimal-short" ;
+<#1literalTotaldigits_pass-decimal-short> a sht:ValidationTest ;
+    mf:name "1literalTotaldigits_pass-decimal-short" ;
     sht:trait sht:TotalDigitsFacet ;
-    rdfs:comment "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> 1.2345 }" ;
+    rdfs:comment "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> 1.234 }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1literalTotaldigits.shex> ;
+      sht:schema <../schemas/1literalTotaldigits5.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DEC1_234.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
+    mf:result <1literalTotaldigits_pass-decimal-short.val>
     .
 
  # for # for numericFacet ::= (numericFacet | numericLength) INTEGER (numericLiteral | string '^^' datatype )
@@ -3021,7 +3143,7 @@
     rdfs:comment "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> 1.2345 }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1literalTotaldigits.shex> ;
+      sht:schema <../schemas/1literalTotaldigits5.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DEC1_2345.ttl> ;
       sht:focus <http://a.example/s1>
@@ -3043,29 +3165,96 @@
  #     mf:result <1literalTotaldigits_pass-decimal-equal.val>
  #     .
 
-<#1literalTotaldigits_pass-float-equal> a sht:ValidationTest ;
-    mf:name "1literalTotaldigits_pass-float-equal" ;
-    sht:trait sht:TotalDigitsFacet ;
-    rdfs:comment "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> \"1.2345\"^^xsd:float }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1literalTotaldigits.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_FLT1_2345.ttl> ;
-      sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1literalTotaldigits_pass-float-equal.val>
-    .
-
 <#1literalTotaldigits_fail-decimal-long> a sht:ValidationFailure ;
     mf:name "1literalTotaldigits_fail-decimal-long" ;
     sht:trait sht:TotalDigitsFacet ;
     rdfs:comment "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> 1.23456 }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1literalTotaldigits.shex> ;
+      sht:schema <../schemas/1literalTotaldigits5.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DEC1_23456.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1literalTotaldigits_pass-decimal-equalLead> a sht:ValidationTest ;
+    mf:name "1literalTotaldigits_pass-decimal-equalLead" ;
+    sht:trait sht:TotalDigitsFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> 01.2345 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalTotaldigits5.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC01_2345.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1literalTotaldigits_pass-decimal-equalLead.val>
+    .
+
+<#1literalTotaldigits_fail-decimal-longLead> a sht:ValidationFailure ;
+    mf:name "1literalTotaldigits_fail-decimal-longLead" ;
+    sht:trait sht:TotalDigitsFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> 01.23456 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalTotaldigits5.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC01_23456.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1literalTotaldigits_pass-decimal-equalTrail> a sht:ValidationTest ;
+    mf:name "1literalTotaldigits_pass-decimal-equalTrail" ;
+    sht:trait sht:TotalDigitsFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> 1.23450 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalTotaldigits5.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC1_23450.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1literalTotaldigits_pass-decimal-equalTrail.val>
+    .
+
+<#1literalTotaldigits_fail-decimal-longTrail> a sht:ValidationFailure ;
+    mf:name "1literalTotaldigits_fail-decimal-longTrail" ;
+    sht:trait sht:TotalDigitsFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> 1.234560 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalTotaldigits5.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC1_234560.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1literalTotaldigits_pass-decimal-equalLeadTrail> a sht:ValidationTest ;
+    mf:name "1literalTotaldigits_pass-decimal-equalLeadTrail" ;
+    sht:trait sht:TotalDigitsFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> 01.23450 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalTotaldigits5.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC01_23450.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1literalTotaldigits_pass-decimal-equalLeadTrail.val>
+    .
+
+<#1literalTotaldigits_fail-decimal-longLeadTrail> a sht:ValidationFailure ;
+    mf:name "1literalTotaldigits_fail-decimal-longLeadTrail" ;
+    sht:trait sht:TotalDigitsFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> 01.234560 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalTotaldigits5.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC1_234560.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
     .
@@ -3076,7 +3265,7 @@
     rdfs:comment "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> 12345 }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1literalTotaldigits.shex> ;
+      sht:schema <../schemas/1literalTotaldigits5.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_INT12345.ttl> ;
       sht:focus <http://a.example/s1>
@@ -3084,15 +3273,165 @@
     mf:result <1literalTotaldigits_pass-integer-equal.val>
     .
 
-<#1literalTotaldigits_fail-xsd_integer-short> a sht:ValidationFailure ;
-    mf:name "1literalTotaldigits_fail-xsd_integer-short" ;
+<#1literalTotaldigits_pass-xsd_integer-short> a sht:ValidationTest ;
+    mf:name "1literalTotaldigits_pass-xsd_integer-short" ;
     sht:trait sht:TotalDigitsFacet ;
     rdfs:comment "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> \"1234\"^^xsd:integer }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1literalTotaldigits.shex> ;
+      sht:schema <../schemas/1literalTotaldigits5.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_xsd-integer1234.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1literalTotaldigits_pass-integer-short.val>
+    .
+
+<#1literalTotaldigits_pass-integer-equalLead> a sht:ValidationTest ;
+    mf:name "1literalTotaldigits_pass-integer-equalLead" ;
+    sht:trait sht:TotalDigitsFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> 012345 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalTotaldigits5.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT012345.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1literalTotaldigits_pass-integer-equalLead.val>
+    .
+
+<#1literalTotaldigits_fail-integer-longLead> a sht:ValidationFailure ;
+    mf:name "1literalTotaldigits_fail-integer-longLead" ;
+    sht:trait sht:TotalDigitsFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> 0123456 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalTotaldigits5.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT0123456.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1literalTotaldigits_pass-integer-equalTrail> a sht:ValidationTest ;
+    mf:name "1literalTotaldigits_pass-integer-equalTrail" ;
+    sht:trait sht:TotalDigitsFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL TOTALDIGITS 6 } / { <s1> <p1> 123450 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalTotaldigits6.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT123450.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1literalTotaldigits_pass-integer-equalTrail.val>
+    .
+
+<#1literalTotaldigits_fail-integer-longTrail> a sht:ValidationFailure ;
+    mf:name "1literalTotaldigits_fail-integer-longTrail" ;
+    sht:trait sht:TotalDigitsFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL TOTALDIGITS 6 } / { <s1> <p1> 1234560 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalTotaldigits6.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT1234560.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1literalTotaldigits_pass-integer-equalLeadTrail> a sht:ValidationTest ;
+    mf:name "1literalTotaldigits_pass-integer-equalLeadTrail" ;
+    sht:trait sht:TotalDigitsFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL TOTALDIGITS 6 } / { <s1> <p1> 0123450 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalTotaldigits6.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT0123450.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1literalTotaldigits_pass-integer-equalLeadTrail.val>
+    .
+
+<#1literalTotaldigits_fail-integer-longLeadTrail> a sht:ValidationFailure ;
+    mf:name "1literalTotaldigits_fail-integer-longLeadTrail" ;
+    sht:trait sht:TotalDigitsFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL TOTALDIGITS 6 } / { <s1> <p1> 01234560 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalTotaldigits6.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT01234560.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1literalTotaldigits_pass-byte-short> a sht:ValidationTest ;
+    mf:name "1literalTotaldigits_pass-byte-short" ;
+    sht:trait sht:TotalDigitsFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL TOTALDIGITS 2 } / { <s1> <p1> 5^^xsd:byte }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalTotaldigits2.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_BYT5.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1literalTotaldigits_pass-byte-short.val>
+    .
+
+<#1literalTotaldigits_pass-byte-equal> a sht:ValidationTest ;
+    mf:name "1literalTotaldigits_pass-byte-equal" ;
+    sht:trait sht:TotalDigitsFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL TOTALDIGITS 2 } / { <s1> <p1> 64^^xsd:byte }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalTotaldigits2.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_BYT64.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1literalTotaldigits_pass-byte-equal.val>
+    .
+
+<#1literalTotaldigits_fail-byte-long> a sht:ValidationFailure ;
+    mf:name "1literalTotaldigits_fail-byte-long" ;
+    sht:trait sht:TotalDigitsFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL TOTALDIGITS 2 } / { <s1> <p1> 128^^xsd:byte }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalTotaldigits2.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_BYT128.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+# Note: totalDigits restricted to decimal-derived datatypes.
+<#1literalTotaldigits_fail-float-equal> a sht:ValidationFailure ;
+    mf:name "1literalTotaldigits_fail-float-equal" ;
+    sht:trait sht:TotalDigitsFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> \"1.2345\"^^xsd:float }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalTotaldigits5.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_FLT1_2345.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1literalTotaldigits_fail-double-equal> a sht:ValidationFailure ;
+    mf:name "1literalTotaldigits_fail-double-equal" ;
+    sht:trait sht:TotalDigitsFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> 4.5e0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalTotaldigits5.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DBL4_5e0.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
     .
@@ -3103,7 +3442,7 @@
     rdfs:comment "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> \"1.23ab\"^^xsd:decimal }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1literalTotaldigits.shex> ;
+      sht:schema <../schemas/1literalTotaldigits5.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_malformedxsd-decimal1_23ab.ttl> ;
       sht:focus <http://a.example/s1>
@@ -3116,7 +3455,7 @@
     rdfs:comment "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> \"1.2345ab\"^^xsd:decimal }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1literalTotaldigits.shex> ;
+      sht:schema <../schemas/1literalTotaldigits5.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_malformedxsd-decimal1_2345ab.ttl> ;
       sht:focus <http://a.example/s1>
@@ -3129,7 +3468,7 @@
     rdfs:comment "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> \"1.2345\"^^xsd:integer }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1literalTotaldigits.shex> ;
+      sht:schema <../schemas/1literalTotaldigits5.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_malformedxsd-integer1_2345.ttl> ;
       sht:focus <http://a.example/s1>
@@ -3142,7 +3481,7 @@
     rdfs:comment "<S1> { <p1> LITERAL TOTALDIGITS 5 } / BASE <http://a.example/> { <s1> <p1> <1.2345> }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1literalTotaldigits.shex> ;
+      sht:schema <../schemas/1literalTotaldigits5.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <BASE_Is1_Ip1_I12345.ttl> ;
       sht:focus <http://a.example/s1>
@@ -3155,7 +3494,7 @@
     rdfs:comment "<S1> { <p1> LITERAL TOTALDIGITS 5 } / BASE <http://a.example/> { <s1> <p1> _:12345 }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1literalTotaldigits.shex> ;
+      sht:schema <../schemas/1literalTotaldigits5.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_B12345.ttl> ;
       sht:focus <http://a.example/s1>
