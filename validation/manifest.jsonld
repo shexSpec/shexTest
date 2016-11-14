@@ -54,6 +54,7 @@
           "extensionResults": [],
           "name": "0_otherbnode",
           "trait": [
+            "ToldBNode",
             "Empty"
           ],
           "comment": "<S1> {  } on { _:abcd <p1> <o1> }",
@@ -356,8 +357,8 @@
           "extensionResults": [],
           "name": "bnode1dot_fail-missing",
           "trait": [
-            "ToldBNode",
-            "TriplePattern"
+            "TriplePattern",
+            "ToldBNode"
           ],
           "comment": "<S> { <p1> . } on { <s> <p2> <o1> }",
           "status": "mf:proposed"
@@ -374,8 +375,8 @@
           "extensionResults": [],
           "name": "bnode1dot_pass-others_lexicallyEarlier",
           "trait": [
-            "ToldBNode",
-            "TriplePattern"
+            "TriplePattern",
+            "ToldBNode"
           ],
           "comment": "_:S1 { <p1> . } on { <s> <p0> <o0>; <p1> <o1> }",
           "status": "mf:proposed",
@@ -8736,7 +8737,8 @@
           "extensionResults": [],
           "name": "1bnodePattern_pass-bnode-match",
           "trait": [
-            "PaternFacet"
+            "PaternFacet",
+            "LexicalBNode"
           ],
           "comment": "<S1> { <p1> BNODE PATTERN \"ab\" } on { <s1> <p1> _:ab }",
           "status": "mf:proposed",
@@ -8891,7 +8893,8 @@
           "extensionResults": [],
           "name": "1nonliteralPattern_pass-bnode-match",
           "trait": [
-            "PaternFacet"
+            "PaternFacet",
+            "LexicalBNode"
           ],
           "comment": "<S1> { <p1> NONLITERAL PATTERN \".*ab\" } on { <s1> <p1> _:ab }",
           "status": "mf:proposed",
@@ -8943,6 +8946,7 @@
           "extensionResults": [],
           "name": "1val1dotMinusiri3_pass",
           "trait": [
+            "Stem",
             "ValueSet"
           ],
           "comment": "<S> { <p1> [.-<v1>-<v2>-<v3>] } on { <s1> <p1> <o1> }",
@@ -9012,6 +9016,7 @@
           "extensionResults": [],
           "name": "1val1refvsMinusiri3_pass",
           "trait": [
+            "Stem",
             "ValueSet"
           ],
           "comment": "$<vs1> = [.-<v1>-<v2>-<v3>] <S> { <p1> $<vs1> } on { <s1> <p1> <o1> }",
@@ -12311,6 +12316,7 @@
           "extensionResults": [],
           "name": "0focusBNODE_other",
           "trait": [
+            "ToldBNode",
             "Empty"
           ],
           "comment": "<S> BNODE {  } on { _:abcd <p1> <o1> }",
@@ -12711,6 +12717,7 @@
           "name": "1focusMaxLength-dot_pass-bnode-short",
           "trait": [
             "FocusConstraint",
+            "LexicalBNode",
             "LengthFacet"
           ],
           "comment": "<S1> MINLENGTH 19 { <p1> . } on { _:abcd <p1> <o1> }",
@@ -12730,6 +12737,7 @@
           "name": "1focusMaxLength-dot_pass-bnode-equal",
           "trait": [
             "FocusConstraint",
+            "LexicalBNode",
             "LengthFacet"
           ],
           "comment": "<S1> MINLENGTH 19 { <p1> . } on { _:abcdefghijklmnopqrs <p1> <o1> }",
@@ -12869,7 +12877,8 @@
           "extensionResults": [],
           "name": "1focusPatternB-dot_pass-bnode-match",
           "trait": [
-            "PaternFacet"
+            "PaternFacet",
+            "LexicalBNode"
           ],
           "comment": "<S1> PATTERN \"abcdefghijklmnopqrs\" { <p1> } on { _:abcdefghijklmnopqrs <p1> <o1> }",
           "status": "mf:proposed",
