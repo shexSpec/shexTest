@@ -8965,6 +8965,7 @@
           "extensionResults": [],
           "name": "1val1dotMinusiri3_v1",
           "trait": [
+            "Stem",
             "ValueSet"
           ],
           "comment": "<S> { <p1> [.-<v1>-<v2>-<v3>] } on { <s1> <p1> <v1> }",
@@ -8982,6 +8983,7 @@
           "extensionResults": [],
           "name": "1val1dotMinusiri3_v2",
           "trait": [
+            "Stem",
             "ValueSet"
           ],
           "comment": "<S> { <p1> [.-<v1>-<v2>-<v3>] } on { <s1> <p1> <v2> }",
@@ -8999,6 +9001,7 @@
           "extensionResults": [],
           "name": "1val1dotMinusiri3_v3",
           "trait": [
+            "Stem",
             "ValueSet"
           ],
           "comment": "<S> { <p1> [.-<v1>-<v2>-<v3>] } on { <s> <p1> <v3> }",
@@ -9035,6 +9038,7 @@
           "extensionResults": [],
           "name": "1val1refvsMinusiri3_v1",
           "trait": [
+            "Stem",
             "ValueSet"
           ],
           "comment": "$<vs1> = [.-<v1>-<v2>-<v3>] <S> { <p1> $<vs1> } on { <s1> <p1> <v1> }",
@@ -9052,6 +9056,7 @@
           "extensionResults": [],
           "name": "1val1refvsMinusiri3_v2",
           "trait": [
+            "Stem",
             "ValueSet"
           ],
           "comment": "$<vs1> = [.-<v1>-<v2>-<v3>] <S> { <p1> $<vs1> } on { <s1> <p1> <v2> }",
@@ -9069,6 +9074,7 @@
           "extensionResults": [],
           "name": "1val1refvsMinusiri3_v3",
           "trait": [
+            "Stem",
             "ValueSet"
           ],
           "comment": "$<vs1> = [.-<v1>-<v2>-<v3>] <S> { <p1> $<vs1> } on { <s> <p1> <v3> }",
