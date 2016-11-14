@@ -919,7 +919,7 @@
 
 <#0_otherbnode> a sht:ValidationTest ;
     mf:name "0_otherbnode" ;
-    sht:trait sht:Empty ;
+    sht:trait sht:Empty, sht:ToldBNode ;
     rdfs:comment "<S1> {  } on { _:abcd <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -7953,7 +7953,7 @@
 
 <#1bnodePattern_pass-bnode-match> a sht:ValidationTest ;
     mf:name "1bnodePattern_pass-bnode-match" ;
-    sht:trait sht:PaternFacet ;
+    sht:trait sht:PaternFacet ,  sht:LexicalBNode ;
     rdfs:comment "<S1> { <p1> BNODE PATTERN \"ab\" } on { <s1> <p1> _:ab }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -8065,7 +8065,7 @@
 
 <#1nonliteralPattern_pass-bnode-match> a sht:ValidationTest ;
     mf:name "1nonliteralPattern_pass-bnode-match" ;
-    sht:trait sht:PaternFacet ;
+    sht:trait sht:PaternFacet , sht:LexicalBNode;
     rdfs:comment "<S1> { <p1> NONLITERAL PATTERN \".*ab\" } on { <s1> <p1> _:ab }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -8107,7 +8107,7 @@
 
 <#1val1dotMinusiri3_pass> a sht:ValidationTest ;
     mf:name "1val1dotMinusiri3_pass" ;
-    sht:trait sht:ValueSet ;
+    sht:trait sht:ValueSet, sht:Stem ;
     rdfs:comment "<S> { <p1> [.-<v1>-<v2>-<v3>] } on { <s1> <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -8121,7 +8121,7 @@
 
 <#1val1dotMinusiri3_v1> a sht:ValidationFailure ;
     mf:name "1val1dotMinusiri3_v1" ;
-    sht:trait sht:ValueSet ;
+    sht:trait sht:ValueSet , sht:Stem ;
     rdfs:comment "<S> { <p1> [.-<v1>-<v2>-<v3>] } on { <s1> <p1> <v1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -8134,7 +8134,7 @@
 
 <#1val1dotMinusiri3_v2> a sht:ValidationFailure ;
     mf:name "1val1dotMinusiri3_v2" ;
-    sht:trait sht:ValueSet ;
+    sht:trait sht:ValueSet , sht:Stem ;
     rdfs:comment "<S> { <p1> [.-<v1>-<v2>-<v3>] } on { <s1> <p1> <v2> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -8147,7 +8147,7 @@
 
 <#1val1dotMinusiri3_v3> a sht:ValidationFailure ;
     mf:name "1val1dotMinusiri3_v3" ;
-    sht:trait sht:ValueSet ;
+    sht:trait sht:ValueSet, sht:Stem ;
     rdfs:comment "<S> { <p1> [.-<v1>-<v2>-<v3>] } on { <s> <p1> <v3> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -8160,7 +8160,7 @@
 
 <#1val1refvsMinusiri3_pass> a sht:ValidationTest ;
     mf:name "1val1refvsMinusiri3_pass" ;
-    sht:trait sht:ValueSet ;
+    sht:trait sht:ValueSet , sht:Stem ;
     rdfs:comment "$<vs1> = [.-<v1>-<v2>-<v3>] <S> { <p1> $<vs1> } on { <s1> <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -8174,7 +8174,7 @@
 
 <#1val1refvsMinusiri3_v1> a sht:ValidationFailure ;
     mf:name "1val1refvsMinusiri3_v1" ;
-    sht:trait sht:ValueSet ;
+    sht:trait sht:ValueSet , sht:Stem;
     rdfs:comment "$<vs1> = [.-<v1>-<v2>-<v3>] <S> { <p1> $<vs1> } on { <s1> <p1> <v1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -8187,7 +8187,7 @@
 
 <#1val1refvsMinusiri3_v2> a sht:ValidationFailure ;
     mf:name "1val1refvsMinusiri3_v2" ;
-    sht:trait sht:ValueSet ;
+    sht:trait sht:ValueSet , sht:Stem;
     rdfs:comment "$<vs1> = [.-<v1>-<v2>-<v3>] <S> { <p1> $<vs1> } on { <s1> <p1> <v2> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -8200,7 +8200,7 @@
 
 <#1val1refvsMinusiri3_v3> a sht:ValidationFailure ;
     mf:name "1val1refvsMinusiri3_v3" ;
-    sht:trait sht:ValueSet ;
+    sht:trait sht:ValueSet , sht:Stem;
     rdfs:comment "$<vs1> = [.-<v1>-<v2>-<v3>] <S> { <p1> $<vs1> } on { <s> <p1> <v3> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -10742,7 +10742,7 @@
 
 <#0focusBNODE_other> a sht:ValidationTest ;
     mf:name "0focusBNODE_other" ;
-    sht:trait sht:Empty ;
+    sht:trait sht:Empty , sht:ToldBNode;
     rdfs:comment "<S> BNODE {  } on { _:abcd <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -11033,7 +11033,7 @@
 
 <#1focusMaxLength-dot_pass-bnode-short> a sht:ValidationTest ;
     mf:name "1focusMaxLength-dot_pass-bnode-short" ;
-    sht:trait sht:FocusConstraint , sht:LengthFacet ;
+    sht:trait sht:FocusConstraint , sht:LengthFacet , sht:LexicalBNode;
     rdfs:comment "<S1> MINLENGTH 19 { <p1> . } on { _:abcd <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -11047,7 +11047,7 @@
 
 <#1focusMaxLength-dot_pass-bnode-equal> a sht:ValidationTest ;
     mf:name "1focusMaxLength-dot_pass-bnode-equal" ;
-    sht:trait sht:FocusConstraint , sht:LengthFacet ;
+    sht:trait sht:FocusConstraint , sht:LengthFacet , sht:LexicalBNode;
     rdfs:comment "<S1> MINLENGTH 19 { <p1> . } on { _:abcdefghijklmnopqrs <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -11150,7 +11150,7 @@
 
 <#1focusPatternB-dot_pass-bnode-match> a sht:ValidationTest ;
     mf:name "1focusPatternB-dot_pass-bnode-match" ;
-    sht:trait sht:PaternFacet ;
+    sht:trait sht:PaternFacet , sht:LexicalBNode ;
     rdfs:comment "<S1> PATTERN \"abcdefghijklmnopqrs\" { <p1> } on { _:abcdefghijklmnopqrs <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
