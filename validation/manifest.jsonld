@@ -484,7 +484,7 @@
           "trait": [
             "TriplePattern"
           ],
-          "comment": "<S1> { !<p1> . } on {  }",
+          "comment": "<S> { !<p1> . } on {  }",
           "status": "mf:proposed",
           "result": "1negateddot_pass.val"
         },
@@ -571,7 +571,7 @@
           "trait": [
             "TriplePattern"
           ],
-          "comment": "<S> { !<p1> . } on {  }",
+          "comment": "<S> { !^<p1> . } on {  }",
           "status": "mf:proposed",
           "result": "1negatedinversedot_pass.val"
         },
@@ -589,7 +589,7 @@
           "trait": [
             "TriplePattern"
           ],
-          "comment": "<S> { !<p1> . } on { <s> <p2> <o1> }",
+          "comment": "<S> { !^<p1> . } on { <s> <p2> <o1> }",
           "status": "mf:proposed",
           "result": "1negatedinversedot_pass.val"
         },
@@ -607,7 +607,7 @@
           "trait": [
             "TriplePattern"
           ],
-          "comment": "<S> { !<p1> . } on { <s1> <p1> <o1> }",
+          "comment": "<S> { !^<p1> . } on { <s1> <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -624,7 +624,7 @@
           "trait": [
             "TriplePattern"
           ],
-          "comment": "<S> { !<p1> . } on { <s> <p0> <o0>; <p1> <o1> }",
+          "comment": "<S> { !^<p1> . } on { <s> <p0> <o0>; <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -641,7 +641,7 @@
           "trait": [
             "TriplePattern"
           ],
-          "comment": "<S> { !<p1> . } on { <s> <p1> <o1>; <p2> <o2> }",
+          "comment": "<S> { !^<p1> . } on { <s> <p1> <o1>; <p2> <o2> }",
           "status": "mf:proposed"
         },
         {

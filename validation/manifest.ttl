@@ -1248,7 +1248,7 @@
 <#1negateddot_pass-empty> a sht:ValidationTest ;
     mf:name "1negateddot_pass-empty" ;
     sht:trait sht:TriplePattern ;
-    rdfs:comment "<S1> { !<p1> . } on {  }" ;
+    rdfs:comment "<S> { !<p1> . } on {  }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1negateddot.shex> ;
@@ -1315,7 +1315,7 @@
 <#1negatedinversedot_pass-empty> a sht:ValidationTest ;
     mf:name "1negatedinversedot_pass-empty" ;
     sht:trait sht:TriplePattern ;
-    rdfs:comment "<S> { !<p1> . } on {  }" ;
+    rdfs:comment "<S> { !^<p1> . } on {  }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1negatedinversedot.shex> ;
@@ -1329,7 +1329,7 @@
 <#1negatedinversedot_pass-missing> a sht:ValidationTest ;
     mf:name "1negatedinversedot_pass-missing" ;
     sht:trait sht:TriplePattern ;
-    rdfs:comment "<S> { !<p1> . } on { <s> <p2> <o1> }" ;
+    rdfs:comment "<S> { !^<p1> . } on { <s> <p2> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1negatedinversedot.shex> ;
@@ -1343,7 +1343,7 @@
 <#1negatedinversedot_fail-noOthers> a sht:ValidationFailure ;
     mf:name "1negatedinversedot_fail-noOthers" ;
     sht:trait sht:TriplePattern ;
-    rdfs:comment "<S> { !<p1> . } on { <s1> <p1> <o1> }" ;
+    rdfs:comment "<S> { !^<p1> . } on { <s1> <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1negatedinversedot.shex> ;
@@ -1356,7 +1356,7 @@
 <#1negatedinversedot_fail-others_lexicallyEarlier> a sht:ValidationFailure ;
     mf:name "1negatedinversedot_fail-others_lexicallyEarlier" ;
     sht:trait sht:TriplePattern ;
-    rdfs:comment "<S> { !<p1> . } on { <s> <p0> <o0>; <p1> <o1> }" ;
+    rdfs:comment "<S> { !^<p1> . } on { <s> <p0> <o0>; <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1negatedinversedot.shex> ;
@@ -1369,7 +1369,7 @@
 <#1negatedinversedot_fail-others_lexicallyLater> a sht:ValidationFailure ;
     mf:name "1negatedinversedot_fail-others_lexicallyLater" ;
     sht:trait sht:TriplePattern ;
-    rdfs:comment "<S> { !<p1> . } on { <s> <p1> <o1>; <p2> <o2> }" ;
+    rdfs:comment "<S> { !^<p1> . } on { <s> <p1> <o1>; <p2> <o2> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1negatedinversedot.shex> ;
