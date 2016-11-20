@@ -20,7 +20,7 @@ A ShExC syntax test consists of these steps:
 ## `negativeSyntax`
 These tests violate the ShEx2 grammar.
 
-## `negativeSyntax`
+## `negativeStrucutre`
 These tests should raise errors when parsed, noting the rule about nested `ValueAnd` and `ValueOr` expressions.
 
 ### `validation`
