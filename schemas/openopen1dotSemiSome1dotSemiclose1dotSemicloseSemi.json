@@ -7,7 +7,7 @@
         "type": "EachOf",
         "expressions": [
           {
-            "type": "SomeOf",
+            "type": "OneOf",
             "expressions": [
               {
                 "type": "TripleConstraint",

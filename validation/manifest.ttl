@@ -8358,7 +8358,7 @@
 
 <#1dotSome2dot_pass_p1> a sht:ValidationTest ;
     mf:name "1dotSome2dot_pass_p1" ;
-    sht:trait sht:SomeOf , sht:EachOf-unvisited ;
+    sht:trait sht:OneOf , sht:EachOf-unvisited ;
     rdfs:comment ":S1 {:p1 .|:p2 .,:p3 .} / { :s1 :p1 \"p1-0\" . }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -8372,7 +8372,7 @@
 
 <#1dotSome2dot_pass_p2p3> a sht:ValidationTest ;
     mf:name "1dotSome2dot_pass_p2p3" ;
-    sht:trait sht:SomeOf , sht:EachOf ;
+    sht:trait sht:OneOf , sht:EachOf ;
     rdfs:comment ":S1 {:p1 .|:p2 .,:p3 .} / { :s1 :p2 \"p2-0\"; :p3 \"p3-0\" . }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -8399,7 +8399,7 @@
 
 <#1dotSome2dot-someOf_fail_p1p2p3> a sht:ValidationFailure ;
     mf:name "1dotSome2dot-someOf_fail_p1p2p3" ;
-    sht:trait sht:SomeOf , sht:EachOf , sht:MissedMatchables ;
+    sht:trait sht:OneOf , sht:EachOf , sht:MissedMatchables ;
     rdfs:comment ":S1 {:p1 .|:p2 .,:p3 .} / { :s1 :p1 \"p1-0\"; :p2 \"p2-0\"; :p3 \"p3-0\" . }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -8412,7 +8412,7 @@
 
 <#open1dotSomeopen2dotcloseclose_pass_p1> a sht:ValidationTest ;
     mf:name "open1dotSomeopen2dotcloseclose_pass_p1" ;
-    sht:trait sht:SomeOf , sht:EachOf-unvisited ;
+    sht:trait sht:OneOf , sht:EachOf-unvisited ;
     rdfs:comment ":S1 {(:p1 .|(:p2 .,:p3 .))} / { :s1 :p1 \"p1-0\" . }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -8426,7 +8426,7 @@
 
 <#open1dotSomeopen2dotcloseclose_pass_p2p3> a sht:ValidationTest ;
     mf:name "open1dotSomeopen2dotcloseclose_pass_p2p3" ;
-    sht:trait sht:SomeOf , sht:EachOf ;
+    sht:trait sht:OneOf , sht:EachOf ;
     rdfs:comment ":S1 {(:p1 .|(:p2 .,:p3 .))} / { :s1 :p2 \"p2-0\"; :p3 \"p3-0\" . }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -8453,7 +8453,7 @@
 
 <#openopen1dotSome1dotclose1dotclose_pass_p1p3> a sht:ValidationTest ;
     mf:name "openopen1dotSome1dotclose1dotclose_pass_p1p3" ;
-    sht:trait sht:SomeOf , sht:EachOf ;
+    sht:trait sht:OneOf , sht:EachOf ;
     rdfs:comment ":S1 { ((:p1 .| :p2 .), :p3 .) } / { <x> :p1 \"p1-0\"; :p3 \"p3-0\" . }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -8467,7 +8467,7 @@
 
 <#openopen1dotSome1dotclose1dotclose_pass_p2p3> a sht:ValidationTest ;
     mf:name "openopen1dotSome1dotclose1dotclose_pass_p2p3" ;
-    sht:trait sht:SomeOf , sht:EachOf ;
+    sht:trait sht:OneOf , sht:EachOf ;
     rdfs:comment ":S1 { ((:p1 .| :p2 .), :p3 .) } / { <x> :p2 \"p2-0\"; :p3 \"p3-0\" . }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -8482,7 +8482,7 @@
 
 <#openopen1dotSome1dotclose1dotclose_fail_p1> a sht:ValidationFailure ;
     mf:name "openopen1dotSome1dotclose1dotclose_fail_p1" ;
-    sht:trait sht:SomeOf , sht:EachOf-unvisited ;
+    sht:trait sht:OneOf , sht:EachOf-unvisited ;
     rdfs:comment ":S1 { ((:p1 .| :p2 .), :p3 .) } / { <x> :p1 \"p1-0\" . }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -8495,7 +8495,7 @@
 
 <#openopen1dotSome1dotclose1dotclose_fail_p3> a sht:ValidationFailure ;
     mf:name "openopen1dotSome1dotclose1dotclose_fail_p3" ;
-    sht:trait sht:SomeOf , sht:EachOf ;
+    sht:trait sht:OneOf , sht:EachOf ;
     rdfs:comment ":S1 { ((:p1 .| :p2 .), :p3 .) } / { <x> :p3 \"p3-0\" . }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -8508,7 +8508,7 @@
 
 <#openopen1dotSome1dotclose1dotclose_fail_p1p2> a sht:ValidationFailure ;
     mf:name "openopen1dotSome1dotclose1dotclose_fail_p1p2" ;
-    sht:trait sht:SomeOf , sht:EachOf ;
+    sht:trait sht:OneOf , sht:EachOf ;
     rdfs:comment ":S1 { ((:p1 .| :p2 .), :p3 .) } / { <x> :p1 \"p1-0\"; :p2 \"p2-0\" . }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -9267,7 +9267,7 @@
 
 <#open3Somedotclosecard2_fail-p1> a sht:ValidationFailure ;
     mf:name "open3Somedotclosecard2_fail-p1" ;
-    sht:trait sht:EachOf , sht:RepeatedSomeOf ;
+    sht:trait sht:EachOf , sht:RepeatedOneOf ;
     rdfs:comment "<S1> { ( <p1> .| <p2> .| <p3> . ){2} } / { <s> <p1> \"p1-0\" }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -9280,7 +9280,7 @@
 
 <#open3Somedotclosecard2_pass-p1X2> a sht:ValidationTest ;
     mf:name "open3Somedotclosecard2_pass-p1X2" ;
-    sht:trait sht:EachOf , sht:RepeatedSomeOf ;
+    sht:trait sht:EachOf , sht:RepeatedOneOf ;
     rdfs:comment "<S1> { ( <p1> .| <p2> .| <p3> . ){2} } / { <s> <p1> \"p1-n\" }X2" ;
     mf:status mf:proposed ;
     mf:action [
@@ -9294,7 +9294,7 @@
 
 <#open3Somedotclosecard2_fail-p1X3> a sht:ValidationFailure ;
     mf:name "open3Somedotclosecard2_fail-p1X3" ;
-    sht:trait sht:EachOf , sht:RepeatedSomeOf ;
+    sht:trait sht:EachOf , sht:RepeatedOneOf ;
     rdfs:comment "<S1> { ( <p1> .| <p2> .| <p3> . ){2} } / { <s> <p1> \"p1-n\" }X3" ;
     mf:status mf:proposed ;
     mf:action [
@@ -9307,7 +9307,7 @@
 
 <#open3Somedotclosecard2_fail-p1X4> a sht:ValidationFailure ;
     mf:name "open3Somedotclosecard2_fail-p1X4" ;
-    sht:trait sht:EachOf , sht:RepeatedSomeOf ;
+    sht:trait sht:EachOf , sht:RepeatedOneOf ;
     rdfs:comment "<S1> { ( <p1> .| <p2> .| <p3> . ){2} } / { <s> <p1> \"p1-n\" }X4" ;
     mf:status mf:proposed ;
     mf:action [
@@ -9320,7 +9320,7 @@
 
 <#open3Somedotclosecard2_pass-p1p2> a sht:ValidationTest ;
     mf:name "open3Somedotclosecard2_pass-p1p2" ;
-    sht:trait sht:EachOf , sht:RepeatedSomeOf ;
+    sht:trait sht:EachOf , sht:RepeatedOneOf ;
     rdfs:comment "<S1> { ( <p1> .| <p2> .| <p3> . ){2} } / { <s> <p1> \"p1-0\"; <p2> \"p2-0\" }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -9334,7 +9334,7 @@
 
 <#open3Somedotclosecard2_pass-p1p3> a sht:ValidationTest ;
     mf:name "open3Somedotclosecard2_pass-p1p3" ;
-    sht:trait sht:EachOf , sht:RepeatedSomeOf ;
+    sht:trait sht:EachOf , sht:RepeatedOneOf ;
     rdfs:comment "<S1> { ( <p1> .| <p2> .| <p3> . ){2} } / { <s> <p1> \"p1-0\"; <p3> \"p3-0\" }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -9348,7 +9348,7 @@
 
 <#open3Somedotclosecard2_pass-p2p3> a sht:ValidationTest ;
     mf:name "open3Somedotclosecard2_pass-p2p3" ;
-    sht:trait sht:EachOf , sht:RepeatedSomeOf ;
+    sht:trait sht:EachOf , sht:RepeatedOneOf ;
     rdfs:comment "<S1> { ( <p1> .| <p2> .| <p3> . ){2} } / { <s> <p2> \"p2-0\"; <p3> \"p3-0\" }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -9362,7 +9362,7 @@
 
 <#open3Somedotclosecard2_fail-p1p2p3> a sht:ValidationFailure ;
     mf:name "open3Somedotclosecard2_fail-p1p2p3" ;
-    sht:trait sht:EachOf , sht:RepeatedSomeOf ;
+    sht:trait sht:EachOf , sht:RepeatedOneOf ;
     rdfs:comment "<S1> { ( <p1> .| <p2> .| <p3> . ){2} } / { <s> <p1> \"p1-0\"; <p2> \"p2-0\"; <p3> \"p3-0\" }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -9375,7 +9375,7 @@
 
 <#open3Somedotclosecard23_fail-p1> a sht:ValidationFailure ;
     mf:name "open3Somedotclosecard23_fail-p1" ;
-    sht:trait sht:EachOf , sht:RepeatedSomeOf ;
+    sht:trait sht:EachOf , sht:RepeatedOneOf ;
     rdfs:comment "<S1> { ( <p1> .| <p2> .| <p3> . ){2,3} } / { <s> <p1> \"p1-0\" }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -9388,7 +9388,7 @@
 
 <#open3Somedotclosecard23_pass-p1X2> a sht:ValidationTest ;
     mf:name "open3Somedotclosecard23_pass-p1X2" ;
-    sht:trait sht:EachOf , sht:RepeatedSomeOf ;
+    sht:trait sht:EachOf , sht:RepeatedOneOf ;
     rdfs:comment "<S1> { ( <p1> .| <p2> .| <p3> . ){2,3} } / { <s> <p1> \"p1-n\" }X2" ;
     mf:status mf:proposed ;
     mf:action [
@@ -9402,7 +9402,7 @@
 
 <#open3Somedotclosecard23_pass-p1X3> a sht:ValidationTest ;
     mf:name "open3Somedotclosecard23_pass-p1X3" ;
-    sht:trait sht:EachOf , sht:RepeatedSomeOf ;
+    sht:trait sht:EachOf , sht:RepeatedOneOf ;
     rdfs:comment "<S1> { ( <p1> .| <p2> .| <p3> . ){2,3} } / { <s> <p1> \"p1-n\" }X3" ;
     mf:status mf:proposed ;
     mf:action [
@@ -9416,7 +9416,7 @@
 
 <#open3Somedotclosecard23_fail-p1X4> a sht:ValidationFailure ;
     mf:name "open3Somedotclosecard23_fail-p1X4" ;
-    sht:trait sht:EachOf , sht:RepeatedSomeOf ;
+    sht:trait sht:EachOf , sht:RepeatedOneOf ;
     rdfs:comment "<S1> { ( <p1> .| <p2> .| <p3> . ){2,3} } / { <s> <p1> \"p1-n\" }X4" ;
     mf:status mf:proposed ;
     mf:action [
@@ -9429,7 +9429,7 @@
 
 <#open3Somedotclosecard23_pass-p1p2> a sht:ValidationTest ;
     mf:name "open3Somedotclosecard23_pass-p1p2" ;
-    sht:trait sht:EachOf , sht:RepeatedSomeOf ;
+    sht:trait sht:EachOf , sht:RepeatedOneOf ;
     rdfs:comment "<S1> { ( <p1> .| <p2> .| <p3> . ){2,3} } / { <s> <p1> \"p1-0\"; <p2> \"p2-0\" }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -9443,7 +9443,7 @@
 
 <#open3Somedotclosecard23_pass-p1p3> a sht:ValidationTest ;
     mf:name "open3Somedotclosecard23_pass-p1p3" ;
-    sht:trait sht:EachOf , sht:RepeatedSomeOf ;
+    sht:trait sht:EachOf , sht:RepeatedOneOf ;
     rdfs:comment "<S1> { ( <p1> .| <p2> .| <p3> . ){2,3} } / { <s> <p1> \"p1-0\"; <p3> \"p3-0\" }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -9457,7 +9457,7 @@
 
 <#open3Somedotclosecard23_pass-p2p3> a sht:ValidationTest ;
     mf:name "open3Somedotclosecard23_pass-p2p3" ;
-    sht:trait sht:EachOf , sht:RepeatedSomeOf ;
+    sht:trait sht:EachOf , sht:RepeatedOneOf ;
     rdfs:comment "<S1> { ( <p1> .| <p2> .| <p3> . ){2,3} } / { <s> <p2> \"p2-0\"; <p3> \"p3-0\" }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -9471,7 +9471,7 @@
 
 <#open3Somedotclosecard23_pass-p1p2p3> a sht:ValidationTest ;
     mf:name "open3Somedotclosecard23_pass-p1p2p3" ;
-    sht:trait sht:EachOf , sht:RepeatedSomeOf , sht:Greedy ;
+    sht:trait sht:EachOf , sht:RepeatedOneOf , sht:Greedy ;
     rdfs:comment "<S1> { ( <p1> .| <p2> .| <p3> . ){2,3} } / { <s> <p1> \"p1-0\"; <p2> \"p2-0\"; <p3> \"p3-0\" }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -9485,7 +9485,7 @@
 
 <#open4Somedotclosecard23_fail-p1p2p3p4> a sht:ValidationFailure ;
     mf:name "open4Somedotclosecard23_fail-p1p2p3p4" ;
-    sht:trait sht:EachOf , sht:RepeatedSomeOf ;
+    sht:trait sht:EachOf , sht:RepeatedOneOf ;
     rdfs:comment "<S1> { ( <p1> .| <p2> .| <p3> .| <p4> . ){2,3} } / { <s> <p1> \"p1-n\"; <p2> \"p2-n\"; <p3> \"p3-n\" ; <p4> \"p4-n\" }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -9675,7 +9675,7 @@
 
 <#1dotSome2dotExtra-someOf_pass_p1p2p3> a sht:ValidationFailure ;
     mf:name "1dotSome2dotExtra-someOf_pass_p1p2p3" ;
-    sht:trait sht:SomeOf , sht:EachOf , sht:Extra , sht:MissedMatchables ;
+    sht:trait sht:OneOf , sht:EachOf , sht:Extra , sht:MissedMatchables ;
     rdfs:comment ":S1 EXTRA <p1> <p2> <p3> {:p1 .|:p2 .,:p3 .} / { :s1 :p1 \"p1-0\"; :p2 \"p2-0\"; :p3 \"p3-0\" . }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -9986,7 +9986,7 @@
 
 <#2SomeInclude1_pass> a sht:ValidationTest ;
     mf:name "2SomeInclude1_pass" ;
-    sht:trait sht:Include , sht:SomeOf ;
+    sht:trait sht:Include , sht:OneOf ;
     rdfs:comment "<S1> { &<S2> | <p1> . } <S2> { <p2> . } on { <n1> <p1> \"X\" }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -10000,7 +10000,7 @@
 
 <#2SomeInclude1-after_pass> a sht:ValidationTest ;
     mf:name "2SomeInclude1-after_pass" ;
-    sht:trait sht:Include , sht:SomeOf ;
+    sht:trait sht:Include , sht:OneOf ;
     rdfs:comment "<S1> { <p1> . | &<S2> } <S2> { <p2> . } on { <n1> <p1> \"X\" }" ;
     mf:status mf:proposed ;
     mf:action [
