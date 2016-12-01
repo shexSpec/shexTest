@@ -11,7 +11,7 @@
             "predicate": "http://a.example/p1"
           },
           {
-            "type": "SomeOf",
+            "type": "OneOf",
             "expressions": [
               {
                 "type": "TripleConstraint",

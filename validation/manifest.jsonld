@@ -9461,7 +9461,7 @@
           "name": "1dotSome2dot_pass_p1",
           "trait": [
             "EachOf-unvisited",
-            "SomeOf"
+            "OneOf"
           ],
           "comment": ":S1 {:p1 .|:p2 .,:p3 .} / { :s1 :p1 \"p1-0\" . }",
           "status": "mf:proposed",
@@ -9479,7 +9479,7 @@
           "extensionResults": [],
           "name": "1dotSome2dot_pass_p2p3",
           "trait": [
-            "SomeOf",
+            "OneOf",
             "EachOf"
           ],
           "comment": ":S1 {:p1 .|:p2 .,:p3 .} / { :s1 :p2 \"p2-0\"; :p3 \"p3-0\" . }",
@@ -9517,7 +9517,7 @@
           "name": "1dotSome2dot-someOf_fail_p1p2p3",
           "trait": [
             "MissedMatchables",
-            "SomeOf",
+            "OneOf",
             "EachOf"
           ],
           "comment": ":S1 {:p1 .|:p2 .,:p3 .} / { :s1 :p1 \"p1-0\"; :p2 \"p2-0\"; :p3 \"p3-0\" . }",
@@ -9536,7 +9536,7 @@
           "name": "open1dotSomeopen2dotcloseclose_pass_p1",
           "trait": [
             "EachOf-unvisited",
-            "SomeOf"
+            "OneOf"
           ],
           "comment": ":S1 {(:p1 .|(:p2 .,:p3 .))} / { :s1 :p1 \"p1-0\" . }",
           "status": "mf:proposed",
@@ -9554,7 +9554,7 @@
           "extensionResults": [],
           "name": "open1dotSomeopen2dotcloseclose_pass_p2p3",
           "trait": [
-            "SomeOf",
+            "OneOf",
             "EachOf"
           ],
           "comment": ":S1 {(:p1 .|(:p2 .,:p3 .))} / { :s1 :p2 \"p2-0\"; :p3 \"p3-0\" . }",
@@ -9591,7 +9591,7 @@
           "extensionResults": [],
           "name": "openopen1dotSome1dotclose1dotclose_pass_p1p3",
           "trait": [
-            "SomeOf",
+            "OneOf",
             "EachOf"
           ],
           "comment": ":S1 { ((:p1 .| :p2 .), :p3 .) } / { <x> :p1 \"p1-0\"; :p3 \"p3-0\" . }",
@@ -9610,7 +9610,7 @@
           "extensionResults": [],
           "name": "openopen1dotSome1dotclose1dotclose_pass_p2p3",
           "trait": [
-            "SomeOf",
+            "OneOf",
             "EachOf"
           ],
           "comment": ":S1 { ((:p1 .| :p2 .), :p3 .) } / { <x> :p2 \"p2-0\"; :p3 \"p3-0\" . }",
@@ -9630,7 +9630,7 @@
           "name": "openopen1dotSome1dotclose1dotclose_fail_p1",
           "trait": [
             "EachOf-unvisited",
-            "SomeOf"
+            "OneOf"
           ],
           "comment": ":S1 { ((:p1 .| :p2 .), :p3 .) } / { <x> :p1 \"p1-0\" . }",
           "status": "mf:proposed"
@@ -9647,7 +9647,7 @@
           "extensionResults": [],
           "name": "openopen1dotSome1dotclose1dotclose_fail_p3",
           "trait": [
-            "SomeOf",
+            "OneOf",
             "EachOf"
           ],
           "comment": ":S1 { ((:p1 .| :p2 .), :p3 .) } / { <x> :p3 \"p3-0\" . }",
@@ -9665,7 +9665,7 @@
           "extensionResults": [],
           "name": "openopen1dotSome1dotclose1dotclose_fail_p1p2",
           "trait": [
-            "SomeOf",
+            "OneOf",
             "EachOf"
           ],
           "comment": ":S1 { ((:p1 .| :p2 .), :p3 .) } / { <x> :p1 \"p1-0\"; :p2 \"p2-0\" . }",
@@ -10656,7 +10656,7 @@
           "extensionResults": [],
           "name": "open3Somedotclosecard2_fail-p1",
           "trait": [
-            "RepeatedSomeOf",
+            "RepeatedOneOf",
             "EachOf"
           ],
           "comment": "<S1> { ( <p1> .| <p2> .| <p3> . ){2} } / { <s> <p1> \"p1-0\" }",
@@ -10674,7 +10674,7 @@
           "extensionResults": [],
           "name": "open3Somedotclosecard2_pass-p1X2",
           "trait": [
-            "RepeatedSomeOf",
+            "RepeatedOneOf",
             "EachOf"
           ],
           "comment": "<S1> { ( <p1> .| <p2> .| <p3> . ){2} } / { <s> <p1> \"p1-n\" }X2",
@@ -10693,7 +10693,7 @@
           "extensionResults": [],
           "name": "open3Somedotclosecard2_fail-p1X3",
           "trait": [
-            "RepeatedSomeOf",
+            "RepeatedOneOf",
             "EachOf"
           ],
           "comment": "<S1> { ( <p1> .| <p2> .| <p3> . ){2} } / { <s> <p1> \"p1-n\" }X3",
@@ -10711,7 +10711,7 @@
           "extensionResults": [],
           "name": "open3Somedotclosecard2_fail-p1X4",
           "trait": [
-            "RepeatedSomeOf",
+            "RepeatedOneOf",
             "EachOf"
           ],
           "comment": "<S1> { ( <p1> .| <p2> .| <p3> . ){2} } / { <s> <p1> \"p1-n\" }X4",
@@ -10729,7 +10729,7 @@
           "extensionResults": [],
           "name": "open3Somedotclosecard2_pass-p1p2",
           "trait": [
-            "RepeatedSomeOf",
+            "RepeatedOneOf",
             "EachOf"
           ],
           "comment": "<S1> { ( <p1> .| <p2> .| <p3> . ){2} } / { <s> <p1> \"p1-0\"; <p2> \"p2-0\" }",
@@ -10748,7 +10748,7 @@
           "extensionResults": [],
           "name": "open3Somedotclosecard2_pass-p1p3",
           "trait": [
-            "RepeatedSomeOf",
+            "RepeatedOneOf",
             "EachOf"
           ],
           "comment": "<S1> { ( <p1> .| <p2> .| <p3> . ){2} } / { <s> <p1> \"p1-0\"; <p3> \"p3-0\" }",
@@ -10767,7 +10767,7 @@
           "extensionResults": [],
           "name": "open3Somedotclosecard2_pass-p2p3",
           "trait": [
-            "RepeatedSomeOf",
+            "RepeatedOneOf",
             "EachOf"
           ],
           "comment": "<S1> { ( <p1> .| <p2> .| <p3> . ){2} } / { <s> <p2> \"p2-0\"; <p3> \"p3-0\" }",
@@ -10786,7 +10786,7 @@
           "extensionResults": [],
           "name": "open3Somedotclosecard2_fail-p1p2p3",
           "trait": [
-            "RepeatedSomeOf",
+            "RepeatedOneOf",
             "EachOf"
           ],
           "comment": "<S1> { ( <p1> .| <p2> .| <p3> . ){2} } / { <s> <p1> \"p1-0\"; <p2> \"p2-0\"; <p3> \"p3-0\" }",
@@ -10804,7 +10804,7 @@
           "extensionResults": [],
           "name": "open3Somedotclosecard23_fail-p1",
           "trait": [
-            "RepeatedSomeOf",
+            "RepeatedOneOf",
             "EachOf"
           ],
           "comment": "<S1> { ( <p1> .| <p2> .| <p3> . ){2,3} } / { <s> <p1> \"p1-0\" }",
@@ -10822,7 +10822,7 @@
           "extensionResults": [],
           "name": "open3Somedotclosecard23_pass-p1X2",
           "trait": [
-            "RepeatedSomeOf",
+            "RepeatedOneOf",
             "EachOf"
           ],
           "comment": "<S1> { ( <p1> .| <p2> .| <p3> . ){2,3} } / { <s> <p1> \"p1-n\" }X2",
@@ -10841,7 +10841,7 @@
           "extensionResults": [],
           "name": "open3Somedotclosecard23_pass-p1X3",
           "trait": [
-            "RepeatedSomeOf",
+            "RepeatedOneOf",
             "EachOf"
           ],
           "comment": "<S1> { ( <p1> .| <p2> .| <p3> . ){2,3} } / { <s> <p1> \"p1-n\" }X3",
@@ -10860,7 +10860,7 @@
           "extensionResults": [],
           "name": "open3Somedotclosecard23_fail-p1X4",
           "trait": [
-            "RepeatedSomeOf",
+            "RepeatedOneOf",
             "EachOf"
           ],
           "comment": "<S1> { ( <p1> .| <p2> .| <p3> . ){2,3} } / { <s> <p1> \"p1-n\" }X4",
@@ -10878,7 +10878,7 @@
           "extensionResults": [],
           "name": "open3Somedotclosecard23_pass-p1p2",
           "trait": [
-            "RepeatedSomeOf",
+            "RepeatedOneOf",
             "EachOf"
           ],
           "comment": "<S1> { ( <p1> .| <p2> .| <p3> . ){2,3} } / { <s> <p1> \"p1-0\"; <p2> \"p2-0\" }",
@@ -10897,7 +10897,7 @@
           "extensionResults": [],
           "name": "open3Somedotclosecard23_pass-p1p3",
           "trait": [
-            "RepeatedSomeOf",
+            "RepeatedOneOf",
             "EachOf"
           ],
           "comment": "<S1> { ( <p1> .| <p2> .| <p3> . ){2,3} } / { <s> <p1> \"p1-0\"; <p3> \"p3-0\" }",
@@ -10916,7 +10916,7 @@
           "extensionResults": [],
           "name": "open3Somedotclosecard23_pass-p2p3",
           "trait": [
-            "RepeatedSomeOf",
+            "RepeatedOneOf",
             "EachOf"
           ],
           "comment": "<S1> { ( <p1> .| <p2> .| <p3> . ){2,3} } / { <s> <p2> \"p2-0\"; <p3> \"p3-0\" }",
@@ -10936,7 +10936,7 @@
           "name": "open3Somedotclosecard23_pass-p1p2p3",
           "trait": [
             "Greedy",
-            "RepeatedSomeOf",
+            "RepeatedOneOf",
             "EachOf"
           ],
           "comment": "<S1> { ( <p1> .| <p2> .| <p3> . ){2,3} } / { <s> <p1> \"p1-0\"; <p2> \"p2-0\"; <p3> \"p3-0\" }",
@@ -10955,7 +10955,7 @@
           "extensionResults": [],
           "name": "open4Somedotclosecard23_fail-p1p2p3p4",
           "trait": [
-            "RepeatedSomeOf",
+            "RepeatedOneOf",
             "EachOf"
           ],
           "comment": "<S1> { ( <p1> .| <p2> .| <p3> .| <p4> . ){2,3} } / { <s> <p1> \"p1-n\"; <p2> \"p2-n\"; <p3> \"p3-n\" ; <p4> \"p4-n\" }",
@@ -11195,7 +11195,7 @@
           "trait": [
             "Extra",
             "MissedMatchables",
-            "SomeOf",
+            "OneOf",
             "EachOf"
           ],
           "comment": ":S1 EXTRA <p1> <p2> <p3> {:p1 .|:p2 .,:p3 .} / { :s1 :p1 \"p1-0\"; :p2 \"p2-0\"; :p3 \"p3-0\" . }",
@@ -11599,7 +11599,7 @@
           "name": "2SomeInclude1_pass",
           "trait": [
             "Include",
-            "SomeOf"
+            "OneOf"
           ],
           "comment": "<S1> { &<S2> | <p1> . } <S2> { <p2> . } on { <n1> <p1> \"X\" }",
           "status": "mf:proposed",
@@ -11618,7 +11618,7 @@
           "name": "2SomeInclude1-after_pass",
           "trait": [
             "Include",
-            "SomeOf"
+            "OneOf"
           ],
           "comment": "<S1> { <p1> . | &<S2> } <S2> { <p2> . } on { <n1> <p1> \"X\" }",
           "status": "mf:proposed",

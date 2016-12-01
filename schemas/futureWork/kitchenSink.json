@@ -113,7 +113,7 @@
         "type": "EachOf",
         "expressions": [
           {
-            "type": "SomeOf",
+            "type": "OneOf",
             "expressions": [
               {
                 "type": "TripleConstraint",
@@ -216,7 +216,7 @@
       "type": "Shape",
       "virtual": true,
       "expression": {
-        "type": "SomeOf",
+        "type": "OneOf",
         "expressions": [
           {
             "type": "EachOf",

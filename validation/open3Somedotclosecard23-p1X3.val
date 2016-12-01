@@ -3,12 +3,12 @@
   "node": "x",
   "shape": "http://a.example/S1",
   "solution": {
-    "type": "SomeOfSolutions",
+    "type": "OneOfSolutions",
     "min": 2,
     "max": 3,
     "solutions": [
       {
-        "type": "SomeOfSolution",
+        "type": "OneOfSolution",
         "expressions": [
           {
             "type": "TripleConstraintSolutions",
@@ -25,7 +25,7 @@
         ]
       },
       {
-        "type": "SomeOfSolution",
+        "type": "OneOfSolution",
         "expressions": [
           {
             "type": "TripleConstraintSolutions",
@@ -42,7 +42,7 @@
         ]
       },
       {
-        "type": "SomeOfSolution",
+        "type": "OneOfSolution",
         "expressions": [
           {
             "type": "TripleConstraintSolutions",
