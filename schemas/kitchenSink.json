@@ -131,7 +131,7 @@
         "type": "EachOf",
         "expressions": [
           {
-            "type": "SomeOf",
+            "type": "OneOf",
             "expressions": [
               {
                 "type": "TripleConstraint",
@@ -241,7 +241,7 @@
     "_:IDshape": {
       "type": "Shape",
       "expression": {
-        "type": "SomeOf",
+        "type": "OneOf",
         "expressions": [
           {
             "type": "EachOf",
