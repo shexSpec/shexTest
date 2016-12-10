@@ -1842,8 +1842,8 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#1val1DOUBLE_pass",
-          "@type": "sht:ValidationTest",
+          "@id": "#1val1DOUBLE_fail",
+          "@type": "sht:ValidationFailure",
           "action": {
             "schema": "../schemas/1val1DOUBLE.shex",
             "shape": "http://a.example/S1",
@@ -1851,13 +1851,12 @@
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1val1DOUBLE_pass",
+          "name": "1val1DOUBLE_fail",
           "trait": [
             "NumericEquivalence"
           ],
-          "comment": "<S1> { <p1> [0e0] } on { <s> <p1> 0e0 }",
-          "status": "mf:proposed",
-          "result": "1val1DOUBLE_pass.val"
+          "comment": "<S1> { <p1> [0E0] } on { <s> <p1> 0e0 }",
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1DOUBLE_passUC",
@@ -1865,7 +1864,7 @@
           "action": {
             "schema": "../schemas/1val1DOUBLE.shex",
             "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_DBL0e0.ttl",
+            "data": "Is1_Ip1_DBL0E0UC.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
@@ -1873,7 +1872,7 @@
           "trait": [
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> [0e0] } on { <s> <p1> 0E0 }",
+          "comment": "<S> { <p1> [0E0] } on { <s> <p1> 0E0 }",
           "status": "mf:proposed",
           "result": "1val1DOUBLE_pass.val"
         },
@@ -1891,7 +1890,7 @@
           "trait": [
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> [0e0] } on { <s> <p1> 0e0.0 }",
+          "comment": "<S> { <p1> [0E0] } on { <s> <p1> 0e0.0 }",
           "status": "mf:proposed"
         },
         {
@@ -1913,22 +1912,21 @@
           "result": "1val1DOUBLE_pass.val"
         },
         {
-          "@id": "#1val1DOUBLElowercase_passUC",
-          "@type": "sht:ValidationTest",
+          "@id": "#1val1DOUBLElowercase_failUC",
+          "@type": "sht:ValidationFailure",
           "action": {
             "schema": "../schemas/1val1DOUBLElowercase.shex",
             "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_DBL0e0.ttl",
+            "data": "Is1_Ip1_DBL0E0UC.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1val1DOUBLElowercase_passUC",
+          "name": "1val1DOUBLElowercase_failUC",
           "trait": [
             "NumericEquivalence"
           ],
           "comment": "<S> { <p1> [0e0] } on { <s> <p1> 0E0 }",
-          "status": "mf:proposed",
-          "result": "1val1DOUBLE_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1DOUBLElowercase_0_0e0",
