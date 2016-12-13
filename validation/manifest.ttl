@@ -139,13 +139,12 @@
         <#1val1INTEGER_pass>            # <S> { <p1> [0] }
         <#1val1INTEGER_00>
         <#1val1INTEGER_Lab>
-        <#1val1DOUBLE_pass>             # <S> { <p1> [0e0] }
-        <#1val1DOUBLE_passUC>
+        <#1val1DOUBLE_pass>             # <S> { <p1> [0E0] }
         <#1val1DOUBLE_0_0e0>
         # 1val1DOUBLElowercase_... same as 1val1DOUBLE
         # @@ eliminate as duplicate?
         <#1val1DOUBLElowercase_pass>    # <S> { <p1> [0e0] }
-        <#1val1DOUBLElowercase_passUC>
+        <#1val1DOUBLElowercase_fail-0E0>
         <#1val1DOUBLElowercase_0_0e0>
 
 ####     language tag equivalence
@@ -2332,26 +2331,12 @@
 <#1val1DOUBLE_pass> a sht:ValidationTest ;
     mf:name "1val1DOUBLE_pass" ;
     sht:trait sht:NumericEquivalence ;
-    rdfs:comment "<S1> { <p1> [0e0] } on { <s> <p1> 0e0 }" ;
+    rdfs:comment "<S1> { <p1> [0E0] } on { <s> <p1> 0E0 }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1DOUBLE.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_DBL0e0.ttl> ;
-      sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1DOUBLE_pass.val>
-    .
-
-<#1val1DOUBLE_passUC> a sht:ValidationTest ;
-    mf:name "1val1DOUBLE_passUC" ;
-    sht:trait sht:NumericEquivalence ;
-    rdfs:comment "<S> { <p1> [0e0] } on { <s> <p1> 0E0 }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1val1DOUBLE.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_DBL0e0.ttl> ;
+      sht:data <Is1_Ip1_DBL0E0.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
     mf:result <1val1DOUBLE_pass.val>
@@ -2360,7 +2345,7 @@
 <#1val1DOUBLE_0_0e0> a sht:ValidationFailure ;
     mf:name "1val1DOUBLE_0_0e0" ;
     sht:trait sht:NumericEquivalence ;
-    rdfs:comment "<S> { <p1> [0e0] } on { <s> <p1> 0e0.0 }" ;
+    rdfs:comment "<S> { <p1> [0E0] } on { <s> <p1> 0e0.0 }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1DOUBLE.shex> ;
@@ -2378,14 +2363,14 @@
     mf:action [
       sht:schema <../schemas/1val1DOUBLElowercase.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_DBL0e0.ttl> ;
+      sht:data <Is1_Ip1_DBL0e0lowercase.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
-    mf:result <1val1DOUBLE_pass.val>
+    mf:result <1val1DOUBLElowercase_pass.val>
     .
 
-<#1val1DOUBLElowercase_passUC> a sht:ValidationFailure ;
-    mf:name "1val1DOUBLElowercase_passUC" ;
+<#1val1DOUBLElowercase_fail-0E0> a sht:ValidationFailure ;
+    mf:name "1val1DOUBLElowercase_fail-0E0" ;
     sht:trait sht:NumericEquivalence ;
     rdfs:comment "<S> { <p1> [0e0] } on { <s> <p1> 0E0 }" ;
     mf:status mf:proposed ;
