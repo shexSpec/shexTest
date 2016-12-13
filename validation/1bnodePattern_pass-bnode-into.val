@@ -7,15 +7,15 @@
     "predicate": "http://a.example/p1",
     "valueExpr": {
       "type": "NodeConstraint",
-      "nodeKind": "literal",
-      "pattern": "ab$"
+      "nodeKind": "bnode",
+      "pattern": "bc"
     },
     "solutions": [
       {
         "type": "TestedTriple",
         "subject": "http://a.example/s1",
         "predicate": "http://a.example/p1",
-        "object": "\"ab$\""
+        "object": "_:abc"
       }
     ]
   }

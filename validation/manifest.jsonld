@@ -711,7 +711,7 @@
           "trait": [
             "Datatype"
           ],
-          "comment": "<S> { <p1> <dt1> } on <s> in { <s> <p2> <o1> }",
+          "comment": "<S> { <p1> <dt1> } on <s> in { <s> <p2> \"ab\" }",
           "status": "mf:proposed"
         },
         {
@@ -1914,11 +1914,11 @@
         },
         {
           "@id": "#1val1DOUBLElowercase_passUC",
-          "@type": "sht:ValidationTest",
+          "@type": "sht:ValidationFailure",
           "action": {
             "schema": "../schemas/1val1DOUBLElowercase.shex",
             "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_DBL0e0.ttl",
+            "data": "Is1_Ip1_DBL0E0.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
@@ -1927,8 +1927,7 @@
             "NumericEquivalence"
           ],
           "comment": "<S> { <p1> [0e0] } on { <s> <p1> 0E0 }",
-          "status": "mf:proposed",
-          "result": "1val1DOUBLE_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1DOUBLElowercase_0_0e0",
@@ -2151,7 +2150,7 @@
           "trait": [
             "BooleanEquivalence"
           ],
-          "comment": "<S> { <p1> [true] } on { <s> <p1> ab }",
+          "comment": "<S> { <p1> [true] } on { <s> <p1> 'ab' }",
           "status": "mf:proposed"
         },
         {
@@ -2203,7 +2202,7 @@
           "trait": [
             "BooleanEquivalence"
           ],
-          "comment": "<S> { <p1> [false] } on { <s> <p1> ab }",
+          "comment": "<S> { <p1> [false] } on { <s> <p1> 'ab' }",
           "status": "mf:proposed"
         },
         {
@@ -2220,7 +2219,7 @@
           "trait": [
             "LengthFacet"
           ],
-          "comment": "<S> { <p1> xs:integer LENGTH 5 } on <s> in { <s> <p2> <o1> }",
+          "comment": "<S> { <p1> xs:integer LENGTH 5 } on <s> in { <s> <p2> 'ab' }",
           "status": "mf:proposed"
         },
         {
@@ -8212,7 +8211,7 @@
           "action": {
             "schema": "../schemas/1literalPattern.shex",
             "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_Lab.ttl",
+            "data": "Is1_Ip1_Lbc.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
@@ -8220,7 +8219,7 @@
           "trait": [
             "PaternFacet"
           ],
-          "comment": "<S1> { <p1> LITERAL PATTERN \"ab\" } on { <s1> <p1> \"ab\" }",
+          "comment": "<S1> { <p1> LITERAL PATTERN \"bc\" } on { <s1> <p1> \"bc\" }",
           "status": "mf:proposed",
           "result": "1literalPattern_pass-lit-match.val"
         },
@@ -8238,12 +8237,46 @@
           "trait": [
             "PaternFacet"
           ],
-          "comment": "<S1> { <p1> LITERAL PATTERN \"ab\" } on { <s1> <p1> \"a\" }",
+          "comment": "<S1> { <p1> LITERAL PATTERN \"bc\" } on { <s1> <p1> \"a\" }",
           "status": "mf:proposed"
         },
         {
-          "@id": "#1literalPattern_fail-lit-long",
+          "@id": "#1literalPattern_fail-ab",
           "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1literalPattern.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Lab.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalPattern_fail-ab",
+          "trait": [
+            "PaternFacet"
+          ],
+          "comment": "<S1> { <p1> LITERAL PATTERN \"bc\" } on { <s1> <p1> \"ab\" }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1literalPattern_fail-cd",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1literalPattern.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Lcd.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalPattern_fail-cd",
+          "trait": [
+            "PaternFacet"
+          ],
+          "comment": "<S1> { <p1> LITERAL PATTERN \"bc\" } on { <s1> <p1> \"cd\" }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1literalPattern_pass-lit-into",
+          "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/1literalPattern.shex",
             "shape": "http://a.example/S1",
@@ -8251,12 +8284,13 @@
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1literalPattern_fail-lit-long",
+          "name": "1literalPattern_pass-lit-into",
           "trait": [
             "PaternFacet"
           ],
-          "comment": "<S1> { <p1> LITERAL PATTERN \"ab\" } on { <s1> <p1> \"abc\" }",
-          "status": "mf:proposed"
+          "comment": "<S1> { <p1> LITERAL PATTERN \"bc\" } on { <s1> <p1> \"abc\" }",
+          "status": "mf:proposed",
+          "result": "1literalPattern_pass-lit-into.val"
         },
         {
           "@id": "#1literalPattern19_fail-iri-match",
@@ -8289,34 +8323,51 @@
           "trait": [
             "PaternFacet"
           ],
-          "comment": "<S1> { <p1> LITERAL PATTERN \"ab\" } on { <s1> <p1> _:ab }",
+          "comment": "<S1> { <p1> LITERAL PATTERN \"bc\" } on { <s1> <p1> _:ab }",
           "status": "mf:proposed"
         },
         {
-          "@id": "#1literalPattern_pass-litEnd-match",
-          "@type": "sht:ValidationTest",
+          "@id": "#1literalPatternEnd_fail-litEnd",
+          "@type": "sht:ValidationFailure",
           "action": {
             "schema": "../schemas/1literalPatternEnd.shex",
             "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_LabEnd.ttl",
+            "data": "Is1_Ip1_LbcDollar.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1literalPattern_pass-litEnd-match",
+          "name": "1literalPatternEnd_fail-litEnd",
           "trait": [
             "PaternFacet"
           ],
-          "comment": "<S1> { <p1> LITERAL PATTERN \"ab$\" } on { <s1> <p1> \"ab$\" }",
+          "comment": "<S1> { <p1> LITERAL PATTERN \"bc$\" } on { <s1> <p1> \"bc$\" }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1literalPatternDollar_pass-litDollar-match",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1literalPatternDollar.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_LbcDollar.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalPatternDollar_pass-litDollar-match",
+          "trait": [
+            "PaternFacet"
+          ],
+          "comment": "<S1> { <p1> LITERAL PATTERN \"bc\\$\" } on { <s1> <p1> \"bc$\" }",
           "status": "mf:proposed",
-          "result": "1literalPattern_pass-litEnd-match.val"
+          "result": "1literalPatternDollar_pass-litDollar-match.val"
         },
         {
           "@id": "#1literalPattern_pass-StartlitEnd-match",
-          "@type": "sht:ValidationTest",
+          "@type": "sht:ValidationFailure",
           "action": {
             "schema": "../schemas/1literalStartPatternEnd.shex",
             "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_LStartabEnd.ttl",
+            "data": "Is1_Ip1_LCarrotbcDollar.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
@@ -8324,9 +8375,60 @@
           "trait": [
             "PaternFacet"
           ],
-          "comment": "<S1> { <p1> LITERAL PATTERN \"^ab$\" } on { <s1> <p1> \"^ab$\" }",
+          "comment": "<S1> { <p1> LITERAL PATTERN \"^bc$\" } on { <s1> <p1> \"^bc$\" }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1literalStartPatternEnd_CarrotbcDollar",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1literalStartPatternEnd.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_LCarrotbcDollar.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalStartPatternEnd_CarrotbcDollar",
+          "trait": [
+            "PaternFacet"
+          ],
+          "comment": "<S1> { <p1> LITERAL PATTERN \"^bc$\" } on { <s1> <p1> \"^bc$\" }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1literalCarrotPatternDollar_pass-bc",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1literalCarrotPatternDollar.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Lbc.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalCarrotPatternDollar_pass-bc",
+          "trait": [
+            "PaternFacet"
+          ],
+          "comment": "<S1> { <p1> LITERAL PATTERN \"\\^bc\\$\" } on { <s1> <p1> \"bc\" }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1literalCarrotPatternDollar_pass-CarrotbcDollar",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1literalCarrotPatternDollar.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_LCarrotbcDollar.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalCarrotPatternDollar_pass-CarrotbcDollar",
+          "trait": [
+            "PaternFacet"
+          ],
+          "comment": "<S1> { <p1> LITERAL PATTERN \"\\^bc\\$\" } on { <s1> <p1> \"^bc$\" }",
           "status": "mf:proposed",
-          "result": "1literalPattern_pass-StartlitEnd-match.val"
+          "result": "1literalCarrotPatternDollar_pass-CarrotbcDollar.val"
         },
         {
           "@id": "#1literalPatternabEnd_fail-bnode-match",
@@ -8334,136 +8436,141 @@
           "action": {
             "schema": "../schemas/1literalPatternabEnd.shex",
             "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_Bab.ttl",
+            "data": "Is1_Ip1_Bbc.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
           "name": "1literalPatternabEnd_fail-bnode-match",
           "trait": [
-            "PaternFacet"
+            "PaternFacet",
+            "ToldBNode"
           ],
-          "comment": "<S1> { <p1> LITERAL PATTERN \"ab$\" } on { <s1> <p1> _:ab }",
+          "comment": "<S1> { <p1> LITERAL PATTERN \"bc$\" } on { <s1> <p1> _:bc }",
           "status": "mf:proposed"
         },
         {
-          "@id": "#1literalPattern_pass-Startlit-match",
+          "@id": "#1literalStartPattern_pass-bc",
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/1literalStartPattern.shex",
             "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_LStartab.ttl",
+            "data": "Is1_Ip1_Lbc.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1literalPattern_pass-Startlit-match",
+          "name": "1literalStartPattern_pass-bc",
           "trait": [
             "PaternFacet"
           ],
-          "comment": "<S1> { <p1> LITERAL PATTERN \"^ab\" } on { <s1> <p1> \"^ab\" }",
+          "comment": "<S1> { <p1> LITERAL PATTERN \"^bc\" } on { <s1> <p1> \"bc\" }",
           "status": "mf:proposed",
-          "result": "1literalPattern_pass-Startlit-match.val"
+          "result": "1literalStartPattern-bc.val"
         },
         {
-          "@id": "#1literalPattern_fail-Startlit-lit",
+          "@id": "#1literalStartPattern_fail-CarrotbcDollar",
           "@type": "sht:ValidationFailure",
           "action": {
             "schema": "../schemas/1literalStartPattern.shex",
             "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_Lab.ttl",
+            "data": "Is1_Ip1_LCarrotbcDollar.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1literalPattern_fail-Startlit-lit",
+          "name": "1literalStartPattern_fail-CarrotbcDollar",
           "trait": [
             "PaternFacet"
           ],
-          "comment": "<S1> { <p1> LITERAL PATTERN \"^ab\" } on { <s1> <p1> \"ab\" }",
+          "comment": "<S1> { <p1> LITERAL PATTERN \"^bc\" } on { <s1> <p1> \"^bc$\" }",
           "status": "mf:proposed"
         },
         {
-          "@id": "#1literalPattern_fail-lit-Startlit",
-          "@type": "sht:ValidationFailure",
+          "@id": "#1literalPatternEnd_pass-bc",
+          "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/1literalPattern.shex",
+            "schema": "../schemas/1literalPatternEnd.shex",
             "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_LStartab.ttl",
+            "data": "Is1_Ip1_Lbc.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1literalPattern_fail-lit-Startlit",
+          "name": "1literalPatternEnd_pass-bc",
           "trait": [
             "PaternFacet"
           ],
-          "comment": "<S1> { <p1> LITERAL PATTERN \"ab\" } on { <s1> <p1> \"^ab\" }",
-          "status": "mf:proposed"
+          "comment": "<S1> { <p1> LITERAL PATTERN \"bc$\" } on { <s1> <p1> \"bc\" }",
+          "status": "mf:proposed",
+          "result": "1literalPatternEnd_pass-bc.val"
         },
         {
-          "@id": "#1literalPattern_fail-litEnd-lit",
+          "@id": "#1literalPatternEnd_pass-CarrotbcDollar",
           "@type": "sht:ValidationFailure",
           "action": {
             "schema": "../schemas/1literalPatternEnd.shex",
             "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_Lab.ttl",
+            "data": "Is1_Ip1_LCarrotbcDollar.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1literalPattern_fail-litEnd-lit",
+          "name": "1literalPatternEnd_pass-CarrotbcDollar",
           "trait": [
             "PaternFacet"
           ],
-          "comment": "<S1> { <p1> LITERAL PATTERN \"ab$\" } on { <s1> <p1> \"ab\" }",
+          "comment": "<S1> { <p1> LITERAL PATTERN \"bc$\" } on { <s1> <p1> \"bc\" }",
           "status": "mf:proposed"
         },
         {
-          "@id": "#1literalPattern_fail-lit-litEnd",
-          "@type": "sht:ValidationFailure",
+          "@id": "#1literalPattern_pass-bcDollar",
+          "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/1literalPattern.shex",
             "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_LabEnd.ttl",
+            "data": "Is1_Ip1_LbcDollar.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1literalPattern_fail-lit-litEnd",
+          "name": "1literalPattern_pass-bcDollar",
           "trait": [
             "PaternFacet"
           ],
-          "comment": "<S1> { <p1> LITERAL PATTERN \"ab\" } on { <s1> <p1> \"ab$\" }",
-          "status": "mf:proposed"
+          "comment": "<S1> { <p1> LITERAL PATTERN \"bc\" } on { <s1> <p1> \"bc$\" }",
+          "status": "mf:proposed",
+          "result": "1literalPattern_pass-bcDollar.val"
         },
         {
-          "@id": "#1literalPattern_fail-StartlitEnd-lit",
-          "@type": "sht:ValidationFailure",
+          "@id": "#1literalStarPatternEnd_pass-bc",
+          "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/1literalStartPatternEnd.shex",
             "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_Lab.ttl",
+            "data": "Is1_Ip1_Lbc.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1literalPattern_fail-StartlitEnd-lit",
+          "name": "1literalStarPatternEnd_pass-bc",
           "trait": [
             "PaternFacet"
           ],
-          "comment": "<S1> { <p1> LITERAL PATTERN \"^ab$\" } on { <s1> <p1> \"ab\" }",
-          "status": "mf:proposed"
+          "comment": "<S1> { <p1> LITERAL PATTERN \"^bc$\" } on { <s1> <p1> \"bc\" }",
+          "status": "mf:proposed",
+          "result": "1literalStarPatternEnd_pass-bc.val"
         },
         {
-          "@id": "#1literalPattern_fail-lit-StartlitEnd",
-          "@type": "sht:ValidationFailure",
+          "@id": "#1literalPattern_pass-CarrotbcDollar",
+          "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/1literalPattern.shex",
             "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_LStartabEnd.ttl",
+            "data": "Is1_Ip1_LCarrotbcDollar.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1literalPattern_fail-lit-StartlitEnd",
+          "name": "1literalPattern_pass-CarrotbcDollar",
           "trait": [
             "PaternFacet"
           ],
-          "comment": "<S1> { <p1> LITERAL PATTERN \"ab\" } on { <s1> <p1> \"^ab$\" }",
-          "status": "mf:proposed"
+          "comment": "<S1> { <p1> LITERAL PATTERN \"bc\" } on { <s1> <p1> \"^bc$\" }",
+          "status": "mf:proposed",
+          "result": "1literalPattern_pass-CarrotbcDollar.val"
         },
         {
           "@id": "#1iriPattern_pass-iri-match",
@@ -8538,9 +8645,9 @@
           "@id": "#1iriPattern_fail-bnode-match",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/1iriPatternab.shex",
+            "schema": "../schemas/1iriPatternbc.shex",
             "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_Bab.ttl",
+            "data": "Is1_Ip1_Bbc.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
@@ -8548,7 +8655,7 @@
           "trait": [
             "PaternFacet"
           ],
-          "comment": "<S1> { <p1> IRI PATTERN \"^ab$\" } on { <s1> <p1> _:ab }",
+          "comment": "<S1> { <p1> IRI PATTERN \"^bc$\" } on { <s1> <p1> _:bc }",
           "status": "mf:proposed"
         },
         {
@@ -8557,7 +8664,7 @@
           "action": {
             "schema": "../schemas/1bnodePattern.shex",
             "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_Bab.ttl",
+            "data": "Is1_Ip1_Bbc.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
@@ -8566,7 +8673,7 @@
             "PaternFacet",
             "LexicalBNode"
           ],
-          "comment": "<S1> { <p1> BNODE PATTERN \"ab\" } on { <s1> <p1> _:ab }",
+          "comment": "<S1> { <p1> BNODE PATTERN \"bc\" } on { <s1> <p1> _:bc }",
           "status": "mf:proposed",
           "result": "1bnodePattern_pass-bnode-match.val"
         },
@@ -8584,12 +8691,12 @@
           "trait": [
             "PaternFacet"
           ],
-          "comment": "<S1> { <p1> BNODE PATTERN \"ab\" } on { <s1> <p1> _:a }",
+          "comment": "<S1> { <p1> BNODE PATTERN \"bc\" } on { <s1> <p1> _:a }",
           "status": "mf:proposed"
         },
         {
           "@id": "#1bnodePattern_fail-bnode-long",
-          "@type": "sht:ValidationFailure",
+          "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/1bnodePattern.shex",
             "shape": "http://a.example/S1",
@@ -8601,8 +8708,9 @@
           "trait": [
             "PaternFacet"
           ],
-          "comment": "<S1> { <p1> BNODE PATTERN \"ab\" } on { <s1> <p1> _:abc }",
-          "status": "mf:proposed"
+          "comment": "<S1> { <p1> BNODE PATTERN \"bc\" } on { <s1> <p1> _:abc }",
+          "status": "mf:proposed",
+          "result": "1bnodePattern_pass-bnode-into.val"
         },
         {
           "@id": "#1bnodePattern_fail-lit-match",
@@ -8618,7 +8726,7 @@
           "trait": [
             "PaternFacet"
           ],
-          "comment": "<S1> { <p1> BNODE PATTERN \"ab\" } on { <s1> <p1> \"ab\" }",
+          "comment": "<S1> { <p1> BNODE PATTERN \"bc\" } on { <s1> <p1> \"ab\" }",
           "status": "mf:proposed"
         },
         {
@@ -8635,7 +8743,7 @@
           "trait": [
             "PaternFacet"
           ],
-          "comment": "<S1> { <p1> BNODE PATTERN \"ab\" } on { BASE <http://a.example/> <s1> <p1> <ab> }",
+          "comment": "<S1> { <p1> BNODE PATTERN \"bc\" } on { BASE <http://a.example/> <s1> <p1> <bc> }",
           "status": "mf:proposed"
         },
         {
@@ -8644,7 +8752,7 @@
           "action": {
             "schema": "../schemas/1nonliteralPattern.shex",
             "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_Iab.ttl",
+            "data": "Is1_Ip1_Ibc.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
@@ -8652,7 +8760,7 @@
           "trait": [
             "PaternFacet"
           ],
-          "comment": "<S1> { <p1> NONLITERAL PATTERN \".*ab\" } on { <s1> <p1> <ab> }",
+          "comment": "<S1> { <p1> NONLITERAL PATTERN \"bc$\" } on { <s1> <p1> <bc> }",
           "status": "mf:proposed",
           "result": "1nonliteralPattern_pass-iri-match.val"
         },
@@ -8670,12 +8778,12 @@
           "trait": [
             "PaternFacet"
           ],
-          "comment": "<S1> { <p1> NONLITERAL PATTERN \".*ab\" } on { <s1> <p1> <a> }",
+          "comment": "<S1> { <p1> NONLITERAL PATTERN \"bc$\" } on { <s1> <p1> <a> }",
           "status": "mf:proposed"
         },
         {
-          "@id": "#1nonliteralPattern_fail-iri-long",
-          "@type": "sht:ValidationFailure",
+          "@id": "#1nonliteralPattern_pass-iri-long",
+          "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/1nonliteralPattern.shex",
             "shape": "http://a.example/S1",
@@ -8683,12 +8791,13 @@
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1nonliteralPattern_fail-iri-long",
+          "name": "1nonliteralPattern_pass-iri-long",
           "trait": [
             "PaternFacet"
           ],
-          "comment": "<S1> { <p1> NONLITERAL PATTERN \".*ab\" } on { <s1> <p1> <abc> }",
-          "status": "mf:proposed"
+          "comment": "<S1> { <p1> NONLITERAL PATTERN \"bc$\" } on { <s1> <p1> <abc> }",
+          "status": "mf:proposed",
+          "result": "1nonliteralPattern_pass-iri-long.val"
         },
         {
           "@id": "#1nonliteralPattern_fail-lit-match",
@@ -8704,7 +8813,7 @@
           "trait": [
             "PaternFacet"
           ],
-          "comment": "<S1> { <p1> NONLITERAL PATTERN \".*ab\" } on { <s1> <p1> \"ab\" }",
+          "comment": "<S1> { <p1> NONLITERAL PATTERN \"bc$\" } on { <s1> <p1> \"ab\" }",
           "status": "mf:proposed"
         },
         {
@@ -8713,7 +8822,7 @@
           "action": {
             "schema": "../schemas/1nonliteralPattern.shex",
             "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_Bab.ttl",
+            "data": "Is1_Ip1_Bbc.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
@@ -8722,7 +8831,7 @@
             "PaternFacet",
             "LexicalBNode"
           ],
-          "comment": "<S1> { <p1> NONLITERAL PATTERN \".*ab\" } on { <s1> <p1> _:ab }",
+          "comment": "<S1> { <p1> NONLITERAL PATTERN \"bc$\" } on { <s1> <p1> _:bc }",
           "status": "mf:proposed",
           "result": "1nonliteralPattern_pass-bnode-match.val"
         },
@@ -8740,12 +8849,12 @@
           "trait": [
             "PaternFacet"
           ],
-          "comment": "<S1> { <p1> NONLITERAL PATTERN \".*ab\" } on { <s1> <p1> _:a }",
+          "comment": "<S1> { <p1> NONLITERAL PATTERN \"bc$\" } on { <s1> <p1> _:a }",
           "status": "mf:proposed"
         },
         {
-          "@id": "#1nonliteralPattern_fail-bnode-long",
-          "@type": "sht:ValidationFailure",
+          "@id": "#1nonliteralPattern_pass-bnode-long",
+          "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/1nonliteralPattern.shex",
             "shape": "http://a.example/S1",
@@ -8753,12 +8862,13 @@
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1nonliteralPattern_fail-bnode-long",
+          "name": "1nonliteralPattern_pass-bnode-long",
           "trait": [
             "PaternFacet"
           ],
-          "comment": "<S1> { <p1> NONLITERAL PATTERN \".*ab\" } on { <s1> <p1> _:abc }",
-          "status": "mf:proposed"
+          "comment": "<S1> { <p1> NONLITERAL PATTERN \"bc$\" } on { <s1> <p1> _:abc }",
+          "status": "mf:proposed",
+          "result": "1nonliteralPattern_pass-bnode-long.val"
         },
         {
           "@id": "#1val1dotMinusiri3_pass",
@@ -9324,8 +9434,8 @@
           "extensionResults": [],
           "name": "1dotSome2dot-oneOf_fail_p1p2p3",
           "trait": [
-            "OneOf",
-            "EachOf-unvisited"
+            "EachOf-unvisited",
+            "OneOf"
           ],
           "comment": ":S1 {:p1 .|:p2 .,:p3 .} / { :s1 :p1 \"p1-0\"; :p2 \"p2-0\"; :p3 \"p3-0\" . }",
           "status": "mf:proposed"
@@ -9399,8 +9509,8 @@
           "extensionResults": [],
           "name": "open1dotSomeopen2dotcloseclose_fail_p1p2p3",
           "trait": [
-            "OneOf",
-            "EachOf-unvisited"
+            "EachOf-unvisited",
+            "OneOf"
           ],
           "comment": ":S1 {(:p1 .|(:p2 .,:p3 .))} / { :s1 :p1 \"p1-0\"; :p2 \"p2-0\"; :p3 \"p3-0\" . }",
           "status": "mf:proposed"
@@ -12677,7 +12787,7 @@
           "trait": [
             "PaternFacet"
           ],
-          "comment": "<S1> PATTERN \"^http://a.example/s1$\" { <p1> } on { <s2> <p1> <o> }",
+          "comment": "<S1> PATTERN \"abcdefghijklmnopqrs\" { <p1> } on { <s2> <p1> <o> }",
           "status": "mf:proposed"
         },
         {
@@ -12694,7 +12804,7 @@
           "trait": [
             "PaternFacet"
           ],
-          "comment": "<S1> PATTERN \"^abcdefghijklmnopqrs$\" { <p1> } on { _:abcd <p1> <o1> }",
+          "comment": "<S1> PATTERN \"abcdefghijklmnopqrs\" { <p1> } on { _:abcd <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -12717,8 +12827,8 @@
           "result": "1focusBNODE_dot_pass.val"
         },
         {
-          "@id": "#1focusPatternB-dot_fail-bnode-long",
-          "@type": "sht:ValidationFailure",
+          "@id": "#1focusPatternB-dot_pass-bnode-long",
+          "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/1focusPatternB-dot.shex",
             "shape": "http://a.example/S1",
@@ -12726,12 +12836,13 @@
             "focus": "_:abcdefghijklmnopqrst"
           },
           "extensionResults": [],
-          "name": "1focusPatternB-dot_fail-bnode-long",
+          "name": "1focusPatternB-dot_pass-bnode-long",
           "trait": [
             "PaternFacet"
           ],
-          "comment": "<S1> PATTERN \"^abcdefghijklmnopqrs$\" { <p1> } on { _:abcdefghijklmnopqrst <p1> <o1> }",
-          "status": "mf:proposed"
+          "comment": "<S1> PATTERN \"abcdefghijklmnopqrs\" { <p1> } on { _:abcdefghijklmnopqrst <p1> <o1> }",
+          "status": "mf:proposed",
+          "result": "1focusPatternB-dot_pass-bnode-long.val"
         },
         {
           "@id": "#1focusIRILength_dot_fail-bnodeFocusLabel-equal",
