@@ -8,14 +8,14 @@
     "valueExpr": {
       "type": "NodeConstraint",
       "nodeKind": "literal",
-      "pattern": "bc"
+      "pattern": "\\^bc\\$"
     },
     "solutions": [
       {
         "type": "TestedTriple",
         "subject": "http://a.example/s1",
         "predicate": "http://a.example/p1",
-        "object": "\"bc\""
+        "object": "\"^bc$\""
       }
     ]
   }
