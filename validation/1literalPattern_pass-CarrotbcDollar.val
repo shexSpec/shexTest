@@ -7,15 +7,15 @@
     "predicate": "http://a.example/p1",
     "valueExpr": {
       "type": "NodeConstraint",
-      "datatype": "http://www.w3.org/2001/XMLSchema#float",
-      "mininclusive": 5
+      "nodeKind": "literal",
+      "pattern": "bc"
     },
     "solutions": [
       {
         "type": "TestedTriple",
         "subject": "http://a.example/s1",
         "predicate": "http://a.example/p1",
-        "object": "\"5.0\"^^http://www.w3.org/2001/XMLSchema#float"
+        "object": "\"^bc$\""
       }
     ]
   }
