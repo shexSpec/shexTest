@@ -644,6 +644,13 @@
         <#1val1vExprAND3_failvc3>
 
 ###   OR valueExpr
+        <#refBNodeORrefIRI_ReflexiveIRI>
+        <#refBNodeORrefIRI_ReflexiveShortIRI>
+        <#refBNodeORrefIRI_IntoReflexiveIRI>
+        <#refBNodeORrefIRI_IntoReflexiveBNode>
+        <#refBNodeORrefIRI_CyclicIRI_IRI>
+        <#refBNodeORrefIRI_CyclicIRI_BNode>
+        <#refBNodeORrefIRI_CyclicIRI_ShortIRI>
 	<#1dotRefOR3_fail>
 	<#1dotRefOR3_passShape1>
 	<#1dotRefOR3_passShape2>
@@ -8901,6 +8908,102 @@
 
 ###   } AND valueExpr
 ###   OR valueExpr {
+
+<#refBNodeORrefIRI_ReflexiveIRI> a sht:ValidationTest ;
+    mf:name "refBNodeORrefIRI_ReflexiveIRI" ;
+    sht:trait sht:OrValueExpression , sht:ValueReference ;
+    rdfs:comment "<S1> { <p1> BNODE @<S1> OR MINLENGTH 20 @<S1> } on { <n1a> <p1> <n1a> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1bnodeRefORRefMinlength.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1a_Ip1_In1a.ttl> ;
+      sht:focus <http://a.example/n1a>
+    ] ;
+    mf:result <refBNodeORrefIRI_ReflexiveIRI.val> ;
+    .
+
+<#refBNodeORrefIRI_ReflexiveShortIRI> a sht:ValidationFailure ;
+    mf:name "refBNodeORrefIRI_ReflexiveShortIRI" ;
+    sht:trait sht:OrValueExpression , sht:ValueReference ;
+    rdfs:comment "<S1> { <p1> BNODE @<S1> OR MINLENGTH 20 @<S1> } on { <n1> <p1> <n1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1bnodeRefORRefMinlength.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip1_In1.ttl> ;
+      sht:focus <http://a.example/n1>
+    ] ;
+    .
+
+<#refBNodeORrefIRI_IntoReflexiveIRI> a sht:ValidationTest ;
+    mf:name "refBNodeORrefIRI_IntoReflexiveIRI" ;
+    sht:trait sht:OrValueExpression , sht:ValueReference ;
+    rdfs:comment "<S1> { <p1> BNODE @<S1> OR MINLENGTH 20 @<S1> } on { <n1> <p1> <n2a> . <n2a> <p1> <n2a> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1bnodeRefORRefMinlength.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip1_In2a.In2a_Ip1_In2a.ttl> ;
+      sht:focus <http://a.example/n1>
+    ] ;
+    mf:result <refBNodeORrefIRI_IntoReflexiveIRI.val> ;
+    .
+
+<#refBNodeORrefIRI_IntoReflexiveBNode> a sht:ValidationTest ;
+    mf:name "refBNodeORrefIRI_IntoReflexiveBNode" ;
+    sht:trait sht:OrValueExpression , sht:ValueReference ;
+    rdfs:comment "<S1> { <p1> BNODE @<S1> OR MINLENGTH 20 @<S1> } on { <n1> <p1> _:n2 . _:n2 <p1> _:n2 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1bnodeRefORRefMinlength.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip1_Bn2.Bn2_Ip1_Bn2.ttl> ;
+      sht:focus <http://a.example/n1>
+    ] ;
+    mf:result <refBNodeORrefIRI_IntoReflexiveBNode.val> ;
+    .
+
+<#refBNodeORrefIRI_CyclicIRI_IRI> a sht:ValidationTest ;
+    mf:name "refBNodeORrefIRI_CyclicIRI_IRI" ;
+    sht:trait sht:OrValueExpression , sht:ValueReference ;
+    rdfs:comment "<S1> { <p1> BNODE @<S1> OR MINLENGTH 20 @<S1> } on { <n1a> <p1> <n2a> . <n2a> <p1> <n1a> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1bnodeRefORRefMinlength.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1a_Ip1_In2a.In2a_Ip1_In1a.ttl> ;
+      sht:focus <http://a.example/n1a>
+    ] ;
+    mf:result <refBNodeORrefIRI_CyclicIRI_IRI.val> ;
+    .
+
+<#refBNodeORrefIRI_CyclicIRI_BNode> a sht:ValidationTest ;
+    mf:name "refBNodeORrefIRI_CyclicIRI_BNode" ;
+    sht:trait sht:OrValueExpression , sht:ValueReference ;
+    rdfs:comment "<S1> { <p1> BNODE @<S1> OR MINLENGTH 20 @<S1> } on { <n1a> <p1> _:n2 . _:n2 <p1> <n1a> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1bnodeRefORRefMinlength.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1a_Ip1_Bn2.Bn2_Ip1_In1a.ttl> ;
+      sht:focus <http://a.example/n1a>
+    ] ;
+    mf:result <refBNodeORrefIRI_CyclicIRI_BNode.val> ;
+    .
+
+<#refBNodeORrefIRI_CyclicIRI_ShortIRI> a sht:ValidationFailure ;
+    mf:name "refBNodeORrefIRI_CyclicIRI_ShortIRI" ;
+    sht:trait sht:OrValueExpression , sht:ValueReference ;
+    rdfs:comment "<S1> { <p1> BNODE @<S1> OR MINLENGTH 20 @<S1> } on { <n1> <p1> <n2a> . <n2a> <p1> <n1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1bnodeRefORRefMinlength.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip1_In2a.In2a_Ip1_In1.ttl> ;
+      sht:focus <http://a.example/n1>
+    ] ;
+    .
 
 <#1dotRefOR3_fail> a sht:ValidationFailure ;
     mf:name "1dotRefOR3_fail" ;

@@ -9970,6 +9970,137 @@
           "status": "mf:proposed"
         },
         {
+          "@id": "#refBNodeORrefIRI_ReflexiveIRI",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1bnodeRefORRefMinlength.shex",
+            "shape": "http://a.example/S1",
+            "data": "In1a_Ip1_In1a.ttl",
+            "focus": "http://a.example/n1a"
+          },
+          "extensionResults": [],
+          "name": "refBNodeORrefIRI_ReflexiveIRI",
+          "trait": [
+            "OrValueExpression",
+            "ValueReference"
+          ],
+          "comment": "<S1> { <p1> BNODE @<S1> OR MINLENGTH 20 @<S1> } on { <n1a> <p1> <n1a> }",
+          "status": "mf:proposed",
+          "result": "refBNodeORrefIRI_ReflexiveIRI.val"
+        },
+        {
+          "@id": "#refBNodeORrefIRI_ReflexiveShortIRI",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1bnodeRefORRefMinlength.shex",
+            "shape": "http://a.example/S1",
+            "data": "In1_Ip1_In1.ttl",
+            "focus": "http://a.example/n1"
+          },
+          "extensionResults": [],
+          "name": "refBNodeORrefIRI_ReflexiveShortIRI",
+          "trait": [
+            "OrValueExpression",
+            "ValueReference"
+          ],
+          "comment": "<S1> { <p1> BNODE @<S1> OR MINLENGTH 20 @<S1> } on { <n1> <p1> <n1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#refBNodeORrefIRI_IntoReflexiveIRI",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1bnodeRefORRefMinlength.shex",
+            "shape": "http://a.example/S1",
+            "data": "In1_Ip1_In2a.In2a_Ip1_In2a.ttl",
+            "focus": "http://a.example/n1"
+          },
+          "extensionResults": [],
+          "name": "refBNodeORrefIRI_IntoReflexiveIRI",
+          "trait": [
+            "OrValueExpression",
+            "ValueReference"
+          ],
+          "comment": "<S1> { <p1> BNODE @<S1> OR MINLENGTH 20 @<S1> } on { <n1> <p1> <n2a> . <n2a> <p1> <n2a> }",
+          "status": "mf:proposed",
+          "result": "refBNodeORrefIRI_IntoReflexiveIRI.val"
+        },
+        {
+          "@id": "#refBNodeORrefIRI_IntoReflexiveBNode",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1bnodeRefORRefMinlength.shex",
+            "shape": "http://a.example/S1",
+            "data": "In1_Ip1_Bn2.Bn2_Ip1_Bn2.ttl",
+            "focus": "http://a.example/n1"
+          },
+          "extensionResults": [],
+          "name": "refBNodeORrefIRI_IntoReflexiveBNode",
+          "trait": [
+            "OrValueExpression",
+            "ValueReference"
+          ],
+          "comment": "<S1> { <p1> BNODE @<S1> OR MINLENGTH 20 @<S1> } on { <n1> <p1> _:n2 . _:n2 <p1> _:n2 }",
+          "status": "mf:proposed",
+          "result": "refBNodeORrefIRI_IntoReflexiveBNode.val"
+        },
+        {
+          "@id": "#refBNodeORrefIRI_CyclicIRI_IRI",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1bnodeRefORRefMinlength.shex",
+            "shape": "http://a.example/S1",
+            "data": "In1a_Ip1_In2a.In2a_Ip1_In1a.ttl",
+            "focus": "http://a.example/n1a"
+          },
+          "extensionResults": [],
+          "name": "refBNodeORrefIRI_CyclicIRI_IRI",
+          "trait": [
+            "OrValueExpression",
+            "ValueReference"
+          ],
+          "comment": "<S1> { <p1> BNODE @<S1> OR MINLENGTH 20 @<S1> } on { <n1a> <p1> <n2a> . <n2a> <p1> <n1a> }",
+          "status": "mf:proposed",
+          "result": "refBNodeORrefIRI_CyclicIRI_IRI.val"
+        },
+        {
+          "@id": "#refBNodeORrefIRI_CyclicIRI_BNode",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1bnodeRefORRefMinlength.shex",
+            "shape": "http://a.example/S1",
+            "data": "In1a_Ip1_Bn2.Bn2_Ip1_In1a.ttl",
+            "focus": "http://a.example/n1a"
+          },
+          "extensionResults": [],
+          "name": "refBNodeORrefIRI_CyclicIRI_BNode",
+          "trait": [
+            "OrValueExpression",
+            "ValueReference"
+          ],
+          "comment": "<S1> { <p1> BNODE @<S1> OR MINLENGTH 20 @<S1> } on { <n1a> <p1> _:n2 . _:n2 <p1> <n1a> }",
+          "status": "mf:proposed",
+          "result": "refBNodeORrefIRI_CyclicIRI_BNode.val"
+        },
+        {
+          "@id": "#refBNodeORrefIRI_CyclicIRI_ShortIRI",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1bnodeRefORRefMinlength.shex",
+            "shape": "http://a.example/S1",
+            "data": "In1_Ip1_In2a.In2a_Ip1_In1.ttl",
+            "focus": "http://a.example/n1"
+          },
+          "extensionResults": [],
+          "name": "refBNodeORrefIRI_CyclicIRI_ShortIRI",
+          "trait": [
+            "OrValueExpression",
+            "ValueReference"
+          ],
+          "comment": "<S1> { <p1> BNODE @<S1> OR MINLENGTH 20 @<S1> } on { <n1> <p1> <n2a> . <n2a> <p1> <n1> }",
+          "status": "mf:proposed"
+        },
+        {
           "@id": "#1dotRefOR3_fail",
           "@type": "sht:ValidationFailure",
           "action": {
