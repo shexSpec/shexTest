@@ -9367,54 +9367,54 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#1dotSome2dot_pass_p1",
+          "@id": "#1dotOne2dot_pass_p1",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/1dotSome2dot.shex",
+            "schema": "../schemas/1dotOne2dot.shex",
             "shape": "http://a.example/S1",
             "data": "p1.ttl",
             "focus": "x"
           },
           "extensionResults": [],
-          "name": "1dotSome2dot_pass_p1",
+          "name": "1dotOne2dot_pass_p1",
           "trait": [
             "EachOf-unvisited",
             "OneOf"
           ],
           "comment": ":S1 {:p1 .|:p2 .,:p3 .} / { :s1 :p1 \"p1-0\" . }",
           "status": "mf:proposed",
-          "result": "1dotSome2dot_pass_p1.val"
+          "result": "1dotOne2dot_pass_p1.val"
         },
         {
-          "@id": "#1dotSome2dot_pass_p2p3",
+          "@id": "#1dotOne2dot_pass_p2p3",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/1dotSome2dot.shex",
+            "schema": "../schemas/1dotOne2dot.shex",
             "shape": "http://a.example/S1",
             "data": "p2p3.ttl",
             "focus": "x"
           },
           "extensionResults": [],
-          "name": "1dotSome2dot_pass_p2p3",
+          "name": "1dotOne2dot_pass_p2p3",
           "trait": [
             "OneOf",
             "EachOf"
           ],
           "comment": ":S1 {:p1 .|:p2 .,:p3 .} / { :s1 :p2 \"p2-0\"; :p3 \"p3-0\" . }",
           "status": "mf:proposed",
-          "result": "1dotSome2dot_pass_p2p3.val"
+          "result": "1dotOne2dot_pass_p2p3.val"
         },
         {
-          "@id": "#1dotSome2dot-oneOf_fail_p1p2p3",
+          "@id": "#1dotOne2dot-oneOf_fail_p1p2p3",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/1dotSome2dot.shex",
+            "schema": "../schemas/1dotOne2dot.shex",
             "shape": "http://a.example/S1",
             "data": "p1p2p3.ttl",
             "focus": "x"
           },
           "extensionResults": [],
-          "name": "1dotSome2dot-oneOf_fail_p1p2p3",
+          "name": "1dotOne2dot-oneOf_fail_p1p2p3",
           "trait": [
             "EachOf-unvisited",
             "OneOf"
@@ -9423,16 +9423,16 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#1dotSome2dot-someOf_fail_p1p2p3",
+          "@id": "#1dotOne2dot-someOf_fail_p1p2p3",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/1dotSome2dot.shex",
+            "schema": "../schemas/1dotOne2dot.shex",
             "shape": "http://a.example/S1",
             "data": "p1p2p3.ttl",
             "focus": "x"
           },
           "extensionResults": [],
-          "name": "1dotSome2dot-someOf_fail_p1p2p3",
+          "name": "1dotOne2dot-someOf_fail_p1p2p3",
           "trait": [
             "MissedMatchables",
             "OneOf",
@@ -9442,54 +9442,54 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#open1dotSomeopen2dotcloseclose_pass_p1",
+          "@id": "#open1dotOneopen2dotcloseclose_pass_p1",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/open1dotSomeopen2dotcloseclose.shex",
+            "schema": "../schemas/open1dotOneopen2dotcloseclose.shex",
             "shape": "http://a.example/S1",
             "data": "p1.ttl",
             "focus": "x"
           },
           "extensionResults": [],
-          "name": "open1dotSomeopen2dotcloseclose_pass_p1",
+          "name": "open1dotOneopen2dotcloseclose_pass_p1",
           "trait": [
             "EachOf-unvisited",
             "OneOf"
           ],
           "comment": ":S1 {(:p1 .|(:p2 .,:p3 .))} / { :s1 :p1 \"p1-0\" . }",
           "status": "mf:proposed",
-          "result": "1dotSome2dot_pass_p1.val"
+          "result": "1dotOne2dot_pass_p1.val"
         },
         {
-          "@id": "#open1dotSomeopen2dotcloseclose_pass_p2p3",
+          "@id": "#open1dotOneopen2dotcloseclose_pass_p2p3",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/open1dotSomeopen2dotcloseclose.shex",
+            "schema": "../schemas/open1dotOneopen2dotcloseclose.shex",
             "shape": "http://a.example/S1",
             "data": "p2p3.ttl",
             "focus": "x"
           },
           "extensionResults": [],
-          "name": "open1dotSomeopen2dotcloseclose_pass_p2p3",
+          "name": "open1dotOneopen2dotcloseclose_pass_p2p3",
           "trait": [
             "OneOf",
             "EachOf"
           ],
           "comment": ":S1 {(:p1 .|(:p2 .,:p3 .))} / { :s1 :p2 \"p2-0\"; :p3 \"p3-0\" . }",
           "status": "mf:proposed",
-          "result": "1dotSome2dot_pass_p2p3.val"
+          "result": "1dotOne2dot_pass_p2p3.val"
         },
         {
-          "@id": "#open1dotSomeopen2dotcloseclose_fail_p1p2p3",
+          "@id": "#open1dotOneopen2dotcloseclose_fail_p1p2p3",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/open1dotSomeopen2dotcloseclose.shex",
+            "schema": "../schemas/open1dotOneopen2dotcloseclose.shex",
             "shape": "http://a.example/S1",
             "data": "p1p2p3.ttl",
             "focus": "x"
           },
           "extensionResults": [],
-          "name": "open1dotSomeopen2dotcloseclose_fail_p1p2p3",
+          "name": "open1dotOneopen2dotcloseclose_fail_p1p2p3",
           "trait": [
             "EachOf-unvisited",
             "OneOf"
@@ -9498,54 +9498,54 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#openopen1dotSome1dotclose1dotclose_pass_p1p3",
+          "@id": "#openopen1dotOne1dotclose1dotclose_pass_p1p3",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/openopen1dotSome1dotclose1dotclose.shex",
+            "schema": "../schemas/openopen1dotOne1dotclose1dotclose.shex",
             "shape": "http://a.example/S1",
             "data": "p1p3.ttl",
             "focus": "x"
           },
           "extensionResults": [],
-          "name": "openopen1dotSome1dotclose1dotclose_pass_p1p3",
+          "name": "openopen1dotOne1dotclose1dotclose_pass_p1p3",
           "trait": [
             "OneOf",
             "EachOf"
           ],
           "comment": ":S1 { ((:p1 .| :p2 .), :p3 .) } / { <x> :p1 \"p1-0\"; :p3 \"p3-0\" . }",
           "status": "mf:proposed",
-          "result": "openopen1dotSome1dotclose1dotclose_pass_p1p3.val"
+          "result": "openopen1dotOne1dotclose1dotclose_pass_p1p3.val"
         },
         {
-          "@id": "#openopen1dotSome1dotclose1dotclose_pass_p2p3",
+          "@id": "#openopen1dotOne1dotclose1dotclose_pass_p2p3",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/openopen1dotSome1dotclose1dotclose.shex",
+            "schema": "../schemas/openopen1dotOne1dotclose1dotclose.shex",
             "shape": "http://a.example/S1",
             "data": "p2p3.ttl",
             "focus": "x"
           },
           "extensionResults": [],
-          "name": "openopen1dotSome1dotclose1dotclose_pass_p2p3",
+          "name": "openopen1dotOne1dotclose1dotclose_pass_p2p3",
           "trait": [
             "OneOf",
             "EachOf"
           ],
           "comment": ":S1 { ((:p1 .| :p2 .), :p3 .) } / { <x> :p2 \"p2-0\"; :p3 \"p3-0\" . }",
           "status": "mf:proposed",
-          "result": "openopen1dotSome1dotclose1dotclose_pass_p2p3.val"
+          "result": "openopen1dotOne1dotclose1dotclose_pass_p2p3.val"
         },
         {
-          "@id": "#openopen1dotSome1dotclose1dotclose_fail_p1",
+          "@id": "#openopen1dotOne1dotclose1dotclose_fail_p1",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/openopen1dotSome1dotclose1dotclose.shex",
+            "schema": "../schemas/openopen1dotOne1dotclose1dotclose.shex",
             "shape": "http://a.example/S1",
             "data": "p1.ttl",
             "focus": "x"
           },
           "extensionResults": [],
-          "name": "openopen1dotSome1dotclose1dotclose_fail_p1",
+          "name": "openopen1dotOne1dotclose1dotclose_fail_p1",
           "trait": [
             "EachOf-unvisited",
             "OneOf"
@@ -9554,16 +9554,16 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#openopen1dotSome1dotclose1dotclose_fail_p3",
+          "@id": "#openopen1dotOne1dotclose1dotclose_fail_p3",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/openopen1dotSome1dotclose1dotclose.shex",
+            "schema": "../schemas/openopen1dotOne1dotclose1dotclose.shex",
             "shape": "http://a.example/S1",
             "data": "p3.ttl",
             "focus": "x"
           },
           "extensionResults": [],
-          "name": "openopen1dotSome1dotclose1dotclose_fail_p3",
+          "name": "openopen1dotOne1dotclose1dotclose_fail_p3",
           "trait": [
             "OneOf",
             "EachOf"
@@ -9572,16 +9572,16 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#openopen1dotSome1dotclose1dotclose_fail_p1p2",
+          "@id": "#openopen1dotOne1dotclose1dotclose_fail_p1p2",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/openopen1dotSome1dotclose1dotclose.shex",
+            "schema": "../schemas/openopen1dotOne1dotclose1dotclose.shex",
             "shape": "http://a.example/S1",
             "data": "p1p2.ttl",
             "focus": "x"
           },
           "extensionResults": [],
-          "name": "openopen1dotSome1dotclose1dotclose_fail_p1p2",
+          "name": "openopen1dotOne1dotclose1dotclose_fail_p1p2",
           "trait": [
             "OneOf",
             "EachOf"
@@ -10563,16 +10563,16 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#open3Somedotclosecard2_fail-p1",
+          "@id": "#open3Onedotclosecard2_fail-p1",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/open3Somedotclosecard2.shex",
+            "schema": "../schemas/open3Onedotclosecard2.shex",
             "shape": "http://a.example/S1",
             "data": "p1.ttl",
             "focus": "x"
           },
           "extensionResults": [],
-          "name": "open3Somedotclosecard2_fail-p1",
+          "name": "open3Onedotclosecard2_fail-p1",
           "trait": [
             "RepeatedOneOf",
             "EachOf"
@@ -10581,35 +10581,35 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#open3Somedotclosecard2_pass-p1X2",
+          "@id": "#open3Onedotclosecard2_pass-p1X2",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/open3Somedotclosecard2.shex",
+            "schema": "../schemas/open3Onedotclosecard2.shex",
             "shape": "http://a.example/S1",
             "data": "p1X2.ttl",
             "focus": "x"
           },
           "extensionResults": [],
-          "name": "open3Somedotclosecard2_pass-p1X2",
+          "name": "open3Onedotclosecard2_pass-p1X2",
           "trait": [
             "RepeatedOneOf",
             "EachOf"
           ],
           "comment": "<S1> { ( <p1> .| <p2> .| <p3> . ){2} } / { <s> <p1> \"p1-n\" }X2",
           "status": "mf:proposed",
-          "result": "open3Somedotclosecard2-p1X2.val"
+          "result": "open3Onedotclosecard2-p1X2.val"
         },
         {
-          "@id": "#open3Somedotclosecard2_fail-p1X3",
+          "@id": "#open3Onedotclosecard2_fail-p1X3",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/open3Somedotclosecard2.shex",
+            "schema": "../schemas/open3Onedotclosecard2.shex",
             "shape": "http://a.example/S1",
             "data": "p1X3.ttl",
             "focus": "x"
           },
           "extensionResults": [],
-          "name": "open3Somedotclosecard2_fail-p1X3",
+          "name": "open3Onedotclosecard2_fail-p1X3",
           "trait": [
             "RepeatedOneOf",
             "EachOf"
@@ -10618,16 +10618,16 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#open3Somedotclosecard2_fail-p1X4",
+          "@id": "#open3Onedotclosecard2_fail-p1X4",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/open3Somedotclosecard2.shex",
+            "schema": "../schemas/open3Onedotclosecard2.shex",
             "shape": "http://a.example/S1",
             "data": "p1X4.ttl",
             "focus": "x"
           },
           "extensionResults": [],
-          "name": "open3Somedotclosecard2_fail-p1X4",
+          "name": "open3Onedotclosecard2_fail-p1X4",
           "trait": [
             "RepeatedOneOf",
             "EachOf"
@@ -10636,73 +10636,73 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#open3Somedotclosecard2_pass-p1p2",
+          "@id": "#open3Onedotclosecard2_pass-p1p2",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/open3Somedotclosecard2.shex",
+            "schema": "../schemas/open3Onedotclosecard2.shex",
             "shape": "http://a.example/S1",
             "data": "p1p2.ttl",
             "focus": "x"
           },
           "extensionResults": [],
-          "name": "open3Somedotclosecard2_pass-p1p2",
+          "name": "open3Onedotclosecard2_pass-p1p2",
           "trait": [
             "RepeatedOneOf",
             "EachOf"
           ],
           "comment": "<S1> { ( <p1> .| <p2> .| <p3> . ){2} } / { <s> <p1> \"p1-0\"; <p2> \"p2-0\" }",
           "status": "mf:proposed",
-          "result": "open3Somedotclosecard2-p1p2.val"
+          "result": "open3Onedotclosecard2-p1p2.val"
         },
         {
-          "@id": "#open3Somedotclosecard2_pass-p1p3",
+          "@id": "#open3Onedotclosecard2_pass-p1p3",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/open3Somedotclosecard2.shex",
+            "schema": "../schemas/open3Onedotclosecard2.shex",
             "shape": "http://a.example/S1",
             "data": "p1p3.ttl",
             "focus": "x"
           },
           "extensionResults": [],
-          "name": "open3Somedotclosecard2_pass-p1p3",
+          "name": "open3Onedotclosecard2_pass-p1p3",
           "trait": [
             "RepeatedOneOf",
             "EachOf"
           ],
           "comment": "<S1> { ( <p1> .| <p2> .| <p3> . ){2} } / { <s> <p1> \"p1-0\"; <p3> \"p3-0\" }",
           "status": "mf:proposed",
-          "result": "open3Somedotclosecard2-p1p3.val"
+          "result": "open3Onedotclosecard2-p1p3.val"
         },
         {
-          "@id": "#open3Somedotclosecard2_pass-p2p3",
+          "@id": "#open3Onedotclosecard2_pass-p2p3",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/open3Somedotclosecard2.shex",
+            "schema": "../schemas/open3Onedotclosecard2.shex",
             "shape": "http://a.example/S1",
             "data": "p2p3.ttl",
             "focus": "x"
           },
           "extensionResults": [],
-          "name": "open3Somedotclosecard2_pass-p2p3",
+          "name": "open3Onedotclosecard2_pass-p2p3",
           "trait": [
             "RepeatedOneOf",
             "EachOf"
           ],
           "comment": "<S1> { ( <p1> .| <p2> .| <p3> . ){2} } / { <s> <p2> \"p2-0\"; <p3> \"p3-0\" }",
           "status": "mf:proposed",
-          "result": "open3Somedotclosecard2-p2p3.val"
+          "result": "open3Onedotclosecard2-p2p3.val"
         },
         {
-          "@id": "#open3Somedotclosecard2_fail-p1p2p3",
+          "@id": "#open3Onedotclosecard2_fail-p1p2p3",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/open3Somedotclosecard2.shex",
+            "schema": "../schemas/open3Onedotclosecard2.shex",
             "shape": "http://a.example/S1",
             "data": "p1p2p3.ttl",
             "focus": "x"
           },
           "extensionResults": [],
-          "name": "open3Somedotclosecard2_fail-p1p2p3",
+          "name": "open3Onedotclosecard2_fail-p1p2p3",
           "trait": [
             "RepeatedOneOf",
             "EachOf"
@@ -10711,16 +10711,16 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#open3Somedotclosecard23_fail-p1",
+          "@id": "#open3Onedotclosecard23_fail-p1",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/open3Somedotclosecard23.shex",
+            "schema": "../schemas/open3Onedotclosecard23.shex",
             "shape": "http://a.example/S1",
             "data": "p1.ttl",
             "focus": "x"
           },
           "extensionResults": [],
-          "name": "open3Somedotclosecard23_fail-p1",
+          "name": "open3Onedotclosecard23_fail-p1",
           "trait": [
             "RepeatedOneOf",
             "EachOf"
@@ -10729,54 +10729,54 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#open3Somedotclosecard23_pass-p1X2",
+          "@id": "#open3Onedotclosecard23_pass-p1X2",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/open3Somedotclosecard23.shex",
+            "schema": "../schemas/open3Onedotclosecard23.shex",
             "shape": "http://a.example/S1",
             "data": "p1X2.ttl",
             "focus": "x"
           },
           "extensionResults": [],
-          "name": "open3Somedotclosecard23_pass-p1X2",
+          "name": "open3Onedotclosecard23_pass-p1X2",
           "trait": [
             "RepeatedOneOf",
             "EachOf"
           ],
           "comment": "<S1> { ( <p1> .| <p2> .| <p3> . ){2,3} } / { <s> <p1> \"p1-n\" }X2",
           "status": "mf:proposed",
-          "result": "open3Somedotclosecard23-p1X2.val"
+          "result": "open3Onedotclosecard23-p1X2.val"
         },
         {
-          "@id": "#open3Somedotclosecard23_pass-p1X3",
+          "@id": "#open3Onedotclosecard23_pass-p1X3",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/open3Somedotclosecard23.shex",
+            "schema": "../schemas/open3Onedotclosecard23.shex",
             "shape": "http://a.example/S1",
             "data": "p1X3.ttl",
             "focus": "x"
           },
           "extensionResults": [],
-          "name": "open3Somedotclosecard23_pass-p1X3",
+          "name": "open3Onedotclosecard23_pass-p1X3",
           "trait": [
             "RepeatedOneOf",
             "EachOf"
           ],
           "comment": "<S1> { ( <p1> .| <p2> .| <p3> . ){2,3} } / { <s> <p1> \"p1-n\" }X3",
           "status": "mf:proposed",
-          "result": "open3Somedotclosecard23-p1X3.val"
+          "result": "open3Onedotclosecard23-p1X3.val"
         },
         {
-          "@id": "#open3Somedotclosecard23_fail-p1X4",
+          "@id": "#open3Onedotclosecard23_fail-p1X4",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/open3Somedotclosecard23.shex",
+            "schema": "../schemas/open3Onedotclosecard23.shex",
             "shape": "http://a.example/S1",
             "data": "p1X4.ttl",
             "focus": "x"
           },
           "extensionResults": [],
-          "name": "open3Somedotclosecard23_fail-p1X4",
+          "name": "open3Onedotclosecard23_fail-p1X4",
           "trait": [
             "RepeatedOneOf",
             "EachOf"
@@ -10785,73 +10785,73 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#open3Somedotclosecard23_pass-p1p2",
+          "@id": "#open3Onedotclosecard23_pass-p1p2",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/open3Somedotclosecard23.shex",
+            "schema": "../schemas/open3Onedotclosecard23.shex",
             "shape": "http://a.example/S1",
             "data": "p1p2.ttl",
             "focus": "x"
           },
           "extensionResults": [],
-          "name": "open3Somedotclosecard23_pass-p1p2",
+          "name": "open3Onedotclosecard23_pass-p1p2",
           "trait": [
             "RepeatedOneOf",
             "EachOf"
           ],
           "comment": "<S1> { ( <p1> .| <p2> .| <p3> . ){2,3} } / { <s> <p1> \"p1-0\"; <p2> \"p2-0\" }",
           "status": "mf:proposed",
-          "result": "open3Somedotclosecard23-p1p2.val"
+          "result": "open3Onedotclosecard23-p1p2.val"
         },
         {
-          "@id": "#open3Somedotclosecard23_pass-p1p3",
+          "@id": "#open3Onedotclosecard23_pass-p1p3",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/open3Somedotclosecard23.shex",
+            "schema": "../schemas/open3Onedotclosecard23.shex",
             "shape": "http://a.example/S1",
             "data": "p1p3.ttl",
             "focus": "x"
           },
           "extensionResults": [],
-          "name": "open3Somedotclosecard23_pass-p1p3",
+          "name": "open3Onedotclosecard23_pass-p1p3",
           "trait": [
             "RepeatedOneOf",
             "EachOf"
           ],
           "comment": "<S1> { ( <p1> .| <p2> .| <p3> . ){2,3} } / { <s> <p1> \"p1-0\"; <p3> \"p3-0\" }",
           "status": "mf:proposed",
-          "result": "open3Somedotclosecard23-p1p3.val"
+          "result": "open3Onedotclosecard23-p1p3.val"
         },
         {
-          "@id": "#open3Somedotclosecard23_pass-p2p3",
+          "@id": "#open3Onedotclosecard23_pass-p2p3",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/open3Somedotclosecard23.shex",
+            "schema": "../schemas/open3Onedotclosecard23.shex",
             "shape": "http://a.example/S1",
             "data": "p2p3.ttl",
             "focus": "x"
           },
           "extensionResults": [],
-          "name": "open3Somedotclosecard23_pass-p2p3",
+          "name": "open3Onedotclosecard23_pass-p2p3",
           "trait": [
             "RepeatedOneOf",
             "EachOf"
           ],
           "comment": "<S1> { ( <p1> .| <p2> .| <p3> . ){2,3} } / { <s> <p2> \"p2-0\"; <p3> \"p3-0\" }",
           "status": "mf:proposed",
-          "result": "open3Somedotclosecard23-p2p3.val"
+          "result": "open3Onedotclosecard23-p2p3.val"
         },
         {
-          "@id": "#open3Somedotclosecard23_pass-p1p2p3",
+          "@id": "#open3Onedotclosecard23_pass-p1p2p3",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/open3Somedotclosecard23.shex",
+            "schema": "../schemas/open3Onedotclosecard23.shex",
             "shape": "http://a.example/S1",
             "data": "p1p2p3.ttl",
             "focus": "x"
           },
           "extensionResults": [],
-          "name": "open3Somedotclosecard23_pass-p1p2p3",
+          "name": "open3Onedotclosecard23_pass-p1p2p3",
           "trait": [
             "Greedy",
             "RepeatedOneOf",
@@ -10859,19 +10859,19 @@
           ],
           "comment": "<S1> { ( <p1> .| <p2> .| <p3> . ){2,3} } / { <s> <p1> \"p1-0\"; <p2> \"p2-0\"; <p3> \"p3-0\" }",
           "status": "mf:proposed",
-          "result": "open3Somedotclosecard23-p1p2p3.val"
+          "result": "open3Onedotclosecard23-p1p2p3.val"
         },
         {
-          "@id": "#open4Somedotclosecard23_fail-p1p2p3p4",
+          "@id": "#open4Onedotclosecard23_fail-p1p2p3p4",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/open4Somedotclosecard23.shex",
+            "schema": "../schemas/open4Onedotclosecard23.shex",
             "shape": "http://a.example/S1",
             "data": "p1p2p3p4.ttl",
             "focus": "x"
           },
           "extensionResults": [],
-          "name": "open4Somedotclosecard23_fail-p1p2p3p4",
+          "name": "open4Onedotclosecard23_fail-p1p2p3p4",
           "trait": [
             "RepeatedOneOf",
             "EachOf"
@@ -11100,16 +11100,16 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#1dotSome2dotExtra-someOf_pass_p1p2p3",
+          "@id": "#1dotOne2dotExtra-someOf_pass_p1p2p3",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/1dotSome2dot.shex",
+            "schema": "../schemas/1dotOne2dot.shex",
             "shape": "http://a.example/S1",
             "data": "p1p2p3.ttl",
             "focus": "x"
           },
           "extensionResults": [],
-          "name": "1dotSome2dotExtra-someOf_pass_p1p2p3",
+          "name": "1dotOne2dotExtra-someOf_pass_p1p2p3",
           "trait": [
             "Extra",
             "MissedMatchables",
@@ -11120,16 +11120,16 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#1val1IRIREFExtra1Some_pass-iri1",
+          "@id": "#1val1IRIREFExtra1One_pass-iri1",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/1val1IRIREFExtra1Some.shex",
+            "schema": "../schemas/1val1IRIREFExtra1One.shex",
             "shape": "http://a.example/S1",
             "data": "Is1_Ip1_Io1.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1val1IRIREFExtra1Some_pass-iri1",
+          "name": "1val1IRIREFExtra1One_pass-iri1",
           "trait": [
             "Extra",
             "IriEquivalence",
@@ -11137,19 +11137,19 @@
           ],
           "comment": "<S> EXTRA <p1> { <p0> . | <p1> [<o1>], <p2> .? } on { <s1> <p1> <o1> }",
           "status": "mf:proposed",
-          "result": "1val1IRIREFExtra1Some_Is1_Ip1_Io1.val"
+          "result": "1val1IRIREFExtra1One_Is1_Ip1_Io1.val"
         },
         {
-          "@id": "#1val1IRIREFExtra1Some_pass-iri2",
+          "@id": "#1val1IRIREFExtra1One_pass-iri2",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/1val1IRIREFExtra1Some.shex",
+            "schema": "../schemas/1val1IRIREFExtra1One.shex",
             "shape": "http://a.example/S1",
             "data": "Is1_Ip1_Io1,Io2.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1val1IRIREFExtra1Some_pass-iri2",
+          "name": "1val1IRIREFExtra1One_pass-iri2",
           "trait": [
             "Extra",
             "IriEquivalence",
@@ -11157,7 +11157,7 @@
           ],
           "comment": "<S> EXTRA <p1> { <p0> . | <p1> [<o1>], <p2> .? } on { <s> <p1> <o1>, <o2> }",
           "status": "mf:proposed",
-          "result": "1val1IRIREFExtra1Some_Is1_Ip1_Io1.val"
+          "result": "1val1IRIREFExtra1One_Is1_Ip1_Io1.val"
         },
         {
           "@id": "#1dotExtra1_pass-iri1",
@@ -11505,42 +11505,42 @@
           "result": "2EachInclude1-after_pass.val"
         },
         {
-          "@id": "#2SomeInclude1_pass",
+          "@id": "#2OneInclude1_pass",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/2SomeInclude1.shex",
+            "schema": "../schemas/2OneInclude1.shex",
             "shape": "http://a.example/S1",
             "data": "In1_Ip1_LX.ttl",
             "focus": "http://a.example/n1"
           },
           "extensionResults": [],
-          "name": "2SomeInclude1_pass",
+          "name": "2OneInclude1_pass",
           "trait": [
             "Include",
             "OneOf"
           ],
           "comment": "<S1> { &<S2> | <p1> . } <S2> { <p2> . } on { <n1> <p1> \"X\" }",
           "status": "mf:proposed",
-          "result": "2SomeInclude1_pass.val"
+          "result": "2OneInclude1_pass.val"
         },
         {
-          "@id": "#2SomeInclude1-after_pass",
+          "@id": "#2OneInclude1-after_pass",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/2SomeInclude1-after.shex",
+            "schema": "../schemas/2OneInclude1-after.shex",
             "shape": "http://a.example/S1",
             "data": "In1_Ip1_LX.ttl",
             "focus": "http://a.example/n1"
           },
           "extensionResults": [],
-          "name": "2SomeInclude1-after_pass",
+          "name": "2OneInclude1-after_pass",
           "trait": [
             "Include",
             "OneOf"
           ],
           "comment": "<S1> { <p1> . | &<S2> } <S2> { <p2> . } on { <n1> <p1> \"X\" }",
           "status": "mf:proposed",
-          "result": "2SomeInclude1_pass.val"
+          "result": "2OneInclude1_pass.val"
         },
         {
           "@id": "#1dotAnnotIRIREF_pass",
