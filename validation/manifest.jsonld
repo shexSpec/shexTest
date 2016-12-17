@@ -12914,6 +12914,24 @@
           "result": "1focus_dot_pass.val"
         },
         {
+          "@id": "#focusdatatype_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/focusdatatype.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_LabDTbloodType.ttl",
+            "focus": "\"ab\"^^http://a.example/bloodType"
+          },
+          "extensionResults": [],
+          "name": "focusdatatype_pass",
+          "trait": [
+            "FocusConstraint"
+          ],
+          "comment": "<S> <dt1> on {  }",
+          "status": "mf:proposed",
+          "result": "focusdatatype_pass.val"
+        },
+        {
           "@id": "#focusdatatype_fail",
           "@type": "sht:ValidationFailure",
           "action": {
@@ -12925,10 +12943,28 @@
           "extensionResults": [],
           "name": "focusdatatype_fail",
           "trait": [
-            "Unsatisfiable"
+            "focusConstraint"
           ],
           "comment": "<S> <dt1> on {  }",
           "status": "mf:proposed"
+        },
+        {
+          "@id": "#focusvs_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/focusvs.shex",
+            "shape": "http://a.example/vs1",
+            "data": "Is1_Ip1_Iv1.ttl",
+            "focus": "http://a.example/v1"
+          },
+          "extensionResults": [],
+          "name": "focusvs_pass",
+          "trait": [
+            "FocusConstraint"
+          ],
+          "comment": "<S> [<v1> <v2> <v3>] on {  }",
+          "status": "mf:proposed",
+          "result": "focusvs_pass.val"
         },
         {
           "@id": "#focusvs_fail",
@@ -12942,7 +12978,7 @@
           "extensionResults": [],
           "name": "focusvs_fail",
           "trait": [
-            "Unsatisfiable"
+            "FocusConstraint"
           ],
           "comment": "<S> [<v1> <v2> <v3>] on {  }",
           "status": "mf:proposed"
@@ -12959,9 +12995,115 @@
           "extensionResults": [],
           "name": "1focusvsANDdatatype_fail",
           "trait": [
+            "FocusConstraint",
             "Unsatisfiable"
           ],
           "comment": "<S> [<v1> <v2> <v3>] AND <dt1> on {  }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1focusvsANDIRI_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/focusvsANDIRI.shex",
+            "shape": "http://a.example/vs1",
+            "data": "empty.ttl",
+            "focus": "http://a.example/v1"
+          },
+          "extensionResults": [],
+          "name": "1focusvsANDIRI_pass",
+          "trait": [
+            "FocusConstraint"
+          ],
+          "comment": "<S> [<v1> <v2> <v3>] AND IRI on {  }",
+          "status": "mf:proposed",
+          "result": "1focusvsANDIRI_pass.val"
+        },
+        {
+          "@id": "#1focusvsANDIRI_fail",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/focusvsANDIRI.shex",
+            "shape": "http://a.example/vs1",
+            "data": "empty.ttl",
+            "focus": "http://a.example/v4"
+          },
+          "extensionResults": [],
+          "name": "1focusvsANDIRI_fail",
+          "trait": [
+            "FocusConstraint"
+          ],
+          "comment": "<S> [<v1> <v2> <v3>] AND IRI on {  }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1focusvsORdatatype_pass-val",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/focusvsORdatatype.shex",
+            "shape": "http://a.example/vs1",
+            "data": "empty.ttl",
+            "focus": "http://a.example/v1"
+          },
+          "extensionResults": [],
+          "name": "1focusvsORdatatype_pass-val",
+          "trait": [
+            "FocusConstraint"
+          ],
+          "comment": "<S> [<v1> <v2> <v3>] OR <dt1> on {  }",
+          "status": "mf:proposed",
+          "result": "1focusvsORdatatype_pass-val.val"
+        },
+        {
+          "@id": "#1focusvsORdatatype_fail-val",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/focusvsORdatatype.shex",
+            "shape": "http://a.example/vs1",
+            "data": "empty.ttl",
+            "focus": "http://a.example/v4"
+          },
+          "extensionResults": [],
+          "name": "1focusvsORdatatype_fail-val",
+          "trait": [
+            "FocusConstraint"
+          ],
+          "comment": "<S> [<v1> <v2> <v3>] OR <dt1> on {  }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1focusvsORdatatype_pass-dt",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/focusvsORdatatype.shex",
+            "shape": "http://a.example/vs1",
+            "data": "empty.ttl",
+            "focus": "\"v1\"^^http://a.example/dt1"
+          },
+          "extensionResults": [],
+          "name": "1focusvsORdatatype_pass-dt",
+          "trait": [
+            "FocusConstraint"
+          ],
+          "comment": "<S> [<v1> <v2> <v3>] OR <dt1> on {  }",
+          "status": "mf:proposed",
+          "result": "1focusvsORdatatype_pass-dt.val"
+        },
+        {
+          "@id": "#1focusvsORdatatype_fail-dt",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/focusvsORdatatype.shex",
+            "shape": "http://a.example/vs1",
+            "data": "empty.ttl",
+            "focus": "\"v1\"^^http://a.example/dt2"
+          },
+          "extensionResults": [],
+          "name": "1focusvsORdatatype_fail-dt",
+          "trait": [
+            "FocusConstraint"
+          ],
+          "comment": "<S> [<v1> <v2> <v3>] OR <dt1> on {  }",
           "status": "mf:proposed"
         },
         {

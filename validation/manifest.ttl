@@ -838,13 +838,23 @@
 
 
 ###  datatype
-	#<#focusdatatype_pass>
+	<#focusdatatype_pass>
 	<#focusdatatype_fail>
+
 ###  value sets
-	#<#focusvs_pass>
+	<#focusvs_pass>
 	<#focusvs_fail>
+
 ### AND focus
 	<#1focusvsANDdatatype_fail>
+	<#1focusvsANDIRI_pass>
+	<#1focusvsANDIRI_fail>
+
+### OR focus
+	<#1focusvsORdatatype_pass-val>
+	<#1focusvsORdatatype_fail-val>
+	<#1focusvsORdatatype_pass-dt>
+	<#1focusvsORdatatype_fail-dt>
 
 ### facet
 #### length
@@ -11261,23 +11271,23 @@
 ###  } kind
 ###  datatype {
 
-#!!! <#focusdatatype_pass> a sht:ValidationTest ;
-#    mf:name "focusdatatype_pass" ;
-#    sht:trait sht:Unsatisfiable ;
-#    rdfs:comment "<S> <dt1> on {  }" ;
-#    mf:status mf:proposed ;
-#    mf:action [
-#      sht:schema <../schemas/focusdatatype.shex> ;
-#      sht:shape <http://a.example/S1> ;
-#      sht:data <Is1_Ip1_LabDTbloodType.ttl> ;
-#      sht:focus "ab"^^<http://a.example/bloodType>
-#    ] ;
-#    mf:result <focusdatatype_pass.val>
-#    .
+<#focusdatatype_pass> a sht:ValidationTest ;
+    mf:name "focusdatatype_pass" ;
+    sht:trait sht:FocusConstraint ;
+    rdfs:comment "<S> <dt1> on {  }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/focusdatatype.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LabDTbloodType.ttl> ;
+      sht:focus "ab"^^<http://a.example/bloodType>
+    ] ;
+    mf:result <focusdatatype_pass.val>
+    .
 
 <#focusdatatype_fail> a sht:ValidationFailure ;
     mf:name "focusdatatype_fail" ;
-    sht:trait sht:Unsatisfiable ;
+    sht:trait sht:focusConstraint ;
     rdfs:comment "<S> <dt1> on {  }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -11291,23 +11301,23 @@
 ###  } datatype
 ###  value sets {
 
-#!!! <#focusvs_pass> a sht:ValidationTest ;
-#    mf:name "focusvs_pass" ;
-#    sht:trait sht:Unsatisfiable ;
-#    rdfs:comment "<S> [<v1> <v2> <v3>] on {  }" ;
-#    mf:status mf:proposed ;
-#    mf:action [
-#      sht:schema <../schemas/focusvs.shex> ;
-#      sht:shape <http://a.example/vs1> ;
-#      sht:data <Is1_Ip1_Iv1.ttl> ;
-#      sht:focus <http://a.example/v1>
-#    ] ;
-#    mf:result <focusvs_pass.val>
-#    .
+<#focusvs_pass> a sht:ValidationTest ;
+    mf:name "focusvs_pass" ;
+    sht:trait sht:FocusConstraint ;
+    rdfs:comment "<S> [<v1> <v2> <v3>] on {  }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/focusvs.shex> ;
+      sht:shape <http://a.example/vs1> ;
+      sht:data <Is1_Ip1_Iv1.ttl> ;
+      sht:focus <http://a.example/v1>
+    ] ;
+    mf:result <focusvs_pass.val>
+    .
 
 <#focusvs_fail> a sht:ValidationFailure ;
     mf:name "focusvs_fail" ;
-    sht:trait sht:Unsatisfiable ;
+    sht:trait sht:FocusConstraint ;
     rdfs:comment "<S> [<v1> <v2> <v3>] on {  }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -11323,7 +11333,7 @@
 
 <#1focusvsANDdatatype_fail> a sht:ValidationFailure ;
     mf:name "1focusvsANDdatatype_fail" ;
-    sht:trait sht:Unsatisfiable ;
+    sht:trait sht:FocusConstraint , sht:Unsatisfiable ;
     rdfs:comment "<S> [<v1> <v2> <v3>] AND <dt1> on {  }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -11334,7 +11344,91 @@
     ] ;
     .
 
+<#1focusvsANDIRI_pass> a sht:ValidationTest ;
+    mf:name "1focusvsANDIRI_pass" ;
+    sht:trait sht:FocusConstraint ;
+    rdfs:comment "<S> [<v1> <v2> <v3>] AND IRI on {  }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/focusvsANDIRI.shex> ;
+      sht:shape <http://a.example/vs1> ;
+      sht:data <empty.ttl> ;
+      sht:focus <http://a.example/v1>
+    ] ;
+    mf:result <1focusvsANDIRI_pass.val>
+    .
+
+<#1focusvsANDIRI_fail> a sht:ValidationFailure ;
+    mf:name "1focusvsANDIRI_fail" ;
+    sht:trait sht:FocusConstraint ;
+    rdfs:comment "<S> [<v1> <v2> <v3>] AND IRI on {  }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/focusvsANDIRI.shex> ;
+      sht:shape <http://a.example/vs1> ;
+      sht:data <empty.ttl> ;
+      sht:focus <http://a.example/v4>
+    ] ;
+    .
+
 ###  } AND focus
+###  OR focus {
+
+<#1focusvsORdatatype_pass-val> a sht:ValidationTest ;
+    mf:name "1focusvsORdatatype_pass-val" ;
+    sht:trait sht:FocusConstraint ;
+    rdfs:comment "<S> [<v1> <v2> <v3>] OR <dt1> on {  }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/focusvsORdatatype.shex> ;
+      sht:shape <http://a.example/vs1> ;
+      sht:data <empty.ttl> ;
+      sht:focus <http://a.example/v1>
+    ] ;
+    mf:result <1focusvsORdatatype_pass-val.val>
+    .
+
+<#1focusvsORdatatype_fail-val> a sht:ValidationFailure ;
+    mf:name "1focusvsORdatatype_fail-val" ;
+    sht:trait sht:FocusConstraint ;
+    rdfs:comment "<S> [<v1> <v2> <v3>] OR <dt1> on {  }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/focusvsORdatatype.shex> ;
+      sht:shape <http://a.example/vs1> ;
+      sht:data <empty.ttl> ;
+      sht:focus <http://a.example/v4>
+    ] ;
+    .
+
+<#1focusvsORdatatype_pass-dt> a sht:ValidationTest ;
+    mf:name "1focusvsORdatatype_pass-dt" ;
+    sht:trait sht:FocusConstraint ;
+    rdfs:comment "<S> [<v1> <v2> <v3>] OR <dt1> on {  }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/focusvsORdatatype.shex> ;
+      sht:shape <http://a.example/vs1> ;
+      sht:data <empty.ttl> ;
+      sht:focus "v1"^^<http://a.example/dt1>
+    ] ;
+    mf:result <1focusvsORdatatype_pass-dt.val>
+    .
+
+<#1focusvsORdatatype_fail-dt> a sht:ValidationFailure ;
+    mf:name "1focusvsORdatatype_fail-dt" ;
+    sht:trait sht:FocusConstraint ;
+    rdfs:comment "<S> [<v1> <v2> <v3>] OR <dt1> on {  }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/focusvsORdatatype.shex> ;
+      sht:shape <http://a.example/vs1> ;
+      sht:data <empty.ttl> ;
+      sht:focus "v1"^^<http://a.example/dt2>
+    ] ;
+    .
+
+###  } OR focus
 ###  focusFacet {
 ####    lengths {
 
