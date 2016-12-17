@@ -192,5 +192,8 @@ function genText () {
     } else {
       console.log(JSON.stringify(ret, null, "  "));
     }
+    process.exit(0);
+  } else {
+    process.exit(1);
   }
 }

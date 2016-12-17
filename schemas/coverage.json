@@ -2,7 +2,7 @@
   ".README": {
     "fields": {
       "rq": "rq query to be substituted into \"jq '.[] | select($rq) | .filename\" corpus.json'\", e.g. \"jq '.[] | select(.json.prefixes) | .filename' corpus.json\"",
-      "expect": "at least these files should match the rq quere"
+      "expect": "at least these files should match the rq query"
     }
   },
   "base": { "rq": ".json.base", "expect": [

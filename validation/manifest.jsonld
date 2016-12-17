@@ -663,6 +663,41 @@
           "result": "1nonliteral_pass-iri.val"
         },
         {
+          "@id": "#1focusnonLiteralLength-nonLiteralLength_fail-short",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1focusnonLiteralLength-nonLiteralLength.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1focusnonLiteralLength-nonLiteralLength_fail-short",
+          "trait": [
+            "NodeKind"
+          ],
+          "comment": "<S1> NONLITERAL LENGTH 19 { <p1> NONLITERAL LENGTH 19 } on { <s1> <p1> <o> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1focusnonLiteralLength-nonLiteralLength_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1focusnonLiteralLength-nonLiteralLength.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1focusnonLiteralLength-nonLiteralLength_pass",
+          "trait": [
+            "NodeKind"
+          ],
+          "comment": "<S1> NONLITERAL LENGTH 19 { <p1> NONLITERAL LENGTH 19 } on { <s1> <p1> <o1> }",
+          "status": "mf:proposed",
+          "result": "1focusnonLiteralLength-nonLiteralLength_pass.val"
+        },
+        {
           "@id": "#1nonliteral_pass-bnode",
           "@type": "sht:ValidationTest",
           "action": {
@@ -1365,6 +1400,41 @@
           "status": "mf:proposed"
         },
         {
+          "@id": "#1dotRef1_selfReference",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1dotRef1.shex",
+            "shape": "http://a.example/S1",
+            "data": "In1_Ip1_In1.In1_Ip2_LX.ttl",
+            "focus": "http://a.example/n1"
+          },
+          "extensionResults": [],
+          "name": "1dotRef1_selfReference",
+          "trait": [
+            "ShapeReference"
+          ],
+          "comment": "<n1> in { <n1> <p1> <n1> . <n1> <p2> \"X\" } as <S1> in <S1> { <p1> @<S2> } <S2> { <p2> . }",
+          "status": "mf:proposed",
+          "result": "1dotRef1_selfReference.val"
+        },
+        {
+          "@id": "#1dotRef1_missingSelfReference",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1dotRef1.shex",
+            "shape": "http://a.example/S1",
+            "data": "In1_Ip1_In1.In2_Ip2_LX.ttl",
+            "focus": "http://a.example/n1"
+          },
+          "extensionResults": [],
+          "name": "1dotRef1_missingSelfReference",
+          "trait": [
+            "ShapeReference"
+          ],
+          "comment": "<n1> in { <n1> <p1> <n1> . <n2> <p2> \"X\" } as <S1> in <S1> { <p1> @<S2> } <S2> { <p2> . }",
+          "status": "mf:proposed"
+        },
+        {
           "@id": "#1dotRef1_overReferrer",
           "@type": "sht:ValidationFailure",
           "action": {
@@ -1581,38 +1651,40 @@
           "result": "1bnodeRef1_pass-bnode.val"
         },
         {
-          "@id": "#1dotRef1_selfReference",
-          "@type": "sht:ValidationTest",
-          "action": {
-            "schema": "../schemas/1dotRef1.shex",
-            "shape": "http://a.example/S1",
-            "data": "In1_Ip1_In1.In1_Ip2_LX.ttl",
-            "focus": "http://a.example/n1"
-          },
-          "extensionResults": [],
-          "name": "1dotRef1_selfReference",
-          "trait": [
-            "ShapeReference"
-          ],
-          "comment": "<n1> in { <n1> <p1> <n1> . <n1> <p2> \"X\" } as <S1> in <S1> { <p1> @<S2> } <S2> { <p2> . }",
-          "status": "mf:proposed",
-          "result": "1dotRef1_selfReference.val"
-        },
-        {
-          "@id": "#1dotRef1_missingSelfReference",
+          "@id": "#1datatypeRef1_fail-datatype",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/1dotRef1.shex",
+            "schema": "../schemas/1datatypeRef1.shex",
             "shape": "http://a.example/S1",
-            "data": "In1_Ip1_In1.In2_Ip2_LX.ttl",
+            "data": "Is1_Ip1_dt1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1datatypeRef1_fail-datatype",
+          "trait": [
+            "Unsatisfiable",
+            "ShapeReference",
+            "Datatype"
+          ],
+          "comment": "<S> { <p1> <dt1> } on <s> in { <s> <p1> 'ab'^^<dt1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1datatypeRef1_fail-reflexiveRef",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1datatypeRef1.shex",
+            "shape": "http://a.example/S1",
+            "data": "In1_Ip1_In1.ttl",
             "focus": "http://a.example/n1"
           },
           "extensionResults": [],
-          "name": "1dotRef1_missingSelfReference",
+          "name": "1datatypeRef1_fail-reflexiveRef",
           "trait": [
+            "Unsatisfiable",
             "ShapeReference"
           ],
-          "comment": "<n1> in { <n1> <p1> <n1> . <n2> <p2> \"X\" } as <S1> in <S1> { <p1> @<S2> } <S2> { <p2> . }",
+          "comment": "<S1> { <p1> <dt1> } on <s> in { <n1> <p1> <n1> }",
           "status": "mf:proposed"
         },
         {
@@ -1822,6 +1894,58 @@
             "NumericEquivalence"
           ],
           "comment": "<S> { <p1> [0] } on { <s> <p1> 00 }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1val1DECIMAL_00",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1val1DECIMAL.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_DEC_0.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1DECIMAL_00",
+          "trait": [
+            "NumericEquivalence"
+          ],
+          "comment": "<S> { <p1> [0.0] } on { <s> <p1> .0 }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1val1DECIMAL_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1val1DECIMAL.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_DEC0_0.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1DECIMAL_pass",
+          "trait": [
+            "NumericEquivalence"
+          ],
+          "comment": "<S> { <p1> [0.0] } on { <s> <p1> 0.0 }",
+          "status": "mf:proposed",
+          "result": "1val1DECIMAL_pass.val"
+        },
+        {
+          "@id": "#1val1DECIMAL_Lab",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1val1DECIMAL.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Lab.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1DECIMAL_Lab",
+          "trait": [
+            "NumericEquivalence"
+          ],
+          "comment": "<S> { <p1> [0.0] } on { <s> <p1> 'ab' }",
           "status": "mf:proposed"
         },
         {
@@ -3055,6 +3179,216 @@
             "TotalDigitsFacet"
           ],
           "comment": "<S1> { <p1> LITERAL TOTALDIGITS 5 } / BASE <http://a.example/> { <s1> <p1> _:12345 }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1literalMinexclusiveINTEGER_fail-low",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1literalMinexclusiveINTEGER.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_INT4.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalMinexclusiveINTEGER_fail-low",
+          "trait": [
+            "ComparatorFacet"
+          ],
+          "comment": "<S1> { <p1> LITERAL MINEXCLUSIVE 5 } / { <s1> <p1> '4'^^xsd:integer }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1literalMinexclusiveINTEGER_pass-equal",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1literalMinexclusiveINTEGER.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_INT5.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalMinexclusiveINTEGER_pass-equal",
+          "trait": [
+            "ComparatorFacet"
+          ],
+          "comment": "<S1> { <p1> LITERAL MINEXCLUSIVE 5 } / { <s1> <p1> '5'^^xsd:integer }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1literalMinexclusiveINTEGER_pass-high",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1literalMinexclusiveINTEGER.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_INT6.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalMinexclusiveINTEGER_pass-high",
+          "trait": [
+            "ComparatorFacet"
+          ],
+          "comment": "<S1> { <p1> LITERAL MINEXCLUSIVE 5 } / { <s1> <p1> '6'^^xsd:integer }",
+          "status": "mf:proposed",
+          "result": "1literalMinexclusiveINTEGER_pass-high.val"
+        },
+        {
+          "@id": "#1literalMininclusiveINTEGER_fail-low",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1literalMininclusiveINTEGER.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_INT4.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalMininclusiveINTEGER_fail-low",
+          "trait": [
+            "ComparatorFacet"
+          ],
+          "comment": "<S1> { <p1> LITERAL MININCLUSIVE 5 } / { <s1> <p1> '4'^^xsd:integer }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1literalMininclusiveINTEGER_pass-equal",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1literalMininclusiveINTEGER.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_INT5.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalMininclusiveINTEGER_pass-equal",
+          "trait": [
+            "ComparatorFacet"
+          ],
+          "comment": "<S1> { <p1> LITERAL MININCLUSIVE 5 } / { <s1> <p1> '5'^^xsd:integer }",
+          "status": "mf:proposed",
+          "result": "1literalMininclusiveINTEGER_pass-equal.val"
+        },
+        {
+          "@id": "#1literalMininclusiveINTEGER_pass-high",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1literalMininclusiveINTEGER.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_INT6.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalMininclusiveINTEGER_pass-high",
+          "trait": [
+            "ComparatorFacet"
+          ],
+          "comment": "<S1> { <p1> LITERAL MININCLUSIVE 5 } / { <s1> <p1> '6'^^xsd:integer }",
+          "status": "mf:proposed",
+          "result": "1literalMininclusiveINTEGER_pass-high.val"
+        },
+        {
+          "@id": "#1literalMaxexclusiveINTEGER_pass-low",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1literalMaxexclusiveINTEGER.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_INT4.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalMaxexclusiveINTEGER_pass-low",
+          "trait": [
+            "ComparatorFacet"
+          ],
+          "comment": "<S1> { <p1> LITERAL MAXEXCLUSIVE 5 } / { <s1> <p1> '4'^^xsd:integer }",
+          "status": "mf:proposed",
+          "result": "1literalMaxexclusiveINTEGER_pass-high.val"
+        },
+        {
+          "@id": "#1literalMaxexclusiveINTEGER_fail-equal",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1literalMaxexclusiveINTEGER.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_INT5.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalMaxexclusiveINTEGER_fail-equal",
+          "trait": [
+            "ComparatorFacet"
+          ],
+          "comment": "<S1> { <p1> LITERAL MAXEXCLUSIVE 5 } / { <s1> <p1> '5'^^xsd:integer }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1literalMaxexclusiveINTEGER_fail-high",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1literalMaxexclusiveINTEGER.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_INT6.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalMaxexclusiveINTEGER_fail-high",
+          "trait": [
+            "ComparatorFacet"
+          ],
+          "comment": "<S1> { <p1> LITERAL MAXEXCLUSIVE 5 } / { <s1> <p1> '6'^^xsd:integer }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1literalMaxinclusiveINTEGER_pass-low",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1literalMaxinclusiveINTEGER.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_INT4.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalMaxinclusiveINTEGER_pass-low",
+          "trait": [
+            "ComparatorFacet"
+          ],
+          "comment": "<S1> { <p1> LITERAL MAXINCLUSIVE 5 } / { <s1> <p1> '4'^^xsd:integer }",
+          "status": "mf:proposed",
+          "result": "1literalMaxinclusiveINTEGER_pass-low.val"
+        },
+        {
+          "@id": "#1literalMaxinclusiveINTEGER_pass-equal",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1literalMaxinclusiveINTEGER.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_INT5.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalMaxinclusiveINTEGER_pass-equal",
+          "trait": [
+            "ComparatorFacet"
+          ],
+          "comment": "<S1> { <p1> LITERAL MAXINCLUSIVE 5 } / { <s1> <p1> '5'^^xsd:integer }",
+          "status": "mf:proposed",
+          "result": "1literalMaxinclusiveINTEGER_pass-equal.val"
+        },
+        {
+          "@id": "#1literalMaxinclusiveINTEGER_fail-high",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1literalMaxinclusiveINTEGER.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_INT6.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalMaxinclusiveINTEGER_fail-high",
+          "trait": [
+            "ComparatorFacet"
+          ],
+          "comment": "<S1> { <p1> LITERAL MAXINCLUSIVE 5 } / { <s1> <p1> '6'^^xsd:integer }",
           "status": "mf:proposed"
         },
         {
@@ -9664,6 +9998,43 @@
           "result": "1val1vExprRefbnode1_pass-lit-equal.val"
         },
         {
+          "@id": "#1dotShapeAND1dot3X_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1dotShapeAND1dot3X.shex",
+            "shape": "http://a.example/S1",
+            "data": "In1_Ipx_LXX3.ttl",
+            "focus": "http://a.example/n1"
+          },
+          "extensionResults": [],
+          "name": "1dotShapeAND1dot3X_pass",
+          "trait": [
+            "OrValueExpression",
+            "ValueReference"
+          ],
+          "comment": "<S1> { <p1> . } AND { <p2> . } AND { <p3> . } on { <s1> <p1> 'X'; <p2> 'X'; <p3> 'X' }",
+          "status": "mf:proposed",
+          "result": "1dotShapeAND1dot3X_pass.val"
+        },
+        {
+          "@id": "#1dotShapeAND1dot3X_fail",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1dotShapeAND1dot3X.shex",
+            "shape": "http://a.example/S1",
+            "data": "In1_Ip1_In2.In2_Ipx_LXX3.ttl",
+            "focus": "http://a.example/n2"
+          },
+          "extensionResults": [],
+          "name": "1dotShapeAND1dot3X_fail",
+          "trait": [
+            "OrValueExpression",
+            "ValueReference"
+          ],
+          "comment": "<S1> { <p1> . } AND { <p2> . } AND { <p3> . } on { <s1> <p1> <s2>, <s3>, <s4> . <s2> <p2> \"X\" . <s3> <p3> \"X\" . <s4> <p4> \"X\" }",
+          "status": "mf:proposed"
+        },
+        {
           "@id": "#1dotRefAND3_failAll",
           "@type": "sht:ValidationFailure",
           "action": {
@@ -11100,6 +11471,41 @@
           "status": "mf:proposed"
         },
         {
+          "@id": "#FocusIRI2groupBnodeNested2groupIRIRef_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/FocusIRI2groupBnodeNested2groupIRIRef.shex",
+            "shape": "http://a.example/S1",
+            "data": "FocusIRI2groupBnodeNested2groupIRIRef.ttl",
+            "focus": "http://a.example/n1"
+          },
+          "extensionResults": [],
+          "name": "FocusIRI2groupBnodeNested2groupIRIRef_pass",
+          "trait": [
+            "Closed"
+          ],
+          "comment": "<S1> IRI PATTERN '^https?://' { <p1> <dt1> ; <p2> BNODE { <p3> LITERAL ; <p4> IRI PATTERN '^https://' @<S1>? } AND CLOSED { <p3> . ; <p4> . } } on { <n1> <p1> 'ab'^^<dt1> ; <p2> [  <p3> 'ab' ; <p4> ex:n1 ] }",
+          "status": "mf:proposed",
+          "result": "FocusIRI2groupBnodeNested2groupIRIRef_pass.val"
+        },
+        {
+          "@id": "#FocusIRI2groupBnodeNested2groupIRIRef_fail",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/FocusIRI2groupBnodeNested2groupIRIRef.shex",
+            "shape": "http://a.example/S1",
+            "data": "FocusIRI2groupBnodeNested3groupIRIRef.ttl",
+            "focus": "http://a.example/n1"
+          },
+          "extensionResults": [],
+          "name": "FocusIRI2groupBnodeNested2groupIRIRef_fail",
+          "trait": [
+            "Closed"
+          ],
+          "comment": "<S1> IRI PATTERN '^https?://' { <p1> <dt1> ; <p2> BNODE { <p3> LITERAL ; <p4> IRI PATTERN '^https://' @<S1>? } AND CLOSED { <p3> . ; <p4> . } } on { <n1> <p1> 'ab'^^<dt1> ; <p2> [  <p3> 'ab' ; <p4> ex:n1 ; <p5> 5 ] }",
+          "status": "mf:proposed"
+        },
+        {
           "@id": "#1val1IRIREFExtra1_pass-iri1",
           "@type": "sht:ValidationTest",
           "action": {
@@ -11707,6 +12113,42 @@
           ],
           "comment": "<S> { <p1> .; <annot> <IRIREF> } on { <s> <p2> <o1> }",
           "status": "mf:proposed"
+        },
+        {
+          "@id": "#1dotPlusAnnotIRIREF_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1dotPlusAnnotIRIREF.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_La,Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1dotPlusAnnotIRIREF_pass",
+          "trait": [
+            "Annotation"
+          ],
+          "comment": "<S> { <p1> .+; <annot> <IRIREF> } on { <s1> <p1> 'a', <o1> }",
+          "status": "mf:proposed",
+          "result": "1dotPlusAnnotIRIREF_pass.val"
+        },
+        {
+          "@id": "#1dotAnnotAIRIREF_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1dotAnnotAIRIREF.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1dotAnnotAIRIREF_pass",
+          "trait": [
+            "Annotation"
+          ],
+          "comment": "<S> { <p1> .; a <IRIREF> } on { <s1> <p1> <o1> }",
+          "status": "mf:proposed",
+          "result": "1dotAnnotAIRIREF_pass.val"
         },
         {
           "@id": "#1dotAnnotSTRING_LITERAL1_pass",
@@ -12472,6 +12914,57 @@
           "result": "1focus_dot_pass.val"
         },
         {
+          "@id": "#focusdatatype_fail",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/focusdatatype.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_LabDTbloodType999.ttl",
+            "focus": "\"ab\"^^http://a.example/bloodType999"
+          },
+          "extensionResults": [],
+          "name": "focusdatatype_fail",
+          "trait": [
+            "Unsatisfiable"
+          ],
+          "comment": "<S> <dt1> on {  }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#focusvs_fail",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/focusvs.shex",
+            "shape": "http://a.example/vs1",
+            "data": "Is1_Ip1_Iv1a.ttl",
+            "focus": "http://a.example/v1a"
+          },
+          "extensionResults": [],
+          "name": "focusvs_fail",
+          "trait": [
+            "Unsatisfiable"
+          ],
+          "comment": "<S> [<v1> <v2> <v3>] on {  }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1focusvsANDdatatype_fail",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/focusvsANDdatatype.shex",
+            "shape": "http://a.example/vs1",
+            "data": "empty.ttl",
+            "focus": "http://a.example/v1"
+          },
+          "extensionResults": [],
+          "name": "1focusvsANDdatatype_fail",
+          "trait": [
+            "Unsatisfiable"
+          ],
+          "comment": "<S> [<v1> <v2> <v3>] AND <dt1> on {  }",
+          "status": "mf:proposed"
+        },
+        {
           "@id": "#1focusLength-dot_fail-iri-short",
           "@type": "sht:ValidationFailure",
           "action": {
@@ -12824,14 +13317,14 @@
             "schema": "../schemas/1focusPattern-dot.shex",
             "shape": "http://a.example/S1",
             "data": "Is2_Ip1_Io.ttl",
-            "focus": "http://a.example/s1"
+            "focus": "http://a.example/s2"
           },
           "extensionResults": [],
           "name": "1focusPattern-dot_fail-iri-match",
           "trait": [
             "PaternFacet"
           ],
-          "comment": "<S1> PATTERN \"^http://a.example/s1$\" { <p1> } on { <s2> <p1> <o> }",
+          "comment": "<S1> PATTERN '^http://a.example/s1$' { <p1> } on { <s2> <p1> <o> }",
           "status": "mf:proposed"
         },
         {
@@ -12841,14 +13334,14 @@
             "schema": "../schemas/1focusPattern-dot.shex",
             "shape": "http://a.example/S1",
             "data": "Is_Ip1_Io1.ttl",
-            "focus": "http://a.example/s1"
+            "focus": "http://a.example/s"
           },
           "extensionResults": [],
           "name": "1focusPattern-dot_fail-iri-short",
           "trait": [
             "PaternFacet"
           ],
-          "comment": "<S1> PATTERN \"^http://a.example/s1$\" { <p1> } on { <s> <p1> <o1> }",
+          "comment": "<S1> PATTERN '^http://a.example/s1$' { <p1> } on { <s> <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -12865,7 +13358,7 @@
           "trait": [
             "PaternFacet"
           ],
-          "comment": "<S1> PATTERN \"http://a.example/s1\" { <p1> } on { <s1> <p1> <o1> }",
+          "comment": "<S1> PATTERN 'http://a.example/s1' { <p1> } on { <s1> <p1> <o1> }",
           "status": "mf:proposed",
           "result": "1focus_dot_pass.val"
         },
@@ -12876,14 +13369,14 @@
             "schema": "../schemas/1focusPattern-dot.shex",
             "shape": "http://a.example/S1",
             "data": "Is1a_Ip1_Io1.ttl",
-            "focus": "http://a.example/s1"
+            "focus": "http://a.example/s1a"
           },
           "extensionResults": [],
           "name": "1focusPattern-dot_fail-iri-long",
           "trait": [
             "PaternFacet"
           ],
-          "comment": "<S1> PATTERN \"^http://a.example/s1$\" { <p1> } on { <s1a> <p1> <o1> }",
+          "comment": "<S1> PATTERN '^http://a.example/s1$' { <p1> } on { <s1a> <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -12893,14 +13386,14 @@
             "schema": "../schemas/1focusPatternB-dot.shex",
             "shape": "http://a.example/S1",
             "data": "Is2_Ip1_Io.ttl",
-            "focus": "http://a.example/s1"
+            "focus": "http://a.example/s2"
           },
           "extensionResults": [],
           "name": "1focusPatternB-dot_fail-iri-match",
           "trait": [
             "PaternFacet"
           ],
-          "comment": "<S1> PATTERN \"abcdefghijklmnopqrs\" { <p1> } on { <s2> <p1> <o> }",
+          "comment": "<S1> PATTERN 'abcdefghijklmnopqrs' { <p1> } on { <s2> <p1> <o> }",
           "status": "mf:proposed"
         },
         {
@@ -12917,7 +13410,7 @@
           "trait": [
             "PaternFacet"
           ],
-          "comment": "<S1> PATTERN \"abcdefghijklmnopqrs\" { <p1> } on { _:abcd <p1> <o1> }",
+          "comment": "<S1> PATTERN 'abcdefghijklmnopqrs' { <p1> } on { _:abcd <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -12935,7 +13428,7 @@
             "PaternFacet",
             "LexicalBNode"
           ],
-          "comment": "<S1> PATTERN \"abcdefghijklmnopqrs\" { <p1> } on { _:abcdefghijklmnopqrs <p1> <o1> }",
+          "comment": "<S1> PATTERN 'abcdefghijklmnopqrs' { <p1> } on { _:abcdefghijklmnopqrs <p1> <o1> }",
           "status": "mf:proposed",
           "result": "1focusBNODE_dot_pass.val"
         },
@@ -12953,7 +13446,7 @@
           "trait": [
             "PaternFacet"
           ],
-          "comment": "<S1> PATTERN \"abcdefghijklmnopqrs\" { <p1> } on { _:abcdefghijklmnopqrst <p1> <o1> }",
+          "comment": "<S1> PATTERN 'abcdefghijklmnopqrs' { <p1> } on { _:abcdefghijklmnopqrst <p1> <o1> }",
           "status": "mf:proposed",
           "result": "1focusPatternB-dot_pass-bnode-long.val"
         },
