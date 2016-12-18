@@ -2860,7 +2860,7 @@
  #     rdfs:comment "<S1> { <p1> LITERAL FRACTIONDIGITS 5 } / { <s1> <p1> 1.2345 }" ;
  #     mf:status mf:proposed ;
  #     mf:action [
- #       sht:schema <../schemas/1literalFractiondigitsxsd-integer.shex> ;
+ #       sht:schema <../schemas/1literalFractiondigitsxsd-integer.shex.bad> ;
  #       sht:shape <http://a.example/S1> ;
  #       sht:data <Is1_Ip1_DEC1_2345.ttl> ;
  #       sht:focus <http://a.example/s1>
@@ -2887,7 +2887,8 @@
  #     rdfs:comment "<S1> { <p1> LITERAL FRACTIONDIGITS \"5\"^^<http://www.w3.org/2001/XMLSchema#integer> } / { <s1> <p1> 1.23456 }" ;
  #     mf:status mf:proposed ;
  #     mf:action [
- #       sht:schema <../schemas/1literalFractiondigitsxsd-integer.shex> ;
+ #       sht:schema <../schemas/1literalFractiondigitsxsd-integer.shex.bad
+ > ;
  #       sht:shape <http://a.example/S1> ;
  #       sht:data <Is1_Ip1_DEC1_23456.ttl> ;
  #       sht:focus <http://a.example/s1>
