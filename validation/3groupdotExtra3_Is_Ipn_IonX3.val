@@ -1,25 +1,25 @@
 {
-  "type": "test",
+  "type": "ShapeTest",
   "node": "http://a.example/s",
   "shape": "http://a.example/S1",
   "solution": {
-    "type": "eachOfSolutions",
+    "type": "EachOfSolutions",
     "solutions": [
       {
-        "type": "eachOfSolution",
+        "type": "EachOfSolution",
         "expressions": [
           {
-            "type": "tripleConstraintSolutions",
+            "type": "TripleConstraintSolutions",
             "predicate": "http://a.example/p1",
             "valueExpr": {
-              "type": "ValueClass",
+              "type": "NodeConstraint",
               "values": [
                 "http://a.example/o1"
               ]
             },
             "solutions": [
               {
-                "type": "testedTriple",
+                "type": "TestedTriple",
                 "subject": "http://a.example/s",
                 "predicate": "http://a.example/p1",
                 "object": "http://a.example/o1"
@@ -27,17 +27,17 @@
             ]
           },
           {
-            "type": "tripleConstraintSolutions",
+            "type": "TripleConstraintSolutions",
             "predicate": "http://a.example/p2",
             "valueExpr": {
-              "type": "ValueClass",
+              "type": "NodeConstraint",
               "values": [
                 "http://a.example/o2"
               ]
             },
             "solutions": [
               {
-                "type": "testedTriple",
+                "type": "TestedTriple",
                 "subject": "http://a.example/s",
                 "predicate": "http://a.example/p2",
                 "object": "http://a.example/o2"
@@ -45,17 +45,17 @@
             ]
           },
           {
-            "type": "tripleConstraintSolutions",
+            "type": "TripleConstraintSolutions",
             "predicate": "http://a.example/p3",
             "valueExpr": {
-              "type": "ValueClass",
+              "type": "NodeConstraint",
               "values": [
                 "http://a.example/o3"
               ]
             },
             "solutions": [
               {
-                "type": "testedTriple",
+                "type": "TestedTriple",
                 "subject": "http://a.example/s",
                 "predicate": "http://a.example/p3",
                 "object": "http://a.example/o3"

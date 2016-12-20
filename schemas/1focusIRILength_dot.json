@@ -1,18 +1,22 @@
 {
-  "prefixes": {},
   "type": "Schema",
   "shapes": {
     "http://a.example/S1": {
-      "nodeKind": "iri",
-      "length": 19,
-      "type": "Shape",
-      "expression": {
-        "type": "TripleConstraint",
-        "predicate": "http://a.example/p1",
-        "valueExpr": {
-          "type": "ValueClass"
+      "type": "ShapeAnd",
+      "shapeExprs": [
+        {
+          "type": "NodeConstraint",
+          "nodeKind": "iri",
+          "length": 19
+        },
+        {
+          "type": "Shape",
+          "expression": {
+            "type": "TripleConstraint",
+            "predicate": "http://a.example/p1"
+          }
         }
-      }
+      ]
     }
   }
 }

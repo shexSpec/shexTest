@@ -1,24 +1,22 @@
-{ "type": "test",
+{ "type": "ShapeTest",
   "node": "s0",
   "shape": "S",
   "solution": {
-    "type": "eachOfSolutions",
+    "type": "EachOfSolutions",
     "solutions": [
       {
-        "type": "eachOfSolution",
+        "type": "EachOfSolution",
         "expressions": [
           {
-            "type": "tripleConstraintSolutions", "predicate": "http://a.example/a",
-            "valueExpr": { "type": "ValueClass" },
+            "type": "TripleConstraintSolutions", "predicate": "http://a.example/a",
             "solutions": [
-              { "type": "testedTriple", "subject": "s0", "predicate": "http://a.example/a", "object": "\"1\"" }
+              { "type": "TestedTriple", "subject": "s0", "predicate": "http://a.example/a", "object": "\"1\"" }
             ]
           },
           {
-            "type": "tripleConstraintSolutions", "predicate": "http://a.example/b",
-            "valueExpr": { "type": "ValueClass" },
+            "type": "TripleConstraintSolutions", "predicate": "http://a.example/b",
             "solutions": [
-              { "type": "testedTriple", "subject": "s0", "predicate": "http://a.example/b", "object": "\"1\"" }
+              { "type": "TestedTriple", "subject": "s0", "predicate": "http://a.example/b", "object": "\"1\"" }
             ]
           }
         ]

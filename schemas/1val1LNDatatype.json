@@ -9,7 +9,7 @@
       "expression": {
         "type": "TripleConstraint",
         "predicate": "http://a.example/p1",
-        "valueExpr": { "type": "ValueClass", "values": ["\"ab\"^^http://a.example/bloodType"] }
+        "valueExpr": { "type": "NodeConstraint", "values": ["\"ab\"^^http://a.example/bloodType"] }
       }
     }
   }

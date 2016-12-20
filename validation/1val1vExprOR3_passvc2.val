@@ -1,33 +1,33 @@
 {
-  "type": "test",
+  "type": "ShapeTest",
   "node": "http://a.example/s1",
   "shape": "http://a.example/S1",
   "solution": {
-    "type": "tripleConstraintSolutions",
+    "type": "TripleConstraintSolutions",
     "predicate": "http://a.example/p1",
     "valueExpr": {
-      "type": "ValueOr",
-      "valueExprs": [
+      "type": "ShapeOr",
+      "shapeExprs": [
         {
-          "type": "ValueClass",
+          "type": "NodeConstraint",
           "nodeKind": "literal",
-          "pattern": "^ab"
+          "pattern": "ab.*"
         },
         {
-          "type": "ValueClass",
+          "type": "NodeConstraint",
           "nodeKind": "literal",
-          "pattern": "cd"
+          "pattern": ".*cd.*"
         },
         {
-          "type": "ValueClass",
+          "type": "NodeConstraint",
           "nodeKind": "literal",
-          "pattern": "ef$"
+          "pattern": ".*ef"
         }
       ]
     },
     "solutions": [
       {
-        "type": "testedTriple",
+        "type": "TestedTriple",
         "subject": "http://a.example/s1",
         "predicate": "http://a.example/p1",
         "object": "\"cd\""

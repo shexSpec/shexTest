@@ -1,21 +1,21 @@
 {
-  "type": "ShapeAnd",
+  "type": "ShapeAndResults",
   "solutions": [
     {
-      "type": "test",
+      "type": "ShapeTest",
       "node": "http://a.example/s1",
       "shape": "http://a.example/S1",
       "solution": {
-        "type": "tripleConstraintSolutions",
+        "type": "TripleConstraintSolutions",
         "predicate": "http://a.example/p1",
         "valueExpr": {
-          "type": "ValueClass",
+          "type": "NodeConstraint",
           "nodeKind": "literal",
           "minlength": 4
         },
         "solutions": [
           {
-            "type": "testedTriple",
+            "type": "TestedTriple",
             "subject": "http://a.example/s1",
             "predicate": "http://a.example/p1",
             "object": "\"abab\""
@@ -24,20 +24,20 @@
       }
     },
     {
-      "type": "test",
+      "type": "ShapeTest",
       "node": "http://a.example/s1",
       "shape": "http://a.example/S1",
       "solution": {
-        "type": "tripleConstraintSolutions",
+        "type": "TripleConstraintSolutions",
         "predicate": "http://a.example/p1",
         "valueExpr": {
-          "type": "ValueClass",
+          "type": "NodeConstraint",
           "nodeKind": "literal",
           "maxlength": 5
         },
         "solutions": [
           {
-            "type": "testedTriple",
+            "type": "TestedTriple",
             "subject": "http://a.example/s1",
             "predicate": "http://a.example/p1",
             "object": "\"abab\""
@@ -46,20 +46,20 @@
       }
     },
     {
-      "type": "test",
+      "type": "ShapeTest",
       "node": "http://a.example/s1",
       "shape": "http://a.example/S1",
       "solution": {
-        "type": "tripleConstraintSolutions",
+        "type": "TripleConstraintSolutions",
         "predicate": "http://a.example/p1",
         "valueExpr": {
-          "type": "ValueClass",
+          "type": "NodeConstraint",
           "nodeKind": "literal",
-          "pattern": "^(ab)+"
+          "pattern": "(ab)+"
         },
         "solutions": [
           {
-            "type": "testedTriple",
+            "type": "TestedTriple",
             "subject": "http://a.example/s1",
             "predicate": "http://a.example/p1",
             "object": "\"abab\""

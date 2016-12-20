@@ -1,5 +1,1 @@
-# source: IRI_subject.ttl
-
-PREFIX : <http://a.example/>
-
-:S1 { :p1 . }
+<http://a.example/S1> { <http://a.example/p1> . }

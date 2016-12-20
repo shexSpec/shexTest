@@ -1,35 +1,40 @@
 {
-  "type": "test",
+  "type": "ShapeTest",
   "node": "http://a.example/s1",
   "shape": "http://a.example/S1",
   "solution": {
-    "type": "tripleConstraintSolutions",
+    "type": "TripleConstraintSolutions",
     "predicate": "http://a.example/p1",
     "valueExpr": {
-      "type": "ValueClass",
-      "nodeKind": "iri",
-      "reference": "http://a.example/S2",
-      "length": 19
+      "type": "ShapeAnd",
+      "shapeExprs": [
+        {
+          "type": "NodeConstraint",
+          "nodeKind": "iri",
+          "length": 19
+        },
+        {
+          "type": "ShapeRef",
+          "reference": "http://a.example/S2"
+        }
+      ]
     },
     "solutions": [
       {
-        "type": "testedTriple",
+        "type": "TestedTriple",
         "subject": "http://a.example/s1",
         "predicate": "http://a.example/p1",
         "object": "http://a.example/o1",
         "referenced": {
-          "type": "test",
+          "type": "ShapeTest",
           "node": "http://a.example/o1",
           "shape": "http://a.example/S2",
           "solution": {
-            "type": "tripleConstraintSolutions",
+            "type": "TripleConstraintSolutions",
             "predicate": "http://a.example/p2",
-            "valueExpr": {
-              "type": "ValueClass"
-            },
             "solutions": [
               {
-                "type": "testedTriple",
+                "type": "TestedTriple",
                 "subject": "http://a.example/o1",
                 "predicate": "http://a.example/p2",
                 "object": "http://a.example/o2"

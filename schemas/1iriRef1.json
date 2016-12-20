@@ -1,24 +1,29 @@
 {
   "type": "Schema",
-  "prefixes": {},
   "shapes": {
     "http://a.example/S1": {
       "type": "Shape",
       "expression": {
         "type": "TripleConstraint",
         "predicate": "http://a.example/p1",
-        "valueExpr": { "type": "ValueClass",
-                       "nodeKind": "iri",
-                       "reference": "http://a.example/S2"
-                     }
+        "valueExpr": {
+	  "type": "ShapeAnd",
+          "shapeExprs": [
+	    { "type": "NodeConstraint",
+              "nodeKind": "iri"
+            },
+	    { "type": "ShapeRef",
+              "reference": "http://a.example/S2"
+            }
+	  ]
+	}
       }
     },
     "http://a.example/S2": {
       "type": "Shape",
       "expression": {
         "type": "TripleConstraint",
-        "predicate": "http://a.example/p2",
-        "valueExpr": { "type": "ValueClass" }
+        "predicate": "http://a.example/p2"
       }
     }
   }

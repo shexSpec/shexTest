@@ -1,31 +1,30 @@
 {
-  "type": "test", "node": "x", "shape": "S",
+  "type": "ShapeTest", "node": "x", "shape": "S",
   "solution": {
-    "type": "eachOfSolutions",
+    "type": "EachOfSolutions",
     "solutions": [
       {
-        "type": "eachOfSolution",
+        "type": "EachOfSolution",
         "expressions": [
           {
-            "type": "tripleConstraintSolutions", "predicate": "http://a.example/a",
-            "valueExpr": { "type": "ValueClass", "reference": "T1" },
+            "type": "TripleConstraintSolutions", "predicate": "http://a.example/a",
+            "valueExpr": { "type": "ShapeRef", "reference": "T1" },
             "solutions": [
-              { "type": "testedTriple", "subject": "x", "predicate": "http://a.example/a", "object": "x1",
+              { "type": "TestedTriple", "subject": "x", "predicate": "http://a.example/a", "object": "x1",
                 "referenced": {
-                  "type": "test", "node": "x1", "shape": "T1",
+                  "type": "ShapeTest", "node": "x1", "shape": "T1",
                   "solution": {
-                    "type": "tripleConstraintSolutions", "predicate": "http://a.example/b",
-                    "valueExpr": { "type": "ValueClass", "reference": "T3" },
+                    "type": "TripleConstraintSolutions", "predicate": "http://a.example/b",
+                    "valueExpr": { "type": "ShapeRef", "reference": "T3" },
                     "solutions": [
                       {
-                        "type": "testedTriple", "subject": "x1", "predicate": "http://a.example/b", "object": "y1",
+                        "type": "TestedTriple", "subject": "x1", "predicate": "http://a.example/b", "object": "y1",
                         "referenced": {
-                          "type": "test", "node": "y1", "shape": "T3",
+                          "type": "ShapeTest", "node": "y1", "shape": "T3",
                           "solution": {
-                            "type": "tripleConstraintSolutions", "predicate": "http://a.example/c",
-                            "valueExpr": { "type": "ValueClass" },
+                            "type": "TripleConstraintSolutions", "predicate": "http://a.example/c",
                             "solutions": [
-                              { "type": "testedTriple", "subject": "y1", "predicate": "http://a.example/c", "object": "\"1\"^^http://www.w3.org/2001/XMLSchema#integer" }
+                              { "type": "TestedTriple", "subject": "y1", "predicate": "http://a.example/c", "object": "\"1\"^^http://www.w3.org/2001/XMLSchema#integer" }
                             ]
                           }
                         }
@@ -35,22 +34,21 @@
                 }
               },
               {
-                "type": "testedTriple", "subject": "x", "predicate": "http://a.example/a", "object": "x3",
+                "type": "TestedTriple", "subject": "x", "predicate": "http://a.example/a", "object": "x3",
                 "referenced": {
-                  "type": "test", "node": "x3", "shape": "T1",
+                  "type": "ShapeTest", "node": "x3", "shape": "T1",
                   "solution": {
-                    "type": "tripleConstraintSolutions", "predicate": "http://a.example/b",
-                    "valueExpr": { "type": "ValueClass", "reference": "T3" },
+                    "type": "TripleConstraintSolutions", "predicate": "http://a.example/b",
+                    "valueExpr": { "type": "ShapeRef", "reference": "T3" },
                     "solutions": [
                       {
-                        "type": "testedTriple", "subject": "x3", "predicate": "http://a.example/b", "object": "y3",
+                        "type": "TestedTriple", "subject": "x3", "predicate": "http://a.example/b", "object": "y3",
                         "referenced": {
-                          "type": "test", "node": "y3", "shape": "T3",
+                          "type": "ShapeTest", "node": "y3", "shape": "T3",
                           "solution": {
-                            "type": "tripleConstraintSolutions", "predicate": "http://a.example/c",
-                            "valueExpr": { "type": "ValueClass" },
+                            "type": "TripleConstraintSolutions", "predicate": "http://a.example/c",
                             "solutions": [
-                              { "type": "testedTriple", "subject": "y3", "predicate": "http://a.example/c", "object": "\"3\"^^http://www.w3.org/2001/XMLSchema#integer" }
+                              { "type": "TestedTriple", "subject": "y3", "predicate": "http://a.example/c", "object": "\"3\"^^http://www.w3.org/2001/XMLSchema#integer" }
                             ]
                           }
                         }
@@ -63,32 +61,31 @@
             "min": 0, "max": "*"
           },
           {
-            "type": "someOfSolutions",
+            "type": "OneOfSolutions",
             "solutions": [
               {
-                "type": "someOfSolution",
+                "type": "OneOfSolution",
                 "expressions": [
                   {
-                    "type": "tripleConstraintSolutions", "predicate": "http://a.example/a",
-                    "valueExpr": { "type": "ValueClass", "reference": "T2" },
+                    "type": "TripleConstraintSolutions", "predicate": "http://a.example/a",
+                    "valueExpr": { "type": "ShapeRef", "reference": "T2" },
                     "solutions": [
                       {
-                        "type": "testedTriple", "subject": "x", "predicate": "http://a.example/a", "object": "x2",
+                        "type": "TestedTriple", "subject": "x", "predicate": "http://a.example/a", "object": "x2",
                         "referenced": {
-                          "type": "test", "node": "x2", "shape": "T2",
+                          "type": "ShapeTest", "node": "x2", "shape": "T2",
                           "solution": {
-                            "type": "tripleConstraintSolutions", "predicate": "http://a.example/b",
-                            "valueExpr": { "type": "ValueClass", "reference": "T4" },
+                            "type": "TripleConstraintSolutions", "predicate": "http://a.example/b",
+                            "valueExpr": { "type": "ShapeRef", "reference": "T4" },
                             "solutions": [
                               {
-                                "type": "testedTriple", "subject": "x2", "predicate": "http://a.example/b", "object": "y2",
+                                "type": "TestedTriple", "subject": "x2", "predicate": "http://a.example/b", "object": "y2",
                                 "referenced": {
-                                  "type": "test", "node": "y2", "shape": "T4",
+                                  "type": "ShapeTest", "node": "y2", "shape": "T4",
                                   "solution": {
-                                    "type": "tripleConstraintSolutions", "predicate": "http://a.example/d",
-                                    "valueExpr": { "type": "ValueClass" },
+                                    "type": "TripleConstraintSolutions", "predicate": "http://a.example/d",
                                     "solutions": [
-                                      { "type": "testedTriple", "subject": "y2", "predicate": "http://a.example/d", "object": "\"2\"^^http://www.w3.org/2001/XMLSchema#integer" }
+                                      { "type": "TestedTriple", "subject": "y2", "predicate": "http://a.example/d", "object": "\"2\"^^http://www.w3.org/2001/XMLSchema#integer" }
                                     ]
                                   }
                                 }
@@ -104,10 +101,9 @@
             ]
           },
           {
-            "type": "tripleConstraintSolutions", "predicate": "http://a.example/b",
-            "valueExpr": { "type": "ValueClass" },
+            "type": "TripleConstraintSolutions", "predicate": "http://a.example/b",
             "solutions": [
-              { "type": "testedTriple", "subject": "x", "predicate": "http://a.example/b", "object": "x4" }
+              { "type": "TestedTriple", "subject": "x", "predicate": "http://a.example/b", "object": "x4" }
             ]
           }
         ]

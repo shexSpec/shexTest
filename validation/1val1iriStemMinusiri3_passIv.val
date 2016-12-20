@@ -1,12 +1,12 @@
 {
-  "type": "test",
+  "type": "ShapeTest",
   "node": "http://a.example/s1",
   "shape": "http://a.example/S1",
   "solution": {
-    "type": "tripleConstraintSolutions",
+    "type": "TripleConstraintSolutions",
     "predicate": "http://a.example/p1",
     "valueExpr": {
-      "type": "ValueClass",
+      "type": "NodeConstraint",
       "values": [
         {
           "type": "StemRange",
@@ -21,7 +21,7 @@
     },
     "solutions": [
       {
-        "type": "testedTriple",
+        "type": "TestedTriple",
         "subject": "http://a.example/s1",
         "predicate": "http://a.example/p1",
         "object": "http://a.example/v"

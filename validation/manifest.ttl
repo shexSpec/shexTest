@@ -12,6 +12,21 @@
 @prefix prov:   <http://www.w3.org/ns/prov#> .
 
  # TODO:
+ #   focus* on empty.ttl
+ #   1IRI_with_all_punctuationdot.shex
+ #   1IRI_with_UCHAR.1dot.shex
+ #   1val1STRING_LITERAL1.shex
+ #   1val1STRING_LITERAL1_with_all_controls.shex
+ #   1val1STRING_LITERAL1_with_all_punctuation.shex
+ #   1val1STRING_LITERAL1_with_ascii_boundaries.shex
+ #   1val1STRING_LITERAL1_with_UTF8_boundaries.shex
+ #   1val1STRING_LITERAL2.shex
+ #   1val1STRING_LITERAL2_with_LANGTAG.shex
+ #   1val1STRING_LITERAL2_with_subtag.shex
+ #   1val1STRING_LITERAL_LONG1.shex
+ #   1val1STRING_LITERAL_LONG2.shex
+ #   1val1STRING_LITERAL_LONG2_with_LANGTAG.shex
+ #   1val1STRING_LITERAL_LONG2_with_subtag.shex
  #   repeated OR
  #   1dotRefOR3 on..
 
@@ -41,20 +56,9 @@
         <#1inversedot_pass-noOthers>
         <#1inversedot_pass-over_lexicallyEarlier>
         <#1inversedot_pass-over_lexicallyLater>
-        <#1negateddot_pass-empty>
-        <#1negateddot_pass-missing>
-        <#1negateddot_fail-noOthers>
-        <#1negateddot_fail-others_lexicallyEarlier>
-        <#1negateddot_fail-others_lexicallyLater>
-        <#1negatedinversedot_pass-empty>
-        <#1negatedinversedot_pass-missing>
-        <#1negatedinversedot_fail-noOthers>
-        <#1negatedinversedot_fail-others_lexicallyEarlier>
-        <#1negatedinversedot_fail-others_lexicallyLater>
-        # 1inversenegateddot_... same as 1negatedinversedot
         <#1Adot_pass>
 
-## node kinds
+## node kind
         <#1iri_pass-iri>
         <#1iri_fail-bnode>
         <#1iri_fail-literal>
@@ -65,14 +69,18 @@
         <#1literal_fail-bnode>
         <#1literal_pass-literal>
         <#1nonliteral_pass-iri>
+	<#1focusnonLiteralLength-nonLiteralLength_fail-short>
+	<#1focusnonLiteralLength-nonLiteralLength_pass>
         <#1nonliteral_pass-bnode>
         <#1nonliteral_fail-literal>
 
 ## datatype
         <#1datatype_missing>
         <#1datatype_nonLiteral>
+	<#1datatype_langString>
         <#1datatype_wrongDatatype>
         <#1datatype_pass>
+	<#1datatypelangString_pass>
 
 ## cardinality
 ###   dot cardinality
@@ -113,6 +121,8 @@
         <#1dotRef1_referent,referrer>
         <#1dotRef1_referrer,referent>
         <#1dotRef1_missingReferent>
+	<#1dotRef1_selfReference>
+	<#1dotRef1_missingSelfReference>
         <#1dotRef1_overReferrer>
         <#1dotRef1_overReferrer,overReferent>
         <#1dotRef1_overMatchesReferent>
@@ -125,8 +135,8 @@
 	<#1iriRef1_fail-bnode>
 	<#1bnodeRef1_fail-iri>
 	<#1bnodeRef1_pass-bnode>
-	<#1dotRef1_selfReference>
-	<#1dotRef1_missingSelfReference>
+	<#1datatypeRef1_fail-datatype>
+	<#1datatypeRef1_fail-reflexiveRef>
 
 ## inline
 	<#1dotInline1_referrer,referent>
@@ -147,14 +157,16 @@
 ####     numeric equivalence
         <#1val1INTEGER_pass>            # <S> { <p1> [0] }
         <#1val1INTEGER_00>
+	<#1val1DECIMAL_00>
+	<#1val1DECIMAL_pass>
+	<#1val1DECIMAL_Lab>
         <#1val1INTEGER_Lab>
-        <#1val1DOUBLE_pass>             # <S> { <p1> [0e0] }
-        <#1val1DOUBLE_passUC>
+        <#1val1DOUBLE_pass>             # <S> { <p1> [0E0] }
         <#1val1DOUBLE_0_0e0>
         # 1val1DOUBLElowercase_... same as 1val1DOUBLE
         # @@ eliminate as duplicate?
         <#1val1DOUBLElowercase_pass>    # <S> { <p1> [0e0] }
-        <#1val1DOUBLElowercase_passUC>
+        <#1val1DOUBLElowercase_fail-0E0>
         <#1val1DOUBLElowercase_0_0e0>
 
 ####     language tag equivalence
@@ -179,7 +191,7 @@
         <#1val1false_true>
         <#1val1false_ab>
 
-## facets
+## facet
 ###   length
         <#1datatypeLength_fail-missing>
         <#1datatypeLength_fail-wrongDatatype>
@@ -187,28 +199,51 @@
         <#1datatypeLength_pass>
         <#1datatypeLength_fail-long>
 ###   fractionDigits
-        <#1literalFractiondigits_fail-decimal-short>
+        <#1literalFractiondigits_pass-decimal-short>
         # <#1literalFractiondigitsxsd-integer_fail-decimal-short> # for numericFacet ::= (numericFacet | numericLength) INTEGER (numericLiteral | string '^^' datatype )
         <#1literalFractiondigits_pass-decimal-equal>
         #  <#1literalFractiondigitsxsd-integer_pass-decimal-equal> # for numericFacet ::= (numericFacet | numericLength) INTEGER (numericLiteral | string '^^' datatype )
-        <#1literalFractiondigits_pass-float-equal>
         <#1literalFractiondigits_fail-decimal-long>
-        <#1literalFractiondigits_fail-integer-short>
-        <#1literalFractiondigits_fail-xsd_integer-short>
+        <#1literalFractiondigits_pass-decimal-equalLead>
+        <#1literalFractiondigits_fail-decimal-longLead>
+        <#1literalFractiondigits_pass-decimal-equalTrail>
+        <#1literalFractiondigits_fail-decimal-longTrail>
+        <#1literalFractiondigits_pass-decimal-equalLeadTrail>
+        <#1literalFractiondigits_fail-decimal-longLeadTrail>
+        <#1literalFractiondigits_pass-integer-short>
+        <#1literalFractiondigits_pass-xsd_integer-short>
+        <#1literalFractiondigits_fail-float-equal>
+        <#1literalFractiondigits_fail-double-equal>
         <#1literalFractiondigits_fail-malformedxsd_decimal-1_23ab>
         <#1literalFractiondigits_fail-malformedxsd_decimal-1_2345ab>
         <#1literalFractiondigits_fail-malformedxsd_integer-1_2345>
         <#1literalFractiondigits_fail-iri>
         <#1literalFractiondigits_fail-bnode>
 ###   totalDigits
-        <#1literalTotaldigits_fail-decimal-short>
+        <#1literalTotaldigits_pass-decimal-short>
         # <#1literalTotaldigitsxsd-integer_fail-decimal-short> # for numericFacet ::= (numericFacet | numericLength) INTEGER (numericLiteral | string '^^' datatype )
         <#1literalTotaldigits_pass-decimal-equal>
         #  <#1literalTotaldigitsxsd-integer_pass-decimal-equal> # for numericFacet ::= (numericFacet | numericLength) INTEGER (numericLiteral | string '^^' datatype )
-        <#1literalTotaldigits_pass-float-equal>
         <#1literalTotaldigits_fail-decimal-long>
+        <#1literalTotaldigits_pass-decimal-equalLead>
+        <#1literalTotaldigits_fail-decimal-longLead>
+        <#1literalTotaldigits_pass-decimal-equalTrail>
+        <#1literalTotaldigits_fail-decimal-longTrail>
+        <#1literalTotaldigits_pass-decimal-equalLeadTrail>
+        <#1literalTotaldigits_fail-decimal-longLeadTrail>
         <#1literalTotaldigits_pass-integer-equal>
-        <#1literalTotaldigits_fail-xsd_integer-short>
+        <#1literalTotaldigits_pass-xsd_integer-short>
+        <#1literalTotaldigits_pass-integer-equalLead>
+        <#1literalTotaldigits_fail-integer-longLead>
+        <#1literalTotaldigits_pass-integer-equalTrail>
+        <#1literalTotaldigits_fail-integer-longTrail>
+        <#1literalTotaldigits_pass-integer-equalLeadTrail>
+        <#1literalTotaldigits_fail-integer-longLeadTrail>
+        <#1literalTotaldigits_pass-byte-short>
+        <#1literalTotaldigits_pass-byte-equal>
+        <#1literalTotaldigits_fail-byte-long>
+        <#1literalTotaldigits_fail-float-equal>
+        <#1literalTotaldigits_fail-double-equal>
         <#1literalTotaldigits_fail-malformedxsd_decimal-1_23ab>
         <#1literalTotaldigits_fail-malformedxsd_decimal-1_2345ab>
         <#1literalTotaldigits_fail-malformedxsd_integer-1_2345>
@@ -216,6 +251,18 @@
         <#1literalTotaldigits_fail-bnode>
 ###   comparators
 ####     manual
+	<#1literalMinexclusiveINTEGER_fail-low>
+	<#1literalMinexclusiveINTEGER_pass-equal>
+	<#1literalMinexclusiveINTEGER_pass-high>
+	<#1literalMininclusiveINTEGER_fail-low>
+	<#1literalMininclusiveINTEGER_pass-equal>
+	<#1literalMininclusiveINTEGER_pass-high>
+	<#1literalMaxexclusiveINTEGER_pass-low>
+	<#1literalMaxexclusiveINTEGER_fail-equal>
+	<#1literalMaxexclusiveINTEGER_fail-high>
+	<#1literalMaxinclusiveINTEGER_pass-low>
+	<#1literalMaxinclusiveINTEGER_pass-equal>
+	<#1literalMaxinclusiveINTEGER_fail-high>
         <#1floatMininclusiveINTEGER_fail-low>
         <#1floatMininclusiveINTEGER_pass-equalLead>
         <#1floatMininclusiveINTEGER_pass-equalTrail>
@@ -450,6 +497,9 @@
         <#1doubleMaxexclusiveDOUBLEint_fail-double-equal>
         <#1doubleMaxexclusiveDOUBLEintLeadTrail_fail-double-equal>
 ###   lengths
+        <#1Length_fail-lit-short>
+        <#1Length_pass-lit-equal>
+        <#1Length_fail-lit-long>
         <#1literalLength_fail-lit-short>
         <#1literalLength_pass-lit-equal>
         <#1literalLength_fail-lit-long>
@@ -510,10 +560,25 @@
 ###   pattern
         <#1literalPattern_pass-lit-match>
         <#1literalPattern_fail-lit-short>
-        <#1literalPattern_fail-lit-long>
+	<#1literalPattern_fail-ab>
+	<#1literalPattern_fail-cd>
+        <#1literalPattern_pass-lit-into>
         <#1literalPattern19_fail-iri-match>
         <#1literalPattern_fail-bnode-match>
+	<#1literalPatternEnd_fail-litEnd>
+	<#1literalPatternDollar_pass-litDollar-match>
+	<#1literalPattern_pass-StartlitEnd-match>
+	<#1literalStartPatternEnd_CarrotbcDollar>
+	<#1literalCarrotPatternDollar_pass-bc>
+	<#1literalCarrotPatternDollar_pass-CarrotbcDollar>
         <#1literalPatternabEnd_fail-bnode-match>
+	<#1literalStartPattern_pass-bc>
+	<#1literalStartPattern_fail-CarrotbcDollar>
+	<#1literalPatternEnd_pass-bc>
+	<#1literalPatternEnd_pass-CarrotbcDollar>
+	<#1literalPattern_pass-bcDollar>
+	<#1literalStarPatternEnd_pass-bc>
+	<#1literalPattern_pass-CarrotbcDollar>
         <#1iriPattern_pass-iri-match>
         <#1iriPattern_fail-iri-short>
         <#1iriPattern_fail-iri-long>
@@ -526,11 +591,11 @@
         <#1bnodePattern_fail-iri-match>
         <#1nonliteralPattern_pass-iri-match>
         <#1nonliteralPattern_fail-iri-short>
-        <#1nonliteralPattern_fail-iri-long>
+        <#1nonliteralPattern_pass-iri-long>
         <#1nonliteralPattern_fail-lit-match>
         <#1nonliteralPattern_pass-bnode-match>
         <#1nonliteralPattern_fail-bnode-short>
-        <#1nonliteralPattern_fail-bnode-long>
+        <#1nonliteralPattern_pass-bnode-long>
 
 ## value sets
         <#1val1dotMinusiri3_pass>
@@ -566,26 +631,26 @@
 ###   AND tripleExpr
 
 ###   OR tripleExpr
-        <#1dotOr2dot_pass_p1>
-        <#1dotOr2dot_pass_p2p3>
-        <#1dotOr2dot-oneOf_fail_p1p2p3>
-        <#1dotOr2dot-someOf_fail_p1p2p3>
-        #<#1dotOr2dot-firstOf_pass_p1p2p3>
-        # open1dotOropen2dotcloseclose_... same as 1dotOr2dot
+        <#1dotOne2dot_pass_p1>
+        <#1dotOne2dot_pass_p2p3>
+        <#1dotOne2dot-oneOf_fail_p1p2p3>
+        <#1dotOne2dot-someOf_fail_p1p2p3>
+        #<#1dotOne2dot-firstOf_pass_p1p2p3>
+        # open1dotOneopen2dotcloseclose_... same as 1dotOne2dot
         # @@ eliminate as duplicate?
-        <#open1dotOropen2dotcloseclose_pass_p1>
-        <#open1dotOropen2dotcloseclose_pass_p2p3>
-        <#open1dotOropen2dotcloseclose_fail_p1p2p3>
-        # 1dotSemiOr2dotSemis_... same as 1dotOr2dot
-        # open1dotSemiOr2dotsemisclose_... same as 1dotOr2dot
-        # open1dotSemiOropen2dotSemiscloseclose_... same as 1dotOr2dot
-        # open1dotOr2dotclose_... same as 1dotOr2dot
-        <#openopen1dotOr1dotclose1dotclose_pass_p1p3>
-        <#openopen1dotOr1dotclose1dotclose_pass_p2p3>
-        <#openopen1dotOr1dotclose1dotclose_fail_p1>
-        <#openopen1dotOr1dotclose1dotclose_fail_p3>
-        <#openopen1dotOr1dotclose1dotclose_fail_p1p2>
-        # openopen1dotSemiOr1dotSemiclose1dotSemicloseSemi_... same as openopen1dotOr1dotclose1dotclose
+        <#open1dotOneopen2dotcloseclose_pass_p1>
+        <#open1dotOneopen2dotcloseclose_pass_p2p3>
+        <#open1dotOneopen2dotcloseclose_fail_p1p2p3>
+        # 1dotSemiOne2dotSemis ... same as 1dotOne2dot
+        # open1dotSemiOne2dotsemisclose_... same as 1dotOne2dot
+        # open1dotSemiOneopen2dotSemiscloseclose_... same as 1dotOne2dot
+        # open1dotOne2dotclose_... same as 1dotOne2dot
+        <#openopen1dotOne1dotclose1dotclose_pass_p1p3>
+        <#openopen1dotOne1dotclose1dotclose_pass_p2p3>
+        <#openopen1dotOne1dotclose1dotclose_fail_p1>
+        <#openopen1dotOne1dotclose1dotclose_fail_p3>
+        <#openopen1dotOne1dotclose1dotclose_fail_p1p2>
+        # openopen1dotSemiOne1dotSemiclose1dotSemicloseSemi_... same as openopen1dotOne1dotclose1dotclose
 
 ## value expressions
 ###   value reference
@@ -594,15 +659,17 @@
 	<#1val1vExprRefbnode1_fail-lit-short>
 	<#1val1vExprRefbnode1_pass-lit-equal>
 ###   AND valueExpr
+	<#1dotShapeAND1dot3X_pass>
+	<#1dotShapeAND1dot3X_fail>
 	<#1dotRefAND3_failAll>
 	<#1dotRefAND3_failShape2Shape3>
 	<#1dotRefAND3_failShape1Shape3>
 	<#1dotRefAND3_failShape1Shape2>
 	<#1dotRefAND3_passShape1Shape2Shape3>
-        <#1val1vExprANDRef3_pass>
-        <#1val1vExprANDRef3_failvc1>
-        <#1val1vExprANDRef3_failvc2>
-        <#1val1vExprANDRef3_failvc3>
+        <#1val1vExpr1AND1AND1Ref3_pass>
+        <#1val1vExpr1AND1AND1Ref3_failvc1>
+        <#1val1vExpr1AND1AND1Ref3_failvc2>
+        <#1val1vExpr1AND1AND1Ref3_failvc3>
         <#1val1vExprRefAND3_pass>
         <#1val1vExprRefAND3_failvc3>
         <#1val1vExprRefAND3_failvc2>
@@ -613,16 +680,23 @@
         <#1val1vExprAND3_failvc3>
 
 ###   OR valueExpr
+        <#refBNodeORrefIRI_ReflexiveIRI>
+        <#refBNodeORrefIRI_ReflexiveShortIRI>
+        <#refBNodeORrefIRI_IntoReflexiveIRI>
+        <#refBNodeORrefIRI_IntoReflexiveBNode>
+        <#refBNodeORrefIRI_CyclicIRI_IRI>
+        <#refBNodeORrefIRI_CyclicIRI_BNode>
+        <#refBNodeORrefIRI_CyclicIRI_ShortIRI>
 	<#1dotRefOR3_fail>
 	<#1dotRefOR3_passShape1>
 	<#1dotRefOR3_passShape2>
 	<#1dotRefOR3_passShape3>
 	<#1dotRefOR3_passShape1Shape2Shape3>
-        <#1val1vExprORRef3_fail>
-        <#1val1vExprORRef3_passvc1>
-        <#1val1vExprORRef3_passvc2>
-        <#1val1vExprORRef3_passvc3>
-        <#1val1vExprORRef3_passvc1vc2vc3>
+        <#1val1vExpr1OR1OR1Ref3_fail>
+        <#1val1vExpr1OR1OR1Ref3_passvc1>
+        <#1val1vExpr1OR1OR1Ref3_passvc2>
+        <#1val1vExpr1OR1OR1Ref3_passvc3>
+        <#1val1vExpr1OR1OR1Ref3_passvc1vc2vc3>
         <#1val1vExprRefOR3_passvc1vc2vc3>
         <#1val1vExprRefOR3_passvc3>
         <#1val1vExprRefOR3_passvc2>
@@ -634,25 +708,39 @@
         <#1val1vExprOR3_passvc3>
         <#1val1vExprOR3_passvc1vc2vc3>
 
-## repetitions
-	<#open3Ordotclosecard2_fail-p1>
-	<#open3Ordotclosecard2_pass-p1X2> #
-	<#open3Ordotclosecard2_fail-p1X3>
-	<#open3Ordotclosecard2_fail-p1X4>
-	<#open3Ordotclosecard2_pass-p1p2>
-	<#open3Ordotclosecard2_pass-p1p3>
-	<#open3Ordotclosecard2_pass-p2p3>
-	<#open3Ordotclosecard2_fail-p1p2p3> #
+###   AND OR valueExpr
+        <#1val1vExpr1AND1OR1Ref3_pass-vc1vc2>
+        <#1val1vExpr1AND1OR1Ref3_pass-vc1vc2vc3>
+        <#1val1vExpr1AND1OR1Ref3_pass-vc1vc3>
+        <#1val1vExpr1AND1OR1Ref3_failvc1vc3>
+        <#1val1vExpr1AND1OR1Ref3_failvc2vc3>
+        <#1val1vExpr1AND1OR1Ref3_failvc1vc2vc3>
+        <#1val1vExpr1OR1AND1Ref3_pass-vc1>
+        <#1val1vExpr1OR1AND1Ref3_pass-vc1vc3>
+        <#1val1vExpr1OR1AND1Ref3_pass-vc2vc3>
+        <#1val1vExpr1OR1AND1Ref3_failvc1vc2>
+        <#1val1vExpr1OR1AND1Ref3_failvc1vc3>
+        <#1val1vExpr1OR1AND1Ref3_failvc1vc2vc3>
 
-	<#open3Ordotclosecard23_fail-p1>
-	<#open3Ordotclosecard23_pass-p1X2> #
-	<#open3Ordotclosecard23_pass-p1X3> #
-	<#open3Ordotclosecard23_fail-p1X4>
-	<#open3Ordotclosecard23_pass-p1p2>
-	<#open3Ordotclosecard23_pass-p1p3>
-	<#open3Ordotclosecard23_pass-p2p3>
-	<#open3Ordotclosecard23_pass-p1p2p3>
-	<#open4Ordotclosecard23_fail-p1p2p3p4> #
+## repetitions
+	<#open3Onedotclosecard2_fail-p1>
+	<#open3Onedotclosecard2_pass-p1X2> #
+	<#open3Onedotclosecard2_fail-p1X3>
+	<#open3Onedotclosecard2_fail-p1X4>
+	<#open3Onedotclosecard2_pass-p1p2>
+	<#open3Onedotclosecard2_pass-p1p3>
+	<#open3Onedotclosecard2_pass-p2p3>
+	<#open3Onedotclosecard2_fail-p1p2p3> #
+
+	<#open3Onedotclosecard23_fail-p1>
+	<#open3Onedotclosecard23_pass-p1X2> #
+	<#open3Onedotclosecard23_pass-p1X3> #
+	<#open3Onedotclosecard23_fail-p1X4>
+	<#open3Onedotclosecard23_pass-p1p2>
+	<#open3Onedotclosecard23_pass-p1p3>
+	<#open3Onedotclosecard23_pass-p2p3>
+	<#open3Onedotclosecard23_pass-p1p2p3>
+	<#open4Onedotclosecard23_fail-p1p2p3p4> #
 	<#open3groupdotclosecard23_pass-p1p2p3X3>
 
 ## shape expressions
@@ -663,6 +751,8 @@
         <#1dotClosed_pass>
         <#1dotClosed_fail_lower>
         <#1dotClosed_fail_higher>
+	<#FocusIRI2groupBnodeNested2groupIRIRef_pass>
+	<#FocusIRI2groupBnodeNested2groupIRIRef_fail>
 
 ## extra
         <#1val1IRIREFExtra1_pass-iri1>
@@ -671,10 +761,10 @@
         <#1val2IRIREFPlusExtra1_pass-iri2>
         <#1val2IRIREFExtra1_pass-iri-bnode>
         <#1val1IRIREFExtra1p2_pass-iri1>
-        <#1val1IRIREFExtra1p2_pass-iri2>
-        <#1dotOr2dotExtra-someOf_pass_p1p2p3>
-        <#1val1IRIREFExtra1Or_pass-iri1>
-        <#1val1IRIREFExtra1Or_pass-iri2>
+        <#1val1IRIREFExtra1p2_fail-iri2>
+        <#1dotOne2dotExtra-someOf_pass_p1p2p3>
+        <#1val1IRIREFExtra1One_pass-iri1>
+        <#1val1IRIREFExtra1One_pass-iri2>
         <#1dotExtra1_pass-iri1>
         <#1dotExtra1_fail-iri2>
         <#3groupdotExtra3_pass-iri1> <#3groupdot3Extra_pass-iri1> <#3groupdotExtra3NLex_pass-iri1>
@@ -692,14 +782,16 @@
         <#startInline_fail-missing>
 
 ## include
-        <#2eachInclude1_pass>
-        <#2eachInclude1-after_pass>
-        <#2someInclude1_pass>
-        <#2someInclude1-after_pass>
+        <#2EachInclude1_pass>
+        <#2EachInclude1-after_pass>
+        <#2OneInclude1_pass>
+        <#2OneInclude1-after_pass>
 
 ## annotations
         <#1dotAnnotIRIREF_pass>
         <#1dotAnnotIRIREF_missing>
+	<#1dotPlusAnnotIRIREF_pass>
+	<#1dotAnnotAIRIREF_pass>
         <#1dotAnnotSTRING_LITERAL1_pass>
         <#1dotAnnot3_pass>
         <#1dotAnnot3_missing>
@@ -728,7 +820,8 @@
 ## annotations + semantic actions
         <#open3groupdotclosecard23Annot3Code2-p1p2p3X3>
 
-## shapeKind
+## focus constraint
+### kind
 	<#0focusIRI_other>
 	<#0focusIRI_other_fail-bnodeFocusLabel>
 	<#0focusIRI_empty>
@@ -743,8 +836,28 @@
         <#1focusBNODE_dot_pass>
         <#1focusnonLiteral-dot_pass-iri-equal>
 
-## focusFacet
-###   lengths
+
+###  datatype
+	<#focusdatatype_pass>
+	<#focusdatatype_fail>
+
+###  value sets
+	<#focusvs_pass>
+	<#focusvs_fail>
+
+### AND focus
+	<#1focusvsANDdatatype_fail>
+	<#1focusvsANDIRI_pass>
+	<#1focusvsANDIRI_fail>
+
+### OR focus
+	<#1focusvsORdatatype_pass-val>
+	<#1focusvsORdatatype_fail-val>
+	<#1focusvsORdatatype_pass-dt>
+	<#1focusvsORdatatype_fail-dt>
+
+### facet
+#### length
         <#1focusLength-dot_fail-iri-short>
         <#1focusLength-dot_pass-iri-equal>
         <#1focusLength-dot_fail-iri-long>
@@ -766,7 +879,7 @@
         <#1focusMaxLength-dot_pass-bnode-equal>
         <#1focusMaxLength-dot_fail-bnode-long>
 
-###   pattern
+#### pattern
         <#1focusPattern-dot_fail-iri-match>
         <#1focusPattern-dot_fail-iri-short>
         <#1focusPattern-dot_pass-iri-match>
@@ -774,9 +887,9 @@
         <#1focusPatternB-dot_fail-iri-match>
         <#1focusPatternB-dot_fail-bnode-short>
         <#1focusPatternB-dot_pass-bnode-match>
-        <#1focusPatternB-dot_fail-bnode-long>
+        <#1focusPatternB-dot_pass-bnode-long>
 
-## shapeKind + length facet
+### kind + length facet
         <#1focusIRILength_dot_fail-bnodeFocusLabel-equal>
         <#1focusIRILength_dot_fail-short>
         <#1focusIRILength_dot_pass>
@@ -786,6 +899,27 @@
         <#1focusBNODELength_dot_pass>
         <#1focusBNODELength_dot_fail-long>
         <#1focusnonLiteralLength-dot_pass-iri-equal>
+
+### AND OR NOT
+        <#NOT1dotOR2dot_pass-empty>
+        <#NOT1dotOR2dot_pass-NoShape1>
+        <#NOT1dotOR2dot_pass-Shape2>
+        <#NOT1dotOR2dot_fail-Shape2>
+        <#NOT1dotOR2dotX3_pass-empty>
+        <#NOT1dotOR2dotX3_pass-NoShape1>
+        <#NOT1dotOR2dotX3_pass-Shape2>
+        <#NOT1dotOR2dotX3_fail-Shape2>
+	<#NOT1dotOR2dotX3AND1_fail-empty>
+	<#NOT1dotOR2dotX3AND1_fail-NoShape1>
+	<#NOT1dotOR2dotX3AND1_pass-Shape2>
+	<#NOT1dotOR2dotX3AND1_fail-Shape2>
+
+## shape extern
+
+        <#shapeExtern_pass>
+        <#shapeExtern_fail>
+        <#shapeExternRef_pass>
+        <#shapeExternRef_fail>
 
 ## manual schemas
         <#false-lead-excluding-value-shape>
@@ -803,7 +937,7 @@
         <#PstarTstar>
         <#P2T2>
 
-## errors
+## error reporting
 	<#1dot_fail-empty-err>
 	<#2dot_fail-empty-err>
 
@@ -815,7 +949,7 @@
 <#0_empty> a sht:ValidationTest ;
     mf:name "0_empty" ;
     sht:trait sht:Empty ;
-    rdfs:comment "<S> {  } on {  }" ;
+    rdfs:comment "<S1> {  } on {  }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/0.shex> ;
@@ -829,7 +963,7 @@
 <#0_other> a sht:ValidationTest ;
     mf:name "0_other" ;
     sht:trait sht:Empty ;
-    rdfs:comment "<S> {  } on { <s1> <p1> <o1> }" ;
+    rdfs:comment "<S1> {  } on { <s1> <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/0.shex> ;
@@ -842,8 +976,8 @@
 
 <#0_otherbnode> a sht:ValidationTest ;
     mf:name "0_otherbnode" ;
-    sht:trait sht:Empty ;
-    rdfs:comment "<S> {  } on { _:abcd <p1> <o1> }" ;
+    sht:trait sht:Empty, sht:ToldBNode ;
+    rdfs:comment "<S1> {  } on { _:abcd <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/0.shex> ;
@@ -860,7 +994,7 @@
 <#1dot_fail-empty> a sht:ValidationFailure ;
     mf:name "1dot_fail-empty" ;
     sht:trait sht:TriplePattern ;
-    rdfs:comment "<S> { <p1> . } on {  }" ;
+    rdfs:comment "<S1> { <p1> . } on {  }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1dot.shex> ;
@@ -873,7 +1007,7 @@
 <#1dot-base_fail-empty> a sht:ValidationFailure ;
     mf:name "1dot-base_fail-empty" ;
     sht:trait sht:TriplePattern ;
-    rdfs:comment "<S> { <p1> . } on {  }" ;
+    rdfs:comment "<S1> { <p1> . } on {  }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1dot-base.shex> ;
@@ -886,7 +1020,7 @@
 <#1dot_fail-missing> a sht:ValidationFailure ;
     mf:name "1dot_fail-missing" ;
     sht:trait sht:TriplePattern ;
-    rdfs:comment "<S> { <p1> . } on { <s> <p2> <o1> }" ;
+    rdfs:comment "<S1> { <p1> . } on { <s> <p2> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1dot.shex> ;
@@ -899,7 +1033,7 @@
 <#1dot-base_fail-missing> a sht:ValidationFailure ;
     mf:name "1dot-base_fail-missing" ;
     sht:trait sht:TriplePattern ;
-    rdfs:comment "<S> { <p1> . } on { <s> <p2> <o1> }" ;
+    rdfs:comment "<S1> { <p1> . } on { <s> <p2> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1dot-base.shex> ;
@@ -912,7 +1046,7 @@
 <#1dot_pass-noOthers> a sht:ValidationTest ;
     mf:name "1dot_pass-noOthers" ;
     sht:trait sht:TriplePattern ;
-    rdfs:comment "<S> { <p1> . } on { <s1> <p1> <o1> }" ;
+    rdfs:comment "<S1> { <p1> . } on { <s1> <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1dot.shex> ;
@@ -926,7 +1060,7 @@
 <#1dot-base_pass-noOthers> a sht:ValidationTest ;
     mf:name "1dot-base_pass-noOthers" ;
     sht:trait sht:TriplePattern ;
-    rdfs:comment "<S> { <p1> . } on { <s1> <p1> <o1> }" ;
+    rdfs:comment "<S1> { <p1> . } on { <s1> <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1dot-base.shex> ;
@@ -940,7 +1074,7 @@
 <#1dotSemi_pass-noOthers> a sht:ValidationTest ;
     mf:name "1dotSemi_pass-noOthers" ;
     sht:trait sht:TriplePattern ;
-    rdfs:comment "PREFIX : <http://a.example/> <S> { :p1 ., } on { <s1> <p1> <o1> }" ;
+    rdfs:comment "PREFIX : <http://a.example/> <S1> { :p1 ., } on { <s1> <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1dotSemi.shex> ;
@@ -1172,140 +1306,6 @@
     mf:result <1inversedot_pass.val>
     .
 
-<#1negateddot_pass-empty> a sht:ValidationTest ;
-    mf:name "1negateddot_pass-empty" ;
-    sht:trait sht:TriplePattern ;
-    rdfs:comment "<S> { !<p1> . } on {  }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1negateddot.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <empty.ttl> ;
-      sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1negateddot_pass.val>
-    .
-
-<#1negateddot_pass-missing> a sht:ValidationTest ;
-    mf:name "1negateddot_pass-missing" ;
-    sht:trait sht:TriplePattern ;
-    rdfs:comment "<S> { !<p1> . } on { <s> <p2> <o1> }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1negateddot.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip2_Io1.ttl> ;
-      sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1negateddot_pass.val>
-    .
-
-<#1negateddot_fail-noOthers> a sht:ValidationFailure ;
-    mf:name "1negateddot_fail-noOthers" ;
-    sht:trait sht:TriplePattern ;
-    rdfs:comment "<S> { !<p1> . } on { <s1> <p1> <o1> }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1negateddot.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_Io1.ttl> ;
-      sht:focus <http://a.example/s1>
-    ] ;
-    .
-
-<#1negateddot_fail-others_lexicallyEarlier> a sht:ValidationFailure ;
-    mf:name "1negateddot_fail-others_lexicallyEarlier" ;
-    sht:trait sht:TriplePattern ;
-    rdfs:comment "<S> { !<p1> . } on { <s> <p0> <o0>; <p1> <o1> }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1negateddot.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip0_Io0;Ip1_Io1.ttl> ;
-      sht:focus <http://a.example/s1>
-    ] ;
-    .
-
-<#1negateddot_fail-others_lexicallyLater> a sht:ValidationFailure ;
-    mf:name "1negateddot_fail-others_lexicallyLater" ;
-    sht:trait sht:TriplePattern ;
-    rdfs:comment "<S> { !<p1> . } on { <s> <p1> <o1>; <p2> <o2> }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1negateddot.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_Io1;Ip2_Io2.ttl> ;
-      sht:focus <http://a.example/s1>
-    ] ;
-    .
-
-<#1negatedinversedot_pass-empty> a sht:ValidationTest ;
-    mf:name "1negatedinversedot_pass-empty" ;
-    sht:trait sht:TriplePattern ;
-    rdfs:comment "<S> { !<p1> . } on {  }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1negatedinversedot.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <empty.ttl> ;
-      sht:focus <http://a.example/o1>
-    ] ;
-    mf:result <1negatedinversedot_pass.val>
-    .
-
-<#1negatedinversedot_pass-missing> a sht:ValidationTest ;
-    mf:name "1negatedinversedot_pass-missing" ;
-    sht:trait sht:TriplePattern ;
-    rdfs:comment "<S> { !<p1> . } on { <s> <p2> <o1> }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1negatedinversedot.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip2_Io1.ttl> ;
-      sht:focus <http://a.example/o1>
-    ] ;
-    mf:result <1negatedinversedot_pass.val>
-    .
-
-<#1negatedinversedot_fail-noOthers> a sht:ValidationFailure ;
-    mf:name "1negatedinversedot_fail-noOthers" ;
-    sht:trait sht:TriplePattern ;
-    rdfs:comment "<S> { !<p1> . } on { <s1> <p1> <o1> }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1negatedinversedot.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_Io1.ttl> ;
-      sht:focus <http://a.example/o1>
-    ] ;
-    .
-
-<#1negatedinversedot_fail-others_lexicallyEarlier> a sht:ValidationFailure ;
-    mf:name "1negatedinversedot_fail-others_lexicallyEarlier" ;
-    sht:trait sht:TriplePattern ;
-    rdfs:comment "<S> { !<p1> . } on { <s> <p0> <o0>; <p1> <o1> }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1negatedinversedot.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip0_Io0;Ip1_Io1.ttl> ;
-      sht:focus <http://a.example/o1>
-    ] ;
-    .
-
-<#1negatedinversedot_fail-others_lexicallyLater> a sht:ValidationFailure ;
-    mf:name "1negatedinversedot_fail-others_lexicallyLater" ;
-    sht:trait sht:TriplePattern ;
-    rdfs:comment "<S> { !<p1> . } on { <s> <p1> <o1>; <p2> <o2> }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1negatedinversedot.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_Io1;Ip2_Io2.ttl> ;
-      sht:focus <http://a.example/o1>
-    ] ;
-    .
-
 <#1Adot_pass> a sht:ValidationTest ;
     mf:name "1Adot_pass" ;
     sht:trait sht:TriplePattern ;
@@ -1457,6 +1457,33 @@
     mf:result <1nonliteral_pass-iri.val>
     .
 
+<#1focusnonLiteralLength-nonLiteralLength_pass> a sht:ValidationTest ;
+    mf:name "1focusnonLiteralLength-nonLiteralLength_pass" ;
+    sht:trait sht:NodeKind ;
+    rdfs:comment "<S1> NONLITERAL LENGTH 19 { <p1> NONLITERAL LENGTH 19 } on { <s1> <p1> <o1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1focusnonLiteralLength-nonLiteralLength.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1focusnonLiteralLength-nonLiteralLength_pass.val>
+    .
+
+<#1focusnonLiteralLength-nonLiteralLength_fail-short> a sht:ValidationFailure ;
+    mf:name "1focusnonLiteralLength-nonLiteralLength_fail-short" ;
+    sht:trait sht:NodeKind ;
+    rdfs:comment "<S1> NONLITERAL LENGTH 19 { <p1> NONLITERAL LENGTH 19 } on { <s1> <p1> <o> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1focusnonLiteralLength-nonLiteralLength.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
 <#1nonliteral_pass-bnode> a sht:ValidationTest ;
     mf:name "1nonliteral_pass-bnode" ;
     sht:trait sht:NodeKind ;
@@ -1490,7 +1517,7 @@
 <#1datatype_missing> a sht:ValidationFailure ;
     mf:name "1datatype_missing" ;
     sht:trait sht:Datatype ;
-    rdfs:comment "<S> { <p1> <dt1> } on <s> in { <s> <p2> <o1> }" ;
+    rdfs:comment "<S> { <p1> <dt1> } on <s> in { <s> <p2> \"ab\" }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1datatype.shex> ;
@@ -1503,12 +1530,25 @@
 <#1datatype_nonLiteral> a sht:ValidationFailure ;
     mf:name "1datatype_nonLiteral" ;
     sht:trait sht:Datatype ;
-    rdfs:comment "<S> { <p1> <dt1> } on <s> in { <s1> <p1> <o1> }" ;
+    rdfs:comment "<S> { <p1> <dt1> } on <s> in { <s1> <p1> <dt1> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1datatype.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_Io1.ttl> ;
+      sht:data <Is1_Ip1_Idt1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1datatype_langString> a sht:ValidationFailure ;
+    mf:name "1datatype_langString" ;
+    sht:trait sht:Datatype ;
+    rdfs:comment "<S> { <p1> <dt1> } on <s> in { <s1> <p1> 'ab'@en }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1datatype.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LabLTen.ttl> ;
       sht:focus <http://a.example/s1>
     ]
     .
@@ -1521,7 +1561,7 @@
     mf:action [
       sht:schema <../schemas/1datatype.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_DEC1.345.ttl> ;
+      sht:data <Is1_Ip1_DEC1_234.ttl> ;
       sht:focus <http://a.example/s1>
     ]
     .
@@ -1538,6 +1578,20 @@
       sht:focus <http://a.example/s1>
     ] ;
     mf:result <1datatype_pass.val>
+    .
+
+<#1datatypelangString_pass> a sht:ValidationTest ;
+    mf:name "1datatypelangString_pass" ;
+    sht:trait sht:Datatype ;
+    rdfs:comment "<S> { <p1> rdf:langString } on <s> in { <s> <p1> 'ab'@en }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1datatypelangString.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LabLTen.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1datatypelangString_pass.val>
     .
 
 ## } datatype
@@ -2051,8 +2105,8 @@
     mf:result <In2_Ip2_In1@In1_Ip1_LX.val>
     .
 
- # !../schemas/1dotRefLNex.shex
- # !../schemas/1dotRefSpaceLNex.shex [1dotRefLNex.shex]
+ # !../schemas/1dotRefLNex1.shex
+ # !../schemas/1dotRefSpaceLNex1.shex [1dotRefLNex1.shex]
  # !../schemas/1dotRefNS1.shex
  # !../schemas/1dotRefSpaceNS1.shex [1dotRefNS1.shex]
 
@@ -2181,6 +2235,32 @@
       sht:focus <http://a.example/n1>
     ] ;
     mf:result <1bnodeRef1_pass-bnode.val>
+    .
+
+<#1datatypeRef1_fail-datatype> a sht:ValidationFailure ;
+    mf:name "1datatypeRef1_fail-datatype" ;
+    sht:trait sht:ShapeReference , sht:Datatype , sht:Unsatisfiable ;
+    rdfs:comment "<S> { <p1> <dt1> } on <s> in { <s> <p1> 'ab'^^<dt1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1datatypeRef1.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_dt1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1datatypeRef1_fail-reflexiveRef> a sht:ValidationFailure ;
+    mf:name "1datatypeRef1_fail-reflexiveRef" ;
+    sht:trait sht:ShapeReference , sht:Unsatisfiable ;
+    rdfs:comment "<S1> { <p1> <dt1> } on <s> in { <n1> <p1> <n1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1datatypeRef1.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip1_In1.ttl> ;
+      sht:focus <http://a.example/n1>
+    ] ;
     .
 
 ## } shape reference
@@ -2368,29 +2448,57 @@
     ] ;
     .
 
+<#1val1DECIMAL_pass> a sht:ValidationTest ;
+    mf:name "1val1DECIMAL_pass" ;
+    sht:trait sht:NumericEquivalence ;
+    rdfs:comment "<S> { <p1> [0.0] } on { <s> <p1> 0.0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1DECIMAL.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC0_0.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1val1DECIMAL_pass.val>
+    .
+
+<#1val1DECIMAL_Lab> a sht:ValidationFailure ;
+    mf:name "1val1DECIMAL_Lab" ;
+    sht:trait sht:NumericEquivalence ;
+    rdfs:comment "<S> { <p1> [0.0] } on { <s> <p1> 'ab' }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1DECIMAL.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Lab.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1val1DECIMAL_00> a sht:ValidationFailure ;
+    mf:name "1val1DECIMAL_00" ;
+    sht:trait sht:NumericEquivalence ;
+    rdfs:comment "<S> { <p1> [0.0] } on { <s> <p1> .0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1DECIMAL.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC_0.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+
+
 <#1val1DOUBLE_pass> a sht:ValidationTest ;
     mf:name "1val1DOUBLE_pass" ;
     sht:trait sht:NumericEquivalence ;
-    rdfs:comment "<S> { <p1> [0e0] } on { <s> <p1> 0e0 }" ;
+    rdfs:comment "<S1> { <p1> [0E0] } on { <s> <p1> 0E0 }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1DOUBLE.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_DBL0e0.ttl> ;
-      sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1DOUBLE_pass.val>
-    .
-
-<#1val1DOUBLE_passUC> a sht:ValidationTest ;
-    mf:name "1val1DOUBLE_passUC" ;
-    sht:trait sht:NumericEquivalence ;
-    rdfs:comment "<S> { <p1> [0e0] } on { <s> <p1> 0E0 }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1val1DOUBLE.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_DBL0e0.ttl> ;
+      sht:data <Is1_Ip1_DBL0E0.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
     mf:result <1val1DOUBLE_pass.val>
@@ -2399,7 +2507,7 @@
 <#1val1DOUBLE_0_0e0> a sht:ValidationFailure ;
     mf:name "1val1DOUBLE_0_0e0" ;
     sht:trait sht:NumericEquivalence ;
-    rdfs:comment "<S> { <p1> [0e0] } on { <s> <p1> 0e0.0 }" ;
+    rdfs:comment "<S> { <p1> [0E0] } on { <s> <p1> 0e0.0 }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1DOUBLE.shex> ;
@@ -2417,24 +2525,23 @@
     mf:action [
       sht:schema <../schemas/1val1DOUBLElowercase.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_DBL0e0.ttl> ;
+      sht:data <Is1_Ip1_DBL0e0lowercase.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
-    mf:result <1val1DOUBLE_pass.val>
+    mf:result <1val1DOUBLElowercase_pass.val>
     .
 
-<#1val1DOUBLElowercase_passUC> a sht:ValidationTest ;
-    mf:name "1val1DOUBLElowercase_passUC" ;
+<#1val1DOUBLElowercase_fail-0E0> a sht:ValidationFailure ;
+    mf:name "1val1DOUBLElowercase_fail-0E0" ;
     sht:trait sht:NumericEquivalence ;
     rdfs:comment "<S> { <p1> [0e0] } on { <s> <p1> 0E0 }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1DOUBLElowercase.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_DBL0e0.ttl> ;
+      sht:data <Is1_Ip1_DBL0E0.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
-    mf:result <1val1DOUBLE_pass.val>
     .
 
 <#1val1DOUBLElowercase_0_0e0> a sht:ValidationFailure ;
@@ -2608,7 +2715,7 @@
 <#1val1true_ab> a sht:ValidationFailure ;
     mf:name "1val1true_ab" ;
     sht:trait sht:BooleanEquivalence ;
-    rdfs:comment "<S> { <p1> [true] } on { <s> <p1> ab }" ;
+    rdfs:comment "<S> { <p1> [true] } on { <s> <p1> 'ab' }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1true.shex> ;
@@ -2648,7 +2755,7 @@
 <#1val1false_ab> a sht:ValidationFailure ;
     mf:name "1val1false_ab" ;
     sht:trait sht:BooleanEquivalence ;
-    rdfs:comment "<S> { <p1> [false] } on { <s> <p1> ab }" ;
+    rdfs:comment "<S> { <p1> [false] } on { <s> <p1> 'ab' }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1false.shex> ;
@@ -2667,7 +2774,7 @@
 <#1datatypeLength_fail-missing> a sht:ValidationFailure ;
     mf:name "1datatypeLength_fail-missing" ;
     sht:trait sht:LengthFacet ;
-    rdfs:comment "<S> { <p1> xs:integer LENGTH 5 } on <s> in { <s> <p2> <o1> }" ;
+    rdfs:comment "<S> { <p1> xs:integer LENGTH 5 } on <s> in { <s> <p2> 'ab' }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1datatypeLength.shex> ;
@@ -2685,7 +2792,7 @@
     mf:action [
       sht:schema <../schemas/1datatypeLength.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_DEC1.345.ttl> ;
+      sht:data <Is1_Ip1_DEC1_234.ttl> ;
       sht:focus <http://a.example/s1>
     ]
     .
@@ -2733,17 +2840,18 @@
 ###   } length
 ###   fractionDigits {
 
-<#1literalFractiondigits_fail-decimal-short> a sht:ValidationFailure ;
-    mf:name "1literalFractiondigits_fail-decimal-short" ;
+<#1literalFractiondigits_pass-decimal-short> a sht:ValidationTest ;
+    mf:name "1literalFractiondigits_pass-decimal-short" ;
     sht:trait sht:FractionDigitsFacet ;
     rdfs:comment "<S1> { <p1> LITERAL FRACTIONDIGITS 5 } / { <s1> <p1> 1.2345 }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1literalFractiondigits.shex> ;
+      sht:schema <../schemas/1literalFractiondigits5.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DEC1_2345.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
+    mf:result <1literalFractiondigits_pass-decimal-short.val>
     .
 
  # for # for numericFacet ::= (numericFacet | numericLength) INTEGER (numericLiteral | string '^^' datatype )
@@ -2752,7 +2860,7 @@
  #     rdfs:comment "<S1> { <p1> LITERAL FRACTIONDIGITS 5 } / { <s1> <p1> 1.2345 }" ;
  #     mf:status mf:proposed ;
  #     mf:action [
- #       sht:schema <../schemas/1literalFractiondigitsxsd-integer.shex> ;
+ #       sht:schema <../schemas/1literalFractiondigitsxsd-integer.shex.bad> ;
  #       sht:shape <http://a.example/S1> ;
  #       sht:data <Is1_Ip1_DEC1_2345.ttl> ;
  #       sht:focus <http://a.example/s1>
@@ -2765,7 +2873,7 @@
     rdfs:comment "<S1> { <p1> LITERAL FRACTIONDIGITS 5 } / { <s1> <p1> 1.23456 }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1literalFractiondigits.shex> ;
+      sht:schema <../schemas/1literalFractiondigits5.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DEC1_23456.ttl> ;
       sht:focus <http://a.example/s1>
@@ -2779,7 +2887,8 @@
  #     rdfs:comment "<S1> { <p1> LITERAL FRACTIONDIGITS \"5\"^^<http://www.w3.org/2001/XMLSchema#integer> } / { <s1> <p1> 1.23456 }" ;
  #     mf:status mf:proposed ;
  #     mf:action [
- #       sht:schema <../schemas/1literalFractiondigitsxsd-integer.shex> ;
+ #       sht:schema <../schemas/1literalFractiondigitsxsd-integer.shex.bad
+ > ;
  #       sht:shape <http://a.example/S1> ;
  #       sht:data <Is1_Ip1_DEC1_23456.ttl> ;
  #       sht:focus <http://a.example/s1>
@@ -2787,55 +2896,152 @@
  #     mf:result <1literalFractiondigits_pass-decimal-equal.val>
  #     .
 
-<#1literalFractiondigits_pass-float-equal> a sht:ValidationTest ;
-    mf:name "1literalFractiondigits_pass-float-equal" ;
-    sht:trait sht:FractionDigitsFacet ;
-    rdfs:comment "<S1> { <p1> LITERAL FRACTIONDIGITS 5 } / { <s1> <p1> \"1.23456\"^^xsd:floag }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1literalFractiondigits.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_FLT1_23456.ttl> ;
-      sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1literalFractiondigits_pass-float-equal.val>
-    .
-
 <#1literalFractiondigits_fail-decimal-long> a sht:ValidationFailure ;
     mf:name "1literalFractiondigits_fail-decimal-long" ;
     sht:trait sht:FractionDigitsFacet ;
     rdfs:comment "<S1> { <p1> LITERAL FRACTIONDIGITS 5 } / { <s1> <p1> 1.234567 }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1literalFractiondigits.shex> ;
+      sht:schema <../schemas/1literalFractiondigits5.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DEC1_234567.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
     .
 
-<#1literalFractiondigits_fail-integer-short> a sht:ValidationFailure ;
-    mf:name "1literalFractiondigits_fail-integer-short" ;
+<#1literalFractiondigits_pass-decimal-equalLead> a sht:ValidationTest ;
+    mf:name "1literalFractiondigits_pass-decimal-equalLead" ;
     sht:trait sht:FractionDigitsFacet ;
-    rdfs:comment "<S1> { <p1> LITERAL FRACTIONDIGITS 5 } / { <s1> <p1> 12345 }" ;
+    rdfs:comment "<S1> { <p1> LITERAL FRACTIONDIGITS 4 } / { <s1> <p1> 01.2345 }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1literalFractiondigits.shex> ;
+      sht:schema <../schemas/1literalFractiondigits4.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_INT12345.ttl> ;
+      sht:data <Is1_Ip1_DEC01_2345.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1literalFractiondigits_pass-decimal-equalLead.val>
+    .
+
+<#1literalFractiondigits_fail-decimal-longLead> a sht:ValidationFailure ;
+    mf:name "1literalFractiondigits_fail-decimal-longLead" ;
+    sht:trait sht:FractionDigitsFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL FRACTIONDIGITS 4 } / { <s1> <p1> 01.23456 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalFractiondigits4.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC01_23456.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
     .
 
-<#1literalFractiondigits_fail-xsd_integer-short> a sht:ValidationFailure ;
-    mf:name "1literalFractiondigits_fail-xsd_integer-short" ;
+<#1literalFractiondigits_pass-decimal-equalTrail> a sht:ValidationTest ;
+    mf:name "1literalFractiondigits_pass-decimal-equalTrail" ;
+    sht:trait sht:FractionDigitsFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL FRACTIONDIGITS 4 } / { <s1> <p1> 1.23450 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalFractiondigits4.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC1_23450.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1literalFractiondigits_pass-decimal-equalTrail.val>
+    .
+
+<#1literalFractiondigits_fail-decimal-longTrail> a sht:ValidationFailure ;
+    mf:name "1literalFractiondigits_fail-decimal-longTrail" ;
+    sht:trait sht:FractionDigitsFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL FRACTIONDIGITS 4 } / { <s1> <p1> 1.234560 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalFractiondigits4.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC1_234560.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1literalFractiondigits_pass-decimal-equalLeadTrail> a sht:ValidationTest ;
+    mf:name "1literalFractiondigits_pass-decimal-equalLeadTrail" ;
+    sht:trait sht:FractionDigitsFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL FRACTIONDIGITS 4 } / { <s1> <p1> 01.23450 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalFractiondigits4.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC01_23450.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1literalFractiondigits_pass-decimal-equalLeadTrail.val>
+    .
+
+<#1literalFractiondigits_fail-decimal-longLeadTrail> a sht:ValidationFailure ;
+    mf:name "1literalFractiondigits_fail-decimal-longLeadTrail" ;
+    sht:trait sht:FractionDigitsFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL FRACTIONDIGITS 4 } / { <s1> <p1> 01.234560 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalFractiondigits4.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC1_234560.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+# !! Note: xs:integer restricted to fractionDigits="0"
+<#1literalFractiondigits_pass-integer-short> a sht:ValidationTest ;
+    mf:name "1literalFractiondigits_pass-integer-short" ;
+    sht:trait sht:FractionDigitsFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL FRACTIONDIGITS 5 } / { <s1> <p1> 12345 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalFractiondigits5.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT12345.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1fractionTotaldigits_pass-integer-equal.val>
+    .
+
+<#1literalFractiondigits_pass-xsd_integer-short> a sht:ValidationTest ;
+    mf:name "1literalFractiondigits_pass-xsd_integer-short" ;
     sht:trait sht:FractionDigitsFacet ;
     rdfs:comment "<S1> { <p1> LITERAL FRACTIONDIGITS 5 } / { <s1> <p1> \"12345\"^^xsd:integer }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1literalFractiondigits.shex> ;
+      sht:schema <../schemas/1literalFractiondigits5.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_xsd-integer12345.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1fractionTotaldigits_pass-integer-equal.val>
+    .
+
+# Note: fractionDigits restricted to decimal-derived datatypes.
+<#1literalFractiondigits_fail-float-equal> a sht:ValidationFailure ;
+    mf:name "1literalFractiondigits_fail-float-equal" ;
+    sht:trait sht:FractionDigitsFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL FRACTIONDIGITS 5 } / { <s1> <p1> \"1.23456\"^^xsd:float }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalFractiondigits5.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_FLT1_23456.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1literalFractiondigits_fail-double-equal> a sht:ValidationFailure ;
+    mf:name "1literalFractiondigits_fail-double-equal" ;
+    sht:trait sht:FractionDigitsFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL FRACTIONDIGITS 5 } / { <s1> <p1> 4.5e0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalFractiondigits5.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DBL4_5e0.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
     .
@@ -2846,7 +3052,7 @@
     rdfs:comment "<S1> { <p1> LITERAL FRACTIONDIGITS 5 } / { <s1> <p1> \"1.23ab\"^^xsd:decimal }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1literalFractiondigits.shex> ;
+      sht:schema <../schemas/1literalFractiondigits5.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_malformedxsd-decimal1_23ab.ttl> ;
       sht:focus <http://a.example/s1>
@@ -2859,7 +3065,7 @@
     rdfs:comment "<S1> { <p1> LITERAL FRACTIONDIGITS 5 } / { <s1> <p1> \"1.2345ab\"^^xsd:decimal }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1literalFractiondigits.shex> ;
+      sht:schema <../schemas/1literalFractiondigits5.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_malformedxsd-decimal1_2345ab.ttl> ;
       sht:focus <http://a.example/s1>
@@ -2872,7 +3078,7 @@
     rdfs:comment "<S1> { <p1> LITERAL FRACTIONDIGITS 5 } / { <s1> <p1> \"1.2345\"^^xsd:integer }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1literalFractiondigits.shex> ;
+      sht:schema <../schemas/1literalFractiondigits5.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_malformedxsd-integer1_2345.ttl> ;
       sht:focus <http://a.example/s1>
@@ -2885,7 +3091,7 @@
     rdfs:comment "<S1> { <p1> LITERAL FRACTIONDIGITS 5 } / BASE <http://a.example/> { <s1> <p1> <1.2345> }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1literalFractiondigits.shex> ;
+      sht:schema <../schemas/1literalFractiondigits5.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <BASE_Is1_Ip1_I12345.ttl> ;
       sht:focus <http://a.example/s1>
@@ -2898,7 +3104,7 @@
     rdfs:comment "<S1> { <p1> LITERAL FRACTIONDIGITS 5 } / BASE <http://a.example/> { <s1> <p1> _:12345 }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1literalFractiondigits.shex> ;
+      sht:schema <../schemas/1literalFractiondigits5.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_B12345.ttl> ;
       sht:focus <http://a.example/s1>
@@ -2908,17 +3114,18 @@
 ###   } fractionDigits
 ###   totalDigits {
 
-<#1literalTotaldigits_fail-decimal-short> a sht:ValidationFailure ;
-    mf:name "1literalTotaldigits_fail-decimal-short" ;
+<#1literalTotaldigits_pass-decimal-short> a sht:ValidationTest ;
+    mf:name "1literalTotaldigits_pass-decimal-short" ;
     sht:trait sht:TotalDigitsFacet ;
-    rdfs:comment "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> 1.2345 }" ;
+    rdfs:comment "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> 1.234 }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1literalTotaldigits.shex> ;
+      sht:schema <../schemas/1literalTotaldigits5.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DEC1_234.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
+    mf:result <1literalTotaldigits_pass-decimal-short.val>
     .
 
  # for # for numericFacet ::= (numericFacet | numericLength) INTEGER (numericLiteral | string '^^' datatype )
@@ -2940,7 +3147,7 @@
     rdfs:comment "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> 1.2345 }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1literalTotaldigits.shex> ;
+      sht:schema <../schemas/1literalTotaldigits5.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DEC1_2345.ttl> ;
       sht:focus <http://a.example/s1>
@@ -2962,29 +3169,96 @@
  #     mf:result <1literalTotaldigits_pass-decimal-equal.val>
  #     .
 
-<#1literalTotaldigits_pass-float-equal> a sht:ValidationTest ;
-    mf:name "1literalTotaldigits_pass-float-equal" ;
-    sht:trait sht:TotalDigitsFacet ;
-    rdfs:comment "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> \"1.2345\"^^xsd:float }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1literalTotaldigits.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_FLT1_2345.ttl> ;
-      sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1literalTotaldigits_pass-float-equal.val>
-    .
-
 <#1literalTotaldigits_fail-decimal-long> a sht:ValidationFailure ;
     mf:name "1literalTotaldigits_fail-decimal-long" ;
     sht:trait sht:TotalDigitsFacet ;
     rdfs:comment "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> 1.23456 }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1literalTotaldigits.shex> ;
+      sht:schema <../schemas/1literalTotaldigits5.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DEC1_23456.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1literalTotaldigits_pass-decimal-equalLead> a sht:ValidationTest ;
+    mf:name "1literalTotaldigits_pass-decimal-equalLead" ;
+    sht:trait sht:TotalDigitsFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> 01.2345 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalTotaldigits5.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC01_2345.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1literalTotaldigits_pass-decimal-equalLead.val>
+    .
+
+<#1literalTotaldigits_fail-decimal-longLead> a sht:ValidationFailure ;
+    mf:name "1literalTotaldigits_fail-decimal-longLead" ;
+    sht:trait sht:TotalDigitsFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> 01.23456 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalTotaldigits5.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC01_23456.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1literalTotaldigits_pass-decimal-equalTrail> a sht:ValidationTest ;
+    mf:name "1literalTotaldigits_pass-decimal-equalTrail" ;
+    sht:trait sht:TotalDigitsFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> 1.23450 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalTotaldigits5.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC1_23450.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1literalTotaldigits_pass-decimal-equalTrail.val>
+    .
+
+<#1literalTotaldigits_fail-decimal-longTrail> a sht:ValidationFailure ;
+    mf:name "1literalTotaldigits_fail-decimal-longTrail" ;
+    sht:trait sht:TotalDigitsFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> 1.234560 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalTotaldigits5.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC1_234560.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1literalTotaldigits_pass-decimal-equalLeadTrail> a sht:ValidationTest ;
+    mf:name "1literalTotaldigits_pass-decimal-equalLeadTrail" ;
+    sht:trait sht:TotalDigitsFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> 01.23450 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalTotaldigits5.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC01_23450.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1literalTotaldigits_pass-decimal-equalLeadTrail.val>
+    .
+
+<#1literalTotaldigits_fail-decimal-longLeadTrail> a sht:ValidationFailure ;
+    mf:name "1literalTotaldigits_fail-decimal-longLeadTrail" ;
+    sht:trait sht:TotalDigitsFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> 01.234560 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalTotaldigits5.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DEC1_234560.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
     .
@@ -2995,7 +3269,7 @@
     rdfs:comment "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> 12345 }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1literalTotaldigits.shex> ;
+      sht:schema <../schemas/1literalTotaldigits5.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_INT12345.ttl> ;
       sht:focus <http://a.example/s1>
@@ -3003,15 +3277,165 @@
     mf:result <1literalTotaldigits_pass-integer-equal.val>
     .
 
-<#1literalTotaldigits_fail-xsd_integer-short> a sht:ValidationFailure ;
-    mf:name "1literalTotaldigits_fail-xsd_integer-short" ;
+<#1literalTotaldigits_pass-xsd_integer-short> a sht:ValidationTest ;
+    mf:name "1literalTotaldigits_pass-xsd_integer-short" ;
     sht:trait sht:TotalDigitsFacet ;
     rdfs:comment "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> \"1234\"^^xsd:integer }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1literalTotaldigits.shex> ;
+      sht:schema <../schemas/1literalTotaldigits5.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_xsd-integer1234.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1literalTotaldigits_pass-integer-short.val>
+    .
+
+<#1literalTotaldigits_pass-integer-equalLead> a sht:ValidationTest ;
+    mf:name "1literalTotaldigits_pass-integer-equalLead" ;
+    sht:trait sht:TotalDigitsFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> 012345 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalTotaldigits5.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT012345.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1literalTotaldigits_pass-integer-equalLead.val>
+    .
+
+<#1literalTotaldigits_fail-integer-longLead> a sht:ValidationFailure ;
+    mf:name "1literalTotaldigits_fail-integer-longLead" ;
+    sht:trait sht:TotalDigitsFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> 0123456 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalTotaldigits5.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT0123456.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1literalTotaldigits_pass-integer-equalTrail> a sht:ValidationTest ;
+    mf:name "1literalTotaldigits_pass-integer-equalTrail" ;
+    sht:trait sht:TotalDigitsFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL TOTALDIGITS 6 } / { <s1> <p1> 123450 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalTotaldigits6.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT123450.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1literalTotaldigits_pass-integer-equalTrail.val>
+    .
+
+<#1literalTotaldigits_fail-integer-longTrail> a sht:ValidationFailure ;
+    mf:name "1literalTotaldigits_fail-integer-longTrail" ;
+    sht:trait sht:TotalDigitsFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL TOTALDIGITS 6 } / { <s1> <p1> 1234560 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalTotaldigits6.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT1234560.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1literalTotaldigits_pass-integer-equalLeadTrail> a sht:ValidationTest ;
+    mf:name "1literalTotaldigits_pass-integer-equalLeadTrail" ;
+    sht:trait sht:TotalDigitsFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL TOTALDIGITS 6 } / { <s1> <p1> 0123450 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalTotaldigits6.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT0123450.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1literalTotaldigits_pass-integer-equalLeadTrail.val>
+    .
+
+<#1literalTotaldigits_fail-integer-longLeadTrail> a sht:ValidationFailure ;
+    mf:name "1literalTotaldigits_fail-integer-longLeadTrail" ;
+    sht:trait sht:TotalDigitsFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL TOTALDIGITS 6 } / { <s1> <p1> 01234560 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalTotaldigits6.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT01234560.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1literalTotaldigits_pass-byte-short> a sht:ValidationTest ;
+    mf:name "1literalTotaldigits_pass-byte-short" ;
+    sht:trait sht:TotalDigitsFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL TOTALDIGITS 2 } / { <s1> <p1> 5^^xsd:byte }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalTotaldigits2.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_BYT5.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1literalTotaldigits_pass-byte-short.val>
+    .
+
+<#1literalTotaldigits_pass-byte-equal> a sht:ValidationTest ;
+    mf:name "1literalTotaldigits_pass-byte-equal" ;
+    sht:trait sht:TotalDigitsFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL TOTALDIGITS 2 } / { <s1> <p1> 64^^xsd:byte }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalTotaldigits2.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_BYT64.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1literalTotaldigits_pass-byte-equal.val>
+    .
+
+<#1literalTotaldigits_fail-byte-long> a sht:ValidationFailure ;
+    mf:name "1literalTotaldigits_fail-byte-long" ;
+    sht:trait sht:TotalDigitsFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL TOTALDIGITS 2 } / { <s1> <p1> 128^^xsd:byte }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalTotaldigits2.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_BYT128.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+# Note: totalDigits restricted to decimal-derived datatypes.
+<#1literalTotaldigits_fail-float-equal> a sht:ValidationFailure ;
+    mf:name "1literalTotaldigits_fail-float-equal" ;
+    sht:trait sht:TotalDigitsFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> \"1.2345\"^^xsd:float }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalTotaldigits5.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_FLT1_2345.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1literalTotaldigits_fail-double-equal> a sht:ValidationFailure ;
+    mf:name "1literalTotaldigits_fail-double-equal" ;
+    sht:trait sht:TotalDigitsFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> 4.5e0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalTotaldigits5.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_DBL4_5e0.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
     .
@@ -3022,7 +3446,7 @@
     rdfs:comment "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> \"1.23ab\"^^xsd:decimal }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1literalTotaldigits.shex> ;
+      sht:schema <../schemas/1literalTotaldigits5.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_malformedxsd-decimal1_23ab.ttl> ;
       sht:focus <http://a.example/s1>
@@ -3035,7 +3459,7 @@
     rdfs:comment "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> \"1.2345ab\"^^xsd:decimal }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1literalTotaldigits.shex> ;
+      sht:schema <../schemas/1literalTotaldigits5.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_malformedxsd-decimal1_2345ab.ttl> ;
       sht:focus <http://a.example/s1>
@@ -3048,7 +3472,7 @@
     rdfs:comment "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> \"1.2345\"^^xsd:integer }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1literalTotaldigits.shex> ;
+      sht:schema <../schemas/1literalTotaldigits5.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_malformedxsd-integer1_2345.ttl> ;
       sht:focus <http://a.example/s1>
@@ -3061,7 +3485,7 @@
     rdfs:comment "<S1> { <p1> LITERAL TOTALDIGITS 5 } / BASE <http://a.example/> { <s1> <p1> <1.2345> }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1literalTotaldigits.shex> ;
+      sht:schema <../schemas/1literalTotaldigits5.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <BASE_Is1_Ip1_I12345.ttl> ;
       sht:focus <http://a.example/s1>
@@ -3074,7 +3498,7 @@
     rdfs:comment "<S1> { <p1> LITERAL TOTALDIGITS 5 } / BASE <http://a.example/> { <s1> <p1> _:12345 }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1literalTotaldigits.shex> ;
+      sht:schema <../schemas/1literalTotaldigits5.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_B12345.ttl> ;
       sht:focus <http://a.example/s1>
@@ -3084,6 +3508,168 @@
 ###   } totalDigits
 ###   comparators {
 ####     manual {
+
+<#1literalMinexclusiveINTEGER_fail-low> a sht:ValidationFailure ;
+    mf:name "1literalMinexclusiveINTEGER_fail-low" ;
+    sht:trait sht:ComparatorFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL MINEXCLUSIVE 5 } / { <s1> <p1> '4'^^xsd:integer }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalMinexclusiveINTEGER.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT4.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1literalMinexclusiveINTEGER_pass-equal> a sht:ValidationFailure ;
+    mf:name "1literalMinexclusiveINTEGER_pass-equal" ;
+    sht:trait sht:ComparatorFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL MINEXCLUSIVE 5 } / { <s1> <p1> '5'^^xsd:integer }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalMinexclusiveINTEGER.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT5.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1literalMinexclusiveINTEGER_pass-high> a sht:ValidationTest ;
+    mf:name "1literalMinexclusiveINTEGER_pass-high" ;
+    sht:trait sht:ComparatorFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL MINEXCLUSIVE 5 } / { <s1> <p1> '6'^^xsd:integer }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalMinexclusiveINTEGER.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT6.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1literalMinexclusiveINTEGER_pass-high.val>
+    .
+
+<#1literalMininclusiveINTEGER_fail-low> a sht:ValidationFailure ;
+    mf:name "1literalMininclusiveINTEGER_fail-low" ;
+    sht:trait sht:ComparatorFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL MININCLUSIVE 5 } / { <s1> <p1> '4'^^xsd:integer }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalMininclusiveINTEGER.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT4.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1literalMininclusiveINTEGER_pass-equal> a sht:ValidationTest ;
+    mf:name "1literalMininclusiveINTEGER_pass-equal" ;
+    sht:trait sht:ComparatorFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL MININCLUSIVE 5 } / { <s1> <p1> '5'^^xsd:integer }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalMininclusiveINTEGER.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT5.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1literalMininclusiveINTEGER_pass-equal.val>
+    .
+
+<#1literalMininclusiveINTEGER_pass-high> a sht:ValidationTest ;
+    mf:name "1literalMininclusiveINTEGER_pass-high" ;
+    sht:trait sht:ComparatorFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL MININCLUSIVE 5 } / { <s1> <p1> '6'^^xsd:integer }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalMininclusiveINTEGER.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT6.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1literalMininclusiveINTEGER_pass-high.val>
+    .
+
+<#1literalMaxexclusiveINTEGER_pass-low> a sht:ValidationTest ;
+    mf:name "1literalMaxexclusiveINTEGER_pass-low" ;
+    sht:trait sht:ComparatorFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL MAXEXCLUSIVE 5 } / { <s1> <p1> '4'^^xsd:integer }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalMaxexclusiveINTEGER.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT4.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1literalMaxexclusiveINTEGER_pass-high.val>
+    .
+
+<#1literalMaxexclusiveINTEGER_fail-equal> a sht:ValidationFailure ;
+    mf:name "1literalMaxexclusiveINTEGER_fail-equal" ;
+    sht:trait sht:ComparatorFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL MAXEXCLUSIVE 5 } / { <s1> <p1> '5'^^xsd:integer }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalMaxexclusiveINTEGER.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT5.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1literalMaxexclusiveINTEGER_fail-high> a sht:ValidationFailure ;
+    mf:name "1literalMaxexclusiveINTEGER_fail-high" ;
+    sht:trait sht:ComparatorFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL MAXEXCLUSIVE 5 } / { <s1> <p1> '6'^^xsd:integer }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalMaxexclusiveINTEGER.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT6.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1literalMaxinclusiveINTEGER_pass-low> a sht:ValidationTest ;
+    mf:name "1literalMaxinclusiveINTEGER_pass-low" ;
+    sht:trait sht:ComparatorFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL MAXINCLUSIVE 5 } / { <s1> <p1> '4'^^xsd:integer }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalMaxinclusiveINTEGER.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT4.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1literalMaxinclusiveINTEGER_pass-low.val>
+    .
+
+<#1literalMaxinclusiveINTEGER_pass-equal> a sht:ValidationTest ;
+    mf:name "1literalMaxinclusiveINTEGER_pass-equal" ;
+    sht:trait sht:ComparatorFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL MAXINCLUSIVE 5 } / { <s1> <p1> '5'^^xsd:integer }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalMaxinclusiveINTEGER.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT5.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1literalMaxinclusiveINTEGER_pass-equal.val>
+    .
+
+<#1literalMaxinclusiveINTEGER_fail-high> a sht:ValidationFailure ;
+    mf:name "1literalMaxinclusiveINTEGER_fail-high" ;
+    sht:trait sht:ComparatorFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL MAXINCLUSIVE 5 } / { <s1> <p1> '6'^^xsd:integer }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalMaxinclusiveINTEGER.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_INT6.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
 
 <#1floatMininclusiveINTEGER_fail-low> a sht:ValidationFailure ;
     mf:name "1floatMininclusiveINTEGER_fail-low" ;
@@ -6449,6 +7035,46 @@
 ####     } generated
 ###   } comparators
 ###   lengths {
+<#1Length_fail-lit-short> a sht:ValidationFailure ;
+    mf:name "1Length_fail-lit-short" ;
+    sht:trait sht:LengthFacet ;
+    rdfs:comment "<S1> { <p1> LENGTH 5 } on { <s1> <p1> \"abcd\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1Length.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Labcd.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1Length_pass-lit-equal> a sht:ValidationTest ;
+    mf:name "1Length_pass-lit-equal" ;
+    sht:trait sht:LengthFacet ;
+    rdfs:comment "<S1> { <p1> LENGTH 5 } on { <s1> <p1> \"abcde\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1Length.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Labcde.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1Length_pass-lit-equal.val>
+    .
+
+<#1Length_fail-lit-long> a sht:ValidationFailure ;
+    mf:name "1Length_fail-lit-long" ;
+    sht:trait sht:LengthFacet ;
+    rdfs:comment "<S1> { <p1> LENGTH 5 } on { <s1> <p1> \"abcdef\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1Length.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Labcdef.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
 <#1literalLength_fail-lit-short> a sht:ValidationFailure ;
     mf:name "1literalLength_fail-lit-short" ;
     sht:trait sht:LengthFacet ;
@@ -6504,7 +7130,7 @@
 
 <#1literalLength_fail-bnode-equal> a sht:ValidationFailure ;
     mf:name "1literalLength_fail-bnode-equal" ;
-    sht:trait sht:LexicalBnode , sht:LengthFacet ;
+    sht:trait sht:LexicalBNode , sht:LengthFacet ;
     rdfs:comment "<S1> { <p1> LITERAL LENGTH 5 } on { <s1> <p1> _:abcde }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -6571,7 +7197,7 @@
 
 <#1iriLength_fail-bnode-equal> a sht:ValidationFailure ;
     mf:name "1iriLength_fail-bnode-equal" ;
-    sht:trait sht:LexicalBnode , sht:LengthFacet ;
+    sht:trait sht:LexicalBNode , sht:LengthFacet ;
     rdfs:comment "<S1> { <p1> IRI LENGTH 19 } on { <s1> <p1> _:abcde }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -6652,7 +7278,7 @@
 
 <#1bnodeLength_fail-bnode-short> a sht:ValidationFailure ;
     mf:name "1bnodeLength_fail-bnode-short" ;
-    sht:trait sht:LexicalBnode , sht:LengthFacet ;
+    sht:trait sht:LexicalBNode , sht:LengthFacet ;
     rdfs:comment "<S1> { <p1> BNODE LENGTH 5 } on { <s1> <p1> _:abcd }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -6665,7 +7291,7 @@
 
 <#1bnodeLength_pass-bnode-equal> a sht:ValidationTest ;
     mf:name "1bnodeLength_pass-bnode-equal" ;
-    sht:trait sht:LexicalBnode , sht:LengthFacet ;
+    sht:trait sht:LexicalBNode , sht:LengthFacet ;
     rdfs:comment "<S1> { <p1> BNODE LENGTH 5 } on { <s1> <p1> _:abcde }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -6679,7 +7305,7 @@
 
 <#1bnodeLength_fail-bnode-long> a sht:ValidationFailure ;
     mf:name "1bnodeLength_fail-bnode-long" ;
-    sht:trait sht:LexicalBnode , sht:LengthFacet ;
+    sht:trait sht:LexicalBNode , sht:LengthFacet ;
     rdfs:comment "<S1> { <p1> BNODE LENGTH 5 } on { <s1> <p1> _:abcdef }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -6772,7 +7398,7 @@
 
 <#1nonliteralLength_fail-bnode-short> a sht:ValidationFailure ;
     mf:name "1nonliteralLength_fail-bnode-short" ;
-    sht:trait sht:LexicalBnode , sht:LengthFacet ;
+    sht:trait sht:LexicalBNode , sht:LengthFacet ;
     rdfs:comment "<S1> { <p1> NONLITERAL LENGTH 19 } on { <s1> <p1> _:abcd }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -6785,7 +7411,7 @@
 
 <#1nonliteralLength_pass-bnode-equal> a sht:ValidationTest ;
     mf:name "1nonliteralLength_pass-bnode-equal" ;
-    sht:trait sht:LexicalBnode , sht:LengthFacet ;
+    sht:trait sht:LexicalBNode , sht:LengthFacet ;
     rdfs:comment "<S1> { <p1> NONLITERAL LENGTH 19 } on { <s1> <p1> _:abcdefghijklmnopqrs }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -6799,7 +7425,7 @@
 
 <#1nonliteralLength_fail-bnode-long> a sht:ValidationFailure ;
     mf:name "1nonliteralLength_fail-bnode-long" ;
-    sht:trait sht:LexicalBnode , sht:LengthFacet ;
+    sht:trait sht:LexicalBNode , sht:LengthFacet ;
     rdfs:comment "<S1> { <p1> NONLITERAL LENGTH 19 } on { <s1> <p1> _:abcdefghijklmnopqrst }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -6898,7 +7524,7 @@
 
 <#1bnodeMinlength_fail-bnode-short> a sht:ValidationFailure ;
     mf:name "1bnodeMinlength_fail-bnode-short" ;
-    sht:trait sht:LexicalBnode , sht:LengthFacet ;
+    sht:trait sht:LexicalBNode , sht:LengthFacet ;
     rdfs:comment "<S1> { <p1> BNODE MINLENGTH 5 } on { <s1> <p1> _:abcd }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -6911,7 +7537,7 @@
 
 <#1bnodeMinlength_pass-bnode-equal> a sht:ValidationTest ;
     mf:name "1bnodeMinlength_pass-bnode-equal" ;
-    sht:trait sht:LexicalBnode , sht:LengthFacet ;
+    sht:trait sht:LexicalBNode , sht:LengthFacet ;
     rdfs:comment "<S1> { <p1> BNODE MINLENGTH 5 } on { <s1> <p1> _:abcde }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -6925,7 +7551,7 @@
 
 <#1bnodeMinlength_pass-bnode-long> a sht:ValidationTest ;
     mf:name "1bnodeMinlength_pass-bnode-long" ;
-    sht:trait sht:LexicalBnode , sht:LengthFacet ;
+    sht:trait sht:LexicalBNode , sht:LengthFacet ;
     rdfs:comment "<S1> { <p1> BNODE MINLENGTH 5 } on { <s1> <p1> _:abcdef }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -6981,7 +7607,7 @@
 
 <#1nonliteralMinlength_fail-bnode-short> a sht:ValidationFailure ;
     mf:name "1nonliteralMinlength_fail-bnode-short" ;
-    sht:trait sht:LexicalBnode , sht:LengthFacet ;
+    sht:trait sht:LexicalBNode , sht:LengthFacet ;
     rdfs:comment "<S1> { <p1> NONLITERAL MINLENGTH 19 } on { <s1> <p1> _:abcd }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -6994,7 +7620,7 @@
 
 <#1nonliteralMinlength_pass-bnode-equal> a sht:ValidationTest ;
     mf:name "1nonliteralMinlength_pass-bnode-equal" ;
-    sht:trait sht:LexicalBnode , sht:LengthFacet ;
+    sht:trait sht:LexicalBNode , sht:LengthFacet ;
     rdfs:comment "<S1> { <p1> NONLITERAL MINLENGTH 19 } on { <s1> <p1> _:abcdefghijklmnopqrs }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -7008,7 +7634,7 @@
 
 <#1nonliteralMinlength_pass-bnode-long> a sht:ValidationTest ;
     mf:name "1nonliteralMinlength_pass-bnode-long" ;
-    sht:trait sht:LexicalBnode , sht:LengthFacet ;
+    sht:trait sht:LexicalBNode , sht:LengthFacet ;
     rdfs:comment "<S1> { <p1> NONLITERAL MINLENGTH 19 } on { <s1> <p1> _:abcdefghijklmnopqrst }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -7108,7 +7734,7 @@
 
 <#1bnodeMaxlength_pass-bnode-short> a sht:ValidationTest ;
     mf:name "1bnodeMaxlength_pass-bnode-short" ;
-    sht:trait sht:LexicalBnode , sht:LengthFacet ;
+    sht:trait sht:LexicalBNode , sht:LengthFacet ;
     rdfs:comment "<S1> { <p1> BNODE MAXLENGTH 5 } on { <s1> <p1> _:abcd }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -7122,7 +7748,7 @@
 
 <#1bnodeMaxlength_pass-bnode-equal> a sht:ValidationTest ;
     mf:name "1bnodeMaxlength_pass-bnode-equal" ;
-    sht:trait sht:LexicalBnode , sht:LengthFacet ;
+    sht:trait sht:LexicalBNode , sht:LengthFacet ;
     rdfs:comment "<S1> { <p1> BNODE MAXLENGTH 5 } on { <s1> <p1> _:abcde }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -7136,7 +7762,7 @@
 
 <#1bnodeMaxlength_fail-bnode-long> a sht:ValidationFailure ;
     mf:name "1bnodeMaxlength_fail-bnode-long" ;
-    sht:trait sht:LexicalBnode , sht:LengthFacet ;
+    sht:trait sht:LexicalBNode , sht:LengthFacet ;
     rdfs:comment "<S1> { <p1> BNODE MAXLENGTH 5 } on { <s1> <p1> _:abcdef }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -7191,7 +7817,7 @@
 
 <#1nonliteralMaxlength_pass-bnode-short> a sht:ValidationTest ;
     mf:name "1nonliteralMaxlength_pass-bnode-short" ;
-    sht:trait sht:LexicalBnode , sht:LengthFacet ;
+    sht:trait sht:LexicalBNode , sht:LengthFacet ;
     rdfs:comment "<S1> { <p1> NONLITERAL MAXLENGTH 19 } on { <s1> <p1> _:abcd }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -7205,7 +7831,7 @@
 
 <#1nonliteralMaxlength_pass-bnode-equal> a sht:ValidationTest ;
     mf:name "1nonliteralMaxlength_pass-bnode-equal" ;
-    sht:trait sht:LexicalBnode , sht:LengthFacet ;
+    sht:trait sht:LexicalBNode , sht:LengthFacet ;
     rdfs:comment "<S1> { <p1> NONLITERAL MAXLENGTH 19 } on { <s1> <p1> _:abcdefghijklmnopqrs }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -7219,7 +7845,7 @@
 
 <#1nonliteralMaxlength_fail-bnode-long> a sht:ValidationFailure ;
     mf:name "1nonliteralMaxlength_fail-bnode-long" ;
-    sht:trait sht:LexicalBnode , sht:LengthFacet ;
+    sht:trait sht:LexicalBNode , sht:LengthFacet ;
     rdfs:comment "<S1> { <p1> NONLITERAL MAXLENGTH 5 } on { <s1> <p1> _:abcdefghijklmnopqrst }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -7236,7 +7862,34 @@
 <#1literalPattern_pass-lit-match> a sht:ValidationTest ;
     mf:name "1literalPattern_pass-lit-match" ;
     sht:trait sht:PaternFacet ;
-    rdfs:comment "<S1> { <p1> LITERAL PATTERN \"^ab$\" } on { <s1> <p1> \"ab\" }" ;
+    rdfs:comment "<S1> { <p1> LITERAL PATTERN \"bc\" } on { <s1> <p1> \"bc\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalPattern.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Lbc.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1literalPattern_pass-lit-match.val>
+    .
+
+<#1literalPattern_fail-lit-short> a sht:ValidationFailure ;
+    mf:name "1literalPattern_fail-lit-short" ;
+    sht:trait sht:PaternFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL PATTERN \"bc\" } on { <s1> <p1> \"a\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalPattern.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_La.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1literalPattern_fail-ab> a sht:ValidationFailure ;
+    mf:name "1literalPattern_fail-ab" ;
+    sht:trait sht:PaternFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL PATTERN \"bc\" } on { <s1> <p1> \"ab\" }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1literalPattern.shex> ;
@@ -7244,73 +7897,255 @@
       sht:data <Is1_Ip1_Lab.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
-    mf:result <1literalPattern_fail-lit-match.val>
     .
 
-<#1literalPattern_fail-lit-short> a sht:ValidationFailure ;
-    mf:name "1literalPattern_fail-lit-short" ;
+<#1literalPattern_fail-cd> a sht:ValidationFailure ;
+    mf:name "1literalPattern_fail-cd" ;
     sht:trait sht:PaternFacet ;
-    rdfs:comment "<S1> { <p1> LITERAL PATTERN \"^ab$\" } on { <s1> <p1> \"a\" }" ;
+    rdfs:comment "<S1> { <p1> LITERAL PATTERN \"bc\" } on { <s1> <p1> \"cd\" }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1literalPattern.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_La.ttl> ;
+      sht:data <Is1_Ip1_Lcd.ttl> ;
       sht:focus <http://a.example/s1>
-    ].
+    ] ;
+    .
 
-<#1literalPattern_fail-lit-long> a sht:ValidationFailure ;
-    mf:name "1literalPattern_fail-lit-long" ;
+<#1literalPattern_pass-lit-into> a sht:ValidationTest ;
+    mf:name "1literalPattern_pass-lit-into" ;
     sht:trait sht:PaternFacet ;
-    rdfs:comment "<S1> { <p1> LITERAL PATTERN \"^ab$\" } on { <s1> <p1> \"abc\" }" ;
+    rdfs:comment "<S1> { <p1> LITERAL PATTERN \"bc\" } on { <s1> <p1> \"abc\" }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1literalPattern.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Labc.ttl> ;
       sht:focus <http://a.example/s1>
-    ].
+    ] ;
+    mf:result <1literalPattern_pass-lit-into.val>
+    .
 
 <#1literalPattern19_fail-iri-match> a sht:ValidationFailure ;
     mf:name "1literalPattern19_fail-iri-match" ;
     sht:trait sht:PaternFacet ;
-    rdfs:comment "<S1> { <p1> LITERAL PATTERN \"^http://a.example/o1$\" } on { <s1> <p1> <o1> }" ;
+    rdfs:comment "<S1> { <p1> LITERAL PATTERN \"http://a.example/o1\" } on { <s1> <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1literalPattern19.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
-    ].
+    ] ;
+    .
 
 <#1literalPattern_fail-bnode-match> a sht:ValidationFailure ;
     mf:name "1literalPattern_fail-bnode-match" ;
     sht:trait sht:PaternFacet ;
-    rdfs:comment "<S1> { <p1> LITERAL PATTERN \"^ab$\" } on { <s1> <p1> _:ab }" ;
+    rdfs:comment "<S1> { <p1> LITERAL PATTERN \"bc\" } on { <s1> <p1> _:ab }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1literalPattern.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Bab.ttl> ;
       sht:focus <http://a.example/s1>
-    ].
+    ] ;
+    .
+
+
+<#1literalStartPattern_pass-bc> a sht:ValidationTest ;
+    mf:name "1literalStartPattern_pass-bc" ;
+    sht:trait sht:PaternFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL PATTERN \"^bc\" } on { <s1> <p1> \"bc\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalStartPattern.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Lbc.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1literalStartPattern-bc.val>
+    .
+
+<#1literalStartPattern_fail-CarrotbcDollar> a sht:ValidationFailure ;
+    mf:name "1literalStartPattern_fail-CarrotbcDollar" ;
+    sht:trait sht:PaternFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL PATTERN \"^bc\" } on { <s1> <p1> \"^bc$\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalStartPattern.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LCarrotbcDollar.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1literalPatternEnd_pass-bc> a sht:ValidationTest ;
+    mf:name "1literalPatternEnd_pass-bc" ;
+    sht:trait sht:PaternFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL PATTERN \"bc$\" } on { <s1> <p1> \"bc\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalPatternEnd.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Lbc.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1literalPatternEnd_pass-bc.val>
+    .
+
+<#1literalPatternEnd_pass-CarrotbcDollar> a sht:ValidationFailure ;
+    mf:name "1literalPatternEnd_pass-CarrotbcDollar" ;
+    sht:trait sht:PaternFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL PATTERN \"bc$\" } on { <s1> <p1> \"bc\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalPatternEnd.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LCarrotbcDollar.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1literalPattern_pass-bcDollar> a sht:ValidationTest ;
+    mf:name "1literalPattern_pass-bcDollar" ;
+    sht:trait sht:PaternFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL PATTERN \"bc\" } on { <s1> <p1> \"bc$\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalPattern.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LbcDollar.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1literalPattern_pass-bcDollar.val>
+    .
+
+<#1literalStarPatternEnd_pass-bc> a sht:ValidationTest ;
+    mf:name "1literalStarPatternEnd_pass-bc" ;
+    sht:trait sht:PaternFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL PATTERN \"^bc$\" } on { <s1> <p1> \"bc\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalStartPatternEnd.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Lbc.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1literalStarPatternEnd_pass-bc.val>
+    .
+
+<#1literalPattern_pass-CarrotbcDollar> a sht:ValidationTest ;
+    mf:name "1literalPattern_pass-CarrotbcDollar" ;
+    sht:trait sht:PaternFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL PATTERN \"bc\" } on { <s1> <p1> \"^bc$\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalPattern.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LCarrotbcDollar.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1literalPattern_pass-CarrotbcDollar.val>
+    .
+
+<#1literalPatternEnd_fail-litEnd> a sht:ValidationFailure ;
+    mf:name "1literalPatternEnd_fail-litEnd" ;
+    sht:trait sht:PaternFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL PATTERN \"bc$\" } on { <s1> <p1> \"bc$\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalPatternEnd.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LbcDollar.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1literalPatternDollar_pass-litDollar-match> a sht:ValidationTest ;
+    mf:name "1literalPatternDollar_pass-litDollar-match" ;
+    sht:trait sht:PaternFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL PATTERN \"bc\\$\" } on { <s1> <p1> \"bc$\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalPatternDollar.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LbcDollar.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1literalPatternDollar_pass-litDollar-match.val>
+    .
+
+<#1literalPattern_pass-StartlitEnd-match> a sht:ValidationFailure ;
+    mf:name "1literalPattern_pass-StartlitEnd-match" ;
+    sht:trait sht:PaternFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL PATTERN \"^bc$\" } on { <s1> <p1> \"^bc$\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalStartPatternEnd.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LCarrotbcDollar.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1literalStartPatternEnd_CarrotbcDollar> a sht:ValidationFailure ;
+    mf:name "1literalStartPatternEnd_CarrotbcDollar" ;
+    sht:trait sht:PaternFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL PATTERN \"^bc$\" } on { <s1> <p1> \"^bc$\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalStartPatternEnd.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LCarrotbcDollar.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1literalCarrotPatternDollar_pass-bc> a sht:ValidationFailure ;
+    mf:name "1literalCarrotPatternDollar_pass-bc" ;
+    sht:trait sht:PaternFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL PATTERN \"\\^bc\\$\" } on { <s1> <p1> \"bc\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalCarrotPatternDollar.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Lbc.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1literalCarrotPatternDollar_pass-CarrotbcDollar> a sht:ValidationTest ;
+    mf:name "1literalCarrotPatternDollar_pass-CarrotbcDollar" ;
+    sht:trait sht:PaternFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL PATTERN \"\\^bc\\$\" } on { <s1> <p1> \"^bc$\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalCarrotPatternDollar.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LCarrotbcDollar.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1literalCarrotPatternDollar_pass-CarrotbcDollar.val>
+    .
 
 <#1literalPatternabEnd_fail-bnode-match> a sht:ValidationFailure ;
     mf:name "1literalPatternabEnd_fail-bnode-match" ;
-    sht:trait sht:PaternFacet ;
-    rdfs:comment "<S1> { <p1> LITERAL PATTERN \"ab$\" } on { <s1> <p1> _:ab }" ;
+    sht:trait sht:PaternFacet, sht:ToldBNode ;
+    rdfs:comment "<S1> { <p1> LITERAL PATTERN \"bc$\" } on { <s1> <p1> _:bc }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1literalPatternabEnd.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_Bab.ttl> ;
+      sht:data <Is1_Ip1_Bbc.ttl> ;
       sht:focus <http://a.example/s1>
-    ].
+    ]
+    .
 
 <#1iriPattern_pass-iri-match> a sht:ValidationTest ;
     mf:name "1iriPattern_pass-iri-match" ;
     sht:trait sht:PaternFacet ;
-    rdfs:comment "<S1> { <p1> IRI PATTERN \"^http://a.example/o1$\" } on { <s1> <p1> <o1> }" ;
+    rdfs:comment "<S1> { <p1> IRI PATTERN \"http://a.example/o1\" } on { <s1> <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1iriPattern.shex> ;
@@ -7324,60 +8159,64 @@
 <#1iriPattern_fail-iri-short> a sht:ValidationFailure ;
     mf:name "1iriPattern_fail-iri-short" ;
     sht:trait sht:PaternFacet ;
-    rdfs:comment "<S1> { <p1> IRI PATTERN \"^http://a.example/o1$\" } on { <s1> <p1> <o> }" ;
+    rdfs:comment "<S1> { <p1> IRI PATTERN \"http://a.example/o1\" } on { <s1> <p1> <o> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1iriPattern.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Io.ttl> ;
       sht:focus <http://a.example/s1>
-    ].
+    ]
+    .
 
 <#1iriPattern_fail-iri-long> a sht:ValidationFailure ;
     mf:name "1iriPattern_fail-iri-long" ;
     sht:trait sht:PaternFacet ;
-    rdfs:comment "<S1> { <p1> IRI PATTERN \"^http://a.example/o1$\" } on { <s1> <p1> <o1a> }" ;
+    rdfs:comment "<S1> { <p1> IRI PATTERN \"http://a.example/o1\" } on { <s1> <p1> <o1a> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1iriPattern.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Io1a.ttl> ;
       sht:focus <http://a.example/s1>
-    ].
+    ]
+    .
 
 <#1iriPattern_fail-lit-match> a sht:ValidationFailure ;
     mf:name "1iriPattern_fail-lit-match" ;
     sht:trait sht:PaternFacet ;
-    rdfs:comment "<S1> { <p1> IRI PATTERN \"^http://a.example/o1$\" } on { <s1> <p1> \"o1\" }" ;
+    rdfs:comment "<S1> { <p1> IRI PATTERN \"http://a.example/o1\" } on { <s1> <p1> \"o1\" }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1iriPattern.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_L19.ttl> ;
       sht:focus <http://a.example/s1>
-    ].
+    ]
+    .
 
 <#1iriPattern_fail-bnode-match> a sht:ValidationFailure ;
     mf:name "1iriPattern_fail-bnode-match" ;
     sht:trait sht:PaternFacet ;
-    rdfs:comment "<S1> { <p1> IRI PATTERN \"^ab$\" } on { <s1> <p1> _:ab }" ;
+    rdfs:comment "<S1> { <p1> IRI PATTERN \"^bc$\" } on { <s1> <p1> _:bc }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1iriPatternab.shex> ;
+      sht:schema <../schemas/1iriPatternbc.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_Bab.ttl> ;
+      sht:data <Is1_Ip1_Bbc.ttl> ;
       sht:focus <http://a.example/s1>
-    ].
+    ]
+    .
 
 <#1bnodePattern_pass-bnode-match> a sht:ValidationTest ;
     mf:name "1bnodePattern_pass-bnode-match" ;
-    sht:trait sht:PaternFacet ;
-    rdfs:comment "<S1> { <p1> BNODE PATTERN \"^ab$\" } on { <s1> <p1> _:ab }" ;
+    sht:trait sht:PaternFacet ,  sht:LexicalBNode ;
+    rdfs:comment "<S1> { <p1> BNODE PATTERN \"bc\" } on { <s1> <p1> _:bc }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1bnodePattern.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_Bab.ttl> ;
+      sht:data <Is1_Ip1_Bbc.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
     mf:result <1bnodePattern_pass-bnode-match.val>
@@ -7386,110 +8225,119 @@
 <#1bnodePattern_fail-bnode-short> a sht:ValidationFailure ;
     mf:name "1bnodePattern_fail-bnode-short" ;
     sht:trait sht:PaternFacet ;
-    rdfs:comment "<S1> { <p1> BNODE PATTERN \"^ab$\" } on { <s1> <p1> _:a }" ;
+    rdfs:comment "<S1> { <p1> BNODE PATTERN \"bc\" } on { <s1> <p1> _:a }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1bnodePattern.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Ba.ttl> ;
       sht:focus <http://a.example/s1>
-    ].
+    ]
+    .
 
-<#1bnodePattern_fail-bnode-long> a sht:ValidationFailure ;
+<#1bnodePattern_fail-bnode-long> a sht:ValidationTest ;
     mf:name "1bnodePattern_fail-bnode-long" ;
     sht:trait sht:PaternFacet ;
-    rdfs:comment "<S1> { <p1> BNODE PATTERN \"^ab$\" } on { <s1> <p1> _:abc }" ;
+    rdfs:comment "<S1> { <p1> BNODE PATTERN \"bc\" } on { <s1> <p1> _:abc }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1bnodePattern.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Babc.ttl> ;
       sht:focus <http://a.example/s1>
-    ].
+    ] ;
+    mf:result <1bnodePattern_pass-bnode-into.val> ;
+    .
 
 <#1bnodePattern_fail-lit-match> a sht:ValidationFailure ;
     mf:name "1bnodePattern_fail-lit-match" ;
     sht:trait sht:PaternFacet ;
-    rdfs:comment "<S1> { <p1> BNODE PATTERN \"^ab$\" } on { <s1> <p1> \"ab\" }" ;
+    rdfs:comment "<S1> { <p1> BNODE PATTERN \"bc\" } on { <s1> <p1> \"ab\" }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1bnodePattern.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Lab.ttl> ;
       sht:focus <http://a.example/s1>
-    ].
+    ] ;
+    .
 
 <#1bnodePattern_fail-iri-match> a sht:ValidationFailure ; # try one against relative name
     mf:name "1bnodePattern_fail-iri-match" ;
     sht:trait sht:PaternFacet ;
-    rdfs:comment "<S1> { <p1> BNODE PATTERN \"^ab$\" } on { BASE <http://a.example/> <s1> <p1> <ab> }" ;
+    rdfs:comment "<S1> { <p1> BNODE PATTERN \"bc\" } on { BASE <http://a.example/> <s1> <p1> <bc> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1bnodePattern.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <BASE_Is1_Ip1_Iab.ttl> ;
       sht:focus <http://a.example/s1>
-    ].
+    ] ;
+    .
 
 <#1nonliteralPattern_pass-iri-match> a sht:ValidationTest ;
     mf:name "1nonliteralPattern_pass-iri-match" ;
     sht:trait sht:PaternFacet ;
-    rdfs:comment "<S1> { <p1> NONLITERAL PATTERN \"ab$\" } on { <s1> <p1> <ab> }" ;
+    rdfs:comment "<S1> { <p1> NONLITERAL PATTERN \"bc$\" } on { <s1> <p1> <bc> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1nonliteralPattern.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_Iab.ttl> ;
+      sht:data <Is1_Ip1_Ibc.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
-    mf:result <1nonliteralPattern_pass-iri-match.val>
+    mf:result <1nonliteralPattern_pass-iri-match.val> ;
     .
 
 <#1nonliteralPattern_fail-iri-short> a sht:ValidationFailure ;
     mf:name "1nonliteralPattern_fail-iri-short" ;
     sht:trait sht:PaternFacet ;
-    rdfs:comment "<S1> { <p1> NONLITERAL PATTERN \"ab$\" } on { <s1> <p1> <a> }" ;
+    rdfs:comment "<S1> { <p1> NONLITERAL PATTERN \"bc$\" } on { <s1> <p1> <a> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1nonliteralPattern.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Ia.ttl> ;
       sht:focus <http://a.example/s1>
-    ].
+    ] ;
+    .
 
-<#1nonliteralPattern_fail-iri-long> a sht:ValidationFailure ;
-    mf:name "1nonliteralPattern_fail-iri-long" ;
+<#1nonliteralPattern_pass-iri-long> a sht:ValidationTest ;
+    mf:name "1nonliteralPattern_pass-iri-long" ;
     sht:trait sht:PaternFacet ;
-    rdfs:comment "<S1> { <p1> NONLITERAL PATTERN \"ab$\" } on { <s1> <p1> <abc> }" ;
+    rdfs:comment "<S1> { <p1> NONLITERAL PATTERN \"bc$\" } on { <s1> <p1> <abc> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1nonliteralPattern.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Iabc.ttl> ;
       sht:focus <http://a.example/s1>
-    ].
+    ] ;
+    mf:result <1nonliteralPattern_pass-iri-long.val> ;
+    .
 
 <#1nonliteralPattern_fail-lit-match> a sht:ValidationFailure ;
     mf:name "1nonliteralPattern_fail-lit-match" ;
     sht:trait sht:PaternFacet ;
-    rdfs:comment "<S1> { <p1> NONLITERAL PATTERN \"ab$\" } on { <s1> <p1> \"ab\" }" ;
+    rdfs:comment "<S1> { <p1> NONLITERAL PATTERN \"bc$\" } on { <s1> <p1> \"ab\" }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1nonliteralPattern.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Lab.ttl> ;
       sht:focus <http://a.example/s1>
-    ].
+    ]
+    .
 
 <#1nonliteralPattern_pass-bnode-match> a sht:ValidationTest ;
     mf:name "1nonliteralPattern_pass-bnode-match" ;
-    sht:trait sht:PaternFacet ;
-    rdfs:comment "<S1> { <p1> NONLITERAL PATTERN \"ab$\" } on { <s1> <p1> _:ab }" ;
+    sht:trait sht:PaternFacet , sht:LexicalBNode;
+    rdfs:comment "<S1> { <p1> NONLITERAL PATTERN \"bc$\" } on { <s1> <p1> _:bc }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1nonliteralPattern.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_Bab.ttl> ;
+      sht:data <Is1_Ip1_Bbc.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
     mf:result <1nonliteralPattern_pass-bnode-match.val>
@@ -7498,26 +8346,29 @@
 <#1nonliteralPattern_fail-bnode-short> a sht:ValidationFailure ;
     mf:name "1nonliteralPattern_fail-bnode-short" ;
     sht:trait sht:PaternFacet ;
-    rdfs:comment "<S1> { <p1> NONLITERAL PATTERN \"ab$\" } on { <s1> <p1> _:a }" ;
+    rdfs:comment "<S1> { <p1> NONLITERAL PATTERN \"bc$\" } on { <s1> <p1> _:a }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1nonliteralPattern.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Ba.ttl> ;
       sht:focus <http://a.example/s1>
-    ].
+    ]
+    .
 
-<#1nonliteralPattern_fail-bnode-long> a sht:ValidationFailure ;
-    mf:name "1nonliteralPattern_fail-bnode-long" ;
+<#1nonliteralPattern_pass-bnode-long> a sht:ValidationTest ;
+    mf:name "1nonliteralPattern_pass-bnode-long" ;
     sht:trait sht:PaternFacet ;
-    rdfs:comment "<S1> { <p1> NONLITERAL PATTERN \"ab$\" } on { <s1> <p1> _:abc }" ;
+    rdfs:comment "<S1> { <p1> NONLITERAL PATTERN \"bc$\" } on { <s1> <p1> _:abc }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1nonliteralPattern.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Babc.ttl> ;
       sht:focus <http://a.example/s1>
-    ].
+    ] ;
+    mf:result <1nonliteralPattern_pass-bnode-long.val>
+    .
 
 ###   } pattern
 ## } facets
@@ -7525,7 +8376,7 @@
 
 <#1val1dotMinusiri3_pass> a sht:ValidationTest ;
     mf:name "1val1dotMinusiri3_pass" ;
-    sht:trait sht:ValueSet ;
+    sht:trait sht:ValueSet, sht:Stem ;
     rdfs:comment "<S> { <p1> [.-<v1>-<v2>-<v3>] } on { <s1> <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -7539,7 +8390,7 @@
 
 <#1val1dotMinusiri3_v1> a sht:ValidationFailure ;
     mf:name "1val1dotMinusiri3_v1" ;
-    sht:trait sht:ValueSet ;
+    sht:trait sht:ValueSet , sht:Stem ;
     rdfs:comment "<S> { <p1> [.-<v1>-<v2>-<v3>] } on { <s1> <p1> <v1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -7552,7 +8403,7 @@
 
 <#1val1dotMinusiri3_v2> a sht:ValidationFailure ;
     mf:name "1val1dotMinusiri3_v2" ;
-    sht:trait sht:ValueSet ;
+    sht:trait sht:ValueSet , sht:Stem ;
     rdfs:comment "<S> { <p1> [.-<v1>-<v2>-<v3>] } on { <s1> <p1> <v2> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -7565,7 +8416,7 @@
 
 <#1val1dotMinusiri3_v3> a sht:ValidationFailure ;
     mf:name "1val1dotMinusiri3_v3" ;
-    sht:trait sht:ValueSet ;
+    sht:trait sht:ValueSet, sht:Stem ;
     rdfs:comment "<S> { <p1> [.-<v1>-<v2>-<v3>] } on { <s> <p1> <v3> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -7578,7 +8429,7 @@
 
 <#1val1refvsMinusiri3_pass> a sht:ValidationTest ;
     mf:name "1val1refvsMinusiri3_pass" ;
-    sht:trait sht:ValueSet ;
+    sht:trait sht:ValueSet , sht:Stem ;
     rdfs:comment "$<vs1> = [.-<v1>-<v2>-<v3>] <S> { <p1> $<vs1> } on { <s1> <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -7592,7 +8443,7 @@
 
 <#1val1refvsMinusiri3_v1> a sht:ValidationFailure ;
     mf:name "1val1refvsMinusiri3_v1" ;
-    sht:trait sht:ValueSet ;
+    sht:trait sht:ValueSet , sht:Stem;
     rdfs:comment "$<vs1> = [.-<v1>-<v2>-<v3>] <S> { <p1> $<vs1> } on { <s1> <p1> <v1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -7605,7 +8456,7 @@
 
 <#1val1refvsMinusiri3_v2> a sht:ValidationFailure ;
     mf:name "1val1refvsMinusiri3_v2" ;
-    sht:trait sht:ValueSet ;
+    sht:trait sht:ValueSet , sht:Stem;
     rdfs:comment "$<vs1> = [.-<v1>-<v2>-<v3>] <S> { <p1> $<vs1> } on { <s1> <p1> <v2> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -7618,7 +8469,7 @@
 
 <#1val1refvsMinusiri3_v3> a sht:ValidationFailure ;
     mf:name "1val1refvsMinusiri3_v3" ;
-    sht:trait sht:ValueSet ;
+    sht:trait sht:ValueSet , sht:Stem;
     rdfs:comment "$<vs1> = [.-<v1>-<v2>-<v3>] <S> { <p1> $<vs1> } on { <s> <p1> <v3> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -7910,176 +8761,176 @@
 ###   } AND tripleExpr
 ###   OR tripleExpr {
 
- # !../schemas/1dotOr1dot.shex
- # !../schemas/1dotSemiOr1dotSemi.shex
- # !../schemas/open1dotOr1dotclose.shex                [1dotSemiOr1dotSemi.shex]
- # !../schemas/open1dotSemiOr1dotSemicloseSemi.shex [1dotSemiOr1dotSemi.shex]
- # !../schemas/2dotOr1dot.shex
- # !../schemas/2dotSemiOr1dotSemi.shex                    [2dotOr1dot.shex]
- # !../schemas/open2dotOr1dotclose.shex                     [2dotOr1dot.shex]
- # !../schemas/open2dotSemisOr1dotSemiclose.shex          [2dotOr1dot.shex]
- # !../schemas/openopen2dotcloseOr1dotclose.shex            [2dotOr1dot.shex]
- # !../schemas/openopen2dotSemiscloseOr1dotSemiclose.shex [2dotOr1dot.shex]
- # !../schemas/open1dotopen1dotOr1dotcloseclose.shex
- # !../schemas/open1dotopen1dotSemiOr1dotSemicloseSemicloseSemi.shex [open1dotopen1dotOr1dotcloseclose.shex]
+ # !../schemas/1dotOne1dot.shex
+ # !../schemas/1dotSemiOne1dotSemi.shex
+ # !../schemas/open1dotOne1dotclose.shex                [1dotSemiOne1dotSemi.shex]
+ # !../schemas/open1dotSemiOne1dotSemicloseSemi.shex [1dotSemiOne1dotSemi.shex]
+ # !../schemas/2dotOne1dot.shex
+ # !../schemas/2dotSemiOne1dotSemi.shex                    [2dotOne1dot.shex]
+ # !../schemas/open2dotOne1dotclose.shex                     [2dotOne1dot.shex]
+ # !../schemas/open2dotSemisOne1dotSemiclose.shex          [2dotOne1dot.shex]
+ # !../schemas/openopen2dotcloseOne1dotclose.shex            [2dotOne1dot.shex]
+ # !../schemas/openopen2dotSemiscloseOne1dotSemiclose.shex [2dotOne1dot.shex]
+ # !../schemas/open1dotopen1dotOne1dotcloseclose.shex
+ # !../schemas/open1dotopen1dotSemiOne1dotSemicloseSemicloseSemi.shex [open1dotopen1dotOne1dotcloseclose.shex]
 
-<#1dotOr2dot_pass_p1> a sht:ValidationTest ;
-    mf:name "1dotOr2dot_pass_p1" ;
-    sht:trait sht:SomeOf , sht:EachOf-unvisited ;
+<#1dotOne2dot_pass_p1> a sht:ValidationTest ;
+    mf:name "1dotOne2dot_pass_p1" ;
+    sht:trait sht:OneOf , sht:EachOf-unvisited ;
     rdfs:comment ":S1 {:p1 .|:p2 .,:p3 .} / { :s1 :p1 \"p1-0\" . }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1dotOr2dot.shex> ;
+      sht:schema <../schemas/1dotOne2dot.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <p1.ttl> ;
       sht:focus <x>
     ] ;
-    mf:result <1dotOr2dot_pass_p1.val>
+    mf:result <1dotOne2dot_pass_p1.val>
     .
 
-<#1dotOr2dot_pass_p2p3> a sht:ValidationTest ;
-    mf:name "1dotOr2dot_pass_p2p3" ;
-    sht:trait sht:SomeOf , sht:EachOf ;
+<#1dotOne2dot_pass_p2p3> a sht:ValidationTest ;
+    mf:name "1dotOne2dot_pass_p2p3" ;
+    sht:trait sht:OneOf , sht:EachOf ;
     rdfs:comment ":S1 {:p1 .|:p2 .,:p3 .} / { :s1 :p2 \"p2-0\"; :p3 \"p3-0\" . }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1dotOr2dot.shex> ;
+      sht:schema <../schemas/1dotOne2dot.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <p2p3.ttl> ;
       sht:focus <x>
     ] ;
-    mf:result <1dotOr2dot_pass_p2p3.val>
+    mf:result <1dotOne2dot_pass_p2p3.val>
     .
 
-<#1dotOr2dot-oneOf_fail_p1p2p3> a sht:ValidationFailure ;
-    mf:name "1dotOr2dot-oneOf_fail_p1p2p3" ;
+<#1dotOne2dot-oneOf_fail_p1p2p3> a sht:ValidationFailure ;
+    mf:name "1dotOne2dot-oneOf_fail_p1p2p3" ;
     sht:trait sht:OneOf , sht:EachOf-unvisited ;
     rdfs:comment ":S1 {:p1 .|:p2 .,:p3 .} / { :s1 :p1 \"p1-0\"; :p2 \"p2-0\"; :p3 \"p3-0\" . }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1dotOr2dot.shex> ;
+      sht:schema <../schemas/1dotOne2dot.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <p1p2p3.ttl> ;
       sht:focus <x>
     ] ;
     .
 
-<#1dotOr2dot-someOf_fail_p1p2p3> a sht:ValidationFailure ;
-    mf:name "1dotOr2dot-someOf_fail_p1p2p3" ;
-    sht:trait sht:SomeOf , sht:EachOf , sht:MissedMatchables ;
+<#1dotOne2dot-someOf_fail_p1p2p3> a sht:ValidationFailure ;
+    mf:name "1dotOne2dot-someOf_fail_p1p2p3" ;
+    sht:trait sht:OneOf , sht:EachOf , sht:MissedMatchables ;
     rdfs:comment ":S1 {:p1 .|:p2 .,:p3 .} / { :s1 :p1 \"p1-0\"; :p2 \"p2-0\"; :p3 \"p3-0\" . }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1dotOr2dot.shex> ;
+      sht:schema <../schemas/1dotOne2dot.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <p1p2p3.ttl> ;
       sht:focus <x>
     ]
     .
 
-<#open1dotOropen2dotcloseclose_pass_p1> a sht:ValidationTest ;
-    mf:name "open1dotOropen2dotcloseclose_pass_p1" ;
-    sht:trait sht:SomeOf , sht:EachOf-unvisited ;
+<#open1dotOneopen2dotcloseclose_pass_p1> a sht:ValidationTest ;
+    mf:name "open1dotOneopen2dotcloseclose_pass_p1" ;
+    sht:trait sht:OneOf , sht:EachOf-unvisited ;
     rdfs:comment ":S1 {(:p1 .|(:p2 .,:p3 .))} / { :s1 :p1 \"p1-0\" . }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/open1dotOropen2dotcloseclose.shex> ;
+      sht:schema <../schemas/open1dotOneopen2dotcloseclose.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <p1.ttl> ;
       sht:focus <x>
     ] ;
-    mf:result <1dotOr2dot_pass_p1.val>
+    mf:result <1dotOne2dot_pass_p1.val>
     .
 
-<#open1dotOropen2dotcloseclose_pass_p2p3> a sht:ValidationTest ;
-    mf:name "open1dotOropen2dotcloseclose_pass_p2p3" ;
-    sht:trait sht:SomeOf , sht:EachOf ;
+<#open1dotOneopen2dotcloseclose_pass_p2p3> a sht:ValidationTest ;
+    mf:name "open1dotOneopen2dotcloseclose_pass_p2p3" ;
+    sht:trait sht:OneOf , sht:EachOf ;
     rdfs:comment ":S1 {(:p1 .|(:p2 .,:p3 .))} / { :s1 :p2 \"p2-0\"; :p3 \"p3-0\" . }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/open1dotOropen2dotcloseclose.shex> ;
+      sht:schema <../schemas/open1dotOneopen2dotcloseclose.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <p2p3.ttl> ;
       sht:focus <x>
     ] ;
-    mf:result <1dotOr2dot_pass_p2p3.val>
+    mf:result <1dotOne2dot_pass_p2p3.val>
     .
 
-<#open1dotOropen2dotcloseclose_fail_p1p2p3> a sht:ValidationFailure ;
-    mf:name "open1dotOropen2dotcloseclose_fail_p1p2p3" ;
+<#open1dotOneopen2dotcloseclose_fail_p1p2p3> a sht:ValidationFailure ;
+    mf:name "open1dotOneopen2dotcloseclose_fail_p1p2p3" ;
     sht:trait sht:OneOf , sht:EachOf-unvisited ;
     rdfs:comment ":S1 {(:p1 .|(:p2 .,:p3 .))} / { :s1 :p1 \"p1-0\"; :p2 \"p2-0\"; :p3 \"p3-0\" . }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/open1dotOropen2dotcloseclose.shex> ;
+      sht:schema <../schemas/open1dotOneopen2dotcloseclose.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <p1p2p3.ttl> ;
       sht:focus <x>
     ] ;
     .
 
-<#openopen1dotOr1dotclose1dotclose_pass_p1p3> a sht:ValidationTest ;
-    mf:name "openopen1dotOr1dotclose1dotclose_pass_p1p3" ;
-    sht:trait sht:SomeOf , sht:EachOf ;
+<#openopen1dotOne1dotclose1dotclose_pass_p1p3> a sht:ValidationTest ;
+    mf:name "openopen1dotOne1dotclose1dotclose_pass_p1p3" ;
+    sht:trait sht:OneOf , sht:EachOf ;
     rdfs:comment ":S1 { ((:p1 .| :p2 .), :p3 .) } / { <x> :p1 \"p1-0\"; :p3 \"p3-0\" . }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/openopen1dotOr1dotclose1dotclose.shex> ;
+      sht:schema <../schemas/openopen1dotOne1dotclose1dotclose.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <p1p3.ttl> ;
       sht:focus <x>
     ] ;
-    mf:result <openopen1dotOr1dotclose1dotclose_pass_p1p3.val>
+    mf:result <openopen1dotOne1dotclose1dotclose_pass_p1p3.val>
     .
 
-<#openopen1dotOr1dotclose1dotclose_pass_p2p3> a sht:ValidationTest ;
-    mf:name "openopen1dotOr1dotclose1dotclose_pass_p2p3" ;
-    sht:trait sht:SomeOf , sht:EachOf ;
+<#openopen1dotOne1dotclose1dotclose_pass_p2p3> a sht:ValidationTest ;
+    mf:name "openopen1dotOne1dotclose1dotclose_pass_p2p3" ;
+    sht:trait sht:OneOf , sht:EachOf ;
     rdfs:comment ":S1 { ((:p1 .| :p2 .), :p3 .) } / { <x> :p2 \"p2-0\"; :p3 \"p3-0\" . }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/openopen1dotOr1dotclose1dotclose.shex> ;
+      sht:schema <../schemas/openopen1dotOne1dotclose1dotclose.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <p2p3.ttl> ;
       sht:focus <x>
     ] ;
-    mf:result <openopen1dotOr1dotclose1dotclose_pass_p2p3.val>
+    mf:result <openopen1dotOne1dotclose1dotclose_pass_p2p3.val>
     .
 
 
-<#openopen1dotOr1dotclose1dotclose_fail_p1> a sht:ValidationFailure ;
-    mf:name "openopen1dotOr1dotclose1dotclose_fail_p1" ;
-    sht:trait sht:SomeOf , sht:EachOf-unvisited ;
+<#openopen1dotOne1dotclose1dotclose_fail_p1> a sht:ValidationFailure ;
+    mf:name "openopen1dotOne1dotclose1dotclose_fail_p1" ;
+    sht:trait sht:OneOf , sht:EachOf-unvisited ;
     rdfs:comment ":S1 { ((:p1 .| :p2 .), :p3 .) } / { <x> :p1 \"p1-0\" . }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/openopen1dotOr1dotclose1dotclose.shex> ;
+      sht:schema <../schemas/openopen1dotOne1dotclose1dotclose.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <p1.ttl> ;
       sht:focus <x>
     ] ;
     .
 
-<#openopen1dotOr1dotclose1dotclose_fail_p3> a sht:ValidationFailure ;
-    mf:name "openopen1dotOr1dotclose1dotclose_fail_p3" ;
-    sht:trait sht:SomeOf , sht:EachOf ;
+<#openopen1dotOne1dotclose1dotclose_fail_p3> a sht:ValidationFailure ;
+    mf:name "openopen1dotOne1dotclose1dotclose_fail_p3" ;
+    sht:trait sht:OneOf , sht:EachOf ;
     rdfs:comment ":S1 { ((:p1 .| :p2 .), :p3 .) } / { <x> :p3 \"p3-0\" . }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/openopen1dotOr1dotclose1dotclose.shex> ;
+      sht:schema <../schemas/openopen1dotOne1dotclose1dotclose.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <p3.ttl> ;
       sht:focus <x>
     ] ;
     .
 
-<#openopen1dotOr1dotclose1dotclose_fail_p1p2> a sht:ValidationFailure ;
-    mf:name "openopen1dotOr1dotclose1dotclose_fail_p1p2" ;
-    sht:trait sht:SomeOf , sht:EachOf ;
+<#openopen1dotOne1dotclose1dotclose_fail_p1p2> a sht:ValidationFailure ;
+    mf:name "openopen1dotOne1dotclose1dotclose_fail_p1p2" ;
+    sht:trait sht:OneOf , sht:EachOf ;
     rdfs:comment ":S1 { ((:p1 .| :p2 .), :p3 .) } / { <x> :p1 \"p1-0\"; :p2 \"p2-0\" . }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/openopen1dotOr1dotclose1dotclose.shex> ;
+      sht:schema <../schemas/openopen1dotOne1dotclose1dotclose.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <p1p2.ttl> ;
       sht:focus <x>
@@ -8148,6 +8999,33 @@
 ###   } value reference
 ###   AND valueExpr {
 
+<#1dotShapeAND1dot3X_pass> a sht:ValidationTest ;
+    mf:name "1dotShapeAND1dot3X_pass" ;
+    sht:trait sht:OrValueExpression , sht:ValueReference ;
+    rdfs:comment "<S1> { <p1> . } AND { <p2> . } AND { <p3> . } on { <s1> <p1> 'X'; <p2> 'X'; <p3> 'X' }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1dotShapeAND1dot3X.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ipx_LXX3.ttl> ;
+      sht:focus <http://a.example/n1>
+    ] ;
+    mf:result <1dotShapeAND1dot3X_pass.val>
+    .
+
+<#1dotShapeAND1dot3X_fail> a sht:ValidationFailure ;
+    mf:name "1dotShapeAND1dot3X_fail" ;
+    sht:trait sht:OrValueExpression , sht:ValueReference ;
+    rdfs:comment "<S1> { <p1> . } AND { <p2> . } AND { <p3> . } on { <s1> <p1> <s2>, <s3>, <s4> . <s2> <p2> \"X\" . <s3> <p3> \"X\" . <s4> <p4> \"X\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1dotShapeAND1dot3X.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip1_In2.In2_Ipx_LXX3.ttl> ;
+      sht:focus <http://a.example/n2>
+    ] ;
+    .
+
 <#1dotRefAND3_failAll> a sht:ValidationFailure ;
     mf:name "1dotRefAND3_failAll" ;
     sht:trait sht:OrValueExpression , sht:ValueReference ;
@@ -8214,53 +9092,53 @@
     mf:result <1dotRefAND3_passShape1Shape2Shape3.val>
     .
 
-<#1val1vExprANDRef3_pass> a sht:ValidationTest ;
-    mf:name "1val1vExprANDRef3_pass" ;
+<#1val1vExpr1AND1AND1Ref3_pass> a sht:ValidationTest ;
+    mf:name "1val1vExpr1AND1AND1Ref3_pass" ;
     sht:trait sht:AndValueExpression , sht:ValueReference ;
     rdfs:comment "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> AND ... $<vc3> } on { <s1> <p1> 'abab' }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1val1vExprANDRef3.shex> ;
+      sht:schema <../schemas/1val1vExpr1AND1AND1Ref3.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Labab.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
-    mf:result <1val1vExprANDRef3_pass.val>
+    mf:result <1val1vExpr1AND1AND1Ref3_pass.val>
     .
 
-<#1val1vExprANDRef3_failvc1> a sht:ValidationFailure ;
-    mf:name "1val1vExprANDRef3_failvc1" ;
+<#1val1vExpr1AND1AND1Ref3_failvc1> a sht:ValidationFailure ;
+    mf:name "1val1vExpr1AND1AND1Ref3_failvc1" ;
     sht:trait sht:AndValueExpression , sht:ValueReference ;
     rdfs:comment "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> AND ... $<vc3> } on { <s1> <p1> 'ab' }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1val1vExprANDRef3.shex> ;
+      sht:schema <../schemas/1val1vExpr1AND1AND1Ref3.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Lab.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
     .
 
-<#1val1vExprANDRef3_failvc2> a sht:ValidationFailure ;
-    mf:name "1val1vExprANDRef3_failvc2" ;
+<#1val1vExpr1AND1AND1Ref3_failvc2> a sht:ValidationFailure ;
+    mf:name "1val1vExpr1AND1AND1Ref3_failvc2" ;
     sht:trait sht:AndValueExpression , sht:ValueReference ;
     rdfs:comment "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> AND ... $<vc3> } on { <s1> <p1> 'ababab' }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1val1vExprANDRef3.shex> ;
+      sht:schema <../schemas/1val1vExpr1AND1AND1Ref3.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Lababab.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
     .
 
-<#1val1vExprANDRef3_failvc3> a sht:ValidationFailure ;
-    mf:name "1val1vExprANDRef3_failvc3" ;
+<#1val1vExpr1AND1AND1Ref3_failvc3> a sht:ValidationFailure ;
+    mf:name "1val1vExpr1AND1AND1Ref3_failvc3" ;
     sht:trait sht:AndValueExpression , sht:ValueReference ;
     rdfs:comment "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> AND ... $<vc3> } on { <s1> <p1> 'baba' }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1val1vExprANDRef3.shex> ;
+      sht:schema <../schemas/1val1vExpr1AND1AND1Ref3.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Lbaba.ttl> ;
       sht:focus <http://a.example/s1>
@@ -8323,7 +9201,7 @@
 <#1val1vExprAND3_pass> a sht:ValidationTest ;
     mf:name "1val1vExprAND3_pass" ;
     sht:trait sht:AndValueExpression ;
-    rdfs:comment "<S> { <p1> MINLENGTH 4 AND MAXLENGTH 5 AND ~ '^(ab)+' } on { <s1> <p1> 'abab' }" ;
+    rdfs:comment "<S> { <p1> MINLENGTH 4 AND MAXLENGTH 5 AND ~ '(ab)+' } on { <s1> <p1> 'abab' }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1vExprAND3.shex> ;
@@ -8337,7 +9215,7 @@
 <#1val1vExprAND3_failvc1> a sht:ValidationFailure ;
     mf:name "1val1vExprAND3_failvc1" ;
     sht:trait sht:AndValueExpression ;
-    rdfs:comment "<S> { <p1> MINLENGTH 4 AND MAXLENGTH 5 AND ~ '^(ab)+' } on { <s1> <p1> 'ab' }" ;
+    rdfs:comment "<S> { <p1> MINLENGTH 4 AND MAXLENGTH 5 AND ~ '(ab)+' } on { <s1> <p1> 'ab' }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1vExprAND3.shex> ;
@@ -8350,7 +9228,7 @@
 <#1val1vExprAND3_failvc2> a sht:ValidationFailure ;
     mf:name "1val1vExprAND3_failvc2" ;
     sht:trait sht:AndValueExpression ;
-    rdfs:comment "<S> { <p1> MINLENGTH 4 AND MAXLENGTH 5 AND ~ '^(ab)+' } on { <s1> <p1> 'ababab' }" ;
+    rdfs:comment "<S> { <p1> MINLENGTH 4 AND MAXLENGTH 5 AND ~ '(ab)+' } on { <s1> <p1> 'ababab' }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1vExprAND3.shex> ;
@@ -8363,7 +9241,7 @@
 <#1val1vExprAND3_failvc3> a sht:ValidationFailure ;
     mf:name "1val1vExprAND3_failvc3" ;
     sht:trait sht:AndValueExpression ;
-    rdfs:comment "<S> { <p1> MINLENGTH 4 AND MAXLENGTH 5 AND ~ '^(ab)+' } on { <s1> <p1> 'baba' }" ;
+    rdfs:comment "<S> { <p1> MINLENGTH 4 AND MAXLENGTH 5 AND ~ '(ab)+' } on { <s1> <p1> 'baba' }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1vExprAND3.shex> ;
@@ -8375,6 +9253,102 @@
 
 ###   } AND valueExpr
 ###   OR valueExpr {
+
+<#refBNodeORrefIRI_ReflexiveIRI> a sht:ValidationTest ;
+    mf:name "refBNodeORrefIRI_ReflexiveIRI" ;
+    sht:trait sht:OrValueExpression , sht:ValueReference ;
+    rdfs:comment "<S1> { <p1> BNODE @<S1> OR MINLENGTH 20 @<S1> } on { <n1a> <p1> <n1a> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1bnodeRefORRefMinlength.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1a_Ip1_In1a.ttl> ;
+      sht:focus <http://a.example/n1a>
+    ] ;
+    mf:result <refBNodeORrefIRI_ReflexiveIRI.val> ;
+    .
+
+<#refBNodeORrefIRI_ReflexiveShortIRI> a sht:ValidationFailure ;
+    mf:name "refBNodeORrefIRI_ReflexiveShortIRI" ;
+    sht:trait sht:OrValueExpression , sht:ValueReference ;
+    rdfs:comment "<S1> { <p1> BNODE @<S1> OR MINLENGTH 20 @<S1> } on { <n1> <p1> <n1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1bnodeRefORRefMinlength.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip1_In1.ttl> ;
+      sht:focus <http://a.example/n1>
+    ] ;
+    .
+
+<#refBNodeORrefIRI_IntoReflexiveIRI> a sht:ValidationTest ;
+    mf:name "refBNodeORrefIRI_IntoReflexiveIRI" ;
+    sht:trait sht:OrValueExpression , sht:ValueReference ;
+    rdfs:comment "<S1> { <p1> BNODE @<S1> OR MINLENGTH 20 @<S1> } on { <n1> <p1> <n2a> . <n2a> <p1> <n2a> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1bnodeRefORRefMinlength.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip1_In2a.In2a_Ip1_In2a.ttl> ;
+      sht:focus <http://a.example/n1>
+    ] ;
+    mf:result <refBNodeORrefIRI_IntoReflexiveIRI.val> ;
+    .
+
+<#refBNodeORrefIRI_IntoReflexiveBNode> a sht:ValidationTest ;
+    mf:name "refBNodeORrefIRI_IntoReflexiveBNode" ;
+    sht:trait sht:OrValueExpression , sht:ValueReference ;
+    rdfs:comment "<S1> { <p1> BNODE @<S1> OR MINLENGTH 20 @<S1> } on { <n1> <p1> _:n2 . _:n2 <p1> _:n2 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1bnodeRefORRefMinlength.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip1_Bn2.Bn2_Ip1_Bn2.ttl> ;
+      sht:focus <http://a.example/n1>
+    ] ;
+    mf:result <refBNodeORrefIRI_IntoReflexiveBNode.val> ;
+    .
+
+<#refBNodeORrefIRI_CyclicIRI_IRI> a sht:ValidationTest ;
+    mf:name "refBNodeORrefIRI_CyclicIRI_IRI" ;
+    sht:trait sht:OrValueExpression , sht:ValueReference ;
+    rdfs:comment "<S1> { <p1> BNODE @<S1> OR MINLENGTH 20 @<S1> } on { <n1a> <p1> <n2a> . <n2a> <p1> <n1a> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1bnodeRefORRefMinlength.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1a_Ip1_In2a.In2a_Ip1_In1a.ttl> ;
+      sht:focus <http://a.example/n1a>
+    ] ;
+    mf:result <refBNodeORrefIRI_CyclicIRI_IRI.val> ;
+    .
+
+<#refBNodeORrefIRI_CyclicIRI_BNode> a sht:ValidationTest ;
+    mf:name "refBNodeORrefIRI_CyclicIRI_BNode" ;
+    sht:trait sht:OrValueExpression , sht:ValueReference ;
+    rdfs:comment "<S1> { <p1> BNODE @<S1> OR MINLENGTH 20 @<S1> } on { <n1a> <p1> _:n2 . _:n2 <p1> <n1a> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1bnodeRefORRefMinlength.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1a_Ip1_Bn2.Bn2_Ip1_In1a.ttl> ;
+      sht:focus <http://a.example/n1a>
+    ] ;
+    mf:result <refBNodeORrefIRI_CyclicIRI_BNode.val> ;
+    .
+
+<#refBNodeORrefIRI_CyclicIRI_ShortIRI> a sht:ValidationFailure ;
+    mf:name "refBNodeORrefIRI_CyclicIRI_ShortIRI" ;
+    sht:trait sht:OrValueExpression , sht:ValueReference ;
+    rdfs:comment "<S1> { <p1> BNODE @<S1> OR MINLENGTH 20 @<S1> } on { <n1> <p1> <n2a> . <n2a> <p1> <n1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1bnodeRefORRefMinlength.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip1_In2a.In2a_Ip1_In1.ttl> ;
+      sht:focus <http://a.example/n1>
+    ] ;
+    .
 
 <#1dotRefOR3_fail> a sht:ValidationFailure ;
     mf:name "1dotRefOR3_fail" ;
@@ -8445,73 +9419,73 @@
     mf:result <1dotRefOR3_passShape1.val>
     .
 
-<#1val1vExprORRef3_fail> a sht:ValidationFailure ;
-    mf:name "1val1vExprORRef3_fail" ;
+<#1val1vExpr1OR1OR1Ref3_fail> a sht:ValidationFailure ;
+    mf:name "1val1vExpr1OR1OR1Ref3_fail" ;
     sht:trait sht:OrValueExpression , sht:ValueReference ;
     rdfs:comment "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> OR ... $<vc3> } on { <s1> <p1> 'a' }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1val1vExprORRef3.shex> ;
+      sht:schema <../schemas/1val1vExpr1OR1OR1Ref3.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_La.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
     .
 
-<#1val1vExprORRef3_passvc1> a sht:ValidationTest ;
-    mf:name "1val1vExprORRef3_passvc1" ;
+<#1val1vExpr1OR1OR1Ref3_passvc1> a sht:ValidationTest ;
+    mf:name "1val1vExpr1OR1OR1Ref3_passvc1" ;
     sht:trait sht:OrValueExpression , sht:ValueReference ;
     rdfs:comment "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> OR ... $<vc3> } on { <s1> <p1> 'ab' }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1val1vExprORRef3.shex> ;
+      sht:schema <../schemas/1val1vExpr1OR1OR1Ref3.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Lab.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
-    mf:result <1val1vExprORRef3_passvc1.val>
+    mf:result <1val1vExpr1OR1OR1Ref3_passvc1.val>
     .
 
-<#1val1vExprORRef3_passvc2> a sht:ValidationTest ;
-    mf:name "1val1vExprORRef3_passvc2" ;
+<#1val1vExpr1OR1OR1Ref3_passvc2> a sht:ValidationTest ;
+    mf:name "1val1vExpr1OR1OR1Ref3_passvc2" ;
     sht:trait sht:OrValueExpression , sht:ValueReference ;
     rdfs:comment "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> OR ... $<vc3> } on { <s1> <p1> 'cd' }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1val1vExprORRef3.shex> ;
+      sht:schema <../schemas/1val1vExpr1OR1OR1Ref3.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Lcd.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
-    mf:result <1val1vExprORRef3_passvc2.val>
+    mf:result <1val1vExpr1OR1OR1Ref3_passvc2.val>
     .
 
-<#1val1vExprORRef3_passvc3> a sht:ValidationTest ;
-    mf:name "1val1vExprORRef3_passvc3" ;
+<#1val1vExpr1OR1OR1Ref3_passvc3> a sht:ValidationTest ;
+    mf:name "1val1vExpr1OR1OR1Ref3_passvc3" ;
     sht:trait sht:OrValueExpression , sht:ValueReference ;
     rdfs:comment "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> OR ... $<vc3> } on { <s1> <p1> 'ef' }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1val1vExprORRef3.shex> ;
+      sht:schema <../schemas/1val1vExpr1OR1OR1Ref3.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Lef.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
-    mf:result <1val1vExprORRef3_passvc3.val>
+    mf:result <1val1vExpr1OR1OR1Ref3_passvc3.val>
     .
 
-<#1val1vExprORRef3_passvc1vc2vc3> a sht:ValidationTest ;
-    mf:name "1val1vExprORRef3_passvc1vc2vc3" ;
+<#1val1vExpr1OR1OR1Ref3_passvc1vc2vc3> a sht:ValidationTest ;
+    mf:name "1val1vExpr1OR1OR1Ref3_passvc1vc2vc3" ;
     sht:trait sht:OrValueExpression , sht:ValueReference ;
     rdfs:comment "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> OR ... $<vc3> } on { <s1> <p1> 'abcdef' }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1val1vExprORRef3.shex> ;
+      sht:schema <../schemas/1val1vExpr1OR1OR1Ref3.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Labcdef.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
-    mf:result <1val1vExprORRef3_passvc1vc2vc3.val>
+    mf:result <1val1vExpr1OR1OR1Ref3_passvc1vc2vc3.val>
     .
 
 <#1val1vExprRefOR3_fail> a sht:ValidationFailure ;
@@ -8538,7 +9512,7 @@
       sht:data <Is1_Ip1_Lab.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
-    mf:result <1val1vExprRefOR3_passvc1.val>
+    mf:result <1val1vExprRefOR3_passvc1.val> # !! ShapeOrResults with no solutions.
     .
 
 <#1val1vExprRefOR3_passvc2> a sht:ValidationTest ;
@@ -8552,7 +9526,7 @@
       sht:data <Is1_Ip1_Lcd.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
-    mf:result <1val1vExprRefOR3_passvc2.val>
+    mf:result <1val1vExprRefOR3_passvc2.val> # !! ShapeOrResults with no solutions.
     .
 
 <#1val1vExprRefOR3_passvc3> a sht:ValidationTest ;
@@ -8566,7 +9540,7 @@
       sht:data <Is1_Ip1_Lef.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
-    mf:result <1val1vExprRefOR3_passvc3.val>
+    mf:result <1val1vExprRefOR3_passvc3.val> # !! ShapeOrResults with no solutions.
     .
 
 <#1val1vExprRefOR3_passvc1vc2vc3> a sht:ValidationTest ;
@@ -8580,7 +9554,7 @@
       sht:data <Is1_Ip1_Labcdef.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
-    mf:result <1val1vExprRefOR3_passvc1vc2vc3.val>
+    mf:result <1val1vExprRefOR3_passvc1vc2vc3.val> # !! ShapeOrResults with no solutions.
     .
 
 <#1val1vExprOR3_fail> a sht:ValidationFailure ;
@@ -8653,236 +9627,410 @@
     .
 
 ###   } OR valueExpr
+###   AND OR valueExpr {
+
+<#1val1vExpr1AND1OR1Ref3_pass-vc1vc2> a sht:ValidationTest ;
+    mf:name "1val1vExpr1AND1OR1Ref3_pass-vc1vc2" ;
+    sht:trait sht:AndValueExpression , sht:ValueReference ;
+    rdfs:comment "<vc1> ... <vc3> ... <S> { <p1> @<vc1> AND @<vc2> OR @<vc3> } on { <s1> <p1> 'abcd' }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1vExpr1AND1OR1Ref3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Labcd.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1val1vExpr1AND1OR1Ref3_pass-vc1vc2.val>
+    .
+
+<#1val1vExpr1AND1OR1Ref3_pass-vc1vc2vc3> a sht:ValidationTest ;
+    mf:name "1val1vExpr1AND1OR1Ref3_pass-vc1vc2vc3" ;
+    sht:trait sht:AndValueExpression , sht:ValueReference ;
+    rdfs:comment "<vc1> ... <vc3> ... <S> { <p1> @<vc1> AND @<vc2> OR @<vc3> } on { <s1> <p1> 'abab' }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1vExpr1AND1OR1Ref3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Labab.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1val1vExpr1AND1OR1Ref3_pass-vc1vc2vc3.val>
+    .
+
+<#1val1vExpr1AND1OR1Ref3_pass-vc1vc3> a sht:ValidationTest ;
+    mf:name "1val1vExpr1AND1OR1Ref3_pass-vc1vc3" ;
+    sht:trait sht:AndValueExpression , sht:ValueReference ;
+    rdfs:comment "<vc1> ... <vc3> ... <S> { <p1> @<vc1> AND @<vc2> OR @<vc3> } on { <s1> <p1> 'ababab' }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1vExpr1AND1OR1Ref3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Lababab.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1val1vExpr1AND1OR1Ref3_pass-vc1vc3.val>
+    .
+
+<#1val1vExpr1AND1OR1Ref3_failvc1vc3> a sht:ValidationFailure ;
+    mf:name "1val1vExpr1AND1OR1Ref3_failvc1vc3" ;
+    sht:trait sht:AndValueExpression , sht:ValueReference ;
+    rdfs:comment "<vc1> ... <vc3> ... <S> { <p1> @<vc1> AND ... @<vc3> } on { <s1> <p1> 'abc' }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1vExpr1AND1OR1Ref3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Labc.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1val1vExpr1AND1OR1Ref3_failvc2vc3> a sht:ValidationFailure ;
+    mf:name "1val1vExpr1AND1OR1Ref3_failvc2vc3" ;
+    sht:trait sht:AndValueExpression , sht:ValueReference ;
+    rdfs:comment "<vc1> ... <vc3> ... <S> { <p1> @<vc1> AND ... @<vc3> } on { <s1> <p1> 'abcdef' }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1vExpr1AND1OR1Ref3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Labcdef.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1val1vExpr1AND1OR1Ref3_failvc1vc2vc3> a sht:ValidationFailure ;
+    mf:name "1val1vExpr1AND1OR1Ref3_failvc1vc2vc3" ;
+    sht:trait sht:AndValueExpression , sht:ValueReference ;
+    rdfs:comment "<vc1> ... <vc3> ... <S> { <p1> @<vc1> AND ... @<vc3> } on { <s1> <p1> 'a' }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1vExpr1AND1OR1Ref3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_La.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+# >5 | ( <3 & /^(ab)*$/ )
+# 1    abcdef
+# 13   ababab
+# 23   ab
+
+<#1val1vExpr1OR1AND1Ref3_pass-vc1> a sht:ValidationTest ;
+    mf:name "1val1vExpr1OR1AND1Ref3_pass-vc1" ;
+    sht:trait sht:AndValueExpression , sht:ValueReference ;
+    rdfs:comment "<vc1> ... <vc3> ... <S> { <p1> @<vc1> AND @<vc2> OR @<vc3> } on { <s1> <p1> 'abcdef' }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1vExpr1OR1AND1Ref3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Labcdef.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1val1vExpr1OR1AND1Ref3_pass-vc1.val>
+    .
+
+<#1val1vExpr1OR1AND1Ref3_pass-vc1vc3> a sht:ValidationTest ;
+    mf:name "1val1vExpr1OR1AND1Ref3_pass-vc1vc3" ;
+    sht:trait sht:AndValueExpression , sht:ValueReference ;
+    rdfs:comment "<vc1> ... <vc3> ... <S> { <p1> @<vc1> AND @<vc2> OR @<vc3> } on { <s1> <p1> 'ababab' }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1vExpr1OR1AND1Ref3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Lababab.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1val1vExpr1OR1AND1Ref3_pass-vc1vc3.val>
+    .
+
+<#1val1vExpr1OR1AND1Ref3_pass-vc2vc3> a sht:ValidationTest ;
+    mf:name "1val1vExpr1OR1AND1Ref3_pass-vc2vc3" ;
+    sht:trait sht:AndValueExpression , sht:ValueReference ;
+    rdfs:comment "<vc1> ... <vc3> ... <S> { <p1> @<vc1> AND @<vc2> OR @<vc3> } on { <s1> <p1> 'ab' }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1vExpr1OR1AND1Ref3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Lab.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1val1vExpr1OR1AND1Ref3_pass-vc2vc3.val>
+    .
+
+# >5 | ( <3 & /^(ab)*$/ )
+# !1!2    abab
+# !1!3    cd
+# !1!2!3  abcd
+<#1val1vExpr1OR1AND1Ref3_failvc1vc2> a sht:ValidationFailure ;
+    mf:name "1val1vExpr1OR1AND1Ref3_failvc1vc2" ;
+    sht:trait sht:AndValueExpression , sht:ValueReference ;
+    rdfs:comment "<vc1> ... <vc3> ... <S> { <p1> @<vc1> AND ... @<vc3> } on { <s1> <p1> 'abab' }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1vExpr1OR1AND1Ref3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Labab.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1val1vExpr1OR1AND1Ref3_failvc1vc3> a sht:ValidationFailure ;
+    mf:name "1val1vExpr1OR1AND1Ref3_failvc1vc3" ;
+    sht:trait sht:AndValueExpression , sht:ValueReference ;
+    rdfs:comment "<vc1> ... <vc3> ... <S> { <p1> @<vc1> AND ... @<vc3> } on { <s1> <p1> 'cd' }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1vExpr1OR1AND1Ref3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Lcd.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1val1vExpr1OR1AND1Ref3_failvc1vc2vc3> a sht:ValidationFailure ;
+    mf:name "1val1vExpr1OR1AND1Ref3_failvc1vc2vc3" ;
+    sht:trait sht:AndValueExpression , sht:ValueReference ;
+    rdfs:comment "<vc1> ... <vc3> ... <S> { <p1> @<vc1> AND ... @<vc3> } on { <s1> <p1> 'abcd' }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1vExpr1OR1AND1Ref3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Labcd.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+###   } AND OR valueExpr
 ## } value expressions
 ## repetitions {
 
  # sht:RepeatedGroup e.g. <S> { (:fname .; :lname .){2} }
 
-<#open3Ordotclosecard2_fail-p1> a sht:ValidationFailure ;
-    mf:name "open3Ordotclosecard2_fail-p1" ;
-    sht:trait sht:EachOf , sht:RepeatedSomeOf ;
+<#open3Onedotclosecard2_fail-p1> a sht:ValidationFailure ;
+    mf:name "open3Onedotclosecard2_fail-p1" ;
+    sht:trait sht:EachOf , sht:RepeatedOneOf ;
     rdfs:comment "<S1> { ( <p1> .| <p2> .| <p3> . ){2} } / { <s> <p1> \"p1-0\" }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/open3Ordotclosecard2.shex> ;
+      sht:schema <../schemas/open3Onedotclosecard2.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <p1.ttl> ;
       sht:focus <x>
     ]
     .
 
-<#open3Ordotclosecard2_pass-p1X2> a sht:ValidationTest ;
-    mf:name "open3Ordotclosecard2_pass-p1X2" ;
-    sht:trait sht:EachOf , sht:RepeatedSomeOf ;
+<#open3Onedotclosecard2_pass-p1X2> a sht:ValidationTest ;
+    mf:name "open3Onedotclosecard2_pass-p1X2" ;
+    sht:trait sht:EachOf , sht:RepeatedOneOf ;
     rdfs:comment "<S1> { ( <p1> .| <p2> .| <p3> . ){2} } / { <s> <p1> \"p1-n\" }X2" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/open3Ordotclosecard2.shex> ;
+      sht:schema <../schemas/open3Onedotclosecard2.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <p1X2.ttl> ;
       sht:focus <x>
     ] ;
-    mf:result <open3Ordotclosecard2-p1X2.val>
+    mf:result <open3Onedotclosecard2-p1X2.val>
     .
 
-<#open3Ordotclosecard2_fail-p1X3> a sht:ValidationFailure ;
-    mf:name "open3Ordotclosecard2_fail-p1X3" ;
-    sht:trait sht:EachOf , sht:RepeatedSomeOf ;
+<#open3Onedotclosecard2_fail-p1X3> a sht:ValidationFailure ;
+    mf:name "open3Onedotclosecard2_fail-p1X3" ;
+    sht:trait sht:EachOf , sht:RepeatedOneOf ;
     rdfs:comment "<S1> { ( <p1> .| <p2> .| <p3> . ){2} } / { <s> <p1> \"p1-n\" }X3" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/open3Ordotclosecard2.shex> ;
+      sht:schema <../schemas/open3Onedotclosecard2.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <p1X3.ttl> ;
       sht:focus <x>
     ]
     .
 
-<#open3Ordotclosecard2_fail-p1X4> a sht:ValidationFailure ;
-    mf:name "open3Ordotclosecard2_fail-p1X4" ;
-    sht:trait sht:EachOf , sht:RepeatedSomeOf ;
+<#open3Onedotclosecard2_fail-p1X4> a sht:ValidationFailure ;
+    mf:name "open3Onedotclosecard2_fail-p1X4" ;
+    sht:trait sht:EachOf , sht:RepeatedOneOf ;
     rdfs:comment "<S1> { ( <p1> .| <p2> .| <p3> . ){2} } / { <s> <p1> \"p1-n\" }X4" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/open3Ordotclosecard2.shex> ;
+      sht:schema <../schemas/open3Onedotclosecard2.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <p1X4.ttl> ;
       sht:focus <x>
     ]
     .
 
-<#open3Ordotclosecard2_pass-p1p2> a sht:ValidationTest ;
-    mf:name "open3Ordotclosecard2_pass-p1p2" ;
-    sht:trait sht:EachOf , sht:RepeatedSomeOf ;
+<#open3Onedotclosecard2_pass-p1p2> a sht:ValidationTest ;
+    mf:name "open3Onedotclosecard2_pass-p1p2" ;
+    sht:trait sht:EachOf , sht:RepeatedOneOf ;
     rdfs:comment "<S1> { ( <p1> .| <p2> .| <p3> . ){2} } / { <s> <p1> \"p1-0\"; <p2> \"p2-0\" }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/open3Ordotclosecard2.shex> ;
+      sht:schema <../schemas/open3Onedotclosecard2.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <p1p2.ttl> ;
       sht:focus <x>
     ] ;
-    mf:result <open3Ordotclosecard2-p1p2.val>
+    mf:result <open3Onedotclosecard2-p1p2.val>
     .
 
-<#open3Ordotclosecard2_pass-p1p3> a sht:ValidationTest ;
-    mf:name "open3Ordotclosecard2_pass-p1p3" ;
-    sht:trait sht:EachOf , sht:RepeatedSomeOf ;
+<#open3Onedotclosecard2_pass-p1p3> a sht:ValidationTest ;
+    mf:name "open3Onedotclosecard2_pass-p1p3" ;
+    sht:trait sht:EachOf , sht:RepeatedOneOf ;
     rdfs:comment "<S1> { ( <p1> .| <p2> .| <p3> . ){2} } / { <s> <p1> \"p1-0\"; <p3> \"p3-0\" }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/open3Ordotclosecard2.shex> ;
+      sht:schema <../schemas/open3Onedotclosecard2.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <p1p3.ttl> ;
       sht:focus <x>
     ] ;
-    mf:result <open3Ordotclosecard2-p1p3.val>
+    mf:result <open3Onedotclosecard2-p1p3.val>
     .
 
-<#open3Ordotclosecard2_pass-p2p3> a sht:ValidationTest ;
-    mf:name "open3Ordotclosecard2_pass-p2p3" ;
-    sht:trait sht:EachOf , sht:RepeatedSomeOf ;
+<#open3Onedotclosecard2_pass-p2p3> a sht:ValidationTest ;
+    mf:name "open3Onedotclosecard2_pass-p2p3" ;
+    sht:trait sht:EachOf , sht:RepeatedOneOf ;
     rdfs:comment "<S1> { ( <p1> .| <p2> .| <p3> . ){2} } / { <s> <p2> \"p2-0\"; <p3> \"p3-0\" }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/open3Ordotclosecard2.shex> ;
+      sht:schema <../schemas/open3Onedotclosecard2.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <p2p3.ttl> ;
       sht:focus <x>
     ] ;
-    mf:result <open3Ordotclosecard2-p2p3.val>
+    mf:result <open3Onedotclosecard2-p2p3.val>
     .
 
-<#open3Ordotclosecard2_fail-p1p2p3> a sht:ValidationFailure ;
-    mf:name "open3Ordotclosecard2_fail-p1p2p3" ;
-    sht:trait sht:EachOf , sht:RepeatedSomeOf ;
+<#open3Onedotclosecard2_fail-p1p2p3> a sht:ValidationFailure ;
+    mf:name "open3Onedotclosecard2_fail-p1p2p3" ;
+    sht:trait sht:EachOf , sht:RepeatedOneOf ;
     rdfs:comment "<S1> { ( <p1> .| <p2> .| <p3> . ){2} } / { <s> <p1> \"p1-0\"; <p2> \"p2-0\"; <p3> \"p3-0\" }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/open3Ordotclosecard2.shex> ;
+      sht:schema <../schemas/open3Onedotclosecard2.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <p1p2p3.ttl> ;
       sht:focus <x>
     ]
     .
 
-<#open3Ordotclosecard23_fail-p1> a sht:ValidationFailure ;
-    mf:name "open3Ordotclosecard23_fail-p1" ;
-    sht:trait sht:EachOf , sht:RepeatedSomeOf ;
+<#open3Onedotclosecard23_fail-p1> a sht:ValidationFailure ;
+    mf:name "open3Onedotclosecard23_fail-p1" ;
+    sht:trait sht:EachOf , sht:RepeatedOneOf ;
     rdfs:comment "<S1> { ( <p1> .| <p2> .| <p3> . ){2,3} } / { <s> <p1> \"p1-0\" }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/open3Ordotclosecard23.shex> ;
+      sht:schema <../schemas/open3Onedotclosecard23.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <p1.ttl> ;
       sht:focus <x>
     ]
     .
 
-<#open3Ordotclosecard23_pass-p1X2> a sht:ValidationTest ;
-    mf:name "open3Ordotclosecard23_pass-p1X2" ;
-    sht:trait sht:EachOf , sht:RepeatedSomeOf ;
+<#open3Onedotclosecard23_pass-p1X2> a sht:ValidationTest ;
+    mf:name "open3Onedotclosecard23_pass-p1X2" ;
+    sht:trait sht:EachOf , sht:RepeatedOneOf ;
     rdfs:comment "<S1> { ( <p1> .| <p2> .| <p3> . ){2,3} } / { <s> <p1> \"p1-n\" }X2" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/open3Ordotclosecard23.shex> ;
+      sht:schema <../schemas/open3Onedotclosecard23.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <p1X2.ttl> ;
       sht:focus <x>
     ] ;
-    mf:result <open3Ordotclosecard23-p1X2.val>
+    mf:result <open3Onedotclosecard23-p1X2.val>
     .
 
-<#open3Ordotclosecard23_pass-p1X3> a sht:ValidationTest ;
-    mf:name "open3Ordotclosecard23_pass-p1X3" ;
-    sht:trait sht:EachOf , sht:RepeatedSomeOf ;
+<#open3Onedotclosecard23_pass-p1X3> a sht:ValidationTest ;
+    mf:name "open3Onedotclosecard23_pass-p1X3" ;
+    sht:trait sht:EachOf , sht:RepeatedOneOf ;
     rdfs:comment "<S1> { ( <p1> .| <p2> .| <p3> . ){2,3} } / { <s> <p1> \"p1-n\" }X3" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/open3Ordotclosecard23.shex> ;
+      sht:schema <../schemas/open3Onedotclosecard23.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <p1X3.ttl> ;
       sht:focus <x>
     ] ;
-    mf:result <open3Ordotclosecard23-p1X3.val>
+    mf:result <open3Onedotclosecard23-p1X3.val>
     .
 
-<#open3Ordotclosecard23_fail-p1X4> a sht:ValidationFailure ;
-    mf:name "open3Ordotclosecard23_fail-p1X4" ;
-    sht:trait sht:EachOf , sht:RepeatedSomeOf ;
+<#open3Onedotclosecard23_fail-p1X4> a sht:ValidationFailure ;
+    mf:name "open3Onedotclosecard23_fail-p1X4" ;
+    sht:trait sht:EachOf , sht:RepeatedOneOf ;
     rdfs:comment "<S1> { ( <p1> .| <p2> .| <p3> . ){2,3} } / { <s> <p1> \"p1-n\" }X4" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/open3Ordotclosecard23.shex> ;
+      sht:schema <../schemas/open3Onedotclosecard23.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <p1X4.ttl> ;
       sht:focus <x>
     ]
     .
 
-<#open3Ordotclosecard23_pass-p1p2> a sht:ValidationTest ;
-    mf:name "open3Ordotclosecard23_pass-p1p2" ;
-    sht:trait sht:EachOf , sht:RepeatedSomeOf ;
+<#open3Onedotclosecard23_pass-p1p2> a sht:ValidationTest ;
+    mf:name "open3Onedotclosecard23_pass-p1p2" ;
+    sht:trait sht:EachOf , sht:RepeatedOneOf ;
     rdfs:comment "<S1> { ( <p1> .| <p2> .| <p3> . ){2,3} } / { <s> <p1> \"p1-0\"; <p2> \"p2-0\" }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/open3Ordotclosecard23.shex> ;
+      sht:schema <../schemas/open3Onedotclosecard23.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <p1p2.ttl> ;
       sht:focus <x>
     ] ;
-    mf:result <open3Ordotclosecard23-p1p2.val>
+    mf:result <open3Onedotclosecard23-p1p2.val>
     .
 
-<#open3Ordotclosecard23_pass-p1p3> a sht:ValidationTest ;
-    mf:name "open3Ordotclosecard23_pass-p1p3" ;
-    sht:trait sht:EachOf , sht:RepeatedSomeOf ;
+<#open3Onedotclosecard23_pass-p1p3> a sht:ValidationTest ;
+    mf:name "open3Onedotclosecard23_pass-p1p3" ;
+    sht:trait sht:EachOf , sht:RepeatedOneOf ;
     rdfs:comment "<S1> { ( <p1> .| <p2> .| <p3> . ){2,3} } / { <s> <p1> \"p1-0\"; <p3> \"p3-0\" }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/open3Ordotclosecard23.shex> ;
+      sht:schema <../schemas/open3Onedotclosecard23.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <p1p3.ttl> ;
       sht:focus <x>
     ] ;
-    mf:result <open3Ordotclosecard23-p1p3.val>
+    mf:result <open3Onedotclosecard23-p1p3.val>
     .
 
-<#open3Ordotclosecard23_pass-p2p3> a sht:ValidationTest ;
-    mf:name "open3Ordotclosecard23_pass-p2p3" ;
-    sht:trait sht:EachOf , sht:RepeatedSomeOf ;
+<#open3Onedotclosecard23_pass-p2p3> a sht:ValidationTest ;
+    mf:name "open3Onedotclosecard23_pass-p2p3" ;
+    sht:trait sht:EachOf , sht:RepeatedOneOf ;
     rdfs:comment "<S1> { ( <p1> .| <p2> .| <p3> . ){2,3} } / { <s> <p2> \"p2-0\"; <p3> \"p3-0\" }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/open3Ordotclosecard23.shex> ;
+      sht:schema <../schemas/open3Onedotclosecard23.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <p2p3.ttl> ;
       sht:focus <x>
     ] ;
-    mf:result <open3Ordotclosecard23-p2p3.val>
+    mf:result <open3Onedotclosecard23-p2p3.val>
     .
 
-<#open3Ordotclosecard23_pass-p1p2p3> a sht:ValidationTest ;
-    mf:name "open3Ordotclosecard23_pass-p1p2p3" ;
-    sht:trait sht:EachOf , sht:RepeatedSomeOf , sht:Greedy ;
+<#open3Onedotclosecard23_pass-p1p2p3> a sht:ValidationTest ;
+    mf:name "open3Onedotclosecard23_pass-p1p2p3" ;
+    sht:trait sht:EachOf , sht:RepeatedOneOf , sht:Greedy ;
     rdfs:comment "<S1> { ( <p1> .| <p2> .| <p3> . ){2,3} } / { <s> <p1> \"p1-0\"; <p2> \"p2-0\"; <p3> \"p3-0\" }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/open3Ordotclosecard23.shex> ;
+      sht:schema <../schemas/open3Onedotclosecard23.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <p1p2p3.ttl> ;
       sht:focus <x>
     ] ;
-    mf:result <open3Ordotclosecard23-p1p2p3.val>
+    mf:result <open3Onedotclosecard23-p1p2p3.val>
     .
 
-<#open4Ordotclosecard23_fail-p1p2p3p4> a sht:ValidationFailure ;
-    mf:name "open4Ordotclosecard23_fail-p1p2p3p4" ;
-    sht:trait sht:EachOf , sht:RepeatedSomeOf ;
+<#open4Onedotclosecard23_fail-p1p2p3p4> a sht:ValidationFailure ;
+    mf:name "open4Onedotclosecard23_fail-p1p2p3p4" ;
+    sht:trait sht:EachOf , sht:RepeatedOneOf ;
     rdfs:comment "<S1> { ( <p1> .| <p2> .| <p3> .| <p4> . ){2,3} } / { <s> <p1> \"p1-n\"; <p2> \"p2-n\"; <p3> \"p3-n\" ; <p4> \"p4-n\" }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/open4Ordotclosecard23.shex> ;
+      sht:schema <../schemas/open4Onedotclosecard23.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <p1p2p3p4.ttl> ;
       sht:focus <x>
@@ -8910,7 +10058,7 @@
 <#1val1vShapeANDRef3_pass> a sht:ValidationTest ;
     mf:name "1val1vShapeANDRef3_pass" ;
     sht:trait sht:AndShapeShapeession ;
-    rdfs:comment "<S1> { <p1> minlength 4 } AND { <p1> maxlength 5 } AND { <p1> pattern '^(ab)+' } on { <s1> <p1> 'abab' }" ;
+    rdfs:comment "<S1> { <p1> minlength 4 } AND { <p1> maxlength 5 } AND { <p1> pattern '(ab)+' } on { <s1> <p1> 'abab' }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1vShapeANDRef3.shex> ;
@@ -8963,6 +10111,33 @@
       sht:data <Is1_Ip1_Io1;Ip2_Io2.ttl> ;
       sht:focus <http://a.example/s1>
     ]
+    .
+
+<#FocusIRI2groupBnodeNested2groupIRIRef_pass> a sht:ValidationTest ;
+    mf:name "FocusIRI2groupBnodeNested2groupIRIRef_pass" ;
+    sht:trait sht:Closed ;
+    rdfs:comment "<S1> IRI PATTERN '^https?://' { <p1> <dt1> ; <p2> BNODE { <p3> LITERAL ; <p4> IRI PATTERN '^https://' @<S1>? } AND CLOSED { <p3> . ; <p4> . } } on { <n1> <p1> 'ab'^^<dt1> ; <p2> [  <p3> 'ab' ; <p4> ex:n1 ] }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/FocusIRI2groupBnodeNested2groupIRIRef.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <FocusIRI2groupBnodeNested2groupIRIRef.ttl> ;
+      sht:focus <http://a.example/n1>
+    ] ;
+    mf:result <FocusIRI2groupBnodeNested2groupIRIRef_pass.val>
+    .
+
+<#FocusIRI2groupBnodeNested2groupIRIRef_fail> a sht:ValidationFailure ;
+    mf:name "FocusIRI2groupBnodeNested2groupIRIRef_fail" ;
+    sht:trait sht:Closed ;
+    rdfs:comment "<S1> IRI PATTERN '^https?://' { <p1> <dt1> ; <p2> BNODE { <p3> LITERAL ; <p4> IRI PATTERN '^https://' @<S1>? } AND CLOSED { <p3> . ; <p4> . } } on { <n1> <p1> 'ab'^^<dt1> ; <p2> [  <p3> 'ab' ; <p4> ex:n1 ; <p5> 5 ] }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/FocusIRI2groupBnodeNested2groupIRIRef.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <FocusIRI2groupBnodeNested3groupIRIRef.ttl> ;
+      sht:focus <http://a.example/n1>
+    ] ;
     .
 
 ## } closed
@@ -9053,8 +10228,8 @@
     mf:result <1val1IRIREFExtra1p2_Is1_Ip1_Io1.val>
     .
 
-<#1val1IRIREFExtra1p2_pass-iri2> a sht:ValidationFailure ;
-    mf:name "1val1IRIREFExtra1p2_pass-iri2" ;
+<#1val1IRIREFExtra1p2_fail-iri2> a sht:ValidationFailure ;
+    mf:name "1val1IRIREFExtra1p2_fail-iri2" ;
     sht:trait sht:Extra , sht:IriEquivalence ;
     rdfs:comment "<S> EXTRA <p2> { <p1> [<o1>] } on { <s> <p1> <o1>, <o2> }" ;
     mf:status mf:proposed ;
@@ -9066,46 +10241,46 @@
     ]
     .
 
-<#1dotOr2dotExtra-someOf_pass_p1p2p3> a sht:ValidationFailure ;
-    mf:name "1dotOr2dotExtra-someOf_pass_p1p2p3" ;
-    sht:trait sht:SomeOf , sht:EachOf , sht:Extra , sht:MissedMatchables ;
+<#1dotOne2dotExtra-someOf_pass_p1p2p3> a sht:ValidationFailure ;
+    mf:name "1dotOne2dotExtra-someOf_pass_p1p2p3" ;
+    sht:trait sht:OneOf , sht:EachOf , sht:Extra , sht:MissedMatchables ;
     rdfs:comment ":S1 EXTRA <p1> <p2> <p3> {:p1 .|:p2 .,:p3 .} / { :s1 :p1 \"p1-0\"; :p2 \"p2-0\"; :p3 \"p3-0\" . }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1dotOr2dot.shex> ;
+      sht:schema <../schemas/1dotOne2dot.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <p1p2p3.ttl> ;
       sht:focus <x>
     ]
     .
 
-<#1val1IRIREFExtra1Or_pass-iri1> a sht:ValidationTest ;
-    mf:name "1val1IRIREFExtra1Or_pass-iri1" ;
+<#1val1IRIREFExtra1One_pass-iri1> a sht:ValidationTest ;
+    mf:name "1val1IRIREFExtra1One_pass-iri1" ;
     sht:trait sht:Extra , sht:IriEquivalence , sht:EachOf ;
     rdfs:seeAlso <#1val1IRIREF_pass>, <#1val1IRIREF_v2>, <#1val1IRIREF_pass> ;
     rdfs:comment "<S> EXTRA <p1> { <p0> . | <p1> [<o1>], <p2> .? } on { <s1> <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1val1IRIREFExtra1Or.shex> ;
+      sht:schema <../schemas/1val1IRIREFExtra1One.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
-    mf:result <1val1IRIREFExtra1Or_Is1_Ip1_Io1.val>
+    mf:result <1val1IRIREFExtra1One_Is1_Ip1_Io1.val>
     .
 
-<#1val1IRIREFExtra1Or_pass-iri2> a sht:ValidationTest ;
-    mf:name "1val1IRIREFExtra1Or_pass-iri2" ;
+<#1val1IRIREFExtra1One_pass-iri2> a sht:ValidationTest ;
+    mf:name "1val1IRIREFExtra1One_pass-iri2" ;
     sht:trait sht:Extra , sht:IriEquivalence , sht:EachOf ;
     rdfs:comment "<S> EXTRA <p1> { <p0> . | <p1> [<o1>], <p2> .? } on { <s> <p1> <o1>, <o2> }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1val1IRIREFExtra1Or.shex> ;
+      sht:schema <../schemas/1val1IRIREFExtra1One.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Io1,Io2.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
-    mf:result <1val1IRIREFExtra1Or_Is1_Ip1_Io1.val>
+    mf:result <1val1IRIREFExtra1One_Is1_Ip1_Io1.val>
     .
 
 <#1dotExtra1_pass-iri1> a sht:ValidationTest ;
@@ -9349,60 +10524,60 @@
 ## } start
 ## include {
 
-<#2eachInclude1_pass> a sht:ValidationTest ;
-    mf:name "2eachInclude1_pass" ;
+<#2EachInclude1_pass> a sht:ValidationTest ;
+    mf:name "2EachInclude1_pass" ;
     sht:trait sht:Include , sht:EachOf ;
     rdfs:comment "<S1> { &<S2>, <p1> . } <S2> { <p2> . } on { <n1> <p1> \"X\" ; <p2> \"Y\" }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/2eachInclude1.shex> ;
+      sht:schema <../schemas/2EachInclude1.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <In1_Ip1_LX.In1_Ip2_LY.ttl> ;
       sht:focus <http://a.example/n1>
     ] ;
-    mf:result <2eachInclude1_pass.val>
+    mf:result <2EachInclude1_pass.val>
     .
 
-<#2eachInclude1-after_pass> a sht:ValidationTest ;
-    mf:name "2eachInclude1-after_pass" ;
+<#2EachInclude1-after_pass> a sht:ValidationTest ;
+    mf:name "2EachInclude1-after_pass" ;
     sht:trait sht:Include , sht:EachOf ;
     rdfs:comment "<S1> { <p1> ., &<S2> } <S2> { <p2> . } on { <n1> <p1> \"X\" ; <p2> \"Y\" }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/2eachInclude1-after.shex> ;
+      sht:schema <../schemas/2EachInclude1-after.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <In1_Ip1_LX.In1_Ip2_LY.ttl> ;
       sht:focus <http://a.example/n1>
     ] ;
-    mf:result <2eachInclude1-after_pass.val>
+    mf:result <2EachInclude1-after_pass.val>
     .
 
-<#2someInclude1_pass> a sht:ValidationTest ;
-    mf:name "2someInclude1_pass" ;
-    sht:trait sht:Include , sht:SomeOf ;
+<#2OneInclude1_pass> a sht:ValidationTest ;
+    mf:name "2OneInclude1_pass" ;
+    sht:trait sht:Include , sht:OneOf ;
     rdfs:comment "<S1> { &<S2> | <p1> . } <S2> { <p2> . } on { <n1> <p1> \"X\" }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/2someInclude1.shex> ;
+      sht:schema <../schemas/2OneInclude1.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <In1_Ip1_LX.ttl> ;
       sht:focus <http://a.example/n1>
     ] ;
-    mf:result <2someInclude1_pass.val>
+    mf:result <2OneInclude1_pass.val>
     .
 
-<#2someInclude1-after_pass> a sht:ValidationTest ;
-    mf:name "2someInclude1-after_pass" ;
-    sht:trait sht:Include , sht:SomeOf ;
+<#2OneInclude1-after_pass> a sht:ValidationTest ;
+    mf:name "2OneInclude1-after_pass" ;
+    sht:trait sht:Include , sht:OneOf ;
     rdfs:comment "<S1> { <p1> . | &<S2> } <S2> { <p2> . } on { <n1> <p1> \"X\" }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/2someInclude1-after.shex> ;
+      sht:schema <../schemas/2OneInclude1-after.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <In1_Ip1_LX.ttl> ;
       sht:focus <http://a.example/n1>
     ] ;
-    mf:result <2someInclude1_pass.val>
+    mf:result <2OneInclude1_pass.val>
     .
 
 ## } include
@@ -9433,6 +10608,34 @@
       sht:data <Is1_Ip2_Io1.ttl> ;
       sht:focus <http://a.example/s1>
     ]
+    .
+
+<#1dotPlusAnnotIRIREF_pass> a sht:ValidationTest ;
+    mf:name "1dotPlusAnnotIRIREF_pass" ;
+    sht:trait sht:Annotation ;
+    rdfs:comment "<S> { <p1> .+; <annot> <IRIREF> } on { <s1> <p1> 'a', <o1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1dotPlusAnnotIRIREF.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_La,Io1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1dotPlusAnnotIRIREF_pass.val>
+    .
+
+<#1dotAnnotAIRIREF_pass> a sht:ValidationTest ;
+    mf:name "1dotAnnotAIRIREF_pass" ;
+    sht:trait sht:Annotation ;
+    rdfs:comment "<S> { <p1> .; a <IRIREF> } on { <s1> <p1> <o1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1dotAnnotAIRIREF.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1dotAnnotAIRIREF_pass.val>
     .
 
 <#1dotAnnotSTRING_LITERAL1_pass> a sht:ValidationTest ;
@@ -9887,7 +11090,8 @@
     .
 
 ## } annotations + semantic actions
-## shapeKind {
+## focus constraint {
+###  kind {
 
 <#0focusIRI_empty_fail-bnodeFocusLabel> a sht:ValidationFailure ;
     mf:name "0focusIRI_empty_fail-bnodeFocusLabel" ;
@@ -9905,7 +11109,7 @@
 <#0focusIRI_empty> a sht:ValidationTest ;
     mf:name "0focusIRI_empty" ;
     sht:trait sht:Empty ;
-    rdfs:comment "<S> IRI {  } on { }" ;
+    rdfs:comment "<S1> IRI {  } on { }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/0focusIRI.shex> ;
@@ -9913,7 +11117,7 @@
       sht:data <empty.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
-    mf:result <0_pass.val>
+    mf:result <0_pass-focus.val>
     .
 
 <#0focusIRI_other_fail-bnodeFocusLabel> a sht:ValidationFailure ;
@@ -9940,7 +11144,7 @@
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
-    mf:result <0_pass.val>
+    mf:result <0_pass-focus.val>
     .
 
 <#0focusBNODE_empty_fail-iriFocusLabel> a sht:ValidationFailure ;
@@ -9967,7 +11171,7 @@
       sht:data <empty.ttl> ;
       sht:focus _:abcd
     ] ;
-    mf:result <0abcd_pass.val>
+    mf:result <0abcd_pass-focus.val>
     .
 
 <#0focusBNODE_other_fail-iriFocusLabel> a sht:ValidationFailure ;
@@ -9985,7 +11189,7 @@
 
 <#0focusBNODE_other> a sht:ValidationTest ;
     mf:name "0focusBNODE_other" ;
-    sht:trait sht:Empty ;
+    sht:trait sht:Empty , sht:ToldBNode;
     rdfs:comment "<S> BNODE {  } on { _:abcd <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -9994,12 +11198,12 @@
       sht:data <Babcd_Ip1_Io1.ttl> ;
       sht:focus _:abcd
     ] ;
-    mf:result <0abcd_pass.val>
+    mf:result <0abcd_pass-focus.val>
     .
 
 <#1focusIRI_dot_fail-bnodeFocusLabel> a sht:ValidationFailure ;
     mf:name "1focusIRI_dot_fail-bnodeFocusLabel" ;
-    sht:trait sht:FocusConstraint , sht:LexicalBnode , sht:ToldBNode ;
+    sht:trait sht:FocusConstraint , sht:LexicalBNode , sht:ToldBNode ;
     rdfs:comment "<S> IRI { <p1> . } on <s> in { _:abcd <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -10021,12 +11225,12 @@
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
-    mf:result <1dot_pass.val>
+    mf:result <1focus_dot_pass.val>
     .
 
 <#1focusBNODE_dot_fail-iriFocusLabel-equal> a sht:ValidationFailure ;
     mf:name "1focusBNODE_dot_fail-iriFocusLabel-equal" ;
-    sht:trait sht:FocusConstraint , sht:LexicalBnode ;
+    sht:trait sht:FocusConstraint , sht:LexicalBNode ;
     rdfs:comment "<S> BNODE { <p1> . } on <s> in { <s1> <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -10039,7 +11243,7 @@
 
 <#1focusBNODE_dot_pass> a sht:ValidationTest ;
     mf:name "1focusBNODE_dot_pass" ;
-    sht:trait sht:FocusConstraint , sht:ToldBNODE ;
+    sht:trait sht:FocusConstraint , sht:ToldBNode ;
     rdfs:comment "<S> BNODE { <p1> . } on <s> in { _:abcdefghijklmnopqrs <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -10062,12 +11266,172 @@
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
-    mf:result <1dot_pass.val>
+    mf:result <1focus_dot_pass.val>
     .
 
-## } shapeKind
-## focusFacet {
-###   lengths {
+###  } kind
+###  datatype {
+
+<#focusdatatype_pass> a sht:ValidationTest ;
+    mf:name "focusdatatype_pass" ;
+    sht:trait sht:FocusConstraint ;
+    rdfs:comment "<S> <dt1> on {  }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/focusdatatype.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LabDTbloodType.ttl> ;
+      sht:focus "ab"^^<http://a.example/bloodType>
+    ] ;
+    mf:result <focusdatatype_pass.val>
+    .
+
+<#focusdatatype_fail> a sht:ValidationFailure ;
+    mf:name "focusdatatype_fail" ;
+    sht:trait sht:focusConstraint ;
+    rdfs:comment "<S> <dt1> on {  }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/focusdatatype.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LabDTbloodType999.ttl> ;
+      sht:focus "ab"^^<http://a.example/bloodType999>
+    ] ;
+    .
+
+###  } datatype
+###  value sets {
+
+<#focusvs_pass> a sht:ValidationTest ;
+    mf:name "focusvs_pass" ;
+    sht:trait sht:FocusConstraint ;
+    rdfs:comment "<S> [<v1> <v2> <v3>] on {  }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/focusvs.shex> ;
+      sht:shape <http://a.example/vs1> ;
+      sht:data <Is1_Ip1_Iv1.ttl> ;
+      sht:focus <http://a.example/v1>
+    ] ;
+    mf:result <focusvs_pass.val>
+    .
+
+<#focusvs_fail> a sht:ValidationFailure ;
+    mf:name "focusvs_fail" ;
+    sht:trait sht:FocusConstraint ;
+    rdfs:comment "<S> [<v1> <v2> <v3>] on {  }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/focusvs.shex> ;
+      sht:shape <http://a.example/vs1> ;
+      sht:data <Is1_Ip1_Iv1a.ttl> ;
+      sht:focus <http://a.example/v1a>
+    ] ;
+    .
+
+###  } value sets
+###  AND focus {
+
+<#1focusvsANDdatatype_fail> a sht:ValidationFailure ;
+    mf:name "1focusvsANDdatatype_fail" ;
+    sht:trait sht:FocusConstraint , sht:Unsatisfiable ;
+    rdfs:comment "<S> [<v1> <v2> <v3>] AND <dt1> on {  }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/focusvsANDdatatype.shex> ;
+      sht:shape <http://a.example/vs1> ;
+      sht:data <empty.ttl> ;
+      sht:focus <http://a.example/v1>
+    ] ;
+    .
+
+<#1focusvsANDIRI_pass> a sht:ValidationTest ;
+    mf:name "1focusvsANDIRI_pass" ;
+    sht:trait sht:FocusConstraint ;
+    rdfs:comment "<S> [<v1> <v2> <v3>] AND IRI on {  }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/focusvsANDIRI.shex> ;
+      sht:shape <http://a.example/vs1> ;
+      sht:data <empty.ttl> ;
+      sht:focus <http://a.example/v1>
+    ] ;
+    mf:result <1focusvsANDIRI_pass.val>
+    .
+
+<#1focusvsANDIRI_fail> a sht:ValidationFailure ;
+    mf:name "1focusvsANDIRI_fail" ;
+    sht:trait sht:FocusConstraint ;
+    rdfs:comment "<S> [<v1> <v2> <v3>] AND IRI on {  }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/focusvsANDIRI.shex> ;
+      sht:shape <http://a.example/vs1> ;
+      sht:data <empty.ttl> ;
+      sht:focus <http://a.example/v4>
+    ] ;
+    .
+
+###  } AND focus
+###  OR focus {
+
+<#1focusvsORdatatype_pass-val> a sht:ValidationTest ;
+    mf:name "1focusvsORdatatype_pass-val" ;
+    sht:trait sht:FocusConstraint ;
+    rdfs:comment "<S> [<v1> <v2> <v3>] OR <dt1> on {  }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/focusvsORdatatype.shex> ;
+      sht:shape <http://a.example/vs1> ;
+      sht:data <empty.ttl> ;
+      sht:focus <http://a.example/v1>
+    ] ;
+    mf:result <1focusvsORdatatype_pass-val.val>
+    .
+
+<#1focusvsORdatatype_fail-val> a sht:ValidationFailure ;
+    mf:name "1focusvsORdatatype_fail-val" ;
+    sht:trait sht:FocusConstraint ;
+    rdfs:comment "<S> [<v1> <v2> <v3>] OR <dt1> on {  }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/focusvsORdatatype.shex> ;
+      sht:shape <http://a.example/vs1> ;
+      sht:data <empty.ttl> ;
+      sht:focus <http://a.example/v4>
+    ] ;
+    .
+
+<#1focusvsORdatatype_pass-dt> a sht:ValidationTest ;
+    mf:name "1focusvsORdatatype_pass-dt" ;
+    sht:trait sht:FocusConstraint ;
+    rdfs:comment "<S> [<v1> <v2> <v3>] OR <dt1> on {  }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/focusvsORdatatype.shex> ;
+      sht:shape <http://a.example/vs1> ;
+      sht:data <empty.ttl> ;
+      sht:focus "v1"^^<http://a.example/dt1>
+    ] ;
+    mf:result <1focusvsORdatatype_pass-dt.val>
+    .
+
+<#1focusvsORdatatype_fail-dt> a sht:ValidationFailure ;
+    mf:name "1focusvsORdatatype_fail-dt" ;
+    sht:trait sht:FocusConstraint ;
+    rdfs:comment "<S> [<v1> <v2> <v3>] OR <dt1> on {  }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/focusvsORdatatype.shex> ;
+      sht:shape <http://a.example/vs1> ;
+      sht:data <empty.ttl> ;
+      sht:focus "v1"^^<http://a.example/dt2>
+    ] ;
+    .
+
+###  } OR focus
+###  focusFacet {
+####    lengths {
 
 <#1focusLength-dot_fail-iri-short> a sht:ValidationFailure ;
     mf:name "1focusLength-dot_fail-iri-short" ;
@@ -10093,7 +11457,7 @@
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
-    mf:result <1dot_pass.val>
+    mf:result <1focus_dot_pass.val>
     .
 
 <#1focusLength-dot_fail-iri-long> a sht:ValidationFailure ;
@@ -10111,7 +11475,7 @@
 
 <#1focusLength-dot_fail-bnode-short> a sht:ValidationFailure ;
     mf:name "1focusLength-dot_fail-bnode-short" ;
-    sht:trait sht:FocusConstraint , sht:LexicalBnode , sht:LengthFacet , sht:ToldBNode ;
+    sht:trait sht:FocusConstraint , sht:LexicalBNode , sht:LengthFacet , sht:ToldBNode ;
     rdfs:comment "<S1> LENGTH 19 { <p1> . } on { _:abcd <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -10124,7 +11488,7 @@
 
 <#1focusLength-dot_pass-bnode-equal> a sht:ValidationTest ;
     mf:name "1focusLength-dot_pass-bnode-equal" ;
-    sht:trait sht:FocusConstraint , sht:LexicalBnode , sht:LengthFacet , sht:ToldBNode ;
+    sht:trait sht:FocusConstraint , sht:LexicalBNode , sht:LengthFacet , sht:ToldBNode ;
     rdfs:comment "<S1> LENGTH 19 { <p1> . } on { _:abcdefghijklmnopqrs <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -10138,7 +11502,7 @@
 
 <#1focusLength-dot_fail-bnode-long> a sht:ValidationFailure ;
     mf:name "1focusLength-dot_fail-bnode-long" ;
-    sht:trait sht:FocusConstraint , sht:LexicalBnode , sht:LengthFacet , sht:ToldBNode ;
+    sht:trait sht:FocusConstraint , sht:LexicalBNode , sht:LengthFacet , sht:ToldBNode ;
     rdfs:comment "<S1> LENGTH 19 { <p1> . } on { _:abcdefghijklmnopqrst <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -10174,7 +11538,7 @@
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
-    mf:result <1dot_pass.val>
+    mf:result <1focus_dot_pass.val>
     .
 
 <#1focusMinLength-dot_pass-iri-long> a sht:ValidationTest ;
@@ -10193,7 +11557,7 @@
 
 <#1focusMinLength-dot_fail-bnode-short> a sht:ValidationFailure ;
     mf:name "1focusMinLength-dot_fail-bnode-short" ;
-    sht:trait sht:FocusConstraint , sht:LengthFacet ;
+    sht:trait sht:FocusConstraint , sht:LengthFacet , sht:ToldBNode ;
     rdfs:comment "<S1> MINLENGTH 19 { <p1> . } on { _:abcd <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -10206,7 +11570,7 @@
 
 <#1focusMinLength-dot_pass-bnode-equal> a sht:ValidationTest ;
     mf:name "1focusMinLength-dot_pass-bnode-equal" ;
-    sht:trait sht:FocusConstraint , sht:LengthFacet ;
+    sht:trait sht:FocusConstraint , sht:LengthFacet, sht:LexicalBNode , sht:ToldBNode ;
     rdfs:comment "<S1> MINLENGTH 19 { <p1> . } on { _:abcdefghijklmnopqrs <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -10220,7 +11584,7 @@
 
 <#1focusMinLength-dot_pass-bnode-long> a sht:ValidationTest ;
     mf:name "1focusMinLength-dot_pass-bnode-long" ;
-    sht:trait sht:FocusConstraint , sht:LengthFacet ;
+    sht:trait sht:FocusConstraint , sht:LengthFacet , sht:ToldBNode ;
     rdfs:comment "<S1> MINLENGTH 19 { <p1> . } on { <s1a> <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -10258,7 +11622,7 @@
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
-    mf:result <1dot_pass.val>
+    mf:result <1focus_dot_pass.val>
     .
 
 <#1focusMaxLength-dot_fail-iri-long> a sht:ValidationFailure ;
@@ -10276,7 +11640,7 @@
 
 <#1focusMaxLength-dot_pass-bnode-short> a sht:ValidationTest ;
     mf:name "1focusMaxLength-dot_pass-bnode-short" ;
-    sht:trait sht:FocusConstraint , sht:LengthFacet ;
+    sht:trait sht:FocusConstraint , sht:LengthFacet , sht:LexicalBNode;
     rdfs:comment "<S1> MINLENGTH 19 { <p1> . } on { _:abcd <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -10290,7 +11654,7 @@
 
 <#1focusMaxLength-dot_pass-bnode-equal> a sht:ValidationTest ;
     mf:name "1focusMaxLength-dot_pass-bnode-equal" ;
-    sht:trait sht:FocusConstraint , sht:LengthFacet ;
+    sht:trait sht:FocusConstraint , sht:LengthFacet , sht:LexicalBNode;
     rdfs:comment "<S1> MINLENGTH 19 { <p1> . } on { _:abcdefghijklmnopqrs <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -10315,36 +11679,36 @@
     ]
     .
 
-###   } lengths
-###   pattern {
+####    } lengths
+####    pattern {
 <#1focusPattern-dot_fail-iri-match> a sht:ValidationFailure ;
     mf:name "1focusPattern-dot_fail-iri-match" ;
     sht:trait sht:PaternFacet ;
-    rdfs:comment "<S1> PATTERN \"^http://a.example/s1$\" { <p1> } on { <s2> <p1> <o> }" ;
+    rdfs:comment "<S1> PATTERN '^http://a.example/s1$' { <p1> } on { <s2> <p1> <o> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1focusPattern-dot.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is2_Ip1_Io.ttl> ;
-      sht:focus <http://a.example/s1>
+      sht:focus <http://a.example/s2>
     ].
 
 <#1focusPattern-dot_fail-iri-short> a sht:ValidationFailure ;
     mf:name "1focusPattern-dot_fail-iri-short" ;
     sht:trait sht:PaternFacet ;
-    rdfs:comment "<S1> PATTERN \"^http://a.example/s1$\" { <p1> } on { <s> <p1> <o1> }" ;
+    rdfs:comment "<S1> PATTERN '^http://a.example/s1$' { <p1> } on { <s> <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1focusPattern-dot.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is_Ip1_Io1.ttl> ;
-      sht:focus <http://a.example/s1>
+      sht:focus <http://a.example/s>
     ].
 
 <#1focusPattern-dot_pass-iri-match> a sht:ValidationTest ;
     mf:name "1focusPattern-dot_pass-iri-match" ;
     sht:trait sht:PaternFacet ;
-    rdfs:comment "<S1> PATTERN \"^http://a.example/s1$\" { <p1> } on { <s1> <p1> <o1> }" ;
+    rdfs:comment "<S1> PATTERN 'http://a.example/s1' { <p1> } on { <s1> <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1focusPattern-dot.shex> ;
@@ -10352,37 +11716,37 @@
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
-    mf:result <1dot_pass.val>
+    mf:result <1focus_dot_pass.val>
     .
 
 <#1focusPattern-dot_fail-iri-long> a sht:ValidationFailure ;
     mf:name "1focusPattern-dot_fail-iri-long" ;
     sht:trait sht:PaternFacet ;
-    rdfs:comment "<S1> PATTERN \"^http://a.example/s1$\" { <p1> } on { <s1a> <p1> <o1> }" ;
+    rdfs:comment "<S1> PATTERN '^http://a.example/s1$' { <p1> } on { <s1a> <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1focusPattern-dot.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1a_Ip1_Io1.ttl> ;
-      sht:focus <http://a.example/s1>
+      sht:focus <http://a.example/s1a>
     ].
 
 <#1focusPatternB-dot_fail-iri-match> a sht:ValidationFailure ;
     mf:name "1focusPatternB-dot_fail-iri-match" ;
     sht:trait sht:PaternFacet ;
-    rdfs:comment "<S1> PATTERN \"^http://a.example/s1$\" { <p1> } on { <s2> <p1> <o> }" ;
+    rdfs:comment "<S1> PATTERN 'abcdefghijklmnopqrs' { <p1> } on { <s2> <p1> <o> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1focusPatternB-dot.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is2_Ip1_Io.ttl> ;
-      sht:focus <http://a.example/s1>
+      sht:focus <http://a.example/s2>
     ].
 
 <#1focusPatternB-dot_fail-bnode-short> a sht:ValidationFailure ;
     mf:name "1focusPatternB-dot_fail-bnode-short" ;
     sht:trait sht:PaternFacet ;
-    rdfs:comment "<S1> PATTERN \"^abcdefghijklmnopqrs$\" { <p1> } on { _:abcd <p1> <o1> }" ;
+    rdfs:comment "<S1> PATTERN 'abcdefghijklmnopqrs' { <p1> } on { _:abcd <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1focusPatternB-dot.shex> ;
@@ -10393,8 +11757,8 @@
 
 <#1focusPatternB-dot_pass-bnode-match> a sht:ValidationTest ;
     mf:name "1focusPatternB-dot_pass-bnode-match" ;
-    sht:trait sht:PaternFacet ;
-    rdfs:comment "<S1> PATTERN \"^abcdefghijklmnopqrs$\" { <p1> } on { _:abcdefghijklmnopqrs <p1> <o1> }" ;
+    sht:trait sht:PaternFacet , sht:LexicalBNode ;
+    rdfs:comment "<S1> PATTERN 'abcdefghijklmnopqrs' { <p1> } on { _:abcdefghijklmnopqrs <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1focusPatternB-dot.shex> ;
@@ -10405,25 +11769,27 @@
     mf:result <1focusBNODE_dot_pass.val>
     .
 
-<#1focusPatternB-dot_fail-bnode-long> a sht:ValidationFailure ;
-    mf:name "1focusPatternB-dot_fail-bnode-long" ;
+<#1focusPatternB-dot_pass-bnode-long> a sht:ValidationTest ;
+    mf:name "1focusPatternB-dot_pass-bnode-long" ;
     sht:trait sht:PaternFacet ;
-    rdfs:comment "<S1> PATTERN \"^abcdefghijklmnopqrs$\" { <p1> } on { _:abcdefghijklmnopqrst <p1> <o1> }" ;
+    rdfs:comment "<S1> PATTERN 'abcdefghijklmnopqrs' { <p1> } on { _:abcdefghijklmnopqrst <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1focusPatternB-dot.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Babcdefghijklmnopqrst_Ip1_Io1.ttl> ;
       sht:focus _:abcdefghijklmnopqrst
-    ].
+    ] ;
+    mf:result <1focusPatternB-dot_pass-bnode-long.val>
+    .
 
-###   } pattern
-## } focusFacet
-## shapeKind + length facet {
+####    } pattern
+###  } focusFacet
+###  kind + length facet {
 
 <#1focusIRILength_dot_fail-bnodeFocusLabel-equal> a sht:ValidationFailure ;
     mf:name "1focusIRILength_dot_fail-bnodeFocusLabel-equal" ;
-    sht:trait sht:FocusConstraint , sht:LexicalBnode , sht:LengthFacet , sht:ToldBNode ;
+    sht:trait sht:FocusConstraint , sht:LexicalBNode , sht:LengthFacet , sht:ToldBNode ;
     rdfs:comment "<S> IRI LENGTH 19 { <p1> . } on <s> in { _:abcdefghijklmnopqrs <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -10458,7 +11824,7 @@
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
-    mf:result <1dot_pass.val>
+    mf:result <1focus_dot_pass.val>
     .
 
 <#1focusIRILength_dot_fail-long> a sht:ValidationFailure ;
@@ -10476,7 +11842,7 @@
 
 <#1focusBNODELength_dot_fail-iriFocusLabel-equal> a sht:ValidationFailure ;
     mf:name "1focusBNODELength_dot_fail-iriFocusLabel-equal" ;
-    sht:trait sht:LexicalBnode , sht:LengthFacet ;
+    sht:trait sht:LexicalBNode , sht:LengthFacet ;
     rdfs:comment "<S> BNODE LENGTH 19 { <p1> . } on <s> in { <s1> <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -10489,7 +11855,7 @@
 
 <#1focusBNODELength_dot_fail-short> a sht:ValidationFailure ;
     mf:name "1focusBNODELength_dot_fail-short" ;
-    sht:trait sht:FocusConstraint , sht:LengthFacet , sht:ToldBNODE ;
+    sht:trait sht:FocusConstraint , sht:LengthFacet , sht:ToldBNode ;
     rdfs:comment "<S> BNODE LENGTH 19 { <p1> . } on <s> in { _:abcd <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -10502,7 +11868,7 @@
 
 <#1focusBNODELength_dot_pass> a sht:ValidationTest ;
     mf:name "1focusBNODELength_dot_pass" ;
-    sht:trait sht:FocusConstraint , sht:LengthFacet , sht:ToldBNODE ;
+    sht:trait sht:FocusConstraint , sht:LengthFacet , sht:ToldBNode ;
     rdfs:comment "<S> BNODE LENGTH 19 { <p1> . } on <s> in { _:abcdefghijklmnopqrs <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -10516,7 +11882,7 @@
 
 <#1focusBNODELength_dot_fail-long> a sht:ValidationFailure ;
     mf:name "1focusBNODELength_dot_fail-long" ;
-    sht:trait sht:FocusConstraint , sht:LengthFacet , sht:ToldBNODE ;
+    sht:trait sht:FocusConstraint , sht:LengthFacet , sht:ToldBNode ;
     rdfs:comment "<S> BNODE LENGTH 19 { <p1> . } on <s> in { _:abcdefghijklmnopqrst <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -10538,10 +11904,240 @@
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
-    mf:result <1dot_pass.val>
+    mf:result <1focus_dot_pass.val>
     .
 
-## } shapeKind + length facet
+###  } kind + length facet
+###  AND OR NOT {
+
+# @@ In1_Ip1_In2.ttl failure tests
+
+<#NOT1dotOR2dot_pass-empty> a sht:ValidationTest ;
+    mf:name "NOT1dotOR2dot_pass-empty" ;
+    sht:trait sht:OrValueExpression , sht:NotValueExpression ;
+    rdfs:comment "@@" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/NOT1dotOR2dot.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <empty.ttl> ;
+      sht:focus <http://a.example/n1>
+    ] ;
+    mf:result <NOT1dotOR2dot_pass-empty.val>
+    .
+
+<#NOT1dotOR2dot_pass-NoShape1> a sht:ValidationTest ;
+    mf:name "NOT1dotOR2dot_pass-NoShape1" ;
+    sht:trait sht:OrValueExpression , sht:NotValueExpression ;
+    rdfs:comment "@@" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/NOT1dotOR2dot.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip2_In2.ttl> ;
+      sht:focus <http://a.example/n1>
+    ] ;
+    mf:result <NOT1dotOR2dot_pass-empty.val>
+    .
+
+<#NOT1dotOR2dot_pass-Shape2> a sht:ValidationTest ;
+    mf:name "NOT1dotOR2dot_pass-Shape2" ;
+    sht:trait sht:OrValueExpression , sht:NotValueExpression ;
+    rdfs:comment "@@" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/NOT1dotOR2dot.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip1_In2.In1_Ip2_In3.ttl> ;
+      sht:focus <http://a.example/n1>
+    ] ;
+    mf:result <NOT1dotOR2dot_pass-Shape2.val>
+    .
+
+<#NOT1dotOR2dot_fail-Shape2> a sht:ValidationFailure ;
+    mf:name "NOT1dotOR2dot_fail-Shape2" ;
+    sht:trait sht:OrValueExpression , sht:NotValueExpression ;
+    rdfs:comment "@@" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/NOT1dotOR2dot.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip1_In2.ttl> ;
+      sht:focus <http://a.example/n1>
+    ]
+    .
+
+<#NOT1dotOR2dotX3_pass-empty> a sht:ValidationTest ;
+    mf:name "NOT1dotOR2dotX3_pass-empty" ;
+    sht:trait sht:OrValueExpression , sht:NotValueExpression ;
+    rdfs:comment "@@" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/NOT1dotOR2dotX3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <empty.ttl> ;
+      sht:focus <http://a.example/n1>
+    ] ;
+    mf:result <NOT1dotOR2dotX3_pass-empty.val>
+    .
+
+<#NOT1dotOR2dotX3_pass-NoShape1> a sht:ValidationTest ;
+    mf:name "NOT1dotOR2dotX3_pass-NoShape1" ;
+    sht:trait sht:OrValueExpression , sht:NotValueExpression ;
+    rdfs:comment "@@" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/NOT1dotOR2dotX3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip2_In2.ttl> ;
+      sht:focus <http://a.example/n1>
+    ] ;
+    mf:result <NOT1dotOR2dotX3_pass-empty.val>
+    .
+
+<#NOT1dotOR2dotX3_pass-Shape2> a sht:ValidationTest ;
+    mf:name "NOT1dotOR2dotX3_pass-Shape2" ;
+    sht:trait sht:OrValueExpression , sht:NotValueExpression ;
+    rdfs:comment "@@" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/NOT1dotOR2dotX3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip1_In2.In1_Ip2_In3.ttl> ;
+      sht:focus <http://a.example/n1>
+    ] ;
+    mf:result <NOT1dotOR2dotX3_pass-Shape2.val>
+    .
+
+<#NOT1dotOR2dotX3_fail-Shape2> a sht:ValidationFailure ;
+    mf:name "NOT1dotOR2dotX3_fail-Shape2" ;
+    sht:trait sht:OrValueExpression , sht:NotValueExpression ;
+    rdfs:comment "@@" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/NOT1dotOR2dotX3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip1_In2.ttl> ;
+      sht:focus <http://a.example/n1>
+    ]
+    .
+
+<#NOT1dotOR2dotX3AND1_fail-empty> a sht:ValidationFailure ;
+    mf:name "NOT1dotOR2dotX3AND1_fail-empty" ;
+    sht:trait sht:OrValueExpression , sht:NotValueExpression ;
+    rdfs:comment "@@" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/NOT1dotOR2dotX3AND1.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip2_In2.ttl> ;
+      sht:focus <http://a.example/n1>
+    ]
+    .
+
+<#NOT1dotOR2dotX3AND1_fail-NoShape1> a sht:ValidationFailure ;
+    mf:name "NOT1dotOR2dotX3AND1_fail-NoShape1" ;
+    sht:trait sht:OrValueExpression , sht:NotValueExpression ;
+    rdfs:comment "@@" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/NOT1dotOR2dotX3AND1.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip2_In2.ttl> ;
+      sht:focus <http://a.example/n1>
+    ]
+    .
+
+<#NOT1dotOR2dotX3AND1_pass-Shape2> a sht:ValidationTest ;
+    mf:name "NOT1dotOR2dotX3AND1_pass-Shape2" ;
+    sht:trait sht:OrValueExpression , sht:NotValueExpression ;
+    rdfs:comment "@@" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/NOT1dotOR2dotX3AND1.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip1_In2.In1_Ip2_In3.ttl> ;
+      sht:focus <http://a.example/n1>
+    ] ;
+    mf:result <NOT1dotOR2dotX3AND1_pass-Shape2.val>
+    .
+
+<#NOT1dotOR2dotX3AND1_fail-Shape2> a sht:ValidationFailure ;
+    mf:name "NOT1dotOR2dotX3AND1_fail-Shape2" ;
+    sht:trait sht:OrValueExpression , sht:NotValueExpression ;
+    rdfs:comment "@@" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/NOT1dotOR2dotX3AND1.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip1_In2.ttl> ;
+      sht:focus <http://a.example/n1>
+    ]
+    .
+
+###  } AND OR NOT
+## } focus constraint
+## shape extern {
+
+<#shapeExtern_pass> a sht:ValidationTest ;
+    mf:name "shapeExtern_pass" ;
+    sht:trait sht:SemanticAction , sht:ExternalShape ;
+    rdfs:comment "<Sext> EXTERNAL + <Sext> { <p2> . } on { <s1> <p1> <n2> . <n2> <p2> \"X\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/shapeExtern.shex> ;
+      sht:shape <http://a.example/Sext> ;
+      sht:data <In1_Ip1_In2.In2_Ip2_LX.ttl> ;
+      sht:focus <http://a.example/n2> ;
+      sht:shapeExterns <../schemas/shapeExtern.shextern>
+    ] ;
+    mf:result <shapeExtern_pass.val>
+    .
+
+<#shapeExtern_fail> a sht:ValidationFailure ;
+    mf:name "shapeExtern_fail" ;
+    sht:trait sht:SemanticAction , sht:ExternalShape ;
+    rdfs:comment "<Sext> EXTERNAL + <Sext> { <p2> . } on { <s1> <p1> <n2> . <n2> <p2> \"X\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/shapeExtern.shex> ;
+      sht:shape <http://a.example/Sext> ;
+      sht:data <In1_Ip1_In2.In2_Ip2_LX.ttl> ;
+      sht:focus <http://a.example/n1> ;
+      sht:shapeExterns <../schemas/shapeExtern.shextern>
+    ]
+    .
+
+<#shapeExternRef_pass> a sht:ValidationTest ;
+    mf:name "shapeExternRef_pass" ;
+    sht:trait sht:SemanticAction , sht:ExternalShape ;
+    rdfs:comment "<S> { <p1> @<Sext> } <Sext> EXTERNAL + <S> { <p2> . } on { <s1> <p1> <n2> . <n2> <p2> \"X\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/shapeExternRef.shex> ;
+      sht:shape <http://a.example/S> ;
+      sht:data <In1_Ip1_In2.In2_Ip2_LX.ttl> ;
+      sht:focus <http://a.example/n1> ;
+      sht:shapeExterns <../schemas/shapeExtern.shextern>
+    ] ;
+    mf:result <shapeExternRef_pass.val>
+    .
+
+<#shapeExternRef_fail> a sht:ValidationFailure ;
+    mf:name "shapeExternRef_fail" ;
+    sht:trait sht:SemanticAction , sht:ExternalShape ;
+    rdfs:comment "<S> { <p1> @<Sext> } <Sext> EXTERNAL + <S> { <p2> . } on { <s1> <p1> <n2> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/shapeExternRef.shex> ;
+      sht:shape <http://a.example/S> ;
+      sht:data <In1_Ip1_In2.ttl> ;
+      sht:focus <http://a.example/n1> ;
+      sht:shapeExterns <../schemas/shapeExtern.shextern>
+    ]
+    .
+
+## } shape extern 
 ## manual schemas {
 
 <#false-lead-excluding-value-shape> a sht:ValidationTest ;
@@ -10740,7 +12336,7 @@
 
 ## } manual schemas
 # deferred {
-## errors {
+## error reporting {
 <#1dot_fail-empty-err> a sht:ValidationFailure ;
     mf:name "1dot_fail-empty-err" ;
     sht:trait sht:ErrorReport ;
@@ -10752,7 +12348,7 @@
       sht:data <empty.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
-    mf:result <1dot_empty.val>
+    mf:result <1dot_empty.err>
     .
 
 <#2dot_fail-empty-err> a sht:ValidationFailure ; # 2dot_fail-missing-err
@@ -10766,10 +12362,10 @@
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
-    mf:result <2dot_missing1.val>
+    mf:result <2dot_missing1.err>
     .
 
-## } errors
+## } error reporting
 # futureWork {
 ## inherit {
 

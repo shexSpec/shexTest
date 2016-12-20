@@ -1,6 +1,5 @@
 {
   "type": "Schema",
-  "prefixes": {},
   "shapes": {
     "http://a.example/S1": {
       "type": "Shape",
@@ -8,7 +7,7 @@
         "type": "TripleConstraint",
         "predicate": "http://a.example/p1",
         "valueExpr": {
-          "type": "ValueClass",
+          "type": "NodeConstraint",
           "datatype": "http://www.w3.org/2001/XMLSchema#double",
           "maxinclusive": 5.5
         }

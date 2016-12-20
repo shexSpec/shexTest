@@ -20,7 +20,7 @@
             "max": "*"
           },
           {
-            "type": "SomeOf",
+            "type": "OneOf",
             "expressions": [
               {
                 "type": "TripleConstraint",

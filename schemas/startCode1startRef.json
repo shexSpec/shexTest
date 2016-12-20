@@ -1,15 +1,13 @@
 {
   "type": "Schema",
-  "prefixes": {},
   "startActs": [ { "type": "SemAct", "name": "http://shex.io/extensions/Test/", "code": " print(\"startAct\") " } ],
-  "start": "http://a.example/S1",
+  "start": { "type": "ShapeRef", "reference": "http://a.example/S1" },
   "shapes":{
     "http://a.example/S1": {
       "type": "Shape",
       "expression": {
         "type": "TripleConstraint",
-        "predicate": "http://a.example/p1",
-        "valueExpr": { "type": "ValueClass" }
+        "predicate": "http://a.example/p1"
       }
     }
   }

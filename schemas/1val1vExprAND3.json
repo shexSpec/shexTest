@@ -1,6 +1,5 @@
 {
   "type": "Schema",
-  "prefixes": {},
   "shapes": {
     "http://a.example/S1": {
       "type": "Shape",
@@ -8,22 +7,22 @@
         "type": "TripleConstraint",
         "predicate": "http://a.example/p1",
         "valueExpr": {
-          "type": "ValueAnd",
-          "valueExprs": [
+          "type": "ShapeAnd",
+          "shapeExprs": [
             {
-              "type": "ValueClass",
+              "type": "NodeConstraint",
               "nodeKind": "literal",
               "minlength": 4
             },
             {
-              "type": "ValueClass",
+              "type": "NodeConstraint",
               "nodeKind": "literal",
               "maxlength": 5
             },
             {
-              "type": "ValueClass",
+              "type": "NodeConstraint",
               "nodeKind": "literal",
-              "pattern": "^(ab)+"
+              "pattern": "^(ab)+$"
             }
           ]
         }
