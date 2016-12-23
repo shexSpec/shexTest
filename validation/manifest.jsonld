@@ -1666,7 +1666,7 @@
             "ShapeReference",
             "Datatype"
           ],
-          "comment": "<S> { <p1> <dt1> } on <s> in { <s> <p1> 'ab'^^<dt1> }",
+          "comment": "<S> { <p1> <dt1> @<S> } on <s> in { <s> <p1> 'ab'^^<dt1> }",
           "status": "mf:proposed"
         },
         {

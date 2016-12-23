@@ -2240,7 +2240,7 @@
 <#1datatypeRef1_fail-datatype> a sht:ValidationFailure ;
     mf:name "1datatypeRef1_fail-datatype" ;
     sht:trait sht:ShapeReference , sht:Datatype , sht:Unsatisfiable ;
-    rdfs:comment "<S> { <p1> <dt1> } on <s> in { <s> <p1> 'ab'^^<dt1> }" ;
+    rdfs:comment "<S> { <p1> <dt1> @<S> } on <s> in { <s> <p1> 'ab'^^<dt1> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1datatypeRef1.shex> ;
@@ -2887,8 +2887,7 @@
  #     rdfs:comment "<S1> { <p1> LITERAL FRACTIONDIGITS \"5\"^^<http://www.w3.org/2001/XMLSchema#integer> } / { <s1> <p1> 1.23456 }" ;
  #     mf:status mf:proposed ;
  #     mf:action [
- #       sht:schema <../schemas/1literalFractiondigitsxsd-integer.shex.bad
- > ;
+ #       sht:schema <../schemas/1literalFractiondigitsxsd-integer.shex.bad> ;
  #       sht:shape <http://a.example/S1> ;
  #       sht:data <Is1_Ip1_DEC1_23456.ttl> ;
  #       sht:focus <http://a.example/s1>
