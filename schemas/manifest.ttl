@@ -78,10 +78,8 @@
         <#1val1false>
         <#1datatypeLength>
         <#1literalFractiondigits5>
-        <#1literalFractiondigitsxsd-integer>
         <#1literalFractiondigits4>
         <#1literalTotaldigits5>
-        <#1literalTotaldigitsxsd-integer>
         <#1literalTotaldigits6>
         <#1literalTotaldigits2>
         <#1floatMininclusiveINTEGER>
@@ -309,7 +307,6 @@
 #         <#1dotVirtualShapeCode1>
 #         <#1dotVirtual>
 #         <#1dotUnlabeledCode1>
-        <#shapeExterntern>
         <#focusvsORdatatype>
         <#focusvsANDIRI>
         <#focusvsANDdatatype>
@@ -779,15 +776,6 @@
     sx:turtle <1literalFractiondigits5.turtle> ;
     .
 
-# Actual file is 1literalFractiondigitsxsd-integer.shex.bad
-<#1literalFractiondigitsxsd-integer> a sht:RepresentationTest ;
-    mf:name "1literalFractiondigitsxsd-integer" ;
-    mf:status mf:proposed ;
-    sx:shex <1literalFractiondigitsxsd-integer.shex> ;
-    sx:json <1literalFractiondigitsxsd-integer.json> ;
-    sx:turtle <1literalFractiondigitsxsd-integer.turtle> ;
-    .
-
 <#1literalFractiondigits4> a sht:RepresentationTest ;
     mf:name "1literalFractiondigits4" ;
     mf:status mf:proposed ;
@@ -834,14 +822,6 @@
     sx:shex <1literalMaxinclusiveINTEGER.shex> ;
     sx:json <1literalMaxinclusiveINTEGER.json> ;
     sx:turtle <1literalMaxinclusiveINTEGER.turtle> ;
-    .
-
-<#1literalTotaldigitsxsd-integer> a sht:RepresentationTest ;
-    mf:name "1literalTotaldigitsxsd-integer" ;
-    mf:status mf:proposed ;
-    sx:shex <1literalTotaldigitsxsd-integer.shex> ;
-    sx:json <1literalTotaldigitsxsd-integer.json> ;
-    sx:turtle <1literalTotaldigitsxsd-integer.turtle> ;
     .
 
 <#1literalTotaldigits6> a sht:RepresentationTest ;
@@ -2707,14 +2687,6 @@
     sx:shex <shapeExtern.shex> ;
     sx:json <shapeExtern.json> ;
     sx:turtle <shapeExtern.turtle> ;
-    .
-
-<#shapeExterntern> a sht:RepresentationTest ;
-    mf:name "shapeExterntern" ;
-    mf:status mf:proposed ;
-    sx:shex <shapeExterntern.shex> ;
-    sx:json <shapeExterntern.json> ;
-    sx:turtle <shapeExterntern.turtle> ;
     .
 
 <#shapeExternRef> a sht:RepresentationTest ;
