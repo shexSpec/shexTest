@@ -12145,13 +12145,13 @@
 
 <#3backtick_pass> a sht:ValidationTest ;
     mf:name "3backtick_pass" ;
-    sht:trait sht:SemanticAction , sht:ExternalShape ;
+    sht:trait sht:Backtick ;
     rdfs:comment "<S> { `a` LITERAL; `b` [ `c` `d`]; `e` `f` } on { <s> ex:a 'A' ; ex:b ex:c ; ex:d '30'^^ex:e }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/3backtick.shex> ;
       sht:shape <http://a.example/S> ;
-      sht:resolver <backtick.owl> ;
+      sht:termResolver <backtick.owl> ;
       sht:data <backtick.ttl> ;
       sht:focus <http://a.example/s> ;
     ] ;
@@ -12160,13 +12160,13 @@
 
 <#3backtick_fail> a sht:ValidationFailure ;
     mf:name "3backtick_fail" ;
-    sht:trait sht:SemanticAction , sht:ExternalShape ;
+    sht:trait sht:Backtick ;
     rdfs:comment "<S> { `a` LITERAL; `b` [ `c` `d`]; `e` `f` } on { <n1> <p1> <n2> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/3backtick.shex> ;
       sht:shape <http://a.example/S> ;
-      sht:resolver <backtick.owl> ;
+      sht:termResolver <backtick.owl> ;
       sht:data <In1_Ip1_In2.ttl> ;
       sht:focus <http://a.example/n1> ;
     ] ;

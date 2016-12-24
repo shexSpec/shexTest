@@ -14069,15 +14069,14 @@
           "action": {
             "schema": "../schemas/3backtick.shex",
             "shape": "http://a.example/S",
-            "resolver": "backtick.owl",
+            "termResolver": "backtick.owl",
             "data": "backtick.ttl",
             "focus": "http://a.example/s"
           },
           "extensionResults": [],
           "name": "3backtick_pass",
           "trait": [
-            "ExternalShape",
-            "SemanticAction"
+            "Backtick"
           ],
           "comment": "<S> { `a` LITERAL; `b` [ `c` `d`]; `e` `f` } on { <s> ex:a 'A' ; ex:b ex:c ; ex:d '30'^^ex:e }",
           "status": "mf:proposed",
@@ -14089,15 +14088,14 @@
           "action": {
             "schema": "../schemas/3backtick.shex",
             "shape": "http://a.example/S",
-            "resolver": "backtick.owl",
+            "termResolver": "backtick.owl",
             "data": "In1_Ip1_In2.ttl",
             "focus": "http://a.example/n1"
           },
           "extensionResults": [],
           "name": "3backtick_fail",
           "trait": [
-            "ExternalShape",
-            "SemanticAction"
+            "Backtick"
           ],
           "comment": "<S> { `a` LITERAL; `b` [ `c` `d`]; `e` `f` } on { <n1> <p1> <n2> }",
           "status": "mf:proposed"
