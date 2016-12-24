@@ -921,6 +921,10 @@
         <#shapeExternRef_pass>
         <#shapeExternRef_fail>
 
+## backticks
+        <#3backtick_pass>
+        <#3backtick_fail>
+
 ## manual schemas
         <#false-lead-excluding-value-shape>
         <#nPlus1>
@@ -12125,7 +12129,7 @@
 <#shapeExternRef_fail> a sht:ValidationFailure ;
     mf:name "shapeExternRef_fail" ;
     sht:trait sht:SemanticAction , sht:ExternalShape ;
-    rdfs:comment "<S> { <p1> @<Sext> } <Sext> EXTERNAL + <S> { <p2> . } on { <s1> <p1> <n2> }" ;
+    rdfs:comment "<S> { <p1> @<Sext> } <Sext> EXTERNAL + <S> { <p2> . } on { <n1> <p1> <n2> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/shapeExternRef.shex> ;
@@ -12137,6 +12141,38 @@
     .
 
 ## } shape extern 
+## backticks {
+
+<#3backtick_pass> a sht:ValidationTest ;
+    mf:name "3backtick_pass" ;
+    sht:trait sht:SemanticAction , sht:ExternalShape ;
+    rdfs:comment "<S> { `a` LITERAL; `b` [ `c` `d`]; `e` `f` } on { <s> ex:a 'A' ; ex:b ex:c ; ex:d '30'^^ex:e }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/3backtick.shex> ;
+      sht:shape <http://a.example/S> ;
+      sht:resolver <backtick.owl> ;
+      sht:data <backtick.ttl> ;
+      sht:focus <http://a.example/s> ;
+    ] ;
+    mf:result <3backtick_pass.val>
+    .
+
+<#3backtick_fail> a sht:ValidationFailure ;
+    mf:name "3backtick_fail" ;
+    sht:trait sht:SemanticAction , sht:ExternalShape ;
+    rdfs:comment "<S> { `a` LITERAL; `b` [ `c` `d`]; `e` `f` } on { <n1> <p1> <n2> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/3backtick.shex> ;
+      sht:shape <http://a.example/S> ;
+      sht:resolver <backtick.owl> ;
+      sht:data <In1_Ip1_In2.ttl> ;
+      sht:focus <http://a.example/n1> ;
+    ] ;
+    .
+
+## } backticks
 ## manual schemas {
 
 <#false-lead-excluding-value-shape> a sht:ValidationTest ;
