@@ -1,8 +1,8 @@
 {
-  "@context": "https://raw.githubusercontent.com/shexSpec/test-suite/gh-pages/tests/manifest-context.jsonld",
+  "@context": "https://raw.githubusercontent.com/shexSpec/shexTest/master/context.jsonld",
   "@graph": [
     {
-      "@id": "http://shexspec.github.io/test-suite/tests/manifest.ttl",
+      "@id": "https://raw.githubusercontent.com/shexSpec/shexTest/master/validation/manifest",
       "@type": "mf:Manifest",
       "rdfs:comment": "ShEx validation tests",
       "entries": [
