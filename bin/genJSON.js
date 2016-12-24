@@ -188,7 +188,13 @@ function genText () {
         [a, "sht", "schema"  , function (v) { return exists("../" + v[0].substr(basePath.length)); } ], // could be more judicious in creating a relative path from an absolute path.
         [a, "sht", "shape"   , function (v) { return v[0].indexOf(dirPath) === 0 ? v[0].substr(dirPath.length) : v[0]; }],
         [a, "sht", "data"    , function (v) { return exists(v[0].substr(dirPath.length)); }],
-        [a, "sht", "focus"   , function (v) { return v[0].indexOf(dirPath) === 0 ? v[0].substr(dirPath.length) : v[0]; }],
+        [a, "sht", "focus"   , function (v) {
+          // Focus can be a literal
+          return /^(http|_)/.test(v[0]) ?
+            (v[0].indexOf(dirPath) === 0 ? v[0].substr(dirPath.length) : v[0]) :
+            {"@value": v[0]};
+          }
+        ],
         [a, "sht", "semActs" , function (v) { return exists("../" + v[0].substr(basePath.length)); }], // could be more judicious in creating a relative path from an absolute path.
         [a, "sht", "shapeExterns" , function (v) { return exists("../" + v[0].substr(basePath.length)); }], // could be more judicious in creating a relative path from an absolute path.
         [s, "mf", "result"  , function (v) { return exists(v[0].substr(dirPath.length)); }],
