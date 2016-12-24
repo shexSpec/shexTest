@@ -168,11 +168,11 @@ function genText () {
           //[s, "sx", "turtle", function (v) { return exists(v[0].substr(dirPath.length)); }],
         ].reduce(function (ret, row) {
           var found = store.findByIRI(row[0], P[row[1]]+row[2], null).map(expandCollection);
-          var target = row[0] === s ? ret : row[0] === a ? ret.action : ret.extensionResults;
+          var target = ret;
           if (found.length)
             target[row[2]] = row[3](found);
           return ret;
-        }, {"@id": s.substr(apparentBase.length), "@type": "sht:"+t.substr(P.sht.length), action: {}, extensionResults: []});
+        }, {"@id": s.substr(apparentBase.length), "@type": "sht:"+t.substr(P.sht.length)});
       }
       var a = actionTriples[0].object;
       return [

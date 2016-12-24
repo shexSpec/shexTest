@@ -39,6 +39,9 @@
     "result": {
       "@id": "sht:result",
       "@type": "@id"
-    }
+    },
+    "shex": {"@id": "sx:shex", "@type": "@id"},
+    "json": {"@id": "sx:json", "@type": "@id"},
+    "turtle": {"@id": "sx:turtle", "@type": "@id"}
   }
 }
