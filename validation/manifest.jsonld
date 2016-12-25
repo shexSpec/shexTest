@@ -1,8 +1,8 @@
 {
-  "@context": "https://raw.githubusercontent.com/shexSpec/test-suite/gh-pages/tests/manifest-context.jsonld",
+  "@context": "https://raw.githubusercontent.com/shexSpec/shexTest/master/context.jsonld",
   "@graph": [
     {
-      "@id": "http://shexspec.github.io/test-suite/tests/manifest.ttl",
+      "@id": "https://raw.githubusercontent.com/shexSpec/shexTest/master/validation/manifest",
       "@type": "mf:Manifest",
       "rdfs:comment": "ShEx validation tests",
       "entries": [
@@ -837,6 +837,41 @@
           "result": "1nonliteral_pass-iri.val"
         },
         {
+          "@id": "#1focusnonLiteralLength-nonLiteralLength_fail-short",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1focusnonLiteralLength-nonLiteralLength.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1focusnonLiteralLength-nonLiteralLength_fail-short",
+          "trait": [
+            "NodeKind"
+          ],
+          "comment": "<S1> NONLITERAL LENGTH 19 { <p1> NONLITERAL LENGTH 19 } on { <s1> <p1> <o> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1focusnonLiteralLength-nonLiteralLength_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1focusnonLiteralLength-nonLiteralLength.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1focusnonLiteralLength-nonLiteralLength_pass",
+          "trait": [
+            "NodeKind"
+          ],
+          "comment": "<S1> NONLITERAL LENGTH 19 { <p1> NONLITERAL LENGTH 19 } on { <s1> <p1> <o1> }",
+          "status": "mf:proposed",
+          "result": "1focusnonLiteralLength-nonLiteralLength_pass.val"
+        },
+        {
           "@id": "#1nonliteral_pass-bnode",
           "@type": "sht:ValidationTest",
           "action": {
@@ -1539,6 +1574,41 @@
           "status": "mf:proposed"
         },
         {
+          "@id": "#1dotRef1_selfReference",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1dotRef1.shex",
+            "shape": "http://a.example/S1",
+            "data": "In1_Ip1_In1.In1_Ip2_LX.ttl",
+            "focus": "http://a.example/n1"
+          },
+          "extensionResults": [],
+          "name": "1dotRef1_selfReference",
+          "trait": [
+            "ShapeReference"
+          ],
+          "comment": "<n1> in { <n1> <p1> <n1> . <n1> <p2> \"X\" } as <S1> in <S1> { <p1> @<S2> } <S2> { <p2> . }",
+          "status": "mf:proposed",
+          "result": "1dotRef1_selfReference.val"
+        },
+        {
+          "@id": "#1dotRef1_missingSelfReference",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1dotRef1.shex",
+            "shape": "http://a.example/S1",
+            "data": "In1_Ip1_In1.In2_Ip2_LX.ttl",
+            "focus": "http://a.example/n1"
+          },
+          "extensionResults": [],
+          "name": "1dotRef1_missingSelfReference",
+          "trait": [
+            "ShapeReference"
+          ],
+          "comment": "<n1> in { <n1> <p1> <n1> . <n2> <p2> \"X\" } as <S1> in <S1> { <p1> @<S2> } <S2> { <p2> . }",
+          "status": "mf:proposed"
+        },
+        {
           "@id": "#1dotRef1_overReferrer",
           "@type": "sht:ValidationFailure",
           "action": {
@@ -1755,38 +1825,40 @@
           "result": "1bnodeRef1_pass-bnode.val"
         },
         {
-          "@id": "#1dotRef1_selfReference",
-          "@type": "sht:ValidationTest",
-          "action": {
-            "schema": "../schemas/1dotRef1.shex",
-            "shape": "http://a.example/S1",
-            "data": "In1_Ip1_In1.In1_Ip2_LX.ttl",
-            "focus": "http://a.example/n1"
-          },
-          "extensionResults": [],
-          "name": "1dotRef1_selfReference",
-          "trait": [
-            "ShapeReference"
-          ],
-          "comment": "<n1> in { <n1> <p1> <n1> . <n1> <p2> \"X\" } as <S1> in <S1> { <p1> @<S2> } <S2> { <p2> . }",
-          "status": "mf:proposed",
-          "result": "1dotRef1_selfReference.val"
-        },
-        {
-          "@id": "#1dotRef1_missingSelfReference",
+          "@id": "#1datatypeRef1_fail-datatype",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/1dotRef1.shex",
+            "schema": "../schemas/1datatypeRef1.shex",
             "shape": "http://a.example/S1",
-            "data": "In1_Ip1_In1.In2_Ip2_LX.ttl",
+            "data": "Is1_Ip1_dt1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1datatypeRef1_fail-datatype",
+          "trait": [
+            "Unsatisfiable",
+            "ShapeReference",
+            "Datatype"
+          ],
+          "comment": "<S> { <p1> <dt1> @<S> } on <s> in { <s> <p1> 'ab'^^<dt1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1datatypeRef1_fail-reflexiveRef",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1datatypeRef1.shex",
+            "shape": "http://a.example/S1",
+            "data": "In1_Ip1_In1.ttl",
             "focus": "http://a.example/n1"
           },
           "extensionResults": [],
-          "name": "1dotRef1_missingSelfReference",
+          "name": "1datatypeRef1_fail-reflexiveRef",
           "trait": [
+            "Unsatisfiable",
             "ShapeReference"
           ],
-          "comment": "<n1> in { <n1> <p1> <n1> . <n2> <p2> \"X\" } as <S1> in <S1> { <p1> @<S2> } <S2> { <p2> . }",
+          "comment": "<S1> { <p1> <dt1> } on <s> in { <n1> <p1> <n1> }",
           "status": "mf:proposed"
         },
         {
@@ -1996,6 +2068,58 @@
             "NumericEquivalence"
           ],
           "comment": "<S> { <p1> [0] } on { <s> <p1> 00 }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1val1DECIMAL_00",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1val1DECIMAL.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_DEC_0.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1DECIMAL_00",
+          "trait": [
+            "NumericEquivalence"
+          ],
+          "comment": "<S> { <p1> [0.0] } on { <s> <p1> .0 }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1val1DECIMAL_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1val1DECIMAL.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_DEC0_0.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1DECIMAL_pass",
+          "trait": [
+            "NumericEquivalence"
+          ],
+          "comment": "<S> { <p1> [0.0] } on { <s> <p1> 0.0 }",
+          "status": "mf:proposed",
+          "result": "1val1DECIMAL_pass.val"
+        },
+        {
+          "@id": "#1val1DECIMAL_Lab",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1val1DECIMAL.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Lab.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1DECIMAL_Lab",
+          "trait": [
+            "NumericEquivalence"
+          ],
+          "comment": "<S> { <p1> [0.0] } on { <s> <p1> 'ab' }",
           "status": "mf:proposed"
         },
         {
@@ -3229,6 +3353,216 @@
             "TotalDigitsFacet"
           ],
           "comment": "<S1> { <p1> LITERAL TOTALDIGITS 5 } / BASE <http://a.example/> { <s1> <p1> _:12345 }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1literalMinexclusiveINTEGER_fail-low",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1literalMinexclusiveINTEGER.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_INT4.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalMinexclusiveINTEGER_fail-low",
+          "trait": [
+            "ComparatorFacet"
+          ],
+          "comment": "<S1> { <p1> LITERAL MINEXCLUSIVE 5 } / { <s1> <p1> '4'^^xsd:integer }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1literalMinexclusiveINTEGER_pass-equal",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1literalMinexclusiveINTEGER.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_INT5.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalMinexclusiveINTEGER_pass-equal",
+          "trait": [
+            "ComparatorFacet"
+          ],
+          "comment": "<S1> { <p1> LITERAL MINEXCLUSIVE 5 } / { <s1> <p1> '5'^^xsd:integer }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1literalMinexclusiveINTEGER_pass-high",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1literalMinexclusiveINTEGER.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_INT6.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalMinexclusiveINTEGER_pass-high",
+          "trait": [
+            "ComparatorFacet"
+          ],
+          "comment": "<S1> { <p1> LITERAL MINEXCLUSIVE 5 } / { <s1> <p1> '6'^^xsd:integer }",
+          "status": "mf:proposed",
+          "result": "1literalMinexclusiveINTEGER_pass-high.val"
+        },
+        {
+          "@id": "#1literalMininclusiveINTEGER_fail-low",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1literalMininclusiveINTEGER.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_INT4.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalMininclusiveINTEGER_fail-low",
+          "trait": [
+            "ComparatorFacet"
+          ],
+          "comment": "<S1> { <p1> LITERAL MININCLUSIVE 5 } / { <s1> <p1> '4'^^xsd:integer }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1literalMininclusiveINTEGER_pass-equal",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1literalMininclusiveINTEGER.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_INT5.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalMininclusiveINTEGER_pass-equal",
+          "trait": [
+            "ComparatorFacet"
+          ],
+          "comment": "<S1> { <p1> LITERAL MININCLUSIVE 5 } / { <s1> <p1> '5'^^xsd:integer }",
+          "status": "mf:proposed",
+          "result": "1literalMininclusiveINTEGER_pass-equal.val"
+        },
+        {
+          "@id": "#1literalMininclusiveINTEGER_pass-high",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1literalMininclusiveINTEGER.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_INT6.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalMininclusiveINTEGER_pass-high",
+          "trait": [
+            "ComparatorFacet"
+          ],
+          "comment": "<S1> { <p1> LITERAL MININCLUSIVE 5 } / { <s1> <p1> '6'^^xsd:integer }",
+          "status": "mf:proposed",
+          "result": "1literalMininclusiveINTEGER_pass-high.val"
+        },
+        {
+          "@id": "#1literalMaxexclusiveINTEGER_pass-low",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1literalMaxexclusiveINTEGER.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_INT4.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalMaxexclusiveINTEGER_pass-low",
+          "trait": [
+            "ComparatorFacet"
+          ],
+          "comment": "<S1> { <p1> LITERAL MAXEXCLUSIVE 5 } / { <s1> <p1> '4'^^xsd:integer }",
+          "status": "mf:proposed",
+          "result": "1literalMaxexclusiveINTEGER_pass-high.val"
+        },
+        {
+          "@id": "#1literalMaxexclusiveINTEGER_fail-equal",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1literalMaxexclusiveINTEGER.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_INT5.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalMaxexclusiveINTEGER_fail-equal",
+          "trait": [
+            "ComparatorFacet"
+          ],
+          "comment": "<S1> { <p1> LITERAL MAXEXCLUSIVE 5 } / { <s1> <p1> '5'^^xsd:integer }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1literalMaxexclusiveINTEGER_fail-high",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1literalMaxexclusiveINTEGER.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_INT6.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalMaxexclusiveINTEGER_fail-high",
+          "trait": [
+            "ComparatorFacet"
+          ],
+          "comment": "<S1> { <p1> LITERAL MAXEXCLUSIVE 5 } / { <s1> <p1> '6'^^xsd:integer }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1literalMaxinclusiveINTEGER_pass-low",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1literalMaxinclusiveINTEGER.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_INT4.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalMaxinclusiveINTEGER_pass-low",
+          "trait": [
+            "ComparatorFacet"
+          ],
+          "comment": "<S1> { <p1> LITERAL MAXINCLUSIVE 5 } / { <s1> <p1> '4'^^xsd:integer }",
+          "status": "mf:proposed",
+          "result": "1literalMaxinclusiveINTEGER_pass-low.val"
+        },
+        {
+          "@id": "#1literalMaxinclusiveINTEGER_pass-equal",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1literalMaxinclusiveINTEGER.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_INT5.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalMaxinclusiveINTEGER_pass-equal",
+          "trait": [
+            "ComparatorFacet"
+          ],
+          "comment": "<S1> { <p1> LITERAL MAXINCLUSIVE 5 } / { <s1> <p1> '5'^^xsd:integer }",
+          "status": "mf:proposed",
+          "result": "1literalMaxinclusiveINTEGER_pass-equal.val"
+        },
+        {
+          "@id": "#1literalMaxinclusiveINTEGER_fail-high",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1literalMaxinclusiveINTEGER.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_INT6.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalMaxinclusiveINTEGER_fail-high",
+          "trait": [
+            "ComparatorFacet"
+          ],
+          "comment": "<S1> { <p1> LITERAL MAXINCLUSIVE 5 } / { <s1> <p1> '6'^^xsd:integer }",
           "status": "mf:proposed"
         },
         {
@@ -9541,54 +9875,54 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#1dotSome2dot_pass_p1",
+          "@id": "#1dotOne2dot_pass_p1",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/1dotSome2dot.shex",
+            "schema": "../schemas/1dotOne2dot.shex",
             "shape": "http://a.example/S1",
             "data": "p1.ttl",
             "focus": "x"
           },
           "extensionResults": [],
-          "name": "1dotSome2dot_pass_p1",
+          "name": "1dotOne2dot_pass_p1",
           "trait": [
             "EachOf-unvisited",
             "OneOf"
           ],
           "comment": ":S1 {:p1 .|:p2 .,:p3 .} / { :s1 :p1 \"p1-0\" . }",
           "status": "mf:proposed",
-          "result": "1dotSome2dot_pass_p1.val"
+          "result": "1dotOne2dot_pass_p1.val"
         },
         {
-          "@id": "#1dotSome2dot_pass_p2p3",
+          "@id": "#1dotOne2dot_pass_p2p3",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/1dotSome2dot.shex",
+            "schema": "../schemas/1dotOne2dot.shex",
             "shape": "http://a.example/S1",
             "data": "p2p3.ttl",
             "focus": "x"
           },
           "extensionResults": [],
-          "name": "1dotSome2dot_pass_p2p3",
+          "name": "1dotOne2dot_pass_p2p3",
           "trait": [
             "OneOf",
             "EachOf"
           ],
           "comment": ":S1 {:p1 .|:p2 .,:p3 .} / { :s1 :p2 \"p2-0\"; :p3 \"p3-0\" . }",
           "status": "mf:proposed",
-          "result": "1dotSome2dot_pass_p2p3.val"
+          "result": "1dotOne2dot_pass_p2p3.val"
         },
         {
-          "@id": "#1dotSome2dot-oneOf_fail_p1p2p3",
+          "@id": "#1dotOne2dot-oneOf_fail_p1p2p3",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/1dotSome2dot.shex",
+            "schema": "../schemas/1dotOne2dot.shex",
             "shape": "http://a.example/S1",
             "data": "p1p2p3.ttl",
             "focus": "x"
           },
           "extensionResults": [],
-          "name": "1dotSome2dot-oneOf_fail_p1p2p3",
+          "name": "1dotOne2dot-oneOf_fail_p1p2p3",
           "trait": [
             "EachOf-unvisited",
             "OneOf"
@@ -9597,16 +9931,16 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#1dotSome2dot-someOf_fail_p1p2p3",
+          "@id": "#1dotOne2dot-someOf_fail_p1p2p3",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/1dotSome2dot.shex",
+            "schema": "../schemas/1dotOne2dot.shex",
             "shape": "http://a.example/S1",
             "data": "p1p2p3.ttl",
             "focus": "x"
           },
           "extensionResults": [],
-          "name": "1dotSome2dot-someOf_fail_p1p2p3",
+          "name": "1dotOne2dot-someOf_fail_p1p2p3",
           "trait": [
             "MissedMatchables",
             "OneOf",
@@ -9616,54 +9950,54 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#open1dotSomeopen2dotcloseclose_pass_p1",
+          "@id": "#open1dotOneopen2dotcloseclose_pass_p1",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/open1dotSomeopen2dotcloseclose.shex",
+            "schema": "../schemas/open1dotOneopen2dotcloseclose.shex",
             "shape": "http://a.example/S1",
             "data": "p1.ttl",
             "focus": "x"
           },
           "extensionResults": [],
-          "name": "open1dotSomeopen2dotcloseclose_pass_p1",
+          "name": "open1dotOneopen2dotcloseclose_pass_p1",
           "trait": [
             "EachOf-unvisited",
             "OneOf"
           ],
           "comment": ":S1 {(:p1 .|(:p2 .,:p3 .))} / { :s1 :p1 \"p1-0\" . }",
           "status": "mf:proposed",
-          "result": "1dotSome2dot_pass_p1.val"
+          "result": "1dotOne2dot_pass_p1.val"
         },
         {
-          "@id": "#open1dotSomeopen2dotcloseclose_pass_p2p3",
+          "@id": "#open1dotOneopen2dotcloseclose_pass_p2p3",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/open1dotSomeopen2dotcloseclose.shex",
+            "schema": "../schemas/open1dotOneopen2dotcloseclose.shex",
             "shape": "http://a.example/S1",
             "data": "p2p3.ttl",
             "focus": "x"
           },
           "extensionResults": [],
-          "name": "open1dotSomeopen2dotcloseclose_pass_p2p3",
+          "name": "open1dotOneopen2dotcloseclose_pass_p2p3",
           "trait": [
             "OneOf",
             "EachOf"
           ],
           "comment": ":S1 {(:p1 .|(:p2 .,:p3 .))} / { :s1 :p2 \"p2-0\"; :p3 \"p3-0\" . }",
           "status": "mf:proposed",
-          "result": "1dotSome2dot_pass_p2p3.val"
+          "result": "1dotOne2dot_pass_p2p3.val"
         },
         {
-          "@id": "#open1dotSomeopen2dotcloseclose_fail_p1p2p3",
+          "@id": "#open1dotOneopen2dotcloseclose_fail_p1p2p3",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/open1dotSomeopen2dotcloseclose.shex",
+            "schema": "../schemas/open1dotOneopen2dotcloseclose.shex",
             "shape": "http://a.example/S1",
             "data": "p1p2p3.ttl",
             "focus": "x"
           },
           "extensionResults": [],
-          "name": "open1dotSomeopen2dotcloseclose_fail_p1p2p3",
+          "name": "open1dotOneopen2dotcloseclose_fail_p1p2p3",
           "trait": [
             "EachOf-unvisited",
             "OneOf"
@@ -9672,54 +10006,54 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#openopen1dotSome1dotclose1dotclose_pass_p1p3",
+          "@id": "#openopen1dotOne1dotclose1dotclose_pass_p1p3",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/openopen1dotSome1dotclose1dotclose.shex",
+            "schema": "../schemas/openopen1dotOne1dotclose1dotclose.shex",
             "shape": "http://a.example/S1",
             "data": "p1p3.ttl",
             "focus": "x"
           },
           "extensionResults": [],
-          "name": "openopen1dotSome1dotclose1dotclose_pass_p1p3",
+          "name": "openopen1dotOne1dotclose1dotclose_pass_p1p3",
           "trait": [
             "OneOf",
             "EachOf"
           ],
           "comment": ":S1 { ((:p1 .| :p2 .), :p3 .) } / { <x> :p1 \"p1-0\"; :p3 \"p3-0\" . }",
           "status": "mf:proposed",
-          "result": "openopen1dotSome1dotclose1dotclose_pass_p1p3.val"
+          "result": "openopen1dotOne1dotclose1dotclose_pass_p1p3.val"
         },
         {
-          "@id": "#openopen1dotSome1dotclose1dotclose_pass_p2p3",
+          "@id": "#openopen1dotOne1dotclose1dotclose_pass_p2p3",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/openopen1dotSome1dotclose1dotclose.shex",
+            "schema": "../schemas/openopen1dotOne1dotclose1dotclose.shex",
             "shape": "http://a.example/S1",
             "data": "p2p3.ttl",
             "focus": "x"
           },
           "extensionResults": [],
-          "name": "openopen1dotSome1dotclose1dotclose_pass_p2p3",
+          "name": "openopen1dotOne1dotclose1dotclose_pass_p2p3",
           "trait": [
             "OneOf",
             "EachOf"
           ],
           "comment": ":S1 { ((:p1 .| :p2 .), :p3 .) } / { <x> :p2 \"p2-0\"; :p3 \"p3-0\" . }",
           "status": "mf:proposed",
-          "result": "openopen1dotSome1dotclose1dotclose_pass_p2p3.val"
+          "result": "openopen1dotOne1dotclose1dotclose_pass_p2p3.val"
         },
         {
-          "@id": "#openopen1dotSome1dotclose1dotclose_fail_p1",
+          "@id": "#openopen1dotOne1dotclose1dotclose_fail_p1",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/openopen1dotSome1dotclose1dotclose.shex",
+            "schema": "../schemas/openopen1dotOne1dotclose1dotclose.shex",
             "shape": "http://a.example/S1",
             "data": "p1.ttl",
             "focus": "x"
           },
           "extensionResults": [],
-          "name": "openopen1dotSome1dotclose1dotclose_fail_p1",
+          "name": "openopen1dotOne1dotclose1dotclose_fail_p1",
           "trait": [
             "EachOf-unvisited",
             "OneOf"
@@ -9728,16 +10062,16 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#openopen1dotSome1dotclose1dotclose_fail_p3",
+          "@id": "#openopen1dotOne1dotclose1dotclose_fail_p3",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/openopen1dotSome1dotclose1dotclose.shex",
+            "schema": "../schemas/openopen1dotOne1dotclose1dotclose.shex",
             "shape": "http://a.example/S1",
             "data": "p3.ttl",
             "focus": "x"
           },
           "extensionResults": [],
-          "name": "openopen1dotSome1dotclose1dotclose_fail_p3",
+          "name": "openopen1dotOne1dotclose1dotclose_fail_p3",
           "trait": [
             "OneOf",
             "EachOf"
@@ -9746,16 +10080,16 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#openopen1dotSome1dotclose1dotclose_fail_p1p2",
+          "@id": "#openopen1dotOne1dotclose1dotclose_fail_p1p2",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/openopen1dotSome1dotclose1dotclose.shex",
+            "schema": "../schemas/openopen1dotOne1dotclose1dotclose.shex",
             "shape": "http://a.example/S1",
             "data": "p1p2.ttl",
             "focus": "x"
           },
           "extensionResults": [],
-          "name": "openopen1dotSome1dotclose1dotclose_fail_p1p2",
+          "name": "openopen1dotOne1dotclose1dotclose_fail_p1p2",
           "trait": [
             "OneOf",
             "EachOf"
@@ -9836,6 +10170,43 @@
           "comment": "$_:vc1 = LITERAL MINLENGTH 5 <S1> { <p1> $_:vc1 } on { <s1> <p1> \"abcde\" }",
           "status": "mf:proposed",
           "result": "1val1vExprRefbnode1_pass-lit-equal.val"
+        },
+        {
+          "@id": "#1dotShapeAND1dot3X_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1dotShapeAND1dot3X.shex",
+            "shape": "http://a.example/S1",
+            "data": "In1_Ipx_LXX3.ttl",
+            "focus": "http://a.example/n1"
+          },
+          "extensionResults": [],
+          "name": "1dotShapeAND1dot3X_pass",
+          "trait": [
+            "OrValueExpression",
+            "ValueReference"
+          ],
+          "comment": "<S1> { <p1> . } AND { <p2> . } AND { <p3> . } on { <s1> <p1> 'X'; <p2> 'X'; <p3> 'X' }",
+          "status": "mf:proposed",
+          "result": "1dotShapeAND1dot3X_pass.val"
+        },
+        {
+          "@id": "#1dotShapeAND1dot3X_fail",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1dotShapeAND1dot3X.shex",
+            "shape": "http://a.example/S1",
+            "data": "In1_Ip1_In2.In2_Ipx_LXX3.ttl",
+            "focus": "http://a.example/n2"
+          },
+          "extensionResults": [],
+          "name": "1dotShapeAND1dot3X_fail",
+          "trait": [
+            "OrValueExpression",
+            "ValueReference"
+          ],
+          "comment": "<S1> { <p1> . } AND { <p2> . } AND { <p3> . } on { <s1> <p1> <s2>, <s3>, <s4> . <s2> <p2> \"X\" . <s3> <p3> \"X\" . <s4> <p4> \"X\" }",
+          "status": "mf:proposed"
         },
         {
           "@id": "#1dotRefAND3_failAll",
@@ -10141,6 +10512,137 @@
             "AndValueExpression"
           ],
           "comment": "<S> { <p1> MINLENGTH 4 AND MAXLENGTH 5 AND ~ '(ab)+' } on { <s1> <p1> 'baba' }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#refBNodeORrefIRI_ReflexiveIRI",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1bnodeRefORRefMinlength.shex",
+            "shape": "http://a.example/S1",
+            "data": "In1a_Ip1_In1a.ttl",
+            "focus": "http://a.example/n1a"
+          },
+          "extensionResults": [],
+          "name": "refBNodeORrefIRI_ReflexiveIRI",
+          "trait": [
+            "OrValueExpression",
+            "ValueReference"
+          ],
+          "comment": "<S1> { <p1> BNODE @<S1> OR MINLENGTH 20 @<S1> } on { <n1a> <p1> <n1a> }",
+          "status": "mf:proposed",
+          "result": "refBNodeORrefIRI_ReflexiveIRI.val"
+        },
+        {
+          "@id": "#refBNodeORrefIRI_ReflexiveShortIRI",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1bnodeRefORRefMinlength.shex",
+            "shape": "http://a.example/S1",
+            "data": "In1_Ip1_In1.ttl",
+            "focus": "http://a.example/n1"
+          },
+          "extensionResults": [],
+          "name": "refBNodeORrefIRI_ReflexiveShortIRI",
+          "trait": [
+            "OrValueExpression",
+            "ValueReference"
+          ],
+          "comment": "<S1> { <p1> BNODE @<S1> OR MINLENGTH 20 @<S1> } on { <n1> <p1> <n1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#refBNodeORrefIRI_IntoReflexiveIRI",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1bnodeRefORRefMinlength.shex",
+            "shape": "http://a.example/S1",
+            "data": "In1_Ip1_In2a.In2a_Ip1_In2a.ttl",
+            "focus": "http://a.example/n1"
+          },
+          "extensionResults": [],
+          "name": "refBNodeORrefIRI_IntoReflexiveIRI",
+          "trait": [
+            "OrValueExpression",
+            "ValueReference"
+          ],
+          "comment": "<S1> { <p1> BNODE @<S1> OR MINLENGTH 20 @<S1> } on { <n1> <p1> <n2a> . <n2a> <p1> <n2a> }",
+          "status": "mf:proposed",
+          "result": "refBNodeORrefIRI_IntoReflexiveIRI.val"
+        },
+        {
+          "@id": "#refBNodeORrefIRI_IntoReflexiveBNode",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1bnodeRefORRefMinlength.shex",
+            "shape": "http://a.example/S1",
+            "data": "In1_Ip1_Bn2.Bn2_Ip1_Bn2.ttl",
+            "focus": "http://a.example/n1"
+          },
+          "extensionResults": [],
+          "name": "refBNodeORrefIRI_IntoReflexiveBNode",
+          "trait": [
+            "OrValueExpression",
+            "ValueReference"
+          ],
+          "comment": "<S1> { <p1> BNODE @<S1> OR MINLENGTH 20 @<S1> } on { <n1> <p1> _:n2 . _:n2 <p1> _:n2 }",
+          "status": "mf:proposed",
+          "result": "refBNodeORrefIRI_IntoReflexiveBNode.val"
+        },
+        {
+          "@id": "#refBNodeORrefIRI_CyclicIRI_IRI",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1bnodeRefORRefMinlength.shex",
+            "shape": "http://a.example/S1",
+            "data": "In1a_Ip1_In2a.In2a_Ip1_In1a.ttl",
+            "focus": "http://a.example/n1a"
+          },
+          "extensionResults": [],
+          "name": "refBNodeORrefIRI_CyclicIRI_IRI",
+          "trait": [
+            "OrValueExpression",
+            "ValueReference"
+          ],
+          "comment": "<S1> { <p1> BNODE @<S1> OR MINLENGTH 20 @<S1> } on { <n1a> <p1> <n2a> . <n2a> <p1> <n1a> }",
+          "status": "mf:proposed",
+          "result": "refBNodeORrefIRI_CyclicIRI_IRI.val"
+        },
+        {
+          "@id": "#refBNodeORrefIRI_CyclicIRI_BNode",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1bnodeRefORRefMinlength.shex",
+            "shape": "http://a.example/S1",
+            "data": "In1a_Ip1_Bn2.Bn2_Ip1_In1a.ttl",
+            "focus": "http://a.example/n1a"
+          },
+          "extensionResults": [],
+          "name": "refBNodeORrefIRI_CyclicIRI_BNode",
+          "trait": [
+            "OrValueExpression",
+            "ValueReference"
+          ],
+          "comment": "<S1> { <p1> BNODE @<S1> OR MINLENGTH 20 @<S1> } on { <n1a> <p1> _:n2 . _:n2 <p1> <n1a> }",
+          "status": "mf:proposed",
+          "result": "refBNodeORrefIRI_CyclicIRI_BNode.val"
+        },
+        {
+          "@id": "#refBNodeORrefIRI_CyclicIRI_ShortIRI",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1bnodeRefORRefMinlength.shex",
+            "shape": "http://a.example/S1",
+            "data": "In1_Ip1_In2a.In2a_Ip1_In1.ttl",
+            "focus": "http://a.example/n1"
+          },
+          "extensionResults": [],
+          "name": "refBNodeORrefIRI_CyclicIRI_ShortIRI",
+          "trait": [
+            "OrValueExpression",
+            "ValueReference"
+          ],
+          "comment": "<S1> { <p1> BNODE @<S1> OR MINLENGTH 20 @<S1> } on { <n1> <p1> <n2a> . <n2a> <p1> <n1> }",
           "status": "mf:proposed"
         },
         {
@@ -10737,16 +11239,16 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#open3Somedotclosecard2_fail-p1",
+          "@id": "#open3Onedotclosecard2_fail-p1",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/open3Somedotclosecard2.shex",
+            "schema": "../schemas/open3Onedotclosecard2.shex",
             "shape": "http://a.example/S1",
             "data": "p1.ttl",
             "focus": "x"
           },
           "extensionResults": [],
-          "name": "open3Somedotclosecard2_fail-p1",
+          "name": "open3Onedotclosecard2_fail-p1",
           "trait": [
             "RepeatedOneOf",
             "EachOf"
@@ -10755,35 +11257,35 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#open3Somedotclosecard2_pass-p1X2",
+          "@id": "#open3Onedotclosecard2_pass-p1X2",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/open3Somedotclosecard2.shex",
+            "schema": "../schemas/open3Onedotclosecard2.shex",
             "shape": "http://a.example/S1",
             "data": "p1X2.ttl",
             "focus": "x"
           },
           "extensionResults": [],
-          "name": "open3Somedotclosecard2_pass-p1X2",
+          "name": "open3Onedotclosecard2_pass-p1X2",
           "trait": [
             "RepeatedOneOf",
             "EachOf"
           ],
           "comment": "<S1> { ( <p1> .| <p2> .| <p3> . ){2} } / { <s> <p1> \"p1-n\" }X2",
           "status": "mf:proposed",
-          "result": "open3Somedotclosecard2-p1X2.val"
+          "result": "open3Onedotclosecard2-p1X2.val"
         },
         {
-          "@id": "#open3Somedotclosecard2_fail-p1X3",
+          "@id": "#open3Onedotclosecard2_fail-p1X3",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/open3Somedotclosecard2.shex",
+            "schema": "../schemas/open3Onedotclosecard2.shex",
             "shape": "http://a.example/S1",
             "data": "p1X3.ttl",
             "focus": "x"
           },
           "extensionResults": [],
-          "name": "open3Somedotclosecard2_fail-p1X3",
+          "name": "open3Onedotclosecard2_fail-p1X3",
           "trait": [
             "RepeatedOneOf",
             "EachOf"
@@ -10792,16 +11294,16 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#open3Somedotclosecard2_fail-p1X4",
+          "@id": "#open3Onedotclosecard2_fail-p1X4",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/open3Somedotclosecard2.shex",
+            "schema": "../schemas/open3Onedotclosecard2.shex",
             "shape": "http://a.example/S1",
             "data": "p1X4.ttl",
             "focus": "x"
           },
           "extensionResults": [],
-          "name": "open3Somedotclosecard2_fail-p1X4",
+          "name": "open3Onedotclosecard2_fail-p1X4",
           "trait": [
             "RepeatedOneOf",
             "EachOf"
@@ -10810,73 +11312,73 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#open3Somedotclosecard2_pass-p1p2",
+          "@id": "#open3Onedotclosecard2_pass-p1p2",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/open3Somedotclosecard2.shex",
+            "schema": "../schemas/open3Onedotclosecard2.shex",
             "shape": "http://a.example/S1",
             "data": "p1p2.ttl",
             "focus": "x"
           },
           "extensionResults": [],
-          "name": "open3Somedotclosecard2_pass-p1p2",
+          "name": "open3Onedotclosecard2_pass-p1p2",
           "trait": [
             "RepeatedOneOf",
             "EachOf"
           ],
           "comment": "<S1> { ( <p1> .| <p2> .| <p3> . ){2} } / { <s> <p1> \"p1-0\"; <p2> \"p2-0\" }",
           "status": "mf:proposed",
-          "result": "open3Somedotclosecard2-p1p2.val"
+          "result": "open3Onedotclosecard2-p1p2.val"
         },
         {
-          "@id": "#open3Somedotclosecard2_pass-p1p3",
+          "@id": "#open3Onedotclosecard2_pass-p1p3",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/open3Somedotclosecard2.shex",
+            "schema": "../schemas/open3Onedotclosecard2.shex",
             "shape": "http://a.example/S1",
             "data": "p1p3.ttl",
             "focus": "x"
           },
           "extensionResults": [],
-          "name": "open3Somedotclosecard2_pass-p1p3",
+          "name": "open3Onedotclosecard2_pass-p1p3",
           "trait": [
             "RepeatedOneOf",
             "EachOf"
           ],
           "comment": "<S1> { ( <p1> .| <p2> .| <p3> . ){2} } / { <s> <p1> \"p1-0\"; <p3> \"p3-0\" }",
           "status": "mf:proposed",
-          "result": "open3Somedotclosecard2-p1p3.val"
+          "result": "open3Onedotclosecard2-p1p3.val"
         },
         {
-          "@id": "#open3Somedotclosecard2_pass-p2p3",
+          "@id": "#open3Onedotclosecard2_pass-p2p3",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/open3Somedotclosecard2.shex",
+            "schema": "../schemas/open3Onedotclosecard2.shex",
             "shape": "http://a.example/S1",
             "data": "p2p3.ttl",
             "focus": "x"
           },
           "extensionResults": [],
-          "name": "open3Somedotclosecard2_pass-p2p3",
+          "name": "open3Onedotclosecard2_pass-p2p3",
           "trait": [
             "RepeatedOneOf",
             "EachOf"
           ],
           "comment": "<S1> { ( <p1> .| <p2> .| <p3> . ){2} } / { <s> <p2> \"p2-0\"; <p3> \"p3-0\" }",
           "status": "mf:proposed",
-          "result": "open3Somedotclosecard2-p2p3.val"
+          "result": "open3Onedotclosecard2-p2p3.val"
         },
         {
-          "@id": "#open3Somedotclosecard2_fail-p1p2p3",
+          "@id": "#open3Onedotclosecard2_fail-p1p2p3",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/open3Somedotclosecard2.shex",
+            "schema": "../schemas/open3Onedotclosecard2.shex",
             "shape": "http://a.example/S1",
             "data": "p1p2p3.ttl",
             "focus": "x"
           },
           "extensionResults": [],
-          "name": "open3Somedotclosecard2_fail-p1p2p3",
+          "name": "open3Onedotclosecard2_fail-p1p2p3",
           "trait": [
             "RepeatedOneOf",
             "EachOf"
@@ -10885,16 +11387,16 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#open3Somedotclosecard23_fail-p1",
+          "@id": "#open3Onedotclosecard23_fail-p1",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/open3Somedotclosecard23.shex",
+            "schema": "../schemas/open3Onedotclosecard23.shex",
             "shape": "http://a.example/S1",
             "data": "p1.ttl",
             "focus": "x"
           },
           "extensionResults": [],
-          "name": "open3Somedotclosecard23_fail-p1",
+          "name": "open3Onedotclosecard23_fail-p1",
           "trait": [
             "RepeatedOneOf",
             "EachOf"
@@ -10903,54 +11405,54 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#open3Somedotclosecard23_pass-p1X2",
+          "@id": "#open3Onedotclosecard23_pass-p1X2",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/open3Somedotclosecard23.shex",
+            "schema": "../schemas/open3Onedotclosecard23.shex",
             "shape": "http://a.example/S1",
             "data": "p1X2.ttl",
             "focus": "x"
           },
           "extensionResults": [],
-          "name": "open3Somedotclosecard23_pass-p1X2",
+          "name": "open3Onedotclosecard23_pass-p1X2",
           "trait": [
             "RepeatedOneOf",
             "EachOf"
           ],
           "comment": "<S1> { ( <p1> .| <p2> .| <p3> . ){2,3} } / { <s> <p1> \"p1-n\" }X2",
           "status": "mf:proposed",
-          "result": "open3Somedotclosecard23-p1X2.val"
+          "result": "open3Onedotclosecard23-p1X2.val"
         },
         {
-          "@id": "#open3Somedotclosecard23_pass-p1X3",
+          "@id": "#open3Onedotclosecard23_pass-p1X3",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/open3Somedotclosecard23.shex",
+            "schema": "../schemas/open3Onedotclosecard23.shex",
             "shape": "http://a.example/S1",
             "data": "p1X3.ttl",
             "focus": "x"
           },
           "extensionResults": [],
-          "name": "open3Somedotclosecard23_pass-p1X3",
+          "name": "open3Onedotclosecard23_pass-p1X3",
           "trait": [
             "RepeatedOneOf",
             "EachOf"
           ],
           "comment": "<S1> { ( <p1> .| <p2> .| <p3> . ){2,3} } / { <s> <p1> \"p1-n\" }X3",
           "status": "mf:proposed",
-          "result": "open3Somedotclosecard23-p1X3.val"
+          "result": "open3Onedotclosecard23-p1X3.val"
         },
         {
-          "@id": "#open3Somedotclosecard23_fail-p1X4",
+          "@id": "#open3Onedotclosecard23_fail-p1X4",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/open3Somedotclosecard23.shex",
+            "schema": "../schemas/open3Onedotclosecard23.shex",
             "shape": "http://a.example/S1",
             "data": "p1X4.ttl",
             "focus": "x"
           },
           "extensionResults": [],
-          "name": "open3Somedotclosecard23_fail-p1X4",
+          "name": "open3Onedotclosecard23_fail-p1X4",
           "trait": [
             "RepeatedOneOf",
             "EachOf"
@@ -10959,73 +11461,73 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#open3Somedotclosecard23_pass-p1p2",
+          "@id": "#open3Onedotclosecard23_pass-p1p2",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/open3Somedotclosecard23.shex",
+            "schema": "../schemas/open3Onedotclosecard23.shex",
             "shape": "http://a.example/S1",
             "data": "p1p2.ttl",
             "focus": "x"
           },
           "extensionResults": [],
-          "name": "open3Somedotclosecard23_pass-p1p2",
+          "name": "open3Onedotclosecard23_pass-p1p2",
           "trait": [
             "RepeatedOneOf",
             "EachOf"
           ],
           "comment": "<S1> { ( <p1> .| <p2> .| <p3> . ){2,3} } / { <s> <p1> \"p1-0\"; <p2> \"p2-0\" }",
           "status": "mf:proposed",
-          "result": "open3Somedotclosecard23-p1p2.val"
+          "result": "open3Onedotclosecard23-p1p2.val"
         },
         {
-          "@id": "#open3Somedotclosecard23_pass-p1p3",
+          "@id": "#open3Onedotclosecard23_pass-p1p3",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/open3Somedotclosecard23.shex",
+            "schema": "../schemas/open3Onedotclosecard23.shex",
             "shape": "http://a.example/S1",
             "data": "p1p3.ttl",
             "focus": "x"
           },
           "extensionResults": [],
-          "name": "open3Somedotclosecard23_pass-p1p3",
+          "name": "open3Onedotclosecard23_pass-p1p3",
           "trait": [
             "RepeatedOneOf",
             "EachOf"
           ],
           "comment": "<S1> { ( <p1> .| <p2> .| <p3> . ){2,3} } / { <s> <p1> \"p1-0\"; <p3> \"p3-0\" }",
           "status": "mf:proposed",
-          "result": "open3Somedotclosecard23-p1p3.val"
+          "result": "open3Onedotclosecard23-p1p3.val"
         },
         {
-          "@id": "#open3Somedotclosecard23_pass-p2p3",
+          "@id": "#open3Onedotclosecard23_pass-p2p3",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/open3Somedotclosecard23.shex",
+            "schema": "../schemas/open3Onedotclosecard23.shex",
             "shape": "http://a.example/S1",
             "data": "p2p3.ttl",
             "focus": "x"
           },
           "extensionResults": [],
-          "name": "open3Somedotclosecard23_pass-p2p3",
+          "name": "open3Onedotclosecard23_pass-p2p3",
           "trait": [
             "RepeatedOneOf",
             "EachOf"
           ],
           "comment": "<S1> { ( <p1> .| <p2> .| <p3> . ){2,3} } / { <s> <p2> \"p2-0\"; <p3> \"p3-0\" }",
           "status": "mf:proposed",
-          "result": "open3Somedotclosecard23-p2p3.val"
+          "result": "open3Onedotclosecard23-p2p3.val"
         },
         {
-          "@id": "#open3Somedotclosecard23_pass-p1p2p3",
+          "@id": "#open3Onedotclosecard23_pass-p1p2p3",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/open3Somedotclosecard23.shex",
+            "schema": "../schemas/open3Onedotclosecard23.shex",
             "shape": "http://a.example/S1",
             "data": "p1p2p3.ttl",
             "focus": "x"
           },
           "extensionResults": [],
-          "name": "open3Somedotclosecard23_pass-p1p2p3",
+          "name": "open3Onedotclosecard23_pass-p1p2p3",
           "trait": [
             "Greedy",
             "RepeatedOneOf",
@@ -11033,19 +11535,19 @@
           ],
           "comment": "<S1> { ( <p1> .| <p2> .| <p3> . ){2,3} } / { <s> <p1> \"p1-0\"; <p2> \"p2-0\"; <p3> \"p3-0\" }",
           "status": "mf:proposed",
-          "result": "open3Somedotclosecard23-p1p2p3.val"
+          "result": "open3Onedotclosecard23-p1p2p3.val"
         },
         {
-          "@id": "#open4Somedotclosecard23_fail-p1p2p3p4",
+          "@id": "#open4Onedotclosecard23_fail-p1p2p3p4",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/open4Somedotclosecard23.shex",
+            "schema": "../schemas/open4Onedotclosecard23.shex",
             "shape": "http://a.example/S1",
             "data": "p1p2p3p4.ttl",
             "focus": "x"
           },
           "extensionResults": [],
-          "name": "open4Somedotclosecard23_fail-p1p2p3p4",
+          "name": "open4Onedotclosecard23_fail-p1p2p3p4",
           "trait": [
             "RepeatedOneOf",
             "EachOf"
@@ -11140,6 +11642,41 @@
             "Closed"
           ],
           "comment": "<S> { <p1> . } on { <s> <p1> <o1>; <p2> <o2> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#FocusIRI2groupBnodeNested2groupIRIRef_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/FocusIRI2groupBnodeNested2groupIRIRef.shex",
+            "shape": "http://a.example/S1",
+            "data": "FocusIRI2groupBnodeNested2groupIRIRef.ttl",
+            "focus": "http://a.example/n1"
+          },
+          "extensionResults": [],
+          "name": "FocusIRI2groupBnodeNested2groupIRIRef_pass",
+          "trait": [
+            "Closed"
+          ],
+          "comment": "<S1> IRI PATTERN '^https?://' { <p1> <dt1> ; <p2> BNODE { <p3> LITERAL ; <p4> IRI PATTERN '^https://' @<S1>? } AND CLOSED { <p3> . ; <p4> . } } on { <n1> <p1> 'ab'^^<dt1> ; <p2> [  <p3> 'ab' ; <p4> ex:n1 ] }",
+          "status": "mf:proposed",
+          "result": "FocusIRI2groupBnodeNested2groupIRIRef_pass.val"
+        },
+        {
+          "@id": "#FocusIRI2groupBnodeNested2groupIRIRef_fail",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/FocusIRI2groupBnodeNested2groupIRIRef.shex",
+            "shape": "http://a.example/S1",
+            "data": "FocusIRI2groupBnodeNested3groupIRIRef.ttl",
+            "focus": "http://a.example/n1"
+          },
+          "extensionResults": [],
+          "name": "FocusIRI2groupBnodeNested2groupIRIRef_fail",
+          "trait": [
+            "Closed"
+          ],
+          "comment": "<S1> IRI PATTERN '^https?://' { <p1> <dt1> ; <p2> BNODE { <p3> LITERAL ; <p4> IRI PATTERN '^https://' @<S1>? } AND CLOSED { <p3> . ; <p4> . } } on { <n1> <p1> 'ab'^^<dt1> ; <p2> [  <p3> 'ab' ; <p4> ex:n1 ; <p5> 5 ] }",
           "status": "mf:proposed"
         },
         {
@@ -11274,16 +11811,16 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#1dotSome2dotExtra-someOf_pass_p1p2p3",
+          "@id": "#1dotOne2dotExtra-someOf_pass_p1p2p3",
           "@type": "sht:ValidationFailure",
           "action": {
-            "schema": "../schemas/1dotSome2dot.shex",
+            "schema": "../schemas/1dotOne2dot.shex",
             "shape": "http://a.example/S1",
             "data": "p1p2p3.ttl",
             "focus": "x"
           },
           "extensionResults": [],
-          "name": "1dotSome2dotExtra-someOf_pass_p1p2p3",
+          "name": "1dotOne2dotExtra-someOf_pass_p1p2p3",
           "trait": [
             "Extra",
             "MissedMatchables",
@@ -11294,16 +11831,16 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#1val1IRIREFExtra1Some_pass-iri1",
+          "@id": "#1val1IRIREFExtra1One_pass-iri1",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/1val1IRIREFExtra1Some.shex",
+            "schema": "../schemas/1val1IRIREFExtra1One.shex",
             "shape": "http://a.example/S1",
             "data": "Is1_Ip1_Io1.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1val1IRIREFExtra1Some_pass-iri1",
+          "name": "1val1IRIREFExtra1One_pass-iri1",
           "trait": [
             "Extra",
             "IriEquivalence",
@@ -11311,19 +11848,19 @@
           ],
           "comment": "<S> EXTRA <p1> { <p0> . | <p1> [<o1>], <p2> .? } on { <s1> <p1> <o1> }",
           "status": "mf:proposed",
-          "result": "1val1IRIREFExtra1Some_Is1_Ip1_Io1.val"
+          "result": "1val1IRIREFExtra1One_Is1_Ip1_Io1.val"
         },
         {
-          "@id": "#1val1IRIREFExtra1Some_pass-iri2",
+          "@id": "#1val1IRIREFExtra1One_pass-iri2",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/1val1IRIREFExtra1Some.shex",
+            "schema": "../schemas/1val1IRIREFExtra1One.shex",
             "shape": "http://a.example/S1",
             "data": "Is1_Ip1_Io1,Io2.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1val1IRIREFExtra1Some_pass-iri2",
+          "name": "1val1IRIREFExtra1One_pass-iri2",
           "trait": [
             "Extra",
             "IriEquivalence",
@@ -11331,7 +11868,7 @@
           ],
           "comment": "<S> EXTRA <p1> { <p0> . | <p1> [<o1>], <p2> .? } on { <s> <p1> <o1>, <o2> }",
           "status": "mf:proposed",
-          "result": "1val1IRIREFExtra1Some_Is1_Ip1_Io1.val"
+          "result": "1val1IRIREFExtra1One_Is1_Ip1_Io1.val"
         },
         {
           "@id": "#1dotExtra1_pass-iri1",
@@ -11679,42 +12216,42 @@
           "result": "2EachInclude1-after_pass.val"
         },
         {
-          "@id": "#2SomeInclude1_pass",
+          "@id": "#2OneInclude1_pass",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/2SomeInclude1.shex",
+            "schema": "../schemas/2OneInclude1.shex",
             "shape": "http://a.example/S1",
             "data": "In1_Ip1_LX.ttl",
             "focus": "http://a.example/n1"
           },
           "extensionResults": [],
-          "name": "2SomeInclude1_pass",
+          "name": "2OneInclude1_pass",
           "trait": [
             "Include",
             "OneOf"
           ],
           "comment": "<S1> { &<S2> | <p1> . } <S2> { <p2> . } on { <n1> <p1> \"X\" }",
           "status": "mf:proposed",
-          "result": "2SomeInclude1_pass.val"
+          "result": "2OneInclude1_pass.val"
         },
         {
-          "@id": "#2SomeInclude1-after_pass",
+          "@id": "#2OneInclude1-after_pass",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/2SomeInclude1-after.shex",
+            "schema": "../schemas/2OneInclude1-after.shex",
             "shape": "http://a.example/S1",
             "data": "In1_Ip1_LX.ttl",
             "focus": "http://a.example/n1"
           },
           "extensionResults": [],
-          "name": "2SomeInclude1-after_pass",
+          "name": "2OneInclude1-after_pass",
           "trait": [
             "Include",
             "OneOf"
           ],
           "comment": "<S1> { <p1> . | &<S2> } <S2> { <p2> . } on { <n1> <p1> \"X\" }",
           "status": "mf:proposed",
-          "result": "2SomeInclude1_pass.val"
+          "result": "2OneInclude1_pass.val"
         },
         {
           "@id": "#1dotAnnotIRIREF_pass",
@@ -11750,6 +12287,42 @@
           ],
           "comment": "<S> { <p1> .; <annot> <IRIREF> } on { <s> <p2> <o1> }",
           "status": "mf:proposed"
+        },
+        {
+          "@id": "#1dotPlusAnnotIRIREF_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1dotPlusAnnotIRIREF.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_La,Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1dotPlusAnnotIRIREF_pass",
+          "trait": [
+            "Annotation"
+          ],
+          "comment": "<S> { <p1> .+; <annot> <IRIREF> } on { <s1> <p1> 'a', <o1> }",
+          "status": "mf:proposed",
+          "result": "1dotPlusAnnotIRIREF_pass.val"
+        },
+        {
+          "@id": "#1dotAnnotAIRIREF_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1dotAnnotAIRIREF.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1dotAnnotAIRIREF_pass",
+          "trait": [
+            "Annotation"
+          ],
+          "comment": "<S> { <p1> .; a <IRIREF> } on { <s1> <p1> <o1> }",
+          "status": "mf:proposed",
+          "result": "1dotAnnotAIRIREF_pass.val"
         },
         {
           "@id": "#1dotAnnotSTRING_LITERAL1_pass",
@@ -12515,6 +13088,207 @@
           "result": "1focus_dot_pass.val"
         },
         {
+          "@id": "#focusdatatype_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/focusdatatype.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_LabDTbloodType.ttl",
+            "focus": {
+              "@value": "\"ab\"^^http://a.example/bloodType"
+            }
+          },
+          "extensionResults": [],
+          "name": "focusdatatype_pass",
+          "trait": [
+            "FocusConstraint"
+          ],
+          "comment": "<S> <dt1> on {  }",
+          "status": "mf:proposed",
+          "result": "focusdatatype_pass.val"
+        },
+        {
+          "@id": "#focusdatatype_fail",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/focusdatatype.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_LabDTbloodType999.ttl",
+            "focus": {
+              "@value": "\"ab\"^^http://a.example/bloodType999"
+            }
+          },
+          "extensionResults": [],
+          "name": "focusdatatype_fail",
+          "trait": [
+            "focusConstraint"
+          ],
+          "comment": "<S> <dt1> on {  }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#focusvs_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/focusvs.shex",
+            "shape": "http://a.example/vs1",
+            "data": "Is1_Ip1_Iv1.ttl",
+            "focus": "http://a.example/v1"
+          },
+          "extensionResults": [],
+          "name": "focusvs_pass",
+          "trait": [
+            "FocusConstraint"
+          ],
+          "comment": "<S> [<v1> <v2> <v3>] on {  }",
+          "status": "mf:proposed",
+          "result": "focusvs_pass.val"
+        },
+        {
+          "@id": "#focusvs_fail",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/focusvs.shex",
+            "shape": "http://a.example/vs1",
+            "data": "Is1_Ip1_Iv1a.ttl",
+            "focus": "http://a.example/v1a"
+          },
+          "extensionResults": [],
+          "name": "focusvs_fail",
+          "trait": [
+            "FocusConstraint"
+          ],
+          "comment": "<S> [<v1> <v2> <v3>] on {  }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1focusvsANDdatatype_fail",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/focusvsANDdatatype.shex",
+            "shape": "http://a.example/vs1",
+            "data": "empty.ttl",
+            "focus": "http://a.example/v1"
+          },
+          "extensionResults": [],
+          "name": "1focusvsANDdatatype_fail",
+          "trait": [
+            "FocusConstraint",
+            "Unsatisfiable"
+          ],
+          "comment": "<S> [<v1> <v2> <v3>] AND <dt1> on {  }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1focusvsANDIRI_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/focusvsANDIRI.shex",
+            "shape": "http://a.example/vs1",
+            "data": "empty.ttl",
+            "focus": "http://a.example/v1"
+          },
+          "extensionResults": [],
+          "name": "1focusvsANDIRI_pass",
+          "trait": [
+            "FocusConstraint"
+          ],
+          "comment": "<S> [<v1> <v2> <v3>] AND IRI on {  }",
+          "status": "mf:proposed",
+          "result": "1focusvsANDIRI_pass.val"
+        },
+        {
+          "@id": "#1focusvsANDIRI_fail",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/focusvsANDIRI.shex",
+            "shape": "http://a.example/vs1",
+            "data": "empty.ttl",
+            "focus": "http://a.example/v4"
+          },
+          "extensionResults": [],
+          "name": "1focusvsANDIRI_fail",
+          "trait": [
+            "FocusConstraint"
+          ],
+          "comment": "<S> [<v1> <v2> <v3>] AND IRI on {  }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1focusvsORdatatype_pass-val",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/focusvsORdatatype.shex",
+            "shape": "http://a.example/vs1",
+            "data": "empty.ttl",
+            "focus": "http://a.example/v1"
+          },
+          "extensionResults": [],
+          "name": "1focusvsORdatatype_pass-val",
+          "trait": [
+            "FocusConstraint"
+          ],
+          "comment": "<S> [<v1> <v2> <v3>] OR <dt1> on {  }",
+          "status": "mf:proposed",
+          "result": "1focusvsORdatatype_pass-val.val"
+        },
+        {
+          "@id": "#1focusvsORdatatype_fail-val",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/focusvsORdatatype.shex",
+            "shape": "http://a.example/vs1",
+            "data": "empty.ttl",
+            "focus": "http://a.example/v4"
+          },
+          "extensionResults": [],
+          "name": "1focusvsORdatatype_fail-val",
+          "trait": [
+            "FocusConstraint"
+          ],
+          "comment": "<S> [<v1> <v2> <v3>] OR <dt1> on {  }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1focusvsORdatatype_pass-dt",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/focusvsORdatatype.shex",
+            "shape": "http://a.example/vs1",
+            "data": "empty.ttl",
+            "focus": {
+              "@value": "\"v1\"^^http://a.example/dt1"
+            }
+          },
+          "extensionResults": [],
+          "name": "1focusvsORdatatype_pass-dt",
+          "trait": [
+            "FocusConstraint"
+          ],
+          "comment": "<S> [<v1> <v2> <v3>] OR <dt1> on {  }",
+          "status": "mf:proposed",
+          "result": "1focusvsORdatatype_pass-dt.val"
+        },
+        {
+          "@id": "#1focusvsORdatatype_fail-dt",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/focusvsORdatatype.shex",
+            "shape": "http://a.example/vs1",
+            "data": "empty.ttl",
+            "focus": {
+              "@value": "\"v1\"^^http://a.example/dt2"
+            }
+          },
+          "extensionResults": [],
+          "name": "1focusvsORdatatype_fail-dt",
+          "trait": [
+            "FocusConstraint"
+          ],
+          "comment": "<S> [<v1> <v2> <v3>] OR <dt1> on {  }",
+          "status": "mf:proposed"
+        },
+        {
           "@id": "#1focusLength-dot_fail-iri-short",
           "@type": "sht:ValidationFailure",
           "action": {
@@ -12867,14 +13641,14 @@
             "schema": "../schemas/1focusPattern-dot.shex",
             "shape": "http://a.example/S1",
             "data": "Is2_Ip1_Io.ttl",
-            "focus": "http://a.example/s1"
+            "focus": "http://a.example/s2"
           },
           "extensionResults": [],
           "name": "1focusPattern-dot_fail-iri-match",
           "trait": [
             "PaternFacet"
           ],
-          "comment": "<S1> PATTERN \"^http://a.example/s1$\" { <p1> } on { <s2> <p1> <o> }",
+          "comment": "<S1> PATTERN '^http://a.example/s1$' { <p1> } on { <s2> <p1> <o> }",
           "status": "mf:proposed"
         },
         {
@@ -12884,14 +13658,14 @@
             "schema": "../schemas/1focusPattern-dot.shex",
             "shape": "http://a.example/S1",
             "data": "Is_Ip1_Io1.ttl",
-            "focus": "http://a.example/s1"
+            "focus": "http://a.example/s"
           },
           "extensionResults": [],
           "name": "1focusPattern-dot_fail-iri-short",
           "trait": [
             "PaternFacet"
           ],
-          "comment": "<S1> PATTERN \"^http://a.example/s1$\" { <p1> } on { <s> <p1> <o1> }",
+          "comment": "<S1> PATTERN '^http://a.example/s1$' { <p1> } on { <s> <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -12908,7 +13682,7 @@
           "trait": [
             "PaternFacet"
           ],
-          "comment": "<S1> PATTERN \"http://a.example/s1\" { <p1> } on { <s1> <p1> <o1> }",
+          "comment": "<S1> PATTERN 'http://a.example/s1' { <p1> } on { <s1> <p1> <o1> }",
           "status": "mf:proposed",
           "result": "1focus_dot_pass.val"
         },
@@ -12919,14 +13693,14 @@
             "schema": "../schemas/1focusPattern-dot.shex",
             "shape": "http://a.example/S1",
             "data": "Is1a_Ip1_Io1.ttl",
-            "focus": "http://a.example/s1"
+            "focus": "http://a.example/s1a"
           },
           "extensionResults": [],
           "name": "1focusPattern-dot_fail-iri-long",
           "trait": [
             "PaternFacet"
           ],
-          "comment": "<S1> PATTERN \"^http://a.example/s1$\" { <p1> } on { <s1a> <p1> <o1> }",
+          "comment": "<S1> PATTERN '^http://a.example/s1$' { <p1> } on { <s1a> <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -12936,14 +13710,14 @@
             "schema": "../schemas/1focusPatternB-dot.shex",
             "shape": "http://a.example/S1",
             "data": "Is2_Ip1_Io.ttl",
-            "focus": "http://a.example/s1"
+            "focus": "http://a.example/s2"
           },
           "extensionResults": [],
           "name": "1focusPatternB-dot_fail-iri-match",
           "trait": [
             "PaternFacet"
           ],
-          "comment": "<S1> PATTERN \"abcdefghijklmnopqrs\" { <p1> } on { <s2> <p1> <o> }",
+          "comment": "<S1> PATTERN 'abcdefghijklmnopqrs' { <p1> } on { <s2> <p1> <o> }",
           "status": "mf:proposed"
         },
         {
@@ -12960,7 +13734,7 @@
           "trait": [
             "PaternFacet"
           ],
-          "comment": "<S1> PATTERN \"abcdefghijklmnopqrs\" { <p1> } on { _:abcd <p1> <o1> }",
+          "comment": "<S1> PATTERN 'abcdefghijklmnopqrs' { <p1> } on { _:abcd <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -12978,7 +13752,7 @@
             "PaternFacet",
             "LexicalBNode"
           ],
-          "comment": "<S1> PATTERN \"abcdefghijklmnopqrs\" { <p1> } on { _:abcdefghijklmnopqrs <p1> <o1> }",
+          "comment": "<S1> PATTERN 'abcdefghijklmnopqrs' { <p1> } on { _:abcdefghijklmnopqrs <p1> <o1> }",
           "status": "mf:proposed",
           "result": "1focusBNODE_dot_pass.val"
         },
@@ -12996,7 +13770,7 @@
           "trait": [
             "PaternFacet"
           ],
-          "comment": "<S1> PATTERN \"abcdefghijklmnopqrs\" { <p1> } on { _:abcdefghijklmnopqrst <p1> <o1> }",
+          "comment": "<S1> PATTERN 'abcdefghijklmnopqrs' { <p1> } on { _:abcdefghijklmnopqrst <p1> <o1> }",
           "status": "mf:proposed",
           "result": "1focusPatternB-dot_pass-bnode-long.val"
         },

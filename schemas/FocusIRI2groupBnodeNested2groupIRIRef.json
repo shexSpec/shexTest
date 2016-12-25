@@ -5,7 +5,7 @@
       { "type": "NodeConstraint", "nodeKind": "iri", "pattern": "^https?://" },
       { "type": "Shape", "expression": { "type": "EachOf", "expressions": [
         { "type": "TripleConstraint", "predicate": "http://a.example/p1",
-          "valueExpr": { "type": "NodeConstraint", "datatype": "http://a.example/dt" } },
+          "valueExpr": { "type": "NodeConstraint", "datatype": "http://a.example/dt1" } },
         { "type": "TripleConstraint", "predicate": "http://a.example/p2",
           "valueExpr": { "type": "ShapeAnd", "shapeExprs": [
             { "type": "NodeConstraint", "nodeKind": "bnode" },
@@ -14,7 +14,7 @@
                 "valueExpr": { "type": "NodeConstraint", "nodeKind": "literal" } },
               { "type": "TripleConstraint", "predicate": "http://a.example/p4", "min": 0, "max": 1,
                 "valueExpr": { "type": "ShapeAnd", "shapeExprs": [
-                  { "type": "NodeConstraint", "nodeKind": "iri", "pattern": "^https://" },
+                  { "type": "NodeConstraint", "nodeKind": "iri", "pattern": "^https?://" },
                   { "type": "ShapeRef", "reference": "http://a.example/S1" }
                 ] } }
             ] } },
