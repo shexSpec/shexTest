@@ -1,0 +1,2795 @@
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix mf:     <http://www.w3.org/2001/sw/DataAccess/tests/test-manifest#> .
+@prefix sht:    <http://www.w3.org/ns/shacl/test-suite#> .
+@prefix sx:     <https://shexspec.github.io/shexTest/ns#> .
+
+# TODO:
+#   1IRI_with_all_punctuationdot
+#   1IRI_with_UCHAR.1dot
+#   1val1STRING_LITERAL1
+#   1val1STRING_LITERAL1_with_all_controls
+#   1val1STRING_LITERAL1_with_all_punctuation
+#   1val1STRING_LITERAL1_with_ascii_boundaries
+#   1val1STRING_LITERAL1_with_UTF8_boundaries
+#   1val1STRING_LITERAL2
+#   1val1STRING_LITERAL2_with_LANGTAG
+#   1val1STRING_LITERAL2_with_subtag
+#   1val1STRING_LITERAL_LONG1
+#   1val1STRING_LITERAL_LONG2
+#   1val1STRING_LITERAL_LONG2_with_LANGTAG
+#   1val1STRING_LITERAL_LONG2_with_subtag
+#
+#   1val1LNDatatype
+
+
+<manifest> a mf:Manifest ;
+    rdfs:comment "ShEx representation tests" ;
+    mf:entries
+    (
+        <#0>
+        <#1dot>
+        <#1dot-base>
+        <#1dotSemi>
+        <#1dotLNex>
+        <#1dotNS2>
+        <#1dotNS2Comment>
+        <#1dotLNexComment>
+        <#1dotLNdefault>
+        <#1dotNSdefault>
+        <#1dotLNex-HYPHEN_MINUS>
+        <#bnode1dot>
+        <#1inversedot>
+        <#1Adot>
+        <#1iri>
+        <#1bnode>
+        <#1literal>
+        <#1nonliteral>
+        <#1datatype>
+        <#1datatypelangString>
+        <#1card2>
+        <#1card25>
+        <#1card2Star>
+        <#1cardOpt>
+        <#1cardPlus>
+        <#1cardStar>
+        <#1literalPlus>
+        <#1dotRef1>
+        <#1dotRefLNex1>
+        <#1dotRefSpaceLNex1>
+        <#1dotRefNS1>
+        <#1dotRefSpaceNS1>
+        <#1refbnode1>
+        <#1refbnode_with_leading_digit1>
+        <#1refbnode_with_leading_underscore1>
+        <#1refbnode_with_spanning_PN_CHARS1>
+        <#1refbnode_with_spanning_PN_CHARS_BASE1>
+        <#3circularRef1>
+        <#1iriRef1>
+        <#1bnodeRef1>
+        <#1dotInline1>
+        <#1val1IRIREF>
+        <#1val1INTEGER>
+        <#1val1DOUBLE>
+        <#1val1DOUBLElowercase>
+        <#1val1LANGTAG>
+        <#1val1IRIREFDatatype>
+        <#1val1true>
+        <#1val1false>
+        <#1datatypeLength>
+        <#1literalFractiondigits5>
+        <#1literalFractiondigits4>
+        <#1literalTotaldigits5>
+        <#1literalTotaldigits6>
+        <#1literalTotaldigits2>
+        <#1floatMininclusiveINTEGER>
+        <#1integerMininclusiveINTEGER>
+        <#1floatMininclusiveINTEGERLead>
+        <#1integerMininclusiveINTEGERLead>
+        <#1integerMininclusiveDECIMAL>
+        <#1integerMininclusiveDECIMALLeadTrail>
+        <#1integerMininclusiveDECIMALint>
+        <#1integerMininclusiveDECIMALintLeadTrail>
+        <#1integerMininclusiveDOUBLE>
+        <#1integerMininclusiveDOUBLELeadTrail>
+        <#1integerMininclusiveDOUBLEint>
+        <#1integerMininclusiveDOUBLEintLeadTrail>
+        <#1integerMininclusivexsd-integer>
+        <#1decimalMininclusiveINTEGER>
+        <#1decimalMininclusiveINTEGERLead>
+        <#1decimalMininclusiveDECIMAL>
+        <#1decimalMininclusiveDECIMALLeadTrail>
+        <#1decimalMininclusiveDECIMALintLeadTrail>
+        <#1decimalMininclusiveDOUBLE>
+        <#1decimalMininclusiveDOUBLELeadTrail>
+        <#1decimalMininclusiveDOUBLEintLeadTrail>
+        <#1decimalMininclusivexsd-decimal>
+        <#1floatMininclusiveDECIMAL>
+        <#1floatMininclusiveDECIMALLeadTrail>
+        <#1floatMininclusiveDECIMALintLeadTrail>
+        <#1floatMininclusiveDOUBLE>
+        <#1floatMininclusiveDOUBLELeadTrail>
+        <#1floatMininclusiveDOUBLEintLeadTrail>
+        <#1floatMininclusivexsd-float>
+        <#1doubleMininclusiveINTEGERLead>
+        <#1doubleMininclusiveDECIMAL>
+        <#1doubleMininclusiveDECIMALLeadTrail>
+        <#1doubleMininclusiveDECIMALintLeadTrail>
+        <#1doubleMininclusiveDOUBLE>
+        <#1doubleMininclusiveDOUBLELeadTrail>
+        <#1doubleMininclusiveDOUBLEintLeadTrail>
+        <#1doubleMininclusivexsd-double>
+        <#1integerMinexclusiveINTEGER>
+        <#1integerMinexclusiveDECIMALint>
+        <#1integerMinexclusiveDOUBLEint>
+        <#1decimalMinexclusiveINTEGER>
+        <#1decimalMinexclusiveDECIMAL>
+        <#1decimalMinexclusiveDOUBLE>
+        <#1floatMinexclusiveINTEGER>
+        <#1floatMinexclusiveDECIMAL>
+        <#1floatMinexclusiveDOUBLE>
+        <#1floatMinexclusivexsd-float>
+        <#1doubleMinexclusiveINTEGER>
+        <#1doubleMinexclusiveDECIMAL>
+        <#1doubleMinexclusiveDOUBLE>
+        <#1integerMaxinclusiveINTEGER>
+        <#1integerMaxinclusiveDECIMALint>
+        <#1integerMaxinclusiveDOUBLEint>
+        <#1decimalMaxinclusiveINTEGER>
+        <#1decimalMaxinclusiveDECIMAL>
+        <#1decimalMaxinclusiveDOUBLE>
+        <#1floatMaxinclusiveINTEGER>
+        <#1floatMaxinclusiveDECIMAL>
+        <#1floatMaxinclusiveDOUBLE>
+        <#1floatMaxinclusivexsd-float>
+        <#1doubleMaxinclusiveINTEGER>
+        <#1doubleMaxinclusiveDECIMAL>
+        <#1doubleMaxinclusiveDOUBLE>
+        <#1integerMaxexclusiveINTEGER>
+        <#1integerMaxexclusiveDECIMALint>
+        <#1integerMaxexclusiveDOUBLEint>
+        <#1decimalMaxexclusiveINTEGER>
+        <#1decimalMaxexclusiveDECIMAL>
+        <#1decimalMaxexclusiveDOUBLE>
+        <#1decimalMaxexclusivexsd-byte>
+        <#1decimalMaxexclusivexsd-decimal>
+        <#1floatMaxexclusiveINTEGER>
+        <#1floatMaxexclusiveDECIMAL>
+        <#1floatMaxexclusiveDOUBLE>
+        <#1doubleMaxexclusiveINTEGER>
+        <#1doubleMaxexclusiveINTEGERLead>
+        <#1doubleMaxexclusiveDECIMAL>
+        <#1doubleMaxexclusiveDECIMALLeadTrail>
+        <#1doubleMaxexclusiveDECIMALint>
+        <#1doubleMaxexclusiveDECIMALintLeadTrail>
+        <#1doubleMaxexclusiveDOUBLE>
+        <#1doubleMaxexclusiveDOUBLELeadTrail>
+        <#1doubleMaxexclusiveDOUBLEint>
+        <#1doubleMaxexclusiveDOUBLEintLeadTrail>
+        <#1Length>
+        <#1literalLength>
+        <#1literalLength19>
+        <#1iriLength>
+        <#1iriRefLength1>
+        <#1bnodeLength>
+        <#1nonliteralLength>
+        <#1literalMinlength>
+        <#1iriMinlength>
+        <#1bnodeMinlength>
+        <#1nonliteralMinlength>
+        <#1literalMaxlength>
+        <#1iriMaxlength>
+        <#1bnodeMaxlength>
+        <#1nonliteralMaxlength>
+        <#1literalPattern>
+        <#1literalPattern19>
+        <#1literalStartPattern>
+        <#1literalPatternEnd>
+        <#1literalStartPatternEnd>
+        <#1literalPatternDollar>
+        <#1literalCarrotPatternDollar>
+        <#1literalPatternabEnd>
+        <#1iriPattern>
+        <#1iriPatternbc>
+        <#1bnodePattern>
+        <#1nonliteralPattern>
+        <#1val1dotMinusiri3>
+        <#1val1refvsMinusiri3>
+        <#1val1dotMinusiriStem3>
+        <#1val1iriStem>
+        <#1val1iriStemMinusiri3>
+        <#1val1iriStemMinusiriStem3>
+        <#2dot>
+        <#2dotSemis>
+        <#open2dotclose>
+        <#open2dotsemisclose>
+        <#3groupdot>
+        <#open3groupdotclose>
+        <#1dotOne1dot>
+        <#1dotSemiOne1dotSemi>
+        <#open1dotOne1dotclose>
+        <#open1dotSemiOne1dotSemicloseSemi>
+        <#2dotOne1dot>
+        <#2dotSemiOne1dotSemi>
+        <#open2dotOne1dotclose>
+        <#open2dotSemisOne1dotSemiclose>
+        <#openopen2dotcloseOne1dotclose>
+        <#openopen2dotSemiscloseOne1dotSemiclose>
+        <#open1dotopen1dotOne1dotcloseclose>
+        <#open1dotopen1dotSemiOne1dotSemicloseSemicloseSemi>
+        <#1dotOne2dot>
+        <#open1dotOneopen2dotcloseclose>
+        <#openopen1dotOne1dotclose1dotclose>
+        <#1val1vExprRefIRIREF1>
+        <#1val1vExprRefbnode1>
+        <#1dotRefAND3>
+        <#1val1vExpr1AND1AND1Ref3>
+        <#1val1vExprRefAND3>
+        <#1val1vExprAND3>
+        <#1dotRefOR3>
+        <#1val1vExpr1OR1OR1Ref3>
+        <#1val1vExprRefOR3>
+        <#1val1vExprOR3>
+        <#1val1vExpr1AND1OR1Ref3>
+        <#1val1vExpr1OR1AND1Ref3>
+        <#open3Onedotclosecard2>
+        <#open3Onedotclosecard23>
+        <#open4Onedotclosecard23>
+        <#open3groupdotclosecard23>
+        <#1val1vShapeANDRef3>
+        <#1dotClosed>
+        <#1val1IRIREFExtra1>
+        <#1val2IRIREFExtra1>
+        <#1val2IRIREFPlusExtra1>
+        <#1val1IRIREFExtra1p2>
+        <#1val1IRIREFExtra1One>
+        <#1dotExtra1>
+        <#3groupdotExtra3>
+        <#3groupdot3Extra>
+        <#3groupdotExtra3NLex>
+        <#startRefIRIREF>
+        <#startRefbnode>
+        <#startInline>
+        <#startEqualSpaceInline>
+        <#startSpaceEqualInline>
+        <#2EachInclude1>
+        <#2EachInclude1-after>
+        <#2OneInclude1>
+        <#2OneInclude1-after>
+        <#1dotAnnotIRIREF>
+        <#1dotAnnotSTRING_LITERAL1>
+        <#1dotAnnot3>
+        <#1inversedotAnnot3>
+        <#open3groupdotcloseAnnot3>
+        <#1dotCode1>
+        <#1dotNoCode1>
+        <#1inversedotCode1>
+        <#1dotCode3>
+        <#1dotNoCode3>
+        <#1dotCode3fail>
+        <#1dotCodeWithEscapes1>
+        <#1dotShapeCode1>
+        <#1dotShapeNoCode1>
+        <#open3groupdotcloseCode1>
+        <#startCode1>
+        <#startNoCode1>
+        <#startCode1fail>
+        <#startCode1startRef>
+        <#startCode1startReffail>
+        <#startCode3>
+        <#startCode3fail>
+        <#open3groupdotclosecard23Annot3Code2>
+        <#0focusIRI>
+        <#0focusBNODE>
+        <#1focusIRI_dot>
+        <#1focusBNODE_dot>
+        <#1focusnonLiteral-dot>
+        <#1focusLength-dot>
+        <#1focusMinLength-dot>
+        <#1focusMaxLength-dot>
+        <#1focusPattern-dot>
+        <#1focusPatternB-dot>
+        <#1focusIRILength_dot>
+        <#1focusBNODELength_dot>
+        <#1focusnonLiteralLength-dot>
+        <#NOT1dotOR2dot>
+        <#NOT1dotOR2dotX3>
+        <#NOT1dotOR2dotX3AND1>
+        <#shapeExtern>
+        <#shapeExternRef>
+#         <#1dotPlusLt1dotPlus>
+        <#2dot>
+#        <#0Inherit1>
+#        <#1dotInherit1>
+#        <#1dotInherit3>
+#        <#1dot3Inherit>
+#        <#1dot3InheritLN>
+#         <#1dotVirtualShapeCode1>
+#         <#1dotVirtual>
+#         <#1dotUnlabeledCode1>
+        <#focusvsORdatatype>
+        <#focusvsANDIRI>
+        <#focusvsANDdatatype>
+        <#focusvs>
+        <#focusdatatype>
+        <#1dotPlusAnnotIRIREF>
+        <#1dotAnnotAIRIREF>
+        <#FocusIRI2groupBnodeNested2groupIRIRef>
+        <#1bnodeRefORRefMinlength>
+        <#1dotShapeAND1dot3X>
+        <#openopen1dotSemiOne1dotSemiclose1dotSemicloseSemi>
+        <#open1dotOne2dotclose>
+        <#open1dotSemiOneopen2dotSemiscloseclose>
+        <#open1dotSemiOne2dotsemisclose>
+        <#1dotSemiOne2dotSemis>
+        <#1literalMaxinclusiveINTEGER>
+        <#1literalMaxexclusiveINTEGER>
+        <#1literalMininclusiveINTEGER>
+        <#1literalMinexclusiveINTEGER>
+        <#1val1DECIMAL>
+        <#1datatypeRef1>
+        <#1card2blank>
+        <#1focusnonLiteralLength-nonLiteralLength>
+        <#_all>
+        <#kitchenSink>
+    ) .
+
+<#0> a sht:RepresentationTest ;
+    mf:name "0" ;
+    mf:status mf:proposed ;
+    sx:shex <0.shex> ;
+    sx:json <0.json> ;
+    sx:turtle <0.turtle> ;
+    .
+
+<#1dot> a sht:RepresentationTest ;
+    mf:name "1dot" ;
+    mf:status mf:proposed ;
+    sx:shex <1dot.shex> ;
+    sx:json <1dot.json> ;
+    sx:turtle <1dot.turtle> ;
+    .
+
+<#1dot-base> a sht:RepresentationTest ;
+    mf:name "1dot-base" ;
+    mf:status mf:proposed ;
+    sx:shex <1dot-base.shex> ;
+    sx:json <1dot-base.json> ;
+    sx:turtle <1dot-base.turtle> ;
+    .
+
+<#1dotSemi> a sht:RepresentationTest ;
+    mf:name "1dotSemi" ;
+    mf:status mf:proposed ;
+    sx:shex <1dotSemi.shex> ;
+    sx:json <1dotSemi.json> ;
+    sx:turtle <1dotSemi.turtle> ;
+    .
+
+<#1dotLNex> a sht:RepresentationTest ;
+    mf:name "1dotLNex" ;
+    mf:status mf:proposed ;
+    sx:shex <1dotLNex.shex> ;
+    sx:json <1dotLNex.json> ;
+    sx:turtle <1dotLNex.turtle> ;
+    .
+
+<#1dotNS2> a sht:RepresentationTest ;
+    mf:name "1dotNS2" ;
+    mf:status mf:proposed ;
+    sx:shex <1dotNS2.shex> ;
+    sx:json <1dotNS2.json> ;
+    sx:turtle <1dotNS2.turtle> ;
+    .
+
+<#1dotNS2Comment> a sht:RepresentationTest ;
+    mf:name "1dotNS2Comment" ;
+    mf:status mf:proposed ;
+    sx:shex <1dotNS2Comment.shex> ;
+    sx:json <1dotNS2Comment.json> ;
+    sx:turtle <1dotNS2Comment.turtle> ;
+    .
+
+<#1dotLNexComment> a sht:RepresentationTest ;
+    mf:name "1dotLNexComment" ;
+    mf:status mf:proposed ;
+    sx:shex <1dotLNexComment.shex> ;
+    sx:json <1dotLNexComment.json> ;
+    sx:turtle <1dotLNexComment.turtle> ;
+    .
+
+<#1dotLNdefault> a sht:RepresentationTest ;
+    mf:name "1dotLNdefault" ;
+    mf:status mf:proposed ;
+    sx:shex <1dotLNdefault.shex> ;
+    sx:json <1dotLNdefault.json> ;
+    sx:turtle <1dotLNdefault.turtle> ;
+    .
+
+<#1dotNSdefault> a sht:RepresentationTest ;
+    mf:name "1dotNSdefault" ;
+    mf:status mf:proposed ;
+    sx:shex <1dotNSdefault.shex> ;
+    sx:json <1dotNSdefault.json> ;
+    sx:turtle <1dotNSdefault.turtle> ;
+    .
+
+<#1dotLNex-HYPHEN_MINUS> a sht:RepresentationTest ;
+    mf:name "1dotLNex-HYPHEN_MINUS" ;
+    mf:status mf:proposed ;
+    sx:shex <1dotLNex-HYPHEN_MINUS.shex> ;
+    sx:json <1dotLNex-HYPHEN_MINUS.json> ;
+    sx:turtle <1dotLNex-HYPHEN_MINUS.turtle> ;
+    .
+
+<#bnode1dot> a sht:RepresentationTest ;
+    mf:name "bnode1dot" ;
+    mf:status mf:proposed ;
+    sx:shex <bnode1dot.shex> ;
+    sx:json <bnode1dot.json> ;
+    sx:turtle <bnode1dot.turtle> ;
+    .
+
+<#1inversedot> a sht:RepresentationTest ;
+    mf:name "1inversedot" ;
+    mf:status mf:proposed ;
+    sx:shex <1inversedot.shex> ;
+    sx:json <1inversedot.json> ;
+    sx:turtle <1inversedot.turtle> ;
+    .
+
+<#1Adot> a sht:RepresentationTest ;
+    mf:name "1Adot" ;
+    mf:status mf:proposed ;
+    sx:shex <1Adot.shex> ;
+    sx:json <1Adot.json> ;
+    sx:turtle <1Adot.turtle> ;
+    .
+
+<#1iri> a sht:RepresentationTest ;
+    mf:name "1iri" ;
+    mf:status mf:proposed ;
+    sx:shex <1iri.shex> ;
+    sx:json <1iri.json> ;
+    sx:turtle <1iri.turtle> ;
+    .
+
+<#1bnode> a sht:RepresentationTest ;
+    mf:name "1bnode" ;
+    mf:status mf:proposed ;
+    sx:shex <1bnode.shex> ;
+    sx:json <1bnode.json> ;
+    sx:turtle <1bnode.turtle> ;
+    .
+
+<#1literal> a sht:RepresentationTest ;
+    mf:name "1literal" ;
+    mf:status mf:proposed ;
+    sx:shex <1literal.shex> ;
+    sx:json <1literal.json> ;
+    sx:turtle <1literal.turtle> ;
+    .
+
+<#1nonliteral> a sht:RepresentationTest ;
+    mf:name "1nonliteral" ;
+    mf:status mf:proposed ;
+    sx:shex <1nonliteral.shex> ;
+    sx:json <1nonliteral.json> ;
+    sx:turtle <1nonliteral.turtle> ;
+    .
+
+<#1focusnonLiteralLength-nonLiteralLength> a sht:RepresentationTest ;
+    mf:name "1focusnonLiteralLength-nonLiteralLength" ;
+    mf:status mf:proposed ;
+    sx:shex <1focusnonLiteralLength-nonLiteralLength.shex> ;
+    sx:json <1focusnonLiteralLength-nonLiteralLength.json> ;
+    sx:turtle <1focusnonLiteralLength-nonLiteralLength.turtle> ;
+    .
+
+<#1datatype> a sht:RepresentationTest ;
+    mf:name "1datatype" ;
+    mf:status mf:proposed ;
+    sx:shex <1datatype.shex> ;
+    sx:json <1datatype.json> ;
+    sx:turtle <1datatype.turtle> ;
+    .
+
+<#1datatypelangString> a sht:RepresentationTest ;
+    mf:name "1datatypelangString" ;
+    mf:status mf:proposed ;
+    sx:shex <1datatypelangString.shex> ;
+    sx:json <1datatypelangString.json> ;
+    sx:turtle <1datatypelangString.turtle> ;
+    .
+
+<#1card2> a sht:RepresentationTest ;
+    mf:name "1card2" ;
+    mf:status mf:proposed ;
+    sx:shex <1card2.shex> ;
+    sx:json <1card2.json> ;
+    sx:turtle <1card2.turtle> ;
+    .
+
+<#1card2blank> a sht:RepresentationTest ;
+    mf:name "1card2blank" ;
+    mf:status mf:proposed ;
+    sx:shex <1card2blank.shex> ;
+    sx:json <1card2blank.json> ;
+    sx:turtle <1card2blank.turtle> ;
+    .
+
+<#1card25> a sht:RepresentationTest ;
+    mf:name "1card25" ;
+    mf:status mf:proposed ;
+    sx:shex <1card25.shex> ;
+    sx:json <1card25.json> ;
+    sx:turtle <1card25.turtle> ;
+    .
+
+<#1card2Star> a sht:RepresentationTest ;
+    mf:name "1card2Star" ;
+    mf:status mf:proposed ;
+    sx:shex <1card2Star.shex> ;
+    sx:json <1card2Star.json> ;
+    sx:turtle <1card2Star.turtle> ;
+    .
+
+<#1cardOpt> a sht:RepresentationTest ;
+    mf:name "1cardOpt" ;
+    mf:status mf:proposed ;
+    sx:shex <1cardOpt.shex> ;
+    sx:json <1cardOpt.json> ;
+    sx:turtle <1cardOpt.turtle> ;
+    .
+
+<#1cardPlus> a sht:RepresentationTest ;
+    mf:name "1cardPlus" ;
+    mf:status mf:proposed ;
+    sx:shex <1cardPlus.shex> ;
+    sx:json <1cardPlus.json> ;
+    sx:turtle <1cardPlus.turtle> ;
+    .
+
+<#1cardStar> a sht:RepresentationTest ;
+    mf:name "1cardStar" ;
+    mf:status mf:proposed ;
+    sx:shex <1cardStar.shex> ;
+    sx:json <1cardStar.json> ;
+    sx:turtle <1cardStar.turtle> ;
+    .
+
+<#1literalPlus> a sht:RepresentationTest ;
+    mf:name "1literalPlus" ;
+    mf:status mf:proposed ;
+    sx:shex <1literalPlus.shex> ;
+    sx:json <1literalPlus.json> ;
+    sx:turtle <1literalPlus.turtle> ;
+    .
+
+<#1dotRef1> a sht:RepresentationTest ;
+    mf:name "1dotRef1" ;
+    mf:status mf:proposed ;
+    sx:shex <1dotRef1.shex> ;
+    sx:json <1dotRef1.json> ;
+    sx:turtle <1dotRef1.turtle> ;
+    .
+
+<#1dotRefLNex1> a sht:RepresentationTest ;
+    mf:name "1dotRefLNex1" ;
+    mf:status mf:proposed ;
+    sx:shex <1dotRefLNex1.shex> ;
+    sx:json <1dotRefLNex1.json> ;
+    sx:turtle <1dotRefLNex1.turtle> ;
+    .
+
+<#1dotRefSpaceLNex1> a sht:RepresentationTest ;
+    mf:name "1dotRefSpaceLNex1" ;
+    mf:status mf:proposed ;
+    mf:sameSemanticsAs <#1dotRefLNex1> ;
+    sx:shex <1dotRefSpaceLNex1.shex> ;
+    sx:json <1dotRefSpaceLNex1.json> ;
+    sx:turtle <1dotRefSpaceLNex1.turtle> ;
+    .
+
+<#1dotRefNS1> a sht:RepresentationTest ;
+    mf:name "1dotRefNS1" ;
+    mf:status mf:proposed ;
+    sx:shex <1dotRefNS1.shex> ;
+    sx:json <1dotRefNS1.json> ;
+    sx:turtle <1dotRefNS1.turtle> ;
+    .
+
+<#1dotRefSpaceNS1> a sht:RepresentationTest ;
+    mf:name "1dotRefSpaceNS1" ;
+    mf:status mf:proposed ;
+    mf:sameSemanticsAs <#1dotRefNS1> ;
+    sx:shex <1dotRefSpaceNS1.shex> ;
+    sx:json <1dotRefSpaceNS1.json> ;
+    sx:turtle <1dotRefSpaceNS1.turtle> ;
+    .
+
+<#1refbnode1> a sht:RepresentationTest ;
+    mf:name "1refbnode1" ;
+    mf:status mf:proposed ;
+    sx:shex <1refbnode1.shex> ;
+    sx:json <1refbnode1.json> ;
+    sx:turtle <1refbnode1.turtle> ;
+    .
+
+<#1refbnode_with_leading_digit1> a sht:RepresentationTest ;
+    mf:name "1refbnode_with_leading_digit1" ;
+    mf:status mf:proposed ;
+    sx:shex <1refbnode_with_leading_digit1.shex> ;
+    sx:json <1refbnode_with_leading_digit1.json> ;
+    sx:turtle <1refbnode_with_leading_digit1.turtle> ;
+    .
+
+<#1refbnode_with_leading_underscore1> a sht:RepresentationTest ;
+    mf:name "1refbnode_with_leading_underscore1" ;
+    mf:status mf:proposed ;
+    sx:shex <1refbnode_with_leading_underscore1.shex> ;
+    sx:json <1refbnode_with_leading_underscore1.json> ;
+    sx:turtle <1refbnode_with_leading_underscore1.turtle> ;
+    .
+
+<#1refbnode_with_spanning_PN_CHARS1> a sht:RepresentationTest ;
+    mf:name "1refbnode_with_spanning_PN_CHARS1" ;
+    mf:status mf:proposed ;
+    sx:shex <1refbnode_with_spanning_PN_CHARS1.shex> ;
+    sx:json <1refbnode_with_spanning_PN_CHARS1.json> ;
+    sx:turtle <1refbnode_with_spanning_PN_CHARS1.turtle> ;
+    .
+
+<#1refbnode_with_spanning_PN_CHARS_BASE1> a sht:RepresentationTest ;
+    mf:name "1refbnode_with_spanning_PN_CHARS_BASE1" ;
+    mf:status mf:proposed ;
+    sx:shex <1refbnode_with_spanning_PN_CHARS_BASE1.shex> ;
+    sx:json <1refbnode_with_spanning_PN_CHARS_BASE1.json> ;
+    sx:turtle <1refbnode_with_spanning_PN_CHARS_BASE1.turtle> ;
+    .
+
+<#3circularRef1> a sht:RepresentationTest ;
+    mf:name "3circularRef1" ;
+    mf:status mf:proposed ;
+    sx:shex <3circularRef1.shex> ;
+    sx:json <3circularRef1.json> ;
+    sx:turtle <3circularRef1.turtle> ;
+    .
+
+<#1iriRef1> a sht:RepresentationTest ;
+    mf:name "1iriRef1" ;
+    mf:status mf:proposed ;
+    sx:shex <1iriRef1.shex> ;
+    sx:json <1iriRef1.json> ;
+    sx:turtle <1iriRef1.turtle> ;
+    .
+
+<#1bnodeRef1> a sht:RepresentationTest ;
+    mf:name "1bnodeRef1" ;
+    mf:status mf:proposed ;
+    sx:shex <1bnodeRef1.shex> ;
+    sx:json <1bnodeRef1.json> ;
+    sx:turtle <1bnodeRef1.turtle> ;
+    .
+
+<#1datatypeRef1> a sht:RepresentationTest ;
+    mf:name "1datatypeRef1" ;
+    mf:status mf:proposed ;
+    sx:shex <1datatypeRef1.shex> ;
+    sx:json <1datatypeRef1.json> ;
+    sx:turtle <1datatypeRef1.turtle> ;
+    .
+
+<#1dotInline1> a sht:RepresentationTest ;
+    mf:name "1dotInline1" ;
+    mf:status mf:proposed ;
+    sx:shex <1dotInline1.shex> ;
+    sx:json <1dotInline1.json> ;
+    sx:turtle <1dotInline1.turtle> ;
+    .
+
+<#1val1IRIREF> a sht:RepresentationTest ;
+    mf:name "1val1IRIREF" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1IRIREF.shex> ;
+    sx:json <1val1IRIREF.json> ;
+    sx:turtle <1val1IRIREF.turtle> ;
+    .
+
+<#1val1INTEGER> a sht:RepresentationTest ;
+    mf:name "1val1INTEGER" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1INTEGER.shex> ;
+    sx:json <1val1INTEGER.json> ;
+    sx:turtle <1val1INTEGER.turtle> ;
+    .
+
+<#1val1DECIMAL> a sht:RepresentationTest ;
+    mf:name "1val1DECIMAL" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1DECIMAL.shex> ;
+    sx:json <1val1DECIMAL.json> ;
+    sx:turtle <1val1DECIMAL.turtle> ;
+    .
+
+<#1val1DOUBLE> a sht:RepresentationTest ;
+    mf:name "1val1DOUBLE" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1DOUBLE.shex> ;
+    sx:json <1val1DOUBLE.json> ;
+    sx:turtle <1val1DOUBLE.turtle> ;
+    .
+
+<#1val1DOUBLElowercase> a sht:RepresentationTest ;
+    mf:name "1val1DOUBLElowercase" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1DOUBLElowercase.shex> ;
+    sx:json <1val1DOUBLElowercase.json> ;
+    sx:turtle <1val1DOUBLElowercase.turtle> ;
+    .
+
+<#1val1LANGTAG> a sht:RepresentationTest ;
+    mf:name "1val1LANGTAG" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1LANGTAG.shex> ;
+    sx:json <1val1LANGTAG.json> ;
+    sx:turtle <1val1LANGTAG.turtle> ;
+    .
+
+<#1val1IRIREFDatatype> a sht:RepresentationTest ;
+    mf:name "1val1IRIREFDatatype" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1IRIREFDatatype.shex> ;
+    sx:json <1val1IRIREFDatatype.json> ;
+    sx:turtle <1val1IRIREFDatatype.turtle> ;
+    .
+
+<#1val1true> a sht:RepresentationTest ;
+    mf:name "1val1true" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1true.shex> ;
+    sx:json <1val1true.json> ;
+    sx:turtle <1val1true.turtle> ;
+    .
+
+<#1val1false> a sht:RepresentationTest ;
+    mf:name "1val1false" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1false.shex> ;
+    sx:json <1val1false.json> ;
+    sx:turtle <1val1false.turtle> ;
+    .
+
+<#1datatypeLength> a sht:RepresentationTest ;
+    mf:name "1datatypeLength" ;
+    mf:status mf:proposed ;
+    sx:shex <1datatypeLength.shex> ;
+    sx:json <1datatypeLength.json> ;
+    sx:turtle <1datatypeLength.turtle> ;
+    .
+
+<#1literalFractiondigits5> a sht:RepresentationTest ;
+    mf:name "1literalFractiondigits5" ;
+    mf:status mf:proposed ;
+    sx:shex <1literalFractiondigits5.shex> ;
+    sx:json <1literalFractiondigits5.json> ;
+    sx:turtle <1literalFractiondigits5.turtle> ;
+    .
+
+<#1literalFractiondigits4> a sht:RepresentationTest ;
+    mf:name "1literalFractiondigits4" ;
+    mf:status mf:proposed ;
+    sx:shex <1literalFractiondigits4.shex> ;
+    sx:json <1literalFractiondigits4.json> ;
+    sx:turtle <1literalFractiondigits4.turtle> ;
+    .
+
+<#1literalTotaldigits5> a sht:RepresentationTest ;
+    mf:name "1literalTotaldigits5" ;
+    mf:status mf:proposed ;
+    sx:shex <1literalTotaldigits5.shex> ;
+    sx:json <1literalTotaldigits5.json> ;
+    sx:turtle <1literalTotaldigits5.turtle> ;
+    .
+
+<#1literalMinexclusiveINTEGER> a sht:RepresentationTest ;
+    mf:name "1literalMinexclusiveINTEGER" ;
+    mf:status mf:proposed ;
+    sx:shex <1literalMinexclusiveINTEGER.shex> ;
+    sx:json <1literalMinexclusiveINTEGER.json> ;
+    sx:turtle <1literalMinexclusiveINTEGER.turtle> ;
+    .
+
+<#1literalMininclusiveINTEGER> a sht:RepresentationTest ;
+    mf:name "1literalMininclusiveINTEGER" ;
+    mf:status mf:proposed ;
+    sx:shex <1literalMininclusiveINTEGER.shex> ;
+    sx:json <1literalMininclusiveINTEGER.json> ;
+    sx:turtle <1literalMininclusiveINTEGER.turtle> ;
+    .
+
+<#1literalMaxexclusiveINTEGER> a sht:RepresentationTest ;
+    mf:name "1literalMaxexclusiveINTEGER" ;
+    mf:status mf:proposed ;
+    sx:shex <1literalMaxexclusiveINTEGER.shex> ;
+    sx:json <1literalMaxexclusiveINTEGER.json> ;
+    sx:turtle <1literalMaxexclusiveINTEGER.turtle> ;
+    .
+
+<#1literalMaxinclusiveINTEGER> a sht:RepresentationTest ;
+    mf:name "1literalMaxinclusiveINTEGER" ;
+    mf:status mf:proposed ;
+    sx:shex <1literalMaxinclusiveINTEGER.shex> ;
+    sx:json <1literalMaxinclusiveINTEGER.json> ;
+    sx:turtle <1literalMaxinclusiveINTEGER.turtle> ;
+    .
+
+<#1literalTotaldigits6> a sht:RepresentationTest ;
+    mf:name "1literalTotaldigits6" ;
+    mf:status mf:proposed ;
+    sx:shex <1literalTotaldigits6.shex> ;
+    sx:json <1literalTotaldigits6.json> ;
+    sx:turtle <1literalTotaldigits6.turtle> ;
+    .
+
+<#1literalTotaldigits2> a sht:RepresentationTest ;
+    mf:name "1literalTotaldigits2" ;
+    mf:status mf:proposed ;
+    sx:shex <1literalTotaldigits2.shex> ;
+    sx:json <1literalTotaldigits2.json> ;
+    sx:turtle <1literalTotaldigits2.turtle> ;
+    .
+
+<#1floatMininclusiveINTEGER> a sht:RepresentationTest ;
+    mf:name "1floatMininclusiveINTEGER" ;
+    mf:status mf:proposed ;
+    sx:shex <1floatMininclusiveINTEGER.shex> ;
+    sx:json <1floatMininclusiveINTEGER.json> ;
+    sx:turtle <1floatMininclusiveINTEGER.turtle> ;
+    .
+
+<#1integerMininclusiveINTEGER> a sht:RepresentationTest ;
+    mf:name "1integerMininclusiveINTEGER" ;
+    mf:status mf:proposed ;
+    sx:shex <1integerMininclusiveINTEGER.shex> ;
+    sx:json <1integerMininclusiveINTEGER.json> ;
+    sx:turtle <1integerMininclusiveINTEGER.turtle> ;
+    .
+
+<#1floatMininclusiveINTEGERLead> a sht:RepresentationTest ;
+    mf:name "1floatMininclusiveINTEGERLead" ;
+    mf:status mf:proposed ;
+    sx:shex <1floatMininclusiveINTEGERLead.shex> ;
+    sx:json <1floatMininclusiveINTEGERLead.json> ;
+    sx:turtle <1floatMininclusiveINTEGERLead.turtle> ;
+    .
+
+<#1integerMininclusiveINTEGERLead> a sht:RepresentationTest ;
+    mf:name "1integerMininclusiveINTEGERLead" ;
+    mf:status mf:proposed ;
+    sx:shex <1integerMininclusiveINTEGERLead.shex> ;
+    sx:json <1integerMininclusiveINTEGERLead.json> ;
+    sx:turtle <1integerMininclusiveINTEGERLead.turtle> ;
+    .
+
+<#1integerMininclusiveDECIMAL> a sht:RepresentationTest ;
+    mf:name "1integerMininclusiveDECIMAL" ;
+    mf:status mf:proposed ;
+    sx:shex <1integerMininclusiveDECIMAL.shex> ;
+    sx:json <1integerMininclusiveDECIMAL.json> ;
+    sx:turtle <1integerMininclusiveDECIMAL.turtle> ;
+    .
+
+<#1integerMininclusiveDECIMALLeadTrail> a sht:RepresentationTest ;
+    mf:name "1integerMininclusiveDECIMALLeadTrail" ;
+    mf:status mf:proposed ;
+    sx:shex <1integerMininclusiveDECIMALLeadTrail.shex> ;
+    sx:json <1integerMininclusiveDECIMALLeadTrail.json> ;
+    sx:turtle <1integerMininclusiveDECIMALLeadTrail.turtle> ;
+    .
+
+<#1integerMininclusiveDECIMALint> a sht:RepresentationTest ;
+    mf:name "1integerMininclusiveDECIMALint" ;
+    mf:status mf:proposed ;
+    sx:shex <1integerMininclusiveDECIMALint.shex> ;
+    sx:json <1integerMininclusiveDECIMALint.json> ;
+    sx:turtle <1integerMininclusiveDECIMALint.turtle> ;
+    .
+
+<#1integerMininclusiveDECIMALintLeadTrail> a sht:RepresentationTest ;
+    mf:name "1integerMininclusiveDECIMALintLeadTrail" ;
+    mf:status mf:proposed ;
+    sx:shex <1integerMininclusiveDECIMALintLeadTrail.shex> ;
+    sx:json <1integerMininclusiveDECIMALintLeadTrail.json> ;
+    sx:turtle <1integerMininclusiveDECIMALintLeadTrail.turtle> ;
+    .
+
+<#1integerMininclusiveDOUBLE> a sht:RepresentationTest ;
+    mf:name "1integerMininclusiveDOUBLE" ;
+    mf:status mf:proposed ;
+    sx:shex <1integerMininclusiveDOUBLE.shex> ;
+    sx:json <1integerMininclusiveDOUBLE.json> ;
+    sx:turtle <1integerMininclusiveDOUBLE.turtle> ;
+    .
+
+<#1integerMininclusiveDOUBLELeadTrail> a sht:RepresentationTest ;
+    mf:name "1integerMininclusiveDOUBLELeadTrail" ;
+    mf:status mf:proposed ;
+    sx:shex <1integerMininclusiveDOUBLELeadTrail.shex> ;
+    sx:json <1integerMininclusiveDOUBLELeadTrail.json> ;
+    sx:turtle <1integerMininclusiveDOUBLELeadTrail.turtle> ;
+    .
+
+<#1integerMininclusiveDOUBLEint> a sht:RepresentationTest ;
+    mf:name "1integerMininclusiveDOUBLEint" ;
+    mf:status mf:proposed ;
+    sx:shex <1integerMininclusiveDOUBLEint.shex> ;
+    sx:json <1integerMininclusiveDOUBLEint.json> ;
+    sx:turtle <1integerMininclusiveDOUBLEint.turtle> ;
+    .
+
+<#1integerMininclusiveDOUBLEintLeadTrail> a sht:RepresentationTest ;
+    mf:name "1integerMininclusiveDOUBLEintLeadTrail" ;
+    mf:status mf:proposed ;
+    sx:shex <1integerMininclusiveDOUBLEintLeadTrail.shex> ;
+    sx:json <1integerMininclusiveDOUBLEintLeadTrail.json> ;
+    sx:turtle <1integerMininclusiveDOUBLEintLeadTrail.turtle> ;
+    .
+
+<#1integerMininclusivexsd-integer> a sht:RepresentationTest ;
+    mf:name "1integerMininclusivexsd-integer" ;
+    mf:status mf:proposed ;
+    sx:shex <1integerMininclusivexsd-integer.shex> ;
+    sx:json <1integerMininclusivexsd-integer.json> ;
+    sx:turtle <1integerMininclusivexsd-integer.turtle> ;
+    .
+
+<#1decimalMininclusiveINTEGER> a sht:RepresentationTest ;
+    mf:name "1decimalMininclusiveINTEGER" ;
+    mf:status mf:proposed ;
+    sx:shex <1decimalMininclusiveINTEGER.shex> ;
+    sx:json <1decimalMininclusiveINTEGER.json> ;
+    sx:turtle <1decimalMininclusiveINTEGER.turtle> ;
+    .
+
+<#1decimalMininclusiveINTEGERLead> a sht:RepresentationTest ;
+    mf:name "1decimalMininclusiveINTEGERLead" ;
+    mf:status mf:proposed ;
+    sx:shex <1decimalMininclusiveINTEGERLead.shex> ;
+    sx:json <1decimalMininclusiveINTEGERLead.json> ;
+    sx:turtle <1decimalMininclusiveINTEGERLead.turtle> ;
+    .
+
+<#1decimalMininclusiveDECIMAL> a sht:RepresentationTest ;
+    mf:name "1decimalMininclusiveDECIMAL" ;
+    mf:status mf:proposed ;
+    sx:shex <1decimalMininclusiveDECIMAL.shex> ;
+    sx:json <1decimalMininclusiveDECIMAL.json> ;
+    sx:turtle <1decimalMininclusiveDECIMAL.turtle> ;
+    .
+
+<#1decimalMininclusiveDECIMALLeadTrail> a sht:RepresentationTest ;
+    mf:name "1decimalMininclusiveDECIMALLeadTrail" ;
+    mf:status mf:proposed ;
+    sx:shex <1decimalMininclusiveDECIMALLeadTrail.shex> ;
+    sx:json <1decimalMininclusiveDECIMALLeadTrail.json> ;
+    sx:turtle <1decimalMininclusiveDECIMALLeadTrail.turtle> ;
+    .
+
+<#1decimalMininclusiveDECIMALintLeadTrail> a sht:RepresentationTest ;
+    mf:name "1decimalMininclusiveDECIMALintLeadTrail" ;
+    mf:status mf:proposed ;
+    sx:shex <1decimalMininclusiveDECIMALintLeadTrail.shex> ;
+    sx:json <1decimalMininclusiveDECIMALintLeadTrail.json> ;
+    sx:turtle <1decimalMininclusiveDECIMALintLeadTrail.turtle> ;
+    .
+
+<#1decimalMininclusiveDOUBLE> a sht:RepresentationTest ;
+    mf:name "1decimalMininclusiveDOUBLE" ;
+    mf:status mf:proposed ;
+    sx:shex <1decimalMininclusiveDOUBLE.shex> ;
+    sx:json <1decimalMininclusiveDOUBLE.json> ;
+    sx:turtle <1decimalMininclusiveDOUBLE.turtle> ;
+    .
+
+<#1decimalMininclusiveDOUBLELeadTrail> a sht:RepresentationTest ;
+    mf:name "1decimalMininclusiveDOUBLELeadTrail" ;
+    mf:status mf:proposed ;
+    sx:shex <1decimalMininclusiveDOUBLELeadTrail.shex> ;
+    sx:json <1decimalMininclusiveDOUBLELeadTrail.json> ;
+    sx:turtle <1decimalMininclusiveDOUBLELeadTrail.turtle> ;
+    .
+
+<#1decimalMininclusiveDOUBLEintLeadTrail> a sht:RepresentationTest ;
+    mf:name "1decimalMininclusiveDOUBLEintLeadTrail" ;
+    mf:status mf:proposed ;
+    sx:shex <1decimalMininclusiveDOUBLEintLeadTrail.shex> ;
+    sx:json <1decimalMininclusiveDOUBLEintLeadTrail.json> ;
+    sx:turtle <1decimalMininclusiveDOUBLEintLeadTrail.turtle> ;
+    .
+
+<#1decimalMininclusivexsd-decimal> a sht:RepresentationTest ;
+    mf:name "1decimalMininclusivexsd-decimal" ;
+    mf:status mf:proposed ;
+    sx:shex <1decimalMininclusivexsd-decimal.shex> ;
+    sx:json <1decimalMininclusivexsd-decimal.json> ;
+    sx:turtle <1decimalMininclusivexsd-decimal.turtle> ;
+    .
+
+<#1floatMininclusiveDECIMAL> a sht:RepresentationTest ;
+    mf:name "1floatMininclusiveDECIMAL" ;
+    mf:status mf:proposed ;
+    sx:shex <1floatMininclusiveDECIMAL.shex> ;
+    sx:json <1floatMininclusiveDECIMAL.json> ;
+    sx:turtle <1floatMininclusiveDECIMAL.turtle> ;
+    .
+
+<#1floatMininclusiveDECIMALLeadTrail> a sht:RepresentationTest ;
+    mf:name "1floatMininclusiveDECIMALLeadTrail" ;
+    mf:status mf:proposed ;
+    sx:shex <1floatMininclusiveDECIMALLeadTrail.shex> ;
+    sx:json <1floatMininclusiveDECIMALLeadTrail.json> ;
+    sx:turtle <1floatMininclusiveDECIMALLeadTrail.turtle> ;
+    .
+
+<#1floatMininclusiveDECIMALintLeadTrail> a sht:RepresentationTest ;
+    mf:name "1floatMininclusiveDECIMALintLeadTrail" ;
+    mf:status mf:proposed ;
+    sx:shex <1floatMininclusiveDECIMALintLeadTrail.shex> ;
+    sx:json <1floatMininclusiveDECIMALintLeadTrail.json> ;
+    sx:turtle <1floatMininclusiveDECIMALintLeadTrail.turtle> ;
+    .
+
+<#1floatMininclusiveDOUBLE> a sht:RepresentationTest ;
+    mf:name "1floatMininclusiveDOUBLE" ;
+    mf:status mf:proposed ;
+    sx:shex <1floatMininclusiveDOUBLE.shex> ;
+    sx:json <1floatMininclusiveDOUBLE.json> ;
+    sx:turtle <1floatMininclusiveDOUBLE.turtle> ;
+    .
+
+<#1floatMininclusiveDOUBLELeadTrail> a sht:RepresentationTest ;
+    mf:name "1floatMininclusiveDOUBLELeadTrail" ;
+    mf:status mf:proposed ;
+    sx:shex <1floatMininclusiveDOUBLELeadTrail.shex> ;
+    sx:json <1floatMininclusiveDOUBLELeadTrail.json> ;
+    sx:turtle <1floatMininclusiveDOUBLELeadTrail.turtle> ;
+    .
+
+<#1floatMininclusiveDOUBLEintLeadTrail> a sht:RepresentationTest ;
+    mf:name "1floatMininclusiveDOUBLEintLeadTrail" ;
+    mf:status mf:proposed ;
+    sx:shex <1floatMininclusiveDOUBLEintLeadTrail.shex> ;
+    sx:json <1floatMininclusiveDOUBLEintLeadTrail.json> ;
+    sx:turtle <1floatMininclusiveDOUBLEintLeadTrail.turtle> ;
+    .
+
+<#1floatMininclusivexsd-float> a sht:RepresentationTest ;
+    mf:name "1floatMininclusivexsd-float" ;
+    mf:status mf:proposed ;
+    sx:shex <1floatMininclusivexsd-float.shex> ;
+    sx:json <1floatMininclusivexsd-float.json> ;
+    sx:turtle <1floatMininclusivexsd-float.turtle> ;
+    .
+
+<#1doubleMininclusiveINTEGERLead> a sht:RepresentationTest ;
+    mf:name "1doubleMininclusiveINTEGERLead" ;
+    mf:status mf:proposed ;
+    sx:shex <1doubleMininclusiveINTEGERLead.shex> ;
+    sx:json <1doubleMininclusiveINTEGERLead.json> ;
+    sx:turtle <1doubleMininclusiveINTEGERLead.turtle> ;
+    .
+
+<#1doubleMininclusiveDECIMAL> a sht:RepresentationTest ;
+    mf:name "1doubleMininclusiveDECIMAL" ;
+    mf:status mf:proposed ;
+    sx:shex <1doubleMininclusiveDECIMAL.shex> ;
+    sx:json <1doubleMininclusiveDECIMAL.json> ;
+    sx:turtle <1doubleMininclusiveDECIMAL.turtle> ;
+    .
+
+<#1doubleMininclusiveDECIMALLeadTrail> a sht:RepresentationTest ;
+    mf:name "1doubleMininclusiveDECIMALLeadTrail" ;
+    mf:status mf:proposed ;
+    sx:shex <1doubleMininclusiveDECIMALLeadTrail.shex> ;
+    sx:json <1doubleMininclusiveDECIMALLeadTrail.json> ;
+    sx:turtle <1doubleMininclusiveDECIMALLeadTrail.turtle> ;
+    .
+
+<#1doubleMininclusiveDECIMALintLeadTrail> a sht:RepresentationTest ;
+    mf:name "1doubleMininclusiveDECIMALintLeadTrail" ;
+    mf:status mf:proposed ;
+    sx:shex <1doubleMininclusiveDECIMALintLeadTrail.shex> ;
+    sx:json <1doubleMininclusiveDECIMALintLeadTrail.json> ;
+    sx:turtle <1doubleMininclusiveDECIMALintLeadTrail.turtle> ;
+    .
+
+<#1doubleMininclusiveDOUBLE> a sht:RepresentationTest ;
+    mf:name "1doubleMininclusiveDOUBLE" ;
+    mf:status mf:proposed ;
+    sx:shex <1doubleMininclusiveDOUBLE.shex> ;
+    sx:json <1doubleMininclusiveDOUBLE.json> ;
+    sx:turtle <1doubleMininclusiveDOUBLE.turtle> ;
+    .
+
+<#1doubleMininclusiveDOUBLELeadTrail> a sht:RepresentationTest ;
+    mf:name "1doubleMininclusiveDOUBLELeadTrail" ;
+    mf:status mf:proposed ;
+    sx:shex <1doubleMininclusiveDOUBLELeadTrail.shex> ;
+    sx:json <1doubleMininclusiveDOUBLELeadTrail.json> ;
+    sx:turtle <1doubleMininclusiveDOUBLELeadTrail.turtle> ;
+    .
+
+<#1doubleMininclusiveDOUBLEintLeadTrail> a sht:RepresentationTest ;
+    mf:name "1doubleMininclusiveDOUBLEintLeadTrail" ;
+    mf:status mf:proposed ;
+    sx:shex <1doubleMininclusiveDOUBLEintLeadTrail.shex> ;
+    sx:json <1doubleMininclusiveDOUBLEintLeadTrail.json> ;
+    sx:turtle <1doubleMininclusiveDOUBLEintLeadTrail.turtle> ;
+    .
+
+<#1doubleMininclusivexsd-double> a sht:RepresentationTest ;
+    mf:name "1doubleMininclusivexsd-double" ;
+    mf:status mf:proposed ;
+    sx:shex <1doubleMininclusivexsd-double.shex> ;
+    sx:json <1doubleMininclusivexsd-double.json> ;
+    sx:turtle <1doubleMininclusivexsd-double.turtle> ;
+    .
+
+<#1integerMinexclusiveINTEGER> a sht:RepresentationTest ;
+    mf:name "1integerMinexclusiveINTEGER" ;
+    mf:status mf:proposed ;
+    sx:shex <1integerMinexclusiveINTEGER.shex> ;
+    sx:json <1integerMinexclusiveINTEGER.json> ;
+    sx:turtle <1integerMinexclusiveINTEGER.turtle> ;
+    .
+
+<#1integerMinexclusiveDECIMALint> a sht:RepresentationTest ;
+    mf:name "1integerMinexclusiveDECIMALint" ;
+    mf:status mf:proposed ;
+    sx:shex <1integerMinexclusiveDECIMALint.shex> ;
+    sx:json <1integerMinexclusiveDECIMALint.json> ;
+    sx:turtle <1integerMinexclusiveDECIMALint.turtle> ;
+    .
+
+<#1integerMinexclusiveDOUBLEint> a sht:RepresentationTest ;
+    mf:name "1integerMinexclusiveDOUBLEint" ;
+    mf:status mf:proposed ;
+    sx:shex <1integerMinexclusiveDOUBLEint.shex> ;
+    sx:json <1integerMinexclusiveDOUBLEint.json> ;
+    sx:turtle <1integerMinexclusiveDOUBLEint.turtle> ;
+    .
+
+<#1decimalMinexclusiveINTEGER> a sht:RepresentationTest ;
+    mf:name "1decimalMinexclusiveINTEGER" ;
+    mf:status mf:proposed ;
+    sx:shex <1decimalMinexclusiveINTEGER.shex> ;
+    sx:json <1decimalMinexclusiveINTEGER.json> ;
+    sx:turtle <1decimalMinexclusiveINTEGER.turtle> ;
+    .
+
+<#1decimalMinexclusiveDECIMAL> a sht:RepresentationTest ;
+    mf:name "1decimalMinexclusiveDECIMAL" ;
+    mf:status mf:proposed ;
+    sx:shex <1decimalMinexclusiveDECIMAL.shex> ;
+    sx:json <1decimalMinexclusiveDECIMAL.json> ;
+    sx:turtle <1decimalMinexclusiveDECIMAL.turtle> ;
+    .
+
+<#1decimalMinexclusiveDOUBLE> a sht:RepresentationTest ;
+    mf:name "1decimalMinexclusiveDOUBLE" ;
+    mf:status mf:proposed ;
+    sx:shex <1decimalMinexclusiveDOUBLE.shex> ;
+    sx:json <1decimalMinexclusiveDOUBLE.json> ;
+    sx:turtle <1decimalMinexclusiveDOUBLE.turtle> ;
+    .
+
+<#1floatMinexclusiveINTEGER> a sht:RepresentationTest ;
+    mf:name "1floatMinexclusiveINTEGER" ;
+    mf:status mf:proposed ;
+    sx:shex <1floatMinexclusiveINTEGER.shex> ;
+    sx:json <1floatMinexclusiveINTEGER.json> ;
+    sx:turtle <1floatMinexclusiveINTEGER.turtle> ;
+    .
+
+<#1floatMinexclusiveDECIMAL> a sht:RepresentationTest ;
+    mf:name "1floatMinexclusiveDECIMAL" ;
+    mf:status mf:proposed ;
+    sx:shex <1floatMinexclusiveDECIMAL.shex> ;
+    sx:json <1floatMinexclusiveDECIMAL.json> ;
+    sx:turtle <1floatMinexclusiveDECIMAL.turtle> ;
+    .
+
+<#1floatMinexclusiveDOUBLE> a sht:RepresentationTest ;
+    mf:name "1floatMinexclusiveDOUBLE" ;
+    mf:status mf:proposed ;
+    sx:shex <1floatMinexclusiveDOUBLE.shex> ;
+    sx:json <1floatMinexclusiveDOUBLE.json> ;
+    sx:turtle <1floatMinexclusiveDOUBLE.turtle> ;
+    .
+
+<#1floatMinexclusivexsd-float> a sht:RepresentationTest ;
+    mf:name "1floatMinexclusivexsd-float" ;
+    mf:status mf:proposed ;
+    sx:shex <1floatMinexclusivexsd-float.shex> ;
+    sx:json <1floatMinexclusivexsd-float.json> ;
+    sx:turtle <1floatMinexclusivexsd-float.turtle> ;
+    .
+
+<#1doubleMinexclusiveINTEGER> a sht:RepresentationTest ;
+    mf:name "1doubleMinexclusiveINTEGER" ;
+    mf:status mf:proposed ;
+    sx:shex <1doubleMinexclusiveINTEGER.shex> ;
+    sx:json <1doubleMinexclusiveINTEGER.json> ;
+    sx:turtle <1doubleMinexclusiveINTEGER.turtle> ;
+    .
+
+<#1doubleMinexclusiveDECIMAL> a sht:RepresentationTest ;
+    mf:name "1doubleMinexclusiveDECIMAL" ;
+    mf:status mf:proposed ;
+    sx:shex <1doubleMinexclusiveDECIMAL.shex> ;
+    sx:json <1doubleMinexclusiveDECIMAL.json> ;
+    sx:turtle <1doubleMinexclusiveDECIMAL.turtle> ;
+    .
+
+<#1doubleMinexclusiveDOUBLE> a sht:RepresentationTest ;
+    mf:name "1doubleMinexclusiveDOUBLE" ;
+    mf:status mf:proposed ;
+    sx:shex <1doubleMinexclusiveDOUBLE.shex> ;
+    sx:json <1doubleMinexclusiveDOUBLE.json> ;
+    sx:turtle <1doubleMinexclusiveDOUBLE.turtle> ;
+    .
+
+<#1integerMaxinclusiveINTEGER> a sht:RepresentationTest ;
+    mf:name "1integerMaxinclusiveINTEGER" ;
+    mf:status mf:proposed ;
+    sx:shex <1integerMaxinclusiveINTEGER.shex> ;
+    sx:json <1integerMaxinclusiveINTEGER.json> ;
+    sx:turtle <1integerMaxinclusiveINTEGER.turtle> ;
+    .
+
+<#1integerMaxinclusiveDECIMALint> a sht:RepresentationTest ;
+    mf:name "1integerMaxinclusiveDECIMALint" ;
+    mf:status mf:proposed ;
+    sx:shex <1integerMaxinclusiveDECIMALint.shex> ;
+    sx:json <1integerMaxinclusiveDECIMALint.json> ;
+    sx:turtle <1integerMaxinclusiveDECIMALint.turtle> ;
+    .
+
+<#1integerMaxinclusiveDOUBLEint> a sht:RepresentationTest ;
+    mf:name "1integerMaxinclusiveDOUBLEint" ;
+    mf:status mf:proposed ;
+    sx:shex <1integerMaxinclusiveDOUBLEint.shex> ;
+    sx:json <1integerMaxinclusiveDOUBLEint.json> ;
+    sx:turtle <1integerMaxinclusiveDOUBLEint.turtle> ;
+    .
+
+<#1decimalMaxinclusiveINTEGER> a sht:RepresentationTest ;
+    mf:name "1decimalMaxinclusiveINTEGER" ;
+    mf:status mf:proposed ;
+    sx:shex <1decimalMaxinclusiveINTEGER.shex> ;
+    sx:json <1decimalMaxinclusiveINTEGER.json> ;
+    sx:turtle <1decimalMaxinclusiveINTEGER.turtle> ;
+    .
+
+<#1decimalMaxinclusiveDECIMAL> a sht:RepresentationTest ;
+    mf:name "1decimalMaxinclusiveDECIMAL" ;
+    mf:status mf:proposed ;
+    sx:shex <1decimalMaxinclusiveDECIMAL.shex> ;
+    sx:json <1decimalMaxinclusiveDECIMAL.json> ;
+    sx:turtle <1decimalMaxinclusiveDECIMAL.turtle> ;
+    .
+
+<#1decimalMaxinclusiveDOUBLE> a sht:RepresentationTest ;
+    mf:name "1decimalMaxinclusiveDOUBLE" ;
+    mf:status mf:proposed ;
+    sx:shex <1decimalMaxinclusiveDOUBLE.shex> ;
+    sx:json <1decimalMaxinclusiveDOUBLE.json> ;
+    sx:turtle <1decimalMaxinclusiveDOUBLE.turtle> ;
+    .
+
+<#1floatMaxinclusiveINTEGER> a sht:RepresentationTest ;
+    mf:name "1floatMaxinclusiveINTEGER" ;
+    mf:status mf:proposed ;
+    sx:shex <1floatMaxinclusiveINTEGER.shex> ;
+    sx:json <1floatMaxinclusiveINTEGER.json> ;
+    sx:turtle <1floatMaxinclusiveINTEGER.turtle> ;
+    .
+
+<#1floatMaxinclusiveDECIMAL> a sht:RepresentationTest ;
+    mf:name "1floatMaxinclusiveDECIMAL" ;
+    mf:status mf:proposed ;
+    sx:shex <1floatMaxinclusiveDECIMAL.shex> ;
+    sx:json <1floatMaxinclusiveDECIMAL.json> ;
+    sx:turtle <1floatMaxinclusiveDECIMAL.turtle> ;
+    .
+
+<#1floatMaxinclusiveDOUBLE> a sht:RepresentationTest ;
+    mf:name "1floatMaxinclusiveDOUBLE" ;
+    mf:status mf:proposed ;
+    sx:shex <1floatMaxinclusiveDOUBLE.shex> ;
+    sx:json <1floatMaxinclusiveDOUBLE.json> ;
+    sx:turtle <1floatMaxinclusiveDOUBLE.turtle> ;
+    .
+
+<#1floatMaxinclusivexsd-float> a sht:RepresentationTest ;
+    mf:name "1floatMaxinclusivexsd-float" ;
+    mf:status mf:proposed ;
+    sx:shex <1floatMaxinclusivexsd-float.shex> ;
+    sx:json <1floatMaxinclusivexsd-float.json> ;
+    sx:turtle <1floatMaxinclusivexsd-float.turtle> ;
+    .
+
+<#1doubleMaxinclusiveINTEGER> a sht:RepresentationTest ;
+    mf:name "1doubleMaxinclusiveINTEGER" ;
+    mf:status mf:proposed ;
+    sx:shex <1doubleMaxinclusiveINTEGER.shex> ;
+    sx:json <1doubleMaxinclusiveINTEGER.json> ;
+    sx:turtle <1doubleMaxinclusiveINTEGER.turtle> ;
+    .
+
+<#1doubleMaxinclusiveDECIMAL> a sht:RepresentationTest ;
+    mf:name "1doubleMaxinclusiveDECIMAL" ;
+    mf:status mf:proposed ;
+    sx:shex <1doubleMaxinclusiveDECIMAL.shex> ;
+    sx:json <1doubleMaxinclusiveDECIMAL.json> ;
+    sx:turtle <1doubleMaxinclusiveDECIMAL.turtle> ;
+    .
+
+<#1doubleMaxinclusiveDOUBLE> a sht:RepresentationTest ;
+    mf:name "1doubleMaxinclusiveDOUBLE" ;
+    mf:status mf:proposed ;
+    sx:shex <1doubleMaxinclusiveDOUBLE.shex> ;
+    sx:json <1doubleMaxinclusiveDOUBLE.json> ;
+    sx:turtle <1doubleMaxinclusiveDOUBLE.turtle> ;
+    .
+
+<#1integerMaxexclusiveINTEGER> a sht:RepresentationTest ;
+    mf:name "1integerMaxexclusiveINTEGER" ;
+    mf:status mf:proposed ;
+    sx:shex <1integerMaxexclusiveINTEGER.shex> ;
+    sx:json <1integerMaxexclusiveINTEGER.json> ;
+    sx:turtle <1integerMaxexclusiveINTEGER.turtle> ;
+    .
+
+<#1integerMaxexclusiveDECIMALint> a sht:RepresentationTest ;
+    mf:name "1integerMaxexclusiveDECIMALint" ;
+    mf:status mf:proposed ;
+    sx:shex <1integerMaxexclusiveDECIMALint.shex> ;
+    sx:json <1integerMaxexclusiveDECIMALint.json> ;
+    sx:turtle <1integerMaxexclusiveDECIMALint.turtle> ;
+    .
+
+<#1integerMaxexclusiveDOUBLEint> a sht:RepresentationTest ;
+    mf:name "1integerMaxexclusiveDOUBLEint" ;
+    mf:status mf:proposed ;
+    sx:shex <1integerMaxexclusiveDOUBLEint.shex> ;
+    sx:json <1integerMaxexclusiveDOUBLEint.json> ;
+    sx:turtle <1integerMaxexclusiveDOUBLEint.turtle> ;
+    .
+
+<#1decimalMaxexclusiveINTEGER> a sht:RepresentationTest ;
+    mf:name "1decimalMaxexclusiveINTEGER" ;
+    mf:status mf:proposed ;
+    sx:shex <1decimalMaxexclusiveINTEGER.shex> ;
+    sx:json <1decimalMaxexclusiveINTEGER.json> ;
+    sx:turtle <1decimalMaxexclusiveINTEGER.turtle> ;
+    .
+
+<#1decimalMaxexclusiveDECIMAL> a sht:RepresentationTest ;
+    mf:name "1decimalMaxexclusiveDECIMAL" ;
+    mf:status mf:proposed ;
+    sx:shex <1decimalMaxexclusiveDECIMAL.shex> ;
+    sx:json <1decimalMaxexclusiveDECIMAL.json> ;
+    sx:turtle <1decimalMaxexclusiveDECIMAL.turtle> ;
+    .
+
+<#1decimalMaxexclusiveDOUBLE> a sht:RepresentationTest ;
+    mf:name "1decimalMaxexclusiveDOUBLE" ;
+    mf:status mf:proposed ;
+    sx:shex <1decimalMaxexclusiveDOUBLE.shex> ;
+    sx:json <1decimalMaxexclusiveDOUBLE.json> ;
+    sx:turtle <1decimalMaxexclusiveDOUBLE.turtle> ;
+    .
+
+<#1decimalMaxexclusivexsd-byte> a sht:RepresentationTest ;
+    mf:name "1decimalMaxexclusivexsd-byte" ;
+    mf:status mf:proposed ;
+    sx:shex <1decimalMaxexclusivexsd-byte.shex> ;
+    sx:json <1decimalMaxexclusivexsd-byte.json> ;
+    sx:turtle <1decimalMaxexclusivexsd-byte.turtle> ;
+    .
+
+<#1decimalMaxexclusivexsd-decimal> a sht:RepresentationTest ;
+    mf:name "1decimalMaxexclusivexsd-decimal" ;
+    mf:status mf:proposed ;
+    sx:shex <1decimalMaxexclusivexsd-decimal.shex> ;
+    sx:json <1decimalMaxexclusivexsd-decimal.json> ;
+    sx:turtle <1decimalMaxexclusivexsd-decimal.turtle> ;
+    .
+
+<#1floatMaxexclusiveINTEGER> a sht:RepresentationTest ;
+    mf:name "1floatMaxexclusiveINTEGER" ;
+    mf:status mf:proposed ;
+    sx:shex <1floatMaxexclusiveINTEGER.shex> ;
+    sx:json <1floatMaxexclusiveINTEGER.json> ;
+    sx:turtle <1floatMaxexclusiveINTEGER.turtle> ;
+    .
+
+<#1floatMaxexclusiveDECIMAL> a sht:RepresentationTest ;
+    mf:name "1floatMaxexclusiveDECIMAL" ;
+    mf:status mf:proposed ;
+    sx:shex <1floatMaxexclusiveDECIMAL.shex> ;
+    sx:json <1floatMaxexclusiveDECIMAL.json> ;
+    sx:turtle <1floatMaxexclusiveDECIMAL.turtle> ;
+    .
+
+<#1floatMaxexclusiveDOUBLE> a sht:RepresentationTest ;
+    mf:name "1floatMaxexclusiveDOUBLE" ;
+    mf:status mf:proposed ;
+    sx:shex <1floatMaxexclusiveDOUBLE.shex> ;
+    sx:json <1floatMaxexclusiveDOUBLE.json> ;
+    sx:turtle <1floatMaxexclusiveDOUBLE.turtle> ;
+    .
+
+<#1doubleMaxexclusiveINTEGER> a sht:RepresentationTest ;
+    mf:name "1doubleMaxexclusiveINTEGER" ;
+    mf:status mf:proposed ;
+    sx:shex <1doubleMaxexclusiveINTEGER.shex> ;
+    sx:json <1doubleMaxexclusiveINTEGER.json> ;
+    sx:turtle <1doubleMaxexclusiveINTEGER.turtle> ;
+    .
+
+<#1doubleMaxexclusiveINTEGERLead> a sht:RepresentationTest ;
+    mf:name "1doubleMaxexclusiveINTEGERLead" ;
+    mf:status mf:proposed ;
+    sx:shex <1doubleMaxexclusiveINTEGERLead.shex> ;
+    sx:json <1doubleMaxexclusiveINTEGERLead.json> ;
+    sx:turtle <1doubleMaxexclusiveINTEGERLead.turtle> ;
+    .
+
+<#1doubleMaxexclusiveDECIMAL> a sht:RepresentationTest ;
+    mf:name "1doubleMaxexclusiveDECIMAL" ;
+    mf:status mf:proposed ;
+    sx:shex <1doubleMaxexclusiveDECIMAL.shex> ;
+    sx:json <1doubleMaxexclusiveDECIMAL.json> ;
+    sx:turtle <1doubleMaxexclusiveDECIMAL.turtle> ;
+    .
+
+<#1doubleMaxexclusiveDECIMALLeadTrail> a sht:RepresentationTest ;
+    mf:name "1doubleMaxexclusiveDECIMALLeadTrail" ;
+    mf:status mf:proposed ;
+    sx:shex <1doubleMaxexclusiveDECIMALLeadTrail.shex> ;
+    sx:json <1doubleMaxexclusiveDECIMALLeadTrail.json> ;
+    sx:turtle <1doubleMaxexclusiveDECIMALLeadTrail.turtle> ;
+    .
+
+<#1doubleMaxexclusiveDECIMALint> a sht:RepresentationTest ;
+    mf:name "1doubleMaxexclusiveDECIMALint" ;
+    mf:status mf:proposed ;
+    sx:shex <1doubleMaxexclusiveDECIMALint.shex> ;
+    sx:json <1doubleMaxexclusiveDECIMALint.json> ;
+    sx:turtle <1doubleMaxexclusiveDECIMALint.turtle> ;
+    .
+
+<#1doubleMaxexclusiveDECIMALintLeadTrail> a sht:RepresentationTest ;
+    mf:name "1doubleMaxexclusiveDECIMALintLeadTrail" ;
+    mf:status mf:proposed ;
+    sx:shex <1doubleMaxexclusiveDECIMALintLeadTrail.shex> ;
+    sx:json <1doubleMaxexclusiveDECIMALintLeadTrail.json> ;
+    sx:turtle <1doubleMaxexclusiveDECIMALintLeadTrail.turtle> ;
+    .
+
+<#1doubleMaxexclusiveDOUBLE> a sht:RepresentationTest ;
+    mf:name "1doubleMaxexclusiveDOUBLE" ;
+    mf:status mf:proposed ;
+    sx:shex <1doubleMaxexclusiveDOUBLE.shex> ;
+    sx:json <1doubleMaxexclusiveDOUBLE.json> ;
+    sx:turtle <1doubleMaxexclusiveDOUBLE.turtle> ;
+    .
+
+<#1doubleMaxexclusiveDOUBLELeadTrail> a sht:RepresentationTest ;
+    mf:name "1doubleMaxexclusiveDOUBLELeadTrail" ;
+    mf:status mf:proposed ;
+    sx:shex <1doubleMaxexclusiveDOUBLELeadTrail.shex> ;
+    sx:json <1doubleMaxexclusiveDOUBLELeadTrail.json> ;
+    sx:turtle <1doubleMaxexclusiveDOUBLELeadTrail.turtle> ;
+    .
+
+<#1doubleMaxexclusiveDOUBLEint> a sht:RepresentationTest ;
+    mf:name "1doubleMaxexclusiveDOUBLEint" ;
+    mf:status mf:proposed ;
+    sx:shex <1doubleMaxexclusiveDOUBLEint.shex> ;
+    sx:json <1doubleMaxexclusiveDOUBLEint.json> ;
+    sx:turtle <1doubleMaxexclusiveDOUBLEint.turtle> ;
+    .
+
+<#1doubleMaxexclusiveDOUBLEintLeadTrail> a sht:RepresentationTest ;
+    mf:name "1doubleMaxexclusiveDOUBLEintLeadTrail" ;
+    mf:status mf:proposed ;
+    sx:shex <1doubleMaxexclusiveDOUBLEintLeadTrail.shex> ;
+    sx:json <1doubleMaxexclusiveDOUBLEintLeadTrail.json> ;
+    sx:turtle <1doubleMaxexclusiveDOUBLEintLeadTrail.turtle> ;
+    .
+
+<#1Length> a sht:RepresentationTest ;
+    mf:name "1Length" ;
+    mf:status mf:proposed ;
+    sx:shex <1Length.shex> ;
+    sx:json <1Length.json> ;
+    sx:turtle <1Length.turtle> ;
+    .
+
+<#1literalLength> a sht:RepresentationTest ;
+    mf:name "1literalLength" ;
+    mf:status mf:proposed ;
+    sx:shex <1literalLength.shex> ;
+    sx:json <1literalLength.json> ;
+    sx:turtle <1literalLength.turtle> ;
+    .
+
+<#1literalLength19> a sht:RepresentationTest ;
+    mf:name "1literalLength19" ;
+    mf:status mf:proposed ;
+    sx:shex <1literalLength19.shex> ;
+    sx:json <1literalLength19.json> ;
+    sx:turtle <1literalLength19.turtle> ;
+    .
+
+<#1iriLength> a sht:RepresentationTest ;
+    mf:name "1iriLength" ;
+    mf:status mf:proposed ;
+    sx:shex <1iriLength.shex> ;
+    sx:json <1iriLength.json> ;
+    sx:turtle <1iriLength.turtle> ;
+    .
+
+<#1iriRefLength1> a sht:RepresentationTest ;
+    mf:name "1iriRefLength1" ;
+    mf:status mf:proposed ;
+    sx:shex <1iriRefLength1.shex> ;
+    sx:json <1iriRefLength1.json> ;
+    sx:turtle <1iriRefLength1.turtle> ;
+    .
+
+<#1bnodeLength> a sht:RepresentationTest ;
+    mf:name "1bnodeLength" ;
+    mf:status mf:proposed ;
+    sx:shex <1bnodeLength.shex> ;
+    sx:json <1bnodeLength.json> ;
+    sx:turtle <1bnodeLength.turtle> ;
+    .
+
+<#1nonliteralLength> a sht:RepresentationTest ;
+    mf:name "1nonliteralLength" ;
+    mf:status mf:proposed ;
+    sx:shex <1nonliteralLength.shex> ;
+    sx:json <1nonliteralLength.json> ;
+    sx:turtle <1nonliteralLength.turtle> ;
+    .
+
+<#1literalMinlength> a sht:RepresentationTest ;
+    mf:name "1literalMinlength" ;
+    mf:status mf:proposed ;
+    sx:shex <1literalMinlength.shex> ;
+    sx:json <1literalMinlength.json> ;
+    sx:turtle <1literalMinlength.turtle> ;
+    .
+
+<#1iriMinlength> a sht:RepresentationTest ;
+    mf:name "1iriMinlength" ;
+    mf:status mf:proposed ;
+    sx:shex <1iriMinlength.shex> ;
+    sx:json <1iriMinlength.json> ;
+    sx:turtle <1iriMinlength.turtle> ;
+    .
+
+<#1bnodeMinlength> a sht:RepresentationTest ;
+    mf:name "1bnodeMinlength" ;
+    mf:status mf:proposed ;
+    sx:shex <1bnodeMinlength.shex> ;
+    sx:json <1bnodeMinlength.json> ;
+    sx:turtle <1bnodeMinlength.turtle> ;
+    .
+
+<#1nonliteralMinlength> a sht:RepresentationTest ;
+    mf:name "1nonliteralMinlength" ;
+    mf:status mf:proposed ;
+    sx:shex <1nonliteralMinlength.shex> ;
+    sx:json <1nonliteralMinlength.json> ;
+    sx:turtle <1nonliteralMinlength.turtle> ;
+    .
+
+<#1literalMaxlength> a sht:RepresentationTest ;
+    mf:name "1literalMaxlength" ;
+    mf:status mf:proposed ;
+    sx:shex <1literalMaxlength.shex> ;
+    sx:json <1literalMaxlength.json> ;
+    sx:turtle <1literalMaxlength.turtle> ;
+    .
+
+<#1iriMaxlength> a sht:RepresentationTest ;
+    mf:name "1iriMaxlength" ;
+    mf:status mf:proposed ;
+    sx:shex <1iriMaxlength.shex> ;
+    sx:json <1iriMaxlength.json> ;
+    sx:turtle <1iriMaxlength.turtle> ;
+    .
+
+<#1bnodeMaxlength> a sht:RepresentationTest ;
+    mf:name "1bnodeMaxlength" ;
+    mf:status mf:proposed ;
+    sx:shex <1bnodeMaxlength.shex> ;
+    sx:json <1bnodeMaxlength.json> ;
+    sx:turtle <1bnodeMaxlength.turtle> ;
+    .
+
+<#1nonliteralMaxlength> a sht:RepresentationTest ;
+    mf:name "1nonliteralMaxlength" ;
+    mf:status mf:proposed ;
+    sx:shex <1nonliteralMaxlength.shex> ;
+    sx:json <1nonliteralMaxlength.json> ;
+    sx:turtle <1nonliteralMaxlength.turtle> ;
+    .
+
+<#1literalPattern> a sht:RepresentationTest ;
+    mf:name "1literalPattern" ;
+    mf:status mf:proposed ;
+    sx:shex <1literalPattern.shex> ;
+    sx:json <1literalPattern.json> ;
+    sx:turtle <1literalPattern.turtle> ;
+    .
+
+<#1literalPattern19> a sht:RepresentationTest ;
+    mf:name "1literalPattern19" ;
+    mf:status mf:proposed ;
+    sx:shex <1literalPattern19.shex> ;
+    sx:json <1literalPattern19.json> ;
+    sx:turtle <1literalPattern19.turtle> ;
+    .
+
+<#1literalStartPattern> a sht:RepresentationTest ;
+    mf:name "1literalStartPattern" ;
+    mf:status mf:proposed ;
+    sx:shex <1literalStartPattern.shex> ;
+    sx:json <1literalStartPattern.json> ;
+    sx:turtle <1literalStartPattern.turtle> ;
+    .
+
+<#1literalPatternEnd> a sht:RepresentationTest ;
+    mf:name "1literalPatternEnd" ;
+    mf:status mf:proposed ;
+    sx:shex <1literalPatternEnd.shex> ;
+    sx:json <1literalPatternEnd.json> ;
+    sx:turtle <1literalPatternEnd.turtle> ;
+    .
+
+<#1literalStartPatternEnd> a sht:RepresentationTest ;
+    mf:name "1literalStartPatternEnd" ;
+    mf:status mf:proposed ;
+    sx:shex <1literalStartPatternEnd.shex> ;
+    sx:json <1literalStartPatternEnd.json> ;
+    sx:turtle <1literalStartPatternEnd.turtle> ;
+    .
+
+<#1literalPatternDollar> a sht:RepresentationTest ;
+    mf:name "1literalPatternDollar" ;
+    mf:status mf:proposed ;
+    sx:shex <1literalPatternDollar.shex> ;
+    sx:json <1literalPatternDollar.json> ;
+    sx:turtle <1literalPatternDollar.turtle> ;
+    .
+
+<#1literalCarrotPatternDollar> a sht:RepresentationTest ;
+    mf:name "1literalCarrotPatternDollar" ;
+    mf:status mf:proposed ;
+    sx:shex <1literalCarrotPatternDollar.shex> ;
+    sx:json <1literalCarrotPatternDollar.json> ;
+    sx:turtle <1literalCarrotPatternDollar.turtle> ;
+    .
+
+<#1literalPatternabEnd> a sht:RepresentationTest ;
+    mf:name "1literalPatternabEnd" ;
+    mf:status mf:proposed ;
+    sx:shex <1literalPatternabEnd.shex> ;
+    sx:json <1literalPatternabEnd.json> ;
+    sx:turtle <1literalPatternabEnd.turtle> ;
+    .
+
+<#1iriPattern> a sht:RepresentationTest ;
+    mf:name "1iriPattern" ;
+    mf:status mf:proposed ;
+    sx:shex <1iriPattern.shex> ;
+    sx:json <1iriPattern.json> ;
+    sx:turtle <1iriPattern.turtle> ;
+    .
+
+<#1iriPatternbc> a sht:RepresentationTest ;
+    mf:name "1iriPatternbc" ;
+    mf:status mf:proposed ;
+    sx:shex <1iriPatternbc.shex> ;
+    sx:json <1iriPatternbc.json> ;
+    sx:turtle <1iriPatternbc.turtle> ;
+    .
+
+<#1bnodePattern> a sht:RepresentationTest ;
+    mf:name "1bnodePattern" ;
+    mf:status mf:proposed ;
+    sx:shex <1bnodePattern.shex> ;
+    sx:json <1bnodePattern.json> ;
+    sx:turtle <1bnodePattern.turtle> ;
+    .
+
+<#1nonliteralPattern> a sht:RepresentationTest ;
+    mf:name "1nonliteralPattern" ;
+    mf:status mf:proposed ;
+    sx:shex <1nonliteralPattern.shex> ;
+    sx:json <1nonliteralPattern.json> ;
+    sx:turtle <1nonliteralPattern.turtle> ;
+    .
+
+<#1val1dotMinusiri3> a sht:RepresentationTest ;
+    mf:name "1val1dotMinusiri3" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1dotMinusiri3.shex> ;
+    sx:json <1val1dotMinusiri3.json> ;
+    sx:turtle <1val1dotMinusiri3.turtle> ;
+    .
+
+<#1val1refvsMinusiri3> a sht:RepresentationTest ;
+    mf:name "1val1refvsMinusiri3" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1refvsMinusiri3.shex> ;
+    sx:json <1val1refvsMinusiri3.json> ;
+    sx:turtle <1val1refvsMinusiri3.turtle> ;
+    .
+
+<#1val1dotMinusiriStem3> a sht:RepresentationTest ;
+    mf:name "1val1dotMinusiriStem3" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1dotMinusiriStem3.shex> ;
+    sx:json <1val1dotMinusiriStem3.json> ;
+    sx:turtle <1val1dotMinusiriStem3.turtle> ;
+    .
+
+<#1val1iriStem> a sht:RepresentationTest ;
+    mf:name "1val1iriStem" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1iriStem.shex> ;
+    sx:json <1val1iriStem.json> ;
+    sx:turtle <1val1iriStem.turtle> ;
+    .
+
+<#1val1iriStemMinusiri3> a sht:RepresentationTest ;
+    mf:name "1val1iriStemMinusiri3" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1iriStemMinusiri3.shex> ;
+    sx:json <1val1iriStemMinusiri3.json> ;
+    sx:turtle <1val1iriStemMinusiri3.turtle> ;
+    .
+
+<#1val1iriStemMinusiriStem3> a sht:RepresentationTest ;
+    mf:name "1val1iriStemMinusiriStem3" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1iriStemMinusiriStem3.shex> ;
+    sx:json <1val1iriStemMinusiriStem3.json> ;
+    sx:turtle <1val1iriStemMinusiriStem3.turtle> ;
+    .
+
+<#2dot> a sht:RepresentationTest ;
+    mf:name "2dot" ;
+    mf:status mf:proposed ;
+    sx:shex <2dot.shex> ;
+    sx:json <2dot.json> ;
+    sx:turtle <2dot.turtle> ;
+    .
+
+<#2dotSemis> a sht:RepresentationTest ;
+    mf:name "2dotSemis" ;
+    mf:status mf:proposed ;
+    mf:sameSemanticsAs <#2dotSemis> ;
+    sx:shex <2dotSemis.shex> ;
+    sx:json <2dotSemis.json> ;
+    sx:turtle <2dotSemis.turtle> ;
+    .
+
+<#open2dotclose> a sht:RepresentationTest ;
+    mf:name "open2dotclose" ;
+    mf:status mf:proposed ;
+    mf:sameSemanticsAs <#2dotSemis> ;
+    sx:shex <open2dotclose.shex> ;
+    sx:json <open2dotclose.json> ;
+    sx:turtle <open2dotclose.turtle> ;
+    .
+
+<#open2dotsemisclose> a sht:RepresentationTest ;
+    mf:name "open2dotsemisclose" ;
+    mf:status mf:proposed ;
+    mf:sameSemanticsAs <#2dotSemis> ;
+    sx:shex <open2dotsemisclose.shex> ;
+    sx:json <open2dotsemisclose.json> ;
+    sx:turtle <open2dotsemisclose.turtle> ;
+    .
+
+<#3groupdot> a sht:RepresentationTest ;
+    mf:name "3groupdot" ;
+    mf:status mf:proposed ;
+    sx:shex <3groupdot.shex> ;
+    sx:json <3groupdot.json> ;
+    sx:turtle <3groupdot.turtle> ;
+    .
+
+<#open3groupdotclose> a sht:RepresentationTest ;
+    mf:name "open3groupdotclose" ;
+    mf:status mf:proposed ;
+    mf:sameSemanticsAs <#3groupdot> ;
+    sx:shex <open3groupdotclose.shex> ;
+    sx:json <open3groupdotclose.json> ;
+    sx:turtle <open3groupdotclose.turtle> ;
+    .
+
+<#1dotOne1dot> a sht:RepresentationTest ;
+    mf:name "1dotOne1dot" ;
+    mf:status mf:proposed ;
+    sx:shex <1dotOne1dot.shex> ;
+    sx:json <1dotOne1dot.json> ;
+    sx:turtle <1dotOne1dot.turtle> ;
+    .
+
+<#1dotSemiOne1dotSemi> a sht:RepresentationTest ;
+    mf:name "1dotSemiOne1dotSemi" ;
+    mf:status mf:proposed ;
+    sx:shex <1dotSemiOne1dotSemi.shex> ;
+    sx:json <1dotSemiOne1dotSemi.json> ;
+    sx:turtle <1dotSemiOne1dotSemi.turtle> ;
+    .
+
+<#open1dotOne1dotclose> a sht:RepresentationTest ;
+    mf:name "open1dotOne1dotclose" ;
+    mf:status mf:proposed ;
+    mf:sameSemanticsAs <#1dotSemiOne1dotSemi> ;
+    sx:shex <open1dotOne1dotclose.shex> ;
+    sx:json <open1dotOne1dotclose.json> ;
+    sx:turtle <open1dotOne1dotclose.turtle> ;
+    .
+
+<#open1dotSemiOne1dotSemicloseSemi> a sht:RepresentationTest ;
+    mf:name "open1dotSemiOne1dotSemicloseSemi" ;
+    mf:status mf:proposed ;
+    mf:sameSemanticsAs <#1dotSemiOne1dotSemi> ;
+    sx:shex <open1dotSemiOne1dotSemicloseSemi.shex> ;
+    sx:json <open1dotSemiOne1dotSemicloseSemi.json> ;
+    sx:turtle <open1dotSemiOne1dotSemicloseSemi.turtle> ;
+    .
+
+<#2dotOne1dot> a sht:RepresentationTest ;
+    mf:name "2dotOne1dot" ;
+    mf:status mf:proposed ;
+    sx:shex <2dotOne1dot.shex> ;
+    sx:json <2dotOne1dot.json> ;
+    sx:turtle <2dotOne1dot.turtle> ;
+    .
+
+<#2dotSemiOne1dotSemi> a sht:RepresentationTest ;
+    mf:name "2dotSemiOne1dotSemi" ;
+    mf:status mf:proposed ;
+    mf:sameSemanticsAs <#2dotOne1dot> ;
+    sx:shex <2dotSemiOne1dotSemi.shex> ;
+    sx:json <2dotSemiOne1dotSemi.json> ;
+    sx:turtle <2dotSemiOne1dotSemi.turtle> ;
+    .
+
+<#open2dotOne1dotclose> a sht:RepresentationTest ;
+    mf:name "open2dotOne1dotclose" ;
+    mf:status mf:proposed ;
+    mf:sameSemanticsAs <#2dotOne1dot> ;
+    sx:shex <open2dotOne1dotclose.shex> ;
+    sx:json <open2dotOne1dotclose.json> ;
+    sx:turtle <open2dotOne1dotclose.turtle> ;
+    .
+
+<#open2dotSemisOne1dotSemiclose> a sht:RepresentationTest ;
+    mf:name "open2dotSemisOne1dotSemiclose" ;
+    mf:status mf:proposed ;
+    mf:sameSemanticsAs <#2dotOne1dot> ;
+    sx:shex <open2dotSemisOne1dotSemiclose.shex> ;
+    sx:json <open2dotSemisOne1dotSemiclose.json> ;
+    sx:turtle <open2dotSemisOne1dotSemiclose.turtle> ;
+    .
+
+<#openopen2dotcloseOne1dotclose> a sht:RepresentationTest ;
+    mf:name "openopen2dotcloseOne1dotclose" ;
+    mf:status mf:proposed ;
+    mf:sameSemanticsAs <#2dotOne1dot> ;
+    sx:shex <openopen2dotcloseOne1dotclose.shex> ;
+    sx:json <openopen2dotcloseOne1dotclose.json> ;
+    sx:turtle <openopen2dotcloseOne1dotclose.turtle> ;
+    .
+
+<#openopen2dotSemiscloseOne1dotSemiclose> a sht:RepresentationTest ;
+    mf:name "openopen2dotSemiscloseOne1dotSemiclose" ;
+    mf:status mf:proposed ;
+    mf:sameSemanticsAs <#2dotOne1dot> ;
+    sx:shex <openopen2dotSemiscloseOne1dotSemiclose.shex> ;
+    sx:json <openopen2dotSemiscloseOne1dotSemiclose.json> ;
+    sx:turtle <openopen2dotSemiscloseOne1dotSemiclose.turtle> ;
+    .
+
+<#open1dotopen1dotOne1dotcloseclose> a sht:RepresentationTest ;
+    mf:name "open1dotopen1dotOne1dotcloseclose" ;
+    mf:status mf:proposed ;
+    sx:shex <open1dotopen1dotOne1dotcloseclose.shex> ;
+    sx:json <open1dotopen1dotOne1dotcloseclose.json> ;
+    sx:turtle <open1dotopen1dotOne1dotcloseclose.turtle> ;
+    .
+
+<#open1dotopen1dotSemiOne1dotSemicloseSemicloseSemi> a sht:RepresentationTest ;
+    mf:name "open1dotopen1dotSemiOne1dotSemicloseSemicloseSemi" ;
+    mf:status mf:proposed ;
+    mf:sameSemanticsAs <#open1dotopen1dotOne1dotcloseclose> ;
+    sx:shex <open1dotopen1dotSemiOne1dotSemicloseSemicloseSemi.shex> ;
+    sx:json <open1dotopen1dotSemiOne1dotSemicloseSemicloseSemi.json> ;
+    sx:turtle <open1dotopen1dotSemiOne1dotSemicloseSemicloseSemi.turtle> ;
+    .
+
+<#1dotOne2dot> a sht:RepresentationTest ;
+    mf:name "1dotOne2dot" ;
+    mf:status mf:proposed ;
+    sx:shex <1dotOne2dot.shex> ;
+    sx:json <1dotOne2dot.json> ;
+    sx:turtle <1dotOne2dot.turtle> ;
+    .
+
+<#1dotSemiOne2dotSemis> a sht:RepresentationTest ;
+    mf:name "1dotSemiOne2dotSemis" ;
+    mf:status mf:proposed ;
+    mf:sameSemanticsAs <#1dotOne2dot> ;
+    sx:shex <1dotSemiOne2dotSemis.shex> ;
+    sx:json <1dotSemiOne2dotSemis.json> ;
+    sx:turtle <1dotSemiOne2dotSemis.turtle> ;
+    .
+
+<#open1dotSemiOne2dotsemisclose> a sht:RepresentationTest ;
+    mf:name "open1dotSemiOne2dotsemisclose" ;
+    mf:status mf:proposed ;
+    mf:sameSemanticsAs <#1dotOne2dot> ;
+    sx:shex <open1dotSemiOne2dotsemisclose.shex> ;
+    sx:json <open1dotSemiOne2dotsemisclose.json> ;
+    sx:turtle <open1dotSemiOne2dotsemisclose.turtle> ;
+    .
+
+<#open1dotSemiOneopen2dotSemiscloseclose> a sht:RepresentationTest ;
+    mf:name "open1dotSemiOneopen2dotSemiscloseclose" ;
+    mf:status mf:proposed ;
+    mf:sameSemanticsAs <#1dotOne2dot> ;
+    sx:shex <open1dotSemiOneopen2dotSemiscloseclose.shex> ;
+    sx:json <open1dotSemiOneopen2dotSemiscloseclose.json> ;
+    sx:turtle <open1dotSemiOneopen2dotSemiscloseclose.turtle> ;
+    .
+
+<#open1dotOne2dotclose> a sht:RepresentationTest ;
+    mf:name "open1dotOne2dotclose" ;
+    mf:status mf:proposed ;
+    mf:sameSemanticsAs <#1dotOne2dot> ;
+    sx:shex <open1dotOne2dotclose.shex> ;
+    sx:json <open1dotOne2dotclose.json> ;
+    sx:turtle <open1dotOne2dotclose.turtle> ;
+    .
+
+<#open1dotOneopen2dotcloseclose> a sht:RepresentationTest ;
+    mf:name "open1dotOneopen2dotcloseclose" ;
+    mf:status mf:proposed ;
+    sx:shex <open1dotOneopen2dotcloseclose.shex> ;
+    sx:json <open1dotOneopen2dotcloseclose.json> ;
+    sx:turtle <open1dotOneopen2dotcloseclose.turtle> ;
+    .
+
+<#openopen1dotOne1dotclose1dotclose> a sht:RepresentationTest ;
+    mf:name "openopen1dotOne1dotclose1dotclose" ;
+    mf:status mf:proposed ;
+    sx:shex <openopen1dotOne1dotclose1dotclose.shex> ;
+    sx:json <openopen1dotOne1dotclose1dotclose.json> ;
+    sx:turtle <openopen1dotOne1dotclose1dotclose.turtle> ;
+    .
+
+<#openopen1dotSemiOne1dotSemiclose1dotSemicloseSemi> a sht:RepresentationTest ;
+    mf:name "openopen1dotSemiOne1dotSemiclose1dotSemicloseSemi" ;
+    mf:status mf:proposed ;
+    mf:sameSemanticsAs <#openopen1dotSemiOne1dotSemiclose1dotSemicloseSemi> ;
+    sx:shex <openopen1dotSemiOne1dotSemiclose1dotSemicloseSemi.shex> ;
+    sx:json <openopen1dotSemiOne1dotSemiclose1dotSemicloseSemi.json> ;
+    sx:turtle <openopen1dotSemiOne1dotSemiclose1dotSemicloseSemi.turtle> ;
+    .
+
+<#1val1vExprRefIRIREF1> a sht:RepresentationTest ;
+    mf:name "1val1vExprRefIRIREF1" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1vExprRefIRIREF1.shex> ;
+    sx:json <1val1vExprRefIRIREF1.json> ;
+    sx:turtle <1val1vExprRefIRIREF1.turtle> ;
+    .
+
+<#1val1vExprRefbnode1> a sht:RepresentationTest ;
+    mf:name "1val1vExprRefbnode1" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1vExprRefbnode1.shex> ;
+    sx:json <1val1vExprRefbnode1.json> ;
+    sx:turtle <1val1vExprRefbnode1.turtle> ;
+    .
+
+<#1dotShapeAND1dot3X> a sht:RepresentationTest ;
+    mf:name "1dotShapeAND1dot3X" ;
+    mf:status mf:proposed ;
+    sx:shex <1dotShapeAND1dot3X.shex> ;
+    sx:json <1dotShapeAND1dot3X.json> ;
+    sx:turtle <1dotShapeAND1dot3X.turtle> ;
+    .
+
+<#1dotRefAND3> a sht:RepresentationTest ;
+    mf:name "1dotRefAND3" ;
+    mf:status mf:proposed ;
+    sx:shex <1dotRefAND3.shex> ;
+    sx:json <1dotRefAND3.json> ;
+    sx:turtle <1dotRefAND3.turtle> ;
+    .
+
+<#1val1vExpr1AND1AND1Ref3> a sht:RepresentationTest ;
+    mf:name "1val1vExpr1AND1AND1Ref3" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1vExpr1AND1AND1Ref3.shex> ;
+    sx:json <1val1vExpr1AND1AND1Ref3.json> ;
+    sx:turtle <1val1vExpr1AND1AND1Ref3.turtle> ;
+    .
+
+<#1val1vExprRefAND3> a sht:RepresentationTest ;
+    mf:name "1val1vExprRefAND3" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1vExprRefAND3.shex> ;
+    sx:json <1val1vExprRefAND3.json> ;
+    sx:turtle <1val1vExprRefAND3.turtle> ;
+    .
+
+<#1val1vExprAND3> a sht:RepresentationTest ;
+    mf:name "1val1vExprAND3" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1vExprAND3.shex> ;
+    sx:json <1val1vExprAND3.json> ;
+    sx:turtle <1val1vExprAND3.turtle> ;
+    .
+
+<#1bnodeRefORRefMinlength> a sht:RepresentationTest ;
+    mf:name "1bnodeRefORRefMinlength" ;
+    mf:status mf:proposed ;
+    sx:shex <1bnodeRefORRefMinlength.shex> ;
+    sx:json <1bnodeRefORRefMinlength.json> ;
+    sx:turtle <1bnodeRefORRefMinlength.turtle> ;
+    .
+
+<#1dotRefOR3> a sht:RepresentationTest ;
+    mf:name "1dotRefOR3" ;
+    mf:status mf:proposed ;
+    sx:shex <1dotRefOR3.shex> ;
+    sx:json <1dotRefOR3.json> ;
+    sx:turtle <1dotRefOR3.turtle> ;
+    .
+
+<#1val1vExpr1OR1OR1Ref3> a sht:RepresentationTest ;
+    mf:name "1val1vExpr1OR1OR1Ref3" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1vExpr1OR1OR1Ref3.shex> ;
+    sx:json <1val1vExpr1OR1OR1Ref3.json> ;
+    sx:turtle <1val1vExpr1OR1OR1Ref3.turtle> ;
+    .
+
+<#1val1vExprRefOR3> a sht:RepresentationTest ;
+    mf:name "1val1vExprRefOR3" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1vExprRefOR3.shex> ;
+    sx:json <1val1vExprRefOR3.json> ;
+    sx:turtle <1val1vExprRefOR3.turtle> ;
+    .
+
+<#1val1vExprOR3> a sht:RepresentationTest ;
+    mf:name "1val1vExprOR3" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1vExprOR3.shex> ;
+    sx:json <1val1vExprOR3.json> ;
+    sx:turtle <1val1vExprOR3.turtle> ;
+    .
+
+<#1val1vExpr1AND1OR1Ref3> a sht:RepresentationTest ;
+    mf:name "1val1vExpr1AND1OR1Ref3" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1vExpr1AND1OR1Ref3.shex> ;
+    sx:json <1val1vExpr1AND1OR1Ref3.json> ;
+    sx:turtle <1val1vExpr1AND1OR1Ref3.turtle> ;
+    .
+
+<#1val1vExpr1OR1AND1Ref3> a sht:RepresentationTest ;
+    mf:name "1val1vExpr1OR1AND1Ref3" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1vExpr1OR1AND1Ref3.shex> ;
+    sx:json <1val1vExpr1OR1AND1Ref3.json> ;
+    sx:turtle <1val1vExpr1OR1AND1Ref3.turtle> ;
+    .
+
+<#open3Onedotclosecard2> a sht:RepresentationTest ;
+    mf:name "open3Onedotclosecard2" ;
+    mf:status mf:proposed ;
+    sx:shex <open3Onedotclosecard2.shex> ;
+    sx:json <open3Onedotclosecard2.json> ;
+    sx:turtle <open3Onedotclosecard2.turtle> ;
+    .
+
+<#open3Onedotclosecard23> a sht:RepresentationTest ;
+    mf:name "open3Onedotclosecard23" ;
+    mf:status mf:proposed ;
+    sx:shex <open3Onedotclosecard23.shex> ;
+    sx:json <open3Onedotclosecard23.json> ;
+    sx:turtle <open3Onedotclosecard23.turtle> ;
+    .
+
+<#open4Onedotclosecard23> a sht:RepresentationTest ;
+    mf:name "open4Onedotclosecard23" ;
+    mf:status mf:proposed ;
+    sx:shex <open4Onedotclosecard23.shex> ;
+    sx:json <open4Onedotclosecard23.json> ;
+    sx:turtle <open4Onedotclosecard23.turtle> ;
+    .
+
+<#open3groupdotclosecard23> a sht:RepresentationTest ;
+    mf:name "open3groupdotclosecard23" ;
+    mf:status mf:proposed ;
+    sx:shex <open3groupdotclosecard23.shex> ;
+    sx:json <open3groupdotclosecard23.json> ;
+    sx:turtle <open3groupdotclosecard23.turtle> ;
+    .
+
+<#1val1vShapeANDRef3> a sht:RepresentationTest ;
+    mf:name "1val1vShapeANDRef3" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1vShapeANDRef3.shex> ;
+    sx:json <1val1vShapeANDRef3.json> ;
+    sx:turtle <1val1vShapeANDRef3.turtle> ;
+    .
+
+<#1dotClosed> a sht:RepresentationTest ;
+    mf:name "1dotClosed" ;
+    mf:status mf:proposed ;
+    sx:shex <1dotClosed.shex> ;
+    sx:json <1dotClosed.json> ;
+    sx:turtle <1dotClosed.turtle> ;
+    .
+
+<#FocusIRI2groupBnodeNested2groupIRIRef> a sht:RepresentationTest ;
+    mf:name "FocusIRI2groupBnodeNested2groupIRIRef" ;
+    mf:status mf:proposed ;
+    sx:shex <FocusIRI2groupBnodeNested2groupIRIRef.shex> ;
+    sx:json <FocusIRI2groupBnodeNested2groupIRIRef.json> ;
+    sx:turtle <FocusIRI2groupBnodeNested2groupIRIRef.turtle> ;
+    .
+
+<#1val1IRIREFExtra1> a sht:RepresentationTest ;
+    mf:name "1val1IRIREFExtra1" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1IRIREFExtra1.shex> ;
+    sx:json <1val1IRIREFExtra1.json> ;
+    sx:turtle <1val1IRIREFExtra1.turtle> ;
+    .
+
+<#1val2IRIREFExtra1> a sht:RepresentationTest ;
+    mf:name "1val2IRIREFExtra1" ;
+    mf:status mf:proposed ;
+    sx:shex <1val2IRIREFExtra1.shex> ;
+    sx:json <1val2IRIREFExtra1.json> ;
+    sx:turtle <1val2IRIREFExtra1.turtle> ;
+    .
+
+<#1val2IRIREFPlusExtra1> a sht:RepresentationTest ;
+    mf:name "1val2IRIREFPlusExtra1" ;
+    mf:status mf:proposed ;
+    sx:shex <1val2IRIREFPlusExtra1.shex> ;
+    sx:json <1val2IRIREFPlusExtra1.json> ;
+    sx:turtle <1val2IRIREFPlusExtra1.turtle> ;
+    .
+
+<#1val1IRIREFExtra1p2> a sht:RepresentationTest ;
+    mf:name "1val1IRIREFExtra1p2" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1IRIREFExtra1p2.shex> ;
+    sx:json <1val1IRIREFExtra1p2.json> ;
+    sx:turtle <1val1IRIREFExtra1p2.turtle> ;
+    .
+
+<#1val1IRIREFExtra1One> a sht:RepresentationTest ;
+    mf:name "1val1IRIREFExtra1One" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1IRIREFExtra1One.shex> ;
+    sx:json <1val1IRIREFExtra1One.json> ;
+    sx:turtle <1val1IRIREFExtra1One.turtle> ;
+    .
+
+<#1dotExtra1> a sht:RepresentationTest ;
+    mf:name "1dotExtra1" ;
+    mf:status mf:proposed ;
+    sx:shex <1dotExtra1.shex> ;
+    sx:json <1dotExtra1.json> ;
+    sx:turtle <1dotExtra1.turtle> ;
+    .
+
+<#3groupdotExtra3> a sht:RepresentationTest ;
+    mf:name "3groupdotExtra3" ;
+    mf:status mf:proposed ;
+    sx:shex <3groupdotExtra3.shex> ;
+    sx:json <3groupdotExtra3.json> ;
+    sx:turtle <3groupdotExtra3.turtle> ;
+    .
+
+<#3groupdot3Extra> a sht:RepresentationTest ;
+    mf:name "3groupdot3Extra" ;
+    mf:status mf:proposed ;
+    sx:shex <3groupdot3Extra.shex> ;
+    sx:json <3groupdot3Extra.json> ;
+    sx:turtle <3groupdot3Extra.turtle> ;
+    .
+
+<#3groupdotExtra3NLex> a sht:RepresentationTest ;
+    mf:name "3groupdotExtra3NLex" ;
+    mf:status mf:proposed ;
+    sx:shex <3groupdotExtra3NLex.shex> ;
+    sx:json <3groupdotExtra3NLex.json> ;
+    sx:turtle <3groupdotExtra3NLex.turtle> ;
+    .
+
+<#startRefIRIREF> a sht:RepresentationTest ;
+    mf:name "startRefIRIREF" ;
+    mf:status mf:proposed ;
+    sx:shex <startRefIRIREF.shex> ;
+    sx:json <startRefIRIREF.json> ;
+    sx:turtle <startRefIRIREF.turtle> ;
+    .
+
+<#startRefbnode> a sht:RepresentationTest ;
+    mf:name "startRefbnode" ;
+    mf:status mf:proposed ;
+    sx:shex <startRefbnode.shex> ;
+    sx:json <startRefbnode.json> ;
+    sx:turtle <startRefbnode.turtle> ;
+    .
+
+<#startInline> a sht:RepresentationTest ;
+    mf:name "startInline" ;
+    mf:status mf:proposed ;
+    sx:shex <startInline.shex> ;
+    sx:json <startInline.json> ;
+    sx:turtle <startInline.turtle> ;
+    .
+
+<#startEqualSpaceInline> a sht:RepresentationTest ;
+    mf:name "startEqualSpaceInline" ;
+    mf:status mf:proposed ;
+    sx:shex <startEqualSpaceInline.shex> ;
+    sx:json <startEqualSpaceInline.json> ;
+    sx:turtle <startEqualSpaceInline.turtle> ;
+    .
+
+<#startSpaceEqualInline> a sht:RepresentationTest ;
+    mf:name "startSpaceEqualInline" ;
+    mf:status mf:proposed ;
+    sx:shex <startSpaceEqualInline.shex> ;
+    sx:json <startSpaceEqualInline.json> ;
+    sx:turtle <startSpaceEqualInline.turtle> ;
+    .
+
+<#2EachInclude1> a sht:RepresentationTest ;
+    mf:name "2EachInclude1" ;
+    mf:status mf:proposed ;
+    sx:shex <2EachInclude1.shex> ;
+    sx:json <2EachInclude1.json> ;
+    sx:turtle <2EachInclude1.turtle> ;
+    .
+
+<#2EachInclude1-after> a sht:RepresentationTest ;
+    mf:name "2EachInclude1-after" ;
+    mf:status mf:proposed ;
+    sx:shex <2EachInclude1-after.shex> ;
+    sx:json <2EachInclude1-after.json> ;
+    sx:turtle <2EachInclude1-after.turtle> ;
+    .
+
+<#2OneInclude1> a sht:RepresentationTest ;
+    mf:name "2OneInclude1" ;
+    mf:status mf:proposed ;
+    sx:shex <2OneInclude1.shex> ;
+    sx:json <2OneInclude1.json> ;
+    sx:turtle <2OneInclude1.turtle> ;
+    .
+
+<#2OneInclude1-after> a sht:RepresentationTest ;
+    mf:name "2OneInclude1-after" ;
+    mf:status mf:proposed ;
+    sx:shex <2OneInclude1-after.shex> ;
+    sx:json <2OneInclude1-after.json> ;
+    sx:turtle <2OneInclude1-after.turtle> ;
+    .
+
+<#1dotAnnotIRIREF> a sht:RepresentationTest ;
+    mf:name "1dotAnnotIRIREF" ;
+    mf:status mf:proposed ;
+    sx:shex <1dotAnnotIRIREF.shex> ;
+    sx:json <1dotAnnotIRIREF.json> ;
+    sx:turtle <1dotAnnotIRIREF.turtle> ;
+    .
+
+<#1dotAnnotAIRIREF> a sht:RepresentationTest ;
+    mf:name "1dotAnnotAIRIREF" ;
+    mf:status mf:proposed ;
+    sx:shex <1dotAnnotAIRIREF.shex> ;
+    sx:json <1dotAnnotAIRIREF.json> ;
+    sx:turtle <1dotAnnotAIRIREF.turtle> ;
+    .
+
+<#1dotPlusAnnotIRIREF> a sht:RepresentationTest ;
+    mf:name "1dotPlusAnnotIRIREF" ;
+    mf:status mf:proposed ;
+    sx:shex <1dotPlusAnnotIRIREF.shex> ;
+    sx:json <1dotPlusAnnotIRIREF.json> ;
+    sx:turtle <1dotPlusAnnotIRIREF.turtle> ;
+    .
+
+<#1dotAnnotSTRING_LITERAL1> a sht:RepresentationTest ;
+    mf:name "1dotAnnotSTRING_LITERAL1" ;
+    mf:status mf:proposed ;
+    sx:shex <1dotAnnotSTRING_LITERAL1.shex> ;
+    sx:json <1dotAnnotSTRING_LITERAL1.json> ;
+    sx:turtle <1dotAnnotSTRING_LITERAL1.turtle> ;
+    .
+
+<#1dotAnnot3> a sht:RepresentationTest ;
+    mf:name "1dotAnnot3" ;
+    mf:status mf:proposed ;
+    sx:shex <1dotAnnot3.shex> ;
+    sx:json <1dotAnnot3.json> ;
+    sx:turtle <1dotAnnot3.turtle> ;
+    .
+
+<#1inversedotAnnot3> a sht:RepresentationTest ;
+    mf:name "1inversedotAnnot3" ;
+    mf:status mf:proposed ;
+    sx:shex <1inversedotAnnot3.shex> ;
+    sx:json <1inversedotAnnot3.json> ;
+    sx:turtle <1inversedotAnnot3.turtle> ;
+    .
+
+<#open3groupdotcloseAnnot3> a sht:RepresentationTest ;
+    mf:name "open3groupdotcloseAnnot3" ;
+    mf:status mf:proposed ;
+    sx:shex <open3groupdotcloseAnnot3.shex> ;
+    sx:json <open3groupdotcloseAnnot3.json> ;
+    sx:turtle <open3groupdotcloseAnnot3.turtle> ;
+    .
+
+<#1dotCode1> a sht:RepresentationTest ;
+    mf:name "1dotCode1" ;
+    mf:status mf:proposed ;
+    sx:shex <1dotCode1.shex> ;
+    sx:json <1dotCode1.json> ;
+    sx:turtle <1dotCode1.turtle> ;
+    .
+
+<#1dotNoCode1> a sht:RepresentationTest ;
+    mf:name "1dotNoCode1" ;
+    mf:status mf:proposed ;
+    sx:shex <1dotNoCode1.shex> ;
+    sx:json <1dotNoCode1.json> ;
+    sx:turtle <1dotNoCode1.turtle> ;
+    .
+
+<#1inversedotCode1> a sht:RepresentationTest ;
+    mf:name "1inversedotCode1" ;
+    mf:status mf:proposed ;
+    sx:shex <1inversedotCode1.shex> ;
+    sx:json <1inversedotCode1.json> ;
+    sx:turtle <1inversedotCode1.turtle> ;
+    .
+
+<#1dotCode3> a sht:RepresentationTest ;
+    mf:name "1dotCode3" ;
+    mf:status mf:proposed ;
+    sx:shex <1dotCode3.shex> ;
+    sx:json <1dotCode3.json> ;
+    sx:turtle <1dotCode3.turtle> ;
+    .
+
+<#1dotNoCode3> a sht:RepresentationTest ;
+    mf:name "1dotNoCode3" ;
+    mf:status mf:proposed ;
+    sx:shex <1dotNoCode3.shex> ;
+    sx:json <1dotNoCode3.json> ;
+    sx:turtle <1dotNoCode3.turtle> ;
+    .
+
+<#1dotCode3fail> a sht:RepresentationTest ;
+    mf:name "1dotCode3fail" ;
+    mf:status mf:proposed ;
+    sx:shex <1dotCode3fail.shex> ;
+    sx:json <1dotCode3fail.json> ;
+    sx:turtle <1dotCode3fail.turtle> ;
+    .
+
+<#1dotCodeWithEscapes1> a sht:RepresentationTest ;
+    mf:name "1dotCodeWithEscapes1" ;
+    mf:status mf:proposed ;
+    sx:shex <1dotCodeWithEscapes1.shex> ;
+    sx:json <1dotCodeWithEscapes1.json> ;
+    sx:turtle <1dotCodeWithEscapes1.turtle> ;
+    .
+
+<#1dotShapeCode1> a sht:RepresentationTest ;
+    mf:name "1dotShapeCode1" ;
+    mf:status mf:proposed ;
+    sx:shex <1dotShapeCode1.shex> ;
+    sx:json <1dotShapeCode1.json> ;
+    sx:turtle <1dotShapeCode1.turtle> ;
+    .
+
+<#1dotShapeNoCode1> a sht:RepresentationTest ;
+    mf:name "1dotShapeNoCode1" ;
+    mf:status mf:proposed ;
+    sx:shex <1dotShapeNoCode1.shex> ;
+    sx:json <1dotShapeNoCode1.json> ;
+    sx:turtle <1dotShapeNoCode1.turtle> ;
+    .
+
+<#open3groupdotcloseCode1> a sht:RepresentationTest ;
+    mf:name "open3groupdotcloseCode1" ;
+    mf:status mf:proposed ;
+    sx:shex <open3groupdotcloseCode1.shex> ;
+    sx:json <open3groupdotcloseCode1.json> ;
+    sx:turtle <open3groupdotcloseCode1.turtle> ;
+    .
+
+<#startCode1> a sht:RepresentationTest ;
+    mf:name "startCode1" ;
+    mf:status mf:proposed ;
+    sx:shex <startCode1.shex> ;
+    sx:json <startCode1.json> ;
+    sx:turtle <startCode1.turtle> ;
+    .
+
+<#startNoCode1> a sht:RepresentationTest ;
+    mf:name "startNoCode1" ;
+    mf:status mf:proposed ;
+    sx:shex <startNoCode1.shex> ;
+    sx:json <startNoCode1.json> ;
+    sx:turtle <startNoCode1.turtle> ;
+    .
+
+<#startCode1fail> a sht:RepresentationTest ;
+    mf:name "startCode1fail" ;
+    mf:status mf:proposed ;
+    sx:shex <startCode1fail.shex> ;
+    sx:json <startCode1fail.json> ;
+    sx:turtle <startCode1fail.turtle> ;
+    .
+
+<#startCode1startRef> a sht:RepresentationTest ;
+    mf:name "startCode1startRef" ;
+    mf:status mf:proposed ;
+    sx:shex <startCode1startRef.shex> ;
+    sx:json <startCode1startRef.json> ;
+    sx:turtle <startCode1startRef.turtle> ;
+    .
+
+<#startCode1startReffail> a sht:RepresentationTest ;
+    mf:name "startCode1startReffail" ;
+    mf:status mf:proposed ;
+    sx:shex <startCode1startReffail.shex> ;
+    sx:json <startCode1startReffail.json> ;
+    sx:turtle <startCode1startReffail.turtle> ;
+    .
+
+<#startCode3> a sht:RepresentationTest ;
+    mf:name "startCode3" ;
+    mf:status mf:proposed ;
+    sx:shex <startCode3.shex> ;
+    sx:json <startCode3.json> ;
+    sx:turtle <startCode3.turtle> ;
+    .
+
+<#startCode3fail> a sht:RepresentationTest ;
+    mf:name "startCode3fail" ;
+    mf:status mf:proposed ;
+    sx:shex <startCode3fail.shex> ;
+    sx:json <startCode3fail.json> ;
+    sx:turtle <startCode3fail.turtle> ;
+    .
+
+<#open3groupdotclosecard23Annot3Code2> a sht:RepresentationTest ;
+    mf:name "open3groupdotclosecard23Annot3Code2" ;
+    mf:status mf:proposed ;
+    sx:shex <open3groupdotclosecard23Annot3Code2.shex> ;
+    sx:json <open3groupdotclosecard23Annot3Code2.json> ;
+    sx:turtle <open3groupdotclosecard23Annot3Code2.turtle> ;
+    .
+
+<#0focusIRI> a sht:RepresentationTest ;
+    mf:name "0focusIRI" ;
+    mf:status mf:proposed ;
+    sx:shex <0focusIRI.shex> ;
+    sx:json <0focusIRI.json> ;
+    sx:turtle <0focusIRI.turtle> ;
+    .
+
+<#0focusBNODE> a sht:RepresentationTest ;
+    mf:name "0focusBNODE" ;
+    mf:status mf:proposed ;
+    sx:shex <0focusBNODE.shex> ;
+    sx:json <0focusBNODE.json> ;
+    sx:turtle <0focusBNODE.turtle> ;
+    .
+
+<#1focusIRI_dot> a sht:RepresentationTest ;
+    mf:name "1focusIRI_dot" ;
+    mf:status mf:proposed ;
+    sx:shex <1focusIRI_dot.shex> ;
+    sx:json <1focusIRI_dot.json> ;
+    sx:turtle <1focusIRI_dot.turtle> ;
+    .
+
+<#1focusBNODE_dot> a sht:RepresentationTest ;
+    mf:name "1focusBNODE_dot" ;
+    mf:status mf:proposed ;
+    sx:shex <1focusBNODE_dot.shex> ;
+    sx:json <1focusBNODE_dot.json> ;
+    sx:turtle <1focusBNODE_dot.turtle> ;
+    .
+
+<#1focusnonLiteral-dot> a sht:RepresentationTest ;
+    mf:name "1focusnonLiteral-dot" ;
+    mf:status mf:proposed ;
+    sx:shex <1focusnonLiteral-dot.shex> ;
+    sx:json <1focusnonLiteral-dot.json> ;
+    sx:turtle <1focusnonLiteral-dot.turtle> ;
+    .
+
+<#focusdatatype> a sht:RepresentationTest ;
+    mf:name "focusdatatype" ;
+    mf:status mf:proposed ;
+    sx:shex <focusdatatype.shex> ;
+    sx:json <focusdatatype.json> ;
+    sx:turtle <focusdatatype.turtle> ;
+    .
+
+<#focusvs> a sht:RepresentationTest ;
+    mf:name "focusvs" ;
+    mf:status mf:proposed ;
+    sx:shex <focusvs.shex> ;
+    sx:json <focusvs.json> ;
+    sx:turtle <focusvs.turtle> ;
+    .
+
+<#focusvsANDdatatype> a sht:RepresentationTest ;
+    mf:name "focusvsANDdatatype" ;
+    mf:status mf:proposed ;
+    sx:shex <focusvsANDdatatype.shex> ;
+    sx:json <focusvsANDdatatype.json> ;
+    sx:turtle <focusvsANDdatatype.turtle> ;
+    .
+
+<#focusvsANDIRI> a sht:RepresentationTest ;
+    mf:name "focusvsANDIRI" ;
+    mf:status mf:proposed ;
+    sx:shex <focusvsANDIRI.shex> ;
+    sx:json <focusvsANDIRI.json> ;
+    sx:turtle <focusvsANDIRI.turtle> ;
+    .
+
+<#focusvsORdatatype> a sht:RepresentationTest ;
+    mf:name "focusvsORdatatype" ;
+    mf:status mf:proposed ;
+    sx:shex <focusvsORdatatype.shex> ;
+    sx:json <focusvsORdatatype.json> ;
+    sx:turtle <focusvsORdatatype.turtle> ;
+    .
+
+<#1focusLength-dot> a sht:RepresentationTest ;
+    mf:name "1focusLength-dot" ;
+    mf:status mf:proposed ;
+    sx:shex <1focusLength-dot.shex> ;
+    sx:json <1focusLength-dot.json> ;
+    sx:turtle <1focusLength-dot.turtle> ;
+    .
+
+<#1focusMinLength-dot> a sht:RepresentationTest ;
+    mf:name "1focusMinLength-dot" ;
+    mf:status mf:proposed ;
+    sx:shex <1focusMinLength-dot.shex> ;
+    sx:json <1focusMinLength-dot.json> ;
+    sx:turtle <1focusMinLength-dot.turtle> ;
+    .
+
+<#1focusMaxLength-dot> a sht:RepresentationTest ;
+    mf:name "1focusMaxLength-dot" ;
+    mf:status mf:proposed ;
+    sx:shex <1focusMaxLength-dot.shex> ;
+    sx:json <1focusMaxLength-dot.json> ;
+    sx:turtle <1focusMaxLength-dot.turtle> ;
+    .
+
+<#1focusPattern-dot> a sht:RepresentationTest ;
+    mf:name "1focusPattern-dot" ;
+    mf:status mf:proposed ;
+    sx:shex <1focusPattern-dot.shex> ;
+    sx:json <1focusPattern-dot.json> ;
+    sx:turtle <1focusPattern-dot.turtle> ;
+    .
+
+<#1focusPatternB-dot> a sht:RepresentationTest ;
+    mf:name "1focusPatternB-dot" ;
+    mf:status mf:proposed ;
+    sx:shex <1focusPatternB-dot.shex> ;
+    sx:json <1focusPatternB-dot.json> ;
+    sx:turtle <1focusPatternB-dot.turtle> ;
+    .
+
+<#1focusIRILength_dot> a sht:RepresentationTest ;
+    mf:name "1focusIRILength_dot" ;
+    mf:status mf:proposed ;
+    sx:shex <1focusIRILength_dot.shex> ;
+    sx:json <1focusIRILength_dot.json> ;
+    sx:turtle <1focusIRILength_dot.turtle> ;
+    .
+
+<#1focusBNODELength_dot> a sht:RepresentationTest ;
+    mf:name "1focusBNODELength_dot" ;
+    mf:status mf:proposed ;
+    sx:shex <1focusBNODELength_dot.shex> ;
+    sx:json <1focusBNODELength_dot.json> ;
+    sx:turtle <1focusBNODELength_dot.turtle> ;
+    .
+
+<#1focusnonLiteralLength-dot> a sht:RepresentationTest ;
+    mf:name "1focusnonLiteralLength-dot" ;
+    mf:status mf:proposed ;
+    sx:shex <1focusnonLiteralLength-dot.shex> ;
+    sx:json <1focusnonLiteralLength-dot.json> ;
+    sx:turtle <1focusnonLiteralLength-dot.turtle> ;
+    .
+
+<#NOT1dotOR2dot> a sht:RepresentationTest ;
+    mf:name "NOT1dotOR2dot" ;
+    mf:status mf:proposed ;
+    sx:shex <NOT1dotOR2dot.shex> ;
+    sx:json <NOT1dotOR2dot.json> ;
+    sx:turtle <NOT1dotOR2dot.turtle> ;
+    .
+
+<#NOT1dotOR2dotX3> a sht:RepresentationTest ;
+    mf:name "NOT1dotOR2dotX3" ;
+    mf:status mf:proposed ;
+    sx:shex <NOT1dotOR2dotX3.shex> ;
+    sx:json <NOT1dotOR2dotX3.json> ;
+    sx:turtle <NOT1dotOR2dotX3.turtle> ;
+    .
+
+<#NOT1dotOR2dotX3AND1> a sht:RepresentationTest ;
+    mf:name "NOT1dotOR2dotX3AND1" ;
+    mf:status mf:proposed ;
+    sx:shex <NOT1dotOR2dotX3AND1.shex> ;
+    sx:json <NOT1dotOR2dotX3AND1.json> ;
+    sx:turtle <NOT1dotOR2dotX3AND1.turtle> ;
+    .
+
+<#shapeExtern> a sht:RepresentationTest ;
+    mf:name "shapeExtern" ;
+    mf:status mf:proposed ;
+    sx:shex <shapeExtern.shex> ;
+    sx:json <shapeExtern.json> ;
+    sx:turtle <shapeExtern.turtle> ;
+    .
+
+<#shapeExternRef> a sht:RepresentationTest ;
+    mf:name "shapeExternRef" ;
+    mf:status mf:proposed ;
+    sx:shex <shapeExternRef.shex> ;
+    sx:json <shapeExternRef.json> ;
+    sx:turtle <shapeExternRef.turtle> ;
+    .
+
+# <#1dotPlusLt1dotPlus> a sht:RepresentationTest ;
+#     mf:name "1dotPlusLt1dotPlus" ;
+#     mf:status mf:proposed ;
+#     sx:shex <1dotPlusLt1dotPlus.shex> ;
+#     sx:json <1dotPlusLt1dotPlus.json> ;
+#     sx:turtle <1dotPlusLt1dotPlus.turtle> ;
+#     .
+
+<#2dot> a sht:RepresentationTest ;
+    mf:name "2dot" ;
+    mf:status mf:proposed ;
+    sx:shex <2dot.shex> ;
+    sx:json <2dot.json> ;
+    sx:turtle <2dot.turtle> ;
+    .
+
+# <#0Inherit1> a sht:RepresentationTest ;
+#     mf:name "0Inherit1" ;
+#     mf:status mf:proposed ;
+#     sx:shex <0Inherit1.shex> ;
+#     sx:json <0Inherit1.json> ;
+#     sx:turtle <0Inherit1.turtle> ;
+#     .
+# 
+# <#1dotInherit1> a sht:RepresentationTest ;
+#     mf:name "1dotInherit1" ;
+#     mf:status mf:proposed ;
+#     sx:shex <1dotInherit1.shex> ;
+#     sx:json <1dotInherit1.json> ;
+#     sx:turtle <1dotInherit1.turtle> ;
+#     .
+# 
+# <#1dotInherit3> a sht:RepresentationTest ;
+#     mf:name "1dotInherit3" ;
+#     mf:status mf:proposed ;
+#     sx:shex <1dotInherit3.shex> ;
+#     sx:json <1dotInherit3.json> ;
+#     sx:turtle <1dotInherit3.turtle> ;
+#     .
+# 
+# <#1dot3Inherit> a sht:RepresentationTest ;
+#     mf:name "1dot3Inherit" ;
+#     mf:status mf:proposed ;
+#     mf:sameSemanticsAs <#1dotInherit3> ;
+#     sx:shex <1dot3Inherit.shex> ;
+#     sx:json <1dot3Inherit.json> ;
+#     sx:turtle <1dot3Inherit.turtle> ;
+#     .
+# 
+# <#1dot3InheritLN> a sht:RepresentationTest ;
+#     mf:name "1dot3InheritLN" ;
+#     mf:status mf:proposed ;
+#     sx:shex <1dot3InheritLN.shex> ;
+#     sx:json <1dot3InheritLN.json> ;
+#     sx:turtle <1dot3InheritLN.turtle> ;
+#     .
+
+# <#1dotVirtualShapeCode1> a sht:RepresentationTest ;
+#     mf:name "1dotVirtualShapeCode1" ;
+#     mf:status mf:proposed ;
+#     sx:shex <1dotVirtualShapeCode1.shex> ;
+#     sx:json <1dotVirtualShapeCode1.json> ;
+#     sx:turtle <1dotVirtualShapeCode1.turtle> ;
+#     .
+# 
+# <#1dotVirtual> a sht:RepresentationTest ;
+#     mf:name "1dotVirtual" ;
+#     mf:status mf:proposed ;
+#     sx:shex <1dotVirtual.shex> ;
+#     sx:json <1dotVirtual.json> ;
+#     sx:turtle <1dotVirtual.turtle> ;
+#     .
+
+# <#1dotUnlabeledCode1> a sht:RepresentationTest ;
+#     mf:name "1dotUnlabeledCode1" ;
+#     mf:status mf:proposed ;
+#     sx:shex <1dotUnlabeledCode1.shex> ;
+#     sx:json <1dotUnlabeledCode1.json> ;
+#     sx:turtle <1dotUnlabeledCode1.turtle> ;
+#     .
+
+<#_all> a sht:RepresentationTest ;
+    mf:name "_all" ;
+    mf:status mf:proposed ;
+    sx:shex <_all.shex> ;
+    sx:json <_all.json> ;
+    sx:turtle <_all.turtle> ;
+    .
+
+<#kitchenSink> a sht:RepresentationTest ;
+    mf:name "kitchenSink" ;
+    mf:status mf:proposed ;
+    sx:shex <kitchenSink.shex> ;
+    sx:json <kitchenSink.json> ;
+    sx:turtle <kitchenSink.turtle> ;
+    .

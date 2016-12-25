@@ -1,0 +1,9 @@
+{
+  "type": "Schema",
+  "shapes": {
+    "http://a.example/S1": {
+      "type": "NodeConstraint",
+      "datatype": "http://a.example/bloodType"
+    }
+  }
+}

@@ -1,7 +1,7 @@
 {
   "type": "Schema",
   "shapes": {
-    "http://a.example/IssueShape": {
+    "http://a.example/S1": {
       "type": "Shape",
       "expression": {
         "type": "TripleConstraint",
@@ -15,7 +15,7 @@
             },
             {
               "type": "ShapeRef",
-              "reference": "http://a.example/IssueShape"
+              "reference": "http://a.example/S1"
             }
           ]
         }
