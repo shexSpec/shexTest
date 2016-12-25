@@ -1,7 +1,8 @@
 @prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix mf:     <http://www.w3.org/2001/sw/DataAccess/tests/test-manifest#> .
-@prefix sht:     <http://www.w3.org/ns/shacl/test-suite#> .
+@prefix sht:    <http://www.w3.org/ns/shacl/test-suite#> .
+@prefix sx:     <https://shexspec.github.io/shexTest/ns#> .
 
 # TODO:
 #   1IRI_with_all_punctuationdot
@@ -22,7 +23,7 @@
 #   1val1LNDatatype
 
 
-<> a mf:Manifest ;
+<manifest> a mf:Manifest ;
     rdfs:comment "ShEx representation tests" ;
     mf:entries
     (
@@ -77,10 +78,8 @@
         <#1val1false>
         <#1datatypeLength>
         <#1literalFractiondigits5>
-        <#1literalFractiondigitsxsd-integer>
         <#1literalFractiondigits4>
         <#1literalTotaldigits5>
-        <#1literalTotaldigitsxsd-integer>
         <#1literalTotaldigits6>
         <#1literalTotaldigits2>
         <#1floatMininclusiveINTEGER>
@@ -297,7 +296,6 @@
         <#NOT1dotOR2dotX3>
         <#NOT1dotOR2dotX3AND1>
         <#shapeExtern>
-        <#shapeExtern>
         <#shapeExternRef>
 #         <#1dotPlusLt1dotPlus>
         <#2dot>
@@ -309,6 +307,29 @@
 #         <#1dotVirtualShapeCode1>
 #         <#1dotVirtual>
 #         <#1dotUnlabeledCode1>
+        <#focusvsORdatatype>
+        <#focusvsANDIRI>
+        <#focusvsANDdatatype>
+        <#focusvs>
+        <#focusdatatype>
+        <#1dotPlusAnnotIRIREF>
+        <#1dotAnnotAIRIREF>
+        <#FocusIRI2groupBnodeNested2groupIRIRef>
+        <#1bnodeRefORRefMinlength>
+        <#1dotShapeAND1dot3X>
+        <#openopen1dotSemiOne1dotSemiclose1dotSemicloseSemi>
+        <#open1dotOne2dotclose>
+        <#open1dotSemiOneopen2dotSemiscloseclose>
+        <#open1dotSemiOne2dotsemisclose>
+        <#1dotSemiOne2dotSemis>
+        <#1literalMaxinclusiveINTEGER>
+        <#1literalMaxexclusiveINTEGER>
+        <#1literalMininclusiveINTEGER>
+        <#1literalMinexclusiveINTEGER>
+        <#1val1DECIMAL>
+        <#1datatypeRef1>
+        <#1card2blank>
+        <#1focusnonLiteralLength-nonLiteralLength>
         <#_all>
         <#kitchenSink>
     ) .
@@ -755,14 +776,6 @@
     sx:turtle <1literalFractiondigits5.turtle> ;
     .
 
-<#1literalFractiondigitsxsd-integer> a sht:RepresentationTest ;
-    mf:name "1literalFractiondigitsxsd-integer" ;
-    mf:status mf:proposed ;
-    sx:shex <1literalFractiondigitsxsd-integer.shex> ;
-    sx:json <1literalFractiondigitsxsd-integer.json> ;
-    sx:turtle <1literalFractiondigitsxsd-integer.turtle> ;
-    .
-
 <#1literalFractiondigits4> a sht:RepresentationTest ;
     mf:name "1literalFractiondigits4" ;
     mf:status mf:proposed ;
@@ -809,14 +822,6 @@
     sx:shex <1literalMaxinclusiveINTEGER.shex> ;
     sx:json <1literalMaxinclusiveINTEGER.json> ;
     sx:turtle <1literalMaxinclusiveINTEGER.turtle> ;
-    .
-
-<#1literalTotaldigitsxsd-integer> a sht:RepresentationTest ;
-    mf:name "1literalTotaldigitsxsd-integer" ;
-    mf:status mf:proposed ;
-    sx:shex <1literalTotaldigitsxsd-integer.shex> ;
-    sx:json <1literalTotaldigitsxsd-integer.json> ;
-    sx:turtle <1literalTotaldigitsxsd-integer.turtle> ;
     .
 
 <#1literalTotaldigits6> a sht:RepresentationTest ;
@@ -1780,7 +1785,7 @@
     .
 
 <#2dotSemis> a sht:RepresentationTest ;
-    mf:name "2dotSemis         " ;
+    mf:name "2dotSemis" ;
     mf:status mf:proposed ;
     mf:sameSemanticsAs <#2dotSemis> ;
     sx:shex <2dotSemis.shex> ;
@@ -2682,14 +2687,6 @@
     sx:shex <shapeExtern.shex> ;
     sx:json <shapeExtern.json> ;
     sx:turtle <shapeExtern.turtle> ;
-    .
-
-<#shapeExterntern>> a sht:RepresentationTest ;
-    mf:name "shapeExterntern>" ;
-    mf:status mf:proposed ;
-    sx:shex <shapeExterntern>.shex> ;
-    sx:json <shapeExterntern>.json> ;
-    sx:turtle <shapeExterntern>.turtle> ;
     .
 
 <#shapeExternRef> a sht:RepresentationTest ;

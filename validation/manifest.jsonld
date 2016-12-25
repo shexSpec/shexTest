@@ -1,8 +1,8 @@
 {
-  "@context": "https://raw.githubusercontent.com/shexSpec/test-suite/gh-pages/tests/manifest-context.jsonld",
+  "@context": "https://raw.githubusercontent.com/shexSpec/shexTest/master/context.jsonld",
   "@graph": [
     {
-      "@id": "http://shexspec.github.io/test-suite/tests/manifest.ttl",
+      "@id": "https://raw.githubusercontent.com/shexSpec/shexTest/master/validation/manifest",
       "@type": "mf:Manifest",
       "rdfs:comment": "ShEx validation tests",
       "entries": [
@@ -12920,7 +12920,9 @@
             "schema": "../schemas/focusdatatype.shex",
             "shape": "http://a.example/S1",
             "data": "Is1_Ip1_LabDTbloodType.ttl",
-            "focus": "\"ab\"^^http://a.example/bloodType"
+            "focus": {
+              "@value": "\"ab\"^^http://a.example/bloodType"
+            }
           },
           "extensionResults": [],
           "name": "focusdatatype_pass",
@@ -12938,7 +12940,9 @@
             "schema": "../schemas/focusdatatype.shex",
             "shape": "http://a.example/S1",
             "data": "Is1_Ip1_LabDTbloodType999.ttl",
-            "focus": "\"ab\"^^http://a.example/bloodType999"
+            "focus": {
+              "@value": "\"ab\"^^http://a.example/bloodType999"
+            }
           },
           "extensionResults": [],
           "name": "focusdatatype_fail",
@@ -13078,7 +13082,9 @@
             "schema": "../schemas/focusvsORdatatype.shex",
             "shape": "http://a.example/vs1",
             "data": "empty.ttl",
-            "focus": "\"v1\"^^http://a.example/dt1"
+            "focus": {
+              "@value": "\"v1\"^^http://a.example/dt1"
+            }
           },
           "extensionResults": [],
           "name": "1focusvsORdatatype_pass-dt",
@@ -13096,7 +13102,9 @@
             "schema": "../schemas/focusvsORdatatype.shex",
             "shape": "http://a.example/vs1",
             "data": "empty.ttl",
-            "focus": "\"v1\"^^http://a.example/dt2"
+            "focus": {
+              "@value": "\"v1\"^^http://a.example/dt2"
+            }
           },
           "extensionResults": [],
           "name": "1focusvsORdatatype_fail-dt",
