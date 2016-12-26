@@ -1,10 +1,15 @@
 {
-  "@context": "https://raw.githubusercontent.com/shexSpec/shexTest/master/context.jsonld",
+  "@context": [
+    {
+      "@base": "https://raw.githubusercontent.com/shexSpec/shexTest/master/negativeStructure/manifest"
+    },
+    "https://raw.githubusercontent.com/shexSpec/shexTest/master/context.jsonld"
+  ],
   "@graph": [
     {
       "@id": "https://raw.githubusercontent.com/shexSpec/shexTest/master/negativeStructure/manifest",
       "@type": "mf:Manifest",
-      "rdfs:comment": "ShEx representation tests",
+      "rdfs:comment": "ShEx negative structure tests",
       "entries": [
         {
           "@id": "#1MissingRef",

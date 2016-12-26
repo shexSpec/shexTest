@@ -1,10 +1,15 @@
 {
-  "@context": "https://raw.githubusercontent.com/shexSpec/shexTest/master/context.jsonld",
+  "@context": [
+    {
+      "@base": "https://raw.githubusercontent.com/shexSpec/shexTest/master/negativeSyntax/manifest"
+    },
+    "https://raw.githubusercontent.com/shexSpec/shexTest/master/context.jsonld"
+  ],
   "@graph": [
     {
       "@id": "https://raw.githubusercontent.com/shexSpec/shexTest/master/negativeSyntax/manifest",
       "@type": "mf:Manifest",
-      "rdfs:comment": "ShEx representation tests",
+      "rdfs:comment": "ShEx negative syntax tests",
       "entries": [
         {
           "@id": "#1decimalMininclusiveroman-numeral",
