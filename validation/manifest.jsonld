@@ -12921,7 +12921,8 @@
             "shape": "http://a.example/S1",
             "data": "Is1_Ip1_LabDTbloodType.ttl",
             "focus": {
-              "@value": "\"ab\"^^http://a.example/bloodType"
+              "@value": "ab",
+              "@type": "http://a.example/bloodType"
             }
           },
           "extensionResults": [],
@@ -12941,7 +12942,8 @@
             "shape": "http://a.example/S1",
             "data": "Is1_Ip1_LabDTbloodType999.ttl",
             "focus": {
-              "@value": "\"ab\"^^http://a.example/bloodType999"
+              "@value": "ab",
+              "@type": "http://a.example/bloodType999"
             }
           },
           "extensionResults": [],
@@ -13083,7 +13085,8 @@
             "shape": "http://a.example/vs1",
             "data": "empty.ttl",
             "focus": {
-              "@value": "\"v1\"^^http://a.example/dt1"
+              "@value": "v1",
+              "@type": "http://a.example/dt1"
             }
           },
           "extensionResults": [],
@@ -13103,7 +13106,8 @@
             "shape": "http://a.example/vs1",
             "data": "empty.ttl",
             "focus": {
-              "@value": "\"v1\"^^http://a.example/dt2"
+              "@value": "v1",
+              "@type": "http://a.example/dt2"
             }
           },
           "extensionResults": [],

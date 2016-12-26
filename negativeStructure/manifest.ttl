@@ -1,0 +1,46 @@
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix mf:     <http://www.w3.org/2001/sw/DataAccess/tests/test-manifest#> .
+@prefix sht:    <http://www.w3.org/ns/shacl/test-suite#> .
+@prefix sx:     <https://shexspec.github.io/shexTest/ns#> .
+
+<manifest> a mf:Manifest ;
+    rdfs:comment "ShEx representation tests" ;
+    mf:entries (
+    <#1MissingRef>
+    <#1focusMissingRefdot>
+    <#1focusRefANDSelfdot>
+    <#includeNonSimpleShape>
+    <#includeShapeNotFound>
+  ) .
+
+<#1MissingRef> a sht:NegativeStructure ;
+  mf:name "1MissingRef" ;
+  mf:status mf:proposed ;
+  sx:shex <1MissingRef.shex> ;
+  .
+
+<#1focusMissingRefdot> a sht:NegativeStructure ;
+  mf:name "1focusMissingRefdot" ;
+  mf:status mf:proposed ;
+  sx:shex <1focusMissingRefdot.shex> ;
+  .
+
+<#1focusRefANDSelfdot> a sht:NegativeStructure ;
+  mf:name "1focusRefANDSelfdot" ;
+  mf:status mf:proposed ;
+  sx:shex <1focusRefANDSelfdot.shex> ;
+  .
+
+<#includeNonSimpleShape> a sht:NegativeStructure ;
+  mf:name "includeNonSimpleShape" ;
+  mf:status mf:proposed ;
+  sx:shex <includeNonSimpleShape.shex> ;
+  .
+
+<#includeShapeNotFound> a sht:NegativeStructure ;
+  mf:name "includeShapeNotFound" ;
+  mf:status mf:proposed ;
+  sx:shex <includeShapeNotFound.shex> ;
+  .
+
