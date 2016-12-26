@@ -102,7 +102,7 @@ function genText () {
     ret[ent] = true;
     return ret;
   }, {});
-  var expectedTypes = ["NotValid", "PositiveSyntax", "Valid", "ValidationTest", "ValidationFailure", "RepresentationTest"].map(function (suffix) {
+  var expectedTypes = ["ValidationTest", "ValidationFailure", "RepresentationTest", "NegativeSyntax", "NegativeStructure"].map(function (suffix) {
     return P.sht + suffix;
   });
 
@@ -134,7 +134,7 @@ function genText () {
     }).map(function (st) {
       var s = st[0], t = st[1];
       var testName = util.getLiteralValue(store.find(s, "mf:name", null)[0].object);
-      var testType = store.find(s, "rdf:type", null)[0].object;
+      var testType = store.find(s, "rdf:type", null)[0].object.replace(P.sht, '');
       var expectedName = s.substr(apparentBase.length+1);
       if (WARN && testName !== expectedName) {
 	report("expected label \"" + expectedName + "\" ; got \"" + testName + "\"");
@@ -149,10 +149,10 @@ function genText () {
         return filename;
       }
       if (actionTriples.length !== 1) {
-        if (testType !== P.sht + "RepresentationTest") {
+        if (["RepresentationTest", "NegativeSyntax", "NegativeStructure"].indexOf(testType) === -1) {
           throw Error("expected 1 action for " + s + " -- got " + actionTriples.length);
         }
-        // Syntax/Structure tests
+        // Representation/Syntax/Structure tests
         return [
           //      ["rdf"  , "type"    , function (v) { return v.substr(P.sht.length); }],
           [s, "mf"   , "name"    , function (v) { return util.getLiteralValue(v[0]); }],
