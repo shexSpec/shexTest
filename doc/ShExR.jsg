@@ -2,7 +2,7 @@
 # The form "OBJNAME  { property:PROPTYPE ... }" matches an object of type OBJTYPE
 # The form "RULENAME = NAME1 | NAME2 ..." matches any of NAMEn.
 # the form "TERMNAME : "RegExp" matches any literal matching RegExp
-# A PROPETYPE can be:
+# A PROPTYPE can be:
 #   TERMINAL - a terminal, all caps in this example.
 #   [PROPTYPE] - an array of PROPTYPE.
 #   {TERMINAL->PROPTYPE} - a map from TERMINAL to PROPTYPE.
