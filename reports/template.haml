@@ -204,7 +204,7 @@
               %li.tocline
                 %span.secno="2.#{ndx+1}"
                 %a.tocxref{href: "##{manifest['rdfs:comment'].gsub(' ', '-')}"}
-                  = manifest['rdfs:comment']
+                  ~ manifest['rdfs:comment']
         %li.tocline
           %a.tocxref{href: "#test-subjects"}
             %span.secno="A."
@@ -299,7 +299,7 @@
         %section{id: manifest['rdfs:comment'].gsub(' ', '-'), typeof: manifest['@type'].join(" "), resource: manifest['@id']}
           %h2{property: "rdfs:comment mf:name"}
             %span.secno="2.#{ndx2+1}"
-            manifest['rdfs:comment']
+            = manifest['rdfs:comment']
           - Array(manifest['description']).each do |desc|
             %p{property: "rdfs:comment"}<
               ~ CGI.escapeHTML desc.to_s
