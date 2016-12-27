@@ -1,1 +1,2 @@
 # shexTest
+This is the location for the [implementation reports](reports) for [ShEx](https://shexspec.github.io/spec). To find the tests themselves, look in the [master branch](https://github.com/shexSpec/shexTest).
