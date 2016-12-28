@@ -39,10 +39,11 @@
 -#    }]
 -#  }
 - require 'cgi'
+- editors = [{ name: "Gregg Kellogg", url: "http://greggkellogg.net/"}]
 
 !!! 5
-%html{prefix: "earl: http://www.w3.org/ns/earl# doap: http://usefulinc.com/ns/doap# mf: http://www.w3.org/2001/sw/DataAccess/tests/test-manifest#"}
-  - subjects = tests['testSubjects']
+%html
+  - subjects = tests['testSubjects'].sort_by {|s| s['name'].to_s.downcase}
   %head
     %meta{"http-equiv" => "Content-Type", content: "text/html;charset=utf-8"}
     %link{rel: "alternate", href: "earl.ttl"}
@@ -102,7 +103,7 @@
       pre > code {
         color: #C83500;
       }
-  %body{prefix: "earl: http://www.w3.org/ns/earl# doap: http://usefulinc.com/ns/doap# mf: http://www.w3.org/2001/sw/DataAccess/tests/test-manifest#"}
+  %body{prefix: "bibo: http://purl.org/ontology/bibo/ doap: http://usefulinc.com/ns/doap# mf: http://www.w3.org/2001/sw/DataAccess/tests/test-manifest#"}
     - test_info = {}
     - test_refs = {}
     - subject_refs = {}
@@ -121,12 +122,12 @@
           = Time.now.strftime("%d %B %Y")
       %dl
         %dt="Editor:"
-        %dd.p-author.h-card.vcard{property: "bibo:editor", resource: "_:editor0"}
-          %span{property: "rdf:first", typeof: "foaf:Person"}
-            %meta{property: "foaf:name", content: "Gregg Kellogg"}
-            %a.url.fn.u-url.p-name{property: "foaf:homepage", href: "http://greggkellogg.net/"}
-              Gregg Kellogg
-          %meta{property: "rdf:rest", resource: "rdf:nil"}
+        - editors.each do |ed|
+          %dd.p-author.h-card.vcard{property: "bibo:editor", inlist: true}<>
+            %span{property: "rdf:first", typeof: "foaf:Person"}<>
+              %meta{property: "foaf:name", content: ed[:name]}<>
+              %a.url.fn.u-url.p-name{property: "foaf:homepage", href: ed[:url]}<>
+                = ed[:name]
       %p
         This document is also available in these non-normative formats:
         %a{re: "alternate", href: "earl.ttl"}
@@ -222,7 +223,6 @@
           %a.tocxref{href: "#report-generation-software"}
             %span.secno="C."
             Report Generation Software
-
     %section#instructions-for-submitting-implementation-reports
       :markdown
         ## Instructions for submitting implementation reports
@@ -294,11 +294,12 @@
       %h2
         %span.secno="2."
         Test Manifests
-      - tests['entries'].sort_by {|m| m['title'].to_s.downcase}.each_with_index do |manifest, ndx2|
+      - tests['entries'].each_with_index do |manifest, ndx2|
         - test_cases = manifest['entries']
         %section{id: manifest['rdfs:comment'].gsub(' ', '-'), typeof: manifest['@type'].join(" "), resource: manifest['@id']}
-          %h2{property: "rdfs:comment mf:name"}
+          %h2
             %span.secno="2.#{ndx2+1}"
+            %span{property: "rdfs:comment mf:name"}<
             = manifest['rdfs:comment']
           - Array(manifest['description']).each do |desc|
             %p{property: "rdfs:comment"}<
@@ -312,18 +313,19 @@
               - subjects.each_with_index do |subject, index|
                 -# If subject is untested for every test in this manifest, skip it
                 - skip_subject[subject['@id']] = manifest['entries'].all? {|t| t['assertions'][index]['result']['outcome'] == 'earl:untested'}
-                - unless skip_subject[subject['@id']]
-                  %th
-                    %a{href: '#' + subject_refs[subject['@id']]}<=subject['name']
+                - next if skip_subject[subject['@id']]
+                %th
+                  %a{href: '#' + subject_refs[subject['@id']]}<=subject['name']
             - test_cases.each do |test|
-              - require 'byebug'; byebug if test.is_a?(String)
               - test['title'] ||= test['rdfs:label']
               - test['title'] = Array(test['title']).first
               %tr{rel: "mf:entries", typeof: test['@type'].join(" "), resource: test['@id'], inlist: true}
                 %td
                   = "Test #{test['@id'].split("#").last}: #{CGI.escapeHTML test['title'].to_s}"
-                - test['assertions'].each_with_index do |assertion, ndx|
-                  - next if skip_subject[assertion['subject']]
+                -# Order assertions by subject name
+                - subjects.each_with_index do |subject, ndx|
+                  - next if skip_subject[subject['@id']]
+                  - assertion = test['assertions'].detect {|a| a['subject'] == subject['@id']}
                   - pass_fail = assertion['result']['outcome'].split(':').last.upcase.sub(/(PASS|FAIL)ED$/, '\1')
                   - passed_tests[ndx] = (passed_tests[ndx] || 0) + (pass_fail == 'PASS' ? 1 : 0)
                   %td{class: pass_fail, property: "earl:assertions", typeof: assertion['@type']}
@@ -336,13 +338,6 @@
                     %span{property: "earl:result", typeof: assertion['result']['@type']}
                       %span{property: 'earl:outcome', resource: assertion['result']['outcome']}
                         = pass_fail
-            %tr.summary
-              %td
-                = "Percentage passed out of #{manifest['entries'].length} Tests"
-              - passed_tests.compact.each do |r|
-                - pct = (r * 100.0) / manifest['entries'].length
-                %td{class: (pct == 100.0 ? 'passed-all' : (pct >= 95.0 ? 'passed-most' : 'passed-some'))}
-                  = "#{'%.1f' % pct}%"
             %tr.summary
               %td
                 = "Percentage passed out of #{manifest['entries'].length} Tests"
