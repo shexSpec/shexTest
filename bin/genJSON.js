@@ -83,7 +83,10 @@ function expandCollection (h) {
 function genText () {
   var g = []; // stuff everything into a JSON-LD @graph
   var ret = {
-    "@context": "https://raw.githubusercontent.com/shexSpec/shexTest/master/context.jsonld",
+    "@context": [
+      {"@base": apparentBase},
+      "https://raw.githubusercontent.com/shexSpec/shexTest/master/context.jsonld"
+    ],
     "@graph": g
   };
 

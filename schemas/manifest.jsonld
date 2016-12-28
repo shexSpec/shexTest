@@ -1,5 +1,10 @@
 {
-  "@context": "https://raw.githubusercontent.com/shexSpec/shexTest/master/context.jsonld",
+  "@context": [
+    {
+      "@base": "https://raw.githubusercontent.com/shexSpec/shexTest/master/schemas/manifest"
+    },
+    "https://raw.githubusercontent.com/shexSpec/shexTest/master/context.jsonld"
+  ],
   "@graph": [
     {
       "@id": "https://raw.githubusercontent.com/shexSpec/shexTest/master/schemas/manifest",

@@ -19,6 +19,10 @@ if (args > 1 || args.indexOf("-help") !== -1 || args.indexOf("--help") !== -1) {
 }
 
 var testClass = args[0] || "NegativeSyntax";
+var comment = {
+  "NegativeSyntax": "ShEx negative syntax tests",
+  "NegativeStructure": "ShEx negative structure tests"
+}[testClass];
 var fs = require('fs');
 var path = require("path");
 
@@ -27,14 +31,15 @@ var basePath = "https://raw.githubusercontent.com/shexSpec/shexTest/master/";
 var dirPath = basePath + testDir + '/';
 
 // Output preamble
-console.log('@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n\
+console.log('@base <https://raw.githubusercontent.com/shexSpec/shexTest/master/' + testDir + '/manifest> .\n\
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n\
 @prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .\n\
 @prefix mf:     <http://www.w3.org/2001/sw/DataAccess/tests/test-manifest#> .\n\
 @prefix sht:    <http://www.w3.org/ns/shacl/test-suite#> .\n\
 @prefix sx:     <https://shexspec.github.io/shexTest/ns#> .\n\
 \n\
-<manifest> a mf:Manifest ;\n\
-    rdfs:comment "ShEx representation tests" ;\n\
+<> a mf:Manifest ;\n\
+    rdfs:comment "' + comment + '" ;\n\
     mf:entries (');
 
 // Get .shex files for generating identifiers
