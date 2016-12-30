@@ -83,7 +83,10 @@ function expandCollection (h) {
 function genText () {
   var g = []; // stuff everything into a JSON-LD @graph
   var ret = {
-    "@context": "https://raw.githubusercontent.com/shexSpec/shexTest/master/context.jsonld",
+    "@context": [
+      {"@base": apparentBase},
+      "https://raw.githubusercontent.com/shexSpec/shexTest/master/context.jsonld"
+    ],
     "@graph": g
   };
 
@@ -102,7 +105,7 @@ function genText () {
     ret[ent] = true;
     return ret;
   }, {});
-  var expectedTypes = ["NotValid", "PositiveSyntax", "Valid", "ValidationTest", "ValidationFailure", "RepresentationTest"].map(function (suffix) {
+  var expectedTypes = ["ValidationTest", "ValidationFailure", "RepresentationTest", "NegativeSyntax", "NegativeStructure"].map(function (suffix) {
     return P.sht + suffix;
   });
 
@@ -134,7 +137,7 @@ function genText () {
     }).map(function (st) {
       var s = st[0], t = st[1];
       var testName = util.getLiteralValue(store.find(s, "mf:name", null)[0].object);
-      var testType = store.find(s, "rdf:type", null)[0].object;
+      var testType = store.find(s, "rdf:type", null)[0].object.replace(P.sht, '');
       var expectedName = s.substr(apparentBase.length+1);
       if (WARN && testName !== expectedName) {
 	report("expected label \"" + expectedName + "\" ; got \"" + testName + "\"");
@@ -149,10 +152,10 @@ function genText () {
         return filename;
       }
       if (actionTriples.length !== 1) {
-        if (testType !== P.sht + "RepresentationTest") {
+        if (["RepresentationTest", "NegativeSyntax", "NegativeStructure"].indexOf(testType) === -1) {
           throw Error("expected 1 action for " + s + " -- got " + actionTriples.length);
         }
-        // Syntax/Structure tests
+        // Representation/Syntax/Structure tests
         return [
           //      ["rdf"  , "type"    , function (v) { return v.substr(P.sht.length); }],
           [s, "mf"   , "name"    , function (v) { return util.getLiteralValue(v[0]); }],
@@ -190,11 +193,17 @@ function genText () {
         [a, "sht", "data"    , function (v) { return exists(v[0].substr(dirPath.length)); }],
         [a, "sht", "focus"   , function (v) {
           // Focus can be a literal
-          return /^(http|_)/.test(v[0]) ?
-            (v[0].indexOf(dirPath) === 0 ? v[0].substr(dirPath.length) : v[0]) :
-            {"@value": v[0]};
+          if (util.isLiteral(v[0])) {
+            var lang = util.getLiteralLanguage(v[0]);
+            var dt = util.getLiteralType(v[0]);
+            var res = {'@value': util.getLiteralValue(v[0])};
+            if (lang.length > 0) {res['@language'] = lang}
+            if (dt.length > 0) {res['@type'] = dt}
+            return res;
+          } else {
+            return (v[0].indexOf(dirPath) === 0 ? v[0].substr(dirPath.length) : v[0]);
           }
-        ],
+        }],
         [a, "sht", "semActs" , function (v) { return exists("../" + v[0].substr(basePath.length)); }], // could be more judicious in creating a relative path from an absolute path.
         [a, "sht", "shapeExterns" , function (v) { return exists("../" + v[0].substr(basePath.length)); }], // could be more judicious in creating a relative path from an absolute path.
         [s, "mf", "result"  , function (v) { return exists(v[0].substr(dirPath.length)); }],
