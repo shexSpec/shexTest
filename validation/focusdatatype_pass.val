@@ -1,5 +1,5 @@
 {
   "type": "NodeTest",
-  "node": "\"ab\"^^http://a.example/bloodType",
+  "node": { "value": "ab", "datatype": "http://a.example/bloodType" },
   "shape": "http://a.example/S1"
 }

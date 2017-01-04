@@ -240,26 +240,26 @@
 	                        "valueExpr":{
 	                          "type":"NodeConstraint",
 	                          "values":[
-	                            "\"STRING_LITERAL2\"",
-	                            "\"STRING_LITERAL2\"@en-uk",
+	                            { "value": "STRING_LITERAL2" },
+	                            { "value": "STRING_LITERAL2", "language": "en-uk" },
 	                            "http://all.example/",
 	                            "http://all.example/val1",
 	                            "http://all.example/",
 	                            "scheme:!$%25&amp;'()*+,-./0123456789:/@ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz~?#",
 	                            "http://a.example/p1",
-	                            "\"0.0\"^^http://www.w3.org/2001/XMLSchema#decimal",
-	                            "\"0e0\"^^http://www.w3.org/2001/XMLSchema#double",
-	                            "\"0E0\"^^http://www.w3.org/2001/XMLSchema#double",
-	                            "\"false\"^^http://www.w3.org/2001/XMLSchema#boolean",
-	                            "\"0\"^^http://www.w3.org/2001/XMLSchema#integer",
-	                            "\"ab\"^^http://all.example/bloodType",
-	                            "\"o+\"^^http://all.example/bloodType",
-	                            "\" !\"#$%&():;<=>?@[]^_`{|}~\"",
-	                            "\"\t\u000b\f\u000e&([]\"",
-	                            "\"߿ࠀ࿿က쿿퀀퟿�𐀀𿿽񀀀󿿽􀀀􏿽\"",
-	                            "\"\"\\\"",
-	                            "\"𝟘𝟙𝟚𝟛𝟜𝟝𝟞𝟟𝟠𝟡\"",
-	                            "\"STRING_LITERAL_LONG2\"@en-uk"
+	                            { "value": "0.0", "datatype": "http://www.w3.org/2001/XMLSchema#decimal" },
+	                            { "value": "0e0", "datatype": "http://www.w3.org/2001/XMLSchema#double" },
+	                            { "value": "0E0", "datatype": "http://www.w3.org/2001/XMLSchema#double" },
+	                            { "value": "false", "datatype": "http://www.w3.org/2001/XMLSchema#boolean" },
+	                            { "value": "0", "datatype": "http://www.w3.org/2001/XMLSchema#integer" },
+	                            { "value": "ab", "datatype": "http://all.example/bloodType" },
+	                            { "value": "o+", "datatype": "http://all.example/bloodType" },
+	                            { "value": " !\"#$%&():;<=>?@[]^_`{|}~" },
+	                            { "value": "\t\u000b\f\u000e&([]" },
+	                            { "value": "߿ࠀ࿿က쿿퀀퟿�𐀀𿿽񀀀󿿽􀀀􏿽" },
+	                            { "value": "\"\\" },
+	                            { "value": "𝟘𝟙𝟚𝟛𝟜𝟝𝟞𝟟𝟠𝟡" },
+	                            { "value": "STRING_LITERAL_LONG2", "language": "en-uk" }
 	                          ]
 	                        }
                               }
@@ -281,8 +281,8 @@
                             ],
 			    "annotations": [
                               { "type": "Annotation", "predicate": "http://a.example/annot1", "object": "http://a.example/IRIREF" },
-                              { "type": "Annotation", "predicate": "http://a.example/annot2", "object": "\"STRING_LITERAL2\"" },
-                              { "type": "Annotation", "predicate": "http://a.example/annot3", "object": "\"3\"^^http://www.w3.org/2001/XMLSchema#integer" }
+                              { "type": "Annotation", "predicate": "http://a.example/annot2", "object": { "value": "STRING_LITERAL2" } },
+                              { "type": "Annotation", "predicate": "http://a.example/annot3", "object": { "value": "3", "datatype": "http://www.w3.org/2001/XMLSchema#integer" } }
 			    ]
 			  }
 			]

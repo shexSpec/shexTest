@@ -6,7 +6,7 @@
       "expression": {
         "type": "TripleConstraint",
         "predicate": "http://a.example/p1",
-        "valueExpr": { "type": "NodeConstraint", "values": ["\"STRING_LITERAL1\""] }
+        "valueExpr": { "type": "NodeConstraint", "values": [{ "value": "STRING_LITERAL1" }] }
       }
     }
   }

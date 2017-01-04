@@ -6,7 +6,7 @@
       "expression": {
         "type": "TripleConstraint",
         "predicate": "http://a.example/p1",
-        "valueExpr": { "type": "NodeConstraint", "values": ["\"0e0\"^^http://www.w3.org/2001/XMLSchema#double"] }
+        "valueExpr": { "type": "NodeConstraint", "values": [{ "value": "0e0", "datatype": "http://www.w3.org/2001/XMLSchema#double" }] }
       }
     }
   }

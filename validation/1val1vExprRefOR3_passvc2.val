@@ -14,12 +14,12 @@
         "type": "TestedTriple",
         "subject": "http://a.example/s1",
         "predicate": "http://a.example/p1",
-        "object": "\"cd\"",
+        "object": { "value": "cd" },
         "referenced": {
           "type": "ShapeOrResults",
           "solution": {
             "type": "NodeTest",
-            "node": "\"cd\"",
+            "node": { "value": "cd" },
             "shape": "http://a.example/vc2"
           }
         }

@@ -49,8 +49,8 @@
               ]
             },
             "annotations": [
-              { "type": "Annotation", "predicate": "http://www.w3.org/2000/01/rdf-schem#label", "object": "\"State\"" },
-              { "type": "Annotation", "predicate": "http://www.w3.org/2000/01/rdf-schem#description", "object": "\"the sit\"" }
+              { "type": "Annotation", "predicate": "http://www.w3.org/2000/01/rdf-schem#label", "object": { "value": "State" } },
+              { "type": "Annotation", "predicate": "http://www.w3.org/2000/01/rdf-schem#description", "object": { "value": "the sit" } }
             ]
           },
           {
@@ -268,10 +268,10 @@
                 "valueExpr": {
                   "type": "NodeConstraint",
                   "values": [
-                    "\"a\"",
-                    "\"b\"^^http://ex.example/#c",
-                    "\"c\"@en",
-                    "\"d\"@en-fr"
+                    { "value": "a" },
+                    { "value": "b", "datatype": "http://ex.example/#c" },
+                    { "value": "c", "language": "en" },
+                    { "value": "d", "language": "en-fr" }
                   ]
                 },
                 "min": 2,
@@ -304,8 +304,8 @@
                     "valueExpr": {
                       "type": "NodeConstraint",
                       "values": [
-                        "\"true\"^^http://www.w3.org/2001/XMLSchema#boolean",
-                        "\"false\"^^http://www.w3.org/2001/XMLSchema#boolean"
+                        { "value": "true", "datatype": "http://www.w3.org/2001/XMLSchema#boolean" },
+                        { "value": "false", "datatype": "http://www.w3.org/2001/XMLSchema#boolean" }
                       ]
                     }
                   },

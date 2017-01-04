@@ -6,7 +6,7 @@
       "expression": {
         "type": "TripleConstraint",
         "predicate": "http://a.example/p1",
-        "valueExpr": { "type": "NodeConstraint", "values": ["\" !\"#$%&():;<=>?@[]^_`{|}~\""] }
+        "valueExpr": { "type": "NodeConstraint", "values": [{ "value": " !\"#$%&():;<=>?@[]^_`{|}~" }] }
       }
     }
   }

@@ -7,7 +7,7 @@
         "type": "TripleConstraint",
         "predicate": "http://a.example/p1",
         "annotations": [
-           { "type": "Annotation", "predicate": "http://a.example/annot", "object": "\"STRING_LITERAL1\"" }
+           { "type": "Annotation", "predicate": "http://a.example/annot", "object": { "value": "STRING_LITERAL1" } }
         ]
       }
     }
