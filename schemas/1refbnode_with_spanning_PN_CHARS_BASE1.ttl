@@ -1,0 +1,21 @@
+@prefix ex: <http://a.example> .
+@prefix sx: <http://shex.io/ns/shex#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://a.example/S1> a sx:Shape ;
+    sx:expression [ a sx:TripleConstraint ;
+            sx:predicate <http://a.example/p1> ;
+            sx:valueExpr [ a sx:ShapeRef ;
+                    sx:reference _:f562a0c363dfd4dafbb4c8f585ce7efacb3 ] ] .
+
+[] a sx:Schema ;
+    sx:shapes _:f562a0c363dfd4dafbb4c8f585ce7efacb3,
+        <http://a.example/S1> .
+
+_:f562a0c363dfd4dafbb4c8f585ce7efacb5 a sx:TripleConstraint ;
+    sx:predicate <http://a.example/p2> .
+
+_:f562a0c363dfd4dafbb4c8f585ce7efacb3 a sx:Shape ;
+    sx:expression _:f562a0c363dfd4dafbb4c8f585ce7efacb5 .
+
+

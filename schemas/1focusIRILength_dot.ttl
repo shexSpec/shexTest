@@ -1,0 +1,15 @@
+@prefix ex: <http://a.example> .
+@prefix sx: <http://shex.io/ns/shex#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://a.example/S1> a sx:ShapeAnd ;
+    sx:shapeExprs ( [ a sx:NodeConstraint ;
+                sx:length "19"^^xsd:nonNegativeInteger ;
+                sx:nodeKind "iri" ] [ a sx:Shape ;
+                sx:expression [ a sx:TripleConstraint ;
+                        sx:predicate <http://a.example/p1> ] ] ) .
+
+[] a sx:Schema ;
+    sx:shapes <http://a.example/S1> .
+
+

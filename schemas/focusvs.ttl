@@ -1,0 +1,13 @@
+@prefix ex: <http://a.example> .
+@prefix sx: <http://shex.io/ns/shex#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://a.example/vs1> a sx:NodeConstraint ;
+    sx:value <http://a.example/v1>,
+        <http://a.example/v2>,
+        <http://a.example/v3> .
+
+[] a sx:Schema ;
+    sx:shapes <http://a.example/vs1> .
+
+
