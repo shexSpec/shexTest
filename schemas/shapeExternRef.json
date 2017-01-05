@@ -1,7 +1,8 @@
 {
   "type": "Schema",
-  "shapes": {
-    "http://a.example/S": {
+  "shapes": [
+    {
+      "label": "http://a.example/S",
       "type": "Shape",
       "expression": {
         "type": "TripleConstraint",
@@ -12,8 +13,9 @@
         }
       }
     },
-    "http://a.example/Sext": {
+    {
+      "label": "http://a.example/Sext",
       "type": "ShapeExternal"
     }
-  }
+  ]
 }

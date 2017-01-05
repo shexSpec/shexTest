@@ -1,21 +1,25 @@
 {
   "type": "Schema",
-  "shapes": {
-    "http://a.example/S1": {
+  "shapes": [
+    {
+      "label": "http://a.example/S1",
       "type": "Shape",
       "expression": {
         "type": "TripleConstraint",
         "predicate": "http://a.example/p1",
-        "valueExpr": { "type": "ShapeRef", "reference": "_:_" }
+        "valueExpr": {
+          "type": "ShapeRef",
+          "reference": "_:_"
+        }
       }
     },
-    "_:_": {
+    {
+      "label": "_:_",
       "type": "Shape",
       "expression": {
         "type": "TripleConstraint",
         "predicate": "http://a.example/p2"
       }
     }
-  }
+  ]
 }
-

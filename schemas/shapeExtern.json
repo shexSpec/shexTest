@@ -1,8 +1,9 @@
 {
   "type": "Schema",
-  "shapes": {
-    "http://a.example/Sext": {
+  "shapes": [
+    {
+      "label": "http://a.example/Sext",
       "type": "ShapeExternal"
     }
-  }
+  ]
 }

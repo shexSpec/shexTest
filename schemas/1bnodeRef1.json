@@ -1,30 +1,34 @@
 {
   "type": "Schema",
-  "shapes": {
-    "http://a.example/S1": {
+  "shapes": [
+    {
+      "label": "http://a.example/S1",
       "type": "Shape",
       "expression": {
         "type": "TripleConstraint",
         "predicate": "http://a.example/p1",
         "valueExpr": {
-	  "type": "ShapeAnd", "shapeExprs": [
-	    { "type": "NodeConstraint",
+          "type": "ShapeAnd",
+          "shapeExprs": [
+            {
+              "type": "NodeConstraint",
               "nodeKind": "bnode"
             },
-	    { "type": "ShapeRef",
+            {
+              "type": "ShapeRef",
               "reference": "http://a.example/S2"
             }
-	  ]
-	}
+          ]
+        }
       }
     },
-    "http://a.example/S2": {
+    {
+      "label": "http://a.example/S2",
       "type": "Shape",
       "expression": {
         "type": "TripleConstraint",
         "predicate": "http://a.example/p2"
       }
     }
-  }
+  ]
 }
-

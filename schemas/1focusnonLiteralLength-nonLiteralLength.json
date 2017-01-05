@@ -1,17 +1,18 @@
 {
   "type": "Schema",
-  "shapes": {
-    "http://a.example/S1": {
+  "shapes": [
+    {
+      "label": "http://a.example/S1",
       "type": "ShapeAnd",
       "shapeExprs": [
-	{
-	  "type": "NodeConstraint",
-	  "nodeKind": "nonliteral",
-	  "length": 19
-	},
-	{
-	  "type": "Shape",
-	  "expression": {
+        {
+          "type": "NodeConstraint",
+          "nodeKind": "nonliteral",
+          "length": 19
+        },
+        {
+          "type": "Shape",
+          "expression": {
             "type": "TripleConstraint",
             "predicate": "http://a.example/p1",
             "valueExpr": {
@@ -19,9 +20,9 @@
               "nodeKind": "nonliteral",
               "length": 19
             }
-	  }
-	}
+          }
+        }
       ]
     }
-  }
+  ]
 }

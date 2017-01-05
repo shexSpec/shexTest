@@ -1,9 +1,10 @@
 {
   "type": "Schema",
-  "shapes": {
-    "http://a.example/S1": {
+  "shapes": [
+    {
+      "label": "http://a.example/S1",
       "nodeKind": "iri",
       "type": "NodeConstraint"
     }
-  }
+  ]
 }

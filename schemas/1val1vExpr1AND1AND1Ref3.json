@@ -1,22 +1,26 @@
 {
   "type": "Schema",
-  "shapes": {
-    "http://a.example/vc1": {
+  "shapes": [
+    {
+      "label": "http://a.example/vc1",
       "type": "NodeConstraint",
       "nodeKind": "literal",
       "minlength": 4
     },
-    "http://a.example/vc2": {
+    {
+      "label": "http://a.example/vc2",
       "type": "NodeConstraint",
       "nodeKind": "literal",
       "maxlength": 5
     },
-    "http://a.example/vc3": {
+    {
+      "label": "http://a.example/vc3",
       "type": "NodeConstraint",
       "nodeKind": "literal",
       "pattern": "^(ab)+$"
     },
-    "http://a.example/S1": {
+    {
+      "label": "http://a.example/S1",
       "type": "Shape",
       "expression": {
         "type": "TripleConstraint",
@@ -40,5 +44,5 @@
         }
       }
     }
-  }
+  ]
 }

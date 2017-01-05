@@ -1,7 +1,8 @@
 {
   "type": "Schema",
-  "shapes": {
-    "http://a.example/S1": {
+  "shapes": [
+    {
+      "label": "http://a.example/S1",
       "type": "Shape",
       "expression": {
         "type": "TripleConstraint",
@@ -25,26 +26,29 @@
         }
       }
     },
-    "http://a.example/S2": {
+    {
+      "label": "http://a.example/S2",
       "type": "Shape",
       "expression": {
         "type": "TripleConstraint",
         "predicate": "http://a.example/p2"
       }
     },
-    "http://a.example/S3": {
+    {
+      "label": "http://a.example/S3",
       "type": "Shape",
       "expression": {
         "type": "TripleConstraint",
         "predicate": "http://a.example/p3"
       }
     },
-    "http://a.example/S4": {
+    {
+      "label": "http://a.example/S4",
       "type": "Shape",
       "expression": {
         "type": "TripleConstraint",
         "predicate": "http://a.example/p4"
       }
     }
-  }
+  ]
 }

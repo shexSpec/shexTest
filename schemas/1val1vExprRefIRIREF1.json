@@ -1,12 +1,14 @@
 {
   "type": "Schema",
-  "shapes": {
-    "http://a.example/vc1": {
+  "shapes": [
+    {
+      "label": "http://a.example/vc1",
       "type": "NodeConstraint",
       "nodeKind": "literal",
       "minlength": 5
     },
-    "http://a.example/S1": {
+    {
+      "label": "http://a.example/S1",
       "type": "Shape",
       "expression": {
         "type": "TripleConstraint",
@@ -17,5 +19,5 @@
         }
       }
     }
-  }
+  ]
 }

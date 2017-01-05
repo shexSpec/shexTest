@@ -1,7 +1,8 @@
 {
   "type": "Schema",
-  "shapes": {
-    "http://a.example/S1": {
+  "shapes": [
+    {
+      "label": "http://a.example/S1",
       "type": "Shape",
       "expression": {
         "type": "EachOf",
@@ -23,5 +24,5 @@
         "max": 3
       }
     }
-  }
+  ]
 }

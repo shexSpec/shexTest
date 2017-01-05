@@ -1,7 +1,8 @@
 {
   "type": "Schema",
-  "shapes":{
-    "http://a.example/S1": {
+  "shapes": [
+    {
+      "label": "http://a.example/S1",
       "type": "Shape",
       "expression": {
         "type": "OneOf",
@@ -17,13 +18,13 @@
         ]
       }
     },
-    "http://a.example/S2": {
+    {
+      "label": "http://a.example/S2",
       "type": "Shape",
       "expression": {
         "type": "TripleConstraint",
         "predicate": "http://a.example/p2"
       }
     }
-  }
+  ]
 }
-

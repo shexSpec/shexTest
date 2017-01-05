@@ -1,7 +1,8 @@
 {
   "type": "Schema",
-  "shapes": {
-    "http://a.example/vs1": {
+  "shapes": [
+    {
+      "label": "http://a.example/vs1",
       "type": "ShapeAnd",
       "shapeExprs": [
         {
@@ -18,5 +19,5 @@
         }
       ]
     }
-  }
+  ]
 }
