@@ -6,16 +6,16 @@
     sx:expression [ a sx:TripleConstraint ;
             sx:predicate <http://a.example/p1> ;
             sx:valueExpr [ a sx:ShapeRef ;
-                    sx:reference _:f936ccb91116e487ba8673d787bb975dfb3 ] ] .
+                    sx:reference _:b3 ] ] .
 
 [] a sx:Schema ;
-    sx:shapes _:f936ccb91116e487ba8673d787bb975dfb3,
+    sx:shapes _:b3,
         <http://a.example/S1> .
 
-_:f936ccb91116e487ba8673d787bb975dfb5 a sx:TripleConstraint ;
+_:b5 a sx:TripleConstraint ;
     sx:predicate <http://a.example/p2> .
 
-_:f936ccb91116e487ba8673d787bb975dfb3 a sx:Shape ;
-    sx:expression _:f936ccb91116e487ba8673d787bb975dfb5 .
+_:b3 a sx:Shape ;
+    sx:expression _:b5 .
 
 

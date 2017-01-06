@@ -3,14 +3,14 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 [] a sx:Schema ;
-    sx:shapes _:fa8a23b1d6d974681bcc33b7eaf766900b2 ;
+    sx:shapes _:b2 ;
     sx:start [ a sx:ShapeRef ;
-            sx:reference _:fa8a23b1d6d974681bcc33b7eaf766900b2 ] .
+            sx:reference _:b2 ] .
 
-_:fa8a23b1d6d974681bcc33b7eaf766900b4 a sx:TripleConstraint ;
+_:b4 a sx:TripleConstraint ;
     sx:predicate <http://a.example/p1> .
 
-_:fa8a23b1d6d974681bcc33b7eaf766900b2 a sx:Shape ;
-    sx:expression _:fa8a23b1d6d974681bcc33b7eaf766900b4 .
+_:b2 a sx:Shape ;
+    sx:expression _:b4 .
 
 
