@@ -258,31 +258,31 @@
                                     "http://a.example/p1",
                                     {
                                       "value": "0.0",
-                                      "datatype": "http://www.w3.org/2001/XMLSchema#decimal"
+                                      "type": "http://www.w3.org/2001/XMLSchema#decimal"
                                     },
                                     {
                                       "value": "0e0",
-                                      "datatype": "http://www.w3.org/2001/XMLSchema#double"
+                                      "type": "http://www.w3.org/2001/XMLSchema#double"
                                     },
                                     {
                                       "value": "0E0",
-                                      "datatype": "http://www.w3.org/2001/XMLSchema#double"
+                                      "type": "http://www.w3.org/2001/XMLSchema#double"
                                     },
                                     {
                                       "value": "false",
-                                      "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
+                                      "type": "http://www.w3.org/2001/XMLSchema#boolean"
                                     },
                                     {
                                       "value": "0",
-                                      "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+                                      "type": "http://www.w3.org/2001/XMLSchema#integer"
                                     },
                                     {
                                       "value": "ab",
-                                      "datatype": "http://all.example/bloodType"
+                                      "type": "http://all.example/bloodType"
                                     },
                                     {
                                       "value": "o+",
-                                      "datatype": "http://all.example/bloodType"
+                                      "type": "http://all.example/bloodType"
                                     },
                                     {
                                       "value": " !\"#$%&():;<=>?@[]^_`{|}~"
@@ -351,7 +351,7 @@
                                 "predicate": "http://a.example/annot3",
                                 "object": {
                                   "value": "3",
-                                  "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+                                  "type": "http://www.w3.org/2001/XMLSchema#integer"
                                 }
                               }
                             ]

@@ -10,7 +10,7 @@
         "valueExpr": {
           "type": "NodeConstraint",
           "values": [
-            "http://a.example/v1"
+            { "uri": "http://a.example/v1" }
           ]
         }
       }

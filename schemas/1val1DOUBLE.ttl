@@ -6,7 +6,7 @@
     sx:expression [ a sx:TripleConstraint ;
             sx:predicate <http://a.example/p1> ;
             sx:valueExpr [ a sx:NodeConstraint ;
-                    sx:value [ sx:datatype xsd:double ] ] ] .
+                    sx:value 0e+00 ] ] .
 
 [] a sx:Schema ;
     sx:shapes <http://a.example/S1> .

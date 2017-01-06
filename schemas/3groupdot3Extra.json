@@ -13,7 +13,7 @@
             "valueExpr": {
               "type": "NodeConstraint",
               "values": [
-                "http://a.example/o1"
+                { "uri": "http://a.example/o1" }
               ]
             }
           },
@@ -23,7 +23,7 @@
             "valueExpr": {
               "type": "NodeConstraint",
               "values": [
-                "http://a.example/o2"
+                { "uri": "http://a.example/o2" }
               ]
             }
           },
@@ -33,7 +33,7 @@
             "valueExpr": {
               "type": "NodeConstraint",
               "values": [
-                "http://a.example/o3"
+                { "uri": "http://a.example/o3" }
               ]
             }
           }

@@ -6,7 +6,7 @@
     sx:expression [ a sx:TripleConstraint ;
             sx:predicate <http://a.example/p1> ;
             sx:valueExpr [ a sx:NodeConstraint ;
-                    sx:value [ ] ] ] .
+                    sx:value "STRING_LITERAL_LONG2" ] ] .
 
 [] a sx:Schema ;
     sx:shapes <http://a.example/S1> .

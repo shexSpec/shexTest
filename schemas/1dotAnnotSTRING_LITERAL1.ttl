@@ -5,7 +5,7 @@
 <http://a.example/S1> a sx:Shape ;
     sx:expression [ a sx:TripleConstraint ;
             sx:annotation [ a sx:Annotation ;
-                    sx:object [ ] ;
+                    sx:object "STRING_LITERAL1" ;
                     sx:predicate <http://a.example/annot> ] ;
             sx:predicate <http://a.example/p1> ] .
 

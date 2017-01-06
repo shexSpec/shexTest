@@ -5,13 +5,13 @@
 <http://a.example/S1> a sx:Shape ;
     sx:expression [ a sx:TripleConstraint ;
             sx:annotation [ a sx:Annotation ;
-                    sx:object [ ] ;
+                    sx:object "1" ;
                     sx:predicate <http://a.example/annot1> ],
                 [ a sx:Annotation ;
-                    sx:object [ ] ;
+                    sx:object "2" ;
                     sx:predicate <http://a.example/annot2> ],
                 [ a sx:Annotation ;
-                    sx:object [ ] ;
+                    sx:object "3" ;
                     sx:predicate <http://a.example/annot3> ] ;
             sx:inverse true ;
             sx:predicate <http://a.example/p1> ] .

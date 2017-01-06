@@ -24,7 +24,7 @@
             "valueExpr": {
               "type": "NodeConstraint",
               "values": [
-                "http://ex.example/#Issue"
+                { "uri": "http://ex.example/#Issue" }
               ]
             },
             "min": 0,
@@ -293,7 +293,7 @@
                     },
                     {
                       "value": "b",
-                      "datatype": "http://ex.example/#c"
+                      "type": "http://ex.example/#c"
                     },
                     {
                       "value": "c",
@@ -345,11 +345,11 @@
                       "values": [
                         {
                           "value": "true",
-                          "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
+                          "type": "http://www.w3.org/2001/XMLSchema#boolean"
                         },
                         {
                           "value": "false",
-                          "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
+                          "type": "http://www.w3.org/2001/XMLSchema#boolean"
                         }
                       ]
                     }
