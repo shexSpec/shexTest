@@ -29,7 +29,7 @@
         {
           "type": "NodeConstraint",
           "values": [
-            "http://a.example/a1",
+            { "uri": "http://a.example/a1" },
             {
               "type": "StemRange",
               "stem": "http://all.example/",
@@ -38,7 +38,7 @@
                   "type": "Stem",
                   "stem": "http://all.example/a"
                 },
-                "http://all.example/b"
+                { "uri": "http://all.example/b" }
               ]
             }
           ]
@@ -251,11 +251,11 @@
                                       "value": "STRING_LITERAL2",
                                       "language": "en-uk"
                                     },
-                                    "http://all.example/",
-                                    "http://all.example/val1",
-                                    "http://all.example/",
-                                    "scheme:!$%25&amp;'()*+,-./0123456789:/@ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz~?#",
-                                    "http://a.example/p1",
+                                    { "uri": "http://all.example/" },
+                                    { "uri": "http://all.example/val1" },
+                                    { "uri": "http://all.example/" },
+                                    { "uri": "scheme:!$%25&amp;'()*+,-./0123456789:/@ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz~?#" },
+                                    { "uri": "http://a.example/p1" },
                                     {
                                       "value": "0.0",
                                       "type": "http://www.w3.org/2001/XMLSchema#decimal"
@@ -433,7 +433,7 @@
                       "type": "Stem",
                       "stem": "http://all.example/a"
                     },
-                    "http://all.example/b"
+                    { "uri": "http://all.example/b" }
                   ]
                 }
               ]
