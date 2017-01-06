@@ -9,11 +9,11 @@
                     sx:reference <http://a.example/vs1> ] ] .
 
 <http://a.example/vs1> a sx:NodeConstraint ;
-    sx:value [ a sx:StemRange ;
-            sx:exclusion <http://a.example/v1>,
-                <http://a.example/v2>,
-                <http://a.example/v3> ;
-            sx:stem [ a sx:Wildcard ] ] .
+    sx:values ( [ a sx:StemRange ;
+                sx:exclusion <http://a.example/v1>,
+                    <http://a.example/v2>,
+                    <http://a.example/v3> ;
+                sx:stem [ a sx:Wildcard ] ] ) .
 
 [] a sx:Schema ;
     sx:shapes <http://a.example/S1>,

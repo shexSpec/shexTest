@@ -6,14 +6,14 @@
     sx:expression [ a sx:TripleConstraint ;
             sx:predicate <http://a.example/p1> ;
             sx:valueExpr [ a sx:NodeConstraint ;
-                    sx:value [ a sx:StemRange ;
-                            sx:exclusion [ a sx:Stem ;
-                                    sx:stem "http://a.example/v1"^^xsd:anyUri ],
-                                [ a sx:Stem ;
-                                    sx:stem "http://a.example/v2"^^xsd:anyUri ],
-                                [ a sx:Stem ;
-                                    sx:stem "http://a.example/v3"^^xsd:anyUri ] ;
-                            sx:stem [ a sx:Wildcard ] ] ] ] .
+                    sx:values ( [ a sx:StemRange ;
+                                sx:exclusion [ a sx:Stem ;
+                                        sx:stem "http://a.example/v1"^^xsd:anyUri ],
+                                    [ a sx:Stem ;
+                                        sx:stem "http://a.example/v2"^^xsd:anyUri ],
+                                    [ a sx:Stem ;
+                                        sx:stem "http://a.example/v3"^^xsd:anyUri ] ;
+                                sx:stem [ a sx:Wildcard ] ] ) ] ] .
 
 [] a sx:Schema ;
     sx:shapes <http://a.example/S1> .

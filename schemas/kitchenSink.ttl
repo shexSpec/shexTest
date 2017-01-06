@@ -5,7 +5,7 @@
 <http://ex.example/#FooID> a sx:Shape ;
     sx:closed true ;
     sx:expression [ a sx:Inclusion ;
-            sx:include _:fb8918c6779ad4dd1afacc58ed9e34897b6 ] ;
+            sx:include _:f87d9c3390f844925abada03e881ca111b6 ] ;
     sx:extra <http://ex.example/#code>,
         <http://ex.example/#system> .
 
@@ -33,7 +33,7 @@
                         sx:valueExpr [ a sx:ShapeAnd ;
                                 sx:shapeExprs ( [ a sx:NodeConstraint ;
                                             sx:nodeKind "bnode" ] [ a sx:ShapeRef ;
-                                            sx:reference _:fb8918c6779ad4dd1afacc58ed9e34897b6 ] ) ] ] ) ] .
+                                            sx:reference _:f87d9c3390f844925abada03e881ca111b6 ] ) ] ] ) ] .
 
 <http://ex.example/#EmployeeShape> a sx:Shape ;
     sx:expression [ a sx:EachOf ;
@@ -64,7 +64,7 @@
                         sx:min "0"^^xsd:nonNegativeInteger ;
                         sx:predicate rdf:type ;
                         sx:valueExpr [ a sx:NodeConstraint ;
-                                sx:value <http://ex.example/#Issue> ] ] [ a sx:TripleConstraint ;
+                                sx:values ( <http://ex.example/#Issue> ) ] ] [ a sx:TripleConstraint ;
                         sx:annotation [ a sx:Annotation ;
                                 sx:object "State" ;
                                 sx:predicate <http://www.w3.org/2000/01/rdf-schem#label> ],
@@ -73,9 +73,9 @@
                                 sx:predicate <http://www.w3.org/2000/01/rdf-schem#description> ] ;
                         sx:predicate <http://ex.example/#state> ;
                         sx:valueExpr [ a sx:NodeConstraint ;
-                                sx:value [ a sx:StemRange ;
-                                        sx:exclusion <http://ex.example/#state_resolved> ;
-                                        sx:stem "http://ex.example/#state"^^xsd:anyUri ] ] ] [ a sx:TripleConstraint ;
+                                sx:values ( [ a sx:StemRange ;
+                                            sx:exclusion <http://ex.example/#state_resolved> ;
+                                            sx:stem "http://ex.example/#state"^^xsd:anyUri ] ) ] ] [ a sx:TripleConstraint ;
                         sx:predicate <http://ex.example/#reportedBy> ;
                         sx:valueExpr [ a sx:ShapeAnd ;
                                 sx:shapeExprs ( [ a sx:NodeConstraint ;
@@ -102,7 +102,7 @@
                                 sx:reference <http://ex.example/S1> ] ] ) ] .
 
 [] a sx:Schema ;
-    sx:shapes _:fb8918c6779ad4dd1afacc58ed9e34897b6,
+    sx:shapes _:f87d9c3390f844925abada03e881ca111b6,
         <http://ex.example/#EmployeeShape>,
         <http://ex.example/#FooID>,
         <http://ex.example/#UserShape>,
@@ -110,14 +110,30 @@
     sx:start [ a sx:ShapeRef ;
             sx:reference <http://ex.example/S1> ] .
 
-_:fb8918c6779ad4dd1afacc58ed9e34897b109 rdf:first [ a sx:EachOf ;
+_:f87d9c3390f844925abada03e881ca111b11 rdf:first [ a sx:TripleConstraint ;
+            sx:predicate <http://ex.example/#code> ;
+            sx:valueExpr [ a sx:NodeConstraint ;
+                    sx:nodeKind "literal" ] ] ;
+    rdf:rest ( [ a sx:TripleConstraint ;
+                sx:predicate <http://ex.example/#system> ;
+                sx:valueExpr [ a sx:NodeConstraint ;
+                        sx:nodeKind "iri" ] ] [ a sx:TripleConstraint ;
+                sx:max 3 ;
+                sx:min "2"^^xsd:nonNegativeInteger ;
+                sx:predicate <http://ex.example/#literal> ;
+                sx:valueExpr [ a sx:NodeConstraint ;
+                        sx:values ( "a" "b"^^<http://ex.example/#c> "c" "d" ) ] ] [ a sx:TripleConstraint ;
+                sx:predicate <http://ex.example/#misc> ;
+                sx:valueExpr [ a sx:NodeConstraint ;
+                        sx:nodeKind "bnode" ] ] ) .
+
+_:f87d9c3390f844925abada03e881ca111b117 rdf:first [ a sx:EachOf ;
             sx:expressions ( [ a sx:EachOf ;
                         sx:expressions ( [ a sx:TripleConstraint ;
                                     sx:inverse true ;
                                     sx:predicate <http://ex.example/#ref> ;
                                     sx:valueExpr [ a sx:NodeConstraint ;
-                                            sx:value false,
-                                                true ] ] [ a sx:TripleConstraint ;
+                                            sx:values ( true false ) ] ] [ a sx:TripleConstraint ;
                                     sx:inverse true ;
                                     sx:predicate <http://ex.example/#miscRef> ] ) ] [ a sx:TripleConstraint ;
                         sx:max "*" ;
@@ -137,31 +153,11 @@ _:fb8918c6779ad4dd1afacc58ed9e34897b109 rdf:first [ a sx:EachOf ;
                                 sx:reference <http://ex.example/#EmployeeShape> ] ] ) ] ;
     rdf:rest () .
 
-_:fb8918c6779ad4dd1afacc58ed9e34897b11 rdf:first [ a sx:TripleConstraint ;
-            sx:predicate <http://ex.example/#system> ;
-            sx:valueExpr [ a sx:NodeConstraint ;
-                    sx:nodeKind "iri" ] ] ;
-    rdf:rest ( [ a sx:TripleConstraint ;
-                sx:max 3 ;
-                sx:min "2"^^xsd:nonNegativeInteger ;
-                sx:predicate <http://ex.example/#literal> ;
-                sx:valueExpr [ a sx:NodeConstraint ;
-                        sx:value "b"^^<http://ex.example/#c>,
-                            "a",
-                            "c",
-                            "d" ] ] [ a sx:TripleConstraint ;
-                sx:predicate <http://ex.example/#misc> ;
-                sx:valueExpr [ a sx:NodeConstraint ;
-                        sx:nodeKind "bnode" ] ] ) .
-
-_:fb8918c6779ad4dd1afacc58ed9e34897b64 a sx:OneOf ;
+_:f87d9c3390f844925abada03e881ca111b75 a sx:OneOf ;
     sx:expressions ( [ a sx:EachOf ;
-                sx:expressions ( [ a sx:TripleConstraint ;
-                            sx:predicate <http://ex.example/#code> ;
-                            sx:valueExpr [ a sx:NodeConstraint ;
-                                    sx:nodeKind "literal" ] ] _:fb8918c6779ad4dd1afacc58ed9e34897b12 _:fb8918c6779ad4dd1afacc58ed9e34897b14 _:fb8918c6779ad4dd1afacc58ed9e34897b16 ) ] _:fb8918c6779ad4dd1afacc58ed9e34897b86 ) .
+                sx:expressions _:f87d9c3390f844925abada03e881ca111b11 ] _:f87d9c3390f844925abada03e881ca111b95 ) .
 
-_:fb8918c6779ad4dd1afacc58ed9e34897b6 a sx:Shape ;
-    sx:expression _:fb8918c6779ad4dd1afacc58ed9e34897b64 .
+_:f87d9c3390f844925abada03e881ca111b6 a sx:Shape ;
+    sx:expression _:f87d9c3390f844925abada03e881ca111b75 .
 
 
