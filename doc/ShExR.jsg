@@ -28,37 +28,45 @@ TripleConstraintSolutions { predicate:IRI valueExpr:shapeExpr? min:INTEGER? max:
 TestedTriple     { subject:(IRI|BNODE) predicate:IRI object:(IRI|BNODE|ObjectLiteral) referenced:(shapeExprTest|Recursion)? }
 Recursion        { node:(IRI|BNODE) shape:(IRI|BNODE) }
 
+# Shape Expressions
 shapeExpr        = ShapeOr | ShapeAnd | ShapeNot | NodeConstraint | Shape | ShapeRef | ShapeExternal;
 ShapeOr          { shapeExprs:[shapeExpr{2,}] }
 ShapeAnd         { shapeExprs:[shapeExpr{2,}] }
 ShapeNot         { shapeExpr:shapeExpr }
+NodeConstraint   { nodeKind:("iri"|"bnode"|"nonliteral"|"literal")? datatype:IRI? xsFacet* values:[valueSetValue+]? }
 Shape            { virtual:BOOL? closed:BOOL? extra:[IRI+]? expression:tripleExpr? inherit:[shapeLabel+]? semActs:[SemAct+]? }
-ShapeExternal    {  }
 ShapeRef         { reference:IRI } # should be a TERM or some such
-SemAct           { name:IRI code:STRING? }
+ShapeExternal    {  }
+
+# Triple Expressions
 tripleExpr       = EachOf | OneOf | TripleConstraint | Inclusion ;
 EachOf           { expressions:[tripleExpr{2,}] min:INTEGER? max:(INTEGER|"*")? semActs:[SemAct+]? annotations:[Annotation+]? }
 OneOf            { expressions:[tripleExpr{2,}] min:INTEGER? max:(INTEGER|"*")? semActs:[SemAct+]? annotations:[Annotation+]? }
-Inclusion        { include:shapeLabel }
 TripleConstraint { inverse:BOOL? negated:BOOL? predicate:IRI valueExpr:shapeExpr? min:INTEGER? max:(INTEGER|"*")? semActs:[SemAct+]? annotations:[Annotation+]? }
-NodeConstraint   { nodeKind:("iri"|"bnode"|"nonliteral"|"literal")? datatype:IRI? xsFacet* values:[valueSetValue+]? }
-Annotation       { predicate:IRI object:objectValue }
+Inclusion        { include:shapeLabel }
 
+# XML Schema facets
 xsFacet          = stringFacet | numericFacet ;
 stringFacet      = (length|minlength|maxlength):INTEGER | pattern:STRING ;
 numericFacet     = (mininclusive|minexclusive|maxinclusive|maxexclusive):numericLiteral
                  | (totaldigits|fractiondigits):INTEGER ;
-shapeLabel       = IRI|BNODE ;
-numericLiteral   = INTEGER|DECIMAL|DOUBLE ;
+
+# Value Sets
 valueSetValue    = objectValue|Stem|StemRange ;
 objectValue      = IRI|ObjectLiteral ;
 Stem             { stem:IRI } # StemRange with exclusions
 StemRange        { stem:(IRI|Wildcard) exclusions:[objectValue|Stem +]? }
 Wildcard         {  }
+
+SemAct           { name:IRI code:STRING? }
+Annotation       { predicate:IRI object:objectValue }
+
+shapeLabel       = IRI|BNODE ;
+numericLiteral   = INTEGER|DECIMAL|DOUBLE ;
+RDFLiteral       = SIMPLE_LITERAL|DATATYPE_LITERAL|LANG_LITERAL ;
 ObjectLiteral    { value:STRING language:STRING? datatype:STRING? }
 
 # Terminals used in productions:
-PREFIX           : PN_PREFIX? ':' ; # <http://www.w3.org/TR/turtle/#grammar-production-PNAME_NS> - ":"
 IRI              : (PN_CHARS | '.' | ':' | '/' | '\\' | '#' | '@' | '%' | '&' | UCHAR)* ; # <http://www.w3.org/TR/turtle/#grammar-production-IRIREF> - "<>"s
 BNODE            : '_:' (PN_CHARS_U | [0-9]) ((PN_CHARS | '.')* PN_CHARS)? ; # <http://www.w3.org/TR/turtle/#grammar-production-BLANK_NODE_LABEL>
 BOOL             : "true" | "false" ; # JSON boolean tokens
