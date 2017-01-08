@@ -57,11 +57,12 @@ start=@<Schema>
 }
 
 <SemAct> CLOSED {
-  sx:name IRI;
+  sx:name IRI ;
   sx:code rdf:langString
 }
 
 <Annotation> CLOSED {
+  a [sx:Annotation] ;
   sx:predicate IRI ;
   sx:object @<objectValue>
 }
@@ -84,7 +85,7 @@ start=@<Schema>
 <numericLiteral> xsd:integer OR xsd:decimal OR xsd:double
 
 <valueSetValue> @<objectValue> OR @<Stem> OR @<StemRange>
-<objectValue> IRI OR rdf:langString
+<objectValue> IRI OR LITERAL # rdf:langString breaks on Annotation.object
 <Stem> CLOSED { a [sx:Stem]; sx:stem xsd:anyUri }
 <StemRange> CLOSED {
   a [sx:StemRange];
@@ -123,7 +124,7 @@ start=@<Schema>
   sx:predicate IRI ;
   sx:valueExpr .? ;# @<shapeExpr>?
   sx:semActs @<SemActList1Plus>? ;
-  sx:annotations @<Annotation>*
+  sx:annotation @<Annotation>*
 }
 
 <Inclusion> CLOSED {
