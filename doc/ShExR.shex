@@ -1,0 +1,96 @@
+PREFIX ex: <http://a.example>
+PREFIX sx: <http://shex.io/ns/shex#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+start=@<Schema>
+<Schema> {
+  a [sx:Schema] ;
+  sx:start @<shapeExpression>?;
+  sx:shapes @<shapeExpression>*
+}
+
+<shapeExpression> @<Shape> OR @<ShapeAnd> OR @<ShapeOr> OR @<NodeConstraint> OR @<ShapeRef>
+
+<Shape> {
+  a [sx:Shape] ;
+  sx:extra IRI* ;
+  sx:closed [true false]? ;
+  sx:expression @<tripleExpression>? ;
+}
+
+<ShapeAnd> {
+  a [sx:ShapeAnd] ;
+  sx:shapeExprs @<shapeExpressionList2Plus>
+}
+
+<ShapeOr> {
+  a [sx:ShapeAnd] ;
+  sx:shapeExprs @<shapeExpressionList2Plus>
+}
+
+<shapeExpressionList2Plus> CLOSED {
+  rdf:first @<shapeExpression> ;
+  rdf:rest  @<shapeExpressionList1Plus>
+}
+<shapeExpressionList1Plus> CLOSED {
+  rdf:first @<shapeExpression> ;
+  rdf:rest  [rdf:nil] OR @<shapeExpressionList1Plus>
+}
+
+<NodeConstraint> {
+  a [sx:NodeConstraint] ;
+  (  sx:nodeKind ["iri"]
+   | sx:values @<valueSetValueList1Plus>
+   | sx:datatype .)+
+}
+
+<valueSetValueList1Plus> CLOSED {
+  rdf:first @<valueSetValue> ;
+  rdf:rest  [rdf:nil] OR @<valueSetValueList1Plus>
+}
+
+<valueSetValue> @<objectValue> OR @<Stem> OR @<StemRange>
+<objectValue>   IRI OR LITERAL
+<Stem>          { a [sx:Stem]; sx:stem xsd:anyUri }
+<StemRange>     {
+  a [sx:StemRange];
+  sx:stem xsd:anyUri OR @<Wildcard>;
+  sx:exclusion @<objectValue> OR @<Stem>*
+}
+<Wildcard>      BNODE CLOSED { }
+
+<ShapeRef> {
+  a [sx:ShapeRef] ;
+  sx:reference @<shapeExpression>
+}
+
+<tripleExpression> @<TripleConstraint> OR @<OneOf> OR @<EachOf> OR @<Inclusion>
+
+<OneOf> CLOSED {
+  a [sx:OneOf] ;
+  sx:expressions @<tripleExpressionList2Plus>
+}
+
+<EachOf> CLOSED {
+  a [sx:EachOf] ;
+  sx:expressions @<tripleExpressionList2Plus>
+}
+
+<tripleExpressionList2Plus> {
+  rdf:first @<tripleExpression> ;
+  rdf:rest @<tripleExpressionList1Plus>
+}
+<tripleExpressionList1Plus> {
+  rdf:first @<tripleExpression> ;
+  rdf:rest  [rdf:nil] OR @<tripleExpressionList1Plus>
+}
+
+<TripleConstraint> {
+  a [sx:TripleConstraint] ;
+}
+
+<Inclusion> CLOSED {
+  a [sx:Inclusion] ;
+  sx:include NONLITERAL
+}
