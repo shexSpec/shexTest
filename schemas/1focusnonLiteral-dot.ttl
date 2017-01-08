@@ -4,7 +4,7 @@
 
 <http://a.example/S1> a sx:ShapeAnd ;
     sx:shapeExprs ( [ a sx:NodeConstraint ;
-                sx:nodeKind "nonliteral" ] [ a sx:Shape ;
+                sx:nodeKind sx:nonliteral ] [ a sx:Shape ;
                 sx:expression [ a sx:TripleConstraint ;
                         sx:predicate <http://a.example/p1> ] ] ) .
 

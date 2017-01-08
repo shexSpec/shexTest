@@ -7,11 +7,11 @@
             sx:predicate <http://a.example/p1> ;
             sx:valueExpr [ a sx:ShapeOr ;
                     sx:shapeExprs ( [ a sx:NodeConstraint ;
-                                sx:nodeKind "literal" ;
+                                sx:nodeKind sx:literal ;
                                 sx:pattern "ab.*" ] [ a sx:NodeConstraint ;
-                                sx:nodeKind "literal" ;
+                                sx:nodeKind sx:literal ;
                                 sx:pattern ".*cd.*" ] [ a sx:NodeConstraint ;
-                                sx:nodeKind "literal" ;
+                                sx:nodeKind sx:literal ;
                                 sx:pattern ".*ef" ] ) ] ] .
 
 [] a sx:Schema ;

@@ -8,10 +8,10 @@
             sx:valueExpr [ a sx:ShapeAnd ;
                     sx:shapeExprs ( [ a sx:NodeConstraint ;
                                 sx:minlength "4"^^xsd:nonNegativeInteger ;
-                                sx:nodeKind "literal" ] [ a sx:NodeConstraint ;
+                                sx:nodeKind sx:literal ] [ a sx:NodeConstraint ;
                                 sx:maxlength "5"^^xsd:nonNegativeInteger ;
-                                sx:nodeKind "literal" ] [ a sx:NodeConstraint ;
-                                sx:nodeKind "literal" ;
+                                sx:nodeKind sx:literal ] [ a sx:NodeConstraint ;
+                                sx:nodeKind sx:literal ;
                                 sx:pattern "^(ab)+$" ] ) ] ] .
 
 [] a sx:Schema ;

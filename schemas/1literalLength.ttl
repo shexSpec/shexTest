@@ -7,7 +7,7 @@
             sx:predicate <http://a.example/p1> ;
             sx:valueExpr [ a sx:NodeConstraint ;
                     sx:length "5"^^xsd:nonNegativeInteger ;
-                    sx:nodeKind "literal" ] ] .
+                    sx:nodeKind sx:literal ] ] .
 
 [] a sx:Schema ;
     sx:shapes <http://a.example/S1> .

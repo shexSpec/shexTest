@@ -6,7 +6,7 @@
     sx:expression [ a sx:TripleConstraint ;
             sx:predicate <http://a.example/p1> ;
             sx:valueExpr [ a sx:NodeConstraint ;
-                    sx:nodeKind "bnode" ] ] .
+                    sx:nodeKind sx:bnode ] ] .
 
 [] a sx:Schema ;
     sx:shapes <http://a.example/S1> .

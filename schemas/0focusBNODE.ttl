@@ -3,7 +3,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://a.example/S1> a sx:NodeConstraint ;
-    sx:nodeKind "bnode" .
+    sx:nodeKind sx:bnode .
 
 [] a sx:Schema ;
     sx:shapes <http://a.example/S1> .

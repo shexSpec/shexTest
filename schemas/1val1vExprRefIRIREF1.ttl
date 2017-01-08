@@ -10,7 +10,7 @@
 
 <http://a.example/vc1> a sx:NodeConstraint ;
     sx:minlength "5"^^xsd:nonNegativeInteger ;
-    sx:nodeKind "literal" .
+    sx:nodeKind sx:literal .
 
 [] a sx:Schema ;
     sx:shapes <http://a.example/S1>,
