@@ -4,66 +4,94 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 
 start=@<Schema>
-<Schema> {
+
+<Schema> CLOSED {
   a [sx:Schema] ;
-  sx:start @<shapeExpression>?;
-  sx:shapes @<shapeExpression>*
+  sx:startActs @<SemActList1Plus>? ;
+  sx:start @<shapeExpr>?;
+  sx:shapes @<shapeExpr>*
 }
 
-<shapeExpression> @<Shape> OR @<ShapeAnd> OR @<ShapeOr> OR @<NodeConstraint> OR @<ShapeRef>
+<shapeExpr> @<ShapeOr> OR @<ShapeAnd> OR @<ShapeNot> OR @<NodeConstraint> OR @<Shape> OR @<ShapeRef> OR @<ShapeExternal>
 
-<Shape> {
-  a [sx:Shape] ;
-  sx:extra IRI* ;
-  sx:closed [true false]? ;
-  sx:expression @<tripleExpression>? ;
-}
-
-<ShapeAnd> {
+<ShapeOr> CLOSED {
   a [sx:ShapeAnd] ;
-  sx:shapeExprs @<shapeExpressionList2Plus>
+  sx:shapeExprs @<shapeExprList2Plus>
 }
 
-<ShapeOr> {
+<ShapeAnd> CLOSED {
   a [sx:ShapeAnd] ;
-  sx:shapeExprs @<shapeExpressionList2Plus>
+  sx:shapeExprs @<shapeExprList2Plus>
 }
 
-<shapeExpressionList2Plus> CLOSED {
-  rdf:first @<shapeExpression> ;
-  rdf:rest  @<shapeExpressionList1Plus>
-}
-<shapeExpressionList1Plus> CLOSED {
-  rdf:first @<shapeExpression> ;
-  rdf:rest  [rdf:nil] OR @<shapeExpressionList1Plus>
+<ShapeNot> CLOSED {
+  a [sx:ShapeNot] ;
+  sx:shapeExpr @<shapeExpr>
 }
 
-<NodeConstraint> {
+<NodeConstraint> CLOSED {
   a [sx:NodeConstraint] ;
-  (  sx:nodeKind ["iri"]
-   | sx:values @<valueSetValueList1Plus>
-   | sx:datatype .)+
+  (  sx:nodeKind ["iri" "bnode" "literal" "nonliteral"]
+   | sx:datatype IRI
+#   | &<xsFacet>
+   | &<stringFacet>
+   | &<numericFacet>
+   | sx:values @<valueSetValueList1Plus>)+
 }
 
-<valueSetValueList1Plus> CLOSED {
-  rdf:first @<valueSetValue> ;
-  rdf:rest  [rdf:nil] OR @<valueSetValueList1Plus>
+<Shape> CLOSED {
+  a [sx:Shape] ;
+  sx:closed [true false]? ;
+  sx:extra IRI* ;
+  sx:expression @<tripleExpression>? ;
+  sx:semActs @<SemActList1Plus>? ;
 }
+
+<ShapeExternal> CLOSED {
+  a [sx:ShapeExternal] ;
+}
+
+<ShapeRef> CLOSED {
+  a [sx:ShapeRef] ;
+  sx:reference @<shapeExpr>
+}
+
+<SemAct> CLOSED {
+  sx:name IRI;
+  sx:code rdf:langString
+}
+
+<Annotation> CLOSED {
+  sx:predicate IRI ;
+  sx:object @<objectValue>
+}
+
+# <xsFacet> @<stringFacet> OR @<numericFacet>
+<stringFacet> {
+    sx:length xsd:nonNegativeInteger
+  | sx:minlength xsd:nonNegativeInteger
+  | sx:maxlength xsd:nonNegativeInteger
+  | sx:pattern rdf:langString
+}
+<numericFacet> {
+    sx:mininclusive   @<numericLiteral>
+  | sx:minexclusive   @<numericLiteral>
+  | sx:maxinclusive   @<numericLiteral>
+  | sx:maxexclusive   @<numericLiteral>
+  | sx:totaldigits    @<numericLiteral>
+  | sx:fractiondigits @<numericLiteral>
+}
+<numericLiteral> xsd:integer OR xsd:decimal OR xsd:double
 
 <valueSetValue> @<objectValue> OR @<Stem> OR @<StemRange>
-<objectValue>   IRI OR LITERAL
-<Stem>          { a [sx:Stem]; sx:stem xsd:anyUri }
-<StemRange>     {
+<objectValue> IRI OR rdf:langString
+<Stem> CLOSED { a [sx:Stem]; sx:stem xsd:anyUri }
+<StemRange> CLOSED {
   a [sx:StemRange];
   sx:stem xsd:anyUri OR @<Wildcard>;
   sx:exclusion @<objectValue> OR @<Stem>*
 }
 <Wildcard>      BNODE CLOSED { }
-
-<ShapeRef> {
-  a [sx:ShapeRef] ;
-  sx:reference @<shapeExpression>
-}
 
 <tripleExpression> @<TripleConstraint> OR @<OneOf> OR @<EachOf> OR @<Inclusion>
 
@@ -77,20 +105,48 @@ start=@<Schema>
   sx:expressions @<tripleExpressionList2Plus>
 }
 
-<tripleExpressionList2Plus> {
+<tripleExpressionList2Plus> CLOSED {
   rdf:first @<tripleExpression> ;
   rdf:rest @<tripleExpressionList1Plus>
 }
-<tripleExpressionList1Plus> {
+<tripleExpressionList1Plus> CLOSED {
   rdf:first @<tripleExpression> ;
   rdf:rest  [rdf:nil] OR @<tripleExpressionList1Plus>
 }
 
-<TripleConstraint> {
+<TripleConstraint> CLOSED {
   a [sx:TripleConstraint] ;
+  sx:inverse [true false]? ;
+  sx:negated [true false]? ;
+  sx:min xsd:nonNegativeInteger? ;
+  sx:max xsd:integer OR ["*"]? ;
+  sx:predicate IRI ;
+  sx:valueExpr .? ;# @<shapeExpr>?
+  sx:semActs @<SemActList1Plus>? ;
+  sx:annotations @<Annotation>*
 }
 
 <Inclusion> CLOSED {
   a [sx:Inclusion] ;
   sx:include NONLITERAL
 }
+
+<SemActList1Plus> CLOSED {
+  rdf:first @<SemAct> ;
+  rdf:rest  [rdf:nil] OR @<SemActList1Plus>
+}
+
+<shapeExprList2Plus> CLOSED {
+  rdf:first @<shapeExpr> ;
+  rdf:rest  @<shapeExprList1Plus>
+}
+<shapeExprList1Plus> CLOSED {
+  rdf:first @<shapeExpr> ;
+  rdf:rest  [rdf:nil] OR @<shapeExprList1Plus>
+}
+
+<valueSetValueList1Plus> CLOSED {
+  rdf:first @<valueSetValue> ;
+  rdf:rest  [rdf:nil] OR @<valueSetValueList1Plus>
+}
+
