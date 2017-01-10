@@ -11,7 +11,7 @@
           {
             "type": "Annotation",
             "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-            "object": "http://a.example/IRIREF"
+            "object": { "uri": "http://a.example/IRIREF" }
           }
         ]
       }

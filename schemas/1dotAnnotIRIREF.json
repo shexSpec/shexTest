@@ -11,7 +11,7 @@
           {
             "type": "Annotation",
             "predicate": "http://a.example/annot",
-            "object": "http://a.example/IRIREF"
+            "object": { "uri": "http://a.example/IRIREF" }
           }
         ]
       }

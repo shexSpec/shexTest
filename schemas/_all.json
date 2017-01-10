@@ -337,7 +337,7 @@
                               {
                                 "type": "Annotation",
                                 "predicate": "http://a.example/annot1",
-                                "object": "http://a.example/IRIREF"
+                                "object": { "uri": "http://a.example/IRIREF" }
                               },
                               {
                                 "type": "Annotation",

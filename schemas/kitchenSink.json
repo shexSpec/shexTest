@@ -40,7 +40,7 @@
                   "type": "StemRange",
                   "stem": "http://ex.example/#state",
                   "exclusions": [
-                    "http://ex.example/#state_resolved"
+                    { "uri": "http://ex.example/#state_resolved" }
                   ]
                 }
               ]
