@@ -3,6 +3,10 @@
   "solution": {
     "type": "NodeTest",
     "node": { "value": "v1", "datatype": "http://a.example/dt1" },
-    "shape": "http://a.example/vs1"
+    "shape": "http://a.example/vs1",
+    "shapeExpr": {
+      "type": "NodeConstraint",
+      "datatype": "http://a.example/dt1"
+    }
   }
 }
