@@ -4,7 +4,7 @@
 
 <http://a.example/S1> a sx:ShapeAnd ;
     sx:shapeExprs ( [ a sx:NodeConstraint ;
-                sx:nodeKind "iri" ;
+                sx:nodeKind sx:iri ;
                 sx:pattern "^https?://" ] [ a sx:Shape ;
                 sx:expression [ a sx:EachOf ;
                         sx:expressions ( [ a sx:TripleConstraint ;
@@ -14,18 +14,18 @@
                                     sx:predicate <http://a.example/p2> ;
                                     sx:valueExpr [ a sx:ShapeAnd ;
                                             sx:shapeExprs ( [ a sx:NodeConstraint ;
-                                                        sx:nodeKind "bnode" ] [ a sx:Shape ;
+                                                        sx:nodeKind sx:bnode ] [ a sx:Shape ;
                                                         sx:expression [ a sx:EachOf ;
                                                                 sx:expressions ( [ a sx:TripleConstraint ;
                                                                             sx:predicate <http://a.example/p3> ;
                                                                             sx:valueExpr [ a sx:NodeConstraint ;
-                                                                                    sx:nodeKind "literal" ] ] [ a sx:TripleConstraint ;
+                                                                                    sx:nodeKind sx:literal ] ] [ a sx:TripleConstraint ;
                                                                             sx:max 1 ;
                                                                             sx:min "0"^^xsd:nonNegativeInteger ;
                                                                             sx:predicate <http://a.example/p4> ;
                                                                             sx:valueExpr [ a sx:ShapeAnd ;
                                                                                     sx:shapeExprs ( [ a sx:NodeConstraint ;
-                                                                                                sx:nodeKind "iri" ;
+                                                                                                sx:nodeKind sx:iri ;
                                                                                                 sx:pattern "^https?://" ] [ a sx:ShapeRef ;
                                                                                                 sx:reference <http://a.example/S1> ] ) ] ] ) ] ] [ a sx:Shape ;
                                                         sx:closed true ;

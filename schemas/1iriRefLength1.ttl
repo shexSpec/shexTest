@@ -8,7 +8,7 @@
             sx:valueExpr [ a sx:ShapeAnd ;
                     sx:shapeExprs ( [ a sx:NodeConstraint ;
                                 sx:length "19"^^xsd:nonNegativeInteger ;
-                                sx:nodeKind "iri" ] [ a sx:ShapeRef ;
+                                sx:nodeKind sx:iri ] [ a sx:ShapeRef ;
                                 sx:reference <http://a.example/S2> ] ) ] ] .
 
 <http://a.example/S2> a sx:Shape ;
