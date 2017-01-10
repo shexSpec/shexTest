@@ -11,33 +11,42 @@
 .TYPE type; # All objects have a type property corresponding to the production name, e.g. "Schema"
 
 Schema           { prefixes:{PREFIX->IRI}? base:IRI? startActs:[SemAct+]? start:shapeExpr? shapes:{shapeLabel->shapeExpr}? }
+
+# Shape Expressions
 shapeExpr        = ShapeOr | ShapeAnd | ShapeNot | NodeConstraint | Shape | ShapeRef | ShapeExternal;
 ShapeOr          { shapeExprs:[shapeExpr{2,}] }
 ShapeAnd         { shapeExprs:[shapeExpr{2,}] }
 ShapeNot         { shapeExpr:shapeExpr }
+NodeConstraint   { nodeKind:("iri"|"bnode"|"nonliteral"|"literal")? datatype:IRI? xsFacet* values:[valueSetValue+]? }
 Shape            { virtual:BOOL? closed:BOOL? extra:[IRI+]? expression:tripleExpr? inherit:[shapeLabel+]? semActs:[SemAct+]? }
-ShapeExternal    {  }
 ShapeRef         { reference:IRI } # should be a TERM or some such
-SemAct           { name:IRI code:STRING? }
+ShapeExternal    {  }
+
+# Triple Expressions
 tripleExpr       = EachOf | OneOf | TripleConstraint | Inclusion ;
 EachOf           { expressions:[tripleExpr{2,}] min:INTEGER? max:(INTEGER|"*")? semActs:[SemAct+]? annotations:[Annotation+]? }
 OneOf            { expressions:[tripleExpr{2,}] min:INTEGER? max:(INTEGER|"*")? semActs:[SemAct+]? annotations:[Annotation+]? }
-Inclusion        { include:shapeLabel }
 TripleConstraint { inverse:BOOL? negated:BOOL? predicate:IRI valueExpr:shapeExpr? min:INTEGER? max:(INTEGER|"*")? semActs:[SemAct+]? annotations:[Annotation+]? }
-NodeConstraint   { nodeKind:("iri"|"bnode"|"nonliteral"|"literal")? datatype:IRI? xsFacet* values:[valueSetValue+]? }
-Annotation       { predicate:IRI object:objectValue }
+Inclusion        { include:shapeLabel }
 
+# XML Schema facets
 xsFacet          = stringFacet | numericFacet ;
 stringFacet      = (length|minlength|maxlength):INTEGER | pattern:STRING ;
 numericFacet     = (mininclusive|minexclusive|maxinclusive|maxexclusive):numericLiteral
                  | (totaldigits|fractiondigits):INTEGER ;
-shapeLabel       = IRI|BNODE ;
-numericLiteral   = INTEGER|DECIMAL|DOUBLE ;
+
+# Value Sets
 valueSetValue    = objectValue|Stem|StemRange ;
 objectValue      = IRI|RDFLiteral ;
 Stem             { stem:IRI } # StemRange with exclusions
 StemRange        { stem:(IRI|Wildcard) exclusions:[objectValue|Stem +]? }
 Wildcard         {  }
+
+SemAct           { name:IRI code:STRING? }
+Annotation       { predicate:IRI object:objectValue }
+
+shapeLabel       = IRI|BNODE ;
+numericLiteral   = INTEGER|DECIMAL|DOUBLE ;
 RDFLiteral       = SIMPLE_LITERAL|DATATYPE_LITERAL|LANG_LITERAL ;
 
 # Terminals used in productions:
