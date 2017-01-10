@@ -4,7 +4,12 @@
     {
       "type": "NodeTest",
       "node": "http://a.example/n1",
-      "shape": "http://a.example/S1"
+      "shape": "http://a.example/S1",
+      "shapeExpr": {
+        "type": "NodeConstraint",
+        "nodeKind": "iri",
+        "pattern": "^https?://"
+      }
     },
     {
       "type": "ShapeTest",

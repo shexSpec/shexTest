@@ -11225,7 +11225,7 @@
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
-    mf:result <1focus_dot_pass.val>
+    mf:result <1focusIRI_dot_pass.val>
     .
 
 <#1focusBNODE_dot_fail-iriFocusLabel-equal> a sht:ValidationFailure ;
@@ -11266,7 +11266,7 @@
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
-    mf:result <1focus_dot_pass.val>
+    mf:result <1focusnonLiteral_dot_pass.val>
     .
 
 ###  } kind
@@ -11457,7 +11457,7 @@
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
-    mf:result <1focus_dot_pass.val>
+    mf:result <1focusLength_dot_pass-iri.val>
     .
 
 <#1focusLength-dot_fail-iri-long> a sht:ValidationFailure ;
@@ -11497,7 +11497,7 @@
       sht:data <Babcdefghijklmnopqrs_Ip1_Io1.ttl> ;
       sht:focus _:abcdefghijklmnopqrs
     ] ;
-    mf:result <1focusBNODE_dot_pass.val>
+    mf:result <1focusLength_dot_pass-bnode.val>
     .
 
 <#1focusLength-dot_fail-bnode-long> a sht:ValidationFailure ;
@@ -11538,7 +11538,7 @@
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
-    mf:result <1focus_dot_pass.val>
+    mf:result <1focusMinLength_dot_pass-iri.val>
     .
 
 <#1focusMinLength-dot_pass-iri-long> a sht:ValidationTest ;
@@ -11579,7 +11579,7 @@
       sht:data <Babcdefghijklmnopqrs_Ip1_Io1.ttl> ;
       sht:focus _:abcdefghijklmnopqrs
     ] ;
-    mf:result <1focusBNODE_dot_pass.val>
+    mf:result <1focusMinLength_dot_pass-bnode.val>
     .
 
 <#1focusMinLength-dot_pass-bnode-long> a sht:ValidationTest ;
@@ -11600,7 +11600,7 @@
 <#1focusMaxLength-dot_pass-iri-short> a sht:ValidationTest ;
     mf:name "1focusMaxLength-dot_pass-iri-short" ;
     sht:trait sht:FocusConstraint , sht:LengthFacet ;
-    rdfs:comment "<S1> MINLENGTH 19 { <p1> . } on { <s> <p1> <o1> }" ;
+    rdfs:comment "<S1> MAXLENGTH 19 { <p1> . } on { <s> <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1focusMaxLength-dot.shex> ;
@@ -11614,7 +11614,7 @@
 <#1focusMaxLength-dot_pass-iri-equal> a sht:ValidationTest ;
     mf:name "1focusMaxLength-dot_pass-iri-equal" ;
     sht:trait sht:FocusConstraint , sht:LengthFacet ;
-    rdfs:comment "<S1> MINLENGTH 19 { <p1> . } on { <s1> <p1> <o1> }" ;
+    rdfs:comment "<S1> MAXLENGTH 19 { <p1> . } on { <s1> <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1focusMaxLength-dot.shex> ;
@@ -11622,13 +11622,13 @@
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
-    mf:result <1focus_dot_pass.val>
+    mf:result <1focusMaxLength_dot_pass-iri.val>
     .
 
 <#1focusMaxLength-dot_fail-iri-long> a sht:ValidationFailure ;
     mf:name "1focusMaxLength-dot_fail-iri-long" ;
     sht:trait sht:FocusConstraint , sht:LengthFacet ;
-    rdfs:comment "<S1> MINLENGTH 19 { <p1> . } on { <s1a> <p1> <o1> }" ;
+    rdfs:comment "<S1> MAXLENGTH 19 { <p1> . } on { <s1a> <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1focusMaxLength-dot.shex> ;
@@ -11641,7 +11641,7 @@
 <#1focusMaxLength-dot_pass-bnode-short> a sht:ValidationTest ;
     mf:name "1focusMaxLength-dot_pass-bnode-short" ;
     sht:trait sht:FocusConstraint , sht:LengthFacet , sht:LexicalBNode;
-    rdfs:comment "<S1> MINLENGTH 19 { <p1> . } on { _:abcd <p1> <o1> }" ;
+    rdfs:comment "<S1> MAXLENGTH 19 { <p1> . } on { _:abcd <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1focusMaxLength-dot.shex> ;
@@ -11655,7 +11655,7 @@
 <#1focusMaxLength-dot_pass-bnode-equal> a sht:ValidationTest ;
     mf:name "1focusMaxLength-dot_pass-bnode-equal" ;
     sht:trait sht:FocusConstraint , sht:LengthFacet , sht:LexicalBNode;
-    rdfs:comment "<S1> MINLENGTH 19 { <p1> . } on { _:abcdefghijklmnopqrs <p1> <o1> }" ;
+    rdfs:comment "<S1> MAXLENGTH 19 { <p1> . } on { _:abcdefghijklmnopqrs <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1focusMaxLength-dot.shex> ;
@@ -11663,13 +11663,13 @@
       sht:data <Babcdefghijklmnopqrs_Ip1_Io1.ttl> ;
       sht:focus _:abcdefghijklmnopqrs
     ] ;
-    mf:result <1focusBNODE_dot_pass.val>
+    mf:result <1focusMaxLength_dot_pass-bnode.val>
     .
 
 <#1focusMaxLength-dot_fail-bnode-long> a sht:ValidationFailure ;
     mf:name "1focusMaxLength-dot_fail-bnode-long" ;
     sht:trait sht:FocusConstraint , sht:LengthFacet ;
-    rdfs:comment "<S1> MINLENGTH 19 { <p1> . } on { <s1a> <p1> <o1> }" ;
+    rdfs:comment "<S1> MAXLENGTH 19 { <p1> . } on { <s1a> <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1focusMaxLength-dot.shex> ;
@@ -11716,7 +11716,7 @@
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
-    mf:result <1focus_dot_pass.val>
+    mf:result <1focusPattern_dot_pass.val>
     .
 
 <#1focusPattern-dot_fail-iri-long> a sht:ValidationFailure ;
@@ -11766,7 +11766,7 @@
       sht:data <Babcdefghijklmnopqrs_Ip1_Io1.ttl> ;
       sht:focus _:abcdefghijklmnopqrs
     ] ;
-    mf:result <1focusBNODE_dot_pass.val>
+    mf:result <1focusPatternB_dot_pass.val>
     .
 
 <#1focusPatternB-dot_pass-bnode-long> a sht:ValidationTest ;
@@ -11824,7 +11824,7 @@
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
-    mf:result <1focus_dot_pass.val>
+    mf:result <1focusIRILength_dot_pass.val>
     .
 
 <#1focusIRILength_dot_fail-long> a sht:ValidationFailure ;
@@ -11877,7 +11877,7 @@
       sht:data <Babcdefghijklmnopqrs_Ip1_Io1.ttl> ;
       sht:focus _:abcdefghijklmnopqrs
     ] ;
-    mf:result <1focusBNODE_dot_pass.val>
+    mf:result <1focusBNODELength_dot_pass.val>
     .
 
 <#1focusBNODELength_dot_fail-long> a sht:ValidationFailure ;
@@ -11904,7 +11904,7 @@
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
-    mf:result <1focus_dot_pass.val>
+    mf:result <1focusnonLiteralLength_dot_pass.val>
     .
 
 ###  } kind + length facet

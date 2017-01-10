@@ -4,7 +4,12 @@
     {
       "type": "NodeTest",
       "node": "http://a.example/s1",
-      "shape": "http://a.example/S1"
+      "shape": "http://a.example/S1",
+      "shapeExpr": {
+        "type": "NodeConstraint",
+        "nodeKind": "nonliteral",
+        "length": 19
+      }
     },
     {
       "type": "ShapeTest",

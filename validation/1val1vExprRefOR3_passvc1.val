@@ -5,10 +5,6 @@
   "solution": {
     "type": "TripleConstraintSolutions",
     "predicate": "http://a.example/p1",
-    "valueExpr": {
-      "type": "ShapeRef",
-      "reference": "http://a.example/vc4"
-    },
     "solutions": [
       {
         "type": "TestedTriple",
@@ -20,10 +16,20 @@
           "solution": {
             "type": "NodeTest",
             "node": "\"ab\"",
-            "shape": "http://a.example/vc1"
+            "shape": "http://a.example/vc1",
+            "shapeExpr": {
+              "type": "NodeConstraint",
+              "nodeKind": "literal",
+              "pattern": "ab.*"
+            }
           }
         }
       }
-    ]
+    ],
+    "valueExpr": {
+      "type": "ShapeRef",
+      "reference": "http://a.example/vc4"
+    }
   }
 }
+
