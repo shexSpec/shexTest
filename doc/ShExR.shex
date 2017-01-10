@@ -31,7 +31,7 @@ start=@<Schema>
 
 <NodeConstraint> CLOSED {
   a [sx:NodeConstraint] ;
-  (  sx:nodeKind ["iri" "bnode" "literal" "nonliteral"]
+  (  sx:nodeKind [sx:iri sx:bnode sx:literal sx:nonliteral]
    | sx:datatype IRI
 #   | &<xsFacet>
    | &<stringFacet>
@@ -58,7 +58,7 @@ start=@<Schema>
 
 <SemAct> CLOSED {
   sx:name IRI ;
-  sx:code rdf:langString
+  sx:code xsd:string
 }
 
 <Annotation> CLOSED {
@@ -72,7 +72,7 @@ start=@<Schema>
     sx:length xsd:nonNegativeInteger
   | sx:minlength xsd:nonNegativeInteger
   | sx:maxlength xsd:nonNegativeInteger
-  | sx:pattern rdf:langString
+  | sx:pattern xsd:string
 }
 <numericFacet> {
     sx:mininclusive   @<numericLiteral>

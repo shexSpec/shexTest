@@ -1,10 +1,11 @@
 @prefix ex: <http://a.example> .
 @prefix sx: <http://shex.io/ns/shex#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://a.example/S1> a sx:Shape ;
     sx:expression [ a sx:TripleConstraint ;
-            sx:predicate a ] .
+            sx:predicate rdf:type ] .
 
 [] a sx:Schema ;
     sx:shapes <http://a.example/S1> .
