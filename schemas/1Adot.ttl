@@ -4,7 +4,7 @@
 
 <http://a.example/S1> a sx:Shape ;
     sx:expression [ a sx:TripleConstraint ;
-            sx:predicate rdf:type ] .
+            sx:predicate a ] .
 
 [] a sx:Schema ;
     sx:shapes <http://a.example/S1> .
