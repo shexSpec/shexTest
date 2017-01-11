@@ -3,35 +3,28 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://a.example/S4> a sx:Shape ;
-    sx:expression [ a sx:TripleConstraint ;
-            sx:predicate <http://a.example/p5> ] .
+  sx:expression [ a sx:TripleConstraint ; sx:predicate <http://a.example/p5> ] .
 
 <http://a.example/S1> a sx:Shape ;
-    sx:expression [ a sx:EachOf ;
-            sx:expressions ( [ a sx:TripleConstraint ;
-                        sx:predicate <http://a.example/p1> ] [ a sx:TripleConstraint ;
-                        sx:max 1 ;
-                        sx:min "0"^^xsd:nonNegativeInteger ;
-                        sx:predicate <http://a.example/p2> ;
-                        sx:valueExpr [ a sx:ShapeRef ;
-                                sx:reference <http://a.example/S2> ] ] ) ] .
+  sx:expression [ a sx:EachOf ; sx:expressions (
+    [ a sx:TripleConstraint ; sx:predicate <http://a.example/p1> ]
+    [ a sx:TripleConstraint ; sx:predicate <http://a.example/p2> ;
+      sx:min "0"^^xsd:nonNegativeInteger ; sx:max 1 ;
+      sx:valueExpr [ a sx:ShapeRef ; sx:reference <http://a.example/S2> ] ]
+  ) ] .
 
 <http://a.example/S2> a sx:Shape ;
-    sx:expression [ a sx:TripleConstraint ;
-            sx:predicate <http://a.example/p3> ;
-            sx:valueExpr [ a sx:ShapeRef ;
-                    sx:reference <http://a.example/S3> ] ] .
+  sx:expression [ a sx:TripleConstraint ;
+    sx:predicate <http://a.example/p3> ;
+    sx:valueExpr [ a sx:ShapeRef ; sx:reference <http://a.example/S3> ] ] .
 
 <http://a.example/S3> a sx:Shape ;
-    sx:expression [ a sx:TripleConstraint ;
-            sx:predicate <http://a.example/p4> ;
-            sx:valueExpr [ a sx:ShapeRef ;
-                    sx:reference <http://a.example/S1> ] ] .
+  sx:expression [ a sx:TripleConstraint ;
+    sx:predicate <http://a.example/p4> ;
+    sx:valueExpr [ a sx:ShapeRef ; sx:reference <http://a.example/S1> ] ] .
 
 [] a sx:Schema ;
-    sx:shapes <http://a.example/S1>,
-        <http://a.example/S2>,
-        <http://a.example/S3>,
-        <http://a.example/S4> .
+  sx:shapes <http://a.example/S1>, <http://a.example/S2>,
+            <http://a.example/S3>, <http://a.example/S4> .
 
 

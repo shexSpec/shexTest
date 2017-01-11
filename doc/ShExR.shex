@@ -15,7 +15,7 @@ start=@<Schema>
 <shapeExpr> @<ShapeOr> OR @<ShapeAnd> OR @<ShapeNot> OR @<NodeConstraint> OR @<Shape> OR @<ShapeRef> OR @<ShapeExternal>
 
 <ShapeOr> CLOSED {
-  a [sx:ShapeAnd] ;
+  a [sx:ShapeOr] ;
   sx:shapeExprs @<shapeExprList2Plus>
 }
 
@@ -79,8 +79,8 @@ start=@<Schema>
   | sx:minexclusive   @<numericLiteral>
   | sx:maxinclusive   @<numericLiteral>
   | sx:maxexclusive   @<numericLiteral>
-  | sx:totaldigits    @<numericLiteral>
-  | sx:fractiondigits @<numericLiteral>
+  | sx:totaldigits    xsd:nonNegativeInteger
+  | sx:fractiondigits xsd:nonNegativeInteger
 }
 <numericLiteral> xsd:integer OR xsd:decimal OR xsd:double
 
@@ -92,18 +92,28 @@ start=@<Schema>
   sx:stem xsd:anyUri OR @<Wildcard>;
   sx:exclusion @<objectValue> OR @<Stem>*
 }
-<Wildcard>      BNODE CLOSED { }
+<Wildcard> BNODE CLOSED {
+  a [sx:Wildcard]
+}
 
 <tripleExpression> @<TripleConstraint> OR @<OneOf> OR @<EachOf> OR @<Inclusion>
 
 <OneOf> CLOSED {
   a [sx:OneOf] ;
-  sx:expressions @<tripleExpressionList2Plus>
+  sx:min xsd:nonNegativeInteger? ;
+  sx:max xsd:integer OR ["*"]? ;
+  sx:expressions @<tripleExpressionList2Plus> ;
+  sx:semActs @<SemActList1Plus>? ;
+  sx:annotation @<Annotation>*
 }
 
 <EachOf> CLOSED {
   a [sx:EachOf] ;
-  sx:expressions @<tripleExpressionList2Plus>
+  sx:min xsd:nonNegativeInteger? ;
+  sx:max xsd:integer OR ["*"]? ;
+  sx:expressions @<tripleExpressionList2Plus> ;
+  sx:semActs @<SemActList1Plus>? ;
+  sx:annotation @<Annotation>*
 }
 
 <tripleExpressionList2Plus> CLOSED {

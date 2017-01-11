@@ -3,13 +3,13 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://a.example/S1> a sx:Shape ;
-    sx:expression [ a sx:OneOf ;
-            sx:expressions ( [ a sx:TripleConstraint ;
-                        sx:predicate <http://a.example/p1> ] [ a sx:TripleConstraint ;
-                        sx:predicate <http://a.example/p2> ] [ a sx:TripleConstraint ;
-                        sx:predicate <http://a.example/p3> ] ) ;
-            sx:max 2 ;
-            sx:min "2"^^xsd:nonNegativeInteger ] .
+  sx:expression [ a sx:OneOf ;
+    sx:min "2"^^xsd:nonNegativeInteger ; sx:max 2 ;
+    sx:expressions (
+      [ a sx:TripleConstraint ; sx:predicate <http://a.example/p1> ]
+      [ a sx:TripleConstraint ; sx:predicate <http://a.example/p2> ]
+      [ a sx:TripleConstraint ; sx:predicate <http://a.example/p3> ]
+    ) ] .
 
 [] a sx:Schema ;
     sx:shapes <http://a.example/S1> .
