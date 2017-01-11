@@ -75,14 +75,17 @@ PREFIX prefix1: <http://all.example/>
                 sx:valueExpr [ a sx:Shape ; sx:expression [ a sx:TripleConstraint ;
                   sx:predicate <http://all.example/p1> ;
                   sx:valueExpr [ a sx:NodeConstraint ; sx:values (
-                    "STRING_LITERAL2" "STRING_LITERAL2"@en-UK <http://all.example/> prefix1:val1#comment
-	            prefix1:#comment
-	            <scheme:!$%25&amp;'()*+,-./0123456789:/@ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz~?#>
-	            <http://a.example/p\u0031>
-	            0.0 0e0 0E0 false 0 "ab"^^<http://all.example/bloodType> "o+"^^prefix1:bloodType
-	            ' !"#$%&():;<=>?@[]^_`{|}~' # "
-	            "\"\\"
-	            """STRING_LITERAL_LONG2"""@en-UK
+              "STRING_LITERAL2" "STRING_LITERAL2"@en-UK : prefix1:val1#comment
+	      prefix1:#comment
+	      <scheme:!$%25&amp;'()*+,-./0123456789:/@ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz~?#>
+	      <http://a.example/p\u0031>
+	      0.0 0e0 0E0 false 0 "ab"^^<http://all.example/bloodType> "o+"^^prefix1:bloodType
+	      ' !"#$%&():;<=>?@[]^_`{|}~'
+	      '	&([]' # Eliding \u0000 because it confuses UTF-8 detectors.
+	      '߿ࠀ࿿က쿿퀀퟿�𐀀𿿽񀀀󿿽􀀀􏿽'
+	      "\"\\"
+	      "𝟘𝟙𝟚𝟛𝟜𝟝𝟞𝟟𝟠𝟡" # outside of BMP
+	      """STRING_LITERAL_LONG2"""@en-UK
                                                                     ) ] ] ] ]
               [ a sx:TripleConstraint ;
                 sx:annotation
