@@ -1,13 +1,11 @@
 {
   "@context": [
-    {
-      "@base": "https://raw.githubusercontent.com/shexSpec/shexTest/master/validation/manifest"
-    },
-    "https://raw.githubusercontent.com/shexSpec/shexTest/master/context.jsonld"
+    {"@base": "https://raw.githubusercontent.com/shexSpec/shexTest/master/validation/manifest"},
+    "../context.jsonld"
   ],
   "@graph": [
     {
-      "@id": "https://raw.githubusercontent.com/shexSpec/shexTest/master/validation/manifest",
+      "@id": "",
       "@type": "mf:Manifest",
       "rdfs:comment": "ShEx validation tests",
       "entries": [
