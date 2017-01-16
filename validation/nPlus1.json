@@ -1,12 +1,9 @@
 {
   "@context": "https://shexspec.github.io/context.jsonld",
   "type": "Schema",
-  "prefixes": {
-    "": "http://a.example/",
-    "xsd": "http://www.w3.org/2001/XMLSchema#"
-  },
-  "shapes": {
-    "file:///home/eric/checkouts/shexSpec/shexTest/validation/S": {
+  "shapes": [
+    {
+      "label": "file:///home/eric/checkouts/shexSpec/shexTest/validation/S",
       "type": "Shape",
       "expression": {
         "type": "EachOf",
@@ -51,5 +48,5 @@
         ]
       }
     }
-  }
+  ]
 }

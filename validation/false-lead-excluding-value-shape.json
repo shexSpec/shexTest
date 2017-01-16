@@ -1,12 +1,9 @@
 {
   "@context": "https://shexspec.github.io/context.jsonld",
   "type": "Schema",
-  "prefixes": {
-    "": "http://a.example/",
-    "xsd": "http://www.w3.org/2001/XMLSchema#"
-  },
-  "shapes": {
-    "file:///home/eric/checkouts/shexSpec/shexTest/validation/S": {
+  "shapes": [
+    {
+      "label": "file:///home/eric/checkouts/shexSpec/shexTest/validation/S",
       "type": "Shape",
       "expression": {
         "type": "EachOf",
@@ -52,7 +49,8 @@
         ]
       }
     },
-    "file:///home/eric/checkouts/shexSpec/shexTest/validation/T1": {
+    {
+      "label": "file:///home/eric/checkouts/shexSpec/shexTest/validation/T1",
       "type": "Shape",
       "expression": {
         "type": "TripleConstraint",
@@ -63,7 +61,8 @@
         }
       }
     },
-    "file:///home/eric/checkouts/shexSpec/shexTest/validation/T2": {
+    {
+      "label": "file:///home/eric/checkouts/shexSpec/shexTest/validation/T2",
       "type": "Shape",
       "expression": {
         "type": "TripleConstraint",
@@ -74,7 +73,8 @@
         }
       }
     },
-    "file:///home/eric/checkouts/shexSpec/shexTest/validation/T3": {
+    {
+      "label": "file:///home/eric/checkouts/shexSpec/shexTest/validation/T3",
       "type": "Shape",
       "expression": {
         "type": "TripleConstraint",
@@ -84,7 +84,8 @@
         }
       }
     },
-    "file:///home/eric/checkouts/shexSpec/shexTest/validation/T4": {
+    {
+      "label": "file:///home/eric/checkouts/shexSpec/shexTest/validation/T4",
       "type": "Shape",
       "expression": {
         "type": "TripleConstraint",
@@ -94,5 +95,5 @@
         }
       }
     }
-  }
+  ]
 }

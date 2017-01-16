@@ -1,9 +1,6 @@
 {
   "@context": "https://shexspec.github.io/context.jsonld",
   "type": "Schema",
-  "prefixes": {
-    "": "http://a.example/"
-  },
   "valueExprDefns": {
     "file:///home/eric/checkouts/shexSpec/shexTest/validation/P": {
       "type": "ValueExprDefn",
@@ -28,8 +25,9 @@
       }
     }
   },
-  "shapes": {
-    "file:///home/eric/checkouts/shexSpec/shexTest/validation/S1": {
+  "shapes": [
+    {
+      "label": "file:///home/eric/checkouts/shexSpec/shexTest/validation/S1",
       "type": "Shape",
       "expression": {
         "type": "EachOf",
@@ -39,7 +37,7 @@
             "predicate": "http://a.example/a",
             "valueExpr": {
               "type": "ValueRef",
-              "valueExprRef": "file:///home/eric/checkouts/shexSpec/shexTest/validation/P"
+              "reference": "file:///home/eric/checkouts/shexSpec/shexTest/validation/P"
             },
             "min": 0,
             "max": "*"
@@ -49,13 +47,14 @@
             "predicate": "http://a.example/a",
             "valueExpr": {
               "type": "ValueRef",
-              "valueExprRef": "file:///home/eric/checkouts/shexSpec/shexTest/validation/T"
+              "reference": "file:///home/eric/checkouts/shexSpec/shexTest/validation/T"
             }
           }
         ]
       }
     },
-    "file:///home/eric/checkouts/shexSpec/shexTest/validation/S2": {
+    {
+      "label": "file:///home/eric/checkouts/shexSpec/shexTest/validation/S2",
       "type": "Shape",
       "expression": {
         "type": "EachOf",
@@ -65,7 +64,7 @@
             "predicate": "http://a.example/a",
             "valueExpr": {
               "type": "ValueRef",
-              "valueExprRef": "file:///home/eric/checkouts/shexSpec/shexTest/validation/T"
+              "reference": "file:///home/eric/checkouts/shexSpec/shexTest/validation/T"
             },
             "min": 0,
             "max": "*"
@@ -75,13 +74,14 @@
             "predicate": "http://a.example/a",
             "valueExpr": {
               "type": "ValueRef",
-              "valueExprRef": "file:///home/eric/checkouts/shexSpec/shexTest/validation/P"
+              "reference": "file:///home/eric/checkouts/shexSpec/shexTest/validation/P"
             }
           }
         ]
       }
     },
-    "file:///home/eric/checkouts/shexSpec/shexTest/validation/S3": {
+    {
+      "label": "file:///home/eric/checkouts/shexSpec/shexTest/validation/S3",
       "type": "Shape",
       "expression": {
         "type": "EachOf",
@@ -91,7 +91,7 @@
             "predicate": "http://a.example/a",
             "valueExpr": {
               "type": "ValueRef",
-              "valueExprRef": "file:///home/eric/checkouts/shexSpec/shexTest/validation/P"
+              "reference": "file:///home/eric/checkouts/shexSpec/shexTest/validation/P"
             },
             "min": 0,
             "max": "*"
@@ -101,7 +101,7 @@
             "predicate": "http://a.example/a",
             "valueExpr": {
               "type": "ValueRef",
-              "valueExprRef": "file:///home/eric/checkouts/shexSpec/shexTest/validation/T"
+              "reference": "file:///home/eric/checkouts/shexSpec/shexTest/validation/T"
             },
             "min": 0,
             "max": "*"
@@ -109,7 +109,8 @@
         ]
       }
     },
-    "file:///home/eric/checkouts/shexSpec/shexTest/validation/S4": {
+    {
+      "label": "file:///home/eric/checkouts/shexSpec/shexTest/validation/S4",
       "type": "Shape",
       "expression": {
         "type": "EachOf",
@@ -119,7 +120,7 @@
             "predicate": "http://a.example/a",
             "valueExpr": {
               "type": "ValueRef",
-              "valueExprRef": "file:///home/eric/checkouts/shexSpec/shexTest/validation/P"
+              "reference": "file:///home/eric/checkouts/shexSpec/shexTest/validation/P"
             },
             "min": 2,
             "max": 2
@@ -129,7 +130,7 @@
             "predicate": "http://a.example/a",
             "valueExpr": {
               "type": "ValueRef",
-              "valueExprRef": "file:///home/eric/checkouts/shexSpec/shexTest/validation/T"
+              "reference": "file:///home/eric/checkouts/shexSpec/shexTest/validation/T"
             },
             "min": 2,
             "max": 2
@@ -137,5 +138,5 @@
         ]
       }
     }
-  }
+  ]
 }
