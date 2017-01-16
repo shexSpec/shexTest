@@ -1,7 +1,8 @@
-@prefix ex: <http://a.example> .
-@prefix sx: <http://shex.io/ns/shex#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+PREFIX ex: <http://a.example>
+PREFIX sx: <http://shex.io/ns/shex#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX prefix1: <http://all.example/>
+PREFIX : <http://all.example/>
 
 <http://all.example/Schema0> a sx:Schema ;
   sx:start [ a sx:ShapeRef ; sx:reference <http://all.example/S3> ] ;
