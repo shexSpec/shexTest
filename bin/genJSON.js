@@ -85,7 +85,7 @@ function genText () {
   var ret = {
     "@context": [
       {"@base": apparentBase},
-      "https://raw.githubusercontent.com/shexSpec/shexTest/master/context.jsonld"
+      "../context.jsonld"
     ],
     "@graph": g
   };
@@ -110,7 +110,7 @@ function genText () {
   });
 
   g.push({
-    "@id": manifest,
+    "@id": "",
     "@type": "mf:Manifest",
     "rdfs:comment": manifestComment,
     "entries": store.find(null, "rdf:type", null).filter(function (t) {
@@ -168,7 +168,7 @@ function genText () {
           [s, "mf", "status"  , function (v) { return "mf:"+v[0].substr(P.mf.length); }],
           [s, "sx", "shex", function (v) { return exists(v[0].substr(dirPath.length)); }],
           [s, "sx", "json", function (v) { return exists(v[0].substr(dirPath.length)); }],
-          //[s, "sx", "turtle", function (v) { return exists(v[0].substr(dirPath.length)); }],
+          [s, "sx", "ttl", function (v) { return exists(v[0].substr(dirPath.length)); }],
         ].reduce(function (ret, row) {
           var found = store.findByIRI(row[0], P[row[1]]+row[2], null).map(expandCollection);
           var target = ret;

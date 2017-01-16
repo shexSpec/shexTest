@@ -3,11 +3,11 @@
     {
       "@base": "https://raw.githubusercontent.com/shexSpec/shexTest/master/negativeSyntax/manifest"
     },
-    "https://raw.githubusercontent.com/shexSpec/shexTest/master/context.jsonld"
+    "../context.jsonld"
   ],
   "@graph": [
     {
-      "@id": "https://raw.githubusercontent.com/shexSpec/shexTest/master/negativeSyntax/manifest",
+      "@id": "",
       "@type": "mf:Manifest",
       "rdfs:comment": "ShEx negative syntax tests",
       "entries": [

@@ -19,38 +19,6 @@
   },
   "shapes": [
     {
-      "label": "http://all.example/IRI",
-      "type": "NodeConstraint",
-      "nodeKind": "iri"
-    },
-    {
-      "label": "http://all.example/vs1",
-      "type": "ShapeAnd",
-      "shapeExprs": [
-        {
-          "type": "NodeConstraint",
-          "values": [
-            { "uri": "http://a.example/a1" },
-            {
-              "type": "StemRange",
-              "stem": "http://all.example/",
-              "exclusions": [
-                {
-                  "type": "Stem",
-                  "stem": "http://all.example/a"
-                },
-                { "uri": "http://all.example/b" }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "NodeConstraint",
-          "datatype": "http://all.example/IRI"
-        }
-      ]
-    },
-    {
       "label": "http://all.example/S1",
       "type": "Shape",
       "expression": {
@@ -100,6 +68,38 @@
         "http://all.example/p1",
         "http://all.example/p2",
         "http://all.example/p3"
+      ]
+    },
+    {
+      "label": "http://all.example/IRI",
+      "type": "NodeConstraint",
+      "nodeKind": "iri"
+    },
+    {
+      "label": "http://all.example/vs1",
+      "type": "ShapeAnd",
+      "shapeExprs": [
+        {
+          "type": "NodeConstraint",
+          "values": [
+            { "uri": "http://a.example/a1" },
+            {
+              "type": "StemRange",
+              "stem": "http://all.example/",
+              "exclusions": [
+                {
+                  "type": "Stem",
+                  "stem": "http://all.example/a"
+                },
+                { "uri": "http://all.example/b" }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "NodeConstraint",
+          "datatype": "http://all.example/IRI"
+        }
       ]
     },
     {
