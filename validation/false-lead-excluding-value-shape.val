@@ -24,7 +24,7 @@
                           "solution": {
                             "type": "TripleConstraintSolutions", "predicate": "http://a.example/c",
                             "solutions": [
-                              { "type": "TestedTriple", "subject": "y1", "predicate": "http://a.example/c", "object": { "value": "1", "datatype": "http://www.w3.org/2001/XMLSchema#integer" } }
+                              { "type": "TestedTriple", "subject": "y1", "predicate": "http://a.example/c", "object": { "value": "1", "type": "http://www.w3.org/2001/XMLSchema#integer" } }
                             ]
                           }
                         }
@@ -48,7 +48,7 @@
                           "solution": {
                             "type": "TripleConstraintSolutions", "predicate": "http://a.example/c",
                             "solutions": [
-                              { "type": "TestedTriple", "subject": "y3", "predicate": "http://a.example/c", "object": { "value": "3", "datatype": "http://www.w3.org/2001/XMLSchema#integer" } }
+                              { "type": "TestedTriple", "subject": "y3", "predicate": "http://a.example/c", "object": { "value": "3", "type": "http://www.w3.org/2001/XMLSchema#integer" } }
                             ]
                           }
                         }
@@ -85,7 +85,7 @@
                                   "solution": {
                                     "type": "TripleConstraintSolutions", "predicate": "http://a.example/d",
                                     "solutions": [
-                                      { "type": "TestedTriple", "subject": "y2", "predicate": "http://a.example/d", "object": { "value": "2", "datatype": "http://www.w3.org/2001/XMLSchema#integer" } }
+                                      { "type": "TestedTriple", "subject": "y2", "predicate": "http://a.example/d", "object": { "value": "2", "type": "http://www.w3.org/2001/XMLSchema#integer" } }
                                     ]
                                   }
                                 }

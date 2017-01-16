@@ -12,10 +12,10 @@
             "type": "TripleConstraintSolutions", "predicate": "http://a.example/a",
             "valueExpr": {
               "type": "NodeConstraint",
-              "values": [ { "value": "1", "datatype": "http://www.w3.org/2001/XMLSchema#integer" } ]
+              "values": [ { "value": "1", "type": "http://www.w3.org/2001/XMLSchema#integer" } ]
             },
             "solutions": [
-              { "type": "TestedTriple", "subject": "x", "predicate": "http://a.example/a", "object": { "value": "1", "datatype": "http://www.w3.org/2001/XMLSchema#integer" } }
+              { "type": "TestedTriple", "subject": "x", "predicate": "http://a.example/a", "object": { "value": "1", "type": "http://www.w3.org/2001/XMLSchema#integer" } }
             ]
           },
           {
@@ -28,10 +28,10 @@
                     "type": "TripleConstraintSolutions", "predicate": "http://a.example/a",
                     "valueExpr": {
                       "type": "NodeConstraint",
-                      "values": [ { "value": "3", "datatype": "http://www.w3.org/2001/XMLSchema#integer" } ]
+                      "values": [ { "value": "3", "type": "http://www.w3.org/2001/XMLSchema#integer" } ]
                     },
                     "solutions": [
-                      { "type": "TestedTriple", "subject": "x", "predicate": "http://a.example/a", "object": { "value": "3", "datatype": "http://www.w3.org/2001/XMLSchema#integer" } }
+                      { "type": "TestedTriple", "subject": "x", "predicate": "http://a.example/a", "object": { "value": "3", "type": "http://www.w3.org/2001/XMLSchema#integer" } }
                     ]
                   }
                 ]
@@ -43,7 +43,7 @@
             "min": 0, "max": "*",
             "valueExpr": {
               "type": "NodeConstraint",
-              "values": [ { "value": "4", "datatype": "http://www.w3.org/2001/XMLSchema#integer" } ]
+              "values": [ { "value": "4", "type": "http://www.w3.org/2001/XMLSchema#integer" } ]
             },
             "solutions": []
           }
