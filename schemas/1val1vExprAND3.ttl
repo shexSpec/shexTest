@@ -7,9 +7,9 @@
             sx:predicate <http://a.example/p1> ;
             sx:valueExpr [ a sx:ShapeAnd ;
                     sx:shapeExprs ( [ a sx:NodeConstraint ;
-                                sx:minlength "4"^^xsd:nonNegativeInteger ;
+                                sx:minlength 4 ;
                                 sx:nodeKind sx:literal ] [ a sx:NodeConstraint ;
-                                sx:maxlength "5"^^xsd:nonNegativeInteger ;
+                                sx:maxlength 5 ;
                                 sx:nodeKind sx:literal ] [ a sx:NodeConstraint ;
                                 sx:nodeKind sx:literal ;
                                 sx:pattern "^(ab)+$" ] ) ] ] .

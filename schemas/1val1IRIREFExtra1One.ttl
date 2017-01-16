@@ -11,7 +11,7 @@
                                     sx:valueExpr [ a sx:NodeConstraint ;
                                             sx:values ( <http://a.example/o1> ) ] ] [ a sx:TripleConstraint ;
                                     sx:max 1 ;
-                                    sx:min "0"^^xsd:nonNegativeInteger ;
+                                    sx:min 0 ;
                                     sx:predicate <http://a.example/p2> ] ) ] ) ] ;
     sx:extra <http://a.example/p1> .
 

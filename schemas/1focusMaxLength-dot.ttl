@@ -4,7 +4,7 @@
 
 <http://a.example/S1> a sx:ShapeAnd ;
     sx:shapeExprs ( [ a sx:NodeConstraint ;
-                sx:maxlength "19"^^xsd:nonNegativeInteger ] [ a sx:Shape ;
+                sx:maxlength 19 ] [ a sx:Shape ;
                 sx:expression [ a sx:TripleConstraint ;
                         sx:predicate <http://a.example/p1> ] ] ) .
 

@@ -8,7 +8,7 @@
                     sx:object <http://a.example/IRIREF> ;
                     sx:predicate <http://a.example/annot> ] ;
             sx:max "*" ;
-            sx:min "1"^^xsd:nonNegativeInteger ;
+            sx:min 1 ;
             sx:predicate <http://a.example/p1> ] .
 
 [] a sx:Schema ;

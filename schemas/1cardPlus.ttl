@@ -5,7 +5,7 @@
 <http://a.example/S1> a sx:Shape ;
     sx:expression [ a sx:TripleConstraint ;
             sx:max "*" ;
-            sx:min "1"^^xsd:nonNegativeInteger ;
+            sx:min 1 ;
             sx:predicate <http://a.example/p1> ] .
 
 [] a sx:Schema ;

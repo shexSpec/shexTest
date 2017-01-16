@@ -11,7 +11,7 @@
                                             sx:nodeKind sx:bnode ] [ a sx:ShapeRef ;
                                             sx:reference <http://a.example/S1> ] ) ] [ a sx:ShapeAnd ;
                                 sx:shapeExprs ( [ a sx:NodeConstraint ;
-                                            sx:minlength "20"^^xsd:nonNegativeInteger ] [ a sx:ShapeRef ;
+                                            sx:minlength 20 ] [ a sx:ShapeRef ;
                                             sx:reference <http://a.example/S1> ] ) ] ) ] ] .
 
 [] a sx:Schema ;

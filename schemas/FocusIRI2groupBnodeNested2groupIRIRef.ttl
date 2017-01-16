@@ -15,7 +15,7 @@
             [ a sx:TripleConstraint ; sx:predicate <http://a.example/p3> ;
                 sx:valueExpr [ a sx:NodeConstraint ; sx:nodeKind sx:literal ] ]
             [ a sx:TripleConstraint ; sx:predicate <http://a.example/p4> ;
-              sx:min "0"^^xsd:nonNegativeInteger ; sx:max 1 ;
+              sx:min 0 ; sx:max 1 ;
               sx:valueExpr [ a sx:ShapeAnd ; sx:shapeExprs (
                 [ a sx:NodeConstraint ; sx:nodeKind sx:iri ; sx:pattern "^https?://" ]
                 [ a sx:ShapeRef ; sx:reference <http://a.example/S1> ]
