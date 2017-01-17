@@ -15,9 +15,9 @@
               "type": "StemRange",
               "stem": "http://a.example/v",
               "exclusions": [
-                { "uri": "http://a.example/v1" },
-                { "uri": "http://a.example/v2" },
-                { "uri": "http://a.example/v3" }
+                "http://a.example/v1",
+                "http://a.example/v2",
+                "http://a.example/v3"
               ]
             }
           ]

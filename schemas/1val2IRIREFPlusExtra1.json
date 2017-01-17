@@ -11,8 +11,8 @@
         "valueExpr": {
           "type": "NodeConstraint",
           "values": [
-            { "uri": "http://a.example/o1" },
-            { "uri": "http://a.example/o2" }
+            "http://a.example/o1",
+            "http://a.example/o2"
           ]
         },
         "min": 1,

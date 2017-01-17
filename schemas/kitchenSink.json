@@ -25,7 +25,7 @@
             "valueExpr": {
               "type": "NodeConstraint",
               "values": [
-                { "uri": "http://ex.example/#Issue" }
+                "http://ex.example/#Issue"
               ]
             },
             "min": 0,
@@ -41,7 +41,7 @@
                   "type": "StemRange",
                   "stem": "http://ex.example/#state",
                   "exclusions": [
-                    { "uri": "http://ex.example/#state_resolved" }
+                    "http://ex.example/#state_resolved"
                   ]
                 }
               ]

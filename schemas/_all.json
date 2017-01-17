@@ -82,7 +82,7 @@
         {
           "type": "NodeConstraint",
           "values": [
-            { "uri": "http://a.example/a1" },
+            "http://a.example/a1",
             {
               "type": "StemRange",
               "stem": "http://all.example/",
@@ -91,7 +91,7 @@
                   "type": "Stem",
                   "stem": "http://all.example/a"
                 },
-                { "uri": "http://all.example/b" }
+                "http://all.example/b"
               ]
             }
           ]
@@ -252,11 +252,11 @@
                                       "value": "STRING_LITERAL2",
                                       "language": "en-uk"
                                     },
-                                    { "uri": "http://all.example/" },
-                                    { "uri": "http://all.example/val1" },
-                                    { "uri": "http://all.example/" },
-                                    { "uri": "scheme:!$%25&amp;'()*+,-./0123456789:/@ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz~?#" },
-                                    { "uri": "http://a.example/p1" },
+                                    "http://all.example/",
+                                    "http://all.example/val1",
+                                    "http://all.example/",
+                                    "scheme:!$%25&amp;'()*+,-./0123456789:/@ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz~?#",
+                                    "http://a.example/p1",
                                     {
                                       "value": "0.0",
                                       "type": "http://www.w3.org/2001/XMLSchema#decimal"
@@ -338,7 +338,7 @@
                               {
                                 "type": "Annotation",
                                 "predicate": "http://a.example/annot1",
-                                "object": { "uri": "http://a.example/IRIREF" }
+                                "object": "http://a.example/IRIREF"
                               },
                               {
                                 "type": "Annotation",
@@ -434,7 +434,7 @@
                       "type": "Stem",
                       "stem": "http://all.example/a"
                     },
-                    { "uri": "http://all.example/b" }
+                    "http://all.example/b"
                   ]
                 }
               ]
