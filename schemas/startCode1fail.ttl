@@ -7,6 +7,11 @@
             sx:predicate <http://a.example/p1> ] .
 
 [] a sx:Schema ;
-    sx:shapes <http://a.example/S1> .
+    sx:shapes <http://a.example/S1>;
+    sx:startActs ([
+      a sx:SemAct;
+      sx:code " fail(\"startAct\") ";
+      sx:name <http://shex.io/extensions/Test/>
+    ]) .
 
 

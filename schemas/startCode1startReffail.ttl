@@ -9,6 +9,11 @@
 [] a sx:Schema ;
     sx:shapes <http://a.example/S1> ;
     sx:start [ a sx:ShapeRef ;
-            sx:reference <http://a.example/S1> ] .
+      sx:reference <http://a.example/S1> ];
+    sx:startActs ([
+      a sx:SemAct;
+      sx:code " fail(\"startAct\") ";
+      sx:name <http://shex.io/extensions/Test/>
+    ]) .
 
 

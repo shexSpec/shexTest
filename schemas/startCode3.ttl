@@ -7,6 +7,19 @@
             sx:predicate <http://a.example/p1> ] .
 
 [] a sx:Schema ;
-    sx:shapes <http://a.example/S1> .
+    sx:shapes <http://a.example/S1>;
+    sx:startActs ([
+      a sx:SemAct;
+      sx:code " print(\"startAct 1\") ";
+      sx:name <http://shex.io/extensions/Test/>
+    ] [
+      a sx:SemAct;
+      sx:code " print(\"startAct 2\") ";
+      sx:name <http://shex.io/extensions/Test/>
+    ] [
+      a sx:SemAct;
+      sx:code " print(\"startAct 3\") ";
+      sx:name <http://shex.io/extensions/Test/>
+    ]) .
 
 

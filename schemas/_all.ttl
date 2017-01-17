@@ -6,6 +6,15 @@ PREFIX : <http://all.example/>
 
 <http://all.example/Schema0> a sx:Schema ;
   sx:start [ a sx:ShapeRef ; sx:reference <http://all.example/S3> ] ;
+  sx:startActs ([
+    a sx:SemAct;
+    sx:code " START1 ";
+    sx:name <http://all.example/act1>
+  ] [
+    a sx:SemAct;
+    sx:code " START2 ";
+    sx:name <http://all.example/act2>
+  ]);
   sx:shapes
     <http://all.example/IRI>,
     <http://all.example/S1>,
