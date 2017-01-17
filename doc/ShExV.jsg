@@ -17,7 +17,7 @@ ShapeNotResults  { solution:Failure }
 Failure          { node:(IRI|BNODE) shape:(IRI|BNODE) errors:[error+] }
 error            = MissingProperty ;
 MissingProperty  { property:IRI }
-NodeTest         { node:(IRI|BNODE|ObjectLiteral) shape:(IRI|BNODE) }
+NodeTest         { node:(IRI|BNODE|ObjectLiteral) shape:(IRI|BNODE) shapeExpr:shapeExpr }
 ShapeTest        { node:(IRI|BNODE) shape:IRI solution:tripleExprSolutions? startActs:[SemAct+]? }
 tripleExprSolutions = EachOfSolutions | OneOfSolutions | TripleConstraintSolutions ;
 EachOfSolutions  { solutions:[EachOfSolution+] min:INTEGER? max:(INTEGER|"*")? annotations:[Annotation+]? semActs:[SemAct+]? }
