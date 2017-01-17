@@ -3,11 +3,16 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://a.example/S1> a sx:Shape ;
-    sx:expression [ a sx:EachOf ;
-            sx:expressions ( [ a sx:TripleConstraint ;
-                        sx:predicate <http://a.example/p1> ] [ a sx:TripleConstraint ;
-                        sx:predicate <http://a.example/p2> ] [ a sx:TripleConstraint ;
-                        sx:predicate <http://a.example/p3> ] ) ] .
+  sx:expression [ a sx:EachOf ;
+    sx:expressions ( [ a sx:TripleConstraint ;
+      sx:predicate <http://a.example/p1> ] [ a sx:TripleConstraint ;
+      sx:predicate <http://a.example/p2> ] [ a sx:TripleConstraint ;
+      sx:predicate <http://a.example/p3> ] );
+    sx:semActs ([
+      a sx:SemAct;
+      sx:code " print(\"group semAct\") ";
+      sx:name <http://shex.io/extensions/Test/>
+    ]) ] .
 
 [] a sx:Schema ;
     sx:shapes <http://a.example/S1> .

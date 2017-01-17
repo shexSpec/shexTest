@@ -3,8 +3,21 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://a.example/S1> a sx:Shape ;
-    sx:expression [ a sx:TripleConstraint ;
-            sx:predicate <http://a.example/p1> ] .
+  sx:expression [ a sx:TripleConstraint ;
+    sx:predicate <http://a.example/p1> ;
+    sx:semActs ([
+       a sx:SemAct;
+       sx:code " print(s) ";
+       sx:name <http://shex.io/extensions/Test/>
+     ] [
+       a sx:SemAct;
+       sx:code " fail(s) ";
+       sx:name <http://shex.io/extensions/Test/>
+     ] [
+       a sx:SemAct;
+       sx:code " print(o) ";
+       sx:name <http://shex.io/extensions/Test/>
+     ])] .
 
 [] a sx:Schema ;
     sx:shapes <http://a.example/S1> .

@@ -18,7 +18,16 @@
                         sx:predicate <http://a.example/p2> ] [ a sx:TripleConstraint ;
                         sx:predicate <http://a.example/p3> ] ) ;
             sx:max 3 ;
-            sx:min 2 ] .
+            sx:min 2 ;
+            sx:semActs ([
+               a sx:SemAct;
+               sx:code " print(\"group semAct 1\") ";
+               sx:name <http://shex.io/extensions/Test/>
+             ] [
+               a sx:SemAct;
+               sx:code " print(\"group semAct 2\") ";
+               sx:name <http://shex.io/extensions/Test/>
+             ])] .
 
 [] a sx:Schema ;
     sx:shapes <http://a.example/S1> .
