@@ -69,9 +69,9 @@ start=@<Schema>
 
 # <xsFacet> @<stringFacet> OR @<numericFacet>
 <stringFacet> {
-    sx:length xsd:nonNegativeInteger
-  | sx:minlength xsd:nonNegativeInteger
-  | sx:maxlength xsd:nonNegativeInteger
+    sx:length xsd:integer
+  | sx:minlength xsd:integer
+  | sx:maxlength xsd:integer
   | sx:pattern xsd:string
 }
 <numericFacet> {
@@ -79,8 +79,8 @@ start=@<Schema>
   | sx:minexclusive   @<numericLiteral>
   | sx:maxinclusive   @<numericLiteral>
   | sx:maxexclusive   @<numericLiteral>
-  | sx:totaldigits    xsd:nonNegativeInteger
-  | sx:fractiondigits xsd:nonNegativeInteger
+  | sx:totaldigits    xsd:integer
+  | sx:fractiondigits xsd:integer
 }
 <numericLiteral> xsd:integer OR xsd:decimal OR xsd:double
 
@@ -100,7 +100,7 @@ start=@<Schema>
 
 <OneOf> CLOSED {
   a [sx:OneOf] ;
-  sx:min xsd:nonNegativeInteger? ;
+  sx:min xsd:integer? ;
   sx:max xsd:integer OR ["*"]? ;
   sx:expressions @<tripleExpressionList2Plus> ;
   sx:semActs @<SemActList1Plus>? ;
@@ -109,7 +109,7 @@ start=@<Schema>
 
 <EachOf> CLOSED {
   a [sx:EachOf] ;
-  sx:min xsd:nonNegativeInteger? ;
+  sx:min xsd:integer? ;
   sx:max xsd:integer OR ["*"]? ;
   sx:expressions @<tripleExpressionList2Plus> ;
   sx:semActs @<SemActList1Plus>? ;
@@ -129,7 +129,7 @@ start=@<Schema>
   a [sx:TripleConstraint] ;
   sx:inverse [true false]? ;
   sx:negated [true false]? ;
-  sx:min xsd:nonNegativeInteger? ;
+  sx:min xsd:integer? ;
   sx:max xsd:integer OR ["*"]? ;
   sx:predicate IRI ;
   sx:valueExpr @<shapeExpr>? ;
