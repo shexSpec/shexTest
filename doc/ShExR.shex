@@ -58,7 +58,7 @@ start=@<Schema>
 <SemAct> CLOSED {
   a [sx:SemAct] ;
   sx:name IRI ;
-  sx:code xsd:string
+  sx:code xsd:string?
 }
 
 <Annotation> CLOSED {
