@@ -25,6 +25,7 @@ PREFIX : <http://all.example/>
     _:bnodeShape1,
     [ a sx:Shape ; sx:expression [ a sx:Inclusion ; sx:include _:bnodeShape1 ] ] .
 
+
 <http://all.example/IRI> a sx:NodeConstraint ; sx:nodeKind sx:iri .
 
 <http://all.example/S1> a sx:Shape ;

@@ -7,10 +7,9 @@
     sx:start [ a sx:ShapeRef ;
             sx:reference _:b2 ] .
 
+
 _:b4 a sx:TripleConstraint ;
     sx:predicate <http://a.example/p1> .
 
 _:b2 a sx:Shape ;
     sx:expression _:b4 .
-
-

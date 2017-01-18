@@ -2,20 +2,17 @@
 @prefix sx: <http://shex.io/ns/shex#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+[] a sx:Schema ;
+    sx:shapes _:b3,
+        <http://a.example/S1> .
+
 <http://a.example/S1> a sx:Shape ;
     sx:expression [ a sx:TripleConstraint ;
             sx:predicate <http://a.example/p1> ;
             sx:valueExpr [ a sx:ShapeRef ;
                     sx:reference _:b3 ] ] .
-
-[] a sx:Schema ;
-    sx:shapes _:b3,
-        <http://a.example/S1> .
-
 _:b5 a sx:TripleConstraint ;
     sx:predicate <http://a.example/p2> .
 
 _:b3 a sx:Shape ;
     sx:expression _:b5 .
-
-

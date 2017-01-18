@@ -2,10 +2,9 @@
 @prefix sx: <http://shex.io/ns/shex#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://a.example/S1> a sx:NodeConstraint ;
-    sx:nodeKind sx:iri .
-
 [] a sx:Schema ;
     sx:shapes <http://a.example/S1> .
 
+<http://a.example/S1> a sx:NodeConstraint ;
+    sx:nodeKind sx:iri .
 

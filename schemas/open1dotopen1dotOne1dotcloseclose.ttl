@@ -2,6 +2,9 @@
 @prefix sx: <http://shex.io/ns/shex#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+[] a sx:Schema ;
+    sx:shapes <http://a.example/S1> .
+
 <http://a.example/S1> a sx:Shape ;
     sx:expression [ a sx:EachOf ;
             sx:expressions ( [ a sx:TripleConstraint ;
@@ -9,8 +12,4 @@
                         sx:expressions ( [ a sx:TripleConstraint ;
                                     sx:predicate <http://a.example/p2> ] [ a sx:TripleConstraint ;
                                     sx:predicate <http://a.example/p3> ] ) ] ) ] .
-
-[] a sx:Schema ;
-    sx:shapes <http://a.example/S1> .
-
 

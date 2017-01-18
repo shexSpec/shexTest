@@ -2,6 +2,9 @@
 @prefix sx: <http://shex.io/ns/shex#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+[] a sx:Schema ;
+    sx:shapes <http://a.example/S1> .
+
 <http://a.example/S1> a sx:ShapeAnd ;
   sx:shapeExprs (
     [ a sx:ShapeOr ; sx:shapeExprs (
@@ -33,8 +36,4 @@
       ) ] ]
     ) ]
   ) .
-
-[] a sx:Schema ;
-    sx:shapes <http://a.example/S1> .
-
 
