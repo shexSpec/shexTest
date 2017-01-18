@@ -8,11 +8,13 @@
 #   {TERMINAL->PROPTYPE} - a map from TERMINAL to PROPTYPE.
 #   (PROPTYPE1|PROPTYPE2...) - any of PROPTYPEn.
 
-.TYPE type - ObjectIRI ObjectLiteral labeledShapeOr labeledShapeAnd labeledShapeNot labeledNodeConstraint labeledShape labeledShapeRef labeledShapeExternal
+.TYPE type - ObjectLiteral labeledShapeOr labeledShapeAnd labeledShapeNot labeledNodeConstraint labeledShape labeledShapeRef labeledShapeExternal
 
 ; # All objects have a type property corresponding to the production name, e.g. "Schema"
 
-Schema           { startActs:[SemAct+]? start:(shapeExpr|labeledShapeExpr)? shapes:[labeledShapeExpr+]? }
+Schema           {
+  "@context":"https://shexspec.github.io/context.jsonld"
+startActs:[SemAct+]? start:(shapeExpr|labeledShapeExpr)? shapes:[labeledShapeExpr+]? }
 
 # labeled Shape Expressions
 labeledShapeExpr        = labeledShapeOr | labeledShapeAnd | labeledShapeNot | labeledNodeConstraint | labeledShape | labeledShapeRef | labeledShapeExternal;
@@ -49,7 +51,7 @@ numericFacet     = (mininclusive|minexclusive|maxinclusive|maxexclusive):numeric
 
 # Value Sets
 valueSetValue    = objectValue|Stem|StemRange ;
-objectValue      = ObjectIRI|ObjectLiteral ;
+objectValue      = IRI|ObjectLiteral ;
 Stem             { stem:IRI } # StemRange with exclusions
 StemRange        { stem:(IRI|Wildcard) exclusions:[objectValue|Stem +]? }
 Wildcard         {  }
@@ -60,7 +62,6 @@ Annotation       { predicate:IRI object:objectValue }
 shapeLabel       = IRI|BNODE ;
 numericLiteral   = INTEGER|DECIMAL|DOUBLE ;
 RDFLiteral       = SIMPLE_LITERAL|DATATYPE_LITERAL|LANG_LITERAL ;
-ObjectIRI        { uri:IRI }
 ObjectLiteral    { value:STRING language:STRING? type:STRING? }
 
 # Terminals used in productions:

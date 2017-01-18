@@ -17,7 +17,7 @@ ShapeNotResults  { solution:Failure }
 Failure          { node:(IRI|BNODE) shape:(IRI|BNODE) errors:[error+] }
 error            = MissingProperty ;
 MissingProperty  { property:IRI }
-NodeTest         { node:(IRI|BNODE|ObjectLiteral) shape:(IRI|BNODE) }
+NodeTest         { node:(IRI|BNODE|ObjectLiteral) shape:(IRI|BNODE) shapeExpr:shapeExpr }
 ShapeTest        { node:(IRI|BNODE) shape:IRI solution:tripleExprSolutions? startActs:[SemAct+]? }
 tripleExprSolutions = EachOfSolutions | OneOfSolutions | TripleConstraintSolutions ;
 EachOfSolutions  { solutions:[EachOfSolution+] min:INTEGER? max:(INTEGER|"*")? annotations:[Annotation+]? semActs:[SemAct+]? }
@@ -64,7 +64,7 @@ Annotation       { predicate:IRI object:objectValue }
 shapeLabel       = IRI|BNODE ;
 numericLiteral   = INTEGER|DECIMAL|DOUBLE ;
 RDFLiteral       = SIMPLE_LITERAL|DATATYPE_LITERAL|LANG_LITERAL ;
-ObjectLiteral    { value:STRING language:STRING? datatype:STRING? }
+ObjectLiteral    { value:STRING language:STRING? type:STRING? }
 
 # Terminals used in productions:
 IRI              : (PN_CHARS | '.' | ':' | '/' | '\\' | '#' | '@' | '%' | '&' | UCHAR)* ; # <http://www.w3.org/TR/turtle/#grammar-production-IRIREF> - "<>"s
