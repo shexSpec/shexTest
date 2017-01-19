@@ -3,16 +3,15 @@ PREFIX sx: <http://shex.io/ns/shex#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 [] a sx:Schema ;
-    sx:shapes _:b3,
+    sx:shapes _:a·̀ͯ‿.⁀,
         <http://a.example/S1> .
 
 <http://a.example/S1> a sx:Shape ;
     sx:expression [ a sx:TripleConstraint ;
             sx:predicate <http://a.example/p1> ;
             sx:valueExpr [ a sx:ShapeRef ;
-                    sx:reference _:b3 ] ] .
-_:b5 a sx:TripleConstraint ;
-    sx:predicate <http://a.example/p2> .
+                    sx:reference _:a·̀ͯ‿.⁀ ] ] .
 
-_:b3 a sx:Shape ;
-    sx:expression _:b5 .
+_:a·̀ͯ‿.⁀ a sx:Shape ;
+  sx:expression [ a sx:TripleConstraint ;
+    sx:predicate <http://a.example/p2> ] .

@@ -22,9 +22,8 @@ PREFIX : <http://all.example/>
     <http://all.example/S3>,
     <http://all.example/S5>,
     <http://all.example/vs1>,
-    _:bnodeShape1,
-    [ a sx:Shape ; sx:expression [ a sx:Inclusion ; sx:include _:bnodeShape1 ] ] .
-
+    _:a·̀ͯ‿.⁀,
+    _:AZazÀÖØöø˿ͰͽͿ῿‌‍⁰↏Ⰰ⿯、퟿豈﷏ﷰ�𐀀󯿽 .
 
 <http://all.example/IRI> a sx:NodeConstraint ; sx:nodeKind sx:iri .
 
@@ -45,7 +44,7 @@ PREFIX : <http://all.example/>
       [ a sx:TripleConstraint ; sx:predicate <http://all.example/p3> ] ) ] .
 
 <http://all.example/S3> a sx:Shape ;
-  sx:extra <http://all.example/a>, <http://all.example/base>, <http://all.example/prefix> ;
+  sx:extra <http://all.example/a>, <http://all.example/prefix>, <http://all.example/base> ;
   sx:expression [ a sx:EachOf ;
     sx:expressions (
       [ a sx:Inclusion ; sx:include <http://all.example/S1> ]
@@ -130,7 +129,7 @@ PREFIX : <http://all.example/>
                 ])] ) ]
           ) ]
           [ a sx:TripleConstraint ; sx:predicate <http://all.example/nonliteral> ;
-            sx:valueExpr [ a sx:NodeConstraint ; sx:datatype xsd:integer ; sx:maxinclusive 5 ; sx:mininclusive 5 ; sx:totaldigits 1 ] ]
+            sx:valueExpr [ a sx:NodeConstraint ; sx:datatype xsd:integer ; sx:maxinclusive 5 ; sx:mininclusive 5 ; sx:totaldigits 1 ; sx:fractiondigits 1 ] ]
         ) ]
       ) ]
 
@@ -163,9 +162,12 @@ PREFIX : <http://all.example/>
         <http://all.example/b> ] ) ]
     [ a sx:NodeConstraint ; sx:datatype <http://all.example/IRI> ] ) .
 
-_:bnodeShape1 a sx:Shape ; sx:closed true ;
+_:a·̀ͯ‿.⁀ a sx:Shape ; sx:closed true ;
   sx:expression [ a sx:EachOf ;
     sx:expressions (
-      [ a sx:Inclusion ; sx:include _:bnodeShape1 ]
+      [ a sx:Inclusion ; sx:include _:a·̀ͯ‿.⁀ ]
       [ a sx:Inclusion ; sx:include <http://all.example/S2> ] )] .
+
+_:AZazÀÖØöø˿ͰͽͿ῿‌‍⁰↏Ⰰ⿯、퟿豈﷏ﷰ�𐀀󯿽 a sx:Shape ;
+  sx:expression [ a sx:Inclusion ; sx:include _:a·̀ͯ‿.⁀ ] .
 
