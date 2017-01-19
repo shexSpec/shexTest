@@ -2,32 +2,32 @@
   "@context": "https://shexspec.github.io/context.jsonld",
   "type": "Schema",
   "valueExprDefns": {
-    "file:///home/eric/checkouts/shexSpec/shexTest/validation/P": {
+    "http://a.example.org/P": {
       "type": "ValueExprDefn",
       "valueExpr": {
         "type": "ValueClass",
         "values": [
-          "file:///home/eric/checkouts/shexSpec/shexTest/validation/p",
-          "file:///home/eric/checkouts/shexSpec/shexTest/validation/pt1",
-          "file:///home/eric/checkouts/shexSpec/shexTest/validation/pt2"
+          "http://a.example.org/p",
+          "http://a.example.org/pt1",
+          "http://a.example.org/pt2"
         ]
       }
     },
-    "file:///home/eric/checkouts/shexSpec/shexTest/validation/T": {
+    "http://a.example.org/T": {
       "type": "ValueExprDefn",
       "valueExpr": {
         "type": "ValueClass",
         "values": [
-          "file:///home/eric/checkouts/shexSpec/shexTest/validation/t",
-          "file:///home/eric/checkouts/shexSpec/shexTest/validation/pt1",
-          "file:///home/eric/checkouts/shexSpec/shexTest/validation/pt2"
+          "http://a.example.org/t",
+          "http://a.example.org/pt1",
+          "http://a.example.org/pt2"
         ]
       }
     }
   },
   "shapes": [
     {
-      "label": "file:///home/eric/checkouts/shexSpec/shexTest/validation/P",
+      "label": "http://a.example.org/P",
       "type": "NodeConstraint",
       "values": [
         "p",
@@ -36,7 +36,7 @@
       ]
     },
     {
-      "label": "file:///home/eric/checkouts/shexSpec/shexTest/validation/T",
+      "label": "http://a.example.org/T",
       "type": "NodeConstraint",
       "values": [
         "t",
@@ -45,7 +45,7 @@
       ]
     },
     {
-      "label": "file:///home/eric/checkouts/shexSpec/shexTest/validation/S1",
+      "label": "http://a.example.org/S1",
       "type": "Shape",
       "expression": {
         "type": "EachOf",
@@ -55,7 +55,7 @@
             "predicate": "http://a.example/a",
             "valueExpr": {
               "type": "ShapeRef",
-              "reference": "file:///home/eric/checkouts/shexSpec/shexTest/validation/P"
+              "reference": "http://a.example.org/P"
             },
             "min": 0,
             "max": "*"
@@ -65,14 +65,14 @@
             "predicate": "http://a.example/a",
             "valueExpr": {
               "type": "ShapeRef",
-              "reference": "file:///home/eric/checkouts/shexSpec/shexTest/validation/T"
+              "reference": "http://a.example.org/T"
             }
           }
         ]
       }
     },
     {
-      "label": "file:///home/eric/checkouts/shexSpec/shexTest/validation/S2",
+      "label": "http://a.example.org/S2",
       "type": "Shape",
       "expression": {
         "type": "EachOf",
@@ -82,7 +82,7 @@
             "predicate": "http://a.example/a",
             "valueExpr": {
               "type": "ShapeRef",
-              "reference": "file:///home/eric/checkouts/shexSpec/shexTest/validation/T"
+              "reference": "http://a.example.org/T"
             },
             "min": 0,
             "max": "*"
@@ -92,14 +92,14 @@
             "predicate": "http://a.example/a",
             "valueExpr": {
               "type": "ShapeRef",
-              "reference": "file:///home/eric/checkouts/shexSpec/shexTest/validation/P"
+              "reference": "http://a.example.org/P"
             }
           }
         ]
       }
     },
     {
-      "label": "file:///home/eric/checkouts/shexSpec/shexTest/validation/S3",
+      "label": "http://a.example.org/S3",
       "type": "Shape",
       "expression": {
         "type": "EachOf",
@@ -109,7 +109,7 @@
             "predicate": "http://a.example/a",
             "valueExpr": {
               "type": "ShapeRef",
-              "reference": "file:///home/eric/checkouts/shexSpec/shexTest/validation/P"
+              "reference": "http://a.example.org/P"
             },
             "min": 0,
             "max": "*"
@@ -119,7 +119,7 @@
             "predicate": "http://a.example/a",
             "valueExpr": {
               "type": "ShapeRef",
-              "reference": "file:///home/eric/checkouts/shexSpec/shexTest/validation/T"
+              "reference": "http://a.example.org/T"
             },
             "min": 0,
             "max": "*"
@@ -128,7 +128,7 @@
       }
     },
     {
-      "label": "file:///home/eric/checkouts/shexSpec/shexTest/validation/S4",
+      "label": "http://a.example.org/S4",
       "type": "Shape",
       "expression": {
         "type": "EachOf",
@@ -138,7 +138,7 @@
             "predicate": "http://a.example/a",
             "valueExpr": {
               "type": "ShapeRef",
-              "reference": "file:///home/eric/checkouts/shexSpec/shexTest/validation/P"
+              "reference": "http://a.example.org/P"
             },
             "min": 2,
             "max": 2
@@ -148,7 +148,7 @@
             "predicate": "http://a.example/a",
             "valueExpr": {
               "type": "ShapeRef",
-              "reference": "file:///home/eric/checkouts/shexSpec/shexTest/validation/T"
+              "reference": "http://a.example.org/T"
             },
             "min": 2,
             "max": 2

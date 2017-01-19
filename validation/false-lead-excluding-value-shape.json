@@ -3,7 +3,7 @@
   "type": "Schema",
   "shapes": [
     {
-      "label": "file:///home/eric/checkouts/shexSpec/shexTest/validation/S",
+      "label": "http://a.example.org/S",
       "type": "Shape",
       "expression": {
         "type": "EachOf",
@@ -13,7 +13,7 @@
             "predicate": "http://a.example/a",
             "valueExpr": {
               "type": "ShapeRef",
-              "reference": "file:///home/eric/checkouts/shexSpec/shexTest/validation/T1"
+              "reference": "http://a.example.org/T1"
             },
             "min": 0,
             "max": "*"
@@ -26,7 +26,7 @@
                 "predicate": "http://a.example/a",
                 "valueExpr": {
                   "type": "ShapeRef",
-                  "reference": "file:///home/eric/checkouts/shexSpec/shexTest/validation/T2"
+                  "reference": "http://a.example.org/T2"
                 }
               },
               {
@@ -47,31 +47,31 @@
       }
     },
     {
-      "label": "file:///home/eric/checkouts/shexSpec/shexTest/validation/T1",
+      "label": "http://a.example.org/T1",
       "type": "Shape",
       "expression": {
         "type": "TripleConstraint",
         "predicate": "http://a.example/b",
         "valueExpr": {
           "type": "ShapeRef",
-          "reference": "file:///home/eric/checkouts/shexSpec/shexTest/validation/T3"
+          "reference": "http://a.example.org/T3"
         }
       }
     },
     {
-      "label": "file:///home/eric/checkouts/shexSpec/shexTest/validation/T2",
+      "label": "http://a.example.org/T2",
       "type": "Shape",
       "expression": {
         "type": "TripleConstraint",
         "predicate": "http://a.example/b",
         "valueExpr": {
           "type": "ShapeRef",
-          "reference": "file:///home/eric/checkouts/shexSpec/shexTest/validation/T4"
+          "reference": "http://a.example.org/T4"
         }
       }
     },
     {
-      "label": "file:///home/eric/checkouts/shexSpec/shexTest/validation/T3",
+      "label": "http://a.example.org/T3",
       "type": "Shape",
       "expression": {
         "type": "TripleConstraint",
@@ -79,7 +79,7 @@
       }
     },
     {
-      "label": "file:///home/eric/checkouts/shexSpec/shexTest/validation/T4",
+      "label": "http://a.example.org/T4",
       "type": "Shape",
       "expression": {
         "type": "TripleConstraint",
