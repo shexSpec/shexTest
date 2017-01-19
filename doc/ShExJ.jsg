@@ -33,7 +33,7 @@ ShapeAnd         { shapeExprs:[shapeExpr{2,}] }
 ShapeNot         { shapeExpr:shapeExpr }
 NodeConstraint   { nodeKind:("iri"|"bnode"|"nonliteral"|"literal")? datatype:IRI? xsFacet* values:[valueSetValue+]? }
 Shape            { virtual:BOOL? closed:BOOL? extra:[IRI+]? expression:tripleExpr? inherit:[shapeLabel+]? semActs:[SemAct+]? }
-ShapeRef         { reference:IRI } # should be a TERM or some such
+ShapeRef         { reference:shapeLabel } # should be a TERM or some such
 ShapeExternal    {  }
 
 # Triple Expressions
