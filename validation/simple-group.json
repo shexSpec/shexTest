@@ -10,17 +10,11 @@
         "expressions": [
           {
             "type": "TripleConstraint",
-            "predicate": "http://a.example/a",
-            "valueExpr": {
-              "type": "ValueClass"
-            }
+            "predicate": "http://a.example/a"
           },
           {
             "type": "TripleConstraint",
-            "predicate": "http://a.example/b",
-            "valueExpr": {
-              "type": "ValueClass"
-            }
+            "predicate": "http://a.example/b"
           }
         ]
       }

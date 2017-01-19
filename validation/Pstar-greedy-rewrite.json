@@ -27,6 +27,24 @@
   },
   "shapes": [
     {
+      "label": "file:///home/eric/checkouts/shexSpec/shexTest/validation/P",
+      "type": "NodeConstraint",
+      "values": [
+        "p",
+        "pt1",
+        "pt2"
+      ]
+    },
+    {
+      "label": "file:///home/eric/checkouts/shexSpec/shexTest/validation/T",
+      "type": "NodeConstraint",
+      "values": [
+        "t",
+        "pt1",
+        "pt2"
+      ]
+    },
+    {
       "label": "file:///home/eric/checkouts/shexSpec/shexTest/validation/S1",
       "type": "Shape",
       "expression": {
@@ -36,7 +54,7 @@
             "type": "TripleConstraint",
             "predicate": "http://a.example/a",
             "valueExpr": {
-              "type": "ValueRef",
+              "type": "ShapeRef",
               "reference": "file:///home/eric/checkouts/shexSpec/shexTest/validation/P"
             },
             "min": 0,
@@ -46,7 +64,7 @@
             "type": "TripleConstraint",
             "predicate": "http://a.example/a",
             "valueExpr": {
-              "type": "ValueRef",
+              "type": "ShapeRef",
               "reference": "file:///home/eric/checkouts/shexSpec/shexTest/validation/T"
             }
           }
@@ -63,7 +81,7 @@
             "type": "TripleConstraint",
             "predicate": "http://a.example/a",
             "valueExpr": {
-              "type": "ValueRef",
+              "type": "ShapeRef",
               "reference": "file:///home/eric/checkouts/shexSpec/shexTest/validation/T"
             },
             "min": 0,
@@ -73,7 +91,7 @@
             "type": "TripleConstraint",
             "predicate": "http://a.example/a",
             "valueExpr": {
-              "type": "ValueRef",
+              "type": "ShapeRef",
               "reference": "file:///home/eric/checkouts/shexSpec/shexTest/validation/P"
             }
           }
@@ -90,7 +108,7 @@
             "type": "TripleConstraint",
             "predicate": "http://a.example/a",
             "valueExpr": {
-              "type": "ValueRef",
+              "type": "ShapeRef",
               "reference": "file:///home/eric/checkouts/shexSpec/shexTest/validation/P"
             },
             "min": 0,
@@ -100,7 +118,7 @@
             "type": "TripleConstraint",
             "predicate": "http://a.example/a",
             "valueExpr": {
-              "type": "ValueRef",
+              "type": "ShapeRef",
               "reference": "file:///home/eric/checkouts/shexSpec/shexTest/validation/T"
             },
             "min": 0,
@@ -119,7 +137,7 @@
             "type": "TripleConstraint",
             "predicate": "http://a.example/a",
             "valueExpr": {
-              "type": "ValueRef",
+              "type": "ShapeRef",
               "reference": "file:///home/eric/checkouts/shexSpec/shexTest/validation/P"
             },
             "min": 2,
@@ -129,7 +147,7 @@
             "type": "TripleConstraint",
             "predicate": "http://a.example/a",
             "valueExpr": {
-              "type": "ValueRef",
+              "type": "ShapeRef",
               "reference": "file:///home/eric/checkouts/shexSpec/shexTest/validation/T"
             },
             "min": 2,

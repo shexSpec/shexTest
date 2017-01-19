@@ -13,17 +13,11 @@
             "expressions": [
               {
                 "type": "TripleConstraint",
-                "predicate": "http://a.example/a",
-                "valueExpr": {
-                  "type": "ValueClass"
-                }
+                "predicate": "http://a.example/a"
               },
               {
                 "type": "TripleConstraint",
-                "predicate": "http://a.example/b",
-                "valueExpr": {
-                  "type": "ValueClass"
-                }
+                "predicate": "http://a.example/b"
               }
             ],
             "min": 2,
@@ -31,10 +25,7 @@
           },
           {
             "type": "TripleConstraint",
-            "predicate": "http://a.example/c",
-            "valueExpr": {
-              "type": "ValueClass"
-            }
+            "predicate": "http://a.example/c"
           }
         ]
       }
