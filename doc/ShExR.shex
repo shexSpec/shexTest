@@ -52,7 +52,7 @@ start=@<Schema>
 
 <ShapeRef> CLOSED {
   a [sx:ShapeRef] ;
-  sx:reference @<shapeExpr>
+  sx:reference IRI OR BNODE
 }
 
 <SemAct> CLOSED {
