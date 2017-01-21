@@ -3,11 +3,11 @@
     {
       "@base": "https://raw.githubusercontent.com/shexSpec/shexTest/master/schemas/manifest"
     },
-    "https://raw.githubusercontent.com/shexSpec/shexTest/master/context.jsonld"
+    "../context.jsonld"
   ],
   "@graph": [
     {
-      "@id": "https://raw.githubusercontent.com/shexSpec/shexTest/master/schemas/manifest",
+      "@id": "",
       "@type": "mf:Manifest",
       "rdfs:comment": "ShEx representation tests",
       "entries": [
@@ -17,7 +17,8 @@
           "name": "0",
           "status": "mf:proposed",
           "shex": "0.shex",
-          "json": "0.json"
+          "json": "0.json",
+          "ttl": "0.ttl"
         },
         {
           "@id": "#1dot",
@@ -25,7 +26,8 @@
           "name": "1dot",
           "status": "mf:proposed",
           "shex": "1dot.shex",
-          "json": "1dot.json"
+          "json": "1dot.json",
+          "ttl": "1dot.ttl"
         },
         {
           "@id": "#1dot-base",
@@ -33,7 +35,8 @@
           "name": "1dot-base",
           "status": "mf:proposed",
           "shex": "1dot-base.shex",
-          "json": "1dot-base.json"
+          "json": "1dot-base.json",
+          "ttl": "1dot-base.ttl"
         },
         {
           "@id": "#1dotSemi",
@@ -41,7 +44,8 @@
           "name": "1dotSemi",
           "status": "mf:proposed",
           "shex": "1dotSemi.shex",
-          "json": "1dotSemi.json"
+          "json": "1dotSemi.json",
+          "ttl": "1dotSemi.ttl"
         },
         {
           "@id": "#1dotLNex",
@@ -49,7 +53,8 @@
           "name": "1dotLNex",
           "status": "mf:proposed",
           "shex": "1dotLNex.shex",
-          "json": "1dotLNex.json"
+          "json": "1dotLNex.json",
+          "ttl": "1dotLNex.ttl"
         },
         {
           "@id": "#1dotNS2",
@@ -57,7 +62,8 @@
           "name": "1dotNS2",
           "status": "mf:proposed",
           "shex": "1dotNS2.shex",
-          "json": "1dotNS2.json"
+          "json": "1dotNS2.json",
+          "ttl": "1dotNS2.ttl"
         },
         {
           "@id": "#1dotNS2Comment",
@@ -65,7 +71,8 @@
           "name": "1dotNS2Comment",
           "status": "mf:proposed",
           "shex": "1dotNS2Comment.shex",
-          "json": "1dotNS2Comment.json"
+          "json": "1dotNS2Comment.json",
+          "ttl": "1dotNS2Comment.ttl"
         },
         {
           "@id": "#1dotLNexComment",
@@ -73,7 +80,8 @@
           "name": "1dotLNexComment",
           "status": "mf:proposed",
           "shex": "1dotLNexComment.shex",
-          "json": "1dotLNexComment.json"
+          "json": "1dotLNexComment.json",
+          "ttl": "1dotLNexComment.ttl"
         },
         {
           "@id": "#1dotLNdefault",
@@ -81,7 +89,8 @@
           "name": "1dotLNdefault",
           "status": "mf:proposed",
           "shex": "1dotLNdefault.shex",
-          "json": "1dotLNdefault.json"
+          "json": "1dotLNdefault.json",
+          "ttl": "1dotLNdefault.ttl"
         },
         {
           "@id": "#1dotNSdefault",
@@ -89,7 +98,8 @@
           "name": "1dotNSdefault",
           "status": "mf:proposed",
           "shex": "1dotNSdefault.shex",
-          "json": "1dotNSdefault.json"
+          "json": "1dotNSdefault.json",
+          "ttl": "1dotNSdefault.ttl"
         },
         {
           "@id": "#1dotLNex-HYPHEN_MINUS",
@@ -97,7 +107,8 @@
           "name": "1dotLNex-HYPHEN_MINUS",
           "status": "mf:proposed",
           "shex": "1dotLNex-HYPHEN_MINUS.shex",
-          "json": "1dotLNex-HYPHEN_MINUS.json"
+          "json": "1dotLNex-HYPHEN_MINUS.json",
+          "ttl": "1dotLNex-HYPHEN_MINUS.ttl"
         },
         {
           "@id": "#bnode1dot",
@@ -105,7 +116,8 @@
           "name": "bnode1dot",
           "status": "mf:proposed",
           "shex": "bnode1dot.shex",
-          "json": "bnode1dot.json"
+          "json": "bnode1dot.json",
+          "ttl": "bnode1dot.ttl"
         },
         {
           "@id": "#1inversedot",
@@ -113,7 +125,8 @@
           "name": "1inversedot",
           "status": "mf:proposed",
           "shex": "1inversedot.shex",
-          "json": "1inversedot.json"
+          "json": "1inversedot.json",
+          "ttl": "1inversedot.ttl"
         },
         {
           "@id": "#1Adot",
@@ -121,7 +134,8 @@
           "name": "1Adot",
           "status": "mf:proposed",
           "shex": "1Adot.shex",
-          "json": "1Adot.json"
+          "json": "1Adot.json",
+          "ttl": "1Adot.ttl"
         },
         {
           "@id": "#1iri",
@@ -129,7 +143,8 @@
           "name": "1iri",
           "status": "mf:proposed",
           "shex": "1iri.shex",
-          "json": "1iri.json"
+          "json": "1iri.json",
+          "ttl": "1iri.ttl"
         },
         {
           "@id": "#1bnode",
@@ -137,7 +152,8 @@
           "name": "1bnode",
           "status": "mf:proposed",
           "shex": "1bnode.shex",
-          "json": "1bnode.json"
+          "json": "1bnode.json",
+          "ttl": "1bnode.ttl"
         },
         {
           "@id": "#1literal",
@@ -145,7 +161,8 @@
           "name": "1literal",
           "status": "mf:proposed",
           "shex": "1literal.shex",
-          "json": "1literal.json"
+          "json": "1literal.json",
+          "ttl": "1literal.ttl"
         },
         {
           "@id": "#1nonliteral",
@@ -153,7 +170,8 @@
           "name": "1nonliteral",
           "status": "mf:proposed",
           "shex": "1nonliteral.shex",
-          "json": "1nonliteral.json"
+          "json": "1nonliteral.json",
+          "ttl": "1nonliteral.ttl"
         },
         {
           "@id": "#1datatype",
@@ -161,7 +179,8 @@
           "name": "1datatype",
           "status": "mf:proposed",
           "shex": "1datatype.shex",
-          "json": "1datatype.json"
+          "json": "1datatype.json",
+          "ttl": "1datatype.ttl"
         },
         {
           "@id": "#1datatypelangString",
@@ -169,7 +188,8 @@
           "name": "1datatypelangString",
           "status": "mf:proposed",
           "shex": "1datatypelangString.shex",
-          "json": "1datatypelangString.json"
+          "json": "1datatypelangString.json",
+          "ttl": "1datatypelangString.ttl"
         },
         {
           "@id": "#1card2",
@@ -177,7 +197,8 @@
           "name": "1card2",
           "status": "mf:proposed",
           "shex": "1card2.shex",
-          "json": "1card2.json"
+          "json": "1card2.json",
+          "ttl": "1card2.ttl"
         },
         {
           "@id": "#1card25",
@@ -185,7 +206,8 @@
           "name": "1card25",
           "status": "mf:proposed",
           "shex": "1card25.shex",
-          "json": "1card25.json"
+          "json": "1card25.json",
+          "ttl": "1card25.ttl"
         },
         {
           "@id": "#1card2Star",
@@ -193,7 +215,8 @@
           "name": "1card2Star",
           "status": "mf:proposed",
           "shex": "1card2Star.shex",
-          "json": "1card2Star.json"
+          "json": "1card2Star.json",
+          "ttl": "1card2Star.ttl"
         },
         {
           "@id": "#1cardOpt",
@@ -201,7 +224,8 @@
           "name": "1cardOpt",
           "status": "mf:proposed",
           "shex": "1cardOpt.shex",
-          "json": "1cardOpt.json"
+          "json": "1cardOpt.json",
+          "ttl": "1cardOpt.ttl"
         },
         {
           "@id": "#1cardPlus",
@@ -209,7 +233,8 @@
           "name": "1cardPlus",
           "status": "mf:proposed",
           "shex": "1cardPlus.shex",
-          "json": "1cardPlus.json"
+          "json": "1cardPlus.json",
+          "ttl": "1cardPlus.ttl"
         },
         {
           "@id": "#1cardStar",
@@ -217,7 +242,8 @@
           "name": "1cardStar",
           "status": "mf:proposed",
           "shex": "1cardStar.shex",
-          "json": "1cardStar.json"
+          "json": "1cardStar.json",
+          "ttl": "1cardStar.ttl"
         },
         {
           "@id": "#1literalPlus",
@@ -225,7 +251,8 @@
           "name": "1literalPlus",
           "status": "mf:proposed",
           "shex": "1literalPlus.shex",
-          "json": "1literalPlus.json"
+          "json": "1literalPlus.json",
+          "ttl": "1literalPlus.ttl"
         },
         {
           "@id": "#1dotRef1",
@@ -233,7 +260,8 @@
           "name": "1dotRef1",
           "status": "mf:proposed",
           "shex": "1dotRef1.shex",
-          "json": "1dotRef1.json"
+          "json": "1dotRef1.json",
+          "ttl": "1dotRef1.ttl"
         },
         {
           "@id": "#1dotRefLNex1",
@@ -241,7 +269,8 @@
           "name": "1dotRefLNex1",
           "status": "mf:proposed",
           "shex": "1dotRefLNex1.shex",
-          "json": "1dotRefLNex1.json"
+          "json": "1dotRefLNex1.json",
+          "ttl": "1dotRefLNex1.ttl"
         },
         {
           "@id": "#1dotRefSpaceLNex1",
@@ -249,7 +278,8 @@
           "name": "1dotRefSpaceLNex1",
           "status": "mf:proposed",
           "shex": "1dotRefSpaceLNex1.shex",
-          "json": "1dotRefSpaceLNex1.json"
+          "json": "1dotRefSpaceLNex1.json",
+          "ttl": "1dotRefSpaceLNex1.ttl"
         },
         {
           "@id": "#1dotRefNS1",
@@ -257,7 +287,8 @@
           "name": "1dotRefNS1",
           "status": "mf:proposed",
           "shex": "1dotRefNS1.shex",
-          "json": "1dotRefNS1.json"
+          "json": "1dotRefNS1.json",
+          "ttl": "1dotRefNS1.ttl"
         },
         {
           "@id": "#1dotRefSpaceNS1",
@@ -265,7 +296,8 @@
           "name": "1dotRefSpaceNS1",
           "status": "mf:proposed",
           "shex": "1dotRefSpaceNS1.shex",
-          "json": "1dotRefSpaceNS1.json"
+          "json": "1dotRefSpaceNS1.json",
+          "ttl": "1dotRefSpaceNS1.ttl"
         },
         {
           "@id": "#1refbnode1",
@@ -273,7 +305,8 @@
           "name": "1refbnode1",
           "status": "mf:proposed",
           "shex": "1refbnode1.shex",
-          "json": "1refbnode1.json"
+          "json": "1refbnode1.json",
+          "ttl": "1refbnode1.ttl"
         },
         {
           "@id": "#1refbnode_with_leading_digit1",
@@ -281,7 +314,8 @@
           "name": "1refbnode_with_leading_digit1",
           "status": "mf:proposed",
           "shex": "1refbnode_with_leading_digit1.shex",
-          "json": "1refbnode_with_leading_digit1.json"
+          "json": "1refbnode_with_leading_digit1.json",
+          "ttl": "1refbnode_with_leading_digit1.ttl"
         },
         {
           "@id": "#1refbnode_with_leading_underscore1",
@@ -289,7 +323,8 @@
           "name": "1refbnode_with_leading_underscore1",
           "status": "mf:proposed",
           "shex": "1refbnode_with_leading_underscore1.shex",
-          "json": "1refbnode_with_leading_underscore1.json"
+          "json": "1refbnode_with_leading_underscore1.json",
+          "ttl": "1refbnode_with_leading_underscore1.ttl"
         },
         {
           "@id": "#1refbnode_with_spanning_PN_CHARS1",
@@ -297,7 +332,8 @@
           "name": "1refbnode_with_spanning_PN_CHARS1",
           "status": "mf:proposed",
           "shex": "1refbnode_with_spanning_PN_CHARS1.shex",
-          "json": "1refbnode_with_spanning_PN_CHARS1.json"
+          "json": "1refbnode_with_spanning_PN_CHARS1.json",
+          "ttl": "1refbnode_with_spanning_PN_CHARS1.ttl"
         },
         {
           "@id": "#1refbnode_with_spanning_PN_CHARS_BASE1",
@@ -305,7 +341,8 @@
           "name": "1refbnode_with_spanning_PN_CHARS_BASE1",
           "status": "mf:proposed",
           "shex": "1refbnode_with_spanning_PN_CHARS_BASE1.shex",
-          "json": "1refbnode_with_spanning_PN_CHARS_BASE1.json"
+          "json": "1refbnode_with_spanning_PN_CHARS_BASE1.json",
+          "ttl": "1refbnode_with_spanning_PN_CHARS_BASE1.ttl"
         },
         {
           "@id": "#3circularRef1",
@@ -313,7 +350,8 @@
           "name": "3circularRef1",
           "status": "mf:proposed",
           "shex": "3circularRef1.shex",
-          "json": "3circularRef1.json"
+          "json": "3circularRef1.json",
+          "ttl": "3circularRef1.ttl"
         },
         {
           "@id": "#1iriRef1",
@@ -321,7 +359,8 @@
           "name": "1iriRef1",
           "status": "mf:proposed",
           "shex": "1iriRef1.shex",
-          "json": "1iriRef1.json"
+          "json": "1iriRef1.json",
+          "ttl": "1iriRef1.ttl"
         },
         {
           "@id": "#1bnodeRef1",
@@ -329,7 +368,8 @@
           "name": "1bnodeRef1",
           "status": "mf:proposed",
           "shex": "1bnodeRef1.shex",
-          "json": "1bnodeRef1.json"
+          "json": "1bnodeRef1.json",
+          "ttl": "1bnodeRef1.ttl"
         },
         {
           "@id": "#1dotInline1",
@@ -337,7 +377,8 @@
           "name": "1dotInline1",
           "status": "mf:proposed",
           "shex": "1dotInline1.shex",
-          "json": "1dotInline1.json"
+          "json": "1dotInline1.json",
+          "ttl": "1dotInline1.ttl"
         },
         {
           "@id": "#1val1IRIREF",
@@ -345,7 +386,8 @@
           "name": "1val1IRIREF",
           "status": "mf:proposed",
           "shex": "1val1IRIREF.shex",
-          "json": "1val1IRIREF.json"
+          "json": "1val1IRIREF.json",
+          "ttl": "1val1IRIREF.ttl"
         },
         {
           "@id": "#1val1INTEGER",
@@ -353,7 +395,8 @@
           "name": "1val1INTEGER",
           "status": "mf:proposed",
           "shex": "1val1INTEGER.shex",
-          "json": "1val1INTEGER.json"
+          "json": "1val1INTEGER.json",
+          "ttl": "1val1INTEGER.ttl"
         },
         {
           "@id": "#1val1DOUBLE",
@@ -361,7 +404,8 @@
           "name": "1val1DOUBLE",
           "status": "mf:proposed",
           "shex": "1val1DOUBLE.shex",
-          "json": "1val1DOUBLE.json"
+          "json": "1val1DOUBLE.json",
+          "ttl": "1val1DOUBLE.ttl"
         },
         {
           "@id": "#1val1DOUBLElowercase",
@@ -369,7 +413,8 @@
           "name": "1val1DOUBLElowercase",
           "status": "mf:proposed",
           "shex": "1val1DOUBLElowercase.shex",
-          "json": "1val1DOUBLElowercase.json"
+          "json": "1val1DOUBLElowercase.json",
+          "ttl": "1val1DOUBLElowercase.ttl"
         },
         {
           "@id": "#1val1LANGTAG",
@@ -377,7 +422,8 @@
           "name": "1val1LANGTAG",
           "status": "mf:proposed",
           "shex": "1val1LANGTAG.shex",
-          "json": "1val1LANGTAG.json"
+          "json": "1val1LANGTAG.json",
+          "ttl": "1val1LANGTAG.ttl"
         },
         {
           "@id": "#1val1IRIREFDatatype",
@@ -385,7 +431,8 @@
           "name": "1val1IRIREFDatatype",
           "status": "mf:proposed",
           "shex": "1val1IRIREFDatatype.shex",
-          "json": "1val1IRIREFDatatype.json"
+          "json": "1val1IRIREFDatatype.json",
+          "ttl": "1val1IRIREFDatatype.ttl"
         },
         {
           "@id": "#1val1true",
@@ -393,7 +440,8 @@
           "name": "1val1true",
           "status": "mf:proposed",
           "shex": "1val1true.shex",
-          "json": "1val1true.json"
+          "json": "1val1true.json",
+          "ttl": "1val1true.ttl"
         },
         {
           "@id": "#1val1false",
@@ -401,7 +449,8 @@
           "name": "1val1false",
           "status": "mf:proposed",
           "shex": "1val1false.shex",
-          "json": "1val1false.json"
+          "json": "1val1false.json",
+          "ttl": "1val1false.ttl"
         },
         {
           "@id": "#1datatypeLength",
@@ -409,7 +458,8 @@
           "name": "1datatypeLength",
           "status": "mf:proposed",
           "shex": "1datatypeLength.shex",
-          "json": "1datatypeLength.json"
+          "json": "1datatypeLength.json",
+          "ttl": "1datatypeLength.ttl"
         },
         {
           "@id": "#1literalFractiondigits5",
@@ -417,7 +467,8 @@
           "name": "1literalFractiondigits5",
           "status": "mf:proposed",
           "shex": "1literalFractiondigits5.shex",
-          "json": "1literalFractiondigits5.json"
+          "json": "1literalFractiondigits5.json",
+          "ttl": "1literalFractiondigits5.ttl"
         },
         {
           "@id": "#1literalFractiondigits4",
@@ -425,7 +476,8 @@
           "name": "1literalFractiondigits4",
           "status": "mf:proposed",
           "shex": "1literalFractiondigits4.shex",
-          "json": "1literalFractiondigits4.json"
+          "json": "1literalFractiondigits4.json",
+          "ttl": "1literalFractiondigits4.ttl"
         },
         {
           "@id": "#1literalTotaldigits5",
@@ -433,7 +485,8 @@
           "name": "1literalTotaldigits5",
           "status": "mf:proposed",
           "shex": "1literalTotaldigits5.shex",
-          "json": "1literalTotaldigits5.json"
+          "json": "1literalTotaldigits5.json",
+          "ttl": "1literalTotaldigits5.ttl"
         },
         {
           "@id": "#1literalTotaldigits6",
@@ -441,7 +494,8 @@
           "name": "1literalTotaldigits6",
           "status": "mf:proposed",
           "shex": "1literalTotaldigits6.shex",
-          "json": "1literalTotaldigits6.json"
+          "json": "1literalTotaldigits6.json",
+          "ttl": "1literalTotaldigits6.ttl"
         },
         {
           "@id": "#1literalTotaldigits2",
@@ -449,7 +503,8 @@
           "name": "1literalTotaldigits2",
           "status": "mf:proposed",
           "shex": "1literalTotaldigits2.shex",
-          "json": "1literalTotaldigits2.json"
+          "json": "1literalTotaldigits2.json",
+          "ttl": "1literalTotaldigits2.ttl"
         },
         {
           "@id": "#1floatMininclusiveINTEGER",
@@ -457,7 +512,8 @@
           "name": "1floatMininclusiveINTEGER",
           "status": "mf:proposed",
           "shex": "1floatMininclusiveINTEGER.shex",
-          "json": "1floatMininclusiveINTEGER.json"
+          "json": "1floatMininclusiveINTEGER.json",
+          "ttl": "1floatMininclusiveINTEGER.ttl"
         },
         {
           "@id": "#1integerMininclusiveINTEGER",
@@ -465,7 +521,8 @@
           "name": "1integerMininclusiveINTEGER",
           "status": "mf:proposed",
           "shex": "1integerMininclusiveINTEGER.shex",
-          "json": "1integerMininclusiveINTEGER.json"
+          "json": "1integerMininclusiveINTEGER.json",
+          "ttl": "1integerMininclusiveINTEGER.ttl"
         },
         {
           "@id": "#1floatMininclusiveINTEGERLead",
@@ -473,7 +530,8 @@
           "name": "1floatMininclusiveINTEGERLead",
           "status": "mf:proposed",
           "shex": "1floatMininclusiveINTEGERLead.shex",
-          "json": "1floatMininclusiveINTEGERLead.json"
+          "json": "1floatMininclusiveINTEGERLead.json",
+          "ttl": "1floatMininclusiveINTEGERLead.ttl"
         },
         {
           "@id": "#1integerMininclusiveINTEGERLead",
@@ -481,7 +539,8 @@
           "name": "1integerMininclusiveINTEGERLead",
           "status": "mf:proposed",
           "shex": "1integerMininclusiveINTEGERLead.shex",
-          "json": "1integerMininclusiveINTEGERLead.json"
+          "json": "1integerMininclusiveINTEGERLead.json",
+          "ttl": "1integerMininclusiveINTEGERLead.ttl"
         },
         {
           "@id": "#1integerMininclusiveDECIMAL",
@@ -489,7 +548,8 @@
           "name": "1integerMininclusiveDECIMAL",
           "status": "mf:proposed",
           "shex": "1integerMininclusiveDECIMAL.shex",
-          "json": "1integerMininclusiveDECIMAL.json"
+          "json": "1integerMininclusiveDECIMAL.json",
+          "ttl": "1integerMininclusiveDECIMAL.ttl"
         },
         {
           "@id": "#1integerMininclusiveDECIMALLeadTrail",
@@ -497,7 +557,8 @@
           "name": "1integerMininclusiveDECIMALLeadTrail",
           "status": "mf:proposed",
           "shex": "1integerMininclusiveDECIMALLeadTrail.shex",
-          "json": "1integerMininclusiveDECIMALLeadTrail.json"
+          "json": "1integerMininclusiveDECIMALLeadTrail.json",
+          "ttl": "1integerMininclusiveDECIMALLeadTrail.ttl"
         },
         {
           "@id": "#1integerMininclusiveDECIMALint",
@@ -505,7 +566,8 @@
           "name": "1integerMininclusiveDECIMALint",
           "status": "mf:proposed",
           "shex": "1integerMininclusiveDECIMALint.shex",
-          "json": "1integerMininclusiveDECIMALint.json"
+          "json": "1integerMininclusiveDECIMALint.json",
+          "ttl": "1integerMininclusiveDECIMALint.ttl"
         },
         {
           "@id": "#1integerMininclusiveDECIMALintLeadTrail",
@@ -513,7 +575,8 @@
           "name": "1integerMininclusiveDECIMALintLeadTrail",
           "status": "mf:proposed",
           "shex": "1integerMininclusiveDECIMALintLeadTrail.shex",
-          "json": "1integerMininclusiveDECIMALintLeadTrail.json"
+          "json": "1integerMininclusiveDECIMALintLeadTrail.json",
+          "ttl": "1integerMininclusiveDECIMALintLeadTrail.ttl"
         },
         {
           "@id": "#1integerMininclusiveDOUBLE",
@@ -521,7 +584,8 @@
           "name": "1integerMininclusiveDOUBLE",
           "status": "mf:proposed",
           "shex": "1integerMininclusiveDOUBLE.shex",
-          "json": "1integerMininclusiveDOUBLE.json"
+          "json": "1integerMininclusiveDOUBLE.json",
+          "ttl": "1integerMininclusiveDOUBLE.ttl"
         },
         {
           "@id": "#1integerMininclusiveDOUBLELeadTrail",
@@ -529,7 +593,8 @@
           "name": "1integerMininclusiveDOUBLELeadTrail",
           "status": "mf:proposed",
           "shex": "1integerMininclusiveDOUBLELeadTrail.shex",
-          "json": "1integerMininclusiveDOUBLELeadTrail.json"
+          "json": "1integerMininclusiveDOUBLELeadTrail.json",
+          "ttl": "1integerMininclusiveDOUBLELeadTrail.ttl"
         },
         {
           "@id": "#1integerMininclusiveDOUBLEint",
@@ -537,7 +602,8 @@
           "name": "1integerMininclusiveDOUBLEint",
           "status": "mf:proposed",
           "shex": "1integerMininclusiveDOUBLEint.shex",
-          "json": "1integerMininclusiveDOUBLEint.json"
+          "json": "1integerMininclusiveDOUBLEint.json",
+          "ttl": "1integerMininclusiveDOUBLEint.ttl"
         },
         {
           "@id": "#1integerMininclusiveDOUBLEintLeadTrail",
@@ -545,7 +611,8 @@
           "name": "1integerMininclusiveDOUBLEintLeadTrail",
           "status": "mf:proposed",
           "shex": "1integerMininclusiveDOUBLEintLeadTrail.shex",
-          "json": "1integerMininclusiveDOUBLEintLeadTrail.json"
+          "json": "1integerMininclusiveDOUBLEintLeadTrail.json",
+          "ttl": "1integerMininclusiveDOUBLEintLeadTrail.ttl"
         },
         {
           "@id": "#1integerMininclusivexsd-integer",
@@ -553,7 +620,8 @@
           "name": "1integerMininclusivexsd-integer",
           "status": "mf:proposed",
           "shex": "1integerMininclusivexsd-integer.shex",
-          "json": "1integerMininclusivexsd-integer.json"
+          "json": "1integerMininclusivexsd-integer.json",
+          "ttl": "1integerMininclusivexsd-integer.ttl"
         },
         {
           "@id": "#1decimalMininclusiveINTEGER",
@@ -561,7 +629,8 @@
           "name": "1decimalMininclusiveINTEGER",
           "status": "mf:proposed",
           "shex": "1decimalMininclusiveINTEGER.shex",
-          "json": "1decimalMininclusiveINTEGER.json"
+          "json": "1decimalMininclusiveINTEGER.json",
+          "ttl": "1decimalMininclusiveINTEGER.ttl"
         },
         {
           "@id": "#1decimalMininclusiveINTEGERLead",
@@ -569,7 +638,8 @@
           "name": "1decimalMininclusiveINTEGERLead",
           "status": "mf:proposed",
           "shex": "1decimalMininclusiveINTEGERLead.shex",
-          "json": "1decimalMininclusiveINTEGERLead.json"
+          "json": "1decimalMininclusiveINTEGERLead.json",
+          "ttl": "1decimalMininclusiveINTEGERLead.ttl"
         },
         {
           "@id": "#1decimalMininclusiveDECIMAL",
@@ -577,7 +647,8 @@
           "name": "1decimalMininclusiveDECIMAL",
           "status": "mf:proposed",
           "shex": "1decimalMininclusiveDECIMAL.shex",
-          "json": "1decimalMininclusiveDECIMAL.json"
+          "json": "1decimalMininclusiveDECIMAL.json",
+          "ttl": "1decimalMininclusiveDECIMAL.ttl"
         },
         {
           "@id": "#1decimalMininclusiveDECIMALLeadTrail",
@@ -585,7 +656,8 @@
           "name": "1decimalMininclusiveDECIMALLeadTrail",
           "status": "mf:proposed",
           "shex": "1decimalMininclusiveDECIMALLeadTrail.shex",
-          "json": "1decimalMininclusiveDECIMALLeadTrail.json"
+          "json": "1decimalMininclusiveDECIMALLeadTrail.json",
+          "ttl": "1decimalMininclusiveDECIMALLeadTrail.ttl"
         },
         {
           "@id": "#1decimalMininclusiveDECIMALintLeadTrail",
@@ -593,7 +665,8 @@
           "name": "1decimalMininclusiveDECIMALintLeadTrail",
           "status": "mf:proposed",
           "shex": "1decimalMininclusiveDECIMALintLeadTrail.shex",
-          "json": "1decimalMininclusiveDECIMALintLeadTrail.json"
+          "json": "1decimalMininclusiveDECIMALintLeadTrail.json",
+          "ttl": "1decimalMininclusiveDECIMALintLeadTrail.ttl"
         },
         {
           "@id": "#1decimalMininclusiveDOUBLE",
@@ -601,7 +674,8 @@
           "name": "1decimalMininclusiveDOUBLE",
           "status": "mf:proposed",
           "shex": "1decimalMininclusiveDOUBLE.shex",
-          "json": "1decimalMininclusiveDOUBLE.json"
+          "json": "1decimalMininclusiveDOUBLE.json",
+          "ttl": "1decimalMininclusiveDOUBLE.ttl"
         },
         {
           "@id": "#1decimalMininclusiveDOUBLELeadTrail",
@@ -609,7 +683,8 @@
           "name": "1decimalMininclusiveDOUBLELeadTrail",
           "status": "mf:proposed",
           "shex": "1decimalMininclusiveDOUBLELeadTrail.shex",
-          "json": "1decimalMininclusiveDOUBLELeadTrail.json"
+          "json": "1decimalMininclusiveDOUBLELeadTrail.json",
+          "ttl": "1decimalMininclusiveDOUBLELeadTrail.ttl"
         },
         {
           "@id": "#1decimalMininclusiveDOUBLEintLeadTrail",
@@ -617,7 +692,8 @@
           "name": "1decimalMininclusiveDOUBLEintLeadTrail",
           "status": "mf:proposed",
           "shex": "1decimalMininclusiveDOUBLEintLeadTrail.shex",
-          "json": "1decimalMininclusiveDOUBLEintLeadTrail.json"
+          "json": "1decimalMininclusiveDOUBLEintLeadTrail.json",
+          "ttl": "1decimalMininclusiveDOUBLEintLeadTrail.ttl"
         },
         {
           "@id": "#1decimalMininclusivexsd-decimal",
@@ -625,7 +701,8 @@
           "name": "1decimalMininclusivexsd-decimal",
           "status": "mf:proposed",
           "shex": "1decimalMininclusivexsd-decimal.shex",
-          "json": "1decimalMininclusivexsd-decimal.json"
+          "json": "1decimalMininclusivexsd-decimal.json",
+          "ttl": "1decimalMininclusivexsd-decimal.ttl"
         },
         {
           "@id": "#1floatMininclusiveDECIMAL",
@@ -633,7 +710,8 @@
           "name": "1floatMininclusiveDECIMAL",
           "status": "mf:proposed",
           "shex": "1floatMininclusiveDECIMAL.shex",
-          "json": "1floatMininclusiveDECIMAL.json"
+          "json": "1floatMininclusiveDECIMAL.json",
+          "ttl": "1floatMininclusiveDECIMAL.ttl"
         },
         {
           "@id": "#1floatMininclusiveDECIMALLeadTrail",
@@ -641,7 +719,8 @@
           "name": "1floatMininclusiveDECIMALLeadTrail",
           "status": "mf:proposed",
           "shex": "1floatMininclusiveDECIMALLeadTrail.shex",
-          "json": "1floatMininclusiveDECIMALLeadTrail.json"
+          "json": "1floatMininclusiveDECIMALLeadTrail.json",
+          "ttl": "1floatMininclusiveDECIMALLeadTrail.ttl"
         },
         {
           "@id": "#1floatMininclusiveDECIMALintLeadTrail",
@@ -649,7 +728,8 @@
           "name": "1floatMininclusiveDECIMALintLeadTrail",
           "status": "mf:proposed",
           "shex": "1floatMininclusiveDECIMALintLeadTrail.shex",
-          "json": "1floatMininclusiveDECIMALintLeadTrail.json"
+          "json": "1floatMininclusiveDECIMALintLeadTrail.json",
+          "ttl": "1floatMininclusiveDECIMALintLeadTrail.ttl"
         },
         {
           "@id": "#1floatMininclusiveDOUBLE",
@@ -657,7 +737,8 @@
           "name": "1floatMininclusiveDOUBLE",
           "status": "mf:proposed",
           "shex": "1floatMininclusiveDOUBLE.shex",
-          "json": "1floatMininclusiveDOUBLE.json"
+          "json": "1floatMininclusiveDOUBLE.json",
+          "ttl": "1floatMininclusiveDOUBLE.ttl"
         },
         {
           "@id": "#1floatMininclusiveDOUBLELeadTrail",
@@ -665,7 +746,8 @@
           "name": "1floatMininclusiveDOUBLELeadTrail",
           "status": "mf:proposed",
           "shex": "1floatMininclusiveDOUBLELeadTrail.shex",
-          "json": "1floatMininclusiveDOUBLELeadTrail.json"
+          "json": "1floatMininclusiveDOUBLELeadTrail.json",
+          "ttl": "1floatMininclusiveDOUBLELeadTrail.ttl"
         },
         {
           "@id": "#1floatMininclusiveDOUBLEintLeadTrail",
@@ -673,7 +755,8 @@
           "name": "1floatMininclusiveDOUBLEintLeadTrail",
           "status": "mf:proposed",
           "shex": "1floatMininclusiveDOUBLEintLeadTrail.shex",
-          "json": "1floatMininclusiveDOUBLEintLeadTrail.json"
+          "json": "1floatMininclusiveDOUBLEintLeadTrail.json",
+          "ttl": "1floatMininclusiveDOUBLEintLeadTrail.ttl"
         },
         {
           "@id": "#1floatMininclusivexsd-float",
@@ -681,7 +764,8 @@
           "name": "1floatMininclusivexsd-float",
           "status": "mf:proposed",
           "shex": "1floatMininclusivexsd-float.shex",
-          "json": "1floatMininclusivexsd-float.json"
+          "json": "1floatMininclusivexsd-float.json",
+          "ttl": "1floatMininclusivexsd-float.ttl"
         },
         {
           "@id": "#1doubleMininclusiveINTEGERLead",
@@ -689,7 +773,8 @@
           "name": "1doubleMininclusiveINTEGERLead",
           "status": "mf:proposed",
           "shex": "1doubleMininclusiveINTEGERLead.shex",
-          "json": "1doubleMininclusiveINTEGERLead.json"
+          "json": "1doubleMininclusiveINTEGERLead.json",
+          "ttl": "1doubleMininclusiveINTEGERLead.ttl"
         },
         {
           "@id": "#1doubleMininclusiveDECIMAL",
@@ -697,7 +782,8 @@
           "name": "1doubleMininclusiveDECIMAL",
           "status": "mf:proposed",
           "shex": "1doubleMininclusiveDECIMAL.shex",
-          "json": "1doubleMininclusiveDECIMAL.json"
+          "json": "1doubleMininclusiveDECIMAL.json",
+          "ttl": "1doubleMininclusiveDECIMAL.ttl"
         },
         {
           "@id": "#1doubleMininclusiveDECIMALLeadTrail",
@@ -705,7 +791,8 @@
           "name": "1doubleMininclusiveDECIMALLeadTrail",
           "status": "mf:proposed",
           "shex": "1doubleMininclusiveDECIMALLeadTrail.shex",
-          "json": "1doubleMininclusiveDECIMALLeadTrail.json"
+          "json": "1doubleMininclusiveDECIMALLeadTrail.json",
+          "ttl": "1doubleMininclusiveDECIMALLeadTrail.ttl"
         },
         {
           "@id": "#1doubleMininclusiveDECIMALintLeadTrail",
@@ -713,7 +800,8 @@
           "name": "1doubleMininclusiveDECIMALintLeadTrail",
           "status": "mf:proposed",
           "shex": "1doubleMininclusiveDECIMALintLeadTrail.shex",
-          "json": "1doubleMininclusiveDECIMALintLeadTrail.json"
+          "json": "1doubleMininclusiveDECIMALintLeadTrail.json",
+          "ttl": "1doubleMininclusiveDECIMALintLeadTrail.ttl"
         },
         {
           "@id": "#1doubleMininclusiveDOUBLE",
@@ -721,7 +809,8 @@
           "name": "1doubleMininclusiveDOUBLE",
           "status": "mf:proposed",
           "shex": "1doubleMininclusiveDOUBLE.shex",
-          "json": "1doubleMininclusiveDOUBLE.json"
+          "json": "1doubleMininclusiveDOUBLE.json",
+          "ttl": "1doubleMininclusiveDOUBLE.ttl"
         },
         {
           "@id": "#1doubleMininclusiveDOUBLELeadTrail",
@@ -729,7 +818,8 @@
           "name": "1doubleMininclusiveDOUBLELeadTrail",
           "status": "mf:proposed",
           "shex": "1doubleMininclusiveDOUBLELeadTrail.shex",
-          "json": "1doubleMininclusiveDOUBLELeadTrail.json"
+          "json": "1doubleMininclusiveDOUBLELeadTrail.json",
+          "ttl": "1doubleMininclusiveDOUBLELeadTrail.ttl"
         },
         {
           "@id": "#1doubleMininclusiveDOUBLEintLeadTrail",
@@ -737,7 +827,8 @@
           "name": "1doubleMininclusiveDOUBLEintLeadTrail",
           "status": "mf:proposed",
           "shex": "1doubleMininclusiveDOUBLEintLeadTrail.shex",
-          "json": "1doubleMininclusiveDOUBLEintLeadTrail.json"
+          "json": "1doubleMininclusiveDOUBLEintLeadTrail.json",
+          "ttl": "1doubleMininclusiveDOUBLEintLeadTrail.ttl"
         },
         {
           "@id": "#1doubleMininclusivexsd-double",
@@ -745,7 +836,8 @@
           "name": "1doubleMininclusivexsd-double",
           "status": "mf:proposed",
           "shex": "1doubleMininclusivexsd-double.shex",
-          "json": "1doubleMininclusivexsd-double.json"
+          "json": "1doubleMininclusivexsd-double.json",
+          "ttl": "1doubleMininclusivexsd-double.ttl"
         },
         {
           "@id": "#1integerMinexclusiveINTEGER",
@@ -753,7 +845,8 @@
           "name": "1integerMinexclusiveINTEGER",
           "status": "mf:proposed",
           "shex": "1integerMinexclusiveINTEGER.shex",
-          "json": "1integerMinexclusiveINTEGER.json"
+          "json": "1integerMinexclusiveINTEGER.json",
+          "ttl": "1integerMinexclusiveINTEGER.ttl"
         },
         {
           "@id": "#1integerMinexclusiveDECIMALint",
@@ -761,7 +854,8 @@
           "name": "1integerMinexclusiveDECIMALint",
           "status": "mf:proposed",
           "shex": "1integerMinexclusiveDECIMALint.shex",
-          "json": "1integerMinexclusiveDECIMALint.json"
+          "json": "1integerMinexclusiveDECIMALint.json",
+          "ttl": "1integerMinexclusiveDECIMALint.ttl"
         },
         {
           "@id": "#1integerMinexclusiveDOUBLEint",
@@ -769,7 +863,8 @@
           "name": "1integerMinexclusiveDOUBLEint",
           "status": "mf:proposed",
           "shex": "1integerMinexclusiveDOUBLEint.shex",
-          "json": "1integerMinexclusiveDOUBLEint.json"
+          "json": "1integerMinexclusiveDOUBLEint.json",
+          "ttl": "1integerMinexclusiveDOUBLEint.ttl"
         },
         {
           "@id": "#1decimalMinexclusiveINTEGER",
@@ -777,7 +872,8 @@
           "name": "1decimalMinexclusiveINTEGER",
           "status": "mf:proposed",
           "shex": "1decimalMinexclusiveINTEGER.shex",
-          "json": "1decimalMinexclusiveINTEGER.json"
+          "json": "1decimalMinexclusiveINTEGER.json",
+          "ttl": "1decimalMinexclusiveINTEGER.ttl"
         },
         {
           "@id": "#1decimalMinexclusiveDECIMAL",
@@ -785,7 +881,8 @@
           "name": "1decimalMinexclusiveDECIMAL",
           "status": "mf:proposed",
           "shex": "1decimalMinexclusiveDECIMAL.shex",
-          "json": "1decimalMinexclusiveDECIMAL.json"
+          "json": "1decimalMinexclusiveDECIMAL.json",
+          "ttl": "1decimalMinexclusiveDECIMAL.ttl"
         },
         {
           "@id": "#1decimalMinexclusiveDOUBLE",
@@ -793,7 +890,8 @@
           "name": "1decimalMinexclusiveDOUBLE",
           "status": "mf:proposed",
           "shex": "1decimalMinexclusiveDOUBLE.shex",
-          "json": "1decimalMinexclusiveDOUBLE.json"
+          "json": "1decimalMinexclusiveDOUBLE.json",
+          "ttl": "1decimalMinexclusiveDOUBLE.ttl"
         },
         {
           "@id": "#1floatMinexclusiveINTEGER",
@@ -801,7 +899,8 @@
           "name": "1floatMinexclusiveINTEGER",
           "status": "mf:proposed",
           "shex": "1floatMinexclusiveINTEGER.shex",
-          "json": "1floatMinexclusiveINTEGER.json"
+          "json": "1floatMinexclusiveINTEGER.json",
+          "ttl": "1floatMinexclusiveINTEGER.ttl"
         },
         {
           "@id": "#1floatMinexclusiveDECIMAL",
@@ -809,7 +908,8 @@
           "name": "1floatMinexclusiveDECIMAL",
           "status": "mf:proposed",
           "shex": "1floatMinexclusiveDECIMAL.shex",
-          "json": "1floatMinexclusiveDECIMAL.json"
+          "json": "1floatMinexclusiveDECIMAL.json",
+          "ttl": "1floatMinexclusiveDECIMAL.ttl"
         },
         {
           "@id": "#1floatMinexclusiveDOUBLE",
@@ -817,7 +917,8 @@
           "name": "1floatMinexclusiveDOUBLE",
           "status": "mf:proposed",
           "shex": "1floatMinexclusiveDOUBLE.shex",
-          "json": "1floatMinexclusiveDOUBLE.json"
+          "json": "1floatMinexclusiveDOUBLE.json",
+          "ttl": "1floatMinexclusiveDOUBLE.ttl"
         },
         {
           "@id": "#1floatMinexclusivexsd-float",
@@ -825,7 +926,8 @@
           "name": "1floatMinexclusivexsd-float",
           "status": "mf:proposed",
           "shex": "1floatMinexclusivexsd-float.shex",
-          "json": "1floatMinexclusivexsd-float.json"
+          "json": "1floatMinexclusivexsd-float.json",
+          "ttl": "1floatMinexclusivexsd-float.ttl"
         },
         {
           "@id": "#1doubleMinexclusiveINTEGER",
@@ -833,7 +935,8 @@
           "name": "1doubleMinexclusiveINTEGER",
           "status": "mf:proposed",
           "shex": "1doubleMinexclusiveINTEGER.shex",
-          "json": "1doubleMinexclusiveINTEGER.json"
+          "json": "1doubleMinexclusiveINTEGER.json",
+          "ttl": "1doubleMinexclusiveINTEGER.ttl"
         },
         {
           "@id": "#1doubleMinexclusiveDECIMAL",
@@ -841,7 +944,8 @@
           "name": "1doubleMinexclusiveDECIMAL",
           "status": "mf:proposed",
           "shex": "1doubleMinexclusiveDECIMAL.shex",
-          "json": "1doubleMinexclusiveDECIMAL.json"
+          "json": "1doubleMinexclusiveDECIMAL.json",
+          "ttl": "1doubleMinexclusiveDECIMAL.ttl"
         },
         {
           "@id": "#1doubleMinexclusiveDOUBLE",
@@ -849,7 +953,8 @@
           "name": "1doubleMinexclusiveDOUBLE",
           "status": "mf:proposed",
           "shex": "1doubleMinexclusiveDOUBLE.shex",
-          "json": "1doubleMinexclusiveDOUBLE.json"
+          "json": "1doubleMinexclusiveDOUBLE.json",
+          "ttl": "1doubleMinexclusiveDOUBLE.ttl"
         },
         {
           "@id": "#1integerMaxinclusiveINTEGER",
@@ -857,7 +962,8 @@
           "name": "1integerMaxinclusiveINTEGER",
           "status": "mf:proposed",
           "shex": "1integerMaxinclusiveINTEGER.shex",
-          "json": "1integerMaxinclusiveINTEGER.json"
+          "json": "1integerMaxinclusiveINTEGER.json",
+          "ttl": "1integerMaxinclusiveINTEGER.ttl"
         },
         {
           "@id": "#1integerMaxinclusiveDECIMALint",
@@ -865,7 +971,8 @@
           "name": "1integerMaxinclusiveDECIMALint",
           "status": "mf:proposed",
           "shex": "1integerMaxinclusiveDECIMALint.shex",
-          "json": "1integerMaxinclusiveDECIMALint.json"
+          "json": "1integerMaxinclusiveDECIMALint.json",
+          "ttl": "1integerMaxinclusiveDECIMALint.ttl"
         },
         {
           "@id": "#1integerMaxinclusiveDOUBLEint",
@@ -873,7 +980,8 @@
           "name": "1integerMaxinclusiveDOUBLEint",
           "status": "mf:proposed",
           "shex": "1integerMaxinclusiveDOUBLEint.shex",
-          "json": "1integerMaxinclusiveDOUBLEint.json"
+          "json": "1integerMaxinclusiveDOUBLEint.json",
+          "ttl": "1integerMaxinclusiveDOUBLEint.ttl"
         },
         {
           "@id": "#1decimalMaxinclusiveINTEGER",
@@ -881,7 +989,8 @@
           "name": "1decimalMaxinclusiveINTEGER",
           "status": "mf:proposed",
           "shex": "1decimalMaxinclusiveINTEGER.shex",
-          "json": "1decimalMaxinclusiveINTEGER.json"
+          "json": "1decimalMaxinclusiveINTEGER.json",
+          "ttl": "1decimalMaxinclusiveINTEGER.ttl"
         },
         {
           "@id": "#1decimalMaxinclusiveDECIMAL",
@@ -889,7 +998,8 @@
           "name": "1decimalMaxinclusiveDECIMAL",
           "status": "mf:proposed",
           "shex": "1decimalMaxinclusiveDECIMAL.shex",
-          "json": "1decimalMaxinclusiveDECIMAL.json"
+          "json": "1decimalMaxinclusiveDECIMAL.json",
+          "ttl": "1decimalMaxinclusiveDECIMAL.ttl"
         },
         {
           "@id": "#1decimalMaxinclusiveDOUBLE",
@@ -897,7 +1007,8 @@
           "name": "1decimalMaxinclusiveDOUBLE",
           "status": "mf:proposed",
           "shex": "1decimalMaxinclusiveDOUBLE.shex",
-          "json": "1decimalMaxinclusiveDOUBLE.json"
+          "json": "1decimalMaxinclusiveDOUBLE.json",
+          "ttl": "1decimalMaxinclusiveDOUBLE.ttl"
         },
         {
           "@id": "#1floatMaxinclusiveINTEGER",
@@ -905,7 +1016,8 @@
           "name": "1floatMaxinclusiveINTEGER",
           "status": "mf:proposed",
           "shex": "1floatMaxinclusiveINTEGER.shex",
-          "json": "1floatMaxinclusiveINTEGER.json"
+          "json": "1floatMaxinclusiveINTEGER.json",
+          "ttl": "1floatMaxinclusiveINTEGER.ttl"
         },
         {
           "@id": "#1floatMaxinclusiveDECIMAL",
@@ -913,7 +1025,8 @@
           "name": "1floatMaxinclusiveDECIMAL",
           "status": "mf:proposed",
           "shex": "1floatMaxinclusiveDECIMAL.shex",
-          "json": "1floatMaxinclusiveDECIMAL.json"
+          "json": "1floatMaxinclusiveDECIMAL.json",
+          "ttl": "1floatMaxinclusiveDECIMAL.ttl"
         },
         {
           "@id": "#1floatMaxinclusiveDOUBLE",
@@ -921,7 +1034,8 @@
           "name": "1floatMaxinclusiveDOUBLE",
           "status": "mf:proposed",
           "shex": "1floatMaxinclusiveDOUBLE.shex",
-          "json": "1floatMaxinclusiveDOUBLE.json"
+          "json": "1floatMaxinclusiveDOUBLE.json",
+          "ttl": "1floatMaxinclusiveDOUBLE.ttl"
         },
         {
           "@id": "#1floatMaxinclusivexsd-float",
@@ -929,7 +1043,8 @@
           "name": "1floatMaxinclusivexsd-float",
           "status": "mf:proposed",
           "shex": "1floatMaxinclusivexsd-float.shex",
-          "json": "1floatMaxinclusivexsd-float.json"
+          "json": "1floatMaxinclusivexsd-float.json",
+          "ttl": "1floatMaxinclusivexsd-float.ttl"
         },
         {
           "@id": "#1doubleMaxinclusiveINTEGER",
@@ -937,7 +1052,8 @@
           "name": "1doubleMaxinclusiveINTEGER",
           "status": "mf:proposed",
           "shex": "1doubleMaxinclusiveINTEGER.shex",
-          "json": "1doubleMaxinclusiveINTEGER.json"
+          "json": "1doubleMaxinclusiveINTEGER.json",
+          "ttl": "1doubleMaxinclusiveINTEGER.ttl"
         },
         {
           "@id": "#1doubleMaxinclusiveDECIMAL",
@@ -945,7 +1061,8 @@
           "name": "1doubleMaxinclusiveDECIMAL",
           "status": "mf:proposed",
           "shex": "1doubleMaxinclusiveDECIMAL.shex",
-          "json": "1doubleMaxinclusiveDECIMAL.json"
+          "json": "1doubleMaxinclusiveDECIMAL.json",
+          "ttl": "1doubleMaxinclusiveDECIMAL.ttl"
         },
         {
           "@id": "#1doubleMaxinclusiveDOUBLE",
@@ -953,7 +1070,8 @@
           "name": "1doubleMaxinclusiveDOUBLE",
           "status": "mf:proposed",
           "shex": "1doubleMaxinclusiveDOUBLE.shex",
-          "json": "1doubleMaxinclusiveDOUBLE.json"
+          "json": "1doubleMaxinclusiveDOUBLE.json",
+          "ttl": "1doubleMaxinclusiveDOUBLE.ttl"
         },
         {
           "@id": "#1integerMaxexclusiveINTEGER",
@@ -961,7 +1079,8 @@
           "name": "1integerMaxexclusiveINTEGER",
           "status": "mf:proposed",
           "shex": "1integerMaxexclusiveINTEGER.shex",
-          "json": "1integerMaxexclusiveINTEGER.json"
+          "json": "1integerMaxexclusiveINTEGER.json",
+          "ttl": "1integerMaxexclusiveINTEGER.ttl"
         },
         {
           "@id": "#1integerMaxexclusiveDECIMALint",
@@ -969,7 +1088,8 @@
           "name": "1integerMaxexclusiveDECIMALint",
           "status": "mf:proposed",
           "shex": "1integerMaxexclusiveDECIMALint.shex",
-          "json": "1integerMaxexclusiveDECIMALint.json"
+          "json": "1integerMaxexclusiveDECIMALint.json",
+          "ttl": "1integerMaxexclusiveDECIMALint.ttl"
         },
         {
           "@id": "#1integerMaxexclusiveDOUBLEint",
@@ -977,7 +1097,8 @@
           "name": "1integerMaxexclusiveDOUBLEint",
           "status": "mf:proposed",
           "shex": "1integerMaxexclusiveDOUBLEint.shex",
-          "json": "1integerMaxexclusiveDOUBLEint.json"
+          "json": "1integerMaxexclusiveDOUBLEint.json",
+          "ttl": "1integerMaxexclusiveDOUBLEint.ttl"
         },
         {
           "@id": "#1decimalMaxexclusiveINTEGER",
@@ -985,7 +1106,8 @@
           "name": "1decimalMaxexclusiveINTEGER",
           "status": "mf:proposed",
           "shex": "1decimalMaxexclusiveINTEGER.shex",
-          "json": "1decimalMaxexclusiveINTEGER.json"
+          "json": "1decimalMaxexclusiveINTEGER.json",
+          "ttl": "1decimalMaxexclusiveINTEGER.ttl"
         },
         {
           "@id": "#1decimalMaxexclusiveDECIMAL",
@@ -993,7 +1115,8 @@
           "name": "1decimalMaxexclusiveDECIMAL",
           "status": "mf:proposed",
           "shex": "1decimalMaxexclusiveDECIMAL.shex",
-          "json": "1decimalMaxexclusiveDECIMAL.json"
+          "json": "1decimalMaxexclusiveDECIMAL.json",
+          "ttl": "1decimalMaxexclusiveDECIMAL.ttl"
         },
         {
           "@id": "#1decimalMaxexclusiveDOUBLE",
@@ -1001,7 +1124,8 @@
           "name": "1decimalMaxexclusiveDOUBLE",
           "status": "mf:proposed",
           "shex": "1decimalMaxexclusiveDOUBLE.shex",
-          "json": "1decimalMaxexclusiveDOUBLE.json"
+          "json": "1decimalMaxexclusiveDOUBLE.json",
+          "ttl": "1decimalMaxexclusiveDOUBLE.ttl"
         },
         {
           "@id": "#1decimalMaxexclusivexsd-byte",
@@ -1009,7 +1133,8 @@
           "name": "1decimalMaxexclusivexsd-byte",
           "status": "mf:proposed",
           "shex": "1decimalMaxexclusivexsd-byte.shex",
-          "json": "1decimalMaxexclusivexsd-byte.json"
+          "json": "1decimalMaxexclusivexsd-byte.json",
+          "ttl": "1decimalMaxexclusivexsd-byte.ttl"
         },
         {
           "@id": "#1decimalMaxexclusivexsd-decimal",
@@ -1017,7 +1142,8 @@
           "name": "1decimalMaxexclusivexsd-decimal",
           "status": "mf:proposed",
           "shex": "1decimalMaxexclusivexsd-decimal.shex",
-          "json": "1decimalMaxexclusivexsd-decimal.json"
+          "json": "1decimalMaxexclusivexsd-decimal.json",
+          "ttl": "1decimalMaxexclusivexsd-decimal.ttl"
         },
         {
           "@id": "#1floatMaxexclusiveINTEGER",
@@ -1025,7 +1151,8 @@
           "name": "1floatMaxexclusiveINTEGER",
           "status": "mf:proposed",
           "shex": "1floatMaxexclusiveINTEGER.shex",
-          "json": "1floatMaxexclusiveINTEGER.json"
+          "json": "1floatMaxexclusiveINTEGER.json",
+          "ttl": "1floatMaxexclusiveINTEGER.ttl"
         },
         {
           "@id": "#1floatMaxexclusiveDECIMAL",
@@ -1033,7 +1160,8 @@
           "name": "1floatMaxexclusiveDECIMAL",
           "status": "mf:proposed",
           "shex": "1floatMaxexclusiveDECIMAL.shex",
-          "json": "1floatMaxexclusiveDECIMAL.json"
+          "json": "1floatMaxexclusiveDECIMAL.json",
+          "ttl": "1floatMaxexclusiveDECIMAL.ttl"
         },
         {
           "@id": "#1floatMaxexclusiveDOUBLE",
@@ -1041,7 +1169,8 @@
           "name": "1floatMaxexclusiveDOUBLE",
           "status": "mf:proposed",
           "shex": "1floatMaxexclusiveDOUBLE.shex",
-          "json": "1floatMaxexclusiveDOUBLE.json"
+          "json": "1floatMaxexclusiveDOUBLE.json",
+          "ttl": "1floatMaxexclusiveDOUBLE.ttl"
         },
         {
           "@id": "#1doubleMaxexclusiveINTEGER",
@@ -1049,7 +1178,8 @@
           "name": "1doubleMaxexclusiveINTEGER",
           "status": "mf:proposed",
           "shex": "1doubleMaxexclusiveINTEGER.shex",
-          "json": "1doubleMaxexclusiveINTEGER.json"
+          "json": "1doubleMaxexclusiveINTEGER.json",
+          "ttl": "1doubleMaxexclusiveINTEGER.ttl"
         },
         {
           "@id": "#1doubleMaxexclusiveINTEGERLead",
@@ -1057,7 +1187,8 @@
           "name": "1doubleMaxexclusiveINTEGERLead",
           "status": "mf:proposed",
           "shex": "1doubleMaxexclusiveINTEGERLead.shex",
-          "json": "1doubleMaxexclusiveINTEGERLead.json"
+          "json": "1doubleMaxexclusiveINTEGERLead.json",
+          "ttl": "1doubleMaxexclusiveINTEGERLead.ttl"
         },
         {
           "@id": "#1doubleMaxexclusiveDECIMAL",
@@ -1065,7 +1196,8 @@
           "name": "1doubleMaxexclusiveDECIMAL",
           "status": "mf:proposed",
           "shex": "1doubleMaxexclusiveDECIMAL.shex",
-          "json": "1doubleMaxexclusiveDECIMAL.json"
+          "json": "1doubleMaxexclusiveDECIMAL.json",
+          "ttl": "1doubleMaxexclusiveDECIMAL.ttl"
         },
         {
           "@id": "#1doubleMaxexclusiveDECIMALLeadTrail",
@@ -1073,7 +1205,8 @@
           "name": "1doubleMaxexclusiveDECIMALLeadTrail",
           "status": "mf:proposed",
           "shex": "1doubleMaxexclusiveDECIMALLeadTrail.shex",
-          "json": "1doubleMaxexclusiveDECIMALLeadTrail.json"
+          "json": "1doubleMaxexclusiveDECIMALLeadTrail.json",
+          "ttl": "1doubleMaxexclusiveDECIMALLeadTrail.ttl"
         },
         {
           "@id": "#1doubleMaxexclusiveDECIMALint",
@@ -1081,7 +1214,8 @@
           "name": "1doubleMaxexclusiveDECIMALint",
           "status": "mf:proposed",
           "shex": "1doubleMaxexclusiveDECIMALint.shex",
-          "json": "1doubleMaxexclusiveDECIMALint.json"
+          "json": "1doubleMaxexclusiveDECIMALint.json",
+          "ttl": "1doubleMaxexclusiveDECIMALint.ttl"
         },
         {
           "@id": "#1doubleMaxexclusiveDECIMALintLeadTrail",
@@ -1089,7 +1223,8 @@
           "name": "1doubleMaxexclusiveDECIMALintLeadTrail",
           "status": "mf:proposed",
           "shex": "1doubleMaxexclusiveDECIMALintLeadTrail.shex",
-          "json": "1doubleMaxexclusiveDECIMALintLeadTrail.json"
+          "json": "1doubleMaxexclusiveDECIMALintLeadTrail.json",
+          "ttl": "1doubleMaxexclusiveDECIMALintLeadTrail.ttl"
         },
         {
           "@id": "#1doubleMaxexclusiveDOUBLE",
@@ -1097,7 +1232,8 @@
           "name": "1doubleMaxexclusiveDOUBLE",
           "status": "mf:proposed",
           "shex": "1doubleMaxexclusiveDOUBLE.shex",
-          "json": "1doubleMaxexclusiveDOUBLE.json"
+          "json": "1doubleMaxexclusiveDOUBLE.json",
+          "ttl": "1doubleMaxexclusiveDOUBLE.ttl"
         },
         {
           "@id": "#1doubleMaxexclusiveDOUBLELeadTrail",
@@ -1105,7 +1241,8 @@
           "name": "1doubleMaxexclusiveDOUBLELeadTrail",
           "status": "mf:proposed",
           "shex": "1doubleMaxexclusiveDOUBLELeadTrail.shex",
-          "json": "1doubleMaxexclusiveDOUBLELeadTrail.json"
+          "json": "1doubleMaxexclusiveDOUBLELeadTrail.json",
+          "ttl": "1doubleMaxexclusiveDOUBLELeadTrail.ttl"
         },
         {
           "@id": "#1doubleMaxexclusiveDOUBLEint",
@@ -1113,7 +1250,8 @@
           "name": "1doubleMaxexclusiveDOUBLEint",
           "status": "mf:proposed",
           "shex": "1doubleMaxexclusiveDOUBLEint.shex",
-          "json": "1doubleMaxexclusiveDOUBLEint.json"
+          "json": "1doubleMaxexclusiveDOUBLEint.json",
+          "ttl": "1doubleMaxexclusiveDOUBLEint.ttl"
         },
         {
           "@id": "#1doubleMaxexclusiveDOUBLEintLeadTrail",
@@ -1121,7 +1259,8 @@
           "name": "1doubleMaxexclusiveDOUBLEintLeadTrail",
           "status": "mf:proposed",
           "shex": "1doubleMaxexclusiveDOUBLEintLeadTrail.shex",
-          "json": "1doubleMaxexclusiveDOUBLEintLeadTrail.json"
+          "json": "1doubleMaxexclusiveDOUBLEintLeadTrail.json",
+          "ttl": "1doubleMaxexclusiveDOUBLEintLeadTrail.ttl"
         },
         {
           "@id": "#1Length",
@@ -1129,7 +1268,8 @@
           "name": "1Length",
           "status": "mf:proposed",
           "shex": "1Length.shex",
-          "json": "1Length.json"
+          "json": "1Length.json",
+          "ttl": "1Length.ttl"
         },
         {
           "@id": "#1literalLength",
@@ -1137,7 +1277,8 @@
           "name": "1literalLength",
           "status": "mf:proposed",
           "shex": "1literalLength.shex",
-          "json": "1literalLength.json"
+          "json": "1literalLength.json",
+          "ttl": "1literalLength.ttl"
         },
         {
           "@id": "#1literalLength19",
@@ -1145,7 +1286,8 @@
           "name": "1literalLength19",
           "status": "mf:proposed",
           "shex": "1literalLength19.shex",
-          "json": "1literalLength19.json"
+          "json": "1literalLength19.json",
+          "ttl": "1literalLength19.ttl"
         },
         {
           "@id": "#1iriLength",
@@ -1153,7 +1295,8 @@
           "name": "1iriLength",
           "status": "mf:proposed",
           "shex": "1iriLength.shex",
-          "json": "1iriLength.json"
+          "json": "1iriLength.json",
+          "ttl": "1iriLength.ttl"
         },
         {
           "@id": "#1iriRefLength1",
@@ -1161,7 +1304,8 @@
           "name": "1iriRefLength1",
           "status": "mf:proposed",
           "shex": "1iriRefLength1.shex",
-          "json": "1iriRefLength1.json"
+          "json": "1iriRefLength1.json",
+          "ttl": "1iriRefLength1.ttl"
         },
         {
           "@id": "#1bnodeLength",
@@ -1169,7 +1313,8 @@
           "name": "1bnodeLength",
           "status": "mf:proposed",
           "shex": "1bnodeLength.shex",
-          "json": "1bnodeLength.json"
+          "json": "1bnodeLength.json",
+          "ttl": "1bnodeLength.ttl"
         },
         {
           "@id": "#1nonliteralLength",
@@ -1177,7 +1322,8 @@
           "name": "1nonliteralLength",
           "status": "mf:proposed",
           "shex": "1nonliteralLength.shex",
-          "json": "1nonliteralLength.json"
+          "json": "1nonliteralLength.json",
+          "ttl": "1nonliteralLength.ttl"
         },
         {
           "@id": "#1literalMinlength",
@@ -1185,7 +1331,8 @@
           "name": "1literalMinlength",
           "status": "mf:proposed",
           "shex": "1literalMinlength.shex",
-          "json": "1literalMinlength.json"
+          "json": "1literalMinlength.json",
+          "ttl": "1literalMinlength.ttl"
         },
         {
           "@id": "#1iriMinlength",
@@ -1193,7 +1340,8 @@
           "name": "1iriMinlength",
           "status": "mf:proposed",
           "shex": "1iriMinlength.shex",
-          "json": "1iriMinlength.json"
+          "json": "1iriMinlength.json",
+          "ttl": "1iriMinlength.ttl"
         },
         {
           "@id": "#1bnodeMinlength",
@@ -1201,7 +1349,8 @@
           "name": "1bnodeMinlength",
           "status": "mf:proposed",
           "shex": "1bnodeMinlength.shex",
-          "json": "1bnodeMinlength.json"
+          "json": "1bnodeMinlength.json",
+          "ttl": "1bnodeMinlength.ttl"
         },
         {
           "@id": "#1nonliteralMinlength",
@@ -1209,7 +1358,8 @@
           "name": "1nonliteralMinlength",
           "status": "mf:proposed",
           "shex": "1nonliteralMinlength.shex",
-          "json": "1nonliteralMinlength.json"
+          "json": "1nonliteralMinlength.json",
+          "ttl": "1nonliteralMinlength.ttl"
         },
         {
           "@id": "#1literalMaxlength",
@@ -1217,7 +1367,8 @@
           "name": "1literalMaxlength",
           "status": "mf:proposed",
           "shex": "1literalMaxlength.shex",
-          "json": "1literalMaxlength.json"
+          "json": "1literalMaxlength.json",
+          "ttl": "1literalMaxlength.ttl"
         },
         {
           "@id": "#1iriMaxlength",
@@ -1225,7 +1376,8 @@
           "name": "1iriMaxlength",
           "status": "mf:proposed",
           "shex": "1iriMaxlength.shex",
-          "json": "1iriMaxlength.json"
+          "json": "1iriMaxlength.json",
+          "ttl": "1iriMaxlength.ttl"
         },
         {
           "@id": "#1bnodeMaxlength",
@@ -1233,7 +1385,8 @@
           "name": "1bnodeMaxlength",
           "status": "mf:proposed",
           "shex": "1bnodeMaxlength.shex",
-          "json": "1bnodeMaxlength.json"
+          "json": "1bnodeMaxlength.json",
+          "ttl": "1bnodeMaxlength.ttl"
         },
         {
           "@id": "#1nonliteralMaxlength",
@@ -1241,7 +1394,8 @@
           "name": "1nonliteralMaxlength",
           "status": "mf:proposed",
           "shex": "1nonliteralMaxlength.shex",
-          "json": "1nonliteralMaxlength.json"
+          "json": "1nonliteralMaxlength.json",
+          "ttl": "1nonliteralMaxlength.ttl"
         },
         {
           "@id": "#1literalPattern",
@@ -1249,7 +1403,8 @@
           "name": "1literalPattern",
           "status": "mf:proposed",
           "shex": "1literalPattern.shex",
-          "json": "1literalPattern.json"
+          "json": "1literalPattern.json",
+          "ttl": "1literalPattern.ttl"
         },
         {
           "@id": "#1literalPattern19",
@@ -1257,7 +1412,8 @@
           "name": "1literalPattern19",
           "status": "mf:proposed",
           "shex": "1literalPattern19.shex",
-          "json": "1literalPattern19.json"
+          "json": "1literalPattern19.json",
+          "ttl": "1literalPattern19.ttl"
         },
         {
           "@id": "#1literalStartPattern",
@@ -1265,7 +1421,8 @@
           "name": "1literalStartPattern",
           "status": "mf:proposed",
           "shex": "1literalStartPattern.shex",
-          "json": "1literalStartPattern.json"
+          "json": "1literalStartPattern.json",
+          "ttl": "1literalStartPattern.ttl"
         },
         {
           "@id": "#1literalPatternEnd",
@@ -1273,7 +1430,8 @@
           "name": "1literalPatternEnd",
           "status": "mf:proposed",
           "shex": "1literalPatternEnd.shex",
-          "json": "1literalPatternEnd.json"
+          "json": "1literalPatternEnd.json",
+          "ttl": "1literalPatternEnd.ttl"
         },
         {
           "@id": "#1literalStartPatternEnd",
@@ -1281,7 +1439,8 @@
           "name": "1literalStartPatternEnd",
           "status": "mf:proposed",
           "shex": "1literalStartPatternEnd.shex",
-          "json": "1literalStartPatternEnd.json"
+          "json": "1literalStartPatternEnd.json",
+          "ttl": "1literalStartPatternEnd.ttl"
         },
         {
           "@id": "#1literalPatternDollar",
@@ -1289,7 +1448,8 @@
           "name": "1literalPatternDollar",
           "status": "mf:proposed",
           "shex": "1literalPatternDollar.shex",
-          "json": "1literalPatternDollar.json"
+          "json": "1literalPatternDollar.json",
+          "ttl": "1literalPatternDollar.ttl"
         },
         {
           "@id": "#1literalCarrotPatternDollar",
@@ -1297,7 +1457,8 @@
           "name": "1literalCarrotPatternDollar",
           "status": "mf:proposed",
           "shex": "1literalCarrotPatternDollar.shex",
-          "json": "1literalCarrotPatternDollar.json"
+          "json": "1literalCarrotPatternDollar.json",
+          "ttl": "1literalCarrotPatternDollar.ttl"
         },
         {
           "@id": "#1literalPatternabEnd",
@@ -1305,7 +1466,8 @@
           "name": "1literalPatternabEnd",
           "status": "mf:proposed",
           "shex": "1literalPatternabEnd.shex",
-          "json": "1literalPatternabEnd.json"
+          "json": "1literalPatternabEnd.json",
+          "ttl": "1literalPatternabEnd.ttl"
         },
         {
           "@id": "#1iriPattern",
@@ -1313,7 +1475,8 @@
           "name": "1iriPattern",
           "status": "mf:proposed",
           "shex": "1iriPattern.shex",
-          "json": "1iriPattern.json"
+          "json": "1iriPattern.json",
+          "ttl": "1iriPattern.ttl"
         },
         {
           "@id": "#1iriPatternbc",
@@ -1321,7 +1484,8 @@
           "name": "1iriPatternbc",
           "status": "mf:proposed",
           "shex": "1iriPatternbc.shex",
-          "json": "1iriPatternbc.json"
+          "json": "1iriPatternbc.json",
+          "ttl": "1iriPatternbc.ttl"
         },
         {
           "@id": "#1bnodePattern",
@@ -1329,7 +1493,8 @@
           "name": "1bnodePattern",
           "status": "mf:proposed",
           "shex": "1bnodePattern.shex",
-          "json": "1bnodePattern.json"
+          "json": "1bnodePattern.json",
+          "ttl": "1bnodePattern.ttl"
         },
         {
           "@id": "#1nonliteralPattern",
@@ -1337,7 +1502,8 @@
           "name": "1nonliteralPattern",
           "status": "mf:proposed",
           "shex": "1nonliteralPattern.shex",
-          "json": "1nonliteralPattern.json"
+          "json": "1nonliteralPattern.json",
+          "ttl": "1nonliteralPattern.ttl"
         },
         {
           "@id": "#1val1dotMinusiri3",
@@ -1345,7 +1511,8 @@
           "name": "1val1dotMinusiri3",
           "status": "mf:proposed",
           "shex": "1val1dotMinusiri3.shex",
-          "json": "1val1dotMinusiri3.json"
+          "json": "1val1dotMinusiri3.json",
+          "ttl": "1val1dotMinusiri3.ttl"
         },
         {
           "@id": "#1val1refvsMinusiri3",
@@ -1353,7 +1520,8 @@
           "name": "1val1refvsMinusiri3",
           "status": "mf:proposed",
           "shex": "1val1refvsMinusiri3.shex",
-          "json": "1val1refvsMinusiri3.json"
+          "json": "1val1refvsMinusiri3.json",
+          "ttl": "1val1refvsMinusiri3.ttl"
         },
         {
           "@id": "#1val1dotMinusiriStem3",
@@ -1361,7 +1529,8 @@
           "name": "1val1dotMinusiriStem3",
           "status": "mf:proposed",
           "shex": "1val1dotMinusiriStem3.shex",
-          "json": "1val1dotMinusiriStem3.json"
+          "json": "1val1dotMinusiriStem3.json",
+          "ttl": "1val1dotMinusiriStem3.ttl"
         },
         {
           "@id": "#1val1iriStem",
@@ -1369,7 +1538,8 @@
           "name": "1val1iriStem",
           "status": "mf:proposed",
           "shex": "1val1iriStem.shex",
-          "json": "1val1iriStem.json"
+          "json": "1val1iriStem.json",
+          "ttl": "1val1iriStem.ttl"
         },
         {
           "@id": "#1val1iriStemMinusiri3",
@@ -1377,7 +1547,8 @@
           "name": "1val1iriStemMinusiri3",
           "status": "mf:proposed",
           "shex": "1val1iriStemMinusiri3.shex",
-          "json": "1val1iriStemMinusiri3.json"
+          "json": "1val1iriStemMinusiri3.json",
+          "ttl": "1val1iriStemMinusiri3.ttl"
         },
         {
           "@id": "#1val1iriStemMinusiriStem3",
@@ -1385,7 +1556,8 @@
           "name": "1val1iriStemMinusiriStem3",
           "status": "mf:proposed",
           "shex": "1val1iriStemMinusiriStem3.shex",
-          "json": "1val1iriStemMinusiriStem3.json"
+          "json": "1val1iriStemMinusiriStem3.json",
+          "ttl": "1val1iriStemMinusiriStem3.ttl"
         },
         {
           "@id": "#2dot",
@@ -1393,7 +1565,8 @@
           "name": "2dot",
           "status": "mf:proposed",
           "shex": "2dot.shex",
-          "json": "2dot.json"
+          "json": "2dot.json",
+          "ttl": "2dot.ttl"
         },
         {
           "@id": "#2dotSemis",
@@ -1401,7 +1574,8 @@
           "name": "2dotSemis",
           "status": "mf:proposed",
           "shex": "2dotSemis.shex",
-          "json": "2dotSemis.json"
+          "json": "2dotSemis.json",
+          "ttl": "2dotSemis.ttl"
         },
         {
           "@id": "#open2dotclose",
@@ -1409,7 +1583,8 @@
           "name": "open2dotclose",
           "status": "mf:proposed",
           "shex": "open2dotclose.shex",
-          "json": "open2dotclose.json"
+          "json": "open2dotclose.json",
+          "ttl": "open2dotclose.ttl"
         },
         {
           "@id": "#open2dotsemisclose",
@@ -1417,7 +1592,8 @@
           "name": "open2dotsemisclose",
           "status": "mf:proposed",
           "shex": "open2dotsemisclose.shex",
-          "json": "open2dotsemisclose.json"
+          "json": "open2dotsemisclose.json",
+          "ttl": "open2dotsemisclose.ttl"
         },
         {
           "@id": "#3groupdot",
@@ -1425,7 +1601,8 @@
           "name": "3groupdot",
           "status": "mf:proposed",
           "shex": "3groupdot.shex",
-          "json": "3groupdot.json"
+          "json": "3groupdot.json",
+          "ttl": "3groupdot.ttl"
         },
         {
           "@id": "#open3groupdotclose",
@@ -1433,7 +1610,8 @@
           "name": "open3groupdotclose",
           "status": "mf:proposed",
           "shex": "open3groupdotclose.shex",
-          "json": "open3groupdotclose.json"
+          "json": "open3groupdotclose.json",
+          "ttl": "open3groupdotclose.ttl"
         },
         {
           "@id": "#1dotOne1dot",
@@ -1441,7 +1619,8 @@
           "name": "1dotOne1dot",
           "status": "mf:proposed",
           "shex": "1dotOne1dot.shex",
-          "json": "1dotOne1dot.json"
+          "json": "1dotOne1dot.json",
+          "ttl": "1dotOne1dot.ttl"
         },
         {
           "@id": "#1dotSemiOne1dotSemi",
@@ -1449,7 +1628,8 @@
           "name": "1dotSemiOne1dotSemi",
           "status": "mf:proposed",
           "shex": "1dotSemiOne1dotSemi.shex",
-          "json": "1dotSemiOne1dotSemi.json"
+          "json": "1dotSemiOne1dotSemi.json",
+          "ttl": "1dotSemiOne1dotSemi.ttl"
         },
         {
           "@id": "#open1dotOne1dotclose",
@@ -1457,7 +1637,8 @@
           "name": "open1dotOne1dotclose",
           "status": "mf:proposed",
           "shex": "open1dotOne1dotclose.shex",
-          "json": "open1dotOne1dotclose.json"
+          "json": "open1dotOne1dotclose.json",
+          "ttl": "open1dotOne1dotclose.ttl"
         },
         {
           "@id": "#open1dotSemiOne1dotSemicloseSemi",
@@ -1465,7 +1646,8 @@
           "name": "open1dotSemiOne1dotSemicloseSemi",
           "status": "mf:proposed",
           "shex": "open1dotSemiOne1dotSemicloseSemi.shex",
-          "json": "open1dotSemiOne1dotSemicloseSemi.json"
+          "json": "open1dotSemiOne1dotSemicloseSemi.json",
+          "ttl": "open1dotSemiOne1dotSemicloseSemi.ttl"
         },
         {
           "@id": "#2dotOne1dot",
@@ -1473,7 +1655,8 @@
           "name": "2dotOne1dot",
           "status": "mf:proposed",
           "shex": "2dotOne1dot.shex",
-          "json": "2dotOne1dot.json"
+          "json": "2dotOne1dot.json",
+          "ttl": "2dotOne1dot.ttl"
         },
         {
           "@id": "#2dotSemiOne1dotSemi",
@@ -1481,7 +1664,8 @@
           "name": "2dotSemiOne1dotSemi",
           "status": "mf:proposed",
           "shex": "2dotSemiOne1dotSemi.shex",
-          "json": "2dotSemiOne1dotSemi.json"
+          "json": "2dotSemiOne1dotSemi.json",
+          "ttl": "2dotSemiOne1dotSemi.ttl"
         },
         {
           "@id": "#open2dotOne1dotclose",
@@ -1489,7 +1673,8 @@
           "name": "open2dotOne1dotclose",
           "status": "mf:proposed",
           "shex": "open2dotOne1dotclose.shex",
-          "json": "open2dotOne1dotclose.json"
+          "json": "open2dotOne1dotclose.json",
+          "ttl": "open2dotOne1dotclose.ttl"
         },
         {
           "@id": "#open2dotSemisOne1dotSemiclose",
@@ -1497,7 +1682,8 @@
           "name": "open2dotSemisOne1dotSemiclose",
           "status": "mf:proposed",
           "shex": "open2dotSemisOne1dotSemiclose.shex",
-          "json": "open2dotSemisOne1dotSemiclose.json"
+          "json": "open2dotSemisOne1dotSemiclose.json",
+          "ttl": "open2dotSemisOne1dotSemiclose.ttl"
         },
         {
           "@id": "#openopen2dotcloseOne1dotclose",
@@ -1505,7 +1691,8 @@
           "name": "openopen2dotcloseOne1dotclose",
           "status": "mf:proposed",
           "shex": "openopen2dotcloseOne1dotclose.shex",
-          "json": "openopen2dotcloseOne1dotclose.json"
+          "json": "openopen2dotcloseOne1dotclose.json",
+          "ttl": "openopen2dotcloseOne1dotclose.ttl"
         },
         {
           "@id": "#openopen2dotSemiscloseOne1dotSemiclose",
@@ -1513,7 +1700,8 @@
           "name": "openopen2dotSemiscloseOne1dotSemiclose",
           "status": "mf:proposed",
           "shex": "openopen2dotSemiscloseOne1dotSemiclose.shex",
-          "json": "openopen2dotSemiscloseOne1dotSemiclose.json"
+          "json": "openopen2dotSemiscloseOne1dotSemiclose.json",
+          "ttl": "openopen2dotSemiscloseOne1dotSemiclose.ttl"
         },
         {
           "@id": "#open1dotopen1dotOne1dotcloseclose",
@@ -1521,7 +1709,8 @@
           "name": "open1dotopen1dotOne1dotcloseclose",
           "status": "mf:proposed",
           "shex": "open1dotopen1dotOne1dotcloseclose.shex",
-          "json": "open1dotopen1dotOne1dotcloseclose.json"
+          "json": "open1dotopen1dotOne1dotcloseclose.json",
+          "ttl": "open1dotopen1dotOne1dotcloseclose.ttl"
         },
         {
           "@id": "#open1dotopen1dotSemiOne1dotSemicloseSemicloseSemi",
@@ -1529,7 +1718,8 @@
           "name": "open1dotopen1dotSemiOne1dotSemicloseSemicloseSemi",
           "status": "mf:proposed",
           "shex": "open1dotopen1dotSemiOne1dotSemicloseSemicloseSemi.shex",
-          "json": "open1dotopen1dotSemiOne1dotSemicloseSemicloseSemi.json"
+          "json": "open1dotopen1dotSemiOne1dotSemicloseSemicloseSemi.json",
+          "ttl": "open1dotopen1dotSemiOne1dotSemicloseSemicloseSemi.ttl"
         },
         {
           "@id": "#1dotOne2dot",
@@ -1537,7 +1727,8 @@
           "name": "1dotOne2dot",
           "status": "mf:proposed",
           "shex": "1dotOne2dot.shex",
-          "json": "1dotOne2dot.json"
+          "json": "1dotOne2dot.json",
+          "ttl": "1dotOne2dot.ttl"
         },
         {
           "@id": "#open1dotOneopen2dotcloseclose",
@@ -1545,7 +1736,8 @@
           "name": "open1dotOneopen2dotcloseclose",
           "status": "mf:proposed",
           "shex": "open1dotOneopen2dotcloseclose.shex",
-          "json": "open1dotOneopen2dotcloseclose.json"
+          "json": "open1dotOneopen2dotcloseclose.json",
+          "ttl": "open1dotOneopen2dotcloseclose.ttl"
         },
         {
           "@id": "#openopen1dotOne1dotclose1dotclose",
@@ -1553,7 +1745,8 @@
           "name": "openopen1dotOne1dotclose1dotclose",
           "status": "mf:proposed",
           "shex": "openopen1dotOne1dotclose1dotclose.shex",
-          "json": "openopen1dotOne1dotclose1dotclose.json"
+          "json": "openopen1dotOne1dotclose1dotclose.json",
+          "ttl": "openopen1dotOne1dotclose1dotclose.ttl"
         },
         {
           "@id": "#1val1vExprRefIRIREF1",
@@ -1561,7 +1754,8 @@
           "name": "1val1vExprRefIRIREF1",
           "status": "mf:proposed",
           "shex": "1val1vExprRefIRIREF1.shex",
-          "json": "1val1vExprRefIRIREF1.json"
+          "json": "1val1vExprRefIRIREF1.json",
+          "ttl": "1val1vExprRefIRIREF1.ttl"
         },
         {
           "@id": "#1val1vExprRefbnode1",
@@ -1569,7 +1763,8 @@
           "name": "1val1vExprRefbnode1",
           "status": "mf:proposed",
           "shex": "1val1vExprRefbnode1.shex",
-          "json": "1val1vExprRefbnode1.json"
+          "json": "1val1vExprRefbnode1.json",
+          "ttl": "1val1vExprRefbnode1.ttl"
         },
         {
           "@id": "#1dotRefAND3",
@@ -1577,7 +1772,8 @@
           "name": "1dotRefAND3",
           "status": "mf:proposed",
           "shex": "1dotRefAND3.shex",
-          "json": "1dotRefAND3.json"
+          "json": "1dotRefAND3.json",
+          "ttl": "1dotRefAND3.ttl"
         },
         {
           "@id": "#1val1vExpr1AND1AND1Ref3",
@@ -1585,7 +1781,8 @@
           "name": "1val1vExpr1AND1AND1Ref3",
           "status": "mf:proposed",
           "shex": "1val1vExpr1AND1AND1Ref3.shex",
-          "json": "1val1vExpr1AND1AND1Ref3.json"
+          "json": "1val1vExpr1AND1AND1Ref3.json",
+          "ttl": "1val1vExpr1AND1AND1Ref3.ttl"
         },
         {
           "@id": "#1val1vExprRefAND3",
@@ -1593,7 +1790,8 @@
           "name": "1val1vExprRefAND3",
           "status": "mf:proposed",
           "shex": "1val1vExprRefAND3.shex",
-          "json": "1val1vExprRefAND3.json"
+          "json": "1val1vExprRefAND3.json",
+          "ttl": "1val1vExprRefAND3.ttl"
         },
         {
           "@id": "#1val1vExprAND3",
@@ -1601,7 +1799,8 @@
           "name": "1val1vExprAND3",
           "status": "mf:proposed",
           "shex": "1val1vExprAND3.shex",
-          "json": "1val1vExprAND3.json"
+          "json": "1val1vExprAND3.json",
+          "ttl": "1val1vExprAND3.ttl"
         },
         {
           "@id": "#1dotRefOR3",
@@ -1609,7 +1808,8 @@
           "name": "1dotRefOR3",
           "status": "mf:proposed",
           "shex": "1dotRefOR3.shex",
-          "json": "1dotRefOR3.json"
+          "json": "1dotRefOR3.json",
+          "ttl": "1dotRefOR3.ttl"
         },
         {
           "@id": "#1val1vExpr1OR1OR1Ref3",
@@ -1617,7 +1817,8 @@
           "name": "1val1vExpr1OR1OR1Ref3",
           "status": "mf:proposed",
           "shex": "1val1vExpr1OR1OR1Ref3.shex",
-          "json": "1val1vExpr1OR1OR1Ref3.json"
+          "json": "1val1vExpr1OR1OR1Ref3.json",
+          "ttl": "1val1vExpr1OR1OR1Ref3.ttl"
         },
         {
           "@id": "#1val1vExprRefOR3",
@@ -1625,7 +1826,8 @@
           "name": "1val1vExprRefOR3",
           "status": "mf:proposed",
           "shex": "1val1vExprRefOR3.shex",
-          "json": "1val1vExprRefOR3.json"
+          "json": "1val1vExprRefOR3.json",
+          "ttl": "1val1vExprRefOR3.ttl"
         },
         {
           "@id": "#1val1vExprOR3",
@@ -1633,7 +1835,8 @@
           "name": "1val1vExprOR3",
           "status": "mf:proposed",
           "shex": "1val1vExprOR3.shex",
-          "json": "1val1vExprOR3.json"
+          "json": "1val1vExprOR3.json",
+          "ttl": "1val1vExprOR3.ttl"
         },
         {
           "@id": "#1val1vExpr1AND1OR1Ref3",
@@ -1641,7 +1844,8 @@
           "name": "1val1vExpr1AND1OR1Ref3",
           "status": "mf:proposed",
           "shex": "1val1vExpr1AND1OR1Ref3.shex",
-          "json": "1val1vExpr1AND1OR1Ref3.json"
+          "json": "1val1vExpr1AND1OR1Ref3.json",
+          "ttl": "1val1vExpr1AND1OR1Ref3.ttl"
         },
         {
           "@id": "#1val1vExpr1OR1AND1Ref3",
@@ -1649,7 +1853,8 @@
           "name": "1val1vExpr1OR1AND1Ref3",
           "status": "mf:proposed",
           "shex": "1val1vExpr1OR1AND1Ref3.shex",
-          "json": "1val1vExpr1OR1AND1Ref3.json"
+          "json": "1val1vExpr1OR1AND1Ref3.json",
+          "ttl": "1val1vExpr1OR1AND1Ref3.ttl"
         },
         {
           "@id": "#open3Onedotclosecard2",
@@ -1657,7 +1862,8 @@
           "name": "open3Onedotclosecard2",
           "status": "mf:proposed",
           "shex": "open3Onedotclosecard2.shex",
-          "json": "open3Onedotclosecard2.json"
+          "json": "open3Onedotclosecard2.json",
+          "ttl": "open3Onedotclosecard2.ttl"
         },
         {
           "@id": "#open3Onedotclosecard23",
@@ -1665,7 +1871,8 @@
           "name": "open3Onedotclosecard23",
           "status": "mf:proposed",
           "shex": "open3Onedotclosecard23.shex",
-          "json": "open3Onedotclosecard23.json"
+          "json": "open3Onedotclosecard23.json",
+          "ttl": "open3Onedotclosecard23.ttl"
         },
         {
           "@id": "#open4Onedotclosecard23",
@@ -1673,7 +1880,8 @@
           "name": "open4Onedotclosecard23",
           "status": "mf:proposed",
           "shex": "open4Onedotclosecard23.shex",
-          "json": "open4Onedotclosecard23.json"
+          "json": "open4Onedotclosecard23.json",
+          "ttl": "open4Onedotclosecard23.ttl"
         },
         {
           "@id": "#open3groupdotclosecard23",
@@ -1681,7 +1889,8 @@
           "name": "open3groupdotclosecard23",
           "status": "mf:proposed",
           "shex": "open3groupdotclosecard23.shex",
-          "json": "open3groupdotclosecard23.json"
+          "json": "open3groupdotclosecard23.json",
+          "ttl": "open3groupdotclosecard23.ttl"
         },
         {
           "@id": "#1val1vShapeANDRef3",
@@ -1689,7 +1898,8 @@
           "name": "1val1vShapeANDRef3",
           "status": "mf:proposed",
           "shex": "1val1vShapeANDRef3.shex",
-          "json": "1val1vShapeANDRef3.json"
+          "json": "1val1vShapeANDRef3.json",
+          "ttl": "1val1vShapeANDRef3.ttl"
         },
         {
           "@id": "#1dotClosed",
@@ -1697,7 +1907,8 @@
           "name": "1dotClosed",
           "status": "mf:proposed",
           "shex": "1dotClosed.shex",
-          "json": "1dotClosed.json"
+          "json": "1dotClosed.json",
+          "ttl": "1dotClosed.ttl"
         },
         {
           "@id": "#1val1IRIREFExtra1",
@@ -1705,7 +1916,8 @@
           "name": "1val1IRIREFExtra1",
           "status": "mf:proposed",
           "shex": "1val1IRIREFExtra1.shex",
-          "json": "1val1IRIREFExtra1.json"
+          "json": "1val1IRIREFExtra1.json",
+          "ttl": "1val1IRIREFExtra1.ttl"
         },
         {
           "@id": "#1val2IRIREFExtra1",
@@ -1713,7 +1925,8 @@
           "name": "1val2IRIREFExtra1",
           "status": "mf:proposed",
           "shex": "1val2IRIREFExtra1.shex",
-          "json": "1val2IRIREFExtra1.json"
+          "json": "1val2IRIREFExtra1.json",
+          "ttl": "1val2IRIREFExtra1.ttl"
         },
         {
           "@id": "#1val2IRIREFPlusExtra1",
@@ -1721,7 +1934,8 @@
           "name": "1val2IRIREFPlusExtra1",
           "status": "mf:proposed",
           "shex": "1val2IRIREFPlusExtra1.shex",
-          "json": "1val2IRIREFPlusExtra1.json"
+          "json": "1val2IRIREFPlusExtra1.json",
+          "ttl": "1val2IRIREFPlusExtra1.ttl"
         },
         {
           "@id": "#1val1IRIREFExtra1p2",
@@ -1729,7 +1943,8 @@
           "name": "1val1IRIREFExtra1p2",
           "status": "mf:proposed",
           "shex": "1val1IRIREFExtra1p2.shex",
-          "json": "1val1IRIREFExtra1p2.json"
+          "json": "1val1IRIREFExtra1p2.json",
+          "ttl": "1val1IRIREFExtra1p2.ttl"
         },
         {
           "@id": "#1val1IRIREFExtra1One",
@@ -1737,7 +1952,8 @@
           "name": "1val1IRIREFExtra1One",
           "status": "mf:proposed",
           "shex": "1val1IRIREFExtra1One.shex",
-          "json": "1val1IRIREFExtra1One.json"
+          "json": "1val1IRIREFExtra1One.json",
+          "ttl": "1val1IRIREFExtra1One.ttl"
         },
         {
           "@id": "#1dotExtra1",
@@ -1745,7 +1961,8 @@
           "name": "1dotExtra1",
           "status": "mf:proposed",
           "shex": "1dotExtra1.shex",
-          "json": "1dotExtra1.json"
+          "json": "1dotExtra1.json",
+          "ttl": "1dotExtra1.ttl"
         },
         {
           "@id": "#3groupdotExtra3",
@@ -1753,7 +1970,8 @@
           "name": "3groupdotExtra3",
           "status": "mf:proposed",
           "shex": "3groupdotExtra3.shex",
-          "json": "3groupdotExtra3.json"
+          "json": "3groupdotExtra3.json",
+          "ttl": "3groupdotExtra3.ttl"
         },
         {
           "@id": "#3groupdot3Extra",
@@ -1761,7 +1979,8 @@
           "name": "3groupdot3Extra",
           "status": "mf:proposed",
           "shex": "3groupdot3Extra.shex",
-          "json": "3groupdot3Extra.json"
+          "json": "3groupdot3Extra.json",
+          "ttl": "3groupdot3Extra.ttl"
         },
         {
           "@id": "#3groupdotExtra3NLex",
@@ -1769,7 +1988,8 @@
           "name": "3groupdotExtra3NLex",
           "status": "mf:proposed",
           "shex": "3groupdotExtra3NLex.shex",
-          "json": "3groupdotExtra3NLex.json"
+          "json": "3groupdotExtra3NLex.json",
+          "ttl": "3groupdotExtra3NLex.ttl"
         },
         {
           "@id": "#startRefIRIREF",
@@ -1777,7 +1997,8 @@
           "name": "startRefIRIREF",
           "status": "mf:proposed",
           "shex": "startRefIRIREF.shex",
-          "json": "startRefIRIREF.json"
+          "json": "startRefIRIREF.json",
+          "ttl": "startRefIRIREF.ttl"
         },
         {
           "@id": "#startRefbnode",
@@ -1785,7 +2006,8 @@
           "name": "startRefbnode",
           "status": "mf:proposed",
           "shex": "startRefbnode.shex",
-          "json": "startRefbnode.json"
+          "json": "startRefbnode.json",
+          "ttl": "startRefbnode.ttl"
         },
         {
           "@id": "#startInline",
@@ -1793,7 +2015,8 @@
           "name": "startInline",
           "status": "mf:proposed",
           "shex": "startInline.shex",
-          "json": "startInline.json"
+          "json": "startInline.json",
+          "ttl": "startInline.ttl"
         },
         {
           "@id": "#startEqualSpaceInline",
@@ -1801,7 +2024,8 @@
           "name": "startEqualSpaceInline",
           "status": "mf:proposed",
           "shex": "startEqualSpaceInline.shex",
-          "json": "startEqualSpaceInline.json"
+          "json": "startEqualSpaceInline.json",
+          "ttl": "startEqualSpaceInline.ttl"
         },
         {
           "@id": "#startSpaceEqualInline",
@@ -1809,7 +2033,8 @@
           "name": "startSpaceEqualInline",
           "status": "mf:proposed",
           "shex": "startSpaceEqualInline.shex",
-          "json": "startSpaceEqualInline.json"
+          "json": "startSpaceEqualInline.json",
+          "ttl": "startSpaceEqualInline.ttl"
         },
         {
           "@id": "#2EachInclude1",
@@ -1817,7 +2042,8 @@
           "name": "2EachInclude1",
           "status": "mf:proposed",
           "shex": "2EachInclude1.shex",
-          "json": "2EachInclude1.json"
+          "json": "2EachInclude1.json",
+          "ttl": "2EachInclude1.ttl"
         },
         {
           "@id": "#2EachInclude1-after",
@@ -1825,7 +2051,8 @@
           "name": "2EachInclude1-after",
           "status": "mf:proposed",
           "shex": "2EachInclude1-after.shex",
-          "json": "2EachInclude1-after.json"
+          "json": "2EachInclude1-after.json",
+          "ttl": "2EachInclude1-after.ttl"
         },
         {
           "@id": "#2OneInclude1",
@@ -1833,7 +2060,8 @@
           "name": "2OneInclude1",
           "status": "mf:proposed",
           "shex": "2OneInclude1.shex",
-          "json": "2OneInclude1.json"
+          "json": "2OneInclude1.json",
+          "ttl": "2OneInclude1.ttl"
         },
         {
           "@id": "#2OneInclude1-after",
@@ -1841,7 +2069,8 @@
           "name": "2OneInclude1-after",
           "status": "mf:proposed",
           "shex": "2OneInclude1-after.shex",
-          "json": "2OneInclude1-after.json"
+          "json": "2OneInclude1-after.json",
+          "ttl": "2OneInclude1-after.ttl"
         },
         {
           "@id": "#1dotAnnotIRIREF",
@@ -1849,7 +2078,8 @@
           "name": "1dotAnnotIRIREF",
           "status": "mf:proposed",
           "shex": "1dotAnnotIRIREF.shex",
-          "json": "1dotAnnotIRIREF.json"
+          "json": "1dotAnnotIRIREF.json",
+          "ttl": "1dotAnnotIRIREF.ttl"
         },
         {
           "@id": "#1dotAnnotSTRING_LITERAL1",
@@ -1857,7 +2087,8 @@
           "name": "1dotAnnotSTRING_LITERAL1",
           "status": "mf:proposed",
           "shex": "1dotAnnotSTRING_LITERAL1.shex",
-          "json": "1dotAnnotSTRING_LITERAL1.json"
+          "json": "1dotAnnotSTRING_LITERAL1.json",
+          "ttl": "1dotAnnotSTRING_LITERAL1.ttl"
         },
         {
           "@id": "#1dotAnnot3",
@@ -1865,7 +2096,8 @@
           "name": "1dotAnnot3",
           "status": "mf:proposed",
           "shex": "1dotAnnot3.shex",
-          "json": "1dotAnnot3.json"
+          "json": "1dotAnnot3.json",
+          "ttl": "1dotAnnot3.ttl"
         },
         {
           "@id": "#1inversedotAnnot3",
@@ -1873,7 +2105,8 @@
           "name": "1inversedotAnnot3",
           "status": "mf:proposed",
           "shex": "1inversedotAnnot3.shex",
-          "json": "1inversedotAnnot3.json"
+          "json": "1inversedotAnnot3.json",
+          "ttl": "1inversedotAnnot3.ttl"
         },
         {
           "@id": "#open3groupdotcloseAnnot3",
@@ -1881,7 +2114,8 @@
           "name": "open3groupdotcloseAnnot3",
           "status": "mf:proposed",
           "shex": "open3groupdotcloseAnnot3.shex",
-          "json": "open3groupdotcloseAnnot3.json"
+          "json": "open3groupdotcloseAnnot3.json",
+          "ttl": "open3groupdotcloseAnnot3.ttl"
         },
         {
           "@id": "#1dotCode1",
@@ -1889,7 +2123,8 @@
           "name": "1dotCode1",
           "status": "mf:proposed",
           "shex": "1dotCode1.shex",
-          "json": "1dotCode1.json"
+          "json": "1dotCode1.json",
+          "ttl": "1dotCode1.ttl"
         },
         {
           "@id": "#1dotNoCode1",
@@ -1897,7 +2132,8 @@
           "name": "1dotNoCode1",
           "status": "mf:proposed",
           "shex": "1dotNoCode1.shex",
-          "json": "1dotNoCode1.json"
+          "json": "1dotNoCode1.json",
+          "ttl": "1dotNoCode1.ttl"
         },
         {
           "@id": "#1inversedotCode1",
@@ -1905,7 +2141,8 @@
           "name": "1inversedotCode1",
           "status": "mf:proposed",
           "shex": "1inversedotCode1.shex",
-          "json": "1inversedotCode1.json"
+          "json": "1inversedotCode1.json",
+          "ttl": "1inversedotCode1.ttl"
         },
         {
           "@id": "#1dotCode3",
@@ -1913,7 +2150,8 @@
           "name": "1dotCode3",
           "status": "mf:proposed",
           "shex": "1dotCode3.shex",
-          "json": "1dotCode3.json"
+          "json": "1dotCode3.json",
+          "ttl": "1dotCode3.ttl"
         },
         {
           "@id": "#1dotNoCode3",
@@ -1921,7 +2159,8 @@
           "name": "1dotNoCode3",
           "status": "mf:proposed",
           "shex": "1dotNoCode3.shex",
-          "json": "1dotNoCode3.json"
+          "json": "1dotNoCode3.json",
+          "ttl": "1dotNoCode3.ttl"
         },
         {
           "@id": "#1dotCode3fail",
@@ -1929,7 +2168,8 @@
           "name": "1dotCode3fail",
           "status": "mf:proposed",
           "shex": "1dotCode3fail.shex",
-          "json": "1dotCode3fail.json"
+          "json": "1dotCode3fail.json",
+          "ttl": "1dotCode3fail.ttl"
         },
         {
           "@id": "#1dotCodeWithEscapes1",
@@ -1937,7 +2177,8 @@
           "name": "1dotCodeWithEscapes1",
           "status": "mf:proposed",
           "shex": "1dotCodeWithEscapes1.shex",
-          "json": "1dotCodeWithEscapes1.json"
+          "json": "1dotCodeWithEscapes1.json",
+          "ttl": "1dotCodeWithEscapes1.ttl"
         },
         {
           "@id": "#1dotShapeCode1",
@@ -1945,7 +2186,8 @@
           "name": "1dotShapeCode1",
           "status": "mf:proposed",
           "shex": "1dotShapeCode1.shex",
-          "json": "1dotShapeCode1.json"
+          "json": "1dotShapeCode1.json",
+          "ttl": "1dotShapeCode1.ttl"
         },
         {
           "@id": "#1dotShapeNoCode1",
@@ -1953,7 +2195,8 @@
           "name": "1dotShapeNoCode1",
           "status": "mf:proposed",
           "shex": "1dotShapeNoCode1.shex",
-          "json": "1dotShapeNoCode1.json"
+          "json": "1dotShapeNoCode1.json",
+          "ttl": "1dotShapeNoCode1.ttl"
         },
         {
           "@id": "#open3groupdotcloseCode1",
@@ -1961,7 +2204,8 @@
           "name": "open3groupdotcloseCode1",
           "status": "mf:proposed",
           "shex": "open3groupdotcloseCode1.shex",
-          "json": "open3groupdotcloseCode1.json"
+          "json": "open3groupdotcloseCode1.json",
+          "ttl": "open3groupdotcloseCode1.ttl"
         },
         {
           "@id": "#startCode1",
@@ -1969,7 +2213,8 @@
           "name": "startCode1",
           "status": "mf:proposed",
           "shex": "startCode1.shex",
-          "json": "startCode1.json"
+          "json": "startCode1.json",
+          "ttl": "startCode1.ttl"
         },
         {
           "@id": "#startNoCode1",
@@ -1977,7 +2222,8 @@
           "name": "startNoCode1",
           "status": "mf:proposed",
           "shex": "startNoCode1.shex",
-          "json": "startNoCode1.json"
+          "json": "startNoCode1.json",
+          "ttl": "startNoCode1.ttl"
         },
         {
           "@id": "#startCode1fail",
@@ -1985,7 +2231,8 @@
           "name": "startCode1fail",
           "status": "mf:proposed",
           "shex": "startCode1fail.shex",
-          "json": "startCode1fail.json"
+          "json": "startCode1fail.json",
+          "ttl": "startCode1fail.ttl"
         },
         {
           "@id": "#startCode1startRef",
@@ -1993,7 +2240,8 @@
           "name": "startCode1startRef",
           "status": "mf:proposed",
           "shex": "startCode1startRef.shex",
-          "json": "startCode1startRef.json"
+          "json": "startCode1startRef.json",
+          "ttl": "startCode1startRef.ttl"
         },
         {
           "@id": "#startCode1startReffail",
@@ -2001,7 +2249,8 @@
           "name": "startCode1startReffail",
           "status": "mf:proposed",
           "shex": "startCode1startReffail.shex",
-          "json": "startCode1startReffail.json"
+          "json": "startCode1startReffail.json",
+          "ttl": "startCode1startReffail.ttl"
         },
         {
           "@id": "#startCode3",
@@ -2009,7 +2258,8 @@
           "name": "startCode3",
           "status": "mf:proposed",
           "shex": "startCode3.shex",
-          "json": "startCode3.json"
+          "json": "startCode3.json",
+          "ttl": "startCode3.ttl"
         },
         {
           "@id": "#startCode3fail",
@@ -2017,7 +2267,8 @@
           "name": "startCode3fail",
           "status": "mf:proposed",
           "shex": "startCode3fail.shex",
-          "json": "startCode3fail.json"
+          "json": "startCode3fail.json",
+          "ttl": "startCode3fail.ttl"
         },
         {
           "@id": "#open3groupdotclosecard23Annot3Code2",
@@ -2025,7 +2276,8 @@
           "name": "open3groupdotclosecard23Annot3Code2",
           "status": "mf:proposed",
           "shex": "open3groupdotclosecard23Annot3Code2.shex",
-          "json": "open3groupdotclosecard23Annot3Code2.json"
+          "json": "open3groupdotclosecard23Annot3Code2.json",
+          "ttl": "open3groupdotclosecard23Annot3Code2.ttl"
         },
         {
           "@id": "#0focusIRI",
@@ -2033,7 +2285,8 @@
           "name": "0focusIRI",
           "status": "mf:proposed",
           "shex": "0focusIRI.shex",
-          "json": "0focusIRI.json"
+          "json": "0focusIRI.json",
+          "ttl": "0focusIRI.ttl"
         },
         {
           "@id": "#0focusBNODE",
@@ -2041,7 +2294,8 @@
           "name": "0focusBNODE",
           "status": "mf:proposed",
           "shex": "0focusBNODE.shex",
-          "json": "0focusBNODE.json"
+          "json": "0focusBNODE.json",
+          "ttl": "0focusBNODE.ttl"
         },
         {
           "@id": "#1focusIRI_dot",
@@ -2049,7 +2303,8 @@
           "name": "1focusIRI_dot",
           "status": "mf:proposed",
           "shex": "1focusIRI_dot.shex",
-          "json": "1focusIRI_dot.json"
+          "json": "1focusIRI_dot.json",
+          "ttl": "1focusIRI_dot.ttl"
         },
         {
           "@id": "#1focusBNODE_dot",
@@ -2057,7 +2312,8 @@
           "name": "1focusBNODE_dot",
           "status": "mf:proposed",
           "shex": "1focusBNODE_dot.shex",
-          "json": "1focusBNODE_dot.json"
+          "json": "1focusBNODE_dot.json",
+          "ttl": "1focusBNODE_dot.ttl"
         },
         {
           "@id": "#1focusnonLiteral-dot",
@@ -2065,7 +2321,8 @@
           "name": "1focusnonLiteral-dot",
           "status": "mf:proposed",
           "shex": "1focusnonLiteral-dot.shex",
-          "json": "1focusnonLiteral-dot.json"
+          "json": "1focusnonLiteral-dot.json",
+          "ttl": "1focusnonLiteral-dot.ttl"
         },
         {
           "@id": "#1focusLength-dot",
@@ -2073,7 +2330,8 @@
           "name": "1focusLength-dot",
           "status": "mf:proposed",
           "shex": "1focusLength-dot.shex",
-          "json": "1focusLength-dot.json"
+          "json": "1focusLength-dot.json",
+          "ttl": "1focusLength-dot.ttl"
         },
         {
           "@id": "#1focusMinLength-dot",
@@ -2081,7 +2339,8 @@
           "name": "1focusMinLength-dot",
           "status": "mf:proposed",
           "shex": "1focusMinLength-dot.shex",
-          "json": "1focusMinLength-dot.json"
+          "json": "1focusMinLength-dot.json",
+          "ttl": "1focusMinLength-dot.ttl"
         },
         {
           "@id": "#1focusMaxLength-dot",
@@ -2089,7 +2348,8 @@
           "name": "1focusMaxLength-dot",
           "status": "mf:proposed",
           "shex": "1focusMaxLength-dot.shex",
-          "json": "1focusMaxLength-dot.json"
+          "json": "1focusMaxLength-dot.json",
+          "ttl": "1focusMaxLength-dot.ttl"
         },
         {
           "@id": "#1focusPattern-dot",
@@ -2097,7 +2357,8 @@
           "name": "1focusPattern-dot",
           "status": "mf:proposed",
           "shex": "1focusPattern-dot.shex",
-          "json": "1focusPattern-dot.json"
+          "json": "1focusPattern-dot.json",
+          "ttl": "1focusPattern-dot.ttl"
         },
         {
           "@id": "#1focusPatternB-dot",
@@ -2105,7 +2366,8 @@
           "name": "1focusPatternB-dot",
           "status": "mf:proposed",
           "shex": "1focusPatternB-dot.shex",
-          "json": "1focusPatternB-dot.json"
+          "json": "1focusPatternB-dot.json",
+          "ttl": "1focusPatternB-dot.ttl"
         },
         {
           "@id": "#1focusIRILength_dot",
@@ -2113,7 +2375,8 @@
           "name": "1focusIRILength_dot",
           "status": "mf:proposed",
           "shex": "1focusIRILength_dot.shex",
-          "json": "1focusIRILength_dot.json"
+          "json": "1focusIRILength_dot.json",
+          "ttl": "1focusIRILength_dot.ttl"
         },
         {
           "@id": "#1focusBNODELength_dot",
@@ -2121,7 +2384,8 @@
           "name": "1focusBNODELength_dot",
           "status": "mf:proposed",
           "shex": "1focusBNODELength_dot.shex",
-          "json": "1focusBNODELength_dot.json"
+          "json": "1focusBNODELength_dot.json",
+          "ttl": "1focusBNODELength_dot.ttl"
         },
         {
           "@id": "#1focusnonLiteralLength-dot",
@@ -2129,7 +2393,8 @@
           "name": "1focusnonLiteralLength-dot",
           "status": "mf:proposed",
           "shex": "1focusnonLiteralLength-dot.shex",
-          "json": "1focusnonLiteralLength-dot.json"
+          "json": "1focusnonLiteralLength-dot.json",
+          "ttl": "1focusnonLiteralLength-dot.ttl"
         },
         {
           "@id": "#NOT1dotOR2dot",
@@ -2137,7 +2402,8 @@
           "name": "NOT1dotOR2dot",
           "status": "mf:proposed",
           "shex": "NOT1dotOR2dot.shex",
-          "json": "NOT1dotOR2dot.json"
+          "json": "NOT1dotOR2dot.json",
+          "ttl": "NOT1dotOR2dot.ttl"
         },
         {
           "@id": "#NOT1dotOR2dotX3",
@@ -2145,7 +2411,8 @@
           "name": "NOT1dotOR2dotX3",
           "status": "mf:proposed",
           "shex": "NOT1dotOR2dotX3.shex",
-          "json": "NOT1dotOR2dotX3.json"
+          "json": "NOT1dotOR2dotX3.json",
+          "ttl": "NOT1dotOR2dotX3.ttl"
         },
         {
           "@id": "#NOT1dotOR2dotX3AND1",
@@ -2153,7 +2420,8 @@
           "name": "NOT1dotOR2dotX3AND1",
           "status": "mf:proposed",
           "shex": "NOT1dotOR2dotX3AND1.shex",
-          "json": "NOT1dotOR2dotX3AND1.json"
+          "json": "NOT1dotOR2dotX3AND1.json",
+          "ttl": "NOT1dotOR2dotX3AND1.ttl"
         },
         {
           "@id": "#shapeExtern",
@@ -2161,7 +2429,8 @@
           "name": "shapeExtern",
           "status": "mf:proposed",
           "shex": "shapeExtern.shex",
-          "json": "shapeExtern.json"
+          "json": "shapeExtern.json",
+          "ttl": "shapeExtern.ttl"
         },
         {
           "@id": "#shapeExternRef",
@@ -2169,7 +2438,8 @@
           "name": "shapeExternRef",
           "status": "mf:proposed",
           "shex": "shapeExternRef.shex",
-          "json": "shapeExternRef.json"
+          "json": "shapeExternRef.json",
+          "ttl": "shapeExternRef.ttl"
         },
         {
           "@id": "#focusvsORdatatype",
@@ -2177,7 +2447,8 @@
           "name": "focusvsORdatatype",
           "status": "mf:proposed",
           "shex": "focusvsORdatatype.shex",
-          "json": "focusvsORdatatype.json"
+          "json": "focusvsORdatatype.json",
+          "ttl": "focusvsORdatatype.ttl"
         },
         {
           "@id": "#focusvsANDIRI",
@@ -2185,7 +2456,8 @@
           "name": "focusvsANDIRI",
           "status": "mf:proposed",
           "shex": "focusvsANDIRI.shex",
-          "json": "focusvsANDIRI.json"
+          "json": "focusvsANDIRI.json",
+          "ttl": "focusvsANDIRI.ttl"
         },
         {
           "@id": "#focusvsANDdatatype",
@@ -2193,7 +2465,8 @@
           "name": "focusvsANDdatatype",
           "status": "mf:proposed",
           "shex": "focusvsANDdatatype.shex",
-          "json": "focusvsANDdatatype.json"
+          "json": "focusvsANDdatatype.json",
+          "ttl": "focusvsANDdatatype.ttl"
         },
         {
           "@id": "#focusvs",
@@ -2201,7 +2474,8 @@
           "name": "focusvs",
           "status": "mf:proposed",
           "shex": "focusvs.shex",
-          "json": "focusvs.json"
+          "json": "focusvs.json",
+          "ttl": "focusvs.ttl"
         },
         {
           "@id": "#focusdatatype",
@@ -2209,7 +2483,8 @@
           "name": "focusdatatype",
           "status": "mf:proposed",
           "shex": "focusdatatype.shex",
-          "json": "focusdatatype.json"
+          "json": "focusdatatype.json",
+          "ttl": "focusdatatype.ttl"
         },
         {
           "@id": "#1dotPlusAnnotIRIREF",
@@ -2217,7 +2492,8 @@
           "name": "1dotPlusAnnotIRIREF",
           "status": "mf:proposed",
           "shex": "1dotPlusAnnotIRIREF.shex",
-          "json": "1dotPlusAnnotIRIREF.json"
+          "json": "1dotPlusAnnotIRIREF.json",
+          "ttl": "1dotPlusAnnotIRIREF.ttl"
         },
         {
           "@id": "#1dotAnnotAIRIREF",
@@ -2225,7 +2501,8 @@
           "name": "1dotAnnotAIRIREF",
           "status": "mf:proposed",
           "shex": "1dotAnnotAIRIREF.shex",
-          "json": "1dotAnnotAIRIREF.json"
+          "json": "1dotAnnotAIRIREF.json",
+          "ttl": "1dotAnnotAIRIREF.ttl"
         },
         {
           "@id": "#FocusIRI2groupBnodeNested2groupIRIRef",
@@ -2233,7 +2510,8 @@
           "name": "FocusIRI2groupBnodeNested2groupIRIRef",
           "status": "mf:proposed",
           "shex": "FocusIRI2groupBnodeNested2groupIRIRef.shex",
-          "json": "FocusIRI2groupBnodeNested2groupIRIRef.json"
+          "json": "FocusIRI2groupBnodeNested2groupIRIRef.json",
+          "ttl": "FocusIRI2groupBnodeNested2groupIRIRef.ttl"
         },
         {
           "@id": "#1bnodeRefORRefMinlength",
@@ -2241,7 +2519,8 @@
           "name": "1bnodeRefORRefMinlength",
           "status": "mf:proposed",
           "shex": "1bnodeRefORRefMinlength.shex",
-          "json": "1bnodeRefORRefMinlength.json"
+          "json": "1bnodeRefORRefMinlength.json",
+          "ttl": "1bnodeRefORRefMinlength.ttl"
         },
         {
           "@id": "#1dotShapeAND1dot3X",
@@ -2249,7 +2528,8 @@
           "name": "1dotShapeAND1dot3X",
           "status": "mf:proposed",
           "shex": "1dotShapeAND1dot3X.shex",
-          "json": "1dotShapeAND1dot3X.json"
+          "json": "1dotShapeAND1dot3X.json",
+          "ttl": "1dotShapeAND1dot3X.ttl"
         },
         {
           "@id": "#openopen1dotSemiOne1dotSemiclose1dotSemicloseSemi",
@@ -2257,7 +2537,8 @@
           "name": "openopen1dotSemiOne1dotSemiclose1dotSemicloseSemi",
           "status": "mf:proposed",
           "shex": "openopen1dotSemiOne1dotSemiclose1dotSemicloseSemi.shex",
-          "json": "openopen1dotSemiOne1dotSemiclose1dotSemicloseSemi.json"
+          "json": "openopen1dotSemiOne1dotSemiclose1dotSemicloseSemi.json",
+          "ttl": "openopen1dotSemiOne1dotSemiclose1dotSemicloseSemi.ttl"
         },
         {
           "@id": "#open1dotOne2dotclose",
@@ -2265,7 +2546,8 @@
           "name": "open1dotOne2dotclose",
           "status": "mf:proposed",
           "shex": "open1dotOne2dotclose.shex",
-          "json": "open1dotOne2dotclose.json"
+          "json": "open1dotOne2dotclose.json",
+          "ttl": "open1dotOne2dotclose.ttl"
         },
         {
           "@id": "#open1dotSemiOneopen2dotSemiscloseclose",
@@ -2273,7 +2555,8 @@
           "name": "open1dotSemiOneopen2dotSemiscloseclose",
           "status": "mf:proposed",
           "shex": "open1dotSemiOneopen2dotSemiscloseclose.shex",
-          "json": "open1dotSemiOneopen2dotSemiscloseclose.json"
+          "json": "open1dotSemiOneopen2dotSemiscloseclose.json",
+          "ttl": "open1dotSemiOneopen2dotSemiscloseclose.ttl"
         },
         {
           "@id": "#open1dotSemiOne2dotsemisclose",
@@ -2281,7 +2564,8 @@
           "name": "open1dotSemiOne2dotsemisclose",
           "status": "mf:proposed",
           "shex": "open1dotSemiOne2dotsemisclose.shex",
-          "json": "open1dotSemiOne2dotsemisclose.json"
+          "json": "open1dotSemiOne2dotsemisclose.json",
+          "ttl": "open1dotSemiOne2dotsemisclose.ttl"
         },
         {
           "@id": "#1dotSemiOne2dotSemis",
@@ -2289,7 +2573,8 @@
           "name": "1dotSemiOne2dotSemis",
           "status": "mf:proposed",
           "shex": "1dotSemiOne2dotSemis.shex",
-          "json": "1dotSemiOne2dotSemis.json"
+          "json": "1dotSemiOne2dotSemis.json",
+          "ttl": "1dotSemiOne2dotSemis.ttl"
         },
         {
           "@id": "#1literalMaxinclusiveINTEGER",
@@ -2297,7 +2582,8 @@
           "name": "1literalMaxinclusiveINTEGER",
           "status": "mf:proposed",
           "shex": "1literalMaxinclusiveINTEGER.shex",
-          "json": "1literalMaxinclusiveINTEGER.json"
+          "json": "1literalMaxinclusiveINTEGER.json",
+          "ttl": "1literalMaxinclusiveINTEGER.ttl"
         },
         {
           "@id": "#1literalMaxexclusiveINTEGER",
@@ -2305,7 +2591,8 @@
           "name": "1literalMaxexclusiveINTEGER",
           "status": "mf:proposed",
           "shex": "1literalMaxexclusiveINTEGER.shex",
-          "json": "1literalMaxexclusiveINTEGER.json"
+          "json": "1literalMaxexclusiveINTEGER.json",
+          "ttl": "1literalMaxexclusiveINTEGER.ttl"
         },
         {
           "@id": "#1literalMininclusiveINTEGER",
@@ -2313,7 +2600,8 @@
           "name": "1literalMininclusiveINTEGER",
           "status": "mf:proposed",
           "shex": "1literalMininclusiveINTEGER.shex",
-          "json": "1literalMininclusiveINTEGER.json"
+          "json": "1literalMininclusiveINTEGER.json",
+          "ttl": "1literalMininclusiveINTEGER.ttl"
         },
         {
           "@id": "#1literalMinexclusiveINTEGER",
@@ -2321,7 +2609,8 @@
           "name": "1literalMinexclusiveINTEGER",
           "status": "mf:proposed",
           "shex": "1literalMinexclusiveINTEGER.shex",
-          "json": "1literalMinexclusiveINTEGER.json"
+          "json": "1literalMinexclusiveINTEGER.json",
+          "ttl": "1literalMinexclusiveINTEGER.ttl"
         },
         {
           "@id": "#1val1DECIMAL",
@@ -2329,7 +2618,8 @@
           "name": "1val1DECIMAL",
           "status": "mf:proposed",
           "shex": "1val1DECIMAL.shex",
-          "json": "1val1DECIMAL.json"
+          "json": "1val1DECIMAL.json",
+          "ttl": "1val1DECIMAL.ttl"
         },
         {
           "@id": "#1datatypeRef1",
@@ -2337,7 +2627,8 @@
           "name": "1datatypeRef1",
           "status": "mf:proposed",
           "shex": "1datatypeRef1.shex",
-          "json": "1datatypeRef1.json"
+          "json": "1datatypeRef1.json",
+          "ttl": "1datatypeRef1.ttl"
         },
         {
           "@id": "#1card2blank",
@@ -2345,7 +2636,8 @@
           "name": "1card2blank",
           "status": "mf:proposed",
           "shex": "1card2blank.shex",
-          "json": "1card2blank.json"
+          "json": "1card2blank.json",
+          "ttl": "1card2blank.ttl"
         },
         {
           "@id": "#1focusnonLiteralLength-nonLiteralLength",
@@ -2353,7 +2645,8 @@
           "name": "1focusnonLiteralLength-nonLiteralLength",
           "status": "mf:proposed",
           "shex": "1focusnonLiteralLength-nonLiteralLength.shex",
-          "json": "1focusnonLiteralLength-nonLiteralLength.json"
+          "json": "1focusnonLiteralLength-nonLiteralLength.json",
+          "ttl": "1focusnonLiteralLength-nonLiteralLength.ttl"
         },
         {
           "@id": "#_all",
@@ -2361,7 +2654,8 @@
           "name": "_all",
           "status": "mf:proposed",
           "shex": "_all.shex",
-          "json": "_all.json"
+          "json": "_all.json",
+          "ttl": "_all.ttl"
         },
         {
           "@id": "#kitchenSink",
@@ -2369,7 +2663,8 @@
           "name": "kitchenSink",
           "status": "mf:proposed",
           "shex": "kitchenSink.shex",
-          "json": "kitchenSink.json"
+          "json": "kitchenSink.json",
+          "ttl": "kitchenSink.ttl"
         }
       ]
     }

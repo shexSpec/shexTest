@@ -8,66 +8,71 @@
 #   {TERMINAL->PROPTYPE} - a map from TERMINAL to PROPTYPE.
 #   (PROPTYPE1|PROPTYPE2...) - any of PROPTYPEn.
 
-.TYPE type; # All objects have a type property corresponding to the production name, e.g. "ShapeTest"
+.TYPE type - ObjectLiteral; # All objects have a type property corresponding to the production name, e.g. "ShapeTest"
 
 shapeExprTest    = ShapeOrResults | ShapeAndResults | ShapeNotResults | ShapeTest | NodeTest ;
 ShapeOrResults   { solution:shapeExprTest }
 ShapeAndResults  { solutions:[shapeExprTest+] }
 ShapeNotResults  { solution:Failure }
-Failure          { node:(IRI|BNode) shape:(IRI|BNode) errors:[error+] }
+Failure          { node:(IRI|BNODE) shape:(IRI|BNODE) errors:[error+] }
 error            = MissingProperty ;
 MissingProperty  { property:IRI }
-NodeTest         { node:(IRI|BNode) shape:(IRI|BNode) }
-ShapeTest        { node:(IRI|BNode) shape:IRI solution:tripleExprSolutions? startActs:[SemAct+]? }
+NodeTest         { node:(IRI|BNODE|ObjectLiteral) shape:(IRI|BNODE) shapeExpr:shapeExpr }
+ShapeTest        { node:(IRI|BNODE) shape:IRI solution:tripleExprSolutions? startActs:[SemAct+]? }
 tripleExprSolutions = EachOfSolutions | OneOfSolutions | TripleConstraintSolutions ;
 EachOfSolutions  { solutions:[EachOfSolution+] min:INTEGER? max:(INTEGER|"*")? annotations:[Annotation+]? semActs:[SemAct+]? }
 EachOfSolution   { expressions:[tripleExprSolutions+] }
 OneOfSolutions   { solutions:[OneOfSolution+] min:INTEGER? max:(INTEGER|"*")? annotations:[Annotation+]? semActs:[SemAct+]? }
 OneOfSolution    { expressions:[tripleExprSolutions+] }
 TripleConstraintSolutions { name:(IRI|BNode)? predicate:IRI valueExpr:shapeExpr? min:INTEGER? max:(INTEGER|"*")? solutions:[TestedTriple] annotations:[Annotation+]? semActs:[SemAct+]? }
-TestedTriple     { subject:(IRI|BNode) predicate:IRI object:(IRI|BNode|RDFLiteral) referenced:(shapeExprTest|Recursion)? }
-Recursion        { node:(IRI|BNode) shape:(IRI|BNode) }
+TestedTriple     { subject:(IRI|BNODE) predicate:IRI object:(IRI|BNODE|ObjectLiteral) referenced:(shapeExprTest|Recursion)? }
+Recursion        { node:(IRI|BNODE) shape:(IRI|BNODE) }
 
+# Shape Expressions
 shapeExpr        = ShapeOr | ShapeAnd | ShapeNot | NodeConstraint | Shape | ShapeRef | ShapeExternal;
 ShapeOr          { shapeExprs:[shapeExpr{2,}] }
 ShapeAnd         { shapeExprs:[shapeExpr{2,}] }
 ShapeNot         { shapeExpr:shapeExpr }
+NodeConstraint   { nodeKind:("iri"|"bnode"|"nonliteral"|"literal")? datatype:IRI? xsFacet* values:[valueSetValue+]? }
 Shape            { virtual:BOOL? closed:BOOL? extra:[IRI+]? expression:tripleExpr? inherit:[shapeLabel+]? semActs:[SemAct+]? }
-ShapeExternal    {  }
 ShapeRef         { reference:IRI } # should be a TERM or some such
-SemAct           { name:IRI code:STRING? }
+ShapeExternal    {  }
+
+# Triple Expressions
 tripleExpr       = EachOf | OneOf | TripleConstraint | Inclusion ;
 EachOf           { expressions:[tripleExpr{2,}] min:INTEGER? max:(INTEGER|"*")? semActs:[SemAct+]? annotations:[Annotation+]? }
 OneOf            { expressions:[tripleExpr{2,}] min:INTEGER? max:(INTEGER|"*")? semActs:[SemAct+]? annotations:[Annotation+]? }
-Inclusion        { include:shapeLabel }
 TripleConstraint { inverse:BOOL? negated:BOOL? predicate:IRI valueExpr:shapeExpr? min:INTEGER? max:(INTEGER|"*")? semActs:[SemAct+]? annotations:[Annotation+]? }
-NodeConstraint   { nodeKind:("iri"|"bnode"|"nonliteral"|"literal")? datatype:IRI? xsFacet* values:[valueSetValue+]? }
-Annotation       { predicate:IRI object:objectValue }
+Inclusion        { include:shapeLabel }
 
+# XML Schema facets
 xsFacet          = stringFacet | numericFacet ;
 stringFacet      = (length|minlength|maxlength):INTEGER | pattern:STRING ;
 numericFacet     = (mininclusive|minexclusive|maxinclusive|maxexclusive):numericLiteral
                  | (totaldigits|fractiondigits):INTEGER ;
-shapeLabel       = IRI|BNODE ;
-numericLiteral   = INTEGER|DECIMAL|DOUBLE ;
+
+# Value Sets
 valueSetValue    = objectValue|Stem|StemRange ;
-objectValue      = IRI|RDFLiteral ;
+objectValue      = IRI|ObjectLiteral ;
 Stem             { stem:IRI } # StemRange with exclusions
 StemRange        { stem:(IRI|Wildcard) exclusions:[objectValue|Stem +]? }
 Wildcard         {  }
+
+SemAct           { name:IRI code:STRING? }
+Annotation       { predicate:IRI object:objectValue }
+
+shapeLabel       = IRI|BNODE ;
+numericLiteral   = INTEGER|DECIMAL|DOUBLE ;
 RDFLiteral       = SIMPLE_LITERAL|DATATYPE_LITERAL|LANG_LITERAL ;
+ObjectLiteral    { value:STRING language:STRING? type:STRING? }
 
 # Terminals used in productions:
-PREFIX           : PN_PREFIX? ':' ; # <http://www.w3.org/TR/turtle/#grammar-production-PNAME_NS> - ":"
 IRI              : (PN_CHARS | '.' | ':' | '/' | '\\' | '#' | '@' | '%' | '&' | UCHAR)* ; # <http://www.w3.org/TR/turtle/#grammar-production-IRIREF> - "<>"s
 BNODE            : '_:' (PN_CHARS_U | [0-9]) ((PN_CHARS | '.')* PN_CHARS)? ; # <http://www.w3.org/TR/turtle/#grammar-production-BLANK_NODE_LABEL>
 BOOL             : "true" | "false" ; # JSON boolean tokens
 INTEGER          : [+-]? [0-9] + ; # <http://www.w3.org/TR/turtle/#grammar-production-INTEGER>
 DECIMAL          : [+-]? [0-9]* '.' [0-9] + ; # <http://www.w3.org/TR/turtle/#grammar-production-DECIMAL>
 DOUBLE           : [+-]? ([0-9] + '.' [0-9]* EXPONENT | '.' [0-9]+ EXPONENT | [0-9]+ EXPONENT) ; # <http://www.w3.org/TR/turtle/#grammar-production-DOUBLE>
-SIMPLE_LITERAL   : '"' ([^"\\\r\n] | '\\"')* '"' ; # JSON string with '"' at beginning and end
-DATATYPE_LITERAL : SIMPLE_LITERAL "^^" IRI ; # JSON string with '"' at beginning, an unescaped '"' followed by '^^' and an IRI
-LANG_LITERAL     : SIMPLE_LITERAL LANGTAG ; # JSON string with '"' at beginning, an unescaped '"' followed by '@' and a Turtle LANGTAG                   
 STRING           : .* ;
 
 # Terminals use only in other terminals:
