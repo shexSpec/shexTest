@@ -53,20 +53,14 @@
           {
             "type": "TripleConstraint",
             "predicate": "http://a.example/a",
-            "valueExpr": {
-              "type": "ShapeRef",
-              "reference": "http://a.example.org/P"
-            },
+            "valueExpr": "http://a.example.org/P",
             "min": 0,
             "max": "*"
           },
           {
             "type": "TripleConstraint",
             "predicate": "http://a.example/a",
-            "valueExpr": {
-              "type": "ShapeRef",
-              "reference": "http://a.example.org/T"
-            }
+            "valueExpr": "http://a.example.org/T"
           }
         ]
       }
@@ -80,18 +74,12 @@
           {
             "type": "TripleConstraint",
             "predicate": "http://a.example/a",
-            "valueExpr": {
-              "type": "ShapeRef",
-              "reference": "http://a.example.org/P"
-            }
+            "valueExpr": "http://a.example.org/P"
           },
           {
             "type": "TripleConstraint",
             "predicate": "http://a.example/a",
-            "valueExpr": {
-              "type": "ShapeRef",
-              "reference": "http://a.example.org/T"
-            },
+            "valueExpr": "http://a.example.org/T",
             "min": 0,
             "max": "*"
           }
@@ -107,20 +95,14 @@
           {
             "type": "TripleConstraint",
             "predicate": "http://a.example/a",
-            "valueExpr": {
-              "type": "ShapeRef",
-              "reference": "http://a.example.org/P"
-            },
+            "valueExpr": "http://a.example.org/P",
             "min": 0,
             "max": "*"
           },
           {
             "type": "TripleConstraint",
             "predicate": "http://a.example/a",
-            "valueExpr": {
-              "type": "ShapeRef",
-              "reference": "http://a.example.org/T"
-            },
+            "valueExpr": "http://a.example.org/T",
             "min": 0,
             "max": "*"
           }
@@ -136,20 +118,14 @@
           {
             "type": "TripleConstraint",
             "predicate": "http://a.example/a",
-            "valueExpr": {
-              "type": "ShapeRef",
-              "reference": "http://a.example.org/P"
-            },
+            "valueExpr": "http://a.example.org/P",
             "min": 2,
             "max": 2
           },
           {
             "type": "TripleConstraint",
             "predicate": "http://a.example/a",
-            "valueExpr": {
-              "type": "ShapeRef",
-              "reference": "http://a.example.org/T"
-            },
+            "valueExpr": "http://a.example.org/T",
             "min": 2,
             "max": 2
           }

@@ -8,10 +8,7 @@
       "code": " initializer for ignored extension "
     }
   ],
-  "start": {
-    "type": "ShapeRef",
-    "reference": "http://ex.example/S1"
-  },
+  "start": "http://a.example/S1",
   "shapes": [
     {
       "label": "http://ex.example/S1",
@@ -73,10 +70,7 @@
                   "type": "NodeConstraint",
                   "nodeKind": "iri"
                 },
-                {
-                  "type": "ShapeRef",
-                  "reference": "http://ex.example/#UserShape"
-                }
+                "http://ex.example/#UserShape"
               ]
             }
           },
@@ -101,10 +95,7 @@
                       "type": "NodeConstraint",
                       "nodeKind": "nonliteral"
                     },
-                    {
-                      "type": "ShapeRef",
-                      "reference": "http://ex.example/#EmployeeShape"
-                    }
+                    "http://ex.example/#EmployeeShape"
                   ]
                 }
               },
@@ -130,10 +121,7 @@
           {
             "type": "TripleConstraint",
             "predicate": "http://ex.example/#related",
-            "valueExpr": {
-              "type": "ShapeRef",
-              "reference": "http://ex.example/S1"
-            },
+            "valueExpr": "http://a.example/S1",
             "min": 0,
             "max": "*"
           }
@@ -201,10 +189,7 @@
                   "type": "NodeConstraint",
                   "nodeKind": "bnode"
                 },
-                {
-                  "type": "ShapeRef",
-                  "reference": "_:IDshape"
-                }
+                "_:IDshape"
               ]
             }
           }
@@ -365,30 +350,21 @@
               {
                 "type": "TripleConstraint",
                 "predicate": "http://ex.example/#issues",
-                "valueExpr": {
-                  "type": "ShapeRef",
-                  "reference": "http://ex.example/S1"
-                },
+                "valueExpr": "http://ex.example/S1",
                 "min": 0,
                 "max": "*"
               },
               {
                 "type": "TripleConstraint",
                 "predicate": "http://ex.example/#seeAlso",
-                "valueExpr": {
-                  "type": "ShapeRef",
-                  "reference": "http://ex.example/S1"
-                },
+                "valueExpr": "http://ex.example/S1",
                 "min": 0,
                 "max": "*"
               },
               {
                 "type": "TripleConstraint",
                 "predicate": "http://ex.example/#says",
-                "valueExpr": {
-                  "type": "ShapeRef",
-                  "reference": "http://ex.example/#EmployeeShape"
-                },
+                "valueExpr": "http://ex.example/#EmployeeShape",
                 "min": 0,
                 "max": "*"
               }
@@ -401,10 +377,7 @@
       "label": "http://ex.example/#FooID",
       "type": "Shape",
       "closed": true,
-      "expression": {
-        "type": "Inclusion",
-        "include": "_:IDshape"
-      },
+      "expression": "_:IDshape",
       "extra": [
         "http://ex.example/#code",
         "http://ex.example/#system"

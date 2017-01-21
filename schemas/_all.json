@@ -13,10 +13,7 @@
       "code": " START2 "
     }
   ],
-  "start": {
-    "type": "ShapeRef",
-    "reference": "http://all.example/S3"
-  },
+  "start": "http://a.example/S3",
   "shapes": [
     {
       "label": "http://all.example/S1",
@@ -108,10 +105,7 @@
       "expression": {
         "type": "EachOf",
         "expressions": [
-          {
-            "type": "Inclusion",
-            "include": "http://all.example/S1"
-          },
+          "http://all.example/S1",
           {
             "type": "TripleConstraint",
             "predicate": "http://all.example/a"
@@ -158,10 +152,7 @@
                   {
                     "type": "TripleConstraint",
                     "predicate": "http://all.example/BaSe",
-                    "valueExpr": {
-                      "type": "ShapeRef",
-                      "reference": "http://all.example/S5"
-                    },
+                    "valueExpr": "http://a.example/S5",
                     "min": 2,
                     "max": 2
                   }
@@ -177,10 +168,7 @@
                       "type": "NodeConstraint",
                       "nodeKind": "nonliteral"
                     },
-                    {
-                      "type": "ShapeRef",
-                      "reference": "http://all.example/S5"
-                    }
+                    "http://a.example/S5"
                   ]
                 },
                 "min": 2,
@@ -199,10 +187,7 @@
                           "type": "NodeConstraint",
                           "nodeKind": "bnode"
                         },
-                        {
-                          "type": "ShapeRef",
-                          "reference": "http://all.example/S5"
-                        }
+                        "http://a.example/S5"
                       ]
                     },
                     {
@@ -213,10 +198,7 @@
                           "minlength": 2,
                           "maxlength": 4
                         },
-                        {
-                          "type": "ShapeRef",
-                          "reference": "http://all.example/S5"
-                        }
+                        "http://a.example/S5"
                       ]
                     }
                   ]
@@ -413,10 +395,7 @@
           {
             "type": "TripleConstraint",
             "predicate": "http://all.example/or",
-            "valueExpr": {
-              "type": "ShapeRef",
-              "reference": "http://all.example/vs1"
-            }
+            "valueExpr": "http://a.example/vs1"
           },
           {
             "type": "TripleConstraint",
@@ -472,24 +451,15 @@
       "expression": {
         "type": "EachOf",
         "expressions": [
-          {
-            "type": "Inclusion",
-            "include": "_:a·̀ͯ‿.⁀"
-          },
-          {
-            "type": "Inclusion",
-            "include": "http://all.example/S2"
-          }
+          "_:a·̀ͯ‿.⁀",
+          "http://all.example/S2"
         ]
       }
     },
     {
       "label": "_:AZazÀÖØöø˿ͰͽͿ῿‌‍⁰↏Ⰰ⿯、퟿豈﷏ﷰ�𐀀󯿽",
       "type": "Shape",
-      "expression": {
-        "type": "Inclusion",
-        "include": "_:a·̀ͯ‿.⁀"
-      }
+      "expression": "_:a·̀ͯ‿.⁀"
     }
   ]
 }

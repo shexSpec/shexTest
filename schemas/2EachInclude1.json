@@ -8,10 +8,7 @@
       "expression": {
         "type": "EachOf",
         "expressions": [
-          {
-            "type": "Inclusion",
-            "include": "http://a.example/S2"
-          },
+          "http://a.example/S2",
           {
             "type": "TripleConstraint",
             "predicate": "http://a.example/p1"

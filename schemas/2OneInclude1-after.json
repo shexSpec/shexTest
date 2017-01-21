@@ -12,10 +12,7 @@
             "type": "TripleConstraint",
             "predicate": "http://a.example/p1"
           },
-          {
-            "type": "Inclusion",
-            "include": "http://a.example/S2"
-          }
+          "http://a.example/S2"
         ]
       }
     },

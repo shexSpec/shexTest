@@ -15,10 +15,7 @@
           {
             "type": "TripleConstraint",
             "predicate": "http://a.example/p2",
-            "valueExpr": {
-              "type": "ShapeRef",
-              "reference": "http://a.example/S2"
-            },
+            "valueExpr": "http://a.example/S2",
             "min": 0,
             "max": 1
           }
@@ -31,10 +28,7 @@
       "expression": {
         "type": "TripleConstraint",
         "predicate": "http://a.example/p3",
-        "valueExpr": {
-          "type": "ShapeRef",
-          "reference": "http://a.example/S3"
-        }
+        "valueExpr": "http://a.example/S3"
       }
     },
     {
@@ -43,10 +37,7 @@
       "expression": {
         "type": "TripleConstraint",
         "predicate": "http://a.example/p4",
-        "valueExpr": {
-          "type": "ShapeRef",
-          "reference": "http://a.example/S1"
-        }
+        "valueExpr": "http://a.example/S2"
       }
     },
     {

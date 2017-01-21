@@ -11,10 +11,7 @@
           {
             "type": "TripleConstraint",
             "predicate": "http://a.example/a",
-            "valueExpr": {
-              "type": "ShapeRef",
-              "reference": "http://a.example.org/T1"
-            },
+            "valueExpr": "http://a.example.org/T1",
             "min": 0,
             "max": "*"
           },
@@ -24,10 +21,7 @@
               {
                 "type": "TripleConstraint",
                 "predicate": "http://a.example/a",
-                "valueExpr": {
-                  "type": "ShapeRef",
-                  "reference": "http://a.example.org/T2"
-                }
+                "valueExpr": "http://a.example.org/T2"
               },
               {
                 "type": "TripleConstraint",
@@ -52,10 +46,7 @@
       "expression": {
         "type": "TripleConstraint",
         "predicate": "http://a.example/b",
-        "valueExpr": {
-          "type": "ShapeRef",
-          "reference": "http://a.example.org/T3"
-        }
+        "valueExpr": "http://a.example.org/T3"
       }
     },
     {
@@ -64,10 +55,7 @@
       "expression": {
         "type": "TripleConstraint",
         "predicate": "http://a.example/b",
-        "valueExpr": {
-          "type": "ShapeRef",
-          "reference": "http://a.example.org/T4"
-        }
+        "valueExpr": "http://a.example.org/T4"
       }
     },
     {
