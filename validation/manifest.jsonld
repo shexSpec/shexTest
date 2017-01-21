@@ -1,13 +1,11 @@
 {
   "@context": [
-    {
-      "@base": "https://raw.githubusercontent.com/shexSpec/shexTest/master/validation/manifest"
-    },
-    "https://raw.githubusercontent.com/shexSpec/shexTest/master/context.jsonld"
+    {"@base": "https://raw.githubusercontent.com/shexSpec/shexTest/master/validation/manifest"},
+    "../context.jsonld"
   ],
   "@graph": [
     {
-      "@id": "https://raw.githubusercontent.com/shexSpec/shexTest/master/validation/manifest",
+      "@id": "",
       "@type": "mf:Manifest",
       "rdfs:comment": "ShEx validation tests",
       "entries": [
@@ -13034,7 +13032,7 @@
           ],
           "comment": "<S> IRI { <p1> . } on <s> in { <s1> <p1> <o1> }",
           "status": "mf:proposed",
-          "result": "1focus_dot_pass.val"
+          "result": "1focusIRI_dot_pass.val"
         },
         {
           "@id": "#1focusBNODE_dot_fail-iriFocusLabel-equal",
@@ -13090,7 +13088,7 @@
           ],
           "comment": "<S1> NONLITERAL { <p1> . } on { <s1> <p1> <o1> }",
           "status": "mf:proposed",
-          "result": "1focus_dot_pass.val"
+          "result": "1focusnonLiteral_dot_pass.val"
         },
         {
           "@id": "#focusdatatype_pass",
@@ -13332,7 +13330,7 @@
           ],
           "comment": "<S1> LENGTH 19 { <p1> . } on { <s1> <p1> <o1> }",
           "status": "mf:proposed",
-          "result": "1focus_dot_pass.val"
+          "result": "1focusLength_dot_pass-iri.val"
         },
         {
           "@id": "#1focusLength-dot_fail-iri-long",
@@ -13391,7 +13389,7 @@
           ],
           "comment": "<S1> LENGTH 19 { <p1> . } on { _:abcdefghijklmnopqrs <p1> <o1> }",
           "status": "mf:proposed",
-          "result": "1focusBNODE_dot_pass.val"
+          "result": "1focusLength_dot_pass-bnode.val"
         },
         {
           "@id": "#1focusLength-dot_fail-bnode-long",
@@ -13448,7 +13446,7 @@
           ],
           "comment": "<S1> MINLENGTH 19 { <p1> . } on { <s1> <p1> <o1> }",
           "status": "mf:proposed",
-          "result": "1focus_dot_pass.val"
+          "result": "1focusMinLength_dot_pass-iri.val"
         },
         {
           "@id": "#1focusMinLength-dot_pass-iri-long",
@@ -13507,7 +13505,7 @@
           ],
           "comment": "<S1> MINLENGTH 19 { <p1> . } on { _:abcdefghijklmnopqrs <p1> <o1> }",
           "status": "mf:proposed",
-          "result": "1focusBNODE_dot_pass.val"
+          "result": "1focusMinLength_dot_pass-bnode.val"
         },
         {
           "@id": "#1focusMinLength-dot_pass-bnode-long",
@@ -13544,7 +13542,7 @@
             "FocusConstraint",
             "LengthFacet"
           ],
-          "comment": "<S1> MINLENGTH 19 { <p1> . } on { <s> <p1> <o1> }",
+          "comment": "<S1> MAXLENGTH 19 { <p1> . } on { <s> <p1> <o1> }",
           "status": "mf:proposed",
           "result": "1s_pass.val"
         },
@@ -13563,9 +13561,9 @@
             "FocusConstraint",
             "LengthFacet"
           ],
-          "comment": "<S1> MINLENGTH 19 { <p1> . } on { <s1> <p1> <o1> }",
+          "comment": "<S1> MAXLENGTH 19 { <p1> . } on { <s1> <p1> <o1> }",
           "status": "mf:proposed",
-          "result": "1focus_dot_pass.val"
+          "result": "1focusMaxLength_dot_pass-iri.val"
         },
         {
           "@id": "#1focusMaxLength-dot_fail-iri-long",
@@ -13582,7 +13580,7 @@
             "FocusConstraint",
             "LengthFacet"
           ],
-          "comment": "<S1> MINLENGTH 19 { <p1> . } on { <s1a> <p1> <o1> }",
+          "comment": "<S1> MAXLENGTH 19 { <p1> . } on { <s1a> <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -13601,7 +13599,7 @@
             "LexicalBNode",
             "LengthFacet"
           ],
-          "comment": "<S1> MINLENGTH 19 { <p1> . } on { _:abcd <p1> <o1> }",
+          "comment": "<S1> MAXLENGTH 19 { <p1> . } on { _:abcd <p1> <o1> }",
           "status": "mf:proposed",
           "result": "1abcd_pass.val"
         },
@@ -13621,9 +13619,9 @@
             "LexicalBNode",
             "LengthFacet"
           ],
-          "comment": "<S1> MINLENGTH 19 { <p1> . } on { _:abcdefghijklmnopqrs <p1> <o1> }",
+          "comment": "<S1> MAXLENGTH 19 { <p1> . } on { _:abcdefghijklmnopqrs <p1> <o1> }",
           "status": "mf:proposed",
-          "result": "1focusBNODE_dot_pass.val"
+          "result": "1focusMaxLength_dot_pass-bnode.val"
         },
         {
           "@id": "#1focusMaxLength-dot_fail-bnode-long",
@@ -13640,7 +13638,7 @@
             "FocusConstraint",
             "LengthFacet"
           ],
-          "comment": "<S1> MINLENGTH 19 { <p1> . } on { <s1a> <p1> <o1> }",
+          "comment": "<S1> MAXLENGTH 19 { <p1> . } on { <s1a> <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -13693,7 +13691,7 @@
           ],
           "comment": "<S1> PATTERN 'http://a.example/s1' { <p1> } on { <s1> <p1> <o1> }",
           "status": "mf:proposed",
-          "result": "1focus_dot_pass.val"
+          "result": "1focusPattern_dot_pass.val"
         },
         {
           "@id": "#1focusPattern-dot_fail-iri-long",
@@ -13763,7 +13761,7 @@
           ],
           "comment": "<S1> PATTERN 'abcdefghijklmnopqrs' { <p1> } on { _:abcdefghijklmnopqrs <p1> <o1> }",
           "status": "mf:proposed",
-          "result": "1focusBNODE_dot_pass.val"
+          "result": "1focusPatternB_dot_pass.val"
         },
         {
           "@id": "#1focusPatternB-dot_pass-bnode-long",
@@ -13838,7 +13836,7 @@
           ],
           "comment": "<S> IRI LENGTH 19 { <p1> . } on <s> in { <s1> <p1> <o1> }",
           "status": "mf:proposed",
-          "result": "1focus_dot_pass.val"
+          "result": "1focusIRILength_dot_pass.val"
         },
         {
           "@id": "#1focusIRILength_dot_fail-long",
@@ -13913,7 +13911,7 @@
           ],
           "comment": "<S> BNODE LENGTH 19 { <p1> . } on <s> in { _:abcdefghijklmnopqrs <p1> <o1> }",
           "status": "mf:proposed",
-          "result": "1focusBNODE_dot_pass.val"
+          "result": "1focusBNODELength_dot_pass.val"
         },
         {
           "@id": "#1focusBNODELength_dot_fail-long",
@@ -13951,7 +13949,7 @@
           ],
           "comment": "<S1> NONLITERAL LENGTH 19 { <p1> . } on { <s1> <p1> <o1> }",
           "status": "mf:proposed",
-          "result": "1focus_dot_pass.val"
+          "result": "1focusnonLiteralLength_dot_pass.val"
         },
         {
           "@id": "#NOT1dotOR2dot_pass-empty",
