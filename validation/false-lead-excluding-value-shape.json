@@ -3,7 +3,7 @@
   "type": "Schema",
   "shapes": [
     {
-      "label": "http://a.example.org/S",
+      "id": "http://a.example.org/S",
       "type": "Shape",
       "expression": {
         "type": "EachOf",
@@ -41,7 +41,7 @@
       }
     },
     {
-      "label": "http://a.example.org/T1",
+      "id": "http://a.example.org/T1",
       "type": "Shape",
       "expression": {
         "type": "TripleConstraint",
@@ -50,7 +50,7 @@
       }
     },
     {
-      "label": "http://a.example.org/T2",
+      "id": "http://a.example.org/T2",
       "type": "Shape",
       "expression": {
         "type": "TripleConstraint",
@@ -59,7 +59,7 @@
       }
     },
     {
-      "label": "http://a.example.org/T3",
+      "id": "http://a.example.org/T3",
       "type": "Shape",
       "expression": {
         "type": "TripleConstraint",
@@ -67,7 +67,7 @@
       }
     },
     {
-      "label": "http://a.example.org/T4",
+      "id": "http://a.example.org/T4",
       "type": "Shape",
       "expression": {
         "type": "TripleConstraint",

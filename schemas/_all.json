@@ -16,7 +16,7 @@
   "start": "http://a.example/S3",
   "shapes": [
     {
-      "label": "http://all.example/S1",
+      "id": "http://all.example/S1",
       "type": "Shape",
       "expression": {
         "type": "EachOf",
@@ -42,7 +42,7 @@
       ]
     },
     {
-      "label": "http://all.example/S2",
+      "id": "http://all.example/S2",
       "type": "Shape",
       "expression": {
         "type": "EachOf",
@@ -68,12 +68,12 @@
       ]
     },
     {
-      "label": "http://all.example/IRI",
+      "id": "http://all.example/IRI",
       "type": "NodeConstraint",
       "nodeKind": "iri"
     },
     {
-      "label": "http://all.example/vs1",
+      "id": "http://all.example/vs1",
       "type": "ShapeAnd",
       "shapeExprs": [
         {
@@ -100,7 +100,7 @@
       ]
     },
     {
-      "label": "http://all.example/S3",
+      "id": "http://all.example/S3",
       "type": "Shape",
       "expression": {
         "type": "EachOf",
@@ -440,12 +440,12 @@
       ]
     },
     {
-      "label": "http://all.example/S5",
+      "id": "http://all.example/S5",
       "type": "NodeConstraint",
       "nodeKind": "iri"
     },
     {
-      "label": "_:a·̀ͯ‿.⁀",
+      "id": "_:a·̀ͯ‿.⁀",
       "type": "Shape",
       "closed": true,
       "expression": {
@@ -457,7 +457,7 @@
       }
     },
     {
-      "label": "_:AZazÀÖØöø˿ͰͽͿ῿‌‍⁰↏Ⰰ⿯、퟿豈﷏ﷰ�𐀀󯿽",
+      "id": "_:AZazÀÖØöø˿ͰͽͿ῿‌‍⁰↏Ⰰ⿯、퟿豈﷏ﷰ�𐀀󯿽",
       "type": "Shape",
       "expression": "_:a·̀ͯ‿.⁀"
     }

@@ -3,7 +3,7 @@
   "type": "Schema",
   "shapes": [
     {
-      "label": "http://a.example/S1",
+      "id": "http://a.example/S1",
       "type": "Shape",
       "expression": {
         "type": "TripleConstraint",
@@ -12,7 +12,7 @@
       }
     },
     {
-      "label": "_:AZazÀÖØöø˿ͰͽͿ῿‌‍⁰↏Ⰰ⿯、퟿豈﷏ﷰ�𐀀󯿽",
+      "id": "_:AZazÀÖØöø˿ͰͽͿ῿‌‍⁰↏Ⰰ⿯、퟿豈﷏ﷰ�𐀀󯿽",
       "type": "Shape",
       "expression": {
         "type": "TripleConstraint",

@@ -3,13 +3,13 @@
   "type": "Schema",
   "shapes": [
     {
-      "label": "http://a.example/vc1",
+      "id": "http://a.example/vc1",
       "type": "NodeConstraint",
       "nodeKind": "literal",
       "minlength": 5
     },
     {
-      "label": "http://a.example/S1",
+      "id": "http://a.example/S1",
       "type": "Shape",
       "expression": {
         "type": "TripleConstraint",

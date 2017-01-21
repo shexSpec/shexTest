@@ -3,7 +3,7 @@
   "type": "Schema",
   "shapes": [
     {
-      "label": "http://a.example/S1",
+      "id": "http://a.example/S1",
       "type": "Shape",
       "expression": {
         "type": "OneOf",
@@ -17,7 +17,7 @@
       }
     },
     {
-      "label": "http://a.example/S2",
+      "id": "http://a.example/S2",
       "type": "Shape",
       "expression": {
         "type": "TripleConstraint",

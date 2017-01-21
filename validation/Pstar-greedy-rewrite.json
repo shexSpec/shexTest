@@ -27,7 +27,7 @@
   },
   "shapes": [
     {
-      "label": "http://a.example.org/P",
+      "id": "http://a.example.org/P",
       "type": "NodeConstraint",
       "values": [
         "p",
@@ -36,7 +36,7 @@
       ]
     },
     {
-      "label": "http://a.example.org/T",
+      "id": "http://a.example.org/T",
       "type": "NodeConstraint",
       "values": [
         "t",
@@ -45,7 +45,7 @@
       ]
     },
     {
-      "label": "http://a.example.org/S1",
+      "id": "http://a.example.org/S1",
       "type": "Shape",
       "expression": {
         "type": "EachOf",
@@ -66,7 +66,7 @@
       }
     },
     {
-      "label": "http://a.example.org/S2",
+      "id": "http://a.example.org/S2",
       "type": "Shape",
       "expression": {
         "type": "EachOf",
@@ -87,7 +87,7 @@
       }
     },
     {
-      "label": "http://a.example.org/S3",
+      "id": "http://a.example.org/S3",
       "type": "Shape",
       "expression": {
         "type": "EachOf",
@@ -110,7 +110,7 @@
       }
     },
     {
-      "label": "http://a.example.org/S4",
+      "id": "http://a.example.org/S4",
       "type": "Shape",
       "expression": {
         "type": "EachOf",
