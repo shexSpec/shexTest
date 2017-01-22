@@ -11,7 +11,7 @@ start=@<Schema>
   sx:shapes @<shapeExpr>*
 }
 
-<shapeExpr> @<ShapeOr> OR @<ShapeAnd> OR @<ShapeNot> OR @<NodeConstraint> OR @<Shape> OR @<ShapeRef> OR @<ShapeExternal>
+<shapeExpr> @<ShapeOr> OR @<ShapeAnd> OR @<ShapeNot> OR @<NodeConstraint> OR @<Shape> OR NONLITERAL OR @<ShapeExternal>
 
 <ShapeOr> CLOSED {
   a [sx:ShapeOr] ;
@@ -48,11 +48,6 @@ start=@<Schema>
 
 <ShapeExternal> CLOSED {
   a [sx:ShapeExternal] ;
-}
-
-<ShapeRef> CLOSED {
-  a [sx:ShapeRef] ;
-  sx:reference IRI OR BNODE
 }
 
 <SemAct> CLOSED {
@@ -96,7 +91,7 @@ start=@<Schema>
   a [sx:Wildcard]
 }
 
-<tripleExpression> @<TripleConstraint> OR @<OneOf> OR @<EachOf> OR @<Inclusion>
+<tripleExpression> @<TripleConstraint> OR @<OneOf> OR @<EachOf> OR NONLITERAL
 
 <OneOf> CLOSED {
   a [sx:OneOf] ;
@@ -135,11 +130,6 @@ start=@<Schema>
   sx:valueExpr @<shapeExpr>? ;
   sx:semActs @<SemActList1Plus>? ;
   sx:annotation @<Annotation>*
-}
-
-<Inclusion> CLOSED {
-  a [sx:Inclusion] ;
-  sx:include NONLITERAL
 }
 
 <SemActList1Plus> CLOSED {
