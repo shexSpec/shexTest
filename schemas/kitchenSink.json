@@ -8,10 +8,10 @@
       "code": " initializer for ignored extension "
     }
   ],
-  "start": "http://a.example/S1",
+  "start": "http://ex.example/S1",
   "shapes": [
     {
-      "label": "http://ex.example/S1",
+      "id": "http://ex.example/S1",
       "type": "Shape",
       "expression": {
         "type": "EachOf",
@@ -121,7 +121,7 @@
           {
             "type": "TripleConstraint",
             "predicate": "http://ex.example/#related",
-            "valueExpr": "http://a.example/S1",
+            "valueExpr": "http://ex.example/S1",
             "min": 0,
             "max": "*"
           }
@@ -129,7 +129,7 @@
       }
     },
     {
-      "label": "http://ex.example/#UserShape",
+      "id": "http://ex.example/#UserShape",
       "type": "Shape",
       "expression": {
         "type": "EachOf",
@@ -197,7 +197,7 @@
       }
     },
     {
-      "label": "http://ex.example/#EmployeeShape",
+      "id": "http://ex.example/#EmployeeShape",
       "type": "Shape",
       "expression": {
         "type": "EachOf",
@@ -244,7 +244,7 @@
       }
     },
     {
-      "label": "_:IDshape",
+      "id": "_:IDshape",
       "type": "Shape",
       "expression": {
         "type": "OneOf",
@@ -374,7 +374,7 @@
       }
     },
     {
-      "label": "http://ex.example/#FooID",
+      "id": "http://ex.example/#FooID",
       "type": "Shape",
       "closed": true,
       "expression": "_:IDshape",

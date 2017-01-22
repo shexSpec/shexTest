@@ -3,7 +3,7 @@ PREFIX sx: <http://shex.io/ns/shex#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 [] a sx:Schema ;
-    sx:start [ a sx:ShapeRef ; sx:reference _:S1 ] ;
+    sx:start _:S1 ;
     sx:shapes _:S1 .
 
 

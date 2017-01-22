@@ -13,7 +13,7 @@
       "code": " START2 "
     }
   ],
-  "start": "http://a.example/S3",
+  "start": "http://all.example/S3",
   "shapes": [
     {
       "id": "http://all.example/S1",
@@ -152,7 +152,7 @@
                   {
                     "type": "TripleConstraint",
                     "predicate": "http://all.example/BaSe",
-                    "valueExpr": "http://a.example/S5",
+                    "valueExpr": "http://all.example/S5",
                     "min": 2,
                     "max": 2
                   }
@@ -168,7 +168,7 @@
                       "type": "NodeConstraint",
                       "nodeKind": "nonliteral"
                     },
-                    "http://a.example/S5"
+                    "http://all.example/S5"
                   ]
                 },
                 "min": 2,
@@ -187,7 +187,7 @@
                           "type": "NodeConstraint",
                           "nodeKind": "bnode"
                         },
-                        "http://a.example/S5"
+                        "http://all.example/S5"
                       ]
                     },
                     {
@@ -198,7 +198,7 @@
                           "minlength": 2,
                           "maxlength": 4
                         },
-                        "http://a.example/S5"
+                        "http://all.example/S5"
                       ]
                     }
                   ]
@@ -395,7 +395,7 @@
           {
             "type": "TripleConstraint",
             "predicate": "http://all.example/or",
-            "valueExpr": "http://a.example/vs1"
+            "valueExpr": "http://all.example/vs1"
           },
           {
             "type": "TripleConstraint",
