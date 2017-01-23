@@ -12147,7 +12147,7 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../validation/false-lead-excluding-value-shape.shex> ;
-      sht:shape <S> ;
+      sht:shape <http://a.example.org/S> ;
       sht:data <false-lead-excluding-value-shape.ttl> ;
       sht:focus <x>
     ] ;
@@ -12161,7 +12161,7 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../validation/nPlus1.shex> ;
-      sht:shape <S> ;
+      sht:shape <http://a.example.org/S> ;
       sht:data <nPlus1.ttl> ;
       sht:focus <x>
     ] ;
@@ -12175,7 +12175,7 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../validation/nPlus1.shex> ;
-      sht:shape <S> ;
+      sht:shape <http://a.example.org/S> ;
       sht:data <nPlus1.ttl> ;
       sht:focus <x>
     ]
@@ -12188,7 +12188,7 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../validation/nPlus1-greedy-rewrite.shex> ;
-      sht:shape <S> ;
+      sht:shape <http://a.example.org/S> ;
       sht:data <nPlus1.ttl> ;
       sht:focus <x>
     ] ;
@@ -12202,7 +12202,7 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../validation/skipped.shex> ;
-      sht:shape <S> ;
+      sht:shape <http://a.example.org/S> ;
       sht:data <skipped.ttl> ;
       sht:focus <x>
     ] ;
@@ -12216,7 +12216,7 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../validation/repeated-group.shex> ;
-      sht:shape <S> ;
+      sht:shape <http://a.example.org/S> ;
       sht:data <repeated-group.ttl> ;
       sht:focus <x>
     ] ;
@@ -12230,7 +12230,7 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../validation/simple-group.shex> ;
-      sht:shape <S> ;
+      sht:shape <http://a.example.org/S> ;
       sht:data <simple-group.ttl> ;
       sht:focus <s0>
     ] ;
@@ -12244,7 +12244,7 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../validation/Pstar.shex> ;
-      sht:shape <S1> ;
+      sht:shape <http://a.example.org/S1> ;
       sht:data <Pstar.ttl> ;
       sht:focus <n>
     ] ;
@@ -12258,7 +12258,7 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../validation/Pstar.shex> ;
-      sht:shape <S1> ;
+      sht:shape <http://a.example.org/S1> ;
       sht:data <Pstar.ttl> ;
       sht:focus <n>
     ] ;
@@ -12272,7 +12272,7 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../validation/Pstar.shex> ;
-      sht:shape <S2> ;
+      sht:shape <http://a.example.org/S2> ;
       sht:data <Pstar.ttl> ;
       sht:focus <n>
     ] ;
@@ -12286,7 +12286,7 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../validation/Pstar.shex> ;
-      sht:shape <S2> ;
+      sht:shape <http://a.example.org/S2> ;
       sht:data <Pstar.ttl> ;
       sht:focus <n>
     ]
@@ -12299,7 +12299,7 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../validation/Pstar-greedy-rewrite.shex> ;
-      sht:shape <S2> ;
+      sht:shape <http://a.example.org/S2> ;
       sht:data <Pstar.ttl> ;
       sht:focus <n>
     ] ;
@@ -12313,7 +12313,7 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../validation/Pstar.shex> ;
-      sht:shape <S3> ;
+      sht:shape <http://a.example.org/S3> ;
       sht:data <Pstar.ttl> ;
       sht:focus <n>
     ] ;
@@ -12327,7 +12327,7 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../validation/Pstar.shex> ;
-      sht:shape <S4> ;
+      sht:shape <http://a.example.org/S4> ;
       sht:data <Pstar.ttl> ;
       sht:focus <n>
     ] ;

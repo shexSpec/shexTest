@@ -14083,7 +14083,7 @@
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../validation/false-lead-excluding-value-shape.shex",
-            "shape": "S",
+            "shape": "http://a.example.org/S",
             "data": "false-lead-excluding-value-shape.ttl",
             "focus": "x"
           },
@@ -14101,7 +14101,7 @@
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../validation/nPlus1.shex",
-            "shape": "S",
+            "shape": "http://a.example.org/S",
             "data": "nPlus1.ttl",
             "focus": "x"
           },
@@ -14120,7 +14120,7 @@
           "@type": "sht:ValidationFailure",
           "action": {
             "schema": "../validation/nPlus1.shex",
-            "shape": "S",
+            "shape": "http://a.example.org/S",
             "data": "nPlus1.ttl",
             "focus": "x"
           },
@@ -14138,7 +14138,7 @@
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../validation/nPlus1-greedy-rewrite.shex",
-            "shape": "S",
+            "shape": "http://a.example.org/S",
             "data": "nPlus1.ttl",
             "focus": "x"
           },
@@ -14156,7 +14156,7 @@
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../validation/skipped.shex",
-            "shape": "S",
+            "shape": "http://a.example.org/S",
             "data": "skipped.ttl",
             "focus": "x"
           },
@@ -14174,7 +14174,7 @@
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../validation/repeated-group.shex",
-            "shape": "S",
+            "shape": "http://a.example.org/S",
             "data": "repeated-group.ttl",
             "focus": "x"
           },
@@ -14192,7 +14192,7 @@
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../validation/simple-group.shex",
-            "shape": "S",
+            "shape": "http://a.example.org/S",
             "data": "simple-group.ttl",
             "focus": "s0"
           },
@@ -14210,7 +14210,7 @@
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../validation/Pstar.shex",
-            "shape": "S1",
+            "shape": "http://a.example.org/S1",
             "data": "Pstar.ttl",
             "focus": "n"
           },
@@ -14228,7 +14228,7 @@
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../validation/Pstar.shex",
-            "shape": "S1",
+            "shape": "http://a.example.org/S1",
             "data": "Pstar.ttl",
             "focus": "n"
           },
@@ -14247,7 +14247,7 @@
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../validation/Pstar.shex",
-            "shape": "S2",
+            "shape": "http://a.example.org/S2",
             "data": "Pstar.ttl",
             "focus": "n"
           },
@@ -14266,7 +14266,7 @@
           "@type": "sht:ValidationFailure",
           "action": {
             "schema": "../validation/Pstar.shex",
-            "shape": "S2",
+            "shape": "http://a.example.org/S2",
             "data": "Pstar.ttl",
             "focus": "n"
           },
@@ -14284,7 +14284,7 @@
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../validation/Pstar-greedy-rewrite.shex",
-            "shape": "S2",
+            "shape": "http://a.example.org/S2",
             "data": "Pstar.ttl",
             "focus": "n"
           },
@@ -14303,7 +14303,7 @@
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../validation/Pstar.shex",
-            "shape": "S3",
+            "shape": "http://a.example.org/S3",
             "data": "Pstar.ttl",
             "focus": "n"
           },
@@ -14321,7 +14321,7 @@
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../validation/Pstar.shex",
-            "shape": "S4",
+            "shape": "http://a.example.org/S4",
             "data": "Pstar.ttl",
             "focus": "n"
           },
