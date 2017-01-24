@@ -3,6 +3,7 @@ PREFIX sx: <http://shex.io/ns/shex#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX prefix1: <http://all.example/>
 PREFIX : <http://all.example/>
+PREFIX a: <http://all.example/>
 
 [] a sx:Schema ;
   sx:start <http://all.example/S3> ;
@@ -29,25 +30,27 @@ PREFIX : <http://all.example/>
 
 <http://all.example/S1> a sx:Shape ;
   sx:extra <http://all.example/p1>, <http://all.example/p2>, <http://all.example/p3> ;
-  sx:expression [ a sx:EachOf ;
+  sx:expression <http://all.example/expr1> .
+<http://all.example/expr1> a sx:EachOf ;
     sx:expressions (
       [ a sx:TripleConstraint ; sx:predicate <http://all.example/p1> ]
       [ a sx:TripleConstraint ; sx:predicate <http://all.example/p2> ]
-      [ a sx:TripleConstraint ; sx:predicate <http://all.example/p3> ] ) ] .
+      [ a sx:TripleConstraint ; sx:predicate <http://all.example/p3> ] ) .
 
 <http://all.example/S2> a sx:Shape ;
   sx:extra <http://all.example/p1>, <http://all.example/p2>, <http://all.example/p3> ;
-  sx:expression [ a sx:EachOf ;
+  sx:expression prefix1:expr2 .
+prefix1:expr2 a sx:EachOf ;
     sx:expressions (
       [ a sx:TripleConstraint ; sx:predicate <http://all.example/p1-> ]
       [ a sx:TripleConstraint ; sx:predicate <http://all.example/p2> ]
-      [ a sx:TripleConstraint ; sx:predicate <http://all.example/p3> ] ) ] .
+      [ a sx:TripleConstraint ; sx:predicate <http://all.example/p3> ] ) .
 
 <http://all.example/S3> a sx:Shape ;
   sx:extra <http://all.example/a>, <http://all.example/prefix>, <http://all.example/base> ;
   sx:expression [ a sx:EachOf ;
     sx:expressions (
-      <http://all.example/S1>
+      a:expr1
       [ a sx:TripleConstraint ; sx:predicate <http://all.example/a> ]
       [ a sx:TripleConstraint ; sx:max 1 ; sx:min 0 ; sx:predicate <http://all.example/prefix> ;
         sx:valueExpr [ a sx:NodeConstraint ;
@@ -168,11 +171,12 @@ PREFIX : <http://all.example/>
     [ a sx:NodeConstraint ; sx:datatype <http://all.example/IRI> ] ) .
 
 _:a·̀ͯ‿.⁀ a sx:Shape ; sx:closed true ;
-  sx:expression [ a sx:EachOf ;
+  sx:expression _:a·̀ͯ‿.⁀expr .
+_:a·̀ͯ‿.⁀expr a sx:EachOf ;
     sx:expressions (
-      _:a·̀ͯ‿.⁀
-      <http://all.example/S2> )] .
+      _:a·̀ͯ‿.⁀expr
+      <http://all.example/expr2> ) .
 
 _:AZazÀÖØöø˿ͰͽͿ῿‌‍⁰↏Ⰰ⿯、퟿豈﷏ﷰ�𐀀󯿽 a sx:Shape ;
-  sx:expression _:a·̀ͯ‿.⁀ .
+  sx:expression _:a·̀ͯ‿.⁀expr .
 

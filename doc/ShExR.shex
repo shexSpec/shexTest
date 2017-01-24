@@ -11,7 +11,7 @@ start=@<Schema>
   sx:shapes @<shapeExpr>*
 }
 
-<shapeExpr> @<ShapeOr> OR @<ShapeAnd> OR @<ShapeNot> OR @<NodeConstraint> OR @<Shape> OR NONLITERAL OR @<ShapeExternal>
+<shapeExpr> @<ShapeOr> OR @<ShapeAnd> OR @<ShapeNot> OR @<NodeConstraint> OR @<Shape> OR @<ShapeExternal>
 
 <ShapeOr> CLOSED {
   a [sx:ShapeOr] ;
@@ -91,7 +91,7 @@ start=@<Schema>
   a [sx:Wildcard]
 }
 
-<tripleExpression> @<TripleConstraint> OR @<OneOf> OR @<EachOf> OR NONLITERAL
+<tripleExpression> @<TripleConstraint> OR @<OneOf> OR @<EachOf>
 
 <OneOf> CLOSED {
   a [sx:OneOf] ;

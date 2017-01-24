@@ -19,6 +19,7 @@
       "id": "http://all.example/S1",
       "type": "Shape",
       "expression": {
+        "id": "http://all.example/S1e",
         "type": "EachOf",
         "expressions": [
           {
@@ -45,6 +46,7 @@
       "id": "http://all.example/S2",
       "type": "Shape",
       "expression": {
+        "id": "http://all.example/S2e",
         "type": "EachOf",
         "expressions": [
           {
@@ -105,7 +107,7 @@
       "expression": {
         "type": "EachOf",
         "expressions": [
-          "http://all.example/S1",
+          "http://all.example/S1e",
           {
             "type": "TripleConstraint",
             "predicate": "http://all.example/a"
@@ -449,17 +451,18 @@
       "type": "Shape",
       "closed": true,
       "expression": {
+        "id": "_:a·̀ͯ‿.⁀e",
         "type": "EachOf",
         "expressions": [
-          "_:a·̀ͯ‿.⁀",
-          "http://all.example/S2"
+          "_:a·̀ͯ‿.⁀e",
+          "http://all.example/S2e"
         ]
       }
     },
     {
       "id": "_:AZazÀÖØöø˿ͰͽͿ῿‌‍⁰↏Ⰰ⿯、퟿豈﷏ﷰ�𐀀󯿽",
       "type": "Shape",
-      "expression": "_:a·̀ͯ‿.⁀"
+      "expression": "_:a·̀ͯ‿.⁀e"
     }
   ]
 }
