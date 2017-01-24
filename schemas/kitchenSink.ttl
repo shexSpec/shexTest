@@ -97,7 +97,9 @@ ex:EmployeeShape a sx:Shape ;
   ) ] .
 
 _:IDshape a sx:Shape ;
-    sx:expression [ a sx:OneOf ; sx:expressions (
+    sx:expression _:IDshapeE .
+
+_:IDshapeE a sx:OneOf ; sx:expressions (
       [ a sx:EachOf ; sx:expressions (
         [ a sx:TripleConstraint ; sx:predicate ex:code ;
           sx:valueExpr [ a sx:NodeConstraint ; sx:nodeKind sx:literal ] ]
@@ -133,9 +135,9 @@ _:IDshape a sx:Shape ;
           sx:min 0 ; sx:max "*" ;
           sx:valueExpr ex:EmployeeShape ]
       ) ]
-    ) ] .
+    ) .
 
 ex:FooID a sx:Shape ; sx:closed true ;
   sx:extra ex:code, ex:system ;
-  sx:expression _:IDshape .
+  sx:expression _:IDshapeE .
 

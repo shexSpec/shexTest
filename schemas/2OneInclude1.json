@@ -8,7 +8,7 @@
       "expression": {
         "type": "OneOf",
         "expressions": [
-          "http://a.example/S2",
+          "http://a.example/S2e",
           {
             "type": "TripleConstraint",
             "predicate": "http://a.example/p1"
@@ -20,6 +20,7 @@
       "id": "http://a.example/S2",
       "type": "Shape",
       "expression": {
+        "id": "http://a.example/S2e",
         "type": "TripleConstraint",
         "predicate": "http://a.example/p2"
       }

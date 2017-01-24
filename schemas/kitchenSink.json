@@ -247,6 +247,7 @@
       "id": "_:IDshape",
       "type": "Shape",
       "expression": {
+        "id": "_:IDshapeE",
         "type": "OneOf",
         "expressions": [
           {
@@ -377,7 +378,7 @@
       "id": "http://ex.example/#FooID",
       "type": "Shape",
       "closed": true,
-      "expression": "_:IDshape",
+      "expression": "_:IDshapeE",
       "extra": [
         "http://ex.example/#code",
         "http://ex.example/#system"

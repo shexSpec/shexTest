@@ -12,7 +12,7 @@
     <#1focusMissingRefdot>
     <#1focusRefANDSelfdot>
     <#includeNonSimpleShape>
-    <#includeShapeNotFound>
+    <#includeExpressionNotFound>
   ) .
 
 <#1MissingRef> a sht:NegativeStructure ;
@@ -39,9 +39,9 @@
   sx:shex <includeNonSimpleShape.shex> ;
   .
 
-<#includeShapeNotFound> a sht:NegativeStructure ;
-  mf:name "includeShapeNotFound" ;
+<#includeExpressionNotFound> a sht:NegativeStructure ;
+  mf:name "includeExpressionNotFound" ;
   mf:status mf:proposed ;
-  sx:shex <includeShapeNotFound.shex> ;
+  sx:shex <includeExpressionNotFound.shex> ;
   .
 

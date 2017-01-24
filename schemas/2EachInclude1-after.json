@@ -12,7 +12,7 @@
             "type": "TripleConstraint",
             "predicate": "http://a.example/p1"
           },
-          "http://a.example/S2"
+          "http://a.example/S2e"
         ]
       }
     },
@@ -20,6 +20,7 @@
       "id": "http://a.example/S2",
       "type": "Shape",
       "expression": {
+        "id": "http://a.example/S2e",
         "type": "TripleConstraint",
         "predicate": "http://a.example/p2"
       }
