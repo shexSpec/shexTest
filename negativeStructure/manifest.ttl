@@ -11,9 +11,11 @@
     <#1MissingRef>
     <#1focusMissingRefdot>
     <#1focusRefANDSelfdot>
+    <#includeSimpleShape>
     <#includeNonSimpleShape>
     <#includeExpressionNotFound>
-  ) .
+    <#1ShapeProductionCollision>
+) .
 
 <#1MissingRef> a sht:NegativeStructure ;
   mf:name "1MissingRef" ;
@@ -33,6 +35,12 @@
   sx:shex <1focusRefANDSelfdot.shex> ;
   .
 
+<#includeSimpleShape> a sht:NegativeStructure ;
+  mf:name "includeSimpleShape" ;
+  mf:status mf:proposed ;
+  sx:shex <includeSimpleShape.shex> ;
+  .
+
 <#includeNonSimpleShape> a sht:NegativeStructure ;
   mf:name "includeNonSimpleShape" ;
   mf:status mf:proposed ;
@@ -43,5 +51,11 @@
   mf:name "includeExpressionNotFound" ;
   mf:status mf:proposed ;
   sx:shex <includeExpressionNotFound.shex> ;
+  .
+
+<#1ShapeProductionCollision> a sht:NegativeStructure ;
+  mf:name "1ShapeProductionCollision" ;
+  mf:status mf:proposed ;
+  sx:shex <1ShapeProductionCollision.shex> ;
   .
 

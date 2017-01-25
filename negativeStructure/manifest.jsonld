@@ -40,6 +40,13 @@
           "shex": "includeNonSimpleShape.shex"
         },
         {
+          "@id": "#includeSimpleShape",
+          "@type": "sht:NegativeStructure",
+          "name": "includeSimpleShape",
+          "status": "mf:proposed",
+          "shex": "includeSimpleShape.shex"
+        },
+        {
           "@id": "#includeExpressionNotFound",
           "@type": "sht:NegativeStructure",
           "name": "includeExpressionNotFound",
