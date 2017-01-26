@@ -1,6 +1,8 @@
 {
   "@context": [
-    {"@base": "https://raw.githubusercontent.com/shexSpec/shexTest/master/validation/manifest"},
+    {
+      "@base": "https://raw.githubusercontent.com/shexSpec/shexTest/master/validation/manifest"
+    },
     "../context.jsonld"
   ],
   "@graph": [
@@ -14079,6 +14081,24 @@
           "status": "mf:proposed"
         },
         {
+          "@id": "#1dot-relative_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../validation/1dot-relative.shex",
+            "shape": "S1",
+            "data": "Is1_Ip1_Io1-relative.ttl",
+            "focus": "s1"
+          },
+          "extensionResults": [],
+          "name": "1dot-relative_pass",
+          "trait": [
+            "relativeIRI"
+          ],
+          "comment": "<S1> { <p1> [<o1>] } / { <s1> <p1> <o1>}",
+          "status": "mf:proposed",
+          "result": "1dot-relative_pass.val"
+        },
+        {
           "@id": "#false-lead-excluding-value-shape",
           "@type": "sht:ValidationTest",
           "action": {
@@ -14210,9 +14230,9 @@
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../validation/Pstar.shex",
-            "shape": "http://a.example.org/S1",
+            "shape": "http://a.example/base/S1",
             "data": "Pstar.ttl",
-            "focus": "n"
+            "focus": "http://a.example/base/n"
           },
           "extensionResults": [],
           "name": "PstarT",
@@ -14228,9 +14248,9 @@
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../validation/Pstar.shex",
-            "shape": "http://a.example.org/S1",
+            "shape": "http://a.example/base/S1",
             "data": "Pstar.ttl",
-            "focus": "n"
+            "focus": "http://a.example/base/n"
           },
           "extensionResults": [],
           "name": "PstarT-greedy",
@@ -14247,9 +14267,9 @@
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../validation/Pstar.shex",
-            "shape": "http://a.example.org/S2",
+            "shape": "http://a.example/base/S2",
             "data": "Pstar.ttl",
-            "focus": "n"
+            "focus": "http://a.example/base/n"
           },
           "extensionResults": [],
           "name": "PTstar",
@@ -14266,9 +14286,9 @@
           "@type": "sht:ValidationFailure",
           "action": {
             "schema": "../validation/Pstar.shex",
-            "shape": "http://a.example.org/S2",
+            "shape": "http://a.example/base/S2",
             "data": "Pstar.ttl",
-            "focus": "n"
+            "focus": "http://a.example/base/n"
           },
           "extensionResults": [],
           "name": "PTstar-greedy-fail",
@@ -14284,9 +14304,9 @@
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../validation/Pstar-greedy-rewrite.shex",
-            "shape": "http://a.example.org/S2",
+            "shape": "http://a.example/base/S2",
             "data": "Pstar.ttl",
-            "focus": "n"
+            "focus": "http://a.example/base/n"
           },
           "extensionResults": [],
           "name": "PTstar-greedy-rewrite",
@@ -14303,9 +14323,9 @@
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../validation/Pstar.shex",
-            "shape": "http://a.example.org/S3",
+            "shape": "http://a.example/base/S3",
             "data": "Pstar.ttl",
-            "focus": "n"
+            "focus": "http://a.example/base/n"
           },
           "extensionResults": [],
           "name": "PstarTstar",
@@ -14321,9 +14341,9 @@
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../validation/Pstar.shex",
-            "shape": "http://a.example.org/S4",
+            "shape": "http://a.example/base/S4",
             "data": "Pstar.ttl",
-            "focus": "n"
+            "focus": "http://a.example/base/n"
           },
           "extensionResults": [],
           "name": "P2T2",

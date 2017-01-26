@@ -922,6 +922,10 @@
         <#shapeExternRef_pass>
         <#shapeExternRef_fail>
 
+## relative IRIs
+
+        <#1dot-relative_pass>
+
 ## manual schemas
         <#false-lead-excluding-value-shape>
         <#nPlus1>
@@ -12137,7 +12141,23 @@
     ]
     .
 
-## } shape extern 
+## } shape extern
+## relative IRIs {
+<#1dot-relative_pass> a sht:ValidationTest ;
+    mf:name "1dot-relative_pass" ;
+    sht:trait sht:relativeIRI ;
+    rdfs:comment "<S1> { <p1> [<o1>] } / { <s1> <p1> <o1>}" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../validation/1dot-relative.shex> ;
+      sht:shape <S1> ;
+      sht:data <Is1_Ip1_Io1-relative.ttl> ;
+      sht:focus <s1>
+    ] ;
+    mf:result <1dot-relative_pass.val>
+    .
+
+## } relative IRIs
 ## manual schemas {
 
 <#false-lead-excluding-value-shape> a sht:ValidationTest ;
@@ -12244,9 +12264,9 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../validation/Pstar.shex> ;
-      sht:shape <http://a.example.org/S1> ;
+      sht:shape <http://a.example/base/S1> ;
       sht:data <Pstar.ttl> ;
-      sht:focus <n>
+      sht:focus <http://a.example/base/n>
     ] ;
     mf:result <PstarT.val>
     .
@@ -12258,9 +12278,9 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../validation/Pstar.shex> ;
-      sht:shape <http://a.example.org/S1> ;
+      sht:shape <http://a.example/base/S1> ;
       sht:data <Pstar.ttl> ;
-      sht:focus <n>
+      sht:focus <http://a.example/base/n>
     ] ;
     mf:result <PstarT.val>
     .
@@ -12272,9 +12292,9 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../validation/Pstar.shex> ;
-      sht:shape <http://a.example.org/S2> ;
+      sht:shape <http://a.example/base/S2> ;
       sht:data <Pstar.ttl> ;
-      sht:focus <n>
+      sht:focus <http://a.example/base/n>
     ] ;
     mf:result <PTstar.val>
     .
@@ -12286,9 +12306,9 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../validation/Pstar.shex> ;
-      sht:shape <http://a.example.org/S2> ;
+      sht:shape <http://a.example/base/S2> ;
       sht:data <Pstar.ttl> ;
-      sht:focus <n>
+      sht:focus <http://a.example/base/n>
     ]
     .
 
@@ -12299,9 +12319,9 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../validation/Pstar-greedy-rewrite.shex> ;
-      sht:shape <http://a.example.org/S2> ;
+      sht:shape <http://a.example/base/S2> ;
       sht:data <Pstar.ttl> ;
-      sht:focus <n>
+      sht:focus <http://a.example/base/n>
     ] ;
     mf:result <Pstar-greedy-rewrite.val>
     .
@@ -12313,9 +12333,9 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../validation/Pstar.shex> ;
-      sht:shape <http://a.example.org/S3> ;
+      sht:shape <http://a.example/base/S3> ;
       sht:data <Pstar.ttl> ;
-      sht:focus <n>
+      sht:focus <http://a.example/base/n>
     ] ;
     mf:result <PstarTstar.val>
     .
@@ -12327,9 +12347,9 @@
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../validation/Pstar.shex> ;
-      sht:shape <http://a.example.org/S4> ;
+      sht:shape <http://a.example/base/S4> ;
       sht:data <Pstar.ttl> ;
-      sht:focus <n>
+      sht:focus <http://a.example/base/n>
     ] ;
     mf:result <P2T2.val>
     .
