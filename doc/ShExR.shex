@@ -63,19 +63,21 @@ start=@<Schema>
 }
 
 # <xsFacet> @<stringFacet> OR @<numericFacet>
-<stringFacet> {
-    sx:length xsd:integer
-  | sx:minlength xsd:integer
-  | sx:maxlength xsd:integer
-  | sx:pattern xsd:string
-}
-<numericFacet> {
-    sx:mininclusive   @<numericLiteral>
-  | sx:minexclusive   @<numericLiteral>
-  | sx:maxinclusive   @<numericLiteral>
-  | sx:maxexclusive   @<numericLiteral>
-  | sx:totaldigits    xsd:integer
-  | sx:fractiondigits xsd:integer
+<facet_holder> { # hold labeled productions
+  $<stringFacet> (
+      sx:length xsd:integer
+    | sx:minlength xsd:integer
+    | sx:maxlength xsd:integer
+    | sx:pattern xsd:string
+  );
+  $<numericFacet> (
+      sx:mininclusive   @<numericLiteral>
+    | sx:minexclusive   @<numericLiteral>
+    | sx:maxinclusive   @<numericLiteral>
+    | sx:maxexclusive   @<numericLiteral>
+    | sx:totaldigits    xsd:integer
+    | sx:fractiondigits xsd:integer
+  )
 }
 <numericLiteral> xsd:integer OR xsd:decimal OR xsd:double
 
