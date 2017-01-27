@@ -8,11 +8,12 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 <http://a.example/S1> a sx:Shape ;
     sx:expression [ a sx:EachOf ;
-            sx:expressions ( [ a sx:Inclusion ;
-                        sx:include <http://a.example/S2> ] [ a sx:TripleConstraint ;
+            sx:expressions ( <http://a.example/S2e> [ a sx:TripleConstraint ;
                         sx:predicate <http://a.example/p1> ] ) ] .
 
 <http://a.example/S2> a sx:Shape ;
-    sx:expression [ a sx:TripleConstraint ;
-            sx:predicate <http://a.example/p2> ] .
+    sx:expression <http://a.example/S2e> .
+
+<http://a.example/S2e> a sx:TripleConstraint ;
+    sx:predicate <http://a.example/p2> .
 

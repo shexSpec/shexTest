@@ -11,7 +11,7 @@ start=@<Schema>
   sx:shapes @<shapeExpr>*
 }
 
-<shapeExpr> @<ShapeOr> OR @<ShapeAnd> OR @<ShapeNot> OR @<NodeConstraint> OR @<Shape> OR @<ShapeRef> OR @<ShapeExternal>
+<shapeExpr> @<ShapeOr> OR @<ShapeAnd> OR @<ShapeNot> OR @<NodeConstraint> OR @<Shape> OR @<ShapeExternal>
 
 <ShapeOr> CLOSED {
   a [sx:ShapeOr] ;
@@ -50,11 +50,6 @@ start=@<Schema>
   a [sx:ShapeExternal] ;
 }
 
-<ShapeRef> CLOSED {
-  a [sx:ShapeRef] ;
-  sx:reference IRI OR BNODE
-}
-
 <SemAct> CLOSED {
   a [sx:SemAct] ;
   sx:name IRI ;
@@ -68,19 +63,21 @@ start=@<Schema>
 }
 
 # <xsFacet> @<stringFacet> OR @<numericFacet>
-<stringFacet> {
-    sx:length xsd:integer
-  | sx:minlength xsd:integer
-  | sx:maxlength xsd:integer
-  | sx:pattern xsd:string
-}
-<numericFacet> {
-    sx:mininclusive   @<numericLiteral>
-  | sx:minexclusive   @<numericLiteral>
-  | sx:maxinclusive   @<numericLiteral>
-  | sx:maxexclusive   @<numericLiteral>
-  | sx:totaldigits    xsd:integer
-  | sx:fractiondigits xsd:integer
+<facet_holder> { # hold labeled productions
+  $<stringFacet> (
+      sx:length xsd:integer
+    | sx:minlength xsd:integer
+    | sx:maxlength xsd:integer
+    | sx:pattern xsd:string
+  );
+  $<numericFacet> (
+      sx:mininclusive   @<numericLiteral>
+    | sx:minexclusive   @<numericLiteral>
+    | sx:maxinclusive   @<numericLiteral>
+    | sx:maxexclusive   @<numericLiteral>
+    | sx:totaldigits    xsd:integer
+    | sx:fractiondigits xsd:integer
+  )
 }
 <numericLiteral> xsd:integer OR xsd:decimal OR xsd:double
 
@@ -96,7 +93,7 @@ start=@<Schema>
   a [sx:Wildcard]
 }
 
-<tripleExpression> @<TripleConstraint> OR @<OneOf> OR @<EachOf> OR @<Inclusion>
+<tripleExpression> @<TripleConstraint> OR @<OneOf> OR @<EachOf>
 
 <OneOf> CLOSED {
   a [sx:OneOf] ;
@@ -135,11 +132,6 @@ start=@<Schema>
   sx:valueExpr @<shapeExpr>? ;
   sx:semActs @<SemActList1Plus>? ;
   sx:annotation @<Annotation>*
-}
-
-<Inclusion> CLOSED {
-  a [sx:Inclusion] ;
-  sx:include NONLITERAL
 }
 
 <SemActList1Plus> CLOSED {

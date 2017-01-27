@@ -3,7 +3,7 @@
   "type": "Schema",
   "shapes": [
     {
-      "label": "http://a.example/S1",
+      "id": "http://a.example/S1",
       "type": "Shape",
       "expression": {
         "type": "TripleConstraint",
@@ -15,10 +15,7 @@
               "type": "NodeConstraint",
               "datatype": "http://a.example/dt1"
             },
-            {
-              "type": "ShapeRef",
-              "reference": "http://a.example/S1"
-            }
+            "http://a.example/S1"
           ]
         }
       }
