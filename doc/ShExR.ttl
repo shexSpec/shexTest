@@ -1,421 +1,315 @@
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix sx: <http://shex.io/ns/shex#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+BASE <http://shex.io/ns/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX sx: <http://shex.io/ns/shex#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 [] a sx:Schema ;
-    sx:shapes <http://shex.io/ns/Annotation>,
-        <http://shex.io/ns/EachOf>,
-        <http://shex.io/ns/NodeConstraint>,
-        <http://shex.io/ns/OneOf>,
-        <http://shex.io/ns/Schema>,
-        <http://shex.io/ns/SemAct>,
-        <http://shex.io/ns/SemActList1Plus>,
-        <http://shex.io/ns/Shape>,
-        <http://shex.io/ns/ShapeAnd>,
-        <http://shex.io/ns/ShapeExternal>,
-        <http://shex.io/ns/ShapeNot>,
-        <http://shex.io/ns/ShapeOr>,
-        <http://shex.io/ns/Stem>,
-        <http://shex.io/ns/StemRange>,
-        <http://shex.io/ns/TripleConstraint>,
-        <http://shex.io/ns/Wildcard>,
-        <http://shex.io/ns/facet_holder>,
-        <http://shex.io/ns/numericLiteral>,
-        <http://shex.io/ns/objectValue>,
-        <http://shex.io/ns/shapeExpr>,
-        <http://shex.io/ns/shapeExprList1Plus>,
-        <http://shex.io/ns/shapeExprList2Plus>,
-        <http://shex.io/ns/tripleExpression>,
-        <http://shex.io/ns/tripleExpressionList1Plus>,
-        <http://shex.io/ns/tripleExpressionList2Plus>,
-        <http://shex.io/ns/valueSetValue>,
-        <http://shex.io/ns/valueSetValueList1Plus> ;
-    sx:start <http://shex.io/ns/Schema> .
+  sx:start <Schema> ;
+  sx:shapes
+     <Annotation>,
+     <EachOf>,
+     <NodeConstraint>,
+     <OneOf>,
+     <Schema>,
+     <SemAct>,
+     <SemActList1Plus>,
+     <Shape>,
+     <ShapeAnd>,
+     <ShapeExternal>,
+     <ShapeNot>,
+     <ShapeOr>,
+     <Stem>,
+     <StemRange>,
+     <TripleConstraint>,
+     <Wildcard>,
+     <facet_holder>,
+     <numericLiteral>,
+     <objectValue>,
+     <shapeExpr>,
+     <shapeExprList1Plus>,
+     <shapeExprList2Plus>,
+     <tripleExpression>,
+     <tripleExpressionList1Plus>,
+     <tripleExpressionList2Plus>,
+     <valueSetValue>,
+     <valueSetValueList1Plus> .
 
-<http://shex.io/ns/Schema> a sx:Shape ;
-    sx:closed true ;
-    sx:expression [ a sx:EachOf ;
-            sx:expressions ( [ a sx:TripleConstraint ;
-                        sx:predicate rdf:type ;
-                        sx:valueExpr [ a sx:NodeConstraint ;
-                                sx:values ( sx:Schema ) ] ] [ a sx:TripleConstraint ;
-                        sx:max 1 ;
-                        sx:min 0 ;
-                        sx:predicate sx:startActs ;
-                        sx:valueExpr <http://shex.io/ns/SemActList1Plus> ] [ a sx:TripleConstraint ;
-                        sx:max 1 ;
-                        sx:min 0 ;
-                        sx:predicate sx:start ;
-                        sx:valueExpr <http://shex.io/ns/shapeExpr> ] [ a sx:TripleConstraint ;
-                        sx:max "*" ;
-                        sx:min 0 ;
-                        sx:predicate sx:shapes ;
-                        sx:valueExpr <http://shex.io/ns/shapeExpr> ] ) ] .
+<Schema> a sx:Shape ; sx:closed true ;
+  sx:expression
+    [ a sx:EachOf ; sx:expressions (
+      [ a sx:TripleConstraint ; sx:predicate rdf:type ;
+        sx:valueExpr [ a sx:NodeConstraint ; sx:values ( sx:Schema ) ] ]
+      [ a sx:TripleConstraint ; sx:predicate sx:startActs ; sx:min 0 ; sx:max 1 ;
+        sx:valueExpr <SemActList1Plus> ]
+      [ a sx:TripleConstraint ; sx:predicate sx:start ; sx:min 0 ; sx:max 1 ;
+        sx:valueExpr <shapeExpr> ]
+      [ a sx:TripleConstraint ; sx:predicate sx:shapes ; sx:min 0 ; sx:max "*" ;
+        sx:valueExpr <shapeExpr> ] ) ] .
 
-<http://shex.io/ns/shapeExpr> a sx:ShapeOr ;
-    sx:shapeExprs ( <http://shex.io/ns/ShapeOr> <http://shex.io/ns/ShapeAnd> <http://shex.io/ns/ShapeNot> <http://shex.io/ns/NodeConstraint> <http://shex.io/ns/Shape> <http://shex.io/ns/ShapeExternal> ) .
+<shapeExpr> a sx:ShapeOr ;
+  sx:shapeExprs ( <ShapeOr> <ShapeAnd> <ShapeNot> <NodeConstraint> <Shape> <ShapeExternal> ) .
 
-<http://shex.io/ns/ShapeOr> a sx:Shape ;
-    sx:closed true ;
-    sx:expression [ a sx:EachOf ;
-            sx:expressions ( [ a sx:TripleConstraint ;
-                        sx:predicate rdf:type ;
-                        sx:valueExpr [ a sx:NodeConstraint ;
-                                sx:values ( sx:ShapeOr ) ] ] [ a sx:TripleConstraint ;
-                        sx:predicate sx:shapeExprs ;
-                        sx:valueExpr <http://shex.io/ns/shapeExprList2Plus> ] ) ] .
+<ShapeOr> a sx:Shape ; sx:closed true ;
+  sx:expression
+    [ a sx:EachOf ; sx:expressions (
+      [ a sx:TripleConstraint ; sx:predicate rdf:type ;
+        sx:valueExpr [ a sx:NodeConstraint ; sx:values ( sx:ShapeOr ) ] ]
+      [ a sx:TripleConstraint ; sx:predicate sx:shapeExprs ;
+        sx:valueExpr <shapeExprList2Plus> ] ) ] .
 
-<http://shex.io/ns/ShapeAnd> a sx:Shape ;
-    sx:closed true ;
-    sx:expression [ a sx:EachOf ;
-            sx:expressions ( [ a sx:TripleConstraint ;
-                        sx:predicate rdf:type ;
-                        sx:valueExpr [ a sx:NodeConstraint ;
-                                sx:values ( sx:ShapeAnd ) ] ] [ a sx:TripleConstraint ;
-                        sx:predicate sx:shapeExprs ;
-                        sx:valueExpr <http://shex.io/ns/shapeExprList2Plus> ] ) ] .
+<ShapeAnd> a sx:Shape ; sx:closed true ;
+  sx:expression
+    [ a sx:EachOf ; sx:expressions (
+      [ a sx:TripleConstraint ; sx:predicate rdf:type ;
+        sx:valueExpr [ a sx:NodeConstraint ; sx:values ( sx:ShapeAnd ) ] ]
+      [ a sx:TripleConstraint ; sx:predicate sx:shapeExprs ;
+        sx:valueExpr <shapeExprList2Plus> ] ) ] .
 
-<http://shex.io/ns/ShapeNot> a sx:Shape ;
-    sx:closed true ;
-    sx:expression [ a sx:EachOf ;
-            sx:expressions ( [ a sx:TripleConstraint ;
-                        sx:predicate rdf:type ;
-                        sx:valueExpr [ a sx:NodeConstraint ;
-                                sx:values ( sx:ShapeNot ) ] ] [ a sx:TripleConstraint ;
-                        sx:predicate sx:shapeExpr ;
-                        sx:valueExpr <http://shex.io/ns/shapeExpr> ] ) ] .
+<ShapeNot> a sx:Shape ; sx:closed true ;
+  sx:expression
+    [ a sx:EachOf ; sx:expressions (
+      [ a sx:TripleConstraint ; sx:predicate rdf:type ;
+        sx:valueExpr [ a sx:NodeConstraint ; sx:values ( sx:ShapeNot ) ] ]
+      [ a sx:TripleConstraint ; sx:predicate sx:shapeExpr ;
+        sx:valueExpr <shapeExpr> ] ) ] .
 
-<http://shex.io/ns/NodeConstraint> a sx:Shape ;
-    sx:closed true ;
-    sx:expression [ a sx:EachOf ;
-            sx:expressions ( [ a sx:TripleConstraint ;
-                        sx:predicate rdf:type ;
-                        sx:valueExpr [ a sx:NodeConstraint ;
-                                sx:values ( sx:NodeConstraint ) ] ] [ a sx:OneOf ;
-                        sx:expressions ( [ a sx:TripleConstraint ;
-                                    sx:predicate sx:nodeKind ;
-                                    sx:valueExpr [ a sx:NodeConstraint ;
-                                            sx:values ( sx:iri sx:bnode sx:literal sx:nonliteral ) ] ] [ a sx:TripleConstraint ;
-                                    sx:predicate sx:datatype ;
-                                    sx:valueExpr [ a sx:NodeConstraint ;
-                                            sx:nodeKind sx:iri ] ] <http://shex.io/ns/stringFacet> <http://shex.io/ns/numericFacet> [ a sx:TripleConstraint ;
-                                    sx:predicate sx:values ;
-                                    sx:valueExpr <http://shex.io/ns/valueSetValueList1Plus> ] ) ;
-                        sx:max "*" ;
-                        sx:min 1 ] ) ] .
+<NodeConstraint> a sx:Shape ; sx:closed true ;
+  sx:expression
+    [ a sx:EachOf ; sx:expressions (
+      [ a sx:TripleConstraint ; sx:predicate rdf:type ;
+        sx:valueExpr [ a sx:NodeConstraint ; sx:values ( sx:NodeConstraint ) ] ]
+      [ a sx:OneOf ; sx:expressions (
+        [ a sx:TripleConstraint ; sx:predicate sx:nodeKind ;
+          sx:valueExpr
+	    [ a sx:NodeConstraint ; sx:values ( sx:iri sx:bnode sx:literal sx:nonliteral ) ] ]
+	[ a sx:TripleConstraint ; sx:predicate sx:datatype ;
+          sx:valueExpr [ a sx:NodeConstraint ; sx:nodeKind sx:iri ] ]
+	<stringFacet>
+	<numericFacet>
+	[ a sx:TripleConstraint ; sx:predicate sx:values ; sx:min 1 ; sx:max "*" ;
+          sx:valueExpr <valueSetValueList1Plus> ] ) ] ) ] .
 
-<http://shex.io/ns/Shape> a sx:Shape ;
-    sx:closed true ;
-    sx:expression [ a sx:EachOf ;
-            sx:expressions ( [ a sx:TripleConstraint ;
-                        sx:predicate rdf:type ;
-                        sx:valueExpr [ a sx:NodeConstraint ;
-                                sx:values ( sx:Shape ) ] ] [ a sx:TripleConstraint ;
-                        sx:max 1 ;
-                        sx:min 0 ;
-                        sx:predicate sx:closed ;
-                        sx:valueExpr [ a sx:NodeConstraint ;
-                                sx:values ( true false ) ] ] [ a sx:TripleConstraint ;
-                        sx:max "*" ;
-                        sx:min 0 ;
-                        sx:predicate sx:extra ;
-                        sx:valueExpr [ a sx:NodeConstraint ;
-                                sx:nodeKind sx:iri ] ] [ a sx:TripleConstraint ;
-                        sx:max 1 ;
-                        sx:min 0 ;
-                        sx:predicate sx:expression ;
-                        sx:valueExpr <http://shex.io/ns/tripleExpression> ] [ a sx:TripleConstraint ;
-                        sx:max 1 ;
-                        sx:min 0 ;
-                        sx:predicate sx:semActs ;
-                        sx:valueExpr <http://shex.io/ns/SemActList1Plus> ] ) ] .
+<Shape> a sx:Shape ; sx:closed true ;
+  sx:expression
+    [ a sx:EachOf ; sx:expressions (
+      [ a sx:TripleConstraint ; sx:predicate rdf:type ;
+        sx:valueExpr [ a sx:NodeConstraint ; sx:values ( sx:Shape ) ] ]
+      [ a sx:TripleConstraint ; sx:predicate sx:closed ; sx:min 0 ; sx:max 1 ;
+        sx:valueExpr [ a sx:NodeConstraint ; sx:values ( true false ) ] ]
+      [ a sx:TripleConstraint ; sx:predicate sx:extra ; sx:min 0 ; sx:max "*" ;
+        sx:valueExpr [ a sx:NodeConstraint ; sx:nodeKind sx:iri ] ]
+      [ a sx:TripleConstraint ; sx:predicate sx:expression ; sx:min 0 ; sx:max 1 ;
+        sx:valueExpr <tripleExpression> ]
+      [ a sx:TripleConstraint ; sx:predicate sx:semActs ; sx:min 0 ; sx:max 1 ;
+        sx:valueExpr <SemActList1Plus> ] ) ] .
 
-<http://shex.io/ns/ShapeExternal> a sx:Shape ;
-    sx:closed true ;
-    sx:expression [ a sx:TripleConstraint ;
-            sx:predicate rdf:type ;
-            sx:valueExpr [ a sx:NodeConstraint ;
-                    sx:values ( sx:ShapeExternal ) ] ] .
+<ShapeExternal> a sx:Shape ; sx:closed true ;
+  sx:expression
+    [ a sx:TripleConstraint ; sx:predicate rdf:type ;
+      sx:valueExpr [ a sx:NodeConstraint ; sx:values ( sx:ShapeExternal ) ] ] .
 
-<http://shex.io/ns/SemAct> a sx:Shape ;
-    sx:closed true ;
-    sx:expression [ a sx:EachOf ;
-            sx:expressions ( [ a sx:TripleConstraint ;
-                        sx:predicate rdf:type ;
-                        sx:valueExpr [ a sx:NodeConstraint ;
-                                sx:values ( sx:SemAct ) ] ] [ a sx:TripleConstraint ;
-                        sx:predicate sx:name ;
-                        sx:valueExpr [ a sx:NodeConstraint ;
-                                sx:nodeKind sx:iri ] ] [ a sx:TripleConstraint ;
-                        sx:max 1 ;
-                        sx:min 0 ;
-                        sx:predicate sx:code ;
-                        sx:valueExpr [ a sx:NodeConstraint ;
-                                sx:datatype xsd:string ] ] ) ] .
+<SemAct> a sx:Shape ; sx:closed true ;
+  sx:expression
+    [ a sx:EachOf ; sx:expressions (
+      [ a sx:TripleConstraint ; sx:predicate rdf:type ;
+        sx:valueExpr [ a sx:NodeConstraint ; sx:values ( sx:SemAct ) ] ]
+      [ a sx:TripleConstraint ; sx:predicate sx:name ;
+        sx:valueExpr [ a sx:NodeConstraint ; sx:nodeKind sx:iri ] ]
+      [ a sx:TripleConstraint ; sx:predicate sx:code ; sx:min 0 ; sx:max 1 ;
+        sx:valueExpr [ a sx:NodeConstraint ; sx:datatype xsd:string ] ] ) ] .
 
-<http://shex.io/ns/Annotation> a sx:Shape ;
-    sx:closed true ;
-    sx:expression [ a sx:EachOf ;
-            sx:expressions ( [ a sx:TripleConstraint ;
-                        sx:predicate rdf:type ;
-                        sx:valueExpr [ a sx:NodeConstraint ;
-                                sx:values ( sx:Annotation ) ] ] [ a sx:TripleConstraint ;
-                        sx:predicate sx:predicate ;
-                        sx:valueExpr [ a sx:NodeConstraint ;
-                                sx:nodeKind sx:iri ] ] [ a sx:TripleConstraint ;
-                        sx:predicate sx:object ;
-                        sx:valueExpr <http://shex.io/ns/objectValue> ] ) ] .
+<Annotation> a sx:Shape ; sx:closed true ;
+  sx:expression
+    [ a sx:EachOf ; sx:expressions (
+      [ a sx:TripleConstraint ; sx:predicate rdf:type ;
+        sx:valueExpr [ a sx:NodeConstraint ; sx:values ( sx:Annotation ) ] ]
+      [ a sx:TripleConstraint ; sx:predicate sx:predicate ;
+        sx:valueExpr [ a sx:NodeConstraint ; sx:nodeKind sx:iri ] ]
+      [ a sx:TripleConstraint ; sx:predicate sx:object ; sx:valueExpr <objectValue> ] ) ] .
 
-<http://shex.io/ns/facet_holder> a sx:Shape ;
-    sx:expression [ a sx:EachOf ;
-            sx:expressions ( <http://shex.io/ns/stringFacet> <http://shex.io/ns/numericFacet> ) ] .
+<facet_holder> a sx:Shape ;
+  sx:expression [ a sx:EachOf ; sx:expressions ( <stringFacet> <numericFacet> ) ] .
 
-<http://shex.io/ns/stringFacet> a sx:OneOf ;
-    sx:expressions ( [ a sx:TripleConstraint ;
-                sx:predicate sx:length ;
-                sx:valueExpr [ a sx:NodeConstraint ;
-                        sx:datatype xsd:integer ] ] [ a sx:TripleConstraint ;
-                sx:predicate sx:minlength ;
-                sx:valueExpr [ a sx:NodeConstraint ;
-                        sx:datatype xsd:integer ] ] [ a sx:TripleConstraint ;
-                sx:predicate sx:maxlength ;
-                sx:valueExpr [ a sx:NodeConstraint ;
-                        sx:datatype xsd:integer ] ] [ a sx:TripleConstraint ;
-                sx:predicate sx:pattern ;
-                sx:valueExpr [ a sx:NodeConstraint ;
-                        sx:datatype xsd:string ] ] ) .
+<stringFacet> a sx:OneOf ;
+  sx:expressions (
+    [ a sx:TripleConstraint ; sx:predicate sx:length ;
+      sx:valueExpr [ a sx:NodeConstraint ; sx:datatype xsd:integer ] ]
+    [ a sx:TripleConstraint ; sx:predicate sx:minlength ;
+      sx:valueExpr [ a sx:NodeConstraint ; sx:datatype xsd:integer ] ]
+    [ a sx:TripleConstraint ; sx:predicate sx:maxlength ;
+      sx:valueExpr [ a sx:NodeConstraint ; sx:datatype xsd:integer ] ]
+    [ a sx:TripleConstraint ; sx:predicate sx:pattern ;
+      sx:valueExpr [ a sx:NodeConstraint ; sx:datatype xsd:string ] ] ) .
 
-<http://shex.io/ns/numericFacet> a sx:OneOf ;
-    sx:expressions ( [ a sx:TripleConstraint ;
-                sx:predicate sx:mininclusive ;
-                sx:valueExpr <http://shex.io/ns/numericLiteral> ] [ a sx:TripleConstraint ;
-                sx:predicate sx:minexclusive ;
-                sx:valueExpr <http://shex.io/ns/numericLiteral> ] [ a sx:TripleConstraint ;
-                sx:predicate sx:maxinclusive ;
-                sx:valueExpr <http://shex.io/ns/numericLiteral> ] [ a sx:TripleConstraint ;
-                sx:predicate sx:maxexclusive ;
-                sx:valueExpr <http://shex.io/ns/numericLiteral> ] [ a sx:TripleConstraint ;
-                sx:predicate sx:totaldigits ;
-                sx:valueExpr [ a sx:NodeConstraint ;
-                        sx:datatype xsd:integer ] ] [ a sx:TripleConstraint ;
-                sx:predicate sx:fractiondigits ;
-                sx:valueExpr [ a sx:NodeConstraint ;
-                        sx:datatype xsd:integer ] ] ) .
+<numericFacet> a sx:OneOf ;
+  sx:expressions (
+    [ a sx:TripleConstraint ; sx:predicate sx:mininclusive ;
+      sx:valueExpr <numericLiteral> ]
+    [ a sx:TripleConstraint ; sx:predicate sx:minexclusive ;
+      sx:valueExpr <numericLiteral> ]
+    [ a sx:TripleConstraint ; sx:predicate sx:maxinclusive ;
+      sx:valueExpr <numericLiteral> ]
+    [ a sx:TripleConstraint ; sx:predicate sx:maxexclusive ;
+      sx:valueExpr <numericLiteral> ]
+    [ a sx:TripleConstraint ; sx:predicate sx:totaldigits ;
+      sx:valueExpr [ a sx:NodeConstraint ; sx:datatype xsd:integer ] ]
+    [ a sx:TripleConstraint ; sx:predicate sx:fractiondigits ;
+      sx:valueExpr [ a sx:NodeConstraint ; sx:datatype xsd:integer ] ] ) .
 
-<http://shex.io/ns/numericLiteral> a sx:ShapeOr ;
-    sx:shapeExprs ( [ a sx:NodeConstraint ;
-                sx:datatype xsd:integer ] [ a sx:NodeConstraint ;
-                sx:datatype xsd:decimal ] [ a sx:NodeConstraint ;
-                sx:datatype xsd:double ] ) .
+<numericLiteral> a sx:ShapeOr ;
+  sx:shapeExprs (
+    [ a sx:NodeConstraint ; sx:datatype xsd:integer ]
+    [ a sx:NodeConstraint ; sx:datatype xsd:decimal ]
+    [ a sx:NodeConstraint ; sx:datatype xsd:double ] ) .
 
-<http://shex.io/ns/valueSetValue> a sx:ShapeOr ;
-    sx:shapeExprs ( <http://shex.io/ns/objectValue> <http://shex.io/ns/Stem> <http://shex.io/ns/StemRange> ) .
-<http://shex.io/ns/objectValue> a sx:ShapeOr ;
-    sx:shapeExprs ( [ a sx:NodeConstraint ;
-                sx:nodeKind sx:iri ] [ a sx:NodeConstraint ;
-                sx:nodeKind sx:literal ] ) .
-<http://shex.io/ns/Stem> a sx:Shape ;
-    sx:closed true ;
-    sx:expression [ a sx:EachOf ;
-            sx:expressions ( [ a sx:TripleConstraint ;
-                        sx:predicate rdf:type ;
-                        sx:valueExpr [ a sx:NodeConstraint ;
-                                sx:values ( sx:Stem ) ] ] [ a sx:TripleConstraint ;
-                        sx:predicate sx:stem ;
-                        sx:valueExpr [ a sx:NodeConstraint ;
-                                sx:datatype xsd:anyUri ] ] ) ] .
-<http://shex.io/ns/StemRange> a sx:Shape ;
-    sx:closed true ;
-    sx:expression [ a sx:EachOf ;
-            sx:expressions ( [ a sx:TripleConstraint ;
-                        sx:predicate rdf:type ;
-                        sx:valueExpr [ a sx:NodeConstraint ;
-                                sx:values ( sx:StemRange ) ] ] [ a sx:TripleConstraint ;
-                        sx:predicate sx:stem ;
-                        sx:valueExpr [ a sx:ShapeOr ;
-                                sx:shapeExprs ( [ a sx:NodeConstraint ;
-                                            sx:datatype xsd:anyUri ] <http://shex.io/ns/Wildcard> ) ] ] [ a sx:TripleConstraint ;
-                        sx:max "*" ;
-                        sx:min 0 ;
-                        sx:predicate sx:exclusion ;
-                        sx:valueExpr [ a sx:ShapeOr ;
-                                sx:shapeExprs ( <http://shex.io/ns/objectValue> <http://shex.io/ns/Stem> ) ] ] ) ] .
-<http://shex.io/ns/Wildcard> a sx:ShapeAnd ;
-    sx:shapeExprs ( [ a sx:NodeConstraint ;
-                sx:nodeKind sx:bnode ] [ a sx:Shape ;
-                sx:closed true ;
-                sx:expression [ a sx:TripleConstraint ;
-                        sx:predicate rdf:type ;
-                        sx:valueExpr [ a sx:NodeConstraint ;
-                                sx:values ( sx:Wildcard ) ] ] ] ) .
+<valueSetValue> a sx:ShapeOr ;
+  sx:shapeExprs ( <objectValue> <Stem> <StemRange> ) .
+<objectValue> a sx:ShapeOr ;
+  sx:shapeExprs (
+    [ a sx:NodeConstraint ; sx:nodeKind sx:iri ]
+    [ a sx:NodeConstraint ; sx:nodeKind sx:literal ] ) .
+<Stem> a sx:Shape ; sx:closed true ;
+  sx:expression
+    [ a sx:EachOf ; sx:expressions (
+      [ a sx:TripleConstraint ; sx:predicate rdf:type ;
+        sx:valueExpr [ a sx:NodeConstraint ; sx:values ( sx:Stem ) ] ]
+      [ a sx:TripleConstraint ; sx:predicate sx:stem ;
+        sx:valueExpr [ a sx:NodeConstraint ; sx:datatype xsd:anyUri ] ] ) ] .
+<StemRange> a sx:Shape ; sx:closed true ;
+  sx:expression
+    [ a sx:EachOf ; sx:expressions (
+      [ a sx:TripleConstraint ; sx:predicate rdf:type ;
+        sx:valueExpr [ a sx:NodeConstraint ; sx:values ( sx:StemRange ) ] ]
+      [ a sx:TripleConstraint ; sx:predicate sx:stem ;
+        sx:valueExpr [ a sx:ShapeOr ; sx:shapeExprs (
+	  [ a sx:NodeConstraint ; sx:datatype xsd:anyUri ]
+          <Wildcard> ) ] ]
+      [ a sx:TripleConstraint ; sx:predicate sx:exclusion ; sx:min 0 ; sx:max "*" ;
+        sx:valueExpr [ a sx:ShapeOr ; sx:shapeExprs (
+	  <objectValue>
+	  <Stem> ) ] ] ) ] .
+<Wildcard> a sx:ShapeAnd ;
+  sx:shapeExprs (
+    [ a sx:NodeConstraint ; sx:nodeKind sx:bnode ]
+    [ a sx:Shape ; sx:closed true ;
+      sx:expression
+        [ a sx:TripleConstraint ; sx:predicate rdf:type ;
+          sx:valueExpr [ a sx:NodeConstraint ; sx:values ( sx:Wildcard ) ] ] ] ) .
 
-<http://shex.io/ns/tripleExpression> a sx:ShapeOr ;
-    sx:shapeExprs ( <http://shex.io/ns/TripleConstraint> <http://shex.io/ns/OneOf> <http://shex.io/ns/EachOf> ) .
+<tripleExpression> a sx:ShapeOr ;
+  sx:shapeExprs ( <TripleConstraint> <OneOf> <EachOf> ) .
 
-<http://shex.io/ns/OneOf> a sx:Shape ;
-    sx:closed true ;
-    sx:expression [ a sx:EachOf ;
-            sx:expressions ( [ a sx:TripleConstraint ;
-                        sx:predicate rdf:type ;
-                        sx:valueExpr [ a sx:NodeConstraint ;
-                                sx:values ( sx:OneOf ) ] ] [ a sx:TripleConstraint ;
-                        sx:max 1 ;
-                        sx:min 0 ;
-                        sx:predicate sx:min ;
-                        sx:valueExpr [ a sx:NodeConstraint ;
-                                sx:datatype xsd:integer ] ] [ a sx:TripleConstraint ;
-                        sx:max 1 ;
-                        sx:min 0 ;
-                        sx:predicate sx:max ;
-                        sx:valueExpr [ a sx:ShapeOr ;
-                                sx:shapeExprs ( [ a sx:NodeConstraint ;
-                                            sx:datatype xsd:integer ] [ a sx:NodeConstraint ;
-                                            sx:values ( "*" ) ] ) ] ] [ a sx:TripleConstraint ;
-                        sx:predicate sx:expressions ;
-                        sx:valueExpr <http://shex.io/ns/tripleExpressionList2Plus> ] [ a sx:TripleConstraint ;
-                        sx:max 1 ;
-                        sx:min 0 ;
-                        sx:predicate sx:semActs ;
-                        sx:valueExpr <http://shex.io/ns/SemActList1Plus> ] [ a sx:TripleConstraint ;
-                        sx:max "*" ;
-                        sx:min 0 ;
-                        sx:predicate sx:annotation ;
-                        sx:valueExpr <http://shex.io/ns/Annotation> ] ) ] .
+<OneOf> a sx:Shape ; sx:closed true ;
+  sx:expression
+    [ a sx:EachOf ; sx:expressions (
+      [ a sx:TripleConstraint ; sx:predicate rdf:type ;
+        sx:valueExpr [ a sx:NodeConstraint ; sx:values ( sx:OneOf ) ] ]
+      [ a sx:TripleConstraint ; sx:predicate sx:min ; sx:min 0 ; sx:max 1 ;
+        sx:valueExpr [ a sx:NodeConstraint ; sx:datatype xsd:integer ] ]
+      [ a sx:TripleConstraint ; sx:predicate sx:max ; sx:min 0 ; sx:max 1 ;
+        sx:valueExpr
+	  [ a sx:ShapeOr ; sx:shapeExprs (
+	    [ a sx:NodeConstraint ; sx:datatype xsd:integer ]
+	    [ a sx:NodeConstraint ; sx:values ( "*" ) ] ) ] ]
+     [ a sx:TripleConstraint ; sx:predicate sx:expressions ;
+       sx:valueExpr <tripleExpressionList2Plus> ]
+     [ a sx:TripleConstraint ; sx:predicate sx:semActs ; sx:min 0 ; sx:max 1 ;
+       sx:valueExpr <SemActList1Plus> ]
+     [ a sx:TripleConstraint ; sx:predicate sx:annotation ; sx:min 0 ; sx:max "*" ;
+       sx:valueExpr <Annotation> ] ) ] .
 
-<http://shex.io/ns/EachOf> a sx:Shape ;
-    sx:closed true ;
-    sx:expression [ a sx:EachOf ;
-            sx:expressions ( [ a sx:TripleConstraint ;
-                        sx:predicate rdf:type ;
-                        sx:valueExpr [ a sx:NodeConstraint ;
-                                sx:values ( sx:EachOf ) ] ] [ a sx:TripleConstraint ;
-                        sx:max 1 ;
-                        sx:min 0 ;
-                        sx:predicate sx:min ;
-                        sx:valueExpr [ a sx:NodeConstraint ;
-                                sx:datatype xsd:integer ] ] [ a sx:TripleConstraint ;
-                        sx:max 1 ;
-                        sx:min 0 ;
-                        sx:predicate sx:max ;
-                        sx:valueExpr [ a sx:ShapeOr ;
-                                sx:shapeExprs ( [ a sx:NodeConstraint ;
-                                            sx:datatype xsd:integer ] [ a sx:NodeConstraint ;
-                                            sx:values ( "*" ) ] ) ] ] [ a sx:TripleConstraint ;
-                        sx:predicate sx:expressions ;
-                        sx:valueExpr <http://shex.io/ns/tripleExpressionList2Plus> ] [ a sx:TripleConstraint ;
-                        sx:max 1 ;
-                        sx:min 0 ;
-                        sx:predicate sx:semActs ;
-                        sx:valueExpr <http://shex.io/ns/SemActList1Plus> ] [ a sx:TripleConstraint ;
-                        sx:max "*" ;
-                        sx:min 0 ;
-                        sx:predicate sx:annotation ;
-                        sx:valueExpr <http://shex.io/ns/Annotation> ] ) ] .
+<EachOf> a sx:Shape ; sx:closed true ;
+  sx:expression
+    [ a sx:EachOf ; sx:expressions (
+      [ a sx:TripleConstraint ; sx:predicate rdf:type ;
+        sx:valueExpr
+	  [ a sx:NodeConstraint ; sx:values ( sx:EachOf ) ] ]
+      [ a sx:TripleConstraint ; sx:predicate sx:min ; sx:min 0 ; sx:max 1 ;
+        sx:valueExpr
+	  [ a sx:NodeConstraint ; sx:datatype xsd:integer ] ]
+      [ a sx:TripleConstraint ; sx:predicate sx:max ; sx:min 0 ; sx:max 1 ;
+        sx:valueExpr
+	  [ a sx:ShapeOr ; sx:shapeExprs (
+	    [ a sx:NodeConstraint ; sx:datatype xsd:integer ]
+            [ a sx:NodeConstraint ; sx:values ( "*" ) ] ) ] ]
+      [ a sx:TripleConstraint ; sx:predicate sx:expressions ;
+        sx:valueExpr <tripleExpressionList2Plus> ]
+      [ a sx:TripleConstraint ; sx:predicate sx:semActs ; sx:min 0 ; sx:max 1 ;
+        sx:valueExpr <SemActList1Plus> ]
+      [ a sx:TripleConstraint ; sx:predicate sx:annotation ; sx:min 0 ; sx:max "*" ;
+        sx:valueExpr <Annotation> ] ) ] .
 
-<http://shex.io/ns/tripleExpressionList2Plus> a sx:Shape ;
-    sx:closed true ;
-    sx:expression [ a sx:EachOf ;
-            sx:expressions ( [ a sx:TripleConstraint ;
-                        sx:predicate rdf:first ;
-                        sx:valueExpr <http://shex.io/ns/tripleExpression> ] [ a sx:TripleConstraint ;
-                        sx:predicate rdf:rest ;
-                        sx:valueExpr <http://shex.io/ns/tripleExpressionList1Plus> ] ) ] .
+<tripleExpressionList2Plus> a sx:Shape ; sx:closed true ;
+  sx:expression
+    [ a sx:EachOf ; sx:expressions (
+      [ a sx:TripleConstraint ; sx:predicate rdf:first ;
+        sx:valueExpr <tripleExpression> ]
+      [ a sx:TripleConstraint ; sx:predicate rdf:rest ;
+        sx:valueExpr <tripleExpressionList1Plus> ] ) ] .
 
-<http://shex.io/ns/tripleExpressionList1Plus> a sx:Shape ;
-    sx:closed true ;
-    sx:expression [ a sx:EachOf ;
-            sx:expressions ( [ a sx:TripleConstraint ;
-                        sx:predicate rdf:first ;
-                        sx:valueExpr <http://shex.io/ns/tripleExpression> ] [ a sx:TripleConstraint ;
-                        sx:predicate rdf:rest ;
-                        sx:valueExpr [ a sx:ShapeOr ;
-                                sx:shapeExprs ( [ a sx:NodeConstraint ;
-                                            sx:values ( rdf:nil ) ] <http://shex.io/ns/tripleExpressionList1Plus> ) ] ] ) ] .
+<tripleExpressionList1Plus> a sx:Shape ; sx:closed true ;
+  sx:expression
+    [ a sx:EachOf ; sx:expressions (
+      [ a sx:TripleConstraint ; sx:predicate rdf:first ;
+        sx:valueExpr <tripleExpression> ]
+      [ a sx:TripleConstraint ; sx:predicate rdf:rest ;
+        sx:valueExpr
+	  [ a sx:ShapeOr ; sx:shapeExprs (
+	    [ a sx:NodeConstraint ; sx:values ( rdf:nil ) ]
+	    <tripleExpressionList1Plus> ) ] ] ) ] .
 
-<http://shex.io/ns/TripleConstraint> a sx:Shape ;
-    sx:closed true ;
-    sx:expression [ a sx:EachOf ;
-            sx:expressions ( [ a sx:TripleConstraint ;
-                        sx:predicate rdf:type ;
-                        sx:valueExpr [ a sx:NodeConstraint ;
-                                sx:values ( sx:TripleConstraint ) ] ] [ a sx:TripleConstraint ;
-                        sx:max 1 ;
-                        sx:min 0 ;
-                        sx:predicate sx:inverse ;
-                        sx:valueExpr [ a sx:NodeConstraint ;
-                                sx:values ( true false ) ] ] [ a sx:TripleConstraint ;
-                        sx:max 1 ;
-                        sx:min 0 ;
-                        sx:predicate sx:negated ;
-                        sx:valueExpr [ a sx:NodeConstraint ;
-                                sx:values ( true false ) ] ] [ a sx:TripleConstraint ;
-                        sx:max 1 ;
-                        sx:min 0 ;
-                        sx:predicate sx:min ;
-                        sx:valueExpr [ a sx:NodeConstraint ;
-                                sx:datatype xsd:integer ] ] [ a sx:TripleConstraint ;
-                        sx:max 1 ;
-                        sx:min 0 ;
-                        sx:predicate sx:max ;
-                        sx:valueExpr [ a sx:ShapeOr ;
-                                sx:shapeExprs ( [ a sx:NodeConstraint ;
-                                            sx:datatype xsd:integer ] [ a sx:NodeConstraint ;
-                                            sx:values ( "*" ) ] ) ] ] [ a sx:TripleConstraint ;
-                        sx:predicate sx:predicate ;
-                        sx:valueExpr [ a sx:NodeConstraint ;
-                                sx:nodeKind sx:iri ] ] [ a sx:TripleConstraint ;
-                        sx:max 1 ;
-                        sx:min 0 ;
-                        sx:predicate sx:valueExpr ;
-                        sx:valueExpr <http://shex.io/ns/shapeExpr> ] [ a sx:TripleConstraint ;
-                        sx:max 1 ;
-                        sx:min 0 ;
-                        sx:predicate sx:semActs ;
-                        sx:valueExpr <http://shex.io/ns/SemActList1Plus> ] [ a sx:TripleConstraint ;
-                        sx:max "*" ;
-                        sx:min 0 ;
-                        sx:predicate sx:annotation ;
-                        sx:valueExpr <http://shex.io/ns/Annotation> ] ) ] .
+<TripleConstraint> a sx:Shape ; sx:closed true ;
+  sx:expression
+    [ a sx:EachOf ; sx:expressions (
+      [ a sx:TripleConstraint ; sx:predicate rdf:type ;
+        sx:valueExpr [ a sx:NodeConstraint ; sx:values ( sx:TripleConstraint ) ] ]
+      [ a sx:TripleConstraint ; sx:predicate sx:inverse ; sx:min 0 ; sx:max 1 ;
+        sx:valueExpr [ a sx:NodeConstraint ; sx:values ( true false ) ] ]
+      [ a sx:TripleConstraint ; sx:predicate sx:negated ; sx:min 0 ; sx:max 1 ;
+        sx:valueExpr [ a sx:NodeConstraint ; sx:values ( true false ) ] ]
+      [ a sx:TripleConstraint ; sx:predicate sx:min ; sx:min 0 ; sx:max 1 ;
+        sx:valueExpr [ a sx:NodeConstraint ; sx:datatype xsd:integer ] ]
+      [ a sx:TripleConstraint ; sx:predicate sx:max ; sx:min 0 ; sx:max 1 ;
+        sx:valueExpr [ a sx:ShapeOr ; sx:shapeExprs (
+         [ a sx:NodeConstraint ; sx:datatype xsd:integer ]
+	 [ a sx:NodeConstraint ; sx:values ( "*" ) ] ) ] ]
+      [ a sx:TripleConstraint ; sx:predicate sx:predicate ;
+        sx:valueExpr [ a sx:NodeConstraint ; sx:nodeKind sx:iri ] ]
+      [ a sx:TripleConstraint ; sx:predicate sx:valueExpr ; sx:min 0 ; sx:max 1 ;
+        sx:valueExpr <shapeExpr> ]
+      [ a sx:TripleConstraint ; sx:predicate sx:semActs ; sx:min 0 ; sx:max 1 ;
+        sx:valueExpr <SemActList1Plus> ]
+      [ a sx:TripleConstraint ; sx:predicate sx:annotation ; sx:min 0 ; sx:max "*" ;
+        sx:valueExpr <Annotation> ] ) ] .
 
-<http://shex.io/ns/SemActList1Plus> a sx:Shape ;
-    sx:closed true ;
-    sx:expression [ a sx:EachOf ;
-            sx:expressions ( [ a sx:TripleConstraint ;
-                        sx:predicate rdf:first ;
-                        sx:valueExpr <http://shex.io/ns/SemAct> ] [ a sx:TripleConstraint ;
-                        sx:predicate rdf:rest ;
-                        sx:valueExpr [ a sx:ShapeOr ;
-                                sx:shapeExprs ( [ a sx:NodeConstraint ;
-                                            sx:values ( rdf:nil ) ] <http://shex.io/ns/SemActList1Plus> ) ] ] ) ] .
+<SemActList1Plus> a sx:Shape ; sx:closed true ;
+  sx:expression
+    [ a sx:EachOf ; sx:expressions (
+      [ a sx:TripleConstraint ; sx:predicate rdf:first ; sx:valueExpr <SemAct> ]
+      [ a sx:TripleConstraint ; sx:predicate rdf:rest ;
+        sx:valueExpr [ a sx:ShapeOr ; sx:shapeExprs (
+	  [ a sx:NodeConstraint ; sx:values ( rdf:nil ) ]
+	  <SemActList1Plus> ) ] ] ) ] .
 
-<http://shex.io/ns/shapeExprList2Plus> a sx:Shape ;
-    sx:closed true ;
-    sx:expression [ a sx:EachOf ;
-            sx:expressions ( [ a sx:TripleConstraint ;
-                        sx:predicate rdf:first ;
-                        sx:valueExpr <http://shex.io/ns/shapeExpr> ] [ a sx:TripleConstraint ;
-                        sx:predicate rdf:rest ;
-                        sx:valueExpr <http://shex.io/ns/shapeExprList1Plus> ] ) ] .
+<shapeExprList2Plus> a sx:Shape ; sx:closed true ;
+  sx:expression [ a sx:EachOf ; sx:expressions (
+    [ a sx:TripleConstraint ; sx:predicate rdf:first ; sx:valueExpr <shapeExpr> ]
+    [ a sx:TripleConstraint ; sx:predicate rdf:rest ; sx:valueExpr <shapeExprList1Plus> ] ) ] .
 
-<http://shex.io/ns/shapeExprList1Plus> a sx:Shape ;
-    sx:closed true ;
-    sx:expression [ a sx:EachOf ;
-            sx:expressions ( [ a sx:TripleConstraint ;
-                        sx:predicate rdf:first ;
-                        sx:valueExpr <http://shex.io/ns/shapeExpr> ] [ a sx:TripleConstraint ;
-                        sx:predicate rdf:rest ;
-                        sx:valueExpr [ a sx:ShapeOr ;
-                                sx:shapeExprs ( [ a sx:NodeConstraint ;
-                                            sx:values ( rdf:nil ) ] <http://shex.io/ns/shapeExprList1Plus> ) ] ] ) ] .
+<shapeExprList1Plus> a sx:Shape ; sx:closed true ;
+  sx:expression
+    [ a sx:EachOf ; sx:expressions (
+      [ a sx:TripleConstraint ; sx:predicate rdf:first ; sx:valueExpr <shapeExpr> ]
+      [ a sx:TripleConstraint ; sx:predicate rdf:rest ;
+        sx:valueExpr [ a sx:ShapeOr ; sx:shapeExprs (
+	  [ a sx:NodeConstraint ; sx:values ( rdf:nil ) ] <shapeExprList1Plus> ) ] ] ) ] .
 
-<http://shex.io/ns/valueSetValueList1Plus> a sx:Shape ;
-    sx:closed true ;
-    sx:expression [ a sx:EachOf ;
-            sx:expressions ( [ a sx:TripleConstraint ;
-                        sx:predicate rdf:first ;
-                        sx:valueExpr <http://shex.io/ns/valueSetValue> ] [ a sx:TripleConstraint ;
-                        sx:predicate rdf:rest ;
-                        sx:valueExpr [ a sx:ShapeOr ;
-                                sx:shapeExprs ( [ a sx:NodeConstraint ;
-                                            sx:values ( rdf:nil ) ] <http://shex.io/ns/valueSetValueList1Plus> ) ] ] ) ] .
+<valueSetValueList1Plus> a sx:Shape ; sx:closed true ;
+  sx:expression
+    [ a sx:EachOf ; sx:expressions (
+      [ a sx:TripleConstraint ; sx:predicate rdf:first ; sx:valueExpr <valueSetValue> ]
+       [ a sx:TripleConstraint ; sx:predicate rdf:rest ;
+         sx:valueExpr [ a sx:ShapeOr ; sx:shapeExprs (
+	   [ a sx:NodeConstraint ; sx:values ( rdf:nil ) ]
+           <valueSetValueList1Plus> ) ] ] ) ] .
 
