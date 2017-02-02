@@ -331,6 +331,10 @@
         <#1datatypeRef1>
         <#1card2blank>
         <#1focusnonLiteralLength-nonLiteralLength>
+        <#1Include1>
+        <#1Include1-after>
+        <#startSelfRefIRIREF>
+        <#startSelfRefbnode>
         <#_all>
         <#kitchenSink>
     ) .
@@ -2778,6 +2782,38 @@
 #     sx:json <1dotUnlabeledCode1.json> ;
 #     sx:ttl <1dotUnlabeledCode1.ttl> ;
 #     .
+
+<#1Include1> a sht:RepresentationTest ;
+    mf:name "1Include1" ;
+    mf:status mf:proposed ;
+    sx:shex <1Include1.shex> ;
+    sx:json <1Include1.json> ;
+    sx:ttl <1Include1.ttl> ;
+    .
+
+<#1Include1-after> a sht:RepresentationTest ;
+    mf:name "1Include1-after" ;
+    mf:status mf:proposed ;
+    sx:shex <1Include1-after.shex> ;
+    sx:json <1Include1-after.json> ;
+    sx:ttl <1Include1-after.ttl> ;
+    .
+
+<#startSelfRefIRIREF> a sht:RepresentationTest ;
+    mf:name "startSelfRefIRIREF" ;
+    mf:status mf:proposed ;
+    sx:shex <startSelfRefIRIREF.shex> ;
+    sx:json <startSelfRefIRIREF.json> ;
+    sx:ttl <startSelfRefIRIREF.ttl> ;
+    .
+
+<#startSelfRefbnode> a sht:RepresentationTest ;
+    mf:name "startSelfRefbnode" ;
+    mf:status mf:proposed ;
+    sx:shex <startSelfRefbnode.shex> ;
+    sx:json <startSelfRefbnode.json> ;
+    sx:ttl <startSelfRefbnode.ttl> ;
+    .
 
 <#_all> a sht:RepresentationTest ;
     mf:name "_all" ;
