@@ -30,8 +30,8 @@ PREFIX a: <http://all.example/>
 
 <http://all.example/S1> a sx:Shape ;
   sx:extra <http://all.example/p1>, <http://all.example/p2>, <http://all.example/p3> ;
-  sx:expression <http://all.example/expr1> .
-<http://all.example/expr1> a sx:EachOf ;
+  sx:expression <http://all.example/S1e> .
+<http://all.example/S1e> a sx:EachOf ;
     sx:expressions (
       [ a sx:TripleConstraint ; sx:predicate <http://all.example/p1> ]
       [ a sx:TripleConstraint ; sx:predicate <http://all.example/p2> ]
@@ -39,8 +39,8 @@ PREFIX a: <http://all.example/>
 
 <http://all.example/S2> a sx:Shape ;
   sx:extra <http://all.example/p1>, <http://all.example/p2>, <http://all.example/p3> ;
-  sx:expression prefix1:expr2 .
-prefix1:expr2 a sx:EachOf ;
+  sx:expression prefix1:S2e .
+prefix1:S2e a sx:EachOf ;
     sx:expressions (
       [ a sx:TripleConstraint ; sx:predicate <http://all.example/p1-> ]
       [ a sx:TripleConstraint ; sx:predicate <http://all.example/p2> ]
@@ -50,7 +50,7 @@ prefix1:expr2 a sx:EachOf ;
   sx:extra <http://all.example/a>, <http://all.example/prefix>, <http://all.example/base> ;
   sx:expression [ a sx:EachOf ;
     sx:expressions (
-      a:expr1
+      a:S1e
       [ a sx:TripleConstraint ; sx:predicate <http://all.example/a> ]
       [ a sx:TripleConstraint ; sx:max 1 ; sx:min 0 ; sx:predicate <http://all.example/prefix> ;
         sx:valueExpr [ a sx:NodeConstraint ;
@@ -171,12 +171,12 @@ prefix1:expr2 a sx:EachOf ;
     [ a sx:NodeConstraint ; sx:datatype <http://all.example/IRI> ] ) .
 
 _:a·̀ͯ‿.⁀ a sx:Shape ; sx:closed true ;
-  sx:expression _:a·̀ͯ‿.⁀expr .
-_:a·̀ͯ‿.⁀expr a sx:EachOf ;
+  sx:expression _:a·̀ͯ‿.⁀e .
+_:a·̀ͯ‿.⁀e a sx:EachOf ;
     sx:expressions (
-      _:a·̀ͯ‿.⁀expr
-      <http://all.example/expr2> ) .
+      _:a·̀ͯ‿.⁀e
+      <http://all.example/S2e> ) .
 
 _:AZazÀÖØöø˿ͰͽͿ῿‌‍⁰↏Ⰰ⿯、퟿豈﷏ﷰ�𐀀󯿽 a sx:Shape ;
-  sx:expression _:a·̀ͯ‿.⁀expr .
+  sx:expression _:a·̀ͯ‿.⁀e .
 
