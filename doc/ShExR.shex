@@ -29,13 +29,11 @@ start=@<Schema>
 }
 
 <NodeConstraint> CLOSED {
-  a [sx:NodeConstraint] ;
-  (  sx:nodeKind [sx:iri sx:bnode sx:literal sx:nonliteral]
-   | sx:datatype IRI
-#   | &<xsFacet>
-   | &<stringFacet>
-   | &<numericFacet>
-   | sx:values @<valueSetValueList1Plus>)+
+  a [sx:NodeConstraint] ; 
+  sx:nodeKind [sx:iri sx:bnode sx:literal sx:nonliteral]?;
+  sx:datatype IRI ? ;
+  &<xsFacet>*  ;
+  sx:values @<valueSetValueList1Plus>? 
 }
 
 <Shape> CLOSED {
