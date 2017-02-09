@@ -32,7 +32,7 @@ start=@<Schema>
   a [sx:NodeConstraint] ; 
   sx:nodeKind [sx:iri sx:bnode sx:literal sx:nonliteral]?;
   sx:datatype IRI ? ;
-  &<xsFacet>*  ;
+  &<xsFacets>  ;
   sx:values @<valueSetValueList1Plus>? 
 }
 
@@ -62,6 +62,7 @@ start=@<Schema>
 
 # <xsFacet> @<stringFacet> OR @<numericFacet>
 <facet_holder> { # hold labeled productions
+  $<xsFacets> ( &<stringFacet> | &<numericFacet> )* ;
   $<stringFacet> (
       sx:length xsd:integer
     | sx:minlength xsd:integer
