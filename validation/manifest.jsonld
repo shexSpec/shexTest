@@ -1196,6 +1196,60 @@
           "result": "float-p1.0_pass.val"
         },
         {
+          "@id": "#float-NaN_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/datatypes.shex",
+            "shape": "http://a.example/S-float",
+            "data": "datatypes-data.ttl",
+            "focus": "http://a.example/float-NaN"
+          },
+          "extensionResults": [],
+          "name": "float-NaN_pass",
+          "trait": [
+            "ValidLexicalForm"
+          ],
+          "comment": "<S> { <p> xsd:float} / { <s> <p> 'NaN'^^xsd:float }",
+          "status": "mf:proposed",
+          "result": "float-NaN_pass.val"
+        },
+        {
+          "@id": "#float-INF_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/datatypes.shex",
+            "shape": "http://a.example/S-float",
+            "data": "datatypes-data.ttl",
+            "focus": "http://a.example/float-INF"
+          },
+          "extensionResults": [],
+          "name": "float-INF_pass",
+          "trait": [
+            "ValidLexicalForm"
+          ],
+          "comment": "<S> { <p> xsd:float} / { <s> <p> 'INF'^^xsd:float }",
+          "status": "mf:proposed",
+          "result": "float-INF_pass.val"
+        },
+        {
+          "@id": "#float-nINF_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/datatypes.shex",
+            "shape": "http://a.example/S-float",
+            "data": "datatypes-data.ttl",
+            "focus": "http://a.example/float-nINF"
+          },
+          "extensionResults": [],
+          "name": "float-nINF_pass",
+          "trait": [
+            "ValidLexicalForm"
+          ],
+          "comment": "<S> { <p> xsd:float} / { <s> <p> '-INF'^^xsd:float }",
+          "status": "mf:proposed",
+          "result": "float-nINF_pass.val"
+        },
+        {
           "@id": "#float-1e0_fail",
           "@type": "sht:ValidationFailure",
           "action": {
@@ -1210,6 +1264,23 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:float} / { <s> <p> '1e0'^^xsd:float }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#float-pINF_fail",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/datatypes.shex",
+            "shape": "http://a.example/S-float",
+            "data": "datatypes-data.ttl",
+            "focus": "http://a.example/float-pINF"
+          },
+          "extensionResults": [],
+          "name": "float-pINF_fail",
+          "trait": [
+            "ValidLexicalForm"
+          ],
+          "comment": "<S> { <p> xsd:float} / { <s> <p> '+INF'^^xsd:float }",
           "status": "mf:proposed"
         },
         {
@@ -1355,6 +1426,77 @@
           "comment": "<S> { <p> xsd:double} / { <s> <p> '1E0'^^xsd:double }",
           "status": "mf:proposed",
           "result": "double-1E0_pass.val"
+        },
+        {
+          "@id": "#double-NaN_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/datatypes.shex",
+            "shape": "http://a.example/S-double",
+            "data": "datatypes-data.ttl",
+            "focus": "http://a.example/double-NaN"
+          },
+          "extensionResults": [],
+          "name": "double-NaN_pass",
+          "trait": [
+            "ValidLexicalForm"
+          ],
+          "comment": "<S> { <p> xsd:double} / { <s> <p> 'NaN'^^xsd:double }",
+          "status": "mf:proposed",
+          "result": "double-NaN_pass.val"
+        },
+        {
+          "@id": "#double-INF_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/datatypes.shex",
+            "shape": "http://a.example/S-double",
+            "data": "datatypes-data.ttl",
+            "focus": "http://a.example/double-INF"
+          },
+          "extensionResults": [],
+          "name": "double-INF_pass",
+          "trait": [
+            "ValidLexicalForm"
+          ],
+          "comment": "<S> { <p> xsd:double} / { <s> <p> 'INF'^^xsd:double }",
+          "status": "mf:proposed",
+          "result": "double-INF_pass.val"
+        },
+        {
+          "@id": "#double-nINF_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/datatypes.shex",
+            "shape": "http://a.example/S-double",
+            "data": "datatypes-data.ttl",
+            "focus": "http://a.example/double-nINF"
+          },
+          "extensionResults": [],
+          "name": "double-nINF_pass",
+          "trait": [
+            "ValidLexicalForm"
+          ],
+          "comment": "<S> { <p> xsd:double} / { <s> <p> '-INF'^^xsd:double }",
+          "status": "mf:proposed",
+          "result": "double-nINF_pass.val"
+        },
+        {
+          "@id": "#double-pINF_fail",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/datatypes.shex",
+            "shape": "http://a.example/S-double",
+            "data": "datatypes-data.ttl",
+            "focus": "http://a.example/double-pINF"
+          },
+          "extensionResults": [],
+          "name": "double-pINF_fail",
+          "trait": [
+            "ValidLexicalForm"
+          ],
+          "comment": "<S> { <p> xsd:double} / { <s> <p> '+INF'^^xsd:double }",
+          "status": "mf:proposed"
         },
         {
           "@id": "#nonPositiveInteger-n1_pass",

@@ -104,7 +104,11 @@
         <#float-p1_pass>
         <#float-n1.0_pass>
         <#float-p1.0_pass>
+        <#float-NaN_pass>
+        <#float-INF_pass>
+        <#float-nINF_pass>
         <#float-1e0_fail>
+        <#float-pINF_fail>
         <#double-n1_pass>
         <#double-0_pass>
         <#double-1_pass>
@@ -113,6 +117,10 @@
         <#double-p1.0_pass>
         <#double-1e0_pass>
         <#double-1E0_pass>
+        <#double-NaN_pass>
+        <#double-INF_pass>
+        <#double-nINF_pass>
+        <#double-pINF_fail>
         <#nonPositiveInteger-n1_pass>
         <#nonPositiveInteger-0_pass>
         <#nonPositiveInteger-p0_pass>
@@ -1978,6 +1986,48 @@
     mf:result <float-p1.0_pass.val>
     .
 
+<#float-NaN_pass> a sht:ValidationTest ;
+    mf:name "float-NaN_pass" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:float} / { <s> <p> 'NaN'^^xsd:float }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-float> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/float-NaN>
+    ] ;
+    mf:result <float-NaN_pass.val>
+    .
+
+<#float-INF_pass> a sht:ValidationTest ;
+    mf:name "float-INF_pass" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:float} / { <s> <p> 'INF'^^xsd:float }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-float> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/float-INF>
+    ] ;
+    mf:result <float-INF_pass.val>
+    .
+
+<#float-nINF_pass> a sht:ValidationTest ;
+    mf:name "float-nINF_pass" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:float} / { <s> <p> '-INF'^^xsd:float }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-float> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/float-nINF>
+    ] ;
+    mf:result <float-nINF_pass.val>
+    .
+
 <#float-1e0_fail> a sht:ValidationFailure ;
     mf:name "float-1e0_fail" ;
     sht:trait sht:ValidLexicalForm ;
@@ -1990,6 +2040,20 @@
       sht:focus <http://a.example/float-1e0>
     ] ;
     .
+
+<#float-pINF_fail> a sht:ValidationFailure ;
+    mf:name "float-pINF_fail" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:float} / { <s> <p> '+INF'^^xsd:float }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-float> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/float-pINF>
+    ] ;
+    .
+
 
 
 ####    double             -1 0 1 +1 -1.0 +1.0 1e0 1E0 |
@@ -2103,6 +2167,61 @@
       sht:focus <http://a.example/double-1E0>
     ] ;
     mf:result <double-1E0_pass.val>
+    .
+
+<#double-NaN_pass> a sht:ValidationTest ;
+    mf:name "double-NaN_pass" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:double} / { <s> <p> 'NaN'^^xsd:double }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-double> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/double-NaN>
+    ] ;
+    mf:result <double-NaN_pass.val>
+    .
+
+<#double-INF_pass> a sht:ValidationTest ;
+    mf:name "double-INF_pass" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:double} / { <s> <p> 'INF'^^xsd:double }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-double> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/double-INF>
+    ] ;
+    mf:result <double-INF_pass.val>
+    .
+
+<#double-nINF_pass> a sht:ValidationTest ;
+    mf:name "double-nINF_pass" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:double} / { <s> <p> '-INF'^^xsd:double }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-double> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/double-nINF>
+    ] ;
+    mf:result <double-nINF_pass.val>
+    .
+
+<#double-pINF_fail> a sht:ValidationFailure ;
+    mf:name "double-pINF_fail" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:double} / { <s> <p> '+INF'^^xsd:double }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-double> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/double-pINF>
+    ] ;
     .
 
 
