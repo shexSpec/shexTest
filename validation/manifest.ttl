@@ -83,6 +83,105 @@
         <#1datatype_pass>
 	<#1datatypelangString_pass>
 
+### lexical form
+        <#integer-n1_pass>
+        <#integer-0_pass>
+        <#integer-1_pass>
+        <#integer-p1_pass>
+        <#integer-n1.0_fail>
+        <#integer-p1.0_fail>
+        <#integer-1e0_fail>
+        <#decimal-n1_pass>
+        <#decimal-0_pass>
+        <#decimal-1_pass>
+        <#decimal-p1_pass>
+        <#decimal-n1.0_fail>
+        <#decimal-p1.0_fail>
+        <#decimal-1e0_fail>
+        <#float-n1_pass>
+        <#float-0_pass>
+        <#float-1_pass>
+        <#float-p1_pass>
+        <#float-n1.0_pass>
+        <#float-p1.0_pass>
+        <#float-1e0_fail>
+        <#double-n1_pass>
+        <#double-0_pass>
+        <#double-1_pass>
+        <#double-p1_pass>
+        <#double-n1.0_pass>
+        <#double-p1.0_pass>
+        <#double-1e0_pass>
+        <#double-1E0_pass>
+        <#nonPositiveInteger-n1_pass>
+        <#nonPositiveInteger-0_pass>
+        <#nonPositiveInteger-p0_pass>
+        <#nonPositiveInteger-n0_pass>
+        <#nonPositiveInteger-1_fail>
+        <#nonPositiveInteger-p1_fail>
+        <#nonPositiveInteger-1a_fail>
+        <#nonPositiveInteger-a1_fail>
+        <#negativeInteger-n1_pass>
+        <#negativeInteger-0_fail>
+        <#negativeInteger-p0_fail>
+        <#negativeInteger-n0_fail>
+        <#negativeInteger-1_fail>
+        <#long-n1_pass>
+        <#long-0_pass>
+        <#long-1_pass>
+        <#long-p1_pass>
+        <#int-n1_pass>
+        <#int-0_pass>
+        <#int-1_pass>
+        <#int-p1_pass>
+        <#short-n32768_pass>
+        <#short-0_pass>
+        <#short-32767_pass>
+        <#short-n32769_fail>
+        <#short-32768_fail>
+        <#byte-n128_pass>
+        <#byte-0_pass>
+        <#byte-127_pass>
+        <#byte-n129_fail>
+        <#byte-128_fail>
+        <#nonNegativeInteger-0_pass>
+        <#nonNegativeInteger-n0_pass>
+        <#nonNegativeInteger-p0_pass>
+        <#nonNegativeInteger-1_pass>
+        <#nonNegativeInteger-p1_pass>
+        <#nonNegativeInteger-n1_fail>
+        <#unsignedLong-0_pass>
+        <#unsignedLong-1_pass>
+        <#unsignedLong-n1_fail>
+        <#unsignedInt-0_pass>
+        <#unsignedInt-1_pass>
+        <#unsignedInt-n1_fail>
+        <#unsignedShort-0_pass>
+        <#unsignedShort-65535_pass>
+        <#unsignedShort-n1_fail>
+        <#unsignedShort-65536_fail>
+        <#unsignedByte-0_pass>
+        <#unsignedByte-255_pass>
+        <#unsignedByte-n1_fail>
+        <#unsignedByte-256_fail>
+        <#positiveInteger-1_pass>
+        <#positiveInteger-n1_fail>
+        <#positiveInteger-0_fail>
+        <#string-empty_pass>
+        <#string-a_pass>
+        <#string-0_pass>
+        <#boolean-true_pass>
+        <#boolean-false_pass>
+        <#boolean-TRUE_fail>
+        <#boolean-FALSE_fail>
+        <#boolean-tRuE_fail>
+        <#boolean-fAlSe_fail>
+        <#boolean-0_fail>
+        <#boolean-1_fail>
+        <#dateTime-dt_pass>
+        <#dateTime-dT_fail>
+        <#dateTime-d_fail>
+
 ## cardinality
 ###   dot cardinality
         <#1card2_fail0>
@@ -1598,7 +1697,1368 @@
     ] ;
     mf:result <1datatypelangString_pass.val>
     .
+###   lexical form {
 
+####    integer            -1 0 1 +1 | -1.0 +1.0 1e0
+<#integer-n1_pass> a sht:ValidationTest ;
+    mf:name "integer-n1_pass" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:integer} / { <s> <p> '-1'^^xsd:integer }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-integer> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/integer-n1>
+    ] ;
+    mf:result <integer-n1_pass.val>
+    .
+
+<#integer-0_pass> a sht:ValidationTest ;
+    mf:name "integer-0_pass" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:integer} / { <s> <p> '0'^^xsd:integer }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-integer> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/integer-0>
+    ] ;
+    mf:result <integer-0_pass.val>
+    .
+
+<#integer-1_pass> a sht:ValidationTest ;
+    mf:name "integer-1_pass" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:integer} / { <s> <p> '1'^^xsd:integer }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-integer> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/integer-1>
+    ] ;
+    mf:result <integer-1_pass.val>
+    .
+
+<#integer-p1_pass> a sht:ValidationTest ;
+    mf:name "integer-p1_pass" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:integer} / { <s> <p> '+1'^^xsd:integer }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-integer> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/integer-p1>
+    ] ;
+    mf:result <integer-p1_pass.val>
+    .
+
+<#integer-n1.0_fail> a sht:ValidationFailure ;
+    mf:name "integer-n1.0_fail" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:integer} / { <s> <p> '-1.0'^^xsd:integer }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-integer> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/integer-n1.0>
+    ] ;
+    .
+
+<#integer-p1.0_fail> a sht:ValidationFailure ;
+    mf:name "integer-p1.0_fail" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:integer} / { <s> <p> '+1.0'^^xsd:integer }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-integer> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/integer-p1.0>
+    ] ;
+    .
+
+<#integer-1e0_fail> a sht:ValidationFailure ;
+    mf:name "integer-1e0_fail" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:integer} / { <s> <p> '1e0'^^xsd:integer }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-integer> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/integer-1e0>
+    ] ;
+    .
+
+
+####    decimal            -1 0 1 +1 | -1.0 +1.0 1e0
+<#decimal-n1_pass> a sht:ValidationTest ;
+    mf:name "decimal-n1_pass" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:decimal} / { <s> <p> '-1'^^xsd:decimal }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-decimal> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/decimal-n1>
+    ] ;
+    mf:result <decimal-n1_pass.val>
+    .
+
+<#decimal-0_pass> a sht:ValidationTest ;
+    mf:name "decimal-0_pass" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:decimal} / { <s> <p> '0'^^xsd:decimal }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-decimal> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/decimal-0>
+    ] ;
+    mf:result <decimal-0_pass.val>
+    .
+
+<#decimal-1_pass> a sht:ValidationTest ;
+    mf:name "decimal-1_pass" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:decimal} / { <s> <p> '1'^^xsd:decimal }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-decimal> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/decimal-1>
+    ] ;
+    mf:result <decimal-1_pass.val>
+    .
+
+<#decimal-p1_pass> a sht:ValidationTest ;
+    mf:name "decimal-p1_pass" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:decimal} / { <s> <p> '+1'^^xsd:decimal }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-decimal> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/decimal-p1>
+    ] ;
+    mf:result <decimal-p1_pass.val>
+    .
+
+<#decimal-n1.0_fail> a sht:ValidationFailure ;
+    mf:name "decimal-n1.0_fail" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:decimal} / { <s> <p> '-1.0'^^xsd:decimal }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-decimal> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/decimal-n1.0>
+    ] ;
+    .
+
+<#decimal-p1.0_fail> a sht:ValidationFailure ;
+    mf:name "decimal-p1.0_fail" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:decimal} / { <s> <p> '+1.0'^^xsd:decimal }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-decimal> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/decimal-p1.0>
+    ] ;
+    .
+
+<#decimal-1e0_fail> a sht:ValidationFailure ;
+    mf:name "decimal-1e0_fail" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:decimal} / { <s> <p> '1e0'^^xsd:decimal }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-decimal> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/decimal-1e0>
+    ] ;
+    .
+
+
+####    float              -1 0 1 +1 -1.0 +1.0 | 1e0
+<#float-n1_pass> a sht:ValidationTest ;
+    mf:name "float-n1_pass" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:float} / { <s> <p> '-1'^^xsd:float }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-float> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/float-n1>
+    ] ;
+    mf:result <float-n1_pass.val>
+    .
+
+<#float-0_pass> a sht:ValidationTest ;
+    mf:name "float-0_pass" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:float} / { <s> <p> '0'^^xsd:float }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-float> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/float-0>
+    ] ;
+    mf:result <float-0_pass.val>
+    .
+
+<#float-1_pass> a sht:ValidationTest ;
+    mf:name "float-1_pass" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:float} / { <s> <p> '1'^^xsd:float }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-float> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/float-1>
+    ] ;
+    mf:result <float-1_pass.val>
+    .
+
+<#float-p1_pass> a sht:ValidationTest ;
+    mf:name "float-p1_pass" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:float} / { <s> <p> '+1'^^xsd:float }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-float> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/float-p1>
+    ] ;
+    mf:result <float-p1_pass.val>
+    .
+
+<#float-n1.0_pass> a sht:ValidationTest ;
+    mf:name "float-n1.0_pass" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:float} / { <s> <p> '-1.0'^^xsd:float }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-float> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/float-n1.0>
+    ] ;
+    mf:result <float-n1.0_pass.val>
+    .
+
+<#float-p1.0_pass> a sht:ValidationTest ;
+    mf:name "float-p1.0_pass" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:float} / { <s> <p> '+1.0'^^xsd:float }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-float> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/float-p1.0>
+    ] ;
+    mf:result <float-p1.0_pass.val>
+    .
+
+<#float-1e0_fail> a sht:ValidationFailure ;
+    mf:name "float-1e0_fail" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:float} / { <s> <p> '1e0'^^xsd:float }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-float> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/float-1e0>
+    ] ;
+    .
+
+
+####    double             -1 0 1 +1 -1.0 +1.0 1e0 1E0 |
+<#double-n1_pass> a sht:ValidationTest ;
+    mf:name "double-n1_pass" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:double} / { <s> <p> '-1'^^xsd:double }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-double> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/double-n1>
+    ] ;
+    mf:result <double-n1_pass.val>
+    .
+
+<#double-0_pass> a sht:ValidationTest ;
+    mf:name "double-0_pass" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:double} / { <s> <p> '0'^^xsd:double }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-double> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/double-0>
+    ] ;
+    mf:result <double-0_pass.val>
+    .
+
+<#double-1_pass> a sht:ValidationTest ;
+    mf:name "double-1_pass" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:double} / { <s> <p> '1'^^xsd:double }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-double> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/double-1>
+    ] ;
+    mf:result <double-1_pass.val>
+    .
+
+<#double-p1_pass> a sht:ValidationTest ;
+    mf:name "double-p1_pass" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:double} / { <s> <p> '+1'^^xsd:double }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-double> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/double-p1>
+    ] ;
+    mf:result <double-p1_pass.val>
+    .
+
+<#double-n1.0_pass> a sht:ValidationTest ;
+    mf:name "double-n1.0_pass" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:double} / { <s> <p> '-1.0'^^xsd:double }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-double> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/double-n1.0>
+    ] ;
+    mf:result <double-n1.0_pass.val>
+    .
+
+<#double-p1.0_pass> a sht:ValidationTest ;
+    mf:name "double-p1.0_pass" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:double} / { <s> <p> '+1.0'^^xsd:double }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-double> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/double-p1.0>
+    ] ;
+    mf:result <double-p1.0_pass.val>
+    .
+
+<#double-1e0_pass> a sht:ValidationTest ;
+    mf:name "double-1e0_pass" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:double} / { <s> <p> '1e0'^^xsd:double }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-double> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/double-1e0>
+    ] ;
+    mf:result <double-1e0_pass.val>
+    .
+
+<#double-1E0_pass> a sht:ValidationTest ;
+    mf:name "double-1E0_pass" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:double} / { <s> <p> '1E0'^^xsd:double }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-double> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/double-1E0>
+    ] ;
+    mf:result <double-1E0_pass.val>
+    .
+
+
+####    nonPositiveInteger -1 0 +0 -0 | 1 +1 1a a1
+<#nonPositiveInteger-n1_pass> a sht:ValidationTest ;
+    mf:name "nonPositiveInteger-n1_pass" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:nonPositiveInteger} / { <s> <p> '-1'^^xsd:nonPositiveInteger }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-nonPositiveInteger> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/nonPositiveInteger-n1>
+    ] ;
+    mf:result <nonPositiveInteger-n1_pass.val>
+    .
+
+<#nonPositiveInteger-0_pass> a sht:ValidationTest ;
+    mf:name "nonPositiveInteger-0_pass" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:nonPositiveInteger} / { <s> <p> '0'^^xsd:nonPositiveInteger }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-nonPositiveInteger> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/nonPositiveInteger-0>
+    ] ;
+    mf:result <nonPositiveInteger-0_pass.val>
+    .
+
+<#nonPositiveInteger-p0_pass> a sht:ValidationTest ;
+    mf:name "nonPositiveInteger-p0_pass" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:nonPositiveInteger} / { <s> <p> '+0'^^xsd:nonPositiveInteger }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-nonPositiveInteger> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/nonPositiveInteger-p0>
+    ] ;
+    mf:result <nonPositiveInteger-p0_pass.val>
+    .
+
+<#nonPositiveInteger-n0_pass> a sht:ValidationTest ;
+    mf:name "nonPositiveInteger-n0_pass" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:nonPositiveInteger} / { <s> <p> '-0'^^xsd:nonPositiveInteger }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-nonPositiveInteger> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/nonPositiveInteger-n0>
+    ] ;
+    mf:result <nonPositiveInteger-n0_pass.val>
+    .
+
+<#nonPositiveInteger-1_fail> a sht:ValidationFailure ;
+    mf:name "nonPositiveInteger-1_fail" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:nonPositiveInteger} / { <s> <p> '1'^^xsd:nonPositiveInteger }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-nonPositiveInteger> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/nonPositiveInteger-1>
+    ] ;
+    .
+
+<#nonPositiveInteger-p1_fail> a sht:ValidationFailure ;
+    mf:name "nonPositiveInteger-p1_fail" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:nonPositiveInteger} / { <s> <p> '+1'^^xsd:nonPositiveInteger }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-nonPositiveInteger> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/nonPositiveInteger-p1>
+    ] ;
+    .
+
+<#nonPositiveInteger-1a_fail> a sht:ValidationFailure ;
+    mf:name "nonPositiveInteger-1a_fail" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:nonPositiveInteger} / { <s> <p> '1a'^^xsd:nonPositiveInteger }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-nonPositiveInteger> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/nonPositiveInteger-1a>
+    ] ;
+    .
+
+<#nonPositiveInteger-a1_fail> a sht:ValidationFailure ;
+    mf:name "nonPositiveInteger-a1_fail" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:nonPositiveInteger} / { <s> <p> 'a1'^^xsd:nonPositiveInteger }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-nonPositiveInteger> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/nonPositiveInteger-a1>
+    ] ;
+    .
+
+
+####    negativeInteger    -1 | 0 +0 -0 1 
+<#negativeInteger-n1_pass> a sht:ValidationTest ;
+    mf:name "negativeInteger-n1_pass" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:negativeInteger} / { <s> <p> '-1'^^xsd:negativeInteger }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-negativeInteger> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/negativeInteger-n1>
+    ] ;
+    mf:result <negativeInteger-n1_pass.val>
+    .
+
+<#negativeInteger-0_fail> a sht:ValidationFailure ;
+    mf:name "negativeInteger-0_fail" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:negativeInteger} / { <s> <p> '0'^^xsd:negativeInteger }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-negativeInteger> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/negativeInteger-0>
+    ] ;
+    .
+
+<#negativeInteger-p0_fail> a sht:ValidationFailure ;
+    mf:name "negativeInteger-p0_fail" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:negativeInteger} / { <s> <p> '+0'^^xsd:negativeInteger }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-negativeInteger> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/negativeInteger-p0>
+    ] ;
+    .
+
+<#negativeInteger-n0_fail> a sht:ValidationFailure ;
+    mf:name "negativeInteger-n0_fail" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:negativeInteger} / { <s> <p> '-0'^^xsd:negativeInteger }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-negativeInteger> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/negativeInteger-n0>
+    ] ;
+    .
+
+<#negativeInteger-1_fail> a sht:ValidationFailure ;
+    mf:name "negativeInteger-1_fail" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:negativeInteger} / { <s> <p> '1'^^xsd:negativeInteger }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-negativeInteger> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/negativeInteger-1>
+    ] ;
+    .
+
+
+####    long               -1 0 1 +1 |
+<#long-n1_pass> a sht:ValidationTest ;
+    mf:name "long-n1_pass" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:long} / { <s> <p> '-1'^^xsd:long }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-long> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/long-n1>
+    ] ;
+    mf:result <long-n1_pass.val>
+    .
+
+<#long-0_pass> a sht:ValidationTest ;
+    mf:name "long-0_pass" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:long} / { <s> <p> '0'^^xsd:long }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-long> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/long-0>
+    ] ;
+    mf:result <long-0_pass.val>
+    .
+
+<#long-1_pass> a sht:ValidationTest ;
+    mf:name "long-1_pass" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:long} / { <s> <p> '1'^^xsd:long }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-long> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/long-1>
+    ] ;
+    mf:result <long-1_pass.val>
+    .
+
+<#long-p1_pass> a sht:ValidationTest ;
+    mf:name "long-p1_pass" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:long} / { <s> <p> '+1'^^xsd:long }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-long> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/long-p1>
+    ] ;
+    mf:result <long-p1_pass.val>
+    .
+
+
+####    int                -1 0 1 +1 |
+<#int-n1_pass> a sht:ValidationTest ;
+    mf:name "int-n1_pass" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:int} / { <s> <p> '-1'^^xsd:int }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-int> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/int-n1>
+    ] ;
+    mf:result <int-n1_pass.val>
+    .
+
+<#int-0_pass> a sht:ValidationTest ;
+    mf:name "int-0_pass" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:int} / { <s> <p> '0'^^xsd:int }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-int> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/int-0>
+    ] ;
+    mf:result <int-0_pass.val>
+    .
+
+<#int-1_pass> a sht:ValidationTest ;
+    mf:name "int-1_pass" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:int} / { <s> <p> '1'^^xsd:int }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-int> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/int-1>
+    ] ;
+    mf:result <int-1_pass.val>
+    .
+
+<#int-p1_pass> a sht:ValidationTest ;
+    mf:name "int-p1_pass" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:int} / { <s> <p> '+1'^^xsd:int }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-int> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/int-p1>
+    ] ;
+    mf:result <int-p1_pass.val>
+    .
+
+
+####    short              -32768 0 32767 | -32769 32768
+<#short-n32768_pass> a sht:ValidationTest ;
+    mf:name "short-n32768_pass" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:short} / { <s> <p> '-32768'^^xsd:short }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-short> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/short-n32768>
+    ] ;
+    mf:result <short-n32768_pass.val>
+    .
+
+<#short-0_pass> a sht:ValidationTest ;
+    mf:name "short-0_pass" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:short} / { <s> <p> '0'^^xsd:short }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-short> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/short-0>
+    ] ;
+    mf:result <short-0_pass.val>
+    .
+
+<#short-32767_pass> a sht:ValidationTest ;
+    mf:name "short-32767_pass" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:short} / { <s> <p> '32767'^^xsd:short }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-short> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/short-32767>
+    ] ;
+    mf:result <short-32767_pass.val>
+    .
+
+<#short-n32769_fail> a sht:ValidationFailure ;
+    mf:name "short-n32769_fail" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:short} / { <s> <p> '-32769'^^xsd:short }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-short> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/short-n32769>
+    ] ;
+    .
+
+<#short-32768_fail> a sht:ValidationFailure ;
+    mf:name "short-32768_fail" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:short} / { <s> <p> '32768'^^xsd:short }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-short> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/short-32768>
+    ] ;
+    .
+
+
+####    byte               -128 0 127 | -129 128
+<#byte-n128_pass> a sht:ValidationTest ;
+    mf:name "byte-n128_pass" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:byte} / { <s> <p> '-128'^^xsd:byte }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-byte> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/byte-n128>
+    ] ;
+    mf:result <byte-n128_pass.val>
+    .
+
+<#byte-0_pass> a sht:ValidationTest ;
+    mf:name "byte-0_pass" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:byte} / { <s> <p> '0'^^xsd:byte }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-byte> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/byte-0>
+    ] ;
+    mf:result <byte-0_pass.val>
+    .
+
+<#byte-127_pass> a sht:ValidationTest ;
+    mf:name "byte-127_pass" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:byte} / { <s> <p> '127'^^xsd:byte }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-byte> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/byte-127>
+    ] ;
+    mf:result <byte-127_pass.val>
+    .
+
+<#byte-n129_fail> a sht:ValidationFailure ;
+    mf:name "byte-n129_fail" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:byte} / { <s> <p> '-129'^^xsd:byte }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-byte> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/byte-n129>
+    ] ;
+    .
+
+<#byte-128_fail> a sht:ValidationFailure ;
+    mf:name "byte-128_fail" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:byte} / { <s> <p> '128'^^xsd:byte }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-byte> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/byte-128>
+    ] ;
+    .
+
+
+####    nonNegativeInteger 0 -0 +0 1 +1 | -1
+<#nonNegativeInteger-0_pass> a sht:ValidationTest ;
+    mf:name "nonNegativeInteger-0_pass" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:nonNegativeInteger} / { <s> <p> '0'^^xsd:nonNegativeInteger }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-nonNegativeInteger> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/nonNegativeInteger-0>
+    ] ;
+    mf:result <nonNegativeInteger-0_pass.val>
+    .
+
+<#nonNegativeInteger-n0_pass> a sht:ValidationTest ;
+    mf:name "nonNegativeInteger-n0_pass" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:nonNegativeInteger} / { <s> <p> '-0'^^xsd:nonNegativeInteger }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-nonNegativeInteger> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/nonNegativeInteger-n0>
+    ] ;
+    mf:result <nonNegativeInteger-n0_pass.val>
+    .
+
+<#nonNegativeInteger-p0_pass> a sht:ValidationTest ;
+    mf:name "nonNegativeInteger-p0_pass" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:nonNegativeInteger} / { <s> <p> '+0'^^xsd:nonNegativeInteger }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-nonNegativeInteger> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/nonNegativeInteger-p0>
+    ] ;
+    mf:result <nonNegativeInteger-p0_pass.val>
+    .
+
+<#nonNegativeInteger-1_pass> a sht:ValidationTest ;
+    mf:name "nonNegativeInteger-1_pass" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:nonNegativeInteger} / { <s> <p> '1'^^xsd:nonNegativeInteger }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-nonNegativeInteger> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/nonNegativeInteger-1>
+    ] ;
+    mf:result <nonNegativeInteger-1_pass.val>
+    .
+
+<#nonNegativeInteger-p1_pass> a sht:ValidationTest ;
+    mf:name "nonNegativeInteger-p1_pass" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:nonNegativeInteger} / { <s> <p> '+1'^^xsd:nonNegativeInteger }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-nonNegativeInteger> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/nonNegativeInteger-p1>
+    ] ;
+    mf:result <nonNegativeInteger-p1_pass.val>
+    .
+
+<#nonNegativeInteger-n1_fail> a sht:ValidationFailure ;
+    mf:name "nonNegativeInteger-n1_fail" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:nonNegativeInteger} / { <s> <p> '-1'^^xsd:nonNegativeInteger }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-nonNegativeInteger> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/nonNegativeInteger-n1>
+    ] ;
+    .
+
+
+####    unsignedLong       0 1 | -1
+<#unsignedLong-0_pass> a sht:ValidationTest ;
+    mf:name "unsignedLong-0_pass" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:unsignedLong} / { <s> <p> '0'^^xsd:unsignedLong }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-unsignedLong> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/unsignedLong-0>
+    ] ;
+    mf:result <unsignedLong-0_pass.val>
+    .
+
+<#unsignedLong-1_pass> a sht:ValidationTest ;
+    mf:name "unsignedLong-1_pass" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:unsignedLong} / { <s> <p> '1'^^xsd:unsignedLong }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-unsignedLong> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/unsignedLong-1>
+    ] ;
+    mf:result <unsignedLong-1_pass.val>
+    .
+
+<#unsignedLong-n1_fail> a sht:ValidationFailure ;
+    mf:name "unsignedLong-n1_fail" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:unsignedLong} / { <s> <p> '-1'^^xsd:unsignedLong }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-unsignedLong> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/unsignedLong-n1>
+    ] ;
+    .
+
+
+####    unsignedInt        0 1 | -1
+<#unsignedInt-0_pass> a sht:ValidationTest ;
+    mf:name "unsignedInt-0_pass" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:unsignedInt} / { <s> <p> '0'^^xsd:unsignedInt }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-unsignedInt> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/unsignedInt-0>
+    ] ;
+    mf:result <unsignedInt-0_pass.val>
+    .
+
+<#unsignedInt-1_pass> a sht:ValidationTest ;
+    mf:name "unsignedInt-1_pass" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:unsignedInt} / { <s> <p> '1'^^xsd:unsignedInt }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-unsignedInt> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/unsignedInt-1>
+    ] ;
+    mf:result <unsignedInt-1_pass.val>
+    .
+
+<#unsignedInt-n1_fail> a sht:ValidationFailure ;
+    mf:name "unsignedInt-n1_fail" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:unsignedInt} / { <s> <p> '-1'^^xsd:unsignedInt }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-unsignedInt> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/unsignedInt-n1>
+    ] ;
+    .
+
+
+####    unsignedShort      0 65535 | -1 65536
+<#unsignedShort-0_pass> a sht:ValidationTest ;
+    mf:name "unsignedShort-0_pass" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:unsignedShort} / { <s> <p> '0'^^xsd:unsignedShort }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-unsignedShort> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/unsignedShort-0>
+    ] ;
+    mf:result <unsignedShort-0_pass.val>
+    .
+
+<#unsignedShort-65535_pass> a sht:ValidationTest ;
+    mf:name "unsignedShort-65535_pass" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:unsignedShort} / { <s> <p> '65535'^^xsd:unsignedShort }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-unsignedShort> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/unsignedShort-65535>
+    ] ;
+    mf:result <unsignedShort-65535_pass.val>
+    .
+
+<#unsignedShort-n1_fail> a sht:ValidationFailure ;
+    mf:name "unsignedShort-n1_fail" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:unsignedShort} / { <s> <p> '-1'^^xsd:unsignedShort }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-unsignedShort> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/unsignedShort-n1>
+    ] ;
+    .
+
+<#unsignedShort-65536_fail> a sht:ValidationFailure ;
+    mf:name "unsignedShort-65536_fail" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:unsignedShort} / { <s> <p> '65536'^^xsd:unsignedShort }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-unsignedShort> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/unsignedShort-65536>
+    ] ;
+    .
+
+
+####    unsignedByte       0 255 | -1 256
+<#unsignedByte-0_pass> a sht:ValidationTest ;
+    mf:name "unsignedByte-0_pass" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:unsignedByte} / { <s> <p> '0'^^xsd:unsignedByte }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-unsignedByte> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/unsignedByte-0>
+    ] ;
+    mf:result <unsignedByte-0_pass.val>
+    .
+
+<#unsignedByte-255_pass> a sht:ValidationTest ;
+    mf:name "unsignedByte-255_pass" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:unsignedByte} / { <s> <p> '255'^^xsd:unsignedByte }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-unsignedByte> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/unsignedByte-255>
+    ] ;
+    mf:result <unsignedByte-255_pass.val>
+    .
+
+<#unsignedByte-n1_fail> a sht:ValidationFailure ;
+    mf:name "unsignedByte-n1_fail" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:unsignedByte} / { <s> <p> '-1'^^xsd:unsignedByte }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-unsignedByte> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/unsignedByte-n1>
+    ] ;
+    .
+
+<#unsignedByte-256_fail> a sht:ValidationFailure ;
+    mf:name "unsignedByte-256_fail" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:unsignedByte} / { <s> <p> '256'^^xsd:unsignedByte }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-unsignedByte> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/unsignedByte-256>
+    ] ;
+    .
+
+
+####    positiveInteger    1 | -1 0
+<#positiveInteger-1_pass> a sht:ValidationTest ;
+    mf:name "positiveInteger-1_pass" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:positiveInteger} / { <s> <p> '1'^^xsd:positiveInteger }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-positiveInteger> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/positiveInteger-1>
+    ] ;
+    mf:result <positiveInteger-1_pass.val>
+    .
+
+<#positiveInteger-n1_fail> a sht:ValidationFailure ;
+    mf:name "positiveInteger-n1_fail" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:positiveInteger} / { <s> <p> '-1'^^xsd:positiveInteger }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-positiveInteger> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/positiveInteger-n1>
+    ] ;
+    .
+
+<#positiveInteger-0_fail> a sht:ValidationFailure ;
+    mf:name "positiveInteger-0_fail" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:positiveInteger} / { <s> <p> '0'^^xsd:positiveInteger }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-positiveInteger> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/positiveInteger-0>
+    ] ;
+    .
+
+
+####    string             "" "a" "0"
+<#string-empty_pass> a sht:ValidationTest ;
+    mf:name "string-empty_pass" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:string} / { <s> <p> ''^^xsd:string }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-string> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/string-empty>
+    ] ;
+    mf:result <string-empty_pass.val>
+    .
+
+<#string-a_pass> a sht:ValidationTest ;
+    mf:name "string-a_pass" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:string} / { <s> <p> 'a'^^xsd:string }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-string> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/string-a>
+    ] ;
+    mf:result <string-a_pass.val>
+    .
+
+<#string-0_pass> a sht:ValidationTest ;
+    mf:name "string-0_pass" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:string} / { <s> <p> '0'^^xsd:string }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-string> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/string-0>
+    ] ;
+    mf:result <string-0_pass.val>
+    .
+
+
+####    boolean            true false | TRUE FALSE tRuE fAlSe 0 1
+<#boolean-true_pass> a sht:ValidationTest ;
+    mf:name "boolean-true_pass" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:boolean} / { <s> <p> 'true'^^xsd:boolean }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-boolean> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/boolean-true>
+    ] ;
+    mf:result <boolean-true_pass.val>
+    .
+
+<#boolean-false_pass> a sht:ValidationTest ;
+    mf:name "boolean-false_pass" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:boolean} / { <s> <p> 'false'^^xsd:boolean }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-boolean> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/boolean-false>
+    ] ;
+    mf:result <boolean-false_pass.val>
+    .
+
+<#boolean-TRUE_fail> a sht:ValidationFailure ;
+    mf:name "boolean-TRUE_fail" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:boolean} / { <s> <p> 'TRUE'^^xsd:boolean }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-boolean> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/boolean-TRUE>
+    ] ;
+    .
+
+<#boolean-FALSE_fail> a sht:ValidationFailure ;
+    mf:name "boolean-FALSE_fail" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:boolean} / { <s> <p> 'FALSE'^^xsd:boolean }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-boolean> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/boolean-FALSE>
+    ] ;
+    .
+
+<#boolean-tRuE_fail> a sht:ValidationFailure ;
+    mf:name "boolean-tRuE_fail" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:boolean} / { <s> <p> 'tRuE'^^xsd:boolean }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-boolean> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/boolean-tRuE>
+    ] ;
+    .
+
+<#boolean-fAlSe_fail> a sht:ValidationFailure ;
+    mf:name "boolean-fAlSe_fail" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:boolean} / { <s> <p> 'fAlSe'^^xsd:boolean }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-boolean> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/boolean-fAlSe>
+    ] ;
+    .
+
+<#boolean-0_fail> a sht:ValidationFailure ;
+    mf:name "boolean-0_fail" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:boolean} / { <s> <p> '0'^^xsd:boolean }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-boolean> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/boolean-0>
+    ] ;
+    .
+
+<#boolean-1_fail> a sht:ValidationFailure ;
+    mf:name "boolean-1_fail" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:boolean} / { <s> <p> '1'^^xsd:boolean }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-boolean> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/boolean-1>
+    ] ;
+    .
+
+
+####    dateTime           "2012-01-02T12:34.56Z" | "2012-01-02T" "2012-01-02"
+<#dateTime-dt_pass> a sht:ValidationTest ;
+    mf:name "dateTime-dt_pass" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:dateTime} / { <s> <p> '2012-01-02T12:34.56Z'^^xsd:dateTime }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-dateTime> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/dateTime-dt>
+    ] ;
+    mf:result <dateTime-dt_pass.val>
+    .
+
+<#dateTime-dT_fail> a sht:ValidationFailure ;
+    mf:name "dateTime-dT_fail" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:dateTime} / { <s> <p> '2012-01-02T'^^xsd:dateTime }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-dateTime> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/dateTime-dT>
+    ] ;
+    .
+
+<#dateTime-d_fail> a sht:ValidationFailure ;
+    mf:name "dateTime-d_fail" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:dateTime} / { <s> <p> '2012-01-02'^^xsd:dateTime }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-dateTime> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/dateTime-d>
+    ] ;
+    .
+
+###   } lexical form
 ## } datatype
 ## cardinality {
 ###   dot cardinality {

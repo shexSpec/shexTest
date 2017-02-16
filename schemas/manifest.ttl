@@ -335,6 +335,7 @@
         <#1Include1-after>
         <#startSelfRefIRIREF>
         <#startSelfRefbnode>
+        <#datatypes>
         <#_all>
         <#kitchenSink>
     ) .
@@ -2813,6 +2814,14 @@
     sx:shex <startSelfRefbnode.shex> ;
     sx:json <startSelfRefbnode.json> ;
     sx:ttl <startSelfRefbnode.ttl> ;
+    .
+
+<#datatypes> a sht:RepresentationTest ;
+    mf:name "datatypes" ;
+    mf:status mf:proposed ;
+    sx:shex <datatypes.shex> ;
+    sx:json <datatypes.json> ;
+    sx:ttl <datatypes.ttl> ;
     .
 
 <#_all> a sht:RepresentationTest ;

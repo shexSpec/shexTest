@@ -1,0 +1,15 @@
+{
+  "type": "Failure",
+  "node": "http://a.example/dateTime-a",
+  "shape": "http://a.example/S-dateTime",
+  "errors": [
+    {
+      "type": "MissingProperty",
+      "property": "http://a.example/p",
+      "valueExpr": {
+        "type": "NodeConstraint",
+        "datatype": "http://www.w3.org/2001/XMLSchema#dateTime"
+      }
+    }
+  ]
+}
