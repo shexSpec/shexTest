@@ -1071,8 +1071,8 @@
           "result": "decimal-p1_pass.val"
         },
         {
-          "@id": "#decimal-n1.0_fail",
-          "@type": "sht:ValidationFailure",
+          "@id": "#decimal-n1.0_pass",
+          "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/datatypes.shex",
             "shape": "http://a.example/S-decimal",
@@ -1080,16 +1080,17 @@
             "focus": "http://a.example/decimal-n1.0"
           },
           "extensionResults": [],
-          "name": "decimal-n1.0_fail",
+          "name": "decimal-n1.0_pass",
           "trait": [
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:decimal} / { <s> <p> '-1.0'^^xsd:decimal }",
-          "status": "mf:proposed"
+          "status": "mf:proposed",
+          "result": "decimal-n1.0_pass.val"
         },
         {
-          "@id": "#decimal-p1.0_fail",
-          "@type": "sht:ValidationFailure",
+          "@id": "#decimal-p1.0_pass",
+          "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/datatypes.shex",
             "shape": "http://a.example/S-decimal",
@@ -1097,12 +1098,13 @@
             "focus": "http://a.example/decimal-p1.0"
           },
           "extensionResults": [],
-          "name": "decimal-p1.0_fail",
+          "name": "decimal-p1.0_pass",
           "trait": [
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:decimal} / { <s> <p> '+1.0'^^xsd:decimal }",
-          "status": "mf:proposed"
+          "status": "mf:proposed",
+          "result": "decimal-p1.0_pass.val"
         },
         {
           "@id": "#decimal-1e0_fail",

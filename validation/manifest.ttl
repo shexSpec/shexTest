@@ -97,8 +97,8 @@
         <#decimal-0_pass>
         <#decimal-1_pass>
         <#decimal-p1_pass>
-        <#decimal-n1.0_fail>
-        <#decimal-p1.0_fail>
+        <#decimal-n1.0_pass>
+        <#decimal-p1.0_pass>
         <#decimal-1e0_fail>
         <#decimal-NaN_fail>
         <#decimal-INF_fail>
@@ -1890,8 +1890,8 @@
     mf:result <decimal-p1_pass.val>
     .
 
-<#decimal-n1.0_fail> a sht:ValidationFailure ;
-    mf:name "decimal-n1.0_fail" ;
+<#decimal-n1.0_pass> a sht:ValidationTest ;
+    mf:name "decimal-n1.0_pass" ;
     sht:trait sht:ValidLexicalForm ;
     rdfs:comment "<S> { <p> xsd:decimal} / { <s> <p> '-1.0'^^xsd:decimal }" ;
     mf:status mf:proposed ;
@@ -1901,10 +1901,11 @@
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/decimal-n1.0>
     ] ;
+    mf:result <decimal-n1.0_pass.val>
     .
 
-<#decimal-p1.0_fail> a sht:ValidationFailure ;
-    mf:name "decimal-p1.0_fail" ;
+<#decimal-p1.0_pass> a sht:ValidationTest ;
+    mf:name "decimal-p1.0_pass" ;
     sht:trait sht:ValidLexicalForm ;
     rdfs:comment "<S> { <p> xsd:decimal} / { <s> <p> '+1.0'^^xsd:decimal }" ;
     mf:status mf:proposed ;
@@ -1914,6 +1915,7 @@
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/decimal-p1.0>
     ] ;
+    mf:result <decimal-p1.0_pass.val>
     .
 
 <#decimal-1e0_fail> a sht:ValidationFailure ;
