@@ -143,7 +143,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
  <http://a.example/boolean-1> <http://a.example/p> "1"^^xsd:boolean .
 
 #    dateTime           "2012-01-02T12:34.56Z" | "2012-01-02T" "2012-01-02"
-<http://a.example/dateTime-dt> <http://a.example/p> "2012-01-02T12:34.56Z"^^xsd:dateTime .
+<http://a.example/dateTime-dt> <http://a.example/p> "2012-01-02T12:34:56.78Z"^^xsd:dateTime .
  <http://a.example/dateTime-dT> <http://a.example/p> "2012-01-02T"^^xsd:dateTime .
  <http://a.example/dateTime-d> <http://a.example/p> "2012-01-02"^^xsd:dateTime .
 
