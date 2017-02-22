@@ -1,28 +1,28 @@
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-#    integer            -1 0 1 +1 | -1.0 +1.0 1e0 NaN INF
+#    integer            -1 0 1 +1 | -1.0 +1.0 1E0 NaN INF
 <http://a.example/integer-n1> <http://a.example/p> "-1"^^xsd:integer .
 <http://a.example/integer-0> <http://a.example/p> "0"^^xsd:integer .
 <http://a.example/integer-1> <http://a.example/p> "1"^^xsd:integer .
 <http://a.example/integer-p1> <http://a.example/p> "+1"^^xsd:integer .
  <http://a.example/integer-n1.0> <http://a.example/p> "-1.0"^^xsd:integer .
  <http://a.example/integer-p1.0> <http://a.example/p> "+1.0"^^xsd:integer .
- <http://a.example/integer-1e0> <http://a.example/p> "1e0"^^xsd:integer .
+ <http://a.example/integer-1E0> <http://a.example/p> "1E0"^^xsd:integer .
  <http://a.example/integer-NaN> <http://a.example/p> "NaN"^^xsd:integer .
  <http://a.example/integer-INF> <http://a.example/p> "INF"^^xsd:integer .
 
-#    decimal            -1 0 1 +1 | -1.0 +1.0 1e0 NaN INF
+#    decimal            -1 0 1 +1 | -1.0 +1.0 1E0 NaN INF
 <http://a.example/decimal-n1> <http://a.example/p> "-1"^^xsd:decimal .
 <http://a.example/decimal-0> <http://a.example/p> "0"^^xsd:decimal .
 <http://a.example/decimal-1> <http://a.example/p> "1"^^xsd:decimal .
 <http://a.example/decimal-p1> <http://a.example/p> "+1"^^xsd:decimal .
  <http://a.example/decimal-n1.0> <http://a.example/p> "-1.0"^^xsd:decimal .
  <http://a.example/decimal-p1.0> <http://a.example/p> "+1.0"^^xsd:decimal .
- <http://a.example/decimal-1e0> <http://a.example/p> "1e0"^^xsd:decimal .
+ <http://a.example/decimal-1E0> <http://a.example/p> "1E0"^^xsd:decimal .
  <http://a.example/decimal-NaN> <http://a.example/p> "NaN"^^xsd:decimal .
  <http://a.example/decimal-INF> <http://a.example/p> "INF"^^xsd:decimal .
 
-#    float              -1 0 1 +1 -1.0 +1.0 NaN INF -INF | 1e0 +INF
+#    float              -1 0 1 +1 -1.0 +1.0 NaN INF -INF | 1E0 +INF
 <http://a.example/float-n1> <http://a.example/p> "-1"^^xsd:float .
 <http://a.example/float-0> <http://a.example/p> "0"^^xsd:float .
 <http://a.example/float-1> <http://a.example/p> "1"^^xsd:float .
@@ -32,18 +32,18 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 <http://a.example/float-NaN> <http://a.example/p> "NaN"^^xsd:float .
 <http://a.example/float-INF> <http://a.example/p> "INF"^^xsd:float .
 <http://a.example/float-nINF> <http://a.example/p> "-INF"^^xsd:float .
- <http://a.example/float-1e0> <http://a.example/p> "1e0"^^xsd:float .
+ <http://a.example/float-1E0> <http://a.example/p> "1E0"^^xsd:float .
  <http://a.example/float-pINF> <http://a.example/p> "+INF"^^xsd:float .
 
-#    double             -1 0 1 +1 -1.0 +1.0 1e0 1E0 NaN INF -INF | +INF
+#    double             -1 0 1 +1 -1.0 +1.0 1E0 1e0 NaN INF -INF | +INF
 <http://a.example/double-n1> <http://a.example/p> "-1"^^xsd:double .
 <http://a.example/double-0> <http://a.example/p> "0"^^xsd:double .
 <http://a.example/double-1> <http://a.example/p> "1"^^xsd:double .
 <http://a.example/double-p1> <http://a.example/p> "+1"^^xsd:double .
 <http://a.example/double-n1.0> <http://a.example/p> "-1.0"^^xsd:double .
 <http://a.example/double-p1.0> <http://a.example/p> "+1.0"^^xsd:double .
-<http://a.example/double-1e0> <http://a.example/p> "1e0"^^xsd:double .
 <http://a.example/double-1E0> <http://a.example/p> "1E0"^^xsd:double .
+<http://a.example/double-1e0> <http://a.example/p> "1e0"^^xsd:double .
 <http://a.example/double-NaN> <http://a.example/p> "NaN"^^xsd:double .
 <http://a.example/double-INF> <http://a.example/p> "INF"^^xsd:double .
 <http://a.example/double-nINF> <http://a.example/p> "-INF"^^xsd:double .

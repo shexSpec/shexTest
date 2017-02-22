@@ -90,7 +90,7 @@
         <#integer-p1_pass>
         <#integer-n1.0_fail>
         <#integer-p1.0_fail>
-        <#integer-1e0_fail>
+        <#integer-1E0_fail>
         <#integer-NaN_fail>
         <#integer-INF_fail>
         <#decimal-n1_pass>
@@ -99,7 +99,7 @@
         <#decimal-p1_pass>
         <#decimal-n1.0_pass>
         <#decimal-p1.0_pass>
-        <#decimal-1e0_fail>
+        <#decimal-1E0_fail>
         <#decimal-NaN_fail>
         <#decimal-INF_fail>
         <#float-n1_pass>
@@ -111,7 +111,7 @@
         <#float-NaN_pass>
         <#float-INF_pass>
         <#float-nINF_pass>
-        <#float-1e0_fail>
+        <#float-1E0_fail>
         <#float-pINF_fail>
         <#double-n1_pass>
         <#double-0_pass>
@@ -119,8 +119,8 @@
         <#double-p1_pass>
         <#double-n1.0_pass>
         <#double-p1.0_pass>
-        <#double-1e0_pass>
         <#double-1E0_pass>
+        <#double-1e0_pass>
         <#double-NaN_pass>
         <#double-INF_pass>
         <#double-nINF_pass>
@@ -1711,7 +1711,7 @@
     .
 ###   lexical form {
 
-####    integer            -1 0 1 +1 | -1.0 +1.0 1e0
+####    integer            -1 0 1 +1 | -1.0 +1.0 1E0
 <#integer-n1_pass> a sht:ValidationTest ;
     mf:name "integer-n1_pass" ;
     sht:trait sht:ValidLexicalForm ;
@@ -1794,16 +1794,16 @@
     ] ;
     .
 
-<#integer-1e0_fail> a sht:ValidationFailure ;
-    mf:name "integer-1e0_fail" ;
+<#integer-1E0_fail> a sht:ValidationFailure ;
+    mf:name "integer-1E0_fail" ;
     sht:trait sht:ValidLexicalForm ;
-    rdfs:comment "<S> { <p> xsd:integer} / { <s> <p> '1e0'^^xsd:integer }" ;
+    rdfs:comment "<S> { <p> xsd:integer} / { <s> <p> '1E0'^^xsd:integer }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/datatypes.shex> ;
       sht:shape <http://a.example/S-integer> ;
       sht:data <datatypes-data.ttl> ;
-      sht:focus <http://a.example/integer-1e0>
+      sht:focus <http://a.example/integer-1E0>
     ] ;
     .
 
@@ -1833,7 +1833,7 @@
     ] ;
     .
 
-####    decimal            -1 0 1 +1 | -1.0 +1.0 1e0 NaN INF
+####    decimal            -1 0 1 +1 | -1.0 +1.0 1E0 NaN INF
 <#decimal-n1_pass> a sht:ValidationTest ;
     mf:name "decimal-n1_pass" ;
     sht:trait sht:ValidLexicalForm ;
@@ -1918,16 +1918,16 @@
     mf:result <decimal-p1.0_pass.val>
     .
 
-<#decimal-1e0_fail> a sht:ValidationFailure ;
-    mf:name "decimal-1e0_fail" ;
+<#decimal-1E0_fail> a sht:ValidationFailure ;
+    mf:name "decimal-1E0_fail" ;
     sht:trait sht:ValidLexicalForm ;
-    rdfs:comment "<S> { <p> xsd:decimal} / { <s> <p> '1e0'^^xsd:decimal }" ;
+    rdfs:comment "<S> { <p> xsd:decimal} / { <s> <p> '1E0'^^xsd:decimal }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/datatypes.shex> ;
       sht:shape <http://a.example/S-decimal> ;
       sht:data <datatypes-data.ttl> ;
-      sht:focus <http://a.example/decimal-1e0>
+      sht:focus <http://a.example/decimal-1E0>
     ] ;
     .
 
@@ -1957,7 +1957,7 @@
     ] ;
     .
 
-####    float              -1 0 1 +1 -1.0 +1.0 | 1e0
+####    float              -1 0 1 +1 -1.0 +1.0 | 1E0
 <#float-n1_pass> a sht:ValidationTest ;
     mf:name "float-n1_pass" ;
     sht:trait sht:ValidLexicalForm ;
@@ -2084,16 +2084,16 @@
     mf:result <float-nINF_pass.val>
     .
 
-<#float-1e0_fail> a sht:ValidationFailure ;
-    mf:name "float-1e0_fail" ;
+<#float-1E0_fail> a sht:ValidationFailure ;
+    mf:name "float-1E0_fail" ;
     sht:trait sht:ValidLexicalForm ;
-    rdfs:comment "<S> { <p> xsd:float} / { <s> <p> '1e0'^^xsd:float }" ;
+    rdfs:comment "<S> { <p> xsd:float} / { <s> <p> '1E0'^^xsd:float }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/datatypes.shex> ;
       sht:shape <http://a.example/S-float> ;
       sht:data <datatypes-data.ttl> ;
-      sht:focus <http://a.example/float-1e0>
+      sht:focus <http://a.example/float-1E0>
     ] ;
     .
 
@@ -2112,7 +2112,7 @@
 
 
 
-####    double             -1 0 1 +1 -1.0 +1.0 1e0 1E0 |
+####    double             -1 0 1 +1 -1.0 +1.0 1E0 1e0 |
 <#double-n1_pass> a sht:ValidationTest ;
     mf:name "double-n1_pass" ;
     sht:trait sht:ValidLexicalForm ;
@@ -2197,20 +2197,6 @@
     mf:result <double-p1.0_pass.val>
     .
 
-<#double-1e0_pass> a sht:ValidationTest ;
-    mf:name "double-1e0_pass" ;
-    sht:trait sht:ValidLexicalForm ;
-    rdfs:comment "<S> { <p> xsd:double} / { <s> <p> '1e0'^^xsd:double }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/datatypes.shex> ;
-      sht:shape <http://a.example/S-double> ;
-      sht:data <datatypes-data.ttl> ;
-      sht:focus <http://a.example/double-1e0>
-    ] ;
-    mf:result <double-1e0_pass.val>
-    .
-
 <#double-1E0_pass> a sht:ValidationTest ;
     mf:name "double-1E0_pass" ;
     sht:trait sht:ValidLexicalForm ;
@@ -2223,6 +2209,20 @@
       sht:focus <http://a.example/double-1E0>
     ] ;
     mf:result <double-1E0_pass.val>
+    .
+
+<#double-1e0_pass> a sht:ValidationTest ;
+    mf:name "double-1e0_pass" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:double} / { <s> <p> '1e0'^^xsd:double }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-double> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/double-1e0>
+    ] ;
+    mf:result <double-1eLC0_pass.val>
     .
 
 <#double-NaN_pass> a sht:ValidationTest ;
