@@ -123,7 +123,7 @@
             "predicate": "http://ex.example/#related",
             "valueExpr": "http://ex.example/S1",
             "min": 0,
-            "max": "*"
+            "max": "INF"
           }
         ]
       }
@@ -156,7 +156,7 @@
                       "datatype": "http://www.w3.org/2001/XMLSchema#string"
                     },
                     "min": 1,
-                    "max": "*"
+                    "max": "INF"
                   },
                   {
                     "type": "TripleConstraint",
@@ -210,7 +210,7 @@
               "datatype": "http://www.w3.org/2001/XMLSchema#string"
             },
             "min": 1,
-            "max": "*"
+            "max": "INF"
           },
           {
             "type": "TripleConstraint",
@@ -228,7 +228,7 @@
               "nodeKind": "iri"
             },
             "min": 0,
-            "max": "*"
+            "max": "INF"
           },
           {
             "type": "TripleConstraint",
@@ -353,21 +353,21 @@
                 "predicate": "http://ex.example/#issues",
                 "valueExpr": "http://ex.example/S1",
                 "min": 0,
-                "max": "*"
+                "max": "INF"
               },
               {
                 "type": "TripleConstraint",
                 "predicate": "http://ex.example/#seeAlso",
                 "valueExpr": "http://ex.example/S1",
                 "min": 0,
-                "max": "*"
+                "max": "INF"
               },
               {
                 "type": "TripleConstraint",
                 "predicate": "http://ex.example/#says",
                 "valueExpr": "http://ex.example/#EmployeeShape",
                 "min": 0,
-                "max": "*"
+                "max": "INF"
               }
             ]
           }

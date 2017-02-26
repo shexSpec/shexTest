@@ -948,20 +948,20 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#integer-1e0_fail",
+          "@id": "#integer-1E0_fail",
           "@type": "sht:ValidationFailure",
           "action": {
             "schema": "../schemas/datatypes.shex",
             "shape": "http://a.example/S-integer",
             "data": "datatypes-data.ttl",
-            "focus": "http://a.example/integer-1e0"
+            "focus": "http://a.example/integer-1E0"
           },
           "extensionResults": [],
-          "name": "integer-1e0_fail",
+          "name": "integer-1E0_fail",
           "trait": [
             "ValidLexicalForm"
           ],
-          "comment": "<S> { <p> xsd:integer} / { <s> <p> '1e0'^^xsd:integer }",
+          "comment": "<S> { <p> xsd:integer} / { <s> <p> '1E0'^^xsd:integer }",
           "status": "mf:proposed"
         },
         {
@@ -1107,20 +1107,20 @@
           "result": "decimal-p1.0_pass.val"
         },
         {
-          "@id": "#decimal-1e0_fail",
+          "@id": "#decimal-1E0_fail",
           "@type": "sht:ValidationFailure",
           "action": {
             "schema": "../schemas/datatypes.shex",
             "shape": "http://a.example/S-decimal",
             "data": "datatypes-data.ttl",
-            "focus": "http://a.example/decimal-1e0"
+            "focus": "http://a.example/decimal-1E0"
           },
           "extensionResults": [],
-          "name": "decimal-1e0_fail",
+          "name": "decimal-1E0_fail",
           "trait": [
             "ValidLexicalForm"
           ],
-          "comment": "<S> { <p> xsd:decimal} / { <s> <p> '1e0'^^xsd:decimal }",
+          "comment": "<S> { <p> xsd:decimal} / { <s> <p> '1E0'^^xsd:decimal }",
           "status": "mf:proposed"
         },
         {
@@ -1481,24 +1481,6 @@
           "result": "double-p1.0_pass.val"
         },
         {
-          "@id": "#double-1e0_pass",
-          "@type": "sht:ValidationTest",
-          "action": {
-            "schema": "../schemas/datatypes.shex",
-            "shape": "http://a.example/S-double",
-            "data": "datatypes-data.ttl",
-            "focus": "http://a.example/double-1e0"
-          },
-          "extensionResults": [],
-          "name": "double-1e0_pass",
-          "trait": [
-            "ValidLexicalForm"
-          ],
-          "comment": "<S> { <p> xsd:double} / { <s> <p> '1e0'^^xsd:double }",
-          "status": "mf:proposed",
-          "result": "double-1e0_pass.val"
-        },
-        {
           "@id": "#double-1E0_pass",
           "@type": "sht:ValidationTest",
           "action": {
@@ -1515,6 +1497,24 @@
           "comment": "<S> { <p> xsd:double} / { <s> <p> '1E0'^^xsd:double }",
           "status": "mf:proposed",
           "result": "double-1E0_pass.val"
+        },
+        {
+          "@id": "#double-1e0_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/datatypes.shex",
+            "shape": "http://a.example/S-double",
+            "data": "datatypes-data.ttl",
+            "focus": "http://a.example/double-1e0"
+          },
+          "extensionResults": [],
+          "name": "double-1e0_pass",
+          "trait": [
+            "ValidLexicalForm"
+          ],
+          "comment": "<S> { <p> xsd:double} / { <s> <p> '1e0'^^xsd:double }",
+          "status": "mf:proposed",
+          "result": "double-1elowercase0_pass.val"
         },
         {
           "@id": "#double-NaN_pass",
