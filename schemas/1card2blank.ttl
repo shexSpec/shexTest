@@ -7,7 +7,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 <http://a.example/S1> a sx:Shape ;
     sx:expression [ a sx:TripleConstraint ;
-            sx:max "*" ;
+            sx:max sx:INF ;
             sx:min 2 ;
             sx:predicate <http://a.example/p1> ] .
 

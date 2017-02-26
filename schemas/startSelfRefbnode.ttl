@@ -8,6 +8,6 @@ PREFIX sx:  <http://shex.io/ns/shex#>
 
 _:S1 a sx:Shape ;
   sx:expression
-    [ a sx:TripleConstraint ; sx:predicate ex:p1 ; sx:min 0 ; sx:max "*" ;
+    [ a sx:TripleConstraint ; sx:predicate ex:p1 ; sx:min 0 ; sx:max sx:INF ;
       sx:valueExpr _:S1 ] .
 
