@@ -1266,6 +1266,42 @@
           "result": "float-p1.0_pass.val"
         },
         {
+          "@id": "#float-1elowercase0_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/datatypes.shex",
+            "shape": "http://a.example/S-float",
+            "data": "datatypes-data.ttl",
+            "focus": "http://a.example/float-1e0"
+          },
+          "extensionResults": [],
+          "name": "float-1elowercase0_pass",
+          "trait": [
+            "ValidLexicalForm"
+          ],
+          "comment": "<S> { <p> xsd:float} / { <s> <p> '1e0'^^xsd:float }",
+          "status": "mf:proposed",
+          "result": "float-1elowercase0_pass.val"
+        },
+        {
+          "@id": "#float-1E0_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/datatypes.shex",
+            "shape": "http://a.example/S-float",
+            "data": "datatypes-data.ttl",
+            "focus": "http://a.example/float-1E0"
+          },
+          "extensionResults": [],
+          "name": "float-1E0_pass",
+          "trait": [
+            "ValidLexicalForm"
+          ],
+          "comment": "<S> { <p> xsd:float} / { <s> <p> '1e0'^^xsd:float }",
+          "status": "mf:proposed",
+          "result": "float-1E0_pass.val"
+        },
+        {
           "@id": "#float-NaN_pass",
           "@type": "sht:ValidationTest",
           "action": {
@@ -1318,23 +1354,6 @@
           "comment": "<S> { <p> xsd:float} / { <s> <p> '-INF'^^xsd:float }",
           "status": "mf:proposed",
           "result": "float-nINF_pass.val"
-        },
-        {
-          "@id": "#float-1e0_fail",
-          "@type": "sht:ValidationFailure",
-          "action": {
-            "schema": "../schemas/datatypes.shex",
-            "shape": "http://a.example/S-float",
-            "data": "datatypes-data.ttl",
-            "focus": "http://a.example/float-1e0"
-          },
-          "extensionResults": [],
-          "name": "float-1e0_fail",
-          "trait": [
-            "ValidLexicalForm"
-          ],
-          "comment": "<S> { <p> xsd:float} / { <s> <p> '1e0'^^xsd:float }",
-          "status": "mf:proposed"
         },
         {
           "@id": "#float-pINF_fail",
@@ -2610,6 +2629,42 @@
           "result": "boolean-false_pass.val"
         },
         {
+          "@id": "#boolean-0_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/datatypes.shex",
+            "shape": "http://a.example/S-boolean",
+            "data": "datatypes-data.ttl",
+            "focus": "http://a.example/boolean-0"
+          },
+          "extensionResults": [],
+          "name": "boolean-0_pass",
+          "trait": [
+            "ValidLexicalForm"
+          ],
+          "comment": "<S> { <p> xsd:boolean} / { <s> <p> '0'^^xsd:boolean }",
+          "status": "mf:proposed",
+          "result": "boolean-0_pass.val"
+        },
+        {
+          "@id": "#boolean-1_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/datatypes.shex",
+            "shape": "http://a.example/S-boolean",
+            "data": "datatypes-data.ttl",
+            "focus": "http://a.example/boolean-1"
+          },
+          "extensionResults": [],
+          "name": "boolean-1_pass",
+          "trait": [
+            "ValidLexicalForm"
+          ],
+          "comment": "<S> { <p> xsd:boolean} / { <s> <p> '1'^^xsd:boolean }",
+          "status": "mf:proposed",
+          "result": "boolean-1_pass.val"
+        },
+        {
           "@id": "#boolean-TRUE_fail",
           "@type": "sht:ValidationFailure",
           "action": {
@@ -2678,37 +2733,71 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#boolean-0_fail",
+          "@id": "#boolean-n1_fail",
           "@type": "sht:ValidationFailure",
           "action": {
             "schema": "../schemas/datatypes.shex",
             "shape": "http://a.example/S-boolean",
             "data": "datatypes-data.ttl",
-            "focus": "http://a.example/boolean-0"
+            "focus": "http://a.example/boolean-n1"
           },
           "extensionResults": [],
-          "name": "boolean-0_fail",
+          "name": "boolean-n1_fail",
           "trait": [
             "ValidLexicalForm"
           ],
-          "comment": "<S> { <p> xsd:boolean} / { <s> <p> '0'^^xsd:boolean }",
+          "comment": "<S> { <p> xsd:boolean} / { <s> <p> '-1'^^xsd:boolean }",
           "status": "mf:proposed"
         },
         {
-          "@id": "#boolean-1_fail",
+          "@id": "#boolean-2_fail",
           "@type": "sht:ValidationFailure",
           "action": {
             "schema": "../schemas/datatypes.shex",
             "shape": "http://a.example/S-boolean",
             "data": "datatypes-data.ttl",
-            "focus": "http://a.example/boolean-1"
+            "focus": "http://a.example/boolean-2"
           },
           "extensionResults": [],
-          "name": "boolean-1_fail",
+          "name": "boolean-2_fail",
           "trait": [
             "ValidLexicalForm"
           ],
-          "comment": "<S> { <p> xsd:boolean} / { <s> <p> '1'^^xsd:boolean }",
+          "comment": "<S> { <p> xsd:boolean} / { <s> <p> '2'^^xsd:boolean }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#boolean-10_fail",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/datatypes.shex",
+            "shape": "http://a.example/S-boolean",
+            "data": "datatypes-data.ttl",
+            "focus": "http://a.example/boolean-10"
+          },
+          "extensionResults": [],
+          "name": "boolean-10_fail",
+          "trait": [
+            "ValidLexicalForm"
+          ],
+          "comment": "<S> { <p> xsd:boolean} / { <s> <p> '10'^^xsd:boolean }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#boolean-01_fail",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/datatypes.shex",
+            "shape": "http://a.example/S-boolean",
+            "data": "datatypes-data.ttl",
+            "focus": "http://a.example/boolean-01"
+          },
+          "extensionResults": [],
+          "name": "boolean-01_fail",
+          "trait": [
+            "ValidLexicalForm"
+          ],
+          "comment": "<S> { <p> xsd:boolean} / { <s> <p> '01'^^xsd:boolean }",
           "status": "mf:proposed"
         },
         {

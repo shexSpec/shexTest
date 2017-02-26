@@ -22,7 +22,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
  <http://a.example/decimal-NaN> <http://a.example/p> "NaN"^^xsd:decimal .
  <http://a.example/decimal-INF> <http://a.example/p> "INF"^^xsd:decimal .
 
-#    float              -1 0 1 +1 -1.0 +1.0 NaN INF -INF | 1e0 +INF
+#    float              -1 0 1 +1 -1.0 +1.0 1e0 1E0 NaN INF -INF | +INF
 <http://a.example/float-n1> <http://a.example/p> "-1"^^xsd:float .
 <http://a.example/float-0> <http://a.example/p> "0"^^xsd:float .
 <http://a.example/float-1> <http://a.example/p> "1"^^xsd:float .
@@ -32,7 +32,8 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 <http://a.example/float-NaN> <http://a.example/p> "NaN"^^xsd:float .
 <http://a.example/float-INF> <http://a.example/p> "INF"^^xsd:float .
 <http://a.example/float-nINF> <http://a.example/p> "-INF"^^xsd:float .
- <http://a.example/float-1e0> <http://a.example/p> "1e0"^^xsd:float .
+<http://a.example/float-1e0> <http://a.example/p> "1e0"^^xsd:float .
+<http://a.example/float-1E0> <http://a.example/p> "1E0"^^xsd:float .
  <http://a.example/float-pINF> <http://a.example/p> "+INF"^^xsd:float .
 
 #    double             -1 0 1 +1 -1.0 +1.0 1e0 1E0 NaN INF -INF | +INF
@@ -135,12 +136,16 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 #    boolean            true false | TRUE FALSE tRuE fAlSe 0 1
 <http://a.example/boolean-true> <http://a.example/p> "true"^^xsd:boolean .
 <http://a.example/boolean-false> <http://a.example/p> "false"^^xsd:boolean .
+<http://a.example/boolean-0> <http://a.example/p> "0"^^xsd:boolean .
+<http://a.example/boolean-1> <http://a.example/p> "1"^^xsd:boolean .
  <http://a.example/boolean-TRUE> <http://a.example/p> "TRUE"^^xsd:boolean .
  <http://a.example/boolean-FALSE> <http://a.example/p> "FALSE"^^xsd:boolean .
  <http://a.example/boolean-tRuE> <http://a.example/p> "tRuE"^^xsd:boolean .
  <http://a.example/boolean-fAlSe> <http://a.example/p> "fAlSe"^^xsd:boolean .
- <http://a.example/boolean-0> <http://a.example/p> "0"^^xsd:boolean .
- <http://a.example/boolean-1> <http://a.example/p> "1"^^xsd:boolean .
+ <http://a.example/boolean-n1> <http://a.example/p> "-1"^^xsd:boolean .
+ <http://a.example/boolean-2> <http://a.example/p> "2"^^xsd:boolean .
+ <http://a.example/boolean-10> <http://a.example/p> "10"^^xsd:boolean .
+ <http://a.example/boolean-01> <http://a.example/p> "01"^^xsd:boolean .
 
 #    dateTime           "2012-01-02T12:34.56Z" | "2012-01-02T" "2012-01-02"
 <http://a.example/dateTime-dt> <http://a.example/p> "2012-01-02T12:34:56.78Z"^^xsd:dateTime .

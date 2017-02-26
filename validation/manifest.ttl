@@ -108,10 +108,11 @@
         <#float-p1_pass>
         <#float-n1.0_pass>
         <#float-p1.0_pass>
+	<#float-1elowercase0_pass>
+	<#float-1E0_pass>
         <#float-NaN_pass>
         <#float-INF_pass>
         <#float-nINF_pass>
-        <#float-1e0_fail>
         <#float-pINF_fail>
         <#double-n1_pass>
         <#double-0_pass>
@@ -184,12 +185,16 @@
         <#string-0_pass>
         <#boolean-true_pass>
         <#boolean-false_pass>
+        <#boolean-0_pass>
+        <#boolean-1_pass>
         <#boolean-TRUE_fail>
         <#boolean-FALSE_fail>
         <#boolean-tRuE_fail>
         <#boolean-fAlSe_fail>
-        <#boolean-0_fail>
-        <#boolean-1_fail>
+        <#boolean-n1_fail>
+        <#boolean-2_fail>
+        <#boolean-10_fail>
+        <#boolean-01_fail>
         <#dateTime-dt_pass>
         <#dateTime-dT_fail>
         <#dateTime-d_fail>
@@ -2042,6 +2047,34 @@
     mf:result <float-p1.0_pass.val>
     .
 
+<#float-1elowercase0_pass> a sht:ValidationTest ;
+    mf:name "float-1elowercase0_pass" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:float} / { <s> <p> '1e0'^^xsd:float }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-float> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/float-1e0>
+    ] ;
+    mf:result <float-1elowercase0_pass.val>
+    .
+
+<#float-1E0_pass> a sht:ValidationTest ;
+    mf:name "float-1E0_pass" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:float} / { <s> <p> '1e0'^^xsd:float }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-float> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/float-1E0>
+    ] ;
+    mf:result <float-1E0_pass.val>
+    .
+
 <#float-NaN_pass> a sht:ValidationTest ;
     mf:name "float-NaN_pass" ;
     sht:trait sht:ValidLexicalForm ;
@@ -2082,19 +2115,6 @@
       sht:focus <http://a.example/float-nINF>
     ] ;
     mf:result <float-nINF_pass.val>
-    .
-
-<#float-1e0_fail> a sht:ValidationFailure ;
-    mf:name "float-1e0_fail" ;
-    sht:trait sht:ValidLexicalForm ;
-    rdfs:comment "<S> { <p> xsd:float} / { <s> <p> '1e0'^^xsd:float }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/datatypes.shex> ;
-      sht:shape <http://a.example/S-float> ;
-      sht:data <datatypes-data.ttl> ;
-      sht:focus <http://a.example/float-1e0>
-    ] ;
     .
 
 <#float-pINF_fail> a sht:ValidationFailure ;
@@ -3113,6 +3133,34 @@
     mf:result <boolean-false_pass.val>
     .
 
+<#boolean-0_pass> a sht:ValidationTest ;
+    mf:name "boolean-0_pass" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:boolean} / { <s> <p> '0'^^xsd:boolean }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-boolean> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/boolean-0>
+    ] ;
+    mf:result <boolean-0_pass.val>
+    .
+
+<#boolean-1_pass> a sht:ValidationTest ;
+    mf:name "boolean-1_pass" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:boolean} / { <s> <p> '1'^^xsd:boolean }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-boolean> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/boolean-1>
+    ] ;
+    mf:result <boolean-1_pass.val>
+    .
+
 <#boolean-TRUE_fail> a sht:ValidationFailure ;
     mf:name "boolean-TRUE_fail" ;
     sht:trait sht:ValidLexicalForm ;
@@ -3165,29 +3213,55 @@
     ] ;
     .
 
-<#boolean-0_fail> a sht:ValidationFailure ;
-    mf:name "boolean-0_fail" ;
+<#boolean-n1_fail> a sht:ValidationFailure ;
+    mf:name "boolean-n1_fail" ;
     sht:trait sht:ValidLexicalForm ;
-    rdfs:comment "<S> { <p> xsd:boolean} / { <s> <p> '0'^^xsd:boolean }" ;
+    rdfs:comment "<S> { <p> xsd:boolean} / { <s> <p> '-1'^^xsd:boolean }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/datatypes.shex> ;
       sht:shape <http://a.example/S-boolean> ;
       sht:data <datatypes-data.ttl> ;
-      sht:focus <http://a.example/boolean-0>
+      sht:focus <http://a.example/boolean-n1>
     ] ;
     .
 
-<#boolean-1_fail> a sht:ValidationFailure ;
-    mf:name "boolean-1_fail" ;
+<#boolean-2_fail> a sht:ValidationFailure ;
+    mf:name "boolean-2_fail" ;
     sht:trait sht:ValidLexicalForm ;
-    rdfs:comment "<S> { <p> xsd:boolean} / { <s> <p> '1'^^xsd:boolean }" ;
+    rdfs:comment "<S> { <p> xsd:boolean} / { <s> <p> '2'^^xsd:boolean }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/datatypes.shex> ;
       sht:shape <http://a.example/S-boolean> ;
       sht:data <datatypes-data.ttl> ;
-      sht:focus <http://a.example/boolean-1>
+      sht:focus <http://a.example/boolean-2>
+    ] ;
+    .
+
+<#boolean-10_fail> a sht:ValidationFailure ;
+    mf:name "boolean-10_fail" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:boolean} / { <s> <p> '10'^^xsd:boolean }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-boolean> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/boolean-10>
+    ] ;
+    .
+
+<#boolean-01_fail> a sht:ValidationFailure ;
+    mf:name "boolean-01_fail" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:boolean} / { <s> <p> '01'^^xsd:boolean }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-boolean> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/boolean-01>
     ] ;
     .
 
