@@ -914,6 +914,23 @@
           "result": "integer-p1_pass.val"
         },
         {
+          "@id": "#integer-empty_fail",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/datatypes.shex",
+            "shape": "http://a.example/S-integer",
+            "data": "datatypes-data.ttl",
+            "focus": "http://a.example/integer-empty.0"
+          },
+          "extensionResults": [],
+          "name": "integer-empty_fail",
+          "trait": [
+            "ValidLexicalForm"
+          ],
+          "comment": "<S> { <p> xsd:integer} / { <s> <p> ''^^xsd:integer }",
+          "status": "mf:proposed"
+        },
+        {
           "@id": "#integer-n1.0_fail",
           "@type": "sht:ValidationFailure",
           "action": {
@@ -1107,6 +1124,23 @@
           "result": "decimal-p1.0_pass.val"
         },
         {
+          "@id": "#decimal-empty_fail",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/datatypes.shex",
+            "shape": "http://a.example/S-decimal",
+            "data": "datatypes-data.ttl",
+            "focus": "http://a.example/decimal-empty"
+          },
+          "extensionResults": [],
+          "name": "decimal-empty_fail",
+          "trait": [
+            "ValidLexicalForm"
+          ],
+          "comment": "<S> { <p> xsd:decimal} / { <s> <p> ''^^xsd:decimal }",
+          "status": "mf:proposed"
+        },
+        {
           "@id": "#decimal-1E0_fail",
           "@type": "sht:ValidationFailure",
           "action": {
@@ -1297,7 +1331,7 @@
           "trait": [
             "ValidLexicalForm"
           ],
-          "comment": "<S> { <p> xsd:float} / { <s> <p> '1e0'^^xsd:float }",
+          "comment": "<S> { <p> xsd:float} / { <s> <p> '1E0'^^xsd:float }",
           "status": "mf:proposed",
           "result": "float-1E0_pass.val"
         },
@@ -1354,6 +1388,23 @@
           "comment": "<S> { <p> xsd:float} / { <s> <p> '-INF'^^xsd:float }",
           "status": "mf:proposed",
           "result": "float-nINF_pass.val"
+        },
+        {
+          "@id": "#float-empty_fail",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/datatypes.shex",
+            "shape": "http://a.example/S-float",
+            "data": "datatypes-data.ttl",
+            "focus": "http://a.example/float-empty"
+          },
+          "extensionResults": [],
+          "name": "float-empty_fail",
+          "trait": [
+            "ValidLexicalForm"
+          ],
+          "comment": "<S> { <p> xsd:float} / { <s> <p> ''^^xsd:float }",
+          "status": "mf:proposed"
         },
         {
           "@id": "#float-pINF_fail",
@@ -1569,6 +1620,23 @@
           "comment": "<S> { <p> xsd:double} / { <s> <p> '-INF'^^xsd:double }",
           "status": "mf:proposed",
           "result": "double-nINF_pass.val"
+        },
+        {
+          "@id": "#double-empty_fail",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/datatypes.shex",
+            "shape": "http://a.example/S-double",
+            "data": "datatypes-data.ttl",
+            "focus": "http://a.example/double-empty"
+          },
+          "extensionResults": [],
+          "name": "double-empty_fail",
+          "trait": [
+            "ValidLexicalForm"
+          ],
+          "comment": "<S> { <p> xsd:double} / { <s> <p> ''^^xsd:double }",
+          "status": "mf:proposed"
         },
         {
           "@id": "#double-pINF_fail",
@@ -2098,6 +2166,23 @@
           "comment": "<S> { <p> xsd:byte} / { <s> <p> '127'^^xsd:byte }",
           "status": "mf:proposed",
           "result": "byte-127_pass.val"
+        },
+        {
+          "@id": "#byte-empty_fail",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/datatypes.shex",
+            "shape": "http://a.example/S-byte",
+            "data": "datatypes-data.ttl",
+            "focus": "http://a.example/byte-empty"
+          },
+          "extensionResults": [],
+          "name": "byte-empty_fail",
+          "trait": [
+            "ValidLexicalForm"
+          ],
+          "comment": "<S> { <p> xsd:byte} / { <s> <p> ''^^xsd:byte }",
+          "status": "mf:proposed"
         },
         {
           "@id": "#byte-n129_fail",
@@ -2665,6 +2750,23 @@
           "result": "boolean-1_pass.val"
         },
         {
+          "@id": "#boolean-empty_fail",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/datatypes.shex",
+            "shape": "http://a.example/S-boolean",
+            "data": "datatypes-data.ttl",
+            "focus": "http://a.example/boolean-empty"
+          },
+          "extensionResults": [],
+          "name": "boolean-empty_fail",
+          "trait": [
+            "ValidLexicalForm"
+          ],
+          "comment": "<S> { <p> xsd:boolean} / { <s> <p> ''^^xsd:boolean }",
+          "status": "mf:proposed"
+        },
+        {
           "@id": "#boolean-TRUE_fail",
           "@type": "sht:ValidationFailure",
           "action": {
@@ -2817,6 +2919,23 @@
           "comment": "<S> { <p> xsd:dateTime} / { <s> <p> '2012-01-02T12:34.56Z'^^xsd:dateTime }",
           "status": "mf:proposed",
           "result": "dateTime-dt_pass.val"
+        },
+        {
+          "@id": "#dateTime-empty_fail",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/datatypes.shex",
+            "shape": "http://a.example/S-dateTime",
+            "data": "datatypes-data.ttl",
+            "focus": "http://a.example/dateTime-empty"
+          },
+          "extensionResults": [],
+          "name": "dateTime-empty_fail",
+          "trait": [
+            "ValidLexicalForm"
+          ],
+          "comment": "<S> { <p> xsd:dateTime} / { <s> <p> ''^^xsd:dateTime }",
+          "status": "mf:proposed"
         },
         {
           "@id": "#dateTime-dT_fail",

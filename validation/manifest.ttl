@@ -88,6 +88,7 @@
         <#integer-0_pass>
         <#integer-1_pass>
         <#integer-p1_pass>
+        <#integer-empty_fail>
         <#integer-n1.0_fail>
         <#integer-p1.0_fail>
         <#integer-1E0_fail>
@@ -99,6 +100,7 @@
         <#decimal-p1_pass>
         <#decimal-n1.0_pass>
         <#decimal-p1.0_pass>
+        <#decimal-empty_fail>
         <#decimal-1E0_fail>
         <#decimal-NaN_fail>
         <#decimal-INF_fail>
@@ -113,6 +115,7 @@
         <#float-NaN_pass>
         <#float-INF_pass>
         <#float-nINF_pass>
+        <#float-empty_fail>
         <#float-pINF_fail>
         <#double-n1_pass>
         <#double-0_pass>
@@ -125,6 +128,7 @@
         <#double-NaN_pass>
         <#double-INF_pass>
         <#double-nINF_pass>
+        <#double-empty_fail>
         <#double-pINF_fail>
         <#nonPositiveInteger-n1_pass>
         <#nonPositiveInteger-0_pass>
@@ -155,6 +159,7 @@
         <#byte-n128_pass>
         <#byte-0_pass>
         <#byte-127_pass>
+        <#byte-empty_fail>
         <#byte-n129_fail>
         <#byte-128_fail>
         <#nonNegativeInteger-0_pass>
@@ -187,6 +192,7 @@
         <#boolean-false_pass>
         <#boolean-0_pass>
         <#boolean-1_pass>
+        <#boolean-empty_fail>
         <#boolean-TRUE_fail>
         <#boolean-FALSE_fail>
         <#boolean-tRuE_fail>
@@ -196,6 +202,7 @@
         <#boolean-10_fail>
         <#boolean-01_fail>
         <#dateTime-dt_pass>
+        <#dateTime-empty_fail>
         <#dateTime-dT_fail>
         <#dateTime-d_fail>
 
@@ -1716,7 +1723,7 @@
     .
 ###   lexical form {
 
-####    integer            -1 0 1 +1 | -1.0 +1.0 1E0
+####    integer            -1 0 1 +1 | "" -1.0 +1.0 1E0
 <#integer-n1_pass> a sht:ValidationTest ;
     mf:name "integer-n1_pass" ;
     sht:trait sht:ValidLexicalForm ;
@@ -1771,6 +1778,19 @@
       sht:focus <http://a.example/integer-p1>
     ] ;
     mf:result <integer-p1_pass.val>
+    .
+
+<#integer-empty_fail> a sht:ValidationFailure ;
+    mf:name "integer-empty_fail" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:integer} / { <s> <p> ''^^xsd:integer }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-integer> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/integer-empty.0>
+    ] ;
     .
 
 <#integer-n1.0_fail> a sht:ValidationFailure ;
@@ -1838,7 +1858,7 @@
     ] ;
     .
 
-####    decimal            -1 0 1 +1 | -1.0 +1.0 1E0 NaN INF
+####    decimal            -1 0 1 +1 | "" -1.0 +1.0 1E0 NaN INF
 <#decimal-n1_pass> a sht:ValidationTest ;
     mf:name "decimal-n1_pass" ;
     sht:trait sht:ValidLexicalForm ;
@@ -1923,6 +1943,19 @@
     mf:result <decimal-p1.0_pass.val>
     .
 
+<#decimal-empty_fail> a sht:ValidationFailure ;
+    mf:name "decimal-empty_fail" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:decimal} / { <s> <p> ''^^xsd:decimal }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-decimal> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/decimal-empty>
+    ] ;
+    .
+
 <#decimal-1E0_fail> a sht:ValidationFailure ;
     mf:name "decimal-1E0_fail" ;
     sht:trait sht:ValidLexicalForm ;
@@ -1962,7 +1995,8 @@
     ] ;
     .
 
-####    float              -1 0 1 +1 -1.0 +1.0 | 1E0
+####    float              -1 0 1 +1 -1.0 +1.0 | "" 1E0
+####    float              -1 0 1 +1 -1.0 +1.0 1e0 1E0 NaN INF -INF | "" +INF
 <#float-n1_pass> a sht:ValidationTest ;
     mf:name "float-n1_pass" ;
     sht:trait sht:ValidLexicalForm ;
@@ -2064,7 +2098,7 @@
 <#float-1E0_pass> a sht:ValidationTest ;
     mf:name "float-1E0_pass" ;
     sht:trait sht:ValidLexicalForm ;
-    rdfs:comment "<S> { <p> xsd:float} / { <s> <p> '1e0'^^xsd:float }" ;
+    rdfs:comment "<S> { <p> xsd:float} / { <s> <p> '1E0'^^xsd:float }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/datatypes.shex> ;
@@ -2117,6 +2151,19 @@
     mf:result <float-nINF_pass.val>
     .
 
+<#float-empty_fail> a sht:ValidationFailure ;
+    mf:name "float-empty_fail" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:float} / { <s> <p> ''^^xsd:float }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-float> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/float-empty>
+    ] ;
+    .
+
 <#float-pINF_fail> a sht:ValidationFailure ;
     mf:name "float-pINF_fail" ;
     sht:trait sht:ValidLexicalForm ;
@@ -2132,7 +2179,7 @@
 
 
 
-####    double             -1 0 1 +1 -1.0 +1.0 1e0 1E0 NaN INF -INF | +INF
+####    double             -1 0 1 +1 -1.0 +1.0 1e0 1E0 NaN INF -INF | "" +INF
 <#double-n1_pass> a sht:ValidationTest ;
     mf:name "double-n1_pass" ;
     sht:trait sht:ValidLexicalForm ;
@@ -2285,6 +2332,19 @@
       sht:focus <http://a.example/double-nINF>
     ] ;
     mf:result <double-nINF_pass.val>
+    .
+
+<#double-empty_fail> a sht:ValidationFailure ;
+    mf:name "double-empty_fail" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:double} / { <s> <p> ''^^xsd:double }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-double> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/double-empty>
+    ] ;
     .
 
 <#double-pINF_fail> a sht:ValidationFailure ;
@@ -2665,7 +2725,7 @@
     .
 
 
-####    byte               -128 0 127 | -129 128
+####    byte               -128 0 127 | "" -129 128
 <#byte-n128_pass> a sht:ValidationTest ;
     mf:name "byte-n128_pass" ;
     sht:trait sht:ValidLexicalForm ;
@@ -2706,6 +2766,19 @@
       sht:focus <http://a.example/byte-127>
     ] ;
     mf:result <byte-127_pass.val>
+    .
+
+<#byte-empty_fail> a sht:ValidationFailure ;
+    mf:name "byte-empty_fail" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:byte} / { <s> <p> ''^^xsd:byte }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-byte> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/byte-empty>
+    ] ;
     .
 
 <#byte-n129_fail> a sht:ValidationFailure ;
@@ -3104,7 +3177,7 @@
     .
 
 
-####    boolean            true false 0 1 | TRUE FALSE tRuE fAlSe -1 2 10 01
+####    boolean            true false 0 1 | "" TRUE FALSE tRuE fAlSe -1 2 10 01
 <#boolean-true_pass> a sht:ValidationTest ;
     mf:name "boolean-true_pass" ;
     sht:trait sht:ValidLexicalForm ;
@@ -3159,6 +3232,19 @@
       sht:focus <http://a.example/boolean-1>
     ] ;
     mf:result <boolean-1_pass.val>
+    .
+
+<#boolean-empty_fail> a sht:ValidationFailure ;
+    mf:name "boolean-empty_fail" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:boolean} / { <s> <p> ''^^xsd:boolean }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-boolean> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/boolean-empty>
+    ] ;
     .
 
 <#boolean-TRUE_fail> a sht:ValidationFailure ;
@@ -3266,7 +3352,7 @@
     .
 
 
-####    dateTime           "2012-01-02T12:34.56Z" | "2012-01-02T" "2012-01-02"
+####    dateTime           "2012-01-02T12:34.56Z" | "" "2012-01-02T" "2012-01-02"
 <#dateTime-dt_pass> a sht:ValidationTest ;
     mf:name "dateTime-dt_pass" ;
     sht:trait sht:ValidLexicalForm ;
@@ -3279,6 +3365,19 @@
       sht:focus <http://a.example/dateTime-dt>
     ] ;
     mf:result <dateTime-dt_pass.val>
+    .
+
+<#dateTime-empty_fail> a sht:ValidationFailure ;
+    mf:name "dateTime-empty_fail" ;
+    sht:trait sht:ValidLexicalForm ;
+    rdfs:comment "<S> { <p> xsd:dateTime} / { <s> <p> ''^^xsd:dateTime }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/datatypes.shex> ;
+      sht:shape <http://a.example/S-dateTime> ;
+      sht:data <datatypes-data.ttl> ;
+      sht:focus <http://a.example/dateTime-empty>
+    ] ;
     .
 
 <#dateTime-dT_fail> a sht:ValidationFailure ;
