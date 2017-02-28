@@ -17,28 +17,28 @@ Schema           {
 startActs:[SemAct+]? start:(shapeExpr|labeledShapeExpr)? shapes:[labeledShapeExpr+]? }
 
 # labeled Shape Expressions
-labeledShapeExpr        = labeledShapeOr | labeledShapeAnd | labeledShapeNot | labeledNodeConstraint | labeledShape | IRI | labeledShapeExternal;
-labeledShapeOr          { type:"ShapeOr"        id:shapeLabel shapeExprs:[shapeExpr{2,}] }
-labeledShapeAnd         { type:"ShapeAnd"       id:shapeLabel shapeExprs:[shapeExpr{2,}] }
-labeledShapeNot         { type:"ShapeNot"       id:shapeLabel shapeExpr:shapeExpr }
-labeledNodeConstraint   { type:"NodeConstraint" id:shapeLabel nodeKind:("iri"|"bnode"|"nonliteral"|"literal")? datatype:IRI? xsFacet* values:[valueSetValue+]? }
-labeledShape            { type:"Shape"          id:shapeLabel virtual:BOOL? closed:BOOL? extra:[IRI+]? expression:tripleExpr? inherit:[shapeLabel+]? semActs:[SemAct+]? }
-labeledShapeExternal    { type:"ShapeExternal"  id:shapeLabel  }
+labeledShapeExpr        = labeledShapeOr | labeledShapeAnd | labeledShapeNot | labeledNodeConstraint | labeledShape | shapeExprLabel | labeledShapeExternal;
+labeledShapeOr          { type:"ShapeOr"        id:shapeExprLabel shapeExprs:[shapeExpr{2,}] }
+labeledShapeAnd         { type:"ShapeAnd"       id:shapeExprLabel shapeExprs:[shapeExpr{2,}] }
+labeledShapeNot         { type:"ShapeNot"       id:shapeExprLabel shapeExpr:shapeExpr }
+labeledNodeConstraint   { type:"NodeConstraint" id:shapeExprLabel nodeKind:("iri"|"bnode"|"nonliteral"|"literal")? datatype:IRI? xsFacet* values:[valueSetValue+]? }
+labeledShape            { type:"Shape"          id:shapeExprLabel virtual:BOOL? closed:BOOL? extra:[IRI+]? expression:tripleExpr? inherit:[shapeExprLabel+]? semActs:[SemAct+]? }
+labeledShapeExternal    { type:"ShapeExternal"  id:shapeExprLabel  }
 
 # Shape Expressions
-shapeExpr        = ShapeOr | ShapeAnd | ShapeNot | NodeConstraint | Shape | IRI | ShapeExternal;
+shapeExpr        = ShapeOr | ShapeAnd | ShapeNot | NodeConstraint | Shape | shapeExprLabel | ShapeExternal;
 ShapeOr          { shapeExprs:[shapeExpr{2,}] }
 ShapeAnd         { shapeExprs:[shapeExpr{2,}] }
 ShapeNot         { shapeExpr:shapeExpr }
 NodeConstraint   { nodeKind:("iri"|"bnode"|"nonliteral"|"literal")? datatype:IRI? xsFacet* values:[valueSetValue+]? }
-Shape            { virtual:BOOL? closed:BOOL? extra:[IRI+]? expression:tripleExpr? inherit:[shapeLabel+]? semActs:[SemAct+]? }
+Shape            { virtual:BOOL? closed:BOOL? extra:[IRI+]? expression:tripleExpr? inherit:[shapeExprLabel+]? semActs:[SemAct+]? }
 ShapeExternal    {  }
 
 # Triple Expressions
-tripleExpr       = EachOf | OneOf | TripleConstraint | IRI ;
-EachOf           { id:IRI? expressions:[tripleExpr{2,}] min:INTEGER? max:(INTEGER|"*")? semActs:[SemAct+]? annotations:[Annotation+]? }
-OneOf            { id:IRI? expressions:[tripleExpr{2,}] min:INTEGER? max:(INTEGER|"*")? semActs:[SemAct+]? annotations:[Annotation+]? }
-TripleConstraint { id:IRI? inverse:BOOL? negated:BOOL? predicate:IRI valueExpr:shapeExpr? min:INTEGER? max:(INTEGER|"*")? semActs:[SemAct+]? annotations:[Annotation+]? }
+tripleExpr       = EachOf | OneOf | TripleConstraint | tripleExprLabel ;
+EachOf           { id:tripleExprLabel? expressions:[tripleExpr{2,}] min:INTEGER? max:(INTEGER|"*")? semActs:[SemAct+]? annotations:[Annotation+]? }
+OneOf            { id:tripleExprLabel? expressions:[tripleExpr{2,}] min:INTEGER? max:(INTEGER|"*")? semActs:[SemAct+]? annotations:[Annotation+]? }
+TripleConstraint { id:tripleExprLabel? inverse:BOOL? negated:BOOL? predicate:IRI valueExpr:shapeExpr? min:INTEGER? max:(INTEGER|"*")? semActs:[SemAct+]? annotations:[Annotation+]? }
 
 # XML Schema facets
 xsFacet          = stringFacet | numericFacet ;
@@ -56,7 +56,8 @@ Wildcard         {  }
 SemAct           { name:IRI code:STRING? }
 Annotation       { predicate:IRI object:objectValue }
 
-shapeLabel       = IRI|BNODE ;
+shapeExprLabel   = IRI|BNODE ;
+tripleExprLabel  = IRI|BNODE ;
 numericLiteral   = INTEGER|DECIMAL|DOUBLE ;
 RDFLiteral       = SIMPLE_LITERAL|DATATYPE_LITERAL|LANG_LITERAL ;
 ObjectLiteral    { value:STRING language:STRING? type:STRING? }
