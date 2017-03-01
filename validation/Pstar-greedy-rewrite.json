@@ -31,7 +31,7 @@
             "predicate": "http://a.example/a",
             "valueExpr": "http://a.example/base/P",
             "min": 0,
-            "max": "INF"
+            "max": "unbounded"
           },
           {
             "type": "TripleConstraint",
@@ -52,7 +52,7 @@
             "predicate": "http://a.example/a",
             "valueExpr": "http://a.example/base/T",
             "min": 0,
-            "max": "INF"
+            "max": "unbounded"
           },
           {
             "type": "TripleConstraint",
@@ -73,14 +73,14 @@
             "predicate": "http://a.example/a",
             "valueExpr": "http://a.example/base/P",
             "min": 0,
-            "max": "INF"
+            "max": "unbounded"
           },
           {
             "type": "TripleConstraint",
             "predicate": "http://a.example/a",
             "valueExpr": "http://a.example/base/T",
             "min": 0,
-            "max": "INF"
+            "max": "unbounded"
           }
         ]
       }

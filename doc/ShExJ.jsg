@@ -36,9 +36,9 @@ ShapeExternal    {  }
 
 # Triple Expressions
 tripleExpr       = EachOf | OneOf | TripleConstraint | tripleExprLabel ;
-EachOf           { id:tripleExprLabel? expressions:[tripleExpr{2,}] min:INTEGER? max:(INTEGER|"INF")? semActs:[SemAct+]? annotations:[Annotation+]? }
-OneOf            { id:tripleExprLabel? expressions:[tripleExpr{2,}] min:INTEGER? max:(INTEGER|"INF")? semActs:[SemAct+]? annotations:[Annotation+]? }
-TripleConstraint { id:tripleExprLabel? inverse:BOOL? negated:BOOL? predicate:IRI valueExpr:shapeExpr? min:INTEGER? max:(INTEGER|"INF")? semActs:[SemAct+]? annotations:[Annotation+]? }
+EachOf           { id:tripleExprLabel? expressions:[tripleExpr{2,}] min:INTEGER? max:(INTEGER|"unbounded")? semActs:[SemAct+]? annotations:[Annotation+]? }
+OneOf            { id:tripleExprLabel? expressions:[tripleExpr{2,}] min:INTEGER? max:(INTEGER|"unbounded")? semActs:[SemAct+]? annotations:[Annotation+]? }
+TripleConstraint { id:tripleExprLabel? inverse:BOOL? negated:BOOL? predicate:IRI valueExpr:shapeExpr? min:INTEGER? max:(INTEGER|"unbounded")? semActs:[SemAct+]? annotations:[Annotation+]? }
 
 # XML Schema facets
 xsFacet          = stringFacet | numericFacet ;

@@ -11,7 +11,7 @@
           {
             "type": "TripleConstraintSolutions",
             "min": 0,
-            "max": "INF",
+            "max": "unbounded",
             "predicate": "http://a.example/a",
             "solutions": []
           },
@@ -23,7 +23,7 @@
                 "expressions": [
                   {
                     "type": "TripleConstraintSolutions", "predicate":"http://a.example/a",
-                    "min": 1, "max": "INF",
+                    "min": 1, "max": "unbounded",
                     "solutions":[
                       {"type":"TestedTriple","subject":"x","predicate":"http://a.example/a","object":{ "value": "1", "type": "http://www.w3.org/2001/XMLSchema#integer" }}
                     ]
