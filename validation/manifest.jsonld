@@ -6304,41 +6304,6 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#1integerMininclusivexsd-integer_fail-integer-low",
-          "@type": "sht:ValidationFailure",
-          "action": {
-            "schema": "../schemas/1integerMininclusivexsd-integer.shex",
-            "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_INT4.ttl",
-            "focus": "http://a.example/s1"
-          },
-          "extensionResults": [],
-          "name": "1integerMininclusivexsd-integer_fail-integer-low",
-          "trait": [
-            "ComparatorFacet"
-          ],
-          "comment": "<S1> { <p1> xsd:integer MININCLUSIVE \"5\"^^<http://www.w3.org/2001/XMLSchema#integer> } / { <s1> <p1> 4 }",
-          "status": "mf:proposed"
-        },
-        {
-          "@id": "#1integerMininclusivexsd-integer_pass-integer-equal",
-          "@type": "sht:ValidationTest",
-          "action": {
-            "schema": "../schemas/1integerMininclusivexsd-integer.shex",
-            "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_INT5.ttl",
-            "focus": "http://a.example/s1"
-          },
-          "extensionResults": [],
-          "name": "1integerMininclusivexsd-integer_pass-integer-equal",
-          "trait": [
-            "ComparatorFacet"
-          ],
-          "comment": "<S1> { <p1> xsd:integer MININCLUSIVE \"5\"^^<http://www.w3.org/2001/XMLSchema#integer> } / { <s1> <p1> 5 }",
-          "status": "mf:proposed",
-          "result": "1integerMininclusivexsd-integer_pass-integer-equal.val"
-        },
-        {
           "@id": "#1decimalMininclusiveINTEGER_fail-decimal-low",
           "@type": "sht:ValidationFailure",
           "action": {
@@ -6779,41 +6744,6 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#1decimalMininclusivexsd-decimal_fail-decimal-low",
-          "@type": "sht:ValidationFailure",
-          "action": {
-            "schema": "../schemas/1decimalMininclusivexsd-decimal.shex",
-            "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_DEC4_4.ttl",
-            "focus": "http://a.example/s1"
-          },
-          "extensionResults": [],
-          "name": "1decimalMininclusivexsd-decimal_fail-decimal-low",
-          "trait": [
-            "ComparatorFacet"
-          ],
-          "comment": "<S1> { <p1> xsd:decimal MININCLUSIVE \"4.5\"^^<http://www.w3.org/2001/XMLSchema#decimal> } / { <s1> <p1> 4.4 }",
-          "status": "mf:proposed"
-        },
-        {
-          "@id": "#1decimalMininclusivexsd-decimal_pass-decimal-equal",
-          "@type": "sht:ValidationTest",
-          "action": {
-            "schema": "../schemas/1decimalMininclusivexsd-decimal.shex",
-            "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_DEC4_5.ttl",
-            "focus": "http://a.example/s1"
-          },
-          "extensionResults": [],
-          "name": "1decimalMininclusivexsd-decimal_pass-decimal-equal",
-          "trait": [
-            "ComparatorFacet"
-          ],
-          "comment": "<S1> { <p1> xsd:decimal MININCLUSIVE \"4.5\"^^<http://www.w3.org/2001/XMLSchema#decimal> } / { <s1> <p1> 4.5 }",
-          "status": "mf:proposed",
-          "result": "1decimalMininclusivexsd-decimal_pass-decimal-equal.val"
-        },
-        {
           "@id": "#1floatMininclusiveINTEGERLead_fail-float-low",
           "@type": "sht:ValidationFailure",
           "action": {
@@ -7133,41 +7063,6 @@
           "result": "1floatMininclusiveDOUBLEintLeadTrail_pass-float-high.val"
         },
         {
-          "@id": "#1floatMininclusivexsd-float_fail-float-low",
-          "@type": "sht:ValidationFailure",
-          "action": {
-            "schema": "../schemas/1floatMininclusivexsd-float.shex",
-            "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_FLT4_4.ttl",
-            "focus": "http://a.example/s1"
-          },
-          "extensionResults": [],
-          "name": "1floatMininclusivexsd-float_fail-float-low",
-          "trait": [
-            "ComparatorFacet"
-          ],
-          "comment": "<S1> { <p1> xsd:float MININCLUSIVE \"4.5\"^^<http://www.w3.org/2001/XMLSchema#float> } / { <s1> <p1> '4.4'^^<http://www.w3.org/2001/XMLSchema#float> }",
-          "status": "mf:proposed"
-        },
-        {
-          "@id": "#1floatMininclusivexsd-float_pass-float-equal",
-          "@type": "sht:ValidationTest",
-          "action": {
-            "schema": "../schemas/1floatMininclusivexsd-float.shex",
-            "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_FLT4_5.ttl",
-            "focus": "http://a.example/s1"
-          },
-          "extensionResults": [],
-          "name": "1floatMininclusivexsd-float_pass-float-equal",
-          "trait": [
-            "ComparatorFacet"
-          ],
-          "comment": "<S1> { <p1> xsd:float MININCLUSIVE \"4.5\"^^<http://www.w3.org/2001/XMLSchema#float> } / { <s1> <p1> '4.5'^^<http://www.w3.org/2001/XMLSchema#float> }",
-          "status": "mf:proposed",
-          "result": "1floatMininclusivexsd-float_pass-float-equal.val"
-        },
-        {
           "@id": "#1doubleMininclusiveINTEGERLead_fail-double-low",
           "@type": "sht:ValidationFailure",
           "action": {
@@ -7485,41 +7380,6 @@
           "comment": "<S1> { <p1> xsd:double MININCLUSIVE 05.00e0 } / { <s1> <p1> 5.6e0 }",
           "status": "mf:proposed",
           "result": "1doubleMininclusiveDOUBLEintLeadTrail_pass-double-high.val"
-        },
-        {
-          "@id": "#1doubleMininclusivexsd-double_fail-double-low",
-          "@type": "sht:ValidationFailure",
-          "action": {
-            "schema": "../schemas/1doubleMininclusivexsd-double.shex",
-            "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_DBL4_4e0.ttl",
-            "focus": "http://a.example/s1"
-          },
-          "extensionResults": [],
-          "name": "1doubleMininclusivexsd-double_fail-double-low",
-          "trait": [
-            "ComparatorFacet"
-          ],
-          "comment": "<S1> { <p1> xsd:double MININCLUSIVE \"4.5e0\"^^<http://www.w3.org/2001/XMLSchema#double> } / { <s1> <p1> 4.4e0 }",
-          "status": "mf:proposed"
-        },
-        {
-          "@id": "#1doubleMininclusivexsd-double_pass-double-equal",
-          "@type": "sht:ValidationTest",
-          "action": {
-            "schema": "../schemas/1doubleMininclusivexsd-double.shex",
-            "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_DBL4_5e0.ttl",
-            "focus": "http://a.example/s1"
-          },
-          "extensionResults": [],
-          "name": "1doubleMininclusivexsd-double_pass-double-equal",
-          "trait": [
-            "ComparatorFacet"
-          ],
-          "comment": "<S1> { <p1> xsd:double MININCLUSIVE \"4.5e0\"^^<http://www.w3.org/2001/XMLSchema#double> } / { <s1> <p1> 4.5e0 }",
-          "status": "mf:proposed",
-          "result": "1doubleMininclusivexsd-double_pass-double-equal.val"
         },
         {
           "@id": "#1integerMinexclusiveINTEGER_fail-integer-low",
@@ -7988,40 +7848,6 @@
           "comment": "<S1> { <p1> xsd:float MINEXCLUSIVE 4.5e0 } / { <s1> <p1> '5.6'^^<http://www.w3.org/2001/XMLSchema#float> }",
           "status": "mf:proposed",
           "result": "1floatMinexclusiveDOUBLE_pass-float-high.val"
-        },
-        {
-          "@id": "#1floatMinexclusivexsd-float_fail-decimal-equal",
-          "@type": "sht:ValidationFailure",
-          "action": {
-            "schema": "../schemas/1floatMinexclusivexsd-float.shex",
-            "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_DEC4_5.ttl",
-            "focus": "http://a.example/s1"
-          },
-          "extensionResults": [],
-          "name": "1floatMinexclusivexsd-float_fail-decimal-equal",
-          "trait": [
-            "ComparatorFacet"
-          ],
-          "comment": "<S1> { <p1> xsd:float MINEXCLUSIVE \"4.5\"^^<http://www.w3.org/2001/XMLSchema#float> } / { <s1> <p1> 4.5 }",
-          "status": "mf:proposed"
-        },
-        {
-          "@id": "#1floatMinexclusivexsd-float_fail-double-equal",
-          "@type": "sht:ValidationFailure",
-          "action": {
-            "schema": "../schemas/1floatMinexclusivexsd-float.shex",
-            "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_DBL4_5e0.ttl",
-            "focus": "http://a.example/s1"
-          },
-          "extensionResults": [],
-          "name": "1floatMinexclusivexsd-float_fail-double-equal",
-          "trait": [
-            "ComparatorFacet"
-          ],
-          "comment": "<S1> { <p1> xsd:float MINEXCLUSIVE \"4.5\"^^<http://www.w3.org/2001/XMLSchema#float> } / { <s1> <p1> 4.5e0 }",
-          "status": "mf:proposed"
         },
         {
           "@id": "#1doubleMinexclusiveINTEGER_fail-double-low",
@@ -8655,40 +8481,6 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#1floatMaxinclusivexsd-float_fail-decimal-equal",
-          "@type": "sht:ValidationFailure",
-          "action": {
-            "schema": "../schemas/1floatMaxinclusivexsd-float.shex",
-            "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_DEC5_5.ttl",
-            "focus": "http://a.example/s1"
-          },
-          "extensionResults": [],
-          "name": "1floatMaxinclusivexsd-float_fail-decimal-equal",
-          "trait": [
-            "ComparatorFacet"
-          ],
-          "comment": "<S1> { <p1> xsd:float MAXINCLUSIVE \"5.5\"^^<http://www.w3.org/2001/XMLSchema#float> } / { <s1> <p1> 5.5 }",
-          "status": "mf:proposed"
-        },
-        {
-          "@id": "#1floatMaxinclusivexsd-float_fail-double-equal",
-          "@type": "sht:ValidationFailure",
-          "action": {
-            "schema": "../schemas/1floatMaxinclusivexsd-float.shex",
-            "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_DBL5_5e0.ttl",
-            "focus": "http://a.example/s1"
-          },
-          "extensionResults": [],
-          "name": "1floatMaxinclusivexsd-float_fail-double-equal",
-          "trait": [
-            "ComparatorFacet"
-          ],
-          "comment": "<S1> { <p1> xsd:float MAXINCLUSIVE \"5.5\"^^<http://www.w3.org/2001/XMLSchema#float> } / { <s1> <p1> 5.5e0 }",
-          "status": "mf:proposed"
-        },
-        {
           "@id": "#1doubleMaxinclusiveINTEGER_pass-double-low",
           "@type": "sht:ValidationTest",
           "action": {
@@ -9190,23 +8982,6 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:decimal MAXEXCLUSIVE 5 } / { <s1> <p1> '5'^^<http://www.w3.org/2001/XMLSchema#byte> }",
-          "status": "mf:proposed"
-        },
-        {
-          "@id": "#1decimalMaxexclusivexsd-decimal_fail-decimal-equal",
-          "@type": "sht:ValidationFailure",
-          "action": {
-            "schema": "../schemas/1decimalMaxexclusivexsd-decimal.shex",
-            "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_DEC5_5.ttl",
-            "focus": "http://a.example/s1"
-          },
-          "extensionResults": [],
-          "name": "1decimalMaxexclusivexsd-decimal_fail-decimal-equal",
-          "trait": [
-            "ComparatorFacet"
-          ],
-          "comment": "<S1> { <p1> xsd:decimal MAXEXCLUSIVE \"5.5\"^^<http://www.w3.org/2001/XMLSchema#decimal> } / { <s1> <p1> 5.5 }",
           "status": "mf:proposed"
         },
         {
