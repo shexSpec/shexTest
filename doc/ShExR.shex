@@ -67,7 +67,7 @@ start=@<Schema>
       sx:length xsd:integer
     | sx:minlength xsd:integer
     | sx:maxlength xsd:integer
-    | sx:pattern xsd:string
+    | sx:pattern xsd:string ; sx:flags xsd:string?
   );
   $<numericFacet> (
       sx:mininclusive   @<numericLiteral>

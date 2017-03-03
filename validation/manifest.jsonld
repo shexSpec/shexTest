@@ -10501,6 +10501,60 @@
           "status": "mf:proposed"
         },
         {
+          "@id": "#1literalPatterni_pass-lit-match",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1literalPatterni.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Lbc.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalPatterni_pass-lit-match",
+          "trait": [
+            "PaternFacet"
+          ],
+          "comment": "<S1> { <p1> LITERAL /bc/i } on { <s1> <p1> \"bc\" }",
+          "status": "mf:proposed",
+          "result": "1literalPatterni_pass-lit-match.val"
+        },
+        {
+          "@id": "#1literalPatterni_pass-lit-BC",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1literalPatterni.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_LBC.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalPatterni_pass-lit-BC",
+          "trait": [
+            "PaternFacet"
+          ],
+          "comment": "<S1> { <p1> LITERAL /bc/i } on { <s1> <p1> \"BC\" }",
+          "status": "mf:proposed",
+          "result": "1literalPatterni_pass-lit-BC.val"
+        },
+        {
+          "@id": "#1literalPatterni_pass-lit-bC",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1literalPatterni.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_LbC.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalPatterni_pass-lit-bC",
+          "trait": [
+            "PaternFacet"
+          ],
+          "comment": "<S1> { <p1> LITERAL /bc/i } on { <s1> <p1> \"bC\" }",
+          "status": "mf:proposed",
+          "result": "1literalPatterni_pass-lit-bC.val"
+        },
+        {
           "@id": "#1literalPattern_pass-lit-into",
           "@type": "sht:ValidationTest",
           "action": {
