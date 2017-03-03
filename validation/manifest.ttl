@@ -432,8 +432,6 @@
         <#1integerMininclusiveINTEGER_fail-dateTime-equal>
         <#1integerMininclusiveINTEGER_fail-string-equal>
         <#1integerMininclusiveINTEGER_fail-byte-equal>
-        <#1integerMininclusivexsd-integer_fail-integer-low>
-        <#1integerMininclusivexsd-integer_pass-integer-equal>
         <#1decimalMininclusiveINTEGER_fail-decimal-low>
         <#1decimalMininclusiveINTEGER_pass-decimal-high>
         <#1decimalMininclusiveINTEGERLead_fail-decimal-low>
@@ -459,8 +457,6 @@
         <#1decimalMininclusiveDOUBLEintLeadTrail_pass-decimal-high>
         <#1decimalMininclusiveDECIMAL_fail-float-equal>
         <#1decimalMininclusiveDECIMAL_fail-double-equal>
-        <#1decimalMininclusivexsd-decimal_fail-decimal-low>
-        <#1decimalMininclusivexsd-decimal_pass-decimal-equal>
         <#1floatMininclusiveINTEGERLead_fail-float-low>
         <#1floatMininclusiveINTEGERLead_pass-float-high>
         <#1floatMininclusiveDECIMAL_pass-float-equal>
@@ -479,8 +475,6 @@
         <#1floatMininclusiveDOUBLELeadTrail_pass-float-high>
         <#1floatMininclusiveDOUBLEintLeadTrail_fail-float-low>
         <#1floatMininclusiveDOUBLEintLeadTrail_pass-float-high>
-        <#1floatMininclusivexsd-float_fail-float-low>
-        <#1floatMininclusivexsd-float_pass-float-equal>
         <#1doubleMininclusiveINTEGERLead_fail-double-low>
         <#1doubleMininclusiveINTEGERLead_pass-double-high>
         <#1doubleMininclusiveDECIMAL_pass-double-equal>
@@ -499,8 +493,6 @@
         <#1doubleMininclusiveDOUBLELeadTrail_pass-double-high>
         <#1doubleMininclusiveDOUBLEintLeadTrail_fail-double-low>
         <#1doubleMininclusiveDOUBLEintLeadTrail_pass-double-high>
-        <#1doubleMininclusivexsd-double_fail-double-low>
-        <#1doubleMininclusivexsd-double_pass-double-equal>
         <#1integerMinexclusiveINTEGER_fail-integer-low>
         <#1integerMinexclusiveINTEGER_fail-integer-equal>
         <#1integerMinexclusiveINTEGER_pass-integer-high>
@@ -528,8 +520,6 @@
         <#1floatMinexclusiveDOUBLE_fail-float-low>
         <#1floatMinexclusiveDOUBLE_fail-float-equal>
         <#1floatMinexclusiveDOUBLE_pass-float-high>
-        <#1floatMinexclusivexsd-float_fail-decimal-equal>
-        <#1floatMinexclusivexsd-float_fail-double-equal>
         <#1doubleMinexclusiveINTEGER_fail-double-low>
         <#1doubleMinexclusiveINTEGER_pass-double-high>
         <#1doubleMinexclusiveDECIMAL_fail-double-low>
@@ -566,8 +556,6 @@
         <#1floatMaxinclusiveDOUBLE_pass-float-low>
         <#1floatMaxinclusiveDOUBLE_pass-float-equal>
         <#1floatMaxinclusiveDOUBLE_fail-float-high>
-        <#1floatMaxinclusivexsd-float_fail-decimal-equal>
-        <#1floatMaxinclusivexsd-float_fail-double-equal>
         <#1doubleMaxinclusiveINTEGER_pass-double-low>
         <#1doubleMaxinclusiveINTEGER_fail-double-high>
         <#1doubleMaxinclusiveDECIMAL_pass-double-low>
@@ -597,7 +585,6 @@
         <#1decimalMaxexclusiveDECIMAL_fail-float-equal>
         <#1decimalMaxexclusiveDECIMAL_fail-double-equal>
         <#1decimalMaxexclusivexsd-byte_fail-byte-equal>
-        <#1decimalMaxexclusivexsd-decimal_fail-decimal-equal>
         <#1floatMaxexclusiveINTEGER_pass-float-low>
         <#1floatMaxexclusiveINTEGER_fail-float-high>
         <#1floatMaxexclusiveDECIMAL_pass-float-low>
@@ -6122,35 +6109,6 @@
     ] ;
     .
 
-<#1integerMininclusivexsd-integer_fail-integer-low> a sht:ValidationFailure ;
-    mf:name "1integerMininclusivexsd-integer_fail-integer-low" ;
-    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.J23> ;
-    sht:trait sht:ComparatorFacet ;
-    rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE \"5\"^^<http://www.w3.org/2001/XMLSchema#integer> } / { <s1> <p1> 4 }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1integerMininclusivexsd-integer.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_INT4.ttl> ;
-      sht:focus <http://a.example/s1>
-    ] ;
-    .
-
-<#1integerMininclusivexsd-integer_pass-integer-equal> a sht:ValidationTest ;
-    mf:name "1integerMininclusivexsd-integer_pass-integer-equal" ;
-    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.K23> ;
-    sht:trait sht:ComparatorFacet ;
-    rdfs:comment "<S1> { <p1> xsd:integer MININCLUSIVE \"5\"^^<http://www.w3.org/2001/XMLSchema#integer> } / { <s1> <p1> 5 }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1integerMininclusivexsd-integer.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_INT5.ttl> ;
-      sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1integerMininclusivexsd-integer_pass-integer-equal.val>
-    .
-
 <#1decimalMininclusiveINTEGER_fail-decimal-low> a sht:ValidationFailure ;
     mf:name "1decimalMininclusiveINTEGER_fail-decimal-low" ;
     prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.J27> ;
@@ -6516,35 +6474,6 @@
     ] ;
     .
 
-<#1decimalMininclusivexsd-decimal_fail-decimal-low> a sht:ValidationFailure ;
-    mf:name "1decimalMininclusivexsd-decimal_fail-decimal-low" ;
-    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.J44> ;
-    sht:trait sht:ComparatorFacet ;
-    rdfs:comment "<S1> { <p1> xsd:decimal MININCLUSIVE \"4.5\"^^<http://www.w3.org/2001/XMLSchema#decimal> } / { <s1> <p1> 4.4 }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1decimalMininclusivexsd-decimal.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_DEC4_4.ttl> ;
-      sht:focus <http://a.example/s1>
-    ] ;
-    .
-
-<#1decimalMininclusivexsd-decimal_pass-decimal-equal> a sht:ValidationTest ;
-    mf:name "1decimalMininclusivexsd-decimal_pass-decimal-equal" ;
-    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.K44> ;
-    sht:trait sht:ComparatorFacet ;
-    rdfs:comment "<S1> { <p1> xsd:decimal MININCLUSIVE \"4.5\"^^<http://www.w3.org/2001/XMLSchema#decimal> } / { <s1> <p1> 4.5 }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1decimalMininclusivexsd-decimal.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_DEC4_5.ttl> ;
-      sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1decimalMininclusivexsd-decimal_pass-decimal-equal.val>
-    .
-
 <#1floatMininclusiveINTEGERLead_fail-float-low> a sht:ValidationFailure ;
     mf:name "1floatMininclusiveINTEGERLead_fail-float-low" ;
     prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.J49> ;
@@ -6810,35 +6739,6 @@
     mf:result <1floatMininclusiveDOUBLEintLeadTrail_pass-float-high.val>
     .
 
-<#1floatMininclusivexsd-float_fail-float-low> a sht:ValidationFailure ;
-    mf:name "1floatMininclusivexsd-float_fail-float-low" ;
-    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.J65> ;
-    sht:trait sht:ComparatorFacet ;
-    rdfs:comment "<S1> { <p1> xsd:float MININCLUSIVE \"4.5\"^^<http://www.w3.org/2001/XMLSchema#float> } / { <s1> <p1> '4.4'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1floatMininclusivexsd-float.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_FLT4_4.ttl> ;
-      sht:focus <http://a.example/s1>
-    ] ;
-    .
-
-<#1floatMininclusivexsd-float_pass-float-equal> a sht:ValidationTest ;
-    mf:name "1floatMininclusivexsd-float_pass-float-equal" ;
-    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.K65> ;
-    sht:trait sht:ComparatorFacet ;
-    rdfs:comment "<S1> { <p1> xsd:float MININCLUSIVE \"4.5\"^^<http://www.w3.org/2001/XMLSchema#float> } / { <s1> <p1> '4.5'^^<http://www.w3.org/2001/XMLSchema#float> }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1floatMininclusivexsd-float.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_FLT4_5.ttl> ;
-      sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1floatMininclusivexsd-float_pass-float-equal.val>
-    .
-
 <#1doubleMininclusiveINTEGERLead_fail-double-low> a sht:ValidationFailure ;
     mf:name "1doubleMininclusiveINTEGERLead_fail-double-low" ;
     prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.J70> ;
@@ -7102,35 +7002,6 @@
       sht:focus <http://a.example/s1>
     ] ;
     mf:result <1doubleMininclusiveDOUBLEintLeadTrail_pass-double-high.val>
-    .
-
-<#1doubleMininclusivexsd-double_fail-double-low> a sht:ValidationFailure ;
-    mf:name "1doubleMininclusivexsd-double_fail-double-low" ;
-    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.J86> ;
-    sht:trait sht:ComparatorFacet ;
-    rdfs:comment "<S1> { <p1> xsd:double MININCLUSIVE \"4.5e0\"^^<http://www.w3.org/2001/XMLSchema#double> } / { <s1> <p1> 4.4e0 }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1doubleMininclusivexsd-double.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_DBL4_4e0.ttl> ;
-      sht:focus <http://a.example/s1>
-    ] ;
-    .
-
-<#1doubleMininclusivexsd-double_pass-double-equal> a sht:ValidationTest ;
-    mf:name "1doubleMininclusivexsd-double_pass-double-equal" ;
-    prov:wasDerivedFrom <facet-tests-data.xlsx#MinInclusive.K86> ;
-    sht:trait sht:ComparatorFacet ;
-    rdfs:comment "<S1> { <p1> xsd:double MININCLUSIVE \"4.5e0\"^^<http://www.w3.org/2001/XMLSchema#double> } / { <s1> <p1> 4.5e0 }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1doubleMininclusivexsd-double.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_DBL4_5e0.ttl> ;
-      sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1doubleMininclusivexsd-double_pass-double-equal.val>
     .
 
 <#1integerMinexclusiveINTEGER_fail-integer-low> a sht:ValidationFailure ;
@@ -7518,34 +7389,6 @@
       sht:focus <http://a.example/s1>
     ] ;
     mf:result <1floatMinexclusiveDOUBLE_pass-float-high.val>
-    .
-
-<#1floatMinexclusivexsd-float_fail-decimal-equal> a sht:ValidationFailure ;
-    mf:name "1floatMinexclusivexsd-float_fail-decimal-equal" ;
-    prov:wasDerivedFrom <facet-tests-data.xlsx#MinExclusive.K58> ;
-    sht:trait sht:ComparatorFacet ;
-    rdfs:comment "<S1> { <p1> xsd:float MINEXCLUSIVE \"4.5\"^^<http://www.w3.org/2001/XMLSchema#float> } / { <s1> <p1> 4.5 }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1floatMinexclusivexsd-float.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_DEC4_5.ttl> ;
-      sht:focus <http://a.example/s1>
-    ] ;
-    .
-
-<#1floatMinexclusivexsd-float_fail-double-equal> a sht:ValidationFailure ;
-    mf:name "1floatMinexclusivexsd-float_fail-double-equal" ;
-    prov:wasDerivedFrom <facet-tests-data.xlsx#MinExclusive.K60> ;
-    sht:trait sht:ComparatorFacet ;
-    rdfs:comment "<S1> { <p1> xsd:float MINEXCLUSIVE \"4.5\"^^<http://www.w3.org/2001/XMLSchema#float> } / { <s1> <p1> 4.5e0 }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1floatMinexclusivexsd-float.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_DBL4_5e0.ttl> ;
-      sht:focus <http://a.example/s1>
-    ] ;
     .
 
 <#1doubleMinexclusiveINTEGER_fail-double-low> a sht:ValidationFailure ;
@@ -8071,34 +7914,6 @@
     ] ;
     .
 
-<#1floatMaxinclusivexsd-float_fail-decimal-equal> a sht:ValidationFailure ;
-    mf:name "1floatMaxinclusivexsd-float_fail-decimal-equal" ;
-    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxInclusive.K58> ;
-    sht:trait sht:ComparatorFacet ;
-    rdfs:comment "<S1> { <p1> xsd:float MAXINCLUSIVE \"5.5\"^^<http://www.w3.org/2001/XMLSchema#float> } / { <s1> <p1> 5.5 }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1floatMaxinclusivexsd-float.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_DEC5_5.ttl> ;
-      sht:focus <http://a.example/s1>
-    ] ;
-    .
-
-<#1floatMaxinclusivexsd-float_fail-double-equal> a sht:ValidationFailure ;
-    mf:name "1floatMaxinclusivexsd-float_fail-double-equal" ;
-    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxInclusive.K60> ;
-    sht:trait sht:ComparatorFacet ;
-    rdfs:comment "<S1> { <p1> xsd:float MAXINCLUSIVE \"5.5\"^^<http://www.w3.org/2001/XMLSchema#float> } / { <s1> <p1> 5.5e0 }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1floatMaxinclusivexsd-float.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_DBL5_5e0.ttl> ;
-      sht:focus <http://a.example/s1>
-    ] ;
-    .
-
 <#1doubleMaxinclusiveINTEGER_pass-double-low> a sht:ValidationTest ;
     mf:name "1doubleMaxinclusiveINTEGER_pass-double-low" ;
     prov:wasDerivedFrom <facet-tests-data.xlsx#MaxInclusive.J69> ;
@@ -8512,20 +8327,6 @@
       sht:schema <../schemas/1decimalMaxexclusivexsd-byte.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_BYT5.ttl> ;
-      sht:focus <http://a.example/s1>
-    ] ;
-    .
-
-<#1decimalMaxexclusivexsd-decimal_fail-decimal-equal> a sht:ValidationFailure ;
-    mf:name "1decimalMaxexclusivexsd-decimal_fail-decimal-equal" ;
-    prov:wasDerivedFrom <facet-tests-data.xlsx#MaxExclusive.K44> ;
-    sht:trait sht:ComparatorFacet ;
-    rdfs:comment "<S1> { <p1> xsd:decimal MAXEXCLUSIVE \"5.5\"^^<http://www.w3.org/2001/XMLSchema#decimal> } / { <s1> <p1> 5.5 }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1decimalMaxexclusivexsd-decimal.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_DEC5_5.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
     .
