@@ -183,6 +183,7 @@
         <#1bnodeMaxlength>
         <#1nonliteralMaxlength>
         <#1literalPattern>
+        <#1literalPatterni>
         <#1literalPattern19>
         <#1literalStartPattern>
         <#1literalPatternEnd>
@@ -1644,6 +1645,14 @@
     sx:shex <1literalPattern.shex> ;
     sx:json <1literalPattern.json> ;
     sx:ttl <1literalPattern.ttl> ;
+    .
+
+<#1literalPatterni> a sht:RepresentationTest ;
+    mf:name "1literalPatterni" ;
+    mf:status mf:proposed ;
+    sx:shex <1literalPatterni.shex> ;
+    sx:json <1literalPatterni.json> ;
+    sx:ttl <1literalPatterni.ttl> ;
     .
 
 <#1literalPattern19> a sht:RepresentationTest ;

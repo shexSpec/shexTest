@@ -686,6 +686,9 @@
         <#1literalPattern_fail-lit-short>
 	<#1literalPattern_fail-ab>
 	<#1literalPattern_fail-cd>
+        <#1literalPatterni_pass-lit-match>
+        <#1literalPatterni_pass-lit-BC>
+        <#1literalPatterni_pass-lit-bC>
         <#1literalPattern_pass-lit-into>
         <#1literalPattern19_fail-iri-match>
         <#1literalPattern_fail-bnode-match>
@@ -9722,6 +9725,48 @@
       sht:data <Is1_Ip1_Lcd.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
+    .
+
+<#1literalPatterni_pass-lit-match> a sht:ValidationTest ;
+    mf:name "1literalPatterni_pass-lit-match" ;
+    sht:trait sht:PaternFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL /bc/i } on { <s1> <p1> \"bc\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalPatterni.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Lbc.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1literalPatterni_pass-lit-match.val>
+    .
+
+<#1literalPatterni_pass-lit-BC> a sht:ValidationTest ;
+    mf:name "1literalPatterni_pass-lit-BC" ;
+    sht:trait sht:PaternFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL /bc/i } on { <s1> <p1> \"BC\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalPatterni.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LBC.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1literalPatterni_pass-lit-BC.val>
+    .
+
+<#1literalPatterni_pass-lit-bC> a sht:ValidationTest ;
+    mf:name "1literalPatterni_pass-lit-bC" ;
+    sht:trait sht:PaternFacet ;
+    rdfs:comment "<S1> { <p1> LITERAL /bc/i } on { <s1> <p1> \"bC\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalPatterni.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LbC.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1literalPatterni_pass-lit-bC.val>
     .
 
 <#1literalPattern_pass-lit-into> a sht:ValidationTest ;
