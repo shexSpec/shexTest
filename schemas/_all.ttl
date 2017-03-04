@@ -154,8 +154,8 @@ prefix1:S2e a sx:EachOf ;
           sx:name <http://all.example/act2>
         ]);
         sx:valueExpr [ a sx:NodeConstraint ; sx:values (
-          [ a sx:StemRange ; sx:stem [ a sx:Wildcard ] ; sx:exclusion
-              [ a sx:Stem ; sx:stem "http://all.example/a"^^xsd:anyUri ],
+          [ a sx:IRIStemRange ; sx:stem [ a sx:Wildcard ] ; sx:exclusion
+              [ a sx:IRIStem ; sx:stem "http://all.example/a"^^xsd:anyUri ],
               <http://all.example/b> ] ) ] ]
     ) ] .
 
@@ -165,8 +165,8 @@ prefix1:S2e a sx:EachOf ;
   sx:shapeExprs (
     [ a sx:NodeConstraint ; sx:values (
       <http://a.example/a1>
-      [ a sx:StemRange ; sx:stem "http://all.example/"^^xsd:anyUri ; sx:exclusion
-        [ a sx:Stem ; sx:stem "http://all.example/a"^^xsd:anyUri ],
+      [ a sx:IRIStemRange ; sx:stem "http://all.example/"^^xsd:anyUri ; sx:exclusion
+        [ a sx:IRIStem ; sx:stem "http://all.example/a"^^xsd:anyUri ],
         <http://all.example/b> ] ) ]
     [ a sx:NodeConstraint ; sx:datatype <http://all.example/IRI> ] ) .
 

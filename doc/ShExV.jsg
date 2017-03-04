@@ -52,10 +52,10 @@ numericFacet     = (mininclusive|minexclusive|maxinclusive|maxexclusive):numeric
                  | (totaldigits|fractiondigits):INTEGER ;
 
 # Value Sets
-valueSetValue    = objectValue|Stem|StemRange ;
+valueSetValue    = objectValue|IRIStem|IRIStemRange ;
 objectValue      = IRI|ObjectLiteral ;
-Stem             { stem:IRI } # StemRange with exclusions
-StemRange        { stem:(IRI|Wildcard) exclusions:[objectValue|Stem +]? }
+IRIStem          { stem:IRI } # IRIStemRange with exclusions
+IRIStemRange     { stem:(IRI|Wildcard) exclusions:[objectValue|IRIStem +]? }
 Wildcard         {  }
 
 SemAct           { name:IRI code:STRING? }

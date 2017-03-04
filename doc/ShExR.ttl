@@ -18,8 +18,8 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
      <ShapeExternal>,
      <ShapeNot>,
      <ShapeOr>,
-     <Stem>,
-     <StemRange>,
+     <IRIStem>,
+     <IRIStemRange>,
      <TripleConstraint>,
      <Wildcard>,
      <facet_holder>,
@@ -163,23 +163,23 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     [ a sx:NodeConstraint ; sx:datatype xsd:double ] ) .
 
 <valueSetValue> a sx:ShapeOr ;
-  sx:shapeExprs ( <objectValue> <Stem> <StemRange> ) .
+  sx:shapeExprs ( <objectValue> <IRIStem> <IRIStemRange> ) .
 <objectValue> a sx:ShapeOr ;
   sx:shapeExprs (
     [ a sx:NodeConstraint ; sx:nodeKind sx:iri ]
     [ a sx:NodeConstraint ; sx:nodeKind sx:literal ] ) .
-<Stem> a sx:Shape ; sx:closed true ;
+<IRIStem> a sx:Shape ; sx:closed true ;
   sx:expression
     [ a sx:EachOf ; sx:expressions (
       [ a sx:TripleConstraint ; sx:predicate rdf:type ;
-        sx:valueExpr [ a sx:NodeConstraint ; sx:values ( sx:Stem ) ] ]
+        sx:valueExpr [ a sx:NodeConstraint ; sx:values ( sx:IRIStem ) ] ]
       [ a sx:TripleConstraint ; sx:predicate sx:stem ;
         sx:valueExpr [ a sx:NodeConstraint ; sx:datatype xsd:anyUri ] ] ) ] .
-<StemRange> a sx:Shape ; sx:closed true ;
+<IRIStemRange> a sx:Shape ; sx:closed true ;
   sx:expression
     [ a sx:EachOf ; sx:expressions (
       [ a sx:TripleConstraint ; sx:predicate rdf:type ;
-        sx:valueExpr [ a sx:NodeConstraint ; sx:values ( sx:StemRange ) ] ]
+        sx:valueExpr [ a sx:NodeConstraint ; sx:values ( sx:IRIStemRange ) ] ]
       [ a sx:TripleConstraint ; sx:predicate sx:stem ;
         sx:valueExpr [ a sx:ShapeOr ; sx:shapeExprs (
 	  [ a sx:NodeConstraint ; sx:datatype xsd:anyUri ]
@@ -187,7 +187,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
       [ a sx:TripleConstraint ; sx:predicate sx:exclusion ; sx:min 0 ; sx:max "*" ;
         sx:valueExpr [ a sx:ShapeOr ; sx:shapeExprs (
 	  <objectValue>
-	  <Stem> ) ] ] ) ] .
+	  <IRIStem> ) ] ] ) ] .
 <Wildcard> a sx:ShapeAnd ;
   sx:shapeExprs (
     [ a sx:NodeConstraint ; sx:nodeKind sx:bnode ]

@@ -445,8 +445,8 @@
       "type": "ShapeOr",
       "shapeExprs": [
         "http://shex.io/ns/objectValue",
-        "http://shex.io/ns/Stem",
-        "http://shex.io/ns/StemRange"
+        "http://shex.io/ns/IRIStem",
+        "http://shex.io/ns/IRIStemRange"
       ],
       "id": "http://shex.io/ns/valueSetValue"
     },
@@ -475,7 +475,7 @@
             "valueExpr": {
               "type": "NodeConstraint",
               "values": [
-                "http://shex.io/ns/shex#Stem"
+                "http://shex.io/ns/shex#IRIStem"
               ]
             }
           },
@@ -490,7 +490,7 @@
         ]
       },
       "closed": true,
-      "id": "http://shex.io/ns/Stem"
+      "id": "http://shex.io/ns/IRIStem"
     },
     {
       "type": "Shape",
@@ -503,7 +503,7 @@
             "valueExpr": {
               "type": "NodeConstraint",
               "values": [
-                "http://shex.io/ns/shex#StemRange"
+                "http://shex.io/ns/shex#IRIStemRange"
               ]
             }
           },
@@ -528,7 +528,7 @@
               "type": "ShapeOr",
               "shapeExprs": [
                 "http://shex.io/ns/objectValue",
-                "http://shex.io/ns/Stem"
+                "http://shex.io/ns/IRIStem"
               ]
             },
             "min": 0,
@@ -537,7 +537,7 @@
         ]
       },
       "closed": true,
-      "id": "http://shex.io/ns/StemRange"
+      "id": "http://shex.io/ns/IRIStemRange"
     },
     {
       "type": "ShapeAnd",
