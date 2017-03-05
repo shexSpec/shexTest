@@ -42,7 +42,7 @@ TripleConstraint { id:tripleExprLabel? inverse:BOOL? negated:BOOL? predicate:IRI
 
 # XML Schema facets
 xsFacet          = stringFacet | numericFacet ;
-stringFacet      = (length|minlength|maxlength):INTEGER | pattern:STRING ;
+stringFacet      = (length|minlength|maxlength):INTEGER | pattern:STRING flags:STRING? ;
 numericFacet     = (mininclusive|minexclusive|maxinclusive|maxexclusive):numericLiteral
                  | (totaldigits|fractiondigits):INTEGER ;
 
