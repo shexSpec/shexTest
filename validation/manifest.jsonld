@@ -11444,6 +11444,24 @@
           "status": "mf:proposed"
         },
         {
+          "@id": "#1val1iriStem_fail-literalIv1",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1val1iriStem.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_LIv1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1iriStem_fail-literalIv1",
+          "trait": [
+            "Stem",
+            "ValueSet"
+          ],
+          "comment": "<S> { <p1> [<v1>~] } on { <s> <p1> 'v1' }",
+          "status": "mf:proposed"
+        },
+        {
           "@id": "#1val1iriStemMinusiri3_passIv",
           "@type": "sht:ValidationTest",
           "action": {
@@ -11482,6 +11500,24 @@
           "result": "1val1iriStemMinusiri3_passIv4.val"
         },
         {
+          "@id": "#1val1iriStemMinusiri3_fail-literalIv4",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1val1iriStemMinusiri3.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_LIv4.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1iriStemMinusiri3_fail-literalIv4",
+          "trait": [
+            "Stem",
+            "ValueSet"
+          ],
+          "comment": "<S> { <p1> [<v>-<v1>-<v2>-<v3>] } on { <s> <p1> 'v4' }",
+          "status": "mf:proposed"
+        },
+        {
           "@id": "#1val1iriStemMinusiri3_v1",
           "@type": "sht:ValidationFailure",
           "action": {
@@ -11497,6 +11533,24 @@
             "ValueSet"
           ],
           "comment": "<S> { <p1> [<v>-<v1>-<v2>-<v3>] } on { <s1> <p1> <v1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1val1iriStemMinusiri3_fail-literalIv1",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1val1iriStemMinusiri3.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_LIv1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1iriStemMinusiri3_fail-literalIv1",
+          "trait": [
+            "Stem",
+            "ValueSet"
+          ],
+          "comment": "<S> { <p1> [<v>-<v1>-<v2>-<v3>] } on { <s1> <p1> 'v1' }",
           "status": "mf:proposed"
         },
         {
@@ -11721,6 +11775,24 @@
           "status": "mf:proposed"
         },
         {
+          "@id": "#1val1literaliriStem_fail-Iv1",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1val1literaliriStem.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1literaliriStem_fail-Iv1",
+          "trait": [
+            "Stem",
+            "ValueSet"
+          ],
+          "comment": "<S> { <p1> ['v1'~] } on { <s> <p1> <v1> }",
+          "status": "mf:proposed"
+        },
+        {
           "@id": "#1val1literalStemMinusliteral3_passLv",
           "@type": "sht:ValidationTest",
           "action": {
@@ -11759,6 +11831,24 @@
           "result": "1val1literalStemMinusliteral3_passLv4.val"
         },
         {
+          "@id": "#1val1literaliriStemMinusliteraliri3_fail-Iv4",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1val1literaliriStemMinusliteraliri3.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv4.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1literaliriStemMinusliteraliri3_fail-Iv4",
+          "trait": [
+            "Stem",
+            "ValueSet"
+          ],
+          "comment": "<S> { <p1> ['v'-'v1'-'v2'-'v3'] } on { <s> <p1> <v4> }",
+          "status": "mf:proposed"
+        },
+        {
           "@id": "#1val1literalStemMinusliteral3_v1",
           "@type": "sht:ValidationFailure",
           "action": {
@@ -11774,6 +11864,24 @@
             "ValueSet"
           ],
           "comment": "<S> { <p1> ['v'-'v1'-'v2'-'v3'] } on { <s1> <p1> 'v1' }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1val1literaliriStemMinusliteraliri3_fail-Iv1",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1val1literaliriStemMinusliteraliri3.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1literaliriStemMinusliteraliri3_fail-Iv1",
+          "trait": [
+            "Stem",
+            "ValueSet"
+          ],
+          "comment": "<S> { <p1> ['v'-'v1'-'v2'-'v3'] } on { <s1> <p1> <v1> }",
           "status": "mf:proposed"
         },
         {

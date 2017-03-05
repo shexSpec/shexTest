@@ -1,0 +1,28 @@
+{
+  "@context": "https://shexspec.github.io/context.jsonld",
+  "type": "Schema",
+  "shapes": [
+    {
+      "id": "http://a.example/S1",
+      "type": "Shape",
+      "expression": {
+        "type": "TripleConstraint",
+        "predicate": "http://a.example/p1",
+        "valueExpr": {
+          "type": "NodeConstraint",
+          "values": [
+            {
+              "type": "LiteralStemRange",
+              "stem": { "value": "http://a.example/v" },
+              "exclusions": [
+                { "value": "http://a.example/v1" },
+                { "value": "http://a.example/v2" },
+                { "value": "http://a.example/v3" }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

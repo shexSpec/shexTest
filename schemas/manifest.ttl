@@ -192,6 +192,7 @@
         <#1val1refvsMinusiri3>
         <#1val1dotMinusiriStem3>
         <#1val1iriStem>
+        <#1val1literaliriStem>
         <#1val1iriStemMinusiri3>
         <#1val1iriStemMinusiriStem3>
 
@@ -1719,12 +1720,28 @@
     sx:ttl <1val1iriStem.ttl> ;
     .
 
+<#1val1literaliriStem> a sht:RepresentationTest ;
+    mf:name "1val1literaliriStem" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1literaliriStem.shex> ;
+    sx:json <1val1literaliriStem.json> ;
+    sx:ttl <1val1literaliriStem.ttl> ;
+    .
+
 <#1val1iriStemMinusiri3> a sht:RepresentationTest ;
     mf:name "1val1iriStemMinusiri3" ;
     mf:status mf:proposed ;
     sx:shex <1val1iriStemMinusiri3.shex> ;
     sx:json <1val1iriStemMinusiri3.json> ;
     sx:ttl <1val1iriStemMinusiri3.ttl> ;
+    .
+
+<#1val1literaliriStemMinusliteraliri3> a sht:RepresentationTest ;
+    mf:name "1val1literaliriStemMinusliteraliri3" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1literaliriStemMinusliteraliri3.shex> ;
+    sx:json <1val1literaliriStemMinusliteraliri3.json> ;
+    sx:ttl <1val1literaliriStemMinusliteraliri3.ttl> ;
     .
 
 <#1val1iriStemMinusiriStem3> a sht:RepresentationTest ;
