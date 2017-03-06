@@ -1,0 +1,39 @@
+{
+  "@context": "https://shexspec.github.io/context.jsonld",
+  "type": "Schema",
+  "shapes": [
+    {
+      "id": "http://a.example/S1",
+      "type": "Shape",
+      "expression": {
+        "type": "TripleConstraint",
+        "predicate": "http://a.example/p1",
+        "valueExpr": {
+          "type": "NodeConstraint",
+          "values": [
+            {
+              "type": "LanguageStemRange",
+              "stem": {
+                "type": "Wildcard"
+              },
+              "exclusions": [
+                {
+                  "type": "LanguageStem",
+                  "stem": { "value": "fr-be" }
+                },
+                {
+                  "type": "LanguageStem",
+                  "stem": { "value": "fr-cd" }
+                },
+                {
+                  "type": "LanguageStem",
+                  "stem": { "value": "fr-ch" }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
