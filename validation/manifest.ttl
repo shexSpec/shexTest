@@ -9617,7 +9617,7 @@
     mf:action [
       sht:schema <../schemas/1literalPatterni.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_LbC.ttl> ;
+      sht:data <Is1_Ip1_LblowercaseC.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
     mf:result <1literalPatterni_pass-lit-bC.val>
@@ -10260,7 +10260,7 @@
 <#1val1iriStem_passv1> a sht:ValidationTest ;
     mf:name "1val1iriStem_passv1" ;
     sht:trait sht:ValueSet, sht:Stem ;
-    rdfs:comment "<S> { <p1> [<v1>~] } on { <s> <p1> <v1> }" ;
+    rdfs:comment "<S> { <p1> [<v>~] } on { <s> <p1> <v1> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1iriStem.shex> ;
@@ -10274,7 +10274,7 @@
 <#1val1iriStem_passv1a> a sht:ValidationTest ;
     mf:name "1val1iriStem_passv1a" ;
     sht:trait sht:ValueSet, sht:Stem ;
-    rdfs:comment "<S> { <p1> [<v1>~] } on { <s> <p1> <v1a> }" ;
+    rdfs:comment "<S> { <p1> [<v>~] } on { <s> <p1> <v1a> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1iriStem.shex> ;
@@ -10288,7 +10288,7 @@
 <#1val1iriStem_fail> a sht:ValidationFailure ;
     mf:name "1val1iriStem_fail" ;
     sht:trait sht:ValueSet, sht:Stem ;
-    rdfs:comment "<S> { <p1> [<v1>~] } on { <s1> <p1> <> }" ;
+    rdfs:comment "<S> { <p1> [<v>~] } on { <s1> <p1> <> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1iriStem.shex> ;
