@@ -10437,7 +10437,7 @@
           "action": {
             "schema": "../schemas/1literalPattern.shex",
             "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_Lbc.ttl",
+            "data": "Is1_Ip1_Lbclowercase.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
@@ -10506,7 +10506,7 @@
           "action": {
             "schema": "../schemas/1literalPatterni.shex",
             "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_Lbc.ttl",
+            "data": "Is1_Ip1_Lbclowercase.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
@@ -10537,7 +10537,7 @@
           "result": "1literalPatterni_pass-lit-BC.val"
         },
         {
-          "@id": "#1literalPatterni_pass-lit-bC",
+          "@id": "#1literalPatterni_pass-lit-blowercaseC",
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/1literalPatterni.shex",
@@ -10546,13 +10546,13 @@
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1literalPatterni_pass-lit-bC",
+          "name": "1literalPatterni_pass-lit-blowercaseC",
           "trait": [
             "PaternFacet"
           ],
           "comment": "<S1> { <p1> LITERAL /bc/i } on { <s1> <p1> \"bC\" }",
           "status": "mf:proposed",
-          "result": "1literalPatterni_pass-lit-bC.val"
+          "result": "1literalPatterni_pass-lit-blowercaseC.val"
         },
         {
           "@id": "#1literalPattern_pass-lit-into",
@@ -10681,7 +10681,7 @@
           "action": {
             "schema": "../schemas/1literalCarrotPatternDollar.shex",
             "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_Lbc.ttl",
+            "data": "Is1_Ip1_Lbclowercase.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
@@ -10734,7 +10734,7 @@
           "action": {
             "schema": "../schemas/1literalStartPattern.shex",
             "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_Lbc.ttl",
+            "data": "Is1_Ip1_Lbclowercase.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
@@ -10769,7 +10769,7 @@
           "action": {
             "schema": "../schemas/1literalPatternEnd.shex",
             "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_Lbc.ttl",
+            "data": "Is1_Ip1_Lbclowercase.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
@@ -10822,7 +10822,7 @@
           "action": {
             "schema": "../schemas/1literalStartPatternEnd.shex",
             "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_Lbc.ttl",
+            "data": "Is1_Ip1_Lbclowercase.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],

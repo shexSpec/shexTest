@@ -675,7 +675,7 @@
 	<#1literalPattern_fail-cd>
         <#1literalPatterni_pass-lit-match>
         <#1literalPatterni_pass-lit-BC>
-        <#1literalPatterni_pass-lit-bC>
+        <#1literalPatterni_pass-lit-blowercaseC>
         <#1literalPattern_pass-lit-into>
         <#1literalPattern19_fail-iri-match>
         <#1literalPattern_fail-bnode-match>
@@ -9483,7 +9483,7 @@
     mf:action [
       sht:schema <../schemas/1literalPattern.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_Lbc.ttl> ;
+      sht:data <Is1_Ip1_Lbclowercase.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
     mf:result <1literalPattern_pass-lit-match.val>
@@ -9536,7 +9536,7 @@
     mf:action [
       sht:schema <../schemas/1literalPatterni.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_Lbc.ttl> ;
+      sht:data <Is1_Ip1_Lbclowercase.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
     mf:result <1literalPatterni_pass-lit-match.val>
@@ -9556,8 +9556,8 @@
     mf:result <1literalPatterni_pass-lit-BC.val>
     .
 
-<#1literalPatterni_pass-lit-bC> a sht:ValidationTest ;
-    mf:name "1literalPatterni_pass-lit-bC" ;
+<#1literalPatterni_pass-lit-blowercaseC> a sht:ValidationTest ;
+    mf:name "1literalPatterni_pass-lit-blowercaseC" ;
     sht:trait sht:PaternFacet ;
     rdfs:comment "<S1> { <p1> LITERAL /bc/i } on { <s1> <p1> \"bC\" }" ;
     mf:status mf:proposed ;
@@ -9567,7 +9567,7 @@
       sht:data <Is1_Ip1_LblowercaseC.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
-    mf:result <1literalPatterni_pass-lit-bC.val>
+    mf:result <1literalPatterni_pass-lit-blowercaseC.val>
     .
 
 <#1literalPattern_pass-lit-into> a sht:ValidationTest ;
@@ -9619,7 +9619,7 @@
     mf:action [
       sht:schema <../schemas/1literalStartPattern.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_Lbc.ttl> ;
+      sht:data <Is1_Ip1_Lbclowercase.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
     mf:result <1literalStartPattern-bc.val>
@@ -9646,7 +9646,7 @@
     mf:action [
       sht:schema <../schemas/1literalPatternEnd.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_Lbc.ttl> ;
+      sht:data <Is1_Ip1_Lbclowercase.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
     mf:result <1literalPatternEnd_pass-bc.val>
@@ -9687,7 +9687,7 @@
     mf:action [
       sht:schema <../schemas/1literalStartPatternEnd.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_Lbc.ttl> ;
+      sht:data <Is1_Ip1_Lbclowercase.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
     mf:result <1literalStarPatternEnd_pass-bc.val>
@@ -9768,7 +9768,7 @@
     mf:action [
       sht:schema <../schemas/1literalCarrotPatternDollar.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_Lbc.ttl> ;
+      sht:data <Is1_Ip1_Lbclowercase.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
     .
