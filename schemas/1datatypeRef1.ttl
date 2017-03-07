@@ -10,6 +10,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sx:predicate <http://a.example/p1> ;
             sx:valueExpr [ a sx:ShapeAnd ;
                     sx:shapeExprs ( [ a sx:NodeConstraint ;
-                                sx:datatype <http://a.example/dt1> ] [ a sx:ShapeRef ;
-                                sx:reference <http://a.example/S1> ] ) ] ] .
+                                sx:datatype <http://a.example/dt1> ]
+                                <http://a.example/S1> ) ] ] .
 

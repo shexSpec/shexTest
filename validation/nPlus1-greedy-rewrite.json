@@ -3,7 +3,7 @@
   "type": "Schema",
   "shapes": [
     {
-      "label": "http://a.example.org/S",
+      "id": "http://a.example.org/S",
       "type": "Shape",
       "expression": {
         "type": "EachOf",
@@ -31,7 +31,7 @@
                   ]
                 },
                 "min": 1,
-                "max": "*"
+                "max": "unbounded"
               },
               {
                 "type": "TripleConstraint",
@@ -55,7 +55,7 @@
               ]
             },
             "min": 0,
-            "max": "*"
+            "max": "unbounded"
           }
         ]
       }

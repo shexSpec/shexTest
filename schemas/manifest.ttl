@@ -95,7 +95,6 @@
         <#1integerMininclusiveDOUBLELeadTrail>
         <#1integerMininclusiveDOUBLEint>
         <#1integerMininclusiveDOUBLEintLeadTrail>
-        <#1integerMininclusivexsd-integer>
         <#1decimalMininclusiveINTEGER>
         <#1decimalMininclusiveINTEGERLead>
         <#1decimalMininclusiveDECIMAL>
@@ -104,14 +103,12 @@
         <#1decimalMininclusiveDOUBLE>
         <#1decimalMininclusiveDOUBLELeadTrail>
         <#1decimalMininclusiveDOUBLEintLeadTrail>
-        <#1decimalMininclusivexsd-decimal>
         <#1floatMininclusiveDECIMAL>
         <#1floatMininclusiveDECIMALLeadTrail>
         <#1floatMininclusiveDECIMALintLeadTrail>
         <#1floatMininclusiveDOUBLE>
         <#1floatMininclusiveDOUBLELeadTrail>
         <#1floatMininclusiveDOUBLEintLeadTrail>
-        <#1floatMininclusivexsd-float>
         <#1doubleMininclusiveINTEGERLead>
         <#1doubleMininclusiveDECIMAL>
         <#1doubleMininclusiveDECIMALLeadTrail>
@@ -119,7 +116,6 @@
         <#1doubleMininclusiveDOUBLE>
         <#1doubleMininclusiveDOUBLELeadTrail>
         <#1doubleMininclusiveDOUBLEintLeadTrail>
-        <#1doubleMininclusivexsd-double>
         <#1integerMinexclusiveINTEGER>
         <#1integerMinexclusiveDECIMALint>
         <#1integerMinexclusiveDOUBLEint>
@@ -129,7 +125,6 @@
         <#1floatMinexclusiveINTEGER>
         <#1floatMinexclusiveDECIMAL>
         <#1floatMinexclusiveDOUBLE>
-        <#1floatMinexclusivexsd-float>
         <#1doubleMinexclusiveINTEGER>
         <#1doubleMinexclusiveDECIMAL>
         <#1doubleMinexclusiveDOUBLE>
@@ -142,7 +137,6 @@
         <#1floatMaxinclusiveINTEGER>
         <#1floatMaxinclusiveDECIMAL>
         <#1floatMaxinclusiveDOUBLE>
-        <#1floatMaxinclusivexsd-float>
         <#1doubleMaxinclusiveINTEGER>
         <#1doubleMaxinclusiveDECIMAL>
         <#1doubleMaxinclusiveDOUBLE>
@@ -153,7 +147,6 @@
         <#1decimalMaxexclusiveDECIMAL>
         <#1decimalMaxexclusiveDOUBLE>
         <#1decimalMaxexclusivexsd-byte>
-        <#1decimalMaxexclusivexsd-decimal>
         <#1floatMaxexclusiveINTEGER>
         <#1floatMaxexclusiveDECIMAL>
         <#1floatMaxexclusiveDOUBLE>
@@ -183,6 +176,7 @@
         <#1bnodeMaxlength>
         <#1nonliteralMaxlength>
         <#1literalPattern>
+        <#1literalPatterni>
         <#1literalPattern19>
         <#1literalStartPattern>
         <#1literalPatternEnd>
@@ -331,6 +325,11 @@
         <#1datatypeRef1>
         <#1card2blank>
         <#1focusnonLiteralLength-nonLiteralLength>
+        <#1Include1>
+        <#1Include1-after>
+        <#startSelfRefIRIREF>
+        <#startSelfRefbnode>
+        <#datatypes>
         <#_all>
         <#kitchenSink>
     ) .
@@ -937,14 +936,6 @@
     sx:ttl <1integerMininclusiveDOUBLEintLeadTrail.ttl> ;
     .
 
-<#1integerMininclusivexsd-integer> a sht:RepresentationTest ;
-    mf:name "1integerMininclusivexsd-integer" ;
-    mf:status mf:proposed ;
-    sx:shex <1integerMininclusivexsd-integer.shex> ;
-    sx:json <1integerMininclusivexsd-integer.json> ;
-    sx:ttl <1integerMininclusivexsd-integer.ttl> ;
-    .
-
 <#1decimalMininclusiveINTEGER> a sht:RepresentationTest ;
     mf:name "1decimalMininclusiveINTEGER" ;
     mf:status mf:proposed ;
@@ -1009,14 +1000,6 @@
     sx:ttl <1decimalMininclusiveDOUBLEintLeadTrail.ttl> ;
     .
 
-<#1decimalMininclusivexsd-decimal> a sht:RepresentationTest ;
-    mf:name "1decimalMininclusivexsd-decimal" ;
-    mf:status mf:proposed ;
-    sx:shex <1decimalMininclusivexsd-decimal.shex> ;
-    sx:json <1decimalMininclusivexsd-decimal.json> ;
-    sx:ttl <1decimalMininclusivexsd-decimal.ttl> ;
-    .
-
 <#1floatMininclusiveDECIMAL> a sht:RepresentationTest ;
     mf:name "1floatMininclusiveDECIMAL" ;
     mf:status mf:proposed ;
@@ -1063,14 +1046,6 @@
     sx:shex <1floatMininclusiveDOUBLEintLeadTrail.shex> ;
     sx:json <1floatMininclusiveDOUBLEintLeadTrail.json> ;
     sx:ttl <1floatMininclusiveDOUBLEintLeadTrail.ttl> ;
-    .
-
-<#1floatMininclusivexsd-float> a sht:RepresentationTest ;
-    mf:name "1floatMininclusivexsd-float" ;
-    mf:status mf:proposed ;
-    sx:shex <1floatMininclusivexsd-float.shex> ;
-    sx:json <1floatMininclusivexsd-float.json> ;
-    sx:ttl <1floatMininclusivexsd-float.ttl> ;
     .
 
 <#1doubleMininclusiveINTEGERLead> a sht:RepresentationTest ;
@@ -1127,14 +1102,6 @@
     sx:shex <1doubleMininclusiveDOUBLEintLeadTrail.shex> ;
     sx:json <1doubleMininclusiveDOUBLEintLeadTrail.json> ;
     sx:ttl <1doubleMininclusiveDOUBLEintLeadTrail.ttl> ;
-    .
-
-<#1doubleMininclusivexsd-double> a sht:RepresentationTest ;
-    mf:name "1doubleMininclusivexsd-double" ;
-    mf:status mf:proposed ;
-    sx:shex <1doubleMininclusivexsd-double.shex> ;
-    sx:json <1doubleMininclusivexsd-double.json> ;
-    sx:ttl <1doubleMininclusivexsd-double.ttl> ;
     .
 
 <#1integerMinexclusiveINTEGER> a sht:RepresentationTest ;
@@ -1207,14 +1174,6 @@
     sx:shex <1floatMinexclusiveDOUBLE.shex> ;
     sx:json <1floatMinexclusiveDOUBLE.json> ;
     sx:ttl <1floatMinexclusiveDOUBLE.ttl> ;
-    .
-
-<#1floatMinexclusivexsd-float> a sht:RepresentationTest ;
-    mf:name "1floatMinexclusivexsd-float" ;
-    mf:status mf:proposed ;
-    sx:shex <1floatMinexclusivexsd-float.shex> ;
-    sx:json <1floatMinexclusivexsd-float.json> ;
-    sx:ttl <1floatMinexclusivexsd-float.ttl> ;
     .
 
 <#1doubleMinexclusiveINTEGER> a sht:RepresentationTest ;
@@ -1313,14 +1272,6 @@
     sx:ttl <1floatMaxinclusiveDOUBLE.ttl> ;
     .
 
-<#1floatMaxinclusivexsd-float> a sht:RepresentationTest ;
-    mf:name "1floatMaxinclusivexsd-float" ;
-    mf:status mf:proposed ;
-    sx:shex <1floatMaxinclusivexsd-float.shex> ;
-    sx:json <1floatMaxinclusivexsd-float.json> ;
-    sx:ttl <1floatMaxinclusivexsd-float.ttl> ;
-    .
-
 <#1doubleMaxinclusiveINTEGER> a sht:RepresentationTest ;
     mf:name "1doubleMaxinclusiveINTEGER" ;
     mf:status mf:proposed ;
@@ -1399,14 +1350,6 @@
     sx:shex <1decimalMaxexclusivexsd-byte.shex> ;
     sx:json <1decimalMaxexclusivexsd-byte.json> ;
     sx:ttl <1decimalMaxexclusivexsd-byte.ttl> ;
-    .
-
-<#1decimalMaxexclusivexsd-decimal> a sht:RepresentationTest ;
-    mf:name "1decimalMaxexclusivexsd-decimal" ;
-    mf:status mf:proposed ;
-    sx:shex <1decimalMaxexclusivexsd-decimal.shex> ;
-    sx:json <1decimalMaxexclusivexsd-decimal.json> ;
-    sx:ttl <1decimalMaxexclusivexsd-decimal.ttl> ;
     .
 
 <#1floatMaxexclusiveINTEGER> a sht:RepresentationTest ;
@@ -1639,6 +1582,14 @@
     sx:shex <1literalPattern.shex> ;
     sx:json <1literalPattern.json> ;
     sx:ttl <1literalPattern.ttl> ;
+    .
+
+<#1literalPatterni> a sht:RepresentationTest ;
+    mf:name "1literalPatterni" ;
+    mf:status mf:proposed ;
+    sx:shex <1literalPatterni.shex> ;
+    sx:json <1literalPatterni.json> ;
+    sx:ttl <1literalPatterni.ttl> ;
     .
 
 <#1literalPattern19> a sht:RepresentationTest ;
@@ -2778,6 +2729,46 @@
 #     sx:json <1dotUnlabeledCode1.json> ;
 #     sx:ttl <1dotUnlabeledCode1.ttl> ;
 #     .
+
+<#1Include1> a sht:RepresentationTest ;
+    mf:name "1Include1" ;
+    mf:status mf:proposed ;
+    sx:shex <1Include1.shex> ;
+    sx:json <1Include1.json> ;
+    sx:ttl <1Include1.ttl> ;
+    .
+
+<#1Include1-after> a sht:RepresentationTest ;
+    mf:name "1Include1-after" ;
+    mf:status mf:proposed ;
+    sx:shex <1Include1-after.shex> ;
+    sx:json <1Include1-after.json> ;
+    sx:ttl <1Include1-after.ttl> ;
+    .
+
+<#startSelfRefIRIREF> a sht:RepresentationTest ;
+    mf:name "startSelfRefIRIREF" ;
+    mf:status mf:proposed ;
+    sx:shex <startSelfRefIRIREF.shex> ;
+    sx:json <startSelfRefIRIREF.json> ;
+    sx:ttl <startSelfRefIRIREF.ttl> ;
+    .
+
+<#startSelfRefbnode> a sht:RepresentationTest ;
+    mf:name "startSelfRefbnode" ;
+    mf:status mf:proposed ;
+    sx:shex <startSelfRefbnode.shex> ;
+    sx:json <startSelfRefbnode.json> ;
+    sx:ttl <startSelfRefbnode.ttl> ;
+    .
+
+<#datatypes> a sht:RepresentationTest ;
+    mf:name "datatypes" ;
+    mf:status mf:proposed ;
+    sx:shex <datatypes.shex> ;
+    sx:json <datatypes.json> ;
+    sx:ttl <datatypes.ttl> ;
+    .
 
 <#_all> a sht:RepresentationTest ;
     mf:name "_all" ;

@@ -11,8 +11,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sx:predicate <http://a.example/p1> ;
             sx:valueExpr [ a sx:ShapeAnd ;
                     sx:shapeExprs ( [ a sx:NodeConstraint ;
-                                sx:nodeKind sx:iri ] [ a sx:ShapeRef ;
-                                sx:reference <http://a.example/S2> ] ) ] ] .
+                                sx:nodeKind sx:iri ] <http://a.example/S2> ) ] ] .
 
 <http://a.example/S2> a sx:Shape ;
     sx:expression [ a sx:TripleConstraint ;

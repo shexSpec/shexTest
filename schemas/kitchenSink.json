@@ -8,13 +8,10 @@
       "code": " initializer for ignored extension "
     }
   ],
-  "start": {
-    "type": "ShapeRef",
-    "reference": "http://ex.example/S1"
-  },
+  "start": "http://ex.example/S1",
   "shapes": [
     {
-      "label": "http://ex.example/S1",
+      "id": "http://ex.example/S1",
       "type": "Shape",
       "expression": {
         "type": "EachOf",
@@ -73,10 +70,7 @@
                   "type": "NodeConstraint",
                   "nodeKind": "iri"
                 },
-                {
-                  "type": "ShapeRef",
-                  "reference": "http://ex.example/#UserShape"
-                }
+                "http://ex.example/#UserShape"
               ]
             }
           },
@@ -101,10 +95,7 @@
                       "type": "NodeConstraint",
                       "nodeKind": "nonliteral"
                     },
-                    {
-                      "type": "ShapeRef",
-                      "reference": "http://ex.example/#EmployeeShape"
-                    }
+                    "http://ex.example/#EmployeeShape"
                   ]
                 }
               },
@@ -130,18 +121,15 @@
           {
             "type": "TripleConstraint",
             "predicate": "http://ex.example/#related",
-            "valueExpr": {
-              "type": "ShapeRef",
-              "reference": "http://ex.example/S1"
-            },
+            "valueExpr": "http://ex.example/S1",
             "min": 0,
-            "max": "*"
+            "max": "unbounded"
           }
         ]
       }
     },
     {
-      "label": "http://ex.example/#UserShape",
+      "id": "http://ex.example/#UserShape",
       "type": "Shape",
       "expression": {
         "type": "EachOf",
@@ -168,7 +156,7 @@
                       "datatype": "http://www.w3.org/2001/XMLSchema#string"
                     },
                     "min": 1,
-                    "max": "*"
+                    "max": "unbounded"
                   },
                   {
                     "type": "TripleConstraint",
@@ -201,10 +189,7 @@
                   "type": "NodeConstraint",
                   "nodeKind": "bnode"
                 },
-                {
-                  "type": "ShapeRef",
-                  "reference": "_:IDshape"
-                }
+                "_:IDshape"
               ]
             }
           }
@@ -212,7 +197,7 @@
       }
     },
     {
-      "label": "http://ex.example/#EmployeeShape",
+      "id": "http://ex.example/#EmployeeShape",
       "type": "Shape",
       "expression": {
         "type": "EachOf",
@@ -225,7 +210,7 @@
               "datatype": "http://www.w3.org/2001/XMLSchema#string"
             },
             "min": 1,
-            "max": "*"
+            "max": "unbounded"
           },
           {
             "type": "TripleConstraint",
@@ -243,7 +228,7 @@
               "nodeKind": "iri"
             },
             "min": 0,
-            "max": "*"
+            "max": "unbounded"
           },
           {
             "type": "TripleConstraint",
@@ -259,9 +244,10 @@
       }
     },
     {
-      "label": "_:IDshape",
+      "id": "_:IDshape",
       "type": "Shape",
       "expression": {
+        "id": "_:IDshapeE",
         "type": "OneOf",
         "expressions": [
           {
@@ -367,32 +353,23 @@
               {
                 "type": "TripleConstraint",
                 "predicate": "http://ex.example/#issues",
-                "valueExpr": {
-                  "type": "ShapeRef",
-                  "reference": "http://ex.example/S1"
-                },
+                "valueExpr": "http://ex.example/S1",
                 "min": 0,
-                "max": "*"
+                "max": "unbounded"
               },
               {
                 "type": "TripleConstraint",
                 "predicate": "http://ex.example/#seeAlso",
-                "valueExpr": {
-                  "type": "ShapeRef",
-                  "reference": "http://ex.example/S1"
-                },
+                "valueExpr": "http://ex.example/S1",
                 "min": 0,
-                "max": "*"
+                "max": "unbounded"
               },
               {
                 "type": "TripleConstraint",
                 "predicate": "http://ex.example/#says",
-                "valueExpr": {
-                  "type": "ShapeRef",
-                  "reference": "http://ex.example/#EmployeeShape"
-                },
+                "valueExpr": "http://ex.example/#EmployeeShape",
                 "min": 0,
-                "max": "*"
+                "max": "unbounded"
               }
             ]
           }
@@ -400,13 +377,10 @@
       }
     },
     {
-      "label": "http://ex.example/#FooID",
+      "id": "http://ex.example/#FooID",
       "type": "Shape",
       "closed": true,
-      "expression": {
-        "type": "Inclusion",
-        "include": "_:IDshape"
-      },
+      "expression": "_:IDshapeE",
       "extra": [
         "http://ex.example/#code",
         "http://ex.example/#system"

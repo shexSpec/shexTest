@@ -10,5 +10,5 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sx:predicate <http://a.example/p1> ;
             sx:valueExpr [ a sx:NodeConstraint ;
                     sx:datatype xsd:integer ;
-                    sx:mininclusive "4.5E0"^^xsd:integer ] ] .
+                    sx:mininclusive "4.5"^^xsd:decimal ] ] .
 

@@ -20,11 +20,11 @@ MissingProperty  { property:IRI }
 NodeTest         { node:(IRI|BNODE|ObjectLiteral) shape:(IRI|BNODE) shapeExpr:shapeExpr }
 ShapeTest        { node:(IRI|BNODE) shape:IRI solution:tripleExprSolutions? startActs:[SemAct+]? }
 tripleExprSolutions = EachOfSolutions | OneOfSolutions | TripleConstraintSolutions ;
-EachOfSolutions  { solutions:[EachOfSolution+] min:INTEGER? max:(INTEGER|"*")? annotations:[Annotation+]? semActs:[SemAct+]? }
+EachOfSolutions  { solutions:[EachOfSolution+] min:INTEGER? max:(INTEGER|"unbounded")? annotations:[Annotation+]? semActs:[SemAct+]? }
 EachOfSolution   { expressions:[tripleExprSolutions+] }
-OneOfSolutions   { solutions:[OneOfSolution+] min:INTEGER? max:(INTEGER|"*")? annotations:[Annotation+]? semActs:[SemAct+]? }
+OneOfSolutions   { solutions:[OneOfSolution+] min:INTEGER? max:(INTEGER|"unbounded")? annotations:[Annotation+]? semActs:[SemAct+]? }
 OneOfSolution    { expressions:[tripleExprSolutions+] }
-TripleConstraintSolutions { predicate:IRI valueExpr:shapeExpr? min:INTEGER? max:(INTEGER|"*")? solutions:[TestedTriple] annotations:[Annotation+]? semActs:[SemAct+]? }
+TripleConstraintSolutions { predicate:IRI valueExpr:shapeExpr? min:INTEGER? max:(INTEGER|"unbounded")? solutions:[TestedTriple] annotations:[Annotation+]? semActs:[SemAct+]? }
 TestedTriple     { subject:(IRI|BNODE) predicate:IRI object:(IRI|BNODE|ObjectLiteral) referenced:(shapeExprTest|Recursion)? }
 Recursion        { node:(IRI|BNODE) shape:(IRI|BNODE) }
 
@@ -40,19 +40,19 @@ ShapeExternal    {  }
 
 # Triple Expressions
 tripleExpr       = EachOf | OneOf | TripleConstraint | Inclusion ;
-EachOf           { expressions:[tripleExpr{2,}] min:INTEGER? max:(INTEGER|"*")? semActs:[SemAct+]? annotations:[Annotation+]? }
-OneOf            { expressions:[tripleExpr{2,}] min:INTEGER? max:(INTEGER|"*")? semActs:[SemAct+]? annotations:[Annotation+]? }
-TripleConstraint { inverse:BOOL? negated:BOOL? predicate:IRI valueExpr:shapeExpr? min:INTEGER? max:(INTEGER|"*")? semActs:[SemAct+]? annotations:[Annotation+]? }
+EachOf           { expressions:[tripleExpr{2,}] min:INTEGER? max:(INTEGER|"unbounded")? semActs:[SemAct+]? annotations:[Annotation+]? }
+OneOf            { expressions:[tripleExpr{2,}] min:INTEGER? max:(INTEGER|"unbounded")? semActs:[SemAct+]? annotations:[Annotation+]? }
+TripleConstraint { inverse:BOOL? negated:BOOL? predicate:IRI valueExpr:shapeExpr? min:INTEGER? max:(INTEGER|"unbounded")? semActs:[SemAct+]? annotations:[Annotation+]? }
 Inclusion        { include:shapeLabel }
 
 # XML Schema facets
 xsFacet          = stringFacet | numericFacet ;
-stringFacet      = (length|minlength|maxlength):INTEGER | pattern:STRING ;
+stringFacet      = (length|minlength|maxlength):INTEGER | pattern:STRING flags:STRING? ;
 numericFacet     = (mininclusive|minexclusive|maxinclusive|maxexclusive):numericLiteral
                  | (totaldigits|fractiondigits):INTEGER ;
 
 # Value Sets
-valueSetValue    = objectValue|Stem|StemRange ;
+valueSetValue    = objectValue | Stem | StemRange ;
 objectValue      = IRI|ObjectLiteral ;
 Stem             { stem:IRI } # StemRange with exclusions
 StemRange        { stem:(IRI|Wildcard) exclusions:[objectValue|Stem +]? }

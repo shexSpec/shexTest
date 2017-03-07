@@ -3,7 +3,7 @@
   "type": "Schema",
   "shapes": [
     {
-      "label": "http://a.example/S1",
+      "id": "http://a.example/S1",
       "type": "ShapeAnd",
       "shapeExprs": [
         {
@@ -60,10 +60,7 @@
                                   "nodeKind": "iri",
                                   "pattern": "^https?://"
                                 },
-                                {
-                                  "type": "ShapeRef",
-                                  "reference": "http://a.example/S1"
-                                }
+                                "http://a.example/S1"
                               ]
                             }
                           }

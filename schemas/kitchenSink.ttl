@@ -15,7 +15,7 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schem#>
   sx:startActs (
     [ a sx:SemAct ; sx:name ex:foo ; sx:code " initializer for ignored extension " ]
   ) ;
-  sx:start [ a sx:ShapeRef ; sx:reference <S1> ] ;
+  sx:start <S1> ;
   sx:shapes
       <S1> ,
       UserShape: ,
@@ -39,7 +39,7 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schem#>
     [ a sx:TripleConstraint ; sx:predicate ex:reportedBy ;
       sx:valueExpr [ a sx:ShapeAnd ; sx:shapeExprs (
         [ a sx:NodeConstraint ; sx:nodeKind sx:iri ]
-        [ a sx:ShapeRef ; sx:reference ex:UserShape ]
+        ex:UserShape
       ) ] ]
     [ a sx:TripleConstraint ; sx:predicate ex:reportedOn ;
       sx:valueExpr [ a sx:NodeConstraint ; sx:datatype xsd:dateTime ] ]
@@ -47,7 +47,7 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schem#>
       [ a sx:TripleConstraint ; sx:predicate ex:reproducedBy ;
         sx:valueExpr [ a sx:ShapeAnd ; sx:shapeExprs (
           [ a sx:NodeConstraint ; sx:nodeKind sx:nonliteral ]
-          [ a sx:ShapeRef ; sx:reference ex:EmployeeShape ]
+          ex:EmployeeShape
         ) ] ]
       [ a sx:TripleConstraint ; sx:predicate ex:reproducedOn ;
         sx:valueExpr [ a sx:NodeConstraint ; sx:datatype xsd:dateTime ] ]
@@ -55,8 +55,8 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schem#>
       [ a sx:SemAct ; sx:name ex:foo ; sx:code " asdfasdf " ]
     ) ]
     [ a sx:TripleConstraint ; sx:predicate ex:related ;
-      sx:max "*" ; sx:min 0 ;
-      sx:valueExpr [ a sx:ShapeRef ; sx:reference <S1> ] ]
+      sx:max sx:unbounded ; sx:min 0 ;
+      sx:valueExpr <S1> ]
   ) ] .
 
 ex:UserShape a sx:Shape ;
@@ -66,7 +66,7 @@ ex:UserShape a sx:Shape ;
         sx:valueExpr [ a sx:NodeConstraint ; sx:datatype xsd:string ] ]
       [ a sx:EachOf ; sx:expressions (
         [ a sx:TripleConstraint ; sx:predicate foaf:givenName ;
-          sx:max "*" ; sx:min 1 ;
+          sx:max sx:unbounded ; sx:min 1 ;
           sx:valueExpr [ a sx:NodeConstraint ; sx:datatype xsd:string ] ]
         [ a sx:TripleConstraint ; sx:predicate foaf:familyName ;
           sx:valueExpr [ a sx:NodeConstraint ; sx:datatype xsd:string ] ]
@@ -77,19 +77,19 @@ ex:UserShape a sx:Shape ;
     [ a sx:TripleConstraint ; sx:predicate ex:id ;
       sx:valueExpr [ a sx:ShapeAnd ; sx:shapeExprs (
         [ a sx:NodeConstraint ; sx:nodeKind sx:bnode ]
-        [ a sx:ShapeRef ; sx:reference _:IDshape ]
+        _:IDshape
     ) ] ]
   ) ] .
 
 ex:EmployeeShape a sx:Shape ;
   sx:expression [ a sx:EachOf ; sx:expressions (
     [ a sx:TripleConstraint ; sx:predicate foaf:givenName ;
-      sx:max "*" ; sx:min 1 ;
+      sx:max sx:unbounded ; sx:min 1 ;
       sx:valueExpr [ a sx:NodeConstraint ; sx:datatype xsd:string ] ]
     [ a sx:TripleConstraint ; sx:predicate foaf:familyName ;
       sx:valueExpr [ a sx:NodeConstraint ; sx:datatype xsd:string ] ]
     [ a sx:TripleConstraint ; sx:predicate foaf:phone ;
-      sx:max "*" ; sx:min 0 ;
+      sx:max sx:unbounded ; sx:min 0 ;
       sx:valueExpr [ a sx:NodeConstraint ; sx:nodeKind sx:iri ] ]
     [ a sx:TripleConstraint ; sx:predicate foaf:mbox ;
       sx:max 1 ; sx:min 0 ;
@@ -97,7 +97,9 @@ ex:EmployeeShape a sx:Shape ;
   ) ] .
 
 _:IDshape a sx:Shape ;
-    sx:expression [ a sx:OneOf ; sx:expressions (
+    sx:expression _:IDshapeE .
+
+_:IDshapeE a sx:OneOf ; sx:expressions (
       [ a sx:EachOf ; sx:expressions (
         [ a sx:TripleConstraint ; sx:predicate ex:code ;
           sx:valueExpr [ a sx:NodeConstraint ; sx:nodeKind sx:literal ] ]
@@ -124,18 +126,18 @@ _:IDshape a sx:Shape ;
             sx:inverse true ]
         ) ]
         [ a sx:TripleConstraint ; sx:predicate ex:issues ;
-          sx:min 0 ; sx:max "*" ;
-          sx:valueExpr [ a sx:ShapeRef ; sx:reference <S1> ] ]
+          sx:min 0 ; sx:max sx:unbounded ;
+          sx:valueExpr <S1> ]
         [ a sx:TripleConstraint ; sx:predicate ex:seeAlso ;
-          sx:min 0 ; sx:max "*" ;
-          sx:valueExpr [ a sx:ShapeRef ; sx:reference <S1> ] ]
+          sx:min 0 ; sx:max sx:unbounded ;
+          sx:valueExpr <S1> ]
         [ a sx:TripleConstraint ; sx:predicate ex:says ;
-          sx:min 0 ; sx:max "*" ;
-          sx:valueExpr [ a sx:ShapeRef ; sx:reference ex:EmployeeShape ] ]
+          sx:min 0 ; sx:max sx:unbounded ;
+          sx:valueExpr ex:EmployeeShape ]
       ) ]
-    ) ] .
+    ) .
 
 ex:FooID a sx:Shape ; sx:closed true ;
   sx:extra ex:code, ex:system ;
-  sx:expression [ a sx:Inclusion ; sx:include _:IDshape ] .
+  sx:expression _:IDshapeE .
 

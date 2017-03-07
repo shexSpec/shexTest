@@ -3,13 +3,13 @@
   "type": "Schema",
   "shapes": [
     {
-      "label": "http://a.example/S1",
+      "id": "http://a.example/S1",
       "type": "Shape",
       "expression": {
         "type": "TripleConstraint",
         "predicate": "http://a.example/p1",
         "min": 1,
-        "max": "*",
+        "max": "unbounded",
         "annotations": [
           {
             "type": "Annotation",
