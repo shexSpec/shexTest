@@ -29,7 +29,7 @@ start=@<Schema>
 }
 
 <NodeConstraint> CLOSED {
-  a [sx:NodeConstraint] ; 
+  a [sx:NodeConstraint] ;
   sx:nodeKind [sx:iri sx:bnode sx:literal sx:nonliteral]?;
   sx:datatype IRI ? ;
   &<xsFacets>  ;
