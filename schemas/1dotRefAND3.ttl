@@ -12,10 +12,10 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     sx:expression [ a sx:TripleConstraint ;
             sx:predicate <http://a.example/p1> ;
             sx:valueExpr [ a sx:ShapeAnd ;
-                    sx:shapeExprs ( [ a sx:ShapeRef ;
-                                sx:reference <http://a.example/S2> ] [ a sx:ShapeRef ;
-                                sx:reference <http://a.example/S3> ] [ a sx:ShapeRef ;
-                                sx:reference <http://a.example/S4> ] ) ] ] .
+                    sx:shapeExprs (
+                                <http://a.example/S2>
+                                <http://a.example/S3>
+                                <http://a.example/S4> ) ] ] .
 
 <http://a.example/S2> a sx:Shape ;
     sx:expression [ a sx:TripleConstraint ;

@@ -10,11 +10,11 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     sx:valueExpr [ a sx:ShapeOr ; sx:shapeExprs (
       [ a sx:ShapeAnd ; sx:shapeExprs (
         [ a sx:NodeConstraint ; sx:nodeKind sx:bnode ]
-        [ a sx:ShapeRef ; sx:reference <http://a.example/S1> ]
+        <http://a.example/S1>
       ) ]
       [ a sx:ShapeAnd ; sx:shapeExprs (
         [ a sx:NodeConstraint ; sx:minlength 20 ]
-        [ a sx:ShapeRef ; sx:reference <http://a.example/S1> ]
+        <http://a.example/S1>
       ) ]
     ) ] ] .
 

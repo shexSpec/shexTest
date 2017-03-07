@@ -3,21 +3,18 @@
   "type": "Schema",
   "shapes": [
     {
-      "label": "_:vc1",
+      "id": "_:vc1",
       "type": "NodeConstraint",
       "nodeKind": "literal",
       "minlength": 5
     },
     {
-      "label": "http://a.example/S1",
+      "id": "http://a.example/S1",
       "type": "Shape",
       "expression": {
         "type": "TripleConstraint",
         "predicate": "http://a.example/p1",
-        "valueExpr": {
-          "type": "ShapeRef",
-          "reference": "_:vc1"
-        }
+        "valueExpr": "_:vc1"
       }
     }
   ]

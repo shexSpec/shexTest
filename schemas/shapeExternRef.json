@@ -3,19 +3,16 @@
   "type": "Schema",
   "shapes": [
     {
-      "label": "http://a.example/S",
+      "id": "http://a.example/S",
       "type": "Shape",
       "expression": {
         "type": "TripleConstraint",
         "predicate": "http://a.example/p1",
-        "valueExpr": {
-          "type": "ShapeRef",
-          "reference": "http://a.example/Sext"
-        }
+        "valueExpr": "http://a.example/Sext"
       }
     },
     {
-      "label": "http://a.example/Sext",
+      "id": "http://a.example/Sext",
       "type": "ShapeExternal"
     }
   ]

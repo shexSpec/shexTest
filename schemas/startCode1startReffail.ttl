@@ -4,8 +4,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 [] a sx:Schema ;
     sx:shapes <http://a.example/S1> ;
-    sx:start [ a sx:ShapeRef ;
-      sx:reference <http://a.example/S1> ];
+    sx:start <http://a.example/S1>;
     sx:startActs ([
       a sx:SemAct;
       sx:code " fail(\"startAct\") ";

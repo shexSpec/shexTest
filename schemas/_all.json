@@ -13,15 +13,13 @@
       "code": " START2 "
     }
   ],
-  "start": {
-    "type": "ShapeRef",
-    "reference": "http://all.example/S3"
-  },
+  "start": "http://all.example/S3",
   "shapes": [
     {
-      "label": "http://all.example/S1",
+      "id": "http://all.example/S1",
       "type": "Shape",
       "expression": {
+        "id": "http://all.example/S1e",
         "type": "EachOf",
         "expressions": [
           {
@@ -45,9 +43,10 @@
       ]
     },
     {
-      "label": "http://all.example/S2",
+      "id": "http://all.example/S2",
       "type": "Shape",
       "expression": {
+        "id": "http://all.example/S2e",
         "type": "EachOf",
         "expressions": [
           {
@@ -71,12 +70,12 @@
       ]
     },
     {
-      "label": "http://all.example/IRI",
+      "id": "http://all.example/IRI",
       "type": "NodeConstraint",
       "nodeKind": "iri"
     },
     {
-      "label": "http://all.example/vs1",
+      "id": "http://all.example/vs1",
       "type": "ShapeAnd",
       "shapeExprs": [
         {
@@ -103,15 +102,12 @@
       ]
     },
     {
-      "label": "http://all.example/S3",
+      "id": "http://all.example/S3",
       "type": "Shape",
       "expression": {
         "type": "EachOf",
         "expressions": [
-          {
-            "type": "Inclusion",
-            "include": "http://all.example/S1"
-          },
+          "http://all.example/S1e",
           {
             "type": "TripleConstraint",
             "predicate": "http://all.example/a"
@@ -141,7 +137,7 @@
                       "nodeKind": "iri"
                     },
                     "min": 0,
-                    "max": "*"
+                    "max": "unbounded"
                   },
                   {
                     "type": "TripleConstraint",
@@ -153,15 +149,12 @@
                       "length": 5
                     },
                     "min": 1,
-                    "max": "*"
+                    "max": "unbounded"
                   },
                   {
                     "type": "TripleConstraint",
                     "predicate": "http://all.example/BaSe",
-                    "valueExpr": {
-                      "type": "ShapeRef",
-                      "reference": "http://all.example/S5"
-                    },
+                    "valueExpr": "http://all.example/S5",
                     "min": 2,
                     "max": 2
                   }
@@ -177,14 +170,11 @@
                       "type": "NodeConstraint",
                       "nodeKind": "nonliteral"
                     },
-                    {
-                      "type": "ShapeRef",
-                      "reference": "http://all.example/S5"
-                    }
+                    "http://all.example/S5"
                   ]
                 },
                 "min": 2,
-                "max": "*"
+                "max": "unbounded"
               },
               {
                 "type": "TripleConstraint",
@@ -199,10 +189,7 @@
                           "type": "NodeConstraint",
                           "nodeKind": "bnode"
                         },
-                        {
-                          "type": "ShapeRef",
-                          "reference": "http://all.example/S5"
-                        }
+                        "http://all.example/S5"
                       ]
                     },
                     {
@@ -213,16 +200,13 @@
                           "minlength": 2,
                           "maxlength": 4
                         },
-                        {
-                          "type": "ShapeRef",
-                          "reference": "http://all.example/S5"
-                        }
+                        "http://all.example/S5"
                       ]
                     }
                   ]
                 },
                 "min": 2,
-                "max": "*"
+                "max": "unbounded"
               },
               {
                 "type": "EachOf",
@@ -326,7 +310,7 @@
                               "nodeKind": "literal"
                             },
                             "min": 1,
-                            "max": "*",
+                            "max": "unbounded",
                             "semActs": [
                               {
                                 "type": "SemAct",
@@ -367,7 +351,7 @@
                             "inverse": true,
                             "predicate": "http://all.example/bnode",
                             "min": 1,
-                            "max": "*",
+                            "max": "unbounded",
                             "semActs": [
                               {
                                 "type": "SemAct",
@@ -381,7 +365,7 @@
                             "inverse": true,
                             "predicate": "http://all.example/literal",
                             "min": 1,
-                            "max": "*",
+                            "max": "unbounded",
                             "semActs": [
                               {
                                 "type": "SemAct",
@@ -413,10 +397,7 @@
           {
             "type": "TripleConstraint",
             "predicate": "http://all.example/or",
-            "valueExpr": {
-              "type": "ShapeRef",
-              "reference": "http://all.example/vs1"
-            }
+            "valueExpr": "http://all.example/vs1"
           },
           {
             "type": "TripleConstraint",
@@ -461,35 +442,27 @@
       ]
     },
     {
-      "label": "http://all.example/S5",
+      "id": "http://all.example/S5",
       "type": "NodeConstraint",
       "nodeKind": "iri"
     },
     {
-      "label": "_:a·̀ͯ‿.⁀",
+      "id": "_:a·̀ͯ‿.⁀",
       "type": "Shape",
       "closed": true,
       "expression": {
+        "id": "_:a·̀ͯ‿.⁀e",
         "type": "EachOf",
         "expressions": [
-          {
-            "type": "Inclusion",
-            "include": "_:a·̀ͯ‿.⁀"
-          },
-          {
-            "type": "Inclusion",
-            "include": "http://all.example/S2"
-          }
+          "_:a·̀ͯ‿.⁀e",
+          "http://all.example/S2e"
         ]
       }
     },
     {
-      "label": "_:AZazÀÖØöø˿ͰͽͿ῿‌‍⁰↏Ⰰ⿯、퟿豈﷏ﷰ�𐀀󯿽",
+      "id": "_:AZazÀÖØöø˿ͰͽͿ῿‌‍⁰↏Ⰰ⿯、퟿豈﷏ﷰ�𐀀󯿽",
       "type": "Shape",
-      "expression": {
-        "type": "Inclusion",
-        "include": "_:a·̀ͯ‿.⁀"
-      }
+      "expression": "_:a·̀ͯ‿.⁀e"
     }
   ]
 }

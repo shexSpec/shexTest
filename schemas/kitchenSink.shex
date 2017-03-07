@@ -31,7 +31,7 @@ UserShape: {                             # A <UserShape> has:
      |                                    #  or
        foaf:givenName xsd:string+;        #   one or more givenNames
        foaf:familyName xsd:string);       #   and one familyName.
-    foaf:mbox IRI PATTERN "^mailto:";     # one FOAF mbox.
+    foaf:mbox IRI ~/^mailto:/;     # one FOAF mbox.
     ex:id BNODE @_:IDshape
 }
 
@@ -45,6 +45,7 @@ UserShape: {                             # A <UserShape> has:
 BASE <../>
 #VIRTUAL
 _:IDshape {
+    $_:IDshapeE (
     ex:code LITERAL;
     ex:system IRI;
     ex:literal ["a" "b"^^ex:c "c"@en "d"@en-fr]{2,3};
@@ -55,11 +56,11 @@ _:IDshape {
     ex:seeAlso @ # interjection!
                  e:S1*;
     ex:says @ # interjection2!
-                 :EmployeeShape*;
+                 :EmployeeShape*; )
 }
 
 ex:FooID CLOSED # &_:IDshape
   EXTRA ex:code ex:system {
-    &_:IDshape
+    &_:IDshapeE
   }
 

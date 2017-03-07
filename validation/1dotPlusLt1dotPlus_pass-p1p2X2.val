@@ -31,9 +31,8 @@
                 }
               }
             ],
-            "productionLabel": "http://a.example/l1",
             "min": 1,
-            "max": "*"
+            "max": "unbounded"
           },
           {
             "type": "TripleConstraintSolutions",
@@ -58,9 +57,8 @@
                 }
               }
             ],
-            "productionLabel": "http://a.example/l2",
             "min": 1,
-            "max": "*"
+            "max": "unbounded"
           }
         ]
       }

@@ -3,7 +3,7 @@
   "type": "Schema",
   "shapes": [
     {
-      "label": "http://a.example/S1",
+      "id": "http://a.example/S1",
       "type": "Shape",
       "expression": {
         "type": "EachOf",
@@ -15,10 +15,7 @@
           {
             "type": "TripleConstraint",
             "predicate": "http://a.example/p2",
-            "valueExpr": {
-              "type": "ShapeRef",
-              "reference": "http://a.example/S2"
-            },
+            "valueExpr": "http://a.example/S2",
             "min": 0,
             "max": 1
           }
@@ -26,31 +23,25 @@
       }
     },
     {
-      "label": "http://a.example/S2",
+      "id": "http://a.example/S2",
       "type": "Shape",
       "expression": {
         "type": "TripleConstraint",
         "predicate": "http://a.example/p3",
-        "valueExpr": {
-          "type": "ShapeRef",
-          "reference": "http://a.example/S3"
-        }
+        "valueExpr": "http://a.example/S3"
       }
     },
     {
-      "label": "http://a.example/S3",
+      "id": "http://a.example/S3",
       "type": "Shape",
       "expression": {
         "type": "TripleConstraint",
         "predicate": "http://a.example/p4",
-        "valueExpr": {
-          "type": "ShapeRef",
-          "reference": "http://a.example/S1"
-        }
+        "valueExpr": "http://a.example/S1"
       }
     },
     {
-      "label": "http://a.example/S4",
+      "id": "http://a.example/S4",
       "type": "Shape",
       "expression": {
         "type": "TripleConstraint",
