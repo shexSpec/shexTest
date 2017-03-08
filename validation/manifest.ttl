@@ -278,6 +278,10 @@
         <#1val1IRIREF_v1v2>
 
 ###   literal equivalence
+####     lexical form
+        <#1val1STRING_LITERAL1_with_ECHAR_escapes_pass>
+        <#1val1STRING_LITERAL1_with_ECHAR_escapes_fail>
+
 ####     numeric equivalence
         <#1val1INTEGER_pass>            # <S> { <p1> [0] }
         <#1val1INTEGER_00>
@@ -679,6 +683,8 @@
         <#1literalPattern_pass-lit-into>
         <#1literalPattern19_fail-iri-match>
         <#1literalPattern_fail-bnode-match>
+        <#1literalPattern_with_REGEXP_escapes_pass>
+        <#1literalPattern_with_REGEXP_escapes_fail>
 	<#1literalPatternEnd_fail-litEnd>
 	<#1literalPatternDollar_pass-litDollar-match>
 	<#1literalPattern_pass-StartlitEnd-match>
@@ -4209,6 +4215,36 @@
 
 ###   } iri equivalence
 ###   literal equivalence {
+####     lexical form {
+
+<#1val1STRING_LITERAL1_with_ECHAR_escapes_pass> a sht:ValidationTest ;
+    mf:name "1val1STRING_LITERAL1_with_ECHAR_escapes_pass" ;
+    sht:trait sht:NumericEquivalence ;
+    rdfs:comment "<S> { <p1> ['\\t\\b\\n\\r\\f'] } on { <s> <p1> '\\t\\b\\n\\r\\f' }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1STRING_LITERAL1_with_ECHAR_escapes.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_L_with_ECHAR_escapes.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1val1STRING_LITERAL1_with_ECHAR_escapes_pass.val>
+    .
+
+<#1val1STRING_LITERAL1_with_ECHAR_escapes_fail> a sht:ValidationFailure ;
+    mf:name "1val1STRING_LITERAL1_with_ECHAR_escapes_fail" ;
+    sht:trait sht:NumericEquivalence ;
+    rdfs:comment "<S> { <p1> ['\\t\\b\\n\\r\\f'] } on { <s> <p1> '\\t\\b\\n\\r\\f' }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1STRING_LITERAL1_with_ECHAR_escapes.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_L_with_ECHAR_escapes999.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+####     } lexical form
 ####     numeric equivalence {
 
 <#1val1INTEGER_pass> a sht:ValidationTest ;
@@ -9705,6 +9741,33 @@
       sht:focus <http://a.example/s1>
     ] ;
     mf:result <1literalPattern_pass-CarrotbcDollar.val>
+    .
+
+<#1literalPattern_with_REGEXP_escapes_pass> a sht:ValidationTest ;
+    mf:name "1literalPattern_with_REGEXP_escapes_pass" ;
+    sht:trait sht:NumericEquivalence ;
+    rdfs:comment "<S> { <p1> /^\\/\\t\\b\\n\\r\\f$/ } on { <s> <p1> '\\t\\b\\n\\r\\f' }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalPattern_with_REGEXP_escapes.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_L_with_REGEXP_escapes.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1literalPattern_with_REGEXP_escapes_pass.val>
+    .
+
+<#1literalPattern_with_REGEXP_escapes_fail> a sht:ValidationFailure ;
+    mf:name "1literalPattern_with_REGEXP_escapes_fail" ;
+    sht:trait sht:NumericEquivalence ;
+    rdfs:comment "<S> { <p1> /^\\/\\t\\b\\n\\r\\f^/ } on { <s> <p1> '\\t\\b\\n\\r\\f' }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalPattern_with_REGEXP_escapes.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_L_with_REGEXP_escapes999.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
     .
 
 <#1literalPatternEnd_fail-litEnd> a sht:ValidationFailure ;

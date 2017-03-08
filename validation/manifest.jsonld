@@ -3997,6 +3997,41 @@
           "status": "mf:proposed"
         },
         {
+          "@id": "#1val1STRING_LITERAL1_with_ECHAR_escapes_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1val1STRING_LITERAL1_with_ECHAR_escapes.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_L_with_ECHAR_escapes.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1STRING_LITERAL1_with_ECHAR_escapes_pass",
+          "trait": [
+            "NumericEquivalence"
+          ],
+          "comment": "<S> { <p1> ['\\t\\b\\n\\r\\f'] } on { <s> <p1> '\\t\\b\\n\\r\\f' }",
+          "status": "mf:proposed",
+          "result": "1val1STRING_LITERAL1_with_ECHAR_escapes_pass.val"
+        },
+        {
+          "@id": "#1val1STRING_LITERAL1_with_ECHAR_escapes_fail",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1val1STRING_LITERAL1_with_ECHAR_escapes.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_L_with_ECHAR_escapes999.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1STRING_LITERAL1_with_ECHAR_escapes_fail",
+          "trait": [
+            "NumericEquivalence"
+          ],
+          "comment": "<S> { <p1> ['\\t\\b\\n\\r\\f'] } on { <s> <p1> '\\t\\b\\n\\r\\f' }",
+          "status": "mf:proposed"
+        },
+        {
           "@id": "#1val1INTEGER_pass",
           "@type": "sht:ValidationTest",
           "action": {
@@ -10604,6 +10639,41 @@
             "PaternFacet"
           ],
           "comment": "<S1> { <p1> LITERAL PATTERN \"bc\" } on { <s1> <p1> _:ab }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1literalPattern_with_REGEXP_escapes_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1literalPattern_with_REGEXP_escapes.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_L_with_REGEXP_escapes.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalPattern_with_REGEXP_escapes_pass",
+          "trait": [
+            "NumericEquivalence"
+          ],
+          "comment": "<S> { <p1> /^\\/\\t\\b\\n\\r\\f$/ } on { <s> <p1> '\\t\\b\\n\\r\\f' }",
+          "status": "mf:proposed",
+          "result": "1literalPattern_with_REGEXP_escapes_pass.val"
+        },
+        {
+          "@id": "#1literalPattern_with_REGEXP_escapes_fail",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1literalPattern_with_REGEXP_escapes.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_L_with_REGEXP_escapes999.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalPattern_with_REGEXP_escapes_fail",
+          "trait": [
+            "NumericEquivalence"
+          ],
+          "comment": "<S> { <p1> /^\\/\\t\\b\\n\\r\\f^/ } on { <s> <p1> '\\t\\b\\n\\r\\f' }",
           "status": "mf:proposed"
         },
         {
