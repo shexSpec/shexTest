@@ -173,6 +173,10 @@
         <#1bnodeMaxlength>
         <#1nonliteralMaxlength>
         <#1literalPattern>
+        <#1literalPattern_with_all_controls>
+        <#1literalPattern_with_all_punctuation>
+        <#1literalPattern_with_ascii_boundaries>
+        <#1literalPattern_with_UTF8_boundaries>
         <#1literalPattern_with_REGEXP_escapes>
         <#1literalPatterni>
         <#1literalPattern19>
@@ -1706,6 +1710,30 @@
     sx:shex <1literalPattern.shex> ;
     sx:json <1literalPattern.json> ;
     sx:ttl <1literalPattern.ttl> ;
+    .
+
+<#1literalPattern_with_all_controls> a sht:RepresentationTest ;
+    mf:name "1literalPattern_with_all_controls" ;
+    mf:status mf:proposed ;
+    sx:shex <1literalPattern_with_all_controls.shex> ;
+    sx:json <1literalPattern_with_all_controls.json> ;
+    sx:ttl <1literalPattern_with_all_controls.ttl> ;
+    .
+
+<#1literalPattern_with_all_punctuation> a sht:RepresentationTest ;
+    mf:name "1literalPattern_with_all_punctuation" ;
+    mf:status mf:proposed ;
+    sx:shex <1literalPattern_with_all_punctuation.shex> ;
+    sx:json <1literalPattern_with_all_punctuation.json> ;
+    sx:ttl <1literalPattern_with_all_punctuation.ttl> ;
+    .
+
+<#1literalPattern_with_ascii_boundaries> a sht:RepresentationTest ;
+    mf:name "1literalPattern_with_ascii_boundaries" ;
+    mf:status mf:proposed ;
+    sx:shex <1literalPattern_with_ascii_boundaries.shex> ;
+    sx:json <1literalPattern_with_ascii_boundaries.json> ;
+    sx:ttl <1literalPattern_with_ascii_boundaries.ttl> ;
     .
 
 <#1literalPattern_with_REGEXP_escapes> a sht:RepresentationTest ;

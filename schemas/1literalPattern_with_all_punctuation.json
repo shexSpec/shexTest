@@ -1,5 +1,5 @@
 {
-  "@context": "http://shex.io/context.jsonld",
+  "@context": "https://shexspec.github.io/context.jsonld",
   "type": "Schema",
   "shapes": [
     {
@@ -10,11 +10,8 @@
         "predicate": "http://a.example/p1",
         "valueExpr": {
           "type": "NodeConstraint",
-          "values": [
-            {
-              "value": " !\"#$%&'()/:;<=>?@[]^_`{|}~"
-            }
-          ]
+          "nodeKind": "literal",
+          "pattern": "^ !\"#$%&'()/:;<=>?@[]^_`{|}~$"
         }
       }
     }

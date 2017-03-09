@@ -14,20 +14,20 @@
 
  # TODO:
  #   focus* on empty.ttl
- #   1IRI_with_all_punctuationdot.shex
- #   1IRI_with_UCHAR.1dot.shex
- #   1val1STRING_LITERAL1.shex
- #   1val1STRING_LITERAL1_with_all_controls.shex
- #   1val1STRING_LITERAL1_with_all_punctuation.shex
- #   1val1STRING_LITERAL1_with_ascii_boundaries.shex
- #   1val1STRING_LITERAL1_with_UTF8_boundaries.shex
- #   1val1STRING_LITERAL2.shex
- #   1val1STRING_LITERAL2_with_LANGTAG.shex
- #   1val1STRING_LITERAL2_with_subtag.shex
- #   1val1STRING_LITERAL_LONG1.shex
- #   1val1STRING_LITERAL_LONG2.shex
- #   1val1STRING_LITERAL_LONG2_with_LANGTAG.shex
- #   1val1STRING_LITERAL_LONG2_with_subtag.shex
+ #   ../schemas/1IRI_with_all_punctuationdot.shex
+ #   ../schemas/1IRI_with_UCHAR.1dot.shex
+ # O ../schemas/1val1STRING_LITERAL1.shex
+ # O ../schemas/1val1STRING_LITERAL1_with_all_controls.shex
+ # O ../schemas/1val1STRING_LITERAL1_with_all_punctuation.shex
+ # O ../schemas/1val1STRING_LITERAL1_with_ascii_boundaries.shex
+ # O ../schemas/1val1STRING_LITERAL1_with_UTF8_boundaries.shex
+ #   ../schemas/1val1STRING_LITERAL2.shex
+ #   ../schemas/1val1STRING_LITERAL2_with_LANGTAG.shex
+ #   ../schemas/1val1STRING_LITERAL2_with_subtag.shex
+ #   ../schemas/1val1STRING_LITERAL_LONG1.shex
+ #   ../schemas/1val1STRING_LITERAL_LONG2.shex
+ #   ../schemas/1val1STRING_LITERAL_LONG2_with_LANGTAG.shex
+ #   ../schemas/1val1STRING_LITERAL_LONG2_with_subtag.shex
  #   repeated OR
  #   1dotRefOR3 on..
 
@@ -279,6 +279,16 @@
 
 ###   literal equivalence
 ####     lexical form
+        <#1val1STRING_LITERAL1_pass>
+        <#1val1STRING_LITERAL1_fail>
+        <#1val1STRING_LITERAL1_with_all_controls_pass>
+        <#1val1STRING_LITERAL1_with_all_controls_fail>
+        <#1val1STRING_LITERAL1_with_all_punctuation_pass>
+        <#1val1STRING_LITERAL1_with_all_punctuation_fail>
+        <#1val1STRING_LITERAL1_with_ascii_boundaries_pass>
+        <#1val1STRING_LITERAL1_with_ascii_boundaries_fail>
+        <#1val1STRING_LITERAL1_with_UTF8_boundaries_pass>
+        <#1val1STRING_LITERAL1_with_UTF8_boundaries_fail>
         <#1val1STRING_LITERAL1_with_ECHAR_escapes_pass>
         <#1val1STRING_LITERAL1_with_ECHAR_escapes_fail>
 
@@ -683,6 +693,14 @@
         <#1literalPattern_pass-lit-into>
         <#1literalPattern19_fail-iri-match>
         <#1literalPattern_fail-bnode-match>
+        <#1literalPattern_with_all_controls_pass>
+        <#1literalPattern_with_all_controls_fail>
+        <#1literalPattern_with_all_punctuation_pass>
+        <#1literalPattern_with_all_punctuation_fail>
+        <#1literalPattern_with_ascii_boundaries_pass>
+        <#1literalPattern_with_ascii_boundaries_fail>
+        <#1literalPattern_with_UTF8_boundaries_pass>
+        <#1literalPattern_with_UTF8_boundaries_fail>
         <#1literalPattern_with_REGEXP_escapes_pass>
         <#1literalPattern_with_REGEXP_escapes_fail>
 	<#1literalPatternEnd_fail-litEnd>
@@ -4216,6 +4234,141 @@
 ###   } iri equivalence
 ###   literal equivalence {
 ####     lexical form {
+
+<#1val1STRING_LITERAL1_pass> a sht:ValidationTest ;
+    mf:name "1val1STRING_LITERAL1_pass" ;
+    sht:trait sht:NumericEquivalence ;
+    rdfs:comment "<S> { <p1> ['STRING_LITERAL1'] } on { <s> <p1> 'STRING_LITERAL1' }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1STRING_LITERAL1.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LSTRING_LITERAL1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1val1STRING_LITERAL1_pass.val>
+    .
+
+<#1val1STRING_LITERAL1_fail> a sht:ValidationFailure ;
+    mf:name "1val1STRING_LITERAL1_fail" ;
+    sht:trait sht:NumericEquivalence ;
+    rdfs:comment "<S> { <p1> ['STRING_LITERAL1'] } on { <s> <p1> 'STRING_LITERAL1' }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1STRING_LITERAL1.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LSTRING_LITERAL1999.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1val1STRING_LITERAL1_with_all_controls_pass> a sht:ValidationTest ;
+    mf:name "1val1STRING_LITERAL1_with_all_controls_pass" ;
+    sht:trait sht:NumericEquivalence ;
+    rdfs:comment "<S> { <p1> ['^@^A...^_'] } on { <s> <p1> '^@^A...^_' }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1STRING_LITERAL1_with_all_controls.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LSTRING_LITERAL1_with_all_controls.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1val1STRING_LITERAL1_with_all_controls_pass.val>
+    .
+
+<#1val1STRING_LITERAL1_with_all_controls_fail> a sht:ValidationFailure ;
+    mf:name "1val1STRING_LITERAL1_with_all_controls_fail" ;
+    sht:trait sht:NumericEquivalence ;
+    rdfs:comment "<S> { <p1> ['^@^A...^_'] } on { <s> <p1> '^@^A...^_999' }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1STRING_LITERAL1_with_all_controls.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LSTRING_LITERAL1_with_all_controls999.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1val1STRING_LITERAL1_with_all_punctuation_pass> a sht:ValidationTest ;
+    mf:name "1val1STRING_LITERAL1_with_all_punctuation_pass" ;
+    sht:trait sht:NumericEquivalence ;
+    rdfs:comment "<S> { <p1> ['^@^A...^_'] } on { <s> <p1> '^@^A...^_' }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1STRING_LITERAL1_with_all_punctuation.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LSTRING_LITERAL1_with_all_punctuation.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1val1STRING_LITERAL1_with_all_punctuation_pass.val>
+    .
+
+<#1val1STRING_LITERAL1_with_all_punctuation_fail> a sht:ValidationFailure ;
+    mf:name "1val1STRING_LITERAL1_with_all_punctuation_fail" ;
+    sht:trait sht:NumericEquivalence ;
+    rdfs:comment "<S> { <p1> ['^@^A...^_'] } on { <s> <p1> '^@^A...^_999' }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1STRING_LITERAL1_with_all_punctuation.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LSTRING_LITERAL1_with_all_punctuation999.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1val1STRING_LITERAL1_with_ascii_boundaries_pass> a sht:ValidationTest ;
+    mf:name "1val1STRING_LITERAL1_with_ascii_boundaries_pass" ;
+    sht:trait sht:NumericEquivalence ;
+    rdfs:comment "<S> { <p1> ['^@^A...^_'] } on { <s> <p1> '^@^A...^_' }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1STRING_LITERAL1_with_ascii_boundaries.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LSTRING_LITERAL1_with_ascii_boundaries.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1val1STRING_LITERAL1_with_ascii_boundaries_pass.val>
+    .
+
+<#1val1STRING_LITERAL1_with_ascii_boundaries_fail> a sht:ValidationFailure ;
+    mf:name "1val1STRING_LITERAL1_with_ascii_boundaries_fail" ;
+    sht:trait sht:NumericEquivalence ;
+    rdfs:comment "<S> { <p1> ['^@^A...^_'] } on { <s> <p1> '^@^A...^_999' }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1STRING_LITERAL1_with_ascii_boundaries.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LSTRING_LITERAL1_with_ascii_boundaries999.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1val1STRING_LITERAL1_with_UTF8_boundaries_pass> a sht:ValidationTest ;
+    mf:name "1val1STRING_LITERAL1_with_UTF8_boundaries_pass" ;
+    sht:trait sht:NumericEquivalence, sht:OutsideBMP ;
+    rdfs:comment "<S> { <p1> ['\u0080...\U0001FFFD'] } on { <s> <p1> '\u0080...\U0010FFFD' }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1STRING_LITERAL1_with_UTF8_boundaries.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LSTRING_LITERAL1_with_UTF8_boundaries.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1val1STRING_LITERAL1_with_UTF8_boundaries_pass.val>
+    .
+
+<#1val1STRING_LITERAL1_with_UTF8_boundaries_fail> a sht:ValidationFailure ;
+    mf:name "1val1STRING_LITERAL1_with_UTF8_boundaries_fail" ;
+    sht:trait sht:NumericEquivalence, sht:OutsideBMP ;
+    rdfs:comment "<S> { <p1> ['\u0080...\U0001FFFD'] } on { <s> <p1> '\u0080...\U0010FFFD999' }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1STRING_LITERAL1_with_UTF8_boundaries.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LSTRING_LITERAL1_with_UTF8_boundaries999.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
 
 <#1val1STRING_LITERAL1_with_ECHAR_escapes_pass> a sht:ValidationTest ;
     mf:name "1val1STRING_LITERAL1_with_ECHAR_escapes_pass" ;
@@ -9743,10 +9896,118 @@
     mf:result <1literalPattern_pass-CarrotbcDollar.val>
     .
 
+<#1literalPattern_with_all_controls_pass> a sht:ValidationTest ;
+    mf:name "1literalPattern_with_all_controls_pass" ;
+    sht:trait sht:NumericEquivalence, sht:OutsideBMP ;
+    rdfs:comment "<S> { <p1> /^^@^A...^_$/ } on { <s> <p1> '^@^A...^_' }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalPattern_with_all_controls.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LSTRING_LITERAL1_with_all_controls.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1literalPattern_with_all_controls_pass.val>
+    .
+
+<#1literalPattern_with_all_controls_fail> a sht:ValidationFailure ;
+    mf:name "1literalPattern_with_all_controls_fail" ;
+    sht:trait sht:NumericEquivalence, sht:OutsideBMP ;
+    rdfs:comment "<S> { <p1> /^^@^A...^_$/ } on { <s> <p1> '^@^A...^_999' }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalPattern_with_all_controls.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LSTRING_LITERAL1_with_all_controls999.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1literalPattern_with_all_punctuation_pass> a sht:ValidationTest ;
+    mf:name "1literalPattern_with_all_punctuation_pass" ;
+    sht:trait sht:NumericEquivalence, sht:OutsideBMP ;
+    rdfs:comment "<S> { <p1> /^ !\"#$%&'()\/:;<=>?@[]^_`{|}~$/ } on { <s> <p1> ' !\"#$%&\'()/:;<=>?@[]^_`{|}~' }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalPattern_with_all_punctuation.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LSTRING_LITERAL1_with_all_punctuation.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1literalPattern_with_all_punctuation_pass.val>
+    .
+
+<#1literalPattern_with_all_punctuation_fail> a sht:ValidationFailure ;
+    mf:name "1literalPattern_with_all_punctuation_fail" ;
+    sht:trait sht:NumericEquivalence, sht:OutsideBMP ;
+    rdfs:comment "<S> { <p1> /^ !\"#$%&'()\/:;<=>?@[]^_`{|}~$/ } on { <s> <p1> ' !\"#$%&\'()/:;<=>?@[]^_`{|}~999' }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalPattern_with_all_punctuation.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LSTRING_LITERAL1_with_all_punctuation999.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1literalPattern_with_ascii_boundaries_pass> a sht:ValidationTest ;
+    mf:name "1literalPattern_with_ascii_boundaries_pass" ;
+    sht:trait sht:NumericEquivalence, sht:OutsideBMP ;
+    rdfs:comment "<S> { <p1> /^^@^A...^_$/ } on { <s> <p1> '^@^A...^_' }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalPattern_with_ascii_boundaries.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LSTRING_LITERAL1_with_ascii_boundaries.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1literalPattern_with_ascii_boundaries_pass.val>
+    .
+
+<#1literalPattern_with_ascii_boundaries_fail> a sht:ValidationFailure ;
+    mf:name "1literalPattern_with_ascii_boundaries_fail" ;
+    sht:trait sht:NumericEquivalence, sht:OutsideBMP ;
+    rdfs:comment "<S> { <p1> /^^@^A...^_$/ } on { <s> <p1> '^@^A...^_999' }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalPattern_with_ascii_boundaries.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LSTRING_LITERAL1_with_ascii_boundaries999.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1literalPattern_with_UTF8_boundaries_pass> a sht:ValidationTest ;
+    mf:name "1literalPattern_with_UTF8_boundaries_pass" ;
+    sht:trait sht:NumericEquivalence, sht:OutsideBMP ;
+    rdfs:comment "<S> { <p1> /^^@^A...^_$/ } on { <s> <p1> '^@^A...^_' }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalPattern_with_UTF8_boundaries.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LSTRING_LITERAL1_with_UTF8_boundaries.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1literalPattern_with_UTF8_boundaries_pass.val>
+    .
+
+<#1literalPattern_with_UTF8_boundaries_fail> a sht:ValidationFailure ;
+    mf:name "1literalPattern_with_UTF8_boundaries_fail" ;
+    sht:trait sht:NumericEquivalence, sht:OutsideBMP ;
+    rdfs:comment "<S> { <p1> /^^@^A...^_$/ } on { <s> <p1> '^@^A...^_999' }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalPattern_with_UTF8_boundaries.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LSTRING_LITERAL1_with_UTF8_boundaries999.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
 <#1literalPattern_with_REGEXP_escapes_pass> a sht:ValidationTest ;
     mf:name "1literalPattern_with_REGEXP_escapes_pass" ;
-    sht:trait sht:NumericEquivalence ;
-    rdfs:comment "<S> { <p1> /^\\/\\t\\b\\n\\r\\f$/ } on { <s> <p1> '\\t\\b\\n\\r\\f' }" ;
+    sht:trait sht:NumericEquivalence, sht:OutsideBMP ;
+    rdfs:comment "<S> { <p1> /^\\/\\t\\b\\n\\r\\f\\\\\u0061\U0001D4B8$/ } on { <s> <p1> '\\/\\t\\b\\n\\r\\f\\\u0061\U0001D4B8' }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1literalPattern_with_REGEXP_escapes.shex> ;
@@ -9759,8 +10020,8 @@
 
 <#1literalPattern_with_REGEXP_escapes_fail> a sht:ValidationFailure ;
     mf:name "1literalPattern_with_REGEXP_escapes_fail" ;
-    sht:trait sht:NumericEquivalence ;
-    rdfs:comment "<S> { <p1> /^\\/\\t\\b\\n\\r\\f^/ } on { <s> <p1> '\\t\\b\\n\\r\\f' }" ;
+    sht:trait sht:NumericEquivalence, sht:OutsideBMP ;
+    rdfs:comment "<S> { <p1> /^\\/\\t\\b\\n\\r\\f\\\\\u0061\U0001D4B8$/ } on { <s> <p1> '\\/\\t\\b\\n\\r\\f\\\u0061\U0001D4B8999' }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1literalPattern_with_REGEXP_escapes.shex> ;

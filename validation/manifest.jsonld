@@ -3997,6 +3997,183 @@
           "status": "mf:proposed"
         },
         {
+          "@id": "#1val1STRING_LITERAL1_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1val1STRING_LITERAL1.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_LSTRING_LITERAL1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1STRING_LITERAL1_pass",
+          "trait": [
+            "NumericEquivalence"
+          ],
+          "comment": "<S> { <p1> ['STRING_LITERAL1'] } on { <s> <p1> 'STRING_LITERAL1' }",
+          "status": "mf:proposed",
+          "result": "1val1STRING_LITERAL1_pass.val"
+        },
+        {
+          "@id": "#1val1STRING_LITERAL1_fail",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1val1STRING_LITERAL1.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_LSTRING_LITERAL1999.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1STRING_LITERAL1_fail",
+          "trait": [
+            "NumericEquivalence"
+          ],
+          "comment": "<S> { <p1> ['STRING_LITERAL1'] } on { <s> <p1> 'STRING_LITERAL1' }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1val1STRING_LITERAL1_with_all_controls_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1val1STRING_LITERAL1_with_all_controls.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_LSTRING_LITERAL1_with_all_controls.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1STRING_LITERAL1_with_all_controls_pass",
+          "trait": [
+            "NumericEquivalence"
+          ],
+          "comment": "<S> { <p1> ['^@^A...^_'] } on { <s> <p1> '^@^A...^_' }",
+          "status": "mf:proposed",
+          "result": "1val1STRING_LITERAL1_with_all_controls_pass.val"
+        },
+        {
+          "@id": "#1val1STRING_LITERAL1_with_all_controls_fail",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1val1STRING_LITERAL1_with_all_controls.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_LSTRING_LITERAL1_with_all_controls999.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1STRING_LITERAL1_with_all_controls_fail",
+          "trait": [
+            "NumericEquivalence"
+          ],
+          "comment": "<S> { <p1> ['^@^A...^_'] } on { <s> <p1> '^@^A...^_999' }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1val1STRING_LITERAL1_with_all_punctuation_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1val1STRING_LITERAL1_with_all_punctuation.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_LSTRING_LITERAL1_with_all_punctuation.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1STRING_LITERAL1_with_all_punctuation_pass",
+          "trait": [
+            "NumericEquivalence"
+          ],
+          "comment": "<S> { <p1> ['^@^A...^_'] } on { <s> <p1> '^@^A...^_' }",
+          "status": "mf:proposed",
+          "result": "1val1STRING_LITERAL1_with_all_punctuation_pass.val"
+        },
+        {
+          "@id": "#1val1STRING_LITERAL1_with_all_punctuation_fail",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1val1STRING_LITERAL1_with_all_punctuation.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_LSTRING_LITERAL1_with_all_punctuation999.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1STRING_LITERAL1_with_all_punctuation_fail",
+          "trait": [
+            "NumericEquivalence"
+          ],
+          "comment": "<S> { <p1> ['^@^A...^_'] } on { <s> <p1> '^@^A...^_999' }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1val1STRING_LITERAL1_with_ascii_boundaries_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1val1STRING_LITERAL1_with_ascii_boundaries.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_LSTRING_LITERAL1_with_ascii_boundaries.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1STRING_LITERAL1_with_ascii_boundaries_pass",
+          "trait": [
+            "NumericEquivalence"
+          ],
+          "comment": "<S> { <p1> ['^@^A...^_'] } on { <s> <p1> '^@^A...^_' }",
+          "status": "mf:proposed",
+          "result": "1val1STRING_LITERAL1_with_ascii_boundaries_pass.val"
+        },
+        {
+          "@id": "#1val1STRING_LITERAL1_with_ascii_boundaries_fail",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1val1STRING_LITERAL1_with_ascii_boundaries.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_LSTRING_LITERAL1_with_ascii_boundaries999.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1STRING_LITERAL1_with_ascii_boundaries_fail",
+          "trait": [
+            "NumericEquivalence"
+          ],
+          "comment": "<S> { <p1> ['^@^A...^_'] } on { <s> <p1> '^@^A...^_999' }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1val1STRING_LITERAL1_with_UTF8_boundaries_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1val1STRING_LITERAL1_with_UTF8_boundaries.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_LSTRING_LITERAL1_with_UTF8_boundaries.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1STRING_LITERAL1_with_UTF8_boundaries_pass",
+          "trait": [
+            "OutsideBMP",
+            "NumericEquivalence"
+          ],
+          "comment": "<S> { <p1> ['...🿽'] } on { <s> <p1> '...􏿽' }",
+          "status": "mf:proposed",
+          "result": "1val1STRING_LITERAL1_with_UTF8_boundaries_pass.val"
+        },
+        {
+          "@id": "#1val1STRING_LITERAL1_with_UTF8_boundaries_fail",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1val1STRING_LITERAL1_with_UTF8_boundaries.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_LSTRING_LITERAL1_with_UTF8_boundaries999.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1STRING_LITERAL1_with_UTF8_boundaries_fail",
+          "trait": [
+            "OutsideBMP",
+            "NumericEquivalence"
+          ],
+          "comment": "<S> { <p1> ['...🿽'] } on { <s> <p1> '...􏿽999' }",
+          "status": "mf:proposed"
+        },
+        {
           "@id": "#1val1STRING_LITERAL1_with_ECHAR_escapes_pass",
           "@type": "sht:ValidationTest",
           "action": {
@@ -10642,6 +10819,154 @@
           "status": "mf:proposed"
         },
         {
+          "@id": "#1literalPattern_with_all_controls_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1literalPattern_with_all_controls.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_LSTRING_LITERAL1_with_all_controls.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalPattern_with_all_controls_pass",
+          "trait": [
+            "OutsideBMP",
+            "NumericEquivalence"
+          ],
+          "comment": "<S> { <p1> /^^@^A...^_$/ } on { <s> <p1> '^@^A...^_' }",
+          "status": "mf:proposed",
+          "result": "1literalPattern_with_all_controls_pass.val"
+        },
+        {
+          "@id": "#1literalPattern_with_all_controls_fail",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1literalPattern_with_all_controls.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_LSTRING_LITERAL1_with_all_controls999.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalPattern_with_all_controls_fail",
+          "trait": [
+            "OutsideBMP",
+            "NumericEquivalence"
+          ],
+          "comment": "<S> { <p1> /^^@^A...^_$/ } on { <s> <p1> '^@^A...^_999' }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1literalPattern_with_all_punctuation_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1literalPattern_with_all_punctuation.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_LSTRING_LITERAL1_with_all_punctuation.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalPattern_with_all_punctuation_pass",
+          "trait": [
+            "OutsideBMP",
+            "NumericEquivalence"
+          ],
+          "comment": "<S> { <p1> /^ !\"#$%&'()/:;<=>?@[]^_`{|}~$/ } on { <s> <p1> ' !\"#$%&'()/:;<=>?@[]^_`{|}~' }",
+          "status": "mf:proposed",
+          "result": "1literalPattern_with_all_punctuation_pass.val"
+        },
+        {
+          "@id": "#1literalPattern_with_all_punctuation_fail",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1literalPattern_with_all_punctuation.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_LSTRING_LITERAL1_with_all_punctuation999.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalPattern_with_all_punctuation_fail",
+          "trait": [
+            "OutsideBMP",
+            "NumericEquivalence"
+          ],
+          "comment": "<S> { <p1> /^ !\"#$%&'()/:;<=>?@[]^_`{|}~$/ } on { <s> <p1> ' !\"#$%&'()/:;<=>?@[]^_`{|}~999' }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1literalPattern_with_ascii_boundaries_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1literalPattern_with_ascii_boundaries.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_LSTRING_LITERAL1_with_ascii_boundaries.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalPattern_with_ascii_boundaries_pass",
+          "trait": [
+            "OutsideBMP",
+            "NumericEquivalence"
+          ],
+          "comment": "<S> { <p1> /^^@^A...^_$/ } on { <s> <p1> '^@^A...^_' }",
+          "status": "mf:proposed",
+          "result": "1literalPattern_with_ascii_boundaries_pass.val"
+        },
+        {
+          "@id": "#1literalPattern_with_ascii_boundaries_fail",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1literalPattern_with_ascii_boundaries.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_LSTRING_LITERAL1_with_ascii_boundaries999.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalPattern_with_ascii_boundaries_fail",
+          "trait": [
+            "OutsideBMP",
+            "NumericEquivalence"
+          ],
+          "comment": "<S> { <p1> /^^@^A...^_$/ } on { <s> <p1> '^@^A...^_999' }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1literalPattern_with_UTF8_boundaries_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1literalPattern_with_UTF8_boundaries.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_LSTRING_LITERAL1_with_UTF8_boundaries.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalPattern_with_UTF8_boundaries_pass",
+          "trait": [
+            "OutsideBMP",
+            "NumericEquivalence"
+          ],
+          "comment": "<S> { <p1> /^^@^A...^_$/ } on { <s> <p1> '^@^A...^_' }",
+          "status": "mf:proposed",
+          "result": "1literalPattern_with_UTF8_boundaries_pass.val"
+        },
+        {
+          "@id": "#1literalPattern_with_UTF8_boundaries_fail",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1literalPattern_with_UTF8_boundaries.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_LSTRING_LITERAL1_with_UTF8_boundaries999.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalPattern_with_UTF8_boundaries_fail",
+          "trait": [
+            "OutsideBMP",
+            "NumericEquivalence"
+          ],
+          "comment": "<S> { <p1> /^^@^A...^_$/ } on { <s> <p1> '^@^A...^_999' }",
+          "status": "mf:proposed"
+        },
+        {
           "@id": "#1literalPattern_with_REGEXP_escapes_pass",
           "@type": "sht:ValidationTest",
           "action": {
@@ -10653,9 +10978,10 @@
           "extensionResults": [],
           "name": "1literalPattern_with_REGEXP_escapes_pass",
           "trait": [
+            "OutsideBMP",
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> /^\\/\\t\\b\\n\\r\\f$/ } on { <s> <p1> '\\t\\b\\n\\r\\f' }",
+          "comment": "<S> { <p1> /^\\/\\t\\b\\n\\r\\f\\\\a𝒸$/ } on { <s> <p1> '\\/\\t\\b\\n\\r\\f\\a𝒸' }",
           "status": "mf:proposed",
           "result": "1literalPattern_with_REGEXP_escapes_pass.val"
         },
@@ -10671,9 +10997,10 @@
           "extensionResults": [],
           "name": "1literalPattern_with_REGEXP_escapes_fail",
           "trait": [
+            "OutsideBMP",
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> /^\\/\\t\\b\\n\\r\\f^/ } on { <s> <p1> '\\t\\b\\n\\r\\f' }",
+          "comment": "<S> { <p1> /^\\/\\t\\b\\n\\r\\f\\\\a𝒸$/ } on { <s> <p1> '\\/\\t\\b\\n\\r\\f\\a𝒸999' }",
           "status": "mf:proposed"
         },
         {
