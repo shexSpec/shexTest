@@ -52,6 +52,8 @@
     <#1literalPattern_bad_delim>
     <#1literalPattern_with_ECHAR_escape_1>
     <#1literalPattern_with_ECHAR_escape_a>
+    <#1literalPattern_with_ECHAR_escape_b>
+    <#1literalPattern_with_ECHAR_escape_f>
     <#1literalPattern_with_ECHAR_escape_z>
     <#1literalPattern_with_UCHAR_escape_U0000061>
     <#1literalPattern_with_UCHAR_escape_u061>
@@ -369,6 +371,18 @@
   mf:name "1literalPattern_with_ECHAR_escape_a" ;
   mf:status mf:proposed ;
   sx:shex <1literalPattern_with_ECHAR_escape_a.shex> ;
+  .
+
+<#1literalPattern_with_ECHAR_escape_b> a sht:NegativeSyntax ;
+  mf:name "1literalPattern_with_ECHAR_escape_b" ;
+  mf:status mf:proposed ;
+  sx:shex <1literalPattern_with_ECHAR_escape_b.shex> ;
+  .
+
+<#1literalPattern_with_ECHAR_escape_f> a sht:NegativeSyntax ;
+  mf:name "1literalPattern_with_ECHAR_escape_f" ;
+  mf:status mf:proposed ;
+  sx:shex <1literalPattern_with_ECHAR_escape_f.shex> ;
   .
 
 <#1literalPattern_with_ECHAR_escape_z> a sht:NegativeSyntax ;

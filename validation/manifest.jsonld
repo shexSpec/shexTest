@@ -10981,7 +10981,7 @@
             "OutsideBMP",
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> /^\\/\\t\\b\\n\\r\\f\\\\a𝒸$/ } on { <s> <p1> '\\/\\t\\b\\n\\r\\f\\a𝒸' }",
+          "comment": "<S> { <p1> /^\\/\\t\\b\\n\\r\\f\\\\\\u0061\\U0001D4B8$/ } on { <s> <p1> '\\/\\t\\b\\n\\r\\f\\a𝒸' }",
           "status": "mf:proposed",
           "result": "1literalPattern_with_REGEXP_escapes_pass.val"
         },
@@ -11000,8 +11000,84 @@
             "OutsideBMP",
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> /^\\/\\t\\b\\n\\r\\f\\\\a𝒸$/ } on { <s> <p1> '\\/\\t\\b\\n\\r\\f\\a𝒸999' }",
+          "comment": "<S> { <p1> /^\\/\\t\\b\\n\\r\\f\\\\\\u0061\\U0001D4B8$/ } on { <s> <p1> '\\/\\t\\b\\n\\r\\f\\a𝒸999' }",
           "status": "mf:proposed"
+        },
+        {
+          "@id": "#1literalPattern_with_REGEXP_escapes_escaped_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1literalPattern_with_REGEXP_escapes_escaped.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_L_with_REGEXP_escapes_escaped.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalPattern_with_REGEXP_escapes_escaped_pass",
+          "trait": [
+            "OutsideBMP",
+            "NumericEquivalence"
+          ],
+          "comment": "<S> { <p1> /^\\\\/\\\\t\\\\b\\\\n\\\\r\\\\f\\\\\\\\\\\\u0061\\\\U0001D4B8$/ } on { <s> <p1> '\\\\/\\\\t\\\\b\\\\n\\\\r\\\\f\\\\\\u0061\\U0001D4B8' }",
+          "status": "mf:proposed",
+          "result": "1literalPattern_with_REGEXP_escapes_escaped_pass.val"
+        },
+        {
+          "@id": "#1literalPattern_with_REGEXP_escapes_bare_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1literalPattern_with_REGEXP_escapes_bare.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_L_with_REGEXP_escapes_bare.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalPattern_with_REGEXP_escapes_bare_pass",
+          "trait": [
+            "OutsideBMP",
+            "NumericEquivalence"
+          ],
+          "comment": "<S> { <p1> /^/\t\n\r-\\a𝒸$/ } on { <s> <p1> '/\t\\b\\n\\r\\f\\a𝒸' }",
+          "status": "mf:proposed",
+          "result": "1literalPattern_with_REGEXP_escapes_bare_pass.val"
+        },
+        {
+          "@id": "#1literalPattern_with_REGEXP_escapes_pass_bare",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1literalPattern_with_REGEXP_escapes.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_L_with_REGEXP_escapes_bare.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalPattern_with_REGEXP_escapes_pass_bare",
+          "trait": [
+            "OutsideBMP",
+            "NumericEquivalence"
+          ],
+          "comment": "<S> { <p1> /^\\/\\t\\b\\n\\r\\f\\\\\\u0061\\U0001D4B8$/ } on { <s> <p1> '/\t\\b\\n\\r\\f\\a𝒸' }",
+          "status": "mf:proposed",
+          "result": "1literalPattern_with_REGEXP_escapes_pass.val"
+        },
+        {
+          "@id": "#1literalPattern_with_REGEXP_escapes_bare_pass_escapes",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1literalPattern_with_REGEXP_escapes_bare.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_L_with_REGEXP_escapes.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalPattern_with_REGEXP_escapes_bare_pass_escapes",
+          "trait": [
+            "OutsideBMP",
+            "NumericEquivalence"
+          ],
+          "comment": "<S> { <p1> /^/\t\n\r-\\a𝒸$/ } on { <s> <p1> '\\/\\t\\b\\n\\r\\f\\a𝒸' }",
+          "status": "mf:proposed",
+          "result": "1literalPattern_with_REGEXP_escapes_bare_pass_escapes.val"
         },
         {
           "@id": "#1literalPatternEnd_fail-litEnd",
