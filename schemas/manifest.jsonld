@@ -507,6 +507,15 @@
           "ttl": "1val1STRING_LITERAL1_with_all_punctuation.ttl"
         },
         {
+          "@id": "#1val1STRING_LITERAL1_with_ECHAR_escapes",
+          "@type": "sht:RepresentationTest",
+          "name": "1val1STRING_LITERAL1_with_ECHAR_escapes",
+          "status": "mf:proposed",
+          "shex": "1val1STRING_LITERAL1_with_ECHAR_escapes.shex",
+          "json": "1val1STRING_LITERAL1_with_ECHAR_escapes.json",
+          "ttl": "1val1STRING_LITERAL1_with_ECHAR_escapes.ttl"
+        },
+        {
           "@id": "#1val1STRING_LITERAL1_with_ascii_boundaries",
           "@type": "sht:RepresentationTest",
           "name": "1val1STRING_LITERAL1_with_ascii_boundaries",
@@ -1477,6 +1486,78 @@
           "shex": "1literalPattern.shex",
           "json": "1literalPattern.json",
           "ttl": "1literalPattern.ttl"
+        },
+        {
+          "@id": "#1literalPattern_with_all_controls",
+          "@type": "sht:RepresentationTest",
+          "name": "1literalPattern_with_all_controls",
+          "status": "mf:proposed",
+          "shex": "1literalPattern_with_all_controls.shex",
+          "json": "1literalPattern_with_all_controls.json",
+          "ttl": "1literalPattern_with_all_controls.ttl"
+        },
+        {
+          "@id": "#1literalPattern_with_all_punctuation",
+          "@type": "sht:RepresentationTest",
+          "name": "1literalPattern_with_all_punctuation",
+          "status": "mf:proposed",
+          "shex": "1literalPattern_with_all_punctuation.shex",
+          "json": "1literalPattern_with_all_punctuation.json",
+          "ttl": "1literalPattern_with_all_punctuation.ttl"
+        },
+        {
+          "@id": "#1literalPattern_with_ascii_boundaries",
+          "@type": "sht:RepresentationTest",
+          "name": "1literalPattern_with_ascii_boundaries",
+          "status": "mf:proposed",
+          "shex": "1literalPattern_with_ascii_boundaries.shex",
+          "json": "1literalPattern_with_ascii_boundaries.json",
+          "ttl": "1literalPattern_with_ascii_boundaries.ttl"
+        },
+        {
+          "@id": "#1literalPattern_with_REGEXP_escapes",
+          "@type": "sht:RepresentationTest",
+          "name": "1literalPattern_with_REGEXP_escapes",
+          "status": "mf:proposed",
+          "shex": "1literalPattern_with_REGEXP_escapes.shex",
+          "json": "1literalPattern_with_REGEXP_escapes.json",
+          "ttl": "1literalPattern_with_REGEXP_escapes.ttl"
+        },
+        {
+          "@id": "#1literalPattern_with_REGEXP_escapes_bare",
+          "@type": "sht:RepresentationTest",
+          "name": "1literalPattern_with_REGEXP_escapes_bare",
+          "status": "mf:proposed",
+          "shex": "1literalPattern_with_REGEXP_escapes_bare.shex",
+          "json": "1literalPattern_with_REGEXP_escapes_bare.json",
+          "ttl": "1literalPattern_with_REGEXP_escapes_bare.ttl"
+        },
+        {
+          "@id": "#1literalPattern_with_REGEXP_escapes_as_bare",
+          "@type": "sht:RepresentationTest",
+          "name": "1literalPattern_with_REGEXP_escapes_as_bare",
+          "status": "mf:proposed",
+          "shex": "1literalPattern_with_REGEXP_escapes.shex",
+          "json": "1literalPattern_with_REGEXP_escapes_as_bare.json",
+          "ttl": "1literalPattern_with_REGEXP_escapes_as_bare.ttl"
+        },
+        {
+          "@id": "#1literalPattern_with_REGEXP_bare_as_escapes",
+          "@type": "sht:RepresentationTest",
+          "name": "1literalPattern_with_REGEXP_bare_as_escapes",
+          "status": "mf:proposed",
+          "shex": "1literalPattern_with_REGEXP_bare_as_escapes.shex",
+          "json": "1literalPattern_with_REGEXP_escapes.json",
+          "ttl": "1literalPattern_with_REGEXP_escapes.ttl"
+        },
+        {
+          "@id": "#1literalPattern_with_REGEXP_escapes_escaped",
+          "@type": "sht:RepresentationTest",
+          "name": "1literalPattern_with_REGEXP_escapes_escaped",
+          "status": "mf:proposed",
+          "shex": "1literalPattern_with_REGEXP_escapes_escaped.shex",
+          "json": "1literalPattern_with_REGEXP_escapes_escaped.json",
+          "ttl": "1literalPattern_with_REGEXP_escapes_escaped.ttl"
         },
         {
           "@id": "#1literalPatterni",
