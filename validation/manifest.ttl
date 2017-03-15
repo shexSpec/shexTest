@@ -9901,6 +9901,21 @@
     mf:result <1literalPattern_pass-CarrotbcDollar.val>
     .
 
+# translates to the implicitly anchored XML Schema:
+# <?xml version="1.0" encoding="UTF-8"?>
+#   <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+#     <xs:element name="p1">
+#       <xs:simpleType>
+#         <xs:restriction base="xs:string">
+#           <xs:pattern value="&#x9;(v:[0-9]+( *, *)?){2,3}/\.&#xD;&#xA;|.*\\N\/A.*" />
+#         </xs:restriction>
+#       </xs:simpleType>
+#     </xs:element>
+#   </xs:schema>
+# with data:
+#   <?xml version="1.0" encoding="UTF-8"?>
+#   <p1>	v:0,  v:12v:3/.&#xD;&#xA;</p1>
+# Try at: <http://www.utilities-online.info/xsdvalidation>
 <#1literalPattern_with_all_meta_pass> a sht:ValidationTest ;
     mf:name "1literalPattern_with_all_meta_pass" ;
     sht:trait sht:NumericEquivalence, sht:OutsideBMP ;
