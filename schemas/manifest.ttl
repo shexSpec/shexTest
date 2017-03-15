@@ -1740,6 +1740,14 @@
     sx:ttl <1literalPattern_with_ascii_boundaries.ttl> ;
     .
 
+<#1literalPattern_with_UTF8_boundaries> a sht:RepresentationTest ;
+    mf:name "1literalPattern_with_UTF8_boundaries" ;
+    mf:status mf:proposed ;
+    sx:shex <1literalPattern_with_UTF8_boundaries.shex> ;
+    sx:json <1literalPattern_with_UTF8_boundaries.json> ;
+    sx:ttl <1literalPattern_with_UTF8_boundaries.ttl> ;
+    .
+
 <#1literalPattern_with_REGEXP_escapes> a sht:RepresentationTest ;
     mf:name "1literalPattern_with_REGEXP_escapes" ;
     mf:status mf:proposed ;
@@ -1756,18 +1764,18 @@
     sx:ttl <1literalPattern_with_REGEXP_escapes_bare.ttl> ;
     .
 
-<#1literalPattern_with_REGEXP_escapes_as_bare> a sht:RepresentationTest ;
+<#1literalPattern_with_REGEXP_escapes_as_bare> a sht:RepresentationTest ; # escapes vs. bare
     mf:name "1literalPattern_with_REGEXP_escapes_as_bare" ;
     mf:status mf:proposed ;
     sx:shex <1literalPattern_with_REGEXP_escapes.shex> ;
-    sx:json <1literalPattern_with_REGEXP_escapes_as_bare.json> ;
-    sx:ttl <1literalPattern_with_REGEXP_escapes_as_bare.ttl> ;
+    sx:json <1literalPattern_with_REGEXP_escapes_bare.json> ;
+    sx:ttl <1literalPattern_with_REGEXP_escapes_bare.ttl> ;
     .
 
-<#1literalPattern_with_REGEXP_bare_as_escapes> a sht:RepresentationTest ;
+<#1literalPattern_with_REGEXP_bare_as_escapes> a sht:RepresentationTest ; # bare vs. escapes
     mf:name "1literalPattern_with_REGEXP_bare_as_escapes" ;
     mf:status mf:proposed ;
-    sx:shex <1literalPattern_with_REGEXP_bare_as_escapes.shex> ;
+    sx:shex <1literalPattern_with_REGEXP_escapes_bare.shex> ;
     sx:json <1literalPattern_with_REGEXP_escapes.json> ;
     sx:ttl <1literalPattern_with_REGEXP_escapes.ttl> ;
     .
