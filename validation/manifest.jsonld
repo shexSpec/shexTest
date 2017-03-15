@@ -10870,7 +10870,7 @@
             "OutsideBMP",
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> /^ !\"#$%&'()/:;<=>?@[]^_`{|}~$/ } on { <s> <p1> ' !\"#$%&'()/:;<=>?@[]^_`{|}~' }",
+          "comment": "<S> { <p1> /^ !\"#\\$%&'\\(\\)\\/:;<=>\\?@\\[\\]\\^_`\\{\\|\\}~$/ } on { <s> <p1> ' !\"#$%&'()/:;<=>?@[]^_`{|}~' }",
           "status": "mf:proposed",
           "result": "1literalPattern_with_all_punctuation_pass.val"
         },
@@ -10889,7 +10889,7 @@
             "OutsideBMP",
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> /^ !\"#$%&'()/:;<=>?@[]^_`{|}~$/ } on { <s> <p1> ' !\"#$%&'()/:;<=>?@[]^_`{|}~999' }",
+          "comment": "<S> { <p1> /^ !\"#\\$%&'\\(\\)\\/:;<=>\\?@\\[\\]\\^_`\\{\\|\\}~$/ } on { <s> <p1> ' !\"#$%&'()/:;<=>?@[]^_`{|}~999' }",
           "status": "mf:proposed"
         },
         {
@@ -11091,7 +11091,7 @@
             "OutsideBMP",
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> /^/\t\n\r-\\a𝒸$/ } on { <s> <p1> '/\t\\b\\n\\r\\f\\a𝒸' }",
+          "comment": "<S> { <p1> /^\\/\t\\n\\r-\\\\a\\U0001D4B8$/ } on { <s> <p1> '/\t\\b\\n\\r\\f\\a𝒸' }",
           "status": "mf:proposed",
           "result": "1literalPattern_with_REGEXP_escapes_bare_pass.val"
         },
@@ -11110,7 +11110,7 @@
             "OutsideBMP",
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> /^/\t\n\r-\\a𝒸$/ } on { <s> <p1> '\\\\/\\\\t\\\\b\\\\n\\\\r\\\\f\\\\\\u0061\\U0001D4B8' }",
+          "comment": "<S> { <p1> /^\\/\t\\n\\r-\\\\a\\U0001D4B8$/ } on { <s> <p1> '\\\\/\\\\t\\\\b\\\\n\\\\r\\\\f\\\\\\u0061\\U0001D4B8' }",
           "status": "mf:proposed"
         },
         {
@@ -11147,7 +11147,7 @@
             "OutsideBMP",
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> /^/\t\n\r-\\a𝒸$/ } on { <s> <p1> '\\/\\t\\b\\n\\r\\f\\a𝒸' }",
+          "comment": "<S> { <p1> /^\\/\t\\n\\r-\\\\a\\U0001D4B8$/ } on { <s> <p1> '\\/\\t\\b\\n\\r\\f\\a𝒸' }",
           "status": "mf:proposed",
           "result": "1literalPattern_with_REGEXP_escapes_bare_pass_escapes.val"
         },
@@ -11396,6 +11396,44 @@
           "comment": "<S1> { <p1> LITERAL PATTERN \"bc\" } on { <s1> <p1> \"^bc$\" }",
           "status": "mf:proposed",
           "result": "1literalPattern_pass-CarrotbcDollar.val"
+        },
+        {
+          "@id": "#1literalPattern_with_all_meta_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1literalPattern_with_all_meta.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_L_with_all_meta.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalPattern_with_all_meta_pass",
+          "trait": [
+            "OutsideBMP",
+            "NumericEquivalence"
+          ],
+          "comment": "<S> { <p1> /^$/ } on { <s> <p1> '' }",
+          "status": "mf:proposed",
+          "result": "1literalPattern_with_all_meta_pass.val"
+        },
+        {
+          "@id": "#1literalPattern_with_all_meta_pass-NA",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1literalPattern_with_all_meta.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_LabcNAdef.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1literalPattern_with_all_meta_pass-NA",
+          "trait": [
+            "OutsideBMP",
+            "NumericEquivalence"
+          ],
+          "comment": "<S> { <p1> /^$/ } on { <s> <p1> '' }",
+          "status": "mf:proposed",
+          "result": "1literalPattern_with_all_meta_pass-NA.val"
         },
         {
           "@id": "#1iriPattern_pass-iri-match",

@@ -173,6 +173,7 @@
         <#1bnodeMaxlength>
         <#1nonliteralMaxlength>
         <#1literalPattern>
+        <#1literalPattern_with_all_meta>
         <#1literalPattern_with_all_controls>
         <#1literalPattern_with_all_punctuation>
         <#1literalPattern_with_ascii_boundaries>
@@ -1714,6 +1715,14 @@
     sx:shex <1literalPattern.shex> ;
     sx:json <1literalPattern.json> ;
     sx:ttl <1literalPattern.ttl> ;
+    .
+
+<#1literalPattern_with_all_meta> a sht:RepresentationTest ;
+    mf:name "1literalPattern_with_all_meta" ;
+    mf:status mf:proposed ;
+    sx:shex <1literalPattern_with_all_meta.shex> ;
+    sx:json <1literalPattern_with_all_meta.json> ;
+    sx:ttl <1literalPattern_with_all_meta.ttl> ;
     .
 
 <#1literalPattern_with_all_controls> a sht:RepresentationTest ;

@@ -1488,6 +1488,15 @@
           "ttl": "1literalPattern.ttl"
         },
         {
+          "@id": "#1literalPattern_with_all_meta",
+          "@type": "sht:RepresentationTest",
+          "name": "1literalPattern_with_all_meta",
+          "status": "mf:proposed",
+          "shex": "1literalPattern_with_all_meta.shex",
+          "json": "1literalPattern_with_all_meta.json",
+          "ttl": "1literalPattern_with_all_meta.ttl"
+        },
+        {
           "@id": "#1literalPattern_with_all_controls",
           "@type": "sht:RepresentationTest",
           "name": "1literalPattern_with_all_controls",

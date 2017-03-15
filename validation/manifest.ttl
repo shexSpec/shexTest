@@ -720,6 +720,8 @@
 	<#1literalPattern_pass-bcDollar>
 	<#1literalStarPatternEnd_pass-bc>
 	<#1literalPattern_pass-CarrotbcDollar>
+        <#1literalPattern_with_all_meta_pass>
+        <#1literalPattern_with_all_meta_pass-NA>
         <#1iriPattern_pass-iri-match>
         <#1iriPattern_fail-iri-short>
         <#1iriPattern_fail-iri-long>
@@ -9899,6 +9901,34 @@
     mf:result <1literalPattern_pass-CarrotbcDollar.val>
     .
 
+<#1literalPattern_with_all_meta_pass> a sht:ValidationTest ;
+    mf:name "1literalPattern_with_all_meta_pass" ;
+    sht:trait sht:NumericEquivalence, sht:OutsideBMP ;
+    rdfs:comment "<S> { <p1> /^$/ } on { <s> <p1> '' }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalPattern_with_all_meta.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_L_with_all_meta.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1literalPattern_with_all_meta_pass.val>
+    .
+
+<#1literalPattern_with_all_meta_pass-NA> a sht:ValidationTest ;
+    mf:name "1literalPattern_with_all_meta_pass-NA" ;
+    sht:trait sht:NumericEquivalence, sht:OutsideBMP ;
+    rdfs:comment "<S> { <p1> /^$/ } on { <s> <p1> '' }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1literalPattern_with_all_meta.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LabcNAdef.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1literalPattern_with_all_meta_pass-NA.val>
+    .
+
 <#1literalPattern_with_all_controls_pass> a sht:ValidationTest ;
     mf:name "1literalPattern_with_all_controls_pass" ;
     sht:trait sht:NumericEquivalence, sht:OutsideBMP ;
@@ -9929,7 +9959,7 @@
 <#1literalPattern_with_all_punctuation_pass> a sht:ValidationTest ;
     mf:name "1literalPattern_with_all_punctuation_pass" ;
     sht:trait sht:NumericEquivalence, sht:OutsideBMP ;
-    rdfs:comment "<S> { <p1> /^ !\"#$%&'()\/:;<=>?@[]^_`{|}~$/ } on { <s> <p1> ' !\"#$%&\'()/:;<=>?@[]^_`{|}~' }" ;
+    rdfs:comment "<S> { <p1> /^ !\"#\\$%&'\\(\\)\\/:;<=>\\?@\\[\\]\\^_`\\{\\|\\}~$/ } on { <s> <p1> ' !\"#$%&\'()/:;<=>?@[]^_`{|}~' }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1literalPattern_with_all_punctuation.shex> ;
@@ -9943,7 +9973,7 @@
 <#1literalPattern_with_all_punctuation_fail> a sht:ValidationFailure ;
     mf:name "1literalPattern_with_all_punctuation_fail" ;
     sht:trait sht:NumericEquivalence, sht:OutsideBMP ;
-    rdfs:comment "<S> { <p1> /^ !\"#$%&'()\/:;<=>?@[]^_`{|}~$/ } on { <s> <p1> ' !\"#$%&\'()/:;<=>?@[]^_`{|}~999' }" ;
+    rdfs:comment "<S> { <p1> /^ !\"#\\$%&'\\(\\)\\/:;<=>\\?@\\[\\]\\^_`\\{\\|\\}~$/ } on { <s> <p1> ' !\"#$%&\'()/:;<=>?@[]^_`{|}~999' }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1literalPattern_with_all_punctuation.shex> ;
@@ -10090,7 +10120,7 @@
 <#1literalPattern_with_REGEXP_escapes_bare_pass> a sht:ValidationTest ;
     mf:name "1literalPattern_with_REGEXP_escapes_bare_pass" ;
     sht:trait sht:NumericEquivalence, sht:OutsideBMP ;
-    rdfs:comment "<S> { <p1> /^\/	\n\r-\\a\U0001D4B8$/ } on { <s> <p1> '/	\\b\\n\\r\\f\\a\U0001D4B8' }" ;
+    rdfs:comment "<S> { <p1> /^\\/	\\n\\r-\\\\a\\U0001D4B8$/ } on { <s> <p1> '/	\\b\\n\\r\\f\\a\U0001D4B8' }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1literalPattern_with_REGEXP_escapes_bare.shex> ;
@@ -10104,7 +10134,7 @@
 <#1literalPattern_with_REGEXP_escapes_bare_fail_escaped> a sht:ValidationFailure ;
     mf:name "1literalPattern_with_REGEXP_escapes_bare_fail_escaped" ;
     sht:trait sht:NumericEquivalence, sht:OutsideBMP ;
-    rdfs:comment "<S> { <p1> /^\/	\n\r-\\a\U0001D4B8$/ } on { <s> <p1> '\\\\/\\\\t\\\\b\\\\n\\\\r\\\\f\\\\\\u0061\\U0001D4B8' }" ;
+    rdfs:comment "<S> { <p1> /^\\/	\\n\\r-\\\\a\\U0001D4B8$/ } on { <s> <p1> '\\\\/\\\\t\\\\b\\\\n\\\\r\\\\f\\\\\\u0061\\U0001D4B8' }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1literalPattern_with_REGEXP_escapes_bare.shex> ;
@@ -10131,7 +10161,7 @@
 <#1literalPattern_with_REGEXP_escapes_bare_pass_escapes> a sht:ValidationTest ;
     mf:name "1literalPattern_with_REGEXP_escapes_bare_pass_escapes" ;
     sht:trait sht:NumericEquivalence, sht:OutsideBMP ;
-    rdfs:comment "<S> { <p1> /^\/	\n\r-\\a\U0001D4B8$/ } on { <s> <p1> '\\/\\t\\b\\n\\r\\f\\\u0061\U0001D4B8' }" ;
+    rdfs:comment "<S> { <p1> /^\\/	\\n\\r-\\\\a\\U0001D4B8$/ } on { <s> <p1> '\\/\\t\\b\\n\\r\\f\\\u0061\U0001D4B8' }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1literalPattern_with_REGEXP_escapes_bare.shex> ;
