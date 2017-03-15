@@ -49,7 +49,7 @@
     <#PN_LOCAL-dash-start>
     <#PN_LOCAL-unescaped-TILDE>
     <#PN_LOCAL-with-UCHAR.1>
-    <#1literalPattern_bad_delim>
+    <#1literalPattern-bad-delim>
     <#1literalPattern_with_ECHAR_escape_1>
     <#1literalPattern_with_ECHAR_escape_b>
     <#1literalPattern_with_ECHAR_escape_f>
@@ -353,10 +353,10 @@
   sx:shex <PN_LOCAL-with-UCHAR.1.shex> ;
   .
 
-<#1literalPattern_bad_delim> a sht:NegativeSyntax ;
-  mf:name "1literalPattern_bad_delim" ;
+<#1literalPattern-bad-delim> a sht:NegativeSyntax ;
+  mf:name "1literalPattern-bad-delim" ;
   mf:status mf:proposed ;
-  sx:shex <1literalPattern_bad_delim.shex> ;
+  sx:shex <1literalPattern-bad-delim.shex> ;
   .
 
 <#1literalPattern_with_ECHAR_escape_1> a sht:NegativeSyntax ;
