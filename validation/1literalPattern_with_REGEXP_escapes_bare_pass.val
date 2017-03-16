@@ -8,7 +8,7 @@
     "valueExpr": {
       "type": "NodeConstraint",
       "nodeKind": "literal",
-      "pattern": "^\/\t\n\r-\\\\\u0061\uD835\uDCB8$"
+      "pattern": "^\/\t\\n\\r-\\\\\u0061\uD835\uDCB8$"
     },
     "solutions": [
       {
