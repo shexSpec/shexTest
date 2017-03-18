@@ -9,18 +9,24 @@
     rdfs:comment "ShEx negative structure tests" ;
     mf:entries (
     <#1MissingRef>
+    <#1ShapeProductionCollision>
     <#1focusMissingRefdot>
     <#1focusRefANDSelfdot>
-    <#includeSimpleShape>
-    <#includeNonSimpleShape>
     <#includeExpressionNotFound>
-    <#1ShapeProductionCollision>
-) .
+    <#includeNonSimpleShape>
+    <#includeSimpleShape>
+  ) .
 
 <#1MissingRef> a sht:NegativeStructure ;
   mf:name "1MissingRef" ;
   mf:status mf:proposed ;
   sx:shex <1MissingRef.shex> ;
+  .
+
+<#1ShapeProductionCollision> a sht:NegativeStructure ;
+  mf:name "1ShapeProductionCollision" ;
+  mf:status mf:proposed ;
+  sx:shex <1ShapeProductionCollision.shex> ;
   .
 
 <#1focusMissingRefdot> a sht:NegativeStructure ;
@@ -35,10 +41,10 @@
   sx:shex <1focusRefANDSelfdot.shex> ;
   .
 
-<#includeSimpleShape> a sht:NegativeStructure ;
-  mf:name "includeSimpleShape" ;
+<#includeExpressionNotFound> a sht:NegativeStructure ;
+  mf:name "includeExpressionNotFound" ;
   mf:status mf:proposed ;
-  sx:shex <includeSimpleShape.shex> ;
+  sx:shex <includeExpressionNotFound.shex> ;
   .
 
 <#includeNonSimpleShape> a sht:NegativeStructure ;
@@ -47,15 +53,9 @@
   sx:shex <includeNonSimpleShape.shex> ;
   .
 
-<#includeExpressionNotFound> a sht:NegativeStructure ;
-  mf:name "includeExpressionNotFound" ;
+<#includeSimpleShape> a sht:NegativeStructure ;
+  mf:name "includeSimpleShape" ;
   mf:status mf:proposed ;
-  sx:shex <includeExpressionNotFound.shex> ;
-  .
-
-<#1ShapeProductionCollision> a sht:NegativeStructure ;
-  mf:name "1ShapeProductionCollision" ;
-  mf:status mf:proposed ;
-  sx:shex <1ShapeProductionCollision.shex> ;
+  sx:shex <includeSimpleShape.shex> ;
   .
 
