@@ -3,11 +3,11 @@
     {
       "@base": "https://raw.githubusercontent.com/shexSpec/shexTest/master/negativeStructure/manifest"
     },
-    "https://raw.githubusercontent.com/shexSpec/shexTest/master/context.jsonld"
+    "../context.jsonld"
   ],
   "@graph": [
     {
-      "@id": "https://raw.githubusercontent.com/shexSpec/shexTest/master/negativeStructure/manifest",
+      "@id": "",
       "@type": "mf:Manifest",
       "rdfs:comment": "ShEx negative structure tests",
       "entries": [
@@ -40,11 +40,18 @@
           "shex": "includeNonSimpleShape.shex"
         },
         {
-          "@id": "#includeShapeNotFound",
+          "@id": "#includeSimpleShape",
           "@type": "sht:NegativeStructure",
-          "name": "includeShapeNotFound",
+          "name": "includeSimpleShape",
           "status": "mf:proposed",
-          "shex": "includeShapeNotFound.shex"
+          "shex": "includeSimpleShape.shex"
+        },
+        {
+          "@id": "#includeExpressionNotFound",
+          "@type": "sht:NegativeStructure",
+          "name": "includeExpressionNotFound",
+          "status": "mf:proposed",
+          "shex": "includeExpressionNotFound.shex"
         }
       ]
     }

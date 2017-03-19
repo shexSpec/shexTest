@@ -10,7 +10,7 @@
         "type": "TestedTriple",
         "subject": "http://a.example/s1",
         "predicate": "http://a.example/p1",
-        "object": "\"a\""
+        "object": { "value": "a" }
       },
       {
         "type": "TestedTriple",
@@ -20,7 +20,7 @@
       }
     ],
     "min": 1,
-    "max": "*",
+    "max": "unbounded",
     "annotations": [
       {
         "type": "Annotation",

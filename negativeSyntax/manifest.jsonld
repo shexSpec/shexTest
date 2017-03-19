@@ -3,11 +3,11 @@
     {
       "@base": "https://raw.githubusercontent.com/shexSpec/shexTest/master/negativeSyntax/manifest"
     },
-    "https://raw.githubusercontent.com/shexSpec/shexTest/master/context.jsonld"
+    "../context.jsonld"
   ],
   "@graph": [
     {
-      "@id": "https://raw.githubusercontent.com/shexSpec/shexTest/master/negativeSyntax/manifest",
+      "@id": "",
       "@type": "mf:Manifest",
       "rdfs:comment": "ShEx negative syntax tests",
       "entries": [
@@ -297,6 +297,90 @@
           "name": "PN_LOCAL-with-UCHAR.1",
           "status": "mf:proposed",
           "shex": "PN_LOCAL-with-UCHAR.1.shex"
+        },
+        {
+          "@id": "#1literalPattern-bad-delim",
+          "@type": "sht:NegativeSyntax",
+          "name": "1literalPattern-bad-delim",
+          "status": "mf:proposed",
+          "shex": "1literalPattern-bad-delim.shex"
+        },
+        {
+          "@id": "#1literalPattern_with_ECHAR_escape_1",
+          "@type": "sht:NegativeSyntax",
+          "name": "1literalPattern_with_ECHAR_escape_1",
+          "status": "mf:proposed",
+          "shex": "1literalPattern_with_ECHAR_escape_1.shex"
+        },
+        {
+          "@id": "#1literalPattern_with_ECHAR_escape_b",
+          "@type": "sht:NegativeSyntax",
+          "name": "1literalPattern_with_ECHAR_escape_b",
+          "status": "mf:proposed",
+          "shex": "1literalPattern_with_ECHAR_escape_b.shex"
+        },
+        {
+          "@id": "#1literalPattern_with_ECHAR_escape_f",
+          "@type": "sht:NegativeSyntax",
+          "name": "1literalPattern_with_ECHAR_escape_f",
+          "status": "mf:proposed",
+          "shex": "1literalPattern_with_ECHAR_escape_f.shex"
+        },
+        {
+          "@id": "#1literalPattern_with_UCHAR_escape_U0000061",
+          "@type": "sht:NegativeSyntax",
+          "name": "1literalPattern_with_UCHAR_escape_U0000061",
+          "status": "mf:proposed",
+          "shex": "1literalPattern_with_UCHAR_escape_U0000061.shex"
+        },
+        {
+          "@id": "#1literalPattern_with_UCHAR_escape_u061",
+          "@type": "sht:NegativeSyntax",
+          "name": "1literalPattern_with_UCHAR_escape_u061",
+          "status": "mf:proposed",
+          "shex": "1literalPattern_with_UCHAR_escape_u061.shex"
+        },
+        {
+          "@id": "#1val1STRING_LITERAL1_bad_delim",
+          "@type": "sht:NegativeSyntax",
+          "name": "1val1STRING_LITERAL1_bad_delim",
+          "status": "mf:proposed",
+          "shex": "1val1STRING_LITERAL1_bad_delim.shex"
+        },
+        {
+          "@id": "#1val1STRING_LITERAL1_with_ECHAR_escape_1",
+          "@type": "sht:NegativeSyntax",
+          "name": "1val1STRING_LITERAL1_with_ECHAR_escape_1",
+          "status": "mf:proposed",
+          "shex": "1val1STRING_LITERAL1_with_ECHAR_escape_1.shex"
+        },
+        {
+          "@id": "#1val1STRING_LITERAL1_with_ECHAR_escape_a",
+          "@type": "sht:NegativeSyntax",
+          "name": "1val1STRING_LITERAL1_with_ECHAR_escape_a",
+          "status": "mf:proposed",
+          "shex": "1val1STRING_LITERAL1_with_ECHAR_escape_a.shex"
+        },
+        {
+          "@id": "#1val1STRING_LITERAL1_with_ECHAR_escape_z",
+          "@type": "sht:NegativeSyntax",
+          "name": "1val1STRING_LITERAL1_with_ECHAR_escape_z",
+          "status": "mf:proposed",
+          "shex": "1val1STRING_LITERAL1_with_ECHAR_escape_z.shex"
+        },
+        {
+          "@id": "#1val1STRING_LITERAL1_with_UCHAR_escape_u061",
+          "@type": "sht:NegativeSyntax",
+          "name": "1val1STRING_LITERAL1_with_UCHAR_escape_u061",
+          "status": "mf:proposed",
+          "shex": "1val1STRING_LITERAL1_with_UCHAR_escape_u061.shex"
+        },
+        {
+          "@id": "#1val1STRING_LITERAL1_with_UCHAR_escape_U0000061",
+          "@type": "sht:NegativeSyntax",
+          "name": "1val1STRING_LITERAL1_with_UCHAR_escape_U0000061",
+          "status": "mf:proposed",
+          "shex": "1val1STRING_LITERAL1_with_UCHAR_escape_U0000061.shex"
         },
         {
           "@id": "#STRING_LITERAL1-ending-QUOTATION_MARK",
