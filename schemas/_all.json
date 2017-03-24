@@ -137,7 +137,7 @@
                       "nodeKind": "iri"
                     },
                     "min": 0,
-                    "max": "unbounded"
+                    "max": -1
                   },
                   {
                     "type": "TripleConstraint",
@@ -149,7 +149,7 @@
                       "length": 5
                     },
                     "min": 1,
-                    "max": "unbounded"
+                    "max": -1
                   },
                   {
                     "type": "TripleConstraint",
@@ -174,7 +174,7 @@
                   ]
                 },
                 "min": 2,
-                "max": "unbounded"
+                "max": -1
               },
               {
                 "type": "TripleConstraint",
@@ -206,7 +206,7 @@
                   ]
                 },
                 "min": 2,
-                "max": "unbounded"
+                "max": -1
               },
               {
                 "type": "EachOf",
@@ -310,7 +310,7 @@
                               "nodeKind": "literal"
                             },
                             "min": 1,
-                            "max": "unbounded",
+                            "max": -1,
                             "semActs": [
                               {
                                 "type": "SemAct",
@@ -351,7 +351,7 @@
                             "inverse": true,
                             "predicate": "http://all.example/bnode",
                             "min": 1,
-                            "max": "unbounded",
+                            "max": -1,
                             "semActs": [
                               {
                                 "type": "SemAct",
@@ -365,7 +365,7 @@
                             "inverse": true,
                             "predicate": "http://all.example/literal",
                             "min": 1,
-                            "max": "unbounded",
+                            "max": -1,
                             "semActs": [
                               {
                                 "type": "SemAct",
