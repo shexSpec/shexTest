@@ -13,7 +13,7 @@
             "predicate": "http://a.example/a",
             "valueExpr": "http://a.example.org/T1",
             "min": 0,
-            "max": "unbounded"
+            "max": -1
           },
           {
             "type": "OneOf",
