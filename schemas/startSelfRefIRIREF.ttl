@@ -8,6 +8,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 <http://a.example/S1> a sx:Shape ;
   sx:expression
-    [ a sx:TripleConstraint ; sx:predicate ex:p1 ; sx:min 0 ; sx:max sx:unbounded ;
+    [ a sx:TripleConstraint ; sx:predicate ex:p1 ; sx:min 0 ; sx:max -1 ;
       sx:valueExpr <http://a.example/S1> ] .
 

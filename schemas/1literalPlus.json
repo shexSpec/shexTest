@@ -1,5 +1,5 @@
 {
-  "@context": "https://shexspec.github.io/context.jsonld",
+  "@context": "http://shex.io/context.jsonld",
   "type": "Schema",
   "shapes": [
     {
@@ -13,7 +13,7 @@
           "nodeKind": "literal"
         },
         "min": 1,
-        "max": "unbounded"
+        "max": -1
       }
     }
   ]
