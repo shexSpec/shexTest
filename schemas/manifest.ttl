@@ -5,25 +5,6 @@
 @prefix sht:    <http://www.w3.org/ns/shacl/test-suite#> .
 @prefix sx:     <https://shexspec.github.io/shexTest/ns#> .
 
-# TODO:
-#   1IRI_with_all_punctuationdot
-#   1IRI_with_UCHAR.1dot
-#   1val1STRING_LITERAL1
-#   1val1STRING_LITERAL1_with_all_controls
-#   1val1STRING_LITERAL1_with_all_punctuation
-#   1val1STRING_LITERAL1_with_ascii_boundaries
-#   1val1STRING_LITERAL1_with_UTF8_boundaries
-#   1val1STRING_LITERAL2
-#   1val1STRING_LITERAL2_with_LANGTAG
-#   1val1STRING_LITERAL2_with_subtag
-#   1val1STRING_LITERAL_LONG1
-#   1val1STRING_LITERAL_LONG2
-#   1val1STRING_LITERAL_LONG2_with_LANGTAG
-#   1val1STRING_LITERAL_LONG2_with_subtag
-#
-#   1val1LNDatatype
-
-
 <> a mf:Manifest ;
     rdfs:comment "ShEx representation tests" ;
     mf:entries
@@ -70,6 +51,8 @@
         <#1bnodeRef1>
         <#1dotInline1>
         <#1val1IRIREF>
+        <#1IRI_with_all_punctuationdot>
+        <#1IRI_with_UCHAR.1dot>
         <#1val1INTEGER>
         <#1val1DOUBLE>
         <#1val1DOUBLElowercase>
@@ -77,6 +60,20 @@
         <#1val1IRIREFDatatype>
         <#1val1true>
         <#1val1false>
+        <#1val1LNDatatype>
+        <#1val1STRING_LITERAL1>
+        <#1val1STRING_LITERAL1_with_all_controls>
+        <#1val1STRING_LITERAL1_with_all_punctuation>
+        <#1val1STRING_LITERAL1_with_ECHAR_escapes>
+        <#1val1STRING_LITERAL1_with_ascii_boundaries>
+        <#1val1STRING_LITERAL1_with_UTF8_boundaries>
+        <#1val1STRING_LITERAL2>
+        <#1val1STRING_LITERAL2_with_LANGTAG>
+        <#1val1STRING_LITERAL2_with_subtag>
+        <#1val1STRING_LITERAL_LONG1>
+        <#1val1STRING_LITERAL_LONG2>
+        <#1val1STRING_LITERAL_LONG2_with_LANGTAG>
+        <#1val1STRING_LITERAL_LONG2_with_subtag>
         <#1datatypeLength>
         <#1literalFractiondigits5>
         <#1literalFractiondigits4>
@@ -176,6 +173,14 @@
         <#1bnodeMaxlength>
         <#1nonliteralMaxlength>
         <#1literalPattern>
+        <#1literalPattern_with_all_meta>
+        <#1literalPattern_with_all_controls>
+        <#1literalPattern_with_all_punctuation>
+        <#1literalPattern_with_ascii_boundaries>
+        <#1literalPattern_with_UTF8_boundaries>
+        <#1literalPattern_with_REGEXP_escapes>
+        <#1literalPattern_with_REGEXP_escapes_bare>
+        <#1literalPattern_with_REGEXP_escapes_escaped>
         <#1literalPatterni>
         <#1literalPattern19>
         <#1literalStartPattern>
@@ -308,8 +313,6 @@
         <#NOT1dotOR2dotX3AND1>
         <#shapeExtern>
         <#shapeExternRef>
-#         <#1dotPlusLt1dotPlus>
-        <#2dot>
 #        <#0Inherit1>
 #        <#1dotInherit1>
 #        <#1dotInherit3>
@@ -712,6 +715,22 @@
     sx:ttl <1val1IRIREF.ttl> ;
     .
 
+<#1IRI_with_all_punctuationdot> a sht:RepresentationTest ;
+    mf:name "1IRI_with_all_punctuationdot" ;
+    mf:status mf:proposed ;
+    sx:shex <1IRI_with_all_punctuationdot.shex> ;
+    sx:json <1IRI_with_all_punctuationdot.json> ;
+    sx:ttl <1IRI_with_all_punctuationdot.ttl> ;
+    .
+
+<#1IRI_with_UCHAR.1dot> a sht:RepresentationTest ;
+    mf:name "1IRI_with_UCHAR.1dot" ;
+    mf:status mf:proposed ;
+    sx:shex <1IRI_with_UCHAR.1dot.shex> ;
+    sx:json <1IRI_with_UCHAR.1dot.json> ;
+    sx:ttl <1IRI_with_UCHAR.1dot.ttl> ;
+    .
+
 <#1val1INTEGER> a sht:RepresentationTest ;
     mf:name "1val1INTEGER" ;
     mf:status mf:proposed ;
@@ -774,6 +793,118 @@
     sx:shex <1val1false.shex> ;
     sx:json <1val1false.json> ;
     sx:ttl <1val1false.ttl> ;
+    .
+
+<#1val1LNDatatype> a sht:RepresentationTest ;
+    mf:name "1val1LNDatatype" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1LNDatatype.shex> ;
+    sx:json <1val1LNDatatype.json> ;
+    sx:ttl <1val1LNDatatype.ttl> ;
+    .
+
+<#1val1STRING_LITERAL1> a sht:RepresentationTest ;
+    mf:name "1val1STRING_LITERAL1" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1STRING_LITERAL1.shex> ;
+    sx:json <1val1STRING_LITERAL1.json> ;
+    sx:ttl <1val1STRING_LITERAL1.ttl> ;
+    .
+
+<#1val1STRING_LITERAL1_with_all_controls> a sht:RepresentationTest ;
+    mf:name "1val1STRING_LITERAL1_with_all_controls" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1STRING_LITERAL1_with_all_controls.shex> ;
+    sx:json <1val1STRING_LITERAL1_with_all_controls.json> ;
+    sx:ttl <1val1STRING_LITERAL1_with_all_controls.ttl> ;
+    .
+
+<#1val1STRING_LITERAL1_with_all_punctuation> a sht:RepresentationTest ;
+    mf:name "1val1STRING_LITERAL1_with_all_punctuation" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1STRING_LITERAL1_with_all_punctuation.shex> ;
+    sx:json <1val1STRING_LITERAL1_with_all_punctuation.json> ;
+    sx:ttl <1val1STRING_LITERAL1_with_all_punctuation.ttl> ;
+    .
+
+<#1val1STRING_LITERAL1_with_ECHAR_escapes> a sht:RepresentationTest ;
+    mf:name "1val1STRING_LITERAL1_with_ECHAR_escapes" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1STRING_LITERAL1_with_ECHAR_escapes.shex> ;
+    sx:json <1val1STRING_LITERAL1_with_ECHAR_escapes.json> ;
+    sx:ttl <1val1STRING_LITERAL1_with_ECHAR_escapes.ttl> ;
+    .
+
+<#1val1STRING_LITERAL1_with_ascii_boundaries> a sht:RepresentationTest ;
+    mf:name "1val1STRING_LITERAL1_with_ascii_boundaries" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1STRING_LITERAL1_with_ascii_boundaries.shex> ;
+    sx:json <1val1STRING_LITERAL1_with_ascii_boundaries.json> ;
+    sx:ttl <1val1STRING_LITERAL1_with_ascii_boundaries.ttl> ;
+    .
+
+<#1val1STRING_LITERAL1_with_UTF8_boundaries> a sht:RepresentationTest ;
+    mf:name "1val1STRING_LITERAL1_with_UTF8_boundaries" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1STRING_LITERAL1_with_UTF8_boundaries.shex> ;
+    sx:json <1val1STRING_LITERAL1_with_UTF8_boundaries.json> ;
+    sx:ttl <1val1STRING_LITERAL1_with_UTF8_boundaries.ttl> ;
+    .
+
+<#1val1STRING_LITERAL2> a sht:RepresentationTest ;
+    mf:name "1val1STRING_LITERAL2" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1STRING_LITERAL2.shex> ;
+    sx:json <1val1STRING_LITERAL2.json> ;
+    sx:ttl <1val1STRING_LITERAL2.ttl> ;
+    .
+
+<#1val1STRING_LITERAL2_with_LANGTAG> a sht:RepresentationTest ;
+    mf:name "1val1STRING_LITERAL2_with_LANGTAG" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1STRING_LITERAL2_with_LANGTAG.shex> ;
+    sx:json <1val1STRING_LITERAL2_with_LANGTAG.json> ;
+    sx:ttl <1val1STRING_LITERAL2_with_LANGTAG.ttl> ;
+    .
+
+<#1val1STRING_LITERAL2_with_subtag> a sht:RepresentationTest ;
+    mf:name "1val1STRING_LITERAL2_with_subtag" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1STRING_LITERAL2_with_subtag.shex> ;
+    sx:json <1val1STRING_LITERAL2_with_subtag.json> ;
+    sx:ttl <1val1STRING_LITERAL2_with_subtag.ttl> ;
+    .
+
+<#1val1STRING_LITERAL_LONG1> a sht:RepresentationTest ;
+    mf:name "1val1STRING_LITERAL_LONG1" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1STRING_LITERAL_LONG1.shex> ;
+    sx:json <1val1STRING_LITERAL_LONG1.json> ;
+    sx:ttl <1val1STRING_LITERAL_LONG1.ttl> ;
+    .
+
+<#1val1STRING_LITERAL_LONG2> a sht:RepresentationTest ;
+    mf:name "1val1STRING_LITERAL_LONG2" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1STRING_LITERAL_LONG2.shex> ;
+    sx:json <1val1STRING_LITERAL_LONG2.json> ;
+    sx:ttl <1val1STRING_LITERAL_LONG2.ttl> ;
+    .
+
+<#1val1STRING_LITERAL_LONG2_with_LANGTAG> a sht:RepresentationTest ;
+    mf:name "1val1STRING_LITERAL_LONG2_with_LANGTAG" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1STRING_LITERAL_LONG2_with_LANGTAG.shex> ;
+    sx:json <1val1STRING_LITERAL_LONG2_with_LANGTAG.json> ;
+    sx:ttl <1val1STRING_LITERAL_LONG2_with_LANGTAG.ttl> ;
+    .
+
+<#1val1STRING_LITERAL_LONG2_with_subtag> a sht:RepresentationTest ;
+    mf:name "1val1STRING_LITERAL_LONG2_with_subtag" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1STRING_LITERAL_LONG2_with_subtag.shex> ;
+    sx:json <1val1STRING_LITERAL_LONG2_with_subtag.json> ;
+    sx:ttl <1val1STRING_LITERAL_LONG2_with_subtag.ttl> ;
     .
 
 <#1datatypeLength> a sht:RepresentationTest ;
@@ -1598,6 +1729,70 @@
     sx:shex <1literalPattern.shex> ;
     sx:json <1literalPattern.json> ;
     sx:ttl <1literalPattern.ttl> ;
+    .
+
+<#1literalPattern_with_all_meta> a sht:RepresentationTest ;
+    mf:name "1literalPattern_with_all_meta" ;
+    mf:status mf:proposed ;
+    sx:shex <1literalPattern_with_all_meta.shex> ;
+    sx:json <1literalPattern_with_all_meta.json> ;
+    sx:ttl <1literalPattern_with_all_meta.ttl> ;
+    .
+
+<#1literalPattern_with_all_controls> a sht:RepresentationTest ;
+    mf:name "1literalPattern_with_all_controls" ;
+    mf:status mf:proposed ;
+    sx:shex <1literalPattern_with_all_controls.shex> ;
+    sx:json <1literalPattern_with_all_controls.json> ;
+    sx:ttl <1literalPattern_with_all_controls.ttl> ;
+    .
+
+<#1literalPattern_with_all_punctuation> a sht:RepresentationTest ;
+    mf:name "1literalPattern_with_all_punctuation" ;
+    mf:status mf:proposed ;
+    sx:shex <1literalPattern_with_all_punctuation.shex> ;
+    sx:json <1literalPattern_with_all_punctuation.json> ;
+    sx:ttl <1literalPattern_with_all_punctuation.ttl> ;
+    .
+
+<#1literalPattern_with_ascii_boundaries> a sht:RepresentationTest ;
+    mf:name "1literalPattern_with_ascii_boundaries" ;
+    mf:status mf:proposed ;
+    sx:shex <1literalPattern_with_ascii_boundaries.shex> ;
+    sx:json <1literalPattern_with_ascii_boundaries.json> ;
+    sx:ttl <1literalPattern_with_ascii_boundaries.ttl> ;
+    .
+
+<#1literalPattern_with_UTF8_boundaries> a sht:RepresentationTest ;
+    mf:name "1literalPattern_with_UTF8_boundaries" ;
+    mf:status mf:proposed ;
+    sx:shex <1literalPattern_with_UTF8_boundaries.shex> ;
+    sx:json <1literalPattern_with_UTF8_boundaries.json> ;
+    sx:ttl <1literalPattern_with_UTF8_boundaries.ttl> ;
+    .
+
+<#1literalPattern_with_REGEXP_escapes> a sht:RepresentationTest ;
+    mf:name "1literalPattern_with_REGEXP_escapes" ;
+    mf:status mf:proposed ;
+    sx:shex <1literalPattern_with_REGEXP_escapes.shex> ;
+    sx:json <1literalPattern_with_REGEXP_escapes.json> ;
+    sx:ttl <1literalPattern_with_REGEXP_escapes.ttl> ;
+    .
+
+<#1literalPattern_with_REGEXP_escapes_bare> a sht:RepresentationTest ;
+    mf:name "1literalPattern_with_REGEXP_escapes_bare" ;
+    mf:status mf:proposed ;
+    sx:shex <1literalPattern_with_REGEXP_escapes_bare.shex> ;
+    sx:json <1literalPattern_with_REGEXP_escapes_bare.json> ;
+    sx:ttl <1literalPattern_with_REGEXP_escapes_bare.ttl> ;
+    .
+
+<#1literalPattern_with_REGEXP_escapes_escaped> a sht:RepresentationTest ;
+    mf:name "1literalPattern_with_REGEXP_escapes_escaped" ;
+    mf:status mf:proposed ;
+    sx:shex <1literalPattern_with_REGEXP_escapes_escaped.shex> ;
+    sx:json <1literalPattern_with_REGEXP_escapes_escaped.json> ;
+    sx:ttl <1literalPattern_with_REGEXP_escapes_escaped.ttl> ;
     .
 
 <#1literalPatterni> a sht:RepresentationTest ;
@@ -2791,22 +2986,6 @@
     sx:shex <shapeExternRef.shex> ;
     sx:json <shapeExternRef.json> ;
     sx:ttl <shapeExternRef.ttl> ;
-    .
-
-# <#1dotPlusLt1dotPlus> a sht:RepresentationTest ;
-#     mf:name "1dotPlusLt1dotPlus" ;
-#     mf:status mf:proposed ;
-#     sx:shex <1dotPlusLt1dotPlus.shex> ;
-#     sx:json <1dotPlusLt1dotPlus.json> ;
-#     sx:ttl <1dotPlusLt1dotPlus.ttl> ;
-#     .
-
-<#2dot> a sht:RepresentationTest ;
-    mf:name "2dot" ;
-    mf:status mf:proposed ;
-    sx:shex <2dot.shex> ;
-    sx:json <2dot.json> ;
-    sx:ttl <2dot.ttl> ;
     .
 
 # <#0Inherit1> a sht:RepresentationTest ;
