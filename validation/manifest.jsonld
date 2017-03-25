@@ -26,8 +26,7 @@
             "Empty"
           ],
           "comment": "<S1> {  } on {  }",
-          "status": "mf:proposed",
-          "result": "0_dummy.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#0_other",
@@ -44,8 +43,7 @@
             "Empty"
           ],
           "comment": "<S1> {  } on { <s1> <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "0_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#0_otherbnode",
@@ -63,8 +61,7 @@
             "Empty"
           ],
           "comment": "<S1> {  } on { _:abcd <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "0abcd_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1dot_fail-empty",
@@ -149,8 +146,7 @@
             "TriplePattern"
           ],
           "comment": "<S1> { <p1> . } on { <s1> <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "1dot_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1dot-base_pass-noOthers",
@@ -167,8 +163,7 @@
             "TriplePattern"
           ],
           "comment": "<S1> { <p1> . } on { <s1> <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "1dot_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1dotSemi_pass-noOthers",
@@ -185,8 +180,7 @@
             "TriplePattern"
           ],
           "comment": "PREFIX : <http://a.example/> <S1> { :p1 ., } on { <s1> <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "1dot_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1dotLNex_pass-noOthers",
@@ -203,8 +197,7 @@
             "TriplePattern"
           ],
           "comment": "PREFIX ex: <http://a.example/> ex:S1 { ex:p1 . } on { <s1> <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "1dot_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1dotNS2_pass-noOthers",
@@ -221,8 +214,7 @@
             "TriplePattern"
           ],
           "comment": "PREFIX S1: <http://a.example/S1> PREFIX p1: <http://a.example/p1> S1: { p1: . } on { <s1> <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "1dot_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1dotNS2Comment_pass-noOthers",
@@ -239,8 +231,7 @@
             "TriplePattern"
           ],
           "comment": "PREFIX S1: <http://a.example/S1> PREFIX p1: <http://a.example/p1> S1: { p1:/*comment*/ . } on { <s1> <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "1dot_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1dotLNexComment_pass-noOthers",
@@ -257,8 +248,7 @@
             "TriplePattern"
           ],
           "comment": "PREFIX ex: <http://a.example/> ex:S1 { ex:p1/*comment*/ . } on { <s1> <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "1dot_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1dotLNdefault_pass-noOthers",
@@ -275,8 +265,7 @@
             "TriplePattern"
           ],
           "comment": "PREFIX : <http://a.example/> :S1 { :p1 . } on { <s1> <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "1dot_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1dotNSdefault_pass-noOthers",
@@ -293,8 +282,7 @@
             "TriplePattern"
           ],
           "comment": "PREFIX : <http://a.example/p1> <S1> { : . } on { <s> :p1 <o1> }",
-          "status": "mf:proposed",
-          "result": "1dot_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1dotLNex-HYPHEN_MINUS_pass-noOthers",
@@ -311,8 +299,7 @@
             "TriplePattern"
           ],
           "comment": "PREFIX ex: <http://a.example/> ex:S1 { ex:p1- . } on { <s> <p1-> <o1> }",
-          "status": "mf:proposed",
-          "result": "1HYPHEN_MINUSdot_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1dot_pass-others_lexicallyEarlier",
@@ -329,8 +316,7 @@
             "TriplePattern"
           ],
           "comment": "<S> { <p1> . } on { <s> <p0> <o0>; <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "1dot_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1dot_pass-others_lexicallyLater",
@@ -347,8 +333,7 @@
             "TriplePattern"
           ],
           "comment": "<S> { <p1> . } on { <s> <p1> <o1>; <p2> <o2> }",
-          "status": "mf:proposed",
-          "result": "1dot_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#bnode1dot_fail-missing",
@@ -384,8 +369,7 @@
             "ToldBNode"
           ],
           "comment": "_:S1 { <p1> . } on { <s> <p0> <o0>; <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "bnode1dot_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1inversedot_fail-empty",
@@ -436,8 +420,7 @@
             "TriplePattern"
           ],
           "comment": "<S> { <p1> . } on { <sr> <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "1inversedot_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1inversedot_pass-over_lexicallyEarlier",
@@ -454,8 +437,7 @@
             "TriplePattern"
           ],
           "comment": "<S> { <p1> . } on { <s> <p0> <o0>; <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "1inversedot_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1inversedot_pass-over_lexicallyLater",
@@ -472,8 +454,7 @@
             "TriplePattern"
           ],
           "comment": "<S> { <p1> . } on { <s> <p1> <o1>; <p2> <o2> }",
-          "status": "mf:proposed",
-          "result": "1inversedot_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1Adot_pass",
@@ -490,8 +471,7 @@
             "TriplePattern"
           ],
           "comment": "<S> { a . } on { <s> a <o1> }",
-          "status": "mf:proposed",
-          "result": "1Adot_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1iri_pass-iri",
@@ -508,8 +488,7 @@
             "NodeKind"
           ],
           "comment": "<S1> { <p1> IRI } on { <s1> <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "1iri_pass-iri.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1iri_fail-bnode",
@@ -577,8 +556,7 @@
             "NodeKind"
           ],
           "comment": "<S1> { <p1> BNODE } on { <s1> <p1> _:ab }",
-          "status": "mf:proposed",
-          "result": "1bnode_pass-bnode.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1bnode_fail-literal",
@@ -646,8 +624,7 @@
             "NodeKind"
           ],
           "comment": "<S1> { <p1> LITERAL } on { <s1> <p1> \"ab\" }",
-          "status": "mf:proposed",
-          "result": "1literal_pass-literal.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1nonliteral_pass-iri",
@@ -664,8 +641,7 @@
             "NodeKind"
           ],
           "comment": "<S1> { <p1> NONLITERAL } on { <s1> <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "1nonliteral_pass-iri.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1focusnonLiteralLength-nonLiteralLength_fail-short",
@@ -699,8 +675,7 @@
             "NodeKind"
           ],
           "comment": "<S1> NONLITERAL LENGTH 19 { <p1> NONLITERAL LENGTH 19 } on { <s1> <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "1focusnonLiteralLength-nonLiteralLength_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1nonliteral_pass-bnode",
@@ -717,8 +692,7 @@
             "NodeKind"
           ],
           "comment": "<S1> { <p1> NONLITERAL } on { <s1> <p1> _:ab }",
-          "status": "mf:proposed",
-          "result": "1nonliteral_pass-bnode.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1nonliteral_fail-literal",
@@ -820,8 +794,7 @@
             "Datatype"
           ],
           "comment": "<S> { <p1> <dt1> } on <s> in { <s> <p1> 'ab'^^<dt1> }",
-          "status": "mf:proposed",
-          "result": "1datatype_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1datatypelangString_pass",
@@ -838,8 +811,7 @@
             "Datatype"
           ],
           "comment": "<S> { <p1> rdf:langString } on <s> in { <s> <p1> 'ab'@en }",
-          "status": "mf:proposed",
-          "result": "1datatypelangString_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#integer-n1_pass",
@@ -856,8 +828,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:integer} / { <s> <p> '-1'^^xsd:integer }",
-          "status": "mf:proposed",
-          "result": "integer-n1_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#integer-0_pass",
@@ -874,8 +845,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:integer} / { <s> <p> '0'^^xsd:integer }",
-          "status": "mf:proposed",
-          "result": "integer-0_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#integer-1_pass",
@@ -892,8 +862,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:integer} / { <s> <p> '1'^^xsd:integer }",
-          "status": "mf:proposed",
-          "result": "integer-1_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#integer-p1_pass",
@@ -910,8 +879,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:integer} / { <s> <p> '+1'^^xsd:integer }",
-          "status": "mf:proposed",
-          "result": "integer-p1_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#integer-empty_fail",
@@ -1030,8 +998,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:decimal} / { <s> <p> '-1'^^xsd:decimal }",
-          "status": "mf:proposed",
-          "result": "decimal-n1_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#decimal-0_pass",
@@ -1048,8 +1015,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:decimal} / { <s> <p> '0'^^xsd:decimal }",
-          "status": "mf:proposed",
-          "result": "decimal-0_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#decimal-1_pass",
@@ -1066,8 +1032,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:decimal} / { <s> <p> '1'^^xsd:decimal }",
-          "status": "mf:proposed",
-          "result": "decimal-1_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#decimal-p1_pass",
@@ -1084,8 +1049,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:decimal} / { <s> <p> '+1'^^xsd:decimal }",
-          "status": "mf:proposed",
-          "result": "decimal-p1_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#decimal-n1.0_pass",
@@ -1102,8 +1066,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:decimal} / { <s> <p> '-1.0'^^xsd:decimal }",
-          "status": "mf:proposed",
-          "result": "decimal-n1.0_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#decimal-p1.0_pass",
@@ -1120,8 +1083,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:decimal} / { <s> <p> '+1.0'^^xsd:decimal }",
-          "status": "mf:proposed",
-          "result": "decimal-p1.0_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#decimal-empty_fail",
@@ -1206,8 +1168,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:float} / { <s> <p> '-1'^^xsd:float }",
-          "status": "mf:proposed",
-          "result": "float-n1_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#float-0_pass",
@@ -1224,8 +1185,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:float} / { <s> <p> '0'^^xsd:float }",
-          "status": "mf:proposed",
-          "result": "float-0_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#float-1_pass",
@@ -1242,8 +1202,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:float} / { <s> <p> '1'^^xsd:float }",
-          "status": "mf:proposed",
-          "result": "float-1_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#float-p1_pass",
@@ -1260,8 +1219,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:float} / { <s> <p> '+1'^^xsd:float }",
-          "status": "mf:proposed",
-          "result": "float-p1_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#float-n1.0_pass",
@@ -1278,8 +1236,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:float} / { <s> <p> '-1.0'^^xsd:float }",
-          "status": "mf:proposed",
-          "result": "float-n1.0_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#float-p1.0_pass",
@@ -1296,8 +1253,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:float} / { <s> <p> '+1.0'^^xsd:float }",
-          "status": "mf:proposed",
-          "result": "float-p1.0_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#float-1elowercase0_pass",
@@ -1314,8 +1270,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:float} / { <s> <p> '1e0'^^xsd:float }",
-          "status": "mf:proposed",
-          "result": "float-1elowercase0_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#float-1E0_pass",
@@ -1332,8 +1287,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:float} / { <s> <p> '1E0'^^xsd:float }",
-          "status": "mf:proposed",
-          "result": "float-1E0_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#float-NaN_pass",
@@ -1350,8 +1304,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:float} / { <s> <p> 'NaN'^^xsd:float }",
-          "status": "mf:proposed",
-          "result": "float-NaN_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#float-INF_pass",
@@ -1368,8 +1321,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:float} / { <s> <p> 'INF'^^xsd:float }",
-          "status": "mf:proposed",
-          "result": "float-INF_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#float-nINF_pass",
@@ -1386,8 +1338,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:float} / { <s> <p> '-INF'^^xsd:float }",
-          "status": "mf:proposed",
-          "result": "float-nINF_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#float-empty_fail",
@@ -1438,8 +1389,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:double} / { <s> <p> '-1'^^xsd:double }",
-          "status": "mf:proposed",
-          "result": "double-n1_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#double-0_pass",
@@ -1456,8 +1406,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:double} / { <s> <p> '0'^^xsd:double }",
-          "status": "mf:proposed",
-          "result": "double-0_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#double-1_pass",
@@ -1474,8 +1423,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:double} / { <s> <p> '1'^^xsd:double }",
-          "status": "mf:proposed",
-          "result": "double-1_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#double-p1_pass",
@@ -1492,8 +1440,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:double} / { <s> <p> '+1'^^xsd:double }",
-          "status": "mf:proposed",
-          "result": "double-p1_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#double-n1.0_pass",
@@ -1510,8 +1457,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:double} / { <s> <p> '-1.0'^^xsd:double }",
-          "status": "mf:proposed",
-          "result": "double-n1.0_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#double-p1.0_pass",
@@ -1528,8 +1474,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:double} / { <s> <p> '+1.0'^^xsd:double }",
-          "status": "mf:proposed",
-          "result": "double-p1.0_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#double-1E0_pass",
@@ -1546,8 +1491,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:double} / { <s> <p> '1E0'^^xsd:double }",
-          "status": "mf:proposed",
-          "result": "double-1E0_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#double-1e0_pass",
@@ -1564,8 +1508,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:double} / { <s> <p> '1e0'^^xsd:double }",
-          "status": "mf:proposed",
-          "result": "double-1elowercase0_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#double-NaN_pass",
@@ -1582,8 +1525,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:double} / { <s> <p> 'NaN'^^xsd:double }",
-          "status": "mf:proposed",
-          "result": "double-NaN_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#double-INF_pass",
@@ -1600,8 +1542,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:double} / { <s> <p> 'INF'^^xsd:double }",
-          "status": "mf:proposed",
-          "result": "double-INF_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#double-nINF_pass",
@@ -1618,8 +1559,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:double} / { <s> <p> '-INF'^^xsd:double }",
-          "status": "mf:proposed",
-          "result": "double-nINF_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#double-empty_fail",
@@ -1670,8 +1610,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:nonPositiveInteger} / { <s> <p> '-1'^^xsd:nonPositiveInteger }",
-          "status": "mf:proposed",
-          "result": "nonPositiveInteger-n1_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#nonPositiveInteger-0_pass",
@@ -1688,8 +1627,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:nonPositiveInteger} / { <s> <p> '0'^^xsd:nonPositiveInteger }",
-          "status": "mf:proposed",
-          "result": "nonPositiveInteger-0_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#nonPositiveInteger-p0_pass",
@@ -1706,8 +1644,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:nonPositiveInteger} / { <s> <p> '+0'^^xsd:nonPositiveInteger }",
-          "status": "mf:proposed",
-          "result": "nonPositiveInteger-p0_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#nonPositiveInteger-n0_pass",
@@ -1724,8 +1661,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:nonPositiveInteger} / { <s> <p> '-0'^^xsd:nonPositiveInteger }",
-          "status": "mf:proposed",
-          "result": "nonPositiveInteger-n0_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#nonPositiveInteger-1_fail",
@@ -1810,8 +1746,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:negativeInteger} / { <s> <p> '-1'^^xsd:negativeInteger }",
-          "status": "mf:proposed",
-          "result": "negativeInteger-n1_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#negativeInteger-0_fail",
@@ -1896,8 +1831,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:long} / { <s> <p> '-1'^^xsd:long }",
-          "status": "mf:proposed",
-          "result": "long-n1_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#long-0_pass",
@@ -1914,8 +1848,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:long} / { <s> <p> '0'^^xsd:long }",
-          "status": "mf:proposed",
-          "result": "long-0_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#long-1_pass",
@@ -1932,8 +1865,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:long} / { <s> <p> '1'^^xsd:long }",
-          "status": "mf:proposed",
-          "result": "long-1_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#long-p1_pass",
@@ -1950,8 +1882,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:long} / { <s> <p> '+1'^^xsd:long }",
-          "status": "mf:proposed",
-          "result": "long-p1_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#int-n1_pass",
@@ -1968,8 +1899,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:int} / { <s> <p> '-1'^^xsd:int }",
-          "status": "mf:proposed",
-          "result": "int-n1_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#int-0_pass",
@@ -1986,8 +1916,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:int} / { <s> <p> '0'^^xsd:int }",
-          "status": "mf:proposed",
-          "result": "int-0_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#int-1_pass",
@@ -2004,8 +1933,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:int} / { <s> <p> '1'^^xsd:int }",
-          "status": "mf:proposed",
-          "result": "int-1_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#int-p1_pass",
@@ -2022,8 +1950,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:int} / { <s> <p> '+1'^^xsd:int }",
-          "status": "mf:proposed",
-          "result": "int-p1_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#short-n32768_pass",
@@ -2040,8 +1967,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:short} / { <s> <p> '-32768'^^xsd:short }",
-          "status": "mf:proposed",
-          "result": "short-n32768_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#short-0_pass",
@@ -2058,8 +1984,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:short} / { <s> <p> '0'^^xsd:short }",
-          "status": "mf:proposed",
-          "result": "short-0_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#short-32767_pass",
@@ -2076,8 +2001,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:short} / { <s> <p> '32767'^^xsd:short }",
-          "status": "mf:proposed",
-          "result": "short-32767_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#short-n32769_fail",
@@ -2128,8 +2052,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:byte} / { <s> <p> '-128'^^xsd:byte }",
-          "status": "mf:proposed",
-          "result": "byte-n128_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#byte-0_pass",
@@ -2146,8 +2069,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:byte} / { <s> <p> '0'^^xsd:byte }",
-          "status": "mf:proposed",
-          "result": "byte-0_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#byte-127_pass",
@@ -2164,8 +2086,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:byte} / { <s> <p> '127'^^xsd:byte }",
-          "status": "mf:proposed",
-          "result": "byte-127_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#byte-empty_fail",
@@ -2233,8 +2154,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:nonNegativeInteger} / { <s> <p> '0'^^xsd:nonNegativeInteger }",
-          "status": "mf:proposed",
-          "result": "nonNegativeInteger-0_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#nonNegativeInteger-n0_pass",
@@ -2251,8 +2171,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:nonNegativeInteger} / { <s> <p> '-0'^^xsd:nonNegativeInteger }",
-          "status": "mf:proposed",
-          "result": "nonNegativeInteger-n0_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#nonNegativeInteger-p0_pass",
@@ -2269,8 +2188,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:nonNegativeInteger} / { <s> <p> '+0'^^xsd:nonNegativeInteger }",
-          "status": "mf:proposed",
-          "result": "nonNegativeInteger-p0_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#nonNegativeInteger-1_pass",
@@ -2287,8 +2205,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:nonNegativeInteger} / { <s> <p> '1'^^xsd:nonNegativeInteger }",
-          "status": "mf:proposed",
-          "result": "nonNegativeInteger-1_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#nonNegativeInteger-p1_pass",
@@ -2305,8 +2222,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:nonNegativeInteger} / { <s> <p> '+1'^^xsd:nonNegativeInteger }",
-          "status": "mf:proposed",
-          "result": "nonNegativeInteger-p1_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#nonNegativeInteger-n1_fail",
@@ -2340,8 +2256,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:unsignedLong} / { <s> <p> '0'^^xsd:unsignedLong }",
-          "status": "mf:proposed",
-          "result": "unsignedLong-0_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#unsignedLong-1_pass",
@@ -2358,8 +2273,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:unsignedLong} / { <s> <p> '1'^^xsd:unsignedLong }",
-          "status": "mf:proposed",
-          "result": "unsignedLong-1_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#unsignedLong-n1_fail",
@@ -2393,8 +2307,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:unsignedInt} / { <s> <p> '0'^^xsd:unsignedInt }",
-          "status": "mf:proposed",
-          "result": "unsignedInt-0_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#unsignedInt-1_pass",
@@ -2411,8 +2324,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:unsignedInt} / { <s> <p> '1'^^xsd:unsignedInt }",
-          "status": "mf:proposed",
-          "result": "unsignedInt-1_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#unsignedInt-n1_fail",
@@ -2446,8 +2358,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:unsignedShort} / { <s> <p> '0'^^xsd:unsignedShort }",
-          "status": "mf:proposed",
-          "result": "unsignedShort-0_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#unsignedShort-65535_pass",
@@ -2464,8 +2375,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:unsignedShort} / { <s> <p> '65535'^^xsd:unsignedShort }",
-          "status": "mf:proposed",
-          "result": "unsignedShort-65535_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#unsignedShort-n1_fail",
@@ -2516,8 +2426,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:unsignedByte} / { <s> <p> '0'^^xsd:unsignedByte }",
-          "status": "mf:proposed",
-          "result": "unsignedByte-0_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#unsignedByte-255_pass",
@@ -2534,8 +2443,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:unsignedByte} / { <s> <p> '255'^^xsd:unsignedByte }",
-          "status": "mf:proposed",
-          "result": "unsignedByte-255_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#unsignedByte-n1_fail",
@@ -2586,8 +2494,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:positiveInteger} / { <s> <p> '1'^^xsd:positiveInteger }",
-          "status": "mf:proposed",
-          "result": "positiveInteger-1_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#positiveInteger-n1_fail",
@@ -2638,8 +2545,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:string} / { <s> <p> ''^^xsd:string }",
-          "status": "mf:proposed",
-          "result": "string-empty_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#string-a_pass",
@@ -2656,8 +2562,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:string} / { <s> <p> 'a'^^xsd:string }",
-          "status": "mf:proposed",
-          "result": "string-a_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#string-0_pass",
@@ -2674,8 +2579,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:string} / { <s> <p> '0'^^xsd:string }",
-          "status": "mf:proposed",
-          "result": "string-0_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#boolean-true_pass",
@@ -2692,8 +2596,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:boolean} / { <s> <p> 'true'^^xsd:boolean }",
-          "status": "mf:proposed",
-          "result": "boolean-true_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#boolean-false_pass",
@@ -2710,8 +2613,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:boolean} / { <s> <p> 'false'^^xsd:boolean }",
-          "status": "mf:proposed",
-          "result": "boolean-false_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#boolean-0_pass",
@@ -2728,8 +2630,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:boolean} / { <s> <p> '0'^^xsd:boolean }",
-          "status": "mf:proposed",
-          "result": "boolean-0_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#boolean-1_pass",
@@ -2746,8 +2647,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:boolean} / { <s> <p> '1'^^xsd:boolean }",
-          "status": "mf:proposed",
-          "result": "boolean-1_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#boolean-empty_fail",
@@ -2917,8 +2817,7 @@
             "ValidLexicalForm"
           ],
           "comment": "<S> { <p> xsd:dateTime} / { <s> <p> '2012-01-02T12:34.56Z'^^xsd:dateTime }",
-          "status": "mf:proposed",
-          "result": "dateTime-dt_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#dateTime-empty_fail",
@@ -3020,8 +2919,7 @@
             "DotCardinality"
           ],
           "comment": "<S> { <p1> .{2} } on { <s> <p1> 'a','b' }",
-          "status": "mf:proposed",
-          "result": "1card2_pass2.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1card2_fail3",
@@ -3089,8 +2987,7 @@
             "DotCardinality"
           ],
           "comment": "<S> { <p1> .{2,5} } on { <s> <p1> 'a','b' }",
-          "status": "mf:proposed",
-          "result": "1card25_pass2.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1card25_pass3",
@@ -3107,8 +3004,7 @@
             "DotCardinality"
           ],
           "comment": "<S> { <p1> .{2,5} } on { <s> <p1> 'a','b','c' }",
-          "status": "mf:proposed",
-          "result": "1card25_pass3.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1card25_pass4",
@@ -3125,8 +3021,7 @@
             "DotCardinality"
           ],
           "comment": "<S> { <p1> .{2,5} } on { <s> <p1> 'a','b','c','d' }",
-          "status": "mf:proposed",
-          "result": "1card25_pass4.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1card25_pass5",
@@ -3143,8 +3038,7 @@
             "DotCardinality"
           ],
           "comment": "<S> { <p1> .{2,5} } on { <s> <p1> 'a','b','c','d','e' }",
-          "status": "mf:proposed",
-          "result": "1card25_pass5.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1card25_fail6",
@@ -3212,8 +3106,7 @@
             "DotCardinality"
           ],
           "comment": "<S> { <p1> .{2,*} } on { <s> <p1> 'a','b' }",
-          "status": "mf:proposed",
-          "result": "1card2Star_pass2.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1card2Star_pass3",
@@ -3230,8 +3123,7 @@
             "DotCardinality"
           ],
           "comment": "<S> { <p1> .{2,*} } on { <s> <p1> 'a','b','c' }",
-          "status": "mf:proposed",
-          "result": "1card2Star_pass3.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1card2Star_pass6",
@@ -3248,8 +3140,7 @@
             "DotCardinality"
           ],
           "comment": "<S> { <p1> .{2,*} } on { <s> <p1> 'a','b','c','d','e','f' }",
-          "status": "mf:proposed",
-          "result": "1card2Star_pass6.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1cardOpt_pass0",
@@ -3266,8 +3157,7 @@
             "DotCardinality"
           ],
           "comment": "<S> { <p1> .? } on {  }",
-          "status": "mf:proposed",
-          "result": "1cardOpt_pass0.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1cardOpt_pass1",
@@ -3284,8 +3174,7 @@
             "DotCardinality"
           ],
           "comment": "<S> { <p1> .? } on { <s> <p1> 'a' }",
-          "status": "mf:proposed",
-          "result": "1cardOpt_pass1.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1cardOpt_fail2",
@@ -3353,8 +3242,7 @@
             "DotCardinality"
           ],
           "comment": "<S> { <p1> .+ } on { <s> <p1> 'a' }",
-          "status": "mf:proposed",
-          "result": "1cardPlus_pass1.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1cardPlus_pass2",
@@ -3371,8 +3259,7 @@
             "DotCardinality"
           ],
           "comment": "<S> { <p1> .+ } on { <s> <p1> 'a','b' }",
-          "status": "mf:proposed",
-          "result": "1cardPlus_pass2.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1cardPlus_pass6",
@@ -3389,8 +3276,7 @@
             "DotCardinality"
           ],
           "comment": "<S> { <p1> .+ } on { <s> <p1> 'a','b','c','d','e','f' }",
-          "status": "mf:proposed",
-          "result": "1cardPlus_pass6.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1cardStar_pass0",
@@ -3407,8 +3293,7 @@
             "DotCardinality"
           ],
           "comment": "<S> { <p1> .* } on {  }",
-          "status": "mf:proposed",
-          "result": "1cardStar_pass0.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1cardStar_pass1",
@@ -3425,8 +3310,7 @@
             "DotCardinality"
           ],
           "comment": "<S> { <p1> .* } on { <s> <p1> 'a' }",
-          "status": "mf:proposed",
-          "result": "1cardStar_pass1.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1cardStar_pass2",
@@ -3443,8 +3327,7 @@
             "DotCardinality"
           ],
           "comment": "<S> { <p1> .* } on { <s> <p1> 'a','b' }",
-          "status": "mf:proposed",
-          "result": "1cardStar_pass2.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1cardStar_pass6",
@@ -3461,8 +3344,7 @@
             "DotCardinality"
           ],
           "comment": "<S> { <p1> .* } on { <s> <p1> 'a','b','c','d','e','f' }",
-          "status": "mf:proposed",
-          "result": "1cardStar_pass6.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1literalPlus_Is1_Ip1_La,Io1",
@@ -3496,8 +3378,7 @@
             "ShapeReference"
           ],
           "comment": "<n2> in { <n2> <p2> \"X\" . <n1> <p1> <n2> } as <S1> in <S1> { <p1> @<S2> } <S2> { <p2> . }",
-          "status": "mf:proposed",
-          "result": "In2_Ip2_In1@In1_Ip1_LX.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1dotRef1_referrer,referent",
@@ -3514,8 +3395,7 @@
             "ShapeReference"
           ],
           "comment": "<n1> in { <n1> <p1> <n2> . <n2> <p2> \"X\" } as <S1> in <S1> { <p1> @<S2> } <S2> { <p2> . }",
-          "status": "mf:proposed",
-          "result": "In2_Ip2_In1@In1_Ip1_LX.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1dotRef1_missingReferent",
@@ -3549,8 +3429,7 @@
             "ShapeReference"
           ],
           "comment": "<n1> in { <n1> <p1> <n1> . <n1> <p2> \"X\" } as <S1> in <S1> { <p1> @<S2> } <S2> { <p2> . }",
-          "status": "mf:proposed",
-          "result": "1dotRef1_selfReference.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1dotRef1_missingSelfReference",
@@ -3618,8 +3497,7 @@
             "ShapeReference"
           ],
           "comment": "<n1> in { <n1> <p1> <n2> . <n2> <p2> \"X\" . <n3> <p1> \"X\" } as <S1> in <S1> { <p1> @<S2> } <S2> { <p2> . }",
-          "status": "mf:proposed",
-          "result": "In2_Ip2_In1@In1_Ip1_LX.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1refbnode1_pass",
@@ -3636,8 +3514,7 @@
             "ShapeReference"
           ],
           "comment": "<S1> { <p1> @_:S2 } _:S2 { <p2> . } on { <n1> <p1> <n2> . <n2> <p2> \"X\" }",
-          "status": "mf:proposed",
-          "result": "1refbnode1_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1refbnode1_fail-g1-arc",
@@ -3689,8 +3566,7 @@
             "ShapeReference"
           ],
           "comment": "<S1> { <p1> ., <p2> @<S2>? } <S2> { <p3> @<S3> } <S3> { <p4> @<S1> } <S4> { <p5> . } on { <n1> <p1> \"X\" ; <p2> <n2> . <n2> <p3> <n3> . <n3> <p4> <n5> . <n5> <p1> \"X\" }",
-          "status": "mf:proposed",
-          "result": "3circularRef1_pass-open.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#3circularRef1_pass-closed",
@@ -3708,8 +3584,7 @@
             "ShapeReference"
           ],
           "comment": "<S1> { <p1> ., <p2> @<S2>? } <S2> { <p3> @<S3> } <S3> { <p4> @<S1> } <S4> { <p5> . } on { <n1> <p1> \"X\" ; <p2> <n2> . <n2> <p3> <n3> . <n3> <p4> <n1> }",
-          "status": "mf:proposed",
-          "result": "3circularRef1_pass-closed.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1iriRef1_pass-iri",
@@ -3727,8 +3602,7 @@
             "NodeKind"
           ],
           "comment": "<n1> in { <n1> <p1> <n2> . <n2> <p2> \"X\" } as <S1> in <S1> { <p1> IRI @<S2> } <S2> { <p2> . }",
-          "status": "mf:proposed",
-          "result": "1iriRef1_pass-iri.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1iriRef1_fail-bnode",
@@ -3782,8 +3656,7 @@
             "NodeKind"
           ],
           "comment": "<n1> in { <n1> <p1> _:n1 . _:n1 <p2> \"X\" } as <S1> in <S1> { <p1> BNODE @<S2> } <S2> { <p2> . }",
-          "status": "mf:proposed",
-          "result": "1bnodeRef1_pass-bnode.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1datatypeRef1_fail-datatype",
@@ -3837,8 +3710,7 @@
             "ShapeReference"
           ],
           "comment": "<n2> in { <n1> <p1> <n2> . <n2> <p2> \"X\" } as <S1> in <S1> { <p1> { <p2> . } }",
-          "status": "mf:proposed",
-          "result": "1dotInline1_In1_Ip1_In2.In2_Ip2_LX.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1dotInline1_missingReferent",
@@ -3872,8 +3744,7 @@
             "ShapeReference"
           ],
           "comment": "<n2> in { <n1> <p1> <n1> . <n1> <p2> \"X\" } as <S1> in <S1> { <p1> { <p2> . } }",
-          "status": "mf:proposed",
-          "result": "1dotInline1_In1_Ip1_In1.In1_Ip2_LX.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1dotInline1_missingSelfReference",
@@ -3941,8 +3812,7 @@
             "ShapeReference"
           ],
           "comment": "<n2> in { <n1> <p1> <n2> . <n2> <p2> \"X\" . <n3> <p1> \"X\" } as <S1> in <S1> { <p1> { <p2> . } }",
-          "status": "mf:proposed",
-          "result": "1dotInline1_In1_Ip1_In2.In2_Ip2_LX.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1IRIREF_pass",
@@ -3959,8 +3829,7 @@
             "IriEquivalence"
           ],
           "comment": "<S> { <p1> [<v1>] } on { <s> <p1> <v1> }",
-          "status": "mf:proposed",
-          "result": "1val1IRIREF_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1IRIREF_v2",
@@ -4011,8 +3880,7 @@
             "NumericEquivalence"
           ],
           "comment": "<S> { <p1> ['STRING_LITERAL1'] } on { <s> <p1> 'STRING_LITERAL1' }",
-          "status": "mf:proposed",
-          "result": "1val1STRING_LITERAL1_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1STRING_LITERAL1_fail",
@@ -4046,8 +3914,7 @@
             "NumericEquivalence"
           ],
           "comment": "<S> { <p1> ['^@^A...^_'] } on { <s> <p1> '^@^A...^_' }",
-          "status": "mf:proposed",
-          "result": "1val1STRING_LITERAL1_with_all_controls_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1STRING_LITERAL1_with_all_controls_fail",
@@ -4081,8 +3948,7 @@
             "NumericEquivalence"
           ],
           "comment": "<S> { <p1> ['^@^A...^_'] } on { <s> <p1> '^@^A...^_' }",
-          "status": "mf:proposed",
-          "result": "1val1STRING_LITERAL1_with_all_punctuation_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1STRING_LITERAL1_with_all_punctuation_fail",
@@ -4116,8 +3982,7 @@
             "NumericEquivalence"
           ],
           "comment": "<S> { <p1> ['^@^A...^_'] } on { <s> <p1> '^@^A...^_' }",
-          "status": "mf:proposed",
-          "result": "1val1STRING_LITERAL1_with_ascii_boundaries_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1STRING_LITERAL1_with_ascii_boundaries_fail",
@@ -4152,8 +4017,7 @@
             "NumericEquivalence"
           ],
           "comment": "<S> { <p1> ['...🿽'] } on { <s> <p1> '...􏿽' }",
-          "status": "mf:proposed",
-          "result": "1val1STRING_LITERAL1_with_UTF8_boundaries_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1STRING_LITERAL1_with_UTF8_boundaries_fail",
@@ -4188,8 +4052,7 @@
             "NumericEquivalence"
           ],
           "comment": "<S> { <p1> ['\\t\\b\\n\\r\\f'] } on { <s> <p1> '\\t\\b\\n\\r\\f' }",
-          "status": "mf:proposed",
-          "result": "1val1STRING_LITERAL1_with_ECHAR_escapes_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1STRING_LITERAL1_with_ECHAR_escapes_fail",
@@ -4223,8 +4086,7 @@
             "NumericEquivalence"
           ],
           "comment": "<S> { <p1> [0] } on { <s> <p1> 0 }",
-          "status": "mf:proposed",
-          "result": "1val1INTEGER_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1INTEGER_00",
@@ -4275,8 +4137,7 @@
             "NumericEquivalence"
           ],
           "comment": "<S> { <p1> [0.0] } on { <s> <p1> 0.0 }",
-          "status": "mf:proposed",
-          "result": "1val1DECIMAL_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1DECIMAL_Lab",
@@ -4327,8 +4188,7 @@
             "NumericEquivalence"
           ],
           "comment": "<S1> { <p1> [0E0] } on { <s> <p1> 0E0 }",
-          "status": "mf:proposed",
-          "result": "1val1DOUBLE_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1DOUBLE_0_0e0",
@@ -4362,8 +4222,7 @@
             "NumericEquivalence"
           ],
           "comment": "<S> { <p1> [0e0] } on { <s> <p1> 0e0 }",
-          "status": "mf:proposed",
-          "result": "1val1DOUBLElowercase_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1DOUBLElowercase_fail-0E0",
@@ -4414,8 +4273,7 @@
             "LanguageTagEquivalence"
           ],
           "comment": "<S> { <p1> ['ab'@en-fr] } on { <s> <p1> 'ab'@en-fr }",
-          "status": "mf:proposed",
-          "result": "1val1LANGTAG_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1LANGTAG_Lab",
@@ -4500,8 +4358,7 @@
             "DatatypedLiteralEquivalence"
           ],
           "comment": "<S> { <p1> ['ab'^^my:bloodType] } on { <s> <p1> 'ab'^^my:bloodType }",
-          "status": "mf:proposed",
-          "result": "1val1IRIREFDatatype_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1IRIREFDatatype_Lab",
@@ -4569,8 +4426,7 @@
             "BooleanEquivalence"
           ],
           "comment": "<S> { <p1> [true] } on { <s> <p1> true }",
-          "status": "mf:proposed",
-          "result": "1val1true_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1true_false",
@@ -4621,8 +4477,7 @@
             "BooleanEquivalence"
           ],
           "comment": "<S> { <p1> [false] } on { <s> <p1> true }",
-          "status": "mf:proposed",
-          "result": "1val1false_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1false_true",
@@ -4724,8 +4579,7 @@
             "LengthFacet"
           ],
           "comment": "<S> { <p1> xs:integer LENGTH 5 } on <s> in { <s> <p1> 12345 }",
-          "status": "mf:proposed",
-          "result": "1datatypeLength_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1datatypeLength_fail-long",
@@ -4759,8 +4613,7 @@
             "FractionDigitsFacet"
           ],
           "comment": "<S1> { <p1> LITERAL FRACTIONDIGITS 5 } / { <s1> <p1> 1.2345 }",
-          "status": "mf:proposed",
-          "result": "1literalFractiondigits_pass-decimal-short.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1literalFractiondigits_pass-decimal-equal",
@@ -4777,8 +4630,7 @@
             "FractionDigitsFacet"
           ],
           "comment": "<S1> { <p1> LITERAL FRACTIONDIGITS 5 } / { <s1> <p1> 1.23456 }",
-          "status": "mf:proposed",
-          "result": "1literalFractiondigits_pass-decimal-equal.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1literalFractiondigits_fail-decimal-long",
@@ -4812,8 +4664,7 @@
             "FractionDigitsFacet"
           ],
           "comment": "<S1> { <p1> LITERAL FRACTIONDIGITS 4 } / { <s1> <p1> 01.2345 }",
-          "status": "mf:proposed",
-          "result": "1literalFractiondigits_pass-decimal-equalLead.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1literalFractiondigits_fail-decimal-longLead",
@@ -4847,8 +4698,7 @@
             "FractionDigitsFacet"
           ],
           "comment": "<S1> { <p1> LITERAL FRACTIONDIGITS 4 } / { <s1> <p1> 1.23450 }",
-          "status": "mf:proposed",
-          "result": "1literalFractiondigits_pass-decimal-equalTrail.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1literalFractiondigits_fail-decimal-longTrail",
@@ -4882,8 +4732,7 @@
             "FractionDigitsFacet"
           ],
           "comment": "<S1> { <p1> LITERAL FRACTIONDIGITS 4 } / { <s1> <p1> 01.23450 }",
-          "status": "mf:proposed",
-          "result": "1literalFractiondigits_pass-decimal-equalLeadTrail.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1literalFractiondigits_fail-decimal-longLeadTrail",
@@ -4917,8 +4766,7 @@
             "FractionDigitsFacet"
           ],
           "comment": "<S1> { <p1> LITERAL FRACTIONDIGITS 5 } / { <s1> <p1> 12345 }",
-          "status": "mf:proposed",
-          "result": "1fractionTotaldigits_pass-integer-equal.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1literalFractiondigits_pass-xsd_integer-short",
@@ -4935,8 +4783,7 @@
             "FractionDigitsFacet"
           ],
           "comment": "<S1> { <p1> LITERAL FRACTIONDIGITS 5 } / { <s1> <p1> \"12345\"^^xsd:integer }",
-          "status": "mf:proposed",
-          "result": "1fractionTotaldigits_pass-integer-equal.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1literalFractiondigits_fail-float-equal",
@@ -5072,8 +4919,7 @@
             "TotalDigitsFacet"
           ],
           "comment": "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> 1.234 }",
-          "status": "mf:proposed",
-          "result": "1literalTotaldigits_pass-decimal-short.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1literalTotaldigits_pass-decimal-equal",
@@ -5090,8 +4936,7 @@
             "TotalDigitsFacet"
           ],
           "comment": "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> 1.2345 }",
-          "status": "mf:proposed",
-          "result": "1literalTotaldigits_pass-decimal-equal.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1literalTotaldigits_fail-decimal-long",
@@ -5125,8 +4970,7 @@
             "TotalDigitsFacet"
           ],
           "comment": "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> 01.2345 }",
-          "status": "mf:proposed",
-          "result": "1literalTotaldigits_pass-decimal-equalLead.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1literalTotaldigits_fail-decimal-longLead",
@@ -5160,8 +5004,7 @@
             "TotalDigitsFacet"
           ],
           "comment": "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> 1.23450 }",
-          "status": "mf:proposed",
-          "result": "1literalTotaldigits_pass-decimal-equalTrail.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1literalTotaldigits_fail-decimal-longTrail",
@@ -5195,8 +5038,7 @@
             "TotalDigitsFacet"
           ],
           "comment": "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> 01.23450 }",
-          "status": "mf:proposed",
-          "result": "1literalTotaldigits_pass-decimal-equalLeadTrail.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1literalTotaldigits_fail-decimal-longLeadTrail",
@@ -5230,8 +5072,7 @@
             "TotalDigitsFacet"
           ],
           "comment": "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> 12345 }",
-          "status": "mf:proposed",
-          "result": "1literalTotaldigits_pass-integer-equal.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1literalTotaldigits_pass-xsd_integer-short",
@@ -5248,8 +5089,7 @@
             "TotalDigitsFacet"
           ],
           "comment": "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> \"1234\"^^xsd:integer }",
-          "status": "mf:proposed",
-          "result": "1literalTotaldigits_pass-integer-short.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1literalTotaldigits_pass-integer-equalLead",
@@ -5266,8 +5106,7 @@
             "TotalDigitsFacet"
           ],
           "comment": "<S1> { <p1> LITERAL TOTALDIGITS 5 } / { <s1> <p1> 012345 }",
-          "status": "mf:proposed",
-          "result": "1literalTotaldigits_pass-integer-equalLead.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1literalTotaldigits_fail-integer-longLead",
@@ -5301,8 +5140,7 @@
             "TotalDigitsFacet"
           ],
           "comment": "<S1> { <p1> LITERAL TOTALDIGITS 6 } / { <s1> <p1> 123450 }",
-          "status": "mf:proposed",
-          "result": "1literalTotaldigits_pass-integer-equalTrail.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1literalTotaldigits_fail-integer-longTrail",
@@ -5336,8 +5174,7 @@
             "TotalDigitsFacet"
           ],
           "comment": "<S1> { <p1> LITERAL TOTALDIGITS 6 } / { <s1> <p1> 0123450 }",
-          "status": "mf:proposed",
-          "result": "1literalTotaldigits_pass-integer-equalLeadTrail.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1literalTotaldigits_fail-integer-longLeadTrail",
@@ -5371,8 +5208,7 @@
             "TotalDigitsFacet"
           ],
           "comment": "<S1> { <p1> LITERAL TOTALDIGITS 2 } / { <s1> <p1> 5^^xsd:byte }",
-          "status": "mf:proposed",
-          "result": "1literalTotaldigits_pass-byte-short.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1literalTotaldigits_pass-byte-equal",
@@ -5389,8 +5225,7 @@
             "TotalDigitsFacet"
           ],
           "comment": "<S1> { <p1> LITERAL TOTALDIGITS 2 } / { <s1> <p1> 64^^xsd:byte }",
-          "status": "mf:proposed",
-          "result": "1literalTotaldigits_pass-byte-equal.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1literalTotaldigits_fail-byte-long",
@@ -5577,8 +5412,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> LITERAL MINEXCLUSIVE 5 } / { <s1> <p1> '6'^^xsd:integer }",
-          "status": "mf:proposed",
-          "result": "1literalMinexclusiveINTEGER_pass-high.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1literalMininclusiveINTEGER_fail-low",
@@ -5612,8 +5446,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> LITERAL MININCLUSIVE 5 } / { <s1> <p1> '5'^^xsd:integer }",
-          "status": "mf:proposed",
-          "result": "1literalMininclusiveINTEGER_pass-equal.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1literalMininclusiveINTEGER_pass-high",
@@ -5630,8 +5463,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> LITERAL MININCLUSIVE 5 } / { <s1> <p1> '6'^^xsd:integer }",
-          "status": "mf:proposed",
-          "result": "1literalMininclusiveINTEGER_pass-high.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1literalMaxexclusiveINTEGER_pass-low",
@@ -5648,8 +5480,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> LITERAL MAXEXCLUSIVE 5 } / { <s1> <p1> '4'^^xsd:integer }",
-          "status": "mf:proposed",
-          "result": "1literalMaxexclusiveINTEGER_pass-high.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1literalMaxexclusiveINTEGER_fail-equal",
@@ -5700,8 +5531,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> LITERAL MAXINCLUSIVE 5 } / { <s1> <p1> '4'^^xsd:integer }",
-          "status": "mf:proposed",
-          "result": "1literalMaxinclusiveINTEGER_pass-low.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1literalMaxinclusiveINTEGER_pass-equal",
@@ -5718,8 +5548,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> LITERAL MAXINCLUSIVE 5 } / { <s1> <p1> '5'^^xsd:integer }",
-          "status": "mf:proposed",
-          "result": "1literalMaxinclusiveINTEGER_pass-equal.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1literalMaxinclusiveINTEGER_fail-high",
@@ -5770,8 +5599,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:float MININCLUSIVE 5 } / { <s1> <p1> '05'^^xsd:float }",
-          "status": "mf:proposed",
-          "result": "1floatMininclusiveINTEGER_pass-equalLead.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1floatMininclusiveINTEGER_pass-equalTrail",
@@ -5788,8 +5616,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:float MININCLUSIVE 5 } / { <s1> <p1> '5.0'^^xsd:float }",
-          "status": "mf:proposed",
-          "result": "1floatMininclusiveINTEGER_pass-equalTrail.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1floatMininclusiveINTEGER_pass-high",
@@ -5806,8 +5633,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:float MININCLUSIVE 5 } / { <s1> <p1> '5.1'^^xsd:float }",
-          "status": "mf:proposed",
-          "result": "1floatMininclusiveINTEGER_pass-high.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1integerMininclusiveINTEGER_fail-low",
@@ -5841,8 +5667,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:integer MININCLUSIVE 5 } / { <s1> <p1> '5'^^xsd:integer }",
-          "status": "mf:proposed",
-          "result": "1integerMininclusiveINTEGER_pass-equal.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1integerMininclusiveINTEGER_pass-equalLead",
@@ -5859,8 +5684,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:integer MININCLUSIVE 5 } / { <s1> <p1> '05'^^xsd:integer }",
-          "status": "mf:proposed",
-          "result": "1integerMininclusiveINTEGER_pass-equalLead.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1integerMininclusiveINTEGER_pass-high",
@@ -5877,8 +5701,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:integer MININCLUSIVE 5 } / { <s1> <p1> '6'^^xsd:integer }",
-          "status": "mf:proposed",
-          "result": "1integerMininclusiveINTEGER_pass-high.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1floatMininclusiveINTEGERLead_pass-equal",
@@ -5895,8 +5718,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:float MININCLUSIVE 5 } / { <s1> <p1> '5'^^xsd:float }",
-          "status": "mf:proposed",
-          "result": "1floatMininclusiveINTEGER_pass-equal.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1integerMininclusiveINTEGER_fail-integer-low",
@@ -5930,8 +5752,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:integer MININCLUSIVE 5 } / { <s1> <p1> 5 }",
-          "status": "mf:proposed",
-          "result": "1integerMininclusiveINTEGER_pass-integer-equal.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1integerMininclusiveINTEGER_pass-integer-high",
@@ -5948,8 +5769,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:integer MININCLUSIVE 5 } / { <s1> <p1> 6 }",
-          "status": "mf:proposed",
-          "result": "1integerMininclusiveINTEGER_pass-integer-high.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1integerMininclusiveINTEGERLead_fail-integer-low",
@@ -5983,8 +5803,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:integer MININCLUSIVE 05 } / { <s1> <p1> 5 }",
-          "status": "mf:proposed",
-          "result": "1integerMininclusiveINTEGERLead_pass-integer-equal.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1integerMininclusiveINTEGERLead_pass-integer-equalLead",
@@ -6001,8 +5820,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:integer MININCLUSIVE 05 } / { <s1> <p1> 05 }",
-          "status": "mf:proposed",
-          "result": "1integerMininclusiveINTEGERLead_pass-integer-equalLead.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1integerMininclusiveINTEGERLead_pass-integer-high",
@@ -6019,8 +5837,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:integer MININCLUSIVE 05 } / { <s1> <p1> 6 }",
-          "status": "mf:proposed",
-          "result": "1integerMininclusiveINTEGERLead_pass-integer-high.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1integerMininclusiveDECIMAL_pass-integer-equal",
@@ -6037,8 +5854,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:integer MININCLUSIVE 4.5 } / { <s1> <p1> 5 }",
-          "status": "mf:proposed",
-          "result": "1integerMininclusiveDECIMAL_pass-integer-equal.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1integerMininclusiveDECIMALLeadTrail_fail-integer-low",
@@ -6072,8 +5888,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:integer MININCLUSIVE 04.50 } / { <s1> <p1> 5 }",
-          "status": "mf:proposed",
-          "result": "1integerMininclusiveDECIMALLeadTrail_pass-integer-equal.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1integerMininclusiveDECIMALLeadTrail_pass-integer-equalLead",
@@ -6090,8 +5905,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:integer MININCLUSIVE 04.50 } / { <s1> <p1> 05 }",
-          "status": "mf:proposed",
-          "result": "1integerMininclusiveDECIMALLeadTrail_pass-integer-equalLead.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1integerMininclusiveDECIMALLeadTrail_pass-integer-high",
@@ -6108,8 +5922,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:integer MININCLUSIVE 04.50 } / { <s1> <p1> 6 }",
-          "status": "mf:proposed",
-          "result": "1integerMininclusiveDECIMALLeadTrail_pass-integer-high.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1integerMininclusiveDECIMALint_fail-integer-low",
@@ -6143,8 +5956,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:integer MININCLUSIVE 5.0 } / { <s1> <p1> 5 }",
-          "status": "mf:proposed",
-          "result": "1integerMininclusiveDECIMALint_pass-integer-equal.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1integerMininclusiveDECIMALint_pass-integer-high",
@@ -6161,8 +5973,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:integer MININCLUSIVE 5.0 } / { <s1> <p1> 6 }",
-          "status": "mf:proposed",
-          "result": "1integerMininclusiveDECIMALint_pass-integer-high.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1integerMininclusiveDECIMALintLeadTrail_fail-integer-low",
@@ -6196,8 +6007,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:integer MININCLUSIVE 05.00 } / { <s1> <p1> 5 }",
-          "status": "mf:proposed",
-          "result": "1integerMininclusiveDECIMALintLeadTrail_pass-integer-equal.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1integerMininclusiveDECIMALintLeadTrail_pass-integer-equalLead",
@@ -6214,8 +6024,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:integer MININCLUSIVE 05.00 } / { <s1> <p1> 05 }",
-          "status": "mf:proposed",
-          "result": "1integerMininclusiveDECIMALintLeadTrail_pass-integer-equalLead.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1integerMininclusiveDECIMALintLeadTrail_pass-integer-high",
@@ -6232,8 +6041,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:integer MININCLUSIVE 05.00 } / { <s1> <p1> 6 }",
-          "status": "mf:proposed",
-          "result": "1integerMininclusiveDECIMALintLeadTrail_pass-integer-high.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1integerMininclusiveDOUBLE_pass-integer-equal",
@@ -6250,8 +6058,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:integer MININCLUSIVE 4.5e0 } / { <s1> <p1> 5 }",
-          "status": "mf:proposed",
-          "result": "1integerMininclusiveDOUBLE_pass-integer-equal.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1integerMininclusiveDOUBLELeadTrail_fail-integer-low",
@@ -6285,8 +6092,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:integer MININCLUSIVE 04.50e0 } / { <s1> <p1> 5 }",
-          "status": "mf:proposed",
-          "result": "1integerMininclusiveDOUBLELeadTrail_pass-integer-equal.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1integerMininclusiveDOUBLELeadTrail_pass-integer-equalLead",
@@ -6303,8 +6109,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:integer MININCLUSIVE 04.50e0 } / { <s1> <p1> 05 }",
-          "status": "mf:proposed",
-          "result": "1integerMininclusiveDOUBLELeadTrail_pass-integer-equalLead.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1integerMininclusiveDOUBLELeadTrail_pass-integer-high",
@@ -6321,8 +6126,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:integer MININCLUSIVE 04.50e0 } / { <s1> <p1> 6 }",
-          "status": "mf:proposed",
-          "result": "1integerMininclusiveDOUBLELeadTrail_pass-integer-high.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1integerMininclusiveDOUBLEint_pass-integer-equal",
@@ -6339,8 +6143,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:integer MININCLUSIVE 5.0e0 } / { <s1> <p1> 5 }",
-          "status": "mf:proposed",
-          "result": "1integerMininclusiveDOUBLEint_pass-integer-equal.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1integerMininclusiveDOUBLEintLeadTrail_fail-integer-low",
@@ -6374,8 +6177,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:integer MININCLUSIVE 05.00e0 } / { <s1> <p1> 5 }",
-          "status": "mf:proposed",
-          "result": "1integerMininclusiveDOUBLEintLeadTrail_pass-integer-equal.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1integerMininclusiveDOUBLEintLeadTrail_pass-integer-equalLead",
@@ -6392,8 +6194,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:integer MININCLUSIVE 05.00e0 } / { <s1> <p1> 05 }",
-          "status": "mf:proposed",
-          "result": "1integerMininclusiveDOUBLEintLeadTrail_pass-integer-equalLead.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1integerMininclusiveDOUBLEintLeadTrail_pass-integer-high",
@@ -6410,8 +6211,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:integer MININCLUSIVE 05.00e0 } / { <s1> <p1> 6 }",
-          "status": "mf:proposed",
-          "result": "1integerMininclusiveDOUBLEintLeadTrail_pass-integer-high.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1integerMininclusiveINTEGER_fail-decimal-equal",
@@ -6547,8 +6347,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:decimal MININCLUSIVE 5 } / { <s1> <p1> 5.6 }",
-          "status": "mf:proposed",
-          "result": "1decimalMininclusiveINTEGER_pass-decimal-high.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1decimalMininclusiveINTEGERLead_fail-decimal-low",
@@ -6582,8 +6381,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:decimal MININCLUSIVE 05 } / { <s1> <p1> 5.6 }",
-          "status": "mf:proposed",
-          "result": "1decimalMininclusiveINTEGERLead_pass-decimal-high.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1decimalMininclusiveDECIMAL_fail-decimal-low",
@@ -6617,8 +6415,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:decimal MININCLUSIVE 4.5 } / { <s1> <p1> 4.5 }",
-          "status": "mf:proposed",
-          "result": "1decimalMininclusiveDECIMAL_pass-decimal-equal.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1decimalMininclusiveDECIMAL_pass-decimal-equalLeadTrail",
@@ -6635,8 +6432,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:decimal MININCLUSIVE 4.5 } / { <s1> <p1> 04.50 }",
-          "status": "mf:proposed",
-          "result": "1decimalMininclusiveDECIMAL_pass-decimal-equalLeadTrail.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1decimalMininclusiveDECIMAL_pass-decimal-high",
@@ -6653,8 +6449,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:decimal MININCLUSIVE 4.5 } / { <s1> <p1> 5.6 }",
-          "status": "mf:proposed",
-          "result": "1decimalMininclusiveDECIMAL_pass-decimal-high.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1decimalMininclusiveDECIMALLeadTrail_fail-decimal-low",
@@ -6688,8 +6483,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:decimal MININCLUSIVE 04.50 } / { <s1> <p1> 4.5 }",
-          "status": "mf:proposed",
-          "result": "1decimalMininclusiveDECIMALLeadTrail_pass-decimal-equal.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1decimalMininclusiveDECIMALLeadTrail_pass-decimal-equalLeadTrail",
@@ -6706,8 +6500,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:decimal MININCLUSIVE 04.50 } / { <s1> <p1> 04.50 }",
-          "status": "mf:proposed",
-          "result": "1decimalMininclusiveDECIMALLeadTrail_pass-decimal-equalLeadTrail.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1decimalMininclusiveDECIMALLeadTrail_pass-decimal-high",
@@ -6724,8 +6517,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:decimal MININCLUSIVE 04.50 } / { <s1> <p1> 5.6 }",
-          "status": "mf:proposed",
-          "result": "1decimalMininclusiveDECIMALLeadTrail_pass-decimal-high.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1decimalMininclusiveDECIMALintLeadTrail_fail-decimal-low",
@@ -6759,8 +6551,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:decimal MININCLUSIVE 05.00 } / { <s1> <p1> 5.6 }",
-          "status": "mf:proposed",
-          "result": "1decimalMininclusiveDECIMALintLeadTrail_pass-decimal-high.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1decimalMininclusiveDOUBLE_fail-decimal-low",
@@ -6794,8 +6585,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:decimal MININCLUSIVE 4.5e0 } / { <s1> <p1> 4.5 }",
-          "status": "mf:proposed",
-          "result": "1decimalMininclusiveDOUBLE_pass-decimal-equal.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1decimalMininclusiveDOUBLE_pass-decimal-equalLeadTrail",
@@ -6812,8 +6602,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:decimal MININCLUSIVE 4.5e0 } / { <s1> <p1> 04.50 }",
-          "status": "mf:proposed",
-          "result": "1decimalMininclusiveDOUBLE_pass-decimal-equalLeadTrail.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1decimalMininclusiveDOUBLELeadTrail_fail-decimal-low",
@@ -6847,8 +6636,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:decimal MININCLUSIVE 04.50e0 } / { <s1> <p1> 4.5 }",
-          "status": "mf:proposed",
-          "result": "1decimalMininclusiveDOUBLELeadTrail_pass-decimal-equal.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1decimalMininclusiveDOUBLELeadTrail_pass-decimal-equalLeadTrail",
@@ -6865,8 +6653,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:decimal MININCLUSIVE 04.50e0 } / { <s1> <p1> 04.50 }",
-          "status": "mf:proposed",
-          "result": "1decimalMininclusiveDOUBLELeadTrail_pass-decimal-equalLeadTrail.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1decimalMininclusiveDOUBLELeadTrail_pass-decimal-high",
@@ -6883,8 +6670,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:decimal MININCLUSIVE 04.50e0 } / { <s1> <p1> 5.6 }",
-          "status": "mf:proposed",
-          "result": "1decimalMininclusiveDOUBLELeadTrail_pass-decimal-high.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1decimalMininclusiveDOUBLEintLeadTrail_fail-decimal-low",
@@ -6918,8 +6704,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:decimal MININCLUSIVE 05.00e0 } / { <s1> <p1> 5.6 }",
-          "status": "mf:proposed",
-          "result": "1decimalMininclusiveDOUBLEintLeadTrail_pass-decimal-high.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1decimalMininclusiveDECIMAL_fail-float-equal",
@@ -6987,8 +6772,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:float MININCLUSIVE 05 } / { <s1> <p1> '5.6'^^<http://www.w3.org/2001/XMLSchema#float> }",
-          "status": "mf:proposed",
-          "result": "1floatMininclusiveINTEGERLead_pass-float-high.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1floatMininclusiveDECIMAL_pass-float-equal",
@@ -7005,8 +6789,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:float MININCLUSIVE 4.5 } / { <s1> <p1> '4.5'^^<http://www.w3.org/2001/XMLSchema#float> }",
-          "status": "mf:proposed",
-          "result": "1floatMininclusiveDECIMAL_pass-float-equal.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1floatMininclusiveDECIMAL_pass-float-equalLeadTrail",
@@ -7023,8 +6806,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:float MININCLUSIVE 4.5 } / { <s1> <p1> '04.50'^^<http://www.w3.org/2001/XMLSchema#float> }",
-          "status": "mf:proposed",
-          "result": "1floatMininclusiveDECIMAL_pass-float-equalLeadTrail.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1floatMininclusiveDECIMALLeadTrail_fail-float-low",
@@ -7058,8 +6840,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:float MININCLUSIVE 04.50 } / { <s1> <p1> '4.5'^^<http://www.w3.org/2001/XMLSchema#float> }",
-          "status": "mf:proposed",
-          "result": "1floatMininclusiveDECIMALLeadTrail_pass-float-equal.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1floatMininclusiveDECIMALLeadTrail_pass-float-equalLeadTrail",
@@ -7076,8 +6857,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:float MININCLUSIVE 04.50 } / { <s1> <p1> '04.50'^^<http://www.w3.org/2001/XMLSchema#float> }",
-          "status": "mf:proposed",
-          "result": "1floatMininclusiveDECIMALLeadTrail_pass-float-equalLeadTrail.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1floatMininclusiveDECIMALLeadTrail_pass-float-high",
@@ -7094,8 +6874,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:float MININCLUSIVE 04.50 } / { <s1> <p1> '5.6'^^<http://www.w3.org/2001/XMLSchema#float> }",
-          "status": "mf:proposed",
-          "result": "1floatMininclusiveDECIMALLeadTrail_pass-float-high.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1floatMininclusiveDECIMALintLeadTrail_fail-float-low",
@@ -7129,8 +6908,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:float MININCLUSIVE 05.00 } / { <s1> <p1> '5.6'^^<http://www.w3.org/2001/XMLSchema#float> }",
-          "status": "mf:proposed",
-          "result": "1floatMininclusiveDECIMALintLeadTrail_pass-float-high.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1floatMininclusiveDOUBLE_pass-float-equal",
@@ -7147,8 +6925,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:float MININCLUSIVE 4.5e0 } / { <s1> <p1> '4.5'^^<http://www.w3.org/2001/XMLSchema#float> }",
-          "status": "mf:proposed",
-          "result": "1floatMininclusiveDOUBLE_pass-float-equal.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1floatMininclusiveDOUBLE_pass-float-equalLeadTrail",
@@ -7165,8 +6942,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:float MININCLUSIVE 4.5e0 } / { <s1> <p1> '04.50'^^<http://www.w3.org/2001/XMLSchema#float> }",
-          "status": "mf:proposed",
-          "result": "1floatMininclusiveDOUBLE_pass-float-equalLeadTrail.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1floatMininclusiveDOUBLELeadTrail_fail-float-low",
@@ -7200,8 +6976,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:float MININCLUSIVE 04.50e0 } / { <s1> <p1> '4.5'^^<http://www.w3.org/2001/XMLSchema#float> }",
-          "status": "mf:proposed",
-          "result": "1floatMininclusiveDOUBLELeadTrail_pass-float-equal.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1floatMininclusiveDOUBLELeadTrail_pass-float-equalLeadTrail",
@@ -7218,8 +6993,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:float MININCLUSIVE 04.50e0 } / { <s1> <p1> '04.50'^^<http://www.w3.org/2001/XMLSchema#float> }",
-          "status": "mf:proposed",
-          "result": "1floatMininclusiveDOUBLELeadTrail_pass-float-equalLeadTrail.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1floatMininclusiveDOUBLELeadTrail_pass-float-high",
@@ -7236,8 +7010,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:float MININCLUSIVE 04.50e0 } / { <s1> <p1> '5.6'^^<http://www.w3.org/2001/XMLSchema#float> }",
-          "status": "mf:proposed",
-          "result": "1floatMininclusiveDOUBLELeadTrail_pass-float-high.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1floatMininclusiveDOUBLEintLeadTrail_fail-float-low",
@@ -7271,8 +7044,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:float MININCLUSIVE 05.00e0 } / { <s1> <p1> '5.6'^^<http://www.w3.org/2001/XMLSchema#float> }",
-          "status": "mf:proposed",
-          "result": "1floatMininclusiveDOUBLEintLeadTrail_pass-float-high.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1doubleMininclusiveINTEGERLead_fail-double-low",
@@ -7306,8 +7078,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:double MININCLUSIVE 05 } / { <s1> <p1> 5.6e0 }",
-          "status": "mf:proposed",
-          "result": "1doubleMininclusiveINTEGERLead_pass-double-high.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1doubleMininclusiveDECIMAL_pass-double-equal",
@@ -7324,8 +7095,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:double MININCLUSIVE 4.5 } / { <s1> <p1> 4.5e0 }",
-          "status": "mf:proposed",
-          "result": "1doubleMininclusiveDECIMAL_pass-double-equal.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1doubleMininclusiveDECIMAL_pass-double-equalLeadTrail",
@@ -7342,8 +7112,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:double MININCLUSIVE 4.5 } / { <s1> <p1> 04.50e0 }",
-          "status": "mf:proposed",
-          "result": "1doubleMininclusiveDECIMAL_pass-double-equalLeadTrail.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1doubleMininclusiveDECIMALLeadTrail_fail-double-low",
@@ -7377,8 +7146,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:double MININCLUSIVE 04.50 } / { <s1> <p1> 4.5e0 }",
-          "status": "mf:proposed",
-          "result": "1doubleMininclusiveDECIMALLeadTrail_pass-double-equal.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1doubleMininclusiveDECIMALLeadTrail_pass-double-equalLeadTrail",
@@ -7395,8 +7163,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:double MININCLUSIVE 04.50 } / { <s1> <p1> 04.50e0 }",
-          "status": "mf:proposed",
-          "result": "1doubleMininclusiveDECIMALLeadTrail_pass-double-equalLeadTrail.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1doubleMininclusiveDECIMALLeadTrail_pass-double-high",
@@ -7413,8 +7180,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:double MININCLUSIVE 04.50 } / { <s1> <p1> 5.6e0 }",
-          "status": "mf:proposed",
-          "result": "1doubleMininclusiveDECIMALLeadTrail_pass-double-high.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1doubleMininclusiveDECIMALintLeadTrail_fail-double-low",
@@ -7448,8 +7214,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:double MININCLUSIVE 05.00 } / { <s1> <p1> 5.6e0 }",
-          "status": "mf:proposed",
-          "result": "1doubleMininclusiveDECIMALintLeadTrail_pass-double-high.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1doubleMininclusiveDOUBLE_pass-double-equal",
@@ -7466,8 +7231,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:double MININCLUSIVE 4.5e0 } / { <s1> <p1> 4.5e0 }",
-          "status": "mf:proposed",
-          "result": "1doubleMininclusiveDOUBLE_pass-double-equal.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1doubleMininclusiveDOUBLE_pass-double-equalLeadTrail",
@@ -7484,8 +7248,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:double MININCLUSIVE 4.5e0 } / { <s1> <p1> 04.50e0 }",
-          "status": "mf:proposed",
-          "result": "1doubleMininclusiveDOUBLE_pass-double-equalLeadTrail.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1doubleMininclusiveDOUBLELeadTrail_fail-double-low",
@@ -7519,8 +7282,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:double MININCLUSIVE 04.50e0 } / { <s1> <p1> 4.5e0 }",
-          "status": "mf:proposed",
-          "result": "1doubleMininclusiveDOUBLELeadTrail_pass-double-equal.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1doubleMininclusiveDOUBLELeadTrail_pass-double-equalLeadTrail",
@@ -7537,8 +7299,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:double MININCLUSIVE 04.50e0 } / { <s1> <p1> 04.50e0 }",
-          "status": "mf:proposed",
-          "result": "1doubleMininclusiveDOUBLELeadTrail_pass-double-equalLeadTrail.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1doubleMininclusiveDOUBLELeadTrail_pass-double-high",
@@ -7555,8 +7316,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:double MININCLUSIVE 04.50e0 } / { <s1> <p1> 5.6e0 }",
-          "status": "mf:proposed",
-          "result": "1doubleMininclusiveDOUBLELeadTrail_pass-double-high.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1doubleMininclusiveDOUBLEintLeadTrail_fail-double-low",
@@ -7590,8 +7350,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:double MININCLUSIVE 05.00e0 } / { <s1> <p1> 5.6e0 }",
-          "status": "mf:proposed",
-          "result": "1doubleMininclusiveDOUBLEintLeadTrail_pass-double-high.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1integerMinexclusiveINTEGER_fail-integer-low",
@@ -7642,8 +7401,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:integer MINEXCLUSIVE 5 } / { <s1> <p1> 6 }",
-          "status": "mf:proposed",
-          "result": "1integerMinexclusiveINTEGER_pass-integer-high.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1integerMinexclusiveDECIMALint_fail-integer-low",
@@ -7694,8 +7452,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:integer MINEXCLUSIVE 5.0 } / { <s1> <p1> 6 }",
-          "status": "mf:proposed",
-          "result": "1integerMinexclusiveDECIMALint_pass-integer-high.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1integerMinexclusiveDOUBLEint_fail-integer-low",
@@ -7746,8 +7503,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:integer MINEXCLUSIVE 5.0e0 } / { <s1> <p1> 6 }",
-          "status": "mf:proposed",
-          "result": "1integerMinexclusiveDOUBLEint_pass-integer-high.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1decimalMinexclusiveINTEGER_fail-decimal-low",
@@ -7781,8 +7537,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:decimal MINEXCLUSIVE 5 } / { <s1> <p1> 5.6 }",
-          "status": "mf:proposed",
-          "result": "1decimalMinexclusiveINTEGER_pass-decimal-high.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1decimalMinexclusiveDECIMAL_fail-decimal-low",
@@ -7833,8 +7588,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:decimal MINEXCLUSIVE 4.5 } / { <s1> <p1> 5.6 }",
-          "status": "mf:proposed",
-          "result": "1decimalMinexclusiveDECIMAL_pass-decimal-high.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1decimalMinexclusiveDOUBLE_fail-decimal-low",
@@ -7885,8 +7639,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:decimal MINEXCLUSIVE 4.5e0 } / { <s1> <p1> 5.6 }",
-          "status": "mf:proposed",
-          "result": "1decimalMinexclusiveDOUBLE_pass-decimal-high.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1decimalMinexclusiveDECIMAL_fail-float-equal",
@@ -7954,8 +7707,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:float MINEXCLUSIVE 5 } / { <s1> <p1> '5.6'^^<http://www.w3.org/2001/XMLSchema#float> }",
-          "status": "mf:proposed",
-          "result": "1floatMinexclusiveINTEGER_pass-float-high.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1floatMinexclusiveDECIMAL_fail-float-low",
@@ -8006,8 +7758,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:float MINEXCLUSIVE 4.5 } / { <s1> <p1> '5.6'^^<http://www.w3.org/2001/XMLSchema#float> }",
-          "status": "mf:proposed",
-          "result": "1floatMinexclusiveDECIMAL_pass-float-high.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1floatMinexclusiveDOUBLE_fail-float-low",
@@ -8058,8 +7809,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:float MINEXCLUSIVE 4.5e0 } / { <s1> <p1> '5.6'^^<http://www.w3.org/2001/XMLSchema#float> }",
-          "status": "mf:proposed",
-          "result": "1floatMinexclusiveDOUBLE_pass-float-high.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1doubleMinexclusiveINTEGER_fail-double-low",
@@ -8093,8 +7843,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:double MINEXCLUSIVE 5 } / { <s1> <p1> 5.6e0 }",
-          "status": "mf:proposed",
-          "result": "1doubleMinexclusiveINTEGER_pass-double-high.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1doubleMinexclusiveDECIMAL_fail-double-low",
@@ -8145,8 +7894,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:double MINEXCLUSIVE 4.5 } / { <s1> <p1> 5.6e0 }",
-          "status": "mf:proposed",
-          "result": "1doubleMinexclusiveDECIMAL_pass-double-high.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1doubleMinexclusiveDOUBLE_fail-double-low",
@@ -8197,8 +7945,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:double MINEXCLUSIVE 4.5e0 } / { <s1> <p1> 5.6e0 }",
-          "status": "mf:proposed",
-          "result": "1doubleMinexclusiveDOUBLE_pass-double-high.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1doubleMinexclusiveDECIMAL_fail-float-equal",
@@ -8232,8 +7979,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:integer MAXINCLUSIVE 5 } / { <s1> <p1> 4 }",
-          "status": "mf:proposed",
-          "result": "1integerMaxinclusiveINTEGER_pass-integer-low.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1integerMaxinclusiveINTEGER_pass-integer-equal",
@@ -8250,8 +7996,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:integer MAXINCLUSIVE 5 } / { <s1> <p1> 5 }",
-          "status": "mf:proposed",
-          "result": "1integerMaxinclusiveINTEGER_pass-integer-equal.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1integerMaxinclusiveINTEGER_fail-integer-high",
@@ -8285,8 +8030,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:integer MAXINCLUSIVE 5.0 } / { <s1> <p1> 4 }",
-          "status": "mf:proposed",
-          "result": "1integerMaxinclusiveDECIMALint_pass-integer-low.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1integerMaxinclusiveDECIMALint_pass-integer-equal",
@@ -8303,8 +8047,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:integer MAXINCLUSIVE 5.0 } / { <s1> <p1> 5 }",
-          "status": "mf:proposed",
-          "result": "1integerMaxinclusiveDECIMALint_pass-integer-equal.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1integerMaxinclusiveDECIMALint_fail-integer-high",
@@ -8338,8 +8081,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:integer MAXINCLUSIVE 5.0e0 } / { <s1> <p1> 4 }",
-          "status": "mf:proposed",
-          "result": "1integerMaxinclusiveDOUBLEint_pass-integer-low.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1integerMaxinclusiveDOUBLEint_pass-integer-equal",
@@ -8356,8 +8098,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:integer MAXINCLUSIVE 5.0e0 } / { <s1> <p1> 5 }",
-          "status": "mf:proposed",
-          "result": "1integerMaxinclusiveDOUBLEint_pass-integer-equal.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1integerMaxinclusiveDOUBLEint_fail-integer-high",
@@ -8391,8 +8132,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:decimal MAXINCLUSIVE 5 } / { <s1> <p1> 4.4 }",
-          "status": "mf:proposed",
-          "result": "1decimalMaxinclusiveINTEGER_pass-decimal-low.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1decimalMaxinclusiveINTEGER_fail-decimal-high",
@@ -8426,8 +8166,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:decimal MAXINCLUSIVE 5.5 } / { <s1> <p1> 4.4 }",
-          "status": "mf:proposed",
-          "result": "1decimalMaxinclusiveDECIMAL_pass-decimal-low.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1decimalMaxinclusiveDECIMAL_pass-decimal-equal",
@@ -8444,8 +8183,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:decimal MAXINCLUSIVE 5.5 } / { <s1> <p1> 5.5 }",
-          "status": "mf:proposed",
-          "result": "1decimalMaxinclusiveDECIMAL_pass-decimal-equal.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1decimalMaxinclusiveDECIMAL_fail-decimal-high",
@@ -8479,8 +8217,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:decimal MAXINCLUSIVE 5.5e0 } / { <s1> <p1> 4.4 }",
-          "status": "mf:proposed",
-          "result": "1decimalMaxinclusiveDOUBLE_pass-decimal-low.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1decimalMaxinclusiveDOUBLE_pass-decimal-equal",
@@ -8497,8 +8234,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:decimal MAXINCLUSIVE 5.5e0 } / { <s1> <p1> 5.5 }",
-          "status": "mf:proposed",
-          "result": "1decimalMaxinclusiveDOUBLE_pass-decimal-equal.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1decimalMaxinclusiveDOUBLE_fail-decimal-high",
@@ -8566,8 +8302,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:float MAXINCLUSIVE 5 } / { <s1> <p1> '4.4'^^<http://www.w3.org/2001/XMLSchema#float> }",
-          "status": "mf:proposed",
-          "result": "1floatMaxinclusiveINTEGER_pass-float-low.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1floatMaxinclusiveINTEGER_fail-float-high",
@@ -8601,8 +8336,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:float MAXINCLUSIVE 5.5 } / { <s1> <p1> '4.4'^^<http://www.w3.org/2001/XMLSchema#float> }",
-          "status": "mf:proposed",
-          "result": "1floatMaxinclusiveDECIMAL_pass-float-low.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1floatMaxinclusiveDECIMAL_pass-float-equal",
@@ -8619,8 +8353,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:float MAXINCLUSIVE 5.5 } / { <s1> <p1> '5.5'^^<http://www.w3.org/2001/XMLSchema#float> }",
-          "status": "mf:proposed",
-          "result": "1floatMaxinclusiveDECIMAL_pass-float-equal.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1floatMaxinclusiveDECIMAL_fail-float-high",
@@ -8654,8 +8387,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:float MAXINCLUSIVE 5.5e0 } / { <s1> <p1> '4.4'^^<http://www.w3.org/2001/XMLSchema#float> }",
-          "status": "mf:proposed",
-          "result": "1floatMaxinclusiveDOUBLE_pass-float-low.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1floatMaxinclusiveDOUBLE_pass-float-equal",
@@ -8672,8 +8404,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:float MAXINCLUSIVE 5.5e0 } / { <s1> <p1> '5.5'^^<http://www.w3.org/2001/XMLSchema#float> }",
-          "status": "mf:proposed",
-          "result": "1floatMaxinclusiveDOUBLE_pass-float-equal.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1floatMaxinclusiveDOUBLE_fail-float-high",
@@ -8707,8 +8438,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:double MAXINCLUSIVE 5 } / { <s1> <p1> 4.4e0 }",
-          "status": "mf:proposed",
-          "result": "1doubleMaxinclusiveINTEGER_pass-double-low.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1doubleMaxinclusiveINTEGER_fail-double-high",
@@ -8742,8 +8472,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:double MAXINCLUSIVE 5.5 } / { <s1> <p1> 4.4e0 }",
-          "status": "mf:proposed",
-          "result": "1doubleMaxinclusiveDECIMAL_pass-double-low.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1doubleMaxinclusiveDECIMAL_pass-double-equal",
@@ -8760,8 +8489,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:double MAXINCLUSIVE 5.5 } / { <s1> <p1> 5.5e0 }",
-          "status": "mf:proposed",
-          "result": "1doubleMaxinclusiveDECIMAL_pass-double-equal.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1doubleMaxinclusiveDECIMAL_fail-double-high",
@@ -8795,8 +8523,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:double MAXINCLUSIVE 5.5e0 } / { <s1> <p1> 4.4e0 }",
-          "status": "mf:proposed",
-          "result": "1doubleMaxinclusiveDOUBLE_pass-double-low.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1doubleMaxinclusiveDOUBLE_pass-double-equal",
@@ -8813,8 +8540,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:double MAXINCLUSIVE 5.5e0 } / { <s1> <p1> 5.5e0 }",
-          "status": "mf:proposed",
-          "result": "1doubleMaxinclusiveDOUBLE_pass-double-equal.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1doubleMaxinclusiveDOUBLE_fail-double-high",
@@ -8865,8 +8591,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:integer MAXEXCLUSIVE 5 } / { <s1> <p1> 4 }",
-          "status": "mf:proposed",
-          "result": "1integerMaxexclusiveINTEGER_pass-integer-low.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1integerMaxexclusiveINTEGER_fail-integer-equal",
@@ -8917,8 +8642,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:integer MAXEXCLUSIVE 5.0 } / { <s1> <p1> 4 }",
-          "status": "mf:proposed",
-          "result": "1integerMaxexclusiveDECIMALint_pass-integer-low.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1integerMaxexclusiveDECIMALint_fail-integer-equal",
@@ -8969,8 +8693,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:integer MAXEXCLUSIVE 5.0e0 } / { <s1> <p1> 4 }",
-          "status": "mf:proposed",
-          "result": "1integerMaxexclusiveDOUBLEint_pass-integer-low.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1integerMaxexclusiveDOUBLEint_fail-integer-equal",
@@ -9021,8 +8744,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:decimal MAXEXCLUSIVE 5 } / { <s1> <p1> 4.4 }",
-          "status": "mf:proposed",
-          "result": "1decimalMaxexclusiveINTEGER_pass-decimal-low.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1decimalMaxexclusiveINTEGER_fail-decimal-high",
@@ -9056,8 +8778,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:decimal MAXEXCLUSIVE 5.5 } / { <s1> <p1> 4.4 }",
-          "status": "mf:proposed",
-          "result": "1decimalMaxexclusiveDECIMAL_pass-decimal-low.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1decimalMaxexclusiveDECIMAL_fail-decimal-equal",
@@ -9108,8 +8829,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:decimal MAXEXCLUSIVE 5.5e0 } / { <s1> <p1> 4.4 }",
-          "status": "mf:proposed",
-          "result": "1decimalMaxexclusiveDOUBLE_pass-decimal-low.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1decimalMaxexclusiveDOUBLE_fail-decimal-equal",
@@ -9211,8 +8931,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:float MAXEXCLUSIVE 5 } / { <s1> <p1> '4.4'^^<http://www.w3.org/2001/XMLSchema#float> }",
-          "status": "mf:proposed",
-          "result": "1floatMaxexclusiveINTEGER_pass-float-low.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1floatMaxexclusiveINTEGER_fail-float-high",
@@ -9246,8 +8965,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:float MAXEXCLUSIVE 5.5 } / { <s1> <p1> '4.4'^^<http://www.w3.org/2001/XMLSchema#float> }",
-          "status": "mf:proposed",
-          "result": "1floatMaxexclusiveDECIMAL_pass-float-low.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1floatMaxexclusiveDECIMAL_fail-float-high",
@@ -9281,8 +8999,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:float MAXEXCLUSIVE 5.5e0 } / { <s1> <p1> '4.4'^^<http://www.w3.org/2001/XMLSchema#float> }",
-          "status": "mf:proposed",
-          "result": "1floatMaxexclusiveDOUBLE_pass-float-low.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1floatMaxexclusiveDOUBLE_fail-float-high",
@@ -9316,8 +9033,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:double MAXEXCLUSIVE 5 } / { <s1> <p1> 4.4e0 }",
-          "status": "mf:proposed",
-          "result": "1doubleMaxexclusiveINTEGER_pass-double-low.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1doubleMaxexclusiveINTEGER_fail-double-equal",
@@ -9385,8 +9101,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:double MAXEXCLUSIVE 5.5 } / { <s1> <p1> 4.4e0 }",
-          "status": "mf:proposed",
-          "result": "1doubleMaxexclusiveDECIMAL_pass-double-low.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1doubleMaxexclusiveDECIMAL_fail-double-equal",
@@ -9488,8 +9203,7 @@
             "ComparatorFacet"
           ],
           "comment": "<S1> { <p1> xsd:double MAXEXCLUSIVE 5.5e0 } / { <s1> <p1> 4.4e0 }",
-          "status": "mf:proposed",
-          "result": "1doubleMaxexclusiveDOUBLE_pass-double-low.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1doubleMaxexclusiveDOUBLE_fail-double-equal",
@@ -9608,8 +9322,7 @@
             "LengthFacet"
           ],
           "comment": "<S1> { <p1> LENGTH 5 } on { <s1> <p1> \"abcde\" }",
-          "status": "mf:proposed",
-          "result": "1Length_pass-lit-equal.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1Length_fail-lit-long",
@@ -9660,8 +9373,7 @@
             "LengthFacet"
           ],
           "comment": "<S1> { <p1> LITERAL LENGTH 5 } on { <s1> <p1> \"abcde\" }",
-          "status": "mf:proposed",
-          "result": "1literalLength_pass-lit-equal.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1literalLength_fail-lit-long",
@@ -9747,8 +9459,7 @@
             "LengthFacet"
           ],
           "comment": "<S1> { <p1> IRI LENGTH 19 } on { <s1> <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "1iriLength_pass-iri-equal.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1iriLength_fail-iri-long",
@@ -9834,8 +9545,7 @@
             "LengthFacet"
           ],
           "comment": "<S1> { <p1> IRI @<S2> LENGTH 19 } <S2> { <p2> . } on { <s1> <p1> <o1> . <o1> <p2>  <o2> }",
-          "status": "mf:proposed",
-          "result": "1iriRefLength1_pass-iri-equal.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1iriRefLength1_fail-iri-long",
@@ -9922,8 +9632,7 @@
             "LengthFacet"
           ],
           "comment": "<S1> { <p1> BNODE LENGTH 5 } on { <s1> <p1> _:abcde }",
-          "status": "mf:proposed",
-          "result": "1bnodeLength_pass-bnode-equal.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1bnodeLength_fail-bnode-long",
@@ -10009,8 +9718,7 @@
             "LengthFacet"
           ],
           "comment": "<S1> { <p1> NONLITERAL LENGTH 19 } on { <s1> <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "1nonliteralLength_pass-iri-equal.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1nonliteralLength_fail-iri-long",
@@ -10080,8 +9788,7 @@
             "LengthFacet"
           ],
           "comment": "<S1> { <p1> NONLITERAL LENGTH 19 } on { <s1> <p1> _:abcdefghijklmnopqrs }",
-          "status": "mf:proposed",
-          "result": "1nonliteralLength_pass-bnode-equal.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1nonliteralLength_fail-bnode-long",
@@ -10133,8 +9840,7 @@
             "LengthFacet"
           ],
           "comment": "<S1> { <p1> LITERAL MINLENGTH 5 } on { <s1> <p1> \"abcde\" }",
-          "status": "mf:proposed",
-          "result": "1literalMinlength_pass-lit-equal.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1literalMinlength_pass-lit-long",
@@ -10151,8 +9857,7 @@
             "LengthFacet"
           ],
           "comment": "<S1> { <p1> LITERAL MINLENGTH 5 } on { <s1> <p1> \"abcdef\" }",
-          "status": "mf:proposed",
-          "result": "1literalMinlength_pass-lit-long.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1iriMinlength_fail-iri-short",
@@ -10186,8 +9891,7 @@
             "LengthFacet"
           ],
           "comment": "<S1> { <p1> IRI MINLENGTH 19 } on { <s1> <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "1iriMinlength_pass-iri-equal.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1iriMinlength_pass-iri-long",
@@ -10204,8 +9908,7 @@
             "LengthFacet"
           ],
           "comment": "<S1> { <p1> IRI MINLENGTH 19 } on { <s1> <p1> <o1a> }",
-          "status": "mf:proposed",
-          "result": "1iriMinlength_pass-iri-long.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1bnodeMinlength_fail-bnode-short",
@@ -10241,8 +9944,7 @@
             "LengthFacet"
           ],
           "comment": "<S1> { <p1> BNODE MINLENGTH 5 } on { <s1> <p1> _:abcde }",
-          "status": "mf:proposed",
-          "result": "1bnodeMinlength_pass-bnode-equal.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1bnodeMinlength_pass-bnode-long",
@@ -10260,8 +9962,7 @@
             "LengthFacet"
           ],
           "comment": "<S1> { <p1> BNODE MINLENGTH 5 } on { <s1> <p1> _:abcdef }",
-          "status": "mf:proposed",
-          "result": "1bnodeMinlength_pass-bnode-long.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1nonliteralMinlength_fail-iri-short",
@@ -10295,8 +9996,7 @@
             "LengthFacet"
           ],
           "comment": "<S1> { <p1> NONLITERAL MINLENGTH 19 } on { <s1> <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "1nonliteralMinlength_pass-iri-equal.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1nonliteralMinlength_pass-iri-long",
@@ -10313,8 +10013,7 @@
             "LengthFacet"
           ],
           "comment": "<S1> { <p1> NONLITERAL MINLENGTH 19 } on { <s1> <p1> <o1a> }",
-          "status": "mf:proposed",
-          "result": "1nonliteralMinlength_pass-iri-long.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1nonliteralMinlength_fail-bnode-short",
@@ -10350,8 +10049,7 @@
             "LengthFacet"
           ],
           "comment": "<S1> { <p1> NONLITERAL MINLENGTH 19 } on { <s1> <p1> _:abcdefghijklmnopqrs }",
-          "status": "mf:proposed",
-          "result": "1nonliteralMinlength_pass-bnode-equal.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1nonliteralMinlength_pass-bnode-long",
@@ -10369,8 +10067,7 @@
             "LengthFacet"
           ],
           "comment": "<S1> { <p1> NONLITERAL MINLENGTH 19 } on { <s1> <p1> _:abcdefghijklmnopqrst }",
-          "status": "mf:proposed",
-          "result": "1nonliteralMinlength_pass-bnode-long.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1literalMaxlength_pass-lit-short",
@@ -10387,8 +10084,7 @@
             "LengthFacet"
           ],
           "comment": "<S1> { <p1> LITERAL MAXLENGTH 5 } on { <s1> <p1> \"abcd\" }",
-          "status": "mf:proposed",
-          "result": "1literalMaxlength_pass-lit-short.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1literalMaxlength_pass-lit-equal",
@@ -10405,8 +10101,7 @@
             "LengthFacet"
           ],
           "comment": "<S1> { <p1> LITERAL MAXLENGTH 5 } on { <s1> <p1> \"abcde\" }",
-          "status": "mf:proposed",
-          "result": "1literalMaxlength_pass-lit-equal.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1literalMaxlength_fail-lit-long",
@@ -10440,8 +10135,7 @@
             "LengthFacet"
           ],
           "comment": "<S1> { <p1> IRI MAXLENGTH 19 } on { <s1> <p1> <o> }",
-          "status": "mf:proposed",
-          "result": "1iriMaxlength_pass-iri-short.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1iriMaxlength_pass-iri-equal",
@@ -10458,8 +10152,7 @@
             "LengthFacet"
           ],
           "comment": "<S1> { <p1> IRI MAXLENGTH 19 } on { <s1> <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "1iriMaxlength_pass-iri-equal.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1iriMaxlength_fail-iri-long",
@@ -10494,8 +10187,7 @@
             "LengthFacet"
           ],
           "comment": "<S1> { <p1> BNODE MAXLENGTH 5 } on { <s1> <p1> _:abcd }",
-          "status": "mf:proposed",
-          "result": "1bnodeMaxlength_pass-bnode-short.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1bnodeMaxlength_pass-bnode-equal",
@@ -10513,8 +10205,7 @@
             "LengthFacet"
           ],
           "comment": "<S1> { <p1> BNODE MAXLENGTH 5 } on { <s1> <p1> _:abcde }",
-          "status": "mf:proposed",
-          "result": "1bnodeMaxlength_pass-bnode-equal.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1bnodeMaxlength_fail-bnode-long",
@@ -10549,8 +10240,7 @@
             "LengthFacet"
           ],
           "comment": "<S1> { <p1> NONLITERAL MAXLENGTH 19 } on { <s1> <p1> <o> }",
-          "status": "mf:proposed",
-          "result": "1nonliteralMaxlength_pass-iri-short.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1nonliteralMaxlength_pass-iri-equal",
@@ -10567,8 +10257,7 @@
             "LengthFacet"
           ],
           "comment": "<S1> { <p1> NONLITERAL MAXLENGTH 19 } on { <s1> <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "1nonliteralMaxlength_pass-iri-equal.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1nonliteralMaxlength_fail-iri-long",
@@ -10603,8 +10292,7 @@
             "LengthFacet"
           ],
           "comment": "<S1> { <p1> NONLITERAL MAXLENGTH 19 } on { <s1> <p1> _:abcd }",
-          "status": "mf:proposed",
-          "result": "1nonliteralMaxlength_pass-bnode-short.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1nonliteralMaxlength_pass-bnode-equal",
@@ -10622,8 +10310,7 @@
             "LengthFacet"
           ],
           "comment": "<S1> { <p1> NONLITERAL MAXLENGTH 19 } on { <s1> <p1> _:abcdefghijklmnopqrs }",
-          "status": "mf:proposed",
-          "result": "1nonliteralMaxlength_pass-bnode-equal.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1nonliteralMaxlength_fail-bnode-long",
@@ -10658,8 +10345,7 @@
             "PaternFacet"
           ],
           "comment": "<S1> { <p1> LITERAL PATTERN \"bc\" } on { <s1> <p1> \"bc\" }",
-          "status": "mf:proposed",
-          "result": "1literalPattern_pass-lit-match.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1literalPattern_fail-lit-short",
@@ -10727,8 +10413,7 @@
             "PaternFacet"
           ],
           "comment": "<S1> { <p1> LITERAL /bc/i } on { <s1> <p1> \"bc\" }",
-          "status": "mf:proposed",
-          "result": "1literalPatterni_pass-lit-match.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1literalPatterni_pass-lit-BC",
@@ -10745,8 +10430,7 @@
             "PaternFacet"
           ],
           "comment": "<S1> { <p1> LITERAL /bc/i } on { <s1> <p1> \"BC\" }",
-          "status": "mf:proposed",
-          "result": "1literalPatterni_pass-lit-BC.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1literalPatterni_pass-lit-blowercaseC",
@@ -10763,8 +10447,7 @@
             "PaternFacet"
           ],
           "comment": "<S1> { <p1> LITERAL /bc/i } on { <s1> <p1> \"bC\" }",
-          "status": "mf:proposed",
-          "result": "1literalPatterni_pass-lit-blowercaseC.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1literalPattern_pass-lit-into",
@@ -10781,8 +10464,7 @@
             "PaternFacet"
           ],
           "comment": "<S1> { <p1> LITERAL PATTERN \"bc\" } on { <s1> <p1> \"abc\" }",
-          "status": "mf:proposed",
-          "result": "1literalPattern_pass-lit-into.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1literalPattern19_fail-iri-match",
@@ -10834,8 +10516,7 @@
             "NumericEquivalence"
           ],
           "comment": "<S> { <p1> /^^@^A...^_$/ } on { <s> <p1> '^@^A...^_' }",
-          "status": "mf:proposed",
-          "result": "1literalPattern_with_all_controls_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1literalPattern_with_all_controls_fail",
@@ -10871,8 +10552,7 @@
             "NumericEquivalence"
           ],
           "comment": "<S> { <p1> /^ !\"#\\$%&'\\(\\)\\/:;<=>\\?@\\[\\]\\^_`\\{\\|\\}~$/ } on { <s> <p1> ' !\"#$%&'()/:;<=>?@[]^_`{|}~' }",
-          "status": "mf:proposed",
-          "result": "1literalPattern_with_all_punctuation_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1literalPattern_with_all_punctuation_fail",
@@ -10908,8 +10588,7 @@
             "NumericEquivalence"
           ],
           "comment": "<S> { <p1> /^^@^A...^_$/ } on { <s> <p1> '^@^A...^_' }",
-          "status": "mf:proposed",
-          "result": "1literalPattern_with_ascii_boundaries_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1literalPattern_with_ascii_boundaries_fail",
@@ -10945,8 +10624,7 @@
             "NumericEquivalence"
           ],
           "comment": "<S> { <p1> /^^@^A...^_$/ } on { <s> <p1> '^@^A...^_' }",
-          "status": "mf:proposed",
-          "result": "1literalPattern_with_UTF8_boundaries_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1literalPattern_with_UTF8_boundaries_fail",
@@ -10982,8 +10660,7 @@
             "NumericEquivalence"
           ],
           "comment": "<S> { <p1> /^\\/\\t\\b\\n\\r\\f\\\\\\u0061\\U0001D4B8$/ } on { <s> <p1> '\\/\\t\\b\\n\\r\\f\\a𝒸' }",
-          "status": "mf:proposed",
-          "result": "1literalPattern_with_REGEXP_escapes_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1literalPattern_with_REGEXP_escapes_fail",
@@ -11037,8 +10714,7 @@
             "NumericEquivalence"
           ],
           "comment": "<S> { <p1> /^\\\\/\\\\t\\\\b\\\\n\\\\r\\\\f\\\\\\\\\\\\u0061\\\\U0001D4B8$/ } on { <s> <p1> '\\\\/\\\\t\\\\b\\\\n\\\\r\\\\f\\\\\\u0061\\U0001D4B8' }",
-          "status": "mf:proposed",
-          "result": "1literalPattern_with_REGEXP_escapes_escaped_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1literalPattern_with_REGEXP_escapes_escaped_fail_escapes",
@@ -11073,7 +10749,7 @@
             "OutsideBMP",
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> /^\\\\/\\\\t\\\\b\\\\n\\\\r\\\\f\\\\\\\\\\\\u0061\\\\U0001D4B8$/ } on { <s> <p1> '/\t\\b\\n\\r\\f\\a𝒸' }",
+          "comment": "<S> { <p1> /^\\\\/\\\\t\\\\b\\\\n\\\\r\\\\f\\\\\\\\\\\\u0061\\\\U0001D4B8$/ } on { <s> <p1> '/        \\b\\n\\r\\f\\a𝒸' }",
           "status": "mf:proposed"
         },
         {
@@ -11091,9 +10767,8 @@
             "OutsideBMP",
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> /^\\/\t\\n\\r-\\\\a\\U0001D4B8$/ } on { <s> <p1> '/\t\\b\\n\\r\\f\\a𝒸' }",
-          "status": "mf:proposed",
-          "result": "1literalPattern_with_REGEXP_escapes_bare_pass.val"
+          "comment": "<S> { <p1> /^\\/      \\n\\r-\\\\a\\U0001D4B8$/ } on { <s> <p1> '/    \\b\\n\\r\\f\\a𝒸' }",
+          "status": "mf:proposed"
         },
         {
           "@id": "#1literalPattern_with_REGEXP_escapes_bare_fail_escaped",
@@ -11110,7 +10785,7 @@
             "OutsideBMP",
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> /^\\/\t\\n\\r-\\\\a\\U0001D4B8$/ } on { <s> <p1> '\\\\/\\\\t\\\\b\\\\n\\\\r\\\\f\\\\\\u0061\\U0001D4B8' }",
+          "comment": "<S> { <p1> /^\\/      \\n\\r-\\\\a\\U0001D4B8$/ } on { <s> <p1> '\\\\/\\\\t\\\\b\\\\n\\\\r\\\\f\\\\\\u0061\\U0001D4B8' }",
           "status": "mf:proposed"
         },
         {
@@ -11128,9 +10803,8 @@
             "OutsideBMP",
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> /^\\/\\t\\b\\n\\r\\f\\\\\\u0061\\U0001D4B8$/ } on { <s> <p1> '/\t\\b\\n\\r\\f\\a𝒸' }",
-          "status": "mf:proposed",
-          "result": "1literalPattern_with_REGEXP_escapes_pass.val"
+          "comment": "<S> { <p1> /^\\/\\t\\b\\n\\r\\f\\\\\\u0061\\U0001D4B8$/ } on { <s> <p1> '/    \\b\\n\\r\\f\\a𝒸' }",
+          "status": "mf:proposed"
         },
         {
           "@id": "#1literalPattern_with_REGEXP_escapes_bare_pass_escapes",
@@ -11147,9 +10821,8 @@
             "OutsideBMP",
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> /^\\/\t\\n\\r-\\\\a\\U0001D4B8$/ } on { <s> <p1> '\\/\\t\\b\\n\\r\\f\\a𝒸' }",
-          "status": "mf:proposed",
-          "result": "1literalPattern_with_REGEXP_escapes_bare_pass_escapes.val"
+          "comment": "<S> { <p1> /^\\/      \\n\\r-\\\\a\\U0001D4B8$/ } on { <s> <p1> '\\/\\t\\b\\n\\r\\f\\a𝒸' }",
+          "status": "mf:proposed"
         },
         {
           "@id": "#1literalPatternEnd_fail-litEnd",
@@ -11183,8 +10856,7 @@
             "PaternFacet"
           ],
           "comment": "<S1> { <p1> LITERAL PATTERN \"bc\\$\" } on { <s1> <p1> \"bc$\" }",
-          "status": "mf:proposed",
-          "result": "1literalPatternDollar_pass-litDollar-match.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1literalPattern_pass-StartlitEnd-match",
@@ -11252,8 +10924,7 @@
             "PaternFacet"
           ],
           "comment": "<S1> { <p1> LITERAL PATTERN \"\\^bc\\$\" } on { <s1> <p1> \"^bc$\" }",
-          "status": "mf:proposed",
-          "result": "1literalCarrotPatternDollar_pass-CarrotbcDollar.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1literalPatternabEnd_fail-bnode-match",
@@ -11288,8 +10959,7 @@
             "PaternFacet"
           ],
           "comment": "<S1> { <p1> LITERAL PATTERN \"^bc\" } on { <s1> <p1> \"bc\" }",
-          "status": "mf:proposed",
-          "result": "1literalStartPattern-bc.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1literalStartPattern_fail-CarrotbcDollar",
@@ -11323,8 +10993,7 @@
             "PaternFacet"
           ],
           "comment": "<S1> { <p1> LITERAL PATTERN \"bc$\" } on { <s1> <p1> \"bc\" }",
-          "status": "mf:proposed",
-          "result": "1literalPatternEnd_pass-bc.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1literalPatternEnd_pass-CarrotbcDollar",
@@ -11358,8 +11027,7 @@
             "PaternFacet"
           ],
           "comment": "<S1> { <p1> LITERAL PATTERN \"bc\" } on { <s1> <p1> \"bc$\" }",
-          "status": "mf:proposed",
-          "result": "1literalPattern_pass-bcDollar.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1literalStarPatternEnd_pass-bc",
@@ -11376,8 +11044,7 @@
             "PaternFacet"
           ],
           "comment": "<S1> { <p1> LITERAL PATTERN \"^bc$\" } on { <s1> <p1> \"bc\" }",
-          "status": "mf:proposed",
-          "result": "1literalStarPatternEnd_pass-bc.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1literalPattern_pass-CarrotbcDollar",
@@ -11394,8 +11061,7 @@
             "PaternFacet"
           ],
           "comment": "<S1> { <p1> LITERAL PATTERN \"bc\" } on { <s1> <p1> \"^bc$\" }",
-          "status": "mf:proposed",
-          "result": "1literalPattern_pass-CarrotbcDollar.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1literalPattern_with_all_meta_pass",
@@ -11413,8 +11079,7 @@
             "NumericEquivalence"
           ],
           "comment": "<S> { <p1> /^$/ } on { <s> <p1> '' }",
-          "status": "mf:proposed",
-          "result": "1literalPattern_with_all_meta_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1literalPattern_with_all_meta_pass-NA",
@@ -11432,8 +11097,7 @@
             "NumericEquivalence"
           ],
           "comment": "<S> { <p1> /^$/ } on { <s> <p1> '' }",
-          "status": "mf:proposed",
-          "result": "1literalPattern_with_all_meta_pass-NA.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1iriPattern_pass-iri-match",
@@ -11450,8 +11114,7 @@
             "PaternFacet"
           ],
           "comment": "<S1> { <p1> IRI PATTERN \"http://a.example/o1\" } on { <s1> <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "1iriPattern_pass-iri-match.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1iriPattern_fail-iri-short",
@@ -11537,8 +11200,7 @@
             "LexicalBNode"
           ],
           "comment": "<S1> { <p1> BNODE PATTERN \"bc\" } on { <s1> <p1> _:bc }",
-          "status": "mf:proposed",
-          "result": "1bnodePattern_pass-bnode-match.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1bnodePattern_fail-bnode-short",
@@ -11572,8 +11234,7 @@
             "PaternFacet"
           ],
           "comment": "<S1> { <p1> BNODE PATTERN \"bc\" } on { <s1> <p1> _:abc }",
-          "status": "mf:proposed",
-          "result": "1bnodePattern_pass-bnode-into.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1bnodePattern_fail-lit-match",
@@ -11624,8 +11285,7 @@
             "PaternFacet"
           ],
           "comment": "<S1> { <p1> NONLITERAL PATTERN \"bc$\" } on { <s1> <p1> <bc> }",
-          "status": "mf:proposed",
-          "result": "1nonliteralPattern_pass-iri-match.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1nonliteralPattern_fail-iri-short",
@@ -11659,8 +11319,7 @@
             "PaternFacet"
           ],
           "comment": "<S1> { <p1> NONLITERAL PATTERN \"bc$\" } on { <s1> <p1> <abc> }",
-          "status": "mf:proposed",
-          "result": "1nonliteralPattern_pass-iri-long.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1nonliteralPattern_fail-lit-match",
@@ -11695,8 +11354,7 @@
             "LexicalBNode"
           ],
           "comment": "<S1> { <p1> NONLITERAL PATTERN \"bc$\" } on { <s1> <p1> _:bc }",
-          "status": "mf:proposed",
-          "result": "1nonliteralPattern_pass-bnode-match.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1nonliteralPattern_fail-bnode-short",
@@ -11730,8 +11388,7 @@
             "PaternFacet"
           ],
           "comment": "<S1> { <p1> NONLITERAL PATTERN \"bc$\" } on { <s1> <p1> _:abc }",
-          "status": "mf:proposed",
-          "result": "1nonliteralPattern_pass-bnode-long.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1dotMinusiri3_pass",
@@ -11749,8 +11406,7 @@
             "ValueSet"
           ],
           "comment": "<S> { <p1> [.-<v1>-<v2>-<v3>] } on { <s1> <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "1val1dotMinusiri3_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1dotMinusiri3_v1",
@@ -11822,8 +11478,7 @@
             "ValueSet"
           ],
           "comment": "$<vs1> = [.-<v1>-<v2>-<v3>] <S> { <p1> $<vs1> } on { <s1> <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "1val1refvsMinusiri3_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1refvsMinusiri3_v1",
@@ -11895,8 +11550,7 @@
             "ValueSet"
           ],
           "comment": "<S> { <p1> [.-<v1>~-<v2>~-<v3>~] } on { <s1> <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "1val1dotMinusiriStem3_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1dotMinusiriStem3_v1",
@@ -11986,8 +11640,7 @@
             "ValueSet"
           ],
           "comment": "<S> { <p1> [<v>~] } on { <s> <p1> <v1> }",
-          "status": "mf:proposed",
-          "result": "1val1iriStem_passv1.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1iriStem_passv1a",
@@ -12005,8 +11658,7 @@
             "ValueSet"
           ],
           "comment": "<S> { <p1> [<v>~] } on { <s> <p1> <v1a> }",
-          "status": "mf:proposed",
-          "result": "1val1iriStem_passv1a.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1iriStem_fail",
@@ -12042,8 +11694,7 @@
             "ValueSet"
           ],
           "comment": "<S> { <p1> [<v>-<v1>-<v2>-<v3>] } on { <s> <p1> <v> }",
-          "status": "mf:proposed",
-          "result": "1val1iriStemMinusiri3_passIv.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1iriStemMinusiri3_passIv4",
@@ -12061,8 +11712,7 @@
             "ValueSet"
           ],
           "comment": "<S> { <p1> [<v>-<v1>-<v2>-<v3>] } on { <s> <p1> <v4> }",
-          "status": "mf:proposed",
-          "result": "1val1iriStemMinusiri3_passIv4.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1iriStemMinusiri3_v1",
@@ -12134,8 +11784,7 @@
             "ValueSet"
           ],
           "comment": "<S> { <p1> [<v>-<v1>-<v2>-<v3>] } on { <s> <p1> <v1a> }",
-          "status": "mf:proposed",
-          "result": "1val1iriStemMinusiri3_passIv1a.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1iriStemMinusiriStem3_passIv",
@@ -12153,8 +11802,7 @@
             "ValueSet"
           ],
           "comment": "<S> { <p1> [<v>~-<v1>~-<v2>~-<v3>~] } on { <s> <p1> <v> }",
-          "status": "mf:proposed",
-          "result": "1val1iriStemMinusiriStem3_passIv.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1iriStemMinusiriStem3_passIv4",
@@ -12172,8 +11820,7 @@
             "ValueSet"
           ],
           "comment": "<S> { <p1> [<v>~-<v1>~-<v2>~-<v3>~] } on { <s> <p1> <v4> }",
-          "status": "mf:proposed",
-          "result": "1val1iriStemMinusiriStem3_passIv4.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1iriStemMinusiriStem3_v1",
@@ -12263,8 +11910,7 @@
             "OneOf"
           ],
           "comment": ":S1 {:p1 .|:p2 .,:p3 .} / { :s1 :p1 \"p1-0\" . }",
-          "status": "mf:proposed",
-          "result": "1dotOne2dot_pass_p1.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1dotOne2dot_pass_p2p3",
@@ -12282,8 +11928,7 @@
             "EachOf"
           ],
           "comment": ":S1 {:p1 .|:p2 .,:p3 .} / { :s1 :p2 \"p2-0\"; :p3 \"p3-0\" . }",
-          "status": "mf:proposed",
-          "result": "1dotOne2dot_pass_p2p3.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1dotOne2dot-oneOf_fail_p1p2p3",
@@ -12338,8 +11983,7 @@
             "OneOf"
           ],
           "comment": ":S1 {(:p1 .|(:p2 .,:p3 .))} / { :s1 :p1 \"p1-0\" . }",
-          "status": "mf:proposed",
-          "result": "1dotOne2dot_pass_p1.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#open1dotOneopen2dotcloseclose_pass_p2p3",
@@ -12357,8 +12001,7 @@
             "EachOf"
           ],
           "comment": ":S1 {(:p1 .|(:p2 .,:p3 .))} / { :s1 :p2 \"p2-0\"; :p3 \"p3-0\" . }",
-          "status": "mf:proposed",
-          "result": "1dotOne2dot_pass_p2p3.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#open1dotOneopen2dotcloseclose_fail_p1p2p3",
@@ -12394,8 +12037,7 @@
             "EachOf"
           ],
           "comment": ":S1 { ((:p1 .| :p2 .), :p3 .) } / { <x> :p1 \"p1-0\"; :p3 \"p3-0\" . }",
-          "status": "mf:proposed",
-          "result": "openopen1dotOne1dotclose1dotclose_pass_p1p3.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#openopen1dotOne1dotclose1dotclose_pass_p2p3",
@@ -12413,8 +12055,7 @@
             "EachOf"
           ],
           "comment": ":S1 { ((:p1 .| :p2 .), :p3 .) } / { <x> :p2 \"p2-0\"; :p3 \"p3-0\" . }",
-          "status": "mf:proposed",
-          "result": "openopen1dotOne1dotclose1dotclose_pass_p2p3.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#openopen1dotOne1dotclose1dotclose_fail_p1",
@@ -12504,8 +12145,7 @@
             "LengthFacet"
           ],
           "comment": "$<vc1> = LITERAL MINLENGTH 5 <S1> { <p1> $<vc1> } on { <s1> <p1> \"abcde\" }",
-          "status": "mf:proposed",
-          "result": "1val1vExprRefIRIREF1_pass-lit-equal.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1vExprRefbnode1_fail-lit-short",
@@ -12541,8 +12181,7 @@
             "LengthFacet"
           ],
           "comment": "$_:vc1 = LITERAL MINLENGTH 5 <S1> { <p1> $_:vc1 } on { <s1> <p1> \"abcde\" }",
-          "status": "mf:proposed",
-          "result": "1val1vExprRefbnode1_pass-lit-equal.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1dotShapeAND1dot3X_pass",
@@ -12560,8 +12199,7 @@
             "ValueReference"
           ],
           "comment": "<S1> { <p1> . } AND { <p2> . } AND { <p3> . } on { <s1> <p1> 'X'; <p2> 'X'; <p3> 'X' }",
-          "status": "mf:proposed",
-          "result": "1dotShapeAND1dot3X_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1dotShapeAND1dot3X_fail",
@@ -12669,8 +12307,7 @@
             "ValueReference"
           ],
           "comment": "<S1> { <p1> @<S2> AND @<S3> AND @<S4> } <S2> { <p2> . } <S3> { <p3> . } <S4> { <p4> . } on { <s1> <p1> <s2>, <s3>, <s4> . <s2> <p2> \"X\" . <s3> <p3> \"X\" . <s4> <p4> \"X\" }",
-          "status": "mf:proposed",
-          "result": "1dotRefAND3_passShape1Shape2Shape3.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1vExpr1AND1AND1Ref3_pass",
@@ -12688,8 +12325,7 @@
             "ValueReference"
           ],
           "comment": "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> AND ... $<vc3> } on { <s1> <p1> 'abab' }",
-          "status": "mf:proposed",
-          "result": "1val1vExpr1AND1AND1Ref3_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1vExpr1AND1AND1Ref3_failvc1",
@@ -12761,8 +12397,7 @@
             "ValueReference"
           ],
           "comment": "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> AND ... $<vc3> } on { <s1> <p1> 'abab' }",
-          "status": "mf:proposed",
-          "result": "1val1vExprRefAND3_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1vExprRefAND3_failvc3",
@@ -12833,8 +12468,7 @@
             "AndValueExpression"
           ],
           "comment": "<S> { <p1> MINLENGTH 4 AND MAXLENGTH 5 AND ~ '(ab)+' } on { <s1> <p1> 'abab' }",
-          "status": "mf:proposed",
-          "result": "1val1vExprAND3_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1vExprAND3_failvc1",
@@ -12903,8 +12537,7 @@
             "ValueReference"
           ],
           "comment": "<S1> { <p1> BNODE @<S1> OR MINLENGTH 20 @<S1> } on { <n1a> <p1> <n1a> }",
-          "status": "mf:proposed",
-          "result": "refBNodeORrefIRI_ReflexiveIRI.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#refBNodeORrefIRI_ReflexiveShortIRI",
@@ -12940,8 +12573,7 @@
             "ValueReference"
           ],
           "comment": "<S1> { <p1> BNODE @<S1> OR MINLENGTH 20 @<S1> } on { <n1> <p1> <n2a> . <n2a> <p1> <n2a> }",
-          "status": "mf:proposed",
-          "result": "refBNodeORrefIRI_IntoReflexiveIRI.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#refBNodeORrefIRI_IntoReflexiveBNode",
@@ -12959,8 +12591,7 @@
             "ValueReference"
           ],
           "comment": "<S1> { <p1> BNODE @<S1> OR MINLENGTH 20 @<S1> } on { <n1> <p1> _:n2 . _:n2 <p1> _:n2 }",
-          "status": "mf:proposed",
-          "result": "refBNodeORrefIRI_IntoReflexiveBNode.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#refBNodeORrefIRI_CyclicIRI_IRI",
@@ -12978,8 +12609,7 @@
             "ValueReference"
           ],
           "comment": "<S1> { <p1> BNODE @<S1> OR MINLENGTH 20 @<S1> } on { <n1a> <p1> <n2a> . <n2a> <p1> <n1a> }",
-          "status": "mf:proposed",
-          "result": "refBNodeORrefIRI_CyclicIRI_IRI.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#refBNodeORrefIRI_CyclicIRI_BNode",
@@ -12997,8 +12627,7 @@
             "ValueReference"
           ],
           "comment": "<S1> { <p1> BNODE @<S1> OR MINLENGTH 20 @<S1> } on { <n1a> <p1> _:n2 . _:n2 <p1> <n1a> }",
-          "status": "mf:proposed",
-          "result": "refBNodeORrefIRI_CyclicIRI_BNode.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#refBNodeORrefIRI_CyclicIRI_ShortIRI",
@@ -13052,8 +12681,7 @@
             "ValueReference"
           ],
           "comment": "<S1> { <p1> @<S2> OR @<S3> OR @<S4> } <S2> { <p2> . } <S3> { <p3> . } <S4> { <p4> . } on { <s1> <p1> <n2> . <n2> <p2> \"X\" }",
-          "status": "mf:proposed",
-          "result": "1dotRefOR3_passShape1.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1dotRefOR3_passShape2",
@@ -13071,8 +12699,7 @@
             "ValueReference"
           ],
           "comment": "<S1> { <p1> @<S2> OR @<S3> OR @<S4> } <S2> { <p2> . } <S3> { <p3> . } <S4> { <p4> . } on { <s1> <p1> <n3> . <n3> <p3> \"X\" }",
-          "status": "mf:proposed",
-          "result": "1dotRefOR3_passShape2.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1dotRefOR3_passShape3",
@@ -13090,8 +12717,7 @@
             "ValueReference"
           ],
           "comment": "<S1> { <p1> @<S2> OR @<S3> OR @<S4> } <S2> { <p2> . } <S3> { <p3> . } <S4> { <p4> . } on { <s1> <p1> <n4> . <n4> <p4> \"X\" }",
-          "status": "mf:proposed",
-          "result": "1dotRefOR3_passShape3.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1dotRefOR3_passShape1Shape2Shape3",
@@ -13109,8 +12735,7 @@
             "ValueReference"
           ],
           "comment": "<S1> { <p1> @<S2> OR @<S3> OR @<S4> } <S2> { <p2> . } <S3> { <p3> . } <S4> { <p4> . } on { <s1> <p1> <s2>, <s3>, <s4> . <s2> <p2> \"X\" . <s3> <p3> \"X\" . <s4> <p4> \"X\" }",
-          "status": "mf:proposed",
-          "result": "1dotRefOR3_passShape1.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1vExpr1OR1OR1Ref3_fail",
@@ -13146,8 +12771,7 @@
             "ValueReference"
           ],
           "comment": "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> OR ... $<vc3> } on { <s1> <p1> 'ab' }",
-          "status": "mf:proposed",
-          "result": "1val1vExpr1OR1OR1Ref3_passvc1.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1vExpr1OR1OR1Ref3_passvc2",
@@ -13165,8 +12789,7 @@
             "ValueReference"
           ],
           "comment": "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> OR ... $<vc3> } on { <s1> <p1> 'cd' }",
-          "status": "mf:proposed",
-          "result": "1val1vExpr1OR1OR1Ref3_passvc2.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1vExpr1OR1OR1Ref3_passvc3",
@@ -13184,8 +12807,7 @@
             "ValueReference"
           ],
           "comment": "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> OR ... $<vc3> } on { <s1> <p1> 'ef' }",
-          "status": "mf:proposed",
-          "result": "1val1vExpr1OR1OR1Ref3_passvc3.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1vExpr1OR1OR1Ref3_passvc1vc2vc3",
@@ -13203,8 +12825,7 @@
             "ValueReference"
           ],
           "comment": "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> OR ... $<vc3> } on { <s1> <p1> 'abcdef' }",
-          "status": "mf:proposed",
-          "result": "1val1vExpr1OR1OR1Ref3_passvc1vc2vc3.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1vExprRefOR3_passvc1vc2vc3",
@@ -13222,8 +12843,7 @@
             "ValueReference"
           ],
           "comment": "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> OR ... $<vc3> } on { <s1> <p1> 'abcdef' }",
-          "status": "mf:proposed",
-          "result": "1val1vExprRefOR3_passvc1vc2vc3.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1vExprRefOR3_passvc3",
@@ -13241,8 +12861,7 @@
             "ValueReference"
           ],
           "comment": "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> OR ... $<vc3> } on { <s1> <p1> 'ef' }",
-          "status": "mf:proposed",
-          "result": "1val1vExprRefOR3_passvc3.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1vExprRefOR3_passvc2",
@@ -13260,8 +12879,7 @@
             "ValueReference"
           ],
           "comment": "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> OR ... $<vc3> } on { <s1> <p1> 'cd' }",
-          "status": "mf:proposed",
-          "result": "1val1vExprRefOR3_passvc2.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1vExprRefOR3_passvc1",
@@ -13279,8 +12897,7 @@
             "ValueReference"
           ],
           "comment": "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> OR ... $<vc3> } on { <s1> <p1> 'ab' }",
-          "status": "mf:proposed",
-          "result": "1val1vExprRefOR3_passvc1.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1vExprRefOR3_fail",
@@ -13332,8 +12949,7 @@
             "OrValueExpression"
           ],
           "comment": "<S> { <p1> ~'^ab' OR ~'cd' OR ~'ef$' } on { <s1> <p1> 'ab' }",
-          "status": "mf:proposed",
-          "result": "1val1vExprOR3_passvc1.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1vExprOR3_passvc2",
@@ -13350,8 +12966,7 @@
             "OrValueExpression"
           ],
           "comment": "<S> { <p1> ~'^ab' OR ~'cd' OR ~'ef$' } on { <s1> <p1> 'cd' }",
-          "status": "mf:proposed",
-          "result": "1val1vExprOR3_passvc2.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1vExprOR3_passvc3",
@@ -13368,8 +12983,7 @@
             "OrValueExpression"
           ],
           "comment": "<S> { <p1> ~'^ab' OR ~'cd' OR ~'ef$' } on { <s1> <p1> 'ef' }",
-          "status": "mf:proposed",
-          "result": "1val1vExprOR3_passvc3.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1vExprOR3_passvc1vc2vc3",
@@ -13386,8 +13000,7 @@
             "OrValueExpression"
           ],
           "comment": "<S> { <p1> ~'^ab' OR ~'cd' OR ~'ef$' } on { <s1> <p1> 'abcdef' }",
-          "status": "mf:proposed",
-          "result": "1val1vExprOR3_passvr1vr2vr3.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1vExpr1AND1OR1Ref3_pass-vc1vc2",
@@ -13405,8 +13018,7 @@
             "ValueReference"
           ],
           "comment": "<vc1> ... <vc3> ... <S> { <p1> @<vc1> AND @<vc2> OR @<vc3> } on { <s1> <p1> 'abcd' }",
-          "status": "mf:proposed",
-          "result": "1val1vExpr1AND1OR1Ref3_pass-vc1vc2.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1vExpr1AND1OR1Ref3_pass-vc1vc2vc3",
@@ -13424,8 +13036,7 @@
             "ValueReference"
           ],
           "comment": "<vc1> ... <vc3> ... <S> { <p1> @<vc1> AND @<vc2> OR @<vc3> } on { <s1> <p1> 'abab' }",
-          "status": "mf:proposed",
-          "result": "1val1vExpr1AND1OR1Ref3_pass-vc1vc2vc3.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1vExpr1AND1OR1Ref3_pass-vc1vc3",
@@ -13443,8 +13054,7 @@
             "ValueReference"
           ],
           "comment": "<vc1> ... <vc3> ... <S> { <p1> @<vc1> AND @<vc2> OR @<vc3> } on { <s1> <p1> 'ababab' }",
-          "status": "mf:proposed",
-          "result": "1val1vExpr1AND1OR1Ref3_pass-vc1vc3.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1vExpr1AND1OR1Ref3_failvc1vc3",
@@ -13516,8 +13126,7 @@
             "ValueReference"
           ],
           "comment": "<vc1> ... <vc3> ... <S> { <p1> @<vc1> AND @<vc2> OR @<vc3> } on { <s1> <p1> 'abcdef' }",
-          "status": "mf:proposed",
-          "result": "1val1vExpr1OR1AND1Ref3_pass-vc1.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1vExpr1OR1AND1Ref3_pass-vc1vc3",
@@ -13535,8 +13144,7 @@
             "ValueReference"
           ],
           "comment": "<vc1> ... <vc3> ... <S> { <p1> @<vc1> AND @<vc2> OR @<vc3> } on { <s1> <p1> 'ababab' }",
-          "status": "mf:proposed",
-          "result": "1val1vExpr1OR1AND1Ref3_pass-vc1vc3.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1vExpr1OR1AND1Ref3_pass-vc2vc3",
@@ -13554,8 +13162,7 @@
             "ValueReference"
           ],
           "comment": "<vc1> ... <vc3> ... <S> { <p1> @<vc1> AND @<vc2> OR @<vc3> } on { <s1> <p1> 'ab' }",
-          "status": "mf:proposed",
-          "result": "1val1vExpr1OR1AND1Ref3_pass-vc2vc3.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1vExpr1OR1AND1Ref3_failvc1vc2",
@@ -13645,8 +13252,7 @@
             "EachOf"
           ],
           "comment": "<S1> { ( <p1> .| <p2> .| <p3> . ){2} } / { <s> <p1> \"p1-n\" }X2",
-          "status": "mf:proposed",
-          "result": "open3Onedotclosecard2-p1X2.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#open3Onedotclosecard2_fail-p1X3",
@@ -13700,8 +13306,7 @@
             "EachOf"
           ],
           "comment": "<S1> { ( <p1> .| <p2> .| <p3> . ){2} } / { <s> <p1> \"p1-0\"; <p2> \"p2-0\" }",
-          "status": "mf:proposed",
-          "result": "open3Onedotclosecard2-p1p2.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#open3Onedotclosecard2_pass-p1p3",
@@ -13719,8 +13324,7 @@
             "EachOf"
           ],
           "comment": "<S1> { ( <p1> .| <p2> .| <p3> . ){2} } / { <s> <p1> \"p1-0\"; <p3> \"p3-0\" }",
-          "status": "mf:proposed",
-          "result": "open3Onedotclosecard2-p1p3.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#open3Onedotclosecard2_pass-p2p3",
@@ -13738,8 +13342,7 @@
             "EachOf"
           ],
           "comment": "<S1> { ( <p1> .| <p2> .| <p3> . ){2} } / { <s> <p2> \"p2-0\"; <p3> \"p3-0\" }",
-          "status": "mf:proposed",
-          "result": "open3Onedotclosecard2-p2p3.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#open3Onedotclosecard2_fail-p1p2p3",
@@ -13793,8 +13396,7 @@
             "EachOf"
           ],
           "comment": "<S1> { ( <p1> .| <p2> .| <p3> . ){2,3} } / { <s> <p1> \"p1-n\" }X2",
-          "status": "mf:proposed",
-          "result": "open3Onedotclosecard23-p1X2.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#open3Onedotclosecard23_pass-p1X3",
@@ -13812,8 +13414,7 @@
             "EachOf"
           ],
           "comment": "<S1> { ( <p1> .| <p2> .| <p3> . ){2,3} } / { <s> <p1> \"p1-n\" }X3",
-          "status": "mf:proposed",
-          "result": "open3Onedotclosecard23-p1X3.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#open3Onedotclosecard23_fail-p1X4",
@@ -13849,8 +13450,7 @@
             "EachOf"
           ],
           "comment": "<S1> { ( <p1> .| <p2> .| <p3> . ){2,3} } / { <s> <p1> \"p1-0\"; <p2> \"p2-0\" }",
-          "status": "mf:proposed",
-          "result": "open3Onedotclosecard23-p1p2.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#open3Onedotclosecard23_pass-p1p3",
@@ -13868,8 +13468,7 @@
             "EachOf"
           ],
           "comment": "<S1> { ( <p1> .| <p2> .| <p3> . ){2,3} } / { <s> <p1> \"p1-0\"; <p3> \"p3-0\" }",
-          "status": "mf:proposed",
-          "result": "open3Onedotclosecard23-p1p3.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#open3Onedotclosecard23_pass-p2p3",
@@ -13887,8 +13486,7 @@
             "EachOf"
           ],
           "comment": "<S1> { ( <p1> .| <p2> .| <p3> . ){2,3} } / { <s> <p2> \"p2-0\"; <p3> \"p3-0\" }",
-          "status": "mf:proposed",
-          "result": "open3Onedotclosecard23-p2p3.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#open3Onedotclosecard23_pass-p1p2p3",
@@ -13907,8 +13505,7 @@
             "EachOf"
           ],
           "comment": "<S1> { ( <p1> .| <p2> .| <p3> . ){2,3} } / { <s> <p1> \"p1-0\"; <p2> \"p2-0\"; <p3> \"p3-0\" }",
-          "status": "mf:proposed",
-          "result": "open3Onedotclosecard23-p1p2p3.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#open4Onedotclosecard23_fail-p1p2p3p4",
@@ -13944,8 +13541,7 @@
             "EachOf"
           ],
           "comment": "<S1> { ( <p1> .; <p2> .; <p3> . ){2,3} } / { <s> <p1> \"p1-n\"; <p2> \"p2-n\"; <p3> \"p3-n\" }X3",
-          "status": "mf:proposed",
-          "result": "open3groupdotclosecard23-p1p2p3X3.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1vShapeANDRef3_pass",
@@ -13962,8 +13558,7 @@
             "AndShapeShapeession"
           ],
           "comment": "<S1> { <p1> minlength 4 } AND { <p1> maxlength 5 } AND { <p1> pattern '(ab)+' } on { <s1> <p1> 'abab' }",
-          "status": "mf:proposed",
-          "result": "1val1vShapeANDRef3_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1dotClosed_pass",
@@ -13980,8 +13575,7 @@
             "Closed"
           ],
           "comment": "<S> CLOSED { <p1> . } on { <s1> <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "1dot_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1dotClosed_fail_lower",
@@ -14032,8 +13626,7 @@
             "Closed"
           ],
           "comment": "<S1> IRI PATTERN '^https?://' { <p1> <dt1> ; <p2> BNODE { <p3> LITERAL ; <p4> IRI PATTERN '^https://' @<S1>? } AND CLOSED { <p3> . ; <p4> . } } on { <n1> <p1> 'ab'^^<dt1> ; <p2> [  <p3> 'ab' ; <p4> ex:n1 ] }",
-          "status": "mf:proposed",
-          "result": "FocusIRI2groupBnodeNested2groupIRIRef_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#FocusIRI2groupBnodeNested2groupIRIRef_fail",
@@ -14068,8 +13661,7 @@
             "IriEquivalence"
           ],
           "comment": "<S> EXTRA <p1> { <p1> [<o1>] } on { <s1> <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "1val1IRIREFExtra1_Is1_Ip1_Io1.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1IRIREFExtra1_pass-iri2",
@@ -14087,8 +13679,7 @@
             "IriEquivalence"
           ],
           "comment": "<S> EXTRA <p1> { <p1> [<o1>] } on { <s> <p1> <o1>, <o2> }",
-          "status": "mf:proposed",
-          "result": "1val1IRIREFExtra1_Is1_Ip1_Io1.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val2IRIREFExtra1_fail-iri2",
@@ -14124,8 +13715,7 @@
             "ValueSet"
           ],
           "comment": "<S> EXTRA <p1> { <p1> [<o1> <o2>]+ } on { <s> <p1> <o1>, <o2> }",
-          "status": "mf:proposed",
-          "result": "1val2IRIREFPlusExtra1_Is1_Ip1_Io1,Io2.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val2IRIREFExtra1_pass-iri-bnode",
@@ -14143,8 +13733,7 @@
             "ValueSet"
           ],
           "comment": "<S> EXTRA <p1> { <p1> [<o1> <o2>] } on { <s> <p1> <o1>, _:o2 }",
-          "status": "mf:proposed",
-          "result": "1val2IRIREFExtra1_bnode_Is1_Ip1_Io1.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1IRIREFExtra1p2_pass-iri1",
@@ -14162,8 +13751,7 @@
             "IriEquivalence"
           ],
           "comment": "<S> EXTRA <p2> { <p1> [<o1>] } on { <s1> <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "1val1IRIREFExtra1p2_Is1_Ip1_Io1.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1IRIREFExtra1p2_fail-iri2",
@@ -14220,8 +13808,7 @@
             "EachOf"
           ],
           "comment": "<S> EXTRA <p1> { <p0> . | <p1> [<o1>], <p2> .? } on { <s1> <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "1val1IRIREFExtra1One_Is1_Ip1_Io1.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1IRIREFExtra1One_pass-iri2",
@@ -14240,8 +13827,7 @@
             "EachOf"
           ],
           "comment": "<S> EXTRA <p1> { <p0> . | <p1> [<o1>], <p2> .? } on { <s> <p1> <o1>, <o2> }",
-          "status": "mf:proposed",
-          "result": "1val1IRIREFExtra1One_Is1_Ip1_Io1.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1dotExtra1_pass-iri1",
@@ -14259,8 +13845,7 @@
             "Extra"
           ],
           "comment": "<S> EXTRA <p1> { <p1> . } on { <s1> <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "1dot_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1dotExtra1_fail-iri2",
@@ -14297,8 +13882,7 @@
             "EachOf"
           ],
           "comment": "<S> EXTRA <p1> <p2> <p3> { <p1> [<o1>], <p2> [<o2>], <p3> [<o3>] } on { <s> <p1> <o1>; <p2> <o2>; <p3> <o3> }",
-          "status": "mf:proposed",
-          "result": "3groupdotExtra3_Is_Ipn_IonX3.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#3groupdot3Extra_pass-iri1",
@@ -14317,8 +13901,7 @@
             "EachOf"
           ],
           "comment": "<S> EXTRA <p1> EXTRA <p2> EXTRA <p3> { <p1> [<o1>], <p2> [<o2>], <p3> [<o3>] } on { <s> <p1> <o1>; <p2> <o2>; <p3> <o3> }",
-          "status": "mf:proposed",
-          "result": "3groupdotExtra3_Is_Ipn_IonX3.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#3groupdotExtra3NLex_pass-iri1",
@@ -14337,8 +13920,7 @@
             "EachOf"
           ],
           "comment": "PREFIX ex: <http://a.example/> <S> EXTRA ex:p1 ex:p2 ex:p3 { <p1> [<o1>], <p2> [<o2>], <p3> [<o3>] } on { <s> <p1> <o1>; <p2> <o2>; <p3> <o3> }",
-          "status": "mf:proposed",
-          "result": "3groupdotExtra3_Is_Ipn_IonX3.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#3groupdotExtra3_pass-iri2",
@@ -14357,8 +13939,7 @@
             "EachOf"
           ],
           "comment": "<S> EXTRA <p1> <p2> <p3> { <p1> [<o1>], <p2> [<o2>], <p3> [<o3>] } on { <s> <p1> <o1>, <o1a>; <p2> <o2>, <o2a>; <p3> <o3>, <o3a> }",
-          "status": "mf:proposed",
-          "result": "3groupdotExtra3_Is_Ipn_IonX3.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#3groupdot3Extra_pass-iri2",
@@ -14377,8 +13958,7 @@
             "EachOf"
           ],
           "comment": "<S> EXTRA <p1> EXTRA <p2> EXTRA <p3> { <p1> [<o1>], <p2> [<o2>], <p3> [<o3>] } on { <s> <p1> <o1>, <o1a>; <p2> <o2>, <o2a>; <p3> <o3>, <o3a> }",
-          "status": "mf:proposed",
-          "result": "3groupdotExtra3_Is_Ipn_IonX3.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#3groupdotExtra3NLex_pass-iri2",
@@ -14397,8 +13977,7 @@
             "EachOf"
           ],
           "comment": "PREFIX ex: <http://a.example/> <S> EXTRA ex:p1 ex:p2 ex:p3 { <p1> [<o1>], <p2> [<o2>], <p3> [<o3>] } on { <s> <p1> <o1>, <o1a>; <p2> <o2>, <o2a>; <p3> <o3>, <o3a> }",
-          "status": "mf:proposed",
-          "result": "3groupdotExtra3_Is_Ipn_IonX3.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#startRefIRIREF_pass-noOthers",
@@ -14414,8 +13993,7 @@
             "Start"
           ],
           "comment": "start=<S> <S> { <p1> . } on { <s> <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "1dot_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#startRefIRIREF_pass-others_lexicallyEarlier",
@@ -14431,8 +14009,7 @@
             "Start"
           ],
           "comment": "start=<S> <S> { <p1> . } on { <s> <p0> <o0>; <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "1dot_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#startRefIRIREF_fail-missing",
@@ -14464,8 +14041,7 @@
             "Start"
           ],
           "comment": "start=_:S _:S { <p1> . } on { <s> <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "bnode1dot_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#startRefbnode_fail-missing",
@@ -14497,8 +14073,7 @@
             "Start"
           ],
           "comment": "start={ <p1> . } on { <s> <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "startInline_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#startEqualSpaceInline_pass-noOthers",
@@ -14514,8 +14089,7 @@
             "Start"
           ],
           "comment": "start= { <p1> . } on { <s> <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "startInline_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#startSpaceEqualInline_pass-noOthers",
@@ -14531,8 +14105,7 @@
             "Start"
           ],
           "comment": "start= { <p1> . } on { <s> <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "startInline_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#startInline_fail-missing",
@@ -14566,8 +14139,7 @@
             "EachOf"
           ],
           "comment": "<S1> { &<S2>, <p1> . } <S2> { <p2> . } on { <n1> <p1> \"X\" ; <p2> \"Y\" }",
-          "status": "mf:proposed",
-          "result": "2EachInclude1_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#2EachInclude1-after_pass",
@@ -14585,8 +14157,7 @@
             "EachOf"
           ],
           "comment": "<S1> { <p1> ., &<S2> } <S2> { <p2> . } on { <n1> <p1> \"X\" ; <p2> \"Y\" }",
-          "status": "mf:proposed",
-          "result": "2EachInclude1-after_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#2OneInclude1_pass",
@@ -14604,8 +14175,7 @@
             "OneOf"
           ],
           "comment": "<S1> { &<S2> | <p1> . } <S2> { <p2> . } on { <n1> <p1> \"X\" }",
-          "status": "mf:proposed",
-          "result": "2OneInclude1_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#2OneInclude1-after_pass",
@@ -14623,8 +14193,7 @@
             "OneOf"
           ],
           "comment": "<S1> { <p1> . | &<S2> } <S2> { <p2> . } on { <n1> <p1> \"X\" }",
-          "status": "mf:proposed",
-          "result": "2OneInclude1_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1dotAnnotIRIREF_pass",
@@ -14641,8 +14210,7 @@
             "Annotation"
           ],
           "comment": "<S> { <p1> .; <annot> <IRIREF> } on { <s1> <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "1dotAnnotIRIREF_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1dotAnnotIRIREF_missing",
@@ -14676,8 +14244,7 @@
             "Annotation"
           ],
           "comment": "<S> { <p1> .+; <annot> <IRIREF> } on { <s1> <p1> 'a', <o1> }",
-          "status": "mf:proposed",
-          "result": "1dotPlusAnnotIRIREF_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1dotAnnotAIRIREF_pass",
@@ -14694,8 +14261,7 @@
             "Annotation"
           ],
           "comment": "<S> { <p1> .; a <IRIREF> } on { <s1> <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "1dotAnnotAIRIREF_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1dotAnnotSTRING_LITERAL1_pass",
@@ -14712,8 +14278,7 @@
             "Annotation"
           ],
           "comment": "<S> { <p1> .; <annot> 'STRING_LITERAL1' } on { <s1> <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "1dotAnnotSTRING_LITERAL1_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1dotAnnot3_pass",
@@ -14730,8 +14295,7 @@
             "Annotation"
           ],
           "comment": "<S> { <p1> .; <a1> '1'; <a1> '2'; <a1> '3'; } on { <s1> <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "1dotAnnot3_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1dotAnnot3_missing",
@@ -14765,8 +14329,7 @@
             "Annotation"
           ],
           "comment": "<S> { <p1> .; <a1> '1'; <a1> '2'; <a1> '3'; } on { <s1> <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "1inversedotAnnot3_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1inversedotAnnot3_missing",
@@ -14805,8 +14368,7 @@
             "SemanticAction"
           ],
           "comment": "<S> { <p1> . %<Test>{ print(o) %} } on { <s1> <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "1dotCode1_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1dotNoCode1_pass",
@@ -14830,8 +14392,7 @@
             "SemanticAction"
           ],
           "comment": "<S> { <p1> . %<Test>% } + %<Test>{ print(o) %} on { <s1> <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "1dotNoCode1_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1inversedotCode1_pass",
@@ -14853,8 +14414,7 @@
             "SemanticAction"
           ],
           "comment": "<S> { <p1> . %<Test>{ print(o) %} } on { <s1> <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "1inversedotCode1_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1dotCode3_pass",
@@ -14885,8 +14445,7 @@
             "SemanticAction"
           ],
           "comment": "<S> { <p1> . %<Test>{ print(s) %} %<Test>{ print(p) %} %<Test>{ print(o) %} } on { <s1> <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "1dotCode3_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1dotNoCode3_pass",
@@ -14918,8 +14477,7 @@
             "SemanticAction"
           ],
           "comment": "<S> { <p1> . %<Test#a>% %<Test#b>% %<Test#c>% } + %<Test/#a>{ print(s) %} %<Test/#b>{ print(p) %} %<Test/#c>{ print(o) %} on { <s1> <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "1dotNoCode3_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1dotCode3fail_abort",
@@ -14958,8 +14516,7 @@
             "SemanticAction"
           ],
           "comment": "<S> { <p1> . %<Test>{ print(o) %} } on { <s1> <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "1dotCodeWithEscapes1_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1dotShapeCode1_pass",
@@ -14981,8 +14538,7 @@
             "SemanticAction"
           ],
           "comment": "<S> { <p1> . } %<Test>{ print(\"shape action\") %} on { <s1> <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "1dotShapeCode1_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1dotShapeNoCode1_pass",
@@ -15006,8 +14562,7 @@
             "SemanticAction"
           ],
           "comment": "<S> { <p1> . } %<Test>% + %<Test>{ print(o) %} on { <s1> <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "1dotShapeNoCode1_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#open3groupdotcloseCode1-p1p2p3",
@@ -15030,8 +14585,7 @@
             "EachOf"
           ],
           "comment": "<S1> { ( <p1> ., <p2> ., <p3> . ) %<Test/>{ print(\"group semAct\") %} } / { :s1 :p1 \"p1-0\"; :p2 \"p2-0\"; :p3 \"p3-0\" . }",
-          "status": "mf:proposed",
-          "result": "open3groupdotcloseCode1-p1p2p3.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#startCode1_pass",
@@ -15053,8 +14607,7 @@
             "SemanticAction"
           ],
           "comment": "%<Test>{print('startAct')%} <S> { <p1> . } on { <s1> <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "startCode1_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#startNoCode1_pass",
@@ -15078,8 +14631,7 @@
             "SemanticAction"
           ],
           "comment": "%<Test>% <S> { <p1> . } + %<Test>{print(\"startAct\")%} on { <s1> <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "startNoCode1_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#startCode1fail_abort",
@@ -15123,8 +14675,7 @@
             "SemanticAction"
           ],
           "comment": "%<Test>{print('startAct')%} <S> { <p1> . } on { <s1> <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "startCode1_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#startCode1startReffail_abort",
@@ -15176,8 +14727,7 @@
             "SemanticAction"
           ],
           "comment": "%<Test>{print('startAct 1')%} %<Test>{print('startAct 2')%} %<Test>{print('startAct 3')%} <S> { <p1> . } on { <s1> <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "startCode3_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#startCode3fail_abort",
@@ -15223,8 +14773,7 @@
             "EachOf"
           ],
           "comment": "<S1> { ( <p1> .; <p2> .; <p3> . ){2,3} // <annot1> \"1\" // <annot2> \"2\" // <annot3> \"3\" %<Test/>{ p(\"...1\") %} %<Test/>{ p(\"...2\") %} } / { <s> <p1> \"p1-n\"; <p2> \"p2-n\"; <p3> \"p3-n\" }X3",
-          "status": "mf:proposed",
-          "result": "open3groupdotclosecard23Annot3Code2-p1p2p3X3.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#0focusIRI_other",
@@ -15241,8 +14790,7 @@
             "Empty"
           ],
           "comment": "<S> IRI {  } on { <s1> <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "0_pass-focus.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#0focusIRI_other_fail-bnodeFocusLabel",
@@ -15276,8 +14824,7 @@
             "Empty"
           ],
           "comment": "<S1> IRI {  } on { }",
-          "status": "mf:proposed",
-          "result": "0_pass-focus.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#0focusIRI_empty_fail-bnodeFocusLabel",
@@ -15328,8 +14875,7 @@
             "Empty"
           ],
           "comment": "<S> BNODE {  } on { }",
-          "status": "mf:proposed",
-          "result": "0abcd_pass-focus.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#0focusBNODE_other_fail-iriFocusLabel",
@@ -15364,8 +14910,7 @@
             "Empty"
           ],
           "comment": "<S> BNODE {  } on { _:abcd <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "0abcd_pass-focus.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1focusIRI_dot_fail-bnodeFocusLabel",
@@ -15401,8 +14946,7 @@
             "FocusConstraint"
           ],
           "comment": "<S> IRI { <p1> . } on <s> in { <s1> <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "1focusIRI_dot_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1focusBNODE_dot_fail-iriFocusLabel-equal",
@@ -15438,8 +14982,7 @@
             "ToldBNode"
           ],
           "comment": "<S> BNODE { <p1> . } on <s> in { _:abcdefghijklmnopqrs <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "1focusBNODE_dot_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1focusnonLiteral-dot_pass-iri-equal",
@@ -15457,8 +15000,7 @@
             "LengthFacet"
           ],
           "comment": "<S1> NONLITERAL { <p1> . } on { <s1> <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "1focusnonLiteral_dot_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#focusdatatype_pass",
@@ -15478,8 +15020,7 @@
             "FocusConstraint"
           ],
           "comment": "<S> <dt1> on {  }",
-          "status": "mf:proposed",
-          "result": "focusdatatype_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#focusdatatype_fail",
@@ -15516,8 +15057,7 @@
             "FocusConstraint"
           ],
           "comment": "<S> [<v1> <v2> <v3>] on {  }",
-          "status": "mf:proposed",
-          "result": "focusvs_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#focusvs_fail",
@@ -15569,8 +15109,7 @@
             "FocusConstraint"
           ],
           "comment": "<S> [<v1> <v2> <v3>] AND IRI on {  }",
-          "status": "mf:proposed",
-          "result": "1focusvsANDIRI_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1focusvsANDIRI_fail",
@@ -15604,8 +15143,7 @@
             "FocusConstraint"
           ],
           "comment": "<S> [<v1> <v2> <v3>] OR <dt1> on {  }",
-          "status": "mf:proposed",
-          "result": "1focusvsORdatatype_pass-val.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1focusvsORdatatype_fail-val",
@@ -15642,8 +15180,7 @@
             "FocusConstraint"
           ],
           "comment": "<S> [<v1> <v2> <v3>] OR <dt1> on {  }",
-          "status": "mf:proposed",
-          "result": "1focusvsORdatatype_pass-dt.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1focusvsORdatatype_fail-dt",
@@ -15699,8 +15236,7 @@
             "LengthFacet"
           ],
           "comment": "<S1> LENGTH 19 { <p1> . } on { <s1> <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "1focusLength_dot_pass-iri.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1focusLength-dot_fail-iri-long",
@@ -15758,8 +15294,7 @@
             "ToldBNode"
           ],
           "comment": "<S1> LENGTH 19 { <p1> . } on { _:abcdefghijklmnopqrs <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "1focusLength_dot_pass-bnode.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1focusLength-dot_fail-bnode-long",
@@ -15815,8 +15350,7 @@
             "LengthFacet"
           ],
           "comment": "<S1> MINLENGTH 19 { <p1> . } on { <s1> <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "1focusMinLength_dot_pass-iri.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1focusMinLength-dot_pass-iri-long",
@@ -15834,8 +15368,7 @@
             "LengthFacet"
           ],
           "comment": "<S1> MINLENGTH 19 { <p1> . } on { <s1a> <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "1s1a_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1focusMinLength-dot_fail-bnode-short",
@@ -15874,8 +15407,7 @@
             "ToldBNode"
           ],
           "comment": "<S1> MINLENGTH 19 { <p1> . } on { _:abcdefghijklmnopqrs <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "1focusMinLength_dot_pass-bnode.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1focusMinLength-dot_pass-bnode-long",
@@ -15894,8 +15426,7 @@
             "ToldBNode"
           ],
           "comment": "<S1> MINLENGTH 19 { <p1> . } on { <s1a> <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "1abcdefghijklmnopqrst_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1focusMaxLength-dot_pass-iri-short",
@@ -15913,8 +15444,7 @@
             "LengthFacet"
           ],
           "comment": "<S1> MAXLENGTH 19 { <p1> . } on { <s> <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "1s_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1focusMaxLength-dot_pass-iri-equal",
@@ -15932,8 +15462,7 @@
             "LengthFacet"
           ],
           "comment": "<S1> MAXLENGTH 19 { <p1> . } on { <s1> <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "1focusMaxLength_dot_pass-iri.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1focusMaxLength-dot_fail-iri-long",
@@ -15970,8 +15499,7 @@
             "LengthFacet"
           ],
           "comment": "<S1> MAXLENGTH 19 { <p1> . } on { _:abcd <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "1abcd_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1focusMaxLength-dot_pass-bnode-equal",
@@ -15990,8 +15518,7 @@
             "LengthFacet"
           ],
           "comment": "<S1> MAXLENGTH 19 { <p1> . } on { _:abcdefghijklmnopqrs <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "1focusMaxLength_dot_pass-bnode.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1focusMaxLength-dot_fail-bnode-long",
@@ -16060,8 +15587,7 @@
             "PaternFacet"
           ],
           "comment": "<S1> PATTERN 'http://a.example/s1' { <p1> } on { <s1> <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "1focusPattern_dot_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1focusPattern-dot_fail-iri-long",
@@ -16130,8 +15656,7 @@
             "LexicalBNode"
           ],
           "comment": "<S1> PATTERN 'abcdefghijklmnopqrs' { <p1> } on { _:abcdefghijklmnopqrs <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "1focusPatternB_dot_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1focusPatternB-dot_pass-bnode-long",
@@ -16148,8 +15673,7 @@
             "PaternFacet"
           ],
           "comment": "<S1> PATTERN 'abcdefghijklmnopqrs' { <p1> } on { _:abcdefghijklmnopqrst <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "1focusPatternB-dot_pass-bnode-long.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1focusIRILength_dot_fail-bnodeFocusLabel-equal",
@@ -16205,8 +15729,7 @@
             "LengthFacet"
           ],
           "comment": "<S> IRI LENGTH 19 { <p1> . } on <s> in { <s1> <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "1focusIRILength_dot_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1focusIRILength_dot_fail-long",
@@ -16280,8 +15803,7 @@
             "ToldBNode"
           ],
           "comment": "<S> BNODE LENGTH 19 { <p1> . } on <s> in { _:abcdefghijklmnopqrs <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "1focusBNODELength_dot_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1focusBNODELength_dot_fail-long",
@@ -16318,8 +15840,7 @@
             "LengthFacet"
           ],
           "comment": "<S1> NONLITERAL LENGTH 19 { <p1> . } on { <s1> <p1> <o1> }",
-          "status": "mf:proposed",
-          "result": "1focusnonLiteralLength_dot_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#NOT1dotOR2dot_pass-empty",
@@ -16337,8 +15858,7 @@
             "OrValueExpression"
           ],
           "comment": "@@",
-          "status": "mf:proposed",
-          "result": "NOT1dotOR2dot_pass-empty.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#NOT1dotOR2dot_pass-NoShape1",
@@ -16356,8 +15876,7 @@
             "OrValueExpression"
           ],
           "comment": "@@",
-          "status": "mf:proposed",
-          "result": "NOT1dotOR2dot_pass-empty.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#NOT1dotOR2dot_pass-Shape2",
@@ -16375,8 +15894,7 @@
             "OrValueExpression"
           ],
           "comment": "@@",
-          "status": "mf:proposed",
-          "result": "NOT1dotOR2dot_pass-Shape2.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#NOT1dotOR2dot_fail-Shape2",
@@ -16412,8 +15930,7 @@
             "OrValueExpression"
           ],
           "comment": "@@",
-          "status": "mf:proposed",
-          "result": "NOT1dotOR2dotX3_pass-empty.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#NOT1dotOR2dotX3_pass-NoShape1",
@@ -16431,8 +15948,7 @@
             "OrValueExpression"
           ],
           "comment": "@@",
-          "status": "mf:proposed",
-          "result": "NOT1dotOR2dotX3_pass-empty.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#NOT1dotOR2dotX3_pass-Shape2",
@@ -16450,8 +15966,7 @@
             "OrValueExpression"
           ],
           "comment": "@@",
-          "status": "mf:proposed",
-          "result": "NOT1dotOR2dotX3_pass-Shape2.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#NOT1dotOR2dotX3_fail-Shape2",
@@ -16523,8 +16038,7 @@
             "OrValueExpression"
           ],
           "comment": "@@",
-          "status": "mf:proposed",
-          "result": "NOT1dotOR2dotX3AND1_pass-Shape2.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#NOT1dotOR2dotX3AND1_fail-Shape2",
@@ -16561,8 +16075,7 @@
             "SemanticAction"
           ],
           "comment": "<Sext> EXTERNAL + <Sext> { <p2> . } on { <s1> <p1> <n2> . <n2> <p2> \"X\" }",
-          "status": "mf:proposed",
-          "result": "shapeExtern_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#shapeExtern_fail",
@@ -16600,8 +16113,7 @@
             "SemanticAction"
           ],
           "comment": "<S> { <p1> @<Sext> } <Sext> EXTERNAL + <S> { <p2> . } on { <s1> <p1> <n2> . <n2> <p2> \"X\" }",
-          "status": "mf:proposed",
-          "result": "shapeExternRef_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#shapeExternRef_fail",
@@ -16637,8 +16149,7 @@
             "relativeIRI"
           ],
           "comment": "<S1> { <p1> [<o1>] } / { <s1> <p1> <o1>}",
-          "status": "mf:proposed",
-          "result": "1dot-relative_pass.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#false-lead-excluding-value-shape",
@@ -16655,8 +16166,7 @@
             "EachOf"
           ],
           "comment": "<S> { :a @<T1>*, (:a @<T2>+ | :b int), :b} <T1>{:b @<T3>} <T2>{:b @<T4>} <T3>{:c .} <T4>{:d .}",
-          "status": "mf:proposed",
-          "result": "false-lead-excluding-value-shape.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#nPlus1",
@@ -16674,8 +16184,7 @@
             "EachOf"
           ],
           "comment": "<S> { :a .*, (:a .+ | :a .), :a . } / { <x> :a 1, 3 }",
-          "status": "mf:proposed",
-          "result": "nPlus1.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#nPlus1-greedy_fail",
@@ -16710,8 +16219,7 @@
             "EachOf"
           ],
           "comment": "<S> { :a [1], (:a [2]+ | :a [3]), :a [4]* } / { <x> :a 1, 3 }",
-          "status": "mf:proposed",
-          "result": "nPlus1-greedy-rewrite.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#skipped",
@@ -16728,8 +16236,7 @@
             "EachOf"
           ],
           "comment": "<S> { ( :a ., :b . )?, :c . } on { <x> :c 1 }",
-          "status": "mf:proposed",
-          "result": "skipped.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#repeated-group",
@@ -16746,8 +16253,7 @@
             "EachOf"
           ],
           "comment": "<S> { ( :a ., :b . ){2,5}, :c . }",
-          "status": "mf:proposed",
-          "result": "repeated-group.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#simple-group",
@@ -16764,8 +16270,7 @@
             "EachOf"
           ],
           "comment": "@@ simple-group",
-          "status": "mf:proposed",
-          "result": "simple-group.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#PstarT",
@@ -16782,8 +16287,7 @@
             "EachOf"
           ],
           "comment": "<S1> {:a $<P>*, :a $<T>} / { <n> :a <pt1>,  <pt2>,  <p>,  <t>}",
-          "status": "mf:proposed",
-          "result": "PstarT.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#PstarT-greedy",
@@ -16801,8 +16305,7 @@
             "EachOf"
           ],
           "comment": "<S1> {:a $<P>*, :a $<T>} / { <n> :a <pt1>,  <pt2>,  <p>,  <t>}",
-          "status": "mf:proposed",
-          "result": "PstarT.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#PTstar",
@@ -16820,8 +16323,7 @@
             "EachOf"
           ],
           "comment": "<S2> {:a $<P>, :a $<T>*} / { <n> :a <pt1>,  <pt2>,  <p>,  <t>}",
-          "status": "mf:proposed",
-          "result": "PTstar.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#PTstar-greedy-fail",
@@ -16857,8 +16359,7 @@
             "EachOf"
           ],
           "comment": "<S2> {:a $<P>, :a $<T>*} / { <n> :a <pt1>,  <pt2>,  <p>,  <t>}",
-          "status": "mf:proposed",
-          "result": "Pstar-greedy-rewrite.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#PstarTstar",
@@ -16875,8 +16376,7 @@
             "EachOf"
           ],
           "comment": "<S3> {:a $<P>*, :a $<T>*} / { <n> :a <pt1>,  <pt2>,  <p>,  <t>}",
-          "status": "mf:proposed",
-          "result": "PstarTstar.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#P2T2",
@@ -16894,8 +16394,7 @@
             "EachOf"
           ],
           "comment": "<S4> {:a $<P>{2}, :a $<T>{2}} / { <n> :a <pt1>,  <pt2>,  <p>,  <t>}",
-          "status": "mf:proposed",
-          "result": "P2T2.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1dot_fail-empty-err",
@@ -16912,8 +16411,7 @@
             "ErrorReport"
           ],
           "comment": "<S> { <p1> . } on {  }",
-          "status": "mf:proposed",
-          "result": "1dot_empty.err"
+          "status": "mf:proposed"
         },
         {
           "@id": "#2dot_fail-empty-err",
@@ -16930,8 +16428,58 @@
             "ErrorReport"
           ],
           "comment": "<S> { <p1> ., <p2> . } on { <s> <p1> <o1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#node_kind_example",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/node_kind_example.shex",
+            "data": "node_kind_example.ttl",
+            "map": "node_kind_example_map.json"
+          },
+          "extensionResults": [],
+          "name": "node_kind_example",
+          "trait": [
+            "ShapeMap"
+          ],
+          "comment": "<S> {<p1> IRI} on { <s1> <p1> <o1> . <s2> <p2> <o2> . <s3> <p1> \"o3\" .}",
           "status": "mf:proposed",
-          "result": "2dot_missing1.err"
+          "result": "node_kind_example_results.json"
+        },
+        {
+          "@id": "#dependent_shape",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/dependent_shape.shex",
+            "data": "dependent_shape.ttl",
+            "map": "dependent_shape_map.json"
+          },
+          "extensionResults": [],
+          "name": "dependent_shape",
+          "trait": [
+            "ShapeMap"
+          ],
+          "comment": "<S1> {<p1> @<S2>} <S2> {<p2> [<s3>]} on { <s1> <p1> <s2> . <s2> <p2> <s3> .}",
+          "status": "mf:proposed",
+          "result": "dependent_shape_results.json"
+        },
+        {
+          "@id": "#recursion_example",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/recursion_example.shex",
+            "data": "recursion_example.ttl",
+            "map": "recursion_example_map.json"
+          },
+          "extensionResults": [],
+          "name": "recursion_example",
+          "trait": [
+            "ShapeMap"
+          ],
+          "comment": "<S1> {<p1> @<S1>*}} on { <s1> <p1> <s2> . <s2> <p1> <s3> . <s3> <p1> <s1> .}",
+          "status": "mf:proposed",
+          "result": "recursion_example_results.json"
         }
       ]
     }

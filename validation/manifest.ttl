@@ -1,7 +1,7 @@
 # -*- mode: n3; outline-regexp: "[#]+ "; -*-
 # handy bits from outline mode:
-#   C-c @ C-l	hide-leaves - on prefixes, entries, definitions
-#   C-c @ C-s	show-subtree - on anything you're hacking
+#   C-c @ C-l   hide-leaves - on prefixes, entries, definitions
+#   C-c @ C-s   show-subtree - on anything you're hacking
 #  Note that incremental search opens leaves for the duration of the search.
 
 # prefixes
@@ -35,7 +35,7 @@
 ## empty
         <#0_empty>
         <#0_other>
-	<#0_otherbnode>
+        <#0_otherbnode>
 
 ## triple pattern
         <#1dot_fail-empty>
@@ -65,18 +65,18 @@
         <#1literal_fail-bnode>
         <#1literal_pass-literal>
         <#1nonliteral_pass-iri>
-	<#1focusnonLiteralLength-nonLiteralLength_fail-short>
-	<#1focusnonLiteralLength-nonLiteralLength_pass>
+        <#1focusnonLiteralLength-nonLiteralLength_fail-short>
+        <#1focusnonLiteralLength-nonLiteralLength_pass>
         <#1nonliteral_pass-bnode>
         <#1nonliteral_fail-literal>
 
 ## datatype
         <#1datatype_missing>
         <#1datatype_nonLiteral>
-	<#1datatype_langString>
+        <#1datatype_langString>
         <#1datatype_wrongDatatype>
         <#1datatype_pass>
-	<#1datatypelangString_pass>
+        <#1datatypelangString_pass>
 
 ### lexical form
         <#integer-n1_pass>
@@ -105,8 +105,8 @@
         <#float-p1_pass>
         <#float-n1.0_pass>
         <#float-p1.0_pass>
-	<#float-1elowercase0_pass>
-	<#float-1E0_pass>
+        <#float-1elowercase0_pass>
+        <#float-1E0_pass>
         <#float-NaN_pass>
         <#float-INF_pass>
         <#float-nINF_pass>
@@ -240,31 +240,31 @@
         <#1dotRef1_referent,referrer>
         <#1dotRef1_referrer,referent>
         <#1dotRef1_missingReferent>
-	<#1dotRef1_selfReference>
-	<#1dotRef1_missingSelfReference>
+        <#1dotRef1_selfReference>
+        <#1dotRef1_missingSelfReference>
         <#1dotRef1_overReferrer>
         <#1dotRef1_overReferrer,overReferent>
         <#1dotRef1_overMatchesReferent>
-	<#1refbnode1_pass>
-	<#1refbnode1_fail-g1-arc>
-	<#1refbnode1_fail-g2-arc>
-	<#3circularRef1_pass-open>
-	<#3circularRef1_pass-closed>
-	<#1iriRef1_pass-iri>
-	<#1iriRef1_fail-bnode>
-	<#1bnodeRef1_fail-iri>
-	<#1bnodeRef1_pass-bnode>
-	<#1datatypeRef1_fail-datatype>
-	<#1datatypeRef1_fail-reflexiveRef>
+        <#1refbnode1_pass>
+        <#1refbnode1_fail-g1-arc>
+        <#1refbnode1_fail-g2-arc>
+        <#3circularRef1_pass-open>
+        <#3circularRef1_pass-closed>
+        <#1iriRef1_pass-iri>
+        <#1iriRef1_fail-bnode>
+        <#1bnodeRef1_fail-iri>
+        <#1bnodeRef1_pass-bnode>
+        <#1datatypeRef1_fail-datatype>
+        <#1datatypeRef1_fail-reflexiveRef>
 
 ## inline
-	<#1dotInline1_referrer,referent>
-	<#1dotInline1_missingReferent>
-	<#1dotInline1_selfReference>
-	<#1dotInline1_missingSelfReference>
-	<#1dotInline1_overReferrer>
-	<#1dotInline1_overReferrer,overReferent>
-	<#1dotInline1_overMatchesReferent>
+        <#1dotInline1_referrer,referent>
+        <#1dotInline1_missingReferent>
+        <#1dotInline1_selfReference>
+        <#1dotInline1_missingSelfReference>
+        <#1dotInline1_overReferrer>
+        <#1dotInline1_overReferrer,overReferent>
+        <#1dotInline1_overMatchesReferent>
 
 ## term equivalence
 ###   iri equivalence
@@ -290,9 +290,9 @@
 ####     numeric equivalence
         <#1val1INTEGER_pass>            # <S> { <p1> [0] }
         <#1val1INTEGER_00>
-	<#1val1DECIMAL_00>
-	<#1val1DECIMAL_pass>
-	<#1val1DECIMAL_Lab>
+        <#1val1DECIMAL_00>
+        <#1val1DECIMAL_pass>
+        <#1val1DECIMAL_Lab>
         <#1val1INTEGER_Lab>
         <#1val1DOUBLE_pass>             # <S> { <p1> [0E0] }
         <#1val1DOUBLE_0_0e0>
@@ -384,18 +384,18 @@
         <#1literalTotaldigits_fail-bnode>
 ###   comparators
 ####     manual
-	<#1literalMinexclusiveINTEGER_fail-low>
-	<#1literalMinexclusiveINTEGER_pass-equal>
-	<#1literalMinexclusiveINTEGER_pass-high>
-	<#1literalMininclusiveINTEGER_fail-low>
-	<#1literalMininclusiveINTEGER_pass-equal>
-	<#1literalMininclusiveINTEGER_pass-high>
-	<#1literalMaxexclusiveINTEGER_pass-low>
-	<#1literalMaxexclusiveINTEGER_fail-equal>
-	<#1literalMaxexclusiveINTEGER_fail-high>
-	<#1literalMaxinclusiveINTEGER_pass-low>
-	<#1literalMaxinclusiveINTEGER_pass-equal>
-	<#1literalMaxinclusiveINTEGER_fail-high>
+        <#1literalMinexclusiveINTEGER_fail-low>
+        <#1literalMinexclusiveINTEGER_pass-equal>
+        <#1literalMinexclusiveINTEGER_pass-high>
+        <#1literalMininclusiveINTEGER_fail-low>
+        <#1literalMininclusiveINTEGER_pass-equal>
+        <#1literalMininclusiveINTEGER_pass-high>
+        <#1literalMaxexclusiveINTEGER_pass-low>
+        <#1literalMaxexclusiveINTEGER_fail-equal>
+        <#1literalMaxexclusiveINTEGER_fail-high>
+        <#1literalMaxinclusiveINTEGER_pass-low>
+        <#1literalMaxinclusiveINTEGER_pass-equal>
+        <#1literalMaxinclusiveINTEGER_fail-high>
         <#1floatMininclusiveINTEGER_fail-low>
         <#1floatMininclusiveINTEGER_pass-equalLead>
         <#1floatMininclusiveINTEGER_pass-equalTrail>
@@ -680,8 +680,8 @@
 ###   pattern
         <#1literalPattern_pass-lit-match>
         <#1literalPattern_fail-lit-short>
-	<#1literalPattern_fail-ab>
-	<#1literalPattern_fail-cd>
+        <#1literalPattern_fail-ab>
+        <#1literalPattern_fail-cd>
         <#1literalPatterni_pass-lit-match>
         <#1literalPatterni_pass-lit-BC>
         <#1literalPatterni_pass-lit-blowercaseC>
@@ -706,20 +706,20 @@
         <#1literalPattern_with_REGEXP_escapes_bare_fail_escaped>
         <#1literalPattern_with_REGEXP_escapes_pass_bare>
         <#1literalPattern_with_REGEXP_escapes_bare_pass_escapes>
-	<#1literalPatternEnd_fail-litEnd>
-	<#1literalPatternDollar_pass-litDollar-match>
-	<#1literalPattern_pass-StartlitEnd-match>
-	<#1literalStartPatternEnd_CarrotbcDollar>
-	<#1literalCarrotPatternDollar_pass-bc>
-	<#1literalCarrotPatternDollar_pass-CarrotbcDollar>
+        <#1literalPatternEnd_fail-litEnd>
+        <#1literalPatternDollar_pass-litDollar-match>
+        <#1literalPattern_pass-StartlitEnd-match>
+        <#1literalStartPatternEnd_CarrotbcDollar>
+        <#1literalCarrotPatternDollar_pass-bc>
+        <#1literalCarrotPatternDollar_pass-CarrotbcDollar>
         <#1literalPatternabEnd_fail-bnode-match>
-	<#1literalStartPattern_pass-bc>
-	<#1literalStartPattern_fail-CarrotbcDollar>
-	<#1literalPatternEnd_pass-bc>
-	<#1literalPatternEnd_pass-CarrotbcDollar>
-	<#1literalPattern_pass-bcDollar>
-	<#1literalStarPatternEnd_pass-bc>
-	<#1literalPattern_pass-CarrotbcDollar>
+        <#1literalStartPattern_pass-bc>
+        <#1literalStartPattern_fail-CarrotbcDollar>
+        <#1literalPatternEnd_pass-bc>
+        <#1literalPatternEnd_pass-CarrotbcDollar>
+        <#1literalPattern_pass-bcDollar>
+        <#1literalStarPatternEnd_pass-bc>
+        <#1literalPattern_pass-CarrotbcDollar>
         <#1literalPattern_with_all_meta_pass>
         <#1literalPattern_with_all_meta_pass-NA>
         <#1iriPattern_pass-iri-match>
@@ -745,10 +745,10 @@
         <#1val1dotMinusiri3_v1>
         <#1val1dotMinusiri3_v2>
         <#1val1dotMinusiri3_v3>
-	<#1val1refvsMinusiri3_pass>
-	<#1val1refvsMinusiri3_v1>
-	<#1val1refvsMinusiri3_v2>
-	<#1val1refvsMinusiri3_v3>
+        <#1val1refvsMinusiri3_pass>
+        <#1val1refvsMinusiri3_v1>
+        <#1val1refvsMinusiri3_v2>
+        <#1val1refvsMinusiri3_v3>
         <#1val1dotMinusiriStem3_pass>
         <#1val1dotMinusiriStem3_v1>
         <#1val1dotMinusiriStem3_v2>
@@ -798,17 +798,17 @@
 ## value expressions
 ###   value reference
         <#1val1vExprRefIRIREF1_fail-lit-short>
-	<#1val1vExprRefIRIREF1_pass-lit-equal>
-	<#1val1vExprRefbnode1_fail-lit-short>
-	<#1val1vExprRefbnode1_pass-lit-equal>
+        <#1val1vExprRefIRIREF1_pass-lit-equal>
+        <#1val1vExprRefbnode1_fail-lit-short>
+        <#1val1vExprRefbnode1_pass-lit-equal>
 ###   AND valueExpr
-	<#1dotShapeAND1dot3X_pass>
-	<#1dotShapeAND1dot3X_fail>
-	<#1dotRefAND3_failAll>
-	<#1dotRefAND3_failShape2Shape3>
-	<#1dotRefAND3_failShape1Shape3>
-	<#1dotRefAND3_failShape1Shape2>
-	<#1dotRefAND3_passShape1Shape2Shape3>
+        <#1dotShapeAND1dot3X_pass>
+        <#1dotShapeAND1dot3X_fail>
+        <#1dotRefAND3_failAll>
+        <#1dotRefAND3_failShape2Shape3>
+        <#1dotRefAND3_failShape1Shape3>
+        <#1dotRefAND3_failShape1Shape2>
+        <#1dotRefAND3_passShape1Shape2Shape3>
         <#1val1vExpr1AND1AND1Ref3_pass>
         <#1val1vExpr1AND1AND1Ref3_failvc1>
         <#1val1vExpr1AND1AND1Ref3_failvc2>
@@ -830,11 +830,11 @@
         <#refBNodeORrefIRI_CyclicIRI_IRI>
         <#refBNodeORrefIRI_CyclicIRI_BNode>
         <#refBNodeORrefIRI_CyclicIRI_ShortIRI>
-	<#1dotRefOR3_fail>
-	<#1dotRefOR3_passShape1>
-	<#1dotRefOR3_passShape2>
-	<#1dotRefOR3_passShape3>
-	<#1dotRefOR3_passShape1Shape2Shape3>
+        <#1dotRefOR3_fail>
+        <#1dotRefOR3_passShape1>
+        <#1dotRefOR3_passShape2>
+        <#1dotRefOR3_passShape3>
+        <#1dotRefOR3_passShape1Shape2Shape3>
         <#1val1vExpr1OR1OR1Ref3_fail>
         <#1val1vExpr1OR1OR1Ref3_passvc1>
         <#1val1vExpr1OR1OR1Ref3_passvc2>
@@ -866,25 +866,25 @@
         <#1val1vExpr1OR1AND1Ref3_failvc1vc2vc3>
 
 ## repetitions
-	<#open3Onedotclosecard2_fail-p1>
-	<#open3Onedotclosecard2_pass-p1X2> #
-	<#open3Onedotclosecard2_fail-p1X3>
-	<#open3Onedotclosecard2_fail-p1X4>
-	<#open3Onedotclosecard2_pass-p1p2>
-	<#open3Onedotclosecard2_pass-p1p3>
-	<#open3Onedotclosecard2_pass-p2p3>
-	<#open3Onedotclosecard2_fail-p1p2p3> #
+        <#open3Onedotclosecard2_fail-p1>
+        <#open3Onedotclosecard2_pass-p1X2> #
+        <#open3Onedotclosecard2_fail-p1X3>
+        <#open3Onedotclosecard2_fail-p1X4>
+        <#open3Onedotclosecard2_pass-p1p2>
+        <#open3Onedotclosecard2_pass-p1p3>
+        <#open3Onedotclosecard2_pass-p2p3>
+        <#open3Onedotclosecard2_fail-p1p2p3> #
 
-	<#open3Onedotclosecard23_fail-p1>
-	<#open3Onedotclosecard23_pass-p1X2> #
-	<#open3Onedotclosecard23_pass-p1X3> #
-	<#open3Onedotclosecard23_fail-p1X4>
-	<#open3Onedotclosecard23_pass-p1p2>
-	<#open3Onedotclosecard23_pass-p1p3>
-	<#open3Onedotclosecard23_pass-p2p3>
-	<#open3Onedotclosecard23_pass-p1p2p3>
-	<#open4Onedotclosecard23_fail-p1p2p3p4> #
-	<#open3groupdotclosecard23_pass-p1p2p3X3>
+        <#open3Onedotclosecard23_fail-p1>
+        <#open3Onedotclosecard23_pass-p1X2> #
+        <#open3Onedotclosecard23_pass-p1X3> #
+        <#open3Onedotclosecard23_fail-p1X4>
+        <#open3Onedotclosecard23_pass-p1p2>
+        <#open3Onedotclosecard23_pass-p1p3>
+        <#open3Onedotclosecard23_pass-p2p3>
+        <#open3Onedotclosecard23_pass-p1p2p3>
+        <#open4Onedotclosecard23_fail-p1p2p3p4> #
+        <#open3groupdotclosecard23_pass-p1p2p3X3>
 
 ## shape expressions
 ###   AND shapeExpr
@@ -894,8 +894,8 @@
         <#1dotClosed_pass>
         <#1dotClosed_fail_lower>
         <#1dotClosed_fail_higher>
-	<#FocusIRI2groupBnodeNested2groupIRIRef_pass>
-	<#FocusIRI2groupBnodeNested2groupIRIRef_fail>
+        <#FocusIRI2groupBnodeNested2groupIRIRef_pass>
+        <#FocusIRI2groupBnodeNested2groupIRIRef_fail>
 
 ## extra
         <#1val1IRIREFExtra1_pass-iri1>
@@ -933,8 +933,8 @@
 ## annotations
         <#1dotAnnotIRIREF_pass>
         <#1dotAnnotIRIREF_missing>
-	<#1dotPlusAnnotIRIREF_pass>
-	<#1dotAnnotAIRIREF_pass>
+        <#1dotPlusAnnotIRIREF_pass>
+        <#1dotAnnotAIRIREF_pass>
         <#1dotAnnotSTRING_LITERAL1_pass>
         <#1dotAnnot3_pass>
         <#1dotAnnot3_missing>
@@ -953,7 +953,7 @@
         <#1dotShapeNoCode1_pass>
         <#open3groupdotcloseCode1-p1p2p3>
         <#startCode1_pass>
-	<#startNoCode1_pass>
+        <#startNoCode1_pass>
         <#startCode1fail_abort>
         <#startCode1startRef_pass>
         <#startCode1startReffail_abort>
@@ -965,14 +965,14 @@
 
 ## focus constraint
 ### kind
-	<#0focusIRI_other>
-	<#0focusIRI_other_fail-bnodeFocusLabel>
-	<#0focusIRI_empty>
-	<#0focusIRI_empty_fail-bnodeFocusLabel>
-	<#0focusBNODE_empty_fail-iriFocusLabel>
-	<#0focusBNODE_empty>
-	<#0focusBNODE_other_fail-iriFocusLabel>
-	<#0focusBNODE_other>
+        <#0focusIRI_other>
+        <#0focusIRI_other_fail-bnodeFocusLabel>
+        <#0focusIRI_empty>
+        <#0focusIRI_empty_fail-bnodeFocusLabel>
+        <#0focusBNODE_empty_fail-iriFocusLabel>
+        <#0focusBNODE_empty>
+        <#0focusBNODE_other_fail-iriFocusLabel>
+        <#0focusBNODE_other>
         <#1focusIRI_dot_fail-bnodeFocusLabel>
         <#1focusIRI_dot_pass>
         <#1focusBNODE_dot_fail-iriFocusLabel-equal>
@@ -981,23 +981,23 @@
 
 
 ###  datatype
-	<#focusdatatype_pass>
-	<#focusdatatype_fail>
+        <#focusdatatype_pass>
+        <#focusdatatype_fail>
 
 ###  value sets
-	<#focusvs_pass>
-	<#focusvs_fail>
+        <#focusvs_pass>
+        <#focusvs_fail>
 
 ### AND focus
-	<#1focusvsANDdatatype_fail>
-	<#1focusvsANDIRI_pass>
-	<#1focusvsANDIRI_fail>
+        <#1focusvsANDdatatype_fail>
+        <#1focusvsANDIRI_pass>
+        <#1focusvsANDIRI_fail>
 
 ### OR focus
-	<#1focusvsORdatatype_pass-val>
-	<#1focusvsORdatatype_fail-val>
-	<#1focusvsORdatatype_pass-dt>
-	<#1focusvsORdatatype_fail-dt>
+        <#1focusvsORdatatype_pass-val>
+        <#1focusvsORdatatype_fail-val>
+        <#1focusvsORdatatype_pass-dt>
+        <#1focusvsORdatatype_fail-dt>
 
 ### facet
 #### length
@@ -1052,10 +1052,10 @@
         <#NOT1dotOR2dotX3_pass-NoShape1>
         <#NOT1dotOR2dotX3_pass-Shape2>
         <#NOT1dotOR2dotX3_fail-Shape2>
-	<#NOT1dotOR2dotX3AND1_fail-empty>
-	<#NOT1dotOR2dotX3AND1_fail-NoShape1>
-	<#NOT1dotOR2dotX3AND1_pass-Shape2>
-	<#NOT1dotOR2dotX3AND1_fail-Shape2>
+        <#NOT1dotOR2dotX3AND1_fail-empty>
+        <#NOT1dotOR2dotX3AND1_fail-NoShape1>
+        <#NOT1dotOR2dotX3AND1_pass-Shape2>
+        <#NOT1dotOR2dotX3AND1_fail-Shape2>
 
 ## shape extern
 
@@ -1071,8 +1071,8 @@
 ## manual schemas
         <#false-lead-excluding-value-shape>
         <#nPlus1>
-	<#nPlus1-greedy_fail>
-	<#nPlus1-greedy-rewrite>
+        <#nPlus1-greedy_fail>
+        <#nPlus1-greedy-rewrite>
         <#skipped>
         <#repeated-group>
         <#simple-group>
@@ -1085,9 +1085,13 @@
         <#P2T2>
 
 ## error reporting
-	<#1dot_fail-empty-err>
-	<#2dot_fail-empty-err>
+        <#1dot_fail-empty-err>
+        <#2dot_fail-empty-err>
 
+## ShapeMaps
+        <#node_kind_example>
+        <#dependent_shape>
+        <#recursion_example>
     ) .
 
 # definitions
@@ -1103,8 +1107,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <empty.ttl> ;
       sht:focus <http://a.example/dummy>
-    ] ;
-    mf:result <0_dummy.val>
+    ]
     .
 
 <#0_other> a sht:ValidationTest ;
@@ -1117,8 +1120,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <0_pass.val>
+    ]
     .
 
 <#0_otherbnode> a sht:ValidationTest ;
@@ -1131,8 +1133,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Babcd_Ip1_Io1.ttl> ;
       sht:focus _:abcd
-    ] ;
-    mf:result <0abcd_pass.val>
+    ]
     .
 
 ## } empty
@@ -1200,8 +1201,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1dot_pass.val>
+    ]
     .
 
 <#1dot-base_pass-noOthers> a sht:ValidationTest ;
@@ -1214,8 +1214,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1dot_pass.val>
+    ]
     .
 
 <#1dotSemi_pass-noOthers> a sht:ValidationTest ;
@@ -1228,8 +1227,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1dot_pass.val>
+    ]
     .
 
 <#1dotLNex_pass-noOthers> a sht:ValidationTest ;
@@ -1242,8 +1240,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1dot_pass.val>
+    ]
     .
 
 <#1dotNS2_pass-noOthers> a sht:ValidationTest ;
@@ -1256,8 +1253,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1dot_pass.val>
+    ]
     .
 
 <#1dotNS2Comment_pass-noOthers> a sht:ValidationTest ;
@@ -1270,8 +1266,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1dot_pass.val>
+    ]
     .
 
 <#1dotLNexComment_pass-noOthers> a sht:ValidationTest ;
@@ -1284,8 +1279,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1dot_pass.val>
+    ]
     .
 
 <#1dotLNdefault_pass-noOthers> a sht:ValidationTest ;
@@ -1298,8 +1292,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1dot_pass.val>
+    ]
     .
 
 <#1dotNSdefault_pass-noOthers> a sht:ValidationTest ;
@@ -1312,8 +1305,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1dot_pass.val>
+    ]
     .
 
 <#1dotLNex-HYPHEN_MINUS_pass-noOthers> a sht:ValidationTest ;
@@ -1326,8 +1318,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1HYPHEN_MINUS_Io1.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1HYPHEN_MINUSdot_pass.val>
+    ]
     .
 
 <#1dot_pass-others_lexicallyEarlier> a sht:ValidationTest ;
@@ -1340,8 +1331,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip0_Io0;Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1dot_pass.val>
+    ]
     .
 
 <#1dot_pass-others_lexicallyLater> a sht:ValidationTest ;
@@ -1354,8 +1344,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Io1;Ip2_Io2.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1dot_pass.val>
+    ]
     .
 
 <#bnode1dot_fail-missing> a sht:ValidationFailure ;
@@ -1381,8 +1370,7 @@
       sht:shape _:S1 ;
       sht:data <Is1_Ip0_Io0;Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <bnode1dot_pass.val>
+    ]
     .
 
 <#1inversedot_fail-empty> a sht:ValidationFailure ;
@@ -1421,8 +1409,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/o1>
-    ] ;
-    mf:result <1inversedot_pass.val>
+    ]
     .
 
 <#1inversedot_pass-over_lexicallyEarlier> a sht:ValidationTest ;
@@ -1435,8 +1422,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip0_Io0;Ip1_Io1.ttl> ;
       sht:focus <http://a.example/o1>
-    ] ;
-    mf:result <1inversedot_pass.val>
+    ]
     .
 
 <#1inversedot_pass-over_lexicallyLater> a sht:ValidationTest ;
@@ -1449,8 +1435,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Io1;Ip2_Io2.ttl> ;
       sht:focus <http://a.example/o1>
-    ] ;
-    mf:result <1inversedot_pass.val>
+    ]
     .
 
 <#1Adot_pass> a sht:ValidationTest ;
@@ -1463,8 +1448,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_a_Io1.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1Adot_pass.val>
+    ]
     .
 
 ## } triple pattern
@@ -1480,8 +1464,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1iri_pass-iri.val>
+    ]
     .
 
 <#1iri_fail-bnode> a sht:ValidationFailure ;
@@ -1533,8 +1516,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Bab.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1bnode_pass-bnode.val>
+    ]
     .
 
 <#1bnode_fail-literal> a sht:ValidationFailure ;
@@ -1586,8 +1568,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Lab.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1literal_pass-literal.val>
+    ]
     .
 
 <#1nonliteral_pass-iri> a sht:ValidationTest ;
@@ -1600,8 +1581,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1nonliteral_pass-iri.val>
+    ]
     .
 
 <#1focusnonLiteralLength-nonLiteralLength_pass> a sht:ValidationTest ;
@@ -1614,8 +1594,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1focusnonLiteralLength-nonLiteralLength_pass.val>
+    ]
     .
 
 <#1focusnonLiteralLength-nonLiteralLength_fail-short> a sht:ValidationFailure ;
@@ -1641,8 +1620,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Bab.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1nonliteral_pass-bnode.val>
+    ]
     .
 
 <#1nonliteral_fail-literal> a sht:ValidationFailure ;
@@ -1723,8 +1701,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_dt1.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1datatype_pass.val>
+    ]
     .
 
 <#1datatypelangString_pass> a sht:ValidationTest ;
@@ -1737,8 +1714,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_LabLTen.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1datatypelangString_pass.val>
+    ]
     .
 ###   lexical form {
 
@@ -1753,8 +1729,7 @@
       sht:shape <http://a.example/S-integer> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/integer-n1>
-    ] ;
-    mf:result <integer-n1_pass.val>
+    ]
     .
 
 <#integer-0_pass> a sht:ValidationTest ;
@@ -1767,8 +1742,7 @@
       sht:shape <http://a.example/S-integer> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/integer-0>
-    ] ;
-    mf:result <integer-0_pass.val>
+    ]
     .
 
 <#integer-1_pass> a sht:ValidationTest ;
@@ -1781,8 +1755,7 @@
       sht:shape <http://a.example/S-integer> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/integer-1>
-    ] ;
-    mf:result <integer-1_pass.val>
+    ]
     .
 
 <#integer-p1_pass> a sht:ValidationTest ;
@@ -1795,8 +1768,7 @@
       sht:shape <http://a.example/S-integer> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/integer-p1>
-    ] ;
-    mf:result <integer-p1_pass.val>
+    ]
     .
 
 <#integer-empty_fail> a sht:ValidationFailure ;
@@ -1888,8 +1860,7 @@
       sht:shape <http://a.example/S-decimal> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/decimal-n1>
-    ] ;
-    mf:result <decimal-n1_pass.val>
+    ]
     .
 
 <#decimal-0_pass> a sht:ValidationTest ;
@@ -1902,8 +1873,7 @@
       sht:shape <http://a.example/S-decimal> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/decimal-0>
-    ] ;
-    mf:result <decimal-0_pass.val>
+    ]
     .
 
 <#decimal-1_pass> a sht:ValidationTest ;
@@ -1916,8 +1886,7 @@
       sht:shape <http://a.example/S-decimal> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/decimal-1>
-    ] ;
-    mf:result <decimal-1_pass.val>
+    ]
     .
 
 <#decimal-p1_pass> a sht:ValidationTest ;
@@ -1930,8 +1899,7 @@
       sht:shape <http://a.example/S-decimal> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/decimal-p1>
-    ] ;
-    mf:result <decimal-p1_pass.val>
+    ]
     .
 
 <#decimal-n1.0_pass> a sht:ValidationTest ;
@@ -1944,8 +1912,7 @@
       sht:shape <http://a.example/S-decimal> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/decimal-n1.0>
-    ] ;
-    mf:result <decimal-n1.0_pass.val>
+    ]
     .
 
 <#decimal-p1.0_pass> a sht:ValidationTest ;
@@ -1958,8 +1925,7 @@
       sht:shape <http://a.example/S-decimal> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/decimal-p1.0>
-    ] ;
-    mf:result <decimal-p1.0_pass.val>
+    ]
     .
 
 <#decimal-empty_fail> a sht:ValidationFailure ;
@@ -2026,8 +1992,7 @@
       sht:shape <http://a.example/S-float> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/float-n1>
-    ] ;
-    mf:result <float-n1_pass.val>
+    ]
     .
 
 <#float-0_pass> a sht:ValidationTest ;
@@ -2040,8 +2005,7 @@
       sht:shape <http://a.example/S-float> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/float-0>
-    ] ;
-    mf:result <float-0_pass.val>
+    ]
     .
 
 <#float-1_pass> a sht:ValidationTest ;
@@ -2054,8 +2018,7 @@
       sht:shape <http://a.example/S-float> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/float-1>
-    ] ;
-    mf:result <float-1_pass.val>
+    ]
     .
 
 <#float-p1_pass> a sht:ValidationTest ;
@@ -2068,8 +2031,7 @@
       sht:shape <http://a.example/S-float> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/float-p1>
-    ] ;
-    mf:result <float-p1_pass.val>
+    ]
     .
 
 <#float-n1.0_pass> a sht:ValidationTest ;
@@ -2082,8 +2044,7 @@
       sht:shape <http://a.example/S-float> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/float-n1.0>
-    ] ;
-    mf:result <float-n1.0_pass.val>
+    ]
     .
 
 <#float-p1.0_pass> a sht:ValidationTest ;
@@ -2096,8 +2057,7 @@
       sht:shape <http://a.example/S-float> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/float-p1.0>
-    ] ;
-    mf:result <float-p1.0_pass.val>
+    ]
     .
 
 <#float-1elowercase0_pass> a sht:ValidationTest ;
@@ -2110,8 +2070,7 @@
       sht:shape <http://a.example/S-float> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/float-1e0>
-    ] ;
-    mf:result <float-1elowercase0_pass.val>
+    ]
     .
 
 <#float-1E0_pass> a sht:ValidationTest ;
@@ -2124,8 +2083,7 @@
       sht:shape <http://a.example/S-float> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/float-1E0>
-    ] ;
-    mf:result <float-1E0_pass.val>
+    ]
     .
 
 <#float-NaN_pass> a sht:ValidationTest ;
@@ -2138,8 +2096,7 @@
       sht:shape <http://a.example/S-float> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/float-NaN>
-    ] ;
-    mf:result <float-NaN_pass.val>
+    ]
     .
 
 <#float-INF_pass> a sht:ValidationTest ;
@@ -2152,8 +2109,7 @@
       sht:shape <http://a.example/S-float> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/float-INF>
-    ] ;
-    mf:result <float-INF_pass.val>
+    ]
     .
 
 <#float-nINF_pass> a sht:ValidationTest ;
@@ -2166,8 +2122,7 @@
       sht:shape <http://a.example/S-float> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/float-nINF>
-    ] ;
-    mf:result <float-nINF_pass.val>
+    ]
     .
 
 <#float-empty_fail> a sht:ValidationFailure ;
@@ -2209,8 +2164,7 @@
       sht:shape <http://a.example/S-double> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/double-n1>
-    ] ;
-    mf:result <double-n1_pass.val>
+    ]
     .
 
 <#double-0_pass> a sht:ValidationTest ;
@@ -2223,8 +2177,7 @@
       sht:shape <http://a.example/S-double> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/double-0>
-    ] ;
-    mf:result <double-0_pass.val>
+    ]
     .
 
 <#double-1_pass> a sht:ValidationTest ;
@@ -2237,8 +2190,7 @@
       sht:shape <http://a.example/S-double> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/double-1>
-    ] ;
-    mf:result <double-1_pass.val>
+    ]
     .
 
 <#double-p1_pass> a sht:ValidationTest ;
@@ -2251,8 +2203,7 @@
       sht:shape <http://a.example/S-double> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/double-p1>
-    ] ;
-    mf:result <double-p1_pass.val>
+    ]
     .
 
 <#double-n1.0_pass> a sht:ValidationTest ;
@@ -2265,8 +2216,7 @@
       sht:shape <http://a.example/S-double> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/double-n1.0>
-    ] ;
-    mf:result <double-n1.0_pass.val>
+    ]
     .
 
 <#double-p1.0_pass> a sht:ValidationTest ;
@@ -2279,8 +2229,7 @@
       sht:shape <http://a.example/S-double> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/double-p1.0>
-    ] ;
-    mf:result <double-p1.0_pass.val>
+    ]
     .
 
 <#double-1E0_pass> a sht:ValidationTest ;
@@ -2293,8 +2242,7 @@
       sht:shape <http://a.example/S-double> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/double-1E0>
-    ] ;
-    mf:result <double-1E0_pass.val>
+    ]
     .
 
 <#double-1e0_pass> a sht:ValidationTest ;
@@ -2307,8 +2255,7 @@
       sht:shape <http://a.example/S-double> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/double-1e0>
-    ] ;
-    mf:result <double-1elowercase0_pass.val>
+    ]
     .
 
 <#double-NaN_pass> a sht:ValidationTest ;
@@ -2321,8 +2268,7 @@
       sht:shape <http://a.example/S-double> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/double-NaN>
-    ] ;
-    mf:result <double-NaN_pass.val>
+    ]
     .
 
 <#double-INF_pass> a sht:ValidationTest ;
@@ -2335,8 +2281,7 @@
       sht:shape <http://a.example/S-double> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/double-INF>
-    ] ;
-    mf:result <double-INF_pass.val>
+    ]
     .
 
 <#double-nINF_pass> a sht:ValidationTest ;
@@ -2349,8 +2294,7 @@
       sht:shape <http://a.example/S-double> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/double-nINF>
-    ] ;
-    mf:result <double-nINF_pass.val>
+    ]
     .
 
 <#double-empty_fail> a sht:ValidationFailure ;
@@ -2391,8 +2335,7 @@
       sht:shape <http://a.example/S-nonPositiveInteger> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/nonPositiveInteger-n1>
-    ] ;
-    mf:result <nonPositiveInteger-n1_pass.val>
+    ]
     .
 
 <#nonPositiveInteger-0_pass> a sht:ValidationTest ;
@@ -2405,8 +2348,7 @@
       sht:shape <http://a.example/S-nonPositiveInteger> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/nonPositiveInteger-0>
-    ] ;
-    mf:result <nonPositiveInteger-0_pass.val>
+    ]
     .
 
 <#nonPositiveInteger-p0_pass> a sht:ValidationTest ;
@@ -2419,8 +2361,7 @@
       sht:shape <http://a.example/S-nonPositiveInteger> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/nonPositiveInteger-p0>
-    ] ;
-    mf:result <nonPositiveInteger-p0_pass.val>
+    ]
     .
 
 <#nonPositiveInteger-n0_pass> a sht:ValidationTest ;
@@ -2433,8 +2374,7 @@
       sht:shape <http://a.example/S-nonPositiveInteger> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/nonPositiveInteger-n0>
-    ] ;
-    mf:result <nonPositiveInteger-n0_pass.val>
+    ]
     .
 
 <#nonPositiveInteger-1_fail> a sht:ValidationFailure ;
@@ -2501,8 +2441,7 @@
       sht:shape <http://a.example/S-negativeInteger> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/negativeInteger-n1>
-    ] ;
-    mf:result <negativeInteger-n1_pass.val>
+    ]
     .
 
 <#negativeInteger-0_fail> a sht:ValidationFailure ;
@@ -2569,8 +2508,7 @@
       sht:shape <http://a.example/S-long> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/long-n1>
-    ] ;
-    mf:result <long-n1_pass.val>
+    ]
     .
 
 <#long-0_pass> a sht:ValidationTest ;
@@ -2583,8 +2521,7 @@
       sht:shape <http://a.example/S-long> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/long-0>
-    ] ;
-    mf:result <long-0_pass.val>
+    ]
     .
 
 <#long-1_pass> a sht:ValidationTest ;
@@ -2597,8 +2534,7 @@
       sht:shape <http://a.example/S-long> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/long-1>
-    ] ;
-    mf:result <long-1_pass.val>
+    ]
     .
 
 <#long-p1_pass> a sht:ValidationTest ;
@@ -2611,8 +2547,7 @@
       sht:shape <http://a.example/S-long> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/long-p1>
-    ] ;
-    mf:result <long-p1_pass.val>
+    ]
     .
 
 
@@ -2627,8 +2562,7 @@
       sht:shape <http://a.example/S-int> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/int-n1>
-    ] ;
-    mf:result <int-n1_pass.val>
+    ]
     .
 
 <#int-0_pass> a sht:ValidationTest ;
@@ -2641,8 +2575,7 @@
       sht:shape <http://a.example/S-int> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/int-0>
-    ] ;
-    mf:result <int-0_pass.val>
+    ]
     .
 
 <#int-1_pass> a sht:ValidationTest ;
@@ -2655,8 +2588,7 @@
       sht:shape <http://a.example/S-int> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/int-1>
-    ] ;
-    mf:result <int-1_pass.val>
+    ]
     .
 
 <#int-p1_pass> a sht:ValidationTest ;
@@ -2669,8 +2601,7 @@
       sht:shape <http://a.example/S-int> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/int-p1>
-    ] ;
-    mf:result <int-p1_pass.val>
+    ]
     .
 
 
@@ -2685,8 +2616,7 @@
       sht:shape <http://a.example/S-short> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/short-n32768>
-    ] ;
-    mf:result <short-n32768_pass.val>
+    ]
     .
 
 <#short-0_pass> a sht:ValidationTest ;
@@ -2699,8 +2629,7 @@
       sht:shape <http://a.example/S-short> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/short-0>
-    ] ;
-    mf:result <short-0_pass.val>
+    ]
     .
 
 <#short-32767_pass> a sht:ValidationTest ;
@@ -2713,8 +2642,7 @@
       sht:shape <http://a.example/S-short> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/short-32767>
-    ] ;
-    mf:result <short-32767_pass.val>
+    ]
     .
 
 <#short-n32769_fail> a sht:ValidationFailure ;
@@ -2755,8 +2683,7 @@
       sht:shape <http://a.example/S-byte> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/byte-n128>
-    ] ;
-    mf:result <byte-n128_pass.val>
+    ]
     .
 
 <#byte-0_pass> a sht:ValidationTest ;
@@ -2769,8 +2696,7 @@
       sht:shape <http://a.example/S-byte> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/byte-0>
-    ] ;
-    mf:result <byte-0_pass.val>
+    ]
     .
 
 <#byte-127_pass> a sht:ValidationTest ;
@@ -2783,8 +2709,7 @@
       sht:shape <http://a.example/S-byte> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/byte-127>
-    ] ;
-    mf:result <byte-127_pass.val>
+    ]
     .
 
 <#byte-empty_fail> a sht:ValidationFailure ;
@@ -2838,8 +2763,7 @@
       sht:shape <http://a.example/S-nonNegativeInteger> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/nonNegativeInteger-0>
-    ] ;
-    mf:result <nonNegativeInteger-0_pass.val>
+    ]
     .
 
 <#nonNegativeInteger-n0_pass> a sht:ValidationTest ;
@@ -2852,8 +2776,7 @@
       sht:shape <http://a.example/S-nonNegativeInteger> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/nonNegativeInteger-n0>
-    ] ;
-    mf:result <nonNegativeInteger-n0_pass.val>
+    ]
     .
 
 <#nonNegativeInteger-p0_pass> a sht:ValidationTest ;
@@ -2866,8 +2789,7 @@
       sht:shape <http://a.example/S-nonNegativeInteger> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/nonNegativeInteger-p0>
-    ] ;
-    mf:result <nonNegativeInteger-p0_pass.val>
+    ]
     .
 
 <#nonNegativeInteger-1_pass> a sht:ValidationTest ;
@@ -2880,8 +2802,7 @@
       sht:shape <http://a.example/S-nonNegativeInteger> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/nonNegativeInteger-1>
-    ] ;
-    mf:result <nonNegativeInteger-1_pass.val>
+    ]
     .
 
 <#nonNegativeInteger-p1_pass> a sht:ValidationTest ;
@@ -2894,8 +2815,7 @@
       sht:shape <http://a.example/S-nonNegativeInteger> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/nonNegativeInteger-p1>
-    ] ;
-    mf:result <nonNegativeInteger-p1_pass.val>
+    ]
     .
 
 <#nonNegativeInteger-n1_fail> a sht:ValidationFailure ;
@@ -2923,8 +2843,7 @@
       sht:shape <http://a.example/S-unsignedLong> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/unsignedLong-0>
-    ] ;
-    mf:result <unsignedLong-0_pass.val>
+    ]
     .
 
 <#unsignedLong-1_pass> a sht:ValidationTest ;
@@ -2937,8 +2856,7 @@
       sht:shape <http://a.example/S-unsignedLong> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/unsignedLong-1>
-    ] ;
-    mf:result <unsignedLong-1_pass.val>
+    ]
     .
 
 <#unsignedLong-n1_fail> a sht:ValidationFailure ;
@@ -2966,8 +2884,7 @@
       sht:shape <http://a.example/S-unsignedInt> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/unsignedInt-0>
-    ] ;
-    mf:result <unsignedInt-0_pass.val>
+    ]
     .
 
 <#unsignedInt-1_pass> a sht:ValidationTest ;
@@ -2980,8 +2897,7 @@
       sht:shape <http://a.example/S-unsignedInt> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/unsignedInt-1>
-    ] ;
-    mf:result <unsignedInt-1_pass.val>
+    ]
     .
 
 <#unsignedInt-n1_fail> a sht:ValidationFailure ;
@@ -3009,8 +2925,7 @@
       sht:shape <http://a.example/S-unsignedShort> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/unsignedShort-0>
-    ] ;
-    mf:result <unsignedShort-0_pass.val>
+    ]
     .
 
 <#unsignedShort-65535_pass> a sht:ValidationTest ;
@@ -3023,8 +2938,7 @@
       sht:shape <http://a.example/S-unsignedShort> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/unsignedShort-65535>
-    ] ;
-    mf:result <unsignedShort-65535_pass.val>
+    ]
     .
 
 <#unsignedShort-n1_fail> a sht:ValidationFailure ;
@@ -3065,8 +2979,7 @@
       sht:shape <http://a.example/S-unsignedByte> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/unsignedByte-0>
-    ] ;
-    mf:result <unsignedByte-0_pass.val>
+    ]
     .
 
 <#unsignedByte-255_pass> a sht:ValidationTest ;
@@ -3079,8 +2992,7 @@
       sht:shape <http://a.example/S-unsignedByte> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/unsignedByte-255>
-    ] ;
-    mf:result <unsignedByte-255_pass.val>
+    ]
     .
 
 <#unsignedByte-n1_fail> a sht:ValidationFailure ;
@@ -3121,8 +3033,7 @@
       sht:shape <http://a.example/S-positiveInteger> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/positiveInteger-1>
-    ] ;
-    mf:result <positiveInteger-1_pass.val>
+    ]
     .
 
 <#positiveInteger-n1_fail> a sht:ValidationFailure ;
@@ -3163,8 +3074,7 @@
       sht:shape <http://a.example/S-string> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/string-empty>
-    ] ;
-    mf:result <string-empty_pass.val>
+    ]
     .
 
 <#string-a_pass> a sht:ValidationTest ;
@@ -3177,8 +3087,7 @@
       sht:shape <http://a.example/S-string> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/string-a>
-    ] ;
-    mf:result <string-a_pass.val>
+    ]
     .
 
 <#string-0_pass> a sht:ValidationTest ;
@@ -3191,8 +3100,7 @@
       sht:shape <http://a.example/S-string> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/string-0>
-    ] ;
-    mf:result <string-0_pass.val>
+    ]
     .
 
 
@@ -3207,8 +3115,7 @@
       sht:shape <http://a.example/S-boolean> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/boolean-true>
-    ] ;
-    mf:result <boolean-true_pass.val>
+    ]
     .
 
 <#boolean-false_pass> a sht:ValidationTest ;
@@ -3221,8 +3128,7 @@
       sht:shape <http://a.example/S-boolean> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/boolean-false>
-    ] ;
-    mf:result <boolean-false_pass.val>
+    ]
     .
 
 <#boolean-0_pass> a sht:ValidationTest ;
@@ -3235,8 +3141,7 @@
       sht:shape <http://a.example/S-boolean> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/boolean-0>
-    ] ;
-    mf:result <boolean-0_pass.val>
+    ]
     .
 
 <#boolean-1_pass> a sht:ValidationTest ;
@@ -3249,8 +3154,7 @@
       sht:shape <http://a.example/S-boolean> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/boolean-1>
-    ] ;
-    mf:result <boolean-1_pass.val>
+    ]
     .
 
 <#boolean-empty_fail> a sht:ValidationFailure ;
@@ -3382,8 +3286,7 @@
       sht:shape <http://a.example/S-dateTime> ;
       sht:data <datatypes-data.ttl> ;
       sht:focus <http://a.example/dateTime-dt>
-    ] ;
-    mf:result <dateTime-dt_pass.val>
+    ]
     .
 
 <#dateTime-empty_fail> a sht:ValidationFailure ;
@@ -3466,8 +3369,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_La,Lb.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1card2_pass2.val>
+    ]
     .
 
 <#1card2_fail3> a sht:ValidationFailure ;
@@ -3519,8 +3421,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_La,Lb.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1card25_pass2.val>
+    ]
     .
 
 <#1card25_pass3> a sht:ValidationTest ;
@@ -3533,8 +3434,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_La,Lb,Lc.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1card25_pass3.val>
+    ]
     .
 
 <#1card25_pass4> a sht:ValidationTest ;
@@ -3547,8 +3447,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_La,Lb,Lc,Ld.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1card25_pass4.val>
+    ]
     .
 
 <#1card25_pass5> a sht:ValidationTest ;
@@ -3561,8 +3460,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_La,Lb,Lc,Ld,Le.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1card25_pass5.val>
+    ]
     .
 
 <#1card25_fail6> a sht:ValidationFailure ;
@@ -3614,8 +3512,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_La,Lb.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1card2Star_pass2.val>
+    ]
     .
 
 <#1card2Star_pass3> a sht:ValidationTest ;
@@ -3628,8 +3525,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_La,Lb,Lc.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1card2Star_pass3.val>
+    ]
     .
 
 <#1card2Star_pass6> a sht:ValidationTest ;
@@ -3642,8 +3538,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_La,Lb,Lc,Ld,Le,Lf.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1card2Star_pass6.val>
+    ]
     .
 
 <#1cardOpt_pass0> a sht:ValidationTest ;
@@ -3656,8 +3551,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <empty.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1cardOpt_pass0.val>
+    ]
     .
 
 <#1cardOpt_pass1> a sht:ValidationTest ;
@@ -3670,8 +3564,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_La.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1cardOpt_pass1.val>
+    ]
     .
 
 <#1cardOpt_fail2> a sht:ValidationFailure ;
@@ -3723,8 +3616,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_La.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1cardPlus_pass1.val>
+    ]
     .
 
 <#1cardPlus_pass2> a sht:ValidationTest ;
@@ -3737,8 +3629,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_La,Lb.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1cardPlus_pass2.val>
+    ]
     .
 
 <#1cardPlus_pass6> a sht:ValidationTest ;
@@ -3751,8 +3642,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_La,Lb,Lc,Ld,Le,Lf.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1cardPlus_pass6.val>
+    ]
     .
 
 <#1cardStar_pass0> a sht:ValidationTest ;
@@ -3765,8 +3655,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <empty.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1cardStar_pass0.val>
+    ]
     .
 
 <#1cardStar_pass1> a sht:ValidationTest ;
@@ -3779,8 +3668,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_La.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1cardStar_pass1.val>
+    ]
     .
 
 <#1cardStar_pass2> a sht:ValidationTest ;
@@ -3793,8 +3681,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_La,Lb.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1cardStar_pass2.val>
+    ]
     .
 
 <#1cardStar_pass6> a sht:ValidationTest ;
@@ -3807,8 +3694,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_La,Lb,Lc,Ld,Le,Lf.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1cardStar_pass6.val>
+    ]
     .
 ###   } dot cardinality
 ###   non-dot cardinality {
@@ -3839,8 +3725,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <In2_Ip2_LX.In1_Ip1_In2.ttl> ;
       sht:focus <http://a.example/n1>
-    ] ;
-    mf:result <In2_Ip2_In1@In1_Ip1_LX.val>
+    ]
     .
 
 <#1dotRef1_referrer,referent> a sht:ValidationTest ;
@@ -3853,8 +3738,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <In1_Ip1_In2.In2_Ip2_LX.ttl> ;
       sht:focus <http://a.example/n1>
-    ] ;
-    mf:result <In2_Ip2_In1@In1_Ip1_LX.val>
+    ]
     .
 
 <#1dotRef1_missingReferent> a sht:ValidationFailure ;
@@ -3880,8 +3764,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <In1_Ip1_In1.In1_Ip2_LX.ttl> ;
       sht:focus <http://a.example/n1>
-    ] ;
-    mf:result <1dotRef1_selfReference.val>
+    ]
     .
 
 <#1dotRef1_missingSelfReference> a sht:ValidationFailure ;
@@ -3933,8 +3816,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <In1_Ip1_In2.In2_Ip2_LX.In3_Ip1_LX.ttl> ;
       sht:focus <http://a.example/n1>
-    ] ;
-    mf:result <In2_Ip2_In1@In1_Ip1_LX.val>
+    ]
     .
 
  # !../schemas/1dotRefLNex1.shex
@@ -3952,8 +3834,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <In1_Ip1_In2.In2_Ip2_LX.ttl> ;
       sht:focus <http://a.example/n1>
-    ] ;
-    mf:result <1refbnode1_pass.val>
+    ]
     .
 
 <#1refbnode1_fail-g1-arc> a sht:ValidationFailure ;
@@ -3997,8 +3878,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <3circularRef1_pass-open.ttl> ;
       sht:focus <http://a.example/n1>
-    ] ;
-    mf:result <3circularRef1_pass-open.val>
+    ]
     .
 
 <#3circularRef1_pass-closed> a sht:ValidationTest ;
@@ -4011,8 +3891,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <3circularRef1_pass-closed.ttl> ;
       sht:focus <http://a.example/n1>
-    ] ;
-    mf:result <3circularRef1_pass-closed.val>
+    ]
     .
 
 <#1iriRef1_pass-iri> a sht:ValidationTest ;
@@ -4025,8 +3904,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <In1_Ip1_In2.In2_Ip2_LX.ttl> ;
       sht:focus <http://a.example/n1>
-    ] ;
-    mf:result <1iriRef1_pass-iri.val>
+    ]
     .
 
 <#1iriRef1_fail-bnode> a sht:ValidationFailure ;
@@ -4065,8 +3943,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <In1_Ip1_Bn2.Bn2_Ip2_LX.ttl> ;
       sht:focus <http://a.example/n1>
-    ] ;
-    mf:result <1bnodeRef1_pass-bnode.val>
+    ]
     .
 
 <#1datatypeRef1_fail-datatype> a sht:ValidationFailure ;
@@ -4108,8 +3985,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <In1_Ip1_In2.In2_Ip2_LX.ttl> ;
       sht:focus <http://a.example/n1>
-    ] ;
-    mf:result <1dotInline1_In1_Ip1_In2.In2_Ip2_LX.val>
+    ]
     .
 
 <#1dotInline1_missingReferent> a sht:ValidationFailure ;
@@ -4135,8 +4011,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <In1_Ip1_In1.In1_Ip2_LX.ttl> ;
       sht:focus <http://a.example/n1>
-    ] ;
-    mf:result <1dotInline1_In1_Ip1_In1.In1_Ip2_LX.val>
+    ]
     .
 
 <#1dotInline1_missingSelfReference> a sht:ValidationFailure ;
@@ -4188,8 +4063,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <In1_Ip1_In2.In2_Ip2_LX.In3_Ip1_LX.ttl> ;
       sht:focus <http://a.example/n1>
-    ] ;
-    mf:result <1dotInline1_In1_Ip1_In2.In2_Ip2_LX.val>
+    ]
     .
 
 ## } inline
@@ -4206,8 +4080,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Iv1.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1IRIREF_pass.val>
+    ]
     .
 
 <#1val1IRIREF_v2> a sht:ValidationFailure ;
@@ -4250,8 +4123,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_LSTRING_LITERAL1.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1STRING_LITERAL1_pass.val>
+    ]
     .
 
 <#1val1STRING_LITERAL1_fail> a sht:ValidationFailure ;
@@ -4277,8 +4149,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_LSTRING_LITERAL1_with_all_controls.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1STRING_LITERAL1_with_all_controls_pass.val>
+    ]
     .
 
 <#1val1STRING_LITERAL1_with_all_controls_fail> a sht:ValidationFailure ;
@@ -4304,8 +4175,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_LSTRING_LITERAL1_with_all_punctuation.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1STRING_LITERAL1_with_all_punctuation_pass.val>
+    ]
     .
 
 <#1val1STRING_LITERAL1_with_all_punctuation_fail> a sht:ValidationFailure ;
@@ -4331,8 +4201,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_LSTRING_LITERAL1_with_ascii_boundaries.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1STRING_LITERAL1_with_ascii_boundaries_pass.val>
+    ]
     .
 
 <#1val1STRING_LITERAL1_with_ascii_boundaries_fail> a sht:ValidationFailure ;
@@ -4358,8 +4227,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_LSTRING_LITERAL1_with_UTF8_boundaries.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1STRING_LITERAL1_with_UTF8_boundaries_pass.val>
+    ]
     .
 
 <#1val1STRING_LITERAL1_with_UTF8_boundaries_fail> a sht:ValidationFailure ;
@@ -4385,8 +4253,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_L_with_ECHAR_escapes.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1STRING_LITERAL1_with_ECHAR_escapes_pass.val>
+    ]
     .
 
 <#1val1STRING_LITERAL1_with_ECHAR_escapes_fail> a sht:ValidationFailure ;
@@ -4415,8 +4282,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_INT0.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1INTEGER_pass.val>
+    ]
     .
 
 <#1val1INTEGER_Lab> a sht:ValidationFailure ;
@@ -4455,8 +4321,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DEC0_0.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1DECIMAL_pass.val>
+    ]
     .
 
 <#1val1DECIMAL_Lab> a sht:ValidationFailure ;
@@ -4497,8 +4362,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DBL0E0.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1DOUBLE_pass.val>
+    ]
     .
 
 <#1val1DOUBLE_0_0e0> a sht:ValidationFailure ;
@@ -4524,8 +4388,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DBL0e0lowercase.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1DOUBLElowercase_pass.val>
+    ]
     .
 
 <#1val1DOUBLElowercase_fail-0E0> a sht:ValidationFailure ;
@@ -4567,8 +4430,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_LabLTen-fr.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1LANGTAG_pass.val>
+    ]
     .
 
 <#1val1LANGTAG_Lab> a sht:ValidationFailure ;
@@ -4636,8 +4498,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_LabDTbloodType.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1IRIREFDatatype_pass.val>
+    ]
     .
 
 <#1val1IRIREFDatatype_Lab> a sht:ValidationFailure ;
@@ -4692,8 +4553,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_true.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1true_pass.val>
+    ]
     .
 
 <#1val1true_false> a sht:ValidationFailure ;
@@ -4732,8 +4592,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_false.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1false_pass.val>
+    ]
     .
 
 <#1val1false_true> a sht:ValidationFailure ;
@@ -4817,8 +4676,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_INT12345.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1datatypeLength_pass.val>
+    ]
     .
 
 <#1datatypeLength_fail-long> a sht:ValidationFailure ;
@@ -4847,8 +4705,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DEC1_2345.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1literalFractiondigits_pass-decimal-short.val>
+    ]
     .
 
  # for # for numericFacet ::= (numericFacet | numericLength) INTEGER (numericLiteral | string '^^' datatype )
@@ -4874,8 +4731,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DEC1_23456.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1literalFractiondigits_pass-decimal-equal.val>
+    ]
     .
 
  # # for numericFacet ::= (numericFacet | numericLength) INTEGER (numericLiteral | string '^^' datatype )
@@ -4889,7 +4745,7 @@
  #       sht:data <Is1_Ip1_DEC1_23456.ttl> ;
  #       sht:focus <http://a.example/s1>
  #     ] ;
- #     mf:result <1literalFractiondigits_pass-decimal-equal.val>
+ #     mf:result <1literalFractiondigits_pass-decimal-equal_results.json>
  #     .
 
 <#1literalFractiondigits_fail-decimal-long> a sht:ValidationFailure ;
@@ -4915,8 +4771,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DEC01_2345.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1literalFractiondigits_pass-decimal-equalLead.val>
+    ]
     .
 
 <#1literalFractiondigits_fail-decimal-longLead> a sht:ValidationFailure ;
@@ -4942,8 +4797,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DEC1_23450.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1literalFractiondigits_pass-decimal-equalTrail.val>
+    ]
     .
 
 <#1literalFractiondigits_fail-decimal-longTrail> a sht:ValidationFailure ;
@@ -4969,8 +4823,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DEC01_23450.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1literalFractiondigits_pass-decimal-equalLeadTrail.val>
+    ]
     .
 
 <#1literalFractiondigits_fail-decimal-longLeadTrail> a sht:ValidationFailure ;
@@ -4997,8 +4850,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_INT12345.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1fractionTotaldigits_pass-integer-equal.val>
+    ]
     .
 
 <#1literalFractiondigits_pass-xsd_integer-short> a sht:ValidationTest ;
@@ -5011,8 +4863,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_xsd-integer12345.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1fractionTotaldigits_pass-integer-equal.val>
+    ]
     .
 
 # Note: fractionDigits restricted to decimal-derived datatypes.
@@ -5120,8 +4971,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DEC1_234.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1literalTotaldigits_pass-decimal-short.val>
+    ]
     .
 
  # for # for numericFacet ::= (numericFacet | numericLength) INTEGER (numericLiteral | string '^^' datatype )
@@ -5147,8 +4997,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DEC1_2345.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1literalTotaldigits_pass-decimal-equal.val>
+    ]
     .
 
  # # for numericFacet ::= (numericFacet | numericLength) INTEGER (numericLiteral | string '^^' datatype )
@@ -5162,7 +5011,7 @@
  #       sht:data <Is1_Ip1_DEC1_2345.ttl> ;
  #       sht:focus <http://a.example/s1>
  #     ] ;
- #     mf:result <1literalTotaldigits_pass-decimal-equal.val>
+ #     mf:result <1literalTotaldigits_pass-decimal-equal_results.json>
  #     .
 
 <#1literalTotaldigits_fail-decimal-long> a sht:ValidationFailure ;
@@ -5188,8 +5037,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DEC01_2345.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1literalTotaldigits_pass-decimal-equalLead.val>
+    ]
     .
 
 <#1literalTotaldigits_fail-decimal-longLead> a sht:ValidationFailure ;
@@ -5215,8 +5063,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DEC1_23450.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1literalTotaldigits_pass-decimal-equalTrail.val>
+    ]
     .
 
 <#1literalTotaldigits_fail-decimal-longTrail> a sht:ValidationFailure ;
@@ -5242,8 +5089,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DEC01_23450.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1literalTotaldigits_pass-decimal-equalLeadTrail.val>
+    ]
     .
 
 <#1literalTotaldigits_fail-decimal-longLeadTrail> a sht:ValidationFailure ;
@@ -5269,8 +5115,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_INT12345.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1literalTotaldigits_pass-integer-equal.val>
+    ]
     .
 
 <#1literalTotaldigits_pass-xsd_integer-short> a sht:ValidationTest ;
@@ -5283,8 +5128,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_xsd-integer1234.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1literalTotaldigits_pass-integer-short.val>
+    ]
     .
 
 <#1literalTotaldigits_pass-integer-equalLead> a sht:ValidationTest ;
@@ -5297,8 +5141,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_INT012345.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1literalTotaldigits_pass-integer-equalLead.val>
+    ]
     .
 
 <#1literalTotaldigits_fail-integer-longLead> a sht:ValidationFailure ;
@@ -5324,8 +5167,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_INT123450.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1literalTotaldigits_pass-integer-equalTrail.val>
+    ]
     .
 
 <#1literalTotaldigits_fail-integer-longTrail> a sht:ValidationFailure ;
@@ -5351,8 +5193,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_INT0123450.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1literalTotaldigits_pass-integer-equalLeadTrail.val>
+    ]
     .
 
 <#1literalTotaldigits_fail-integer-longLeadTrail> a sht:ValidationFailure ;
@@ -5378,8 +5219,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_BYT5.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1literalTotaldigits_pass-byte-short.val>
+    ]
     .
 
 <#1literalTotaldigits_pass-byte-equal> a sht:ValidationTest ;
@@ -5392,8 +5232,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_BYT64.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1literalTotaldigits_pass-byte-equal.val>
+    ]
     .
 
 <#1literalTotaldigits_fail-byte-long> a sht:ValidationFailure ;
@@ -5541,8 +5380,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_INT6.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1literalMinexclusiveINTEGER_pass-high.val>
+    ]
     .
 
 <#1literalMininclusiveINTEGER_fail-low> a sht:ValidationFailure ;
@@ -5568,8 +5406,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_INT5.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1literalMininclusiveINTEGER_pass-equal.val>
+    ]
     .
 
 <#1literalMininclusiveINTEGER_pass-high> a sht:ValidationTest ;
@@ -5582,8 +5419,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_INT6.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1literalMininclusiveINTEGER_pass-high.val>
+    ]
     .
 
 <#1literalMaxexclusiveINTEGER_pass-low> a sht:ValidationTest ;
@@ -5596,8 +5432,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_INT4.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1literalMaxexclusiveINTEGER_pass-high.val>
+    ]
     .
 
 <#1literalMaxexclusiveINTEGER_fail-equal> a sht:ValidationFailure ;
@@ -5636,8 +5471,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_INT4.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1literalMaxinclusiveINTEGER_pass-low.val>
+    ]
     .
 
 <#1literalMaxinclusiveINTEGER_pass-equal> a sht:ValidationTest ;
@@ -5650,8 +5484,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_INT5.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1literalMaxinclusiveINTEGER_pass-equal.val>
+    ]
     .
 
 <#1literalMaxinclusiveINTEGER_fail-high> a sht:ValidationFailure ;
@@ -5690,8 +5523,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_FLT05.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1floatMininclusiveINTEGER_pass-equalLead.val>
+    ]
     .
 
 <#1floatMininclusiveINTEGER_pass-equalTrail> a sht:ValidationTest ;
@@ -5704,8 +5536,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_FLT5_0.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1floatMininclusiveINTEGER_pass-equalTrail.val>
+    ]
     .
 
 <#1floatMininclusiveINTEGER_pass-high> a sht:ValidationTest ;
@@ -5718,8 +5549,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_FLT5_1.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1floatMininclusiveINTEGER_pass-high.val>
+    ]
     .
 
 <#1integerMininclusiveINTEGER_fail-low> a sht:ValidationFailure ;
@@ -5745,8 +5575,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_INT05.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1integerMininclusiveINTEGER_pass-equalLead.val>
+    ]
     .
 
 <#1integerMininclusiveINTEGER_pass-equal> a sht:ValidationTest ;
@@ -5759,8 +5588,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_INT5.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1integerMininclusiveINTEGER_pass-equal.val>
+    ]
     .
 
 <#1integerMininclusiveINTEGER_pass-high> a sht:ValidationTest ;
@@ -5773,8 +5601,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_INT6.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1integerMininclusiveINTEGER_pass-high.val>
+    ]
     .
 
 <#1floatMininclusiveINTEGERLead_pass-equal> a sht:ValidationTest ;
@@ -5787,8 +5614,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_FLT5.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1floatMininclusiveINTEGER_pass-equal.val>
+    ]
     .
 
 ####     } manual
@@ -5819,8 +5645,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_INT5.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1integerMininclusiveINTEGER_pass-integer-equal.val>
+    ]
     .
 
 <#1integerMininclusiveINTEGER_pass-integer-high> a sht:ValidationTest ;
@@ -5834,8 +5659,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_INT6.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1integerMininclusiveINTEGER_pass-integer-high.val>
+    ]
     .
 
 <#1integerMininclusiveINTEGERLead_fail-integer-low> a sht:ValidationFailure ;
@@ -5863,8 +5687,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_INT5.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1integerMininclusiveINTEGERLead_pass-integer-equal.val>
+    ]
     .
 
 <#1integerMininclusiveINTEGERLead_pass-integer-equalLead> a sht:ValidationTest ;
@@ -5878,8 +5701,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_INT05.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1integerMininclusiveINTEGERLead_pass-integer-equalLead.val>
+    ]
     .
 
 <#1integerMininclusiveINTEGERLead_pass-integer-high> a sht:ValidationTest ;
@@ -5893,8 +5715,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_INT6.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1integerMininclusiveINTEGERLead_pass-integer-high.val>
+    ]
     .
 
 <#1integerMininclusiveDECIMAL_pass-integer-equal> a sht:ValidationTest ;
@@ -5908,8 +5729,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_INT5.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1integerMininclusiveDECIMAL_pass-integer-equal.val>
+    ]
     .
 
 <#1integerMininclusiveDECIMALLeadTrail_fail-integer-low> a sht:ValidationFailure ;
@@ -5937,8 +5757,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_INT5.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1integerMininclusiveDECIMALLeadTrail_pass-integer-equal.val>
+    ]
     .
 
 <#1integerMininclusiveDECIMALLeadTrail_pass-integer-equalLead> a sht:ValidationTest ;
@@ -5952,8 +5771,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_INT05.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1integerMininclusiveDECIMALLeadTrail_pass-integer-equalLead.val>
+    ]
     .
 
 <#1integerMininclusiveDECIMALLeadTrail_pass-integer-high> a sht:ValidationTest ;
@@ -5967,8 +5785,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_INT6.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1integerMininclusiveDECIMALLeadTrail_pass-integer-high.val>
+    ]
     .
 
 <#1integerMininclusiveDECIMALint_fail-integer-low> a sht:ValidationFailure ;
@@ -5996,8 +5813,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_INT5.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1integerMininclusiveDECIMALint_pass-integer-equal.val>
+    ]
     .
 
 <#1integerMininclusiveDECIMALint_pass-integer-high> a sht:ValidationTest ;
@@ -6011,8 +5827,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_INT6.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1integerMininclusiveDECIMALint_pass-integer-high.val>
+    ]
     .
 
 <#1integerMininclusiveDECIMALintLeadTrail_fail-integer-low> a sht:ValidationFailure ;
@@ -6040,8 +5855,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_INT5.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1integerMininclusiveDECIMALintLeadTrail_pass-integer-equal.val>
+    ]
     .
 
 <#1integerMininclusiveDECIMALintLeadTrail_pass-integer-equalLead> a sht:ValidationTest ;
@@ -6055,8 +5869,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_INT05.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1integerMininclusiveDECIMALintLeadTrail_pass-integer-equalLead.val>
+    ]
     .
 
 <#1integerMininclusiveDECIMALintLeadTrail_pass-integer-high> a sht:ValidationTest ;
@@ -6070,8 +5883,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_INT6.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1integerMininclusiveDECIMALintLeadTrail_pass-integer-high.val>
+    ]
     .
 
 <#1integerMininclusiveDOUBLE_pass-integer-equal> a sht:ValidationTest ;
@@ -6085,8 +5897,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_INT5.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1integerMininclusiveDOUBLE_pass-integer-equal.val>
+    ]
     .
 
 <#1integerMininclusiveDOUBLELeadTrail_fail-integer-low> a sht:ValidationFailure ;
@@ -6114,8 +5925,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_INT5.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1integerMininclusiveDOUBLELeadTrail_pass-integer-equal.val>
+    ]
     .
 
 <#1integerMininclusiveDOUBLELeadTrail_pass-integer-equalLead> a sht:ValidationTest ;
@@ -6129,8 +5939,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_INT05.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1integerMininclusiveDOUBLELeadTrail_pass-integer-equalLead.val>
+    ]
     .
 
 <#1integerMininclusiveDOUBLELeadTrail_pass-integer-high> a sht:ValidationTest ;
@@ -6144,8 +5953,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_INT6.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1integerMininclusiveDOUBLELeadTrail_pass-integer-high.val>
+    ]
     .
 
 <#1integerMininclusiveDOUBLEint_pass-integer-equal> a sht:ValidationTest ;
@@ -6159,8 +5967,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_INT5.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1integerMininclusiveDOUBLEint_pass-integer-equal.val>
+    ]
     .
 
 <#1integerMininclusiveDOUBLEintLeadTrail_fail-integer-low> a sht:ValidationFailure ;
@@ -6188,8 +5995,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_INT5.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1integerMininclusiveDOUBLEintLeadTrail_pass-integer-equal.val>
+    ]
     .
 
 <#1integerMininclusiveDOUBLEintLeadTrail_pass-integer-equalLead> a sht:ValidationTest ;
@@ -6203,8 +6009,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_INT05.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1integerMininclusiveDOUBLEintLeadTrail_pass-integer-equalLead.val>
+    ]
     .
 
 <#1integerMininclusiveDOUBLEintLeadTrail_pass-integer-high> a sht:ValidationTest ;
@@ -6218,8 +6023,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_INT6.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1integerMininclusiveDOUBLEintLeadTrail_pass-integer-high.val>
+    ]
     .
 
 <#1integerMininclusiveINTEGER_fail-decimal-equal> a sht:ValidationFailure ;
@@ -6331,8 +6135,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DEC5_6.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1decimalMininclusiveINTEGER_pass-decimal-high.val>
+    ]
     .
 
 <#1decimalMininclusiveINTEGERLead_fail-decimal-low> a sht:ValidationFailure ;
@@ -6360,8 +6163,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DEC5_6.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1decimalMininclusiveINTEGERLead_pass-decimal-high.val>
+    ]
     .
 
 <#1decimalMininclusiveDECIMAL_fail-decimal-low> a sht:ValidationFailure ;
@@ -6389,8 +6191,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DEC4_5.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1decimalMininclusiveDECIMAL_pass-decimal-equal.val>
+    ]
     .
 
 <#1decimalMininclusiveDECIMAL_pass-decimal-equalLeadTrail> a sht:ValidationTest ;
@@ -6404,8 +6205,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DEC04_50.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1decimalMininclusiveDECIMAL_pass-decimal-equalLeadTrail.val>
+    ]
     .
 
 <#1decimalMininclusiveDECIMAL_pass-decimal-high> a sht:ValidationTest ;
@@ -6419,8 +6219,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DEC5_6.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1decimalMininclusiveDECIMAL_pass-decimal-high.val>
+    ]
     .
 
 <#1decimalMininclusiveDECIMALLeadTrail_fail-decimal-low> a sht:ValidationFailure ;
@@ -6448,8 +6247,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DEC4_5.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1decimalMininclusiveDECIMALLeadTrail_pass-decimal-equal.val>
+    ]
     .
 
 <#1decimalMininclusiveDECIMALLeadTrail_pass-decimal-equalLeadTrail> a sht:ValidationTest ;
@@ -6463,8 +6261,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DEC04_50.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1decimalMininclusiveDECIMALLeadTrail_pass-decimal-equalLeadTrail.val>
+    ]
     .
 
 <#1decimalMininclusiveDECIMALLeadTrail_pass-decimal-high> a sht:ValidationTest ;
@@ -6478,8 +6275,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DEC5_6.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1decimalMininclusiveDECIMALLeadTrail_pass-decimal-high.val>
+    ]
     .
 
 <#1decimalMininclusiveDECIMALintLeadTrail_fail-decimal-low> a sht:ValidationFailure ;
@@ -6507,8 +6303,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DEC5_6.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1decimalMininclusiveDECIMALintLeadTrail_pass-decimal-high.val>
+    ]
     .
 
 <#1decimalMininclusiveDOUBLE_fail-decimal-low> a sht:ValidationFailure ;
@@ -6536,8 +6331,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DEC4_5.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1decimalMininclusiveDOUBLE_pass-decimal-equal.val>
+    ]
     .
 
 <#1decimalMininclusiveDOUBLE_pass-decimal-equalLeadTrail> a sht:ValidationTest ;
@@ -6551,8 +6345,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DEC04_50.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1decimalMininclusiveDOUBLE_pass-decimal-equalLeadTrail.val>
+    ]
     .
 
 <#1decimalMininclusiveDOUBLELeadTrail_fail-decimal-low> a sht:ValidationFailure ;
@@ -6580,8 +6373,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DEC4_5.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1decimalMininclusiveDOUBLELeadTrail_pass-decimal-equal.val>
+    ]
     .
 
 <#1decimalMininclusiveDOUBLELeadTrail_pass-decimal-equalLeadTrail> a sht:ValidationTest ;
@@ -6595,8 +6387,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DEC04_50.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1decimalMininclusiveDOUBLELeadTrail_pass-decimal-equalLeadTrail.val>
+    ]
     .
 
 <#1decimalMininclusiveDOUBLELeadTrail_pass-decimal-high> a sht:ValidationTest ;
@@ -6610,8 +6401,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DEC5_6.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1decimalMininclusiveDOUBLELeadTrail_pass-decimal-high.val>
+    ]
     .
 
 <#1decimalMininclusiveDOUBLEintLeadTrail_fail-decimal-low> a sht:ValidationFailure ;
@@ -6639,8 +6429,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DEC5_6.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1decimalMininclusiveDOUBLEintLeadTrail_pass-decimal-high.val>
+    ]
     .
 
 <#1decimalMininclusiveDECIMAL_fail-float-equal> a sht:ValidationFailure ;
@@ -6696,8 +6485,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_FLT5_6.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1floatMininclusiveINTEGERLead_pass-float-high.val>
+    ]
     .
 
 <#1floatMininclusiveDECIMAL_pass-float-equal> a sht:ValidationTest ;
@@ -6711,8 +6499,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_FLT4_5.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1floatMininclusiveDECIMAL_pass-float-equal.val>
+    ]
     .
 
 <#1floatMininclusiveDECIMAL_pass-float-equalLeadTrail> a sht:ValidationTest ;
@@ -6726,8 +6513,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_FLT04_50.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1floatMininclusiveDECIMAL_pass-float-equalLeadTrail.val>
+    ]
     .
 
 <#1floatMininclusiveDECIMALLeadTrail_fail-float-low> a sht:ValidationFailure ;
@@ -6755,8 +6541,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_FLT4_5.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1floatMininclusiveDECIMALLeadTrail_pass-float-equal.val>
+    ]
     .
 
 <#1floatMininclusiveDECIMALLeadTrail_pass-float-equalLeadTrail> a sht:ValidationTest ;
@@ -6770,8 +6555,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_FLT04_50.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1floatMininclusiveDECIMALLeadTrail_pass-float-equalLeadTrail.val>
+    ]
     .
 
 <#1floatMininclusiveDECIMALLeadTrail_pass-float-high> a sht:ValidationTest ;
@@ -6785,8 +6569,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_FLT5_6.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1floatMininclusiveDECIMALLeadTrail_pass-float-high.val>
+    ]
     .
 
 <#1floatMininclusiveDECIMALintLeadTrail_fail-float-low> a sht:ValidationFailure ;
@@ -6814,8 +6597,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_FLT5_6.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1floatMininclusiveDECIMALintLeadTrail_pass-float-high.val>
+    ]
     .
 
 <#1floatMininclusiveDOUBLE_pass-float-equal> a sht:ValidationTest ;
@@ -6829,8 +6611,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_FLT4_5.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1floatMininclusiveDOUBLE_pass-float-equal.val>
+    ]
     .
 
 <#1floatMininclusiveDOUBLE_pass-float-equalLeadTrail> a sht:ValidationTest ;
@@ -6844,8 +6625,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_FLT04_50.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1floatMininclusiveDOUBLE_pass-float-equalLeadTrail.val>
+    ]
     .
 
 <#1floatMininclusiveDOUBLELeadTrail_fail-float-low> a sht:ValidationFailure ;
@@ -6873,8 +6653,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_FLT4_5.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1floatMininclusiveDOUBLELeadTrail_pass-float-equal.val>
+    ]
     .
 
 <#1floatMininclusiveDOUBLELeadTrail_pass-float-equalLeadTrail> a sht:ValidationTest ;
@@ -6888,8 +6667,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_FLT04_50.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1floatMininclusiveDOUBLELeadTrail_pass-float-equalLeadTrail.val>
+    ]
     .
 
 <#1floatMininclusiveDOUBLELeadTrail_pass-float-high> a sht:ValidationTest ;
@@ -6903,8 +6681,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_FLT5_6.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1floatMininclusiveDOUBLELeadTrail_pass-float-high.val>
+    ]
     .
 
 <#1floatMininclusiveDOUBLEintLeadTrail_fail-float-low> a sht:ValidationFailure ;
@@ -6932,8 +6709,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_FLT5_6.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1floatMininclusiveDOUBLEintLeadTrail_pass-float-high.val>
+    ]
     .
 
 <#1doubleMininclusiveINTEGERLead_fail-double-low> a sht:ValidationFailure ;
@@ -6961,8 +6737,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DBL5_6e0.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1doubleMininclusiveINTEGERLead_pass-double-high.val>
+    ]
     .
 
 <#1doubleMininclusiveDECIMAL_pass-double-equal> a sht:ValidationTest ;
@@ -6976,8 +6751,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DBL4_5e0.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1doubleMininclusiveDECIMAL_pass-double-equal.val>
+    ]
     .
 
 <#1doubleMininclusiveDECIMAL_pass-double-equalLeadTrail> a sht:ValidationTest ;
@@ -6991,8 +6765,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DBL04_50e0.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1doubleMininclusiveDECIMAL_pass-double-equalLeadTrail.val>
+    ]
     .
 
 <#1doubleMininclusiveDECIMALLeadTrail_fail-double-low> a sht:ValidationFailure ;
@@ -7020,8 +6793,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DBL4_5e0.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1doubleMininclusiveDECIMALLeadTrail_pass-double-equal.val>
+    ]
     .
 
 <#1doubleMininclusiveDECIMALLeadTrail_pass-double-equalLeadTrail> a sht:ValidationTest ;
@@ -7035,8 +6807,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DBL04_50e0.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1doubleMininclusiveDECIMALLeadTrail_pass-double-equalLeadTrail.val>
+    ]
     .
 
 <#1doubleMininclusiveDECIMALLeadTrail_pass-double-high> a sht:ValidationTest ;
@@ -7050,8 +6821,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DBL5_6e0.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1doubleMininclusiveDECIMALLeadTrail_pass-double-high.val>
+    ]
     .
 
 <#1doubleMininclusiveDECIMALintLeadTrail_fail-double-low> a sht:ValidationFailure ;
@@ -7079,8 +6849,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DBL5_6e0.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1doubleMininclusiveDECIMALintLeadTrail_pass-double-high.val>
+    ]
     .
 
 <#1doubleMininclusiveDOUBLE_pass-double-equal> a sht:ValidationTest ;
@@ -7094,8 +6863,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DBL4_5e0.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1doubleMininclusiveDOUBLE_pass-double-equal.val>
+    ]
     .
 
 <#1doubleMininclusiveDOUBLE_pass-double-equalLeadTrail> a sht:ValidationTest ;
@@ -7109,8 +6877,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DBL04_50e0.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1doubleMininclusiveDOUBLE_pass-double-equalLeadTrail.val>
+    ]
     .
 
 <#1doubleMininclusiveDOUBLELeadTrail_fail-double-low> a sht:ValidationFailure ;
@@ -7138,8 +6905,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DBL4_5e0.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1doubleMininclusiveDOUBLELeadTrail_pass-double-equal.val>
+    ]
     .
 
 <#1doubleMininclusiveDOUBLELeadTrail_pass-double-equalLeadTrail> a sht:ValidationTest ;
@@ -7153,8 +6919,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DBL04_50e0.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1doubleMininclusiveDOUBLELeadTrail_pass-double-equalLeadTrail.val>
+    ]
     .
 
 <#1doubleMininclusiveDOUBLELeadTrail_pass-double-high> a sht:ValidationTest ;
@@ -7168,8 +6933,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DBL5_6e0.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1doubleMininclusiveDOUBLELeadTrail_pass-double-high.val>
+    ]
     .
 
 <#1doubleMininclusiveDOUBLEintLeadTrail_fail-double-low> a sht:ValidationFailure ;
@@ -7197,8 +6961,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DBL5_6e0.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1doubleMininclusiveDOUBLEintLeadTrail_pass-double-high.val>
+    ]
     .
 
 <#1integerMinexclusiveINTEGER_fail-integer-low> a sht:ValidationFailure ;
@@ -7240,8 +7003,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_INT6.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1integerMinexclusiveINTEGER_pass-integer-high.val>
+    ]
     .
 
 <#1integerMinexclusiveDECIMALint_fail-integer-low> a sht:ValidationFailure ;
@@ -7283,8 +7045,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_INT6.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1integerMinexclusiveDECIMALint_pass-integer-high.val>
+    ]
     .
 
 <#1integerMinexclusiveDOUBLEint_fail-integer-low> a sht:ValidationFailure ;
@@ -7326,8 +7087,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_INT6.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1integerMinexclusiveDOUBLEint_pass-integer-high.val>
+    ]
     .
 
 <#1decimalMinexclusiveINTEGER_fail-decimal-low> a sht:ValidationFailure ;
@@ -7355,8 +7115,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DEC5_6.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1decimalMinexclusiveINTEGER_pass-decimal-high.val>
+    ]
     .
 
 <#1decimalMinexclusiveDECIMAL_fail-decimal-low> a sht:ValidationFailure ;
@@ -7398,8 +7157,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DEC5_6.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1decimalMinexclusiveDECIMAL_pass-decimal-high.val>
+    ]
     .
 
 <#1decimalMinexclusiveDOUBLE_fail-decimal-low> a sht:ValidationFailure ;
@@ -7441,8 +7199,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DEC5_6.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1decimalMinexclusiveDOUBLE_pass-decimal-high.val>
+    ]
     .
 
 <#1decimalMinexclusiveDECIMAL_fail-float-equal> a sht:ValidationFailure ;
@@ -7498,8 +7255,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_FLT5_6.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1floatMinexclusiveINTEGER_pass-float-high.val>
+    ]
     .
 
 <#1floatMinexclusiveDECIMAL_fail-float-low> a sht:ValidationFailure ;
@@ -7541,8 +7297,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_FLT5_6.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1floatMinexclusiveDECIMAL_pass-float-high.val>
+    ]
     .
 
 <#1floatMinexclusiveDOUBLE_fail-float-low> a sht:ValidationFailure ;
@@ -7584,8 +7339,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_FLT5_6.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1floatMinexclusiveDOUBLE_pass-float-high.val>
+    ]
     .
 
 <#1doubleMinexclusiveINTEGER_fail-double-low> a sht:ValidationFailure ;
@@ -7613,8 +7367,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DBL5_6e0.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1doubleMinexclusiveINTEGER_pass-double-high.val>
+    ]
     .
 
 <#1doubleMinexclusiveDECIMAL_fail-double-low> a sht:ValidationFailure ;
@@ -7656,8 +7409,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DBL5_6e0.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1doubleMinexclusiveDECIMAL_pass-double-high.val>
+    ]
     .
 
 <#1doubleMinexclusiveDOUBLE_fail-double-low> a sht:ValidationFailure ;
@@ -7699,8 +7451,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DBL5_6e0.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1doubleMinexclusiveDOUBLE_pass-double-high.val>
+    ]
     .
 
 <#1doubleMinexclusiveDECIMAL_fail-float-equal> a sht:ValidationFailure ;
@@ -7728,8 +7479,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_INT4.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1integerMaxinclusiveINTEGER_pass-integer-low.val>
+    ]
     .
 
 <#1integerMaxinclusiveINTEGER_pass-integer-equal> a sht:ValidationTest ;
@@ -7743,8 +7493,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_INT5.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1integerMaxinclusiveINTEGER_pass-integer-equal.val>
+    ]
     .
 
 <#1integerMaxinclusiveINTEGER_fail-integer-high> a sht:ValidationFailure ;
@@ -7772,8 +7521,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_INT4.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1integerMaxinclusiveDECIMALint_pass-integer-low.val>
+    ]
     .
 
 <#1integerMaxinclusiveDECIMALint_pass-integer-equal> a sht:ValidationTest ;
@@ -7787,8 +7535,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_INT5.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1integerMaxinclusiveDECIMALint_pass-integer-equal.val>
+    ]
     .
 
 <#1integerMaxinclusiveDECIMALint_fail-integer-high> a sht:ValidationFailure ;
@@ -7816,8 +7563,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_INT4.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1integerMaxinclusiveDOUBLEint_pass-integer-low.val>
+    ]
     .
 
 <#1integerMaxinclusiveDOUBLEint_pass-integer-equal> a sht:ValidationTest ;
@@ -7831,8 +7577,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_INT5.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1integerMaxinclusiveDOUBLEint_pass-integer-equal.val>
+    ]
     .
 
 <#1integerMaxinclusiveDOUBLEint_fail-integer-high> a sht:ValidationFailure ;
@@ -7860,8 +7605,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DEC4_4.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1decimalMaxinclusiveINTEGER_pass-decimal-low.val>
+    ]
     .
 
 <#1decimalMaxinclusiveINTEGER_fail-decimal-high> a sht:ValidationFailure ;
@@ -7889,8 +7633,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DEC4_4.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1decimalMaxinclusiveDECIMAL_pass-decimal-low.val>
+    ]
     .
 
 <#1decimalMaxinclusiveDECIMAL_pass-decimal-equal> a sht:ValidationTest ;
@@ -7904,8 +7647,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DEC5_5.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1decimalMaxinclusiveDECIMAL_pass-decimal-equal.val>
+    ]
     .
 
 <#1decimalMaxinclusiveDECIMAL_fail-decimal-high> a sht:ValidationFailure ;
@@ -7933,8 +7675,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DEC4_4.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1decimalMaxinclusiveDOUBLE_pass-decimal-low.val>
+    ]
     .
 
 <#1decimalMaxinclusiveDOUBLE_pass-decimal-equal> a sht:ValidationTest ;
@@ -7948,8 +7689,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DEC5_5.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1decimalMaxinclusiveDOUBLE_pass-decimal-equal.val>
+    ]
     .
 
 <#1decimalMaxinclusiveDOUBLE_fail-decimal-high> a sht:ValidationFailure ;
@@ -8005,8 +7745,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_FLT4_4.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1floatMaxinclusiveINTEGER_pass-float-low.val>
+    ]
     .
 
 <#1floatMaxinclusiveINTEGER_fail-float-high> a sht:ValidationFailure ;
@@ -8034,8 +7773,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_FLT4_4.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1floatMaxinclusiveDECIMAL_pass-float-low.val>
+    ]
     .
 
 <#1floatMaxinclusiveDECIMAL_pass-float-equal> a sht:ValidationTest ;
@@ -8049,8 +7787,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_FLT5_5.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1floatMaxinclusiveDECIMAL_pass-float-equal.val>
+    ]
     .
 
 <#1floatMaxinclusiveDECIMAL_fail-float-high> a sht:ValidationFailure ;
@@ -8078,8 +7815,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_FLT4_4.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1floatMaxinclusiveDOUBLE_pass-float-low.val>
+    ]
     .
 
 <#1floatMaxinclusiveDOUBLE_pass-float-equal> a sht:ValidationTest ;
@@ -8093,8 +7829,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_FLT5_5.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1floatMaxinclusiveDOUBLE_pass-float-equal.val>
+    ]
     .
 
 <#1floatMaxinclusiveDOUBLE_fail-float-high> a sht:ValidationFailure ;
@@ -8122,8 +7857,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DBL4_4e0.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1doubleMaxinclusiveINTEGER_pass-double-low.val>
+    ]
     .
 
 <#1doubleMaxinclusiveINTEGER_fail-double-high> a sht:ValidationFailure ;
@@ -8151,8 +7885,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DBL4_4e0.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1doubleMaxinclusiveDECIMAL_pass-double-low.val>
+    ]
     .
 
 <#1doubleMaxinclusiveDECIMAL_pass-double-equal> a sht:ValidationTest ;
@@ -8166,8 +7899,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DBL5_5e0.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1doubleMaxinclusiveDECIMAL_pass-double-equal.val>
+    ]
     .
 
 <#1doubleMaxinclusiveDECIMAL_fail-double-high> a sht:ValidationFailure ;
@@ -8195,8 +7927,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DBL4_4e0.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1doubleMaxinclusiveDOUBLE_pass-double-low.val>
+    ]
     .
 
 <#1doubleMaxinclusiveDOUBLE_pass-double-equal> a sht:ValidationTest ;
@@ -8210,8 +7941,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DBL5_5e0.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1doubleMaxinclusiveDOUBLE_pass-double-equal.val>
+    ]
     .
 
 <#1doubleMaxinclusiveDOUBLE_fail-double-high> a sht:ValidationFailure ;
@@ -8253,8 +7983,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_INT4.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1integerMaxexclusiveINTEGER_pass-integer-low.val>
+    ]
     .
 
 <#1integerMaxexclusiveINTEGER_fail-integer-equal> a sht:ValidationFailure ;
@@ -8296,8 +8025,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_INT4.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1integerMaxexclusiveDECIMALint_pass-integer-low.val>
+    ]
     .
 
 <#1integerMaxexclusiveDECIMALint_fail-integer-equal> a sht:ValidationFailure ;
@@ -8339,8 +8067,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_INT4.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1integerMaxexclusiveDOUBLEint_pass-integer-low.val>
+    ]
     .
 
 <#1integerMaxexclusiveDOUBLEint_fail-integer-equal> a sht:ValidationFailure ;
@@ -8382,8 +8109,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DEC4_4.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1decimalMaxexclusiveINTEGER_pass-decimal-low.val>
+    ]
     .
 
 <#1decimalMaxexclusiveINTEGER_fail-decimal-high> a sht:ValidationFailure ;
@@ -8411,8 +8137,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DEC4_4.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1decimalMaxexclusiveDECIMAL_pass-decimal-low.val>
+    ]
     .
 
 <#1decimalMaxexclusiveDECIMAL_fail-decimal-equal> a sht:ValidationFailure ;
@@ -8454,8 +8179,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DEC4_4.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1decimalMaxexclusiveDOUBLE_pass-decimal-low.val>
+    ]
     .
 
 <#1decimalMaxexclusiveDOUBLE_fail-decimal-equal> a sht:ValidationFailure ;
@@ -8539,8 +8263,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_FLT4_4.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1floatMaxexclusiveINTEGER_pass-float-low.val>
+    ]
     .
 
 <#1floatMaxexclusiveINTEGER_fail-float-high> a sht:ValidationFailure ;
@@ -8568,8 +8291,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_FLT4_4.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1floatMaxexclusiveDECIMAL_pass-float-low.val>
+    ]
     .
 
 <#1floatMaxexclusiveDECIMAL_fail-float-high> a sht:ValidationFailure ;
@@ -8597,8 +8319,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_FLT4_4.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1floatMaxexclusiveDOUBLE_pass-float-low.val>
+    ]
     .
 
 <#1floatMaxexclusiveDOUBLE_fail-float-high> a sht:ValidationFailure ;
@@ -8626,8 +8347,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DBL4_4e0.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1doubleMaxexclusiveINTEGER_pass-double-low.val>
+    ]
     .
 
 <#1doubleMaxexclusiveINTEGER_fail-double-equal> a sht:ValidationFailure ;
@@ -8683,8 +8403,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DBL4_4e0.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1doubleMaxexclusiveDECIMAL_pass-double-low.val>
+    ]
     .
 
 <#1doubleMaxexclusiveDECIMAL_fail-double-equal> a sht:ValidationFailure ;
@@ -8768,8 +8487,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_DBL4_4e0.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1doubleMaxexclusiveDOUBLE_pass-double-low.val>
+    ]
     .
 
 <#1doubleMaxexclusiveDOUBLE_fail-double-equal> a sht:ValidationFailure ;
@@ -8868,8 +8586,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Labcde.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1Length_pass-lit-equal.val>
+    ]
     .
 
 <#1Length_fail-lit-long> a sht:ValidationFailure ;
@@ -8908,8 +8625,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Labcde.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1literalLength_pass-lit-equal.val>
+    ]
     .
 
 <#1literalLength_fail-lit-long> a sht:ValidationFailure ;
@@ -8975,8 +8691,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1iriLength_pass-iri-equal.val>
+    ]
     .
 
 <#1iriLength_fail-iri-long> a sht:ValidationFailure ;
@@ -9042,8 +8757,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Io1-Io1_Ip2_Io2.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1iriRefLength1_pass-iri-equal.val>
+    ]
     .
 
 <#1iriRefLength1_fail-iri-long> a sht:ValidationFailure ;
@@ -9109,8 +8823,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Babcde.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1bnodeLength_pass-bnode-equal.val>
+    ]
     .
 
 <#1bnodeLength_fail-bnode-long> a sht:ValidationFailure ;
@@ -9176,8 +8889,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1nonliteralLength_pass-iri-equal.val>
+    ]
     .
 
 <#1nonliteralLength_fail-iri-long> a sht:ValidationFailure ;
@@ -9229,8 +8941,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Babcdefghijklmnopqrs.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1nonliteralLength_pass-bnode-equal.val>
+    ]
     .
 
 <#1nonliteralLength_fail-bnode-long> a sht:ValidationFailure ;
@@ -9271,8 +8982,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Labcde.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1literalMinlength_pass-lit-equal.val>
+    ]
     .
 
 <#1literalMinlength_pass-lit-long> a sht:ValidationTest ;
@@ -9285,8 +8995,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Labcdef.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1literalMinlength_pass-lit-long.val>
+    ]
     .
 
 
@@ -9313,8 +9022,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1iriMinlength_pass-iri-equal.val>
+    ]
     .
 
 <#1iriMinlength_pass-iri-long> a sht:ValidationTest ;
@@ -9327,8 +9035,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Io1a.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1iriMinlength_pass-iri-long.val>
+    ]
     .
 
 
@@ -9355,8 +9062,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Babcde.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1bnodeMinlength_pass-bnode-equal.val>
+    ]
     .
 
 <#1bnodeMinlength_pass-bnode-long> a sht:ValidationTest ;
@@ -9369,8 +9075,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Babcdef.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1bnodeMinlength_pass-bnode-long.val>
+    ]
     .
 
 
@@ -9397,8 +9102,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1nonliteralMinlength_pass-iri-equal.val>
+    ]
     .
 
 <#1nonliteralMinlength_pass-iri-long> a sht:ValidationTest ;
@@ -9411,8 +9115,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Io1a.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1nonliteralMinlength_pass-iri-long.val>
+    ]
     .
 
 <#1nonliteralMinlength_fail-bnode-short> a sht:ValidationFailure ;
@@ -9438,8 +9141,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Babcdefghijklmnopqrs.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1nonliteralMinlength_pass-bnode-equal.val>
+    ]
     .
 
 <#1nonliteralMinlength_pass-bnode-long> a sht:ValidationTest ;
@@ -9452,8 +9154,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Babcdefghijklmnopqrs.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1nonliteralMinlength_pass-bnode-long.val>
+    ]
     .
 
 
@@ -9468,8 +9169,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Labcd.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1literalMaxlength_pass-lit-short.val>
+    ]
     .
 
 <#1literalMaxlength_pass-lit-equal> a sht:ValidationTest ;
@@ -9482,8 +9182,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Labcde.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1literalMaxlength_pass-lit-equal.val>
+    ]
     .
 
 <#1literalMaxlength_fail-lit-long> a sht:ValidationFailure ;
@@ -9510,8 +9209,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Io.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1iriMaxlength_pass-iri-short.val>
+    ]
     .
 
 <#1iriMaxlength_pass-iri-equal> a sht:ValidationTest ;
@@ -9524,8 +9222,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1iriMaxlength_pass-iri-equal.val>
+    ]
     .
 
 <#1iriMaxlength_fail-iri-long> a sht:ValidationFailure ;
@@ -9552,8 +9249,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Babcd.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1bnodeMaxlength_pass-bnode-short.val>
+    ]
     .
 
 <#1bnodeMaxlength_pass-bnode-equal> a sht:ValidationTest ;
@@ -9566,8 +9262,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Babcde.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1bnodeMaxlength_pass-bnode-equal.val>
+    ]
     .
 
 <#1bnodeMaxlength_fail-bnode-long> a sht:ValidationFailure ;
@@ -9594,8 +9289,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Io.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1nonliteralMaxlength_pass-iri-short.val>
+    ]
     .
 
 <#1nonliteralMaxlength_pass-iri-equal> a sht:ValidationTest ;
@@ -9608,8 +9302,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1nonliteralMaxlength_pass-iri-equal.val>
+    ]
     .
 
 <#1nonliteralMaxlength_fail-iri-long> a sht:ValidationFailure ;
@@ -9635,8 +9328,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Babcd.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1nonliteralMaxlength_pass-bnode-short.val>
+    ]
     .
 
 <#1nonliteralMaxlength_pass-bnode-equal> a sht:ValidationTest ;
@@ -9649,8 +9341,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Babcdefghijklmnopqrs.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1nonliteralMaxlength_pass-bnode-equal.val>
+    ]
     .
 
 <#1nonliteralMaxlength_fail-bnode-long> a sht:ValidationFailure ;
@@ -9679,8 +9370,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Lbclowercase.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1literalPattern_pass-lit-match.val>
+    ]
     .
 
 <#1literalPattern_fail-lit-short> a sht:ValidationFailure ;
@@ -9732,8 +9422,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Lbclowercase.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1literalPatterni_pass-lit-match.val>
+    ]
     .
 
 <#1literalPatterni_pass-lit-BC> a sht:ValidationTest ;
@@ -9746,8 +9435,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_LBC.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1literalPatterni_pass-lit-BC.val>
+    ]
     .
 
 <#1literalPatterni_pass-lit-blowercaseC> a sht:ValidationTest ;
@@ -9760,8 +9448,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_LblowercaseC.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1literalPatterni_pass-lit-blowercaseC.val>
+    ]
     .
 
 <#1literalPattern_pass-lit-into> a sht:ValidationTest ;
@@ -9774,8 +9461,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Labc.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1literalPattern_pass-lit-into.val>
+    ]
     .
 
 <#1literalPattern19_fail-iri-match> a sht:ValidationFailure ;
@@ -9815,8 +9501,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Lbclowercase.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1literalStartPattern-bc.val>
+    ]
     .
 
 <#1literalStartPattern_fail-CarrotbcDollar> a sht:ValidationFailure ;
@@ -9842,8 +9527,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Lbclowercase.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1literalPatternEnd_pass-bc.val>
+    ]
     .
 
 <#1literalPatternEnd_pass-CarrotbcDollar> a sht:ValidationFailure ;
@@ -9869,8 +9553,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_LbcDollar.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1literalPattern_pass-bcDollar.val>
+    ]
     .
 
 <#1literalStarPatternEnd_pass-bc> a sht:ValidationTest ;
@@ -9883,8 +9566,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Lbclowercase.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1literalStarPatternEnd_pass-bc.val>
+    ]
     .
 
 <#1literalPattern_pass-CarrotbcDollar> a sht:ValidationTest ;
@@ -9897,8 +9579,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_LCarrotbcDollar.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1literalPattern_pass-CarrotbcDollar.val>
+    ]
     .
 
 # translates to the implicitly anchored XML Schema:
@@ -9914,7 +9595,7 @@
 #   </xs:schema>
 # with data:
 #   <?xml version="1.0" encoding="UTF-8"?>
-#   <p1>	v:0,  v:12v:3/.&#xD;&#xA;</p1>
+#   <p1>        v:0,  v:12v:3/.&#xD;&#xA;</p1>
 # Try at: <http://www.utilities-online.info/xsdvalidation>
 <#1literalPattern_with_all_meta_pass> a sht:ValidationTest ;
     mf:name "1literalPattern_with_all_meta_pass" ;
@@ -9926,8 +9607,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_L_with_all_meta.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1literalPattern_with_all_meta_pass.val>
+    ]
     .
 
 <#1literalPattern_with_all_meta_pass-NA> a sht:ValidationTest ;
@@ -9940,8 +9620,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_LabcNAdef.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1literalPattern_with_all_meta_pass-NA.val>
+    ]
     .
 
 <#1literalPattern_with_all_controls_pass> a sht:ValidationTest ;
@@ -9954,8 +9633,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_LSTRING_LITERAL1_with_all_controls.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1literalPattern_with_all_controls_pass.val>
+    ]
     .
 
 <#1literalPattern_with_all_controls_fail> a sht:ValidationFailure ;
@@ -9981,8 +9659,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_LSTRING_LITERAL1_with_all_punctuation.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1literalPattern_with_all_punctuation_pass.val>
+    ]
     .
 
 <#1literalPattern_with_all_punctuation_fail> a sht:ValidationFailure ;
@@ -10008,8 +9685,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_LSTRING_LITERAL1_with_ascii_boundaries.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1literalPattern_with_ascii_boundaries_pass.val>
+    ]
     .
 
 <#1literalPattern_with_ascii_boundaries_fail> a sht:ValidationFailure ;
@@ -10035,8 +9711,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_LSTRING_LITERAL1_with_UTF8_boundaries.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1literalPattern_with_UTF8_boundaries_pass.val>
+    ]
     .
 
 <#1literalPattern_with_UTF8_boundaries_fail> a sht:ValidationFailure ;
@@ -10062,8 +9737,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_L_with_REGEXP_escapes.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1literalPattern_with_REGEXP_escapes_pass.val>
+    ]
     .
 
 <#1literalPattern_with_REGEXP_escapes_fail> a sht:ValidationFailure ;
@@ -10102,8 +9776,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_L_with_REGEXP_escapes_escaped.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1literalPattern_with_REGEXP_escapes_escaped_pass.val>
+    ]
     .
 
 <#1literalPattern_with_REGEXP_escapes_escaped_fail_escapes> a sht:ValidationFailure ;
@@ -10122,7 +9795,7 @@
 <#1literalPattern_with_REGEXP_escapes_escaped_fail_escapes_bare> a sht:ValidationFailure ;
     mf:name "1literalPattern_with_REGEXP_escapes_escaped_fail_escapes_bare" ;
     sht:trait sht:NumericEquivalence, sht:OutsideBMP ;
-    rdfs:comment "<S> { <p1> /^\\\\/\\\\t\\\\b\\\\n\\\\r\\\\f\\\\\\\\\\\\u0061\\\\U0001D4B8$/ } on { <s> <p1> '/	\\b\\n\\r\\f\\a\U0001D4B8' }" ;
+    rdfs:comment "<S> { <p1> /^\\\\/\\\\t\\\\b\\\\n\\\\r\\\\f\\\\\\\\\\\\u0061\\\\U0001D4B8$/ } on { <s> <p1> '/        \\b\\n\\r\\f\\a\U0001D4B8' }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1literalPattern_with_REGEXP_escapes_escaped.shex> ;
@@ -10135,21 +9808,20 @@
 <#1literalPattern_with_REGEXP_escapes_bare_pass> a sht:ValidationTest ;
     mf:name "1literalPattern_with_REGEXP_escapes_bare_pass" ;
     sht:trait sht:NumericEquivalence, sht:OutsideBMP ;
-    rdfs:comment "<S> { <p1> /^\\/	\\n\\r-\\\\a\\U0001D4B8$/ } on { <s> <p1> '/	\\b\\n\\r\\f\\a\U0001D4B8' }" ;
+    rdfs:comment "<S> { <p1> /^\\/      \\n\\r-\\\\a\\U0001D4B8$/ } on { <s> <p1> '/    \\b\\n\\r\\f\\a\U0001D4B8' }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1literalPattern_with_REGEXP_escapes_bare.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_L_with_REGEXP_escapes_bare.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1literalPattern_with_REGEXP_escapes_bare_pass.val>
+    ]
     .
 
 <#1literalPattern_with_REGEXP_escapes_bare_fail_escaped> a sht:ValidationFailure ;
     mf:name "1literalPattern_with_REGEXP_escapes_bare_fail_escaped" ;
     sht:trait sht:NumericEquivalence, sht:OutsideBMP ;
-    rdfs:comment "<S> { <p1> /^\\/	\\n\\r-\\\\a\\U0001D4B8$/ } on { <s> <p1> '\\\\/\\\\t\\\\b\\\\n\\\\r\\\\f\\\\\\u0061\\U0001D4B8' }" ;
+    rdfs:comment "<S> { <p1> /^\\/      \\n\\r-\\\\a\\U0001D4B8$/ } on { <s> <p1> '\\\\/\\\\t\\\\b\\\\n\\\\r\\\\f\\\\\\u0061\\U0001D4B8' }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1literalPattern_with_REGEXP_escapes_bare.shex> ;
@@ -10162,29 +9834,27 @@
 <#1literalPattern_with_REGEXP_escapes_pass_bare> a sht:ValidationTest ;
     mf:name "1literalPattern_with_REGEXP_escapes_pass_bare" ;
     sht:trait sht:NumericEquivalence, sht:OutsideBMP ;
-    rdfs:comment "<S> { <p1> /^\\/\\t\\b\\n\\r\\f\\\\\\u0061\\U0001D4B8$/ } on { <s> <p1> '/	\\b\\n\\r\\f\\a\U0001D4B8' }" ;
+    rdfs:comment "<S> { <p1> /^\\/\\t\\b\\n\\r\\f\\\\\\u0061\\U0001D4B8$/ } on { <s> <p1> '/    \\b\\n\\r\\f\\a\U0001D4B8' }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1literalPattern_with_REGEXP_escapes.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_L_with_REGEXP_escapes_bare.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1literalPattern_with_REGEXP_escapes_pass.val>
+    ]
     .
 
 <#1literalPattern_with_REGEXP_escapes_bare_pass_escapes> a sht:ValidationTest ;
     mf:name "1literalPattern_with_REGEXP_escapes_bare_pass_escapes" ;
     sht:trait sht:NumericEquivalence, sht:OutsideBMP ;
-    rdfs:comment "<S> { <p1> /^\\/	\\n\\r-\\\\a\\U0001D4B8$/ } on { <s> <p1> '\\/\\t\\b\\n\\r\\f\\\u0061\U0001D4B8' }" ;
+    rdfs:comment "<S> { <p1> /^\\/      \\n\\r-\\\\a\\U0001D4B8$/ } on { <s> <p1> '\\/\\t\\b\\n\\r\\f\\\u0061\U0001D4B8' }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1literalPattern_with_REGEXP_escapes_bare.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_L_with_REGEXP_escapes.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1literalPattern_with_REGEXP_escapes_bare_pass_escapes.val>
+    ]
     .
 
 <#1literalPatternEnd_fail-litEnd> a sht:ValidationFailure ;
@@ -10210,8 +9880,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_LbcDollar.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1literalPatternDollar_pass-litDollar-match.val>
+    ]
     .
 
 <#1literalPattern_pass-StartlitEnd-match> a sht:ValidationFailure ;
@@ -10263,8 +9932,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_LCarrotbcDollar.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1literalCarrotPatternDollar_pass-CarrotbcDollar.val>
+    ]
     .
 
 <#1literalPatternabEnd_fail-bnode-match> a sht:ValidationFailure ;
@@ -10290,8 +9958,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1iriPattern_pass-iri-match.val>
+    ]
     .
 
 <#1iriPattern_fail-iri-short> a sht:ValidationFailure ;
@@ -10356,8 +10023,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Bbc.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1bnodePattern_pass-bnode-match.val>
+    ]
     .
 
 <#1bnodePattern_fail-bnode-short> a sht:ValidationFailure ;
@@ -10384,7 +10050,6 @@
       sht:data <Is1_Ip1_Babc.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
-    mf:result <1bnodePattern_pass-bnode-into.val> ;
     .
 
 <#1bnodePattern_fail-lit-match> a sht:ValidationFailure ;
@@ -10424,7 +10089,6 @@
       sht:data <Is1_Ip1_Ibc.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
-    mf:result <1nonliteralPattern_pass-iri-match.val> ;
     .
 
 <#1nonliteralPattern_fail-iri-short> a sht:ValidationFailure ;
@@ -10451,7 +10115,6 @@
       sht:data <Is1_Ip1_Iabc.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
-    mf:result <1nonliteralPattern_pass-iri-long.val> ;
     .
 
 <#1nonliteralPattern_fail-lit-match> a sht:ValidationFailure ;
@@ -10477,8 +10140,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Bbc.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1nonliteralPattern_pass-bnode-match.val>
+    ]
     .
 
 <#1nonliteralPattern_fail-bnode-short> a sht:ValidationFailure ;
@@ -10504,8 +10166,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Babc.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1nonliteralPattern_pass-bnode-long.val>
+    ]
     .
 
 ###   } pattern
@@ -10522,8 +10183,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1dotMinusiri3_pass.val>
+    ]
     .
 
 <#1val1dotMinusiri3_v1> a sht:ValidationFailure ;
@@ -10575,8 +10235,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1refvsMinusiri3_pass.val>
+    ]
     .
 
 <#1val1refvsMinusiri3_v1> a sht:ValidationFailure ;
@@ -10628,8 +10287,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1dotMinusiriStem3_pass.val>
+    ]
     .
 
 <#1val1dotMinusiriStem3_v1> a sht:ValidationFailure ;
@@ -10694,8 +10352,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Iv1.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1iriStem_passv1.val>
+    ]
     .
 
 <#1val1iriStem_passv1a> a sht:ValidationTest ;
@@ -10708,8 +10365,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Iv1a.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1iriStem_passv1a.val>
+    ]
     .
 
 <#1val1iriStem_fail> a sht:ValidationFailure ;
@@ -10735,8 +10391,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Iv.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1iriStemMinusiri3_passIv.val>
+    ]
     .
 
 <#1val1iriStemMinusiri3_passIv4> a sht:ValidationTest ;
@@ -10749,8 +10404,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Iv4.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1iriStemMinusiri3_passIv4.val>
+    ]
     .
 
 <#1val1iriStemMinusiri3_v1> a sht:ValidationFailure ;
@@ -10802,8 +10456,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Iv1a.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1iriStemMinusiri3_passIv1a.val>
+    ]
     .
 
 <#1val1iriStemMinusiriStem3_passIv> a sht:ValidationTest ;
@@ -10816,8 +10469,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Iv.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1iriStemMinusiriStem3_passIv.val>
+    ]
     .
 
 <#1val1iriStemMinusiriStem3_passIv4> a sht:ValidationTest ;
@@ -10830,8 +10482,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Iv4.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1iriStemMinusiriStem3_passIv4.val>
+    ]
     .
 
 <#1val1iriStemMinusiriStem3_v1> a sht:ValidationFailure ;
@@ -10922,8 +10573,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <p1.ttl> ;
       sht:focus <x>
-    ] ;
-    mf:result <1dotOne2dot_pass_p1.val>
+    ]
     .
 
 <#1dotOne2dot_pass_p2p3> a sht:ValidationTest ;
@@ -10936,8 +10586,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <p2p3.ttl> ;
       sht:focus <x>
-    ] ;
-    mf:result <1dotOne2dot_pass_p2p3.val>
+    ]
     .
 
 <#1dotOne2dot-oneOf_fail_p1p2p3> a sht:ValidationFailure ;
@@ -10976,8 +10625,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <p1.ttl> ;
       sht:focus <x>
-    ] ;
-    mf:result <1dotOne2dot_pass_p1.val>
+    ]
     .
 
 <#open1dotOneopen2dotcloseclose_pass_p2p3> a sht:ValidationTest ;
@@ -10990,8 +10638,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <p2p3.ttl> ;
       sht:focus <x>
-    ] ;
-    mf:result <1dotOne2dot_pass_p2p3.val>
+    ]
     .
 
 <#open1dotOneopen2dotcloseclose_fail_p1p2p3> a sht:ValidationFailure ;
@@ -11017,8 +10664,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <p1p3.ttl> ;
       sht:focus <x>
-    ] ;
-    mf:result <openopen1dotOne1dotclose1dotclose_pass_p1p3.val>
+    ]
     .
 
 <#openopen1dotOne1dotclose1dotclose_pass_p2p3> a sht:ValidationTest ;
@@ -11031,8 +10677,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <p2p3.ttl> ;
       sht:focus <x>
-    ] ;
-    mf:result <openopen1dotOne1dotclose1dotclose_pass_p2p3.val>
+    ]
     .
 
 
@@ -11103,8 +10748,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Labcde.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1vExprRefIRIREF1_pass-lit-equal.val>
+    ]
     .
 
 <#1val1vExprRefbnode1_fail-lit-short> a sht:ValidationFailure ;
@@ -11130,8 +10774,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Labcde.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1vExprRefbnode1_pass-lit-equal.val>
+    ]
     .
 
 ###   } value reference
@@ -11147,8 +10790,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <In1_Ipx_LXX3.ttl> ;
       sht:focus <http://a.example/n1>
-    ] ;
-    mf:result <1dotShapeAND1dot3X_pass.val>
+    ]
     .
 
 <#1dotShapeAND1dot3X_fail> a sht:ValidationFailure ;
@@ -11226,8 +10868,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <In1_Ip1_In2.In2_Ipx_LXX3.ttl> ;
       sht:focus <http://a.example/n1>
-    ] ;
-    mf:result <1dotRefAND3_passShape1Shape2Shape3.val>
+    ]
     .
 
 <#1val1vExpr1AND1AND1Ref3_pass> a sht:ValidationTest ;
@@ -11240,8 +10881,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Labab.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1vExpr1AND1AND1Ref3_pass.val>
+    ]
     .
 
 <#1val1vExpr1AND1AND1Ref3_failvc1> a sht:ValidationFailure ;
@@ -11293,8 +10933,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Labab.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1vExprRefAND3_pass.val>
+    ]
     .
 
 <#1val1vExprRefAND3_failvc1> a sht:ValidationFailure ;
@@ -11346,8 +10985,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Labab.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1vExprAND3_pass.val>
+    ]
     .
 
 <#1val1vExprAND3_failvc1> a sht:ValidationFailure ;
@@ -11403,7 +11041,6 @@
       sht:data <In1a_Ip1_In1a.ttl> ;
       sht:focus <http://a.example/n1a>
     ] ;
-    mf:result <refBNodeORrefIRI_ReflexiveIRI.val> ;
     .
 
 <#refBNodeORrefIRI_ReflexiveShortIRI> a sht:ValidationFailure ;
@@ -11430,7 +11067,6 @@
       sht:data <In1_Ip1_In2a.In2a_Ip1_In2a.ttl> ;
       sht:focus <http://a.example/n1>
     ] ;
-    mf:result <refBNodeORrefIRI_IntoReflexiveIRI.val> ;
     .
 
 <#refBNodeORrefIRI_IntoReflexiveBNode> a sht:ValidationTest ;
@@ -11444,7 +11080,6 @@
       sht:data <In1_Ip1_Bn2.Bn2_Ip1_Bn2.ttl> ;
       sht:focus <http://a.example/n1>
     ] ;
-    mf:result <refBNodeORrefIRI_IntoReflexiveBNode.val> ;
     .
 
 <#refBNodeORrefIRI_CyclicIRI_IRI> a sht:ValidationTest ;
@@ -11458,7 +11093,6 @@
       sht:data <In1a_Ip1_In2a.In2a_Ip1_In1a.ttl> ;
       sht:focus <http://a.example/n1a>
     ] ;
-    mf:result <refBNodeORrefIRI_CyclicIRI_IRI.val> ;
     .
 
 <#refBNodeORrefIRI_CyclicIRI_BNode> a sht:ValidationTest ;
@@ -11472,7 +11106,6 @@
       sht:data <In1a_Ip1_Bn2.Bn2_Ip1_In1a.ttl> ;
       sht:focus <http://a.example/n1a>
     ] ;
-    mf:result <refBNodeORrefIRI_CyclicIRI_BNode.val> ;
     .
 
 <#refBNodeORrefIRI_CyclicIRI_ShortIRI> a sht:ValidationFailure ;
@@ -11511,8 +11144,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <In1_Ip1_In2.In2_Ip2_LX.ttl> ;
       sht:focus <http://a.example/n1>
-    ] ;
-    mf:result <1dotRefOR3_passShape1.val>
+    ]
     .
 
 <#1dotRefOR3_passShape2> a sht:ValidationTest ;
@@ -11525,8 +11157,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <In1_Ip1_In3.In3_Ip3_LX.ttl> ;
       sht:focus <http://a.example/n1>
-    ] ;
-    mf:result <1dotRefOR3_passShape2.val>
+    ]
     .
 
 <#1dotRefOR3_passShape3> a sht:ValidationTest ;
@@ -11539,8 +11170,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <In1_Ip1_In4.In4_Ip4_LX.ttl> ;
       sht:focus <http://a.example/n1>
-    ] ;
-    mf:result <1dotRefOR3_passShape3.val>
+    ]
     .
 
 <#1dotRefOR3_passShape1Shape2Shape3> a sht:ValidationTest ;
@@ -11553,8 +11183,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <In1_Ip1_In2.In2_Ipx_LXX3.ttl> ;
       sht:focus <http://a.example/n1>
-    ] ;
-    mf:result <1dotRefOR3_passShape1.val>
+    ]
     .
 
 <#1val1vExpr1OR1OR1Ref3_fail> a sht:ValidationFailure ;
@@ -11580,8 +11209,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Lab.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1vExpr1OR1OR1Ref3_passvc1.val>
+    ]
     .
 
 <#1val1vExpr1OR1OR1Ref3_passvc2> a sht:ValidationTest ;
@@ -11594,8 +11222,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Lcd.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1vExpr1OR1OR1Ref3_passvc2.val>
+    ]
     .
 
 <#1val1vExpr1OR1OR1Ref3_passvc3> a sht:ValidationTest ;
@@ -11608,8 +11235,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Lef.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1vExpr1OR1OR1Ref3_passvc3.val>
+    ]
     .
 
 <#1val1vExpr1OR1OR1Ref3_passvc1vc2vc3> a sht:ValidationTest ;
@@ -11622,8 +11248,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Labcdef.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1vExpr1OR1OR1Ref3_passvc1vc2vc3.val>
+    ]
     .
 
 <#1val1vExprRefOR3_fail> a sht:ValidationFailure ;
@@ -11649,8 +11274,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Lab.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1vExprRefOR3_passvc1.val> # !! ShapeOrResults with no solutions.
+    ] # !! ShapeOrResults with no solutions.
     .
 
 <#1val1vExprRefOR3_passvc2> a sht:ValidationTest ;
@@ -11663,8 +11287,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Lcd.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1vExprRefOR3_passvc2.val> # !! ShapeOrResults with no solutions.
+    ] # !! ShapeOrResults with no solutions.
     .
 
 <#1val1vExprRefOR3_passvc3> a sht:ValidationTest ;
@@ -11677,8 +11300,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Lef.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1vExprRefOR3_passvc3.val> # !! ShapeOrResults with no solutions.
+    ] # !! ShapeOrResults with no solutions.
     .
 
 <#1val1vExprRefOR3_passvc1vc2vc3> a sht:ValidationTest ;
@@ -11691,8 +11313,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Labcdef.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1vExprRefOR3_passvc1vc2vc3.val> # !! ShapeOrResults with no solutions.
+    ] # !! ShapeOrResults with no solutions.
     .
 
 <#1val1vExprOR3_fail> a sht:ValidationFailure ;
@@ -11718,8 +11339,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Lab.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1vExprOR3_passvc1.val>
+    ]
     .
 
 <#1val1vExprOR3_passvc2> a sht:ValidationTest ;
@@ -11732,8 +11352,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Lcd.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1vExprOR3_passvc2.val>
+    ]
     .
 
 <#1val1vExprOR3_passvc3> a sht:ValidationTest ;
@@ -11746,8 +11365,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Lef.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1vExprOR3_passvc3.val>
+    ]
     .
 
 <#1val1vExprOR3_passvc1vc2vc3> a sht:ValidationTest ;
@@ -11760,8 +11378,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Labcdef.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1vExprOR3_passvr1vr2vr3.val>
+    ]
     .
 
 ###   } OR valueExpr
@@ -11777,8 +11394,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Labcd.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1vExpr1AND1OR1Ref3_pass-vc1vc2.val>
+    ]
     .
 
 <#1val1vExpr1AND1OR1Ref3_pass-vc1vc2vc3> a sht:ValidationTest ;
@@ -11791,8 +11407,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Labab.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1vExpr1AND1OR1Ref3_pass-vc1vc2vc3.val>
+    ]
     .
 
 <#1val1vExpr1AND1OR1Ref3_pass-vc1vc3> a sht:ValidationTest ;
@@ -11805,8 +11420,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Lababab.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1vExpr1AND1OR1Ref3_pass-vc1vc3.val>
+    ]
     .
 
 <#1val1vExpr1AND1OR1Ref3_failvc1vc3> a sht:ValidationFailure ;
@@ -11863,8 +11477,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Labcdef.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1vExpr1OR1AND1Ref3_pass-vc1.val>
+    ]
     .
 
 <#1val1vExpr1OR1AND1Ref3_pass-vc1vc3> a sht:ValidationTest ;
@@ -11877,8 +11490,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Lababab.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1vExpr1OR1AND1Ref3_pass-vc1vc3.val>
+    ]
     .
 
 <#1val1vExpr1OR1AND1Ref3_pass-vc2vc3> a sht:ValidationTest ;
@@ -11891,8 +11503,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Lab.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1vExpr1OR1AND1Ref3_pass-vc2vc3.val>
+    ]
     .
 
 # >5 | ( <3 & /^(ab)*$/ )
@@ -11967,8 +11578,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <p1X2.ttl> ;
       sht:focus <x>
-    ] ;
-    mf:result <open3Onedotclosecard2-p1X2.val>
+    ]
     .
 
 <#open3Onedotclosecard2_fail-p1X3> a sht:ValidationFailure ;
@@ -12007,8 +11617,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <p1p2.ttl> ;
       sht:focus <x>
-    ] ;
-    mf:result <open3Onedotclosecard2-p1p2.val>
+    ]
     .
 
 <#open3Onedotclosecard2_pass-p1p3> a sht:ValidationTest ;
@@ -12021,8 +11630,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <p1p3.ttl> ;
       sht:focus <x>
-    ] ;
-    mf:result <open3Onedotclosecard2-p1p3.val>
+    ]
     .
 
 <#open3Onedotclosecard2_pass-p2p3> a sht:ValidationTest ;
@@ -12035,8 +11643,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <p2p3.ttl> ;
       sht:focus <x>
-    ] ;
-    mf:result <open3Onedotclosecard2-p2p3.val>
+    ]
     .
 
 <#open3Onedotclosecard2_fail-p1p2p3> a sht:ValidationFailure ;
@@ -12075,8 +11682,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <p1X2.ttl> ;
       sht:focus <x>
-    ] ;
-    mf:result <open3Onedotclosecard23-p1X2.val>
+    ]
     .
 
 <#open3Onedotclosecard23_pass-p1X3> a sht:ValidationTest ;
@@ -12089,8 +11695,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <p1X3.ttl> ;
       sht:focus <x>
-    ] ;
-    mf:result <open3Onedotclosecard23-p1X3.val>
+    ]
     .
 
 <#open3Onedotclosecard23_fail-p1X4> a sht:ValidationFailure ;
@@ -12116,8 +11721,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <p1p2.ttl> ;
       sht:focus <x>
-    ] ;
-    mf:result <open3Onedotclosecard23-p1p2.val>
+    ]
     .
 
 <#open3Onedotclosecard23_pass-p1p3> a sht:ValidationTest ;
@@ -12130,8 +11734,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <p1p3.ttl> ;
       sht:focus <x>
-    ] ;
-    mf:result <open3Onedotclosecard23-p1p3.val>
+    ]
     .
 
 <#open3Onedotclosecard23_pass-p2p3> a sht:ValidationTest ;
@@ -12144,8 +11747,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <p2p3.ttl> ;
       sht:focus <x>
-    ] ;
-    mf:result <open3Onedotclosecard23-p2p3.val>
+    ]
     .
 
 <#open3Onedotclosecard23_pass-p1p2p3> a sht:ValidationTest ;
@@ -12158,8 +11760,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <p1p2p3.ttl> ;
       sht:focus <x>
-    ] ;
-    mf:result <open3Onedotclosecard23-p1p2p3.val>
+    ]
     .
 
 <#open4Onedotclosecard23_fail-p1p2p3p4> a sht:ValidationFailure ;
@@ -12185,8 +11786,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <p1p2p3X3.ttl> ;
       sht:focus <x>
-    ] ;
-    mf:result <open3groupdotclosecard23-p1p2p3X3.val>
+    ]
     .
 
 ## } repetitions
@@ -12203,8 +11803,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Labab.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1vShapeANDRef3_pass.val>
+    ]
     .
 
 ###   } AND shapeExpr
@@ -12221,8 +11820,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1dot_pass.val>
+    ]
     .
 
 <#1dotClosed_fail_lower> a sht:ValidationFailure ;
@@ -12261,8 +11859,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <FocusIRI2groupBnodeNested2groupIRIRef.ttl> ;
       sht:focus <http://a.example/n1>
-    ] ;
-    mf:result <FocusIRI2groupBnodeNested2groupIRIRef_pass.val>
+    ]
     .
 
 <#FocusIRI2groupBnodeNested2groupIRIRef_fail> a sht:ValidationFailure ;
@@ -12292,8 +11889,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1IRIREFExtra1_Is1_Ip1_Io1.val>
+    ]
     .
 
 <#1val1IRIREFExtra1_pass-iri2> a sht:ValidationTest ;
@@ -12306,8 +11902,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Io1,Io2.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1IRIREFExtra1_Is1_Ip1_Io1.val>
+    ]
     .
 
 <#1val2IRIREFExtra1_fail-iri2> a sht:ValidationFailure ;
@@ -12333,8 +11928,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Io1,Io2.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val2IRIREFPlusExtra1_Is1_Ip1_Io1,Io2.val>
+    ]
     .
 
 <#1val2IRIREFExtra1_pass-iri-bnode> a sht:ValidationTest ;
@@ -12347,8 +11941,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Io1,Bo2.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val2IRIREFExtra1_bnode_Is1_Ip1_Io1.val>
+    ]
     .
 
 <#1val1IRIREFExtra1p2_pass-iri1> a sht:ValidationTest ;
@@ -12362,8 +11955,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1IRIREFExtra1p2_Is1_Ip1_Io1.val>
+    ]
     .
 
 <#1val1IRIREFExtra1p2_fail-iri2> a sht:ValidationFailure ;
@@ -12403,8 +11995,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1IRIREFExtra1One_Is1_Ip1_Io1.val>
+    ]
     .
 
 <#1val1IRIREFExtra1One_pass-iri2> a sht:ValidationTest ;
@@ -12417,8 +12008,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Io1,Io2.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1IRIREFExtra1One_Is1_Ip1_Io1.val>
+    ]
     .
 
 <#1dotExtra1_pass-iri1> a sht:ValidationTest ;
@@ -12431,8 +12021,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1dot_pass.val>
+    ]
     .
 
 <#1dotExtra1_fail-iri2> a sht:ValidationFailure ;
@@ -12458,8 +12047,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is_Ipn_IonX3.ttl> ;
       sht:focus <http://a.example/s>
-    ] ;
-    mf:result <3groupdotExtra3_Is_Ipn_IonX3.val>
+    ]
     .
 
 <#3groupdot3Extra_pass-iri1> a sht:ValidationTest ;
@@ -12472,8 +12060,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is_Ipn_IonX3.ttl> ;
       sht:focus <http://a.example/s>
-    ] ;
-    mf:result <3groupdotExtra3_Is_Ipn_IonX3.val>
+    ]
     .
 
 <#3groupdotExtra3NLex_pass-iri1> a sht:ValidationTest ;
@@ -12486,8 +12073,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is_Ipn_IonX3.ttl> ;
       sht:focus <http://a.example/s>
-    ] ;
-    mf:result <3groupdotExtra3_Is_Ipn_IonX3.val>
+    ]
     .
 
 <#3groupdotExtra3_pass-iri2> a sht:ValidationTest ;
@@ -12500,8 +12086,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is_Ipn_IonX3.Is_Ipn_IonaX3.ttl> ;
       sht:focus <http://a.example/s>
-    ] ;
-    mf:result <3groupdotExtra3_Is_Ipn_IonX3.val>
+    ]
     .
 
 <#3groupdot3Extra_pass-iri2> a sht:ValidationTest ;
@@ -12514,8 +12099,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is_Ipn_IonX3.Is_Ipn_IonaX3.ttl> ;
       sht:focus <http://a.example/s>
-    ] ;
-    mf:result <3groupdotExtra3_Is_Ipn_IonX3.val>
+    ]
     .
 
 <#3groupdotExtra3NLex_pass-iri2> a sht:ValidationTest ;
@@ -12528,8 +12112,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is_Ipn_IonX3.Is_Ipn_IonaX3.ttl> ;
       sht:focus <http://a.example/s>
-    ] ;
-    mf:result <3groupdotExtra3_Is_Ipn_IonX3.val>
+    ]
     .
 
 ## } extra
@@ -12545,8 +12128,7 @@
       # sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1dot_pass.val>
+    ]
     .
 
 <#startRefIRIREF_pass-others_lexicallyEarlier> a sht:ValidationTest ;
@@ -12559,8 +12141,7 @@
       # sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip0_Io0;Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1dot_pass.val>
+    ]
     .
 
 <#startRefIRIREF_fail-missing> a sht:ValidationFailure ;
@@ -12586,8 +12167,7 @@
       # sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <bnode1dot_pass.val>
+    ]
     .
 
 <#startRefbnode_fail-missing> a sht:ValidationFailure ;
@@ -12613,8 +12193,7 @@
       # sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <startInline_pass.val>
+    ]
     .
 
 <#startEqualSpaceInline_pass-noOthers> a sht:ValidationTest ;
@@ -12627,8 +12206,7 @@
       # sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <startInline_pass.val>
+    ]
     .
 
 <#startSpaceEqualInline_pass-noOthers> a sht:ValidationTest ;
@@ -12641,8 +12219,7 @@
       # sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <startInline_pass.val>
+    ]
     .
 
 <#startInline_fail-missing> a sht:ValidationFailure ;
@@ -12672,8 +12249,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <In1_Ip1_LX.In1_Ip2_LY.ttl> ;
       sht:focus <http://a.example/n1>
-    ] ;
-    mf:result <2EachInclude1_pass.val>
+    ]
     .
 
 <#2EachInclude1-after_pass> a sht:ValidationTest ;
@@ -12686,8 +12262,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <In1_Ip1_LX.In1_Ip2_LY.ttl> ;
       sht:focus <http://a.example/n1>
-    ] ;
-    mf:result <2EachInclude1-after_pass.val>
+    ]
     .
 
 <#2OneInclude1_pass> a sht:ValidationTest ;
@@ -12700,8 +12275,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <In1_Ip1_LX.ttl> ;
       sht:focus <http://a.example/n1>
-    ] ;
-    mf:result <2OneInclude1_pass.val>
+    ]
     .
 
 <#2OneInclude1-after_pass> a sht:ValidationTest ;
@@ -12714,8 +12288,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <In1_Ip1_LX.ttl> ;
       sht:focus <http://a.example/n1>
-    ] ;
-    mf:result <2OneInclude1_pass.val>
+    ]
     .
 
 ## } include
@@ -12731,8 +12304,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1dotAnnotIRIREF_pass.val>
+    ]
     .
 
 <#1dotAnnotIRIREF_missing> a sht:ValidationFailure ;
@@ -12758,8 +12330,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_La,Io1.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1dotPlusAnnotIRIREF_pass.val>
+    ]
     .
 
 <#1dotAnnotAIRIREF_pass> a sht:ValidationTest ;
@@ -12772,8 +12343,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1dotAnnotAIRIREF_pass.val>
+    ]
     .
 
 <#1dotAnnotSTRING_LITERAL1_pass> a sht:ValidationTest ;
@@ -12786,8 +12356,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1dotAnnotSTRING_LITERAL1_pass.val>
+    ]
     .
 
 <#1dotAnnot3_pass> a sht:ValidationTest ;
@@ -12800,8 +12369,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1dotAnnot3_pass.val>
+    ]
     .
 
 <#1dotAnnot3_missing> a sht:ValidationFailure ;
@@ -12827,8 +12395,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/o1>
-    ] ;
-    mf:result <1inversedotAnnot3_pass.val>
+    ]
     .
 
 <#1inversedotAnnot3_missing> a sht:ValidationFailure ;
@@ -12860,7 +12427,6 @@
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
-    mf:result <1dotCode1_pass.val> ;
     mf:extensionResults (
       [
         mf:extension <http://shex.io/extensions/Test/> ;
@@ -12881,7 +12447,6 @@
       sht:focus <http://a.example/s1> ;
       sht:semActs <../schemas/1dotNoCode1.semact>
     ] ;
-    mf:result <1dotNoCode1_pass.val> ;
     mf:extensionResults (
       [
         mf:extension <http://shex.io/extensions/Test/> ;
@@ -12901,7 +12466,6 @@
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/o1>
     ] ;
-    mf:result <1inversedotCode1_pass.val> ;
     mf:extensionResults (
       [
         mf:extension <http://shex.io/extensions/Test/> ;
@@ -12921,7 +12485,6 @@
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
-    mf:result <1dotCode3_pass.val> ;
     mf:extensionResults (
       [
         mf:extension <http://shex.io/extensions/Test/> ;
@@ -12950,7 +12513,6 @@
       sht:focus <http://a.example/s1> ;
       sht:semActs <../schemas/1dotNoCode3.semact>
     ] ;
-    mf:result <1dotNoCode3_pass.val> ;
     mf:extensionResults (
       [
         mf:extension <http://shex.io/extensions/Test/#a> ;
@@ -12991,7 +12553,6 @@
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
-    mf:result <1dotCodeWithEscapes1_pass.val> ;
     mf:extensionResults (
       [
         mf:extension <http://shex.io/extensions/Test/> ;
@@ -13011,7 +12572,6 @@
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
-    mf:result <1dotShapeCode1_pass.val> ;
     mf:extensionResults (
       [
         mf:extension <http://shex.io/extensions/Test/> ;
@@ -13032,7 +12592,6 @@
       sht:focus <http://a.example/s1> ;
       sht:semActs <../schemas/1dotShapeNoCode1.semact>
     ] ;
-    mf:result <1dotShapeNoCode1_pass.val> ;
     mf:extensionResults (
       [
         mf:extension <http://shex.io/extensions/Test/> ;
@@ -13057,8 +12616,7 @@
         mf:extension <http://shex.io/extensions/Test/> ;
         mf:prints "\"group semAct\""
       ]
-    ) ;
-    mf:result <open3groupdotcloseCode1-p1p2p3.val>
+    )
     .
 
 <#startCode1_pass> a sht:ValidationTest ;
@@ -13072,7 +12630,6 @@
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
-    mf:result <startCode1_pass.val> ;
     mf:extensionResults (
       [
         mf:extension <http://shex.io/extensions/Test/> ;
@@ -13093,7 +12650,6 @@
       sht:focus <http://a.example/s1> ;
       sht:semActs <../schemas/startNoCode1.semact>
     ] ;
-    mf:result <startNoCode1_pass.val> ;
     mf:extensionResults (
       [
         mf:extension <http://shex.io/extensions/Test/> ;
@@ -13132,7 +12688,6 @@
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
-    mf:result <startCode1_pass.val> ;
     mf:extensionResults (
       [
         mf:extension <http://shex.io/extensions/Test/> ;
@@ -13171,7 +12726,6 @@
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
-    mf:result <startCode3_pass.val> ;
     mf:extensionResults (
       [
         mf:extension <http://shex.io/extensions/Test/> ;
@@ -13223,8 +12777,7 @@
         mf:extension <http://shex.io/extensions/Test/> ;
         mf:prints "\"group semAct 2\""
       ]
-    ) ;
-    mf:result <open3groupdotclosecard23Annot3Code2-p1p2p3X3.val>
+    )
     .
 
 ## } annotations + semantic actions
@@ -13254,8 +12807,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <empty.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <0_pass-focus.val>
+    ]
     .
 
 <#0focusIRI_other_fail-bnodeFocusLabel> a sht:ValidationFailure ;
@@ -13281,8 +12833,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <0_pass-focus.val>
+    ]
     .
 
 <#0focusBNODE_empty_fail-iriFocusLabel> a sht:ValidationFailure ;
@@ -13308,8 +12859,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <empty.ttl> ;
       sht:focus _:abcd
-    ] ;
-    mf:result <0abcd_pass-focus.val>
+    ]
     .
 
 <#0focusBNODE_other_fail-iriFocusLabel> a sht:ValidationFailure ;
@@ -13335,8 +12885,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Babcd_Ip1_Io1.ttl> ;
       sht:focus _:abcd
-    ] ;
-    mf:result <0abcd_pass-focus.val>
+    ]
     .
 
 <#1focusIRI_dot_fail-bnodeFocusLabel> a sht:ValidationFailure ;
@@ -13362,8 +12911,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1focusIRI_dot_pass.val>
+    ]
     .
 
 <#1focusBNODE_dot_fail-iriFocusLabel-equal> a sht:ValidationFailure ;
@@ -13389,8 +12937,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Babcdefghijklmnopqrs_Ip1_Io1.ttl> ;
       sht:focus _:abcdefghijklmnopqrs
-    ] ;
-    mf:result <1focusBNODE_dot_pass.val>
+    ]
     .
 
 <#1focusnonLiteral-dot_pass-iri-equal> a sht:ValidationTest ;
@@ -13403,8 +12950,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1focusnonLiteral_dot_pass.val>
+    ]
     .
 
 ###  } kind
@@ -13420,8 +12966,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_LabDTbloodType.ttl> ;
       sht:focus "ab"^^<http://a.example/bloodType>
-    ] ;
-    mf:result <focusdatatype_pass.val>
+    ]
     .
 
 <#focusdatatype_fail> a sht:ValidationFailure ;
@@ -13450,8 +12995,7 @@
       sht:shape <http://a.example/vs1> ;
       sht:data <Is1_Ip1_Iv1.ttl> ;
       sht:focus <http://a.example/v1>
-    ] ;
-    mf:result <focusvs_pass.val>
+    ]
     .
 
 <#focusvs_fail> a sht:ValidationFailure ;
@@ -13493,8 +13037,7 @@
       sht:shape <http://a.example/vs1> ;
       sht:data <empty.ttl> ;
       sht:focus <http://a.example/v1>
-    ] ;
-    mf:result <1focusvsANDIRI_pass.val>
+    ]
     .
 
 <#1focusvsANDIRI_fail> a sht:ValidationFailure ;
@@ -13523,8 +13066,7 @@
       sht:shape <http://a.example/vs1> ;
       sht:data <empty.ttl> ;
       sht:focus <http://a.example/v1>
-    ] ;
-    mf:result <1focusvsORdatatype_pass-val.val>
+    ]
     .
 
 <#1focusvsORdatatype_fail-val> a sht:ValidationFailure ;
@@ -13550,8 +13092,7 @@
       sht:shape <http://a.example/vs1> ;
       sht:data <empty.ttl> ;
       sht:focus "v1"^^<http://a.example/dt1>
-    ] ;
-    mf:result <1focusvsORdatatype_pass-dt.val>
+    ]
     .
 
 <#1focusvsORdatatype_fail-dt> a sht:ValidationFailure ;
@@ -13594,8 +13135,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1focusLength_dot_pass-iri.val>
+    ]
     .
 
 <#1focusLength-dot_fail-iri-long> a sht:ValidationFailure ;
@@ -13634,8 +13174,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Babcdefghijklmnopqrs_Ip1_Io1.ttl> ;
       sht:focus _:abcdefghijklmnopqrs
-    ] ;
-    mf:result <1focusLength_dot_pass-bnode.val>
+    ]
     .
 
 <#1focusLength-dot_fail-bnode-long> a sht:ValidationFailure ;
@@ -13675,8 +13214,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1focusMinLength_dot_pass-iri.val>
+    ]
     .
 
 <#1focusMinLength-dot_pass-iri-long> a sht:ValidationTest ;
@@ -13689,8 +13227,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1a_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1a>
-    ] ;
-    mf:result <1s1a_pass.val>
+    ]
     .
 
 <#1focusMinLength-dot_fail-bnode-short> a sht:ValidationFailure ;
@@ -13716,8 +13253,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Babcdefghijklmnopqrs_Ip1_Io1.ttl> ;
       sht:focus _:abcdefghijklmnopqrs
-    ] ;
-    mf:result <1focusMinLength_dot_pass-bnode.val>
+    ]
     .
 
 <#1focusMinLength-dot_pass-bnode-long> a sht:ValidationTest ;
@@ -13730,8 +13266,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Babcdefghijklmnopqrst_Ip1_Io1.ttl> ;
       sht:focus _:abcdefghijklmnopqrst
-    ] ;
-    mf:result <1abcdefghijklmnopqrst_pass.val>
+    ]
     .
 
 
@@ -13745,8 +13280,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s>
-    ] ;
-    mf:result <1s_pass.val>
+    ]
     .
 
 <#1focusMaxLength-dot_pass-iri-equal> a sht:ValidationTest ;
@@ -13759,8 +13293,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1focusMaxLength_dot_pass-iri.val>
+    ]
     .
 
 <#1focusMaxLength-dot_fail-iri-long> a sht:ValidationFailure ;
@@ -13786,8 +13319,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Babcd_Ip1_Io1.ttl> ;
       sht:focus _:abcd
-    ] ;
-    mf:result <1abcd_pass.val>
+    ]
     .
 
 <#1focusMaxLength-dot_pass-bnode-equal> a sht:ValidationTest ;
@@ -13800,8 +13332,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Babcdefghijklmnopqrs_Ip1_Io1.ttl> ;
       sht:focus _:abcdefghijklmnopqrs
-    ] ;
-    mf:result <1focusMaxLength_dot_pass-bnode.val>
+    ]
     .
 
 <#1focusMaxLength-dot_fail-bnode-long> a sht:ValidationFailure ;
@@ -13853,8 +13384,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1focusPattern_dot_pass.val>
+    ]
     .
 
 <#1focusPattern-dot_fail-iri-long> a sht:ValidationFailure ;
@@ -13903,8 +13433,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Babcdefghijklmnopqrs_Ip1_Io1.ttl> ;
       sht:focus _:abcdefghijklmnopqrs
-    ] ;
-    mf:result <1focusPatternB_dot_pass.val>
+    ]
     .
 
 <#1focusPatternB-dot_pass-bnode-long> a sht:ValidationTest ;
@@ -13917,8 +13446,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Babcdefghijklmnopqrst_Ip1_Io1.ttl> ;
       sht:focus _:abcdefghijklmnopqrst
-    ] ;
-    mf:result <1focusPatternB-dot_pass-bnode-long.val>
+    ]
     .
 
 ####    } pattern
@@ -13961,8 +13489,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1focusIRILength_dot_pass.val>
+    ]
     .
 
 <#1focusIRILength_dot_fail-long> a sht:ValidationFailure ;
@@ -14014,8 +13541,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Babcdefghijklmnopqrs_Ip1_Io1.ttl> ;
       sht:focus _:abcdefghijklmnopqrs
-    ] ;
-    mf:result <1focusBNODELength_dot_pass.val>
+    ]
     .
 
 <#1focusBNODELength_dot_fail-long> a sht:ValidationFailure ;
@@ -14041,8 +13567,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1focusnonLiteralLength_dot_pass.val>
+    ]
     .
 
 ###  } kind + length facet
@@ -14060,8 +13585,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <empty.ttl> ;
       sht:focus <http://a.example/n1>
-    ] ;
-    mf:result <NOT1dotOR2dot_pass-empty.val>
+    ]
     .
 
 <#NOT1dotOR2dot_pass-NoShape1> a sht:ValidationTest ;
@@ -14074,8 +13598,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <In1_Ip2_In2.ttl> ;
       sht:focus <http://a.example/n1>
-    ] ;
-    mf:result <NOT1dotOR2dot_pass-empty.val>
+    ]
     .
 
 <#NOT1dotOR2dot_pass-Shape2> a sht:ValidationTest ;
@@ -14088,8 +13611,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <In1_Ip1_In2.In1_Ip2_In3.ttl> ;
       sht:focus <http://a.example/n1>
-    ] ;
-    mf:result <NOT1dotOR2dot_pass-Shape2.val>
+    ]
     .
 
 <#NOT1dotOR2dot_fail-Shape2> a sht:ValidationFailure ;
@@ -14115,8 +13637,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <empty.ttl> ;
       sht:focus <http://a.example/n1>
-    ] ;
-    mf:result <NOT1dotOR2dotX3_pass-empty.val>
+    ]
     .
 
 <#NOT1dotOR2dotX3_pass-NoShape1> a sht:ValidationTest ;
@@ -14129,8 +13650,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <In1_Ip2_In2.ttl> ;
       sht:focus <http://a.example/n1>
-    ] ;
-    mf:result <NOT1dotOR2dotX3_pass-empty.val>
+    ]
     .
 
 <#NOT1dotOR2dotX3_pass-Shape2> a sht:ValidationTest ;
@@ -14143,8 +13663,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <In1_Ip1_In2.In1_Ip2_In3.ttl> ;
       sht:focus <http://a.example/n1>
-    ] ;
-    mf:result <NOT1dotOR2dotX3_pass-Shape2.val>
+    ]
     .
 
 <#NOT1dotOR2dotX3_fail-Shape2> a sht:ValidationFailure ;
@@ -14196,8 +13715,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <In1_Ip1_In2.In1_Ip2_In3.ttl> ;
       sht:focus <http://a.example/n1>
-    ] ;
-    mf:result <NOT1dotOR2dotX3AND1_pass-Shape2.val>
+    ]
     .
 
 <#NOT1dotOR2dotX3AND1_fail-Shape2> a sht:ValidationFailure ;
@@ -14228,8 +13746,7 @@
       sht:data <In1_Ip1_In2.In2_Ip2_LX.ttl> ;
       sht:focus <http://a.example/n2> ;
       sht:shapeExterns <../schemas/shapeExtern.shextern>
-    ] ;
-    mf:result <shapeExtern_pass.val>
+    ]
     .
 
 <#shapeExtern_fail> a sht:ValidationFailure ;
@@ -14257,8 +13774,7 @@
       sht:data <In1_Ip1_In2.In2_Ip2_LX.ttl> ;
       sht:focus <http://a.example/n1> ;
       sht:shapeExterns <../schemas/shapeExtern.shextern>
-    ] ;
-    mf:result <shapeExternRef_pass.val>
+    ]
     .
 
 <#shapeExternRef_fail> a sht:ValidationFailure ;
@@ -14287,8 +13803,7 @@
       sht:shape <S1> ;
       sht:data <Is1_Ip1_Io1-relative.ttl> ;
       sht:focus <s1>
-    ] ;
-    mf:result <1dot-relative_pass.val>
+    ]
     .
 
 ## } relative IRIs
@@ -14304,8 +13819,7 @@
       sht:shape <http://a.example.org/S> ;
       sht:data <false-lead-excluding-value-shape.ttl> ;
       sht:focus <x>
-    ] ;
-    mf:result <false-lead-excluding-value-shape.val>
+    ]
     .
 
 <#nPlus1> a sht:ValidationTest ;
@@ -14318,8 +13832,7 @@
       sht:shape <http://a.example.org/S> ;
       sht:data <nPlus1.ttl> ;
       sht:focus <x>
-    ] ;
-    mf:result <nPlus1.val>
+    ]
     .
 
 <#nPlus1-greedy_fail> a sht:ValidationFailure ;
@@ -14345,8 +13858,7 @@
       sht:shape <http://a.example.org/S> ;
       sht:data <nPlus1.ttl> ;
       sht:focus <x>
-    ] ;
-    mf:result <nPlus1-greedy-rewrite.val>
+    ]
     .
 
 <#skipped> a sht:ValidationTest ;
@@ -14359,8 +13871,7 @@
       sht:shape <http://a.example.org/S> ;
       sht:data <skipped.ttl> ;
       sht:focus <x>
-    ] ;
-    mf:result <skipped.val>
+    ]
     .
 
 <#repeated-group> a sht:ValidationTest ;
@@ -14373,8 +13884,7 @@
       sht:shape <http://a.example.org/S> ;
       sht:data <repeated-group.ttl> ;
       sht:focus <x>
-    ] ;
-    mf:result <repeated-group.val>
+    ]
     .
 
 <#simple-group> a sht:ValidationTest ;
@@ -14387,8 +13897,7 @@
       sht:shape <http://a.example.org/S> ;
       sht:data <simple-group.ttl> ;
       sht:focus <s0>
-    ] ;
-    mf:result <simple-group.val>
+    ]
     .
 
 <#PstarT> a sht:ValidationTest ;
@@ -14401,8 +13910,7 @@
       sht:shape <http://a.example/base/S1> ;
       sht:data <Pstar.ttl> ;
       sht:focus <http://a.example/base/n>
-    ] ;
-    mf:result <PstarT.val>
+    ]
     .
 
 <#PstarT-greedy> a sht:ValidationTest ;
@@ -14415,8 +13923,7 @@
       sht:shape <http://a.example/base/S1> ;
       sht:data <Pstar.ttl> ;
       sht:focus <http://a.example/base/n>
-    ] ;
-    mf:result <PstarT.val>
+    ]
     .
 
 <#PTstar> a sht:ValidationTest ;
@@ -14429,8 +13936,7 @@
       sht:shape <http://a.example/base/S2> ;
       sht:data <Pstar.ttl> ;
       sht:focus <http://a.example/base/n>
-    ] ;
-    mf:result <PTstar.val>
+    ]
     .
 
 <#PTstar-greedy-fail> a sht:ValidationFailure ;
@@ -14456,8 +13962,7 @@
       sht:shape <http://a.example/base/S2> ;
       sht:data <Pstar.ttl> ;
       sht:focus <http://a.example/base/n>
-    ] ;
-    mf:result <Pstar-greedy-rewrite.val>
+    ]
     .
 
 <#PstarTstar> a sht:ValidationTest ;
@@ -14470,8 +13975,7 @@
       sht:shape <http://a.example/base/S3> ;
       sht:data <Pstar.ttl> ;
       sht:focus <http://a.example/base/n>
-    ] ;
-    mf:result <PstarTstar.val>
+    ]
     .
 
 <#P2T2> a sht:ValidationTest ;
@@ -14484,8 +13988,7 @@
       sht:shape <http://a.example/base/S4> ;
       sht:data <Pstar.ttl> ;
       sht:focus <http://a.example/base/n>
-    ] ;
-    mf:result <P2T2.val>
+    ]
     .
 
 ## } manual schemas
@@ -14501,8 +14004,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <empty.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1dot_empty.err>
+    ]
     .
 
 <#2dot_fail-empty-err> a sht:ValidationFailure ; # 2dot_fail-missing-err
@@ -14515,8 +14017,46 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#node_kind_example> a sht:ValidationFailure ; # node_kind_example
+    mf:name "node_kind_example" ;
+    sht:trait sht:ShapeMap ;
+    rdfs:comment "<S> {<p1> IRI} on { <s1> <p1> <o1> . <s2> <p2> <o2> . <s3> <p1> \"o3\" .}" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/node_kind_example.shex> ;
+      sht:map <node_kind_example_map.json> ;
+      sht:data <node_kind_example.ttl>
     ] ;
-    mf:result <2dot_missing1.err>
+    mf:result <node_kind_example_results.json>
+    .
+
+<#dependent_shape> a sht:ValidationTest ; # dependent_shape
+    mf:name "dependent_shape" ;
+    sht:trait sht:ShapeMap ;
+    rdfs:comment "<S1> {<p1> @<S2>} <S2> {<p2> [<s3>]} on { <s1> <p1> <s2> . <s2> <p2> <s3> .}" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/dependent_shape.shex> ;
+      sht:map <dependent_shape_map.json> ;
+      sht:data <dependent_shape.ttl>
+    ] ;
+    mf:result <dependent_shape_results.json>
+    .
+
+<#recursion_example> a sht:ValidationTest ; # recursion_example
+    mf:name "recursion_example" ;
+    sht:trait sht:ShapeMap ;
+    rdfs:comment "<S1> {<p1> @<S1>*}} on { <s1> <p1> <s2> . <s2> <p1> <s3> . <s3> <p1> <s1> .}" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/recursion_example.shex> ;
+      sht:map <recursion_example_map.json> ;
+      sht:data <recursion_example.ttl>
+    ] ;
+    mf:result <recursion_example_results.json>
     .
 
 ## } error reporting
