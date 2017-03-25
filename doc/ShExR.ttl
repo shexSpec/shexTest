@@ -1,6 +1,6 @@
-BASE <http://shex.io/ns/>
+BASE <http://www.w3.org/ns/shex#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX sx: <http://shex.io/ns/shex#>
+PREFIX sx: <http://www.w3.org/ns/shex#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 [] a sx:Schema ;

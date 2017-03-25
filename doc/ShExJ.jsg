@@ -13,7 +13,7 @@
 ; # All objects have a type property corresponding to the production name, e.g. "Schema"
 
 Schema           {
-  "@context":"https://shexspec.github.io/context.jsonld"
+  "@context":"http://shex.io/context.jsonld"
 startActs:[SemAct+]? start:(shapeExpr|labeledShapeExpr)? shapes:[labeledShapeExpr+]? }
 
 # labeled Shape Expressions

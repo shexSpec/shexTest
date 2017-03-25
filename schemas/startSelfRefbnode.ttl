@@ -1,6 +1,6 @@
 BASE <http://ex.example/>
 PREFIX ex: <http://a.example/>
-PREFIX sx:  <http://shex.io/ns/shex#>
+PREFIX sx:  <http://www.w3.org/ns/shex#>
 
 [] a sx:Schema ;
   sx:start _:S1 ;
