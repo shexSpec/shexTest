@@ -351,6 +351,9 @@
         <#datatypes>
         <#_all>
         <#kitchenSink>
+        <#node_kind_example>
+        <#dependent_shape>
+        <#recursion_example>
     ) .
 
 <#0> a sht:RepresentationTest ;
@@ -3107,4 +3110,28 @@
     sx:shex <kitchenSink.shex> ;
     sx:json <kitchenSink.json> ;
     sx:ttl <kitchenSink.ttl> ;
+    .
+
+<#node_kind_example> a sht:RepresentationTest ;
+    mf:name "node_kind_example" ;
+    mf:status mf:proposed ;
+    sx:shex <node_kind_example.shex> ;
+    sx:json <node_kind_example.json> ;
+    sx:ttl <node_kind_example.ttl> ;
+    .
+
+<#dependent_shape> a sht:RepresentationTest ;
+    mf:name "dependent_shape" ;
+    mf:status mf:proposed ;
+    sx:shex <dependent_shape.shex> ;
+    sx:json <dependent_shape.json> ;
+    sx:ttl <dependent_shape.ttl> ;
+    .
+
+<#recursion_example> a sht:RepresentationTest ;
+    mf:name "recursion_example" ;
+    mf:status mf:proposed ;
+    sx:shex <recursion_example.shex> ;
+    sx:json <recursion_example.json> ;
+    sx:ttl <recursion_example.ttl> ;
     .

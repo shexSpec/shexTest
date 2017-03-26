@@ -9,7 +9,7 @@ PREFIX foaf: <http://xmlns.com/foaf/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schem#>
-@prefix sx:  <http://shex.io/ns/shex#> .
+@prefix sx:  <http://www.w3.org/ns/shex#> .
 
 [] a sx:Schema ;
   sx:startActs (
@@ -30,7 +30,7 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schem#>
       sx:valueExpr [ a sx:NodeConstraint ; sx:values ( ex:Issue ) ] ]
     [ a sx:TripleConstraint ; sx:predicate ex:state ;
       sx:valueExpr [ a sx:NodeConstraint ; sx:values (
-        [ a sx:IRIStemRange ; sx:stem "http://ex.example/#state"^^xsd:anyUri ;
+        [ a sx:IriStemRange ; sx:stem "http://ex.example/#state"^^xsd:anyUri ;
           sx:exclusion ex:state_resolved ] ) ] ;
       sx:annotation
         [ a sx:Annotation ; sx:object "State" ; sx:predicate rdfs:label ],

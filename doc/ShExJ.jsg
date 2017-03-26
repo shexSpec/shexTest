@@ -13,7 +13,7 @@
 ; # All objects have a type property corresponding to the production name, e.g. "Schema"
 
 Schema           {
-  "@context":"https://shexspec.github.io/context.jsonld"
+  "@context":"http://shex.io/context.jsonld"
 startActs:[SemAct+]? start:(shapeExpr|labeledShapeExpr)? shapes:[labeledShapeExpr+]? }
 
 # labeled Shape Expressions
@@ -47,10 +47,10 @@ numericFacet     = (mininclusive|minexclusive|maxinclusive|maxexclusive):numeric
                  | (totaldigits|fractiondigits):INTEGER ;
 
 # Value Sets
-valueSetValue    = objectValue | IRIStem | IRIStemRange | LiteralStem | LiteralStemRange | LanguageStem | LanguageStemRange ;
+valueSetValue    = objectValue | IriStem | IriStemRange | LiteralStem | LiteralStemRange | LanguageStem | LanguageStemRange ;
 objectValue      = IRI|ObjectLiteral ;
-IRIStem          { stem:IRI } # IRIStemRange with exclusions
-IRIStemRange     { stem:(IRI|Wildcard) exclusions:[objectValue|IRIStem +]? }
+IriStem          { stem:IRI } # IriStemRange with exclusions
+IriStemRange     { stem:(IRI|Wildcard) exclusions:[objectValue|IriStem +]? }
 LiteralStem      { stem:ObjectLiteral } # LiteralStemRange with exclusions
 LiteralStemRange { stem:(ObjectLiteral|Wildcard) exclusions:[objectValue|LiteralStem +]? }
 LanguageStem     { stem:ObjectLiteral } # LanguageStemRange with exclusions

@@ -3016,6 +3016,33 @@
           "shex": "kitchenSink.shex",
           "json": "kitchenSink.json",
           "ttl": "kitchenSink.ttl"
+        },
+        {
+          "@id": "#node_kind_example",
+          "@type": "sht:RepresentationTest",
+          "name": "node_kind_example",
+          "status": "mf:proposed",
+          "shex": "node_kind_example.shex",
+          "json": "node_kind_example.json",
+          "ttl": "node_kind_example.ttl"
+        },
+        {
+          "@id": "#dependent_shape",
+          "@type": "sht:RepresentationTest",
+          "name": "dependent_shape",
+          "status": "mf:proposed",
+          "shex": "dependent_shape.shex",
+          "json": "dependent_shape.json",
+          "ttl": "dependent_shape.ttl"
+        },
+        {
+          "@id": "#recursion_example",
+          "@type": "sht:RepresentationTest",
+          "name": "recursion_example",
+          "status": "mf:proposed",
+          "shex": "recursion_example.shex",
+          "json": "recursion_example.json",
+          "ttl": "recursion_example.ttl"
         }
       ]
     }
