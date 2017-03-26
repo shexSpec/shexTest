@@ -83,11 +83,11 @@
           "values": [
             "http://a.example/a1",
             {
-              "type": "StemRange",
+              "type": "IRIStemRange",
               "stem": "http://all.example/",
               "exclusions": [
                 {
-                  "type": "Stem",
+                  "type": "IRIStem",
                   "stem": "http://all.example/a"
                 },
                 "http://all.example/b"
@@ -406,13 +406,13 @@
               "type": "NodeConstraint",
               "values": [
                 {
-                  "type": "StemRange",
+                  "type": "IRIStemRange",
                   "stem": {
                     "type": "Wildcard"
                   },
                   "exclusions": [
                     {
-                      "type": "Stem",
+                      "type": "IRIStem",
                       "stem": "http://all.example/a"
                     },
                     "http://all.example/b"

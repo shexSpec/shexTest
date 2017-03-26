@@ -12,7 +12,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sx:valueExpr <http://a.example/vs1> ] .
 
 <http://a.example/vs1> a sx:NodeConstraint ;
-    sx:values ( [ a sx:StemRange ;
+    sx:values ( [ a sx:IRIStemRange ;
                 sx:exclusion <http://a.example/v1>,
                     <http://a.example/v2>,
                     <http://a.example/v3> ;

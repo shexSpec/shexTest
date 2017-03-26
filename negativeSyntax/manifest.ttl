@@ -105,6 +105,8 @@
     <#tripleConsraint-with-datatype-and-valueSet>
     <#tripleConsraint-with-dot-and-datatype>
     <#tripleConsraint-with-two-cardinalities>
+    <#1val1languageStemMinusliteral3>
+    <#1val1literalStemMinuslanguage3>
   ) .
 
 <#1decimalMininclusiveroman-numeral> a sht:NegativeSyntax ;
@@ -687,5 +689,17 @@
   mf:name "tripleConsraint-with-two-cardinalities" ;
   mf:status mf:proposed ;
   sx:shex <tripleConsraint-with-two-cardinalities.shex> ;
+  .
+
+<#1val1languageStemMinusliteral3> a sht:NegativeSyntax ;
+  mf:name "1val1languageStemMinusliteral3" ;
+  mf:status mf:proposed ;
+  sx:shex <1val1languageStemMinusliteral3.shex> ;
+  .
+
+<#1val1literalStemMinuslanguage3> a sht:NegativeSyntax ;
+  mf:name "1val1literalStemMinuslanguage3" ;
+  mf:status mf:proposed ;
+  sx:shex <1val1literalStemMinuslanguage3.shex> ;
   .
 

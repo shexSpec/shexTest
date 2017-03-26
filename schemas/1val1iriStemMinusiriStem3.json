@@ -12,19 +12,19 @@
           "type": "NodeConstraint",
           "values": [
             {
-              "type": "StemRange",
+              "type": "IRIStemRange",
               "stem": "http://a.example/v",
               "exclusions": [
                 {
-                  "type": "Stem",
+                  "type": "IRIStem",
                   "stem": "http://a.example/v1"
                 },
                 {
-                  "type": "Stem",
+                  "type": "IRIStem",
                   "stem": "http://a.example/v2"
                 },
                 {
-                  "type": "Stem",
+                  "type": "IRIStem",
                   "stem": "http://a.example/v3"
                 }
               ]

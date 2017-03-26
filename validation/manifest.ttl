@@ -26,6 +26,20 @@
  #   repeated OR
  #   1dotRefOR3 on..
 
+ # 1val1dotMinuslanguage3.shex - 1val1dotMinusiri3.shex
+ #         <#1val1dotMinusiri3_pass>
+ #         <#1val1dotMinusiri3_v1>
+ #         <#1val1dotMinusiri3_v2>
+ #         <#1val1dotMinusiri3_v3>
+ # 1val1dotMinuslanguageStem3.shex - 1val1dotMinusiriStem3.shex
+ #         <#1val1dotMinusiriStem3_pass>
+ #         <#1val1dotMinusiriStem3_v1>
+ #         <#1val1dotMinusiriStem3_v2>
+ #         <#1val1dotMinusiriStem3_v3>
+ #         <#1val1dotMinusiriStem3_v1a>
+ # 1val1literalAtlanguageStem.shex -
+ # 1val1literalAtlanguageStemMinusliteralAtlanguage3 -
+
 
 # entries
 <> a mf:Manifest ;
@@ -757,9 +771,12 @@
         <#1val1iriStem_passv1>
         <#1val1iriStem_passv1a>
         <#1val1iriStem_fail>
+        <#1val1iriStem_fail-literalIv1>
         <#1val1iriStemMinusiri3_passIv>
         <#1val1iriStemMinusiri3_passIv4>
+        <#1val1iriStemMinusiri3_fail-literalIv4>
         <#1val1iriStemMinusiri3_v1>
+        <#1val1iriStemMinusiri3_fail-literalIv1>
         <#1val1iriStemMinusiri3_v2>
         <#1val1iriStemMinusiri3_v3>
         <#1val1iriStemMinusiri3_passIv1a>
@@ -769,6 +786,42 @@
         <#1val1iriStemMinusiriStem3_v2>
         <#1val1iriStemMinusiriStem3_v3>
         <#1val1iriStemMinusiriStem3_v1a>
+        <#1val1literalStem_passv1>
+        <#1val1literalStem_passv1a>
+        <#1val1literalStem_fail>
+        <#1val1literaliriStem_fail-Iv1>
+        <#1val1literalStemMinusliteral3_passLv>
+        <#1val1literalStemMinusliteral3_passLv4>
+        <#1val1literaliriStemMinusliteraliri3_fail-Iv4>
+        <#1val1literalStemMinusliteral3_v1>
+        <#1val1literaliriStemMinusliteraliri3_fail-Iv1>
+        <#1val1literalStemMinusliteral3_v2>
+        <#1val1literalStemMinusliteral3_v3>
+        <#1val1literalStemMinusliteral3_passLv1a>
+        <#1val1literalStemMinusliteralStem3_passLv>
+        <#1val1literalStemMinusliteralStem3_passLv4>
+        <#1val1literalStemMinusliteralStem3_v1>
+        <#1val1literalStemMinusliteralStem3_v2>
+        <#1val1literalStemMinusliteralStem3_v3>
+        <#1val1literalStemMinusliteralStem3_v1a>
+        <#1val1languageStem_passLAtfr-be>
+        <#1val1languageStem_passLAtfr-be-fbcl>
+        <#1val1languageStem_fail>
+        <#1val1literallanguageStem_failLAtfr>
+        <#1val1languageStemMinuslanguage3_passLAtfr>
+        <#1val1languageStemMinuslanguage3_passLAtfr-FR>
+        <#1val1literallanguageStemMinusliterallanguage3_failLAtfr-FR>
+        <#1val1languageStemMinuslanguage3_failLAtfr-be>
+        <#1val1literallanguageStemMinusliterallanguage3_failLAtfr-BE>
+        <#1val1languageStemMinuslanguage3_failLAtfr-cd>
+        <#1val1languageStemMinuslanguage3_failLAtfr-ch>
+        <#1val1languageStemMinuslanguage3_passLAtfr-be-fbcl>
+        <#1val1languageStemMinuslanguageStem3_passLAtfr>
+        <#1val1languageStemMinuslanguageStem3_passLAtfr-FR>
+        <#1val1languageStemMinuslanguageStem3_LAtfr-be>
+        <#1val1languageStemMinuslanguageStem3_LAtfr-cd>
+        <#1val1languageStemMinuslanguageStem3_LAtfr-ch>
+        <#1val1languageStemMinuslanguageStem3_LAtfr-be-fbcl>
 
 ## triple expressions
 ###   AND tripleExpr
@@ -10381,6 +10434,19 @@
     ] ;
     .
 
+<#1val1iriStem_fail-literalIv1> a sht:ValidationFailure ;
+    mf:name "1val1iriStem_fail-literalIv1" ;
+    sht:trait sht:ValueSet, sht:Stem ;
+    rdfs:comment "<S> { <p1> [<v1>~] } on { <s> <p1> 'v1' }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1iriStem.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LIv1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
 <#1val1iriStemMinusiri3_passIv> a sht:ValidationTest ;
     mf:name "1val1iriStemMinusiri3_passIv" ;
     sht:trait sht:ValueSet, sht:Stem ;
@@ -10407,6 +10473,19 @@
     ]
     .
 
+<#1val1iriStemMinusiri3_fail-literalIv4> a sht:ValidationFailure ;
+    mf:name "1val1iriStemMinusiri3_fail-literalIv4" ;
+    sht:trait sht:ValueSet, sht:Stem ;
+    rdfs:comment "<S> { <p1> [<v>-<v1>-<v2>-<v3>] } on { <s> <p1> 'v4' }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1iriStemMinusiri3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LIv4.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
 <#1val1iriStemMinusiri3_v1> a sht:ValidationFailure ;
     mf:name "1val1iriStemMinusiri3_v1" ;
     sht:trait sht:ValueSet, sht:Stem ;
@@ -10416,6 +10495,19 @@
       sht:schema <../schemas/1val1iriStemMinusiri3.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Iv1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1val1iriStemMinusiri3_fail-literalIv1> a sht:ValidationFailure ;
+    mf:name "1val1iriStemMinusiri3_fail-literalIv1" ;
+    sht:trait sht:ValueSet, sht:Stem ;
+    rdfs:comment "<S> { <p1> [<v>-<v1>-<v2>-<v3>] } on { <s1> <p1> 'v1' }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1iriStemMinusiri3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LIv1.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
     .
@@ -10533,6 +10625,488 @@
       sht:schema <../schemas/1val1iriStemMinusiriStem3.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Iv1a.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1val1literalStem_passv1> a sht:ValidationTest ;
+    mf:name "1val1literalStem_passv1" ;
+    sht:trait sht:ValueSet, sht:Stem ;
+    rdfs:comment "<S> { <p1> ['v'~] } on { <s> <p1> 'v1' }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1literalStem.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Lv1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1val1literalStem_passv1.val>
+    .
+
+<#1val1literalStem_passv1a> a sht:ValidationTest ;
+    mf:name "1val1literalStem_passv1a" ;
+    sht:trait sht:ValueSet, sht:Stem ;
+    rdfs:comment "<S> { <p1> ['v'~] } on { <s> <p1> 'v1a' }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1literalStem.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Lv1a.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1val1literalStem_passv1a.val>
+    .
+
+<#1val1literalStem_fail> a sht:ValidationFailure ;
+    mf:name "1val1literalStem_fail" ;
+    sht:trait sht:ValueSet, sht:Stem ;
+    rdfs:comment "<S> { <p1> ['v'~] } on { <s1> <p1> '' }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1literalStem.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_L.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1val1literaliriStem_fail-Iv1> a sht:ValidationFailure ;
+    mf:name "1val1literaliriStem_fail-Iv1" ;
+    sht:trait sht:ValueSet, sht:Stem ;
+    rdfs:comment "<S> { <p1> ['v'~] } on { <s> <p1> <v1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1literaliriStem.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Iv1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1val1literalStemMinusliteral3_passLv> a sht:ValidationTest ;
+    mf:name "1val1literalStemMinusliteral3_passLv" ;
+    sht:trait sht:ValueSet, sht:Stem ;
+    rdfs:comment "<S> { <p1> ['v'-'v1'-'v2'-'v3'] } on { <s> <p1> 'v' }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1literalStemMinusliteral3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Lv.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1val1literalStemMinusliteral3_passLv.val>
+    .
+
+<#1val1literalStemMinusliteral3_passLv4> a sht:ValidationTest ;
+    mf:name "1val1literalStemMinusliteral3_passLv4" ;
+    sht:trait sht:ValueSet, sht:Stem ;
+    rdfs:comment "<S> { <p1> ['v'-'v1'-'v2'-'v3'] } on { <s> <p1> 'v4' }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1literalStemMinusliteral3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Lv4.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1val1literalStemMinusliteral3_passLv4.val>
+    .
+
+<#1val1literaliriStemMinusliteraliri3_fail-Iv4> a sht:ValidationFailure ;
+    mf:name "1val1literaliriStemMinusliteraliri3_fail-Iv4" ;
+    sht:trait sht:ValueSet, sht:Stem ;
+    rdfs:comment "<S> { <p1> ['v'-'v1'-'v2'-'v3'] } on { <s> <p1> <v4> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1literaliriStemMinusliteraliri3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Iv4.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1val1literalStemMinusliteral3_v1> a sht:ValidationFailure ;
+    mf:name "1val1literalStemMinusliteral3_v1" ;
+    sht:trait sht:ValueSet, sht:Stem ;
+    rdfs:comment "<S> { <p1> ['v'-'v1'-'v2'-'v3'] } on { <s1> <p1> 'v1' }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1literalStemMinusliteral3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Lv1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1val1literaliriStemMinusliteraliri3_fail-Iv1> a sht:ValidationFailure ;
+    mf:name "1val1literaliriStemMinusliteraliri3_fail-Iv1" ;
+    sht:trait sht:ValueSet, sht:Stem ;
+    rdfs:comment "<S> { <p1> ['v'-'v1'-'v2'-'v3'] } on { <s1> <p1> <v1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1literaliriStemMinusliteraliri3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Iv1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1val1literalStemMinusliteral3_v2> a sht:ValidationFailure ;
+    mf:name "1val1literalStemMinusliteral3_v2" ;
+    sht:trait sht:ValueSet, sht:Stem ;
+    rdfs:comment "<S> { <p1> ['v'-'v1'-'v2'-'v3'] } on { <s1> <p1> 'v2' }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1literalStemMinusliteral3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Lv2.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1val1literalStemMinusliteral3_v3> a sht:ValidationFailure ;
+    mf:name "1val1literalStemMinusliteral3_v3" ;
+    sht:trait sht:ValueSet, sht:Stem ;
+    rdfs:comment "<S> { <p1> ['v'-'v1'-'v2'-'v3'] } on { <s> <p1> 'v3' }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1literalStemMinusliteral3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Lv3.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1val1literalStemMinusliteral3_passLv1a> a sht:ValidationTest ;
+    mf:name "1val1literalStemMinusliteral3_passLv1a" ;
+    sht:trait sht:ValueSet, sht:Stem ;
+    rdfs:comment "<S> { <p1> ['v'-'v1'-'v2'-'v3'] } on { <s> <p1> 'v1a' }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1literalStemMinusliteral3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Lv1a.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1val1literalStemMinusliteral3_passLv1a.val>
+    .
+
+<#1val1literalStemMinusliteralStem3_passLv> a sht:ValidationTest ;
+    mf:name "1val1literalStemMinusliteralStem3_passLv" ;
+    sht:trait sht:ValueSet, sht:Stem ;
+    rdfs:comment "<S> { <p1> ['v'~-'v1'~-'v2'~-'v3'~] } on { <s> <p1> 'v' }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1literalStemMinusliteralStem3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Lv.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1val1literalStemMinusliteralStem3_passLv.val>
+    .
+
+<#1val1literalStemMinusliteralStem3_passLv4> a sht:ValidationTest ;
+    mf:name "1val1literalStemMinusliteralStem3_passLv4" ;
+    sht:trait sht:ValueSet, sht:Stem ;
+    rdfs:comment "<S> { <p1> ['v'~-'v1'~-'v2'~-'v3'~] } on { <s> <p1> 'v4' }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1literalStemMinusliteralStem3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Lv4.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1val1literalStemMinusliteralStem3_passLv4.val>
+    .
+
+<#1val1literalStemMinusliteralStem3_v1> a sht:ValidationFailure ;
+    mf:name "1val1literalStemMinusliteralStem3_v1" ;
+    sht:trait sht:ValueSet, sht:Stem ;
+    rdfs:comment "<S> { <p1> ['v'~-'v1'~-'v2'~-'v3'~] } on { <s1> <p1> 'v1' }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1literalStemMinusliteralStem3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Lv1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1val1literalStemMinusliteralStem3_v2> a sht:ValidationFailure ;
+    mf:name "1val1literalStemMinusliteralStem3_v2" ;
+    sht:trait sht:ValueSet, sht:Stem ;
+    rdfs:comment "<S> { <p1> ['v'~-'v1'~-'v2'~-'v3'~] } on { <s1> <p1> 'v2' }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1literalStemMinusliteralStem3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Lv2.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1val1literalStemMinusliteralStem3_v3> a sht:ValidationFailure ;
+    mf:name "1val1literalStemMinusliteralStem3_v3" ;
+    sht:trait sht:ValueSet, sht:Stem ;
+    rdfs:comment "<S> { <p1> ['v'~-'v1'~-'v2'~-'v3'~] } on { <s> <p1> 'v3' }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1literalStemMinusliteralStem3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Lv3.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1val1literalStemMinusliteralStem3_v1a> a sht:ValidationFailure ;
+    mf:name "1val1literalStemMinusliteralStem3_v1a" ;
+    sht:trait sht:ValueSet, sht:Stem ;
+    rdfs:comment "<S> { <p1> ['v'~-'v1'~-'v2'~-'v3'~] } on { <s1> <p1> 'v1a' }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1literalStemMinusliteralStem3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Lv1a.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1val1languageStem_passLAtfr-be> a sht:ValidationTest ;
+    mf:name "1val1languageStem_passLAtfr-be" ;
+    sht:trait sht:ValueSet, sht:Stem ;
+    rdfs:comment "<S> { <p1> [@fr~] } on { <s> <p1> 'septante'@fr-be }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1languageStem.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LAtfr-be.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1val1languageStem_passLAtfr-be.val>
+    .
+
+<#1val1languageStem_passLAtfr-be-fbcl> a sht:ValidationTest ;
+    mf:name "1val1languageStem_passLAtfr-be-fbcl" ;
+    sht:trait sht:ValueSet, sht:Stem ;
+    rdfs:comment "<S> { <p1> [@fr~] } on { <s> <p1> 'septante'@fr-be-fbcl }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1languageStem.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LAtfr-be-fbcl.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1val1languageStem_passLAtfr-be-fbcl.val>
+    .
+
+<#1val1languageStem_fail> a sht:ValidationFailure ;
+    mf:name "1val1languageStem_fail" ;
+    sht:trait sht:ValueSet, sht:Stem ;
+    rdfs:comment "<S> { <p1> [@fr~] } on { <s1> <p1> '' }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1languageStem.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_L.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1val1literallanguageStem_failLAtfr> a sht:ValidationFailure ;
+    mf:name "1val1literallanguageStem_failLAtfr" ;
+    sht:trait sht:ValueSet, sht:Stem ;
+    rdfs:comment "<S> { <p1> ['fr'~] } on { <s> <p1> 'septante'@fr }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1literallanguageStem.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LAtfr.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1val1languageStemMinuslanguage3_passLAtfr> a sht:ValidationTest ;
+    mf:name "1val1languageStemMinuslanguage3_passLAtfr" ;
+    sht:trait sht:ValueSet, sht:Stem ;
+    rdfs:comment "<S> { <p1> [@fr-@fr-be-@fr-cd-@fr-ch] } on { <s> <p1> 'septante'@fr }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1languageStemMinuslanguage3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LAtfr.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1val1languageStemMinuslanguage3_passLAtfr.val>
+    .
+
+<#1val1languageStemMinuslanguage3_passLAtfr-FR> a sht:ValidationTest ;
+    mf:name "1val1languageStemMinuslanguage3_passLAtfr-FR" ;
+    sht:trait sht:ValueSet, sht:Stem ;
+    rdfs:comment "<S> { <p1> [@fr-@fr-be-@fr-cd-@fr-ch] } on { <s> <p1> 'septante'@fr-FR }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1languageStemMinuslanguage3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LAtfr-fr.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1val1languageStemMinuslanguage3_passLAtfr-FR.val>
+    .
+
+<#1val1literallanguageStemMinusliterallanguage3_failLAtfr-FR> a sht:ValidationFailure ;
+    mf:name "1val1literallanguageStemMinusliterallanguage3_failLAtfr-FR" ;
+    sht:trait sht:ValueSet, sht:Stem ;
+    rdfs:comment "<S> { <p1> ['fr'-'fr-be'-'fr-cd'-'fr-ch'] } on { <s> <p1> 'septante'@fr-FR }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1literallanguageStemMinusliterallanguage3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LAtfr-fr.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1val1languageStemMinuslanguage3_failLAtfr-be> a sht:ValidationFailure ;
+    mf:name "1val1languageStemMinuslanguage3_failLAtfr-be" ;
+    sht:trait sht:ValueSet, sht:Stem ;
+    rdfs:comment "<S> { <p1> [@fr-@fr-be-@fr-cd-@fr-ch] } on { <s1> <p1> 'septante'@fr-be }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1languageStemMinuslanguage3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LAtfr-be.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1val1literallanguageStemMinusliterallanguage3_failLAtfr-BE> a sht:ValidationFailure ;
+    mf:name "1val1literallanguageStemMinusliterallanguage3_failLAtfr-BE" ;
+    sht:trait sht:ValueSet, sht:Stem ;
+    rdfs:comment "<S> { <p1> ['fr'-'fr-be'-'fr-cd'-'fr-ch'] } on { <s1> <p1> 'septante'@fr-be }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1literallanguageStemMinusliterallanguage3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LAtfr-be.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1val1languageStemMinuslanguage3_failLAtfr-cd> a sht:ValidationFailure ;
+    mf:name "1val1languageStemMinuslanguage3_failLAtfr-cd" ;
+    sht:trait sht:ValueSet, sht:Stem ;
+    rdfs:comment "<S> { <p1> [@fr-@fr-be-@fr-cd-@fr-ch] } on { <s1> <p1> 'septante'@fr-cd }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1languageStemMinuslanguage3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LAtfr-cd.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1val1languageStemMinuslanguage3_failLAtfr-ch> a sht:ValidationFailure ;
+    mf:name "1val1languageStemMinuslanguage3_failLAtfr-ch" ;
+    sht:trait sht:ValueSet, sht:Stem ;
+    rdfs:comment "<S> { <p1> [@fr-@fr-be-@fr-cd-@fr-ch] } on { <s> <p1> 'septante'@fr-ch }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1languageStemMinuslanguage3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LAtfr-ch.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1val1languageStemMinuslanguage3_passLAtfr-be-fbcl> a sht:ValidationTest ;
+    mf:name "1val1languageStemMinuslanguage3_passLAtfr-be-fbcl" ;
+    sht:trait sht:ValueSet, sht:Stem ;
+    rdfs:comment "<S> { <p1> [@fr-@fr-be-@fr-cd-@fr-ch] } on { <s> <p1> 'septante'@fr-be-fbcl }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1languageStemMinuslanguage3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LAtfr-be-fbcl.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1val1languageStemMinuslanguage3_passLAtfr-be-fbcl.val>
+    .
+
+<#1val1languageStemMinuslanguageStem3_passLAtfr> a sht:ValidationTest ;
+    mf:name "1val1languageStemMinuslanguageStem3_passLAtfr" ;
+    sht:trait sht:ValueSet, sht:Stem ;
+    rdfs:comment "<S> { <p1> [@fr~-@fr-be~-@fr-cd~-@fr-ch] } on { <s> <p1> 'septante'@fr }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1languageStemMinuslanguageStem3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LAtfr.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1val1languageStemMinuslanguageStem3_passLAtfr.val>
+    .
+
+<#1val1languageStemMinuslanguageStem3_passLAtfr-FR> a sht:ValidationTest ;
+    mf:name "1val1languageStemMinuslanguageStem3_passLAtfr-FR" ;
+    sht:trait sht:ValueSet, sht:Stem ;
+    rdfs:comment "<S> { <p1> [@fr~-@fr-be~-@fr-cd~-@fr-ch] } on { <s> <p1> 'septante'@fr-FR }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1languageStemMinuslanguageStem3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LAtfr-fr.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:result <1val1languageStemMinuslanguageStem3_passLAtfr-FR.val>
+    .
+
+<#1val1languageStemMinuslanguageStem3_LAtfr-be> a sht:ValidationFailure ;
+    mf:name "1val1languageStemMinuslanguageStem3_LAtfr-be" ;
+    sht:trait sht:ValueSet, sht:Stem ;
+    rdfs:comment "<S> { <p1> [@fr~-@fr-be~-@fr-cd~-@fr-ch] } on { <s1> <p1> 'septante'@fr-be }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1languageStemMinuslanguageStem3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LAtfr-be.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1val1languageStemMinuslanguageStem3_LAtfr-cd> a sht:ValidationFailure ;
+    mf:name "1val1languageStemMinuslanguageStem3_LAtfr-cd" ;
+    sht:trait sht:ValueSet, sht:Stem ;
+    rdfs:comment "<S> { <p1> [@fr~-@fr-be~-@fr-cd~-@fr-ch] } on { <s1> <p1> 'septante'@fr-cd }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1languageStemMinuslanguageStem3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LAtfr-cd.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1val1languageStemMinuslanguageStem3_LAtfr-ch> a sht:ValidationFailure ;
+    mf:name "1val1languageStemMinuslanguageStem3_LAtfr-ch" ;
+    sht:trait sht:ValueSet, sht:Stem ;
+    rdfs:comment "<S> { <p1> [@fr~-@fr-be~-@fr-cd~-@fr-ch] } on { <s1> <p1> 'septante'@fr-ch }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1languageStemMinuslanguageStem3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LAtfr-ch.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1val1languageStemMinuslanguageStem3_LAtfr-be-fbcl> a sht:ValidationFailure ;
+    mf:name "1val1languageStemMinuslanguageStem3_LAtfr-be-fbcl" ;
+    sht:trait sht:ValueSet, sht:Stem ;
+    rdfs:comment "<S> { <p1> [@fr~-@fr-be~-@fr-cd~-@fr-ch] } on { <s1> <p1> 'septante'@fr-be-fbcl }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1languageStemMinuslanguageStem3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LAtfr-be-fbcl.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
     .

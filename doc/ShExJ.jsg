@@ -47,10 +47,14 @@ numericFacet     = (mininclusive|minexclusive|maxinclusive|maxexclusive):numeric
                  | (totaldigits|fractiondigits):INTEGER ;
 
 # Value Sets
-valueSetValue    = objectValue|Stem|StemRange ;
+valueSetValue    = objectValue | IRIStem | IRIStemRange | LiteralStem | LiteralStemRange | LanguageStem | LanguageStemRange ;
 objectValue      = IRI|ObjectLiteral ;
-Stem             { stem:IRI } # StemRange with exclusions
-StemRange        { stem:(IRI|Wildcard) exclusions:[objectValue|Stem +]? }
+IRIStem          { stem:IRI } # IRIStemRange with exclusions
+IRIStemRange     { stem:(IRI|Wildcard) exclusions:[objectValue|IRIStem +]? }
+LiteralStem      { stem:ObjectLiteral } # LiteralStemRange with exclusions
+LiteralStemRange { stem:(ObjectLiteral|Wildcard) exclusions:[objectValue|LiteralStem +]? }
+LanguageStem     { stem:ObjectLiteral } # LanguageStemRange with exclusions
+LanguageStemRange{ stem:(ObjectLiteral|Wildcard) exclusions:[objectValue|LanguageStem +]? }
 Wildcard         {  }
 
 SemAct           { name:IRI code:STRING? }
