@@ -10749,7 +10749,7 @@
             "OutsideBMP",
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> /^\\\\/\\\\t\\\\b\\\\n\\\\r\\\\f\\\\\\\\\\\\u0061\\\\U0001D4B8$/ } on { <s> <p1> '/        \\b\\n\\r\\f\\a𝒸' }",
+          "comment": "<S> { <p1> /^\\\\/\\\\t\\\\b\\\\n\\\\r\\\\f\\\\\\\\\\\\u0061\\\\U0001D4B8$/ } on { <s> <p1> '/\t\\b\\n\\r\\f\\a𝒸' }",
           "status": "mf:proposed"
         },
         {
@@ -10767,7 +10767,7 @@
             "OutsideBMP",
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> /^\\/      \\n\\r-\\\\a\\U0001D4B8$/ } on { <s> <p1> '/    \\b\\n\\r\\f\\a𝒸' }",
+          "comment": "<S> { <p1> /^\\/\t\\n\\r-\\\\a\\U0001D4B8$/ } on { <s> <p1> '/\t\\b\\n\\r\\f\\a𝒸' }",
           "status": "mf:proposed"
         },
         {
@@ -10785,7 +10785,7 @@
             "OutsideBMP",
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> /^\\/      \\n\\r-\\\\a\\U0001D4B8$/ } on { <s> <p1> '\\\\/\\\\t\\\\b\\\\n\\\\r\\\\f\\\\\\u0061\\U0001D4B8' }",
+          "comment": "<S> { <p1> /^\\/\t\\n\\r-\\\\a\\U0001D4B8$/ } on { <s> <p1> '\\\\/\\\\t\\\\b\\\\n\\\\r\\\\f\\\\\\u0061\\U0001D4B8' }",
           "status": "mf:proposed"
         },
         {
@@ -10803,7 +10803,7 @@
             "OutsideBMP",
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> /^\\/\\t\\b\\n\\r\\f\\\\\\u0061\\U0001D4B8$/ } on { <s> <p1> '/    \\b\\n\\r\\f\\a𝒸' }",
+          "comment": "<S> { <p1> /^\\/\\t\\b\\n\\r\\f\\\\\\u0061\\U0001D4B8$/ } on { <s> <p1> '/\t\\b\\n\\r\\f\\a𝒸' }",
           "status": "mf:proposed"
         },
         {
@@ -10821,7 +10821,7 @@
             "OutsideBMP",
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> /^\\/      \\n\\r-\\\\a\\U0001D4B8$/ } on { <s> <p1> '\\/\\t\\b\\n\\r\\f\\a𝒸' }",
+          "comment": "<S> { <p1> /^\\/\t\\n\\r-\\\\a\\U0001D4B8$/ } on { <s> <p1> '\\/\\t\\b\\n\\r\\f\\a𝒸' }",
           "status": "mf:proposed"
         },
         {
@@ -11964,8 +11964,7 @@
             "ValueSet"
           ],
           "comment": "<S> { <p1> ['v'~] } on { <s> <p1> 'v1' }",
-          "status": "mf:proposed",
-          "result": "1val1literalStem_passv1.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1literalStem_passv1a",
@@ -11983,8 +11982,7 @@
             "ValueSet"
           ],
           "comment": "<S> { <p1> ['v'~] } on { <s> <p1> 'v1a' }",
-          "status": "mf:proposed",
-          "result": "1val1literalStem_passv1a.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1literalStem_fail",
@@ -12038,8 +12036,7 @@
             "ValueSet"
           ],
           "comment": "<S> { <p1> ['v'-'v1'-'v2'-'v3'] } on { <s> <p1> 'v' }",
-          "status": "mf:proposed",
-          "result": "1val1literalStemMinusliteral3_passLv.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1literalStemMinusliteral3_passLv4",
@@ -12057,8 +12054,7 @@
             "ValueSet"
           ],
           "comment": "<S> { <p1> ['v'-'v1'-'v2'-'v3'] } on { <s> <p1> 'v4' }",
-          "status": "mf:proposed",
-          "result": "1val1literalStemMinusliteral3_passLv4.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1literaliriStemMinusliteraliri3_fail-Iv4",
@@ -12166,8 +12162,7 @@
             "ValueSet"
           ],
           "comment": "<S> { <p1> ['v'-'v1'-'v2'-'v3'] } on { <s> <p1> 'v1a' }",
-          "status": "mf:proposed",
-          "result": "1val1literalStemMinusliteral3_passLv1a.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1literalStemMinusliteralStem3_passLv",
@@ -12185,8 +12180,7 @@
             "ValueSet"
           ],
           "comment": "<S> { <p1> ['v'~-'v1'~-'v2'~-'v3'~] } on { <s> <p1> 'v' }",
-          "status": "mf:proposed",
-          "result": "1val1literalStemMinusliteralStem3_passLv.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1literalStemMinusliteralStem3_passLv4",
@@ -12204,8 +12198,7 @@
             "ValueSet"
           ],
           "comment": "<S> { <p1> ['v'~-'v1'~-'v2'~-'v3'~] } on { <s> <p1> 'v4' }",
-          "status": "mf:proposed",
-          "result": "1val1literalStemMinusliteralStem3_passLv4.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1literalStemMinusliteralStem3_v1",
@@ -12295,8 +12288,7 @@
             "ValueSet"
           ],
           "comment": "<S> { <p1> [@fr~] } on { <s> <p1> 'septante'@fr-be }",
-          "status": "mf:proposed",
-          "result": "1val1languageStem_passLAtfr-be.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1languageStem_passLAtfr-be-fbcl",
@@ -12314,8 +12306,7 @@
             "ValueSet"
           ],
           "comment": "<S> { <p1> [@fr~] } on { <s> <p1> 'septante'@fr-be-fbcl }",
-          "status": "mf:proposed",
-          "result": "1val1languageStem_passLAtfr-be-fbcl.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1languageStem_fail",
@@ -12369,8 +12360,7 @@
             "ValueSet"
           ],
           "comment": "<S> { <p1> [@fr-@fr-be-@fr-cd-@fr-ch] } on { <s> <p1> 'septante'@fr }",
-          "status": "mf:proposed",
-          "result": "1val1languageStemMinuslanguage3_passLAtfr.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1languageStemMinuslanguage3_passLAtfr-FR",
@@ -12388,8 +12378,7 @@
             "ValueSet"
           ],
           "comment": "<S> { <p1> [@fr-@fr-be-@fr-cd-@fr-ch] } on { <s> <p1> 'septante'@fr-FR }",
-          "status": "mf:proposed",
-          "result": "1val1languageStemMinuslanguage3_passLAtfr-FR.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1literallanguageStemMinusliterallanguage3_failLAtfr-FR",
@@ -12497,8 +12486,7 @@
             "ValueSet"
           ],
           "comment": "<S> { <p1> [@fr-@fr-be-@fr-cd-@fr-ch] } on { <s> <p1> 'septante'@fr-be-fbcl }",
-          "status": "mf:proposed",
-          "result": "1val1languageStemMinuslanguage3_passLAtfr-be-fbcl.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1languageStemMinuslanguageStem3_passLAtfr",
@@ -12516,8 +12504,7 @@
             "ValueSet"
           ],
           "comment": "<S> { <p1> [@fr~-@fr-be~-@fr-cd~-@fr-ch] } on { <s> <p1> 'septante'@fr }",
-          "status": "mf:proposed",
-          "result": "1val1languageStemMinuslanguageStem3_passLAtfr.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1languageStemMinuslanguageStem3_passLAtfr-FR",
@@ -12535,8 +12522,7 @@
             "ValueSet"
           ],
           "comment": "<S> { <p1> [@fr~-@fr-be~-@fr-cd~-@fr-ch] } on { <s> <p1> 'septante'@fr-FR }",
-          "status": "mf:proposed",
-          "result": "1val1languageStemMinuslanguageStem3_passLAtfr-FR.val"
+          "status": "mf:proposed"
         },
         {
           "@id": "#1val1languageStemMinuslanguageStem3_LAtfr-be",

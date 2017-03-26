@@ -1,7 +1,7 @@
 # -*- mode: n3; outline-regexp: "[#]+ "; -*-
 # handy bits from outline mode:
-#   C-c @ C-l   hide-leaves - on prefixes, entries, definitions
-#   C-c @ C-s   show-subtree - on anything you're hacking
+#   C-c @ C-l	hide-leaves - on prefixes, entries, definitions
+#   C-c @ C-s	show-subtree - on anything you're hacking
 #  Note that incremental search opens leaves for the duration of the search.
 
 # prefixes
@@ -4798,7 +4798,7 @@
  #       sht:data <Is1_Ip1_DEC1_23456.ttl> ;
  #       sht:focus <http://a.example/s1>
  #     ] ;
- #     mf:result <1literalFractiondigits_pass-decimal-equal_results.json>
+ #     mf:result <1literalFractiondigits_pass-decimal-equal.val>
  #     .
 
 <#1literalFractiondigits_fail-decimal-long> a sht:ValidationFailure ;
@@ -5064,7 +5064,7 @@
  #       sht:data <Is1_Ip1_DEC1_2345.ttl> ;
  #       sht:focus <http://a.example/s1>
  #     ] ;
- #     mf:result <1literalTotaldigits_pass-decimal-equal_results.json>
+ #     mf:result <1literalTotaldigits_pass-decimal-equal.val>
  #     .
 
 <#1literalTotaldigits_fail-decimal-long> a sht:ValidationFailure ;
@@ -9648,7 +9648,7 @@
 #   </xs:schema>
 # with data:
 #   <?xml version="1.0" encoding="UTF-8"?>
-#   <p1>        v:0,  v:12v:3/.&#xD;&#xA;</p1>
+#   <p1>	v:0,  v:12v:3/.&#xD;&#xA;</p1>
 # Try at: <http://www.utilities-online.info/xsdvalidation>
 <#1literalPattern_with_all_meta_pass> a sht:ValidationTest ;
     mf:name "1literalPattern_with_all_meta_pass" ;
@@ -9848,7 +9848,7 @@
 <#1literalPattern_with_REGEXP_escapes_escaped_fail_escapes_bare> a sht:ValidationFailure ;
     mf:name "1literalPattern_with_REGEXP_escapes_escaped_fail_escapes_bare" ;
     sht:trait sht:NumericEquivalence, sht:OutsideBMP ;
-    rdfs:comment "<S> { <p1> /^\\\\/\\\\t\\\\b\\\\n\\\\r\\\\f\\\\\\\\\\\\u0061\\\\U0001D4B8$/ } on { <s> <p1> '/        \\b\\n\\r\\f\\a\U0001D4B8' }" ;
+    rdfs:comment "<S> { <p1> /^\\\\/\\\\t\\\\b\\\\n\\\\r\\\\f\\\\\\\\\\\\u0061\\\\U0001D4B8$/ } on { <s> <p1> '/	\\b\\n\\r\\f\\a\U0001D4B8' }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1literalPattern_with_REGEXP_escapes_escaped.shex> ;
@@ -9861,7 +9861,7 @@
 <#1literalPattern_with_REGEXP_escapes_bare_pass> a sht:ValidationTest ;
     mf:name "1literalPattern_with_REGEXP_escapes_bare_pass" ;
     sht:trait sht:NumericEquivalence, sht:OutsideBMP ;
-    rdfs:comment "<S> { <p1> /^\\/      \\n\\r-\\\\a\\U0001D4B8$/ } on { <s> <p1> '/    \\b\\n\\r\\f\\a\U0001D4B8' }" ;
+    rdfs:comment "<S> { <p1> /^\\/	\\n\\r-\\\\a\\U0001D4B8$/ } on { <s> <p1> '/	\\b\\n\\r\\f\\a\U0001D4B8' }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1literalPattern_with_REGEXP_escapes_bare.shex> ;
@@ -9874,7 +9874,7 @@
 <#1literalPattern_with_REGEXP_escapes_bare_fail_escaped> a sht:ValidationFailure ;
     mf:name "1literalPattern_with_REGEXP_escapes_bare_fail_escaped" ;
     sht:trait sht:NumericEquivalence, sht:OutsideBMP ;
-    rdfs:comment "<S> { <p1> /^\\/      \\n\\r-\\\\a\\U0001D4B8$/ } on { <s> <p1> '\\\\/\\\\t\\\\b\\\\n\\\\r\\\\f\\\\\\u0061\\U0001D4B8' }" ;
+    rdfs:comment "<S> { <p1> /^\\/	\\n\\r-\\\\a\\U0001D4B8$/ } on { <s> <p1> '\\\\/\\\\t\\\\b\\\\n\\\\r\\\\f\\\\\\u0061\\U0001D4B8' }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1literalPattern_with_REGEXP_escapes_bare.shex> ;
@@ -9887,7 +9887,7 @@
 <#1literalPattern_with_REGEXP_escapes_pass_bare> a sht:ValidationTest ;
     mf:name "1literalPattern_with_REGEXP_escapes_pass_bare" ;
     sht:trait sht:NumericEquivalence, sht:OutsideBMP ;
-    rdfs:comment "<S> { <p1> /^\\/\\t\\b\\n\\r\\f\\\\\\u0061\\U0001D4B8$/ } on { <s> <p1> '/    \\b\\n\\r\\f\\a\U0001D4B8' }" ;
+    rdfs:comment "<S> { <p1> /^\\/\\t\\b\\n\\r\\f\\\\\\u0061\\U0001D4B8$/ } on { <s> <p1> '/	\\b\\n\\r\\f\\a\U0001D4B8' }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1literalPattern_with_REGEXP_escapes.shex> ;
@@ -9900,7 +9900,7 @@
 <#1literalPattern_with_REGEXP_escapes_bare_pass_escapes> a sht:ValidationTest ;
     mf:name "1literalPattern_with_REGEXP_escapes_bare_pass_escapes" ;
     sht:trait sht:NumericEquivalence, sht:OutsideBMP ;
-    rdfs:comment "<S> { <p1> /^\\/      \\n\\r-\\\\a\\U0001D4B8$/ } on { <s> <p1> '\\/\\t\\b\\n\\r\\f\\\u0061\U0001D4B8' }" ;
+    rdfs:comment "<S> { <p1> /^\\/	\\n\\r-\\\\a\\U0001D4B8$/ } on { <s> <p1> '\\/\\t\\b\\n\\r\\f\\\u0061\U0001D4B8' }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1literalPattern_with_REGEXP_escapes_bare.shex> ;
@@ -10639,8 +10639,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Lv1.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1literalStem_passv1.val>
+    ]
     .
 
 <#1val1literalStem_passv1a> a sht:ValidationTest ;
@@ -10653,8 +10652,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Lv1a.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1literalStem_passv1a.val>
+    ]
     .
 
 <#1val1literalStem_fail> a sht:ValidationFailure ;
@@ -10693,8 +10691,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Lv.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1literalStemMinusliteral3_passLv.val>
+    ]
     .
 
 <#1val1literalStemMinusliteral3_passLv4> a sht:ValidationTest ;
@@ -10707,8 +10704,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Lv4.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1literalStemMinusliteral3_passLv4.val>
+    ]
     .
 
 <#1val1literaliriStemMinusliteraliri3_fail-Iv4> a sht:ValidationFailure ;
@@ -10786,8 +10782,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Lv1a.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1literalStemMinusliteral3_passLv1a.val>
+    ]
     .
 
 <#1val1literalStemMinusliteralStem3_passLv> a sht:ValidationTest ;
@@ -10800,8 +10795,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Lv.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1literalStemMinusliteralStem3_passLv.val>
+    ]
     .
 
 <#1val1literalStemMinusliteralStem3_passLv4> a sht:ValidationTest ;
@@ -10814,8 +10808,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Lv4.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1literalStemMinusliteralStem3_passLv4.val>
+    ]
     .
 
 <#1val1literalStemMinusliteralStem3_v1> a sht:ValidationFailure ;
@@ -10880,8 +10873,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_LAtfr-be.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1languageStem_passLAtfr-be.val>
+    ]
     .
 
 <#1val1languageStem_passLAtfr-be-fbcl> a sht:ValidationTest ;
@@ -10894,8 +10886,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_LAtfr-be-fbcl.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1languageStem_passLAtfr-be-fbcl.val>
+    ]
     .
 
 <#1val1languageStem_fail> a sht:ValidationFailure ;
@@ -10934,8 +10925,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_LAtfr.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1languageStemMinuslanguage3_passLAtfr.val>
+    ]
     .
 
 <#1val1languageStemMinuslanguage3_passLAtfr-FR> a sht:ValidationTest ;
@@ -10948,8 +10938,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_LAtfr-fr.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1languageStemMinuslanguage3_passLAtfr-FR.val>
+    ]
     .
 
 <#1val1literallanguageStemMinusliterallanguage3_failLAtfr-FR> a sht:ValidationFailure ;
@@ -11027,8 +11016,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_LAtfr-be-fbcl.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1languageStemMinuslanguage3_passLAtfr-be-fbcl.val>
+    ]
     .
 
 <#1val1languageStemMinuslanguageStem3_passLAtfr> a sht:ValidationTest ;
@@ -11041,8 +11029,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_LAtfr.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1languageStemMinuslanguageStem3_passLAtfr.val>
+    ]
     .
 
 <#1val1languageStemMinuslanguageStem3_passLAtfr-FR> a sht:ValidationTest ;
@@ -11055,8 +11042,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_LAtfr-fr.ttl> ;
       sht:focus <http://a.example/s1>
-    ] ;
-    mf:result <1val1languageStemMinuslanguageStem3_passLAtfr-FR.val>
+    ]
     .
 
 <#1val1languageStemMinuslanguageStem3_LAtfr-be> a sht:ValidationFailure ;
