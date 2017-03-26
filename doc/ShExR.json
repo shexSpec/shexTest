@@ -446,8 +446,8 @@
       "type": "ShapeOr",
       "shapeExprs": [
         "http://www.w3.org/ns/shex#objectValue",
-        "http://www.w3.org/ns/shex#IRIStem",
-        "http://www.w3.org/ns/shex#IRIStemRange"
+        "http://www.w3.org/ns/shex#IriStem",
+        "http://www.w3.org/ns/shex#IriStemRange"
       ],
       "id": "http://www.w3.org/ns/shex#valueSetValue"
     },
@@ -476,7 +476,7 @@
             "valueExpr": {
               "type": "NodeConstraint",
               "values": [
-                "http://www.w3.org/ns/shex#IRIStem"
+                "http://www.w3.org/ns/shex#IriStem"
               ]
             }
           },
@@ -491,7 +491,7 @@
         ]
       },
       "closed": true,
-      "id": "http://www.w3.org/ns/shex#IRIStem"
+      "id": "http://www.w3.org/ns/shex#IriStem"
     },
     {
       "type": "Shape",
@@ -504,7 +504,7 @@
             "valueExpr": {
               "type": "NodeConstraint",
               "values": [
-                "http://www.w3.org/ns/shex#IRIStemRange"
+                "http://www.w3.org/ns/shex#IriStemRange"
               ]
             }
           },
@@ -529,7 +529,7 @@
               "type": "ShapeOr",
               "shapeExprs": [
                 "http://www.w3.org/ns/shex#objectValue",
-                "http://www.w3.org/ns/shex#IRIStem"
+                "http://www.w3.org/ns/shex#IriStem"
               ]
             },
             "min": 0,
@@ -538,7 +538,7 @@
         ]
       },
       "closed": true,
-      "id": "http://www.w3.org/ns/shex#IRIStemRange"
+      "id": "http://www.w3.org/ns/shex#IriStemRange"
     },
     {
       "type": "ShapeAnd",

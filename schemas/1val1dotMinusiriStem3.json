@@ -12,21 +12,21 @@
           "type": "NodeConstraint",
           "values": [
             {
-              "type": "IRIStemRange",
+              "type": "IriStemRange",
               "stem": {
                 "type": "Wildcard"
               },
               "exclusions": [
                 {
-                  "type": "IRIStem",
+                  "type": "IriStem",
                   "stem": "http://a.example/v1"
                 },
                 {
-                  "type": "IRIStem",
+                  "type": "IriStem",
                   "stem": "http://a.example/v2"
                 },
                 {
-                  "type": "IRIStem",
+                  "type": "IriStem",
                   "stem": "http://a.example/v3"
                 }
               ]

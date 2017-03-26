@@ -35,7 +35,7 @@
               "type": "NodeConstraint",
               "values": [
                 {
-                  "type": "IRIStemRange",
+                  "type": "IriStemRange",
                   "stem": "http://ex.example/#state",
                   "exclusions": [
                     "http://ex.example/#state_resolved"
