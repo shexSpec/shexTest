@@ -689,6 +689,20 @@
           "name": "tripleConsraint-with-two-cardinalities",
           "status": "mf:proposed",
           "shex": "tripleConsraint-with-two-cardinalities.shex"
+        },
+        {
+          "@id": "#1val1languageStemMinusliteral3",
+          "@type": "sht:NegativeSyntax",
+          "name": "1val1languageStemMinusliteral3",
+          "status": "mf:proposed",
+          "shex": "1val1languageStemMinusliteral3.shex"
+        },
+        {
+          "@id": "#1val1literalStemMinuslanguage3",
+          "@type": "sht:NegativeSyntax",
+          "name": "1val1literalStemMinuslanguage3",
+          "status": "mf:proposed",
+          "shex": "1val1literalStemMinuslanguage3.shex"
         }
       ]
     }
