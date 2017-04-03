@@ -3659,43 +3659,6 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#1datatypeRef1_fail-datatype",
-          "@type": "sht:ValidationFailure",
-          "action": {
-            "schema": "../schemas/1datatypeRef1.shex",
-            "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_dt1.ttl",
-            "focus": "http://a.example/s1"
-          },
-          "extensionResults": [],
-          "name": "1datatypeRef1_fail-datatype",
-          "trait": [
-            "Unsatisfiable",
-            "ShapeReference",
-            "Datatype"
-          ],
-          "comment": "<S> { <p1> <dt1> @<S> } on <s> in { <s> <p1> 'ab'^^<dt1> }",
-          "status": "mf:proposed"
-        },
-        {
-          "@id": "#1datatypeRef1_fail-reflexiveRef",
-          "@type": "sht:ValidationFailure",
-          "action": {
-            "schema": "../schemas/1datatypeRef1.shex",
-            "shape": "http://a.example/S1",
-            "data": "In1_Ip1_In1.ttl",
-            "focus": "http://a.example/n1"
-          },
-          "extensionResults": [],
-          "name": "1datatypeRef1_fail-reflexiveRef",
-          "trait": [
-            "Unsatisfiable",
-            "ShapeReference"
-          ],
-          "comment": "<S1> { <p1> <dt1> } on <s> in { <n1> <p1> <n1> }",
-          "status": "mf:proposed"
-        },
-        {
           "@id": "#1dotInline1_referrer,referent",
           "@type": "sht:ValidationTest",
           "action": {
@@ -15790,8 +15753,8 @@
           "extensionResults": [],
           "name": "1focusvsANDdatatype_fail",
           "trait": [
-            "FocusConstraint",
-            "Unsatisfiable"
+            "Unsatisfiable",
+            "FocusConstraint"
           ],
           "comment": "<S> [<v1> <v2> <v3>] AND <dt1> on {  }",
           "status": "mf:proposed"

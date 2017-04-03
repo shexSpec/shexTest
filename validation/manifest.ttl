@@ -268,8 +268,6 @@
         <#1iriRef1_fail-bnode>
         <#1bnodeRef1_fail-iri>
         <#1bnodeRef1_pass-bnode>
-        <#1datatypeRef1_fail-datatype>
-        <#1datatypeRef1_fail-reflexiveRef>
 
 ## inline
         <#1dotInline1_referrer,referent>
@@ -3997,32 +3995,6 @@
       sht:data <In1_Ip1_Bn2.Bn2_Ip2_LX.ttl> ;
       sht:focus <http://a.example/n1>
     ]
-    .
-
-<#1datatypeRef1_fail-datatype> a sht:ValidationFailure ;
-    mf:name "1datatypeRef1_fail-datatype" ;
-    sht:trait sht:ShapeReference , sht:Datatype , sht:Unsatisfiable ;
-    rdfs:comment "<S> { <p1> <dt1> @<S> } on <s> in { <s> <p1> 'ab'^^<dt1> }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1datatypeRef1.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_dt1.ttl> ;
-      sht:focus <http://a.example/s1>
-    ] ;
-    .
-
-<#1datatypeRef1_fail-reflexiveRef> a sht:ValidationFailure ;
-    mf:name "1datatypeRef1_fail-reflexiveRef" ;
-    sht:trait sht:ShapeReference , sht:Unsatisfiable ;
-    rdfs:comment "<S1> { <p1> <dt1> } on <s> in { <n1> <p1> <n1> }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/1datatypeRef1.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <In1_Ip1_In1.ttl> ;
-      sht:focus <http://a.example/n1>
-    ] ;
     .
 
 ## } shape reference
