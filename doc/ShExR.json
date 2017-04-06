@@ -485,7 +485,7 @@
             "predicate": "http://www.w3.org/ns/shex#stem",
             "valueExpr": {
               "type": "NodeConstraint",
-              "datatype": "http://www.w3.org/2001/XMLSchema#anyUri"
+              "datatype": "http://www.w3.org/2001/XMLSchema#string"
             }
           }
         ]
@@ -516,7 +516,7 @@
               "shapeExprs": [
                 {
                   "type": "NodeConstraint",
-                  "datatype": "http://www.w3.org/2001/XMLSchema#anyUri"
+                  "datatype": "http://www.w3.org/2001/XMLSchema#string"
                 },
                 "http://www.w3.org/ns/shex#Wildcard"
               ]

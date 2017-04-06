@@ -11,10 +11,10 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sx:valueExpr [ a sx:NodeConstraint ;
                     sx:values ( [ a sx:IriStemRange ;
                                 sx:exclusion [ a sx:IriStem ;
-                                        sx:stem "http://a.example/v1"^^xsd:anyUri ],
+                                        sx:stem "http://a.example/v1" ],
                                     [ a sx:IriStem ;
-                                        sx:stem "http://a.example/v2"^^xsd:anyUri ],
+                                        sx:stem "http://a.example/v2" ],
                                     [ a sx:IriStem ;
-                                        sx:stem "http://a.example/v3"^^xsd:anyUri ] ;
-                                sx:stem "http://a.example/v"^^xsd:anyUri ] ) ] ] .
+                                        sx:stem "http://a.example/v3" ] ;
+                                sx:stem "http://a.example/v" ] ) ] ] .
 
