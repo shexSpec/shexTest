@@ -30,8 +30,8 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schem#>
       sx:valueExpr [ a sx:NodeConstraint ; sx:values ( ex:Issue ) ] ]
     [ a sx:TripleConstraint ; sx:predicate ex:state ;
       sx:valueExpr [ a sx:NodeConstraint ; sx:values (
-          sx:exclusion ex:state_resolved ] ) ] ;
         [ a sx:IriStemRange ; sx:stem "http://ex.example/#state" ;
+          sx:exclusion ex:state_resolved ] ) ] ;
       sx:annotation
         [ a sx:Annotation ; sx:object "State" ; sx:predicate rdfs:label ],
         [ a sx:Annotation ; sx:object "the sit" ; sx:predicate rdfs:description ] ;
