@@ -276,6 +276,10 @@
         <#1dotAnnotSTRING_LITERAL1>
         <#1dotAnnot3>
         <#1inversedotAnnot3>
+        <#1dotShapeAnnotIRIREF>
+        <#1dotShapePlusAnnotIRIREF>
+        <#1dotShapeAnnotAIRIREF>
+        <#1dotShapeAnnotSTRING_LITERAL1>
         <#open3groupdotcloseAnnot3>
         <#1dotCode1>
         <#1dotNoCode1>
@@ -2615,20 +2619,20 @@
     sx:ttl <1dotAnnotIRIREF.ttl> ;
     .
 
-<#1dotAnnotAIRIREF> a sht:RepresentationTest ;
-    mf:name "1dotAnnotAIRIREF" ;
-    mf:status mf:proposed ;
-    sx:shex <1dotAnnotAIRIREF.shex> ;
-    sx:json <1dotAnnotAIRIREF.json> ;
-    sx:ttl <1dotAnnotAIRIREF.ttl> ;
-    .
-
 <#1dotPlusAnnotIRIREF> a sht:RepresentationTest ;
     mf:name "1dotPlusAnnotIRIREF" ;
     mf:status mf:proposed ;
     sx:shex <1dotPlusAnnotIRIREF.shex> ;
     sx:json <1dotPlusAnnotIRIREF.json> ;
     sx:ttl <1dotPlusAnnotIRIREF.ttl> ;
+    .
+
+<#1dotAnnotAIRIREF> a sht:RepresentationTest ;
+    mf:name "1dotAnnotAIRIREF" ;
+    mf:status mf:proposed ;
+    sx:shex <1dotAnnotAIRIREF.shex> ;
+    sx:json <1dotAnnotAIRIREF.json> ;
+    sx:ttl <1dotAnnotAIRIREF.ttl> ;
     .
 
 <#1dotAnnotSTRING_LITERAL1> a sht:RepresentationTest ;
@@ -2653,6 +2657,38 @@
     sx:shex <1inversedotAnnot3.shex> ;
     sx:json <1inversedotAnnot3.json> ;
     sx:ttl <1inversedotAnnot3.ttl> ;
+    .
+
+<#1dotShapeAnnotIRIREF> a sht:RepresentationTest ;
+    mf:name "1dotShapeAnnotIRIREF" ;
+    mf:status mf:proposed ;
+    sx:shex <1dotShapeAnnotIRIREF.shex> ;
+    sx:json <1dotShapeAnnotIRIREF.json> ;
+    sx:ttl <1dotShapeAnnotIRIREF.ttl> ;
+    .
+
+<#1dotShapePlusAnnotIRIREF> a sht:RepresentationTest ;
+    mf:name "1dotShapePlusAnnotIRIREF" ;
+    mf:status mf:proposed ;
+    sx:shex <1dotShapePlusAnnotIRIREF.shex> ;
+    sx:json <1dotShapePlusAnnotIRIREF.json> ;
+    sx:ttl <1dotShapePlusAnnotIRIREF.ttl> ;
+    .
+
+<#1dotShapeAnnotAIRIREF> a sht:RepresentationTest ;
+    mf:name "1dotShapeAnnotAIRIREF" ;
+    mf:status mf:proposed ;
+    sx:shex <1dotShapeAnnotAIRIREF.shex> ;
+    sx:json <1dotShapeAnnotAIRIREF.json> ;
+    sx:ttl <1dotShapeAnnotAIRIREF.ttl> ;
+    .
+
+<#1dotShapeAnnotSTRING_LITERAL1> a sht:RepresentationTest ;
+    mf:name "1dotShapeAnnotSTRING_LITERAL1" ;
+    mf:status mf:proposed ;
+    sx:shex <1dotShapeAnnotSTRING_LITERAL1.shex> ;
+    sx:json <1dotShapeAnnotSTRING_LITERAL1.json> ;
+    sx:ttl <1dotShapeAnnotSTRING_LITERAL1.ttl> ;
     .
 
 <#open3groupdotcloseAnnot3> a sht:RepresentationTest ;

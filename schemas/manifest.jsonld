@@ -2415,6 +2415,42 @@
           "ttl": "1inversedotAnnot3.ttl"
         },
         {
+          "@id": "#1dotShapeAnnotIRIREF",
+          "@type": "sht:RepresentationTest",
+          "name": "1dotShapeAnnotIRIREF",
+          "status": "mf:proposed",
+          "shex": "1dotShapeAnnotIRIREF.shex",
+          "json": "1dotShapeAnnotIRIREF.json",
+          "ttl": "1dotShapeAnnotIRIREF.ttl"
+        },
+        {
+          "@id": "#1dotShapePlusAnnotIRIREF",
+          "@type": "sht:RepresentationTest",
+          "name": "1dotShapePlusAnnotIRIREF",
+          "status": "mf:proposed",
+          "shex": "1dotShapePlusAnnotIRIREF.shex",
+          "json": "1dotShapePlusAnnotIRIREF.json",
+          "ttl": "1dotShapePlusAnnotIRIREF.ttl"
+        },
+        {
+          "@id": "#1dotShapeAnnotAIRIREF",
+          "@type": "sht:RepresentationTest",
+          "name": "1dotShapeAnnotAIRIREF",
+          "status": "mf:proposed",
+          "shex": "1dotShapeAnnotAIRIREF.shex",
+          "json": "1dotShapeAnnotAIRIREF.json",
+          "ttl": "1dotShapeAnnotAIRIREF.ttl"
+        },
+        {
+          "@id": "#1dotShapeAnnotSTRING_LITERAL1",
+          "@type": "sht:RepresentationTest",
+          "name": "1dotShapeAnnotSTRING_LITERAL1",
+          "status": "mf:proposed",
+          "shex": "1dotShapeAnnotSTRING_LITERAL1.shex",
+          "json": "1dotShapeAnnotSTRING_LITERAL1.json",
+          "ttl": "1dotShapeAnnotSTRING_LITERAL1.ttl"
+        },
+        {
           "@id": "#open3groupdotcloseAnnot3",
           "@type": "sht:RepresentationTest",
           "name": "open3groupdotcloseAnnot3",

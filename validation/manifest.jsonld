@@ -15014,6 +15014,91 @@
           "status": "mf:proposed"
         },
         {
+          "@id": "#1dotShapeAnnotIRIREF_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1dotShapeAnnotIRIREF.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1dotShapeAnnotIRIREF_pass",
+          "trait": [
+            "Annotation"
+          ],
+          "comment": "<S> { <p1> . } // <annot> <IRIREF> on { <s1> <p1> <o1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1dotShapeAnnotIRIREF_missing",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1dotShapeAnnotIRIREF.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip2_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1dotShapeAnnotIRIREF_missing",
+          "trait": [
+            "Annotation"
+          ],
+          "comment": "<S> { <p1> . } // <annot> <IRIREF> on { <s> <p2> <o1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1dotShapePlusAnnotIRIREF_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1dotShapePlusAnnotIRIREF.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_La,Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1dotShapePlusAnnotIRIREF_pass",
+          "trait": [
+            "Annotation"
+          ],
+          "comment": "<S> { <p1> .+ } // <annot> <IRIREF> on { <s1> <p1> 'a', <o1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1dotShapeAnnotAIRIREF_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1dotShapeAnnotAIRIREF.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1dotShapeAnnotAIRIREF_pass",
+          "trait": [
+            "Annotation"
+          ],
+          "comment": "<S> { <p1> . } // a <IRIREF> on { <s1> <p1> <o1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1dotShapeAnnotSTRING_LITERAL1_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1dotShapeAnnotSTRING_LITERAL1.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1dotShapeAnnotSTRING_LITERAL1_pass",
+          "trait": [
+            "Annotation"
+          ],
+          "comment": "<S> { <p1> . } // <annot> 'STRING_LITERAL1' on { <s1> <p1> <o1> }",
+          "status": "mf:proposed"
+        },
+        {
           "@id": "#1dotCode1_pass",
           "@type": "sht:ValidationTest",
           "action": {

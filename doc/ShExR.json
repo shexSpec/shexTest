@@ -37,7 +37,7 @@
             "predicate": "http://www.w3.org/ns/shex#shapes",
             "valueExpr": "http://www.w3.org/ns/shex#shapeExpr",
             "min": 0,
-            "max": "*"
+            "max": -1
           }
         ]
       },
@@ -179,7 +179,7 @@
               }
             ],
             "min": 1,
-            "max": "*"
+            "max": -1
           }
         ]
       },
@@ -228,7 +228,7 @@
               "nodeKind": "iri"
             },
             "min": 0,
-            "max": "*"
+            "max": -1
           },
           {
             "type": "TripleConstraint",
@@ -243,6 +243,13 @@
             "valueExpr": "http://www.w3.org/ns/shex#SemActList1Plus",
             "min": 0,
             "max": 1
+          },
+          {
+            "type": "TripleConstraint",
+            "predicate": "http://www.w3.org/ns/shex#annotation",
+            "valueExpr": "http://www.w3.org/ns/shex#Annotation",
+            "min": 0,
+            "max": -1
           }
         ]
       },
@@ -533,7 +540,7 @@
               ]
             },
             "min": 0,
-            "max": "*"
+            "max": -1
           }
         ]
       },
@@ -625,7 +632,7 @@
             "predicate": "http://www.w3.org/ns/shex#annotation",
             "valueExpr": "http://www.w3.org/ns/shex#Annotation",
             "min": 0,
-            "max": "*"
+            "max": -1
           }
         ]
       },
@@ -684,7 +691,7 @@
             "predicate": "http://www.w3.org/ns/shex#annotation",
             "valueExpr": "http://www.w3.org/ns/shex#Annotation",
             "min": 0,
-            "max": "*"
+            "max": -1
           }
         ]
       },
@@ -842,7 +849,7 @@
             "predicate": "http://www.w3.org/ns/shex#annotation",
             "valueExpr": "http://www.w3.org/ns/shex#Annotation",
             "min": 0,
-            "max": "*"
+            "max": -1
           }
         ]
       },

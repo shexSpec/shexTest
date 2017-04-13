@@ -101,6 +101,8 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
       [ a sx:TripleConstraint ; sx:predicate sx:expression ; sx:min 0 ; sx:max 1 ;
         sx:valueExpr <tripleExpression> ]
       [ a sx:TripleConstraint ; sx:predicate sx:semActs ; sx:min 0 ; sx:max 1 ;
+        sx:valueExpr <SemActList1Plus> ]
+      [ a sx:TripleConstraint ; sx:predicate sx:annotation ; sx:min 0 ; sx:max -1 ;
         sx:valueExpr <SemActList1Plus> ] ) ] .
 
 <ShapeExternal> a sx:Shape ; sx:closed true ;

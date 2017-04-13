@@ -42,6 +42,7 @@ start=@<Schema>
   sx:extra IRI* ;
   sx:expression @<tripleExpression>? ;
   sx:semActs @<SemActList1Plus>? ;
+  sx:annotation @<Annotation>* ;
 }
 
 <ShapeExternal> CLOSED {

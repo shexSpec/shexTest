@@ -991,6 +991,11 @@
         <#1dotAnnot3_missing>
         <#1inversedotAnnot3_pass>
         <#1inversedotAnnot3_missing>
+        <#1dotShapeAnnotIRIREF_pass>
+        <#1dotShapeAnnotIRIREF_missing>
+        <#1dotShapePlusAnnotIRIREF_pass>
+        <#1dotShapeAnnotAIRIREF_pass>
+        <#1dotShapeAnnotSTRING_LITERAL1_pass>
 
 ## semantic actions
         <#1dotCode1_pass>
@@ -12940,6 +12945,71 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip2_Io1.ttl> ;
       sht:focus <http://a.example/o1>
+    ]
+    .
+
+<#1dotShapeAnnotIRIREF_pass> a sht:ValidationTest ;
+    mf:name "1dotShapeAnnotIRIREF_pass" ;
+    sht:trait sht:Annotation ;
+    rdfs:comment "<S> { <p1> . } // <annot> <IRIREF> on { <s1> <p1> <o1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1dotShapeAnnotIRIREF.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1dotShapeAnnotIRIREF_missing> a sht:ValidationFailure ;
+    mf:name "1dotShapeAnnotIRIREF_missing" ;
+    sht:trait sht:Annotation ;
+    rdfs:comment "<S> { <p1> . } // <annot> <IRIREF> on { <s> <p2> <o1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1dotShapeAnnotIRIREF.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip2_Io1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1dotShapePlusAnnotIRIREF_pass> a sht:ValidationTest ;
+    mf:name "1dotShapePlusAnnotIRIREF_pass" ;
+    sht:trait sht:Annotation ;
+    rdfs:comment "<S> { <p1> .+ } // <annot> <IRIREF> on { <s1> <p1> 'a', <o1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1dotShapePlusAnnotIRIREF.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_La,Io1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1dotShapeAnnotAIRIREF_pass> a sht:ValidationTest ;
+    mf:name "1dotShapeAnnotAIRIREF_pass" ;
+    sht:trait sht:Annotation ;
+    rdfs:comment "<S> { <p1> . } // a <IRIREF> on { <s1> <p1> <o1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1dotShapeAnnotAIRIREF.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1dotShapeAnnotSTRING_LITERAL1_pass> a sht:ValidationTest ;
+    mf:name "1dotShapeAnnotSTRING_LITERAL1_pass" ;
+    sht:trait sht:Annotation ;
+    rdfs:comment "<S> { <p1> . } // <annot> 'STRING_LITERAL1' on { <s1> <p1> <o1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1dotShapeAnnotSTRING_LITERAL1.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1.ttl> ;
+      sht:focus <http://a.example/s1>
     ]
     .
 
