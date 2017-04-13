@@ -174,7 +174,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
       [ a sx:TripleConstraint ; sx:predicate rdf:type ;
         sx:valueExpr [ a sx:NodeConstraint ; sx:values ( sx:IriStem ) ] ]
       [ a sx:TripleConstraint ; sx:predicate sx:stem ;
-        sx:valueExpr [ a sx:NodeConstraint ; sx:datatype xsd:anyUri ] ] ) ] .
+        sx:valueExpr [ a sx:NodeConstraint ; sx:datatype xsd:string ] ] ) ] .
 <IriStemRange> a sx:Shape ; sx:closed true ;
   sx:expression
     [ a sx:EachOf ; sx:expressions (
@@ -182,7 +182,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         sx:valueExpr [ a sx:NodeConstraint ; sx:values ( sx:IriStemRange ) ] ]
       [ a sx:TripleConstraint ; sx:predicate sx:stem ;
         sx:valueExpr [ a sx:ShapeOr ; sx:shapeExprs (
-	  [ a sx:NodeConstraint ; sx:datatype xsd:anyUri ]
+	  [ a sx:NodeConstraint ; sx:datatype xsd:string ]
           <Wildcard> ) ] ]
       [ a sx:TripleConstraint ; sx:predicate sx:exclusion ; sx:min 0 ; sx:max -1 ;
         sx:valueExpr [ a sx:ShapeOr ; sx:shapeExprs (

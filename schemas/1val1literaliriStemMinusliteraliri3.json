@@ -13,11 +13,11 @@
           "values": [
             {
               "type": "LiteralStemRange",
-              "stem": { "value": "http://a.example/v" },
+              "stem": "http://a.example/v",
               "exclusions": [
-                { "value": "http://a.example/v1" },
-                { "value": "http://a.example/v2" },
-                { "value": "http://a.example/v3" }
+                "http://a.example/v1",
+                "http://a.example/v2",
+                "http://a.example/v3"
               ]
             }
           ]

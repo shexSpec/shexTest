@@ -106,7 +106,7 @@ _:g70362516943840 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:g70362512
 _:g70362516943840 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:g70362516957080 .
 _:g70362516533460 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.w3.org/ns/ShapeOr> .
 _:g70362516533460 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:g70362516546240 .
-_:g70362516234820 <http://www.w3.org/ns/shex#datatype> <http://www.w3.org/2001/XMLSchema#anyUri> .
+_:g70362516234820 <http://www.w3.org/ns/shex#datatype> <http://www.w3.org/2001/XMLSchema#string> .
 _:g70362516234820 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shex#NodeConstraint> .
 _:g70362516089580 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shex#NodeConstraint> .
 _:g70362516089580 <http://www.w3.org/ns/shex#nodeKind> <http://www.w3.org/ns/shex#iri> .
@@ -182,7 +182,7 @@ _:g70362512353340 <http://www.w3.org/ns/shex#shapeExprs> _:g70362507704520 .
 _:g70362512353340 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shex#ShapeOr> .
 _:g70362525008600 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shex#NodeConstraint> .
 _:g70362525008600 <http://www.w3.org/ns/shex#values> _:g70362525041220 .
-_:g70362512108420 <http://www.w3.org/ns/shex#datatype> <http://www.w3.org/2001/XMLSchema#anyUri> .
+_:g70362512108420 <http://www.w3.org/ns/shex#datatype> <http://www.w3.org/2001/XMLSchema#string> .
 _:g70362512108420 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shex#NodeConstraint> .
 _:g70362524340120 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:g70362524439660 .
 _:g70362524340120 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:g70362524343920 .
