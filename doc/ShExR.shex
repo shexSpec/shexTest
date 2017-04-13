@@ -85,10 +85,10 @@ start=@<Schema>
                                OR @<LiteralStem> OR @<LiteralStemRange>
                                OR @<LanguageStem> OR @<LanguageStemRange>
 <objectValue> IRI OR LITERAL # rdf:langString breaks on Annotation.object
-<IriStem> CLOSED { a [sx:IriStem]; sx:stem xsd:anyUri }
+<IriStem> CLOSED { a [sx:IriStem]; sx:stem xsd:string }
 <IriStemRange> CLOSED {
   a [sx:IriStemRange];
-  sx:stem xsd:anyUri OR @<Wildcard>;
+  sx:stem xsd:string OR @<Wildcard>;
   sx:exclusion @<objectValue> OR @<IriStem>*
 }
 <LiteralStem> CLOSED { a [sx:LiteralStem]; sx:stem xsd:string }

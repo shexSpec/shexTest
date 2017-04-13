@@ -13,5 +13,5 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
                                 sx:exclusion <http://a.example/v1>,
                                     <http://a.example/v2>,
                                     <http://a.example/v3> ;
-                                sx:stem "http://a.example/v"^^xsd:anyUri ] ) ] ] .
+                                sx:stem "http://a.example/v" ] ) ] ] .
 
