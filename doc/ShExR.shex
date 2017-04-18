@@ -1,7 +1,7 @@
-PREFIX sx: <http://shex.io/ns/shex#>
+PREFIX sx: <http://www.w3.org/ns/shex#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-BASE <http://shex.io/ns/ShExR#>
+BASE <http://www.w3.org/ns/shex#>
 start=@<Schema>
 
 <Schema> CLOSED {
@@ -29,7 +29,7 @@ start=@<Schema>
 }
 
 <NodeConstraint> CLOSED {
-  a [sx:NodeConstraint] ; 
+  a [sx:NodeConstraint] ;
   sx:nodeKind [sx:iri sx:bnode sx:literal sx:nonliteral]?;
   sx:datatype IRI ? ;
   &<xsFacets>  ;
@@ -42,6 +42,7 @@ start=@<Schema>
   sx:extra IRI* ;
   sx:expression @<tripleExpression>? ;
   sx:semActs @<SemActList1Plus>? ;
+  sx:annotation @<Annotation>* ;
 }
 
 <ShapeExternal> CLOSED {
@@ -80,13 +81,27 @@ start=@<Schema>
 }
 <numericLiteral> xsd:integer OR xsd:decimal OR xsd:double
 
-<valueSetValue> @<objectValue> OR @<Stem> OR @<StemRange>
+<valueSetValue> @<objectValue> OR @<IriStem> OR @<IriStemRange>
+                               OR @<LiteralStem> OR @<LiteralStemRange>
+                               OR @<LanguageStem> OR @<LanguageStemRange>
 <objectValue> IRI OR LITERAL # rdf:langString breaks on Annotation.object
-<Stem> CLOSED { a [sx:Stem]; sx:stem xsd:anyUri }
-<StemRange> CLOSED {
-  a [sx:StemRange];
-  sx:stem xsd:anyUri OR @<Wildcard>;
-  sx:exclusion @<objectValue> OR @<Stem>*
+<IriStem> CLOSED { a [sx:IriStem]; sx:stem xsd:string }
+<IriStemRange> CLOSED {
+  a [sx:IriStemRange];
+  sx:stem xsd:string OR @<Wildcard>;
+  sx:exclusion @<objectValue> OR @<IriStem>*
+}
+<LiteralStem> CLOSED { a [sx:LiteralStem]; sx:stem xsd:string }
+<LiteralStemRange> CLOSED {
+  a [sx:LiteralStemRange];
+  sx:stem xsd:string OR @<Wildcard>;
+  sx:exclusion @<objectValue> OR @<LiteralStem>*
+}
+<LanguageStem> CLOSED { a [sx:LanguageStem]; sx:stem xsd:string }
+<LanguageStemRange> CLOSED {
+  a [sx:LanguageStemRange];
+  sx:stem xsd:string OR @<Wildcard>;
+  sx:exclusion @<objectValue> OR @<LanguageStem>*
 }
 <Wildcard> BNODE CLOSED {
   a [sx:Wildcard]
@@ -97,7 +112,7 @@ start=@<Schema>
 <OneOf> CLOSED {
   a [sx:OneOf] ;
   sx:min xsd:integer? ;
-  sx:max xsd:integer OR [sx:unbounded]? ;
+  sx:max xsd:integer? ;
   sx:expressions @<tripleExpressionList2Plus> ;
   sx:semActs @<SemActList1Plus>? ;
   sx:annotation @<Annotation>*
@@ -106,7 +121,7 @@ start=@<Schema>
 <EachOf> CLOSED {
   a [sx:EachOf] ;
   sx:min xsd:integer? ;
-  sx:max xsd:integer OR [sx:unbounded]? ;
+  sx:max xsd:integer? ;
   sx:expressions @<tripleExpressionList2Plus> ;
   sx:semActs @<SemActList1Plus>? ;
   sx:annotation @<Annotation>*
@@ -126,7 +141,7 @@ start=@<Schema>
   sx:inverse [true false]? ;
   sx:negated [true false]? ;
   sx:min xsd:integer? ;
-  sx:max xsd:integer OR [sx:unbounded]? ;
+  sx:max xsd:integer? ;
   sx:predicate IRI ;
   sx:valueExpr @<shapeExpr>? ;
   sx:semActs @<SemActList1Plus>? ;
