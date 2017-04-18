@@ -180,8 +180,6 @@
         <#1literalPattern_with_UTF8_boundaries>
         <#1literalPattern_with_REGEXP_escapes>
         <#1literalPattern_with_REGEXP_escapes_bare>
-        <#1literalPattern_with_REGEXP_escapes_as_bare>
-        <#1literalPattern_with_REGEXP_bare_as_escapes>
         <#1literalPattern_with_REGEXP_escapes_escaped>
         <#1literalPatterni>
         <#1literalPattern19>
@@ -201,6 +199,22 @@
         <#1val1iriStem>
         <#1val1iriStemMinusiri3>
         <#1val1iriStemMinusiriStem3>
+        <#1val1dotMinusliteral3>
+        <#1val1dotMinusliteralStem3>
+        <#1val1literalStem>
+        <#1val1literalStemMinusliteral3>
+        <#1val1literalStemMinusliteralStem3>
+        <#1val1literaliriStem>
+        <#1val1literaliriStemMinusliteraliri3>
+        <#1val1dotMinuslanguage3>
+        <#1val1dotMinuslanguageStem3>
+        <#1val1languageStem>
+        <#1val1languageStemMinuslanguage3>
+        <#1val1languageStemMinuslanguageStem3>
+        <#1val1literallanguageStem>
+        <#1val1literallanguageStemMinusliterallanguage3>
+        <#1val1literalAtlanguageStem>
+        <#1val1literalAtlanguageStemMinusliteralAtlanguage3>
         <#2dot>
         <#2dotSemis>
         <#open2dotclose>
@@ -262,6 +276,10 @@
         <#1dotAnnotSTRING_LITERAL1>
         <#1dotAnnot3>
         <#1inversedotAnnot3>
+        <#1dotShapeAnnotIRIREF>
+        <#1dotShapePlusAnnotIRIREF>
+        <#1dotShapeAnnotAIRIREF>
+        <#1dotShapeAnnotSTRING_LITERAL1>
         <#open3groupdotcloseAnnot3>
         <#1dotCode1>
         <#1dotNoCode1>
@@ -337,6 +355,9 @@
         <#datatypes>
         <#_all>
         <#kitchenSink>
+        <#node_kind_example>
+        <#dependent_shape>
+        <#recursion_example>
     ) .
 
 <#0> a sht:RepresentationTest ;
@@ -1773,22 +1794,6 @@
     sx:ttl <1literalPattern_with_REGEXP_escapes_bare.ttl> ;
     .
 
-<#1literalPattern_with_REGEXP_escapes_as_bare> a sht:RepresentationTest ; # escapes vs. bare
-    mf:name "1literalPattern_with_REGEXP_escapes_as_bare" ;
-    mf:status mf:proposed ;
-    sx:shex <1literalPattern_with_REGEXP_escapes.shex> ;
-    sx:json <1literalPattern_with_REGEXP_escapes_bare.json> ;
-    sx:ttl <1literalPattern_with_REGEXP_escapes_bare.ttl> ;
-    .
-
-<#1literalPattern_with_REGEXP_bare_as_escapes> a sht:RepresentationTest ; # bare vs. escapes
-    mf:name "1literalPattern_with_REGEXP_bare_as_escapes" ;
-    mf:status mf:proposed ;
-    sx:shex <1literalPattern_with_REGEXP_escapes_bare.shex> ;
-    sx:json <1literalPattern_with_REGEXP_escapes.json> ;
-    sx:ttl <1literalPattern_with_REGEXP_escapes.ttl> ;
-    .
-
 <#1literalPattern_with_REGEXP_escapes_escaped> a sht:RepresentationTest ;
     mf:name "1literalPattern_with_REGEXP_escapes_escaped" ;
     mf:status mf:proposed ;
@@ -1939,6 +1944,134 @@
     sx:shex <1val1iriStemMinusiriStem3.shex> ;
     sx:json <1val1iriStemMinusiriStem3.json> ;
     sx:ttl <1val1iriStemMinusiriStem3.ttl> ;
+    .
+
+<#1val1dotMinusliteral3> a sht:RepresentationTest ;
+    mf:name "1val1dotMinusliteral3" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1dotMinusliteral3.shex> ;
+    sx:json <1val1dotMinusliteral3.json> ;
+    sx:ttl <1val1dotMinusliteral3.ttl> ;
+    .
+
+<#1val1dotMinusliteralStem3> a sht:RepresentationTest ;
+    mf:name "1val1dotMinusliteralStem3" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1dotMinusliteralStem3.shex> ;
+    sx:json <1val1dotMinusliteralStem3.json> ;
+    sx:ttl <1val1dotMinusliteralStem3.ttl> ;
+    .
+
+<#1val1literalStem> a sht:RepresentationTest ;
+    mf:name "1val1literalStem" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1literalStem.shex> ;
+    sx:json <1val1literalStem.json> ;
+    sx:ttl <1val1literalStem.ttl> ;
+    .
+
+<#1val1literalStemMinusliteral3> a sht:RepresentationTest ;
+    mf:name "1val1literalStemMinusliteral3" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1literalStemMinusliteral3.shex> ;
+    sx:json <1val1literalStemMinusliteral3.json> ;
+    sx:ttl <1val1literalStemMinusliteral3.ttl> ;
+    .
+
+<#1val1literalStemMinusliteralStem3> a sht:RepresentationTest ;
+    mf:name "1val1literalStemMinusliteralStem3" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1literalStemMinusliteralStem3.shex> ;
+    sx:json <1val1literalStemMinusliteralStem3.json> ;
+    sx:ttl <1val1literalStemMinusliteralStem3.ttl> ;
+    .
+
+<#1val1literaliriStem> a sht:RepresentationTest ;
+    mf:name "1val1literaliriStem" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1literaliriStem.shex> ;
+    sx:json <1val1literaliriStem.json> ;
+    sx:ttl <1val1literaliriStem.ttl> ;
+    .
+
+<#1val1literaliriStemMinusliteraliri3> a sht:RepresentationTest ;
+    mf:name "1val1literaliriStemMinusliteraliri3" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1literaliriStemMinusliteraliri3.shex> ;
+    sx:json <1val1literaliriStemMinusliteraliri3.json> ;
+    sx:ttl <1val1literaliriStemMinusliteraliri3.ttl> ;
+    .
+
+<#1val1dotMinuslanguage3> a sht:RepresentationTest ;
+    mf:name "1val1dotMinuslanguage3" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1dotMinuslanguage3.shex> ;
+    sx:json <1val1dotMinuslanguage3.json> ;
+    sx:ttl <1val1dotMinuslanguage3.ttl> ;
+    .
+
+<#1val1dotMinuslanguageStem3> a sht:RepresentationTest ;
+    mf:name "1val1dotMinuslanguageStem3" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1dotMinuslanguageStem3.shex> ;
+    sx:json <1val1dotMinuslanguageStem3.json> ;
+    sx:ttl <1val1dotMinuslanguageStem3.ttl> ;
+    .
+
+<#1val1languageStem> a sht:RepresentationTest ;
+    mf:name "1val1languageStem" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1languageStem.shex> ;
+    sx:json <1val1languageStem.json> ;
+    sx:ttl <1val1languageStem.ttl> ;
+    .
+
+<#1val1languageStemMinuslanguage3> a sht:RepresentationTest ;
+    mf:name "1val1languageStemMinuslanguage3" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1languageStemMinuslanguage3.shex> ;
+    sx:json <1val1languageStemMinuslanguage3.json> ;
+    sx:ttl <1val1languageStemMinuslanguage3.ttl> ;
+    .
+
+<#1val1languageStemMinuslanguageStem3> a sht:RepresentationTest ;
+    mf:name "1val1languageStemMinuslanguageStem3" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1languageStemMinuslanguageStem3.shex> ;
+    sx:json <1val1languageStemMinuslanguageStem3.json> ;
+    sx:ttl <1val1languageStemMinuslanguageStem3.ttl> ;
+    .
+
+<#1val1literallanguageStem> a sht:RepresentationTest ;
+    mf:name "1val1literallanguageStem" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1literallanguageStem.shex> ;
+    sx:json <1val1literallanguageStem.json> ;
+    sx:ttl <1val1literallanguageStem.ttl> ;
+    .
+
+<#1val1literallanguageStemMinusliterallanguage3> a sht:RepresentationTest ;
+    mf:name "1val1literallanguageStemMinusliterallanguage3" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1literallanguageStemMinusliterallanguage3.shex> ;
+    sx:json <1val1literallanguageStemMinusliterallanguage3.json> ;
+    sx:ttl <1val1literallanguageStemMinusliterallanguage3.ttl> ;
+    .
+
+<#1val1literalAtlanguageStem> a sht:RepresentationTest ;
+    mf:name "1val1literalAtlanguageStem" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1literalAtlanguageStem.shex> ;
+    sx:json <1val1literalAtlanguageStem.json> ;
+    sx:ttl <1val1literalAtlanguageStem.ttl> ;
+    .
+
+<#1val1literalAtlanguageStemMinusliteralAtlanguage3> a sht:RepresentationTest ;
+    mf:name "1val1literalAtlanguageStemMinusliteralAtlanguage3" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1literalAtlanguageStemMinusliteralAtlanguage3.shex> ;
+    sx:json <1val1literalAtlanguageStemMinusliteralAtlanguage3.json> ;
+    sx:ttl <1val1literalAtlanguageStemMinusliteralAtlanguage3.ttl> ;
     .
 
 <#2dot> a sht:RepresentationTest ;
@@ -2486,20 +2619,20 @@
     sx:ttl <1dotAnnotIRIREF.ttl> ;
     .
 
-<#1dotAnnotAIRIREF> a sht:RepresentationTest ;
-    mf:name "1dotAnnotAIRIREF" ;
-    mf:status mf:proposed ;
-    sx:shex <1dotAnnotAIRIREF.shex> ;
-    sx:json <1dotAnnotAIRIREF.json> ;
-    sx:ttl <1dotAnnotAIRIREF.ttl> ;
-    .
-
 <#1dotPlusAnnotIRIREF> a sht:RepresentationTest ;
     mf:name "1dotPlusAnnotIRIREF" ;
     mf:status mf:proposed ;
     sx:shex <1dotPlusAnnotIRIREF.shex> ;
     sx:json <1dotPlusAnnotIRIREF.json> ;
     sx:ttl <1dotPlusAnnotIRIREF.ttl> ;
+    .
+
+<#1dotAnnotAIRIREF> a sht:RepresentationTest ;
+    mf:name "1dotAnnotAIRIREF" ;
+    mf:status mf:proposed ;
+    sx:shex <1dotAnnotAIRIREF.shex> ;
+    sx:json <1dotAnnotAIRIREF.json> ;
+    sx:ttl <1dotAnnotAIRIREF.ttl> ;
     .
 
 <#1dotAnnotSTRING_LITERAL1> a sht:RepresentationTest ;
@@ -2524,6 +2657,38 @@
     sx:shex <1inversedotAnnot3.shex> ;
     sx:json <1inversedotAnnot3.json> ;
     sx:ttl <1inversedotAnnot3.ttl> ;
+    .
+
+<#1dotShapeAnnotIRIREF> a sht:RepresentationTest ;
+    mf:name "1dotShapeAnnotIRIREF" ;
+    mf:status mf:proposed ;
+    sx:shex <1dotShapeAnnotIRIREF.shex> ;
+    sx:json <1dotShapeAnnotIRIREF.json> ;
+    sx:ttl <1dotShapeAnnotIRIREF.ttl> ;
+    .
+
+<#1dotShapePlusAnnotIRIREF> a sht:RepresentationTest ;
+    mf:name "1dotShapePlusAnnotIRIREF" ;
+    mf:status mf:proposed ;
+    sx:shex <1dotShapePlusAnnotIRIREF.shex> ;
+    sx:json <1dotShapePlusAnnotIRIREF.json> ;
+    sx:ttl <1dotShapePlusAnnotIRIREF.ttl> ;
+    .
+
+<#1dotShapeAnnotAIRIREF> a sht:RepresentationTest ;
+    mf:name "1dotShapeAnnotAIRIREF" ;
+    mf:status mf:proposed ;
+    sx:shex <1dotShapeAnnotAIRIREF.shex> ;
+    sx:json <1dotShapeAnnotAIRIREF.json> ;
+    sx:ttl <1dotShapeAnnotAIRIREF.ttl> ;
+    .
+
+<#1dotShapeAnnotSTRING_LITERAL1> a sht:RepresentationTest ;
+    mf:name "1dotShapeAnnotSTRING_LITERAL1" ;
+    mf:status mf:proposed ;
+    sx:shex <1dotShapeAnnotSTRING_LITERAL1.shex> ;
+    sx:json <1dotShapeAnnotSTRING_LITERAL1.json> ;
+    sx:ttl <1dotShapeAnnotSTRING_LITERAL1.ttl> ;
     .
 
 <#open3groupdotcloseAnnot3> a sht:RepresentationTest ;
@@ -2981,4 +3146,28 @@
     sx:shex <kitchenSink.shex> ;
     sx:json <kitchenSink.json> ;
     sx:ttl <kitchenSink.ttl> ;
+    .
+
+<#node_kind_example> a sht:RepresentationTest ;
+    mf:name "node_kind_example" ;
+    mf:status mf:proposed ;
+    sx:shex <node_kind_example.shex> ;
+    sx:json <node_kind_example.json> ;
+    sx:ttl <node_kind_example.ttl> ;
+    .
+
+<#dependent_shape> a sht:RepresentationTest ;
+    mf:name "dependent_shape" ;
+    mf:status mf:proposed ;
+    sx:shex <dependent_shape.shex> ;
+    sx:json <dependent_shape.json> ;
+    sx:ttl <dependent_shape.ttl> ;
+    .
+
+<#recursion_example> a sht:RepresentationTest ;
+    mf:name "recursion_example" ;
+    mf:status mf:proposed ;
+    sx:shex <recursion_example.shex> ;
+    sx:json <recursion_example.json> ;
+    sx:ttl <recursion_example.ttl> ;
     .

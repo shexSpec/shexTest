@@ -1551,24 +1551,6 @@
           "ttl": "1literalPattern_with_REGEXP_escapes_bare.ttl"
         },
         {
-          "@id": "#1literalPattern_with_REGEXP_escapes_as_bare",
-          "@type": "sht:RepresentationTest",
-          "name": "1literalPattern_with_REGEXP_escapes_as_bare",
-          "status": "mf:proposed",
-          "shex": "1literalPattern_with_REGEXP_escapes.shex",
-          "json": "1literalPattern_with_REGEXP_escapes_bare.json",
-          "ttl": "1literalPattern_with_REGEXP_escapes_bare.ttl"
-        },
-        {
-          "@id": "#1literalPattern_with_REGEXP_bare_as_escapes",
-          "@type": "sht:RepresentationTest",
-          "name": "1literalPattern_with_REGEXP_bare_as_escapes",
-          "status": "mf:proposed",
-          "shex": "1literalPattern_with_REGEXP_escapes_bare.shex",
-          "json": "1literalPattern_with_REGEXP_escapes.json",
-          "ttl": "1literalPattern_with_REGEXP_escapes.ttl"
-        },
-        {
           "@id": "#1literalPattern_with_REGEXP_escapes_escaped",
           "@type": "sht:RepresentationTest",
           "name": "1literalPattern_with_REGEXP_escapes_escaped",
@@ -1738,6 +1720,150 @@
           "shex": "1val1iriStemMinusiriStem3.shex",
           "json": "1val1iriStemMinusiriStem3.json",
           "ttl": "1val1iriStemMinusiriStem3.ttl"
+        },
+        {
+          "@id": "#1val1dotMinusliteral3",
+          "@type": "sht:RepresentationTest",
+          "name": "1val1dotMinusliteral3",
+          "status": "mf:proposed",
+          "shex": "1val1dotMinusliteral3.shex",
+          "json": "1val1dotMinusliteral3.json",
+          "ttl": "1val1dotMinusliteral3.ttl"
+        },
+        {
+          "@id": "#1val1dotMinusliteralStem3",
+          "@type": "sht:RepresentationTest",
+          "name": "1val1dotMinusliteralStem3",
+          "status": "mf:proposed",
+          "shex": "1val1dotMinusliteralStem3.shex",
+          "json": "1val1dotMinusliteralStem3.json",
+          "ttl": "1val1dotMinusliteralStem3.ttl"
+        },
+        {
+          "@id": "#1val1literalStem",
+          "@type": "sht:RepresentationTest",
+          "name": "1val1literalStem",
+          "status": "mf:proposed",
+          "shex": "1val1literalStem.shex",
+          "json": "1val1literalStem.json",
+          "ttl": "1val1literalStem.ttl"
+        },
+        {
+          "@id": "#1val1literalStemMinusliteral3",
+          "@type": "sht:RepresentationTest",
+          "name": "1val1literalStemMinusliteral3",
+          "status": "mf:proposed",
+          "shex": "1val1literalStemMinusliteral3.shex",
+          "json": "1val1literalStemMinusliteral3.json",
+          "ttl": "1val1literalStemMinusliteral3.ttl"
+        },
+        {
+          "@id": "#1val1literalStemMinusliteralStem3",
+          "@type": "sht:RepresentationTest",
+          "name": "1val1literalStemMinusliteralStem3",
+          "status": "mf:proposed",
+          "shex": "1val1literalStemMinusliteralStem3.shex",
+          "json": "1val1literalStemMinusliteralStem3.json",
+          "ttl": "1val1literalStemMinusliteralStem3.ttl"
+        },
+        {
+          "@id": "#1val1literaliriStem",
+          "@type": "sht:RepresentationTest",
+          "name": "1val1literaliriStem",
+          "status": "mf:proposed",
+          "shex": "1val1literaliriStem.shex",
+          "json": "1val1literaliriStem.json",
+          "ttl": "1val1literaliriStem.ttl"
+        },
+        {
+          "@id": "#1val1literaliriStemMinusliteraliri3",
+          "@type": "sht:RepresentationTest",
+          "name": "1val1literaliriStemMinusliteraliri3",
+          "status": "mf:proposed",
+          "shex": "1val1literaliriStemMinusliteraliri3.shex",
+          "json": "1val1literaliriStemMinusliteraliri3.json",
+          "ttl": "1val1literaliriStemMinusliteraliri3.ttl"
+        },
+        {
+          "@id": "#1val1dotMinuslanguage3",
+          "@type": "sht:RepresentationTest",
+          "name": "1val1dotMinuslanguage3",
+          "status": "mf:proposed",
+          "shex": "1val1dotMinuslanguage3.shex",
+          "json": "1val1dotMinuslanguage3.json",
+          "ttl": "1val1dotMinuslanguage3.ttl"
+        },
+        {
+          "@id": "#1val1dotMinuslanguageStem3",
+          "@type": "sht:RepresentationTest",
+          "name": "1val1dotMinuslanguageStem3",
+          "status": "mf:proposed",
+          "shex": "1val1dotMinuslanguageStem3.shex",
+          "json": "1val1dotMinuslanguageStem3.json",
+          "ttl": "1val1dotMinuslanguageStem3.ttl"
+        },
+        {
+          "@id": "#1val1languageStem",
+          "@type": "sht:RepresentationTest",
+          "name": "1val1languageStem",
+          "status": "mf:proposed",
+          "shex": "1val1languageStem.shex",
+          "json": "1val1languageStem.json",
+          "ttl": "1val1languageStem.ttl"
+        },
+        {
+          "@id": "#1val1languageStemMinuslanguage3",
+          "@type": "sht:RepresentationTest",
+          "name": "1val1languageStemMinuslanguage3",
+          "status": "mf:proposed",
+          "shex": "1val1languageStemMinuslanguage3.shex",
+          "json": "1val1languageStemMinuslanguage3.json",
+          "ttl": "1val1languageStemMinuslanguage3.ttl"
+        },
+        {
+          "@id": "#1val1languageStemMinuslanguageStem3",
+          "@type": "sht:RepresentationTest",
+          "name": "1val1languageStemMinuslanguageStem3",
+          "status": "mf:proposed",
+          "shex": "1val1languageStemMinuslanguageStem3.shex",
+          "json": "1val1languageStemMinuslanguageStem3.json",
+          "ttl": "1val1languageStemMinuslanguageStem3.ttl"
+        },
+        {
+          "@id": "#1val1literallanguageStem",
+          "@type": "sht:RepresentationTest",
+          "name": "1val1literallanguageStem",
+          "status": "mf:proposed",
+          "shex": "1val1literallanguageStem.shex",
+          "json": "1val1literallanguageStem.json",
+          "ttl": "1val1literallanguageStem.ttl"
+        },
+        {
+          "@id": "#1val1literallanguageStemMinusliterallanguage3",
+          "@type": "sht:RepresentationTest",
+          "name": "1val1literallanguageStemMinusliterallanguage3",
+          "status": "mf:proposed",
+          "shex": "1val1literallanguageStemMinusliterallanguage3.shex",
+          "json": "1val1literallanguageStemMinusliterallanguage3.json",
+          "ttl": "1val1literallanguageStemMinusliterallanguage3.ttl"
+        },
+        {
+          "@id": "#1val1literalAtlanguageStem",
+          "@type": "sht:RepresentationTest",
+          "name": "1val1literalAtlanguageStem",
+          "status": "mf:proposed",
+          "shex": "1val1literalAtlanguageStem.shex",
+          "json": "1val1literalAtlanguageStem.json",
+          "ttl": "1val1literalAtlanguageStem.ttl"
+        },
+        {
+          "@id": "#1val1literalAtlanguageStemMinusliteralAtlanguage3",
+          "@type": "sht:RepresentationTest",
+          "name": "1val1literalAtlanguageStemMinusliteralAtlanguage3",
+          "status": "mf:proposed",
+          "shex": "1val1literalAtlanguageStemMinusliteralAtlanguage3.shex",
+          "json": "1val1literalAtlanguageStemMinusliteralAtlanguage3.json",
+          "ttl": "1val1literalAtlanguageStemMinusliteralAtlanguage3.ttl"
         },
         {
           "@id": "#2dot",
@@ -2287,6 +2413,42 @@
           "shex": "1inversedotAnnot3.shex",
           "json": "1inversedotAnnot3.json",
           "ttl": "1inversedotAnnot3.ttl"
+        },
+        {
+          "@id": "#1dotShapeAnnotIRIREF",
+          "@type": "sht:RepresentationTest",
+          "name": "1dotShapeAnnotIRIREF",
+          "status": "mf:proposed",
+          "shex": "1dotShapeAnnotIRIREF.shex",
+          "json": "1dotShapeAnnotIRIREF.json",
+          "ttl": "1dotShapeAnnotIRIREF.ttl"
+        },
+        {
+          "@id": "#1dotShapePlusAnnotIRIREF",
+          "@type": "sht:RepresentationTest",
+          "name": "1dotShapePlusAnnotIRIREF",
+          "status": "mf:proposed",
+          "shex": "1dotShapePlusAnnotIRIREF.shex",
+          "json": "1dotShapePlusAnnotIRIREF.json",
+          "ttl": "1dotShapePlusAnnotIRIREF.ttl"
+        },
+        {
+          "@id": "#1dotShapeAnnotAIRIREF",
+          "@type": "sht:RepresentationTest",
+          "name": "1dotShapeAnnotAIRIREF",
+          "status": "mf:proposed",
+          "shex": "1dotShapeAnnotAIRIREF.shex",
+          "json": "1dotShapeAnnotAIRIREF.json",
+          "ttl": "1dotShapeAnnotAIRIREF.ttl"
+        },
+        {
+          "@id": "#1dotShapeAnnotSTRING_LITERAL1",
+          "@type": "sht:RepresentationTest",
+          "name": "1dotShapeAnnotSTRING_LITERAL1",
+          "status": "mf:proposed",
+          "shex": "1dotShapeAnnotSTRING_LITERAL1.shex",
+          "json": "1dotShapeAnnotSTRING_LITERAL1.json",
+          "ttl": "1dotShapeAnnotSTRING_LITERAL1.ttl"
         },
         {
           "@id": "#open3groupdotcloseAnnot3",
@@ -2890,6 +3052,33 @@
           "shex": "kitchenSink.shex",
           "json": "kitchenSink.json",
           "ttl": "kitchenSink.ttl"
+        },
+        {
+          "@id": "#node_kind_example",
+          "@type": "sht:RepresentationTest",
+          "name": "node_kind_example",
+          "status": "mf:proposed",
+          "shex": "node_kind_example.shex",
+          "json": "node_kind_example.json",
+          "ttl": "node_kind_example.ttl"
+        },
+        {
+          "@id": "#dependent_shape",
+          "@type": "sht:RepresentationTest",
+          "name": "dependent_shape",
+          "status": "mf:proposed",
+          "shex": "dependent_shape.shex",
+          "json": "dependent_shape.json",
+          "ttl": "dependent_shape.ttl"
+        },
+        {
+          "@id": "#recursion_example",
+          "@type": "sht:RepresentationTest",
+          "name": "recursion_example",
+          "status": "mf:proposed",
+          "shex": "recursion_example.shex",
+          "json": "recursion_example.json",
+          "ttl": "recursion_example.ttl"
         }
       ]
     }

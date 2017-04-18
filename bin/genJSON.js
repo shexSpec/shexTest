@@ -192,6 +192,7 @@ function genText () {
         [a, "sht", "shape"   , function (v) { return v[0].indexOf(dirPath) === 0 ? v[0].substr(dirPath.length) : v[0]; }],
         [a, "sht", "termResolver", function (v) { return exists(v[0].substr(dirPath.length)); }],
         [a, "sht", "data"    , function (v) { return exists(v[0].substr(dirPath.length)); }],
+        [a, "sht", "map"    , function (v) { return exists(v[0].substr(dirPath.length)); }],
         [a, "sht", "focus"   , function (v) {
           // Focus can be a literal
           if (util.isLiteral(v[0])) {
