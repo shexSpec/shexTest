@@ -2343,6 +2343,15 @@
           "ttl": "startSpaceEqualInline.ttl"
         },
         {
+          "@id": "#1IRIInline0",
+          "@type": "sht:RepresentationTest",
+          "name": "1IRIInline0",
+          "status": "mf:proposed",
+          "shex": "1IRIInline0.shex",
+          "json": "1IRIInline0.json",
+          "ttl": "1IRIInline0.ttl"
+        },
+        {
           "@id": "#2EachInclude1",
           "@type": "sht:RepresentationTest",
           "name": "2EachInclude1",
@@ -3079,6 +3088,15 @@
           "shex": "recursion_example.shex",
           "json": "recursion_example.json",
           "ttl": "recursion_example.ttl"
+        },
+        {
+          "@id": "#focusbnode0ORfocusPattern0",
+          "@type": "sht:RepresentationTest",
+          "name": "focusbnode0ORfocusPattern0",
+          "status": "mf:proposed",
+          "shex": "focusbnode0ORfocusPattern0.shex",
+          "json": "focusbnode0ORfocusPattern0.json",
+          "ttl": "focusbnode0ORfocusPattern0.ttl"
         }
       ]
     }
