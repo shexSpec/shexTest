@@ -360,6 +360,9 @@
         <#dependent_shape>
         <#recursion_example>
         <#focusbnode0ORfocusPattern0>
+        <#1dotAND1dotAND1dot>
+        <#open1dotAND1dotcloseAND1dot>
+        <#1dotANDopen1dotAND1dotclose>
     ) .
 
 <#0> a sht:RepresentationTest ;
@@ -3188,5 +3191,29 @@
     sx:shex <focusbnode0ORfocusPattern0.shex> ;
     sx:json <focusbnode0ORfocusPattern0.json> ;
     sx:ttl <focusbnode0ORfocusPattern0.ttl> ;
+    .
+
+<#1dotAND1dotAND1dot> a sht:RepresentationTest ;
+    mf:name "1dotAND1dotAND1dot" ;
+    mf:status mf:proposed ;
+    sx:shex <1dotAND1dotAND1dot.shex> ;
+    sx:json <1dotAND1dotAND1dot.json> ;
+    sx:ttl <1dotAND1dotAND1dot.ttl> ;
+    .
+
+<#open1dotAND1dotcloseAND1dot> a sht:RepresentationTest ;
+    mf:name "open1dotAND1dotcloseAND1dot" ;
+    mf:status mf:proposed ;
+    sx:shex <open1dotAND1dotcloseAND1dot.shex> ;
+    sx:json <open1dotAND1dotcloseAND1dot.json> ;
+    sx:ttl <open1dotAND1dotcloseAND1dot.ttl> ;
+    .
+
+<#1dotANDopen1dotAND1dotclose> a sht:RepresentationTest ;
+    mf:name "1dotANDopen1dotAND1dotclose" ;
+    mf:status mf:proposed ;
+    sx:shex <1dotANDopen1dotAND1dotclose.shex> ;
+    sx:json <1dotANDopen1dotAND1dotclose.json> ;
+    sx:ttl <1dotANDopen1dotAND1dotclose.ttl> ;
     .
 
