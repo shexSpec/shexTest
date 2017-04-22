@@ -14256,7 +14256,7 @@
           "trait": [
             "Closed"
           ],
-          "comment": "<S> { <p1> . } on { <s> <p1> <o1>; <p1> <o1> }",
+          "comment": "<S> { <p1> . } on { <s> <p0> <o0>; <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -14344,6 +14344,114 @@
             "IriEquivalence"
           ],
           "comment": "<S> EXTRA <p1> { <p1> [<o1>] } on { <s> <p1> <o1>, <o2> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1val1IRIREFExtra1Closed_pass-iri1",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1val1IRIREFExtra1Closed.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1IRIREFExtra1Closed_pass-iri1",
+          "trait": [
+            "VapidExtra",
+            "Extra"
+          ],
+          "comment": "<S> EXTRA <p1> CLOSED { <p1> . } on { <s1> <p1> <o1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1val1IRIREFExtra1Closed_pass-iri2",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1val1IRIREFExtra1Closed.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1,Io2.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1IRIREFExtra1Closed_pass-iri2",
+          "trait": [
+            "VapidExtra",
+            "Extra"
+          ],
+          "comment": "<S> EXTRA <p1> CLOSED { <p1> . } on { <s> <p1> <o1>, <o2> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1val1IRIREFExtra1Closed_fail-iri2_higher",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1val1IRIREFExtra1Closed.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1,Io2;Ip2_Io2.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1IRIREFExtra1Closed_fail-iri2_higher",
+          "trait": [
+            "VapidExtra",
+            "Extra"
+          ],
+          "comment": "<S> EXTRA <p1> CLOSED { <p1> . } on { <s> <p1> <o1>, <o2>; <p2> <o2> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1val1IRIREFClosedExtra1_pass-iri1",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1val1IRIREFClosedExtra1.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1IRIREFClosedExtra1_pass-iri1",
+          "trait": [
+            "VapidExtra",
+            "Extra"
+          ],
+          "comment": "<S> EXTRA <p1> CLOSED { <p1> . } on { <s1> <p1> <o1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1val1IRIREFClosedExtra1_pass-iri2",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1val1IRIREFClosedExtra1.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1,Io2.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1IRIREFClosedExtra1_pass-iri2",
+          "trait": [
+            "VapidExtra",
+            "Extra"
+          ],
+          "comment": "<S> EXTRA <p1> CLOSED { <p1> . } on { <s> <p1> <o1>, <o2> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1val1IRIREFClosedExtra1_fail-iri2_higher",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1val1IRIREFClosedExtra1.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1,Io2;Ip2_Io2.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1IRIREFClosedExtra1_fail-iri2_higher",
+          "trait": [
+            "VapidExtra",
+            "Extra"
+          ],
+          "comment": "<S> EXTRA <p1> CLOSED { <p1> . } on { <s> <p1> <o1>, <o2>; <p2> <o2> }",
           "status": "mf:proposed"
         },
         {

@@ -7,7 +7,7 @@
         { "type": "Shape",
           "expression": {
             "type": "TripleConstraint",
-            "predicate": "http://a.example/p1" } }.
+            "predicate": "http://a.example/p1" } },
         { "type": "ShapeAnd",
           "shapeExprs": [
             { "type": "Shape",

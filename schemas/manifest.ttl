@@ -255,6 +255,8 @@
         <#1val1vShapeANDRef3>
         <#1dotClosed>
         <#1val1IRIREFExtra1>
+        <#1val1IRIREFExtra1Closed>
+        <#1val1IRIREFClosedExtra1>
         <#1val2IRIREFExtra1>
         <#1val2IRIREFPlusExtra1>
         <#1val1IRIREFExtra1p2>
@@ -2478,6 +2480,22 @@
     sx:shex <1val1IRIREFExtra1.shex> ;
     sx:json <1val1IRIREFExtra1.json> ;
     sx:ttl <1val1IRIREFExtra1.ttl> ;
+    .
+
+<#1val1IRIREFExtra1Closed> a sht:RepresentationTest ;
+    mf:name "1val1IRIREFExtra1Closed" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1IRIREFExtra1Closed.shex> ;
+    sx:json <1val1IRIREFExtra1Closed.json> ;
+    sx:ttl <1val1IRIREFExtra1Closed.ttl> ;
+    .
+
+<#1val1IRIREFClosedExtra1> a sht:RepresentationTest ;
+    mf:name "1val1IRIREFClosedExtra1" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1IRIREFClosedExtra1.shex> ;
+    sx:json <1val1IRIREFClosedExtra1.json> ;
+    sx:ttl <1val1IRIREFClosedExtra1.ttl> ;
     .
 
 <#1val2IRIREFExtra1> a sht:RepresentationTest ;
