@@ -50,11 +50,11 @@ numericFacet     = (mininclusive|minexclusive|maxinclusive|maxexclusive):numeric
 valueSetValue    = objectValue | IriStem | IriStemRange | LiteralStem | LiteralStemRange | LanguageStem | LanguageStemRange ;
 objectValue      = IRI|ObjectLiteral ;
 IriStem          { stem:IRI } # IriStemRange with exclusions
-IriStemRange     { stem:(IRI|Wildcard) exclusions:[objectValue|IriStem +]? }
+IriStemRange     { stem:(IRI|Wildcard) exclusions:[objectValue|IriStem +] }
 LiteralStem      { stem:ObjectLiteral } # LiteralStemRange with exclusions
-LiteralStemRange { stem:(ObjectLiteral|Wildcard) exclusions:[objectValue|LiteralStem +]? }
+LiteralStemRange { stem:(ObjectLiteral|Wildcard) exclusions:[objectValue|LiteralStem +] }
 LanguageStem     { stem:ObjectLiteral } # LanguageStemRange with exclusions
-LanguageStemRange{ stem:(ObjectLiteral|Wildcard) exclusions:[objectValue|LanguageStem +]? }
+LanguageStemRange{ stem:(ObjectLiteral|Wildcard) exclusions:[objectValue|LanguageStem +] }
 Wildcard         {  }
 
 SemAct           { name:IRI code:STRING? }
