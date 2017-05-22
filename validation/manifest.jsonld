@@ -15877,7 +15877,7 @@
           "trait": [
             "FocusConstraint"
           ],
-          "comment": "<S> <dt1> on {  }",
+          "comment": "<S> <dt1> on { <s> <p1> 'ab'^^my:bloodType }",
           "status": "mf:proposed"
         },
         {
@@ -15894,6 +15894,46 @@
           },
           "extensionResults": [],
           "name": "focusdatatype_fail",
+          "trait": [
+            "focusConstraint"
+          ],
+          "comment": "<S> <dt1> on { <s> <p1> 'ab'^^my:bloodType999 }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#focusdatatype_pass-empty",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/focusdatatype.shex",
+            "shape": "http://a.example/S1",
+            "data": "empty.ttl",
+            "focus": {
+              "@value": "ab",
+              "@type": "http://a.example/bloodType"
+            }
+          },
+          "extensionResults": [],
+          "name": "focusdatatype_pass-empty",
+          "trait": [
+            "FocusConstraint"
+          ],
+          "comment": "<S> <dt1> on {  }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#focusdatatype_fail-empty",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/focusdatatype.shex",
+            "shape": "http://a.example/S1",
+            "data": "empty.ttl",
+            "focus": {
+              "@value": "ab",
+              "@type": "http://a.example/bloodType999"
+            }
+          },
+          "extensionResults": [],
+          "name": "focusdatatype_fail-empty",
           "trait": [
             "focusConstraint"
           ],
