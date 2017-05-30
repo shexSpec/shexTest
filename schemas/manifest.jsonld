@@ -2226,6 +2226,24 @@
           "ttl": "1val1IRIREFExtra1.ttl"
         },
         {
+          "@id": "#1val1IRIREFExtra1Closed",
+          "@type": "sht:RepresentationTest",
+          "name": "1val1IRIREFExtra1Closed",
+          "status": "mf:proposed",
+          "shex": "1val1IRIREFExtra1Closed.shex",
+          "json": "1val1IRIREFExtra1Closed.json",
+          "ttl": "1val1IRIREFExtra1Closed.ttl"
+        },
+        {
+          "@id": "#1val1IRIREFClosedExtra1",
+          "@type": "sht:RepresentationTest",
+          "name": "1val1IRIREFClosedExtra1",
+          "status": "mf:proposed",
+          "shex": "1val1IRIREFClosedExtra1.shex",
+          "json": "1val1IRIREFClosedExtra1.json",
+          "ttl": "1val1IRIREFClosedExtra1.ttl"
+        },
+        {
           "@id": "#1val2IRIREFExtra1",
           "@type": "sht:RepresentationTest",
           "name": "1val2IRIREFExtra1",
@@ -3097,6 +3115,33 @@
           "shex": "focusbnode0ORfocusPattern0.shex",
           "json": "focusbnode0ORfocusPattern0.json",
           "ttl": "focusbnode0ORfocusPattern0.ttl"
+        },
+        {
+          "@id": "#1dotAND1dotAND1dot",
+          "@type": "sht:RepresentationTest",
+          "name": "1dotAND1dotAND1dot",
+          "status": "mf:proposed",
+          "shex": "1dotAND1dotAND1dot.shex",
+          "json": "1dotAND1dotAND1dot.json",
+          "ttl": "1dotAND1dotAND1dot.ttl"
+        },
+        {
+          "@id": "#open1dotAND1dotcloseAND1dot",
+          "@type": "sht:RepresentationTest",
+          "name": "open1dotAND1dotcloseAND1dot",
+          "status": "mf:proposed",
+          "shex": "open1dotAND1dotcloseAND1dot.shex",
+          "json": "open1dotAND1dotcloseAND1dot.json",
+          "ttl": "open1dotAND1dotcloseAND1dot.ttl"
+        },
+        {
+          "@id": "#1dotANDopen1dotAND1dotclose",
+          "@type": "sht:RepresentationTest",
+          "name": "1dotANDopen1dotAND1dotclose",
+          "status": "mf:proposed",
+          "shex": "1dotANDopen1dotAND1dotclose.shex",
+          "json": "1dotANDopen1dotAND1dotclose.json",
+          "ttl": "1dotANDopen1dotAND1dotclose.ttl"
         }
       ]
     }

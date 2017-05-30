@@ -26,6 +26,7 @@
  #   repeated OR
  #   1dotRefOR3 on..
  # 1IRIInline0, focusbnode0ORfocusPattern0
+ # <#1dotAND1dotAND1dot>, <#open1dotAND1dotcloseAND1dot>, <#1dotANDopen1dotAND1dotclose>
 
  # 1val1dotMinuslanguage3.shex - 1val1dotMinusiri3.shex
  #         <#1val1dotMinusiri3_pass>
@@ -963,6 +964,12 @@
 ## extra
         <#1val1IRIREFExtra1_pass-iri1>
         <#1val1IRIREFExtra1_pass-iri2>
+        <#1val1IRIREFExtra1Closed_pass-iri1>
+        <#1val1IRIREFExtra1Closed_pass-iri2>
+        <#1val1IRIREFExtra1Closed_fail-iri2_higher>
+        <#1val1IRIREFClosedExtra1_pass-iri1>
+        <#1val1IRIREFClosedExtra1_pass-iri2>
+        <#1val1IRIREFClosedExtra1_fail-iri2_higher>
         <#1val2IRIREFExtra1_fail-iri2>
         <#1val2IRIREFPlusExtra1_pass-iri2>
         <#1val2IRIREFExtra1_pass-iri-bnode>
@@ -1051,6 +1058,8 @@
 ###  datatype
         <#focusdatatype_pass>
         <#focusdatatype_fail>
+        <#focusdatatype_pass-empty>
+        <#focusdatatype_fail-empty>
 
 ###  value sets
         <#focusvs_pass>
@@ -12505,7 +12514,7 @@
 <#1dotClosed_fail_lower> a sht:ValidationFailure ;
     mf:name "1dotClosed_fail_lower" ;
     sht:trait sht:Closed ;
-    rdfs:comment "<S> { <p1> . } on { <s> <p1> <o1>; <p1> <o1> }" ;
+    rdfs:comment "<S> { <p1> . } on { <s> <p0> <o0>; <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1dotClosed.shex> ;
@@ -12580,6 +12589,84 @@
       sht:schema <../schemas/1val1IRIREFExtra1.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Io1,Io2.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1val1IRIREFExtra1Closed_pass-iri1> a sht:ValidationTest ;
+    mf:name "1val1IRIREFExtra1Closed_pass-iri1" ;
+    sht:trait sht:VapidExtra , sht:Extra ;
+    rdfs:comment "<S> EXTRA <p1> CLOSED { <p1> . } on { <s1> <p1> <o1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1IRIREFExtra1Closed.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1val1IRIREFExtra1Closed_pass-iri2> a sht:ValidationTest ;
+    mf:name "1val1IRIREFExtra1Closed_pass-iri2" ;
+    sht:trait sht:VapidExtra , sht:Extra ;
+    rdfs:comment "<S> EXTRA <p1> CLOSED { <p1> . } on { <s> <p1> <o1>, <o2> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1IRIREFExtra1Closed.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1,Io2.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1val1IRIREFExtra1Closed_fail-iri2_higher> a sht:ValidationFailure ;
+    mf:name "1val1IRIREFExtra1Closed_fail-iri2_higher" ;
+    sht:trait sht:VapidExtra , sht:Extra ;
+    rdfs:comment "<S> EXTRA <p1> CLOSED { <p1> . } on { <s> <p1> <o1>, <o2>; <p2> <o2> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1IRIREFExtra1Closed.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1,Io2;Ip2_Io2.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1val1IRIREFClosedExtra1_pass-iri1> a sht:ValidationTest ;
+    mf:name "1val1IRIREFClosedExtra1_pass-iri1" ;
+    sht:trait sht:VapidExtra , sht:Extra ;
+    rdfs:comment "<S> EXTRA <p1> CLOSED { <p1> . } on { <s1> <p1> <o1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1IRIREFClosedExtra1.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1val1IRIREFClosedExtra1_pass-iri2> a sht:ValidationTest ;
+    mf:name "1val1IRIREFClosedExtra1_pass-iri2" ;
+    sht:trait sht:VapidExtra , sht:Extra ;
+    rdfs:comment "<S> EXTRA <p1> CLOSED { <p1> . } on { <s> <p1> <o1>, <o2> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1IRIREFClosedExtra1.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1,Io2.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1val1IRIREFClosedExtra1_fail-iri2_higher> a sht:ValidationFailure ;
+    mf:name "1val1IRIREFClosedExtra1_fail-iri2_higher" ;
+    sht:trait sht:VapidExtra , sht:Extra ;
+    rdfs:comment "<S> EXTRA <p1> CLOSED { <p1> . } on { <s> <p1> <o1>, <o2>; <p2> <o2> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1IRIREFClosedExtra1.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1,Io2;Ip2_Io2.ttl> ;
       sht:focus <http://a.example/s1>
     ]
     .
@@ -13703,7 +13790,7 @@
 <#focusdatatype_pass> a sht:ValidationTest ;
     mf:name "focusdatatype_pass" ;
     sht:trait sht:FocusConstraint ;
-    rdfs:comment "<S> <dt1> on {  }" ;
+    rdfs:comment "<S> <dt1> on { <s> <p1> 'ab'^^my:bloodType }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/focusdatatype.shex> ;
@@ -13716,12 +13803,38 @@
 <#focusdatatype_fail> a sht:ValidationFailure ;
     mf:name "focusdatatype_fail" ;
     sht:trait sht:focusConstraint ;
-    rdfs:comment "<S> <dt1> on {  }" ;
+    rdfs:comment "<S> <dt1> on { <s> <p1> 'ab'^^my:bloodType999 }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/focusdatatype.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_LabDTbloodType999.ttl> ;
+      sht:focus "ab"^^<http://a.example/bloodType999>
+    ] ;
+    .
+
+<#focusdatatype_pass-empty> a sht:ValidationTest ;
+    mf:name "focusdatatype_pass-empty" ;
+    sht:trait sht:FocusConstraint ;
+    rdfs:comment "<S> <dt1> on {  }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/focusdatatype.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <empty.ttl> ;
+      sht:focus "ab"^^<http://a.example/bloodType>
+    ]
+    .
+
+<#focusdatatype_fail-empty> a sht:ValidationFailure ;
+    mf:name "focusdatatype_fail-empty" ;
+    sht:trait sht:focusConstraint ;
+    rdfs:comment "<S> <dt1> on {  }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/focusdatatype.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <empty.ttl> ;
       sht:focus "ab"^^<http://a.example/bloodType999>
     ] ;
     .

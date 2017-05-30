@@ -1,3 +1,4 @@
+
 PREFIX ex: <http://a.example>
 PREFIX sx: <http://www.w3.org/ns/shex#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
@@ -9,6 +10,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     sx:expression [ a sx:TripleConstraint ;
             sx:predicate <http://a.example/p1> ;
             sx:valueExpr [ a sx:NodeConstraint ;
-                    sx:values ( [ a sx:LiteralStemRange ;
+                    sx:values ( [ a sx:LiteralStem ;
                                 sx:stem "http://a.example/v" ] ) ] ] .
 
