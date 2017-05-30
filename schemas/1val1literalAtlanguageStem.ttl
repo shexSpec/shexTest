@@ -9,6 +9,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     sx:expression [ a sx:TripleConstraint ;
             sx:predicate <http://a.example/p1> ;
             sx:valueExpr [ a sx:NodeConstraint ;
-                    sx:values ( [ a sx:LiteralStemRange ;
+                    sx:values ( [ a sx:LiteralStem ;
                                 sx:stem "@fr" ] ) ] ] .
 

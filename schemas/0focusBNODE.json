@@ -4,8 +4,16 @@
   "shapes": [
     {
       "id": "http://a.example/S1",
-      "nodeKind": "bnode",
-      "type": "NodeConstraint"
+      "type": "ShapeAnd",
+      "shapeExprs": [
+        {
+          "type": "NodeConstraint",
+          "nodeKind": "bnode"
+        },
+        {
+          "type": "Shape"
+        }
+      ]
     }
   ]
 }

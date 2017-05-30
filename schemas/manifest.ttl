@@ -255,6 +255,8 @@
         <#1val1vShapeANDRef3>
         <#1dotClosed>
         <#1val1IRIREFExtra1>
+        <#1val1IRIREFExtra1Closed>
+        <#1val1IRIREFClosedExtra1>
         <#1val2IRIREFExtra1>
         <#1val2IRIREFPlusExtra1>
         <#1val1IRIREFExtra1p2>
@@ -268,6 +270,7 @@
         <#startInline>
         <#startEqualSpaceInline>
         <#startSpaceEqualInline>
+        <#1IRIInline0>
         <#2EachInclude1>
         <#2EachInclude1-after>
         <#2OneInclude1>
@@ -358,6 +361,10 @@
         <#node_kind_example>
         <#dependent_shape>
         <#recursion_example>
+        <#focusbnode0ORfocusPattern0>
+        <#1dotAND1dotAND1dot>
+        <#open1dotAND1dotcloseAND1dot>
+        <#1dotANDopen1dotAND1dotclose>
     ) .
 
 <#0> a sht:RepresentationTest ;
@@ -2475,6 +2482,22 @@
     sx:ttl <1val1IRIREFExtra1.ttl> ;
     .
 
+<#1val1IRIREFExtra1Closed> a sht:RepresentationTest ;
+    mf:name "1val1IRIREFExtra1Closed" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1IRIREFExtra1Closed.shex> ;
+    sx:json <1val1IRIREFExtra1Closed.json> ;
+    sx:ttl <1val1IRIREFExtra1Closed.ttl> ;
+    .
+
+<#1val1IRIREFClosedExtra1> a sht:RepresentationTest ;
+    mf:name "1val1IRIREFClosedExtra1" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1IRIREFClosedExtra1.shex> ;
+    sx:json <1val1IRIREFClosedExtra1.json> ;
+    sx:ttl <1val1IRIREFClosedExtra1.ttl> ;
+    .
+
 <#1val2IRIREFExtra1> a sht:RepresentationTest ;
     mf:name "1val2IRIREFExtra1" ;
     mf:status mf:proposed ;
@@ -2577,6 +2600,14 @@
     sx:shex <startSpaceEqualInline.shex> ;
     sx:json <startSpaceEqualInline.json> ;
     sx:ttl <startSpaceEqualInline.ttl> ;
+    .
+
+<#1IRIInline0> a sht:RepresentationTest ;
+    mf:name "1IRIInline0" ;
+    mf:status mf:proposed ;
+    sx:shex <1IRIInline0.shex> ;
+    sx:json <1IRIInline0.json> ;
+    sx:ttl <1IRIInline0.ttl> ;
     .
 
 <#2EachInclude1> a sht:RepresentationTest ;
@@ -3171,3 +3202,36 @@
     sx:json <recursion_example.json> ;
     sx:ttl <recursion_example.ttl> ;
     .
+
+<#focusbnode0ORfocusPattern0> a sht:RepresentationTest ;
+    mf:name "focusbnode0ORfocusPattern0" ;
+    mf:status mf:proposed ;
+    sx:shex <focusbnode0ORfocusPattern0.shex> ;
+    sx:json <focusbnode0ORfocusPattern0.json> ;
+    sx:ttl <focusbnode0ORfocusPattern0.ttl> ;
+    .
+
+<#1dotAND1dotAND1dot> a sht:RepresentationTest ;
+    mf:name "1dotAND1dotAND1dot" ;
+    mf:status mf:proposed ;
+    sx:shex <1dotAND1dotAND1dot.shex> ;
+    sx:json <1dotAND1dotAND1dot.json> ;
+    sx:ttl <1dotAND1dotAND1dot.ttl> ;
+    .
+
+<#open1dotAND1dotcloseAND1dot> a sht:RepresentationTest ;
+    mf:name "open1dotAND1dotcloseAND1dot" ;
+    mf:status mf:proposed ;
+    sx:shex <open1dotAND1dotcloseAND1dot.shex> ;
+    sx:json <open1dotAND1dotcloseAND1dot.json> ;
+    sx:ttl <open1dotAND1dotcloseAND1dot.ttl> ;
+    .
+
+<#1dotANDopen1dotAND1dotclose> a sht:RepresentationTest ;
+    mf:name "1dotANDopen1dotAND1dotclose" ;
+    mf:status mf:proposed ;
+    sx:shex <1dotANDopen1dotAND1dotclose.shex> ;
+    sx:json <1dotANDopen1dotAND1dotclose.json> ;
+    sx:ttl <1dotANDopen1dotAND1dotclose.ttl> ;
+    .
+
