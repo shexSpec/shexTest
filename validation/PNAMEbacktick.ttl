@@ -1,6 +1,7 @@
 PREFIX ex1: <http://ex1.example/>
+PREFIX ex2: <http://ex2.example/>
 
 <http://a.example/s>
   ex1:protName "Dracula" ;
-  ex1:protType ex1:Regulatory ;
+  ex2:protType ex1:Regulatory ;
   ex1:protWidth "30"^^ex1:microns .

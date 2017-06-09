@@ -1137,6 +1137,8 @@
 ## backticks
         <#3backtick_pass>
         <#3backtick_fail>
+        <#3PNAMEbacktick_pass>
+        <#3PNAMEbacktick_fail>
 
 ## manual schemas
         <#false-lead-excluding-value-shape>
@@ -14553,6 +14555,35 @@
       sht:schema <../schemas/3backtick.shex> ;
       sht:shape <http://a.example/S> ;
       sht:termResolver <backtick.owl> ;
+      sht:data <In1_Ip1_In2.ttl> ;
+      sht:focus <http://a.example/n1> ;
+    ] ;
+    .
+
+<#3PNAMEbacktick_pass> a sht:ValidationTest ;
+    mf:name "3PNAMEbacktick_pass" ;
+    sht:trait sht:Backtick ;
+    rdfs:comment "<S> { ex1:`a` LITERAL; ex2:`b` [ `c` `d`]; `e` `f` } on { <s> ex1:a 'A' ; ex2:b ex1:c ; ex1:d '30'^^ex1:e }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/3PNAMEbacktick.shex> ;
+      sht:shape <http://a.example/S> ;
+      sht:termResolver <PNAMEbacktick.owl> ;
+      sht:data <PNAMEbacktick.ttl> ;
+      sht:focus <http://a.example/s> ;
+    ] ;
+    mf:result <3PNAMEbacktick_pass.val>
+    .
+
+<#3PNAMEbacktick_fail> a sht:ValidationFailure ;
+    mf:name "3PNAMEbacktick_fail" ;
+    sht:trait sht:Backtick ;
+    rdfs:comment "<S> { ex1:`a` LITERAL; ex2:`b` [ `c` `d`]; `e` `f` } on { <n1> <p1> <n2> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/3PNAMEbacktick.shex> ;
+      sht:shape <http://a.example/S> ;
+      sht:termResolver <PNAMEbacktick.owl> ;
       sht:data <In1_Ip1_In2.ttl> ;
       sht:focus <http://a.example/n1> ;
     ] ;

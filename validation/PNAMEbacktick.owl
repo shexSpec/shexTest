@@ -1,9 +1,12 @@
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX ex1: <http://ex1.example/>
+PREFIX ex2: <http://ex2.example/>
 
 ex1:protName rdfs:label "protein name" .
 ex1:protType skos:label "protein type" .
+ex2:protName rdfs:label "protein name" .
+ex2:protType skos:label "protein type" .
 ex1:Signaling rdfs:label "signaling" .
 ex1:Regulatory skos:label "regulatory" .
 ex1:Transport rdfs:label "transport" ; skos:label "transport" .
