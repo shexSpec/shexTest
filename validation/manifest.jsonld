@@ -16755,7 +16755,7 @@
             "NotValueExpression",
             "OrValueExpression"
           ],
-          "comment": "@@",
+          "comment": "<S1> NOT { <p1> . } OR { <p1> .; <p2> . } on {  }",
           "status": "mf:proposed"
         },
         {
@@ -16773,7 +16773,7 @@
             "NotValueExpression",
             "OrValueExpression"
           ],
-          "comment": "@@",
+          "comment": "<S1> NOT { <p1> . } OR { <p1> .; <p2> . } on { <n1>  <p2> <n2> }",
           "status": "mf:proposed"
         },
         {
@@ -16791,7 +16791,7 @@
             "NotValueExpression",
             "OrValueExpression"
           ],
-          "comment": "@@",
+          "comment": "<S1> NOT { <p1> . } OR { <p1> .; <p2> . } on { <n1>  <p1> <n2> . <n1>  <p2> <n3> }",
           "status": "mf:proposed"
         },
         {
@@ -16809,7 +16809,7 @@
             "NotValueExpression",
             "OrValueExpression"
           ],
-          "comment": "@@",
+          "comment": "<S1> NOT { <p1> . } OR { <p1> .; <p2> . } on { <n1>  <p1> <n2> }",
           "status": "mf:proposed"
         },
         {
@@ -16827,7 +16827,7 @@
             "NotValueExpression",
             "OrValueExpression"
           ],
-          "comment": "@@",
+          "comment": "<S1> ((NOT { <p1> . } OR { <p1> .; <p2> . }) AND (NOT { <p3> . } OR { <p3> .; <p4> . }) AND (NOT { <p5> . } OR { <p5> .; <p6> . }) ) on {  }",
           "status": "mf:proposed"
         },
         {
@@ -16845,7 +16845,7 @@
             "NotValueExpression",
             "OrValueExpression"
           ],
-          "comment": "@@",
+          "comment": "<S1> ((NOT { <p1> . } OR { <p1> .; <p2> . }) AND (NOT { <p3> . } OR { <p3> .; <p4> . }) AND (NOT { <p5> . } OR { <p5> .; <p6> . }) ) on { <n1>  <p2> <n2> }",
           "status": "mf:proposed"
         },
         {
@@ -16863,7 +16863,7 @@
             "NotValueExpression",
             "OrValueExpression"
           ],
-          "comment": "@@",
+          "comment": "<S1> ((NOT { <p1> . } OR { <p1> .; <p2> . }) AND (NOT { <p3> . } OR { <p3> .; <p4> . }) AND (NOT { <p5> . } OR { <p5> .; <p6> . }) ) on { <n1>  <p1> <n2> . <n1>  <p2> <n3> }",
           "status": "mf:proposed"
         },
         {
@@ -16881,7 +16881,7 @@
             "NotValueExpression",
             "OrValueExpression"
           ],
-          "comment": "@@",
+          "comment": "<S1> ((NOT { <p1> . } OR { <p1> .; <p2> . }) AND (NOT { <p3> . } OR { <p3> .; <p4> . }) AND (NOT { <p5> . } OR { <p5> .; <p6> . }) ) on { <n1>  <p1> <n2> }",
           "status": "mf:proposed"
         },
         {
@@ -16890,7 +16890,7 @@
           "action": {
             "schema": "../schemas/NOT1dotOR2dotX3AND1.shex",
             "shape": "http://a.example/S1",
-            "data": "In1_Ip2_In2.ttl",
+            "data": "empty.ttl",
             "focus": "http://a.example/n1"
           },
           "extensionResults": [],
@@ -16899,7 +16899,7 @@
             "NotValueExpression",
             "OrValueExpression"
           ],
-          "comment": "@@",
+          "comment": "<S1> ((NOT { <p1> . } OR { <p1> .; <p2> . }) AND (NOT { <p3> . } OR { <p3> .; <p4> . }) AND (NOT { <p5> . } OR { <p5> .; <p6> . }) AND ({ <p1> . } OR { <p3> . } OR { <p5> . } ) ) on {  }",
           "status": "mf:proposed"
         },
         {
@@ -16917,7 +16917,7 @@
             "NotValueExpression",
             "OrValueExpression"
           ],
-          "comment": "@@",
+          "comment": "<S1> ((NOT { <p1> . } OR { <p1> .; <p2> . }) AND (NOT { <p3> . } OR { <p3> .; <p4> . }) AND (NOT { <p5> . } OR { <p5> .; <p6> . }) AND ({ <p1> . } OR { <p3> . } OR { <p5> . } ) ) on { <n1>  <p2> <n2> }",
           "status": "mf:proposed"
         },
         {
@@ -16935,7 +16935,7 @@
             "NotValueExpression",
             "OrValueExpression"
           ],
-          "comment": "@@",
+          "comment": "<S1> ((NOT { <p1> . } OR { <p1> .; <p2> . }) AND (NOT { <p3> . } OR { <p3> .; <p4> . }) AND (NOT { <p5> . } OR { <p5> .; <p6> . }) AND ({ <p1> . } OR { <p3> . } OR { <p5> . } ) ) on { <n1>  <p1> <n2> . <n1>  <p2> <n3> }",
           "status": "mf:proposed"
         },
         {
@@ -16953,7 +16953,7 @@
             "NotValueExpression",
             "OrValueExpression"
           ],
-          "comment": "@@",
+          "comment": "<S1> ((NOT { <p1> . } OR { <p1> .; <p2> . }) AND (NOT { <p3> . } OR { <p3> .; <p4> . }) AND (NOT { <p5> . } OR { <p5> .; <p6> . }) AND ({ <p1> . } OR { <p3> . } OR { <p5> . } ) ) on { <n1>  <p1> <n2> }",
           "status": "mf:proposed"
         },
         {

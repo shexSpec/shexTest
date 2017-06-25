@@ -14294,7 +14294,7 @@
 <#NOT1dotOR2dot_pass-empty> a sht:ValidationTest ;
     mf:name "NOT1dotOR2dot_pass-empty" ;
     sht:trait sht:OrValueExpression , sht:NotValueExpression ;
-    rdfs:comment "@@" ;
+    rdfs:comment "<S1> NOT { <p1> . } OR { <p1> .; <p2> . } on {  }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/NOT1dotOR2dot.shex> ;
@@ -14307,7 +14307,7 @@
 <#NOT1dotOR2dot_pass-NoShape1> a sht:ValidationTest ;
     mf:name "NOT1dotOR2dot_pass-NoShape1" ;
     sht:trait sht:OrValueExpression , sht:NotValueExpression ;
-    rdfs:comment "@@" ;
+    rdfs:comment "<S1> NOT { <p1> . } OR { <p1> .; <p2> . } on { <n1>  <p2> <n2> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/NOT1dotOR2dot.shex> ;
@@ -14320,7 +14320,7 @@
 <#NOT1dotOR2dot_pass-Shape2> a sht:ValidationTest ;
     mf:name "NOT1dotOR2dot_pass-Shape2" ;
     sht:trait sht:OrValueExpression , sht:NotValueExpression ;
-    rdfs:comment "@@" ;
+    rdfs:comment "<S1> NOT { <p1> . } OR { <p1> .; <p2> . } on { <n1>  <p1> <n2> . <n1>  <p2> <n3> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/NOT1dotOR2dot.shex> ;
@@ -14333,7 +14333,7 @@
 <#NOT1dotOR2dot_fail-Shape2> a sht:ValidationFailure ;
     mf:name "NOT1dotOR2dot_fail-Shape2" ;
     sht:trait sht:OrValueExpression , sht:NotValueExpression ;
-    rdfs:comment "@@" ;
+    rdfs:comment "<S1> NOT { <p1> . } OR { <p1> .; <p2> . } on { <n1>  <p1> <n2> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/NOT1dotOR2dot.shex> ;
@@ -14346,7 +14346,7 @@
 <#NOT1dotOR2dotX3_pass-empty> a sht:ValidationTest ;
     mf:name "NOT1dotOR2dotX3_pass-empty" ;
     sht:trait sht:OrValueExpression , sht:NotValueExpression ;
-    rdfs:comment "@@" ;
+    rdfs:comment "<S1> ((NOT { <p1> . } OR { <p1> .; <p2> . }) AND (NOT { <p3> . } OR { <p3> .; <p4> . }) AND (NOT { <p5> . } OR { <p5> .; <p6> . }) ) on {  }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/NOT1dotOR2dotX3.shex> ;
@@ -14359,7 +14359,7 @@
 <#NOT1dotOR2dotX3_pass-NoShape1> a sht:ValidationTest ;
     mf:name "NOT1dotOR2dotX3_pass-NoShape1" ;
     sht:trait sht:OrValueExpression , sht:NotValueExpression ;
-    rdfs:comment "@@" ;
+    rdfs:comment "<S1> ((NOT { <p1> . } OR { <p1> .; <p2> . }) AND (NOT { <p3> . } OR { <p3> .; <p4> . }) AND (NOT { <p5> . } OR { <p5> .; <p6> . }) ) on { <n1>  <p2> <n2> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/NOT1dotOR2dotX3.shex> ;
@@ -14372,7 +14372,7 @@
 <#NOT1dotOR2dotX3_pass-Shape2> a sht:ValidationTest ;
     mf:name "NOT1dotOR2dotX3_pass-Shape2" ;
     sht:trait sht:OrValueExpression , sht:NotValueExpression ;
-    rdfs:comment "@@" ;
+    rdfs:comment "<S1> ((NOT { <p1> . } OR { <p1> .; <p2> . }) AND (NOT { <p3> . } OR { <p3> .; <p4> . }) AND (NOT { <p5> . } OR { <p5> .; <p6> . }) ) on { <n1>  <p1> <n2> . <n1>  <p2> <n3> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/NOT1dotOR2dotX3.shex> ;
@@ -14385,7 +14385,7 @@
 <#NOT1dotOR2dotX3_fail-Shape2> a sht:ValidationFailure ;
     mf:name "NOT1dotOR2dotX3_fail-Shape2" ;
     sht:trait sht:OrValueExpression , sht:NotValueExpression ;
-    rdfs:comment "@@" ;
+    rdfs:comment "<S1> ((NOT { <p1> . } OR { <p1> .; <p2> . }) AND (NOT { <p3> . } OR { <p3> .; <p4> . }) AND (NOT { <p5> . } OR { <p5> .; <p6> . }) ) on { <n1>  <p1> <n2> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/NOT1dotOR2dotX3.shex> ;
@@ -14398,12 +14398,12 @@
 <#NOT1dotOR2dotX3AND1_fail-empty> a sht:ValidationFailure ;
     mf:name "NOT1dotOR2dotX3AND1_fail-empty" ;
     sht:trait sht:OrValueExpression , sht:NotValueExpression ;
-    rdfs:comment "@@" ;
+    rdfs:comment "<S1> ((NOT { <p1> . } OR { <p1> .; <p2> . }) AND (NOT { <p3> . } OR { <p3> .; <p4> . }) AND (NOT { <p5> . } OR { <p5> .; <p6> . }) AND ({ <p1> . } OR { <p3> . } OR { <p5> . } ) ) on {  }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/NOT1dotOR2dotX3AND1.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <In1_Ip2_In2.ttl> ;
+      sht:data <empty.ttl> ;
       sht:focus <http://a.example/n1>
     ]
     .
@@ -14411,7 +14411,7 @@
 <#NOT1dotOR2dotX3AND1_fail-NoShape1> a sht:ValidationFailure ;
     mf:name "NOT1dotOR2dotX3AND1_fail-NoShape1" ;
     sht:trait sht:OrValueExpression , sht:NotValueExpression ;
-    rdfs:comment "@@" ;
+    rdfs:comment "<S1> ((NOT { <p1> . } OR { <p1> .; <p2> . }) AND (NOT { <p3> . } OR { <p3> .; <p4> . }) AND (NOT { <p5> . } OR { <p5> .; <p6> . }) AND ({ <p1> . } OR { <p3> . } OR { <p5> . } ) ) on { <n1>  <p2> <n2> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/NOT1dotOR2dotX3AND1.shex> ;
@@ -14424,7 +14424,7 @@
 <#NOT1dotOR2dotX3AND1_pass-Shape2> a sht:ValidationTest ;
     mf:name "NOT1dotOR2dotX3AND1_pass-Shape2" ;
     sht:trait sht:OrValueExpression , sht:NotValueExpression ;
-    rdfs:comment "@@" ;
+    rdfs:comment "<S1> ((NOT { <p1> . } OR { <p1> .; <p2> . }) AND (NOT { <p3> . } OR { <p3> .; <p4> . }) AND (NOT { <p5> . } OR { <p5> .; <p6> . }) AND ({ <p1> . } OR { <p3> . } OR { <p5> . } ) ) on { <n1>  <p1> <n2> . <n1>  <p2> <n3> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/NOT1dotOR2dotX3AND1.shex> ;
@@ -14437,7 +14437,7 @@
 <#NOT1dotOR2dotX3AND1_fail-Shape2> a sht:ValidationFailure ;
     mf:name "NOT1dotOR2dotX3AND1_fail-Shape2" ;
     sht:trait sht:OrValueExpression , sht:NotValueExpression ;
-    rdfs:comment "@@" ;
+    rdfs:comment "<S1> ((NOT { <p1> . } OR { <p1> .; <p2> . }) AND (NOT { <p3> . } OR { <p3> .; <p4> . }) AND (NOT { <p5> . } OR { <p5> .; <p6> . }) AND ({ <p1> . } OR { <p3> . } OR { <p5> . } ) ) on { <n1>  <p1> <n2> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/NOT1dotOR2dotX3AND1.shex> ;
