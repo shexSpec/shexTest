@@ -196,6 +196,7 @@
         <#1val1dotMinusiri3>
         <#1val1refvsMinusiri3>
         <#1val1dotMinusiriStem3>
+        <#1val1iri>
         <#1val1iriStem>
         <#1val1iriStemMinusiri3>
         <#1val1iriStemMinusiriStem3>
@@ -1929,6 +1930,14 @@
     sx:ttl <1val1dotMinusiriStem3.ttl> ;
     .
 
+<#1val1iri> a sht:RepresentationTest ;
+    mf:name "1val1iri" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1iri.shex> ;
+    sx:json <1val1iri.json> ;
+    sx:ttl <1val1iri.ttl> ;
+    .
+
 <#1val1iriStem> a sht:RepresentationTest ;
     mf:name "1val1iriStem" ;
     mf:status mf:proposed ;
@@ -1967,6 +1976,14 @@
     sx:shex <1val1dotMinusliteralStem3.shex> ;
     sx:json <1val1dotMinusliteralStem3.json> ;
     sx:ttl <1val1dotMinusliteralStem3.ttl> ;
+    .
+
+<#1val1literal> a sht:RepresentationTest ;
+    mf:name "1val1literal" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1literal.shex> ;
+    sx:json <1val1literal.json> ;
+    sx:ttl <1val1literal.ttl> ;
     .
 
 <#1val1literalStem> a sht:RepresentationTest ;
@@ -2023,6 +2040,14 @@
     sx:shex <1val1dotMinuslanguageStem3.shex> ;
     sx:json <1val1dotMinuslanguageStem3.json> ;
     sx:ttl <1val1dotMinuslanguageStem3.ttl> ;
+    .
+
+<#1val1language> a sht:RepresentationTest ;
+    mf:name "1val1language" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1language.shex> ;
+    sx:json <1val1language.json> ;
+    sx:ttl <1val1language.ttl> ;
     .
 
 <#1val1languageStem> a sht:RepresentationTest ;
