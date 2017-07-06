@@ -42,7 +42,7 @@ start=@<Schema>
   sx:extra IRI* ;
   sx:expression @<tripleExpression>? ;
   sx:semActs @<SemActList1Plus>? ;
-  sx:annotation @<AnnotationList1Plus> ;
+  sx:annotation @<AnnotationList1Plus>? ;
 }
 
 <ShapeExternal> CLOSED {
@@ -117,7 +117,7 @@ start=@<Schema>
   sx:max xsd:integer? ;
   sx:expressions @<tripleExpressionList2Plus> ;
   sx:semActs @<SemActList1Plus>? ;
-  sx:annotation @<AnnotationList1Plus>
+  sx:annotation @<AnnotationList1Plus>?
 }
 
 <EachOf> CLOSED {
@@ -126,7 +126,7 @@ start=@<Schema>
   sx:max xsd:integer? ;
   sx:expressions @<tripleExpressionList2Plus> ;
   sx:semActs @<SemActList1Plus>? ;
-  sx:annotation @<AnnotationList1Plus>
+  sx:annotation @<AnnotationList1Plus>?
 }
 
 <tripleExpressionList2Plus> CLOSED {
@@ -147,7 +147,7 @@ start=@<Schema>
   sx:predicate IRI ;
   sx:valueExpr @<shapeExpr>? ;
   sx:semActs @<SemActList1Plus>? ;
-  sx:annotation @<AnnotationList1Plus>
+  sx:annotation @<AnnotationList1Plus>?
 }
 
 <SemActList1Plus> CLOSED {
