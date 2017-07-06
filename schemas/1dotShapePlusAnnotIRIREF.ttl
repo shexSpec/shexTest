@@ -11,7 +11,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
       sx:predicate <http://a.example/p1> ;
       sx:min 1 ; sx:max -1 ] ;
   sx:annotation
-    [ a sx:Annotation ;
-      sx:predicate <http://a.example/annot> ;
-      sx:object <http://a.example/IRIREF> ] .
+    ([ a sx:Annotation ;
+       sx:predicate <http://a.example/annot> ;
+       sx:object <http://a.example/IRIREF> ]) .
 
