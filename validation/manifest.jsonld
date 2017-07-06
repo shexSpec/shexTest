@@ -11588,6 +11588,40 @@
           "status": "mf:proposed"
         },
         {
+          "@id": "#1val1iri_passv1",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1val1iriStem.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1iri_passv1",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S> { <p1> [<v1>] } on { <s> <p1> <v1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1val1iri_failv1a",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1val1iri.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv1a.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1iri_failv1a",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S> { <p1> [<v1>] } on { <s> <p1> <v1a> }",
+          "status": "mf:proposed"
+        },
+        {
           "@id": "#1val1iriStem_passv1",
           "@type": "sht:ValidationTest",
           "action": {
@@ -11912,6 +11946,40 @@
           "status": "mf:proposed"
         },
         {
+          "@id": "#1val1literal_passv",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1val1literal.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Lv.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1literal_passv",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S> { <p1> ['v'] } on { <s> <p1> 'v' }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1val1literal_failv1",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1val1literal.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Lv1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1literal_failv1",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S> { <p1> ['v'] } on { <s1> <p1> 'v1' }",
+          "status": "mf:proposed"
+        },
+        {
           "@id": "#1val1literalStem_passv1",
           "@type": "sht:ValidationTest",
           "action": {
@@ -12233,6 +12301,40 @@
             "ValueSet"
           ],
           "comment": "<S> { <p1> ['v'~-'v1'~-'v2'~-'v3'~] } on { <s1> <p1> 'v1a' }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1val1language_passLAtfr",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1val1language.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_LAtfr.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1language_passLAtfr",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S> { <p1> [@fr] } on { <s> <p1> 'septante'@fr }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1val1language_failLAtfr-be",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1val1language.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_LAtfr-be.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1language_failLAtfr-be",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S> { <p1> [@fr] } on { <s> <p1> 'septante'@fr-be }",
           "status": "mf:proposed"
         },
         {
