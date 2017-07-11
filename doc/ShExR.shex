@@ -85,6 +85,7 @@ start=@<Schema>
                                OR @<LiteralStem> OR @<LiteralStemRange>
                 OR @<Language> OR @<LanguageStem> OR @<LanguageStemRange>
 <objectValue> IRI OR LITERAL # rdf:langString breaks on Annotation.object
+<Language> CLOSED { a [sx:Language]; sx:languageTag xsd:string }
 <IriStem> CLOSED { a [sx:IriStem]; sx:stem xsd:string }
 <IriStemRange> CLOSED {
   a [sx:IriStemRange];
