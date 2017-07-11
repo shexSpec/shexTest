@@ -10394,7 +10394,7 @@
     rdfs:comment "<S> { <p1> [<v1>] } on { <s> <p1> <v1> }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1val1iriStem.shex> ;
+      sht:schema <../schemas/1val1iri.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Iv1.ttl> ;
       sht:focus <http://a.example/s1>
