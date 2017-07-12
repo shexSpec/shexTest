@@ -111,7 +111,7 @@
           "trait": [
             "TriplePattern"
           ],
-          "comment": "<S1> { <p1> . } on { <s> <p2> <o1> }",
+          "comment": "<S1> { <p1> . } on { <s1> <p2> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -128,7 +128,7 @@
           "trait": [
             "TriplePattern"
           ],
-          "comment": "<S1> { <p1> . } on { <s> <p2> <o1> }",
+          "comment": "<S1> { <p1> . } on { <s1> <p2> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -281,7 +281,7 @@
           "trait": [
             "TriplePattern"
           ],
-          "comment": "PREFIX : <http://a.example/p1> <S1> { : . } on { <s> :p1 <o1> }",
+          "comment": "PREFIX : <http://a.example/p1> <S1> { : . } on { <s1> :p1 <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -298,7 +298,7 @@
           "trait": [
             "TriplePattern"
           ],
-          "comment": "PREFIX ex: <http://a.example/> ex:S1 { ex:p1- . } on { <s> <p1-> <o1> }",
+          "comment": "PREFIX ex: <http://a.example/> ex:S1 { ex:p1- . } on { <s1> <p1-> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -315,7 +315,7 @@
           "trait": [
             "TriplePattern"
           ],
-          "comment": "<S> { <p1> . } on { <s> <p0> <o0>; <p1> <o1> }",
+          "comment": "<S> { <p1> . } on { <s1> <p0> <o0>; <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -332,7 +332,7 @@
           "trait": [
             "TriplePattern"
           ],
-          "comment": "<S> { <p1> . } on { <s> <p1> <o1>; <p2> <o2> }",
+          "comment": "<S> { <p1> . } on { <s1> <p1> <o1>; <p2> <o2> }",
           "status": "mf:proposed"
         },
         {
@@ -350,7 +350,7 @@
             "TriplePattern",
             "ToldBNode"
           ],
-          "comment": "<S> { <p1> . } on { <s> <p2> <o1> }",
+          "comment": "<S> { <p1> . } on { <s1> <p2> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -368,7 +368,7 @@
             "TriplePattern",
             "ToldBNode"
           ],
-          "comment": "_:S1 { <p1> . } on { <s> <p0> <o0>; <p1> <o1> }",
+          "comment": "_:S1 { <p1> . } on { <s1> <p0> <o0>; <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -402,7 +402,7 @@
           "trait": [
             "TriplePattern"
           ],
-          "comment": "<S> { <p1> . } on { <s> <p2> <o1> }",
+          "comment": "<S> { <p1> . } on { <s1> <p2> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -436,7 +436,7 @@
           "trait": [
             "TriplePattern"
           ],
-          "comment": "<S> { <p1> . } on { <s> <p0> <o0>; <p1> <o1> }",
+          "comment": "<S> { <p1> . } on { <s1> <p0> <o0>; <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -453,7 +453,7 @@
           "trait": [
             "TriplePattern"
           ],
-          "comment": "<S> { <p1> . } on { <s> <p1> <o1>; <p2> <o2> }",
+          "comment": "<S> { <p1> . } on { <s1> <p1> <o1>; <p2> <o2> }",
           "status": "mf:proposed"
         },
         {
@@ -470,7 +470,7 @@
           "trait": [
             "TriplePattern"
           ],
-          "comment": "<S> { a . } on { <s> a <o1> }",
+          "comment": "<S> { a . } on { <s1> a <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -725,7 +725,7 @@
           "trait": [
             "Datatype"
           ],
-          "comment": "<S> { <p1> <dt1> } on <s> in { <s> <p2> \"ab\" }",
+          "comment": "<S> { <p1> <dt1> } on <s> in { <s1> <p2> \"ab\" }",
           "status": "mf:proposed"
         },
         {
@@ -776,7 +776,7 @@
           "trait": [
             "Datatype"
           ],
-          "comment": "<S> { <p1> <dt1> } on <s> in { <s> <p1> 1.234 }",
+          "comment": "<S> { <p1> <dt1> } on <s> in { <s1> <p1> 1.234 }",
           "status": "mf:proposed"
         },
         {
@@ -793,7 +793,7 @@
           "trait": [
             "Datatype"
           ],
-          "comment": "<S> { <p1> <dt1> } on <s> in { <s> <p1> 'ab'^^<dt1> }",
+          "comment": "<S> { <p1> <dt1> } on <s> in { <s1> <p1> 'ab'^^<dt1> }",
           "status": "mf:proposed"
         },
         {
@@ -810,7 +810,7 @@
           "trait": [
             "Datatype"
           ],
-          "comment": "<S> { <p1> rdf:langString } on <s> in { <s> <p1> 'ab'@en }",
+          "comment": "<S> { <p1> rdf:langString } on <s> in { <s1> <p1> 'ab'@en }",
           "status": "mf:proposed"
         },
         {
@@ -2901,7 +2901,7 @@
           "trait": [
             "DotCardinality"
           ],
-          "comment": "<S> { <p1> .{2} } on { <s> <p1> 'a' }",
+          "comment": "<S> { <p1> .{2} } on { <s1> <p1> 'a' }",
           "status": "mf:proposed"
         },
         {
@@ -2918,7 +2918,7 @@
           "trait": [
             "DotCardinality"
           ],
-          "comment": "<S> { <p1> .{2} } on { <s> <p1> 'a','b' }",
+          "comment": "<S> { <p1> .{2} } on { <s1> <p1> 'a','b' }",
           "status": "mf:proposed"
         },
         {
@@ -2935,7 +2935,7 @@
           "trait": [
             "DotCardinality"
           ],
-          "comment": "<S> { <p1> .{2} } on { <s> <p1> 'a','b','c' }",
+          "comment": "<S> { <p1> .{2} } on { <s1> <p1> 'a','b','c' }",
           "status": "mf:proposed"
         },
         {
@@ -2969,7 +2969,7 @@
           "trait": [
             "DotCardinality"
           ],
-          "comment": "<S> { <p1> .{2,5} } on { <s> <p1> 'a' }",
+          "comment": "<S> { <p1> .{2,5} } on { <s1> <p1> 'a' }",
           "status": "mf:proposed"
         },
         {
@@ -2986,7 +2986,7 @@
           "trait": [
             "DotCardinality"
           ],
-          "comment": "<S> { <p1> .{2,5} } on { <s> <p1> 'a','b' }",
+          "comment": "<S> { <p1> .{2,5} } on { <s1> <p1> 'a','b' }",
           "status": "mf:proposed"
         },
         {
@@ -3003,7 +3003,7 @@
           "trait": [
             "DotCardinality"
           ],
-          "comment": "<S> { <p1> .{2,5} } on { <s> <p1> 'a','b','c' }",
+          "comment": "<S> { <p1> .{2,5} } on { <s1> <p1> 'a','b','c' }",
           "status": "mf:proposed"
         },
         {
@@ -3020,7 +3020,7 @@
           "trait": [
             "DotCardinality"
           ],
-          "comment": "<S> { <p1> .{2,5} } on { <s> <p1> 'a','b','c','d' }",
+          "comment": "<S> { <p1> .{2,5} } on { <s1> <p1> 'a','b','c','d' }",
           "status": "mf:proposed"
         },
         {
@@ -3037,7 +3037,7 @@
           "trait": [
             "DotCardinality"
           ],
-          "comment": "<S> { <p1> .{2,5} } on { <s> <p1> 'a','b','c','d','e' }",
+          "comment": "<S> { <p1> .{2,5} } on { <s1> <p1> 'a','b','c','d','e' }",
           "status": "mf:proposed"
         },
         {
@@ -3054,7 +3054,7 @@
           "trait": [
             "DotCardinality"
           ],
-          "comment": "<S> { <p1> .{2,5} } on { <s> <p1> 'a','b','c','d','e','f' }",
+          "comment": "<S> { <p1> .{2,5} } on { <s1> <p1> 'a','b','c','d','e','f' }",
           "status": "mf:proposed"
         },
         {
@@ -3088,7 +3088,7 @@
           "trait": [
             "DotCardinality"
           ],
-          "comment": "<S> { <p1> .{2,*} } on { <s> <p1> 'a' }",
+          "comment": "<S> { <p1> .{2,*} } on { <s1> <p1> 'a' }",
           "status": "mf:proposed"
         },
         {
@@ -3105,7 +3105,7 @@
           "trait": [
             "DotCardinality"
           ],
-          "comment": "<S> { <p1> .{2,*} } on { <s> <p1> 'a','b' }",
+          "comment": "<S> { <p1> .{2,*} } on { <s1> <p1> 'a','b' }",
           "status": "mf:proposed"
         },
         {
@@ -3122,7 +3122,7 @@
           "trait": [
             "DotCardinality"
           ],
-          "comment": "<S> { <p1> .{2,*} } on { <s> <p1> 'a','b','c' }",
+          "comment": "<S> { <p1> .{2,*} } on { <s1> <p1> 'a','b','c' }",
           "status": "mf:proposed"
         },
         {
@@ -3139,7 +3139,7 @@
           "trait": [
             "DotCardinality"
           ],
-          "comment": "<S> { <p1> .{2,*} } on { <s> <p1> 'a','b','c','d','e','f' }",
+          "comment": "<S> { <p1> .{2,*} } on { <s1> <p1> 'a','b','c','d','e','f' }",
           "status": "mf:proposed"
         },
         {
@@ -3173,7 +3173,7 @@
           "trait": [
             "DotCardinality"
           ],
-          "comment": "<S> { <p1> .? } on { <s> <p1> 'a' }",
+          "comment": "<S> { <p1> .? } on { <s1> <p1> 'a' }",
           "status": "mf:proposed"
         },
         {
@@ -3190,7 +3190,7 @@
           "trait": [
             "DotCardinality"
           ],
-          "comment": "<S> { <p1> .? } on { <s> <p1> 'a','b' }",
+          "comment": "<S> { <p1> .? } on { <s1> <p1> 'a','b' }",
           "status": "mf:proposed"
         },
         {
@@ -3207,7 +3207,7 @@
           "trait": [
             "DotCardinality"
           ],
-          "comment": "<S> { <p1> .? } on { <s> <p1> 'a','b','c','d','e','f' }",
+          "comment": "<S> { <p1> .? } on { <s1> <p1> 'a','b','c','d','e','f' }",
           "status": "mf:proposed"
         },
         {
@@ -3241,7 +3241,7 @@
           "trait": [
             "DotCardinality"
           ],
-          "comment": "<S> { <p1> .+ } on { <s> <p1> 'a' }",
+          "comment": "<S> { <p1> .+ } on { <s1> <p1> 'a' }",
           "status": "mf:proposed"
         },
         {
@@ -3258,7 +3258,7 @@
           "trait": [
             "DotCardinality"
           ],
-          "comment": "<S> { <p1> .+ } on { <s> <p1> 'a','b' }",
+          "comment": "<S> { <p1> .+ } on { <s1> <p1> 'a','b' }",
           "status": "mf:proposed"
         },
         {
@@ -3275,7 +3275,7 @@
           "trait": [
             "DotCardinality"
           ],
-          "comment": "<S> { <p1> .+ } on { <s> <p1> 'a','b','c','d','e','f' }",
+          "comment": "<S> { <p1> .+ } on { <s1> <p1> 'a','b','c','d','e','f' }",
           "status": "mf:proposed"
         },
         {
@@ -3309,7 +3309,7 @@
           "trait": [
             "DotCardinality"
           ],
-          "comment": "<S> { <p1> .* } on { <s> <p1> 'a' }",
+          "comment": "<S> { <p1> .* } on { <s1> <p1> 'a' }",
           "status": "mf:proposed"
         },
         {
@@ -3326,7 +3326,7 @@
           "trait": [
             "DotCardinality"
           ],
-          "comment": "<S> { <p1> .* } on { <s> <p1> 'a','b' }",
+          "comment": "<S> { <p1> .* } on { <s1> <p1> 'a','b' }",
           "status": "mf:proposed"
         },
         {
@@ -3343,7 +3343,7 @@
           "trait": [
             "DotCardinality"
           ],
-          "comment": "<S> { <p1> .* } on { <s> <p1> 'a','b','c','d','e','f' }",
+          "comment": "<S> { <p1> .* } on { <s1> <p1> 'a','b','c','d','e','f' }",
           "status": "mf:proposed"
         },
         {
@@ -3360,7 +3360,7 @@
           "trait": [
             "NonDotCardinality"
           ],
-          "comment": "<S> { <p1> LITERAL+ } on { <s> <p1> 'a', <o2> }",
+          "comment": "<S> { <p1> LITERAL+ } on { <s1> <p1> 'a', <o2> }",
           "status": "mf:proposed"
         },
         {
@@ -3791,7 +3791,7 @@
           "trait": [
             "IriEquivalence"
           ],
-          "comment": "<S> { <p1> [<v1>] } on { <s> <p1> <v1> }",
+          "comment": "<S> { <p1> [<v1>] } on { <s1> <p1> <v1> }",
           "status": "mf:proposed"
         },
         {
@@ -3808,7 +3808,7 @@
           "trait": [
             "IriEquivalence"
           ],
-          "comment": "<S> { <p1> [<v1>] } on { <s> <p1> <v2> }",
+          "comment": "<S> { <p1> [<v1>] } on { <s1> <p1> <v2> }",
           "status": "mf:proposed"
         },
         {
@@ -3825,7 +3825,7 @@
           "trait": [
             "IriEquivalence"
           ],
-          "comment": "<S> { <p1> [<v1>] } on { <s> <p1> <v1>, <v2> }",
+          "comment": "<S> { <p1> [<v1>] } on { <s1> <p1> <v1>, <v2> }",
           "status": "mf:proposed"
         },
         {
@@ -3842,7 +3842,7 @@
           "trait": [
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> ['STRING_LITERAL1'] } on { <s> <p1> 'STRING_LITERAL1' }",
+          "comment": "<S> { <p1> ['STRING_LITERAL1'] } on { <s1> <p1> 'STRING_LITERAL1' }",
           "status": "mf:proposed"
         },
         {
@@ -3859,7 +3859,7 @@
           "trait": [
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> ['STRING_LITERAL1'] } on { <s> <p1> 'STRING_LITERAL1' }",
+          "comment": "<S> { <p1> ['STRING_LITERAL1'] } on { <s1> <p1> 'STRING_LITERAL1' }",
           "status": "mf:proposed"
         },
         {
@@ -3876,7 +3876,7 @@
           "trait": [
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> ['^@^A...^_'] } on { <s> <p1> '^@^A...^_' }",
+          "comment": "<S> { <p1> ['^@^A...^_'] } on { <s1> <p1> '^@^A...^_' }",
           "status": "mf:proposed"
         },
         {
@@ -3893,7 +3893,7 @@
           "trait": [
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> ['^@^A...^_'] } on { <s> <p1> '^@^A...^_999' }",
+          "comment": "<S> { <p1> ['^@^A...^_'] } on { <s1> <p1> '^@^A...^_999' }",
           "status": "mf:proposed"
         },
         {
@@ -3910,7 +3910,7 @@
           "trait": [
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> ['^@^A...^_'] } on { <s> <p1> '^@^A...^_' }",
+          "comment": "<S> { <p1> ['^@^A...^_'] } on { <s1> <p1> '^@^A...^_' }",
           "status": "mf:proposed"
         },
         {
@@ -3927,7 +3927,7 @@
           "trait": [
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> ['^@^A...^_'] } on { <s> <p1> '^@^A...^_999' }",
+          "comment": "<S> { <p1> ['^@^A...^_'] } on { <s1> <p1> '^@^A...^_999' }",
           "status": "mf:proposed"
         },
         {
@@ -3944,7 +3944,7 @@
           "trait": [
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> ['^@^A...^_'] } on { <s> <p1> '^@^A...^_' }",
+          "comment": "<S> { <p1> ['^@^A...^_'] } on { <s1> <p1> '^@^A...^_' }",
           "status": "mf:proposed"
         },
         {
@@ -3961,7 +3961,7 @@
           "trait": [
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> ['^@^A...^_'] } on { <s> <p1> '^@^A...^_999' }",
+          "comment": "<S> { <p1> ['^@^A...^_'] } on { <s1> <p1> '^@^A...^_999' }",
           "status": "mf:proposed"
         },
         {
@@ -3979,7 +3979,7 @@
             "OutsideBMP",
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> ['...🿽'] } on { <s> <p1> '...􏿽' }",
+          "comment": "<S> { <p1> ['...🿽'] } on { <s1> <p1> '...􏿽' }",
           "status": "mf:proposed"
         },
         {
@@ -3997,7 +3997,7 @@
             "OutsideBMP",
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> ['...🿽'] } on { <s> <p1> '...􏿽999' }",
+          "comment": "<S> { <p1> ['...🿽'] } on { <s1> <p1> '...􏿽999' }",
           "status": "mf:proposed"
         },
         {
@@ -4014,7 +4014,7 @@
           "trait": [
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> ['\\t\\b\\n\\r\\f'] } on { <s> <p1> '\\t\\b\\n\\r\\f' }",
+          "comment": "<S> { <p1> ['\\t\\b\\n\\r\\f'] } on { <s1> <p1> '\\t\\b\\n\\r\\f' }",
           "status": "mf:proposed"
         },
         {
@@ -4031,7 +4031,7 @@
           "trait": [
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> ['\\t\\b\\n\\r\\f'] } on { <s> <p1> '\\t\\b\\n\\r\\f' }",
+          "comment": "<S> { <p1> ['\\t\\b\\n\\r\\f'] } on { <s1> <p1> '\\t\\b\\n\\r\\f' }",
           "status": "mf:proposed"
         },
         {
@@ -4048,7 +4048,7 @@
           "trait": [
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> [0] } on { <s> <p1> 0 }",
+          "comment": "<S> { <p1> [0] } on { <s1> <p1> 0 }",
           "status": "mf:proposed"
         },
         {
@@ -4065,7 +4065,7 @@
           "trait": [
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> [0] } on { <s> <p1> 00 }",
+          "comment": "<S> { <p1> [0] } on { <s1> <p1> 00 }",
           "status": "mf:proposed"
         },
         {
@@ -4082,7 +4082,7 @@
           "trait": [
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> [0.0] } on { <s> <p1> .0 }",
+          "comment": "<S> { <p1> [0.0] } on { <s1> <p1> .0 }",
           "status": "mf:proposed"
         },
         {
@@ -4099,7 +4099,7 @@
           "trait": [
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> [0.0] } on { <s> <p1> 0.0 }",
+          "comment": "<S> { <p1> [0.0] } on { <s1> <p1> 0.0 }",
           "status": "mf:proposed"
         },
         {
@@ -4116,7 +4116,7 @@
           "trait": [
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> [0.0] } on { <s> <p1> 'ab' }",
+          "comment": "<S> { <p1> [0.0] } on { <s1> <p1> 'ab' }",
           "status": "mf:proposed"
         },
         {
@@ -4133,7 +4133,7 @@
           "trait": [
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> [0] } on { <s> <p1> 'ab' }",
+          "comment": "<S> { <p1> [0] } on { <s1> <p1> 'ab' }",
           "status": "mf:proposed"
         },
         {
@@ -4150,7 +4150,7 @@
           "trait": [
             "NumericEquivalence"
           ],
-          "comment": "<S1> { <p1> [0E0] } on { <s> <p1> 0E0 }",
+          "comment": "<S1> { <p1> [0E0] } on { <s1> <p1> 0E0 }",
           "status": "mf:proposed"
         },
         {
@@ -4167,7 +4167,7 @@
           "trait": [
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> [0E0] } on { <s> <p1> 0e0.0 }",
+          "comment": "<S> { <p1> [0E0] } on { <s1> <p1> 0e0.0 }",
           "status": "mf:proposed"
         },
         {
@@ -4184,7 +4184,7 @@
           "trait": [
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> [0e0] } on { <s> <p1> 0e0 }",
+          "comment": "<S> { <p1> [0e0] } on { <s1> <p1> 0e0 }",
           "status": "mf:proposed"
         },
         {
@@ -4201,7 +4201,7 @@
           "trait": [
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> [0e0] } on { <s> <p1> 0E0 }",
+          "comment": "<S> { <p1> [0e0] } on { <s1> <p1> 0E0 }",
           "status": "mf:proposed"
         },
         {
@@ -4218,7 +4218,7 @@
           "trait": [
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> [0e0] } on { <s> <p1> 0e0.0 }",
+          "comment": "<S> { <p1> [0e0] } on { <s1> <p1> 0e0.0 }",
           "status": "mf:proposed"
         },
         {
@@ -4235,7 +4235,7 @@
           "trait": [
             "LanguageTagEquivalence"
           ],
-          "comment": "<S> { <p1> ['ab'@en-fr] } on { <s> <p1> 'ab'@en-fr }",
+          "comment": "<S> { <p1> ['ab'@en-fr] } on { <s1> <p1> 'ab'@en-fr }",
           "status": "mf:proposed"
         },
         {
@@ -4252,7 +4252,7 @@
           "trait": [
             "LanguageTagEquivalence"
           ],
-          "comment": "<S> { <p1> ['ab'@en-fr] } on { <s> <p1> 'ab' }",
+          "comment": "<S> { <p1> ['ab'@en-fr] } on { <s1> <p1> 'ab' }",
           "status": "mf:proposed"
         },
         {
@@ -4269,7 +4269,7 @@
           "trait": [
             "LanguageTagEquivalence"
           ],
-          "comment": "<S> { <p1> ['ab'@en-fr] } on { <s> <p1> 'ab'@en }",
+          "comment": "<S> { <p1> ['ab'@en-fr] } on { <s1> <p1> 'ab'@en }",
           "status": "mf:proposed"
         },
         {
@@ -4286,7 +4286,7 @@
           "trait": [
             "LanguageTagEquivalence"
           ],
-          "comment": "<S> { <p1> ['ab'@en-fr] } on { <s> <p1> 'ab'@en-fr-jura }",
+          "comment": "<S> { <p1> ['ab'@en-fr] } on { <s1> <p1> 'ab'@en-fr-jura }",
           "status": "mf:proposed"
         },
         {
@@ -4303,7 +4303,7 @@
           "trait": [
             "LanguageTagEquivalence"
           ],
-          "comment": "<S> { <p1> ['ab'@en-fr] } on { <s> <p1> 'a'@en-fr }",
+          "comment": "<S> { <p1> ['ab'@en-fr] } on { <s1> <p1> 'a'@en-fr }",
           "status": "mf:proposed"
         },
         {
@@ -4320,7 +4320,7 @@
           "trait": [
             "DatatypedLiteralEquivalence"
           ],
-          "comment": "<S> { <p1> ['ab'^^my:bloodType] } on { <s> <p1> 'ab'^^my:bloodType }",
+          "comment": "<S> { <p1> ['ab'^^my:bloodType] } on { <s1> <p1> 'ab'^^my:bloodType }",
           "status": "mf:proposed"
         },
         {
@@ -4337,7 +4337,7 @@
           "trait": [
             "DatatypedLiteralEquivalence"
           ],
-          "comment": "<S> { <p1> ['ab'^^my:bloodType] } on { <s> <p1> 'ab' }",
+          "comment": "<S> { <p1> ['ab'^^my:bloodType] } on { <s1> <p1> 'ab' }",
           "status": "mf:proposed"
         },
         {
@@ -4354,7 +4354,7 @@
           "trait": [
             "DatatypedLiteralEquivalence"
           ],
-          "comment": "<S> { <p1> ['ab'^^my:bloodType] } on { <s> <p1> 'ab'^^my:bloodType999 }",
+          "comment": "<S> { <p1> ['ab'^^my:bloodType] } on { <s1> <p1> 'ab'^^my:bloodType999 }",
           "status": "mf:proposed"
         },
         {
@@ -4371,7 +4371,7 @@
           "trait": [
             "DatatypedLiteralEquivalence"
           ],
-          "comment": "<S> { <p1> ['ab'^^my:bloodType] } on { <s> <p1> 'a'^^my:bloodType }",
+          "comment": "<S> { <p1> ['ab'^^my:bloodType] } on { <s1> <p1> 'a'^^my:bloodType }",
           "status": "mf:proposed"
         },
         {
@@ -4388,7 +4388,7 @@
           "trait": [
             "BooleanEquivalence"
           ],
-          "comment": "<S> { <p1> [true] } on { <s> <p1> true }",
+          "comment": "<S> { <p1> [true] } on { <s1> <p1> true }",
           "status": "mf:proposed"
         },
         {
@@ -4405,7 +4405,7 @@
           "trait": [
             "BooleanEquivalence"
           ],
-          "comment": "<S> { <p1> [true] } on { <s> <p1> false }",
+          "comment": "<S> { <p1> [true] } on { <s1> <p1> false }",
           "status": "mf:proposed"
         },
         {
@@ -4422,7 +4422,7 @@
           "trait": [
             "BooleanEquivalence"
           ],
-          "comment": "<S> { <p1> [true] } on { <s> <p1> 'ab' }",
+          "comment": "<S> { <p1> [true] } on { <s1> <p1> 'ab' }",
           "status": "mf:proposed"
         },
         {
@@ -4439,7 +4439,7 @@
           "trait": [
             "BooleanEquivalence"
           ],
-          "comment": "<S> { <p1> [false] } on { <s> <p1> true }",
+          "comment": "<S> { <p1> [false] } on { <s1> <p1> true }",
           "status": "mf:proposed"
         },
         {
@@ -4456,7 +4456,7 @@
           "trait": [
             "BooleanEquivalence"
           ],
-          "comment": "<S> { <p1> [false] } on { <s> <p1> false }",
+          "comment": "<S> { <p1> [false] } on { <s1> <p1> false }",
           "status": "mf:proposed"
         },
         {
@@ -4473,7 +4473,7 @@
           "trait": [
             "BooleanEquivalence"
           ],
-          "comment": "<S> { <p1> [false] } on { <s> <p1> 'ab' }",
+          "comment": "<S> { <p1> [false] } on { <s1> <p1> 'ab' }",
           "status": "mf:proposed"
         },
         {
@@ -4490,7 +4490,7 @@
           "trait": [
             "LengthFacet"
           ],
-          "comment": "<S> { <p1> xs:integer LENGTH 5 } on <s> in { <s> <p2> 'ab' }",
+          "comment": "<S> { <p1> xs:integer LENGTH 5 } on <s> in { <s1> <p2> 'ab' }",
           "status": "mf:proposed"
         },
         {
@@ -4507,7 +4507,7 @@
           "trait": [
             "LengthFacet"
           ],
-          "comment": "<S> { <p1> xs:integer LENGTH 5 } on <s> in { <s> <p1> 1.234 }",
+          "comment": "<S> { <p1> xs:integer LENGTH 5 } on <s> in { <s1> <p1> 1.234 }",
           "status": "mf:proposed"
         },
         {
@@ -4524,7 +4524,7 @@
           "trait": [
             "LengthFacet"
           ],
-          "comment": "<S> { <p1> xs:integer LENGTH 5 } on <s> in { <s> <p1> 1234 }",
+          "comment": "<S> { <p1> xs:integer LENGTH 5 } on <s> in { <s1> <p1> 1234 }",
           "status": "mf:proposed"
         },
         {
@@ -4541,7 +4541,7 @@
           "trait": [
             "LengthFacet"
           ],
-          "comment": "<S> { <p1> xs:integer LENGTH 5 } on <s> in { <s> <p1> 12345 }",
+          "comment": "<S> { <p1> xs:integer LENGTH 5 } on <s> in { <s1> <p1> 12345 }",
           "status": "mf:proposed"
         },
         {
@@ -4558,7 +4558,7 @@
           "trait": [
             "LengthFacet"
           ],
-          "comment": "<S> { <p1> xs:integer LENGTH 5 } on <s> in { <s> <p1> 123456 }",
+          "comment": "<S> { <p1> xs:integer LENGTH 5 } on <s> in { <s1> <p1> 123456 }",
           "status": "mf:proposed"
         },
         {
@@ -10478,7 +10478,7 @@
             "OutsideBMP",
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> /^^@^A...^_$/ } on { <s> <p1> '^@^A...^_' }",
+          "comment": "<S> { <p1> /^^@^A...^_$/ } on { <s1> <p1> '^@^A...^_' }",
           "status": "mf:proposed"
         },
         {
@@ -10496,7 +10496,7 @@
             "OutsideBMP",
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> /^^@^A...^_$/ } on { <s> <p1> '^@^A...^_999' }",
+          "comment": "<S> { <p1> /^^@^A...^_$/ } on { <s1> <p1> '^@^A...^_999' }",
           "status": "mf:proposed"
         },
         {
@@ -10514,7 +10514,7 @@
             "OutsideBMP",
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> /^ !\"#\\$%&'\\(\\)\\/:;<=>\\?@\\[\\]\\^_`\\{\\|\\}~$/ } on { <s> <p1> ' !\"#$%&'()/:;<=>?@[]^_`{|}~' }",
+          "comment": "<S> { <p1> /^ !\"#\\$%&'\\(\\)\\/:;<=>\\?@\\[\\]\\^_`\\{\\|\\}~$/ } on { <s1> <p1> ' !\"#$%&'()/:;<=>?@[]^_`{|}~' }",
           "status": "mf:proposed"
         },
         {
@@ -10532,7 +10532,7 @@
             "OutsideBMP",
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> /^ !\"#\\$%&'\\(\\)\\/:;<=>\\?@\\[\\]\\^_`\\{\\|\\}~$/ } on { <s> <p1> ' !\"#$%&'()/:;<=>?@[]^_`{|}~999' }",
+          "comment": "<S> { <p1> /^ !\"#\\$%&'\\(\\)\\/:;<=>\\?@\\[\\]\\^_`\\{\\|\\}~$/ } on { <s1> <p1> ' !\"#$%&'()/:;<=>?@[]^_`{|}~999' }",
           "status": "mf:proposed"
         },
         {
@@ -10550,7 +10550,7 @@
             "OutsideBMP",
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> /^^@^A...^_$/ } on { <s> <p1> '^@^A...^_' }",
+          "comment": "<S> { <p1> /^^@^A...^_$/ } on { <s1> <p1> '^@^A...^_' }",
           "status": "mf:proposed"
         },
         {
@@ -10568,7 +10568,7 @@
             "OutsideBMP",
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> /^^@^A...^_$/ } on { <s> <p1> '^@^A...^_999' }",
+          "comment": "<S> { <p1> /^^@^A...^_$/ } on { <s1> <p1> '^@^A...^_999' }",
           "status": "mf:proposed"
         },
         {
@@ -10586,7 +10586,7 @@
             "OutsideBMP",
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> /^^@^A...^_$/ } on { <s> <p1> '^@^A...^_' }",
+          "comment": "<S> { <p1> /^^@^A...^_$/ } on { <s1> <p1> '^@^A...^_' }",
           "status": "mf:proposed"
         },
         {
@@ -10604,7 +10604,7 @@
             "OutsideBMP",
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> /^^@^A...^_$/ } on { <s> <p1> '^@^A...^_999' }",
+          "comment": "<S> { <p1> /^^@^A...^_$/ } on { <s1> <p1> '^@^A...^_999' }",
           "status": "mf:proposed"
         },
         {
@@ -10622,7 +10622,7 @@
             "OutsideBMP",
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> /^\\/\\t\\b\\n\\r\\f\\\\\\u0061\\U0001D4B8$/ } on { <s> <p1> '\\/\\t\\b\\n\\r\\f\\a𝒸' }",
+          "comment": "<S> { <p1> /^\\/\\t\\b\\n\\r\\f\\\\\\u0061\\U0001D4B8$/ } on { <s1> <p1> '\\/\\t\\b\\n\\r\\f\\a𝒸' }",
           "status": "mf:proposed"
         },
         {
@@ -10640,7 +10640,7 @@
             "OutsideBMP",
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> /^\\/\\t\\b\\n\\r\\f\\\\\\u0061\\U0001D4B8$/ } on { <s> <p1> '\\/\\t\\b\\n\\r\\f\\a𝒸999' }",
+          "comment": "<S> { <p1> /^\\/\\t\\b\\n\\r\\f\\\\\\u0061\\U0001D4B8$/ } on { <s1> <p1> '\\/\\t\\b\\n\\r\\f\\a𝒸999' }",
           "status": "mf:proposed"
         },
         {
@@ -10658,7 +10658,7 @@
             "OutsideBMP",
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> /^\\/\\t\\b\\n\\r\\f\\\\\\u0061\\U0001D4B8$/ } on { <s> <p1> '\\\\/\\\\t\\\\b\\\\n\\\\r\\\\f\\\\\\u0061\\U0001D4B8' }",
+          "comment": "<S> { <p1> /^\\/\\t\\b\\n\\r\\f\\\\\\u0061\\U0001D4B8$/ } on { <s1> <p1> '\\\\/\\\\t\\\\b\\\\n\\\\r\\\\f\\\\\\u0061\\U0001D4B8' }",
           "status": "mf:proposed"
         },
         {
@@ -10676,7 +10676,7 @@
             "OutsideBMP",
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> /^\\\\/\\\\t\\\\b\\\\n\\\\r\\\\f\\\\\\\\\\\\u0061\\\\U0001D4B8$/ } on { <s> <p1> '\\\\/\\\\t\\\\b\\\\n\\\\r\\\\f\\\\\\u0061\\U0001D4B8' }",
+          "comment": "<S> { <p1> /^\\\\/\\\\t\\\\b\\\\n\\\\r\\\\f\\\\\\\\\\\\u0061\\\\U0001D4B8$/ } on { <s1> <p1> '\\\\/\\\\t\\\\b\\\\n\\\\r\\\\f\\\\\\u0061\\U0001D4B8' }",
           "status": "mf:proposed"
         },
         {
@@ -10694,7 +10694,7 @@
             "OutsideBMP",
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> /^\\\\/\\\\t\\\\b\\\\n\\\\r\\\\f\\\\\\\\\\\\u0061\\\\U0001D4B8$/ } on { <s> <p1> '\\/\\t\\b\\n\\r\\f\\a𝒸' }",
+          "comment": "<S> { <p1> /^\\\\/\\\\t\\\\b\\\\n\\\\r\\\\f\\\\\\\\\\\\u0061\\\\U0001D4B8$/ } on { <s1> <p1> '\\/\\t\\b\\n\\r\\f\\a𝒸' }",
           "status": "mf:proposed"
         },
         {
@@ -10712,7 +10712,7 @@
             "OutsideBMP",
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> /^\\\\/\\\\t\\\\b\\\\n\\\\r\\\\f\\\\\\\\\\\\u0061\\\\U0001D4B8$/ } on { <s> <p1> '/\t\\b\\n\\r\\f\\a𝒸' }",
+          "comment": "<S> { <p1> /^\\\\/\\\\t\\\\b\\\\n\\\\r\\\\f\\\\\\\\\\\\u0061\\\\U0001D4B8$/ } on { <s1> <p1> '/\t\\b\\n\\r\\f\\a𝒸' }",
           "status": "mf:proposed"
         },
         {
@@ -10730,7 +10730,7 @@
             "OutsideBMP",
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> /^\\/\t\\n\\r-\\\\a\\U0001D4B8$/ } on { <s> <p1> '/\t\\b\\n\\r\\f\\a𝒸' }",
+          "comment": "<S> { <p1> /^\\/\t\\n\\r-\\\\a\\U0001D4B8$/ } on { <s1> <p1> '/\t\\b\\n\\r\\f\\a𝒸' }",
           "status": "mf:proposed"
         },
         {
@@ -10748,7 +10748,7 @@
             "OutsideBMP",
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> /^\\/\t\\n\\r-\\\\a\\U0001D4B8$/ } on { <s> <p1> '\\\\/\\\\t\\\\b\\\\n\\\\r\\\\f\\\\\\u0061\\U0001D4B8' }",
+          "comment": "<S> { <p1> /^\\/\t\\n\\r-\\\\a\\U0001D4B8$/ } on { <s1> <p1> '\\\\/\\\\t\\\\b\\\\n\\\\r\\\\f\\\\\\u0061\\U0001D4B8' }",
           "status": "mf:proposed"
         },
         {
@@ -10766,7 +10766,7 @@
             "OutsideBMP",
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> /^\\/\\t\\b\\n\\r\\f\\\\\\u0061\\U0001D4B8$/ } on { <s> <p1> '/\t\\b\\n\\r\\f\\a𝒸' }",
+          "comment": "<S> { <p1> /^\\/\\t\\b\\n\\r\\f\\\\\\u0061\\U0001D4B8$/ } on { <s1> <p1> '/\t\\b\\n\\r\\f\\a𝒸' }",
           "status": "mf:proposed"
         },
         {
@@ -10784,7 +10784,7 @@
             "OutsideBMP",
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> /^\\/\t\\n\\r-\\\\a\\U0001D4B8$/ } on { <s> <p1> '\\/\\t\\b\\n\\r\\f\\a𝒸' }",
+          "comment": "<S> { <p1> /^\\/\t\\n\\r-\\\\a\\U0001D4B8$/ } on { <s1> <p1> '\\/\\t\\b\\n\\r\\f\\a𝒸' }",
           "status": "mf:proposed"
         },
         {
@@ -11041,7 +11041,7 @@
             "OutsideBMP",
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> /^$/ } on { <s> <p1> '' }",
+          "comment": "<S> { <p1> /^$/ } on { <s1> <p1> '' }",
           "status": "mf:proposed"
         },
         {
@@ -11059,7 +11059,7 @@
             "OutsideBMP",
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> /^$/ } on { <s> <p1> '' }",
+          "comment": "<S> { <p1> /^$/ } on { <s1> <p1> '' }",
           "status": "mf:proposed"
         },
         {
@@ -11422,7 +11422,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> [.-<v1>-<v2>-<v3>] } on { <s> <p1> <v3> }",
+          "comment": "<S> { <p1> [.-<v1>-<v2>-<v3>] } on { <s1> <p1> <v3> }",
           "status": "mf:proposed"
         },
         {
@@ -11494,7 +11494,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "$<vs1> = [.-<v1>-<v2>-<v3>] <S> { <p1> $<vs1> } on { <s> <p1> <v3> }",
+          "comment": "$<vs1> = [.-<v1>-<v2>-<v3>] <S> { <p1> $<vs1> } on { <s1> <p1> <v3> }",
           "status": "mf:proposed"
         },
         {
@@ -11566,7 +11566,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> [.-<v1>~-<v2>~-<v3>~] } on { <s> <p1> <v3> }",
+          "comment": "<S> { <p1> [.-<v1>~-<v2>~-<v3>~] } on { <s1> <p1> <v3> }",
           "status": "mf:proposed"
         },
         {
@@ -11601,7 +11601,7 @@
           "trait": [
             "ValueSet"
           ],
-          "comment": "<S> { <p1> [<v1>] } on { <s> <p1> <v1> }",
+          "comment": "<S> { <p1> [<v1>] } on { <s1> <p1> <v1> }",
           "status": "mf:proposed"
         },
         {
@@ -11618,7 +11618,7 @@
           "trait": [
             "ValueSet"
           ],
-          "comment": "<S> { <p1> [<v1>] } on { <s> <p1> <v1a> }",
+          "comment": "<S> { <p1> [<v1>] } on { <s1> <p1> <v1a> }",
           "status": "mf:proposed"
         },
         {
@@ -11636,7 +11636,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> [<v>~] } on { <s> <p1> <v1> }",
+          "comment": "<S> { <p1> [<v>~] } on { <s1> <p1> <v1> }",
           "status": "mf:proposed"
         },
         {
@@ -11654,7 +11654,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> [<v>~] } on { <s> <p1> <v1a> }",
+          "comment": "<S> { <p1> [<v>~] } on { <s1> <p1> <v1a> }",
           "status": "mf:proposed"
         },
         {
@@ -11690,7 +11690,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> [<v1>~] } on { <s> <p1> 'v1' }",
+          "comment": "<S> { <p1> [<v1>~] } on { <s1> <p1> 'v1' }",
           "status": "mf:proposed"
         },
         {
@@ -11708,7 +11708,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> [<v>-<v1>-<v2>-<v3>] } on { <s> <p1> <v> }",
+          "comment": "<S> { <p1> [<v>-<v1>-<v2>-<v3>] } on { <s1> <p1> <v> }",
           "status": "mf:proposed"
         },
         {
@@ -11726,7 +11726,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> [<v>-<v1>-<v2>-<v3>] } on { <s> <p1> <v4> }",
+          "comment": "<S> { <p1> [<v>-<v1>-<v2>-<v3>] } on { <s1> <p1> <v4> }",
           "status": "mf:proposed"
         },
         {
@@ -11744,7 +11744,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> [<v>-<v1>-<v2>-<v3>] } on { <s> <p1> 'v4' }",
+          "comment": "<S> { <p1> [<v>-<v1>-<v2>-<v3>] } on { <s1> <p1> 'v4' }",
           "status": "mf:proposed"
         },
         {
@@ -11816,7 +11816,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> [<v>-<v1>-<v2>-<v3>] } on { <s> <p1> <v3> }",
+          "comment": "<S> { <p1> [<v>-<v1>-<v2>-<v3>] } on { <s1> <p1> <v3> }",
           "status": "mf:proposed"
         },
         {
@@ -11834,7 +11834,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> [<v>-<v1>-<v2>-<v3>] } on { <s> <p1> <v1a> }",
+          "comment": "<S> { <p1> [<v>-<v1>-<v2>-<v3>] } on { <s1> <p1> <v1a> }",
           "status": "mf:proposed"
         },
         {
@@ -11852,7 +11852,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> [<v>~-<v1>~-<v2>~-<v3>~] } on { <s> <p1> <v> }",
+          "comment": "<S> { <p1> [<v>~-<v1>~-<v2>~-<v3>~] } on { <s1> <p1> <v> }",
           "status": "mf:proposed"
         },
         {
@@ -11870,7 +11870,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> [<v>~-<v1>~-<v2>~-<v3>~] } on { <s> <p1> <v4> }",
+          "comment": "<S> { <p1> [<v>~-<v1>~-<v2>~-<v3>~] } on { <s1> <p1> <v4> }",
           "status": "mf:proposed"
         },
         {
@@ -11924,7 +11924,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> [<v>~-<v1>~-<v2>~-<v3>~] } on { <s> <p1> <v3> }",
+          "comment": "<S> { <p1> [<v>~-<v1>~-<v2>~-<v3>~] } on { <s1> <p1> <v3> }",
           "status": "mf:proposed"
         },
         {
@@ -11959,7 +11959,7 @@
           "trait": [
             "ValueSet"
           ],
-          "comment": "<S> { <p1> ['v'] } on { <s> <p1> 'v' }",
+          "comment": "<S> { <p1> ['v'] } on { <s1> <p1> 'v' }",
           "status": "mf:proposed"
         },
         {
@@ -11994,7 +11994,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> ['v'~] } on { <s> <p1> 'v1' }",
+          "comment": "<S> { <p1> ['v'~] } on { <s1> <p1> 'v1' }",
           "status": "mf:proposed"
         },
         {
@@ -12012,7 +12012,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> ['v'~] } on { <s> <p1> 'v1a' }",
+          "comment": "<S> { <p1> ['v'~] } on { <s1> <p1> 'v1a' }",
           "status": "mf:proposed"
         },
         {
@@ -12048,7 +12048,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> ['v'~] } on { <s> <p1> <v1> }",
+          "comment": "<S> { <p1> ['v'~] } on { <s1> <p1> <v1> }",
           "status": "mf:proposed"
         },
         {
@@ -12066,7 +12066,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> ['v'-'v1'-'v2'-'v3'] } on { <s> <p1> 'v' }",
+          "comment": "<S> { <p1> ['v'-'v1'-'v2'-'v3'] } on { <s1> <p1> 'v' }",
           "status": "mf:proposed"
         },
         {
@@ -12084,7 +12084,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> ['v'-'v1'-'v2'-'v3'] } on { <s> <p1> 'v4' }",
+          "comment": "<S> { <p1> ['v'-'v1'-'v2'-'v3'] } on { <s1> <p1> 'v4' }",
           "status": "mf:proposed"
         },
         {
@@ -12102,7 +12102,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> ['v'-'v1'-'v2'-'v3'] } on { <s> <p1> <v4> }",
+          "comment": "<S> { <p1> ['v'-'v1'-'v2'-'v3'] } on { <s1> <p1> <v4> }",
           "status": "mf:proposed"
         },
         {
@@ -12174,7 +12174,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> ['v'-'v1'-'v2'-'v3'] } on { <s> <p1> 'v3' }",
+          "comment": "<S> { <p1> ['v'-'v1'-'v2'-'v3'] } on { <s1> <p1> 'v3' }",
           "status": "mf:proposed"
         },
         {
@@ -12192,7 +12192,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> ['v'-'v1'-'v2'-'v3'] } on { <s> <p1> 'v1a' }",
+          "comment": "<S> { <p1> ['v'-'v1'-'v2'-'v3'] } on { <s1> <p1> 'v1a' }",
           "status": "mf:proposed"
         },
         {
@@ -12210,7 +12210,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> ['v'~-'v1'~-'v2'~-'v3'~] } on { <s> <p1> 'v' }",
+          "comment": "<S> { <p1> ['v'~-'v1'~-'v2'~-'v3'~] } on { <s1> <p1> 'v' }",
           "status": "mf:proposed"
         },
         {
@@ -12228,7 +12228,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> ['v'~-'v1'~-'v2'~-'v3'~] } on { <s> <p1> 'v4' }",
+          "comment": "<S> { <p1> ['v'~-'v1'~-'v2'~-'v3'~] } on { <s1> <p1> 'v4' }",
           "status": "mf:proposed"
         },
         {
@@ -12282,7 +12282,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> ['v'~-'v1'~-'v2'~-'v3'~] } on { <s> <p1> 'v3' }",
+          "comment": "<S> { <p1> ['v'~-'v1'~-'v2'~-'v3'~] } on { <s1> <p1> 'v3' }",
           "status": "mf:proposed"
         },
         {
@@ -12317,7 +12317,7 @@
           "trait": [
             "ValueSet"
           ],
-          "comment": "<S> { <p1> [@fr] } on { <s> <p1> 'septante'@fr }",
+          "comment": "<S> { <p1> [@fr] } on { <s1> <p1> 'septante'@fr }",
           "status": "mf:proposed"
         },
         {
@@ -12334,7 +12334,7 @@
           "trait": [
             "ValueSet"
           ],
-          "comment": "<S> { <p1> [@fr] } on { <s> <p1> 'septante'@fr-be }",
+          "comment": "<S> { <p1> [@fr] } on { <s1> <p1> 'septante'@fr-be }",
           "status": "mf:proposed"
         },
         {
@@ -12352,7 +12352,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> [@fr~] } on { <s> <p1> 'septante'@fr-be }",
+          "comment": "<S> { <p1> [@fr~] } on { <s1> <p1> 'septante'@fr-be }",
           "status": "mf:proposed"
         },
         {
@@ -12370,7 +12370,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> [@fr~] } on { <s> <p1> 'septante'@fr-be-fbcl }",
+          "comment": "<S> { <p1> [@fr~] } on { <s1> <p1> 'septante'@fr-be-fbcl }",
           "status": "mf:proposed"
         },
         {
@@ -12406,7 +12406,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> ['fr'~] } on { <s> <p1> 'septante'@fr }",
+          "comment": "<S> { <p1> ['fr'~] } on { <s1> <p1> 'septante'@fr }",
           "status": "mf:proposed"
         },
         {
@@ -12424,7 +12424,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> [@fr-@fr-be-@fr-cd-@fr-ch] } on { <s> <p1> 'septante'@fr }",
+          "comment": "<S> { <p1> [@fr-@fr-be-@fr-cd-@fr-ch] } on { <s1> <p1> 'septante'@fr }",
           "status": "mf:proposed"
         },
         {
@@ -12442,7 +12442,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> [@fr-@fr-be-@fr-cd-@fr-ch] } on { <s> <p1> 'septante'@fr-FR }",
+          "comment": "<S> { <p1> [@fr-@fr-be-@fr-cd-@fr-ch] } on { <s1> <p1> 'septante'@fr-FR }",
           "status": "mf:proposed"
         },
         {
@@ -12460,7 +12460,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> ['fr'-'fr-be'-'fr-cd'-'fr-ch'] } on { <s> <p1> 'septante'@fr-FR }",
+          "comment": "<S> { <p1> ['fr'-'fr-be'-'fr-cd'-'fr-ch'] } on { <s1> <p1> 'septante'@fr-FR }",
           "status": "mf:proposed"
         },
         {
@@ -12532,7 +12532,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> [@fr-@fr-be-@fr-cd-@fr-ch] } on { <s> <p1> 'septante'@fr-ch }",
+          "comment": "<S> { <p1> [@fr-@fr-be-@fr-cd-@fr-ch] } on { <s1> <p1> 'septante'@fr-ch }",
           "status": "mf:proposed"
         },
         {
@@ -12550,7 +12550,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> [@fr-@fr-be-@fr-cd-@fr-ch] } on { <s> <p1> 'septante'@fr-be-fbcl }",
+          "comment": "<S> { <p1> [@fr-@fr-be-@fr-cd-@fr-ch] } on { <s1> <p1> 'septante'@fr-be-fbcl }",
           "status": "mf:proposed"
         },
         {
@@ -12568,7 +12568,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> [@fr~-@fr-be~-@fr-cd~-@fr-ch] } on { <s> <p1> 'septante'@fr }",
+          "comment": "<S> { <p1> [@fr~-@fr-be~-@fr-cd~-@fr-ch] } on { <s1> <p1> 'septante'@fr }",
           "status": "mf:proposed"
         },
         {
@@ -12586,7 +12586,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> [@fr~-@fr-be~-@fr-cd~-@fr-ch] } on { <s> <p1> 'septante'@fr-FR }",
+          "comment": "<S> { <p1> [@fr~-@fr-be~-@fr-cd~-@fr-ch] } on { <s1> <p1> 'septante'@fr-FR }",
           "status": "mf:proposed"
         },
         {
@@ -14358,7 +14358,7 @@
           "trait": [
             "Closed"
           ],
-          "comment": "<S> { <p1> . } on { <s> <p0> <o0>; <p1> <o1> }",
+          "comment": "<S> { <p1> . } on { <s1> <p0> <o0>; <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -14375,7 +14375,7 @@
           "trait": [
             "Closed"
           ],
-          "comment": "<S> { <p1> . } on { <s> <p1> <o1>; <p2> <o2> }",
+          "comment": "<S> { <p1> . } on { <s1> <p1> <o1>; <p2> <o2> }",
           "status": "mf:proposed"
         },
         {
@@ -14445,7 +14445,7 @@
             "Extra",
             "IriEquivalence"
           ],
-          "comment": "<S> EXTRA <p1> { <p1> [<o1>] } on { <s> <p1> <o1>, <o2> }",
+          "comment": "<S> EXTRA <p1> { <p1> [<o1>] } on { <s1> <p1> <o1>, <o2> }",
           "status": "mf:proposed"
         },
         {
@@ -14481,7 +14481,7 @@
             "VapidExtra",
             "Extra"
           ],
-          "comment": "<S> EXTRA <p1> CLOSED { <p1> . } on { <s> <p1> <o1>, <o2> }",
+          "comment": "<S> EXTRA <p1> CLOSED { <p1> . } on { <s1> <p1> <o1>, <o2> }",
           "status": "mf:proposed"
         },
         {
@@ -14499,7 +14499,7 @@
             "VapidExtra",
             "Extra"
           ],
-          "comment": "<S> EXTRA <p1> CLOSED { <p1> . } on { <s> <p1> <o1>, <o2>; <p2> <o2> }",
+          "comment": "<S> EXTRA <p1> CLOSED { <p1> . } on { <s1> <p1> <o1>, <o2>; <p2> <o2> }",
           "status": "mf:proposed"
         },
         {
@@ -14535,7 +14535,7 @@
             "VapidExtra",
             "Extra"
           ],
-          "comment": "<S> EXTRA <p1> CLOSED { <p1> . } on { <s> <p1> <o1>, <o2> }",
+          "comment": "<S> EXTRA <p1> CLOSED { <p1> . } on { <s1> <p1> <o1>, <o2> }",
           "status": "mf:proposed"
         },
         {
@@ -14553,7 +14553,7 @@
             "VapidExtra",
             "Extra"
           ],
-          "comment": "<S> EXTRA <p1> CLOSED { <p1> . } on { <s> <p1> <o1>, <o2>; <p2> <o2> }",
+          "comment": "<S> EXTRA <p1> CLOSED { <p1> . } on { <s1> <p1> <o1>, <o2>; <p2> <o2> }",
           "status": "mf:proposed"
         },
         {
@@ -14571,7 +14571,7 @@
             "Extra",
             "ValueSet"
           ],
-          "comment": "<S> EXTRA <p1> { <p1> [<o1> <o2>] } on { <s> <p1> <o1>, <o2> }",
+          "comment": "<S> EXTRA <p1> { <p1> [<o1> <o2>] } on { <s1> <p1> <o1>, <o2> }",
           "status": "mf:proposed"
         },
         {
@@ -14589,7 +14589,7 @@
             "Extra",
             "ValueSet"
           ],
-          "comment": "<S> EXTRA <p1> { <p1> [<o1> <o2>]+ } on { <s> <p1> <o1>, <o2> }",
+          "comment": "<S> EXTRA <p1> { <p1> [<o1> <o2>]+ } on { <s1> <p1> <o1>, <o2> }",
           "status": "mf:proposed"
         },
         {
@@ -14607,7 +14607,7 @@
             "Extra",
             "ValueSet"
           ],
-          "comment": "<S> EXTRA <p1> { <p1> [<o1> <o2>] } on { <s> <p1> <o1>, _:o2 }",
+          "comment": "<S> EXTRA <p1> { <p1> [<o1> <o2>] } on { <s1> <p1> <o1>, _:o2 }",
           "status": "mf:proposed"
         },
         {
@@ -14643,7 +14643,7 @@
             "Extra",
             "IriEquivalence"
           ],
-          "comment": "<S> EXTRA <p2> { <p1> [<o1>] } on { <s> <p1> <o1>, <o2> }",
+          "comment": "<S> EXTRA <p2> { <p1> [<o1>] } on { <s1> <p1> <o1>, <o2> }",
           "status": "mf:proposed"
         },
         {
@@ -14701,7 +14701,7 @@
             "IriEquivalence",
             "EachOf"
           ],
-          "comment": "<S> EXTRA <p1> { <p0> . | <p1> [<o1>], <p2> .? } on { <s> <p1> <o1>, <o2> }",
+          "comment": "<S> EXTRA <p1> { <p0> . | <p1> [<o1>], <p2> .? } on { <s1> <p1> <o1>, <o2> }",
           "status": "mf:proposed"
         },
         {
@@ -14737,7 +14737,7 @@
             "VapidExtra",
             "Extra"
           ],
-          "comment": "<S> EXTRA <p1> { <p1> . } on { <s> <p1> <o1>, <o2> }",
+          "comment": "<S> EXTRA <p1> { <p1> . } on { <s1> <p1> <o1>, <o2> }",
           "status": "mf:proposed"
         },
         {
@@ -14867,7 +14867,7 @@
           "trait": [
             "Start"
           ],
-          "comment": "start=<S> <S> { <p1> . } on { <s> <p1> <o1> }",
+          "comment": "start=<S> <S> { <p1> . } on { <s1> <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -14883,7 +14883,7 @@
           "trait": [
             "Start"
           ],
-          "comment": "start=<S> <S> { <p1> . } on { <s> <p0> <o0>; <p1> <o1> }",
+          "comment": "start=<S> <S> { <p1> . } on { <s1> <p0> <o0>; <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -14899,7 +14899,7 @@
           "trait": [
             "Start"
           ],
-          "comment": "start=<S> <S> { <p1> . } on { <s> <p2> <o1> }",
+          "comment": "start=<S> <S> { <p1> . } on { <s1> <p2> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -14915,7 +14915,7 @@
           "trait": [
             "Start"
           ],
-          "comment": "start=_:S _:S { <p1> . } on { <s> <p1> <o1> }",
+          "comment": "start=_:S _:S { <p1> . } on { <s1> <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -14931,7 +14931,7 @@
           "trait": [
             "Start"
           ],
-          "comment": "start=_:S _S { <p1> . } on { <s> <p2> <o1> }",
+          "comment": "start=_:S _S { <p1> . } on { <s1> <p2> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -14947,7 +14947,7 @@
           "trait": [
             "Start"
           ],
-          "comment": "start={ <p1> . } on { <s> <p1> <o1> }",
+          "comment": "start={ <p1> . } on { <s1> <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -14963,7 +14963,7 @@
           "trait": [
             "Start"
           ],
-          "comment": "start= { <p1> . } on { <s> <p1> <o1> }",
+          "comment": "start= { <p1> . } on { <s1> <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -14979,7 +14979,7 @@
           "trait": [
             "Start"
           ],
-          "comment": "start= { <p1> . } on { <s> <p1> <o1> }",
+          "comment": "start= { <p1> . } on { <s1> <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -14995,7 +14995,7 @@
           "trait": [
             "Start"
           ],
-          "comment": "start={ <p1> . } on { <s> <p2> <o1> }",
+          "comment": "start={ <p1> . } on { <s1> <p2> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -15101,7 +15101,7 @@
           "trait": [
             "Annotation"
           ],
-          "comment": "<S> { <p1> .; <annot> <IRIREF> } on { <s> <p2> <o1> }",
+          "comment": "<S> { <p1> .; <annot> <IRIREF> } on { <s1> <p2> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -15186,7 +15186,7 @@
           "trait": [
             "Annotation"
           ],
-          "comment": "<S> { <p1> .; <a1> '1'; <a1> '2'; <a1> '3'; } on { <s> <p2> <o1> }",
+          "comment": "<S> { <p1> .; <a1> '1'; <a1> '2'; <a1> '3'; } on { <s1> <p2> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -15220,7 +15220,7 @@
           "trait": [
             "Annotation"
           ],
-          "comment": "<S> { <p1> .; <a1> '1'; <a1> '2'; <a1> '3'; } on { <s> <p2> <o1> }",
+          "comment": "<S> { <p1> .; <a1> '1'; <a1> '2'; <a1> '3'; } on { <s1> <p2> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -15254,7 +15254,7 @@
           "trait": [
             "Annotation"
           ],
-          "comment": "<S> { <p1> . } // <annot> <IRIREF> on { <s> <p2> <o1> }",
+          "comment": "<S> { <p1> . } // <annot> <IRIREF> on { <s1> <p2> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -15979,7 +15979,7 @@
           "trait": [
             "FocusConstraint"
           ],
-          "comment": "<S> <dt1> on { <s> <p1> 'ab'^^my:bloodType }",
+          "comment": "<S> <dt1> on { <s1> <p1> 'ab'^^my:bloodType }",
           "status": "mf:proposed"
         },
         {
@@ -15999,7 +15999,7 @@
           "trait": [
             "focusConstraint"
           ],
-          "comment": "<S> <dt1> on { <s> <p1> 'ab'^^my:bloodType999 }",
+          "comment": "<S> <dt1> on { <s1> <p1> 'ab'^^my:bloodType999 }",
           "status": "mf:proposed"
         },
         {
@@ -17427,7 +17427,7 @@
           "trait": [
             "ErrorReport"
           ],
-          "comment": "<S> { <p1> ., <p2> . } on { <s> <p1> <o1> }",
+          "comment": "<S> { <p1> ., <p2> . } on { <s1> <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
