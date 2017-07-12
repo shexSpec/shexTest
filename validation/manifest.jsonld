@@ -13770,6 +13770,907 @@
           "status": "mf:proposed"
         },
         {
+          "@id": "#1NOTIRI_passLv",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1NOTIRI.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Lv.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOTIRI_passLv",
+          "trait": [
+            "TriplePattern"
+          ],
+          "comment": "<S1> { <p1> NOT IRI } on { <s1> <p1> 'v' }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOTIRI_failIo1",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1NOTIRI.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOTIRI_failIo1",
+          "trait": [
+            "TriplePattern"
+          ],
+          "comment": "<S1> { <p1> NOT IRI } on { <s1> <p1> <o1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOTIRI_failempty",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1NOTIRI.shex",
+            "shape": "http://a.example/S1",
+            "data": "empty.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOTIRI_failempty",
+          "trait": [
+            "TriplePattern"
+          ],
+          "comment": "<S1> { <p1> NOT IRI } on {  }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOTNOTIRI_failLv",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1NOTNOTIRI.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Lv.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOTNOTIRI_failLv",
+          "trait": [
+            "TriplePattern"
+          ],
+          "comment": "<S1> { <p1> NOT(NOT IRI) } on { <s1> <p1> 'v' }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOTNOTIRI_passIo1",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1NOTNOTIRI.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOTNOTIRI_passIo1",
+          "trait": [
+            "TriplePattern"
+          ],
+          "comment": "<S1> { <p1> NOT(NOT IRI) } on { <s1> <p1> <o1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOTvs_failIv1",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1NOTvs.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOTvs_failIv1",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S1> { <p1> NOT [<v1> <v2> <v3>] } on { <s1> <p1> <v1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOTvs_passIo1",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1NOTvs.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOTvs_passIo1",
+          "trait": [
+            "TriplePattern"
+          ],
+          "comment": "<S1> { <p1> NOT [<v1> <v2> <v3>] } on { <s1> <p1> <o1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOTvs_failempty",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1NOTvs.shex",
+            "shape": "http://a.example/S1",
+            "data": "empty.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOTvs_failempty",
+          "trait": [
+            "TriplePattern"
+          ],
+          "comment": "<S1> { <p1> NOT [<v1> <v2> <v3>] } on {  }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOTNOTvs_passIv1",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1NOTNOTvs.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOTNOTvs_passIv1",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S1> { <p1> NOT(NOT [<v1>]) } on { <s1> <p1> <v1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOTNOTvs_failIo1",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1NOTNOTvs.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOTNOTvs_failIo1",
+          "trait": [
+            "TriplePattern"
+          ],
+          "comment": "<S1> { <p1> NOT(NOT [<v1>]) } on { <s1> <p1> <o1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOTdot_failIv1",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1NOTdot.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOTdot_failIv1",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S1> { <p1> NOT . } on { <s1> <p1> <v1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOTdot_failIo1",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1NOTdot.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOTdot_failIo1",
+          "trait": [
+            "TriplePattern"
+          ],
+          "comment": "<S1> { <p1> NOT . } on { <s1> <p1> <o1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOTdot_failempty",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1NOTdot.shex",
+            "shape": "http://a.example/S1",
+            "data": "empty.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOTdot_failempty",
+          "trait": [
+            "wildcard"
+          ],
+          "comment": "<S1> { <p1> NOT . } on {  }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOTNOTdot_passIv1",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1NOTNOTdot.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOTNOTdot_passIv1",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S1> { <p1> NOT(NOT .) } on { <s1> <p1> <v1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOTNOTdot_passIo1",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1NOTNOTdot.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOTNOTdot_passIo1",
+          "trait": [
+            "TriplePattern"
+          ],
+          "comment": "<S1> { <p1> NOT(NOT .) } on { <s1> <p1> <o1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1_NOTliteral_ANDvs_passIv1",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1_NOTliteral_ANDvs.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1_NOTliteral_ANDvs_passIv1",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S1> { <p1> (NOT  LITERAL) AND [<v1> <v2>]  } on { <s1> <p1> <v1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1_NOTliteral_ANDvs_failIo1",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1_NOTliteral_ANDvs.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1_NOTliteral_ANDvs_failIo1",
+          "trait": [
+            "TriplePattern"
+          ],
+          "comment": "<S1> { <p1> (NOT  LITERAL) AND [<v1> <v2>]  } on { <s1> <p1> <o1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1_NOTliteral_ANDvs_failLv",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1_NOTliteral_ANDvs.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Lv.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1_NOTliteral_ANDvs_failLv",
+          "trait": [
+            "TriplePattern"
+          ],
+          "comment": "<S1> { <p1> (NOT  LITERAL) AND [<v1> <v2>]  } on { <s1> <p1> 'v' }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOT_literalANDvs__passIv1",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1NOT_literalANDvs_.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOT_literalANDvs__passIv1",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S1> { <p1>  NOT (LITERAL  AND [<v1> <v2>]) } on { <s1> <p1> <v1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOT_literalANDvs__passLv",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1NOT_literalANDvs_.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Lv.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOT_literalANDvs__passLv",
+          "trait": [
+            "TriplePattern"
+          ],
+          "comment": "<S1> { <p1>  NOT (LITERAL  AND [<v1> <v2>]) } on { <s1> <p1> 'v' }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOTliteralANDvs_passIv1",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1NOTliteralANDvs.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOTliteralANDvs_passIv1",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S1> { <p1>  NOT  LITERAL  AND [<v1> <v2>]  } on { <s1> <p1> <v1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOTliteralANDvs_failIo1",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1NOTliteralANDvs.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOTliteralANDvs_failIo1",
+          "trait": [
+            "TriplePattern"
+          ],
+          "comment": "<S1> { <p1>  NOT  LITERAL  AND [<v1> <v2>]  } on { <s1> <p1> <o1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOTliteralANDvs_failLv",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1NOTliteralANDvs.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Lv.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOTliteralANDvs_failLv",
+          "trait": [
+            "TriplePattern"
+          ],
+          "comment": "<S1> { <p1>  NOT  LITERAL  AND [<v1> <v2>]  } on { <s1> <p1> 'v' }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1_NOTvs_ANDvs_failIv1",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1_NOTvs_ANDvs.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1_NOTvs_ANDvs_failIv1",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S1> { <p1> (NOT  [<v1>]) AND [<v2>]  } on { <s1> <p1> <v1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1_NOTvs_ANDvs_passIv2",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1_NOTvs_ANDvs.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv2.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1_NOTvs_ANDvs_passIv2",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S1> { <p1> (NOT  [<v1>]) AND [<v2>]  } on { <s1> <p1> <v2> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1_NOTvs_ANDvs_failIv3",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1_NOTvs_ANDvs.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv3.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1_NOTvs_ANDvs_failIv3",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S1> { <p1> (NOT  [<v1>]) AND [<v2>]  } on { <s1> <p1> <v3> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOT_vsANDvs__passIv1",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1NOT_vsANDvs_.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOT_vsANDvs__passIv1",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S1> { <p1>  NOT ([<v1>]  AND [<v2>]) } on { <s1> <p1> <v1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOT_vsANDvs__passIv2",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1NOT_vsANDvs_.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv2.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOT_vsANDvs__passIv2",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S1> { <p1>  NOT ([<v1>]  AND [<v2>]) } on { <s1> <p1> <v2> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOT_vsANDvs__passIv3",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1NOT_vsANDvs_.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv3.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOT_vsANDvs__passIv3",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S1> { <p1>  NOT ([<v1>]  AND [<v2>]) } on { <s1> <p1> <v3> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOTvsANDvs_failIv1",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1NOTvsANDvs.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOTvsANDvs_failIv1",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S1> { <p1>  NOT  [<v1>]  AND [<v2>]  } on { <s1> <p1> <v1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOTvsANDvs_passIv2",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1NOTvsANDvs.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv2.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOTvsANDvs_passIv2",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S1> { <p1>  NOT  [<v1>]  AND [<v2>]  } on { <s1> <p1> <v2> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOTvsANDvs_failIv3",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1NOTvsANDvs.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv3.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOTvsANDvs_failIv3",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S1> { <p1>  NOT  [<v1>]  AND [<v2>]  } on { <s1> <p1> <v3> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1_NOTliteral_ORvs_passIv1",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1_NOTliteral_ORvs.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1_NOTliteral_ORvs_passIv1",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S1> { <p1> (NOT  LITERAL) OR [<v1> <v2>]  } on { <s1> <p1> <v1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1_NOTliteral_ORvs_passIo1",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1_NOTliteral_ORvs.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1_NOTliteral_ORvs_passIo1",
+          "trait": [
+            "TriplePattern"
+          ],
+          "comment": "<S1> { <p1> (NOT  LITERAL) OR [<v1> <v2>]  } on { <s1> <p1> <o1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1_NOTliteral_ORvs_failLv",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1_NOTliteral_ORvs.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Lv.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1_NOTliteral_ORvs_failLv",
+          "trait": [
+            "TriplePattern"
+          ],
+          "comment": "<S1> { <p1> (NOT  LITERAL) OR [<v1> <v2>]  } on { <s1> <p1> 'v' }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOT_literalORvs__failIv1",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1NOT_literalORvs_.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOT_literalORvs__failIv1",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S1> { <p1>  NOT (LITERAL  OR [<v1> <v2>]) } on { <s1> <p1> <v1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOT_literalORvs__passIo1",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1NOT_literalORvs_.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOT_literalORvs__passIo1",
+          "trait": [
+            "TriplePattern"
+          ],
+          "comment": "<S1> { <p1>  NOT (LITERAL  OR [<v1> <v2>]) } on { <s1> <p1> <o1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOT_literalORvs__failLv",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1NOT_literalORvs_.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Lv.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOT_literalORvs__failLv",
+          "trait": [
+            "TriplePattern"
+          ],
+          "comment": "<S1> { <p1>  NOT (LITERAL  OR [<v1> <v2>]) } on { <s1> <p1> 'v' }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOTliteralORvs_passIv1",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1NOTliteralORvs.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOTliteralORvs_passIv1",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S1> { <p1>  NOT  LITERAL  OR [<v1> <v2>]  } on { <s1> <p1> <v1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOTliteralORvs_passIo1",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1NOTliteralORvs.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOTliteralORvs_passIo1",
+          "trait": [
+            "TriplePattern"
+          ],
+          "comment": "<S1> { <p1>  NOT  LITERAL  OR [<v1> <v2>]  } on { <s1> <p1> <o1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOTliteralORvs_failLv",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1NOTliteralORvs.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Lv.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOTliteralORvs_failLv",
+          "trait": [
+            "TriplePattern"
+          ],
+          "comment": "<S1> { <p1>  NOT  LITERAL  OR [<v1> <v2>]  } on { <s1> <p1> 'v' }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1_NOTvs_ORvs_failIv1",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1_NOTvs_ORvs.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1_NOTvs_ORvs_failIv1",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S1> { <p1> (NOT  [<v1>]) OR [<v2>]  } on { <s1> <p1> <v1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1_NOTvs_ORvs_passIv2",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1_NOTvs_ORvs.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv2.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1_NOTvs_ORvs_passIv2",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S1> { <p1> (NOT  [<v1>]) OR [<v2>]  } on { <s1> <p1> <v2> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1_NOTvs_ORvs_passIv3",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1_NOTvs_ORvs.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv3.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1_NOTvs_ORvs_passIv3",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S1> { <p1> (NOT  [<v1>]) OR [<v2>]  } on { <s1> <p1> <v3> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOT_vsORvs__failIv1",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1NOT_vsORvs_.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOT_vsORvs__failIv1",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S1> { <p1>  NOT ([<v1>]  OR [<v2>]) } on { <s1> <p1> <v1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOT_vsORvs__failIv2",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1NOT_vsORvs_.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv2.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOT_vsORvs__failIv2",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S1> { <p1>  NOT ([<v1>]  OR [<v2>]) } on { <s1> <p1> <v2> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOT_vsORvs__passIv3",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1NOT_vsORvs_.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv3.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOT_vsORvs__passIv3",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S1> { <p1>  NOT ([<v1>]  OR [<v2>]) } on { <s1> <p1> <v3> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOTvsORvs_failIv1",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1NOTvsORvs.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOTvsORvs_failIv1",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S1> { <p1>  NOT  [<v1>]  OR [<v2>]  } on { <s1> <p1> <v1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOTvsORvs_passIv2",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1NOTvsORvs.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv2.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOTvsORvs_passIv2",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S1> { <p1>  NOT  [<v1>]  OR [<v2>]  } on { <s1> <p1> <v2> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOTvsORvs_passIv3",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1NOTvsORvs.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv3.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOTvsORvs_passIv3",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S1> { <p1>  NOT  [<v1>]  OR [<v2>]  } on { <s1> <p1> <v3> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#NOT1NOTvs_passIv1",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/NOT1NOTvs.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "NOT1NOTvs_passIv1",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S1> NOT { <p1> NOT [<v1> <v2>] } on { <s1> <p1> <v1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#NOT1NOTvs_passIv2",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/NOT1NOTvs.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv2.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "NOT1NOTvs_passIv2",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S1> NOT { <p1> NOT [<v1> <v2>] } on { <s1> <p1> <v2> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#NOT1NOTvs_failIv3",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/NOT1NOTvs.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv3.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "NOT1NOTvs_failIv3",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S1> NOT { <p1> NOT [<v1> <v2>] } on { <s1> <p1> <v3> }",
+          "status": "mf:proposed"
+        },
+        {
           "@id": "#1val1vExpr1AND1OR1Ref3_pass-vc1vc2",
           "@type": "sht:ValidationTest",
           "action": {
