@@ -1695,6 +1695,15 @@
           "ttl": "1val1dotMinusiriStem3.ttl"
         },
         {
+          "@id": "#1val1iri",
+          "@type": "sht:RepresentationTest",
+          "name": "1val1iri",
+          "status": "mf:proposed",
+          "shex": "1val1iri.shex",
+          "json": "1val1iri.json",
+          "ttl": "1val1iri.ttl"
+        },
+        {
           "@id": "#1val1iriStem",
           "@type": "sht:RepresentationTest",
           "name": "1val1iriStem",

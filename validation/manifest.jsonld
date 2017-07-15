@@ -111,7 +111,7 @@
           "trait": [
             "TriplePattern"
           ],
-          "comment": "<S1> { <p1> . } on { <s> <p2> <o1> }",
+          "comment": "<S1> { <p1> . } on { <s1> <p2> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -128,7 +128,7 @@
           "trait": [
             "TriplePattern"
           ],
-          "comment": "<S1> { <p1> . } on { <s> <p2> <o1> }",
+          "comment": "<S1> { <p1> . } on { <s1> <p2> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -281,7 +281,7 @@
           "trait": [
             "TriplePattern"
           ],
-          "comment": "PREFIX : <http://a.example/p1> <S1> { : . } on { <s> :p1 <o1> }",
+          "comment": "PREFIX : <http://a.example/p1> <S1> { : . } on { <s1> :p1 <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -298,7 +298,7 @@
           "trait": [
             "TriplePattern"
           ],
-          "comment": "PREFIX ex: <http://a.example/> ex:S1 { ex:p1- . } on { <s> <p1-> <o1> }",
+          "comment": "PREFIX ex: <http://a.example/> ex:S1 { ex:p1- . } on { <s1> <p1-> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -315,7 +315,7 @@
           "trait": [
             "TriplePattern"
           ],
-          "comment": "<S> { <p1> . } on { <s> <p0> <o0>; <p1> <o1> }",
+          "comment": "<S> { <p1> . } on { <s1> <p0> <o0>; <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -332,7 +332,7 @@
           "trait": [
             "TriplePattern"
           ],
-          "comment": "<S> { <p1> . } on { <s> <p1> <o1>; <p2> <o2> }",
+          "comment": "<S> { <p1> . } on { <s1> <p1> <o1>; <p2> <o2> }",
           "status": "mf:proposed"
         },
         {
@@ -350,7 +350,7 @@
             "TriplePattern",
             "ToldBNode"
           ],
-          "comment": "<S> { <p1> . } on { <s> <p2> <o1> }",
+          "comment": "<S> { <p1> . } on { <s1> <p2> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -368,7 +368,7 @@
             "TriplePattern",
             "ToldBNode"
           ],
-          "comment": "_:S1 { <p1> . } on { <s> <p0> <o0>; <p1> <o1> }",
+          "comment": "_:S1 { <p1> . } on { <s1> <p0> <o0>; <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -402,7 +402,7 @@
           "trait": [
             "TriplePattern"
           ],
-          "comment": "<S> { <p1> . } on { <s> <p2> <o1> }",
+          "comment": "<S> { <p1> . } on { <s1> <p2> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -436,7 +436,7 @@
           "trait": [
             "TriplePattern"
           ],
-          "comment": "<S> { <p1> . } on { <s> <p0> <o0>; <p1> <o1> }",
+          "comment": "<S> { <p1> . } on { <s1> <p0> <o0>; <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -453,7 +453,7 @@
           "trait": [
             "TriplePattern"
           ],
-          "comment": "<S> { <p1> . } on { <s> <p1> <o1>; <p2> <o2> }",
+          "comment": "<S> { <p1> . } on { <s1> <p1> <o1>; <p2> <o2> }",
           "status": "mf:proposed"
         },
         {
@@ -640,7 +640,7 @@
           "trait": [
             "TriplePattern"
           ],
-          "comment": "<S> { a . } on { <s> a <o1> }",
+          "comment": "<S> { a . } on { <s1> a <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -895,7 +895,7 @@
           "trait": [
             "Datatype"
           ],
-          "comment": "<S> { <p1> <dt1> } on <s> in { <s> <p2> \"ab\" }",
+          "comment": "<S> { <p1> <dt1> } on <s> in { <s1> <p2> \"ab\" }",
           "status": "mf:proposed"
         },
         {
@@ -946,7 +946,7 @@
           "trait": [
             "Datatype"
           ],
-          "comment": "<S> { <p1> <dt1> } on <s> in { <s> <p1> 1.234 }",
+          "comment": "<S> { <p1> <dt1> } on <s> in { <s1> <p1> 1.234 }",
           "status": "mf:proposed"
         },
         {
@@ -963,7 +963,7 @@
           "trait": [
             "Datatype"
           ],
-          "comment": "<S> { <p1> <dt1> } on <s> in { <s> <p1> 'ab'^^<dt1> }",
+          "comment": "<S> { <p1> <dt1> } on <s> in { <s1> <p1> 'ab'^^<dt1> }",
           "status": "mf:proposed"
         },
         {
@@ -980,7 +980,7 @@
           "trait": [
             "Datatype"
           ],
-          "comment": "<S> { <p1> rdf:langString } on <s> in { <s> <p1> 'ab'@en }",
+          "comment": "<S> { <p1> rdf:langString } on <s> in { <s1> <p1> 'ab'@en }",
           "status": "mf:proposed"
         },
         {
@@ -3071,7 +3071,7 @@
           "trait": [
             "DotCardinality"
           ],
-          "comment": "<S> { <p1> .{2} } on { <s> <p1> 'a' }",
+          "comment": "<S> { <p1> .{2} } on { <s1> <p1> 'a' }",
           "status": "mf:proposed"
         },
         {
@@ -3088,7 +3088,7 @@
           "trait": [
             "DotCardinality"
           ],
-          "comment": "<S> { <p1> .{2} } on { <s> <p1> 'a','b' }",
+          "comment": "<S> { <p1> .{2} } on { <s1> <p1> 'a','b' }",
           "status": "mf:proposed"
         },
         {
@@ -3105,7 +3105,7 @@
           "trait": [
             "DotCardinality"
           ],
-          "comment": "<S> { <p1> .{2} } on { <s> <p1> 'a','b','c' }",
+          "comment": "<S> { <p1> .{2} } on { <s1> <p1> 'a','b','c' }",
           "status": "mf:proposed"
         },
         {
@@ -3139,7 +3139,7 @@
           "trait": [
             "DotCardinality"
           ],
-          "comment": "<S> { <p1> .{2,5} } on { <s> <p1> 'a' }",
+          "comment": "<S> { <p1> .{2,5} } on { <s1> <p1> 'a' }",
           "status": "mf:proposed"
         },
         {
@@ -3156,7 +3156,7 @@
           "trait": [
             "DotCardinality"
           ],
-          "comment": "<S> { <p1> .{2,5} } on { <s> <p1> 'a','b' }",
+          "comment": "<S> { <p1> .{2,5} } on { <s1> <p1> 'a','b' }",
           "status": "mf:proposed"
         },
         {
@@ -3173,7 +3173,7 @@
           "trait": [
             "DotCardinality"
           ],
-          "comment": "<S> { <p1> .{2,5} } on { <s> <p1> 'a','b','c' }",
+          "comment": "<S> { <p1> .{2,5} } on { <s1> <p1> 'a','b','c' }",
           "status": "mf:proposed"
         },
         {
@@ -3190,7 +3190,7 @@
           "trait": [
             "DotCardinality"
           ],
-          "comment": "<S> { <p1> .{2,5} } on { <s> <p1> 'a','b','c','d' }",
+          "comment": "<S> { <p1> .{2,5} } on { <s1> <p1> 'a','b','c','d' }",
           "status": "mf:proposed"
         },
         {
@@ -3207,7 +3207,7 @@
           "trait": [
             "DotCardinality"
           ],
-          "comment": "<S> { <p1> .{2,5} } on { <s> <p1> 'a','b','c','d','e' }",
+          "comment": "<S> { <p1> .{2,5} } on { <s1> <p1> 'a','b','c','d','e' }",
           "status": "mf:proposed"
         },
         {
@@ -3224,7 +3224,7 @@
           "trait": [
             "DotCardinality"
           ],
-          "comment": "<S> { <p1> .{2,5} } on { <s> <p1> 'a','b','c','d','e','f' }",
+          "comment": "<S> { <p1> .{2,5} } on { <s1> <p1> 'a','b','c','d','e','f' }",
           "status": "mf:proposed"
         },
         {
@@ -3258,7 +3258,7 @@
           "trait": [
             "DotCardinality"
           ],
-          "comment": "<S> { <p1> .{2,*} } on { <s> <p1> 'a' }",
+          "comment": "<S> { <p1> .{2,*} } on { <s1> <p1> 'a' }",
           "status": "mf:proposed"
         },
         {
@@ -3275,7 +3275,7 @@
           "trait": [
             "DotCardinality"
           ],
-          "comment": "<S> { <p1> .{2,*} } on { <s> <p1> 'a','b' }",
+          "comment": "<S> { <p1> .{2,*} } on { <s1> <p1> 'a','b' }",
           "status": "mf:proposed"
         },
         {
@@ -3292,7 +3292,7 @@
           "trait": [
             "DotCardinality"
           ],
-          "comment": "<S> { <p1> .{2,*} } on { <s> <p1> 'a','b','c' }",
+          "comment": "<S> { <p1> .{2,*} } on { <s1> <p1> 'a','b','c' }",
           "status": "mf:proposed"
         },
         {
@@ -3309,7 +3309,7 @@
           "trait": [
             "DotCardinality"
           ],
-          "comment": "<S> { <p1> .{2,*} } on { <s> <p1> 'a','b','c','d','e','f' }",
+          "comment": "<S> { <p1> .{2,*} } on { <s1> <p1> 'a','b','c','d','e','f' }",
           "status": "mf:proposed"
         },
         {
@@ -3343,7 +3343,7 @@
           "trait": [
             "DotCardinality"
           ],
-          "comment": "<S> { <p1> .? } on { <s> <p1> 'a' }",
+          "comment": "<S> { <p1> .? } on { <s1> <p1> 'a' }",
           "status": "mf:proposed"
         },
         {
@@ -3360,7 +3360,7 @@
           "trait": [
             "DotCardinality"
           ],
-          "comment": "<S> { <p1> .? } on { <s> <p1> 'a','b' }",
+          "comment": "<S> { <p1> .? } on { <s1> <p1> 'a','b' }",
           "status": "mf:proposed"
         },
         {
@@ -3377,7 +3377,7 @@
           "trait": [
             "DotCardinality"
           ],
-          "comment": "<S> { <p1> .? } on { <s> <p1> 'a','b','c','d','e','f' }",
+          "comment": "<S> { <p1> .? } on { <s1> <p1> 'a','b','c','d','e','f' }",
           "status": "mf:proposed"
         },
         {
@@ -3411,7 +3411,7 @@
           "trait": [
             "DotCardinality"
           ],
-          "comment": "<S> { <p1> .+ } on { <s> <p1> 'a' }",
+          "comment": "<S> { <p1> .+ } on { <s1> <p1> 'a' }",
           "status": "mf:proposed"
         },
         {
@@ -3428,7 +3428,7 @@
           "trait": [
             "DotCardinality"
           ],
-          "comment": "<S> { <p1> .+ } on { <s> <p1> 'a','b' }",
+          "comment": "<S> { <p1> .+ } on { <s1> <p1> 'a','b' }",
           "status": "mf:proposed"
         },
         {
@@ -3445,7 +3445,7 @@
           "trait": [
             "DotCardinality"
           ],
-          "comment": "<S> { <p1> .+ } on { <s> <p1> 'a','b','c','d','e','f' }",
+          "comment": "<S> { <p1> .+ } on { <s1> <p1> 'a','b','c','d','e','f' }",
           "status": "mf:proposed"
         },
         {
@@ -3479,7 +3479,7 @@
           "trait": [
             "DotCardinality"
           ],
-          "comment": "<S> { <p1> .* } on { <s> <p1> 'a' }",
+          "comment": "<S> { <p1> .* } on { <s1> <p1> 'a' }",
           "status": "mf:proposed"
         },
         {
@@ -3496,7 +3496,7 @@
           "trait": [
             "DotCardinality"
           ],
-          "comment": "<S> { <p1> .* } on { <s> <p1> 'a','b' }",
+          "comment": "<S> { <p1> .* } on { <s1> <p1> 'a','b' }",
           "status": "mf:proposed"
         },
         {
@@ -3513,7 +3513,7 @@
           "trait": [
             "DotCardinality"
           ],
-          "comment": "<S> { <p1> .* } on { <s> <p1> 'a','b','c','d','e','f' }",
+          "comment": "<S> { <p1> .* } on { <s1> <p1> 'a','b','c','d','e','f' }",
           "status": "mf:proposed"
         },
         {
@@ -3530,7 +3530,7 @@
           "trait": [
             "NonDotCardinality"
           ],
-          "comment": "<S> { <p1> LITERAL+ } on { <s> <p1> 'a', <o2> }",
+          "comment": "<S> { <p1> LITERAL+ } on { <s1> <p1> 'a', <o2> }",
           "status": "mf:proposed"
         },
         {
@@ -3961,7 +3961,7 @@
           "trait": [
             "IriEquivalence"
           ],
-          "comment": "<S> { <p1> [<v1>] } on { <s> <p1> <v1> }",
+          "comment": "<S> { <p1> [<v1>] } on { <s1> <p1> <v1> }",
           "status": "mf:proposed"
         },
         {
@@ -3978,7 +3978,7 @@
           "trait": [
             "IriEquivalence"
           ],
-          "comment": "<S> { <p1> [<v1>] } on { <s> <p1> <v2> }",
+          "comment": "<S> { <p1> [<v1>] } on { <s1> <p1> <v2> }",
           "status": "mf:proposed"
         },
         {
@@ -3995,7 +3995,7 @@
           "trait": [
             "IriEquivalence"
           ],
-          "comment": "<S> { <p1> [<v1>] } on { <s> <p1> <v1>, <v2> }",
+          "comment": "<S> { <p1> [<v1>] } on { <s1> <p1> <v1>, <v2> }",
           "status": "mf:proposed"
         },
         {
@@ -4012,7 +4012,7 @@
           "trait": [
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> ['STRING_LITERAL1'] } on { <s> <p1> 'STRING_LITERAL1' }",
+          "comment": "<S> { <p1> ['STRING_LITERAL1'] } on { <s1> <p1> 'STRING_LITERAL1' }",
           "status": "mf:proposed"
         },
         {
@@ -4029,7 +4029,7 @@
           "trait": [
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> ['STRING_LITERAL1'] } on { <s> <p1> 'STRING_LITERAL1' }",
+          "comment": "<S> { <p1> ['STRING_LITERAL1'] } on { <s1> <p1> 'STRING_LITERAL1' }",
           "status": "mf:proposed"
         },
         {
@@ -4046,7 +4046,7 @@
           "trait": [
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> ['^@^A...^_'] } on { <s> <p1> '^@^A...^_' }",
+          "comment": "<S> { <p1> ['^@^A...^_'] } on { <s1> <p1> '^@^A...^_' }",
           "status": "mf:proposed"
         },
         {
@@ -4063,7 +4063,7 @@
           "trait": [
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> ['^@^A...^_'] } on { <s> <p1> '^@^A...^_999' }",
+          "comment": "<S> { <p1> ['^@^A...^_'] } on { <s1> <p1> '^@^A...^_999' }",
           "status": "mf:proposed"
         },
         {
@@ -4080,7 +4080,7 @@
           "trait": [
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> ['^@^A...^_'] } on { <s> <p1> '^@^A...^_' }",
+          "comment": "<S> { <p1> ['^@^A...^_'] } on { <s1> <p1> '^@^A...^_' }",
           "status": "mf:proposed"
         },
         {
@@ -4097,7 +4097,7 @@
           "trait": [
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> ['^@^A...^_'] } on { <s> <p1> '^@^A...^_999' }",
+          "comment": "<S> { <p1> ['^@^A...^_'] } on { <s1> <p1> '^@^A...^_999' }",
           "status": "mf:proposed"
         },
         {
@@ -4114,7 +4114,7 @@
           "trait": [
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> ['^@^A...^_'] } on { <s> <p1> '^@^A...^_' }",
+          "comment": "<S> { <p1> ['^@^A...^_'] } on { <s1> <p1> '^@^A...^_' }",
           "status": "mf:proposed"
         },
         {
@@ -4131,7 +4131,7 @@
           "trait": [
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> ['^@^A...^_'] } on { <s> <p1> '^@^A...^_999' }",
+          "comment": "<S> { <p1> ['^@^A...^_'] } on { <s1> <p1> '^@^A...^_999' }",
           "status": "mf:proposed"
         },
         {
@@ -4149,7 +4149,7 @@
             "OutsideBMP",
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> ['...🿽'] } on { <s> <p1> '...􏿽' }",
+          "comment": "<S> { <p1> ['...🿽'] } on { <s1> <p1> '...􏿽' }",
           "status": "mf:proposed"
         },
         {
@@ -4167,7 +4167,7 @@
             "OutsideBMP",
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> ['...🿽'] } on { <s> <p1> '...􏿽999' }",
+          "comment": "<S> { <p1> ['...🿽'] } on { <s1> <p1> '...􏿽999' }",
           "status": "mf:proposed"
         },
         {
@@ -4184,7 +4184,7 @@
           "trait": [
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> ['\\t\\b\\n\\r\\f'] } on { <s> <p1> '\\t\\b\\n\\r\\f' }",
+          "comment": "<S> { <p1> ['\\t\\b\\n\\r\\f'] } on { <s1> <p1> '\\t\\b\\n\\r\\f' }",
           "status": "mf:proposed"
         },
         {
@@ -4201,7 +4201,7 @@
           "trait": [
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> ['\\t\\b\\n\\r\\f'] } on { <s> <p1> '\\t\\b\\n\\r\\f' }",
+          "comment": "<S> { <p1> ['\\t\\b\\n\\r\\f'] } on { <s1> <p1> '\\t\\b\\n\\r\\f' }",
           "status": "mf:proposed"
         },
         {
@@ -4218,7 +4218,7 @@
           "trait": [
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> [0] } on { <s> <p1> 0 }",
+          "comment": "<S> { <p1> [0] } on { <s1> <p1> 0 }",
           "status": "mf:proposed"
         },
         {
@@ -4235,7 +4235,7 @@
           "trait": [
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> [0] } on { <s> <p1> 00 }",
+          "comment": "<S> { <p1> [0] } on { <s1> <p1> 00 }",
           "status": "mf:proposed"
         },
         {
@@ -4252,7 +4252,7 @@
           "trait": [
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> [0.0] } on { <s> <p1> .0 }",
+          "comment": "<S> { <p1> [0.0] } on { <s1> <p1> .0 }",
           "status": "mf:proposed"
         },
         {
@@ -4269,7 +4269,7 @@
           "trait": [
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> [0.0] } on { <s> <p1> 0.0 }",
+          "comment": "<S> { <p1> [0.0] } on { <s1> <p1> 0.0 }",
           "status": "mf:proposed"
         },
         {
@@ -4286,7 +4286,7 @@
           "trait": [
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> [0.0] } on { <s> <p1> 'ab' }",
+          "comment": "<S> { <p1> [0.0] } on { <s1> <p1> 'ab' }",
           "status": "mf:proposed"
         },
         {
@@ -4303,7 +4303,7 @@
           "trait": [
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> [0] } on { <s> <p1> 'ab' }",
+          "comment": "<S> { <p1> [0] } on { <s1> <p1> 'ab' }",
           "status": "mf:proposed"
         },
         {
@@ -4320,7 +4320,7 @@
           "trait": [
             "NumericEquivalence"
           ],
-          "comment": "<S1> { <p1> [0E0] } on { <s> <p1> 0E0 }",
+          "comment": "<S1> { <p1> [0E0] } on { <s1> <p1> 0E0 }",
           "status": "mf:proposed"
         },
         {
@@ -4337,7 +4337,7 @@
           "trait": [
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> [0E0] } on { <s> <p1> 0e0.0 }",
+          "comment": "<S> { <p1> [0E0] } on { <s1> <p1> 0e0.0 }",
           "status": "mf:proposed"
         },
         {
@@ -4354,7 +4354,7 @@
           "trait": [
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> [0e0] } on { <s> <p1> 0e0 }",
+          "comment": "<S> { <p1> [0e0] } on { <s1> <p1> 0e0 }",
           "status": "mf:proposed"
         },
         {
@@ -4371,7 +4371,7 @@
           "trait": [
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> [0e0] } on { <s> <p1> 0E0 }",
+          "comment": "<S> { <p1> [0e0] } on { <s1> <p1> 0E0 }",
           "status": "mf:proposed"
         },
         {
@@ -4388,7 +4388,7 @@
           "trait": [
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> [0e0] } on { <s> <p1> 0e0.0 }",
+          "comment": "<S> { <p1> [0e0] } on { <s1> <p1> 0e0.0 }",
           "status": "mf:proposed"
         },
         {
@@ -4405,7 +4405,7 @@
           "trait": [
             "LanguageTagEquivalence"
           ],
-          "comment": "<S> { <p1> ['ab'@en-fr] } on { <s> <p1> 'ab'@en-fr }",
+          "comment": "<S> { <p1> ['ab'@en-fr] } on { <s1> <p1> 'ab'@en-fr }",
           "status": "mf:proposed"
         },
         {
@@ -4422,7 +4422,7 @@
           "trait": [
             "LanguageTagEquivalence"
           ],
-          "comment": "<S> { <p1> ['ab'@en-fr] } on { <s> <p1> 'ab' }",
+          "comment": "<S> { <p1> ['ab'@en-fr] } on { <s1> <p1> 'ab' }",
           "status": "mf:proposed"
         },
         {
@@ -4439,7 +4439,7 @@
           "trait": [
             "LanguageTagEquivalence"
           ],
-          "comment": "<S> { <p1> ['ab'@en-fr] } on { <s> <p1> 'ab'@en }",
+          "comment": "<S> { <p1> ['ab'@en-fr] } on { <s1> <p1> 'ab'@en }",
           "status": "mf:proposed"
         },
         {
@@ -4456,7 +4456,7 @@
           "trait": [
             "LanguageTagEquivalence"
           ],
-          "comment": "<S> { <p1> ['ab'@en-fr] } on { <s> <p1> 'ab'@en-fr-jura }",
+          "comment": "<S> { <p1> ['ab'@en-fr] } on { <s1> <p1> 'ab'@en-fr-jura }",
           "status": "mf:proposed"
         },
         {
@@ -4473,7 +4473,7 @@
           "trait": [
             "LanguageTagEquivalence"
           ],
-          "comment": "<S> { <p1> ['ab'@en-fr] } on { <s> <p1> 'a'@en-fr }",
+          "comment": "<S> { <p1> ['ab'@en-fr] } on { <s1> <p1> 'a'@en-fr }",
           "status": "mf:proposed"
         },
         {
@@ -4490,7 +4490,7 @@
           "trait": [
             "DatatypedLiteralEquivalence"
           ],
-          "comment": "<S> { <p1> ['ab'^^my:bloodType] } on { <s> <p1> 'ab'^^my:bloodType }",
+          "comment": "<S> { <p1> ['ab'^^my:bloodType] } on { <s1> <p1> 'ab'^^my:bloodType }",
           "status": "mf:proposed"
         },
         {
@@ -4507,7 +4507,7 @@
           "trait": [
             "DatatypedLiteralEquivalence"
           ],
-          "comment": "<S> { <p1> ['ab'^^my:bloodType] } on { <s> <p1> 'ab' }",
+          "comment": "<S> { <p1> ['ab'^^my:bloodType] } on { <s1> <p1> 'ab' }",
           "status": "mf:proposed"
         },
         {
@@ -4524,7 +4524,7 @@
           "trait": [
             "DatatypedLiteralEquivalence"
           ],
-          "comment": "<S> { <p1> ['ab'^^my:bloodType] } on { <s> <p1> 'ab'^^my:bloodType999 }",
+          "comment": "<S> { <p1> ['ab'^^my:bloodType] } on { <s1> <p1> 'ab'^^my:bloodType999 }",
           "status": "mf:proposed"
         },
         {
@@ -4541,7 +4541,7 @@
           "trait": [
             "DatatypedLiteralEquivalence"
           ],
-          "comment": "<S> { <p1> ['ab'^^my:bloodType] } on { <s> <p1> 'a'^^my:bloodType }",
+          "comment": "<S> { <p1> ['ab'^^my:bloodType] } on { <s1> <p1> 'a'^^my:bloodType }",
           "status": "mf:proposed"
         },
         {
@@ -4558,7 +4558,7 @@
           "trait": [
             "BooleanEquivalence"
           ],
-          "comment": "<S> { <p1> [true] } on { <s> <p1> true }",
+          "comment": "<S> { <p1> [true] } on { <s1> <p1> true }",
           "status": "mf:proposed"
         },
         {
@@ -4575,7 +4575,7 @@
           "trait": [
             "BooleanEquivalence"
           ],
-          "comment": "<S> { <p1> [true] } on { <s> <p1> false }",
+          "comment": "<S> { <p1> [true] } on { <s1> <p1> false }",
           "status": "mf:proposed"
         },
         {
@@ -4592,7 +4592,7 @@
           "trait": [
             "BooleanEquivalence"
           ],
-          "comment": "<S> { <p1> [true] } on { <s> <p1> 'ab' }",
+          "comment": "<S> { <p1> [true] } on { <s1> <p1> 'ab' }",
           "status": "mf:proposed"
         },
         {
@@ -4609,7 +4609,7 @@
           "trait": [
             "BooleanEquivalence"
           ],
-          "comment": "<S> { <p1> [false] } on { <s> <p1> true }",
+          "comment": "<S> { <p1> [false] } on { <s1> <p1> true }",
           "status": "mf:proposed"
         },
         {
@@ -4626,7 +4626,7 @@
           "trait": [
             "BooleanEquivalence"
           ],
-          "comment": "<S> { <p1> [false] } on { <s> <p1> false }",
+          "comment": "<S> { <p1> [false] } on { <s1> <p1> false }",
           "status": "mf:proposed"
         },
         {
@@ -4643,7 +4643,7 @@
           "trait": [
             "BooleanEquivalence"
           ],
-          "comment": "<S> { <p1> [false] } on { <s> <p1> 'ab' }",
+          "comment": "<S> { <p1> [false] } on { <s1> <p1> 'ab' }",
           "status": "mf:proposed"
         },
         {
@@ -4660,7 +4660,7 @@
           "trait": [
             "LengthFacet"
           ],
-          "comment": "<S> { <p1> xs:integer LENGTH 5 } on <s> in { <s> <p2> 'ab' }",
+          "comment": "<S> { <p1> xs:integer LENGTH 5 } on <s> in { <s1> <p2> 'ab' }",
           "status": "mf:proposed"
         },
         {
@@ -4677,7 +4677,7 @@
           "trait": [
             "LengthFacet"
           ],
-          "comment": "<S> { <p1> xs:integer LENGTH 5 } on <s> in { <s> <p1> 1.234 }",
+          "comment": "<S> { <p1> xs:integer LENGTH 5 } on <s> in { <s1> <p1> 1.234 }",
           "status": "mf:proposed"
         },
         {
@@ -4694,7 +4694,7 @@
           "trait": [
             "LengthFacet"
           ],
-          "comment": "<S> { <p1> xs:integer LENGTH 5 } on <s> in { <s> <p1> 1234 }",
+          "comment": "<S> { <p1> xs:integer LENGTH 5 } on <s> in { <s1> <p1> 1234 }",
           "status": "mf:proposed"
         },
         {
@@ -4711,7 +4711,7 @@
           "trait": [
             "LengthFacet"
           ],
-          "comment": "<S> { <p1> xs:integer LENGTH 5 } on <s> in { <s> <p1> 12345 }",
+          "comment": "<S> { <p1> xs:integer LENGTH 5 } on <s> in { <s1> <p1> 12345 }",
           "status": "mf:proposed"
         },
         {
@@ -4728,7 +4728,7 @@
           "trait": [
             "LengthFacet"
           ],
-          "comment": "<S> { <p1> xs:integer LENGTH 5 } on <s> in { <s> <p1> 123456 }",
+          "comment": "<S> { <p1> xs:integer LENGTH 5 } on <s> in { <s1> <p1> 123456 }",
           "status": "mf:proposed"
         },
         {
@@ -10648,7 +10648,7 @@
             "OutsideBMP",
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> /^^@^A...^_$/ } on { <s> <p1> '^@^A...^_' }",
+          "comment": "<S> { <p1> /^^@^A...^_$/ } on { <s1> <p1> '^@^A...^_' }",
           "status": "mf:proposed"
         },
         {
@@ -10666,7 +10666,7 @@
             "OutsideBMP",
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> /^^@^A...^_$/ } on { <s> <p1> '^@^A...^_999' }",
+          "comment": "<S> { <p1> /^^@^A...^_$/ } on { <s1> <p1> '^@^A...^_999' }",
           "status": "mf:proposed"
         },
         {
@@ -10684,7 +10684,7 @@
             "OutsideBMP",
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> /^ !\"#\\$%&'\\(\\)\\/:;<=>\\?@\\[\\]\\^_`\\{\\|\\}~$/ } on { <s> <p1> ' !\"#$%&'()/:;<=>?@[]^_`{|}~' }",
+          "comment": "<S> { <p1> /^ !\"#\\$%&'\\(\\)\\/:;<=>\\?@\\[\\]\\^_`\\{\\|\\}~$/ } on { <s1> <p1> ' !\"#$%&'()/:;<=>?@[]^_`{|}~' }",
           "status": "mf:proposed"
         },
         {
@@ -10702,7 +10702,7 @@
             "OutsideBMP",
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> /^ !\"#\\$%&'\\(\\)\\/:;<=>\\?@\\[\\]\\^_`\\{\\|\\}~$/ } on { <s> <p1> ' !\"#$%&'()/:;<=>?@[]^_`{|}~999' }",
+          "comment": "<S> { <p1> /^ !\"#\\$%&'\\(\\)\\/:;<=>\\?@\\[\\]\\^_`\\{\\|\\}~$/ } on { <s1> <p1> ' !\"#$%&'()/:;<=>?@[]^_`{|}~999' }",
           "status": "mf:proposed"
         },
         {
@@ -10720,7 +10720,7 @@
             "OutsideBMP",
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> /^^@^A...^_$/ } on { <s> <p1> '^@^A...^_' }",
+          "comment": "<S> { <p1> /^^@^A...^_$/ } on { <s1> <p1> '^@^A...^_' }",
           "status": "mf:proposed"
         },
         {
@@ -10738,7 +10738,7 @@
             "OutsideBMP",
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> /^^@^A...^_$/ } on { <s> <p1> '^@^A...^_999' }",
+          "comment": "<S> { <p1> /^^@^A...^_$/ } on { <s1> <p1> '^@^A...^_999' }",
           "status": "mf:proposed"
         },
         {
@@ -10756,7 +10756,7 @@
             "OutsideBMP",
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> /^^@^A...^_$/ } on { <s> <p1> '^@^A...^_' }",
+          "comment": "<S> { <p1> /^^@^A...^_$/ } on { <s1> <p1> '^@^A...^_' }",
           "status": "mf:proposed"
         },
         {
@@ -10774,7 +10774,7 @@
             "OutsideBMP",
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> /^^@^A...^_$/ } on { <s> <p1> '^@^A...^_999' }",
+          "comment": "<S> { <p1> /^^@^A...^_$/ } on { <s1> <p1> '^@^A...^_999' }",
           "status": "mf:proposed"
         },
         {
@@ -10792,7 +10792,7 @@
             "OutsideBMP",
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> /^\\/\\t\\b\\n\\r\\f\\\\\\u0061\\U0001D4B8$/ } on { <s> <p1> '\\/\\t\\b\\n\\r\\f\\a𝒸' }",
+          "comment": "<S> { <p1> /^\\/\\t\\b\\n\\r\\f\\\\\\u0061\\U0001D4B8$/ } on { <s1> <p1> '\\/\\t\\b\\n\\r\\f\\a𝒸' }",
           "status": "mf:proposed"
         },
         {
@@ -10810,7 +10810,7 @@
             "OutsideBMP",
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> /^\\/\\t\\b\\n\\r\\f\\\\\\u0061\\U0001D4B8$/ } on { <s> <p1> '\\/\\t\\b\\n\\r\\f\\a𝒸999' }",
+          "comment": "<S> { <p1> /^\\/\\t\\b\\n\\r\\f\\\\\\u0061\\U0001D4B8$/ } on { <s1> <p1> '\\/\\t\\b\\n\\r\\f\\a𝒸999' }",
           "status": "mf:proposed"
         },
         {
@@ -10828,7 +10828,7 @@
             "OutsideBMP",
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> /^\\/\\t\\b\\n\\r\\f\\\\\\u0061\\U0001D4B8$/ } on { <s> <p1> '\\\\/\\\\t\\\\b\\\\n\\\\r\\\\f\\\\\\u0061\\U0001D4B8' }",
+          "comment": "<S> { <p1> /^\\/\\t\\b\\n\\r\\f\\\\\\u0061\\U0001D4B8$/ } on { <s1> <p1> '\\\\/\\\\t\\\\b\\\\n\\\\r\\\\f\\\\\\u0061\\U0001D4B8' }",
           "status": "mf:proposed"
         },
         {
@@ -10846,7 +10846,7 @@
             "OutsideBMP",
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> /^\\\\/\\\\t\\\\b\\\\n\\\\r\\\\f\\\\\\\\\\\\u0061\\\\U0001D4B8$/ } on { <s> <p1> '\\\\/\\\\t\\\\b\\\\n\\\\r\\\\f\\\\\\u0061\\U0001D4B8' }",
+          "comment": "<S> { <p1> /^\\\\/\\\\t\\\\b\\\\n\\\\r\\\\f\\\\\\\\\\\\u0061\\\\U0001D4B8$/ } on { <s1> <p1> '\\\\/\\\\t\\\\b\\\\n\\\\r\\\\f\\\\\\u0061\\U0001D4B8' }",
           "status": "mf:proposed"
         },
         {
@@ -10864,7 +10864,7 @@
             "OutsideBMP",
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> /^\\\\/\\\\t\\\\b\\\\n\\\\r\\\\f\\\\\\\\\\\\u0061\\\\U0001D4B8$/ } on { <s> <p1> '\\/\\t\\b\\n\\r\\f\\a𝒸' }",
+          "comment": "<S> { <p1> /^\\\\/\\\\t\\\\b\\\\n\\\\r\\\\f\\\\\\\\\\\\u0061\\\\U0001D4B8$/ } on { <s1> <p1> '\\/\\t\\b\\n\\r\\f\\a𝒸' }",
           "status": "mf:proposed"
         },
         {
@@ -10882,7 +10882,7 @@
             "OutsideBMP",
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> /^\\\\/\\\\t\\\\b\\\\n\\\\r\\\\f\\\\\\\\\\\\u0061\\\\U0001D4B8$/ } on { <s> <p1> '/\t\\b\\n\\r\\f\\a𝒸' }",
+          "comment": "<S> { <p1> /^\\\\/\\\\t\\\\b\\\\n\\\\r\\\\f\\\\\\\\\\\\u0061\\\\U0001D4B8$/ } on { <s1> <p1> '/\t\\b\\n\\r\\f\\a𝒸' }",
           "status": "mf:proposed"
         },
         {
@@ -10900,7 +10900,7 @@
             "OutsideBMP",
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> /^\\/\t\\n\\r-\\\\a\\U0001D4B8$/ } on { <s> <p1> '/\t\\b\\n\\r\\f\\a𝒸' }",
+          "comment": "<S> { <p1> /^\\/\t\\n\\r-\\\\a\\U0001D4B8$/ } on { <s1> <p1> '/\t\\b\\n\\r\\f\\a𝒸' }",
           "status": "mf:proposed"
         },
         {
@@ -10918,7 +10918,7 @@
             "OutsideBMP",
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> /^\\/\t\\n\\r-\\\\a\\U0001D4B8$/ } on { <s> <p1> '\\\\/\\\\t\\\\b\\\\n\\\\r\\\\f\\\\\\u0061\\U0001D4B8' }",
+          "comment": "<S> { <p1> /^\\/\t\\n\\r-\\\\a\\U0001D4B8$/ } on { <s1> <p1> '\\\\/\\\\t\\\\b\\\\n\\\\r\\\\f\\\\\\u0061\\U0001D4B8' }",
           "status": "mf:proposed"
         },
         {
@@ -10936,7 +10936,7 @@
             "OutsideBMP",
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> /^\\/\\t\\b\\n\\r\\f\\\\\\u0061\\U0001D4B8$/ } on { <s> <p1> '/\t\\b\\n\\r\\f\\a𝒸' }",
+          "comment": "<S> { <p1> /^\\/\\t\\b\\n\\r\\f\\\\\\u0061\\U0001D4B8$/ } on { <s1> <p1> '/\t\\b\\n\\r\\f\\a𝒸' }",
           "status": "mf:proposed"
         },
         {
@@ -10954,7 +10954,7 @@
             "OutsideBMP",
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> /^\\/\t\\n\\r-\\\\a\\U0001D4B8$/ } on { <s> <p1> '\\/\\t\\b\\n\\r\\f\\a𝒸' }",
+          "comment": "<S> { <p1> /^\\/\t\\n\\r-\\\\a\\U0001D4B8$/ } on { <s1> <p1> '\\/\\t\\b\\n\\r\\f\\a𝒸' }",
           "status": "mf:proposed"
         },
         {
@@ -11211,7 +11211,7 @@
             "OutsideBMP",
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> /^$/ } on { <s> <p1> '' }",
+          "comment": "<S> { <p1> /^$/ } on { <s1> <p1> '' }",
           "status": "mf:proposed"
         },
         {
@@ -11229,7 +11229,7 @@
             "OutsideBMP",
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> /^$/ } on { <s> <p1> '' }",
+          "comment": "<S> { <p1> /^$/ } on { <s1> <p1> '' }",
           "status": "mf:proposed"
         },
         {
@@ -11592,7 +11592,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> [.-<v1>-<v2>-<v3>] } on { <s> <p1> <v3> }",
+          "comment": "<S> { <p1> [.-<v1>-<v2>-<v3>] } on { <s1> <p1> <v3> }",
           "status": "mf:proposed"
         },
         {
@@ -11664,7 +11664,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "$<vs1> = [.-<v1>-<v2>-<v3>] <S> { <p1> $<vs1> } on { <s> <p1> <v3> }",
+          "comment": "$<vs1> = [.-<v1>-<v2>-<v3>] <S> { <p1> $<vs1> } on { <s1> <p1> <v3> }",
           "status": "mf:proposed"
         },
         {
@@ -11736,7 +11736,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> [.-<v1>~-<v2>~-<v3>~] } on { <s> <p1> <v3> }",
+          "comment": "<S> { <p1> [.-<v1>~-<v2>~-<v3>~] } on { <s1> <p1> <v3> }",
           "status": "mf:proposed"
         },
         {
@@ -11758,6 +11758,40 @@
           "status": "mf:proposed"
         },
         {
+          "@id": "#1val1iri_passv1",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1val1iri.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1iri_passv1",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S> { <p1> [<v1>] } on { <s1> <p1> <v1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1val1iri_failv1a",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1val1iri.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv1a.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1iri_failv1a",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S> { <p1> [<v1>] } on { <s1> <p1> <v1a> }",
+          "status": "mf:proposed"
+        },
+        {
           "@id": "#1val1iriStem_passv1",
           "@type": "sht:ValidationTest",
           "action": {
@@ -11772,7 +11806,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> [<v>~] } on { <s> <p1> <v1> }",
+          "comment": "<S> { <p1> [<v>~] } on { <s1> <p1> <v1> }",
           "status": "mf:proposed"
         },
         {
@@ -11790,7 +11824,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> [<v>~] } on { <s> <p1> <v1a> }",
+          "comment": "<S> { <p1> [<v>~] } on { <s1> <p1> <v1a> }",
           "status": "mf:proposed"
         },
         {
@@ -11826,7 +11860,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> [<v1>~] } on { <s> <p1> 'v1' }",
+          "comment": "<S> { <p1> [<v1>~] } on { <s1> <p1> 'v1' }",
           "status": "mf:proposed"
         },
         {
@@ -11844,7 +11878,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> [<v>-<v1>-<v2>-<v3>] } on { <s> <p1> <v> }",
+          "comment": "<S> { <p1> [<v>-<v1>-<v2>-<v3>] } on { <s1> <p1> <v> }",
           "status": "mf:proposed"
         },
         {
@@ -11862,7 +11896,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> [<v>-<v1>-<v2>-<v3>] } on { <s> <p1> <v4> }",
+          "comment": "<S> { <p1> [<v>-<v1>-<v2>-<v3>] } on { <s1> <p1> <v4> }",
           "status": "mf:proposed"
         },
         {
@@ -11880,7 +11914,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> [<v>-<v1>-<v2>-<v3>] } on { <s> <p1> 'v4' }",
+          "comment": "<S> { <p1> [<v>-<v1>-<v2>-<v3>] } on { <s1> <p1> 'v4' }",
           "status": "mf:proposed"
         },
         {
@@ -11952,7 +11986,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> [<v>-<v1>-<v2>-<v3>] } on { <s> <p1> <v3> }",
+          "comment": "<S> { <p1> [<v>-<v1>-<v2>-<v3>] } on { <s1> <p1> <v3> }",
           "status": "mf:proposed"
         },
         {
@@ -11970,7 +12004,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> [<v>-<v1>-<v2>-<v3>] } on { <s> <p1> <v1a> }",
+          "comment": "<S> { <p1> [<v>-<v1>-<v2>-<v3>] } on { <s1> <p1> <v1a> }",
           "status": "mf:proposed"
         },
         {
@@ -11988,7 +12022,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> [<v>~-<v1>~-<v2>~-<v3>~] } on { <s> <p1> <v> }",
+          "comment": "<S> { <p1> [<v>~-<v1>~-<v2>~-<v3>~] } on { <s1> <p1> <v> }",
           "status": "mf:proposed"
         },
         {
@@ -12006,7 +12040,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> [<v>~-<v1>~-<v2>~-<v3>~] } on { <s> <p1> <v4> }",
+          "comment": "<S> { <p1> [<v>~-<v1>~-<v2>~-<v3>~] } on { <s1> <p1> <v4> }",
           "status": "mf:proposed"
         },
         {
@@ -12060,7 +12094,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> [<v>~-<v1>~-<v2>~-<v3>~] } on { <s> <p1> <v3> }",
+          "comment": "<S> { <p1> [<v>~-<v1>~-<v2>~-<v3>~] } on { <s1> <p1> <v3> }",
           "status": "mf:proposed"
         },
         {
@@ -12082,6 +12116,40 @@
           "status": "mf:proposed"
         },
         {
+          "@id": "#1val1literal_passv",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1val1literal.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Lv.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1literal_passv",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S> { <p1> ['v'] } on { <s1> <p1> 'v' }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1val1literal_failv1",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1val1literal.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Lv1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1literal_failv1",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S> { <p1> ['v'] } on { <s1> <p1> 'v1' }",
+          "status": "mf:proposed"
+        },
+        {
           "@id": "#1val1literalStem_passv1",
           "@type": "sht:ValidationTest",
           "action": {
@@ -12096,7 +12164,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> ['v'~] } on { <s> <p1> 'v1' }",
+          "comment": "<S> { <p1> ['v'~] } on { <s1> <p1> 'v1' }",
           "status": "mf:proposed"
         },
         {
@@ -12114,7 +12182,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> ['v'~] } on { <s> <p1> 'v1a' }",
+          "comment": "<S> { <p1> ['v'~] } on { <s1> <p1> 'v1a' }",
           "status": "mf:proposed"
         },
         {
@@ -12150,7 +12218,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> ['v'~] } on { <s> <p1> <v1> }",
+          "comment": "<S> { <p1> ['v'~] } on { <s1> <p1> <v1> }",
           "status": "mf:proposed"
         },
         {
@@ -12168,7 +12236,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> ['v'-'v1'-'v2'-'v3'] } on { <s> <p1> 'v' }",
+          "comment": "<S> { <p1> ['v'-'v1'-'v2'-'v3'] } on { <s1> <p1> 'v' }",
           "status": "mf:proposed"
         },
         {
@@ -12186,7 +12254,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> ['v'-'v1'-'v2'-'v3'] } on { <s> <p1> 'v4' }",
+          "comment": "<S> { <p1> ['v'-'v1'-'v2'-'v3'] } on { <s1> <p1> 'v4' }",
           "status": "mf:proposed"
         },
         {
@@ -12204,7 +12272,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> ['v'-'v1'-'v2'-'v3'] } on { <s> <p1> <v4> }",
+          "comment": "<S> { <p1> ['v'-'v1'-'v2'-'v3'] } on { <s1> <p1> <v4> }",
           "status": "mf:proposed"
         },
         {
@@ -12276,7 +12344,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> ['v'-'v1'-'v2'-'v3'] } on { <s> <p1> 'v3' }",
+          "comment": "<S> { <p1> ['v'-'v1'-'v2'-'v3'] } on { <s1> <p1> 'v3' }",
           "status": "mf:proposed"
         },
         {
@@ -12294,7 +12362,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> ['v'-'v1'-'v2'-'v3'] } on { <s> <p1> 'v1a' }",
+          "comment": "<S> { <p1> ['v'-'v1'-'v2'-'v3'] } on { <s1> <p1> 'v1a' }",
           "status": "mf:proposed"
         },
         {
@@ -12312,7 +12380,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> ['v'~-'v1'~-'v2'~-'v3'~] } on { <s> <p1> 'v' }",
+          "comment": "<S> { <p1> ['v'~-'v1'~-'v2'~-'v3'~] } on { <s1> <p1> 'v' }",
           "status": "mf:proposed"
         },
         {
@@ -12330,7 +12398,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> ['v'~-'v1'~-'v2'~-'v3'~] } on { <s> <p1> 'v4' }",
+          "comment": "<S> { <p1> ['v'~-'v1'~-'v2'~-'v3'~] } on { <s1> <p1> 'v4' }",
           "status": "mf:proposed"
         },
         {
@@ -12384,7 +12452,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> ['v'~-'v1'~-'v2'~-'v3'~] } on { <s> <p1> 'v3' }",
+          "comment": "<S> { <p1> ['v'~-'v1'~-'v2'~-'v3'~] } on { <s1> <p1> 'v3' }",
           "status": "mf:proposed"
         },
         {
@@ -12406,6 +12474,40 @@
           "status": "mf:proposed"
         },
         {
+          "@id": "#1val1language_passLAtfr",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1val1language.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_LAtfr.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1language_passLAtfr",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S> { <p1> [@fr] } on { <s1> <p1> 'septante'@fr }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1val1language_failLAtfr-be",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1val1language.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_LAtfr-be.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1language_failLAtfr-be",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S> { <p1> [@fr] } on { <s1> <p1> 'septante'@fr-be }",
+          "status": "mf:proposed"
+        },
+        {
           "@id": "#1val1languageStem_passLAtfr-be",
           "@type": "sht:ValidationTest",
           "action": {
@@ -12420,7 +12522,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> [@fr~] } on { <s> <p1> 'septante'@fr-be }",
+          "comment": "<S> { <p1> [@fr~] } on { <s1> <p1> 'septante'@fr-be }",
           "status": "mf:proposed"
         },
         {
@@ -12438,7 +12540,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> [@fr~] } on { <s> <p1> 'septante'@fr-be-fbcl }",
+          "comment": "<S> { <p1> [@fr~] } on { <s1> <p1> 'septante'@fr-be-fbcl }",
           "status": "mf:proposed"
         },
         {
@@ -12474,7 +12576,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> ['fr'~] } on { <s> <p1> 'septante'@fr }",
+          "comment": "<S> { <p1> ['fr'~] } on { <s1> <p1> 'septante'@fr }",
           "status": "mf:proposed"
         },
         {
@@ -12492,7 +12594,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> [@fr-@fr-be-@fr-cd-@fr-ch] } on { <s> <p1> 'septante'@fr }",
+          "comment": "<S> { <p1> [@fr-@fr-be-@fr-cd-@fr-ch] } on { <s1> <p1> 'septante'@fr }",
           "status": "mf:proposed"
         },
         {
@@ -12510,7 +12612,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> [@fr-@fr-be-@fr-cd-@fr-ch] } on { <s> <p1> 'septante'@fr-FR }",
+          "comment": "<S> { <p1> [@fr-@fr-be-@fr-cd-@fr-ch] } on { <s1> <p1> 'septante'@fr-FR }",
           "status": "mf:proposed"
         },
         {
@@ -12528,7 +12630,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> ['fr'-'fr-be'-'fr-cd'-'fr-ch'] } on { <s> <p1> 'septante'@fr-FR }",
+          "comment": "<S> { <p1> ['fr'-'fr-be'-'fr-cd'-'fr-ch'] } on { <s1> <p1> 'septante'@fr-FR }",
           "status": "mf:proposed"
         },
         {
@@ -12600,7 +12702,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> [@fr-@fr-be-@fr-cd-@fr-ch] } on { <s> <p1> 'septante'@fr-ch }",
+          "comment": "<S> { <p1> [@fr-@fr-be-@fr-cd-@fr-ch] } on { <s1> <p1> 'septante'@fr-ch }",
           "status": "mf:proposed"
         },
         {
@@ -12618,7 +12720,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> [@fr-@fr-be-@fr-cd-@fr-ch] } on { <s> <p1> 'septante'@fr-be-fbcl }",
+          "comment": "<S> { <p1> [@fr-@fr-be-@fr-cd-@fr-ch] } on { <s1> <p1> 'septante'@fr-be-fbcl }",
           "status": "mf:proposed"
         },
         {
@@ -12636,7 +12738,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> [@fr~-@fr-be~-@fr-cd~-@fr-ch] } on { <s> <p1> 'septante'@fr }",
+          "comment": "<S> { <p1> [@fr~-@fr-be~-@fr-cd~-@fr-ch] } on { <s1> <p1> 'septante'@fr }",
           "status": "mf:proposed"
         },
         {
@@ -12654,7 +12756,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> [@fr~-@fr-be~-@fr-cd~-@fr-ch] } on { <s> <p1> 'septante'@fr-FR }",
+          "comment": "<S> { <p1> [@fr~-@fr-be~-@fr-cd~-@fr-ch] } on { <s1> <p1> 'septante'@fr-FR }",
           "status": "mf:proposed"
         },
         {
@@ -13838,6 +13940,907 @@
           "status": "mf:proposed"
         },
         {
+          "@id": "#1NOTIRI_passLv",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1NOTIRI.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Lv.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOTIRI_passLv",
+          "trait": [
+            "TriplePattern"
+          ],
+          "comment": "<S1> { <p1> NOT IRI } on { <s1> <p1> 'v' }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOTIRI_failIo1",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1NOTIRI.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOTIRI_failIo1",
+          "trait": [
+            "TriplePattern"
+          ],
+          "comment": "<S1> { <p1> NOT IRI } on { <s1> <p1> <o1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOTIRI_failempty",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1NOTIRI.shex",
+            "shape": "http://a.example/S1",
+            "data": "empty.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOTIRI_failempty",
+          "trait": [
+            "TriplePattern"
+          ],
+          "comment": "<S1> { <p1> NOT IRI } on {  }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOTNOTIRI_failLv",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1NOTNOTIRI.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Lv.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOTNOTIRI_failLv",
+          "trait": [
+            "TriplePattern"
+          ],
+          "comment": "<S1> { <p1> NOT(NOT IRI) } on { <s1> <p1> 'v' }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOTNOTIRI_passIo1",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1NOTNOTIRI.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOTNOTIRI_passIo1",
+          "trait": [
+            "TriplePattern"
+          ],
+          "comment": "<S1> { <p1> NOT(NOT IRI) } on { <s1> <p1> <o1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOTvs_failIv1",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1NOTvs.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOTvs_failIv1",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S1> { <p1> NOT [<v1> <v2> <v3>] } on { <s1> <p1> <v1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOTvs_passIo1",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1NOTvs.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOTvs_passIo1",
+          "trait": [
+            "TriplePattern"
+          ],
+          "comment": "<S1> { <p1> NOT [<v1> <v2> <v3>] } on { <s1> <p1> <o1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOTvs_failempty",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1NOTvs.shex",
+            "shape": "http://a.example/S1",
+            "data": "empty.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOTvs_failempty",
+          "trait": [
+            "TriplePattern"
+          ],
+          "comment": "<S1> { <p1> NOT [<v1> <v2> <v3>] } on {  }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOTNOTvs_passIv1",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1NOTNOTvs.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOTNOTvs_passIv1",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S1> { <p1> NOT(NOT [<v1>]) } on { <s1> <p1> <v1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOTNOTvs_failIo1",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1NOTNOTvs.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOTNOTvs_failIo1",
+          "trait": [
+            "TriplePattern"
+          ],
+          "comment": "<S1> { <p1> NOT(NOT [<v1>]) } on { <s1> <p1> <o1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOTdot_failIv1",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1NOTdot.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOTdot_failIv1",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S1> { <p1> NOT . } on { <s1> <p1> <v1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOTdot_failIo1",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1NOTdot.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOTdot_failIo1",
+          "trait": [
+            "TriplePattern"
+          ],
+          "comment": "<S1> { <p1> NOT . } on { <s1> <p1> <o1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOTdot_failempty",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1NOTdot.shex",
+            "shape": "http://a.example/S1",
+            "data": "empty.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOTdot_failempty",
+          "trait": [
+            "wildcard"
+          ],
+          "comment": "<S1> { <p1> NOT . } on {  }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOTNOTdot_passIv1",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1NOTNOTdot.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOTNOTdot_passIv1",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S1> { <p1> NOT(NOT .) } on { <s1> <p1> <v1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOTNOTdot_passIo1",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1NOTNOTdot.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOTNOTdot_passIo1",
+          "trait": [
+            "TriplePattern"
+          ],
+          "comment": "<S1> { <p1> NOT(NOT .) } on { <s1> <p1> <o1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1_NOTliteral_ANDvs_passIv1",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1_NOTliteral_ANDvs.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1_NOTliteral_ANDvs_passIv1",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S1> { <p1> (NOT  LITERAL) AND [<v1> <v2>]  } on { <s1> <p1> <v1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1_NOTliteral_ANDvs_failIo1",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1_NOTliteral_ANDvs.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1_NOTliteral_ANDvs_failIo1",
+          "trait": [
+            "TriplePattern"
+          ],
+          "comment": "<S1> { <p1> (NOT  LITERAL) AND [<v1> <v2>]  } on { <s1> <p1> <o1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1_NOTliteral_ANDvs_failLv",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1_NOTliteral_ANDvs.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Lv.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1_NOTliteral_ANDvs_failLv",
+          "trait": [
+            "TriplePattern"
+          ],
+          "comment": "<S1> { <p1> (NOT  LITERAL) AND [<v1> <v2>]  } on { <s1> <p1> 'v' }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOT_literalANDvs__passIv1",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1NOT_literalANDvs_.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOT_literalANDvs__passIv1",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S1> { <p1>  NOT (LITERAL  AND [<v1> <v2>]) } on { <s1> <p1> <v1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOT_literalANDvs__passLv",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1NOT_literalANDvs_.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Lv.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOT_literalANDvs__passLv",
+          "trait": [
+            "TriplePattern"
+          ],
+          "comment": "<S1> { <p1>  NOT (LITERAL  AND [<v1> <v2>]) } on { <s1> <p1> 'v' }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOTliteralANDvs_passIv1",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1NOTliteralANDvs.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOTliteralANDvs_passIv1",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S1> { <p1>  NOT  LITERAL  AND [<v1> <v2>]  } on { <s1> <p1> <v1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOTliteralANDvs_failIo1",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1NOTliteralANDvs.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOTliteralANDvs_failIo1",
+          "trait": [
+            "TriplePattern"
+          ],
+          "comment": "<S1> { <p1>  NOT  LITERAL  AND [<v1> <v2>]  } on { <s1> <p1> <o1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOTliteralANDvs_failLv",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1NOTliteralANDvs.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Lv.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOTliteralANDvs_failLv",
+          "trait": [
+            "TriplePattern"
+          ],
+          "comment": "<S1> { <p1>  NOT  LITERAL  AND [<v1> <v2>]  } on { <s1> <p1> 'v' }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1_NOTvs_ANDvs_failIv1",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1_NOTvs_ANDvs.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1_NOTvs_ANDvs_failIv1",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S1> { <p1> (NOT  [<v1>]) AND [<v2>]  } on { <s1> <p1> <v1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1_NOTvs_ANDvs_passIv2",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1_NOTvs_ANDvs.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv2.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1_NOTvs_ANDvs_passIv2",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S1> { <p1> (NOT  [<v1>]) AND [<v2>]  } on { <s1> <p1> <v2> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1_NOTvs_ANDvs_failIv3",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1_NOTvs_ANDvs.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv3.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1_NOTvs_ANDvs_failIv3",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S1> { <p1> (NOT  [<v1>]) AND [<v2>]  } on { <s1> <p1> <v3> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOT_vsANDvs__passIv1",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1NOT_vsANDvs_.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOT_vsANDvs__passIv1",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S1> { <p1>  NOT ([<v1>]  AND [<v2>]) } on { <s1> <p1> <v1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOT_vsANDvs__passIv2",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1NOT_vsANDvs_.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv2.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOT_vsANDvs__passIv2",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S1> { <p1>  NOT ([<v1>]  AND [<v2>]) } on { <s1> <p1> <v2> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOT_vsANDvs__passIv3",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1NOT_vsANDvs_.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv3.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOT_vsANDvs__passIv3",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S1> { <p1>  NOT ([<v1>]  AND [<v2>]) } on { <s1> <p1> <v3> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOTvsANDvs_failIv1",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1NOTvsANDvs.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOTvsANDvs_failIv1",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S1> { <p1>  NOT  [<v1>]  AND [<v2>]  } on { <s1> <p1> <v1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOTvsANDvs_passIv2",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1NOTvsANDvs.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv2.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOTvsANDvs_passIv2",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S1> { <p1>  NOT  [<v1>]  AND [<v2>]  } on { <s1> <p1> <v2> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOTvsANDvs_failIv3",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1NOTvsANDvs.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv3.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOTvsANDvs_failIv3",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S1> { <p1>  NOT  [<v1>]  AND [<v2>]  } on { <s1> <p1> <v3> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1_NOTliteral_ORvs_passIv1",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1_NOTliteral_ORvs.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1_NOTliteral_ORvs_passIv1",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S1> { <p1> (NOT  LITERAL) OR [<v1> <v2>]  } on { <s1> <p1> <v1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1_NOTliteral_ORvs_passIo1",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1_NOTliteral_ORvs.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1_NOTliteral_ORvs_passIo1",
+          "trait": [
+            "TriplePattern"
+          ],
+          "comment": "<S1> { <p1> (NOT  LITERAL) OR [<v1> <v2>]  } on { <s1> <p1> <o1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1_NOTliteral_ORvs_failLv",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1_NOTliteral_ORvs.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Lv.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1_NOTliteral_ORvs_failLv",
+          "trait": [
+            "TriplePattern"
+          ],
+          "comment": "<S1> { <p1> (NOT  LITERAL) OR [<v1> <v2>]  } on { <s1> <p1> 'v' }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOT_literalORvs__failIv1",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1NOT_literalORvs_.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOT_literalORvs__failIv1",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S1> { <p1>  NOT (LITERAL  OR [<v1> <v2>]) } on { <s1> <p1> <v1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOT_literalORvs__passIo1",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1NOT_literalORvs_.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOT_literalORvs__passIo1",
+          "trait": [
+            "TriplePattern"
+          ],
+          "comment": "<S1> { <p1>  NOT (LITERAL  OR [<v1> <v2>]) } on { <s1> <p1> <o1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOT_literalORvs__failLv",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1NOT_literalORvs_.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Lv.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOT_literalORvs__failLv",
+          "trait": [
+            "TriplePattern"
+          ],
+          "comment": "<S1> { <p1>  NOT (LITERAL  OR [<v1> <v2>]) } on { <s1> <p1> 'v' }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOTliteralORvs_passIv1",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1NOTliteralORvs.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOTliteralORvs_passIv1",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S1> { <p1>  NOT  LITERAL  OR [<v1> <v2>]  } on { <s1> <p1> <v1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOTliteralORvs_passIo1",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1NOTliteralORvs.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOTliteralORvs_passIo1",
+          "trait": [
+            "TriplePattern"
+          ],
+          "comment": "<S1> { <p1>  NOT  LITERAL  OR [<v1> <v2>]  } on { <s1> <p1> <o1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOTliteralORvs_failLv",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1NOTliteralORvs.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Lv.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOTliteralORvs_failLv",
+          "trait": [
+            "TriplePattern"
+          ],
+          "comment": "<S1> { <p1>  NOT  LITERAL  OR [<v1> <v2>]  } on { <s1> <p1> 'v' }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1_NOTvs_ORvs_failIv1",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1_NOTvs_ORvs.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1_NOTvs_ORvs_failIv1",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S1> { <p1> (NOT  [<v1>]) OR [<v2>]  } on { <s1> <p1> <v1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1_NOTvs_ORvs_passIv2",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1_NOTvs_ORvs.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv2.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1_NOTvs_ORvs_passIv2",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S1> { <p1> (NOT  [<v1>]) OR [<v2>]  } on { <s1> <p1> <v2> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1_NOTvs_ORvs_passIv3",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1_NOTvs_ORvs.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv3.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1_NOTvs_ORvs_passIv3",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S1> { <p1> (NOT  [<v1>]) OR [<v2>]  } on { <s1> <p1> <v3> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOT_vsORvs__failIv1",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1NOT_vsORvs_.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOT_vsORvs__failIv1",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S1> { <p1>  NOT ([<v1>]  OR [<v2>]) } on { <s1> <p1> <v1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOT_vsORvs__failIv2",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1NOT_vsORvs_.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv2.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOT_vsORvs__failIv2",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S1> { <p1>  NOT ([<v1>]  OR [<v2>]) } on { <s1> <p1> <v2> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOT_vsORvs__passIv3",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1NOT_vsORvs_.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv3.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOT_vsORvs__passIv3",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S1> { <p1>  NOT ([<v1>]  OR [<v2>]) } on { <s1> <p1> <v3> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOTvsORvs_failIv1",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1NOTvsORvs.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOTvsORvs_failIv1",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S1> { <p1>  NOT  [<v1>]  OR [<v2>]  } on { <s1> <p1> <v1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOTvsORvs_passIv2",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1NOTvsORvs.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv2.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOTvsORvs_passIv2",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S1> { <p1>  NOT  [<v1>]  OR [<v2>]  } on { <s1> <p1> <v2> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1NOTvsORvs_passIv3",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1NOTvsORvs.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv3.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOTvsORvs_passIv3",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S1> { <p1>  NOT  [<v1>]  OR [<v2>]  } on { <s1> <p1> <v3> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#NOT1NOTvs_passIv1",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/NOT1NOTvs.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "NOT1NOTvs_passIv1",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S1> NOT { <p1> NOT [<v1> <v2>] } on { <s1> <p1> <v1> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#NOT1NOTvs_passIv2",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/NOT1NOTvs.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv2.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "NOT1NOTvs_passIv2",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S1> NOT { <p1> NOT [<v1> <v2>] } on { <s1> <p1> <v2> }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#NOT1NOTvs_failIv3",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/NOT1NOTvs.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv3.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "NOT1NOTvs_failIv3",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S1> NOT { <p1> NOT [<v1> <v2>] } on { <s1> <p1> <v3> }",
+          "status": "mf:proposed"
+        },
+        {
           "@id": "#1val1vExpr1AND1OR1Ref3_pass-vc1vc2",
           "@type": "sht:ValidationTest",
           "action": {
@@ -14426,7 +15429,7 @@
           "trait": [
             "Closed"
           ],
-          "comment": "<S> { <p1> . } on { <s> <p0> <o0>; <p1> <o1> }",
+          "comment": "<S> { <p1> . } on { <s1> <p0> <o0>; <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -14443,7 +15446,7 @@
           "trait": [
             "Closed"
           ],
-          "comment": "<S> { <p1> . } on { <s> <p1> <o1>; <p2> <o2> }",
+          "comment": "<S> { <p1> . } on { <s1> <p1> <o1>; <p2> <o2> }",
           "status": "mf:proposed"
         },
         {
@@ -14513,7 +15516,7 @@
             "Extra",
             "IriEquivalence"
           ],
-          "comment": "<S> EXTRA <p1> { <p1> [<o1>] } on { <s> <p1> <o1>, <o2> }",
+          "comment": "<S> EXTRA <p1> { <p1> [<o1>] } on { <s1> <p1> <o1>, <o2> }",
           "status": "mf:proposed"
         },
         {
@@ -14549,7 +15552,7 @@
             "VapidExtra",
             "Extra"
           ],
-          "comment": "<S> EXTRA <p1> CLOSED { <p1> . } on { <s> <p1> <o1>, <o2> }",
+          "comment": "<S> EXTRA <p1> CLOSED { <p1> . } on { <s1> <p1> <o1>, <o2> }",
           "status": "mf:proposed"
         },
         {
@@ -14567,7 +15570,7 @@
             "VapidExtra",
             "Extra"
           ],
-          "comment": "<S> EXTRA <p1> CLOSED { <p1> . } on { <s> <p1> <o1>, <o2>; <p2> <o2> }",
+          "comment": "<S> EXTRA <p1> CLOSED { <p1> . } on { <s1> <p1> <o1>, <o2>; <p2> <o2> }",
           "status": "mf:proposed"
         },
         {
@@ -14603,7 +15606,7 @@
             "VapidExtra",
             "Extra"
           ],
-          "comment": "<S> EXTRA <p1> CLOSED { <p1> . } on { <s> <p1> <o1>, <o2> }",
+          "comment": "<S> EXTRA <p1> CLOSED { <p1> . } on { <s1> <p1> <o1>, <o2> }",
           "status": "mf:proposed"
         },
         {
@@ -14621,7 +15624,7 @@
             "VapidExtra",
             "Extra"
           ],
-          "comment": "<S> EXTRA <p1> CLOSED { <p1> . } on { <s> <p1> <o1>, <o2>; <p2> <o2> }",
+          "comment": "<S> EXTRA <p1> CLOSED { <p1> . } on { <s1> <p1> <o1>, <o2>; <p2> <o2> }",
           "status": "mf:proposed"
         },
         {
@@ -14639,7 +15642,7 @@
             "Extra",
             "ValueSet"
           ],
-          "comment": "<S> EXTRA <p1> { <p1> [<o1> <o2>] } on { <s> <p1> <o1>, <o2> }",
+          "comment": "<S> EXTRA <p1> { <p1> [<o1> <o2>] } on { <s1> <p1> <o1>, <o2> }",
           "status": "mf:proposed"
         },
         {
@@ -14657,7 +15660,7 @@
             "Extra",
             "ValueSet"
           ],
-          "comment": "<S> EXTRA <p1> { <p1> [<o1> <o2>]+ } on { <s> <p1> <o1>, <o2> }",
+          "comment": "<S> EXTRA <p1> { <p1> [<o1> <o2>]+ } on { <s1> <p1> <o1>, <o2> }",
           "status": "mf:proposed"
         },
         {
@@ -14675,7 +15678,7 @@
             "Extra",
             "ValueSet"
           ],
-          "comment": "<S> EXTRA <p1> { <p1> [<o1> <o2>] } on { <s> <p1> <o1>, _:o2 }",
+          "comment": "<S> EXTRA <p1> { <p1> [<o1> <o2>] } on { <s1> <p1> <o1>, _:o2 }",
           "status": "mf:proposed"
         },
         {
@@ -14711,7 +15714,7 @@
             "Extra",
             "IriEquivalence"
           ],
-          "comment": "<S> EXTRA <p2> { <p1> [<o1>] } on { <s> <p1> <o1>, <o2> }",
+          "comment": "<S> EXTRA <p2> { <p1> [<o1>] } on { <s1> <p1> <o1>, <o2> }",
           "status": "mf:proposed"
         },
         {
@@ -14769,7 +15772,7 @@
             "IriEquivalence",
             "EachOf"
           ],
-          "comment": "<S> EXTRA <p1> { <p0> . | <p1> [<o1>], <p2> .? } on { <s> <p1> <o1>, <o2> }",
+          "comment": "<S> EXTRA <p1> { <p0> . | <p1> [<o1>], <p2> .? } on { <s1> <p1> <o1>, <o2> }",
           "status": "mf:proposed"
         },
         {
@@ -14805,7 +15808,7 @@
             "VapidExtra",
             "Extra"
           ],
-          "comment": "<S> EXTRA <p1> { <p1> . } on { <s> <p1> <o1>, <o2> }",
+          "comment": "<S> EXTRA <p1> { <p1> . } on { <s1> <p1> <o1>, <o2> }",
           "status": "mf:proposed"
         },
         {
@@ -14935,7 +15938,7 @@
           "trait": [
             "Start"
           ],
-          "comment": "start=<S> <S> { <p1> . } on { <s> <p1> <o1> }",
+          "comment": "start=<S> <S> { <p1> . } on { <s1> <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -14951,7 +15954,7 @@
           "trait": [
             "Start"
           ],
-          "comment": "start=<S> <S> { <p1> . } on { <s> <p0> <o0>; <p1> <o1> }",
+          "comment": "start=<S> <S> { <p1> . } on { <s1> <p0> <o0>; <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -14967,7 +15970,7 @@
           "trait": [
             "Start"
           ],
-          "comment": "start=<S> <S> { <p1> . } on { <s> <p2> <o1> }",
+          "comment": "start=<S> <S> { <p1> . } on { <s1> <p2> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -14983,7 +15986,7 @@
           "trait": [
             "Start"
           ],
-          "comment": "start=_:S _:S { <p1> . } on { <s> <p1> <o1> }",
+          "comment": "start=_:S _:S { <p1> . } on { <s1> <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -14999,7 +16002,7 @@
           "trait": [
             "Start"
           ],
-          "comment": "start=_:S _S { <p1> . } on { <s> <p2> <o1> }",
+          "comment": "start=_:S _S { <p1> . } on { <s1> <p2> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -15015,7 +16018,7 @@
           "trait": [
             "Start"
           ],
-          "comment": "start={ <p1> . } on { <s> <p1> <o1> }",
+          "comment": "start={ <p1> . } on { <s1> <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -15031,7 +16034,7 @@
           "trait": [
             "Start"
           ],
-          "comment": "start= { <p1> . } on { <s> <p1> <o1> }",
+          "comment": "start= { <p1> . } on { <s1> <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -15047,7 +16050,7 @@
           "trait": [
             "Start"
           ],
-          "comment": "start= { <p1> . } on { <s> <p1> <o1> }",
+          "comment": "start= { <p1> . } on { <s1> <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -15063,7 +16066,7 @@
           "trait": [
             "Start"
           ],
-          "comment": "start={ <p1> . } on { <s> <p2> <o1> }",
+          "comment": "start={ <p1> . } on { <s1> <p2> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -15169,7 +16172,7 @@
           "trait": [
             "Annotation"
           ],
-          "comment": "<S> { <p1> .; <annot> <IRIREF> } on { <s> <p2> <o1> }",
+          "comment": "<S> { <p1> .; <annot> <IRIREF> } on { <s1> <p2> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -15254,7 +16257,7 @@
           "trait": [
             "Annotation"
           ],
-          "comment": "<S> { <p1> .; <a1> '1'; <a1> '2'; <a1> '3'; } on { <s> <p2> <o1> }",
+          "comment": "<S> { <p1> .; <a1> '1'; <a1> '2'; <a1> '3'; } on { <s1> <p2> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -15288,7 +16291,7 @@
           "trait": [
             "Annotation"
           ],
-          "comment": "<S> { <p1> .; <a1> '1'; <a1> '2'; <a1> '3'; } on { <s> <p2> <o1> }",
+          "comment": "<S> { <p1> .; <a1> '1'; <a1> '2'; <a1> '3'; } on { <s1> <p2> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -15322,7 +16325,7 @@
           "trait": [
             "Annotation"
           ],
-          "comment": "<S> { <p1> . } // <annot> <IRIREF> on { <s> <p2> <o1> }",
+          "comment": "<S> { <p1> . } // <annot> <IRIREF> on { <s1> <p2> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -16047,7 +17050,7 @@
           "trait": [
             "FocusConstraint"
           ],
-          "comment": "<S> <dt1> on { <s> <p1> 'ab'^^my:bloodType }",
+          "comment": "<S> <dt1> on { <s1> <p1> 'ab'^^my:bloodType }",
           "status": "mf:proposed"
         },
         {
@@ -16067,7 +17070,7 @@
           "trait": [
             "focusConstraint"
           ],
-          "comment": "<S> <dt1> on { <s> <p1> 'ab'^^my:bloodType999 }",
+          "comment": "<S> <dt1> on { <s1> <p1> 'ab'^^my:bloodType999 }",
           "status": "mf:proposed"
         },
         {
@@ -16925,7 +17928,7 @@
             "NotValueExpression",
             "OrValueExpression"
           ],
-          "comment": "@@",
+          "comment": "<S1> NOT { <p1> . } OR { <p1> .; <p2> . } on {  }",
           "status": "mf:proposed"
         },
         {
@@ -16943,7 +17946,7 @@
             "NotValueExpression",
             "OrValueExpression"
           ],
-          "comment": "@@",
+          "comment": "<S1> NOT { <p1> . } OR { <p1> .; <p2> . } on { <n1>  <p2> <n2> }",
           "status": "mf:proposed"
         },
         {
@@ -16961,7 +17964,7 @@
             "NotValueExpression",
             "OrValueExpression"
           ],
-          "comment": "@@",
+          "comment": "<S1> NOT { <p1> . } OR { <p1> .; <p2> . } on { <n1>  <p1> <n2> . <n1>  <p2> <n3> }",
           "status": "mf:proposed"
         },
         {
@@ -16979,7 +17982,7 @@
             "NotValueExpression",
             "OrValueExpression"
           ],
-          "comment": "@@",
+          "comment": "<S1> NOT { <p1> . } OR { <p1> .; <p2> . } on { <n1>  <p1> <n2> }",
           "status": "mf:proposed"
         },
         {
@@ -16997,7 +18000,7 @@
             "NotValueExpression",
             "OrValueExpression"
           ],
-          "comment": "@@",
+          "comment": "<S1> ((NOT { <p1> . } OR { <p1> .; <p2> . }) AND (NOT { <p3> . } OR { <p3> .; <p4> . }) AND (NOT { <p5> . } OR { <p5> .; <p6> . }) ) on {  }",
           "status": "mf:proposed"
         },
         {
@@ -17015,7 +18018,7 @@
             "NotValueExpression",
             "OrValueExpression"
           ],
-          "comment": "@@",
+          "comment": "<S1> ((NOT { <p1> . } OR { <p1> .; <p2> . }) AND (NOT { <p3> . } OR { <p3> .; <p4> . }) AND (NOT { <p5> . } OR { <p5> .; <p6> . }) ) on { <n1>  <p2> <n2> }",
           "status": "mf:proposed"
         },
         {
@@ -17033,7 +18036,7 @@
             "NotValueExpression",
             "OrValueExpression"
           ],
-          "comment": "@@",
+          "comment": "<S1> ((NOT { <p1> . } OR { <p1> .; <p2> . }) AND (NOT { <p3> . } OR { <p3> .; <p4> . }) AND (NOT { <p5> . } OR { <p5> .; <p6> . }) ) on { <n1>  <p1> <n2> . <n1>  <p2> <n3> }",
           "status": "mf:proposed"
         },
         {
@@ -17051,7 +18054,7 @@
             "NotValueExpression",
             "OrValueExpression"
           ],
-          "comment": "@@",
+          "comment": "<S1> ((NOT { <p1> . } OR { <p1> .; <p2> . }) AND (NOT { <p3> . } OR { <p3> .; <p4> . }) AND (NOT { <p5> . } OR { <p5> .; <p6> . }) ) on { <n1>  <p1> <n2> }",
           "status": "mf:proposed"
         },
         {
@@ -17060,7 +18063,7 @@
           "action": {
             "schema": "../schemas/NOT1dotOR2dotX3AND1.shex",
             "shape": "http://a.example/S1",
-            "data": "In1_Ip2_In2.ttl",
+            "data": "empty.ttl",
             "focus": "http://a.example/n1"
           },
           "extensionResults": [],
@@ -17069,7 +18072,7 @@
             "NotValueExpression",
             "OrValueExpression"
           ],
-          "comment": "@@",
+          "comment": "<S1> ((NOT { <p1> . } OR { <p1> .; <p2> . }) AND (NOT { <p3> . } OR { <p3> .; <p4> . }) AND (NOT { <p5> . } OR { <p5> .; <p6> . }) AND ({ <p1> . } OR { <p3> . } OR { <p5> . } ) ) on {  }",
           "status": "mf:proposed"
         },
         {
@@ -17087,7 +18090,7 @@
             "NotValueExpression",
             "OrValueExpression"
           ],
-          "comment": "@@",
+          "comment": "<S1> ((NOT { <p1> . } OR { <p1> .; <p2> . }) AND (NOT { <p3> . } OR { <p3> .; <p4> . }) AND (NOT { <p5> . } OR { <p5> .; <p6> . }) AND ({ <p1> . } OR { <p3> . } OR { <p5> . } ) ) on { <n1>  <p2> <n2> }",
           "status": "mf:proposed"
         },
         {
@@ -17105,7 +18108,7 @@
             "NotValueExpression",
             "OrValueExpression"
           ],
-          "comment": "@@",
+          "comment": "<S1> ((NOT { <p1> . } OR { <p1> .; <p2> . }) AND (NOT { <p3> . } OR { <p3> .; <p4> . }) AND (NOT { <p5> . } OR { <p5> .; <p6> . }) AND ({ <p1> . } OR { <p3> . } OR { <p5> . } ) ) on { <n1>  <p1> <n2> . <n1>  <p2> <n3> }",
           "status": "mf:proposed"
         },
         {
@@ -17123,7 +18126,7 @@
             "NotValueExpression",
             "OrValueExpression"
           ],
-          "comment": "@@",
+          "comment": "<S1> ((NOT { <p1> . } OR { <p1> .; <p2> . }) AND (NOT { <p3> . } OR { <p3> .; <p4> . }) AND (NOT { <p5> . } OR { <p5> .; <p6> . }) AND ({ <p1> . } OR { <p3> . } OR { <p5> . } ) ) on { <n1>  <p1> <n2> }",
           "status": "mf:proposed"
         },
         {
@@ -17495,7 +18498,7 @@
           "trait": [
             "ErrorReport"
           ],
-          "comment": "<S> { <p1> ., <p2> . } on { <s> <p1> <o1> }",
+          "comment": "<S> { <p1> ., <p2> . } on { <s1> <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
