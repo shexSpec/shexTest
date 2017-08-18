@@ -6,6 +6,7 @@ start=@<Schema>
 
 <Schema> CLOSED {
   a [sx:Schema] ;
+  sx:imports @<IriList1Plus>? ;
   sx:startActs @<SemActList1Plus>? ;
   sx:start @<shapeExpr>?;
   sx:shapes @<shapeExpr>*
@@ -147,6 +148,11 @@ start=@<Schema>
   sx:valueExpr @<shapeExpr>? ;
   sx:semActs @<SemActList1Plus>? ;
   sx:annotation @<AnnotationList1Plus>?
+}
+
+<IriList1Plus> CLOSED {
+  rdf:first IRI ;
+  rdf:rest  [rdf:nil] OR @<IriList1Plus>
 }
 
 <SemActList1Plus> CLOSED {
