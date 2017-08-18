@@ -209,9 +209,11 @@
         <#1val1literaliriStemMinusliteraliri3>
         <#1val1dotMinuslanguage3>
         <#1val1dotMinuslanguageStem3>
+        <#1val1language>
         <#1val1languageStem>
         <#1val1languageStemMinuslanguage3>
         <#1val1languageStemMinuslanguageStem3>
+        <#1val1literal>
         <#1val1literallanguageStem>
         <#1val1literallanguageStemMinusliterallanguage3>
         <#1val1literalAtlanguageStem>
@@ -366,6 +368,9 @@
         <#1dotAND1dotAND1dot>
         <#open1dotAND1dotcloseAND1dot>
         <#1dotANDopen1dotAND1dotclose>
+
+        # imports
+        <#1dotIMPORT1dot>
     ) .
 
 <#0> a sht:RepresentationTest ;
@@ -3260,3 +3265,14 @@
     sx:ttl <1dotANDopen1dotAND1dotclose.ttl> ;
     .
 
+# imports {
+
+<#1dotIMPORT1dot> a sht:RepresentationTest ;
+    mf:name "1dotIMPORT1dot" ;
+    mf:status mf:proposed ;
+    sx:shex <1dotIMPORT1dot.shex> ;
+    sx:json <1dotIMPORT1dot.json> ;
+    sx:ttl <1dotIMPORT1dot.ttl> ;
+    .
+
+# } imports

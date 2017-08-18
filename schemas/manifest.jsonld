@@ -1812,6 +1812,15 @@
           "ttl": "1val1dotMinuslanguageStem3.ttl"
         },
         {
+          "@id": "#1val1language",
+          "@type": "sht:RepresentationTest",
+          "name": "1val1language",
+          "status": "mf:proposed",
+          "shex": "1val1language.shex",
+          "json": "1val1language.json",
+          "ttl": "1val1language.ttl"
+        },
+        {
           "@id": "#1val1languageStem",
           "@type": "sht:RepresentationTest",
           "name": "1val1languageStem",
@@ -1837,6 +1846,15 @@
           "shex": "1val1languageStemMinuslanguageStem3.shex",
           "json": "1val1languageStemMinuslanguageStem3.json",
           "ttl": "1val1languageStemMinuslanguageStem3.ttl"
+        },
+        {
+          "@id": "#1val1literal",
+          "@type": "sht:RepresentationTest",
+          "name": "1val1literal",
+          "status": "mf:proposed",
+          "shex": "1val1literal.shex",
+          "json": "1val1literal.json",
+          "ttl": "1val1literal.ttl"
         },
         {
           "@id": "#1val1literallanguageStem",
@@ -3151,6 +3169,15 @@
           "shex": "1dotANDopen1dotAND1dotclose.shex",
           "json": "1dotANDopen1dotAND1dotclose.json",
           "ttl": "1dotANDopen1dotAND1dotclose.ttl"
+        },
+        {
+          "@id": "#1dotIMPORT1dot",
+          "@type": "sht:RepresentationTest",
+          "name": "1dotIMPORT1dot",
+          "status": "mf:proposed",
+          "shex": "1dotIMPORT1dot.shex",
+          "json": "1dotIMPORT1dot.json",
+          "ttl": "1dotIMPORT1dot.ttl"
         }
       ]
     }
