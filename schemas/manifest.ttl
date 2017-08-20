@@ -46,7 +46,7 @@
         <#1refbnode_with_leading_underscore1>
         <#1refbnode_with_spanning_PN_CHARS1>
         <#1refbnode_with_spanning_PN_CHARS_BASE1>
-        <#3circularRef1>
+        <#3circRefPlus1>
         <#1iriRef1>
         <#1bnodeRef1>
         <#1dotInline1>
@@ -687,12 +687,12 @@
     sx:ttl <1refbnode_with_spanning_PN_CHARS_BASE1.ttl> ;
     .
 
-<#3circularRef1> a sht:RepresentationTest ;
-    mf:name "3circularRef1" ;
+<#3circRefPlus1> a sht:RepresentationTest ;
+    mf:name "3circRefPlus1" ;
     mf:status mf:proposed ;
-    sx:shex <3circularRef1.shex> ;
-    sx:json <3circularRef1.json> ;
-    sx:ttl <3circularRef1.ttl> ;
+    sx:shex <3circRefPlus1.shex> ;
+    sx:json <3circRefPlus1.json> ;
+    sx:ttl <3circRefPlus1.ttl> ;
     .
 
 <#1iriRef1> a sht:RepresentationTest ;

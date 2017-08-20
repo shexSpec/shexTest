@@ -3551,16 +3551,16 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#3circularRef1_pass-open",
+          "@id": "#3circRefPlus1_pass-open",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/3circularRef1.shex",
+            "schema": "../schemas/3circRefPlus1.shex",
             "shape": "http://a.example/S1",
-            "data": "3circularRef1_pass-open.ttl",
+            "data": "3circRefPlus1_pass-open.ttl",
             "focus": "http://a.example/n1"
           },
           "extensionResults": [],
-          "name": "3circularRef1_pass-open",
+          "name": "3circRefPlus1_pass-open",
           "trait": [
             "EachOf",
             "ShapeReference"
@@ -3569,17 +3569,18 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#3circularRef1_pass-closed",
+          "@id": "#3circRefPlus1_pass-recursiveData",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/3circularRef1.shex",
+            "schema": "../schemas/3circRefPlus1.shex",
             "shape": "http://a.example/S1",
-            "data": "3circularRef1_pass-closed.ttl",
+            "data": "3circRefPlus1_pass-recursiveData.ttl",
             "focus": "http://a.example/n1"
           },
           "extensionResults": [],
-          "name": "3circularRef1_pass-closed",
+          "name": "3circRefPlus1_pass-recursiveData",
           "trait": [
+            "RecursiveData",
             "EachOf",
             "ShapeReference"
           ],
@@ -18376,7 +18377,8 @@
           "extensionResults": [],
           "name": "recursion_example",
           "trait": [
-            "ShapeMap"
+            "ShapeMap",
+            "RecursiveData"
           ],
           "comment": "<S1> {<p1> @<S1>*}} on { <s1> <p1> <s2> . <s2> <p1> <s3> . <s3> <p1> <s1> .}",
           "status": "mf:proposed",
