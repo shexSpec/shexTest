@@ -371,6 +371,25 @@
 
         # imports
         <#1dotIMPORT1dot>
+        <#2RefS1-IS2>
+        <#2RefS1-Icirc>
+        <#2RefS1>
+        <#2RefS2-IS1>
+        <#2RefS2-Icirc>
+        <#2RefS2>
+        <#3circRefS1-IS2-IS3-IS3>
+        <#3circRefS1-IS2-IS3>
+        <#3circRefS1-IS23>
+        <#3circRefS1-Icirc>
+        <#3circRefS12>
+        <#3circRefS123-Icirc>
+        <#3circRefS123>
+        <#3circRefS2-IS3>
+        <#3circRefS2-Icirc>
+        <#3circRefS23>
+        <#3circRefS3-IS12>
+        <#3circRefS3-Icirc>
+        <#3circRefS3>
     ) .
 
 <#0> a sht:RepresentationTest ;
@@ -3273,6 +3292,158 @@
     sx:shex <1dotIMPORT1dot.shex> ;
     sx:json <1dotIMPORT1dot.json> ;
     sx:ttl <1dotIMPORT1dot.ttl> ;
+    .
+
+<#2RefS1-IS2> a sht:RepresentationTest ;
+    mf:name "2RefS1-IS2" ;
+    mf:status mf:proposed ;
+    sx:shex <2RefS1-IS2.shex> ;
+    sx:json <2RefS1-IS2.json> ;
+    sx:ttl <2RefS1-IS2.ttl> ;
+    .
+
+<#2RefS1-Icirc> a sht:RepresentationTest ;
+    mf:name "2RefS1-Icirc" ;
+    mf:status mf:proposed ;
+    sx:shex <2RefS1-Icirc.shex> ;
+    sx:json <2RefS1-Icirc.json> ;
+    sx:ttl <2RefS1-Icirc.ttl> ;
+    .
+
+<#2RefS1> a sht:RepresentationTest ;
+    mf:name "2RefS1" ;
+    mf:status mf:proposed ;
+    sx:shex <2RefS1.shex> ;
+    sx:json <2RefS1.json> ;
+    sx:ttl <2RefS1.ttl> ;
+    .
+
+<#2RefS2-IS1> a sht:RepresentationTest ;
+    mf:name "2RefS2-IS1" ;
+    mf:status mf:proposed ;
+    sx:shex <2RefS2-IS1.shex> ;
+    sx:json <2RefS2-IS1.json> ;
+    sx:ttl <2RefS2-IS1.ttl> ;
+    .
+
+<#2RefS2-Icirc> a sht:RepresentationTest ;
+    mf:name "2RefS2-Icirc" ;
+    mf:status mf:proposed ;
+    sx:shex <2RefS2-Icirc.shex> ;
+    sx:json <2RefS2-Icirc.json> ;
+    sx:ttl <2RefS2-Icirc.ttl> ;
+    .
+
+<#2RefS2> a sht:RepresentationTest ;
+    mf:name "2RefS2" ;
+    mf:status mf:proposed ;
+    sx:shex <2RefS2.shex> ;
+    sx:json <2RefS2.json> ;
+    sx:ttl <2RefS2.ttl> ;
+    .
+
+<#3circRefS1-IS2-IS3-IS3> a sht:RepresentationTest ;
+    mf:name "3circRefS1-IS2-IS3-IS3" ;
+    mf:status mf:proposed ;
+    sx:shex <3circRefS1-IS2-IS3-IS3.shex> ;
+    sx:json <3circRefS1-IS2-IS3-IS3.json> ;
+    sx:ttl <3circRefS1-IS2-IS3-IS3.ttl> ;
+    .
+
+<#3circRefS1-IS2-IS3> a sht:RepresentationTest ;
+    mf:name "3circRefS1-IS2-IS3" ;
+    mf:status mf:proposed ;
+    sx:shex <3circRefS1-IS2-IS3.shex> ;
+    sx:json <3circRefS1-IS2-IS3.json> ;
+    sx:ttl <3circRefS1-IS2-IS3.ttl> ;
+    .
+
+<#3circRefS1-IS23> a sht:RepresentationTest ;
+    mf:name "3circRefS1-IS23" ;
+    mf:status mf:proposed ;
+    sx:shex <3circRefS1-IS23.shex> ;
+    sx:json <3circRefS1-IS23.json> ;
+    sx:ttl <3circRefS1-IS23.ttl> ;
+    .
+
+<#3circRefS1-Icirc> a sht:RepresentationTest ;
+    mf:name "3circRefS1-Icirc" ;
+    mf:status mf:proposed ;
+    sx:shex <3circRefS1-Icirc.shex> ;
+    sx:json <3circRefS1-Icirc.json> ;
+    sx:ttl <3circRefS1-Icirc.ttl> ;
+    .
+
+<#3circRefS12> a sht:RepresentationTest ;
+    mf:name "3circRefS12" ;
+    mf:status mf:proposed ;
+    sx:shex <3circRefS12.shex> ;
+    sx:json <3circRefS12.json> ;
+    sx:ttl <3circRefS12.ttl> ;
+    .
+
+<#3circRefS123-Icirc> a sht:RepresentationTest ;
+    mf:name "3circRefS123-Icirc" ;
+    mf:status mf:proposed ;
+    sx:shex <3circRefS123-Icirc.shex> ;
+    sx:json <3circRefS123-Icirc.json> ;
+    sx:ttl <3circRefS123-Icirc.ttl> ;
+    .
+
+<#3circRefS123> a sht:RepresentationTest ;
+    mf:name "3circRefS123" ;
+    mf:status mf:proposed ;
+    sx:shex <3circRefS123.shex> ;
+    sx:json <3circRefS123.json> ;
+    sx:ttl <3circRefS123.ttl> ;
+    .
+
+<#3circRefS2-IS3> a sht:RepresentationTest ;
+    mf:name "3circRefS2-IS3" ;
+    mf:status mf:proposed ;
+    sx:shex <3circRefS2-IS3.shex> ;
+    sx:json <3circRefS2-IS3.json> ;
+    sx:ttl <3circRefS2-IS3.ttl> ;
+    .
+
+<#3circRefS2-Icirc> a sht:RepresentationTest ;
+    mf:name "3circRefS2-Icirc" ;
+    mf:status mf:proposed ;
+    sx:shex <3circRefS2-Icirc.shex> ;
+    sx:json <3circRefS2-Icirc.json> ;
+    sx:ttl <3circRefS2-Icirc.ttl> ;
+    .
+
+<#3circRefS23> a sht:RepresentationTest ;
+    mf:name "3circRefS23" ;
+    mf:status mf:proposed ;
+    sx:shex <3circRefS23.shex> ;
+    sx:json <3circRefS23.json> ;
+    sx:ttl <3circRefS23.ttl> ;
+    .
+
+<#3circRefS3-IS12> a sht:RepresentationTest ;
+    mf:name "3circRefS3-IS12" ;
+    mf:status mf:proposed ;
+    sx:shex <3circRefS3-IS12.shex> ;
+    sx:json <3circRefS3-IS12.json> ;
+    sx:ttl <3circRefS3-IS12.ttl> ;
+    .
+
+<#3circRefS3-Icirc> a sht:RepresentationTest ;
+    mf:name "3circRefS3-Icirc" ;
+    mf:status mf:proposed ;
+    sx:shex <3circRefS3-Icirc.shex> ;
+    sx:json <3circRefS3-Icirc.json> ;
+    sx:ttl <3circRefS3-Icirc.ttl> ;
+    .
+
+<#3circRefS3> a sht:RepresentationTest ;
+    mf:name "3circRefS3" ;
+    mf:status mf:proposed ;
+    sx:shex <3circRefS3.shex> ;
+    sx:json <3circRefS3.json> ;
+    sx:ttl <3circRefS3.ttl> ;
     .
 
 # } imports
