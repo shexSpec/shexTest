@@ -1219,6 +1219,9 @@
         <#1dot_fail-empty-err>
         <#2dot_fail-empty-err>
 
+## imports
+        <#3circRefS1-IS2-IS3-IS3>
+
 ## ShapeMaps
         <#node_kind_example>
         <#dependent_shape>
@@ -15541,33 +15544,35 @@
     .
 
 ## } manual schemas
-# deferred {
-## error reporting {
-<#1dot_fail-empty-err> a sht:ValidationFailure ;
-    mf:name "1dot_fail-empty-err" ;
-    sht:trait sht:ErrorReport ;
-    rdfs:comment "<S> { <p1> . } on {  }" ;
+## imports {
+
+### 2RefS1-IS2      : I=2RefS2       S1 | 2RefS2      :          S2 sht:imports
+### 2RefS2-IS1      : I=2RefS1       S2 | 2RefS1      :          S1 sht:imports
+### 2RefS1-IS2-Icirc: I=2RefS2-Icirc S1 | 2RefS2-Icirc: I=2RefS1 S2 sht:imports , sht:circularImports
+
+### 3circRefS123           :                          S1 S2 S3
+### 3circRefS1-IS23        : I=3circRefS23                  S1 | 3circRefS23      :                 S2 S3
+### 3circRefS1-IS2-IS3     : I=3circRefS2-IS3               S1 | 3circRefS2-IS3   : I=3circRefS3       S2 | 3circRefS3: S3
+### 3circRefS3-IS12        : I=3circRefS12                  S3 | 3circRefS12      :                 S1 S2
+### 3circRefS123-Icirc     : I=3circRefS123-Icirc S1 S2 S3
+### 3circRefS1-Icirc       : I=3circRefS2-Icirc             S1 | 3circRefS2-Icirc : I=3circRefS3-Icirc S2 | 3circRefS3-Icirc: I=3circRefS1-Icirc S3
+### 3circRefS1-IS2-IS3-IS3 : I=3circRefS2-IS3 I=3circRefS3  S1 | 3circRefS2-IS3   : I=3circRefS3       S2 | 3circRefS3: S3
+<#3circRefS1-IS2-IS3-IS3> a sht:ValidationTest ;
+    mf:name "3circRefS1-IS2-IS3-IS3" ;
+    sht:trait sht:Import ;
+    rdfs:comment "<S1> { <p1> ., <p2> @<S2>? } | <S2> { <p3> @<S3> } | <S3> { <p4> @<S1> } on { <n1> <p1> \"X\" ; <p2> <n2> . <n2> <p3> <n3> . <n3> <p4> <n5> . <n5> <p1> \"X\" }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1dot.shex> ;
+      sht:schema <../schemas/3circRefS1-IS2-IS3-IS3.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <empty.ttl> ;
-      sht:focus <http://a.example/s1>
-    ]
+      sht:data <3circRefPlus1_pass-open.ttl> ;
+      sht:focus <http://a.example/n1>
+    ] ;
+#    mf:result <3circRefS1-IS2-IS3-IS3_results.json>
     .
 
-<#2dot_fail-empty-err> a sht:ValidationFailure ; # 2dot_fail-missing-err
-    mf:name "2dot_fail-empty-err" ;
-    sht:trait sht:ErrorReport ;
-    rdfs:comment "<S> { <p1> ., <p2> . } on { <s1> <p1> <o1> }" ;
-    mf:status mf:proposed ;
-    mf:action [
-      sht:schema <../schemas/2dot.shex> ;
-      sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_Io1.ttl> ;
-      sht:focus <http://a.example/s1>
-    ]
-    .
+## } imports
+## ShapeMaps {
 
 <#node_kind_example> a sht:ValidationFailure ; # node_kind_example
     mf:name "node_kind_example" ;
@@ -15606,6 +15611,35 @@
       sht:data <recursion_example.ttl>
     ] ;
     mf:result <recursion_example_results.json>
+    .
+
+## } ShapeMaps
+# deferred {
+## error reporting {
+<#1dot_fail-empty-err> a sht:ValidationFailure ;
+    mf:name "1dot_fail-empty-err" ;
+    sht:trait sht:ErrorReport ;
+    rdfs:comment "<S> { <p1> . } on {  }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1dot.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <empty.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#2dot_fail-empty-err> a sht:ValidationFailure ; # 2dot_fail-missing-err
+    mf:name "2dot_fail-empty-err" ;
+    sht:trait sht:ErrorReport ;
+    rdfs:comment "<S> { <p1> ., <p2> . } on { <s1> <p1> <o1> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/2dot.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
     .
 
 ## } error reporting
