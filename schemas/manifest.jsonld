@@ -3174,6 +3174,9 @@
           "@id": "#1dotIMPORT1dot",
           "@type": "sht:RepresentationTest",
           "name": "1dotIMPORT1dot",
+          "trait": [
+            "Import"
+          ],
           "status": "mf:proposed",
           "shex": "1dotIMPORT1dot.shex",
           "json": "1dotIMPORT1dot.json",
@@ -3183,6 +3186,9 @@
           "@id": "#2RefS1-IS2",
           "@type": "sht:RepresentationTest",
           "name": "2RefS1-IS2",
+          "trait": [
+            "Import"
+          ],
           "status": "mf:proposed",
           "shex": "2RefS1-IS2.shex",
           "json": "2RefS1-IS2.json",
@@ -3192,24 +3198,21 @@
           "@id": "#2RefS1-Icirc",
           "@type": "sht:RepresentationTest",
           "name": "2RefS1-Icirc",
+          "trait": [
+            "Import"
+          ],
           "status": "mf:proposed",
           "shex": "2RefS1-Icirc.shex",
           "json": "2RefS1-Icirc.json",
           "ttl": "2RefS1-Icirc.ttl"
         },
         {
-          "@id": "#2RefS1",
-          "@type": "sht:RepresentationTest",
-          "name": "2RefS1",
-          "status": "mf:proposed",
-          "shex": "2RefS1.shex",
-          "json": "2RefS1.json",
-          "ttl": "2RefS1.ttl"
-        },
-        {
           "@id": "#2RefS2-IS1",
           "@type": "sht:RepresentationTest",
           "name": "2RefS2-IS1",
+          "trait": [
+            "Import"
+          ],
           "status": "mf:proposed",
           "shex": "2RefS2-IS1.shex",
           "json": "2RefS2-IS1.json",
@@ -3219,6 +3222,9 @@
           "@id": "#2RefS2-Icirc",
           "@type": "sht:RepresentationTest",
           "name": "2RefS2-Icirc",
+          "trait": [
+            "Import"
+          ],
           "status": "mf:proposed",
           "shex": "2RefS2-Icirc.shex",
           "json": "2RefS2-Icirc.json",
@@ -3228,6 +3234,9 @@
           "@id": "#2RefS2",
           "@type": "sht:RepresentationTest",
           "name": "2RefS2",
+          "trait": [
+            "Import"
+          ],
           "status": "mf:proposed",
           "shex": "2RefS2.shex",
           "json": "2RefS2.json",
@@ -3237,6 +3246,9 @@
           "@id": "#3circRefS1-IS2-IS3-IS3",
           "@type": "sht:RepresentationTest",
           "name": "3circRefS1-IS2-IS3-IS3",
+          "trait": [
+            "Import"
+          ],
           "status": "mf:proposed",
           "shex": "3circRefS1-IS2-IS3-IS3.shex",
           "json": "3circRefS1-IS2-IS3-IS3.json",
@@ -3246,6 +3258,9 @@
           "@id": "#3circRefS1-IS2-IS3",
           "@type": "sht:RepresentationTest",
           "name": "3circRefS1-IS2-IS3",
+          "trait": [
+            "Import"
+          ],
           "status": "mf:proposed",
           "shex": "3circRefS1-IS2-IS3.shex",
           "json": "3circRefS1-IS2-IS3.json",
@@ -3255,6 +3270,9 @@
           "@id": "#3circRefS1-IS23",
           "@type": "sht:RepresentationTest",
           "name": "3circRefS1-IS23",
+          "trait": [
+            "Import"
+          ],
           "status": "mf:proposed",
           "shex": "3circRefS1-IS23.shex",
           "json": "3circRefS1-IS23.json",
@@ -3264,24 +3282,21 @@
           "@id": "#3circRefS1-Icirc",
           "@type": "sht:RepresentationTest",
           "name": "3circRefS1-Icirc",
+          "trait": [
+            "Import"
+          ],
           "status": "mf:proposed",
           "shex": "3circRefS1-Icirc.shex",
           "json": "3circRefS1-Icirc.json",
           "ttl": "3circRefS1-Icirc.ttl"
         },
         {
-          "@id": "#3circRefS12",
-          "@type": "sht:RepresentationTest",
-          "name": "3circRefS12",
-          "status": "mf:proposed",
-          "shex": "3circRefS12.shex",
-          "json": "3circRefS12.json",
-          "ttl": "3circRefS12.ttl"
-        },
-        {
           "@id": "#3circRefS123-Icirc",
           "@type": "sht:RepresentationTest",
           "name": "3circRefS123-Icirc",
+          "trait": [
+            "Import"
+          ],
           "status": "mf:proposed",
           "shex": "3circRefS123-Icirc.shex",
           "json": "3circRefS123-Icirc.json",
@@ -3291,42 +3306,33 @@
           "@id": "#3circRefS123",
           "@type": "sht:RepresentationTest",
           "name": "3circRefS123",
+          "trait": [
+            "Import"
+          ],
           "status": "mf:proposed",
           "shex": "3circRefS123.shex",
           "json": "3circRefS123.json",
           "ttl": "3circRefS123.ttl"
         },
         {
-          "@id": "#3circRefS2-IS3",
-          "@type": "sht:RepresentationTest",
-          "name": "3circRefS2-IS3",
-          "status": "mf:proposed",
-          "shex": "3circRefS2-IS3.shex",
-          "json": "3circRefS2-IS3.json",
-          "ttl": "3circRefS2-IS3.ttl"
-        },
-        {
           "@id": "#3circRefS2-Icirc",
           "@type": "sht:RepresentationTest",
           "name": "3circRefS2-Icirc",
+          "trait": [
+            "Import"
+          ],
           "status": "mf:proposed",
           "shex": "3circRefS2-Icirc.shex",
           "json": "3circRefS2-Icirc.json",
           "ttl": "3circRefS2-Icirc.ttl"
         },
         {
-          "@id": "#3circRefS23",
-          "@type": "sht:RepresentationTest",
-          "name": "3circRefS23",
-          "status": "mf:proposed",
-          "shex": "3circRefS23.shex",
-          "json": "3circRefS23.json",
-          "ttl": "3circRefS23.ttl"
-        },
-        {
           "@id": "#3circRefS3-IS12",
           "@type": "sht:RepresentationTest",
           "name": "3circRefS3-IS12",
+          "trait": [
+            "Import"
+          ],
           "status": "mf:proposed",
           "shex": "3circRefS3-IS12.shex",
           "json": "3circRefS3-IS12.json",
@@ -3336,19 +3342,13 @@
           "@id": "#3circRefS3-Icirc",
           "@type": "sht:RepresentationTest",
           "name": "3circRefS3-Icirc",
+          "trait": [
+            "Import"
+          ],
           "status": "mf:proposed",
           "shex": "3circRefS3-Icirc.shex",
           "json": "3circRefS3-Icirc.json",
           "ttl": "3circRefS3-Icirc.ttl"
-        },
-        {
-          "@id": "#3circRefS3",
-          "@type": "sht:RepresentationTest",
-          "name": "3circRefS3",
-          "status": "mf:proposed",
-          "shex": "3circRefS3.shex",
-          "json": "3circRefS3.json",
-          "ttl": "3circRefS3.ttl"
         }
       ]
     }
