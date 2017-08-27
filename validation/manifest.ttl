@@ -15358,7 +15358,7 @@
 <#shapeExternRef_fail> a sht:ValidationFailure ;
     mf:name "shapeExternRef_fail" ;
     sht:trait sht:SemanticAction , sht:ExternalShape ;
-    rdfs:comment "<S> { <p1> @<Sext> } <Sext> EXTERNAL + <S> { <p2> . } on { <s1> <p1> <n2> }" ;
+    rdfs:comment "<S> { <p1> @<Sext> } <Sext> EXTERNAL + <S> { <p2> . } on { <n1> <p1> <n2> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/shapeExternRef.shex> ;
