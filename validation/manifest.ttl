@@ -264,6 +264,7 @@
         <#1refbnode1_pass>
         <#1refbnode1_fail-g1-arc>
         <#1refbnode1_fail-g2-arc>
+        <#3circRefS123>
         <#3circRefPlus1_pass-open>
         <#3circRefPlus1_pass-recursiveData>
         <#1iriRef1_pass-iri>
@@ -1220,6 +1221,17 @@
         <#2dot_fail-empty-err>
 
 ## imports
+        <#2RefS1-IS2>
+        <#2RefS1-IS2_fail-p2>
+        <#2RefS2-IS1>
+        <#2RefS1-Icirc>
+        <#2RefS1-Icirc_fail-p2>
+        <#3circRefS1-IS23>
+        <#3circRefS1-IS23_pass-p1>
+        <#3circRefS1-IS2-IS3>
+        <#3circRefS3-IS12>
+        <#3circRefS123-Icirc>
+        <#3circRefS1-Icirc>
         <#3circRefS1-IS2-IS3-IS3>
 
 ## ShapeMaps
@@ -4001,6 +4013,20 @@
  # !../schemas/1refbnode_with_leading_underscore1.shex
  # !../schemas/1refbnode_with_spanning_PN_CHARS1.shex
  # !../schemas/1refbnode_with_spanning_PN_CHARS_BASE1.shex
+
+<#3circRefS123> a sht:ValidationTest ;
+    mf:name "3circRefS123" ;
+    sht:trait sht:Import ;
+    rdfs:comment "<S1> { <p1> ., <p2> @<S2>? } <S2> { <p3> @<S3> } <S3> { <p4> @<S1> } on { <n1> <p1> \"X\" ; <p2> <n2> . <n2> <p3> <n3> . <n3> <p4> <n5> . <n5> <p1> \"X\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/3circRefS123.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <3circRefPlus1_pass-open.ttl> ;
+      sht:focus <http://a.example/n1>
+    ] ;
+    mf:result <3circRefPlus1_pass-open.val>
+    .
 
 <#3circRefPlus1_pass-open> a sht:ValidationTest ;
     mf:name "3circRefPlus1_pass-open" ;
@@ -15546,9 +15572,9 @@
 ## } manual schemas
 ## imports {
 
-### 2RefS1-IS2      : I=2RefS2       S1 | 2RefS2      :          S2 sht:imports
-### 2RefS2-IS1      : I=2RefS1       S2 | 2RefS1      :          S1 sht:imports
-### 2RefS1-IS2-Icirc: I=2RefS2-Icirc S1 | 2RefS2-Icirc: I=2RefS1 S2 sht:imports , sht:circularImports
+### 2RefS1-IS2  : I=2RefS2       S1 | 2RefS2      :          S2 sht:imports
+### 2RefS2-IS1  : I=2RefS1       S2 | 2RefS1      :          S1 sht:imports
+### 2RefS1-Icirc: I=2RefS2-Icirc S1 | 2RefS2-Icirc: I=2RefS1 S2 sht:imports , sht:circularImports
 
 ### 3circRefS123           :                          S1 S2 S3
 ### 3circRefS1-IS23        : I=3circRefS23                  S1 | 3circRefS23      :                 S2 S3
@@ -15557,10 +15583,162 @@
 ### 3circRefS123-Icirc     : I=3circRefS123-Icirc S1 S2 S3
 ### 3circRefS1-Icirc       : I=3circRefS2-Icirc             S1 | 3circRefS2-Icirc : I=3circRefS3-Icirc S2 | 3circRefS3-Icirc: I=3circRefS1-Icirc S3
 ### 3circRefS1-IS2-IS3-IS3 : I=3circRefS2-IS3 I=3circRefS3  S1 | 3circRefS2-IS3   : I=3circRefS3       S2 | 3circRefS3: S3
+
+<#2RefS1-IS2> a sht:ValidationTest ;
+    mf:name "2RefS1-IS2" ;
+    sht:trait sht:Import ;
+    rdfs:comment "I2 <S1> { <p1> @<S2> } | <S2> { <p2> . } on { <s1> <p1> <n2> . <n2> <p2> \"X\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/2RefS1-IS2.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip1_In2.In2_Ip2_LX.ttl> ;
+      sht:focus <http://a.example/n1>
+    ] ;
+    mf:result <In2_Ip2_In1@In1_Ip1_LX.val>
+    .
+
+<#2RefS1-IS2_fail-p2> a sht:ValidationFailure ;
+    mf:name "2RefS1-IS2_fail-p2" ;
+    sht:trait sht:Import ;
+    rdfs:comment "I2 <S1> { <p1> @<S2> } | <S2> { <p2> . } on { <n1> <p1> <n2> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/2RefS1-IS2.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip1_In2.ttl> ;
+      sht:focus <http://a.example/n1>
+    ] ;
+    .
+
+<#2RefS2-IS1> a sht:ValidationTest ;
+    mf:name "2RefS2-IS1" ;
+    sht:trait sht:Import ;
+    rdfs:comment "I2 <S2> { <p2> . } | <S1> { <p1> @<S2> }  on { <s1> <p1> <n2> . <n2> <p2> \"X\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/2RefS2-IS1.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip1_In2.In2_Ip2_LX.ttl> ;
+      sht:focus <http://a.example/n1>
+    ] ;
+    mf:result <In2_Ip2_In1@In1_Ip1_LX.val>
+    .
+
+<#2RefS1-Icirc> a sht:ValidationTest ;
+    mf:name "2RefS1-Icirc" ;
+    sht:trait sht:Import ;
+    rdfs:comment "I2 <S1> { <p1> @<S2> } | I1 <S2> { <p2> . } on { <s1> <p1> <n2> . <n2> <p2> \"X\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/2RefS1-Icirc.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip1_In2.In2_Ip2_LX.ttl> ;
+      sht:focus <http://a.example/n1>
+    ] ;
+    mf:result <In2_Ip2_In1@In1_Ip1_LX.val>
+    .
+
+<#2RefS1-Icirc_fail-p2> a sht:ValidationFailure ;
+    mf:name "2RefS1-Icirc_fail-p2" ;
+    sht:trait sht:Import ;
+    rdfs:comment "I2 <S1> { <p1> @<S2> } | <S2> { <p2> . } on { <n1> <p1> <n2> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/2RefS1-Icirc.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip1_In2.ttl> ;
+      sht:focus <http://a.example/n1>
+    ] ;
+    .
+
+<#3circRefS1-IS23> a sht:ValidationTest ;
+    mf:name "3circRefS1-IS23" ;
+    sht:trait sht:Import ;
+    rdfs:comment "I23 <S1> { <p1> ., <p2> @<S2>? } | <S2> { <p3> @<S3> } <S3> { <p4> @<S1> } on { <n1> <p1> \"X\" ; <p2> <n2> . <n2> <p3> <n3> . <n3> <p4> <n5> . <n5> <p1> \"X\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/3circRefS1-IS23.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <3circRefPlus1_pass-open.ttl> ;
+      sht:focus <http://a.example/n1>
+    ] ;
+    mf:result <3circRefPlus1_pass-open.val>
+    .
+
+<#3circRefS1-IS23_pass-p1> a sht:ValidationTest ;
+    mf:name "3circRefS1-IS23_pass-p1" ;
+    sht:trait sht:Import ;
+    rdfs:comment "I23 <S1> { <p1> ., <p2> @<S2>? } | <S2> { <p3> @<S3> } <S3> { <p4> @<S1> } on { <n1> <p1> <n2> }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/3circRefS1-IS23.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip1_In2.ttl> ;
+      sht:focus <http://a.example/n1>
+    ] ;
+    .
+
+<#3circRefS1-IS2-IS3> a sht:ValidationTest ;
+    mf:name "3circRefS1-IS2-IS3" ;
+    sht:trait sht:Import ;
+    rdfs:comment "I2 <S1> { <p1> ., <p2> @<S2>? } | I3 <S2> { <p3> @<S3> } | <S3> { <p4> @<S1> } on { <n1> <p1> \"X\" ; <p2> <n2> . <n2> <p3> <n3> . <n3> <p4> <n5> . <n5> <p1> \"X\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/3circRefS1-IS2-IS3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <3circRefPlus1_pass-open.ttl> ;
+      sht:focus <http://a.example/n1>
+    ] ;
+    mf:result <3circRefPlus1_pass-open.val>
+    .
+
+<#3circRefS3-IS12> a sht:ValidationTest ;
+    mf:name "3circRefS3-IS12" ;
+    sht:trait sht:Import ;
+    rdfs:comment "I2 <S3> { <p4> @<S1> } | <S1> { <p1> ., <p2> @<S2>? } <S2> { <p3> @<S3> } on { <n1> <p1> \"X\" ; <p2> <n2> . <n2> <p3> <n3> . <n3> <p4> <n5> . <n5> <p1> \"X\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/3circRefS3-IS12.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <3circRefPlus1_pass-open.ttl> ;
+      sht:focus <http://a.example/n1>
+    ] ;
+    mf:result <3circRefPlus1_pass-open.val>
+    .
+
+<#3circRefS123-Icirc> a sht:ValidationTest ;
+    mf:name "3circRefS123-Icirc" ;
+    sht:trait sht:Import ;
+    rdfs:comment "I1 <S1> { <p1> ., <p2> @<S2>? } <S2> { <p3> @<S3> } <S3> { <p4> @<S1> } on { <n1> <p1> \"X\" ; <p2> <n2> . <n2> <p3> <n3> . <n3> <p4> <n5> . <n5> <p1> \"X\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/3circRefS123-Icirc.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <3circRefPlus1_pass-open.ttl> ;
+      sht:focus <http://a.example/n1>
+    ] ;
+    mf:result <3circRefPlus1_pass-open.val>
+    .
+
+<#3circRefS1-Icirc> a sht:ValidationTest ;
+    mf:name "3circRefS1-Icirc" ;
+    sht:trait sht:Import ;
+    rdfs:comment "I2 <S1> { <p1> ., <p2> @<S2>? } | I3 <S2> { <p3> @<S3> } | I1 <S3> { <p4> @<S1> } on { <n1> <p1> \"X\" ; <p2> <n2> . <n2> <p3> <n3> . <n3> <p4> <n5> . <n5> <p1> \"X\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/3circRefS1-Icirc.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <3circRefPlus1_pass-open.ttl> ;
+      sht:focus <http://a.example/n1>
+    ] ;
+    mf:result <3circRefPlus1_pass-open.val>
+    .
+
 <#3circRefS1-IS2-IS3-IS3> a sht:ValidationTest ;
     mf:name "3circRefS1-IS2-IS3-IS3" ;
     sht:trait sht:Import ;
-    rdfs:comment "<S1> { <p1> ., <p2> @<S2>? } | <S2> { <p3> @<S3> } | <S3> { <p4> @<S1> } on { <n1> <p1> \"X\" ; <p2> <n2> . <n2> <p3> <n3> . <n3> <p4> <n5> . <n5> <p1> \"X\" }" ;
+    rdfs:comment "I2 I3 <S1> { <p1> ., <p2> @<S2>? } | I3 <S2> { <p3> @<S3> } | <S3> { <p4> @<S1> } on { <n1> <p1> \"X\" ; <p2> <n2> . <n2> <p3> <n3> . <n3> <p4> <n5> . <n5> <p1> \"X\" }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/3circRefS1-IS2-IS3-IS3.shex> ;
@@ -15568,7 +15746,7 @@
       sht:data <3circRefPlus1_pass-open.ttl> ;
       sht:focus <http://a.example/n1>
     ] ;
-#    mf:result <3circRefS1-IS2-IS3-IS3_results.json>
+    mf:result <3circRefPlus1_pass-open.val>
     .
 
 ## } imports

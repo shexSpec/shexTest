@@ -2,6 +2,6 @@
   "imports": [ "2RefS2" ],
   "shapes": [
     { "id": "http://a.example/S1", "type": "Shape", "expression": {
-        "type": "TripleConstraint", "predicate": "http://a.example/p2",
+        "type": "TripleConstraint", "predicate": "http://a.example/p1",
         "valueExpr": "http://a.example/S2" } }
   ] }
