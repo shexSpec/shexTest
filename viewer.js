@@ -15,7 +15,6 @@
     evt.preventDefault();
     droparea.removeClass("droppable");
     let xfer = evt.originalEvent.dataTransfer;
-    console.dir(xfer.files.length);
     [ "files", "application/json", "text/uri-list", "text/plain"
     ].find(l => {
       if (l.indexOf("/") === -1) {
