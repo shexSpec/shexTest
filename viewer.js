@@ -105,20 +105,17 @@
       }
 
       function title (anchor) {
+        let url = anchor.get(0).href;
         $.ajax({
-          url: anchor.get(0).href,
+          url: url,
           dataType: 'text',
           type: 'GET',
-          async: true,
-          statusCode: {
-            404: function (response) {
-              alert(JSON.stringify([404, response]));
-            }
-          },
+          async: true
         }).then(function (data) {
           anchor.attr("title", data);
         }).fail(function (jqXHR, status, errorThrown) {
-          alert(JSON.stringify([jqXHR, status, errorThrown]));
+          anchor.addClass("error");
+          anchor.attr("title", url + " " + status + ": " + errorThrown);
         });
         return anchor;
       }
