@@ -1221,6 +1221,7 @@
         <#2dot_fail-empty-err>
 
 ## imports
+###  shape reference
         <#2RefS1-IS2>
         <#2RefS1-IS2_fail-p2>
         <#2RefS2-IS1>
@@ -1233,6 +1234,17 @@
         <#3circRefS123-Icirc>
         <#3circRefS1-Icirc>
         <#3circRefS1-IS2-IS3-IS3>
+
+###  value reference
+        <#1valExprRef-IV1_fail-lit-short>
+        <#1valExprRef-IV1_pass-lit-equal>
+        <#1valExprRefbnode-IV1_fail-lit-short>
+        <#1valExprRefbnode-IV1_pass-lit-equal>
+
+###  include (ref to triple expression)
+        <#2EachInclude1-IS2_pass>
+
+# could steal from: <#2EachInclude1-after_pass> <#2OneInclude1_pass> <#2OneInclude1-after_pass>
 
 ## ShapeMaps
         <#node_kind_example>
@@ -15571,6 +15583,7 @@
 
 ## } manual schemas
 ## imports {
+### shape reference {
 
 ### 2RefS1-IS2  : I=2RefS2       S1 | 2RefS2      :          S2 sht:imports
 ### 2RefS2-IS1  : I=2RefS1       S2 | 2RefS1      :          S1 sht:imports
@@ -15749,6 +15762,78 @@
     mf:result <3circRefPlus1_pass-open.val>
     .
 
+### } shape reference
+### value reference {
+
+<#1valExprRef-IV1_fail-lit-short> a sht:ValidationFailure ;
+    mf:name "1valExprRef-IV1_fail-lit-short" ;
+    sht:trait sht:ValueReference , sht:LengthFacet ;
+    rdfs:comment "<vc1> = LITERAL MINLENGTH 5 <S1> { <p1> <vc1> } on { <s1> <p1> \"abcd\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1valExprRef-IV1.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Labcd.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1valExprRef-IV1_pass-lit-equal> a sht:ValidationTest ;
+    mf:name "1valExprRef-IV1_pass-lit-equal" ;
+    sht:trait sht:ValueReference , sht:LengthFacet ;
+    rdfs:comment "<vc1> = LITERAL MINLENGTH 5 <S1> { <p1> <vc1> } on { <s1> <p1> \"abcde\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1valExprRef-IV1.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Labcde.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1valExprRefbnode-IV1_fail-lit-short> a sht:ValidationFailure ;
+    mf:name "1valExprRefbnode-IV1_fail-lit-short" ;
+    sht:trait sht:ValueReference , sht:LengthFacet ;
+    rdfs:comment "_:vc1 = LITERAL MINLENGTH 5 <S1> { <p1> _:vc1 } on { <s1> <p1> \"abcd\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1valExprRefbnode-IV1.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Labcd.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1valExprRefbnode-IV1_pass-lit-equal> a sht:ValidationTest ;
+    mf:name "1valExprRefbnode-IV1_pass-lit-equal" ;
+    sht:trait sht:ValueReference , sht:LengthFacet ;
+    rdfs:comment "_:vc1 = LITERAL MINLENGTH 5 <S1> { <p1> _:vc1 } on { <s1> <p1> \"abcde\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1valExprRefbnode-IV1.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Labcde.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+### } value reference
+### include {
+
+<#2EachInclude1-IS2_pass> a sht:ValidationTest ;
+    mf:name "2EachInclude1-IS2_pass" ;
+    sht:trait sht:Include , sht:EachOf ;
+    rdfs:comment "I2 <S1> { &<S2>, <p1> . } on { <n1> <p1> \"X\" ; <p2> \"Y\" }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/2EachInclude1-IS2.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip1_LX.In1_Ip2_LY.ttl> ;
+      sht:focus <http://a.example/n1>
+    ]
+    .
+
+### } include
 ## } imports
 ## ShapeMaps {
 

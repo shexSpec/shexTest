@@ -109,7 +109,7 @@ start=@<Schema>
   a [sx:Wildcard]
 }
 
-<tripleExpression> @<TripleConstraint> OR @<OneOf> OR @<EachOf>
+<tripleExpression> @<TripleConstraint> OR @<OneOf> OR @<EachOf> OR CLOSED {  }
 
 <OneOf> CLOSED {
   a [sx:OneOf] ;

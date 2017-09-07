@@ -18564,6 +18564,96 @@
           "result": "3circRefPlus1_pass-open.val"
         },
         {
+          "@id": "#1valExprRef-IV1_fail-lit-short",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1valExprRef-IV1.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Labcd.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1valExprRef-IV1_fail-lit-short",
+          "trait": [
+            "ValueReference",
+            "LengthFacet"
+          ],
+          "comment": "<vc1> = LITERAL MINLENGTH 5 <S1> { <p1> <vc1> } on { <s1> <p1> \"abcd\" }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1valExprRef-IV1_pass-lit-equal",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1valExprRef-IV1.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Labcde.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1valExprRef-IV1_pass-lit-equal",
+          "trait": [
+            "ValueReference",
+            "LengthFacet"
+          ],
+          "comment": "<vc1> = LITERAL MINLENGTH 5 <S1> { <p1> <vc1> } on { <s1> <p1> \"abcde\" }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1valExprRefbnode-IV1_fail-lit-short",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1valExprRefbnode-IV1.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Labcd.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1valExprRefbnode-IV1_fail-lit-short",
+          "trait": [
+            "ValueReference",
+            "LengthFacet"
+          ],
+          "comment": "_:vc1 = LITERAL MINLENGTH 5 <S1> { <p1> _:vc1 } on { <s1> <p1> \"abcd\" }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1valExprRefbnode-IV1_pass-lit-equal",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1valExprRefbnode-IV1.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Labcde.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1valExprRefbnode-IV1_pass-lit-equal",
+          "trait": [
+            "ValueReference",
+            "LengthFacet"
+          ],
+          "comment": "_:vc1 = LITERAL MINLENGTH 5 <S1> { <p1> _:vc1 } on { <s1> <p1> \"abcde\" }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#2EachInclude1-IS2_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/2EachInclude1-IS2.shex",
+            "shape": "http://a.example/S1",
+            "data": "In1_Ip1_LX.In1_Ip2_LY.ttl",
+            "focus": "http://a.example/n1"
+          },
+          "extensionResults": [],
+          "name": "2EachInclude1-IS2_pass",
+          "trait": [
+            "Include",
+            "EachOf"
+          ],
+          "comment": "I2 <S1> { &<S2>, <p1> . } on { <n1> <p1> \"X\" ; <p2> \"Y\" }",
+          "status": "mf:proposed"
+        },
+        {
           "@id": "#node_kind_example",
           "@type": "sht:ValidationFailure",
           "action": {

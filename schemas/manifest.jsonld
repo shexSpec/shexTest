@@ -3349,6 +3349,78 @@
           "shex": "3circRefS3-Icirc.shex",
           "json": "3circRefS3-Icirc.json",
           "ttl": "3circRefS3-Icirc.ttl"
+        },
+        {
+          "@id": "#2EachInclude1-S2",
+          "@type": "sht:RepresentationTest",
+          "name": "2EachInclude1-S2",
+          "trait": [
+            "Import"
+          ],
+          "status": "mf:proposed",
+          "shex": "2EachInclude1-S2.shex",
+          "json": "2EachInclude1-S2.json",
+          "ttl": "2EachInclude1-S2.ttl"
+        },
+        {
+          "@id": "#2EachInclude1-IS2",
+          "@type": "sht:RepresentationTest",
+          "name": "2EachInclude1-IS2",
+          "trait": [
+            "Import"
+          ],
+          "status": "mf:proposed",
+          "shex": "2EachInclude1-IS2.shex",
+          "json": "2EachInclude1-IS2.json",
+          "ttl": "2EachInclude1-IS2.ttl"
+        },
+        {
+          "@id": "#1valExprRefbnode-vc1",
+          "@type": "sht:RepresentationTest",
+          "name": "1valExprRefbnode-vc1",
+          "trait": [
+            "Import"
+          ],
+          "status": "mf:proposed",
+          "shex": "1valExprRefbnode-vc1.shex",
+          "json": "1valExprRefbnode-vc1.json",
+          "ttl": "1valExprRefbnode-vc1.ttl"
+        },
+        {
+          "@id": "#1valExprRefbnode-IV1",
+          "@type": "sht:RepresentationTest",
+          "name": "1valExprRefbnode-IV1",
+          "trait": [
+            "Import"
+          ],
+          "status": "mf:proposed",
+          "shex": "1valExprRefbnode-IV1.shex",
+          "json": "1valExprRefbnode-IV1.json",
+          "ttl": "1valExprRefbnode-IV1.ttl"
+        },
+        {
+          "@id": "#1valExprRef-vc1",
+          "@type": "sht:RepresentationTest",
+          "name": "1valExprRef-vc1",
+          "trait": [
+            "Import"
+          ],
+          "status": "mf:proposed",
+          "shex": "1valExprRef-vc1.shex",
+          "json": "1valExprRef-vc1.json",
+          "ttl": "1valExprRef-vc1.ttl"
+        },
+        {
+          "@id": "#1valExprRef-IV1",
+          "@type": "sht:RepresentationTest",
+          "name": "1valExprRef-IV1",
+          "trait": [
+            "Import"
+          ],
+          "status": "mf:proposed",
+          "shex": "1valExprRef-IV1.shex",
+          "json": "1valExprRef-IV1.json",
+          "ttl": "1valExprRef-IV1.ttl"
         }
       ]
     }

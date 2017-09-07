@@ -390,6 +390,12 @@
         <#3circRefS3-IS12>
         <#3circRefS3-Icirc>
 #         <#3circRefS3>
+        <#2EachInclude1-S2>
+        <#2EachInclude1-IS2>
+        <#1valExprRefbnode-vc1>
+        <#1valExprRefbnode-IV1>
+        <#1valExprRef-vc1>
+        <#1valExprRef-IV1>
     ) .
 
 <#0> a sht:RepresentationTest ;
@@ -3465,5 +3471,59 @@
 #     sx:json <3circRefS3.json> ;
 #     sx:ttl <3circRefS3.ttl> ;
 #     .
+
+<#1valExprRef-IV1> a sht:RepresentationTest ;
+    mf:name "1valExprRef-IV1" ;
+    mf:status mf:proposed ;
+    sht:trait sht:Import ;
+    sx:shex <1valExprRef-IV1.shex> ;
+    sx:json <1valExprRef-IV1.json> ;
+    sx:ttl <1valExprRef-IV1.ttl> ;
+    .
+
+<#1valExprRef-vc1> a sht:RepresentationTest ;
+    mf:name "1valExprRef-vc1" ;
+    mf:status mf:proposed ;
+    sht:trait sht:Import ;
+    sx:shex <1valExprRef-vc1.shex> ;
+    sx:json <1valExprRef-vc1.json> ;
+    sx:ttl <1valExprRef-vc1.ttl> ;
+    .
+
+<#1valExprRefbnode-IV1> a sht:RepresentationTest ;
+    mf:name "1valExprRefbnode-IV1" ;
+    mf:status mf:proposed ;
+    sht:trait sht:Import ;
+    sx:shex <1valExprRefbnode-IV1.shex> ;
+    sx:json <1valExprRefbnode-IV1.json> ;
+    sx:ttl <1valExprRefbnode-IV1.ttl> ;
+    .
+
+<#1valExprRefbnode-vc1> a sht:RepresentationTest ;
+    mf:name "1valExprRefbnode-vc1" ;
+    mf:status mf:proposed ;
+    sht:trait sht:Import ;
+    sx:shex <1valExprRefbnode-vc1.shex> ;
+    sx:json <1valExprRefbnode-vc1.json> ;
+    sx:ttl <1valExprRefbnode-vc1.ttl> ;
+    .
+
+<#2EachInclude1-IS2> a sht:RepresentationTest ;
+    mf:name "2EachInclude1-IS2" ;
+    mf:status mf:proposed ;
+    sht:trait sht:Import ;
+    sx:shex <2EachInclude1-IS2.shex> ;
+    sx:json <2EachInclude1-IS2.json> ;
+    sx:ttl <2EachInclude1-IS2.ttl> ;
+    .
+
+<#2EachInclude1-S2> a sht:RepresentationTest ;
+    mf:name "2EachInclude1-S2" ;
+    mf:status mf:proposed ;
+    sht:trait sht:Import ;
+    sx:shex <2EachInclude1-S2.shex> ;
+    sx:json <2EachInclude1-S2.json> ;
+    sx:ttl <2EachInclude1-S2.ttl> ;
+    .
 
 # } imports
