@@ -11459,7 +11459,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "$<vs1> = [.-<v1>-<v2>-<v3>] <S> { <p1> $<vs1> } on { <s1> <p1> <o1> }",
+          "comment": "<vs1> = [.-<v1>-<v2>-<v3>] <S> { <p1> @<vs1> } on { <s1> <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -11477,7 +11477,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "$<vs1> = [.-<v1>-<v2>-<v3>] <S> { <p1> $<vs1> } on { <s1> <p1> <v1> }",
+          "comment": "<vs1> = [.-<v1>-<v2>-<v3>] <S> { <p1> @<vs1> } on { <s1> <p1> <v1> }",
           "status": "mf:proposed"
         },
         {
@@ -11495,7 +11495,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "$<vs1> = [.-<v1>-<v2>-<v3>] <S> { <p1> $<vs1> } on { <s1> <p1> <v2> }",
+          "comment": "<vs1> = [.-<v1>-<v2>-<v3>] <S> { <p1> @<vs1> } on { <s1> <p1> <v2> }",
           "status": "mf:proposed"
         },
         {
@@ -11513,7 +11513,7 @@
             "Stem",
             "ValueSet"
           ],
-          "comment": "$<vs1> = [.-<v1>-<v2>-<v3>] <S> { <p1> $<vs1> } on { <s1> <p1> <v3> }",
+          "comment": "<vs1> = [.-<v1>-<v2>-<v3>] <S> { <p1> @<vs1> } on { <s1> <p1> <v3> }",
           "status": "mf:proposed"
         },
         {
@@ -12912,7 +12912,7 @@
             "ValueReference",
             "LengthFacet"
           ],
-          "comment": "$<vc1> = LITERAL MINLENGTH 5 <S1> { <p1> $<vc1> } on { <s1> <p1> \"abcd\" }",
+          "comment": "<vc1> = LITERAL MINLENGTH 5 <S1> { <p1> @<vc1> } on { <s1> <p1> \"abcd\" }",
           "status": "mf:proposed"
         },
         {
@@ -12930,7 +12930,7 @@
             "ValueReference",
             "LengthFacet"
           ],
-          "comment": "$<vc1> = LITERAL MINLENGTH 5 <S1> { <p1> $<vc1> } on { <s1> <p1> \"abcde\" }",
+          "comment": "<vc1> = LITERAL MINLENGTH 5 <S1> { <p1> @<vc1> } on { <s1> <p1> \"abcde\" }",
           "status": "mf:proposed"
         },
         {
@@ -12948,7 +12948,7 @@
             "ValueReference",
             "LengthFacet"
           ],
-          "comment": "$_:vc1 = LITERAL MINLENGTH 5 <S1> { <p1> $_:vc1 } on { <s1> <p1> \"abcd\" }",
+          "comment": "_:vc1 = LITERAL MINLENGTH 5 <S1> { <p1> @_:vc1 } on { <s1> <p1> \"abcd\" }",
           "status": "mf:proposed"
         },
         {
@@ -12966,7 +12966,7 @@
             "ValueReference",
             "LengthFacet"
           ],
-          "comment": "$_:vc1 = LITERAL MINLENGTH 5 <S1> { <p1> $_:vc1 } on { <s1> <p1> \"abcde\" }",
+          "comment": "_:vc1 = LITERAL MINLENGTH 5 <S1> { <p1> @_:vc1 } on { <s1> <p1> \"abcde\" }",
           "status": "mf:proposed"
         },
         {
@@ -13110,7 +13110,7 @@
             "AndValueExpression",
             "ValueReference"
           ],
-          "comment": "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> AND ... $<vc3> } on { <s1> <p1> 'abab' }",
+          "comment": "<vc1> = ... <vc3> = ... <S> { <p1> @<vc1> AND ... @<vc3> } on { <s1> <p1> 'abab' }",
           "status": "mf:proposed"
         },
         {
@@ -13128,7 +13128,7 @@
             "AndValueExpression",
             "ValueReference"
           ],
-          "comment": "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> AND ... $<vc3> } on { <s1> <p1> 'ab' }",
+          "comment": "<vc1> = ... <vc3> = ... <S> { <p1> @<vc1> AND ... @<vc3> } on { <s1> <p1> 'ab' }",
           "status": "mf:proposed"
         },
         {
@@ -13146,7 +13146,7 @@
             "AndValueExpression",
             "ValueReference"
           ],
-          "comment": "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> AND ... $<vc3> } on { <s1> <p1> 'ababab' }",
+          "comment": "<vc1> = ... <vc3> = ... <S> { <p1> @<vc1> AND ... @<vc3> } on { <s1> <p1> 'ababab' }",
           "status": "mf:proposed"
         },
         {
@@ -13164,7 +13164,7 @@
             "AndValueExpression",
             "ValueReference"
           ],
-          "comment": "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> AND ... $<vc3> } on { <s1> <p1> 'baba' }",
+          "comment": "<vc1> = ... <vc3> = ... <S> { <p1> @<vc1> AND ... @<vc3> } on { <s1> <p1> 'baba' }",
           "status": "mf:proposed"
         },
         {
@@ -13182,7 +13182,7 @@
             "AndValueExpression",
             "ValueReference"
           ],
-          "comment": "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> AND ... $<vc3> } on { <s1> <p1> 'abab' }",
+          "comment": "<vc1> = ... <vc3> = ... <S> { <p1> @<vc1> AND ... @<vc3> } on { <s1> <p1> 'abab' }",
           "status": "mf:proposed"
         },
         {
@@ -13200,7 +13200,7 @@
             "AndValueExpression",
             "ValueReference"
           ],
-          "comment": "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> AND ... $<vc3> } on { <s1> <p1> 'baba' }",
+          "comment": "<vc1> = ... <vc3> = ... <S> { <p1> @<vc1> AND ... @<vc3> } on { <s1> <p1> 'baba' }",
           "status": "mf:proposed"
         },
         {
@@ -13218,7 +13218,7 @@
             "AndValueExpression",
             "ValueReference"
           ],
-          "comment": "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> AND ... $<vc3> } on { <s1> <p1> 'ababab' }",
+          "comment": "<vc1> = ... <vc3> = ... <S> { <p1> @<vc1> AND ... @<vc3> } on { <s1> <p1> 'ababab' }",
           "status": "mf:proposed"
         },
         {
@@ -13236,7 +13236,7 @@
             "AndValueExpression",
             "ValueReference"
           ],
-          "comment": "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> AND ... $<vc3> } on { <s1> <p1> 'ab' }",
+          "comment": "<vc1> = ... <vc3> = ... <S> { <p1> @<vc1> AND ... @<vc3> } on { <s1> <p1> 'ab' }",
           "status": "mf:proposed"
         },
         {
@@ -13538,7 +13538,7 @@
             "OrValueExpression",
             "ValueReference"
           ],
-          "comment": "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> OR ... $<vc3> } on { <s1> <p1> 'a' }",
+          "comment": "<vc1> = ... <vc3> = ... <S> { <p1> @<vc1> OR ... @<vc3> } on { <s1> <p1> 'a' }",
           "status": "mf:proposed"
         },
         {
@@ -13556,7 +13556,7 @@
             "OrValueExpression",
             "ValueReference"
           ],
-          "comment": "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> OR ... $<vc3> } on { <s1> <p1> 'ab' }",
+          "comment": "<vc1> = ... <vc3> = ... <S> { <p1> @<vc1> OR ... @<vc3> } on { <s1> <p1> 'ab' }",
           "status": "mf:proposed"
         },
         {
@@ -13574,7 +13574,7 @@
             "OrValueExpression",
             "ValueReference"
           ],
-          "comment": "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> OR ... $<vc3> } on { <s1> <p1> 'cd' }",
+          "comment": "<vc1> = ... <vc3> = ... <S> { <p1> @<vc1> OR ... @<vc3> } on { <s1> <p1> 'cd' }",
           "status": "mf:proposed"
         },
         {
@@ -13592,7 +13592,7 @@
             "OrValueExpression",
             "ValueReference"
           ],
-          "comment": "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> OR ... $<vc3> } on { <s1> <p1> 'ef' }",
+          "comment": "<vc1> = ... <vc3> = ... <S> { <p1> @<vc1> OR ... @<vc3> } on { <s1> <p1> 'ef' }",
           "status": "mf:proposed"
         },
         {
@@ -13610,7 +13610,7 @@
             "OrValueExpression",
             "ValueReference"
           ],
-          "comment": "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> OR ... $<vc3> } on { <s1> <p1> 'abcdef' }",
+          "comment": "<vc1> = ... <vc3> = ... <S> { <p1> @<vc1> OR ... @<vc3> } on { <s1> <p1> 'abcdef' }",
           "status": "mf:proposed"
         },
         {
@@ -13628,7 +13628,7 @@
             "OrValueExpression",
             "ValueReference"
           ],
-          "comment": "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> OR ... $<vc3> } on { <s1> <p1> 'abcdef' }",
+          "comment": "<vc1> = ... <vc3> = ... <S> { <p1> @<vc1> OR ... @<vc3> } on { <s1> <p1> 'abcdef' }",
           "status": "mf:proposed"
         },
         {
@@ -13646,7 +13646,7 @@
             "OrValueExpression",
             "ValueReference"
           ],
-          "comment": "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> OR ... $<vc3> } on { <s1> <p1> 'ef' }",
+          "comment": "<vc1> = ... <vc3> = ... <S> { <p1> @<vc1> OR ... @<vc3> } on { <s1> <p1> 'ef' }",
           "status": "mf:proposed"
         },
         {
@@ -13664,7 +13664,7 @@
             "OrValueExpression",
             "ValueReference"
           ],
-          "comment": "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> OR ... $<vc3> } on { <s1> <p1> 'cd' }",
+          "comment": "<vc1> = ... <vc3> = ... <S> { <p1> @<vc1> OR ... @<vc3> } on { <s1> <p1> 'cd' }",
           "status": "mf:proposed"
         },
         {
@@ -13682,7 +13682,7 @@
             "OrValueExpression",
             "ValueReference"
           ],
-          "comment": "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> OR ... $<vc3> } on { <s1> <p1> 'ab' }",
+          "comment": "<vc1> = ... <vc3> = ... <S> { <p1> @<vc1> OR ... @<vc3> } on { <s1> <p1> 'ab' }",
           "status": "mf:proposed"
         },
         {
@@ -13700,7 +13700,7 @@
             "OrValueExpression",
             "ValueReference"
           ],
-          "comment": "$<vc1> = ... $<vc3> = ... <S> { <p1> $<vc1> OR ... $<vc3> } on { <s1> <p1> 'a' }",
+          "comment": "<vc1> = ... <vc3> = ... <S> { <p1> @<vc1> OR ... @<vc3> } on { <s1> <p1> 'a' }",
           "status": "mf:proposed"
         },
         {
@@ -13717,7 +13717,7 @@
           "trait": [
             "OrValueExpression"
           ],
-          "comment": "<S> { <p1> ~'^ab' OR ~'cd' OR ~'ef$' } on { <s1> <p1> 'a' }",
+          "comment": "<S> { <p1> /^ab/ OR /cd/ OR /ef$/ } on { <s1> <p1> 'a' }",
           "status": "mf:proposed"
         },
         {
@@ -13734,7 +13734,7 @@
           "trait": [
             "OrValueExpression"
           ],
-          "comment": "<S> { <p1> ~'^ab' OR ~'cd' OR ~'ef$' } on { <s1> <p1> 'ab' }",
+          "comment": "<S> { <p1> /^ab/ OR /cd/ OR /ef$/ } on { <s1> <p1> 'ab' }",
           "status": "mf:proposed"
         },
         {
@@ -13751,7 +13751,7 @@
           "trait": [
             "OrValueExpression"
           ],
-          "comment": "<S> { <p1> ~'^ab' OR ~'cd' OR ~'ef$' } on { <s1> <p1> 'cd' }",
+          "comment": "<S> { <p1> /^ab/ OR /cd/ OR /ef$/ } on { <s1> <p1> 'cd' }",
           "status": "mf:proposed"
         },
         {
@@ -13768,7 +13768,7 @@
           "trait": [
             "OrValueExpression"
           ],
-          "comment": "<S> { <p1> ~'^ab' OR ~'cd' OR ~'ef$' } on { <s1> <p1> 'ef' }",
+          "comment": "<S> { <p1> /^ab/ OR /cd/ OR /ef$/ } on { <s1> <p1> 'ef' }",
           "status": "mf:proposed"
         },
         {
@@ -13785,7 +13785,7 @@
           "trait": [
             "OrValueExpression"
           ],
-          "comment": "<S> { <p1> ~'^ab' OR ~'cd' OR ~'ef$' } on { <s1> <p1> 'abcdef' }",
+          "comment": "<S> { <p1> /^ab/ OR /cd/ OR /ef$/ } on { <s1> <p1> 'abcdef' }",
           "status": "mf:proposed"
         },
         {
@@ -18206,7 +18206,7 @@
           "trait": [
             "EachOf"
           ],
-          "comment": "<S1> {:a $<P>*, :a $<T>} / { <n> :a <pt1>,  <pt2>,  <p>,  <t>}",
+          "comment": "<S1> {:a @<P>*, :a @<T>} / { <n> :a <pt1>,  <pt2>,  <p>,  <t>}",
           "status": "mf:proposed"
         },
         {
@@ -18224,7 +18224,7 @@
             "Greedy",
             "EachOf"
           ],
-          "comment": "<S1> {:a $<P>*, :a $<T>} / { <n> :a <pt1>,  <pt2>,  <p>,  <t>}",
+          "comment": "<S1> {:a @<P>*, :a @<T>} / { <n> :a <pt1>,  <pt2>,  <p>,  <t>}",
           "status": "mf:proposed"
         },
         {
@@ -18242,7 +18242,7 @@
             "Exhaustive",
             "EachOf"
           ],
-          "comment": "<S2> {:a $<P>, :a $<T>*} / { <n> :a <pt1>,  <pt2>,  <p>,  <t>}",
+          "comment": "<S2> {:a @<P>, :a @<T>*} / { <n> :a <pt1>,  <pt2>,  <p>,  <t>}",
           "status": "mf:proposed"
         },
         {
@@ -18260,7 +18260,7 @@
             "Greedy",
             "EachOf"
           ],
-          "comment": "<S2> {:a $<P>, :a $<T>*} / { <n> :a <pt1>,  <pt2>,  <p>,  <t>}",
+          "comment": "<S2> {:a @<P>, :a @<T>*} / { <n> :a <pt1>,  <pt2>,  <p>,  <t>}",
           "status": "mf:proposed"
         },
         {
@@ -18278,7 +18278,7 @@
             "Greedy",
             "EachOf"
           ],
-          "comment": "<S2> {:a $<P>, :a $<T>*} / { <n> :a <pt1>,  <pt2>,  <p>,  <t>}",
+          "comment": "<S2> {:a @<P>, :a @<T>*} / { <n> :a <pt1>,  <pt2>,  <p>,  <t>}",
           "status": "mf:proposed"
         },
         {
@@ -18295,7 +18295,7 @@
           "trait": [
             "EachOf"
           ],
-          "comment": "<S3> {:a $<P>*, :a $<T>*} / { <n> :a <pt1>,  <pt2>,  <p>,  <t>}",
+          "comment": "<S3> {:a @<P>*, :a @<T>*} / { <n> :a <pt1>,  <pt2>,  <p>,  <t>}",
           "status": "mf:proposed"
         },
         {
@@ -18313,7 +18313,7 @@
             "Exhaustive",
             "EachOf"
           ],
-          "comment": "<S4> {:a $<P>{2}, :a $<T>{2}} / { <n> :a <pt1>,  <pt2>,  <p>,  <t>}",
+          "comment": "<S4> {:a @<P>{2}, :a @<T>{2}} / { <n> :a <pt1>,  <pt2>,  <p>,  <t>}",
           "status": "mf:proposed"
         },
         {
