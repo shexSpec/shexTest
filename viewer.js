@@ -1,13 +1,36 @@
 (function () {
-  if (location.search.substr(1) === "toy") // some examples from validation/manifest.jsonld
+  if (location.search.substr(1) === "toy") { // some examples from validation/manifest.jsonld
     renderManifest(aFewTests(), "validation/");
-  else
-    $.getJSON(location.search.substr(1) + "/manifest.jsonld", function(data) {
+  } else {
+    $.getJSON(location.search.substr(1) + "/manifest.jsonld").then(data => {
       renderManifest(data["@graph"][0].entries, location.search.substr(1) + "/");
+    }).fail(e => {
+      $("table thead").append(
+        $("<tr/>").append(
+          $("<th/>").text("directory"),
+          $("<th/>").text("description")
+        ));
+      $("table tbody").append(
+        [
+          {directory: "schemas",
+           description: "ShExC, JSON and Turtle versions of all schemas in the test suite."},
+          {directory: "validation",
+           description: "Positive and negative ShEx validation tests."},
+          {directory: "negativeStructure",
+           description: "Constructs that fail <a href=''>structural constraints</a>."},
+          {directory: "negativeSyntax",
+           description: "Constructs that fail the <a href=''>ShExC grammar</a>."},
+          {directory: "toy",
+           description: "small, static emulation of some validation tests for easy debugging."},
+        ].map(d => {
+          return $("<tr/>").append(
+            $("<td/>").append($("<a/>", {href: location.href+"?"+d.directory}).text(d.directory)),
+            $("<td/>").html(d.description)
+          );
+        }));
     });
+  }
 
-  $("#tests").colResizable({ fixed:false, liveDrag:true, gripInnerHtml:"<div class='grip2'></div>", 
- });
   let droparea = $("#droparea");
   let type = droparea.find("input");
   let data = droparea.find("textarea");
@@ -47,29 +70,79 @@
     let testNo = 0;
     // assumes at least one test entry
     queue();
+
     function queue () {
       renderTest(tests[testNo]);
       if (++testNo < tests.length)
         setTimeout(queue, 0);
+      else
+        $("#tests").colResizable({ fixed:false, liveDrag:true, gripInnerHtml:"<div class='grip2'></div>"});
     }
-    // tests.forEach(renderTest);
+
     function renderTest (test) {
-      const stati = [ { str: "fails" , chr: "✗" }, { str: "passes", chr: "✓"} ];
-      let statum = stati[0 + (test["@type"] === "sht:ValidationTest")];
-      let titleText = "#" + (testNo+1) + " " + statum.str;
+      const structures = {
+        "sht:ValidationTest": {
+          str: "passes", chr: "✓", offset: ["action"],
+          fields: [
+            {name:"schema", f: link},
+            {name:"data", f: link},
+            {name:"shape map", f:makeShapeMap}
+          ]
+        },
+        "sht:ValidationFailure": {
+          str: "fails" , chr: "✗", offset: ["action"],
+          fields: [
+            {name:"schema", f: link},
+            {name:"data", f: link},
+            {name:"shape map", f:makeShapeMap}
+          ]
+        },
+        "sht:RepresentationTest": {
+          str: "" , chr: "", offset: [],
+          fields: [
+            {name:"shex", f: link},
+            {name:"json", f: link},
+            {name:"ttl", f:link}
+          ]
+        },
+        "sht:NegativeStructure": {
+          str: "" , chr: "", offset: [],
+          fields: [
+            {name:"shex", f: link}
+          ]
+        },
+        "sht:NegativeSyntax": {
+          str: "" , chr: "", offset: [],
+          fields: [
+            {name:"shex", f: link}
+          ]
+        }
+      };
 
-      let status = drag("td", { title: titleText, class: statum.str }, statum.chr, showTest, "application/json");      
-      let shexc = link(test.action.schema);
-      let data = link(test.action.data);
+      let structure = structures[test["@type"]];
+      if (testNo === 0) {
+        $("table thead").append(
+          $("<tr/>").append(
+            $("<th/>"),
+            $("<th/>").text("name"),
+            structure.fields.map(h => {
+              return $("<th/>").text(h.name);
+            })
+          ));
+      }
 
-      // Change .schema and .data to absolute URLs.
-      test.action.schema = shexc.prop("href");
-      test.action.data = data.prop("href");
+      let titleText = "#" + (testNo+1) + " " + structure.str;
+      let status = drag("td", { title: titleText, class: structure.str }, structure.chr, showTest, "application/json");
+      let attrs = structure.offset.reduce((acc, o) => { return acc[o]; }, test);
       let name = drag("td", { title: test.comment }, test["@id"], showTest, "application/json");
-      let shapemap = makeShapeMap(test.action);
       $("table tbody").append(
         $("<tr/>").append(
-          status, name, $("<td/>").append(shexc), $("<td/>").append(data), shapemap
+          status, name,
+          // $("<td/>").append(shexc), $("<td/>").append(data), shapemap
+          structure.fields.map(h => {
+            return h.f(attrs, h.name);
+          })
+
         ));
 
       function showTest (elt) {
@@ -97,10 +170,13 @@
           });
       }
 
-      function link (rel) {
-        return title(drag("a", { href: relPrepend + rel }, rel, elt => {
+      function link (attrs, name) {
+        let val = attrs[name];
+        let a = title(drag("a", { href: relPrepend + val }, val, elt => {
           return elt.href;
         }, "text/uri-list"));
+        attrs.schema = a.prop("href");
+        return $("<td/>").append(a);
       }
 
       function title (anchor) {
@@ -119,15 +195,14 @@
         return anchor;
       }
 
-
-      function makeShapeMap (action) {
-        if ("map" in action) {
-          var anchor = drag("a", { href: relPrepend + action.map }, action.map, elt => {
+      function makeShapeMap (attrs, val) {
+        if ("map" in attrs) {
+          var anchor = drag("a", { href: relPrepend + attrs.map }, attrs.map, elt => {
             return elt.href;
           }, "text/uri-list");
           return $("<td/>").append(title(anchor));
         }
-        return drag("td", { }, ttl(action.focus) + "@" + ("shape" in action ? ttl(action.shape) : "START"), elt => {
+        return drag("td", { }, ttl(attrs.focus) + "@" + ("shape" in attrs ? ttl(attrs.shape) : "START"), elt => {
           return elt.innerText;
         }, "text/plain")
       }
