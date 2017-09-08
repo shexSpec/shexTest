@@ -17,9 +17,9 @@
           {directory: "validation",
            description: "Positive and negative ShEx validation tests."},
           {directory: "negativeStructure",
-           description: "Constructs that fail <a href=''>structural constraints</a>."},
+           description: "Constructs that fail <a href='http://shex.io/shex-semantics/index.html#schema-requirements'>structural constraints</a>."},
           {directory: "negativeSyntax",
-           description: "Constructs that fail the <a href=''>ShExC grammar</a>."},
+           description: "Constructs that fail the <a href='http://shex.io/shex-semantics/index.html#shexc'>ShExC grammar</a>."},
           {directory: "toy",
            description: "small, static emulation of some validation tests for easy debugging."},
         ].map(d => {
