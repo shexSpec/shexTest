@@ -34,9 +34,14 @@
   let droparea = $("#droparea");
   let type = droparea.find("input");
   let data = droparea.find("textarea");
-  droparea.on("drop", evt => {
+  droparea.on("dragover", function (evt) {
+    droparea.addClass("droppable");
     evt.preventDefault();
+  }).on("dragleave", () => {
     droparea.removeClass("droppable");
+  }).on("drop", evt => {
+    droparea.removeClass("droppable");
+    evt.preventDefault();
     let xfer = evt.originalEvent.dataTransfer;
     [ "files", "application/json", "text/uri-list", "text/plain"
     ].find(l => {
@@ -56,12 +61,6 @@
       }
       return false;
     });
-  }).on("dragenter", () => {
-    droparea.addClass("droppable");
-  }).on("dragleave", () => {
-    droparea.removeClass("droppable");
-  }).on("dragover", function (evt) {
-    evt.preventDefault();
   });
 
   /* progressively render the tests, adjusting relative URLs by relPrepend.
@@ -154,7 +153,7 @@
           ld.startsWith("_:") ? ld :
           "<" + ld + ">";
         function lit (o) {
-          let ret = o["@value"];
+          let ret = "\""+o["@value"]+"\"";
           if ("@type" in o)
             ret += "^^<" + o["@type"] + ">";
           if ("language" in o)
@@ -175,7 +174,7 @@
         let a = title(drag("a", { href: relPrepend + val }, val, elt => {
           return elt.href;
         }, "text/uri-list"));
-        attrs.schema = a.prop("href");
+        attrs[name] = a.prop("href");
         return $("<td/>").append(a);
       }
 
