@@ -85,6 +85,7 @@
           fields: [
             {name:"schema", f: link},
             {name:"data", f: link},
+            {name:"termResolver", f: link},
             {name:"shape map", f:makeShapeMap}
           ]
         },
@@ -93,6 +94,7 @@
           fields: [
             {name:"schema", f: link},
             {name:"data", f: link},
+            {name:"termResolver", f: link},
             {name:"shape map", f:makeShapeMap}
           ]
         },
@@ -170,6 +172,8 @@
       }
 
       function link (attrs, name) {
+        if (!(name in attrs))
+          return $("<td/>");
         let val = attrs[name];
         let a = title(drag("a", { href: relPrepend + val }, val, elt => {
           return elt.href;
@@ -316,6 +320,25 @@
         "comment": "<S1> {<p1> @<S2>} <S2> {<p2> [<s3>]} on { <s1> <p1> <s2> . <s2> <p2> <s3> .}",
         "status": "mf:proposed",
         "result": "dependent_shape_results.json"
+      },
+      {
+        "@id": "#3backtick_pass",
+        "@type": "sht:ValidationTest",
+        "action": {
+          "schema": "../schemas/3backtick.shex",
+          "shape": "http://a.example/S",
+          "termResolver": "backtick.owl",
+          "data": "backtick.ttl",
+          "focus": "http://a.example/s"
+        },
+        "extensionResults": [],
+        "name": "3backtick_pass",
+        "trait": [
+          "Backtick"
+        ],
+        "comment": "<S> { `a` LITERAL; `b` [ `c` `d`]; `e` `f` } on { <s> ex:a 'A' ; ex:b ex:c ; ex:d '30'^^ex:e }",
+        "status": "mf:proposed",
+        "result": "3backtick_pass.val"
       },
     ];
   }
