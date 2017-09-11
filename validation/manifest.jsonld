@@ -18091,6 +18091,43 @@
           "status": "mf:proposed"
         },
         {
+          "@id": "#3PNAMEbacktick_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/3PNAMEbacktick.shex",
+            "shape": "http://a.example/S",
+            "termResolver": "PNAMEbacktick.owl",
+            "data": "PNAMEbacktick.ttl",
+            "focus": "http://a.example/s"
+          },
+          "extensionResults": [],
+          "name": "3PNAMEbacktick_pass",
+          "trait": [
+            "Backtick"
+          ],
+          "comment": "<S> { ex1:`a` LITERAL; ex2:`b` [ `c` `d`]; `e` `f` } on { <s> ex1:a 'A' ; ex2:b ex1:c ; ex1:d '30'^^ex1:e }",
+          "status": "mf:proposed",
+          "result": "3PNAMEbacktick_pass.val"
+        },
+        {
+          "@id": "#3PNAMEbacktick_fail",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/3PNAMEbacktick.shex",
+            "shape": "http://a.example/S",
+            "termResolver": "PNAMEbacktick.owl",
+            "data": "In1_Ip1_In2.ttl",
+            "focus": "http://a.example/n1"
+          },
+          "extensionResults": [],
+          "name": "3PNAMEbacktick_fail",
+          "trait": [
+            "Backtick"
+          ],
+          "comment": "<S> { ex1:`a` LITERAL; ex2:`b` [ `c` `d`]; `e` `f` } on { <n1> <p1> <n2> }",
+          "status": "mf:proposed"
+        },
+        {
           "@id": "#false-lead-excluding-value-shape",
           "@type": "sht:ValidationTest",
           "action": {
