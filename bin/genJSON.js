@@ -159,11 +159,11 @@ function genText () {
         return [
           //      ["rdf"  , "type"    , function (v) { return v.substr(P.sht.length); }],
           [s, "mf"   , "name"    , function (v) { return util.getLiteralValue(v[0]); }],
-          //[s, "sht", "trait"  , function (v) {
-          //  return v.map(function (x) {
-          //    return x.substr(P.sht.length);;
-          //  });
-          //}],
+          [s, "sht", "trait"  , function (v) {
+           return v.map(function (x) {
+             return x.substr(P.sht.length);;
+           });
+          }],
           //[s, "rdfs" , "comment" , function (v) { return util.getLiteralValue(v[0]); }],
           [s, "mf", "status"  , function (v) { return "mf:"+v[0].substr(P.mf.length); }],
           [s, "sx", "shex", function (v) { return exists(v[0].substr(dirPath.length)); }],

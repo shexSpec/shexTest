@@ -13,8 +13,8 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 <http://a.example/vs1> a sx:NodeConstraint ;
     sx:values ( [ a sx:IriStemRange ;
-                sx:exclusion <http://a.example/v1>,
-                    <http://a.example/v2>,
-                    <http://a.example/v3> ;
+                sx:exclusion (<http://a.example/v1>
+                    <http://a.example/v2>
+                    <http://a.example/v3>) ;
                 sx:stem [ a sx:Wildcard ] ] ) .
 

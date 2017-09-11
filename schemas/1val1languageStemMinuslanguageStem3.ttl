@@ -10,11 +10,11 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sx:predicate <http://a.example/p1> ;
             sx:valueExpr [ a sx:NodeConstraint ;
                     sx:values ( [ a sx:LanguageStemRange ;
-                                sx:exclusion [ a sx:LanguageStem ;
-                                        sx:stem "fr-be" ],
+                                sx:exclusion ([ a sx:LanguageStem ;
+                                        sx:stem "fr-be" ]
                                     [ a sx:LanguageStem ;
-                                        sx:stem "fr-cd" ],
+                                        sx:stem "fr-cd" ]
                                     [ a sx:LanguageStem ;
-                                        sx:stem "fr-ch" ] ;
+                                        sx:stem "fr-ch" ]) ;
                                 sx:stem "fr" ] ) ] ] .
 
