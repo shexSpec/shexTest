@@ -1,5 +1,5 @@
-{
-  "http://inst.example/Issue1": "http://schema.example/IssueShape",
-  "http://inst.example/Issue2": "http://schema.example/IssueShape",
-  "http://inst.example/Issue3": "http://schema.example/IssueShape"
-}
+[
+  {"nodeSelector":"http://inst.example/Issue1", "shapeLabel":"http://schema.example/IssueShape"},
+  {"nodeSelector":"http://inst.example/Issue2", "shapeLabel":"http://schema.example/IssueShape"},
+  {"nodeSelector":"http://inst.example/Issue3", "shapeLabel":"http://schema.example/IssueShape"}
+]
