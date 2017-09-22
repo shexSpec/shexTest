@@ -43,24 +43,37 @@
     droparea.removeClass("droppable");
     evt.preventDefault();
     let xfer = evt.originalEvent.dataTransfer;
-    [ "files", "application/json", "text/uri-list", "text/plain"
-    ].find(l => {
+    const prefOrder = [
+      "files", "application/json", "text/uri-list", "text/plain"
+    ];
+    if (prefOrder.find(l => {
       if (l.indexOf("/") === -1) {
         if (xfer[l].length > 0) {
           type.val(l);
-          data.text(JSON.stringify(xfer[l]));
+          data.val(JSON.stringify(xfer[l]));
           readfiles(xfer[l], data);
           return true;
         }
       } else {
         if (xfer.getData(l)) {
           type.val(l);
-          data.text(xfer.getData(l));
+          data.val(xfer.getData(l));
           return true;
         }
       }
       return false;
-    });
+    }) === undefined) {
+      type.val(xfer.types[0]);
+      data.val(xfer.getData(xfer.types[0]));
+    }
+  }).on("dragstart", (evt) => {
+    evt.originalEvent.dataTransfer.setData(type.val(), data.val());
+  });
+  type.on('mousedown', function(e) {
+    e.stopPropagation();
+    droparea.attr('draggable', false);
+  }).on('mouseup', function(e) {
+    droparea.attr('draggable', true);
   });
 
   /* progressively render the tests, adjusting relative URLs by relPrepend.
