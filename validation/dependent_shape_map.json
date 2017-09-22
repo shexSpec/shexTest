@@ -1,4 +1,4 @@
-{
-  "http://inst.example/Issue1":  "http://schema.example/IssueShape",
-  "http://inst.example/Tester2": "http://schema.example/TesterShape"
-}
+[
+  {"nodeSelector":"http://inst.example/Issue1" , "shapeLabel":"http://schema.example/IssueShape"},
+  {"nodeSelector":"http://inst.example/Tester2", "shapeLabel":"http://schema.example/TesterShape"}
+]
