@@ -1,5 +1,5 @@
 [
-  {"nodeSelector":"http://example/issue1", "shapeLabel":"http://schema.example/IssueShape"},
-  {"nodeSelector":"http://example/issue2", "shapeLabel":"http://schema.example/IssueShape"},
-  {"nodeSelector":"http://example/issue3", "shapeLabel":"http://schema.example/IssueShape"}
+  {"node":"http://example/issue1", "shape":"http://schema.example/IssueShape"},
+  {"node":"http://example/issue2", "shape":"http://schema.example/IssueShape"},
+  {"node":"http://example/issue3", "shape":"http://schema.example/IssueShape"}
 ]
