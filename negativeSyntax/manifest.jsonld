@@ -131,6 +131,13 @@
           "shex": "1negatednegateddot.shex"
         },
         {
+          "@id": "#1datatypeRef1",
+          "@type": "sht:NegativeSyntax",
+          "name": "1datatypeRef1",
+          "status": "mf:proposed",
+          "shex": "1datatypeRef1.shex"
+        },
+        {
           "@id": "#1unknowndatatypeMaxInclusive",
           "@type": "sht:NegativeSyntax",
           "name": "1unknowndatatypeMaxInclusive",
@@ -691,11 +698,25 @@
           "shex": "tripleConsraint-with-two-cardinalities.shex"
         },
         {
+          "@id": "#1val1iriStemMinusliteral3",
+          "@type": "sht:NegativeSyntax",
+          "name": "1val1iriStemMinusliteral3",
+          "status": "mf:proposed",
+          "shex": "1val1iriStemMinusliteral3.shex"
+        },
+        {
           "@id": "#1val1languageStemMinusliteral3",
           "@type": "sht:NegativeSyntax",
           "name": "1val1languageStemMinusliteral3",
           "status": "mf:proposed",
           "shex": "1val1languageStemMinusliteral3.shex"
+        },
+        {
+          "@id": "#1val1literalStemMinusiri3",
+          "@type": "sht:NegativeSyntax",
+          "name": "1val1literalStemMinusiri3",
+          "status": "mf:proposed",
+          "shex": "1val1literalStemMinusiri3.shex"
         },
         {
           "@id": "#1val1literalStemMinuslanguage3",
