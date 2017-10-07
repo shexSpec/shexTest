@@ -92,7 +92,7 @@ prefix1:S2e a sx:EachOf ;
                 sx:valueExpr [ a sx:Shape ; sx:expression [ a sx:TripleConstraint ;
                   sx:predicate <http://all.example/p1> ;
                   sx:valueExpr [ a sx:NodeConstraint ; sx:values (
-              "STRING_LITERAL2" "STRING_LITERAL2"@en-UK : prefix1:val1#comment
+              "STRING_LITERAL2" "STRING_LITERAL2"@en-uk : prefix1:val1#comment
 	      prefix1:#comment
 	      <scheme:!$%25&amp;'()*+,-./0123456789:/@ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz~?#>
 	      <http://a.example/p\u0031>
@@ -102,7 +102,7 @@ prefix1:S2e a sx:EachOf ;
 	      '߿ࠀ࿿က쿿퀀퟿�𐀀𿿽񀀀󿿽􀀀􏿽'
 	      "\"\\"
 	      "𝟘𝟙𝟚𝟛𝟜𝟝𝟞𝟟𝟠𝟡" # outside of BMP
-	      """STRING_LITERAL_LONG2"""@en-UK
+	      """STRING_LITERAL_LONG2"""@en-uk
                                                                     ) ] ] ] ]
               [ a sx:TripleConstraint ;
                 sx:annotation (

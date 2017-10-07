@@ -57,6 +57,8 @@
         <#1val1DOUBLE>
         <#1val1DOUBLElowercase>
         <#1val1LANGTAG>
+        <#1val1LANGTAG_U_L>
+        <#1val1LANGTAG_L_U>
         <#1val1IRIREFDatatype>
         <#1val1true>
         <#1val1false>
@@ -213,6 +215,7 @@
         <#1val1languageStem>
         <#1val1languageStemMinuslanguage3>
         <#1val1languageStemMinuslanguageStem3>
+        <#1val1languageStemMinuslanguageStemU3>
         <#1val1literal>
         <#1val1literallanguageStem>
         <#1val1literallanguageStemMinusliterallanguage3>
@@ -813,6 +816,22 @@
     mf:status mf:proposed ;
     sx:shex <1val1LANGTAG.shex> ;
     sx:json <1val1LANGTAG.json> ;
+    sx:ttl <1val1LANGTAG.ttl> ;
+    .
+
+<#1val1LANGTAG_U_L> a sht:RepresentationTest ;
+    mf:name "1val1LANGTAG_U_L" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1LANGTAG_U_L.shex> ;
+    sx:json <1val1LANGTAG_U_L.json> ;
+    sx:ttl <1val1LANGTAG.ttl> ;
+    .
+
+<#1val1LANGTAG_L_U> a sht:RepresentationTest ;
+    mf:name "1val1LANGTAG_L_U" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1LANGTAG_L_U.shex> ;
+    sx:json <1val1LANGTAG_L_U.json> ;
     sx:ttl <1val1LANGTAG.ttl> ;
     .
 
@@ -2102,6 +2121,14 @@
     sx:shex <1val1languageStemMinuslanguageStem3.shex> ;
     sx:json <1val1languageStemMinuslanguageStem3.json> ;
     sx:ttl <1val1languageStemMinuslanguageStem3.ttl> ;
+    .
+
+<#1val1languageStemMinuslanguageStemU3> a sht:RepresentationTest ;
+    mf:name "1val1languageStemMinuslanguageStemU3" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1languageStemMinuslanguageStemU3.shex> ;
+    sx:json <1val1languageStemMinuslanguageStemU3.json> ;
+    sx:ttl <1val1languageStemMinuslanguageStemU3.ttl> ;
     .
 
 <#1val1literallanguageStem> a sht:RepresentationTest ;
