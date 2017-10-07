@@ -13,6 +13,8 @@
 @prefix prov:   <http://www.w3.org/ns/prov#> .
 
  # TODO:
+ #   unify At and LT (both indicate language tag)
+ #   @en-fr examples could reuse @fr-{be,cd,ch,fr}
  #   focus* on empty.ttl
  #   ../schemas/1IRI_with_all_punctuationdot.shex
  #   ../schemas/1IRI_with_UCHAR.1dot.shex
@@ -318,10 +320,13 @@
         <#1val1DOUBLElowercase_0_0e0>
 
 ####     language tag equivalence
-        <#1val1LANGTAG_pass>            # <S> { <p1> ['ab'@en-fr] }
+        <#1val1LANGTAG_passLabLTen-fr>            # <S> { <p1> ['ab'@en-fr] }
+        <#1val1LANGTAG_passLabLTEN-FR>            # <S> { <p1> ['ab'@en-fr] }
         <#1val1LANGTAG_Lab>
         <#1val1LANGTAG_LabLTen>
+        <#1val1LANGTAG_LabLTEN>
         <#1val1LANGTAG_LabLTen-fr-jura>
+        <#1val1LANGTAG_LabLTEN-FR-JURA>
         <#1val1LANGTAG_LaLTen-fr>
 
 ####     datatyped literal equivalence
@@ -816,6 +821,7 @@
         <#1val1languageStem_fail>
         <#1val1literallanguageStem_failLAtfr>
         <#1val1languageStemMinuslanguage3_passLAtfr>
+        <#1val1languageStemMinuslanguage3_passLAtFR>
         <#1val1languageStemMinuslanguage3_passLAtfr-FR>
         <#1val1literallanguageStemMinusliterallanguage3_failLAtfr-FR>
         <#1val1languageStemMinuslanguage3_failLAtfr-be>
@@ -824,6 +830,7 @@
         <#1val1languageStemMinuslanguage3_failLAtfr-ch>
         <#1val1languageStemMinuslanguage3_passLAtfr-be-fbcl>
         <#1val1languageStemMinuslanguageStem3_passLAtfr>
+        <#1val1languageStemMinuslanguageStem3_passLAtFR>
         <#1val1languageStemMinuslanguageStem3_passLAtfr-FR>
         <#1val1languageStemMinuslanguageStem3_LAtfr-be>
         <#1val1languageStemMinuslanguageStem3_LAtfr-cd>
@@ -4566,8 +4573,8 @@
 ####     } numeric equivalence
 ####     language tag equivalence {
 
-<#1val1LANGTAG_pass> a sht:ValidationTest ;
-    mf:name "1val1LANGTAG_pass" ;
+<#1val1LANGTAG_passLabLTen-fr> a sht:ValidationTest ;
+    mf:name "1val1LANGTAG_passLabLTen-fr" ;
     sht:trait sht:LanguageTagEquivalence ;
     rdfs:comment "<S> { <p1> ['ab'@en-fr] } on { <s1> <p1> 'ab'@en-fr }" ;
     mf:status mf:proposed ;
@@ -4575,6 +4582,19 @@
       sht:schema <../schemas/1val1LANGTAG.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_LabLTen-fr.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1val1LANGTAG_passLabLTEN-FR> a sht:ValidationTest ;
+    mf:name "1val1LANGTAG_passLabLTEN-FR" ;
+    sht:trait sht:LanguageCase ;
+    rdfs:comment "<S> { <p1> ['ab'@en-fr] } on { <s1> <p1> 'ab'@EN-FR }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1LANGTAG.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LabLTUEN-UFR.ttl> ;
       sht:focus <http://a.example/s1>
     ]
     .
@@ -4605,6 +4625,19 @@
     ] ;
     .
 
+<#1val1LANGTAG_LabLTEN> a sht:ValidationFailure ;
+    mf:name "1val1LANGTAG_LabLTEN" ;
+    sht:trait sht:LanguageCase ;
+    rdfs:comment "<S> { <p1> ['ab'@en-fr] } on { <s1> <p1> 'ab'@EN }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1LANGTAG.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LabLTUEN.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
 <#1val1LANGTAG_LabLTen-fr-jura> a sht:ValidationFailure ;
     mf:name "1val1LANGTAG_LabLTen-fr-jura" ;
     sht:trait sht:LanguageTagEquivalence ;
@@ -4614,6 +4647,19 @@
       sht:schema <../schemas/1val1LANGTAG.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_LabLTen-fr-jura.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1val1LANGTAG_LabLTEN-FR-JURA> a sht:ValidationFailure ;
+    mf:name "1val1LANGTAG_LabLTEN-FR-JURA" ;
+    sht:trait sht:LanguageCase ;
+    rdfs:comment "<S> { <p1> ['ab'@en-fr] } on { <s1> <p1> 'ab'@EN-FR-JURA }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1LANGTAG.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LabLTUEN-UFR-UJURA.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
     .
@@ -11089,12 +11135,25 @@
 <#1val1languageStemMinuslanguage3_passLAtfr> a sht:ValidationTest ;
     mf:name "1val1languageStemMinuslanguage3_passLAtfr" ;
     sht:trait sht:ValueSet, sht:Stem ;
-    rdfs:comment "<S> { <p1> [@fr-@fr-be-@fr-cd-@fr-ch] } on { <s1> <p1> 'septante'@fr }" ;
+    rdfs:comment "<S> { <p1> [@fr~-@fr-be-@fr-cd-@fr-ch] } on { <s1> <p1> 'septante'@fr }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1languageStemMinuslanguage3.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_LAtfr.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1val1languageStemMinuslanguage3_passLAtFR> a sht:ValidationTest ;
+    mf:name "1val1languageStemMinuslanguage3_passLAtFR" ;
+    sht:trait sht:ValueSet, sht:Stem, sht:LanguageCase ;
+    rdfs:comment "<S> { <p1> [@fr-@fr-be-@fr-cd-@fr-ch] } on { <s1> <p1> 'septante'@FR }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1languageStemMinuslanguage3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LAtUFR.ttl> ;
       sht:focus <http://a.example/s1>
     ]
     .
@@ -11199,6 +11258,19 @@
       sht:schema <../schemas/1val1languageStemMinuslanguageStem3.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_LAtfr.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1val1languageStemMinuslanguageStem3_passLAtFR> a sht:ValidationTest ;
+    mf:name "1val1languageStemMinuslanguageStem3_passLAtFR" ;
+    sht:trait sht:ValueSet, sht:Stem, sht:LanguageCase ;
+    rdfs:comment "<S> { <p1> [@fr~-@fr-be~-@fr-cd~-@fr-ch] } on { <s1> <p1> 'septante'@FR }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1languageStemMinuslanguageStem3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LAtUFR.ttl> ;
       sht:focus <http://a.example/s1>
     ]
     .
