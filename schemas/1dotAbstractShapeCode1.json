@@ -2,18 +2,17 @@
   "@context": "http://www.w3.org/ns/shex.jsonld",
   "type": "Schema",
   "prefixes": {},
-  "shapes":{
-    "http://a.example/S1": {
+  "shapes": [
+    { "id": "http://a.example/S1",
       "type": "Shape",
-      "virtual": true,
+      "abstract": true,
       "expression": {
         "type": "TripleConstraint",
-        "predicate": "http://a.example/p1",
-        "valueExpr": { "type": "ValueClass" }
+        "predicate": "http://a.example/p1"
       },
       "semActs": [
         { "type": "SemAct", "name": "http://shex.io/extensions/Test/", "code": " print(o) " }
       ]
     }
-  }
+  ]
 }

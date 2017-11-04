@@ -2838,6 +2838,24 @@
           "ttl": "shapeExternRef.ttl"
         },
         {
+          "@id": "#1dotAbstractShapeCode1",
+          "@type": "sht:RepresentationTest",
+          "name": "1dotAbstractShapeCode1",
+          "status": "mf:proposed",
+          "shex": "1dotAbstractShapeCode1.shex",
+          "json": "1dotAbstractShapeCode1.json",
+          "ttl": "1dotAbstractShapeCode1.ttl"
+        },
+        {
+          "@id": "#1dotAbstract",
+          "@type": "sht:RepresentationTest",
+          "name": "1dotAbstract",
+          "status": "mf:proposed",
+          "shex": "1dotAbstract.shex",
+          "json": "1dotAbstract.json",
+          "ttl": "1dotAbstract.ttl"
+        },
+        {
           "@id": "#focusvsORdatatype",
           "@type": "sht:RepresentationTest",
           "name": "focusvsORdatatype",

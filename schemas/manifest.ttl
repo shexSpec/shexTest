@@ -328,8 +328,8 @@
 #        <#1dotInherit3>
 #        <#1dot3Inherit>
 #        <#1dot3InheritLN>
-#         <#1dotVirtualShapeCode1>
-#         <#1dotVirtual>
+        <#1dotAbstractShapeCode1>
+        <#1dotAbstract>
 #         <#1dotUnlabeledCode1>
         <#focusvsORdatatype>
         <#focusvsANDIRI>
@@ -3154,21 +3154,21 @@
 #     sx:ttl <1dot3InheritLN.ttl> ;
 #     .
 
-# <#1dotVirtualShapeCode1> a sht:RepresentationTest ;
-#     mf:name "1dotVirtualShapeCode1" ;
-#     mf:status mf:proposed ;
-#     sx:shex <1dotVirtualShapeCode1.shex> ;
-#     sx:json <1dotVirtualShapeCode1.json> ;
-#     sx:ttl <1dotVirtualShapeCode1.ttl> ;
-#     .
-# 
-# <#1dotVirtual> a sht:RepresentationTest ;
-#     mf:name "1dotVirtual" ;
-#     mf:status mf:proposed ;
-#     sx:shex <1dotVirtual.shex> ;
-#     sx:json <1dotVirtual.json> ;
-#     sx:ttl <1dotVirtual.ttl> ;
-#     .
+<#1dotAbstractShapeCode1> a sht:RepresentationTest ;
+    mf:name "1dotAbstractShapeCode1" ;
+    mf:status mf:proposed ;
+    sx:shex <1dotAbstractShapeCode1.shex> ;
+    sx:json <1dotAbstractShapeCode1.json> ;
+    sx:ttl <1dotAbstractShapeCode1.ttl> ;
+    .
+
+<#1dotAbstract> a sht:RepresentationTest ;
+    mf:name "1dotAbstract" ;
+    mf:status mf:proposed ;
+    sx:shex <1dotAbstract.shex> ;
+    sx:json <1dotAbstract.json> ;
+    sx:ttl <1dotAbstract.ttl> ;
+    .
 
 # <#1dotUnlabeledCode1> a sht:RepresentationTest ;
 #     mf:name "1dotUnlabeledCode1" ;
