@@ -18055,7 +18055,7 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#1dot-relative_pass",
+          "@id": "#1dot-relative_pass-short-shape",
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../validation/1dot-relative.shex",
@@ -18064,7 +18064,24 @@
             "focus": "s1"
           },
           "extensionResults": [],
-          "name": "1dot-relative_pass",
+          "name": "1dot-relative_pass-short-shape",
+          "trait": [
+            "relativeIRI"
+          ],
+          "comment": "<S1> { <p1> [<o1>] } / { <s1> <p1> <o1>}",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1dot-relative_pass-relative-shape",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../validation/1dot-relative.shex",
+            "shape": "S1",
+            "data": "Is1_Ip1_Io1-relative.ttl",
+            "focus": "s1"
+          },
+          "extensionResults": [],
+          "name": "1dot-relative_pass-relative-shape",
           "trait": [
             "relativeIRI"
           ],

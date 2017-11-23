@@ -1198,7 +1198,8 @@
 
 ## relative IRIs
 
-        <#1dot-relative_pass>
+        <#1dot-relative_pass-short-shape>
+        <#1dot-relative_pass-relative-shape>
 
 ## manual schemas
         <#false-lead-excluding-value-shape>
@@ -15383,14 +15384,28 @@
 
 ## } shape extern
 ## relative IRIs {
-<#1dot-relative_pass> a sht:ValidationTest ;
-    mf:name "1dot-relative_pass" ;
+   # schema paths include ../validation in order to be easy to find.
+<#1dot-relative_pass-short-shape> a sht:ValidationTest ;
+    mf:name "1dot-relative_pass-short-shape" ;
     sht:trait sht:relativeIRI ;
     rdfs:comment "<S1> { <p1> [<o1>] } / { <s1> <p1> <o1>}" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../validation/1dot-relative.shex> ;
       sht:shape <S1> ;
+      sht:data <Is1_Ip1_Io1-relative.ttl> ;
+      sht:focus <s1>
+    ]
+    .
+
+<#1dot-relative_pass-relative-shape> a sht:ValidationTest ;
+    mf:name "1dot-relative_pass-relative-shape" ;
+    sht:trait sht:relativeIRI ;
+    rdfs:comment "<S1> { <p1> [<o1>] } / { <s1> <p1> <o1>}" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../validation/1dot-relative.shex> ;
+      sht:shape <../validation/S1> ;
       sht:data <Is1_Ip1_Io1-relative.ttl> ;
       sht:focus <s1>
     ]
