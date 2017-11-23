@@ -811,6 +811,8 @@
         <#1val1literalStemMinusliteralStem3_v1a>
         <#1val1language_passLAtfr>
         <#1val1language_failLAtfr-be>
+        <#1val1languageStem_passLAtfr>
+        <#1val1languageStem_failLAtfrc>
         <#1val1languageStem_passLAtfr-be>
         <#1val1languageStem_passLAtfr-be-fbcl>
         <#1val1languageStem_fail>
@@ -824,10 +826,12 @@
         <#1val1languageStemMinuslanguage3_failLAtfr-ch>
         <#1val1languageStemMinuslanguage3_passLAtfr-be-fbcl>
         <#1val1languageStemMinuslanguageStem3_passLAtfr>
+        <#1val1languageStemMinuslanguageStem3_LAtfrc>
         <#1val1languageStemMinuslanguageStem3_passLAtfr-FR>
         <#1val1languageStemMinuslanguageStem3_LAtfr-be>
         <#1val1languageStemMinuslanguageStem3_LAtfr-cd>
         <#1val1languageStemMinuslanguageStem3_LAtfr-ch>
+        <#1val1languageStemMinuslanguageStem3_passLAtfr-bel>
         <#1val1languageStemMinuslanguageStem3_LAtfr-be-fbcl>
 
 ## triple expressions
@@ -1198,7 +1202,8 @@
 
 ## relative IRIs
 
-        <#1dot-relative_pass>
+        <#1dot-relative_pass-short-shape>
+        <#1dot-relative_pass-relative-shape>
 
 ## backticks
         <#3backtick_pass>
@@ -11040,6 +11045,32 @@
     ]
     .
 
+<#1val1languageStem_passLAtfr> a sht:ValidationTest ;
+    mf:name "1val1languageStem_passLAtfr" ;
+    sht:trait sht:ValueSet, sht:Stem ;
+    rdfs:comment "<S> { <p1> [@fr~] } on { <s1> <p1> 'septante'@fr }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1languageStem.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LAtfr.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1val1languageStem_failLAtfrc> a sht:ValidationFailure ;
+    mf:name "1val1languageStem_failLAtfrc" ;
+    sht:trait sht:ValueSet, sht:Stem ;
+    rdfs:comment "<S> { <p1> [@fr~] } on { <s1> <p1> 'septante'@frc }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1languageStem.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LAtfrc.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
 <#1val1languageStem_passLAtfr-be> a sht:ValidationTest ;
     mf:name "1val1languageStem_passLAtfr-be" ;
     sht:trait sht:ValueSet, sht:Stem ;
@@ -11209,6 +11240,19 @@
     ]
     .
 
+<#1val1languageStemMinuslanguageStem3_LAtfrc> a sht:ValidationFailure ;
+    mf:name "1val1languageStemMinuslanguageStem3_LAtfrc" ;
+    sht:trait sht:ValueSet, sht:Stem ;
+    rdfs:comment "<S> { <p1> [@fr~-@fr-be~-@fr-cd~-@fr-ch] } on { <s1> <p1> 'septante'@frc }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1languageStemMinuslanguageStem3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LAtfrc.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
 <#1val1languageStemMinuslanguageStem3_passLAtfr-FR> a sht:ValidationTest ;
     mf:name "1val1languageStemMinuslanguageStem3_passLAtfr-FR" ;
     sht:trait sht:ValueSet, sht:Stem ;
@@ -11257,6 +11301,19 @@
       sht:schema <../schemas/1val1languageStemMinuslanguageStem3.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_LAtfr-ch.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1val1languageStemMinuslanguageStem3_passLAtfr-bel> a sht:ValidationTest ;
+    mf:name "1val1languageStemMinuslanguageStem3_passLAtfr-bel" ;
+    sht:trait sht:ValueSet, sht:Stem ;
+    rdfs:comment "<S> { <p1> [@fr~-@fr-be~-@fr-cd~-@fr-ch] } on { <s1> <p1> 'septante'@fr-bel }" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1languageStemMinuslanguageStem3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LAtfr-bel.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
     .
@@ -15389,14 +15446,28 @@
 
 ## } shape extern
 ## relative IRIs {
-<#1dot-relative_pass> a sht:ValidationTest ;
-    mf:name "1dot-relative_pass" ;
+   # schema paths include ../validation in order to be easy to find.
+<#1dot-relative_pass-short-shape> a sht:ValidationTest ;
+    mf:name "1dot-relative_pass-short-shape" ;
     sht:trait sht:relativeIRI ;
     rdfs:comment "<S1> { <p1> [<o1>] } / { <s1> <p1> <o1>}" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../validation/1dot-relative.shex> ;
       sht:shape <S1> ;
+      sht:data <Is1_Ip1_Io1-relative.ttl> ;
+      sht:focus <s1>
+    ]
+    .
+
+<#1dot-relative_pass-relative-shape> a sht:ValidationTest ;
+    mf:name "1dot-relative_pass-relative-shape" ;
+    sht:trait sht:relativeIRI ;
+    rdfs:comment "<S1> { <p1> [<o1>] } / { <s1> <p1> <o1>}" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../validation/1dot-relative.shex> ;
+      sht:shape <../validation/S1> ;
       sht:data <Is1_Ip1_Io1-relative.ttl> ;
       sht:focus <s1>
     ]
