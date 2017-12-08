@@ -13,8 +13,8 @@
 ; # All objects have a type property corresponding to the production name, e.g. "Schema"
 
 Schema           {
-  "@context":"http://shex.io/context.jsonld"
-startActs:[SemAct+]? start:(shapeExpr|labeledShapeExpr)? shapes:[labeledShapeExpr+]? }
+  "@context":"http://www.w3.org/ns/shex.jsonld"
+imports:[IRI+]? startActs:[SemAct+]? start:(shapeExpr|labeledShapeExpr)? shapes:[labeledShapeExpr+]? }
 
 # labeled Shape Expressions
 labeledShapeExpr        = labeledShapeOr | labeledShapeAnd | labeledShapeNot | labeledNodeConstraint | labeledShape | shapeExprLabel | labeledShapeExternal;
@@ -22,7 +22,7 @@ labeledShapeOr          { type:"ShapeOr"        id:shapeExprLabel shapeExprs:[sh
 labeledShapeAnd         { type:"ShapeAnd"       id:shapeExprLabel shapeExprs:[shapeExpr{2,}] }
 labeledShapeNot         { type:"ShapeNot"       id:shapeExprLabel shapeExpr:shapeExpr }
 labeledNodeConstraint   { type:"NodeConstraint" id:shapeExprLabel nodeKind:("iri"|"bnode"|"nonliteral"|"literal")? datatype:IRI? xsFacet* values:[valueSetValue+]? }
-labeledShape            { type:"Shape"          id:shapeExprLabel virtual:BOOL? closed:BOOL? extra:[IRI+]? expression:tripleExpr? inherit:[shapeExprLabel+]? semActs:[SemAct+]? }
+labeledShape            { type:"Shape"          id:shapeExprLabel virtual:BOOL? closed:BOOL? extra:[IRI+]? expression:tripleExpr? inherit:[shapeExprLabel+]? semActs:[SemAct+]? annotations:[Annotation+]? }
 labeledShapeExternal    { type:"ShapeExternal"  id:shapeExprLabel  }
 
 # Shape Expressions
@@ -31,7 +31,7 @@ ShapeOr          { shapeExprs:[shapeExpr{2,}] }
 ShapeAnd         { shapeExprs:[shapeExpr{2,}] }
 ShapeNot         { shapeExpr:shapeExpr }
 NodeConstraint   { nodeKind:("iri"|"bnode"|"nonliteral"|"literal")? datatype:IRI? xsFacet* values:[valueSetValue+]? }
-Shape            { virtual:BOOL? closed:BOOL? extra:[IRI+]? expression:tripleExpr? inherit:[shapeExprLabel+]? semActs:[SemAct+]? }
+Shape            { virtual:BOOL? closed:BOOL? extra:[IRI+]? expression:tripleExpr? inherit:[shapeExprLabel+]? semActs:[SemAct+]? annotations:[Annotation+]? }
 ShapeExternal    {  }
 
 # Triple Expressions
@@ -47,14 +47,15 @@ numericFacet     = (mininclusive|minexclusive|maxinclusive|maxexclusive):numeric
                  | (totaldigits|fractiondigits):INTEGER ;
 
 # Value Sets
-valueSetValue    = objectValue | IriStem | IriStemRange | LiteralStem | LiteralStemRange | LanguageStem | LanguageStemRange ;
+valueSetValue    = objectValue | IriStem | IriStemRange | LiteralStem | LiteralStemRange | Language | LanguageStem | LanguageStemRange ;
 objectValue      = IRI|ObjectLiteral ;
-IriStem          { stem:IRI } # IriStemRange with exclusions
-IriStemRange     { stem:(IRI|Wildcard) exclusions:[objectValue|IriStem +] }
-LiteralStem      { stem:ObjectLiteral } # LiteralStemRange with exclusions
-LiteralStemRange { stem:(ObjectLiteral|Wildcard) exclusions:[objectValue|LiteralStem +] }
-LanguageStem     { stem:ObjectLiteral } # LanguageStemRange with exclusions
-LanguageStemRange{ stem:(ObjectLiteral|Wildcard) exclusions:[objectValue|LanguageStem +] }
+IriStem          { stem:IRI }
+IriStemRange     { stem:(IRI|Wildcard) exclusions:[IRI|IriStem +] }
+LiteralStem      { stem:STRING }
+LiteralStemRange { stem:(STRING|Wildcard) exclusions:[STRING|LiteralStem +] }
+Language         { languageTag:LANGTAG }
+LanguageStem     { stem:LANGTAG }
+LanguageStemRange{ stem:(LANGTAG|Wildcard) exclusions:[LANGTAG|LanguageStem +] }
 Wildcard         {  }
 
 SemAct           { name:IRI code:STRING? }
@@ -63,8 +64,7 @@ Annotation       { predicate:IRI object:objectValue }
 shapeExprLabel   = IRI|BNODE ;
 tripleExprLabel  = IRI|BNODE ;
 numericLiteral   = INTEGER|DECIMAL|DOUBLE ;
-RDFLiteral       = SIMPLE_LITERAL|DATATYPE_LITERAL|LANG_LITERAL ;
-ObjectLiteral    { value:STRING language:STRING? type:STRING? }
+ObjectLiteral    { value:STRING language:LANGTAG? type:IRI? }
 
 # Terminals used in productions:
 IRI              : (PN_CHARS | '.' | ':' | '/' | '\\' | '#' | '@' | '%' | '&' | UCHAR)* ; # <http://www.w3.org/TR/turtle/#grammar-production-IRIREF> - "<>"s
@@ -73,7 +73,8 @@ BOOL             : "true" | "false" ; # JSON boolean tokens
 INTEGER          : [+-]? [0-9] + ; # <http://www.w3.org/TR/turtle/#grammar-production-INTEGER>
 DECIMAL          : [+-]? [0-9]* '.' [0-9] + ; # <http://www.w3.org/TR/turtle/#grammar-production-DECIMAL>
 DOUBLE           : [+-]? ([0-9] + '.' [0-9]* EXPONENT | '.' [0-9]+ EXPONENT | [0-9]+ EXPONENT) ; # <http://www.w3.org/TR/turtle/#grammar-production-DOUBLE>
-STRING           : .* ;
+LANGTAG          : ([a-zA-Z])+('-'([a-zA-Z0-9])+)* ; # @@BCP47
+STRING           : .* ; # @@ JSON string
 
 # Terminals use only in other terminals:
 PN_PREFIX        : PN_CHARS_BASE ((PN_CHARS | '.')* PN_CHARS)? ;
@@ -88,5 +89,4 @@ UCHAR            : '\\u' HEX HEX HEX HEX
                  | '\\U' HEX HEX HEX HEX HEX HEX HEX HEX ;
 HEX              : [0-9] | [A-F] | [a-f] ;
 EXPONENT 	 : [eE] [+-]? [0-9]+ ;
-LANGTAG          : '@' [a-zA-Z] + ('-' [a-zA-Z0-9] +)* ;
 
