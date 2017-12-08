@@ -9,20 +9,20 @@
       "type": "NodeConstraint",
       "values": [
         {
-          "type": "LiteralStemRange",
-          "stem": "v",
+          "type": "LanguageStemRange",
+          "stem": "fr",
           "exclusions": [
             {
-              "type": "LiteralStem",
-              "stem": "v1"
+              "type": "LanguageStem",
+              "stem": "fr-be"
             },
             {
-              "type": "LiteralStem",
-              "stem": "v2"
+              "type": "LanguageStem",
+              "stem": "fr-cd"
             },
             {
-              "type": "LiteralStem",
-              "stem": "v3"
+              "type": "LanguageStem",
+              "stem": "fr-ch"
             }
           ]
         }
@@ -33,7 +33,7 @@
         "type": "TestedTriple",
         "subject": "http://a.example/s1",
         "predicate": "http://a.example/p1",
-        "object": { "value": "v" }
+        "object": { "value": "septante", "language": "fr-bel" }
       }
     ]
   }
