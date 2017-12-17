@@ -22,7 +22,7 @@ labeledShapeOr          { type:"ShapeOr"        id:shapeExprLabel shapeExprs:[sh
 labeledShapeAnd         { type:"ShapeAnd"       id:shapeExprLabel shapeExprs:[shapeExpr{2,}] }
 labeledShapeNot         { type:"ShapeNot"       id:shapeExprLabel shapeExpr:shapeExpr }
 labeledNodeConstraint   { type:"NodeConstraint" id:shapeExprLabel nodeKind:("iri"|"bnode"|"nonliteral"|"literal")? datatype:IRIREF? xsFacet* values:[valueSetValue+]? }
-labeledShape            { type:"Shape"          id:shapeExprLabel virtual:BOOL? closed:BOOL? extra:[IRIREF+]? expression:tripleExpr? inherit:[shapeExprLabel+]? semActs:[SemAct+]? annotations:[Annotation+]? }
+labeledShape            { type:"Shape"          id:shapeExprLabel virtual:BOOL? closed:BOOL? extra:[IRIREF+]? expression:tripleExpr? extends:[shapeExprLabel+]? semActs:[SemAct+]? annotations:[Annotation+]? }
 labeledShapeExternal    { type:"ShapeExternal"  id:shapeExprLabel  }
 
 # Shape Expressions
@@ -55,8 +55,8 @@ LanguageStem     { stem:LANGTAG }
 LanguageStemRange{ stem:(LANGTAG|Wildcard) exclusions:[LANGTAG|LanguageStem +] }
 Wildcard         {  }
 
-# Shape            { abstract:BOOL? closed:BOOL? extra:[IRIREF+]? expression:tripleExpr? restrict:[shapeExprLabel+]? extend:[shapeExprLabel+]? semActs:[SemAct+]? annotations:[Annotation+]? }
-Shape            { closed:BOOL? extra:[IRIREF+]? expression:tripleExpr? semActs:[SemAct+]? annotations:[Annotation+]? }
+# Shape            { abstract:BOOL? closed:BOOL? extra:[IRIREF+]? expression:tripleExpr? restrict:[shapeExprLabel+]? extends:[shapeExprLabel+]? semActs:[SemAct+]? annotations:[Annotation+]? }
+Shape            { closed:BOOL? extra:[IRIREF+]? expression:tripleExpr? extends:[shapeExprLabel+]? semActs:[SemAct+]? annotations:[Annotation+]? }
 
 # Triple Expressions
 tripleExpr       = EachOf | OneOf | TripleConstraint | tripleExprRef ;

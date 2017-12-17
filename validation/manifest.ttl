@@ -1255,6 +1255,10 @@
         <#node_kind_example>
         <#dependent_shape>
         <#recursion_example>
+
+## Inheritance
+        <#inheritance-abstract-multi-empty_pass>
+
     ) .
 
 # definitions
@@ -15948,6 +15952,22 @@
     .
 
 ## } ShapeMaps
+## Inheritance {
+
+<#inheritance-abstract-multi-empty_pass> a sht:ValidationTest ;
+    mf:name "inheritance-abstract-multi-empty_pass" ;
+    sht:trait sht:Inheritance , sht:Abstract , sht:MultiInheritance ;
+    rdfs:comment "@@@" ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/inheritance-abstract-multi-empty.shex> ;
+      sht:shape <IssueShape> ;
+      sht:data <inheritance-abstract-multi-empty_pass.ttl> ;
+      sht:focus <Issue1>
+    ] ;
+    .
+
+## } Inheritance
 # deferred {
 ## error reporting {
 <#1dot_fail-empty-err> a sht:ValidationFailure ;

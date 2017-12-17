@@ -3,11 +3,14 @@
   "type": "Schema",
   "shapes": [
     { "id": "http://a.example/S1",
-      "type": "Shape",
+      "type": "ShapeDecl",
       "abstract": true,
-      "expression": {
-        "type": "TripleConstraint",
-        "predicate": "http://a.example/p1"
+      "shapeExpr": {
+        "type": "Shape",
+        "expression": {
+          "type": "TripleConstraint",
+          "predicate": "http://a.example/p1"
+        }
       }
     }
   ]

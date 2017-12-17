@@ -18793,6 +18793,25 @@
           "comment": "<S1> {<p1> @<S1>*}} on { <s1> <p1> <s2> . <s2> <p1> <s3> . <s3> <p1> <s1> .}",
           "status": "mf:proposed",
           "result": "recursion_example_results.json"
+        },
+        {
+          "@id": "#inheritance-abstract-multi-empty_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/inheritance-abstract-multi-empty.shex",
+            "shape": "IssueShape",
+            "data": "inheritance-abstract-multi-empty_pass.ttl",
+            "focus": "Issue1"
+          },
+          "extensionResults": [],
+          "name": "inheritance-abstract-multi-empty_pass",
+          "trait": [
+            "MultiInheritance",
+            "Abstract",
+            "Inheritance"
+          ],
+          "comment": "@@@",
+          "status": "mf:proposed"
         }
       ]
     }

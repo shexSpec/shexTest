@@ -323,11 +323,11 @@
         <#NOT1dotOR2dotX3AND1>
         <#shapeExtern>
         <#shapeExternRef>
-#        <#0Inherit1>
-#        <#1dotInherit1>
-#        <#1dotInherit3>
-#        <#1dot3Inherit>
-#        <#1dot3InheritLN>
+        <#0Extends1>
+        <#1dotExtends1>
+        <#1dotExtends3>
+        <#1dot3Extends>
+        <#1dot3ExtendsLN>
         <#1dotAbstractShapeCode1>
         <#1dotAbstract>
 #         <#1dotUnlabeledCode1>
@@ -3113,46 +3113,46 @@
     sx:ttl <shapeExternRef.ttl> ;
     .
 
-# <#0Inherit1> a sht:RepresentationTest ;
-#     mf:name "0Inherit1" ;
-#     mf:status mf:proposed ;
-#     sx:shex <0Inherit1.shex> ;
-#     sx:json <0Inherit1.json> ;
-#     sx:ttl <0Inherit1.ttl> ;
-#     .
-# 
-# <#1dotInherit1> a sht:RepresentationTest ;
-#     mf:name "1dotInherit1" ;
-#     mf:status mf:proposed ;
-#     sx:shex <1dotInherit1.shex> ;
-#     sx:json <1dotInherit1.json> ;
-#     sx:ttl <1dotInherit1.ttl> ;
-#     .
-# 
-# <#1dotInherit3> a sht:RepresentationTest ;
-#     mf:name "1dotInherit3" ;
-#     mf:status mf:proposed ;
-#     sx:shex <1dotInherit3.shex> ;
-#     sx:json <1dotInherit3.json> ;
-#     sx:ttl <1dotInherit3.ttl> ;
-#     .
-# 
-# <#1dot3Inherit> a sht:RepresentationTest ;
-#     mf:name "1dot3Inherit" ;
-#     mf:status mf:proposed ;
-#     mf:sameSemanticsAs <#1dotInherit3> ;
-#     sx:shex <1dot3Inherit.shex> ;
-#     sx:json <1dot3Inherit.json> ;
-#     sx:ttl <1dot3Inherit.ttl> ;
-#     .
-# 
-# <#1dot3InheritLN> a sht:RepresentationTest ;
-#     mf:name "1dot3InheritLN" ;
-#     mf:status mf:proposed ;
-#     sx:shex <1dot3InheritLN.shex> ;
-#     sx:json <1dot3InheritLN.json> ;
-#     sx:ttl <1dot3InheritLN.ttl> ;
-#     .
+<#0Extends1> a sht:RepresentationTest ;
+    mf:name "0Extends1" ;
+    mf:status mf:proposed ;
+    sx:shex <0Extends1.shex> ;
+    sx:json <0Extends1.json> ;
+    sx:ttl <0Extends1.ttl> ;
+    .
+
+<#1dotExtends1> a sht:RepresentationTest ;
+    mf:name "1dotExtends1" ;
+    mf:status mf:proposed ;
+    sx:shex <1dotExtends1.shex> ;
+    sx:json <1dotExtends1.json> ;
+    sx:ttl <1dotExtends1.ttl> ;
+    .
+
+<#1dotExtends3> a sht:RepresentationTest ;
+    mf:name "1dotExtends3" ;
+    mf:status mf:proposed ;
+    sx:shex <1dotExtends3.shex> ;
+    sx:json <1dotExtends3.json> ;
+    sx:ttl <1dotExtends3.ttl> ;
+    .
+
+<#1dot3Extends> a sht:RepresentationTest ;
+    mf:name "1dot3Extends" ;
+    mf:status mf:proposed ;
+    mf:sameSemanticsAs <#1dotExtends3> ;
+    sx:shex <1dot3Extends.shex> ;
+    sx:json <1dotExtends3.json> ;
+    sx:ttl <1dotExtends3.ttl> ;
+    .
+
+<#1dot3ExtendsLN> a sht:RepresentationTest ;
+    mf:name "1dot3ExtendsLN" ;
+    mf:status mf:proposed ;
+    sx:shex <1dot3ExtendsLN.shex> ;
+    sx:json <1dotExtends3.json> ;
+    sx:ttl <1dotExtends3.ttl> ;
+    .
 
 <#1dotAbstractShapeCode1> a sht:RepresentationTest ;
     mf:name "1dotAbstractShapeCode1" ;
