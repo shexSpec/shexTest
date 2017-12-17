@@ -12357,6 +12357,42 @@
           "status": "mf:proposed"
         },
         {
+          "@id": "#1val1languageStem_passLAtfr",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1val1languageStem.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_LAtfr.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1languageStem_passLAtfr",
+          "trait": [
+            "Stem",
+            "ValueSet"
+          ],
+          "comment": "<S> { <p1> [@fr~] } on { <s1> <p1> 'septante'@fr }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1val1languageStem_failLAtfrc",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1val1languageStem.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_LAtfrc.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1languageStem_failLAtfrc",
+          "trait": [
+            "Stem",
+            "ValueSet"
+          ],
+          "comment": "<S> { <p1> [@fr~] } on { <s1> <p1> 'septante'@frc }",
+          "status": "mf:proposed"
+        },
+        {
           "@id": "#1val1languageStem_passLAtfr-be",
           "@type": "sht:ValidationTest",
           "action": {
@@ -12591,6 +12627,24 @@
           "status": "mf:proposed"
         },
         {
+          "@id": "#1val1languageStemMinuslanguageStem3_LAtfrc",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1val1languageStemMinuslanguageStem3.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_LAtfrc.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1languageStemMinuslanguageStem3_LAtfrc",
+          "trait": [
+            "Stem",
+            "ValueSet"
+          ],
+          "comment": "<S> { <p1> [@fr~-@fr-be~-@fr-cd~-@fr-ch] } on { <s1> <p1> 'septante'@frc }",
+          "status": "mf:proposed"
+        },
+        {
           "@id": "#1val1languageStemMinuslanguageStem3_passLAtfr-FR",
           "@type": "sht:ValidationTest",
           "action": {
@@ -12660,6 +12714,24 @@
             "ValueSet"
           ],
           "comment": "<S> { <p1> [@fr~-@fr-be~-@fr-cd~-@fr-ch] } on { <s1> <p1> 'septante'@fr-ch }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1val1languageStemMinuslanguageStem3_passLAtfr-bel",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1val1languageStemMinuslanguageStem3.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_LAtfr-bel.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1languageStemMinuslanguageStem3_passLAtfr-bel",
+          "trait": [
+            "Stem",
+            "ValueSet"
+          ],
+          "comment": "<S> { <p1> [@fr~-@fr-be~-@fr-cd~-@fr-ch] } on { <s1> <p1> 'septante'@fr-bel }",
           "status": "mf:proposed"
         },
         {
@@ -18055,7 +18127,7 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#1dot-relative_pass",
+          "@id": "#1dot-relative_pass-short-shape",
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../validation/1dot-relative.shex",
@@ -18064,7 +18136,24 @@
             "focus": "s1"
           },
           "extensionResults": [],
-          "name": "1dot-relative_pass",
+          "name": "1dot-relative_pass-short-shape",
+          "trait": [
+            "relativeIRI"
+          ],
+          "comment": "<S1> { <p1> [<o1>] } / { <s1> <p1> <o1>}",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1dot-relative_pass-relative-shape",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../validation/1dot-relative.shex",
+            "shape": "S1",
+            "data": "Is1_Ip1_Io1-relative.ttl",
+            "focus": "s1"
+          },
+          "extensionResults": [],
+          "name": "1dot-relative_pass-relative-shape",
           "trait": [
             "relativeIRI"
           ],
