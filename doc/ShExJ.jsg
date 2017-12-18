@@ -14,7 +14,7 @@
 
 Schema           {
   "@context":"http://www.w3.org/ns/shex.jsonld"
-imports:[IRIREF+]? startActs:[SemAct+]? start:(shapeExpr|labeledShapeExpr)? shapes:[labeledShapeExpr+]? }
+startActs:[SemAct+]? start:(shapeExpr|labeledShapeExpr)? shapes:[labeledShapeExpr+]? }
 
 # labeled Shape Expressions
 labeledShapeExpr        = labeledShapeOr | labeledShapeAnd | labeledShapeNot | labeledNodeConstraint | labeledShape | labeledShapeExternal | shapeExprLabel ;
@@ -22,7 +22,7 @@ labeledShapeOr          { type:"ShapeOr"        id:shapeExprLabel shapeExprs:[sh
 labeledShapeAnd         { type:"ShapeAnd"       id:shapeExprLabel shapeExprs:[shapeExpr{2,}] }
 labeledShapeNot         { type:"ShapeNot"       id:shapeExprLabel shapeExpr:shapeExpr }
 labeledNodeConstraint   { type:"NodeConstraint" id:shapeExprLabel nodeKind:("iri"|"bnode"|"nonliteral"|"literal")? datatype:IRIREF? xsFacet* values:[valueSetValue+]? }
-labeledShape            { type:"Shape"          id:shapeExprLabel virtual:BOOL? closed:BOOL? extra:[IRIREF+]? expression:tripleExpr? inherit:[shapeExprLabel+]? semActs:[SemAct+]? annotations:[Annotation+]? }
+labeledShape            { type:"Shape"          id:shapeExprLabel virtual:BOOL? closed:BOOL? extra:[IRIREF+]? expression:tripleExpr? semActs:[SemAct+]? annotations:[Annotation+]? }
 labeledShapeExternal    { type:"ShapeExternal"  id:shapeExprLabel  }
 
 # Shape Expressions
@@ -55,14 +55,12 @@ LanguageStem     { stem:LANGTAG }
 LanguageStemRange{ stem:(LANGTAG|Wildcard) exclusions:[LANGTAG|LanguageStem +] }
 Wildcard         {  }
 
-# Shape            { abstract:BOOL? closed:BOOL? extra:[IRIREF+]? expression:tripleExpr? restrict:[shapeExprLabel+]? extend:[shapeExprLabel+]? semActs:[SemAct+]? annotations:[Annotation+]? }
 Shape            { closed:BOOL? extra:[IRIREF+]? expression:tripleExpr? semActs:[SemAct+]? annotations:[Annotation+]? }
 
 # Triple Expressions
 tripleExpr       = EachOf | OneOf | TripleConstraint | tripleExprRef ;
 EachOf           { id:tripleExprLabel? expressions:[tripleExpr{2,}] min:INTEGER? max:INTEGER? semActs:[SemAct+]? annotations:[Annotation+]? }
 OneOf            { id:tripleExprLabel? expressions:[tripleExpr{2,}] min:INTEGER? max:INTEGER? semActs:[SemAct+]? annotations:[Annotation+]? }
-# TripleConstraint { id:tripleExprLabel? inverse:BOOL? negated:BOOL? predicate:IRIREF valueExpr:shapeExpr? min:INTEGER? max:INTEGER? semActs:[SemAct+]? annotations:[Annotation+]? }
 TripleConstraint { id:tripleExprLabel? inverse:BOOL? predicate:IRIREF valueExpr:shapeExpr? min:INTEGER? max:INTEGER? semActs:[SemAct+]? annotations:[Annotation+]? }
 tripleExprRef    = tripleExprLabel ;
 tripleExprLabel  = IRIREF|BNODE ;
