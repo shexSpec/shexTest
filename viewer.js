@@ -213,10 +213,11 @@
 
       function makeShapeMap (attrs, val) {
         if ("map" in attrs) {
-          var anchor = drag("a", { href: relPrepend + attrs.map }, attrs.map, elt => {
+          var a = drag("a", { href: relPrepend + attrs.map }, attrs.map, elt => {
             return elt.href;
           }, "text/uri-list");
-          return $("<td/>").append(title(anchor));
+          attrs["map"] = a.prop("href");
+          return $("<td/>").append(title(a));
         }
         return drag("td", { }, ttl(attrs.focus) + "@" + ("shape" in attrs ? ttl(attrs.shape) : "START"), elt => {
           return elt.innerText;
