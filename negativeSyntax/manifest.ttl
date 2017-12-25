@@ -25,6 +25,7 @@
     <#1literalTotaldigitsxsd-integer>
     <#1negatedinversenegateddot>
     <#1negatednegateddot>
+    <#1datatypeRef1>
     <#1unknowndatatypeMaxInclusive>
     <#1val1bnode>
     <#1val1iriMinusiri1>
@@ -105,7 +106,9 @@
     <#tripleConsraint-with-datatype-and-valueSet>
     <#tripleConsraint-with-dot-and-datatype>
     <#tripleConsraint-with-two-cardinalities>
+    <#1val1iriStemMinusliteral3>
     <#1val1languageStemMinusliteral3>
+    <#1val1literalStemMinusiri3>
     <#1val1literalStemMinuslanguage3>
   ) .
 
@@ -209,6 +212,12 @@
   mf:name "1negatednegateddot" ;
   mf:status mf:proposed ;
   sx:shex <1negatednegateddot.shex> ;
+  .
+
+<#1datatypeRef1> a sht:NegativeSyntax ;
+  mf:name "1datatypeRef1" ;
+  mf:status mf:proposed ;
+  sx:shex <1datatypeRef1.shex> ;
   .
 
 <#1unknowndatatypeMaxInclusive> a sht:NegativeSyntax ;
@@ -691,10 +700,22 @@
   sx:shex <tripleConsraint-with-two-cardinalities.shex> ;
   .
 
+<#1val1iriStemMinusliteral3> a sht:NegativeSyntax ;
+  mf:name "1val1iriStemMinusliteral3" ;
+  mf:status mf:proposed ;
+  sx:shex <1val1iriStemMinusliteral3.shex> ;
+  .
+
 <#1val1languageStemMinusliteral3> a sht:NegativeSyntax ;
   mf:name "1val1languageStemMinusliteral3" ;
   mf:status mf:proposed ;
   sx:shex <1val1languageStemMinusliteral3.shex> ;
+  .
+
+<#1val1literalStemMinusiri3> a sht:NegativeSyntax ;
+  mf:name "1val1literalStemMinusiri3" ;
+  mf:status mf:proposed ;
+  sx:shex <1val1literalStemMinusiri3.shex> ;
   .
 
 <#1val1literalStemMinuslanguage3> a sht:NegativeSyntax ;
