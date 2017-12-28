@@ -94,7 +94,7 @@
           "trait": [
             "TriplePattern"
           ],
-          "comment": "<S1> { <p1> . } on {  }",
+          "comment": "BASE <…> <S1> { <p1> . } on {  }",
           "status": "mf:proposed"
         },
         {
@@ -128,7 +128,7 @@
           "trait": [
             "TriplePattern"
           ],
-          "comment": "<S1> { <p1> . } on { <s1> <p2> <o1> }",
+          "comment": "BASE <…> <S1> { <p1> . } on { <s1> <p2> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -162,7 +162,7 @@
           "trait": [
             "TriplePattern"
           ],
-          "comment": "<S1> { <p1> . } on { <s1> <p1> <o1> }",
+          "comment": "BASE <…> <S1> { <p1> . } on { <s1> <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -350,7 +350,7 @@
             "TriplePattern",
             "ToldBNode"
           ],
-          "comment": "<S> { <p1> . } on { <s1> <p2> <o1> }",
+          "comment": "_:S { <p1> . } on { <s1> <p2> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -385,7 +385,7 @@
           "trait": [
             "TriplePattern"
           ],
-          "comment": "<S> { <p1> . } on {  }",
+          "comment": "<S> { ^<p1> . } on {  }",
           "status": "mf:proposed"
         },
         {
@@ -402,7 +402,7 @@
           "trait": [
             "TriplePattern"
           ],
-          "comment": "<S> { <p1> . } on { <s1> <p2> <o1> }",
+          "comment": "<S> { ^<p1> . } on { <s1> <p2> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -419,7 +419,7 @@
           "trait": [
             "TriplePattern"
           ],
-          "comment": "<S> { <p1> . } on { <sr> <p1> <o1> }",
+          "comment": "<S> { ^<p1> . } on { <sr> <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -436,7 +436,7 @@
           "trait": [
             "TriplePattern"
           ],
-          "comment": "<S> { <p1> . } on { <s1> <p0> <o0>; <p1> <o1> }",
+          "comment": "<S> { ^<p1> . } on { <s1> <p0> <o0>; <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -453,7 +453,7 @@
           "trait": [
             "TriplePattern"
           ],
-          "comment": "<S> { <p1> . } on { <s1> <p1> <o1>; <p2> <o2> }",
+          "comment": "<S> { ^<p1> . } on { <s1> <p1> <o1>; <p2> <o2> }",
           "status": "mf:proposed"
         },
         {
@@ -3878,7 +3878,7 @@
           "trait": [
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> ['STRING_LITERAL1'] } on { <s1> <p1> 'STRING_LITERAL1' }",
+          "comment": "<S> { <p1> ['STRING_LITERAL1'] } on { <s1> <p1> 'STRING_LITERAL1999' }",
           "status": "mf:proposed"
         },
         {
@@ -3929,7 +3929,7 @@
           "trait": [
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> ['^@^A...^_'] } on { <s1> <p1> '^@^A...^_' }",
+          "comment": "<S> { <p1> [' !\"#...'] } on { <s1> <p1> ' !\"#...' }",
           "status": "mf:proposed"
         },
         {
@@ -3946,7 +3946,7 @@
           "trait": [
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> ['^@^A...^_'] } on { <s1> <p1> '^@^A...^_999' }",
+          "comment": "<S> { <p1> [' !\"#...'] } on { <s1> <p1> ' !\"#...999' }",
           "status": "mf:proposed"
         },
         {
@@ -3963,7 +3963,7 @@
           "trait": [
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> ['^@^A...^_'] } on { <s1> <p1> '^@^A...^_' }",
+          "comment": "<S> { <p1> ['^@^I^K^L^N&([]^?'] } on { <s1> <p1> '^@^I^K^L^N&([]^?' }",
           "status": "mf:proposed"
         },
         {
@@ -3980,7 +3980,7 @@
           "trait": [
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> ['^@^A...^_'] } on { <s1> <p1> '^@^A...^_999' }",
+          "comment": "<S> { <p1> ['^@^I^K^L^N&([]^?'] } on { <s1> <p1> '^@^I^K^L^N&([]^?999' }",
           "status": "mf:proposed"
         },
         {
@@ -3998,7 +3998,7 @@
             "OutsideBMP",
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> ['...🿽'] } on { <s1> <p1> '...􏿽' }",
+          "comment": "<S> { <p1> ['...􏿽'] } on { <s1> <p1> '...􏿽' }",
           "status": "mf:proposed"
         },
         {
@@ -4016,7 +4016,7 @@
             "OutsideBMP",
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> ['...🿽'] } on { <s1> <p1> '...􏿽999' }",
+          "comment": "<S> { <p1> ['...􏿽'] } on { <s1> <p1> '...􏿽999' }",
           "status": "mf:proposed"
         },
         {
@@ -4050,7 +4050,7 @@
           "trait": [
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> ['\\t\\b\\n\\r\\f'] } on { <s1> <p1> '\\t\\b\\n\\r\\f' }",
+          "comment": "<S> { <p1> ['\\t\\b\\n\\r\\f'] } on { <s1> <p1> '\\t\\b\\n\\r\\f999' }",
           "status": "mf:proposed"
         },
         {
@@ -10569,7 +10569,7 @@
             "OutsideBMP",
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> /^^@^A...^_$/ } on { <s1> <p1> '^@^A...^_' }",
+          "comment": "<S> { <p1> /^^@^I^K^L^N&\\(\\[\\]^?$/ } on { <s1> <p1> '^@^I^K^L^N&([]^?' }",
           "status": "mf:proposed"
         },
         {
@@ -10587,7 +10587,7 @@
             "OutsideBMP",
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> /^^@^A...^_$/ } on { <s1> <p1> '^@^A...^_999' }",
+          "comment": "<S> { <p1> /^^@^I^K^L^N&\\(\\[\\]^?$/ } on { <s1> <p1> '^@^I^K^L^N&([]^?999' }",
           "status": "mf:proposed"
         },
         {
@@ -10605,7 +10605,7 @@
             "OutsideBMP",
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> /^^@^A...^_$/ } on { <s1> <p1> '^@^A...^_' }",
+          "comment": "<S> { <p1> /^...􏿽$/ } on { <s1> <p1> '...􏿽' }",
           "status": "mf:proposed"
         },
         {
@@ -10623,7 +10623,7 @@
             "OutsideBMP",
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> /^^@^A...^_$/ } on { <s1> <p1> '^@^A...^_999' }",
+          "comment": "<S> { <p1> /^...􏿽$/ } on { <s1> <p1> '...􏿽999' }",
           "status": "mf:proposed"
         },
         {
@@ -10991,7 +10991,7 @@
           "trait": [
             "PaternFacet"
           ],
-          "comment": "<S1> { <p1> LITERAL PATTERN \"bc$\" } on { <s1> <p1> \"bc\" }",
+          "comment": "<S1> { <p1> LITERAL PATTERN \"bc$\" } on { <s1> <p1> \"^bc$\" }",
           "status": "mf:proposed"
         },
         {
@@ -11060,7 +11060,7 @@
             "OutsideBMP",
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> /^$/ } on { <s1> <p1> '' }",
+          "comment": "<S> { <p1> /^\t(v:[0-9]+.../ } on { <s1> <p1> '\tv:0, ...' }",
           "status": "mf:proposed"
         },
         {
@@ -11078,7 +11078,7 @@
             "OutsideBMP",
             "NumericEquivalence"
           ],
-          "comment": "<S> { <p1> /^$/ } on { <s1> <p1> '' }",
+          "comment": "<S> { <p1> /^\t(v:[0-9]+.../ } on { <s1> <p1> 'abc\\N/Adef' }",
           "status": "mf:proposed"
         },
         {
@@ -13254,7 +13254,7 @@
             "AndValueExpression",
             "ValueReference"
           ],
-          "comment": "<vc1> = ... <vc3> = ... <S> { <p1> @<vc1> AND ... @<vc3> } on { <s1> <p1> 'abab' }",
+          "comment": "<vc1> = ... <vc3> = ... <vc4> = @<vc1> AND ... @<vc3> <S> { <p1> @<vc4> } on { <s1> <p1> 'abab' }",
           "status": "mf:proposed"
         },
         {
@@ -13272,7 +13272,7 @@
             "AndValueExpression",
             "ValueReference"
           ],
-          "comment": "<vc1> = ... <vc3> = ... <S> { <p1> @<vc1> AND ... @<vc3> } on { <s1> <p1> 'baba' }",
+          "comment": "<vc1> = ... <vc3> = ... <vc4> = @<vc1> AND ... @<vc3> <S> { <p1> @<vc4> } on { <s1> <p1> 'baba' }",
           "status": "mf:proposed"
         },
         {
@@ -13290,7 +13290,7 @@
             "AndValueExpression",
             "ValueReference"
           ],
-          "comment": "<vc1> = ... <vc3> = ... <S> { <p1> @<vc1> AND ... @<vc3> } on { <s1> <p1> 'ababab' }",
+          "comment": "<vc1> = ... <vc3> = ... <vc4> = @<vc1> AND ... @<vc3> <S> { <p1> @<vc4> } on { <s1> <p1> 'ababab' }",
           "status": "mf:proposed"
         },
         {
@@ -13308,7 +13308,7 @@
             "AndValueExpression",
             "ValueReference"
           ],
-          "comment": "<vc1> = ... <vc3> = ... <S> { <p1> @<vc1> AND ... @<vc3> } on { <s1> <p1> 'ab' }",
+          "comment": "<vc1> = ... <vc3> = ... <vc4> = @<vc1> AND ... @<vc3> <S> { <p1> @<vc4> } on { <s1> <p1> 'ab' }",
           "status": "mf:proposed"
         },
         {
@@ -13700,7 +13700,7 @@
             "OrValueExpression",
             "ValueReference"
           ],
-          "comment": "<vc1> = ... <vc3> = ... <S> { <p1> @<vc1> OR ... @<vc3> } on { <s1> <p1> 'abcdef' }",
+          "comment": "<vc1> = ... <vc3> = ... <vc4> = @<vc1> OR ... @<vc3> <S> { <p1> @<vc4> } on { <s1> <p1> 'abcdef' }",
           "status": "mf:proposed"
         },
         {
@@ -13718,7 +13718,7 @@
             "OrValueExpression",
             "ValueReference"
           ],
-          "comment": "<vc1> = ... <vc3> = ... <S> { <p1> @<vc1> OR ... @<vc3> } on { <s1> <p1> 'ef' }",
+          "comment": "<vc1> = ... <vc3> = ... <vc4> = @<vc1> OR ... @<vc3> <S> { <p1> @<vc4> } on { <s1> <p1> 'ef' }",
           "status": "mf:proposed"
         },
         {
@@ -13736,7 +13736,7 @@
             "OrValueExpression",
             "ValueReference"
           ],
-          "comment": "<vc1> = ... <vc3> = ... <S> { <p1> @<vc1> OR ... @<vc3> } on { <s1> <p1> 'cd' }",
+          "comment": "<vc1> = ... <vc3> = ... <vc4> = @<vc1> OR ... @<vc3> <S> { <p1> @<vc4> } on { <s1> <p1> 'cd' }",
           "status": "mf:proposed"
         },
         {
@@ -13754,7 +13754,7 @@
             "OrValueExpression",
             "ValueReference"
           ],
-          "comment": "<vc1> = ... <vc3> = ... <S> { <p1> @<vc1> OR ... @<vc3> } on { <s1> <p1> 'ab' }",
+          "comment": "<vc1> = ... <vc3> = ... <vc4> = @<vc1> OR ... @<vc3> <S> { <p1> @<vc4> } on { <s1> <p1> 'ab' }",
           "status": "mf:proposed"
         },
         {
@@ -13772,7 +13772,7 @@
             "OrValueExpression",
             "ValueReference"
           ],
-          "comment": "<vc1> = ... <vc3> = ... <S> { <p1> @<vc1> OR ... @<vc3> } on { <s1> <p1> 'a' }",
+          "comment": "<vc1> = ... <vc3> = ... <vc4> = @<vc1> OR ... @<vc3> <S> { <p1> @<vc4> } on { <s1> <p1> 'a' }",
           "status": "mf:proposed"
         },
         {
@@ -14884,7 +14884,7 @@
             "AndValueExpression",
             "ValueReference"
           ],
-          "comment": "<vc1> ... <vc3> ... <S> { <p1> @<vc1> AND @<vc2> OR @<vc3> } on { <s1> <p1> 'abcdef' }",
+          "comment": "<vc1> ... <vc3> ... <vc4> = @<vc1> AND @<vc2> OR @<vc3> <S> { <p1> @<vc4> } on { <s1> <p1> 'abcdef' }",
           "status": "mf:proposed"
         },
         {
@@ -14902,7 +14902,7 @@
             "AndValueExpression",
             "ValueReference"
           ],
-          "comment": "<vc1> ... <vc3> ... <S> { <p1> @<vc1> AND @<vc2> OR @<vc3> } on { <s1> <p1> 'ababab' }",
+          "comment": "<vc1> ... <vc3> ... <vc4> = @<vc1> AND @<vc2> OR @<vc3> <S> { <p1> @<vc4> } on { <s1> <p1> 'ababab' }",
           "status": "mf:proposed"
         },
         {
@@ -14920,7 +14920,7 @@
             "AndValueExpression",
             "ValueReference"
           ],
-          "comment": "<vc1> ... <vc3> ... <S> { <p1> @<vc1> AND @<vc2> OR @<vc3> } on { <s1> <p1> 'ab' }",
+          "comment": "<vc1> ... <vc3> ... <vc4> = @<vc1> AND @<vc2> OR @<vc3> <S> { <p1> @<vc4> } on { <s1> <p1> 'ab' }",
           "status": "mf:proposed"
         },
         {
@@ -14938,7 +14938,7 @@
             "AndValueExpression",
             "ValueReference"
           ],
-          "comment": "<vc1> ... <vc3> ... <S> { <p1> @<vc1> AND ... @<vc3> } on { <s1> <p1> 'abab' }",
+          "comment": "<vc1> ... <vc3> ... <vc4> = @<vc1> AND @<vc2> OR @<vc3> <S> { <p1> @<vc4> } on { <s1> <p1> 'abab' }",
           "status": "mf:proposed"
         },
         {
@@ -14956,7 +14956,7 @@
             "AndValueExpression",
             "ValueReference"
           ],
-          "comment": "<vc1> ... <vc3> ... <S> { <p1> @<vc1> AND ... @<vc3> } on { <s1> <p1> 'cd' }",
+          "comment": "<vc1> ... <vc3> ... <vc4> = @<vc1> AND @<vc2> OR @<vc3> <S> { <p1> @<vc4> } on { <s1> <p1> 'cd' }",
           "status": "mf:proposed"
         },
         {
@@ -14974,7 +14974,7 @@
             "AndValueExpression",
             "ValueReference"
           ],
-          "comment": "<vc1> ... <vc3> ... <S> { <p1> @<vc1> AND ... @<vc3> } on { <s1> <p1> 'abcd' }",
+          "comment": "<vc1> ... <vc3> ... <S> { <p1> @<vc1> AND @<vc2> OR @<vc3> } on { <s1> <p1> 'abcd' }",
           "status": "mf:proposed"
         },
         {
@@ -15350,7 +15350,7 @@
           "trait": [
             "Closed"
           ],
-          "comment": "<S> { <p1> . } on { <s1> <p0> <o0>; <p1> <o1> }",
+          "comment": "<S> CLOSED { <p1> . } on { <s1> <p0> <o0>; <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -15367,7 +15367,7 @@
           "trait": [
             "Closed"
           ],
-          "comment": "<S> { <p1> . } on { <s1> <p1> <o1>; <p2> <o2> }",
+          "comment": "<S> CLOSED { <p1> . } on { <s1> <p1> <o1>; <p2> <o2> }",
           "status": "mf:proposed"
         },
         {
@@ -15971,7 +15971,7 @@
           "trait": [
             "Start"
           ],
-          "comment": "start= { <p1> . } on { <s1> <p1> <o1> }",
+          "comment": "start ={ <p1> . } on { <s1> <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -16076,7 +16076,7 @@
           "trait": [
             "Annotation"
           ],
-          "comment": "<S> { <p1> .; <annot> <IRIREF> } on { <s1> <p1> <o1> }",
+          "comment": "<S> { <p1> .// <annot> <IRIREF> } on { <s1> <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -16093,7 +16093,7 @@
           "trait": [
             "Annotation"
           ],
-          "comment": "<S> { <p1> .; <annot> <IRIREF> } on { <s1> <p2> <o1> }",
+          "comment": "<S> { <p1> .// <annot> <IRIREF> } on { <s1> <p2> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -16110,7 +16110,7 @@
           "trait": [
             "Annotation"
           ],
-          "comment": "<S> { <p1> .+; <annot> <IRIREF> } on { <s1> <p1> 'a', <o1> }",
+          "comment": "<S> { <p1> .+// <annot> <IRIREF> } on { <s1> <p1> 'a', <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -16127,7 +16127,7 @@
           "trait": [
             "Annotation"
           ],
-          "comment": "<S> { <p1> .; a <IRIREF> } on { <s1> <p1> <o1> }",
+          "comment": "<S> { <p1> .// a <IRIREF> } on { <s1> <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -16144,7 +16144,7 @@
           "trait": [
             "Annotation"
           ],
-          "comment": "<S> { <p1> .; <annot> 'STRING_LITERAL1' } on { <s1> <p1> <o1> }",
+          "comment": "<S> { <p1> .// <annot> 'STRING_LITERAL1' } on { <s1> <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -16161,7 +16161,7 @@
           "trait": [
             "Annotation"
           ],
-          "comment": "<S> { <p1> .; <a1> '1'; <a1> '2'; <a1> '3'; } on { <s1> <p1> <o1> }",
+          "comment": "<S> { <p1> .// <a1> '1'// <a2> '2'// <a3> '3' } on { <s1> <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -16178,7 +16178,7 @@
           "trait": [
             "Annotation"
           ],
-          "comment": "<S> { <p1> .; <a1> '1'; <a1> '2'; <a1> '3'; } on { <s1> <p2> <o1> }",
+          "comment": "<S> { <p1> .// <a1> '1'// <a1> '2'// <a1> '3' } on { <s1> <p2> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -16195,7 +16195,7 @@
           "trait": [
             "Annotation"
           ],
-          "comment": "<S> { <p1> .; <a1> '1'; <a1> '2'; <a1> '3'; } on { <s1> <p1> <o1> }",
+          "comment": "<S> { ^<p1> .// <a1> '1'// <a1> '2'// <a1> '3' } on { <s1> <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -16212,7 +16212,7 @@
           "trait": [
             "Annotation"
           ],
-          "comment": "<S> { <p1> .; <a1> '1'; <a1> '2'; <a1> '3'; } on { <s1> <p2> <o1> }",
+          "comment": "<S> { ^<p1> .// <a1> '1'// <a1> '2'// <a1> '3' } on { <s1> <p2> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -16365,7 +16365,7 @@
           "trait": [
             "SemanticAction"
           ],
-          "comment": "<S> { <p1> . %<Test>{ print(o) %} } on { <s1> <p1> <o1> }",
+          "comment": "<S> { ^<p1> . %<Test>{ print(o) %} } on { <s1> <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -16467,7 +16467,7 @@
           "trait": [
             "SemanticAction"
           ],
-          "comment": "<S> { <p1> . %<Test>{ print(o) %} } on { <s1> <p1> <o1> }",
+          "comment": "<S> { <p1> . %<Test>{ print(\"%{\\\\%}\") %} } on { <s1> <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -16626,7 +16626,7 @@
           "trait": [
             "SemanticAction"
           ],
-          "comment": "%<Test>{print('startAct')%} <S> { <p1> . } on { <s1> <p1> <o1> }",
+          "comment": "%<Test>{print('startAct')%} start=<S> <S> { <p1> . } on { <s1> <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -16648,7 +16648,7 @@
           "trait": [
             "SemanticAction"
           ],
-          "comment": "%<Test>{ fail('startAct') %} <S> { <p1> . } on { <s1> <p1> <o1> }",
+          "comment": "%<Test>{ fail('startAct') %} start=<S> <S> { <p1> . } on { <s1> <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -16758,7 +16758,7 @@
           "trait": [
             "Empty"
           ],
-          "comment": "<S> IRI {  } on { }",
+          "comment": "<S> IRI {  } on { _:abcd <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -16843,7 +16843,7 @@
           "trait": [
             "Empty"
           ],
-          "comment": "<S> BNODE {  } on { }",
+          "comment": "<S> BNODE {  } on { <s1> <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -17048,7 +17048,7 @@
           "trait": [
             "FocusConstraint"
           ],
-          "comment": "<S> [<v1> <v2> <v3>] on {  }",
+          "comment": "<S> [<v1> <v2> <v3>] on { <s1> <p1> <v1> }",
           "status": "mf:proposed"
         },
         {
@@ -17065,7 +17065,7 @@
           "trait": [
             "FocusConstraint"
           ],
-          "comment": "<S> [<v1> <v2> <v3>] on {  }",
+          "comment": "<S> [<v1> <v2> <v3>] on { <s1> <p1> <v1a> }",
           "status": "mf:proposed"
         },
         {
@@ -17417,7 +17417,7 @@
             "LengthFacet",
             "ToldBNode"
           ],
-          "comment": "<S1> MINLENGTH 19 { <p1> . } on { <s1a> <p1> <o1> }",
+          "comment": "<S1> MINLENGTH 19 { <p1> . } on { _:abcdefghijklmnopqrst <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -17527,7 +17527,7 @@
             "FocusConstraint",
             "LengthFacet"
           ],
-          "comment": "<S1> MAXLENGTH 19 { <p1> . } on { <s1a> <p1> <o1> }",
+          "comment": "<S1> MAXLENGTH 19 { <p1> . } on { _:abcdefghijklmnopqrst <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -18140,7 +18140,7 @@
           "trait": [
             "relativeIRI"
           ],
-          "comment": "<S1> { <p1> [<o1>] } / { <s1> <p1> <o1>}",
+          "comment": "<S1> { <p1> [<o1>] } / { <s1> <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -18157,7 +18157,7 @@
           "trait": [
             "relativeIRI"
           ],
-          "comment": "<S1> { <p1> [<o1>] } / { <s1> <p1> <o1>}",
+          "comment": "<S1> { <p1> [<o1>] } / { <s1> <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -18295,7 +18295,7 @@
           "trait": [
             "EachOf"
           ],
-          "comment": "<S1> {:a @<P>*, :a @<T>} / { <n> :a <pt1>,  <pt2>,  <p>,  <t>}",
+          "comment": "<S1> {:a @<P>*, :a @<T>} / { <n> :a <pt1>,  <pt2>,  <p>,  <t> }",
           "status": "mf:proposed"
         },
         {
@@ -18313,7 +18313,7 @@
             "Greedy",
             "EachOf"
           ],
-          "comment": "<S1> {:a @<P>*, :a @<T>} / { <n> :a <pt1>,  <pt2>,  <p>,  <t>}",
+          "comment": "<S1> {:a @<P>*, :a @<T>} / { <n> :a <pt1>,  <pt2>,  <p>,  <t> }",
           "status": "mf:proposed"
         },
         {
@@ -18331,7 +18331,7 @@
             "Exhaustive",
             "EachOf"
           ],
-          "comment": "<S2> {:a @<P>, :a @<T>*} / { <n> :a <pt1>,  <pt2>,  <p>,  <t>}",
+          "comment": "<S2> {:a @<P>, :a @<T>*} / { <n> :a <pt1>,  <pt2>,  <p>,  <t> }",
           "status": "mf:proposed"
         },
         {
@@ -18349,7 +18349,7 @@
             "Greedy",
             "EachOf"
           ],
-          "comment": "<S2> {:a @<P>, :a @<T>*} / { <n> :a <pt1>,  <pt2>,  <p>,  <t>}",
+          "comment": "<S2> {:a @<P>, :a @<T>*} / { <n> :a <pt1>,  <pt2>,  <p>,  <t> }",
           "status": "mf:proposed"
         },
         {
@@ -18367,7 +18367,7 @@
             "Greedy",
             "EachOf"
           ],
-          "comment": "<S2> {:a @<P>, :a @<T>*} / { <n> :a <pt1>,  <pt2>,  <p>,  <t>}",
+          "comment": "<S2> {:a @<P>, :a @<T>*} / { <n> :a <pt1>,  <pt2>,  <p>,  <t> }",
           "status": "mf:proposed"
         },
         {
@@ -18384,7 +18384,7 @@
           "trait": [
             "EachOf"
           ],
-          "comment": "<S3> {:a @<P>*, :a @<T>*} / { <n> :a <pt1>,  <pt2>,  <p>,  <t>}",
+          "comment": "<S3> {:a @<P>*, :a @<T>*} / { <n> :a <pt1>,  <pt2>,  <p>,  <t> }",
           "status": "mf:proposed"
         },
         {
@@ -18402,7 +18402,7 @@
             "Exhaustive",
             "EachOf"
           ],
-          "comment": "<S4> {:a @<P>{2}, :a @<T>{2}} / { <n> :a <pt1>,  <pt2>,  <p>,  <t>}",
+          "comment": "<S4> {:a @<P>{2}, :a @<T>{2}} / { <n> :a <pt1>,  <pt2>,  <p>,  <t> }",
           "status": "mf:proposed"
         },
         {
@@ -18524,7 +18524,7 @@
           "trait": [
             "Import"
           ],
-          "comment": "I2 <S1> { <p1> @<S2> } | <S2> { <p2> . } on { <n1> <p1> <n2> }",
+          "comment": "I2circ <S1> { <p1> @<S2> } | <S2> { <p2> . } on { <n1> <p1> <n2> }",
           "status": "mf:proposed"
         },
         {
@@ -18755,7 +18755,7 @@
           "trait": [
             "ShapeMap"
           ],
-          "comment": "<S> {<p1> IRI} on { <s1> <p1> <o1> . <s2> <p2> <o2> . <s3> <p1> \"o3\" .}",
+          "comment": "<S> {<p1> IRI} on { <s1> <p1> <o1> . <s2> <p2> <o2> . <s3> <p1> \"o3\" }",
           "status": "mf:proposed",
           "result": "node_kind_example_results.json"
         },
@@ -18772,7 +18772,7 @@
           "trait": [
             "ShapeMap"
           ],
-          "comment": "<S1> {<p1> @<S2>} <S2> {<p2> [<s3>]} on { <s1> <p1> <s2> . <s2> <p2> <s3> .}",
+          "comment": "<S1> {<p1> @<S2>} <S2> {<p2> [<s3>]} on { <s1> <p1> <s2> . <s2> <p2> <s3> }",
           "status": "mf:proposed",
           "result": "dependent_shape_results.json"
         },
@@ -18790,7 +18790,7 @@
             "ShapeMap",
             "RecursiveData"
           ],
-          "comment": "<S1> {<p1> @<S1>*}} on { <s1> <p1> <s2> . <s2> <p1> <s3> . <s3> <p1> <s1> .}",
+          "comment": "<S1> {<p1> @<S1>*}} on { <s1> <p1> <s2> . <s2> <p1> <s3> . <s3> <p1> <s1> }",
           "status": "mf:proposed",
           "result": "recursion_example_results.json"
         }
