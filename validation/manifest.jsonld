@@ -14974,7 +14974,7 @@
             "AndValueExpression",
             "ValueReference"
           ],
-          "comment": "<vc1> ... <vc3> ... <S> { <p1> @<vc1> AND @<vc2> OR @<vc3> } on { <s1> <p1> 'abcd' }",
+          "comment": "<vc1> ... <vc3> ... <S> { <p1> @<vc1> OR @<vc2> AND @<vc3> } on { <s1> <p1> 'abcd' }",
           "status": "mf:proposed"
         },
         {
@@ -15509,7 +15509,7 @@
             "VapidExtra",
             "Extra"
           ],
-          "comment": "<S> EXTRA <p1> CLOSED { <p1> . } on { <s1> <p1> <o1> }",
+          "comment": "<S> CLOSED EXTRA <p1> { <p1> . } on { <s1> <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -15527,7 +15527,7 @@
             "VapidExtra",
             "Extra"
           ],
-          "comment": "<S> EXTRA <p1> CLOSED { <p1> . } on { <s1> <p1> <o1>, <o2> }",
+          "comment": "<S> CLOSED EXTRA <p1> { <p1> . } on { <s1> <p1> <o1>, <o2> }",
           "status": "mf:proposed"
         },
         {
@@ -15545,7 +15545,7 @@
             "VapidExtra",
             "Extra"
           ],
-          "comment": "<S> EXTRA <p1> CLOSED { <p1> . } on { <s1> <p1> <o1>, <o2>; <p2> <o2> }",
+          "comment": "<S> CLOSED EXTRA <p1> { <p1> . } on { <s1> <p1> <o1>, <o2>; <p2> <o2> }",
           "status": "mf:proposed"
         },
         {
@@ -16809,7 +16809,7 @@
           "trait": [
             "Empty"
           ],
-          "comment": "<S> BNODE {  } on { }",
+          "comment": "<S> BNODE {  } on <s1> in { }",
           "status": "mf:proposed"
         },
         {
@@ -16826,7 +16826,7 @@
           "trait": [
             "Empty"
           ],
-          "comment": "<S> BNODE {  } on { }",
+          "comment": "<S> BNODE {  } on _:abcd in { }",
           "status": "mf:proposed"
         },
         {
@@ -17011,7 +17011,7 @@
           "trait": [
             "FocusConstraint"
           ],
-          "comment": "<S> <dt1> on {  }",
+          "comment": "<S> <dt1> on 'ab'^^<bloodType> in {  }",
           "status": "mf:proposed"
         },
         {
@@ -17031,7 +17031,7 @@
           "trait": [
             "focusConstraint"
           ],
-          "comment": "<S> <dt1> on {  }",
+          "comment": "<S> <dt1> on 'ab'^^<bloodType999> in {  }",
           "status": "mf:proposed"
         },
         {
@@ -17100,7 +17100,7 @@
           "trait": [
             "FocusConstraint"
           ],
-          "comment": "<S> [<v1> <v2> <v3>] AND IRI on {  }",
+          "comment": "<S> [<v1> <v2> <v3>] AND IRI on <v1> in {  }",
           "status": "mf:proposed"
         },
         {
@@ -17117,7 +17117,7 @@
           "trait": [
             "FocusConstraint"
           ],
-          "comment": "<S> [<v1> <v2> <v3>] AND IRI on {  }",
+          "comment": "<S> [<v1> <v2> <v3>] AND IRI on <v4> in {  }",
           "status": "mf:proposed"
         },
         {
@@ -17134,7 +17134,7 @@
           "trait": [
             "FocusConstraint"
           ],
-          "comment": "<S> [<v1> <v2> <v3>] OR <dt1> on {  }",
+          "comment": "<S> [<v1> <v2> <v3>] OR <dt1> on <v1> in {  }",
           "status": "mf:proposed"
         },
         {
@@ -17151,7 +17151,7 @@
           "trait": [
             "FocusConstraint"
           ],
-          "comment": "<S> [<v1> <v2> <v3>] OR <dt1> on {  }",
+          "comment": "<S> [<v1> <v2> <v3>] OR <dt1> on <v4> in {  }",
           "status": "mf:proposed"
         },
         {
@@ -17171,7 +17171,7 @@
           "trait": [
             "FocusConstraint"
           ],
-          "comment": "<S> [<v1> <v2> <v3>] OR <dt1> on {  }",
+          "comment": "<S> [<v1> <v2> <v3>] OR <dt1> on 'v1'^^<dt1> in {  }",
           "status": "mf:proposed"
         },
         {
@@ -17191,7 +17191,7 @@
           "trait": [
             "FocusConstraint"
           ],
-          "comment": "<S> [<v1> <v2> <v3>] OR <dt1> on {  }",
+          "comment": "<S> [<v1> <v2> <v3>] OR <dt1> on 'v1'^^<dt2> in {  }",
           "status": "mf:proposed"
         },
         {
@@ -18066,7 +18066,7 @@
             "ExternalShape",
             "SemanticAction"
           ],
-          "comment": "<Sext> EXTERNAL + <Sext> { <p2> . } on { <s1> <p1> <n2> . <n2> <p2> \"X\" }",
+          "comment": "<Sext> EXTERNAL + <Sext> { <p2> . } on <n2> in { <s1> <p1> <n2> . <n2> <p2> \"X\" }",
           "status": "mf:proposed"
         },
         {
@@ -18085,7 +18085,7 @@
             "ExternalShape",
             "SemanticAction"
           ],
-          "comment": "<Sext> EXTERNAL + <Sext> { <p2> . } on { <s1> <p1> <n2> . <n2> <p2> \"X\" }",
+          "comment": "<Sext> EXTERNAL + <Sext> { <p2> . } on <n1> in { <s1> <p1> <n2> . <n2> <p2> \"X\" }",
           "status": "mf:proposed"
         },
         {
@@ -18140,7 +18140,7 @@
           "trait": [
             "relativeIRI"
           ],
-          "comment": "<S1> { <p1> [<o1>] } / { <s1> <p1> <o1> }",
+          "comment": "<S1> { <p1> [<o1>] } on <S1> in { <s1> <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -18157,7 +18157,7 @@
           "trait": [
             "relativeIRI"
           ],
-          "comment": "<S1> { <p1> [<o1>] } / { <s1> <p1> <o1> }",
+          "comment": "<S1> { <p1> [<o1>] } on <../validation/S1> in { <s1> <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
@@ -18210,7 +18210,7 @@
             "Greedy",
             "EachOf"
           ],
-          "comment": "<S> { :a .*, (:a .+ | :a .), :a . } / { <x> :a 1, 3 }",
+          "comment": "<S> { :a .*, (:a .+ | :a .), :a . } / { <x> :a 1, 3 } Greedy",
           "status": "mf:proposed"
         },
         {
@@ -18313,7 +18313,7 @@
             "Greedy",
             "EachOf"
           ],
-          "comment": "<S1> {:a @<P>*, :a @<T>} / { <n> :a <pt1>,  <pt2>,  <p>,  <t> }",
+          "comment": "<S1> {:a @<P>*, :a @<T>} / { <n> :a <pt1>,  <pt2>,  <p>,  <t> } Greedy",
           "status": "mf:proposed"
         },
         {
@@ -18349,7 +18349,7 @@
             "Greedy",
             "EachOf"
           ],
-          "comment": "<S2> {:a @<P>, :a @<T>*} / { <n> :a <pt1>,  <pt2>,  <p>,  <t> }",
+          "comment": "<S2> {:a @<P>, :a @<T>*} / { <n> :a <pt1>,  <pt2>,  <p>,  <t> } Greedy",
           "status": "mf:proposed"
         },
         {
@@ -18367,7 +18367,7 @@
             "Greedy",
             "EachOf"
           ],
-          "comment": "<S2> {:a @<P>, :a @<T>*} / { <n> :a <pt1>,  <pt2>,  <p>,  <t> }",
+          "comment": "<S2> {:a @<T>*, :a @<P>} / { <n> :a <pt1>,  <pt2>,  <p>,  <t> }",
           "status": "mf:proposed"
         },
         {

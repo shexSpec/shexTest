@@ -13017,7 +13017,7 @@
 <#1val1vExpr1OR1AND1Ref3_failvc1vc2vc3> a sht:ValidationFailure ;
     mf:name "1val1vExpr1OR1AND1Ref3_failvc1vc2vc3" ;
     sht:trait sht:AndValueExpression , sht:ValueReference ;
-    rdfs:comment "<vc1> ... <vc3> ... <S> { <p1> @<vc1> AND @<vc2> OR @<vc3> } on { <s1> <p1> 'abcd' }" ;
+    rdfs:comment "<vc1> ... <vc3> ... <S> { <p1> @<vc1> OR @<vc2> AND @<vc3> } on { <s1> <p1> 'abcd' }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1vExpr1OR1AND1Ref3.shex> ;
@@ -13425,7 +13425,7 @@
 <#1val1IRIREFClosedExtra1_pass-iri1> a sht:ValidationTest ;
     mf:name "1val1IRIREFClosedExtra1_pass-iri1" ;
     sht:trait sht:VapidExtra , sht:Extra ;
-    rdfs:comment "<S> EXTRA <p1> CLOSED { <p1> . } on { <s1> <p1> <o1> }" ;
+    rdfs:comment "<S> CLOSED EXTRA <p1> { <p1> . } on { <s1> <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1IRIREFClosedExtra1.shex> ;
@@ -13438,7 +13438,7 @@
 <#1val1IRIREFClosedExtra1_pass-iri2> a sht:ValidationTest ;
     mf:name "1val1IRIREFClosedExtra1_pass-iri2" ;
     sht:trait sht:VapidExtra , sht:Extra ;
-    rdfs:comment "<S> EXTRA <p1> CLOSED { <p1> . } on { <s1> <p1> <o1>, <o2> }" ;
+    rdfs:comment "<S> CLOSED EXTRA <p1> { <p1> . } on { <s1> <p1> <o1>, <o2> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1IRIREFClosedExtra1.shex> ;
@@ -13451,7 +13451,7 @@
 <#1val1IRIREFClosedExtra1_fail-iri2_higher> a sht:ValidationFailure ;
     mf:name "1val1IRIREFClosedExtra1_fail-iri2_higher" ;
     sht:trait sht:VapidExtra , sht:Extra ;
-    rdfs:comment "<S> EXTRA <p1> CLOSED { <p1> . } on { <s1> <p1> <o1>, <o2>; <p2> <o2> }" ;
+    rdfs:comment "<S> CLOSED EXTRA <p1> { <p1> . } on { <s1> <p1> <o1>, <o2>; <p2> <o2> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1val1IRIREFClosedExtra1.shex> ;
@@ -14460,7 +14460,7 @@
 <#0focusBNODE_empty_fail-iriFocusLabel> a sht:ValidationFailure ;
     mf:name "0focusBNODE_empty_fail-iriFocusLabel" ;
     sht:trait sht:Empty ;
-    rdfs:comment "<S> BNODE {  } on { }" ;
+    rdfs:comment "<S> BNODE {  } on <s1> in { }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/0focusBNODE.shex> ;
@@ -14473,7 +14473,7 @@
 <#0focusBNODE_empty> a sht:ValidationTest ;
     mf:name "0focusBNODE_empty" ;
     sht:trait sht:Empty ;
-    rdfs:comment "<S> BNODE {  } on { }" ;
+    rdfs:comment "<S> BNODE {  } on _:abcd in { }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/0focusBNODE.shex> ;
@@ -14606,7 +14606,7 @@
 <#focusdatatype_pass-empty> a sht:ValidationTest ;
     mf:name "focusdatatype_pass-empty" ;
     sht:trait sht:FocusConstraint ;
-    rdfs:comment "<S> <dt1> on {  }" ;
+    rdfs:comment "<S> <dt1> on 'ab'^^<bloodType> in {  }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/focusdatatype.shex> ;
@@ -14619,7 +14619,7 @@
 <#focusdatatype_fail-empty> a sht:ValidationFailure ;
     mf:name "focusdatatype_fail-empty" ;
     sht:trait sht:focusConstraint ;
-    rdfs:comment "<S> <dt1> on {  }" ;
+    rdfs:comment "<S> <dt1> on 'ab'^^<bloodType999> in {  }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/focusdatatype.shex> ;
@@ -14677,7 +14677,7 @@
 <#1focusvsANDIRI_pass> a sht:ValidationTest ;
     mf:name "1focusvsANDIRI_pass" ;
     sht:trait sht:FocusConstraint ;
-    rdfs:comment "<S> [<v1> <v2> <v3>] AND IRI on {  }" ;
+    rdfs:comment "<S> [<v1> <v2> <v3>] AND IRI on <v1> in {  }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/focusvsANDIRI.shex> ;
@@ -14690,7 +14690,7 @@
 <#1focusvsANDIRI_fail> a sht:ValidationFailure ;
     mf:name "1focusvsANDIRI_fail" ;
     sht:trait sht:FocusConstraint ;
-    rdfs:comment "<S> [<v1> <v2> <v3>] AND IRI on {  }" ;
+    rdfs:comment "<S> [<v1> <v2> <v3>] AND IRI on <v4> in {  }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/focusvsANDIRI.shex> ;
@@ -14706,7 +14706,7 @@
 <#1focusvsORdatatype_pass-val> a sht:ValidationTest ;
     mf:name "1focusvsORdatatype_pass-val" ;
     sht:trait sht:FocusConstraint ;
-    rdfs:comment "<S> [<v1> <v2> <v3>] OR <dt1> on {  }" ;
+    rdfs:comment "<S> [<v1> <v2> <v3>] OR <dt1> on <v1> in {  }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/focusvsORdatatype.shex> ;
@@ -14719,7 +14719,7 @@
 <#1focusvsORdatatype_fail-val> a sht:ValidationFailure ;
     mf:name "1focusvsORdatatype_fail-val" ;
     sht:trait sht:FocusConstraint ;
-    rdfs:comment "<S> [<v1> <v2> <v3>] OR <dt1> on {  }" ;
+    rdfs:comment "<S> [<v1> <v2> <v3>] OR <dt1> on <v4> in {  }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/focusvsORdatatype.shex> ;
@@ -14732,7 +14732,7 @@
 <#1focusvsORdatatype_pass-dt> a sht:ValidationTest ;
     mf:name "1focusvsORdatatype_pass-dt" ;
     sht:trait sht:FocusConstraint ;
-    rdfs:comment "<S> [<v1> <v2> <v3>] OR <dt1> on {  }" ;
+    rdfs:comment "<S> [<v1> <v2> <v3>] OR <dt1> on 'v1'^^<dt1> in {  }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/focusvsORdatatype.shex> ;
@@ -14745,7 +14745,7 @@
 <#1focusvsORdatatype_fail-dt> a sht:ValidationFailure ;
     mf:name "1focusvsORdatatype_fail-dt" ;
     sht:trait sht:FocusConstraint ;
-    rdfs:comment "<S> [<v1> <v2> <v3>] OR <dt1> on {  }" ;
+    rdfs:comment "<S> [<v1> <v2> <v3>] OR <dt1> on 'v1'^^<dt2> in {  }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/focusvsORdatatype.shex> ;
@@ -15385,7 +15385,7 @@
 <#shapeExtern_pass> a sht:ValidationTest ;
     mf:name "shapeExtern_pass" ;
     sht:trait sht:SemanticAction , sht:ExternalShape ;
-    rdfs:comment "<Sext> EXTERNAL + <Sext> { <p2> . } on { <s1> <p1> <n2> . <n2> <p2> \"X\" }" ;
+    rdfs:comment "<Sext> EXTERNAL + <Sext> { <p2> . } on <n2> in { <s1> <p1> <n2> . <n2> <p2> \"X\" }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/shapeExtern.shex> ;
@@ -15399,7 +15399,7 @@
 <#shapeExtern_fail> a sht:ValidationFailure ;
     mf:name "shapeExtern_fail" ;
     sht:trait sht:SemanticAction , sht:ExternalShape ;
-    rdfs:comment "<Sext> EXTERNAL + <Sext> { <p2> . } on { <s1> <p1> <n2> . <n2> <p2> \"X\" }" ;
+    rdfs:comment "<Sext> EXTERNAL + <Sext> { <p2> . } on <n1> in { <s1> <p1> <n2> . <n2> <p2> \"X\" }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/shapeExtern.shex> ;
@@ -15444,7 +15444,7 @@
 <#1dot-relative_pass-short-shape> a sht:ValidationTest ;
     mf:name "1dot-relative_pass-short-shape" ;
     sht:trait sht:relativeIRI ;
-    rdfs:comment "<S1> { <p1> [<o1>] } / { <s1> <p1> <o1> }" ;
+    rdfs:comment "<S1> { <p1> [<o1>] } on <S1> in { <s1> <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../validation/1dot-relative.shex> ;
@@ -15457,7 +15457,7 @@
 <#1dot-relative_pass-relative-shape> a sht:ValidationTest ;
     mf:name "1dot-relative_pass-relative-shape" ;
     sht:trait sht:relativeIRI ;
-    rdfs:comment "<S1> { <p1> [<o1>] } / { <s1> <p1> <o1> }" ;
+    rdfs:comment "<S1> { <p1> [<o1>] } on <../validation/S1> in { <s1> <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../validation/1dot-relative.shex> ;
@@ -15499,7 +15499,7 @@
 <#nPlus1-greedy_fail> a sht:ValidationFailure ;
     mf:name "nPlus1-greedy_fail" ;
     sht:trait sht:EachOf , sht:Greedy ;
-    rdfs:comment "<S> { :a .*, (:a .+ | :a .), :a . } / { <x> :a 1, 3 }" ;
+    rdfs:comment "<S> { :a .*, (:a .+ | :a .), :a . } / { <x> :a 1, 3 } Greedy" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../validation/nPlus1.shex> ;
@@ -15577,7 +15577,7 @@
 <#PstarT-greedy> a sht:ValidationTest ;
     mf:name "PstarT-greedy" ;
     sht:trait sht:EachOf , sht:Greedy ;
-    rdfs:comment "<S1> {:a @<P>*, :a @<T>} / { <n> :a <pt1>,  <pt2>,  <p>,  <t> }" ;
+    rdfs:comment "<S1> {:a @<P>*, :a @<T>} / { <n> :a <pt1>,  <pt2>,  <p>,  <t> } Greedy" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../validation/Pstar.shex> ;
@@ -15603,7 +15603,7 @@
 <#PTstar-greedy-fail> a sht:ValidationFailure ;
     mf:name "PTstar-greedy-fail" ;
     sht:trait sht:EachOf , sht:Greedy ;
-    rdfs:comment "<S2> {:a @<P>, :a @<T>*} / { <n> :a <pt1>,  <pt2>,  <p>,  <t> }" ;
+    rdfs:comment "<S2> {:a @<P>, :a @<T>*} / { <n> :a <pt1>,  <pt2>,  <p>,  <t> } Greedy" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../validation/Pstar.shex> ;
@@ -15616,7 +15616,7 @@
 <#PTstar-greedy-rewrite> a sht:ValidationTest ;
     mf:name "PTstar-greedy-rewrite" ;
     sht:trait sht:EachOf , sht:Greedy ;
-    rdfs:comment "<S2> {:a @<P>, :a @<T>*} / { <n> :a <pt1>,  <pt2>,  <p>,  <t> }" ;
+    rdfs:comment "<S2> {:a @<T>*, :a @<P>} / { <n> :a <pt1>,  <pt2>,  <p>,  <t> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../validation/Pstar-greedy-rewrite.shex> ;
