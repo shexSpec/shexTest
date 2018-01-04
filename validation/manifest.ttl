@@ -14170,7 +14170,7 @@
 <#1dotCodeWithEscapes1_pass> a sht:ValidationTest ;
     mf:name "1dotCodeWithEscapes1_pass" ;
     sht:trait sht:SemanticAction ;
-    rdfs:comment "<S> { <p1> . %<Test>{ print\u0028\u0022\%{\\\\\%}\u0022\u0029 %} } on { <s1> <p1> <o1> }" ;
+    rdfs:comment "<S> { <p1> . %<Test>{ print\\u0028\\u0022\\%{\\\\\\\\\\%}\\u0022\\u0029 %} } on { <s1> <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1dotCodeWithEscapes1.shex> ;

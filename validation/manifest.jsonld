@@ -16467,7 +16467,7 @@
           "trait": [
             "SemanticAction"
           ],
-          "comment": "<S> { <p1> . %<Test>{ print(\"%{\\\\%}\") %} } on { <s1> <p1> <o1> }",
+          "comment": "<S> { <p1> . %<Test>{ print\\u0028\\u0022\\%{\\\\\\\\\\%}\\u0022\\u0029 %} } on { <s1> <p1> <o1> }",
           "status": "mf:proposed"
         },
         {
