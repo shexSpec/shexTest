@@ -9803,7 +9803,7 @@
 <#1literalPattern_with_all_punctuation_pass> a sht:ValidationTest ;
     mf:name "1literalPattern_with_all_punctuation_pass" ;
     sht:trait sht:NumericEquivalence, sht:OutsideBMP ;
-    rdfs:comment "<S> { <p1> /^ !\"#\\$%&'\\(\\)\\/:;<=>\\?@\\[\\]\\^_`\\{\\|\\}~$/ } on { <s1> <p1> ' !\"#$%&\()/:;<=>?@[]^_`{|}~' }" ;
+    rdfs:comment "<S> { <p1> /^ !\"#\\$%&'\\(\\)\\/:;<=>\\?@\\[\\]\\^_`\\{\\|\\}~$/ } on { <s1> <p1> ' !\"#$%&'()/:;<=>?@[]^_`{|}~' }" ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/1literalPattern_with_all_punctuation.shex> ;
