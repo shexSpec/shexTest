@@ -1288,7 +1288,7 @@
 
 <#0_otherbnode> a sht:ValidationTest ;
     mf:name "0_otherbnode" ;
-    sht:trait sht:Empty, sht:ToldBNode ;
+    sht:trait sht:Empty , sht:ToldBNode ;
     rdfs:comment "<S1> {  } on { _:abcd <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -1512,7 +1512,7 @@
 
 <#bnode1dot_fail-missing> a sht:ValidationFailure ;
     mf:name "bnode1dot_fail-missing" ;
-    sht:trait sht:ToldBNode , sht:TriplePattern ;
+    sht:trait sht:BNodeShapeLabel , sht:TriplePattern ;
     rdfs:comment "_:S { <p1> . } on { <s1> <p2> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -1525,7 +1525,7 @@
 
 <#bnode1dot_pass-others_lexicallyEarlier> a sht:ValidationTest ;
     mf:name "bnode1dot_pass-others_lexicallyEarlier" ;
-    sht:trait sht:ToldBNode , sht:TriplePattern ;
+    sht:trait sht:BNodeShapeLabel , sht:TriplePattern ;
     rdfs:comment "_:S1 { <p1> . } on { <s1> <p0> <o0>; <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -10088,7 +10088,7 @@
 
 <#1literalPatternabEnd_fail-bnode-match> a sht:ValidationFailure ;
     mf:name "1literalPatternabEnd_fail-bnode-match" ;
-    sht:trait sht:PaternFacet, sht:ToldBNode ;
+    sht:trait sht:PaternFacet, sht:LexicalBNode ;
     rdfs:comment "<S1> { <p1> LITERAL PATTERN \"bc$\" } on { <s1> <p1> _:bc }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -10166,7 +10166,7 @@
 
 <#1bnodePattern_pass-bnode-match> a sht:ValidationTest ;
     mf:name "1bnodePattern_pass-bnode-match" ;
-    sht:trait sht:PaternFacet ,  sht:LexicalBNode ;
+    sht:trait sht:PaternFacet , sht:LexicalBNode ;
     rdfs:comment "<S1> { <p1> BNODE PATTERN \"bc\" } on { <s1> <p1> _:bc }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -10192,7 +10192,7 @@
 
 <#1bnodePattern_fail-bnode-long> a sht:ValidationTest ;
     mf:name "1bnodePattern_fail-bnode-long" ;
-    sht:trait sht:PaternFacet ;
+    sht:trait sht:PaternFacet , sht:LexicalBNode ;
     rdfs:comment "<S1> { <p1> BNODE PATTERN \"bc\" } on { <s1> <p1> _:abc }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -10283,7 +10283,7 @@
 
 <#1nonliteralPattern_pass-bnode-match> a sht:ValidationTest ;
     mf:name "1nonliteralPattern_pass-bnode-match" ;
-    sht:trait sht:PaternFacet , sht:LexicalBNode;
+    sht:trait sht:PaternFacet , sht:LexicalBNode ;
     rdfs:comment "<S1> { <p1> NONLITERAL PATTERN \"bc$\" } on { <s1> <p1> _:bc }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -10309,7 +10309,7 @@
 
 <#1nonliteralPattern_pass-bnode-long> a sht:ValidationTest ;
     mf:name "1nonliteralPattern_pass-bnode-long" ;
-    sht:trait sht:PaternFacet ;
+    sht:trait sht:PaternFacet , sht:LexicalBNode ;
     rdfs:comment "<S1> { <p1> NONLITERAL PATTERN \"bc$\" } on { <s1> <p1> _:abc }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -14407,7 +14407,7 @@
 
 <#0focusIRI_empty_fail-bnodeFocusLabel> a sht:ValidationFailure ;
     mf:name "0focusIRI_empty_fail-bnodeFocusLabel" ;
-    sht:trait sht:Empty ;
+    sht:trait sht:Empty , sht:ToldBNode ;
     rdfs:comment "<S> IRI {  } on { }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -14433,7 +14433,7 @@
 
 <#0focusIRI_other_fail-bnodeFocusLabel> a sht:ValidationFailure ;
     mf:name "0focusIRI_other_fail-bnodeFocusLabel" ;
-    sht:trait sht:Empty ;
+    sht:trait sht:Empty , sht:ToldBNode ;
     rdfs:comment "<S> IRI {  } on { _:abcd <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -14472,7 +14472,7 @@
 
 <#0focusBNODE_empty> a sht:ValidationTest ;
     mf:name "0focusBNODE_empty" ;
-    sht:trait sht:Empty ;
+    sht:trait sht:Empty , sht:ToldBNode ;
     rdfs:comment "<S> BNODE {  } on _:abcd in { }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -14511,7 +14511,7 @@
 
 <#1focusIRI_dot_fail-bnodeFocusLabel> a sht:ValidationFailure ;
     mf:name "1focusIRI_dot_fail-bnodeFocusLabel" ;
-    sht:trait sht:FocusConstraint , sht:LexicalBNode , sht:ToldBNode ;
+    sht:trait sht:FocusConstraint , sht:ToldBNode ;
     rdfs:comment "<S> IRI { <p1> . } on <s> in { _:abcd <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -14879,7 +14879,7 @@
 
 <#1focusMinLength-dot_fail-bnode-short> a sht:ValidationFailure ;
     mf:name "1focusMinLength-dot_fail-bnode-short" ;
-    sht:trait sht:FocusConstraint , sht:LengthFacet , sht:ToldBNode ;
+    sht:trait sht:FocusConstraint , sht:LengthFacet , sht:LexicalBNode , sht:ToldBNode ;
     rdfs:comment "<S1> MINLENGTH 19 { <p1> . } on { _:abcd <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -14958,7 +14958,7 @@
 
 <#1focusMaxLength-dot_pass-bnode-short> a sht:ValidationTest ;
     mf:name "1focusMaxLength-dot_pass-bnode-short" ;
-    sht:trait sht:FocusConstraint , sht:LengthFacet , sht:LexicalBNode;
+    sht:trait sht:FocusConstraint , sht:LengthFacet , sht:LexicalBNode , sht:LexicalBNode;
     rdfs:comment "<S1> MAXLENGTH 19 { <p1> . } on { _:abcd <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -14971,7 +14971,7 @@
 
 <#1focusMaxLength-dot_pass-bnode-equal> a sht:ValidationTest ;
     mf:name "1focusMaxLength-dot_pass-bnode-equal" ;
-    sht:trait sht:FocusConstraint , sht:LengthFacet , sht:LexicalBNode;
+    sht:trait sht:FocusConstraint , sht:LengthFacet , sht:LexicalBNode , sht:LexicalBNode;
     rdfs:comment "<S1> MAXLENGTH 19 { <p1> . } on { _:abcdefghijklmnopqrs <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -14984,7 +14984,7 @@
 
 <#1focusMaxLength-dot_fail-bnode-long> a sht:ValidationFailure ;
     mf:name "1focusMaxLength-dot_fail-bnode-long" ;
-    sht:trait sht:FocusConstraint , sht:LengthFacet ;
+    sht:trait sht:FocusConstraint , sht:LexicalBNode , sht:LengthFacet ;
     rdfs:comment "<S1> MAXLENGTH 19 { <p1> . } on { _:abcdefghijklmnopqrst <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -15060,7 +15060,7 @@
 
 <#1focusPatternB-dot_fail-bnode-short> a sht:ValidationFailure ;
     mf:name "1focusPatternB-dot_fail-bnode-short" ;
-    sht:trait sht:PaternFacet ;
+    sht:trait sht:PaternFacet , sht:LexicalBNode , sht:ToldBNode ;
     rdfs:comment "<S1> PATTERN 'abcdefghijklmnopqrs' { <p1> } on { _:abcd <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -15072,7 +15072,7 @@
 
 <#1focusPatternB-dot_pass-bnode-match> a sht:ValidationTest ;
     mf:name "1focusPatternB-dot_pass-bnode-match" ;
-    sht:trait sht:PaternFacet , sht:LexicalBNode ;
+    sht:trait sht:PaternFacet , sht:LexicalBNode , sht:ToldBNode ;
     rdfs:comment "<S1> PATTERN 'abcdefghijklmnopqrs' { <p1> } on { _:abcdefghijklmnopqrs <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -15085,7 +15085,7 @@
 
 <#1focusPatternB-dot_pass-bnode-long> a sht:ValidationTest ;
     mf:name "1focusPatternB-dot_pass-bnode-long" ;
-    sht:trait sht:PaternFacet ;
+    sht:trait sht:PaternFacet , sht:LexicalBNode , sht:ToldBNode ;
     rdfs:comment "<S1> PATTERN 'abcdefghijklmnopqrs' { <p1> } on { _:abcdefghijklmnopqrst <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -15167,7 +15167,7 @@
 
 <#1focusBNODELength_dot_fail-short> a sht:ValidationFailure ;
     mf:name "1focusBNODELength_dot_fail-short" ;
-    sht:trait sht:FocusConstraint , sht:LengthFacet , sht:ToldBNode ;
+    sht:trait sht:FocusConstraint , sht:LengthFacet , sht:LexicalBNode , sht:ToldBNode ;
     rdfs:comment "<S> BNODE LENGTH 19 { <p1> . } on <s> in { _:abcd <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -15180,7 +15180,7 @@
 
 <#1focusBNODELength_dot_pass> a sht:ValidationTest ;
     mf:name "1focusBNODELength_dot_pass" ;
-    sht:trait sht:FocusConstraint , sht:LengthFacet , sht:ToldBNode ;
+    sht:trait sht:FocusConstraint , sht:LengthFacet , sht:LexicalBNode , sht:ToldBNode ;
     rdfs:comment "<S> BNODE LENGTH 19 { <p1> . } on <s> in { _:abcdefghijklmnopqrs <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -15193,7 +15193,7 @@
 
 <#1focusBNODELength_dot_fail-long> a sht:ValidationFailure ;
     mf:name "1focusBNODELength_dot_fail-long" ;
-    sht:trait sht:FocusConstraint , sht:LengthFacet , sht:ToldBNode ;
+    sht:trait sht:FocusConstraint , sht:LengthFacet , sht:LexicalBNode , sht:ToldBNode ;
     rdfs:comment "<S> BNODE LENGTH 19 { <p1> . } on <s> in { _:abcdefghijklmnopqrst <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
