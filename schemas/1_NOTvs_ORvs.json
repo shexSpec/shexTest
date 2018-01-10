@@ -1,0 +1,34 @@
+{
+  "@context": "https://shexspec.github.io/context.jsonld",
+  "type": "Schema",
+  "shapes": [
+    {
+      "id": "http://a.example/S1",
+      "type": "Shape",
+      "expression": {
+        "type": "TripleConstraint",
+        "predicate": "http://a.example/p1",
+        "valueExpr": {
+          "type": "ShapeOr",
+          "shapeExprs": [
+            {
+              "type": "ShapeNot",
+              "shapeExpr": {
+                "type": "NodeConstraint",
+                "values": [
+                  "http://a.example/v1"
+                ]
+              }
+            },
+            {
+              "type": "NodeConstraint",
+              "values": [
+                "http://a.example/v2"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

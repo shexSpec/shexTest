@@ -249,6 +249,25 @@
         <#1val1vExpr1OR1OR1Ref3>
         <#1val1vExprRefOR3>
         <#1val1vExprOR3>
+        <#1NOTIRI>
+        <#1NOTNOTIRI>
+        <#1NOTvs>
+        <#1NOTNOTvs>
+        <#1NOTdot>
+        <#1NOTNOTdot>
+        <#1_NOTliteral_ANDvs>
+        <#1NOT_literalANDvs_>
+        <#1NOTliteralANDvs>
+        <#1_NOTvs_ANDvs>
+        <#1NOT_vsANDvs_>
+        <#1NOTvsANDvs>
+        <#1_NOTliteral_ORvs>
+        <#1NOT_literalORvs_>
+        <#1NOTliteralORvs>
+        <#1_NOTvs_ORvs>
+        <#1NOT_vsORvs_>
+        <#1NOTvsORvs>
+        <#NOT1NOTvs>
         <#1val1vExpr1AND1OR1Ref3>
         <#1val1vExpr1OR1AND1Ref3>
         <#open3Onedotclosecard2>
@@ -2456,6 +2475,161 @@
     sx:json <1val1vExprOR3.json> ;
     sx:ttl <1val1vExprOR3.ttl> ;
     .
+
+#START
+<#1NOTIRI> a sht:RepresentationTest ;
+    mf:name "1NOTIRI" ;
+    mf:status mf:proposed ;
+    sx:shex <1NOTIRI.shex> ;
+    sx:json <1NOTIRI.json> ;
+    sx:ttl <1NOTIRI.ttl> ;
+    .
+
+<#1NOTNOTIRI> a sht:RepresentationTest ;
+    mf:name "1NOTNOTIRI" ;
+    mf:status mf:proposed ;
+    sx:shex <1NOTNOTIRI.shex> ;
+    sx:json <1NOTNOTIRI.json> ;
+    sx:ttl <1NOTNOTIRI.ttl> ;
+    .
+
+<#1NOTvs> a sht:RepresentationTest ;
+    mf:name "1NOTvs" ;
+    mf:status mf:proposed ;
+    sx:shex <1NOTvs.shex> ;
+    sx:json <1NOTvs.json> ;
+    sx:ttl <1NOTvs.ttl> ;
+    .
+
+<#1NOTNOTvs> a sht:RepresentationTest ;
+    mf:name "1NOTNOTvs" ;
+    mf:status mf:proposed ;
+    sx:shex <1NOTNOTvs.shex> ;
+    sx:json <1NOTNOTvs.json> ;
+    sx:ttl <1NOTNOTvs.ttl> ;
+    .
+
+<#1NOTdot> a sht:RepresentationTest ;
+    mf:name "1NOTdot" ;
+    mf:status mf:proposed ;
+    sx:shex <1NOTdot.shex> ;
+    sx:json <1NOTdot.json> ;
+    sx:ttl <1NOTdot.ttl> ;
+    .
+
+<#1NOTNOTdot> a sht:RepresentationTest ;
+    mf:name "1NOTNOTdot" ;
+    mf:status mf:proposed ;
+    sx:shex <1NOTNOTdot.shex> ;
+    sx:json <1NOTNOTdot.json> ;
+    sx:ttl <1NOTNOTdot.ttl> ;
+    .
+
+<#1_NOTliteral_ANDvs> a sht:RepresentationTest ;
+    mf:name "1_NOTliteral_ANDvs" ;
+    mf:status mf:proposed ;
+    sx:shex <1_NOTliteral_ANDvs.shex> ;
+    sx:json <1_NOTliteral_ANDvs.json> ;
+    sx:ttl <1_NOTliteral_ANDvs.ttl> ;
+    .
+
+<#1NOT_literalANDvs_> a sht:RepresentationTest ;
+    mf:name "1NOT_literalANDvs_" ;
+    mf:status mf:proposed ;
+    sx:shex <1NOT_literalANDvs_.shex> ;
+    sx:json <1NOT_literalANDvs_.json> ;
+    sx:ttl <1NOT_literalANDvs_.ttl> ;
+    .
+
+<#1NOTliteralANDvs> a sht:RepresentationTest ;
+    mf:name "1NOTliteralANDvs" ;
+    mf:status mf:proposed ;
+    sx:shex <1NOTliteralANDvs.shex> ;
+    sx:json <1NOTliteralANDvs.json> ;
+    sx:ttl <1NOTliteralANDvs.ttl> ;
+    .
+
+<#1_NOTvs_ANDvs> a sht:RepresentationTest ;
+    mf:name "1_NOTvs_ANDvs" ;
+    mf:status mf:proposed ;
+    sx:shex <1_NOTvs_ANDvs.shex> ;
+    sx:json <1_NOTvs_ANDvs.json> ;
+    sx:ttl <1_NOTvs_ANDvs.ttl> ;
+    .
+
+<#1NOT_vsANDvs_> a sht:RepresentationTest ;
+    mf:name "1NOT_vsANDvs_" ;
+    mf:status mf:proposed ;
+    sx:shex <1NOT_vsANDvs_.shex> ;
+    sx:json <1NOT_vsANDvs_.json> ;
+    sx:ttl <1NOT_vsANDvs_.ttl> ;
+    .
+
+<#1NOTvsANDvs> a sht:RepresentationTest ;
+    mf:name "1NOTvsANDvs" ;
+    mf:status mf:proposed ;
+    sx:shex <1NOTvsANDvs.shex> ;
+    sx:json <1NOTvsANDvs.json> ;
+    sx:ttl <1NOTvsANDvs.ttl> ;
+    .
+
+<#1_NOTliteral_ORvs> a sht:RepresentationTest ;
+    mf:name "1_NOTliteral_ORvs" ;
+    mf:status mf:proposed ;
+    sx:shex <1_NOTliteral_ORvs.shex> ;
+    sx:json <1_NOTliteral_ORvs.json> ;
+    sx:ttl <1_NOTliteral_ORvs.ttl> ;
+    .
+
+<#1NOT_literalORvs_> a sht:RepresentationTest ;
+    mf:name "1NOT_literalORvs_" ;
+    mf:status mf:proposed ;
+    sx:shex <1NOT_literalORvs_.shex> ;
+    sx:json <1NOT_literalORvs_.json> ;
+    sx:ttl <1NOT_literalORvs_.ttl> ;
+    .
+
+<#1NOTliteralORvs> a sht:RepresentationTest ;
+    mf:name "1NOTliteralORvs" ;
+    mf:status mf:proposed ;
+    sx:shex <1NOTliteralORvs.shex> ;
+    sx:json <1NOTliteralORvs.json> ;
+    sx:ttl <1NOTliteralORvs.ttl> ;
+    .
+
+<#1_NOTvs_ORvs> a sht:RepresentationTest ;
+    mf:name "1_NOTvs_ORvs" ;
+    mf:status mf:proposed ;
+    sx:shex <1_NOTvs_ORvs.shex> ;
+    sx:json <1_NOTvs_ORvs.json> ;
+    sx:ttl <1_NOTvs_ORvs.ttl> ;
+    .
+
+<#1NOT_vsORvs_> a sht:RepresentationTest ;
+    mf:name "1NOT_vsORvs_" ;
+    mf:status mf:proposed ;
+    sx:shex <1NOT_vsORvs_.shex> ;
+    sx:json <1NOT_vsORvs_.json> ;
+    sx:ttl <1NOT_vsORvs_.ttl> ;
+    .
+
+<#1NOTvsORvs> a sht:RepresentationTest ;
+    mf:name "1NOTvsORvs" ;
+    mf:status mf:proposed ;
+    sx:shex <1NOTvsORvs.shex> ;
+    sx:json <1NOTvsORvs.json> ;
+    sx:ttl <1NOTvsORvs.ttl> ;
+    .
+
+<#NOT1NOTvs> a sht:RepresentationTest ;
+    mf:name "NOT1NOTvs" ;
+    mf:status mf:proposed ;
+    sx:shex <NOT1NOTvs.shex> ;
+    sx:json <NOT1NOTvs.json> ;
+    sx:ttl <NOT1NOTvs.ttl> ;
+    .
+
+#END
 
 <#1val1vExpr1AND1OR1Ref3> a sht:RepresentationTest ;
     mf:name "1val1vExpr1AND1OR1Ref3" ;
