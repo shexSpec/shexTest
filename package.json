@@ -2,6 +2,9 @@
   "name": "shex-test",
   "version": "2.0.0",
   "description": "Shape Expressions library tests.",
+  "scripts": {
+    "test": "make test"
+  },
   "author": {
     "name": "Eric Prud'hommeaux",
     "email": "eric@w3.org",
@@ -19,6 +22,7 @@
     "node": ">=0.10.0"
   },
   "dependencies": {
+    "json-grammar": "^0.2.3",
     "n3": "^0.4.5",
     "xlsx": "^0.8.0"
   },
