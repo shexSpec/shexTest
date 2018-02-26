@@ -2,6 +2,7 @@
   if (location.search.substr(1) === "toy") { // some examples from validation/manifest.jsonld
     renderManifest(aFewTests(), "validation/");
   } else {
+    $.ajaxSetup({ mimeType: "text/plain" }); // for persistent FF bug.
     $.getJSON(location.search.substr(1) + "/manifest.jsonld").then(data => {
       renderManifest(data["@graph"][0].entries, location.search.substr(1) + "/");
     }).fail(e => {
@@ -135,8 +136,9 @@
 
       let structure = structures[test["@type"]];
       if (testNo === 0) {
+        // Table heading with column titles.
         $("table thead").append(
-          $("<tr/>").append(
+          drag("tr", { }, x => JSON.stringify(tests, null, 2), "application/json").append(
             $("<th/>"),
             $("<th/>").text("name"),
             structure.fields.map(h => {
@@ -146,9 +148,9 @@
       }
 
       let titleText = "#" + (testNo+1) + " " + structure.str;
-      let status = drag("td", { title: titleText, class: structure.str }, structure.chr, showTest, "application/json");
+      let status = drag("td", { title: titleText, class: structure.str }, showTest, "application/json").text(structure.chr);
       let attrs = structure.offset.reduce((acc, o) => { return acc[o]; }, test);
-      let name = drag("td", { title: test.comment }, test["@id"], showTest, "application/json");
+      let name = drag("td", { title: test.comment }, showTest, "application/json").text(test["@id"]);
       $("table tbody").append(
         $("<tr/>").append(
           status, name,
@@ -156,8 +158,20 @@
           structure.fields.map(h => {
             return h.f(attrs, h.name);
           })
-
         ));
+
+      if (testNo === tests.length-1) {
+        // Table footer with column titles.
+        $("table tbody").append(
+          drag("tr", { }, x => JSON.stringify(tests, null, 2), "application/json").append(
+            $("<th/>"),
+            $("<th/>").text(tests.length + " tests"),
+            structure.fields.map(h => {
+              return $("<th/>").text(h.name);
+            })
+          )
+        );
+      }
 
       function showTest (elt) {
         return JSON.stringify(test, null, 2);
@@ -177,10 +191,11 @@
         }
       }
 
-      function drag (name, attrs, text, val, type) {
-        return $("<"+name+"/>", attrs).attr("draggable", true).text(text).
+      function drag (name, attrs, val, type) {
+        return $("<"+name+"/>", attrs).attr("draggable", true).
           on("dragstart", (evt) => {
             evt.originalEvent.dataTransfer.setData(type, val(evt.target));
+            return true;
           });
       }
 
@@ -188,40 +203,41 @@
         if (!(name in attrs))
           return $("<td/>");
         let val = attrs[name];
-        let a = title(drag("a", { href: relPrepend + val }, val, elt => {
-          return elt.href;
-        }, "text/uri-list"));
+        let a = $("<a/>", { href: relPrepend + val }).text(val);
         attrs[name] = a.prop("href");
-        return $("<td/>").append(a);
+        return title(drag("td", {}, elt => {
+          return a.get(0).href;
+        }, "text/uri-list").append(a), a.get(0).href);
       }
 
-      function title (anchor) {
-        let url = anchor.get(0).href;
+      function title (target, url) {
         $.ajax({
           url: url,
           dataType: 'text',
           type: 'GET',
           async: true
         }).then(function (data) {
-          anchor.attr("title", data);
+          target.attr("title", data.length > 0 ? data : "-- empty file --");
         }).fail(function (jqXHR, status, errorThrown) {
-          anchor.addClass("error");
-          anchor.attr("title", url + " " + status + ": " + errorThrown);
+          target.addClass("error");
+          target.attr("title", url + " " + status + ": " + errorThrown);
         });
-        return anchor;
+        return target;
       }
 
       function makeShapeMap (attrs, val) {
         if ("map" in attrs) {
-          var a = drag("a", { href: relPrepend + attrs.map }, attrs.map, elt => {
-            return elt.href;
-          }, "text/uri-list");
+          var a = $("<a/>", { href: relPrepend + attrs.map }).text(attrs.map);
+          title(a, a.get(0).href)
           attrs["map"] = a.prop("href");
-          return $("<td/>").append(title(a));
+          return drag("<td/>", { }, elt => {
+            return a.get(0).href;
+          }, "text/uri-list").append(a);
+        } else {
+          return drag("td", { }, elt => {
+            return elt.innerText;
+          }, "text/plain").text(ttl(attrs.focus) + "@" + ("shape" in attrs ? ttl(attrs.shape) : "START"))
         }
-        return drag("td", { }, ttl(attrs.focus) + "@" + ("shape" in attrs ? ttl(attrs.shape) : "START"), elt => {
-          return elt.innerText;
-        }, "text/plain")
       }
     };
   }
