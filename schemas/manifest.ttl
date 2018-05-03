@@ -3701,3 +3701,26 @@
     .
 
 # } imports
+
+# regexp template:
+
+# match:
+# <#\(.*?\)> a sht:RepresentationTest ;
+#     mf:name "\1" ;
+#     mf:status mf:proposed ;\(
+#     mf:sameSemanticsAs <#.*?> ;\)?\(
+#     sht:trait .*? ;\)?
+#     sx:shex <\(.*?\)\.shex> ;
+#     sx:json <\4\.json> ;
+#     sx:ttl <\4\.ttl> ;
+#     \.
+
+# emit:
+# <#\1> a sht:RepresentationTest ;
+#     mf:name "\1" ;
+#     mf:status mf:proposed ;\2\3
+#     sx:shex <\4.shex> ;
+#     sx:json <\4.json> ;
+#     sx:ttl <\4.ttl> ;
+#     .
+
