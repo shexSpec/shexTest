@@ -25,6 +25,10 @@
     <#TwoNegation_pass>
     <#TwoNegation_fail>
     <#TwoNegation2_fail>
+    <#Cycle2NoNegation_pass>
+    <#Cycle2Negation_fail>
+    <#Cycle2Extra_fail>
+    <#Cycle2Extra_pass>
 ) .
   
 <#1MissingRef> a sht:NegativeStructureFailure ;
@@ -127,5 +131,29 @@
   mf:name "TwoNegation2_fail" ;
   mf:status mf:proposed ;
   sx:shex <TwoNegation2_fail.shex> ;
+  .
+
+<#Cycle2NoNegation_pass> a sht:NegativeStructureTest ;
+  mf:name "Cycle2NoNegation_pass" ;
+  mf:status mf:proposed ;
+  sx:shex <Cycle2NoNegation_pass.shex> ;
+  .
+
+<#Cycle2Negation_fail> a sht:NegativeStructureFailure ;
+  mf:name "Cycle2Negation_fail" ;
+  mf:status mf:proposed ;
+  sx:shex <Cycle2Negation_fail.shex> ;
+  .
+
+<#Cycle2Extra_fail> a sht:NegativeStructureFailure ;
+  mf:name "Cycle2Extra_fail" ;
+  mf:status mf:proposed ;
+  sx:shex <Cycle2Extra_fail.shex> ;
+  .
+
+<#Cycle2Extra_pass> a sht:NegativeStructureTest ;
+  mf:name "Cycle2Extra_pass" ;
+  mf:status mf:proposed ;
+  sx:shex <Cycle2Extra_pass.shex> ;
   .
 

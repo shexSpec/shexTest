@@ -136,6 +136,34 @@
           "name": "TwoNegation2_fail",
           "status": "mf:proposed",
           "shex": "TwoNegation2_fail.shex"
+        },
+        {
+          "@id": "#Cycle2NoNegation_pass",
+          "@type": "sht:NegativeStructureTest",
+          "name": "Cycle2NoNegation_pass",
+          "status": "mf:proposed",
+          "shex": "Cycle2NoNegation_pass.shex"
+        },
+        {
+          "@id": "#Cycle2Negation_fail",
+          "@type": "sht:NegativeStructureFailure",
+          "name": "Cycle2Negation_fail",
+          "status": "mf:proposed",
+          "shex": "Cycle2Negation_fail.shex"
+        },
+        {
+          "@id": "#Cycle2Extra_fail",
+          "@type": "sht:NegativeStructureFailure",
+          "name": "Cycle2Extra_fail",
+          "status": "mf:proposed",
+          "shex": "Cycle2Extra_fail.shex"
+        },
+        {
+          "@id": "#Cycle2Extra_pass",
+          "@type": "sht:NegativeStructureTest",
+          "name": "Cycle2Extra_pass",
+          "status": "mf:proposed",
+          "shex": "Cycle2Extra_pass.shex"
         }
       ]
     }
