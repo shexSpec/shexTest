@@ -66,22 +66,40 @@
           "ttl": "1dotNS2.ttl"
         },
         {
-          "@id": "#1dotNS2Comment",
+          "@id": "#1dotNS2SingleComment",
           "@type": "sht:RepresentationTest",
-          "name": "1dotNS2Comment",
+          "name": "1dotNS2SingleComment",
           "status": "mf:proposed",
-          "shex": "1dotNS2Comment.shex",
-          "json": "1dotNS2Comment.json",
-          "ttl": "1dotNS2Comment.ttl"
+          "shex": "1dotNS2SingleComment.shex",
+          "json": "1dotNS2SingleComment.json",
+          "ttl": "1dotNS2SingleComment.ttl"
         },
         {
-          "@id": "#1dotLNexComment",
+          "@id": "#1dotLNexSingleComment",
           "@type": "sht:RepresentationTest",
-          "name": "1dotLNexComment",
+          "name": "1dotLNexSingleComment",
           "status": "mf:proposed",
-          "shex": "1dotLNexComment.shex",
-          "json": "1dotLNexComment.json",
-          "ttl": "1dotLNexComment.ttl"
+          "shex": "1dotLNexSingleComment.shex",
+          "json": "1dotLNexSingleComment.json",
+          "ttl": "1dotLNexSingleComment.ttl"
+        },
+        {
+          "@id": "#1dotNS2MultiComment",
+          "@type": "sht:RepresentationTest",
+          "name": "1dotNS2MultiComment",
+          "status": "mf:proposed",
+          "shex": "1dotNS2MultiComment.shex",
+          "json": "1dotNS2MultiComment.json",
+          "ttl": "1dotNS2MultiComment.ttl"
+        },
+        {
+          "@id": "#1dotLNexMultiComment",
+          "@type": "sht:RepresentationTest",
+          "name": "1dotLNexMultiComment",
+          "status": "mf:proposed",
+          "shex": "1dotLNexMultiComment.shex",
+          "json": "1dotLNexMultiComment.json",
+          "ttl": "1dotLNexMultiComment.ttl"
         },
         {
           "@id": "#1dotLNdefault",

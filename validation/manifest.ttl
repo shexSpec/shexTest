@@ -58,7 +58,7 @@
         <#1dot-base_fail-empty>
         <#1dot_fail-missing>
         <#1dot-base_fail-missing>
-        <#1dot_pass-noOthers> <#1dot-base_pass-noOthers> <#1dotSemi_pass-noOthers> <#1dotLNex_pass-noOthers> <#1dotNS2_pass-noOthers> <#1dotNS2Comment_pass-noOthers> <#1dotLNexComment_pass-noOthers> <#1dotLNdefault_pass-noOthers> <#1dotNSdefault_pass-noOthers> <#1dotLNex-HYPHEN_MINUS_pass-noOthers>
+        <#1dot_pass-noOthers> <#1dot-base_pass-noOthers> <#1dotSemi_pass-noOthers> <#1dotLNex_pass-noOthers> <#1dotNS2_pass-noOthers> <#1dotNS2SingleComment_pass-noOthers> <#1dotLNexSingleComment_pass-noOthers> <#1dotLNdefault_pass-noOthers> <#1dotNSdefault_pass-noOthers> <#1dotLNex-HYPHEN_MINUS_pass-noOthers>
         <#1dot_pass-others_lexicallyEarlier>
         <#1dot_pass-others_lexicallyLater>
         <#bnode1dot_fail-missing>
@@ -1419,26 +1419,26 @@
     ]
     .
 
-<#1dotNS2Comment_pass-noOthers> a sht:ValidationTest ;
-    mf:name "1dotNS2Comment_pass-noOthers" ;
+<#1dotNS2SingleComment_pass-noOthers> a sht:ValidationTest ;
+    mf:name "1dotNS2SingleComment_pass-noOthers" ;
     sht:trait sht:TriplePattern ;
     rdfs:comment "PREFIX S1: <http://a.example/S1> PREFIX p1: <http://a.example/p1> S1: { p1:/*comment*/ . } on { <s1> <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1dotNS2Comment.shex> ;
+      sht:schema <../schemas/1dotNS2SingleComment.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
     ]
     .
 
-<#1dotLNexComment_pass-noOthers> a sht:ValidationTest ;
-    mf:name "1dotLNexComment_pass-noOthers" ;
+<#1dotLNexSingleComment_pass-noOthers> a sht:ValidationTest ;
+    mf:name "1dotLNexSingleComment_pass-noOthers" ;
     sht:trait sht:TriplePattern ;
     rdfs:comment "PREFIX ex: <http://a.example/> ex:S1 { ex:p1/*comment*/ . } on { <s1> <p1> <o1> }" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/1dotLNexComment.shex> ;
+      sht:schema <../schemas/1dotLNexSingleComment.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>

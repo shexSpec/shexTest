@@ -217,16 +217,16 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#1dotNS2Comment_pass-noOthers",
+          "@id": "#1dotNS2SingleComment_pass-noOthers",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/1dotNS2Comment.shex",
+            "schema": "../schemas/1dotNS2SingleComment.shex",
             "shape": "http://a.example/S1",
             "data": "Is1_Ip1_Io1.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1dotNS2Comment_pass-noOthers",
+          "name": "1dotNS2SingleComment_pass-noOthers",
           "trait": [
             "TriplePattern"
           ],
@@ -234,16 +234,16 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#1dotLNexComment_pass-noOthers",
+          "@id": "#1dotLNexSingleComment_pass-noOthers",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/1dotLNexComment.shex",
+            "schema": "../schemas/1dotLNexSingleComment.shex",
             "shape": "http://a.example/S1",
             "data": "Is1_Ip1_Io1.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1dotLNexComment_pass-noOthers",
+          "name": "1dotLNexSingleComment_pass-noOthers",
           "trait": [
             "TriplePattern"
           ],
