@@ -1,3 +1,4 @@
+[![NPM Version](https://badge.fury.io/js/shex.png)](https://npmjs.org/package/shex)
 # shexTest
 
 ## Directories:
