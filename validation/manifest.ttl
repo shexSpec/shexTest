@@ -15838,7 +15838,7 @@
 
 <#1valExprRef-IV1_fail-lit-short> a sht:ValidationFailure ;
     mf:name "1valExprRef-IV1_fail-lit-short" ;
-    sht:trait sht:ValueReference , sht:LengthFacet ;
+    sht:trait sht:ValueReference , sht:LengthFacet , sht:Import ;
     rdfs:comment "<vc1> = LITERAL MINLENGTH 5 <S1> { <p1> <vc1> } on { <s1> <p1> \"abcd\" }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -15851,7 +15851,7 @@
 
 <#1valExprRef-IV1_pass-lit-equal> a sht:ValidationTest ;
     mf:name "1valExprRef-IV1_pass-lit-equal" ;
-    sht:trait sht:ValueReference , sht:LengthFacet ;
+    sht:trait sht:ValueReference , sht:LengthFacet , sht:Import ;
     rdfs:comment "<vc1> = LITERAL MINLENGTH 5 <S1> { <p1> <vc1> } on { <s1> <p1> \"abcde\" }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -15864,7 +15864,7 @@
 
 <#1valExprRefbnode-IV1_fail-lit-short> a sht:ValidationFailure ;
     mf:name "1valExprRefbnode-IV1_fail-lit-short" ;
-    sht:trait sht:ValueReference , sht:LengthFacet ;
+    sht:trait sht:ValueReference , sht:LengthFacet , sht:Import ;
     rdfs:comment "_:vc1 = LITERAL MINLENGTH 5 <S1> { <p1> _:vc1 } on { <s1> <p1> \"abcd\" }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -15877,7 +15877,7 @@
 
 <#1valExprRefbnode-IV1_pass-lit-equal> a sht:ValidationTest ;
     mf:name "1valExprRefbnode-IV1_pass-lit-equal" ;
-    sht:trait sht:ValueReference , sht:LengthFacet ;
+    sht:trait sht:ValueReference , sht:LengthFacet , sht:Import ;
     rdfs:comment "_:vc1 = LITERAL MINLENGTH 5 <S1> { <p1> _:vc1 } on { <s1> <p1> \"abcde\" }" ;
     mf:status mf:proposed ;
     mf:action [
@@ -15893,7 +15893,7 @@
 
 <#2EachInclude1-IS2_pass> a sht:ValidationTest ;
     mf:name "2EachInclude1-IS2_pass" ;
-    sht:trait sht:Include , sht:EachOf ;
+    sht:trait sht:Include , sht:EachOf , sht:Import ;
     rdfs:comment "I2 <S1> { &<S2>, <p1> . } on { <n1> <p1> \"X\" ; <p2> \"Y\" }" ;
     mf:status mf:proposed ;
     mf:action [

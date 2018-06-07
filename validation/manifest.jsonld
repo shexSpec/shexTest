@@ -18679,7 +18679,8 @@
           "name": "1valExprRef-IV1_fail-lit-short",
           "trait": [
             "ValueReference",
-            "LengthFacet"
+            "LengthFacet",
+            "Import"
           ],
           "comment": "<vc1> = LITERAL MINLENGTH 5 <S1> { <p1> <vc1> } on { <s1> <p1> \"abcd\" }",
           "status": "mf:proposed"
@@ -18697,7 +18698,8 @@
           "name": "1valExprRef-IV1_pass-lit-equal",
           "trait": [
             "ValueReference",
-            "LengthFacet"
+            "LengthFacet",
+            "Import"
           ],
           "comment": "<vc1> = LITERAL MINLENGTH 5 <S1> { <p1> <vc1> } on { <s1> <p1> \"abcde\" }",
           "status": "mf:proposed"
@@ -18715,7 +18717,8 @@
           "name": "1valExprRefbnode-IV1_fail-lit-short",
           "trait": [
             "ValueReference",
-            "LengthFacet"
+            "LengthFacet",
+            "Import"
           ],
           "comment": "_:vc1 = LITERAL MINLENGTH 5 <S1> { <p1> _:vc1 } on { <s1> <p1> \"abcd\" }",
           "status": "mf:proposed"
@@ -18733,7 +18736,8 @@
           "name": "1valExprRefbnode-IV1_pass-lit-equal",
           "trait": [
             "ValueReference",
-            "LengthFacet"
+            "LengthFacet",
+            "Import"
           ],
           "comment": "_:vc1 = LITERAL MINLENGTH 5 <S1> { <p1> _:vc1 } on { <s1> <p1> \"abcde\" }",
           "status": "mf:proposed"
@@ -18751,7 +18755,8 @@
           "name": "2EachInclude1-IS2_pass",
           "trait": [
             "Include",
-            "EachOf"
+            "EachOf",
+            "Import"
           ],
           "comment": "I2 <S1> { &<S2>, <p1> . } on { <n1> <p1> \"X\" ; <p2> \"Y\" }",
           "status": "mf:proposed"
