@@ -488,6 +488,20 @@
           "shex": "a.shex"
         },
         {
+          "@id": "#Dot-Minus-emptylanguageStem",
+          "@type": "sht:NegativeSyntax",
+          "name": "Dot-Minus-emptylanguageStem",
+          "status": "mf:proposed",
+          "shex": "Dot-Minus-emptylanguageStem.shex"
+        },
+        {
+          "@id": "#emptylanguageStem-Minus-emptylanguageStem",
+          "@type": "sht:NegativeSyntax",
+          "name": "emptylanguageStem-Minus-emptylanguageStem",
+          "status": "mf:proposed",
+          "shex": "emptylanguageStem-Minus-emptylanguageStem.shex"
+        },
+        {
           "@id": "#base-no-uri",
           "@type": "sht:NegativeSyntax",
           "name": "base-no-uri",

@@ -12359,6 +12359,204 @@
           "status": "mf:proposed"
         },
         {
+          "@id": "#1val1emptylanguageStem_passLAtfr",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1val1emptylanguageStem.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_LAtfr.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1emptylanguageStem_passLAtfr",
+          "trait": [
+            "Stem",
+            "ValueSet"
+          ],
+          "comment": "<S> { <p1> [@~] } on { <s1> <p1> 'septante'@fr }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1val1emptylanguageStem_fail-literal",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1val1emptylanguageStem.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Lab.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1emptylanguageStem_fail-literal",
+          "trait": [
+            "Stem",
+            "ValueSet"
+          ],
+          "comment": "<S> { <p1> [@~] } on { <s1> <p1> '' }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1val1emptylanguageStem_fail-empty",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1val1emptylanguageStem.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_L.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1emptylanguageStem_fail-empty",
+          "trait": [
+            "Stem",
+            "ValueSet"
+          ],
+          "comment": "<S> { <p1> [@~] } on { <s1> <p1> '' }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1val1emptylanguageStem_fail-integer",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1val1emptylanguageStem.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_INT12345.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1emptylanguageStem_fail-integer",
+          "trait": [
+            "Stem",
+            "ValueSet"
+          ],
+          "comment": "<S> { <p1> [@~] } on { <s1> <p1> 12345 }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1val1emptylanguageStemMinuslanguage3_passLAtfr",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1val1emptylanguageStemMinuslanguage3.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_LAtfr.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1emptylanguageStemMinuslanguage3_passLAtfr",
+          "trait": [
+            "Stem",
+            "ValueSet"
+          ],
+          "comment": "<S> { <p1> [@~-@fr-be-@fr-cd-@fr-ch] } on { <s1> <p1> 'septante'@fr }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1val1emptylanguageStemMinuslanguage3_failLAtfr-be",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1val1emptylanguageStemMinuslanguage3.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_LAtfr-be.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1emptylanguageStemMinuslanguage3_failLAtfr-be",
+          "trait": [
+            "Stem",
+            "ValueSet"
+          ],
+          "comment": "<S> { <p1> [@~-@fr-be-@fr-cd-@fr-ch] } on { <s1> <p1> 'septante'@fr-be }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1val1emptylanguageStemMinuslanguage3_passLAtfr-be-fbcl",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1val1emptylanguageStemMinuslanguage3.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_LAtfr-be-fbcl.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1emptylanguageStemMinuslanguage3_passLAtfr-be-fbcl",
+          "trait": [
+            "Stem",
+            "ValueSet"
+          ],
+          "comment": "<S> { <p1> [@~-@fr-be-@fr-cd-@fr-ch] } on { <s1> <p1> 'septante'@fr-be-fbcl }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1val1emptylanguageStemMinuslanguageStem3_LAtfr",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1val1emptylanguageStemMinuslanguageStem3.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_LAtfr.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1emptylanguageStemMinuslanguageStem3_LAtfr",
+          "trait": [
+            "Stem",
+            "ValueSet"
+          ],
+          "comment": "<S> { <p1> [@~-@fr-be~-@fr-cd~-@fr-ch~] } on { <s1> <p1> 'septante'@fr }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1val1emptylanguageStemMinuslanguageStem3_failLAtfr-be",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1val1emptylanguageStemMinuslanguageStem3.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_LAtfr-be.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1emptylanguageStemMinuslanguageStem3_failLAtfr-be",
+          "trait": [
+            "Stem",
+            "ValueSet"
+          ],
+          "comment": "<S> { <p1> [@~-@fr-be~-@fr-cd~-@fr-ch~] } on { <s1> <p1> 'septante'@fr-be }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1val1emptylanguageStemMinuslanguageStem3_LAtfr-be-fbcl",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1val1emptylanguageStemMinuslanguageStem3.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_LAtfr-be-fbcl.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1emptylanguageStemMinuslanguageStem3_LAtfr-be-fbcl",
+          "trait": [
+            "Stem",
+            "ValueSet"
+          ],
+          "comment": "<S> { <p1> [@~-@fr-be~-@fr-cd~-@fr-ch~] } on { <s1> <p1> 'septante'@fr-be-fbcl }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#1val1emptylanguageStemMinuslanguageStem3_LAtfrc",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1val1emptylanguageStemMinuslanguageStem3.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_LAtfrc.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1emptylanguageStemMinuslanguageStem3_LAtfrc",
+          "trait": [
+            "Stem",
+            "ValueSet"
+          ],
+          "comment": "<S> { <p1> [@~-@fr-be~-@fr-cd~-@fr-ch~] } on { <s1> <p1> 'septante'@frc }",
+          "status": "mf:proposed"
+        },
+        {
           "@id": "#1val1languageStem_passLAtfr",
           "@type": "sht:ValidationTest",
           "action": {
