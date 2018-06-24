@@ -15,8 +15,10 @@
         <#1dotSemi>
         <#1dotLNex>
         <#1dotNS2>
-        <#1dotNS2Comment>
-        <#1dotLNexComment>
+        <#1dotNS2SingleComment>
+        <#1dotLNexSingleComment>
+        <#1dotNS2MultiComment>
+        <#1dotLNexMultiComment>
         <#1dotLNdefault>
         <#1dotNSdefault>
         <#1dotLNex-HYPHEN_MINUS>
@@ -465,20 +467,36 @@
     sx:ttl <1dotNS2.ttl> ;
     .
 
-<#1dotNS2Comment> a sht:RepresentationTest ;
-    mf:name "1dotNS2Comment" ;
+<#1dotNS2SingleComment> a sht:RepresentationTest ;
+    mf:name "1dotNS2SingleComment" ;
     mf:status mf:proposed ;
-    sx:shex <1dotNS2Comment.shex> ;
-    sx:json <1dotNS2Comment.json> ;
-    sx:ttl <1dotNS2Comment.ttl> ;
+    sx:shex <1dotNS2SingleComment.shex> ;
+    sx:json <1dotNS2SingleComment.json> ;
+    sx:ttl <1dotNS2SingleComment.ttl> ;
     .
 
-<#1dotLNexComment> a sht:RepresentationTest ;
-    mf:name "1dotLNexComment" ;
+<#1dotLNexSingleComment> a sht:RepresentationTest ;
+    mf:name "1dotLNexSingleComment" ;
     mf:status mf:proposed ;
-    sx:shex <1dotLNexComment.shex> ;
-    sx:json <1dotLNexComment.json> ;
-    sx:ttl <1dotLNexComment.ttl> ;
+    sx:shex <1dotLNexSingleComment.shex> ;
+    sx:json <1dotLNexSingleComment.json> ;
+    sx:ttl <1dotLNexSingleComment.ttl> ;
+    .
+
+<#1dotNS2MultiComment> a sht:RepresentationTest ;
+    mf:name "1dotNS2MultiComment" ;
+    mf:status mf:proposed ;
+    sx:shex <1dotNS2MultiComment.shex> ;
+    sx:json <1dotNS2MultiComment.json> ;
+    sx:ttl <1dotNS2MultiComment.ttl> ;
+    .
+
+<#1dotLNexMultiComment> a sht:RepresentationTest ;
+    mf:name "1dotLNexMultiComment" ;
+    mf:status mf:proposed ;
+    sx:shex <1dotLNexMultiComment.shex> ;
+    sx:json <1dotLNexMultiComment.json> ;
+    sx:ttl <1dotLNexMultiComment.ttl> ;
     .
 
 <#1dotLNdefault> a sht:RepresentationTest ;
@@ -3701,3 +3719,26 @@
     .
 
 # } imports
+
+# regexp template:
+
+# match:
+# <#\(.*?\)> a sht:RepresentationTest ;
+#     mf:name "\1" ;
+#     mf:status mf:proposed ;\(
+#     mf:sameSemanticsAs <#.*?> ;\)?\(
+#     sht:trait .*? ;\)?
+#     sx:shex <\(.*?\)\.shex> ;
+#     sx:json <\4\.json> ;
+#     sx:ttl <\4\.ttl> ;
+#     \.
+
+# emit:
+# <#\1> a sht:RepresentationTest ;
+#     mf:name "\1" ;
+#     mf:status mf:proposed ;\2\3
+#     sx:shex <\4.shex> ;
+#     sx:json <\4.json> ;
+#     sx:ttl <\4.ttl> ;
+#     .
+
