@@ -53,7 +53,7 @@ valueSetValue    = objectValue | IriStem | IriStemRange | LiteralStem | LiteralS
 objectValue      = IRI|ObjectLiteral ;
 IriStem          { stem:IRI } # IriStemRange with exclusions
 IriStemRange     { stem:(IRI|Wildcard) exclusions:[objectValue|IriStem +]? }
-LiteralStem      { stem:STRING } # LiteralStemRange with exclusions ## @@ -ObjectLiteral?
+LiteralStem      { stem:STRING } # LiteralStemRange with exclusions
 LiteralStemRange { stem:(STRING|Wildcard) exclusions:[objectValue|LiteralStem +]? }
 Language         { languageTag: LANGTAG }
 LanguageStem     { stem:EMPTYLANGTAG }
