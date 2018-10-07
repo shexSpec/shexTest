@@ -12,6 +12,13 @@
       "rdfs:comment": "ShEx negative syntax tests",
       "entries": [
         {
+          "@id": "#directShapeExpression",
+          "@type": "sht:NegativeSyntax",
+          "name": "directShapeExpression",
+          "status": "mf:proposed",
+          "shex": "directShapeExpression.shex"
+        },
+        {
           "@id": "#1decimalMininclusiveroman-numeral",
           "@type": "sht:NegativeSyntax",
           "name": "1decimalMininclusiveroman-numeral",
@@ -486,6 +493,20 @@
           "name": "a",
           "status": "mf:proposed",
           "shex": "a.shex"
+        },
+        {
+          "@id": "#Dot-Minus-emptylanguageStem",
+          "@type": "sht:NegativeSyntax",
+          "name": "Dot-Minus-emptylanguageStem",
+          "status": "mf:proposed",
+          "shex": "Dot-Minus-emptylanguageStem.shex"
+        },
+        {
+          "@id": "#emptylanguageStem-Minus-emptylanguageStem",
+          "@type": "sht:NegativeSyntax",
+          "name": "emptylanguageStem-Minus-emptylanguageStem",
+          "status": "mf:proposed",
+          "shex": "emptylanguageStem-Minus-emptylanguageStem.shex"
         },
         {
           "@id": "#base-no-uri",
