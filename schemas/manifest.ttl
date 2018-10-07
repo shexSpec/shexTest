@@ -214,6 +214,9 @@
         <#1val1dotMinuslanguage3>
         <#1val1dotMinuslanguageStem3>
         <#1val1language>
+        <#1val1emptylanguageStem>
+        <#1val1emptylanguageStemMinuslanguage3>
+        <#1val1emptylanguageStemMinuslanguageStem3>
         <#1val1languageStem>
         <#1val1languageStemMinuslanguage3>
         <#1val1languageStemMinuslanguageStem3>
@@ -2136,6 +2139,30 @@
     sx:shex <1val1language.shex> ;
     sx:json <1val1language.json> ;
     sx:ttl <1val1language.ttl> ;
+    .
+
+<#1val1emptylanguageStem> a sht:RepresentationTest ;
+    mf:name "1val1emptylanguageStem" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1emptylanguageStem.shex> ;
+    sx:json <1val1emptylanguageStem.json> ;
+    sx:ttl <1val1emptylanguageStem.ttl> ;
+    .
+
+<#1val1emptylanguageStemMinuslanguage3> a sht:RepresentationTest ;
+    mf:name "1val1emptylanguageStemMinuslanguage3" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1emptylanguageStemMinuslanguage3.shex> ;
+    sx:json <1val1emptylanguageStemMinuslanguage3.json> ;
+    sx:ttl <1val1emptylanguageStemMinuslanguage3.ttl> ;
+    .
+
+<#1val1emptylanguageStemMinuslanguageStem3> a sht:RepresentationTest ;
+    mf:name "1val1emptylanguageStemMinuslanguageStem3" ;
+    mf:status mf:proposed ;
+    sx:shex <1val1emptylanguageStemMinuslanguageStem3.shex> ;
+    sx:json <1val1emptylanguageStemMinuslanguageStem3.json> ;
+    sx:ttl <1val1emptylanguageStemMinuslanguageStem3.ttl> ;
     .
 
 <#1val1languageStem> a sht:RepresentationTest ;

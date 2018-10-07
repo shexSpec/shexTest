@@ -8,6 +8,7 @@
 <> a mf:Manifest ;
     rdfs:comment "ShEx negative syntax tests" ;
     mf:entries (
+    <#directShapeExpression>
     <#1decimalMininclusiveroman-numeral>
     <#1dotAnnot_AIRIREF>
     <#1dotUnlabeledCode1>
@@ -76,6 +77,8 @@
     <#STRING_LITERAL_LONG2-ending-QUOTATION_MARK4>
     <#STRING_LITERAL_LONG2-unterminated>
     <#a>
+    <#Dot-Minus-emptylanguageStem>
+    <#emptylanguageStem-Minus-emptylanguageStem>
     <#base-no-uri>
     <#base-uri-dot>
     <#bnodedot>
@@ -106,6 +109,12 @@
     <#1val1literalStemMinusiri3>
     <#1val1literalStemMinuslanguage3>
   ) .
+
+<#directShapeExpression> a sht:NegativeSyntax ;
+  mf:name "directShapeExpression" ;
+  mf:status mf:proposed ;
+  sx:shex <directShapeExpression.shex> ;
+  .
 
 <#1decimalMininclusiveroman-numeral> a sht:NegativeSyntax ;
   mf:name "1decimalMininclusiveroman-numeral" ;
@@ -513,6 +522,18 @@
   mf:name "a" ;
   mf:status mf:proposed ;
   sx:shex <a.shex> ;
+  .
+
+<#Dot-Minus-emptylanguageStem> a sht:NegativeSyntax ;
+  mf:name "Dot-Minus-emptylanguageStem" ;
+  mf:status mf:proposed ;
+  sx:shex <Dot-Minus-emptylanguageStem.shex> ;
+  .
+
+<#emptylanguageStem-Minus-emptylanguageStem> a sht:NegativeSyntax ;
+  mf:name "emptylanguageStem-Minus-emptylanguageStem" ;
+  mf:status mf:proposed ;
+  sx:shex <emptylanguageStem-Minus-emptylanguageStem.shex> ;
   .
 
 <#base-no-uri> a sht:NegativeSyntax ;

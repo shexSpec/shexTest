@@ -1857,6 +1857,33 @@
           "ttl": "1val1language.ttl"
         },
         {
+          "@id": "#1val1emptylanguageStem",
+          "@type": "sht:RepresentationTest",
+          "name": "1val1emptylanguageStem",
+          "status": "mf:proposed",
+          "shex": "1val1emptylanguageStem.shex",
+          "json": "1val1emptylanguageStem.json",
+          "ttl": "1val1emptylanguageStem.ttl"
+        },
+        {
+          "@id": "#1val1emptylanguageStemMinuslanguage3",
+          "@type": "sht:RepresentationTest",
+          "name": "1val1emptylanguageStemMinuslanguage3",
+          "status": "mf:proposed",
+          "shex": "1val1emptylanguageStemMinuslanguage3.shex",
+          "json": "1val1emptylanguageStemMinuslanguage3.json",
+          "ttl": "1val1emptylanguageStemMinuslanguage3.ttl"
+        },
+        {
+          "@id": "#1val1emptylanguageStemMinuslanguageStem3",
+          "@type": "sht:RepresentationTest",
+          "name": "1val1emptylanguageStemMinuslanguageStem3",
+          "status": "mf:proposed",
+          "shex": "1val1emptylanguageStemMinuslanguageStem3.shex",
+          "json": "1val1emptylanguageStemMinuslanguageStem3.json",
+          "ttl": "1val1emptylanguageStemMinuslanguageStem3.ttl"
+        },
+        {
           "@id": "#1val1languageStem",
           "@type": "sht:RepresentationTest",
           "name": "1val1languageStem",
