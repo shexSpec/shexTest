@@ -30,6 +30,15 @@
           "ttl": "1dot.ttl"
         },
         {
+          "@id": "#open1dotclose",
+          "@type": "sht:RepresentationTest",
+          "name": "open1dotclose",
+          "status": "mf:proposed",
+          "shex": "open1dotclose.shex",
+          "json": "1dot.json",
+          "ttl": "1dot.ttl"
+        },
+        {
           "@id": "#1dot-base",
           "@type": "sht:RepresentationTest",
           "name": "1dot-base",
@@ -66,22 +75,40 @@
           "ttl": "1dotNS2.ttl"
         },
         {
-          "@id": "#1dotNS2Comment",
+          "@id": "#1dotNS2SingleComment",
           "@type": "sht:RepresentationTest",
-          "name": "1dotNS2Comment",
+          "name": "1dotNS2SingleComment",
           "status": "mf:proposed",
-          "shex": "1dotNS2Comment.shex",
-          "json": "1dotNS2Comment.json",
-          "ttl": "1dotNS2Comment.ttl"
+          "shex": "1dotNS2SingleComment.shex",
+          "json": "1dotNS2SingleComment.json",
+          "ttl": "1dotNS2SingleComment.ttl"
         },
         {
-          "@id": "#1dotLNexComment",
+          "@id": "#1dotLNexSingleComment",
           "@type": "sht:RepresentationTest",
-          "name": "1dotLNexComment",
+          "name": "1dotLNexSingleComment",
           "status": "mf:proposed",
-          "shex": "1dotLNexComment.shex",
-          "json": "1dotLNexComment.json",
-          "ttl": "1dotLNexComment.ttl"
+          "shex": "1dotLNexSingleComment.shex",
+          "json": "1dotLNexSingleComment.json",
+          "ttl": "1dotLNexSingleComment.ttl"
+        },
+        {
+          "@id": "#1dotNS2MultiComment",
+          "@type": "sht:RepresentationTest",
+          "name": "1dotNS2MultiComment",
+          "status": "mf:proposed",
+          "shex": "1dotNS2MultiComment.shex",
+          "json": "1dotNS2MultiComment.json",
+          "ttl": "1dotNS2MultiComment.ttl"
+        },
+        {
+          "@id": "#1dotLNexMultiComment",
+          "@type": "sht:RepresentationTest",
+          "name": "1dotLNexMultiComment",
+          "status": "mf:proposed",
+          "shex": "1dotLNexMultiComment.shex",
+          "json": "1dotLNexMultiComment.json",
+          "ttl": "1dotLNexMultiComment.ttl"
         },
         {
           "@id": "#1dotLNdefault",
@@ -224,6 +251,15 @@
           "name": "1cardOpt",
           "status": "mf:proposed",
           "shex": "1cardOpt.shex",
+          "json": "1cardOpt.json",
+          "ttl": "1cardOpt.ttl"
+        },
+        {
+          "@id": "#open1dotclosecardOpt",
+          "@type": "sht:RepresentationTest",
+          "name": "open1dotclosecardOpt",
+          "status": "mf:proposed",
+          "shex": "open1dotclosecardOpt.shex",
           "json": "1cardOpt.json",
           "ttl": "1cardOpt.ttl"
         },
@@ -1821,6 +1857,33 @@
           "ttl": "1val1language.ttl"
         },
         {
+          "@id": "#1val1emptylanguageStem",
+          "@type": "sht:RepresentationTest",
+          "name": "1val1emptylanguageStem",
+          "status": "mf:proposed",
+          "shex": "1val1emptylanguageStem.shex",
+          "json": "1val1emptylanguageStem.json",
+          "ttl": "1val1emptylanguageStem.ttl"
+        },
+        {
+          "@id": "#1val1emptylanguageStemMinuslanguage3",
+          "@type": "sht:RepresentationTest",
+          "name": "1val1emptylanguageStemMinuslanguage3",
+          "status": "mf:proposed",
+          "shex": "1val1emptylanguageStemMinuslanguage3.shex",
+          "json": "1val1emptylanguageStemMinuslanguage3.json",
+          "ttl": "1val1emptylanguageStemMinuslanguage3.ttl"
+        },
+        {
+          "@id": "#1val1emptylanguageStemMinuslanguageStem3",
+          "@type": "sht:RepresentationTest",
+          "name": "1val1emptylanguageStemMinuslanguageStem3",
+          "status": "mf:proposed",
+          "shex": "1val1emptylanguageStemMinuslanguageStem3.shex",
+          "json": "1val1emptylanguageStemMinuslanguageStem3.json",
+          "ttl": "1val1emptylanguageStemMinuslanguageStem3.ttl"
+        },
+        {
           "@id": "#1val1languageStem",
           "@type": "sht:RepresentationTest",
           "name": "1val1languageStem",
@@ -1952,6 +2015,15 @@
           "name": "1dotOne1dot",
           "status": "mf:proposed",
           "shex": "1dotOne1dot.shex",
+          "json": "1dotOne1dot.json",
+          "ttl": "1dotOne1dot.ttl"
+        },
+        {
+          "@id": "#openopen1dotOr1dotclose",
+          "@type": "sht:RepresentationTest",
+          "name": "openopen1dotOr1dotclose",
+          "status": "mf:proposed",
+          "shex": "openopen1dotOr1dotclose.shex",
           "json": "1dotOne1dot.json",
           "ttl": "1dotOne1dot.ttl"
         },
@@ -2170,6 +2242,177 @@
           "shex": "1val1vExprOR3.shex",
           "json": "1val1vExprOR3.json",
           "ttl": "1val1vExprOR3.ttl"
+        },
+        {
+          "@id": "#1NOTIRI",
+          "@type": "sht:RepresentationTest",
+          "name": "1NOTIRI",
+          "status": "mf:proposed",
+          "shex": "1NOTIRI.shex",
+          "json": "1NOTIRI.json",
+          "ttl": "1NOTIRI.ttl"
+        },
+        {
+          "@id": "#1NOTNOTIRI",
+          "@type": "sht:RepresentationTest",
+          "name": "1NOTNOTIRI",
+          "status": "mf:proposed",
+          "shex": "1NOTNOTIRI.shex",
+          "json": "1NOTNOTIRI.json",
+          "ttl": "1NOTNOTIRI.ttl"
+        },
+        {
+          "@id": "#1NOTvs",
+          "@type": "sht:RepresentationTest",
+          "name": "1NOTvs",
+          "status": "mf:proposed",
+          "shex": "1NOTvs.shex",
+          "json": "1NOTvs.json",
+          "ttl": "1NOTvs.ttl"
+        },
+        {
+          "@id": "#1NOTNOTvs",
+          "@type": "sht:RepresentationTest",
+          "name": "1NOTNOTvs",
+          "status": "mf:proposed",
+          "shex": "1NOTNOTvs.shex",
+          "json": "1NOTNOTvs.json",
+          "ttl": "1NOTNOTvs.ttl"
+        },
+        {
+          "@id": "#1NOTdot",
+          "@type": "sht:RepresentationTest",
+          "name": "1NOTdot",
+          "status": "mf:proposed",
+          "shex": "1NOTdot.shex",
+          "json": "1NOTdot.json",
+          "ttl": "1NOTdot.ttl"
+        },
+        {
+          "@id": "#1NOTNOTdot",
+          "@type": "sht:RepresentationTest",
+          "name": "1NOTNOTdot",
+          "status": "mf:proposed",
+          "shex": "1NOTNOTdot.shex",
+          "json": "1NOTNOTdot.json",
+          "ttl": "1NOTNOTdot.ttl"
+        },
+        {
+          "@id": "#1_NOTliteral_ANDvs",
+          "@type": "sht:RepresentationTest",
+          "name": "1_NOTliteral_ANDvs",
+          "status": "mf:proposed",
+          "shex": "1_NOTliteral_ANDvs.shex",
+          "json": "1_NOTliteral_ANDvs.json",
+          "ttl": "1_NOTliteral_ANDvs.ttl"
+        },
+        {
+          "@id": "#1NOT_literalANDvs_",
+          "@type": "sht:RepresentationTest",
+          "name": "1NOT_literalANDvs_",
+          "status": "mf:proposed",
+          "shex": "1NOT_literalANDvs_.shex",
+          "json": "1NOT_literalANDvs_.json",
+          "ttl": "1NOT_literalANDvs_.ttl"
+        },
+        {
+          "@id": "#1NOTliteralANDvs",
+          "@type": "sht:RepresentationTest",
+          "name": "1NOTliteralANDvs",
+          "status": "mf:proposed",
+          "shex": "1NOTliteralANDvs.shex",
+          "json": "1NOTliteralANDvs.json",
+          "ttl": "1NOTliteralANDvs.ttl"
+        },
+        {
+          "@id": "#1_NOTvs_ANDvs",
+          "@type": "sht:RepresentationTest",
+          "name": "1_NOTvs_ANDvs",
+          "status": "mf:proposed",
+          "shex": "1_NOTvs_ANDvs.shex",
+          "json": "1_NOTvs_ANDvs.json",
+          "ttl": "1_NOTvs_ANDvs.ttl"
+        },
+        {
+          "@id": "#1NOT_vsANDvs_",
+          "@type": "sht:RepresentationTest",
+          "name": "1NOT_vsANDvs_",
+          "status": "mf:proposed",
+          "shex": "1NOT_vsANDvs_.shex",
+          "json": "1NOT_vsANDvs_.json",
+          "ttl": "1NOT_vsANDvs_.ttl"
+        },
+        {
+          "@id": "#1NOTvsANDvs",
+          "@type": "sht:RepresentationTest",
+          "name": "1NOTvsANDvs",
+          "status": "mf:proposed",
+          "shex": "1NOTvsANDvs.shex",
+          "json": "1NOTvsANDvs.json",
+          "ttl": "1NOTvsANDvs.ttl"
+        },
+        {
+          "@id": "#1_NOTliteral_ORvs",
+          "@type": "sht:RepresentationTest",
+          "name": "1_NOTliteral_ORvs",
+          "status": "mf:proposed",
+          "shex": "1_NOTliteral_ORvs.shex",
+          "json": "1_NOTliteral_ORvs.json",
+          "ttl": "1_NOTliteral_ORvs.ttl"
+        },
+        {
+          "@id": "#1NOT_literalORvs_",
+          "@type": "sht:RepresentationTest",
+          "name": "1NOT_literalORvs_",
+          "status": "mf:proposed",
+          "shex": "1NOT_literalORvs_.shex",
+          "json": "1NOT_literalORvs_.json",
+          "ttl": "1NOT_literalORvs_.ttl"
+        },
+        {
+          "@id": "#1NOTliteralORvs",
+          "@type": "sht:RepresentationTest",
+          "name": "1NOTliteralORvs",
+          "status": "mf:proposed",
+          "shex": "1NOTliteralORvs.shex",
+          "json": "1NOTliteralORvs.json",
+          "ttl": "1NOTliteralORvs.ttl"
+        },
+        {
+          "@id": "#1_NOTvs_ORvs",
+          "@type": "sht:RepresentationTest",
+          "name": "1_NOTvs_ORvs",
+          "status": "mf:proposed",
+          "shex": "1_NOTvs_ORvs.shex",
+          "json": "1_NOTvs_ORvs.json",
+          "ttl": "1_NOTvs_ORvs.ttl"
+        },
+        {
+          "@id": "#1NOT_vsORvs_",
+          "@type": "sht:RepresentationTest",
+          "name": "1NOT_vsORvs_",
+          "status": "mf:proposed",
+          "shex": "1NOT_vsORvs_.shex",
+          "json": "1NOT_vsORvs_.json",
+          "ttl": "1NOT_vsORvs_.ttl"
+        },
+        {
+          "@id": "#1NOTvsORvs",
+          "@type": "sht:RepresentationTest",
+          "name": "1NOTvsORvs",
+          "status": "mf:proposed",
+          "shex": "1NOTvsORvs.shex",
+          "json": "1NOTvsORvs.json",
+          "ttl": "1NOTvsORvs.ttl"
+        },
+        {
+          "@id": "#NOT1NOTvs",
+          "@type": "sht:RepresentationTest",
+          "name": "NOT1NOTvs",
+          "status": "mf:proposed",
+          "shex": "NOT1NOTvs.shex",
+          "json": "NOT1NOTvs.json",
+          "ttl": "NOT1NOTvs.ttl"
         },
         {
           "@id": "#1val1vExpr1AND1OR1Ref3",
@@ -2523,6 +2766,15 @@
           "ttl": "1dotCode1.ttl"
         },
         {
+          "@id": "#open1dotcloseCode1",
+          "@type": "sht:RepresentationTest",
+          "name": "open1dotcloseCode1",
+          "status": "mf:proposed",
+          "shex": "open1dotcloseCode1.shex",
+          "json": "1dotCode1.json",
+          "ttl": "1dotCode1.ttl"
+        },
+        {
           "@id": "#1dotNoCode1",
           "@type": "sht:RepresentationTest",
           "name": "1dotNoCode1",
@@ -2546,6 +2798,15 @@
           "name": "1dotCode3",
           "status": "mf:proposed",
           "shex": "1dotCode3.shex",
+          "json": "1dotCode3.json",
+          "ttl": "1dotCode3.ttl"
+        },
+        {
+          "@id": "#openopen1dotcloseCode1closeCode3",
+          "@type": "sht:RepresentationTest",
+          "name": "openopen1dotcloseCode1closeCode3",
+          "status": "mf:proposed",
+          "shex": "openopen1dotcloseCode1closeCode3.shex",
           "json": "1dotCode3.json",
           "ttl": "1dotCode3.ttl"
         },
@@ -2856,22 +3117,13 @@
           "ttl": "1dotExtends1.ttl"
         },
         {
-          "@id": "#1dotExtends3",
-          "@type": "sht:RepresentationTest",
-          "name": "1dotExtends3",
-          "status": "mf:proposed",
-          "shex": "1dotExtends3.shex",
-          "json": "1dotExtends3.json",
-          "ttl": "1dotExtends3.ttl"
-        },
-        {
           "@id": "#1dot3Extends",
           "@type": "sht:RepresentationTest",
           "name": "1dot3Extends",
           "status": "mf:proposed",
           "shex": "1dot3Extends.shex",
-          "json": "1dotExtends3.json",
-          "ttl": "1dotExtends3.ttl"
+          "json": "1dot3Extends.json",
+          "ttl": "1dot3Extends.ttl"
         },
         {
           "@id": "#1dot3ExtendsLN",
@@ -2879,8 +3131,8 @@
           "name": "1dot3ExtendsLN",
           "status": "mf:proposed",
           "shex": "1dot3ExtendsLN.shex",
-          "json": "1dotExtends3.json",
-          "ttl": "1dotExtends3.ttl"
+          "json": "1dot3Extends.json",
+          "ttl": "1dot3Extends.ttl"
         },
         {
           "@id": "#1dotAbstractShapeCode1",
