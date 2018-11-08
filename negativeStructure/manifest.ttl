@@ -18,142 +18,93 @@
     <#Cycle1Negation1_fail>
     <#Cycle1Negation2_fail>
     <#Cycle1Negation3_fail>
-    <#CycleNoNegation_pass>
-    <#NoNegation_pass>
-    <#NoNegation2_pass>
-    <#OneNegation_pass>
-    <#TwoNegation_pass>
     <#TwoNegation_fail>
     <#TwoNegation2_fail>
-    <#Cycle2NoNegation_pass>
     <#Cycle2Negation_fail>
     <#Cycle2Extra_fail>
-    <#Cycle2Extra_pass>
 ) .
-  
-<#1MissingRef> a sht:NegativeStructureFailure ;
+
+<#1MissingRef> a sht:NegativeStructure ;
   mf:name "1MissingRef" ;
   mf:status mf:proposed ;
   sx:shex <1MissingRef.shex> ;
   .
 
-<#1focusMissingRefdot> a sht:NegativeStructureFailure ;
+<#1focusMissingRefdot> a sht:NegativeStructure ;
   mf:name "1focusMissingRefdot" ;
   mf:status mf:proposed ;
   sx:shex <1focusMissingRefdot.shex> ;
   .
 
-<#1focusRefANDSelfdot> a sht:NegativeStructureFailure ;
+<#1focusRefANDSelfdot> a sht:NegativeStructure ;
   mf:name "1focusRefANDSelfdot" ;
   mf:status mf:proposed ;
   sx:shex <1focusRefANDSelfdot.shex> ;
   .
 
-<#includeSimpleShape> a sht:NegativeStructureFailure ;
+<#includeSimpleShape> a sht:NegativeStructure ;
   mf:name "includeSimpleShape" ;
   mf:status mf:proposed ;
   sx:shex <includeSimpleShape.shex> ;
   .
 
-<#includeNonSimpleShape> a sht:NegativeStructureFailure ;
+<#includeNonSimpleShape> a sht:NegativeStructure ;
   mf:name "includeNonSimpleShape" ;
   mf:status mf:proposed ;
   sx:shex <includeNonSimpleShape.shex> ;
   .
 
-<#includeExpressionNotFound> a sht:NegativeStructureFailure ;
+<#includeExpressionNotFound> a sht:NegativeStructure ;
   mf:name "includeExpressionNotFound" ;
   mf:status mf:proposed ;
   sx:shex <includeExpressionNotFound.shex> ;
   .
 
-<#1ShapeProductionCollision> a sht:NegativeStructureFailure ;
+<#1ShapeProductionCollision> a sht:NegativeStructure ;
   mf:name "1ShapeProductionCollision" ;
   mf:status mf:proposed ;
   sx:shex <1ShapeProductionCollision.shex> ;
   .
 
-<#Cycle1Negation1_fail> a sht:NegativeStructureFailure ;
+<#Cycle1Negation1_fail> a sht:NegativeStructure ;
   mf:name "Cycle1Negation1_fail" ;
   mf:status mf:proposed ;
   sx:shex <Cycle1Negation1_fail.shex> ;
   .
 
-<#Cycle1Negation2_fail> a sht:NegativeStructureFailure ;
+<#Cycle1Negation2_fail> a sht:NegativeStructure ;
   mf:name "Cycle1Negation2_fail" ;
   mf:status mf:proposed ;
   sx:shex <Cycle1Negation2_fail.shex> ;
   .
 
-<#Cycle1Negation3_fail> a sht:NegativeStructureFailure ;
+<#Cycle1Negation3_fail> a sht:NegativeStructure ;
   mf:name "Cycle1Negation3_fail" ;
   mf:status mf:proposed ;
   sx:shex <Cycle1Negation3_fail.shex> ;
   .
 
-<#CycleNoNegation_pass> a sht:NegativeStructureTest ;
-  mf:name "CycleNoNegation_pass" ;
-  mf:status mf:proposed ;
-  sx:shex <CycleNoNegation_pass.shex> ;
-  .
-
-<#NoNegation_pass> a sht:NegativeStructureTest ;
-  mf:name "NoNegation_pass" ;
-  mf:status mf:proposed ;
-  sx:shex <NoNegation_pass.shex> ;
-  .
-
-<#NoNegation2_pass> a sht:NegativeStructureTest ;
-  mf:name "NoNegation2_pass" ;
-  mf:status mf:proposed ;
-  sx:shex <NoNegation2_pass.shex> ;
-  .
-
-<#OneNegation_pass> a sht:NegativeStructureTest ;
-  mf:name "OneNegation_pass" ;
-  mf:status mf:proposed ;
-  sx:shex <OneNegation_pass.shex> ;
-  .
-
-<#TwoNegation_pass> a sht:NegativeStructureTest ;
-  mf:name "TwoNegation_pass" ;
-  mf:status mf:proposed ;
-  sx:shex <TwoNegation_pass.shex> ;
-  .
-
-<#TwoNegation_fail> a sht:NegativeStructureFailure ;
+<#TwoNegation_fail> a sht:NegativeStructure ;
   mf:name "TwoNegation_fail" ;
   mf:status mf:proposed ;
   sx:shex <TwoNegation_fail.shex> ;
   .
 
-<#TwoNegation2_fail> a sht:NegativeStructureFailure ;
+<#TwoNegation2_fail> a sht:NegativeStructure ;
   mf:name "TwoNegation2_fail" ;
   mf:status mf:proposed ;
   sx:shex <TwoNegation2_fail.shex> ;
   .
 
-<#Cycle2NoNegation_pass> a sht:NegativeStructureTest ;
-  mf:name "Cycle2NoNegation_pass" ;
-  mf:status mf:proposed ;
-  sx:shex <Cycle2NoNegation_pass.shex> ;
-  .
-
-<#Cycle2Negation_fail> a sht:NegativeStructureFailure ;
+<#Cycle2Negation_fail> a sht:NegativeStructure ;
   mf:name "Cycle2Negation_fail" ;
   mf:status mf:proposed ;
   sx:shex <Cycle2Negation_fail.shex> ;
   .
 
-<#Cycle2Extra_fail> a sht:NegativeStructureFailure ;
+<#Cycle2Extra_fail> a sht:NegativeStructure ;
   mf:name "Cycle2Extra_fail" ;
   mf:status mf:proposed ;
   sx:shex <Cycle2Extra_fail.shex> ;
-  .
-
-<#Cycle2Extra_pass> a sht:NegativeStructureTest ;
-  mf:name "Cycle2Extra_pass" ;
-  mf:status mf:proposed ;
-  sx:shex <Cycle2Extra_pass.shex> ;
   .
 

@@ -13,157 +13,101 @@
       "entries": [
         {
           "@id": "#1MissingRef",
-          "@type": "sht:NegativeStructureFailure",
+          "@type": "sht:NegativeStructure",
           "name": "1MissingRef",
           "status": "mf:proposed",
           "shex": "1MissingRef.shex"
         },
         {
           "@id": "#1focusMissingRefdot",
-          "@type": "sht:NegativeStructureFailure",
+          "@type": "sht:NegativeStructure",
           "name": "1focusMissingRefdot",
           "status": "mf:proposed",
           "shex": "1focusMissingRefdot.shex"
         },
         {
           "@id": "#1focusRefANDSelfdot",
-          "@type": "sht:NegativeStructureFailure",
+          "@type": "sht:NegativeStructure",
           "name": "1focusRefANDSelfdot",
           "status": "mf:proposed",
           "shex": "1focusRefANDSelfdot.shex"
         },
         {
           "@id": "#includeSimpleShape",
-          "@type": "sht:NegativeStructureFailure",
+          "@type": "sht:NegativeStructure",
           "name": "includeSimpleShape",
           "status": "mf:proposed",
           "shex": "includeSimpleShape.shex"
         },
         {
           "@id": "#includeNonSimpleShape",
-          "@type": "sht:NegativeStructureFailure",
+          "@type": "sht:NegativeStructure",
           "name": "includeNonSimpleShape",
           "status": "mf:proposed",
           "shex": "includeNonSimpleShape.shex"
         },
         {
           "@id": "#includeExpressionNotFound",
-          "@type": "sht:NegativeStructureFailure",
+          "@type": "sht:NegativeStructure",
           "name": "includeExpressionNotFound",
           "status": "mf:proposed",
           "shex": "includeExpressionNotFound.shex"
         },
         {
           "@id": "#1ShapeProductionCollision",
-          "@type": "sht:NegativeStructureFailure",
-          "name": "1ShapeProductionCollision",
-          "status": "mf:proposed",
-          "shex": "1ShapeProductionCollision.shex"
-        },
-        {
-          "@id": "#1ShapeProductionCollision",
-          "@type": "sht:NegativeStructureFailure",
+          "@type": "sht:NegativeStructure",
           "name": "1ShapeProductionCollision",
           "status": "mf:proposed",
           "shex": "1ShapeProductionCollision.shex"
         },
         {
           "@id": "#Cycle1Negation1_fail",
-          "@type": "sht:NegativeStructureFailure",
+          "@type": "sht:NegativeStructure",
           "name": "Cycle1Negation1_fail",
           "status": "mf:proposed",
           "shex": "Cycle1Negation1_fail.shex"
         },
         {
           "@id": "#Cycle1Negation2_fail",
-          "@type": "sht:NegativeStructureFailure",
+          "@type": "sht:NegativeStructure",
           "name": "Cycle1Negation2_fail",
           "status": "mf:proposed",
           "shex": "Cycle1Negation2_fail.shex"
         },
         {
           "@id": "#Cycle1Negation3_fail",
-          "@type": "sht:NegativeStructureFailure",
+          "@type": "sht:NegativeStructure",
           "name": "Cycle1Negation3_fail",
           "status": "mf:proposed",
           "shex": "Cycle1Negation3_fail.shex"
         },
         {
-          "@id": "#CycleNoNegation_pass",
-          "@type": "sht:NegativeStructureTest",
-          "name": "CycleNoNegation_pass",
-          "status": "mf:proposed",
-          "shex": "CycleNoNegation_pass.shex"
-        },
-        {
-          "@id": "#NoNegation_pass",
-          "@type": "sht:NegativeStructureTest",
-          "name": "NoNegation_pass",
-          "status": "mf:proposed",
-          "shex": "NoNegation_pass.shex"
-        },
-        {
-          "@id": "#NoNegation2_pass",
-          "@type": "sht:NegativeStructureTest",
-          "name": "NoNegation2_pass",
-          "status": "mf:proposed",
-          "shex": "NoNegation2_pass.shex"
-        },
-        {
-          "@id": "#OneNegation_pass",
-          "@type": "sht:NegativeStructureTest",
-          "name": "OneNegation_pass",
-          "status": "mf:proposed",
-          "shex": "OneNegation_pass.shex"
-        },
-        {
-          "@id": "#TwoNegation_pass",
-          "@type": "sht:NegativeStructureTest",
-          "name": "TwoNegation_pass",
-          "status": "mf:proposed",
-          "shex": "TwoNegation_pass.shex"
-        },
-        {
           "@id": "#TwoNegation_fail",
-          "@type": "sht:NegativeStructureFailure",
+          "@type": "sht:NegativeStructure",
           "name": "TwoNegation_fail",
           "status": "mf:proposed",
           "shex": "TwoNegation_fail.shex"
         },
         {
           "@id": "#TwoNegation2_fail",
-          "@type": "sht:NegativeStructureFailure",
+          "@type": "sht:NegativeStructure",
           "name": "TwoNegation2_fail",
           "status": "mf:proposed",
           "shex": "TwoNegation2_fail.shex"
         },
         {
-          "@id": "#Cycle2NoNegation_pass",
-          "@type": "sht:NegativeStructureTest",
-          "name": "Cycle2NoNegation_pass",
-          "status": "mf:proposed",
-          "shex": "Cycle2NoNegation_pass.shex"
-        },
-        {
           "@id": "#Cycle2Negation_fail",
-          "@type": "sht:NegativeStructureFailure",
+          "@type": "sht:NegativeStructure",
           "name": "Cycle2Negation_fail",
           "status": "mf:proposed",
           "shex": "Cycle2Negation_fail.shex"
         },
         {
           "@id": "#Cycle2Extra_fail",
-          "@type": "sht:NegativeStructureFailure",
+          "@type": "sht:NegativeStructure",
           "name": "Cycle2Extra_fail",
           "status": "mf:proposed",
           "shex": "Cycle2Extra_fail.shex"
-        },
-        {
-          "@id": "#Cycle2Extra_pass",
-          "@type": "sht:NegativeStructureTest",
-          "name": "Cycle2Extra_pass",
-          "status": "mf:proposed",
-          "shex": "Cycle2Extra_pass.shex"
         }
       ]
     }
