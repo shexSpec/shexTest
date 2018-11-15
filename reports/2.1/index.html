@@ -223,33 +223,24 @@ Report Generation Software
 </ul>
 </section>
 <section id='instructions-for-submitting-implementation-reports'>
-<h2 id="instructions-for-submitting-implementation-reports">Instructions for submitting implementation reports</h2>
-
-<p>Tests should be run using the test manifests defined in the 
-  <a href="#test-manifests">Test Manifests</a> Section.</p>
-
+<h2>Instructions for submitting implementation reports</h2>
+<p>Tests should be run using the test manifests defined in the
+<a href="#test-manifests">Test Manifests</a> Section.</p>
 <p>The assumed base URI for the tests is <code>&lt;http://example/base/&gt;</code> if needed.</p>
-
 <p>Reports should be submitted in Turtle format to <a href="mailto:public-rdf-comments@w3.org">public-shex@w3.org</a>
-  and include an <code>earl:Assertion</code>
-  for each test, referencing the test resource from the associated manifest
-  and the test subject being reported upon. An example test entry is be the following:</p>
-
-<pre><code>  [ a earl:Assertion;&#x000A;    earl:assertedBy &lt;http://greggkellogg.net/foaf#me&gt;;&#x000A;    earl:subject &lt;http://rubygems.org/gems/shex&gt;;&#x000A;    earl:test &lt;https://raw.githubusercontent.com/shexSpec/shexTest/master/schemas/manifest#0&gt;;&#x000A;    earl:result [&#x000A;      a earl:TestResult;&#x000A;      earl:outcome earl:passed;&#x000A;      dc:date "2016-12-26T10:18:04-08:00"^^xsd:dateTime];&#x000A;    earl:mode earl:automatic ] .&#x000A;</code></pre>
-
+and include an <code>earl:Assertion</code>
+for each test, referencing the test resource from the associated manifest
+and the test subject being reported upon. An example test entry is be the following:</p>
+<pre><code>  [ a earl:Assertion;&#x000A;    earl:assertedBy &lt;http://greggkellogg.net/foaf#me&gt;;&#x000A;    earl:subject &lt;http://rubygems.org/gems/shex&gt;;&#x000A;    earl:test &lt;https://raw.githubusercontent.com/shexSpec/shexTest/master/schemas/manifest#0&gt;;&#x000A;    earl:result [&#x000A;      a earl:TestResult;&#x000A;      earl:outcome earl:passed;&#x000A;      dc:date &quot;2016-12-26T10:18:04-08:00&quot;^^xsd:dateTime];&#x000A;    earl:mode earl:automatic ] .&#x000A;</code></pre>
 <p>The Test Subject should be defined as a <code>doap:Project</code>, including the name,
-  homepage and developer(s) of the software (see <a href="https://github.com/edumbill/doap/wiki">DOAP</a>). Optionally, including the
-  project description and programming language. An example test subject description is the following:</p>
-
-<pre><code>  &lt;&gt; foaf:primaryTopic &lt;http://rubygems.org/gems/shex&gt; ;&#x000A;    dc:issued "2016-12-26T10:18:04-08:00"^^xsd:dateTime ;&#x000A;    foaf:maker &lt;http://greggkellogg.net/foaf#me&gt; .&#x000A;&#x000A;  &lt;http://rubygems.org/gems/shex&gt; a doap:Project, earl:TestSubject, earl:Software ;&#x000A;    doap:name          "ShEx" ;&#x000A;    doap:homepage      &lt;http://ruby-rdf.github.com/shex&gt; ;&#x000A;    doap:license       &lt;http://creativecommons.org/licenses/publicdomain/&gt; ;&#x000A;    doap:shortdesc     "ShEx is a Shape Expression engine for Ruby."@en ;&#x000A;    doap:description   "ShEx is an Shape Expression engine for the RDF.rb library suite."@en ;&#x000A;    doap:created       "2016-12-09"^^xsd:date ;&#x000A;    doap:programming-language "Ruby" ;&#x000A;    doap:implements    &lt;https://shexspec.github.io/spec/&gt; ;&#x000A;    doap:category      &lt;http://dbpedia.org/resource/Resource_Description_Framework&gt;,&#x000A;                       &lt;http://dbpedia.org/resource/Ruby_(programming_language)&gt; ;&#x000A;    doap:download-page &lt;http://rubygems.org/gems/shex&gt; ;&#x000A;    doap:mailing-list  &lt;http://lists.w3.org/Archives/Public/public-rdf-ruby/&gt; ;&#x000A;    doap:bug-database  &lt;http://github.com/ruby-rdf/shex/issues&gt; ;&#x000A;    doap:blog          &lt;http://greggkellogg.net/&gt; ;&#x000A;    doap:developer     &lt;http://greggkellogg.net/foaf#me&gt; ;&#x000A;    doap:maintainer    &lt;http://greggkellogg.net/foaf#me&gt; ;&#x000A;    doap:documenter    &lt;http://greggkellogg.net/foaf#me&gt; ;&#x000A;    foaf:maker         &lt;http://greggkellogg.net/foaf#me&gt; ;&#x000A;    dc:title           "ShEx" ;&#x000A;    dc:description     "ShEx is an Shape Expression engine for the RDF.rb library suite."@en ;&#x000A;    dc:date            "2016-12-09"^^xsd:date ;&#x000A;    dc:creator         &lt;http://greggkellogg.net/foaf#me&gt; ;&#x000A;    dc:isPartOf        &lt;http://rubygems.org/gems/rdf&gt; .&#x000A;</code></pre>
-
+homepage and developer(s) of the software (see <a href="https://github.com/edumbill/doap/wiki">DOAP</a>). Optionally, including the
+project description and programming language. An example test subject description is the following:</p>
+<pre><code>  &lt;&gt; foaf:primaryTopic &lt;http://rubygems.org/gems/shex&gt; ;&#x000A;    dc:issued &quot;2016-12-26T10:18:04-08:00&quot;^^xsd:dateTime ;&#x000A;    foaf:maker &lt;http://greggkellogg.net/foaf#me&gt; .&#x000A;&#x000A;  &lt;http://rubygems.org/gems/shex&gt; a doap:Project, earl:TestSubject, earl:Software ;&#x000A;    doap:name          &quot;ShEx&quot; ;&#x000A;    doap:homepage      &lt;http://ruby-rdf.github.com/shex&gt; ;&#x000A;    doap:license       &lt;http://creativecommons.org/licenses/publicdomain/&gt; ;&#x000A;    doap:shortdesc     &quot;ShEx is a Shape Expression engine for Ruby.&quot;@en ;&#x000A;    doap:description   &quot;ShEx is an Shape Expression engine for the RDF.rb library suite.&quot;@en ;&#x000A;    doap:created       &quot;2016-12-09&quot;^^xsd:date ;&#x000A;    doap:programming-language &quot;Ruby&quot; ;&#x000A;    doap:implements    &lt;https://shexspec.github.io/spec/&gt; ;&#x000A;    doap:category      &lt;http://dbpedia.org/resource/Resource_Description_Framework&gt;,&#x000A;                       &lt;http://dbpedia.org/resource/Ruby_(programming_language)&gt; ;&#x000A;    doap:download-page &lt;http://rubygems.org/gems/shex&gt; ;&#x000A;    doap:mailing-list  &lt;http://lists.w3.org/Archives/Public/public-rdf-ruby/&gt; ;&#x000A;    doap:bug-database  &lt;http://github.com/ruby-rdf/shex/issues&gt; ;&#x000A;    doap:blog          &lt;http://greggkellogg.net/&gt; ;&#x000A;    doap:developer     &lt;http://greggkellogg.net/foaf#me&gt; ;&#x000A;    doap:maintainer    &lt;http://greggkellogg.net/foaf#me&gt; ;&#x000A;    doap:documenter    &lt;http://greggkellogg.net/foaf#me&gt; ;&#x000A;    foaf:maker         &lt;http://greggkellogg.net/foaf#me&gt; ;&#x000A;    dc:title           &quot;ShEx&quot; ;&#x000A;    dc:description     &quot;ShEx is an Shape Expression engine for the RDF.rb library suite.&quot;@en ;&#x000A;    dc:date            &quot;2016-12-09&quot;^^xsd:date ;&#x000A;    dc:creator         &lt;http://greggkellogg.net/foaf#me&gt; ;&#x000A;    dc:isPartOf        &lt;http://rubygems.org/gems/rdf&gt; .&#x000A;</code></pre>
 <p>The software developer, either an organization or one or more individuals SHOULD be
-  referenced from <code>doap:developer</code> using <a href="http://xmlns.com/foaf/spec">FOAF</a>. For example:</p>
-
-<pre><code>  &lt;http://greggkellogg.net/foaf#me&gt; a foaf:Person, earl:Assertor;&#x000A;    foaf:name "Gregg Kellogg";&#x000A;    foaf:title "Implementor";&#x000A;    foaf:homepage &lt;http://greggkellogg.net/&gt; .&#x000A;</code></pre>
-
+referenced from <code>doap:developer</code> using <a href="http://xmlns.com/foaf/spec">FOAF</a>. For example:</p>
+<pre><code>  &lt;http://greggkellogg.net/foaf#me&gt; a foaf:Person, earl:Assertor;&#x000A;    foaf:name &quot;Gregg Kellogg&quot;;&#x000A;    foaf:title &quot;Implementor&quot;;&#x000A;    foaf:homepage &lt;http://greggkellogg.net/&gt; .&#x000A;</code></pre>
 <p>See <a href="https://github.com/shexSpec/shexTest/blob/master/README.md">ShEx Test Suite</a>
-  for more information.</p>
+for more information.</p>
 </section>
 <section id='test-manifests'>
 <h2>
@@ -60556,37 +60547,7 @@ ShEx validation tests
 </a>
 </td>
 <td class='passed-most'>
-1062/1088 (97.6%)
-</td>
-</tr>
-<tr>
-<td>
-<a href='#ShEx negative syntax tests'>
-ShEx negative syntax tests
-</a>
-</td>
-<td class='passed-some'>
-60/99 (60.6%)
-</td>
-</tr>
-<tr>
-<td>
-<a href='#ShEx representation tests'>
-ShEx representation tests
-</a>
-</td>
-<td class='passed-some'>
-272/408 (66.7%)
-</td>
-</tr>
-<tr>
-<td>
-<a href='#ShEx negative structure tests'>
-ShEx negative structure tests
-</a>
-</td>
-<td class='passed-some'>
-7/14 (50.0%)
+1007/1088 (92.6%)
 </td>
 </tr>
 </tbody>
@@ -60625,7 +60586,7 @@ ShEx validation tests
 </a>
 </td>
 <td class='passed-most'>
-1042/1088 (95.8%)
+1070/1088 (98.3%)
 </td>
 </tr>
 <tr>
@@ -60634,8 +60595,8 @@ ShEx validation tests
 ShEx negative syntax tests
 </a>
 </td>
-<td class='passed-some'>
-62/99 (62.6%)
+<td class='passed-most'>
+96/99 (97.0%)
 </td>
 </tr>
 <tr>
@@ -60644,8 +60605,8 @@ ShEx negative syntax tests
 ShEx representation tests
 </a>
 </td>
-<td class='passed-some'>
-273/408 (66.9%)
+<td class='passed-all'>
+408/408 (100.0%)
 </td>
 </tr>
 <tr>
@@ -60655,7 +60616,7 @@ ShEx negative structure tests
 </a>
 </td>
 <td class='passed-some'>
-8/14 (57.1%)
+6/14 (42.9%)
 </td>
 </tr>
 </tbody>
@@ -60704,8 +60665,8 @@ Test Suite Compliance
 ShEx validation tests
 </a>
 </td>
-<td class='passed-most'>
-1061/1088 (97.5%)
+<td class='passed-all'>
+1088/1088 (100.0%)
 </td>
 </tr>
 <tr>
@@ -60714,8 +60675,8 @@ ShEx validation tests
 ShEx negative syntax tests
 </a>
 </td>
-<td class='passed-some'>
-73/99 (73.7%)
+<td class='passed-all'>
+99/99 (100.0%)
 </td>
 </tr>
 <tr>
@@ -60724,8 +60685,8 @@ ShEx negative syntax tests
 ShEx representation tests
 </a>
 </td>
-<td class='passed-some'>
-271/408 (66.4%)
+<td class='passed-all'>
+408/408 (100.0%)
 </td>
 </tr>
 <tr>
@@ -60734,8 +60695,8 @@ ShEx representation tests
 ShEx negative structure tests
 </a>
 </td>
-<td class='passed-some'>
-5/14 (35.7%)
+<td class='passed-all'>
+14/14 (100.0%)
 </td>
 </tr>
 </tbody>
