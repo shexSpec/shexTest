@@ -107,6 +107,7 @@
     - test_info = {}
     - test_refs = {}
     - subject_refs = {}
+    - passed_tests = []
     - tests['entries'].each {|m| m['title'] ||= m['rdfs:label'] || m['description']}
     - subjects.each_with_index do |subject, index|
       - subject_refs[subject['@id']] = "subj_#{index}"
@@ -306,7 +307,7 @@
               ~ CGI.escapeHTML desc.to_s
           %table.report
             - skip_subject = {}
-            - passed_tests = []
+            - passed_tests[ndx2] = []
             %tr
               %th
                 Test
@@ -327,7 +328,7 @@
                   - next if skip_subject[subject['@id']]
                   - assertion = test['assertions'].detect {|a| a['subject'] == subject['@id']}
                   - pass_fail = assertion['result']['outcome'].split(':').last.upcase.sub(/(PASS|FAIL)ED$/, '\1')
-                  - passed_tests[ndx] = (passed_tests[ndx] || 0) + (pass_fail == 'PASS' ? 1 : 0)
+                  - passed_tests[ndx2][ndx] = (passed_tests[ndx2][ndx] || 0) + (pass_fail == 'PASS' ? 1 : 0)
                   %td{class: pass_fail, property: "earl:assertions", typeof: assertion['@type']}
                     - if assertion['assertedBy']
                       %link{property: "earl:assertedBy", href: assertion['assertedBy']}
@@ -341,7 +342,7 @@
             %tr.summary
               %td
                 = "Percentage passed out of #{manifest['entries'].length} Tests"
-              - passed_tests.compact.each do |r|
+              - passed_tests[ndx2].compact.each do |r|
                 - pct = (r * 100.0) / manifest['entries'].length
                 %td{class: (pct == 100.0 ? 'passed-all' : (pct >= 95.0 ? 'passed-most' : 'passed-some'))}
                   = "#{'%.1f' % pct}%"
@@ -392,17 +393,17 @@
               %dd
                 %table.report
                   %tbody
-                    - tests['entries'].sort_by {|m| m['title'].to_s.downcase}.each do |manifest|
-                      - passed = manifest['entries'].select {|t| t['assertions'][index]['result']['outcome'] == 'earl:passed' }.length
+                    - tests['entries'].sort_by {|m| m['title'].to_s.downcase}.each_with_index do |manifest, ndx|
+                      - passed = passed_tests[ndx][index].to_i
+                      - next if passed == 0
                       - total = manifest['entries'].length
                       - pct = (passed * 100.0) / total
-                      - cls = (pct == 100.0 ? 'passed-all' : (pct >= 85.0) ? 'passed-most' : (pct == 0.0 ? 'passed-none' : 'passed-some'))
                       %tr
                         %td
                           %a{href: "##{manifest['rdfs:comment']}"}
                             ~ manifest['rdfs:comment']
-                        %td{class: cls}
-                          = pct == 0.0 ? "Untested" : "#{passed}/#{total} (#{'%.1f' % pct}%)"
+                        %td{class: (pct == 100.0 ? 'passed-all' : (pct >= 85.0 ? 'passed-most' : 'passed-some'))}
+                          = "#{passed}/#{total} (#{'%.1f' % pct}%)"
     - unless tests['assertions'].empty?
       %section.appendix#individual-test-results{rel: "xhv:related earl:assertions"}
         %h2
