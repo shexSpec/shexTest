@@ -13315,7 +13315,7 @@
   earl:result [
     a earl:TestResult;
     earl:outcome earl:passed;
-    earl:description "line 3:28 no viable alternative at input '<http://a.example/p1>[<http://a.example/v>~-"http://a.example/v1"'";
+    earl:description "line 3:28 no viable alternative at input '<http://a.example/p1>[<http://a.example/v>~-\"http://a.example/v1\"'";
     dc:date "2018-11-15T12:16:47"^^xsd:dateTime;
   ];
   earl:mode earl:automatic] .
@@ -13367,7 +13367,7 @@
   earl:result [
     a earl:TestResult;
     earl:outcome earl:passed;
-    earl:description "line 4:26 token recognition error at: '"\U0000W'";
+    earl:description "line 4:26 token recognition error at: '\"\\U0000W'";
     dc:date "2018-11-15T12:16:47"^^xsd:dateTime;
   ];
   earl:mode earl:automatic] .
@@ -13432,7 +13432,7 @@
   earl:result [
     a earl:TestResult;
     earl:outcome earl:passed;
-    earl:description "line 4:3 token recognition error at: '<http://a.example/\u00p'";
+    earl:description "line 4:3 token recognition error at: '<http://a.example/\\u00p'";
     dc:date "2018-11-15T12:16:47"^^xsd:dateTime;
   ];
   earl:mode earl:automatic] .
@@ -13471,7 +13471,7 @@
   earl:result [
     a earl:TestResult;
     earl:outcome earl:passed;
-    earl:description "line 4:26 no viable alternative at input '<http://a.example/p1>("string"'";
+    earl:description "line 4:26 no viable alternative at input '<http://a.example/p1>(\"string\"'";
     dc:date "2018-11-15T12:16:47"^^xsd:dateTime;
   ];
   earl:mode earl:automatic] .
@@ -13523,7 +13523,7 @@
   earl:result [
     a earl:TestResult;
     earl:outcome earl:passed;
-    earl:description "line 4:26 token recognition error at: ''abc")\n'";
+    earl:description "line 4:26 token recognition error at: ''abc\")\\n'";
     dc:date "2018-11-15T12:16:47"^^xsd:dateTime;
   ];
   earl:mode earl:automatic] .
@@ -13536,7 +13536,7 @@
   earl:result [
     a earl:TestResult;
     earl:outcome earl:passed;
-    earl:description "line 4:28 token recognition error at: '"abc''')\n'";
+    earl:description "line 4:28 token recognition error at: '\"abc''')\\n'";
     dc:date "2018-11-15T12:16:47"^^xsd:dateTime;
   ];
   earl:mode earl:automatic] .
@@ -13575,7 +13575,7 @@
   earl:result [
     a earl:TestResult;
     earl:outcome earl:passed;
-    earl:description "line 4:35 token recognition error at: '"@en)\n'";
+    earl:description "line 4:35 token recognition error at: '\"@en)\\n'";
     dc:date "2018-11-15T12:16:47"^^xsd:dateTime;
   ];
   earl:mode earl:automatic] .
@@ -13614,7 +13614,7 @@
   earl:result [
     a earl:TestResult;
     earl:outcome earl:passed;
-    earl:description "line 2:81 no viable alternative at input '<http://a.example/p1><http://www.w3.org/2001/XMLSchema#integer>MININCLUSIVE"V"'";
+    earl:description "line 2:81 no viable alternative at input '<http://a.example/p1><http://www.w3.org/2001/XMLSchema#integer>MININCLUSIVE\"V\"'";
     dc:date "2018-11-15T12:16:47"^^xsd:dateTime;
   ];
   earl:mode earl:automatic] .
@@ -13640,7 +13640,7 @@
   earl:result [
     a earl:TestResult;
     earl:outcome earl:passed;
-    earl:description "line 4:26 token recognition error at: '"\U0000W'";
+    earl:description "line 4:26 token recognition error at: '\"\\U0000W'";
     dc:date "2018-11-15T12:16:47"^^xsd:dateTime;
   ];
   earl:mode earl:automatic] .
@@ -13731,7 +13731,7 @@
   earl:result [
     a earl:TestResult;
     earl:outcome earl:passed;
-    earl:description "line 6:7 token recognition error at: '\'";
+    earl:description "line 6:7 token recognition error at: '\\'";
     dc:date "2018-11-15T12:16:47"^^xsd:dateTime;
   ];
   earl:mode earl:automatic] .
@@ -13744,7 +13744,7 @@
   earl:result [
     a earl:TestResult;
     earl:outcome earl:passed;
-    earl:description "line 4:26 token recognition error at: '"\uW'";
+    earl:description "line 4:26 token recognition error at: '\"\\uW'";
     dc:date "2018-11-15T12:16:47"^^xsd:dateTime;
   ];
   earl:mode earl:automatic] .
@@ -13770,7 +13770,7 @@
   earl:result [
     a earl:TestResult;
     earl:outcome earl:passed;
-    earl:description "line 4:26 no viable alternative at input '<http://a.example/p1>("value"'";
+    earl:description "line 4:26 no viable alternative at input '<http://a.example/p1>(\"value\"'";
     dc:date "2018-11-15T12:16:47"^^xsd:dateTime;
   ];
   earl:mode earl:automatic] .
@@ -13783,7 +13783,7 @@
   earl:result [
     a earl:TestResult;
     earl:outcome earl:passed;
-    earl:description "line 4:26 token recognition error at: '"abc')\n'";
+    earl:description "line 4:26 token recognition error at: '\"abc')\\n'";
     dc:date "2018-11-15T12:16:47"^^xsd:dateTime;
   ];
   earl:mode earl:automatic] .
@@ -13822,7 +13822,7 @@
   earl:result [
     a earl:TestResult;
     earl:outcome earl:passed;
-    earl:description "line 2:26 token recognition error at: ''\U0000061''";
+    earl:description "line 2:26 token recognition error at: ''\\U0000061''";
     dc:date "2018-11-15T12:16:47"^^xsd:dateTime;
   ];
   earl:mode earl:automatic] .
@@ -13835,7 +13835,7 @@
   earl:result [
     a earl:TestResult;
     earl:outcome earl:passed;
-    earl:description "line 3:0 "IssueShape"";
+    earl:description "line 3:0 \"IssueShape\"";
     dc:date "2018-11-15T12:16:47"^^xsd:dateTime;
   ];
   earl:mode earl:automatic] .
@@ -13848,7 +13848,7 @@
   earl:result [
     a earl:TestResult;
     earl:outcome earl:passed;
-    earl:description "line 2:26 token recognition error at: ''\1'";
+    earl:description "line 2:26 token recognition error at: ''\\1'";
     dc:date "2018-11-15T12:16:47"^^xsd:dateTime;
   ];
   earl:mode earl:automatic] .
@@ -13861,7 +13861,7 @@
   earl:result [
     a earl:TestResult;
     earl:outcome earl:passed;
-    earl:description "line 1:0 "vc1"";
+    earl:description "line 1:0 \"vc1\"";
     dc:date "2018-11-15T12:16:47"^^xsd:dateTime;
   ];
   earl:mode earl:automatic] .
@@ -13874,7 +13874,7 @@
   earl:result [
     a earl:TestResult;
     earl:outcome earl:passed;
-    earl:description "line 2:26 token recognition error at: ''\z'";
+    earl:description "line 2:26 token recognition error at: ''\\z'";
     dc:date "2018-11-15T12:16:47"^^xsd:dateTime;
   ];
   earl:mode earl:automatic] .
@@ -13887,7 +13887,7 @@
   earl:result [
     a earl:TestResult;
     earl:outcome earl:passed;
-    earl:description "line 4:35 token recognition error at: ''@en)\n'";
+    earl:description "line 4:35 token recognition error at: ''@en)\\n'";
     dc:date "2018-11-15T12:16:47"^^xsd:dateTime;
   ];
   earl:mode earl:automatic] .
@@ -13900,7 +13900,7 @@
   earl:result [
     a earl:TestResult;
     earl:outcome earl:passed;
-    earl:description "line 2:81 no viable alternative at input '<http://a.example/p1><http://www.w3.org/2001/XMLSchema#decimal>MININCLUSIVE"V"'";
+    earl:description "line 2:81 no viable alternative at input '<http://a.example/p1><http://www.w3.org/2001/XMLSchema#decimal>MININCLUSIVE\"V\"'";
     dc:date "2018-11-15T12:16:47"^^xsd:dateTime;
   ];
   earl:mode earl:automatic] .
@@ -13978,7 +13978,7 @@
   earl:result [
     a earl:TestResult;
     earl:outcome earl:passed;
-    earl:description "line 2:26 token recognition error at: ''STRING_LITERAL1"]\n'";
+    earl:description "line 2:26 token recognition error at: ''STRING_LITERAL1\"]\\n'";
     dc:date "2018-11-15T12:16:47"^^xsd:dateTime;
   ];
   earl:mode earl:automatic] .
@@ -13991,7 +13991,7 @@
   earl:result [
     a earl:TestResult;
     earl:outcome earl:passed;
-    earl:description "line 4:3 token recognition error at: '<http://a.example/\U000000p'";
+    earl:description "line 4:3 token recognition error at: '<http://a.example/\\U000000p'";
     dc:date "2018-11-15T12:16:47"^^xsd:dateTime;
   ];
   earl:mode earl:automatic] .
@@ -14030,7 +14030,7 @@
   earl:result [
     a earl:TestResult;
     earl:outcome earl:passed;
-    earl:description "line 2:25 token recognition error at: '/\f'";
+    earl:description "line 2:25 token recognition error at: '/\\f'";
     dc:date "2018-11-15T12:16:47"^^xsd:dateTime;
   ];
   earl:mode earl:automatic] .
@@ -14043,7 +14043,7 @@
   earl:result [
     a earl:TestResult;
     earl:outcome earl:passed;
-    earl:description "line 2:25 token recognition error at: '/STRING_LITERAL1"\n'";
+    earl:description "line 2:25 token recognition error at: '/STRING_LITERAL1\"\\n'";
     dc:date "2018-11-15T12:16:47"^^xsd:dateTime;
   ];
   earl:mode earl:automatic] .
@@ -14069,7 +14069,7 @@
   earl:result [
     a earl:TestResult;
     earl:outcome earl:passed;
-    earl:description "line 3:28 no viable alternative at input '<http://a.example/p1>["@fr"~-@fr-be'";
+    earl:description "line 3:28 no viable alternative at input '<http://a.example/p1>[\"@fr\"~-@fr-be'";
     dc:date "2018-11-15T12:16:47"^^xsd:dateTime;
   ];
   earl:mode earl:automatic] .
@@ -14134,7 +14134,7 @@
   earl:result [
     a earl:TestResult;
     earl:outcome earl:passed;
-    earl:description "line 3:28 no viable alternative at input '<http://a.example/p1>["http://a.example/v"~-<http://a.example/v1>'";
+    earl:description "line 3:28 no viable alternative at input '<http://a.example/p1>[\"http://a.example/v\"~-<http://a.example/v1>'";
     dc:date "2018-11-15T12:16:47"^^xsd:dateTime;
   ];
   earl:mode earl:automatic] .
@@ -14186,7 +14186,7 @@
   earl:result [
     a earl:TestResult;
     earl:outcome earl:passed;
-    earl:description "line 4:3 token recognition error at: '<http://a.example/p1\n'";
+    earl:description "line 4:3 token recognition error at: '<http://a.example/p1\\n'";
     dc:date "2018-11-15T12:16:47"^^xsd:dateTime;
   ];
   earl:mode earl:automatic] .
@@ -14199,7 +14199,7 @@
   earl:result [
     a earl:TestResult;
     earl:outcome earl:passed;
-    earl:description "line 3:32 no viable alternative at input '(<http://a.example/p1>.);<http://a.example/annot1>"1"'";
+    earl:description "line 3:32 no viable alternative at input '(<http://a.example/p1>.);<http://a.example/annot1>\"1\"'";
     dc:date "2018-11-15T12:16:47"^^xsd:dateTime;
   ];
   earl:mode earl:automatic] .
@@ -14225,7 +14225,7 @@
   earl:result [
     a earl:TestResult;
     earl:outcome earl:passed;
-    earl:description "line 2:25 token recognition error at: '/\1'";
+    earl:description "line 2:25 token recognition error at: '/\\1'";
     dc:date "2018-11-15T12:16:47"^^xsd:dateTime;
   ];
   earl:mode earl:automatic] .
@@ -14264,7 +14264,7 @@
   earl:result [
     a earl:TestResult;
     earl:outcome earl:passed;
-    earl:description "line 2:26 token recognition error at: ''\a'";
+    earl:description "line 2:26 token recognition error at: ''\\a'";
     dc:date "2018-11-15T12:16:47"^^xsd:dateTime;
   ];
   earl:mode earl:automatic] .
@@ -14277,7 +14277,7 @@
   earl:result [
     a earl:TestResult;
     earl:outcome earl:passed;
-    earl:description "line 4:28 token recognition error at: '"abc\n'";
+    earl:description "line 4:28 token recognition error at: '\"abc\\n'";
     dc:date "2018-11-15T12:16:47"^^xsd:dateTime;
   ];
   earl:mode earl:automatic] .
@@ -14303,7 +14303,7 @@
   earl:result [
     a earl:TestResult;
     earl:outcome earl:passed;
-    earl:description "line 3:28 no viable alternative at input '<http://a.example/p1>[@fr~-"@fr-be"'";
+    earl:description "line 3:28 no viable alternative at input '<http://a.example/p1>[@fr~-\"@fr-be\"'";
     dc:date "2018-11-15T12:16:47"^^xsd:dateTime;
   ];
   earl:mode earl:automatic] .
@@ -14316,7 +14316,7 @@
   earl:result [
     a earl:TestResult;
     earl:outcome earl:passed;
-    earl:description "line 4:3 token recognition error at: '<http://a.example/p1\/'";
+    earl:description "line 4:3 token recognition error at: '<http://a.example/p1\\/'";
     dc:date "2018-11-15T12:16:47"^^xsd:dateTime;
   ];
   earl:mode earl:automatic] .
@@ -14329,7 +14329,7 @@
   earl:result [
     a earl:TestResult;
     earl:outcome earl:passed;
-    earl:description "line 2:26 token recognition error at: ''\u061''";
+    earl:description "line 2:26 token recognition error at: ''\\u061''";
     dc:date "2018-11-15T12:16:47"^^xsd:dateTime;
   ];
   earl:mode earl:automatic] .
@@ -14342,7 +14342,7 @@
   earl:result [
     a earl:TestResult;
     earl:outcome earl:passed;
-    earl:description "line 2:26 token recognition error at: ''\U0000061''";
+    earl:description "line 2:26 token recognition error at: ''\\U0000061''";
     dc:date "2018-11-15T12:16:47"^^xsd:dateTime;
   ];
   earl:mode earl:automatic] .
@@ -14368,7 +14368,7 @@
   earl:result [
     a earl:TestResult;
     earl:outcome earl:passed;
-    earl:description "line 4:26 token recognition error at: '"a\z'";
+    earl:description "line 4:26 token recognition error at: '\"a\\z'";
     dc:date "2018-11-15T12:16:47"^^xsd:dateTime;
   ];
   earl:mode earl:automatic] .
@@ -14381,7 +14381,7 @@
   earl:result [
     a earl:TestResult;
     earl:outcome earl:passed;
-    earl:description "line 4:3 "p1"";
+    earl:description "line 4:3 \"p1\"";
     dc:date "2018-11-15T12:16:47"^^xsd:dateTime;
   ];
   earl:mode earl:automatic] .
@@ -14407,7 +14407,7 @@
   earl:result [
     a earl:TestResult;
     earl:outcome earl:passed;
-    earl:description "line 2:26 token recognition error at: ''\u061''";
+    earl:description "line 2:26 token recognition error at: ''\\u061''";
     dc:date "2018-11-15T12:16:47"^^xsd:dateTime;
   ];
   earl:mode earl:automatic] .
@@ -14433,7 +14433,7 @@
   earl:result [
     a earl:TestResult;
     earl:outcome earl:passed;
-    earl:description "line 2:46 no viable alternative at input '<http://a.example/p1>LITERALTOTALDIGITS"5"'";
+    earl:description "line 2:46 no viable alternative at input '<http://a.example/p1>LITERALTOTALDIGITS\"5\"'";
     dc:date "2018-11-15T12:16:47"^^xsd:dateTime;
   ];
   earl:mode earl:automatic] .
@@ -14459,7 +14459,7 @@
   earl:result [
     a earl:TestResult;
     earl:outcome earl:passed;
-    earl:description "line 2:25 token recognition error at: '/\b'";
+    earl:description "line 2:25 token recognition error at: '/\\b'";
     dc:date "2018-11-15T12:16:47"^^xsd:dateTime;
   ];
   earl:mode earl:automatic] .
@@ -14485,7 +14485,7 @@
   earl:result [
     a earl:TestResult;
     earl:outcome earl:passed;
-    earl:description "line 2:79 no viable alternative at input '<http://a.example/p1><http://www.w3.org/2001/XMLSchema#float>MININCLUSIVE"V"'";
+    earl:description "line 2:79 no viable alternative at input '<http://a.example/p1><http://www.w3.org/2001/XMLSchema#float>MININCLUSIVE\"V\"'";
     dc:date "2018-11-15T12:16:47"^^xsd:dateTime;
   ];
   earl:mode earl:automatic] .
@@ -14511,7 +14511,7 @@
   earl:result [
     a earl:TestResult;
     earl:outcome earl:passed;
-    earl:description "line 2:49 no viable alternative at input '<http://a.example/p1>LITERALFRACTIONDIGITS"5"'";
+    earl:description "line 2:49 no viable alternative at input '<http://a.example/p1>LITERALFRACTIONDIGITS\"5\"'";
     dc:date "2018-11-15T12:16:47"^^xsd:dateTime;
   ];
   earl:mode earl:automatic] .
@@ -14563,7 +14563,7 @@
   earl:result [
     a earl:TestResult;
     earl:outcome earl:passed;
-    earl:description "line 2:80 no viable alternative at input '<http://a.example/p1><http://www.w3.org/2001/XMLSchema#double>MININCLUSIVE"V"'";
+    earl:description "line 2:80 no viable alternative at input '<http://a.example/p1><http://www.w3.org/2001/XMLSchema#double>MININCLUSIVE\"V\"'";
     dc:date "2018-11-15T12:16:47"^^xsd:dateTime;
   ];
   earl:mode earl:automatic] .
@@ -19489,13 +19489,13 @@
   earl:mode earl:automatic] .
 
 
-://raw.githubusercontent.com/shexSpec/shexTest/master/negativeStructure/manifest#1IRI_with_UCHAR.1dot>;
-  earl:result [
-    a earl:TestResult;
-    earl:outcome earl:failed;
-    earl:description "Illegal character in path at index 18: http://a.example/p\u0031";
-    dc:date "2018-11-15T12:16:47"^^xsd:dateTime;
-  ];
-  earl:mode earl:automatic] .
+# ://raw.githubusercontent.com/shexSpec/shexTest/master/negativeStructure/manifest#1IRI_with_UCHAR.1dot>;
+#   earl:result [
+#     a earl:TestResult;
+#     earl:outcome earl:failed;
+#     earl:description "Illegal character in path at index 18: http://a.example/p\\u0031";
+#     dc:date "2018-11-15T12:16:47"^^xsd:dateTime;
+#   ];
+#   earl:mode earl:automatic] .
 
 
