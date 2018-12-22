@@ -433,6 +433,9 @@
         <#1valExprRefbnode-IV1>
         <#1valExprRef-vc1>
         <#1valExprRef-IV1>
+
+        # inheritance
+        <#Inherit-sAB>
     ) .
 
 <#0> a sht:RepresentationTest ;
@@ -3858,6 +3861,19 @@
     .
 
 # } imports
+
+# inheritance {
+
+<#Inherit-sAB> a sht:RepresentationTest ;
+    mf:name "Inherit-sAB" ;
+    mf:status mf:Proposed ;
+    sht:trait sht:Import ;
+    sx:shex <Inherit-sAB.shex> ;
+    sx:json <Inherit-sAB.json> ;
+    sx:ttl <Inherit-sAB.ttl> ;
+    .
+
+# } inheritance
 
 # regexp template:
 

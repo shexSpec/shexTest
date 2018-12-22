@@ -3820,6 +3820,18 @@
           "shex": "1valExprRef-IV1.shex",
           "json": "1valExprRef-IV1.json",
           "ttl": "1valExprRef-IV1.ttl"
+        },
+        {
+          "@id": "#Inherit-sAB",
+          "@type": "sht:RepresentationTest",
+          "name": "Inherit-sAB",
+          "trait": [
+            "Import"
+          ],
+          "status": "mf:Proposed",
+          "shex": "Inherit-sAB.shex",
+          "json": "Inherit-sAB.json",
+          "ttl": "Inherit-sAB.ttl"
         }
       ]
     }
