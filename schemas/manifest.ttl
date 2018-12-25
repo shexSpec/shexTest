@@ -339,6 +339,7 @@
         <#1focusIRI_dot>
         <#1focusBNODE_dot>
         <#1focusnonLiteral-dot>
+        <#focusNOTRefOR1dot>
         <#1focusLength-dot>
         <#1focusMinLength-dot>
         <#1focusMaxLength-dot>
@@ -350,6 +351,7 @@
         <#NOT1dotOR2dot>
         <#NOT1dotOR2dotX3>
         <#NOT1dotOR2dotX3AND1>
+        <#1NOTRefOR1dot>
         <#shapeExtern>
         <#shapeExternRef>
 #        <#0Inherit1>
@@ -3282,6 +3284,14 @@
     sx:ttl <focusvsORdatatype.ttl> ;
     .
 
+<#focusNOTRefOR1dot> a sht:RepresentationTest ;
+    mf:name "focusNOTRefOR1dot" ;
+    mf:status mf:Proposed ;
+    sx:shex <focusNOTRefOR1dot.shex> ;
+    sx:json <focusNOTRefOR1dot.json> ;
+    sx:ttl <focusNOTRefOR1dot.ttl> ;
+    .
+
 <#1focusLength-dot> a sht:RepresentationTest ;
     mf:name "1focusLength-dot" ;
     mf:status mf:Approved ;
@@ -3368,6 +3378,14 @@
     sx:shex <NOT1dotOR2dotX3AND1.shex> ;
     sx:json <NOT1dotOR2dotX3AND1.json> ;
     sx:ttl <NOT1dotOR2dotX3AND1.ttl> ;
+    .
+
+<#1NOTRefOR1dot> a sht:RepresentationTest ;
+    mf:name "1NOTRefOR1dot" ;
+    mf:status mf:Proposed ;
+    sx:shex <1NOTRefOR1dot.shex> ;
+    sx:json <1NOTRefOR1dot.json> ;
+    sx:ttl <1NOTRefOR1dot.ttl> ;
     .
 
 <#shapeExtern> a sht:RepresentationTest ;

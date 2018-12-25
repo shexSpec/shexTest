@@ -1142,6 +1142,9 @@
         <#1focusvsORdatatype_fail-val>
         <#1focusvsORdatatype_pass-dt>
         <#1focusvsORdatatype_fail-dt>
+        <#focusNOTRefOR1dot_pass-inOR>
+        <#focusNOTRefOR1dot_fail-inNOT>
+        <#focusNOTRefOR1dot_pass-other>
 
 ### NOT focus
 
@@ -1203,6 +1206,9 @@
         <#NOT1dotOR2dotX3AND1_fail-NoShape1>
         <#NOT1dotOR2dotX3AND1_pass-Shape2>
         <#NOT1dotOR2dotX3AND1_fail-Shape2>
+        <#1NOTRefOR1dot_pass-inOR>
+        <#1NOTRefOR1dot_fail-inNOT>
+        <#1NOTRefOR1dot_pass-other>
 
 ## shape extern
 
@@ -14909,6 +14915,45 @@
     ] ;
     .
 
+<#focusNOTRefOR1dot_pass-inOR> a sht:ValidationTest ;
+    mf:name "focusNOTRefOR1dot_pass-inOR" ;
+    sht:trait sht:FocusConstraint ;
+    rdfs:comment "<S1> NOT @<S2> OR { <p2> . } <S2> { <p3> . } in { <n1> <p2> <n2> }" ;
+    mf:status mf:Proposed ;
+    mf:action [
+      sht:schema <../schemas/focusNOTRefOR1dot.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip2_In2.ttl> ;
+      sht:focus <http://a.example/n1>
+    ]
+    .
+
+<#focusNOTRefOR1dot_fail-inNOT> a sht:ValidationFailure ;
+    mf:name "focusNOTRefOR1dot_fail-inNOT" ;
+    sht:trait sht:FocusConstraint ;
+    rdfs:comment "<S1> NOT @<S2> OR { <p2> . } <S2> { <p3> . } in { <n1> <p3> <n2> }" ;
+    mf:status mf:Proposed ;
+    mf:action [
+      sht:schema <../schemas/focusNOTRefOR1dot.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip3_In2.ttl> ;
+      sht:focus <http://a.example/n1>
+    ]
+    .
+
+<#focusNOTRefOR1dot_pass-other> a sht:ValidationTest ;
+    mf:name "focusNOTRefOR1dot_pass-other" ;
+    sht:trait sht:FocusConstraint ;
+    rdfs:comment "<S1> NOT @<S2> OR { <p2> . } <S2> { <p3> . } in { <n1> <p4> <n2> }" ;
+    mf:status mf:Proposed ;
+    mf:action [
+      sht:schema <../schemas/focusNOTRefOR1dot.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip4_In2.ttl> ;
+      sht:focus <http://a.example/n1>
+    ]
+    .
+
 ###  } OR focus
 ###  focusFacet {
 ####    lengths {
@@ -15528,6 +15573,42 @@
       sht:schema <../schemas/NOT1dotOR2dotX3AND1.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <In1_Ip1_In2.ttl> ;
+      sht:focus <http://a.example/n1>
+    ]
+    .
+
+<#1NOTRefOR1dot_pass-inOR> a sht:ValidationTest ;
+    mf:name "1NOTRefOR1dot_pass-inOR" ;
+    rdfs:comment "<S1> { <p1> NOT @<S2> OR { <p2> . } } <S2> { <p3> . } in { <n1> <p1> <n2> . <n2> <p2> \"X\" }" ;
+    mf:status mf:Proposed ;
+    mf:action [
+      sht:schema <../schemas/1NOTRefOR1dot.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip1_In2.In2_Ip2_LX.ttl> ;
+      sht:focus <http://a.example/n1>
+    ]
+    .
+
+<#1NOTRefOR1dot_fail-inNOT> a sht:ValidationFailure ;
+    mf:name "1NOTRefOR1dot_fail-inNOT" ;
+    rdfs:comment "<S1> { <p1> NOT @<S2> OR { <p2> . } } <S2> { <p3> . } in { <n1> <p1> <n2> . <n2> <p3> \"X\" }" ;
+    mf:status mf:Proposed ;
+    mf:action [
+      sht:schema <../schemas/1NOTRefOR1dot.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip1_In2.In2_Ip3_LX.ttl> ;
+      sht:focus <http://a.example/n1>
+    ]
+    .
+
+<#1NOTRefOR1dot_pass-other> a sht:ValidationTest ;
+    mf:name "1NOTRefOR1dot_pass-other" ;
+    rdfs:comment "<S1> { <p1> NOT @<S2> OR { <p2> . } } <S2> { <p3> . } in { <n1> <p1> <n2> . <n2> <p4> \"X\" }" ;
+    mf:status mf:Proposed ;
+    mf:action [
+      sht:schema <../schemas/1NOTRefOR1dot.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip1_In2.In2_Ip4_LX.ttl> ;
       sht:focus <http://a.example/n1>
     ]
     .
