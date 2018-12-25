@@ -2982,6 +2982,15 @@
           "ttl": "1focusnonLiteral-dot.ttl"
         },
         {
+          "@id": "#focusNOTRefOR1dot",
+          "@type": "sht:RepresentationTest",
+          "name": "focusNOTRefOR1dot",
+          "status": "mf:Proposed",
+          "shex": "focusNOTRefOR1dot.shex",
+          "json": "focusNOTRefOR1dot.json",
+          "ttl": "focusNOTRefOR1dot.ttl"
+        },
+        {
           "@id": "#1focusLength-dot",
           "@type": "sht:RepresentationTest",
           "name": "1focusLength-dot",
@@ -3079,6 +3088,15 @@
           "shex": "NOT1dotOR2dotX3AND1.shex",
           "json": "NOT1dotOR2dotX3AND1.json",
           "ttl": "NOT1dotOR2dotX3AND1.ttl"
+        },
+        {
+          "@id": "#1NOTRefOR1dot",
+          "@type": "sht:RepresentationTest",
+          "name": "1NOTRefOR1dot",
+          "status": "mf:Proposed",
+          "shex": "1NOTRefOR1dot.shex",
+          "json": "1NOTRefOR1dot.json",
+          "ttl": "1NOTRefOR1dot.ttl"
         },
         {
           "@id": "#shapeExtern",

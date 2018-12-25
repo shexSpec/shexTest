@@ -17397,6 +17397,57 @@
           "status": "mf:Approved"
         },
         {
+          "@id": "#focusNOTRefOR1dot_pass-inOR",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/focusNOTRefOR1dot.shex",
+            "shape": "http://a.example/S1",
+            "data": "In1_Ip2_In2.ttl",
+            "focus": "http://a.example/n1"
+          },
+          "extensionResults": [],
+          "name": "focusNOTRefOR1dot_pass-inOR",
+          "trait": [
+            "FocusConstraint"
+          ],
+          "comment": "<S1> NOT @<S2> OR { <p2> . } <S2> { <p3> . } in { <n1> <p2> <n2> }",
+          "status": "mf:Proposed"
+        },
+        {
+          "@id": "#focusNOTRefOR1dot_fail-inNOT",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/focusNOTRefOR1dot.shex",
+            "shape": "http://a.example/S1",
+            "data": "In1_Ip3_In2.ttl",
+            "focus": "http://a.example/n1"
+          },
+          "extensionResults": [],
+          "name": "focusNOTRefOR1dot_fail-inNOT",
+          "trait": [
+            "FocusConstraint"
+          ],
+          "comment": "<S1> NOT @<S2> OR { <p2> . } <S2> { <p3> . } in { <n1> <p3> <n2> }",
+          "status": "mf:Proposed"
+        },
+        {
+          "@id": "#focusNOTRefOR1dot_pass-other",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/focusNOTRefOR1dot.shex",
+            "shape": "http://a.example/S1",
+            "data": "In1_Ip4_In2.ttl",
+            "focus": "http://a.example/n1"
+          },
+          "extensionResults": [],
+          "name": "focusNOTRefOR1dot_pass-other",
+          "trait": [
+            "FocusConstraint"
+          ],
+          "comment": "<S1> NOT @<S2> OR { <p2> . } <S2> { <p3> . } in { <n1> <p4> <n2> }",
+          "status": "mf:Proposed"
+        },
+        {
           "@id": "#1focusLength-dot_fail-iri-short",
           "@type": "sht:ValidationFailure",
           "action": {
@@ -18261,6 +18312,48 @@
           ],
           "comment": "<S1> ((NOT { <p1> . } OR { <p1> .; <p2> . }) AND (NOT { <p3> . } OR { <p3> .; <p4> . }) AND (NOT { <p5> . } OR { <p5> .; <p6> . }) AND ({ <p1> . } OR { <p3> . } OR { <p5> . } ) ) on { <n1>  <p1> <n2> }",
           "status": "mf:Approved"
+        },
+        {
+          "@id": "#1NOTRefOR1dot_pass-inOR",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1NOTRefOR1dot.shex",
+            "shape": "http://a.example/S1",
+            "data": "In1_Ip1_In2.In2_Ip2_LX.ttl",
+            "focus": "http://a.example/n1"
+          },
+          "extensionResults": [],
+          "name": "1NOTRefOR1dot_pass-inOR",
+          "comment": "<S1> NOT @<S2> OR { <p2> . } <S2> { <p3> . } in { <n1> <p1> <n2> . <n2> <p2> \"X\" }",
+          "status": "mf:Proposed"
+        },
+        {
+          "@id": "#1NOTRefOR1dot_fail-inNOT",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1NOTRefOR1dot.shex",
+            "shape": "http://a.example/S1",
+            "data": "In1_Ip1_In2.In2_Ip3_LX.ttl",
+            "focus": "http://a.example/n1"
+          },
+          "extensionResults": [],
+          "name": "1NOTRefOR1dot_fail-inNOT",
+          "comment": "<S1> NOT @<S2> OR { <p2> . } <S2> { <p3> . } in { <n1> <p1> <n2> . <n2> <p3> \"X\" }",
+          "status": "mf:Proposed"
+        },
+        {
+          "@id": "#1NOTRefOR1dot_pass-other",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1NOTRefOR1dot.shex",
+            "shape": "http://a.example/S1",
+            "data": "In1_Ip1_In2.In2_Ip4_LX.ttl",
+            "focus": "http://a.example/n1"
+          },
+          "extensionResults": [],
+          "name": "1NOTRefOR1dot_pass-other",
+          "comment": "<S1> NOT @<S2> OR { <p2> . } <S2> { <p3> . } in { <n1> <p1> <n2> . <n2> <p4> \"X\" }",
+          "status": "mf:Proposed"
         },
         {
           "@id": "#shapeExtern_pass",
