@@ -4,14 +4,14 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 
 <IssueShape> {
-  ex:reportedBy @<PersonShape>,
+  ex:reportedBy @<PersonShape>;
   ex:reproducedBy @<EmployeeShape>?
 }
 
 ABSTRACT <PersonShape> {
   (  foaf:name xsd:string
-   | foaf:givenName xsd:string+,
-     foaf:familyName xsd:string),
+   | foaf:givenName xsd:string+;
+     foaf:familyName xsd:string);
   foaf:mbox IRI
 }
 
