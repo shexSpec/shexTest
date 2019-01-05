@@ -19105,20 +19105,20 @@
           "result": "recursion_example_results.json"
         },
         {
-          "@id": "#inheritance-abstract-multi-empty_pass",
+          "@id": "#extends-abstract-multi-empty_pass",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/inheritance-abstract-multi-empty.shex",
+            "schema": "../schemas/extends-abstract-multi-empty.shex",
             "shape": "IssueShape",
-            "data": "inheritance-abstract-multi-empty_pass.ttl",
+            "data": "extends-abstract-multi-empty_pass.ttl",
             "focus": "Issue1"
           },
           "extensionResults": [],
-          "name": "inheritance-abstract-multi-empty_pass",
+          "name": "extends-abstract-multi-empty_pass",
           "trait": [
-            "MultiInheritance",
+            "MultiExtends",
             "Abstract",
-            "Inheritance"
+            "Extends"
           ],
           "comment": "@@@",
           "status": "mf:proposed"

@@ -1273,8 +1273,8 @@
         <#dependent_shape>
         <#recursion_example>
 
-## Inheritance
-        <#inheritance-abstract-multi-empty_pass>
+## Extends
+        <#extends-abstract-multi-empty_pass>
 
     ) .
 
@@ -16187,22 +16187,22 @@
     .
 
 ## } ShapeMaps
-## Inheritance {
+## Extends {
 
-<#inheritance-abstract-multi-empty_pass> a sht:ValidationTest ;
-    mf:name "inheritance-abstract-multi-empty_pass" ;
-    sht:trait sht:Inheritance , sht:Abstract , sht:MultiInheritance ;
+<#extends-abstract-multi-empty_pass> a sht:ValidationTest ;
+    mf:name "extends-abstract-multi-empty_pass" ;
+    sht:trait sht:Extends , sht:Abstract , sht:MultiExtends ;
     rdfs:comment "@@@" ;
     mf:status mf:proposed ;
     mf:action [
-      sht:schema <../schemas/inheritance-abstract-multi-empty.shex> ;
+      sht:schema <../schemas/extends-abstract-multi-empty.shex> ;
       sht:shape <IssueShape> ;
-      sht:data <inheritance-abstract-multi-empty_pass.ttl> ;
+      sht:data <extends-abstract-multi-empty_pass.ttl> ;
       sht:focus <Issue1>
     ] ;
     .
 
-## } Inheritance
+## } Extends
 # deferred {
 ## error reporting {
 <#1dot_fail-empty-err> a sht:ValidationFailure ;

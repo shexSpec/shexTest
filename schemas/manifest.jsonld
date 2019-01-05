@@ -3840,16 +3840,16 @@
           "ttl": "1valExprRef-IV1.ttl"
         },
         {
-          "@id": "#Inherit-sAB",
+          "@id": "#Extends-sAB",
           "@type": "sht:RepresentationTest",
-          "name": "Inherit-sAB",
+          "name": "Extends-sAB",
           "trait": [
             "Import"
           ],
           "status": "mf:Proposed",
-          "shex": "Inherit-sAB.shex",
-          "json": "Inherit-sAB.json",
-          "ttl": "Inherit-sAB.ttl"
+          "shex": "Extends-sAB.shex",
+          "json": "Extends-sAB.json",
+          "ttl": "Extends-sAB.ttl"
         }
       ]
     }

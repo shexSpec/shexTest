@@ -436,8 +436,8 @@
         <#1valExprRef-vc1>
         <#1valExprRef-IV1>
 
-        # inheritance
-        <#Inherit-sAB>
+        # extends
+        <#Extends-sAB>
     ) .
 
 <#0> a sht:RepresentationTest ;
@@ -3880,18 +3880,18 @@
 
 # } imports
 
-# inheritance {
+# extends {
 
-<#Inherit-sAB> a sht:RepresentationTest ;
-    mf:name "Inherit-sAB" ;
+<#Extends-sAB> a sht:RepresentationTest ;
+    mf:name "Extends-sAB" ;
     mf:status mf:Proposed ;
     sht:trait sht:Import ;
-    sx:shex <Inherit-sAB.shex> ;
-    sx:json <Inherit-sAB.json> ;
-    sx:ttl <Inherit-sAB.ttl> ;
+    sx:shex <Extends-sAB.shex> ;
+    sx:json <Extends-sAB.json> ;
+    sx:ttl <Extends-sAB.ttl> ;
     .
 
-# } inheritance
+# } extends
 
 # regexp template:
 
