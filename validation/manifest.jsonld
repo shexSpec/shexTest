@@ -18324,7 +18324,7 @@
           },
           "extensionResults": [],
           "name": "1NOTRefOR1dot_pass-inOR",
-          "comment": "<S1> NOT @<S2> OR { <p2> . } <S2> { <p3> . } in { <n1> <p1> <n2> . <n2> <p2> \"X\" }",
+          "comment": "<S1> { <p1> NOT @<S2> OR { <p2> . } } <S2> { <p3> . } in { <n1> <p1> <n2> . <n2> <p2> \"X\" }",
           "status": "mf:Proposed"
         },
         {
@@ -18338,7 +18338,7 @@
           },
           "extensionResults": [],
           "name": "1NOTRefOR1dot_fail-inNOT",
-          "comment": "<S1> NOT @<S2> OR { <p2> . } <S2> { <p3> . } in { <n1> <p1> <n2> . <n2> <p3> \"X\" }",
+          "comment": "<S1> { <p1> NOT @<S2> OR { <p2> . } } <S2> { <p3> . } in { <n1> <p1> <n2> . <n2> <p3> \"X\" }",
           "status": "mf:Proposed"
         },
         {
@@ -18352,7 +18352,7 @@
           },
           "extensionResults": [],
           "name": "1NOTRefOR1dot_pass-other",
-          "comment": "<S1> NOT @<S2> OR { <p2> . } <S2> { <p3> . } in { <n1> <p1> <n2> . <n2> <p4> \"X\" }",
+          "comment": "<S1> { <p1> NOT @<S2> OR { <p2> . } } <S2> { <p3> . } in { <n1> <p1> <n2> . <n2> <p4> \"X\" }",
           "status": "mf:Proposed"
         },
         {
