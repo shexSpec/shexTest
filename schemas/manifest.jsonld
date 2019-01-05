@@ -3117,60 +3117,6 @@
           "ttl": "shapeExternRef.ttl"
         },
         {
-          "@id": "#0Extends1",
-          "@type": "sht:RepresentationTest",
-          "name": "0Extends1",
-          "status": "mf:proposed",
-          "shex": "0Extends1.shex",
-          "json": "0Extends1.json",
-          "ttl": "0Extends1.ttl"
-        },
-        {
-          "@id": "#1dotExtends1",
-          "@type": "sht:RepresentationTest",
-          "name": "1dotExtends1",
-          "status": "mf:proposed",
-          "shex": "1dotExtends1.shex",
-          "json": "1dotExtends1.json",
-          "ttl": "1dotExtends1.ttl"
-        },
-        {
-          "@id": "#1dot3Extends",
-          "@type": "sht:RepresentationTest",
-          "name": "1dot3Extends",
-          "status": "mf:proposed",
-          "shex": "1dot3Extends.shex",
-          "json": "1dot3Extends.json",
-          "ttl": "1dot3Extends.ttl"
-        },
-        {
-          "@id": "#1dot3ExtendsLN",
-          "@type": "sht:RepresentationTest",
-          "name": "1dot3ExtendsLN",
-          "status": "mf:proposed",
-          "shex": "1dot3ExtendsLN.shex",
-          "json": "1dot3Extends.json",
-          "ttl": "1dot3Extends.ttl"
-        },
-        {
-          "@id": "#1dotAbstractShapeCode1",
-          "@type": "sht:RepresentationTest",
-          "name": "1dotAbstractShapeCode1",
-          "status": "mf:proposed",
-          "shex": "1dotAbstractShapeCode1.shex",
-          "json": "1dotAbstractShapeCode1.json",
-          "ttl": "1dotAbstractShapeCode1.ttl"
-        },
-        {
-          "@id": "#1dotAbstract",
-          "@type": "sht:RepresentationTest",
-          "name": "1dotAbstract",
-          "status": "mf:proposed",
-          "shex": "1dotAbstract.shex",
-          "json": "1dotAbstract.json",
-          "ttl": "1dotAbstract.ttl"
-        },
-        {
           "@id": "#focusvsORdatatype",
           "@type": "sht:RepresentationTest",
           "name": "focusvsORdatatype",
@@ -3840,6 +3786,42 @@
           "ttl": "1valExprRef-IV1.ttl"
         },
         {
+          "@id": "#0Extends1",
+          "@type": "sht:RepresentationTest",
+          "name": "0Extends1",
+          "status": "mf:proposed",
+          "shex": "0Extends1.shex",
+          "json": "0Extends1.json",
+          "ttl": "0Extends1.ttl"
+        },
+        {
+          "@id": "#1dotExtends1",
+          "@type": "sht:RepresentationTest",
+          "name": "1dotExtends1",
+          "status": "mf:proposed",
+          "shex": "1dotExtends1.shex",
+          "json": "1dotExtends1.json",
+          "ttl": "1dotExtends1.ttl"
+        },
+        {
+          "@id": "#1dot3Extends",
+          "@type": "sht:RepresentationTest",
+          "name": "1dot3Extends",
+          "status": "mf:proposed",
+          "shex": "1dot3Extends.shex",
+          "json": "1dot3Extends.json",
+          "ttl": "1dot3Extends.ttl"
+        },
+        {
+          "@id": "#1dot3ExtendsLN",
+          "@type": "sht:RepresentationTest",
+          "name": "1dot3ExtendsLN",
+          "status": "mf:proposed",
+          "shex": "1dot3ExtendsLN.shex",
+          "json": "1dot3Extends.json",
+          "ttl": "1dot3Extends.ttl"
+        },
+        {
           "@id": "#Extends-sAB",
           "@type": "sht:RepresentationTest",
           "name": "Extends-sAB",
@@ -3850,6 +3832,24 @@
           "shex": "Extends-sAB.shex",
           "json": "Extends-sAB.json",
           "ttl": "Extends-sAB.ttl"
+        },
+        {
+          "@id": "#1dotAbstractShapeCode1",
+          "@type": "sht:RepresentationTest",
+          "name": "1dotAbstractShapeCode1",
+          "status": "mf:proposed",
+          "shex": "1dotAbstractShapeCode1.shex",
+          "json": "1dotAbstractShapeCode1.json",
+          "ttl": "1dotAbstractShapeCode1.ttl"
+        },
+        {
+          "@id": "#1dotAbstract",
+          "@type": "sht:RepresentationTest",
+          "name": "1dotAbstract",
+          "status": "mf:proposed",
+          "shex": "1dotAbstract.shex",
+          "json": "1dotAbstract.json",
+          "ttl": "1dotAbstract.ttl"
         }
       ]
     }

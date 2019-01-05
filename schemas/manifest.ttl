@@ -354,12 +354,6 @@
         <#1NOTRefOR1dot>
         <#shapeExtern>
         <#shapeExternRef>
-        <#0Extends1>
-        <#1dotExtends1>
-        <#1dot3Extends>
-        <#1dot3ExtendsLN>
-        <#1dotAbstractShapeCode1>
-        <#1dotAbstract>
 #         <#1dotUnlabeledCode1>
         <#focusvsORdatatype>
         <#focusvsANDIRI>
@@ -437,7 +431,15 @@
         <#1valExprRef-IV1>
 
         # extends
+        <#0Extends1>
+        <#1dotExtends1>
+        <#1dot3Extends>
+        <#1dot3ExtendsLN>
         <#Extends-sAB>
+
+        # abstract
+        <#1dotAbstractShapeCode1>
+        <#1dotAbstract>
     ) .
 
 <#0> a sht:RepresentationTest ;
@@ -3406,55 +3408,6 @@
     sx:ttl <shapeExternRef.ttl> ;
     .
 
-<#0Extends1> a sht:RepresentationTest ;
-    mf:name "0Extends1" ;
-    mf:status mf:proposed ;
-    sx:shex <0Extends1.shex> ;
-    sx:json <0Extends1.json> ;
-    sx:ttl <0Extends1.ttl> ;
-    .
-
-<#1dotExtends1> a sht:RepresentationTest ;
-    mf:name "1dotExtends1" ;
-    mf:status mf:proposed ;
-    sx:shex <1dotExtends1.shex> ;
-    sx:json <1dotExtends1.json> ;
-    sx:ttl <1dotExtends1.ttl> ;
-    .
-
-<#1dot3Extends> a sht:RepresentationTest ;
-    mf:name "1dot3Extends" ;
-    mf:status mf:proposed ;
-    sx:shex <1dot3Extends.shex> ;
-    sx:json <1dot3Extends.json> ;
-    sx:ttl <1dot3Extends.ttl> ;
-    .
-
-<#1dot3ExtendsLN> a sht:RepresentationTest ;
-    mf:name "1dot3ExtendsLN" ;
-    mf:status mf:proposed ;
-    mf:sameSemanticsAs <#1dot3Extends> ;
-    sx:shex <1dot3ExtendsLN.shex> ;
-    sx:json <1dot3Extends.json> ;
-    sx:ttl <1dot3Extends.ttl> ;
-    .
-
-<#1dotAbstractShapeCode1> a sht:RepresentationTest ;
-    mf:name "1dotAbstractShapeCode1" ;
-    mf:status mf:proposed ;
-    sx:shex <1dotAbstractShapeCode1.shex> ;
-    sx:json <1dotAbstractShapeCode1.json> ;
-    sx:ttl <1dotAbstractShapeCode1.ttl> ;
-    .
-
-<#1dotAbstract> a sht:RepresentationTest ;
-    mf:name "1dotAbstract" ;
-    mf:status mf:proposed ;
-    sx:shex <1dotAbstract.shex> ;
-    sx:json <1dotAbstract.json> ;
-    sx:ttl <1dotAbstract.ttl> ;
-    .
-
 # <#1dotUnlabeledCode1> a sht:RepresentationTest ;
 #     mf:name "1dotUnlabeledCode1" ;
 #     mf:status mf:Proposed ;
@@ -3882,6 +3835,39 @@
 
 # extends {
 
+<#0Extends1> a sht:RepresentationTest ;
+    mf:name "0Extends1" ;
+    mf:status mf:proposed ;
+    sx:shex <0Extends1.shex> ;
+    sx:json <0Extends1.json> ;
+    sx:ttl <0Extends1.ttl> ;
+    .
+
+<#1dotExtends1> a sht:RepresentationTest ;
+    mf:name "1dotExtends1" ;
+    mf:status mf:proposed ;
+    sx:shex <1dotExtends1.shex> ;
+    sx:json <1dotExtends1.json> ;
+    sx:ttl <1dotExtends1.ttl> ;
+    .
+
+<#1dot3Extends> a sht:RepresentationTest ;
+    mf:name "1dot3Extends" ;
+    mf:status mf:proposed ;
+    sx:shex <1dot3Extends.shex> ;
+    sx:json <1dot3Extends.json> ;
+    sx:ttl <1dot3Extends.ttl> ;
+    .
+
+<#1dot3ExtendsLN> a sht:RepresentationTest ;
+    mf:name "1dot3ExtendsLN" ;
+    mf:status mf:proposed ;
+    mf:sameSemanticsAs <#1dot3Extends> ;
+    sx:shex <1dot3ExtendsLN.shex> ;
+    sx:json <1dot3Extends.json> ;
+    sx:ttl <1dot3Extends.ttl> ;
+    .
+
 <#Extends-sAB> a sht:RepresentationTest ;
     mf:name "Extends-sAB" ;
     mf:status mf:Proposed ;
@@ -3892,6 +3878,26 @@
     .
 
 # } extends
+
+# abstract {
+
+<#1dotAbstractShapeCode1> a sht:RepresentationTest ;
+    mf:name "1dotAbstractShapeCode1" ;
+    mf:status mf:proposed ;
+    sx:shex <1dotAbstractShapeCode1.shex> ;
+    sx:json <1dotAbstractShapeCode1.json> ;
+    sx:ttl <1dotAbstractShapeCode1.ttl> ;
+    .
+
+<#1dotAbstract> a sht:RepresentationTest ;
+    mf:name "1dotAbstract" ;
+    mf:status mf:proposed ;
+    sx:shex <1dotAbstract.shex> ;
+    sx:json <1dotAbstract.json> ;
+    sx:ttl <1dotAbstract.ttl> ;
+    .
+
+# } abstract
 
 # regexp template:
 
