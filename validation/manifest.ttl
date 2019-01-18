@@ -1274,6 +1274,12 @@
         <#recursion_example>
 
 ## Extends
+        <#extends-abstract-multi-empty_fail-Ref2ExtraP>
+        <#extends-abstract-multi-empty_fail-Ref1ExtraP>
+        <#extends-abstract-multi-empty_fail-ReferrerExtraP>
+        <#extends-abstract-multi-empty_fail-Ref1ExtraOR>
+        <#extends-abstract-multi-empty_fail-missingRef2>
+        <#extends-abstract-multi-empty_pass-missingOptRef1>
         <#extends-abstract-multi-empty_pass>
 
     ) .
@@ -16176,7 +16182,7 @@
 <#recursion_example> a sht:ValidationTest ; # recursion_example
     mf:name "recursion_example" ;
     sht:trait sht:ShapeMap , sht:RecursiveData ;
-    rdfs:comment "<S1> {<p1> @<S1>*}} on { <s1> <p1> <s2> . <s2> <p1> <s3> . <s3> <p1> <s1> }" ;
+    rdfs:comment "<S1> {<p1> @<S1>*} on { <s1> <p1> <s2> . <s2> <p1> <s3> . <s3> <p1> <s1> }" ;
     mf:status mf:Proposed ;
     mf:action [
       sht:schema <../schemas/recursion_example.shex> ;
@@ -16191,14 +16197,92 @@
 
 <#extends-abstract-multi-empty_pass> a sht:ValidationTest ;
     mf:name "extends-abstract-multi-empty_pass" ;
-    sht:trait sht:Extends , sht:Abstract , sht:MultiExtends ;
-    rdfs:comment "@@@" ;
+    sht:trait sht:Extends , sht:Abstract , sht:MultiExtends , sht:Closed ;
+    rdfs:comment "<Issue> C { ... @<Person> ... @<Employee> } ABS <Person> <User> EXT @<Person> ABS <Rep> <Employee> EXT @<Person> EXT @<Rep> on { <Issue1> ... <User2> ... <Thompson.J> ... } " ;
     mf:status mf:proposed ;
     mf:action [
       sht:schema <../schemas/extends-abstract-multi-empty.shex> ;
-      sht:shape <IssueShape> ;
+      sht:shape <http://a.example/IssueShape> ;
       sht:data <extends-abstract-multi-empty_pass.ttl> ;
-      sht:focus <Issue1>
+      sht:focus <http://a.example/Issue1>
+    ] ;
+    .
+
+<#extends-abstract-multi-empty_pass-missingOptRef1> a sht:ValidationTest ;
+    mf:name "extends-abstract-multi-empty_pass-missingOptRef1" ;
+    sht:trait sht:Extends , sht:Abstract , sht:MultiExtends , sht:Closed ;
+    rdfs:comment "<Issue> C { ... @<Person> ... @<Employee> } ABS <Person> <User> EXT @<Person> ABS <Rep> <Employee> EXT @<Person> EXT @<Rep> on { <Issue1> ... - @<Employee> <User2> ... <Thompson.J> ... } " ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/extends-abstract-multi-empty.shex> ;
+      sht:shape <http://a.example/IssueShape> ;
+      sht:data <extends-abstract-multi-empty_no-employee.ttl> ;
+      sht:focus <http://a.example/Issue1>
+    ] ;
+    .
+
+<#extends-abstract-multi-empty_fail-missingRef2> a sht:ValidationFailure ;
+    mf:name "extends-abstract-multi-empty_fail-missingRef2" ;
+    sht:trait sht:Extends , sht:Abstract , sht:MultiExtends , sht:Closed ;
+    rdfs:comment "<Issue> C { ... @<Person> ... @<Employee> } ABS <Person> <User> EXT @<Person> ABS <Rep> <Employee> EXT @<Person> EXT @<Rep> on { <Issue1> ... - @<Person> <User2> ... <Thompson.J> ... } " ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/extends-abstract-multi-empty.shex> ;
+      sht:shape <http://a.example/IssueShape> ;
+      sht:data <extends-abstract-multi-empty_no-person.ttl> ;
+      sht:focus <http://a.example/Issue1>
+    ] ;
+    .
+
+<#extends-abstract-multi-empty_fail-Ref1ExtraOR> a sht:ValidationFailure ;
+    mf:name "extends-abstract-multi-empty_fail-Ref1ExtraOR" ;
+    sht:trait sht:Extends , sht:Abstract , sht:MultiExtends , sht:Closed ;
+    rdfs:comment "<Issue> C { ... @<Person> ... @<Employee> } ABS <Person> <User> EXT @<Person> ABS <Rep> <Employee> EXT @<Person> EXT @<Rep> on { <Issue1> ... - @<Person> <User2> f:name; f:givenName; f:familyName. <Thompson.J> ... } " ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/extends-abstract-multi-empty.shex> ;
+      sht:shape <http://a.example/IssueShape> ;
+      sht:data <extends-abstract-multi-empty_extraOR.ttl> ;
+      sht:focus <http://a.example/Issue1>
+    ] ;
+    .
+
+<#extends-abstract-multi-empty_fail-ReferrerExtraP> a sht:ValidationFailure ;
+    mf:name "extends-abstract-multi-empty_fail-ReferrerExtraP" ;
+    sht:trait sht:Extends , sht:Abstract , sht:MultiExtends , sht:Closed ;
+    rdfs:comment "<Issue> C { ... @<Person> ... @<Employee> } ABS <Person> <User> EXT @<Person> ABS <Rep> <Employee> EXT @<Person> EXT @<Rep> on { <Issue1> ... - @<Person> <User2> f:name; f:givenName; f:familyName. <Thompson.J> ... } " ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/extends-abstract-multi-empty.shex> ;
+      sht:shape <http://a.example/IssueShape> ;
+      sht:data <extends-abstract-multi-empty_issue-extraP.ttl> ;
+      sht:focus <http://a.example/Issue1>
+    ] ;
+    .
+
+<#extends-abstract-multi-empty_fail-Ref1ExtraP> a sht:ValidationFailure ;
+    mf:name "extends-abstract-multi-empty_fail-Ref1ExtraP" ;
+    sht:trait sht:Extends , sht:Abstract , sht:MultiExtends , sht:Closed ;
+    rdfs:comment "<Issue> C { ... @<Person> ... @<Employee> } ABS <Person> <User> EXT @<Person> ABS <Rep> <Employee> EXT @<Person> EXT @<Rep> on { <Issue1> ... - @<Person> <User2> f:name; f:givenName; f:familyName. <Thompson.J> ... } " ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/extends-abstract-multi-empty.shex> ;
+      sht:shape <http://a.example/IssueShape> ;
+      sht:data <extends-abstract-multi-empty_user-extraP.ttl> ;
+      sht:focus <http://a.example/Issue1>
+    ] ;
+    .
+
+<#extends-abstract-multi-empty_fail-Ref2ExtraP> a sht:ValidationFailure ;
+    mf:name "extends-abstract-multi-empty_fail-Ref2ExtraP" ;
+    sht:trait sht:Extends , sht:Abstract , sht:MultiExtends , sht:Closed ;
+    rdfs:comment "<Issue> C { ... @<Person> ... @<Employee> } ABS <Person> <User> EXT @<Person> ABS <Rep> <Employee> EXT @<Person> EXT @<Rep> on { <Issue1> ... - @<Person> <User2> f:name; f:givenName; f:familyName. <Thompson.J> ... } " ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/extends-abstract-multi-empty.shex> ;
+      sht:shape <http://a.example/IssueShape> ;
+      sht:data <extends-abstract-multi-empty_employee-extraP.ttl> ;
+      sht:focus <http://a.example/Issue1>
     ] ;
     .
 

@@ -3,25 +3,28 @@ PREFIX foaf: <http://xmlns.com/foaf/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 
-<IssueShape> CLOSED {
-  ex:reportedBy @<PersonShape>;
-  ex:reproducedBy @<EmployeeShape>?
+<http://a.example/IssueShape> CLOSED {
+  ex:reportedBy @<http://a.example/PersonShape>;
+  ex:reproducedBy @<http://a.example/EmployeeShape>?
 }
 
-ABSTRACT <PersonShape> {
+ABSTRACT <http://a.example/PersonShape> {
   (  foaf:name xsd:string
    | foaf:givenName xsd:string+;
      foaf:familyName xsd:string);
   foaf:mbox IRI
 }
 
-<UserShape> EXTENDS @<PersonShape> CLOSED {
-  ex:representative @<EmployeeShape>
+<http://a.example/UserShape>
+    EXTENDS @<http://a.example/PersonShape> CLOSED {
+  ex:representative @<http://a.example/EmployeeShape>
 }
 
-ABSTRACT <RepShape> {
+ABSTRACT <http://a.example/RepShape> {
   foaf:phone IRI+
 }
 
-<EmployeeShape> EXTENDS @<PersonShape> EXTENDS @<RepShape> CLOSED {
+<http://a.example/EmployeeShape>
+    EXTENDS @<http://a.example/PersonShape>
+    EXTENDS @<http://a.example/RepShape> CLOSED {
 }

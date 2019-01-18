@@ -18,5 +18,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     foaf:givenName "Joe", "Joseph" ;
     foaf:familyName "Thompson" ;
     foaf:phone <tel:+456> ;
-    foaf:mbox <mail:joe@example.org>
+    foaf:mbox <mail:joe@example.org> ;
+    ex:p 1
 .

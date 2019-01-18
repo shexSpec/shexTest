@@ -11,7 +11,8 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     foaf:givenName "Bob" ;
     foaf:familyName "Smith" ;
     foaf:mbox <mail:bob@example.org> ;
-    ex:representative <http://a.example/Thompson.J>
+    ex:representative <http://a.example/Thompson.J> ;
+    ex:p 1
 .
 
 <http://a.example/Thompson.J>

@@ -19100,27 +19100,148 @@
             "ShapeMap",
             "RecursiveData"
           ],
-          "comment": "<S1> {<p1> @<S1>*}} on { <s1> <p1> <s2> . <s2> <p1> <s3> . <s3> <p1> <s1> }",
+          "comment": "<S1> {<p1> @<S1>*} on { <s1> <p1> <s2> . <s2> <p1> <s3> . <s3> <p1> <s1> }",
           "status": "mf:Proposed",
           "result": "recursion_example_results.json"
+        },
+        {
+          "@id": "#extends-abstract-multi-empty_fail-Ref2ExtraP",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/extends-abstract-multi-empty.shex",
+            "shape": "http://a.example/IssueShape",
+            "data": "extends-abstract-multi-empty_employee-extraP.ttl",
+            "focus": "http://a.example/Issue1"
+          },
+          "extensionResults": [],
+          "name": "extends-abstract-multi-empty_fail-Ref2ExtraP",
+          "trait": [
+            "MultiExtends",
+            "Abstract",
+            "Extends",
+            "Closed"
+          ],
+          "comment": "<Issue> C { ... @<Person> ... @<Employee> } ABS <Person> <User> EXT @<Person> ABS <Rep> <Employee> EXT @<Person> EXT @<Rep> on { <Issue1> ... - @<Person> <User2> f:name; f:givenName; f:familyName. <Thompson.J> ... } ",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#extends-abstract-multi-empty_fail-Ref1ExtraP",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/extends-abstract-multi-empty.shex",
+            "shape": "http://a.example/IssueShape",
+            "data": "extends-abstract-multi-empty_user-extraP.ttl",
+            "focus": "http://a.example/Issue1"
+          },
+          "extensionResults": [],
+          "name": "extends-abstract-multi-empty_fail-Ref1ExtraP",
+          "trait": [
+            "MultiExtends",
+            "Abstract",
+            "Extends",
+            "Closed"
+          ],
+          "comment": "<Issue> C { ... @<Person> ... @<Employee> } ABS <Person> <User> EXT @<Person> ABS <Rep> <Employee> EXT @<Person> EXT @<Rep> on { <Issue1> ... - @<Person> <User2> f:name; f:givenName; f:familyName. <Thompson.J> ... } ",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#extends-abstract-multi-empty_fail-ReferrerExtraP",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/extends-abstract-multi-empty.shex",
+            "shape": "http://a.example/IssueShape",
+            "data": "extends-abstract-multi-empty_issue-extraP.ttl",
+            "focus": "http://a.example/Issue1"
+          },
+          "extensionResults": [],
+          "name": "extends-abstract-multi-empty_fail-ReferrerExtraP",
+          "trait": [
+            "MultiExtends",
+            "Abstract",
+            "Extends",
+            "Closed"
+          ],
+          "comment": "<Issue> C { ... @<Person> ... @<Employee> } ABS <Person> <User> EXT @<Person> ABS <Rep> <Employee> EXT @<Person> EXT @<Rep> on { <Issue1> ... - @<Person> <User2> f:name; f:givenName; f:familyName. <Thompson.J> ... } ",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#extends-abstract-multi-empty_fail-Ref1ExtraOR",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/extends-abstract-multi-empty.shex",
+            "shape": "http://a.example/IssueShape",
+            "data": "extends-abstract-multi-empty_extraOR.ttl",
+            "focus": "http://a.example/Issue1"
+          },
+          "extensionResults": [],
+          "name": "extends-abstract-multi-empty_fail-Ref1ExtraOR",
+          "trait": [
+            "MultiExtends",
+            "Abstract",
+            "Extends",
+            "Closed"
+          ],
+          "comment": "<Issue> C { ... @<Person> ... @<Employee> } ABS <Person> <User> EXT @<Person> ABS <Rep> <Employee> EXT @<Person> EXT @<Rep> on { <Issue1> ... - @<Person> <User2> f:name; f:givenName; f:familyName. <Thompson.J> ... } ",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#extends-abstract-multi-empty_fail-missingRef2",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/extends-abstract-multi-empty.shex",
+            "shape": "http://a.example/IssueShape",
+            "data": "extends-abstract-multi-empty_no-person.ttl",
+            "focus": "http://a.example/Issue1"
+          },
+          "extensionResults": [],
+          "name": "extends-abstract-multi-empty_fail-missingRef2",
+          "trait": [
+            "MultiExtends",
+            "Abstract",
+            "Extends",
+            "Closed"
+          ],
+          "comment": "<Issue> C { ... @<Person> ... @<Employee> } ABS <Person> <User> EXT @<Person> ABS <Rep> <Employee> EXT @<Person> EXT @<Rep> on { <Issue1> ... - @<Person> <User2> ... <Thompson.J> ... } ",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#extends-abstract-multi-empty_pass-missingOptRef1",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/extends-abstract-multi-empty.shex",
+            "shape": "http://a.example/IssueShape",
+            "data": "extends-abstract-multi-empty_no-employee.ttl",
+            "focus": "http://a.example/Issue1"
+          },
+          "extensionResults": [],
+          "name": "extends-abstract-multi-empty_pass-missingOptRef1",
+          "trait": [
+            "MultiExtends",
+            "Abstract",
+            "Extends",
+            "Closed"
+          ],
+          "comment": "<Issue> C { ... @<Person> ... @<Employee> } ABS <Person> <User> EXT @<Person> ABS <Rep> <Employee> EXT @<Person> EXT @<Rep> on { <Issue1> ... - @<Employee> <User2> ... <Thompson.J> ... } ",
+          "status": "mf:proposed"
         },
         {
           "@id": "#extends-abstract-multi-empty_pass",
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/extends-abstract-multi-empty.shex",
-            "shape": "IssueShape",
+            "shape": "http://a.example/IssueShape",
             "data": "extends-abstract-multi-empty_pass.ttl",
-            "focus": "Issue1"
+            "focus": "http://a.example/Issue1"
           },
           "extensionResults": [],
           "name": "extends-abstract-multi-empty_pass",
           "trait": [
             "MultiExtends",
             "Abstract",
-            "Extends"
+            "Extends",
+            "Closed"
           ],
-          "comment": "@@@",
+          "comment": "<Issue> C { ... @<Person> ... @<Employee> } ABS <Person> <User> EXT @<Person> ABS <Rep> <Employee> EXT @<Person> EXT @<Rep> on { <Issue1> ... <User2> ... <Thompson.J> ... } ",
           "status": "mf:proposed"
         }
       ]

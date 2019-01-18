@@ -8,6 +8,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 .
 
 <http://a.example/User2>
+    foaf:name "Bob Smith" ;
     foaf:givenName "Bob" ;
     foaf:familyName "Smith" ;
     foaf:mbox <mail:bob@example.org> ;
