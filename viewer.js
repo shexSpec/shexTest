@@ -146,11 +146,14 @@
       }
 
       let titleText = "#" + (testNo+1) + " " + structure.str;
+      let id = test["@id"].substr(1);
       let status = drag("td", { title: titleText, class: structure.str }, showTest, "application/json").text(structure.chr);
       let attrs = structure.offset.reduce((acc, o) => { return acc[o]; }, test);
-      let name = drag("td", { title: test.comment }, showTest, "application/json").text(test["@id"]);
+      let name = drag("td", { title: test.comment }, showTest, "application/json").append(
+        $("<a>", { href: test["@id"] }).text(test["@id"])
+      );
       $("table tbody").append(
-        $("<tr/>").append(
+        $("<tr/>", {id: id}).append(
           status, name,
           // $("<td/>").append(shexc), $("<td/>").append(data), shapemap
           structure.fields.map(h => {
