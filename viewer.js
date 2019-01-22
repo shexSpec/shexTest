@@ -81,6 +81,7 @@
    */
   function renderManifest (tests, relPrepend) {
     let testNo = 0;
+    $("#tests").colResizable({ disable: true });
     // assumes at least one test entry
     queue();
 
@@ -88,8 +89,19 @@
       renderTest(tests[testNo]);
       if (++testNo < tests.length)
         setTimeout(queue, 0);
-      else
-        $("#tests").colResizable({ fixed:false, liveDrag:true, gripInnerHtml:"<div class='grip2'></div>"});
+      else {
+        var h = new URL(location).hash;
+        if (h)
+          document.getElementById(h.substr(1)).scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+        $("#tests").colResizable({
+          fixed:false,
+          liveDrag:true,
+          gripInnerHtml:"<div class='grip2'></div>"
+        });
+      }
     }
 
     function renderTest (test) {
