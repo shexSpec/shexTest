@@ -1,11 +1,12 @@
 (function () {
+  const MANIFEST_FILE = "manifest.jsonld"
   const OCTICON_USE = "<svg viewBox='0 0 16 16' style='height: .8em;' aria-hidden='true'><use xlink:href='#octicon'/></svg>" // doesn't render when composed in pieces.
 
   if (location.search.substr(1) === "toy") { // some examples from validation/manifest.jsonld
     renderManifest(aFewTests(), "validation/");
   } else {
     $.ajaxSetup({ mimeType: "text/plain" }); // for persistent FF bug.
-    $.getJSON(location.search.substr(1) + "/manifest.jsonld").then(data => {
+    $.getJSON(location.search.substr(1) + '/' + MANIFEST_FILE).then(data => {
       renderManifest(data["@graph"][0].entries, location.search.substr(1) + "/");
     }).fail(e => {
       $("table thead").append(
@@ -85,9 +86,27 @@
     let testNo = 0;
     $("#tests").colResizable({ disable: true });
     // assumes at least one test entry
+    var progressbar = $( "#progressbar" ),
+      progressLabel = $( ".progress-label" );
+
+    progressbar.progressbar({
+      value: false,
+      max: tests.length,
+      change: function() {
+        progressLabel.text( progressbar.progressbar( "value" ) + "/" + tests.length );
+      },
+      complete: function() {
+        progressLabel.empty().append(
+          "Loaded " + tests.length + " tests from ",
+          $("<a>", {href: relPrepend + MANIFEST_FILE}).text(relPrepend + MANIFEST_FILE)
+        );
+      }
+    });
+
     queue();
 
     function queue () {
+      progressbar.progressbar( "value", testNo+1 );
       renderTest(tests[testNo]);
       if (++testNo < tests.length) {
         setTimeout(queue, 0);
