@@ -1,6 +1,7 @@
 (function () {
-  const MANIFEST_FILE = "manifest.jsonld"
-  const OCTICON_USE = "<svg viewBox='0 0 16 16' style='height: .8em;' aria-hidden='true'><use xlink:href='#octicon'/></svg>" // doesn't render when composed in pieces.
+  const MANIFEST_FILE = "manifest.jsonld";
+  const PROGRESS_CHUNK_SIZE = 100;
+  const OCTICON_USE = "<svg viewBox='0 0 16 16' style='height: .8em;' aria-hidden='true'><use xlink:href='#octicon'/></svg>"; // doesn't render when composed in pieces.
 
   if (location.search.substr(1) === "toy") { // some examples from validation/manifest.jsonld
     renderManifest(aFewTests(), "validation/");
@@ -102,12 +103,14 @@
     queue();
 
     function queue () {
-      progressbar.progressbar( "value", testNo+1 );
       renderTest(tests[testNo]);
       if (++testNo < tests.length) {
+        if (testNo % PROGRESS_CHUNK_SIZE === 0)
+          progressbar.progressbar( "value", testNo+1 );
         setTimeout(queue, 0);
       } else {
         // done loading tests
+        progressbar.progressbar( "value", testNo+1 );
         $("table tbody").append(toAdd);
         progressLabel.empty().append(
           "Loaded " + tests.length + " tests from ",
