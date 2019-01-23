@@ -83,6 +83,8 @@
   /* progressively render the tests, adjusting relative URLs by relPrepend.
    */
   function renderManifest (tests, relPrepend) {
+    let toAdd = [];
+    let startTime = new Date();
     let testNo = 0;
     $("#tests").colResizable({ disable: true });
     // assumes at least one test entry
@@ -94,12 +96,6 @@
       max: tests.length,
       change: function() {
         progressLabel.text( progressbar.progressbar( "value" ) + "/" + tests.length );
-      },
-      complete: function() {
-        progressLabel.empty().append(
-          "Loaded " + tests.length + " tests from ",
-          $("<a>", {href: relPrepend + MANIFEST_FILE}).text(relPrepend + MANIFEST_FILE)
-        );
       }
     });
 
@@ -112,6 +108,14 @@
         setTimeout(queue, 0);
       } else {
         // done loading tests
+        $("table tbody").append(toAdd);
+        progressLabel.empty().append(
+          "Loaded " + tests.length + " tests from ",
+          $("<a>", {href: relPrepend + MANIFEST_FILE}).text(relPrepend + MANIFEST_FILE),
+          " in ",
+          (new Date() - startTime)/1000,
+          " seconds."
+        );
         var h = new URL(location).hash;
         if (h) {
           let [top, bottom] = h.substr(1).split(/--/);
@@ -122,8 +126,12 @@
               block: "start"
             });
             let range = $(topElt);
-            if (bottom && document.getElementById(bottom))
-              range = range.nextUntil(document.getElementById(bottom));
+            if (bottom) {
+              let botElt = document.getElementById(bottom);
+              if (botElt) {
+                range = range.add(range.nextUntil(botElt)).add(botElt);
+              }
+            }
             range.attr("style", "background-color: #ffc");
           }
         }
@@ -197,7 +205,7 @@
         " ",
         id
       );
-      $("table tbody").append(
+      toAdd = toAdd.concat(
         $("<tr/>", {id: id}).append(
           status, name,
           // $("<td/>").append(shexc), $("<td/>").append(data), shapemap
@@ -208,7 +216,7 @@
 
       if (testNo === tests.length-1) {
         // Table footer with column titles.
-        $("table tbody").append(
+        toAdd = toAdd.concat(
           drag("tr", { }, x => JSON.stringify(tests, null, 2), "application/json").append(
             $("<th/>"),
             $("<th/>").text(tests.length + " tests"),
@@ -255,6 +263,7 @@
       }
 
       function title (target, url) {
+        // localStorage shaves ~1.5s off the load time.
         if (typeof(Storage) !== "undefined" && url in localStorage) {
           target.attr("title", localStorage[url].length > 0 ? localStorage[url] : "-- empty file --");
         } else {
