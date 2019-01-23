@@ -89,18 +89,23 @@
 
     function queue () {
       renderTest(tests[testNo]);
-      if (++testNo < tests.length)
+      if (++testNo < tests.length) {
         setTimeout(queue, 0);
-      else {
+      } else {
+        // done loading tests
         var h = new URL(location).hash;
         if (h) {
-          var elt = document.getElementById(h.substr(1));
-          if (elt) {
-            elt.scrollIntoView({
+          let [top, bottom] = h.substr(1).split(/--/);
+          let topElt = document.getElementById(top);
+          if (topElt) {
+            topElt.scrollIntoView({
               behavior: "smooth",
               block: "start"
             });
-            $(elt).attr("style", "background-color: #ffc");
+            let range = $(topElt);
+            if (bottom && document.getElementById(bottom))
+              range = range.nextUntil(document.getElementById(bottom));
+            range.attr("style", "background-color: #ffc");
           }
         }
         $("#tests").colResizable({
@@ -231,17 +236,24 @@
       }
 
       function title (target, url) {
-        $.ajax({
-          url: url,
-          dataType: 'text',
-          type: 'GET',
-          async: true
-        }).then(function (data) {
-          target.attr("title", data.length > 0 ? data : "-- empty file --");
-        }).fail(function (jqXHR, status, errorThrown) {
-          target.addClass("error");
-          target.attr("title", url + " " + status + ": " + errorThrown);
-        });
+        if (typeof(Storage) !== "undefined" && url in localStorage) {
+          target.attr("title", localStorage[url].length > 0 ? localStorage[url] : "-- empty file --");
+        } else {
+          $.ajax({
+            url: url,
+            dataType: 'text',
+            type: 'GET',
+            async: true
+          }).then(function (data) {
+            if (typeof(Storage) !== "undefined") {
+              localStorage[url] = data;
+            }
+            target.attr("title", data.length > 0 ? data : "-- empty file --");
+          }).fail(function (jqXHR, status, errorThrown) {
+            target.addClass("error");
+            target.attr("title", url + " " + status + ": " + errorThrown);
+          });
+        }
         return target;
       }
 
