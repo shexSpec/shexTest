@@ -1,4 +1,6 @@
 (function () {
+  const OCTICON_USE = "<svg viewBox='0 0 16 16' style='height: .8em;' aria-hidden='true'><use xlink:href='#octicon'/></svg>" // doesn't render when composed in pieces.
+
   if (location.search.substr(1) === "toy") { // some examples from validation/manifest.jsonld
     renderManifest(aFewTests(), "validation/");
   } else {
@@ -91,11 +93,16 @@
         setTimeout(queue, 0);
       else {
         var h = new URL(location).hash;
-        if (h)
-          document.getElementById(h.substr(1)).scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-          });
+        if (h) {
+          var elt = document.getElementById(h.substr(1));
+          if (elt) {
+            elt.scrollIntoView({
+              behavior: "smooth",
+              block: "start"
+            });
+            $(elt).attr("style", "background-color: #ffc");
+          }
+        }
         $("#tests").colResizable({
           fixed:false,
           liveDrag:true,
@@ -162,7 +169,9 @@
       let status = drag("td", { title: titleText, class: structure.str }, showTest, "application/json").text(structure.chr);
       let attrs = structure.offset.reduce((acc, o) => { return acc[o]; }, test);
       let name = drag("td", { title: test.comment }, showTest, "application/json").append(
-        $("<a>", { href: test["@id"] }).text(test["@id"])
+        $("<a>", { href: test["@id"] }).append(OCTICON_USE),
+        " ",
+        id
       );
       $("table tbody").append(
         $("<tr/>", {id: id}).append(
