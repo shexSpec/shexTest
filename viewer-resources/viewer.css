@@ -52,3 +52,5 @@ th:nth-child(1), td:nth-child(1) { text-indent: 0; width: 1em; }
     font-weight: bold;
     text-shadow: 1px 1px 0 #fff;
 }
+
+tr.highlight { background-color: #ffc; }

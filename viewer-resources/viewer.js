@@ -150,7 +150,7 @@
             range = range.add(range.nextUntil(botElt)).add(botElt);
           }
         }
-        range.attr("style", "background-color: #ffc");
+        range.addClass("highlight");
       }
     }
 
@@ -211,8 +211,19 @@
       let id = test["@id"].substr(1);
       let status = drag("td", { title: titleText, class: structure.str }, showTest, "application/json").text(structure.chr);
       let attrs = structure.offset.reduce((acc, o) => { return acc[o]; }, test);
+      let octicon = $("<a>", { href: test["@id"] }).append(OCTICON_USE).on("click", function (evt) {
+        evt.preventDefault();
+        $(".highlight").removeClass("highlight");
+        let fragment = $(this).attr("href").substr(1);
+        if (!evt.shiftKey) {
+          location.hash = fragment;
+        } else {
+          location.hash = location.hash + "--" + fragment;
+        }
+        highlight(location.hash);
+      });
       let name = drag("td", { title: test.comment }, showTest, "application/json").append(
-        $("<a>", { href: test["@id"] }).append(OCTICON_USE),
+        octicon,
         " ",
         id
       );
