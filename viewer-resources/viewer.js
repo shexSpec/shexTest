@@ -87,7 +87,7 @@
     let toAdd = [];
     let startTime = new Date();
     let testNo = 0;
-    let chunkSize = Math.floor(tests.length / PROGRESS_CHUNK_COUNT)
+    let chunkSize = Math.max(Math.floor(tests.length / PROGRESS_CHUNK_COUNT), 1);
     $("#tests").colResizable({ disable: true });
     // assumes at least one test entry
     let progressbar = $( "#progressbar" ),
