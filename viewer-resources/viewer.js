@@ -1,6 +1,6 @@
 (function () {
   const MANIFEST_FILE = "manifest.jsonld";
-  const PROGRESS_CHUNK_SIZE = 100;
+  const PROGRESS_CHUNK_COUNT = 100;
   const OCTICON_USE = "<svg viewBox='0 0 16 16' style='height: .8em;' aria-hidden='true'><use xlink:href='#octicon'/></svg>"; // doesn't render when composed in pieces.
 
   if (location.search.substr(1) === "toy") { // some examples from validation/manifest.jsonld
@@ -87,9 +87,10 @@
     let toAdd = [];
     let startTime = new Date();
     let testNo = 0;
+    let chunkSize = Math.max(Math.floor(tests.length / PROGRESS_CHUNK_COUNT), 1);
     $("#tests").colResizable({ disable: true });
     // assumes at least one test entry
-    var progressbar = $( "#progressbar" ),
+    let progressbar = $( "#progressbar" ),
       progressLabel = $( ".progress-label" );
 
     progressbar.progressbar({
@@ -105,13 +106,13 @@
     function queue () {
       renderTest(tests[testNo]);
       if (++testNo < tests.length) {
-        if (testNo % PROGRESS_CHUNK_SIZE === 0)
+        if (testNo % chunkSize === 0) {
           progressbar.progressbar( "value", testNo+1 );
+        }
         setTimeout(queue, 0);
       } else {
         // done loading tests
         progressbar.progressbar( "value", testNo+1 );
-        $("table tbody").append(toAdd);
         progressLabel.empty().append(
           "Loaded " + tests.length + " tests from ",
           $("<a>", {href: relPrepend + MANIFEST_FILE}).text(relPrepend + MANIFEST_FILE),
@@ -119,30 +120,37 @@
           (new Date() - startTime)/1000,
           " seconds."
         );
-        var h = new URL(location).hash;
-        if (h) {
-          let [top, bottom] = h.substr(1).split(/--/);
-          let topElt = document.getElementById(top);
-          if (topElt) {
-            topElt.scrollIntoView({
-              behavior: "smooth",
-              block: "start"
-            });
-            let range = $(topElt);
-            if (bottom) {
-              let botElt = document.getElementById(bottom);
-              if (botElt) {
-                range = range.add(range.nextUntil(botElt)).add(botElt);
-              }
-            }
-            range.attr("style", "background-color: #ffc");
+
+        setTimeout(() => {
+          $("table tbody").append(toAdd);
+          var h = new URL(location).hash;
+          if (h)
+            highlight(h);
+          $("#tests").colResizable({
+            fixed:false,
+            liveDrag:true,
+            gripInnerHtml:"<div class='grip2'></div>"
+          });
+        }, 0);
+      }
+    }
+
+    function highlight (h) {
+      let [top, bottom] = h.substr(1).split(/--/);
+      let topElt = document.getElementById(top);
+      if (topElt) {
+        topElt.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+        let range = $(topElt);
+        if (bottom) {
+          let botElt = document.getElementById(bottom);
+          if (botElt) {
+            range = range.add(range.nextUntil(botElt)).add(botElt);
           }
         }
-        $("#tests").colResizable({
-          fixed:false,
-          liveDrag:true,
-          gripInnerHtml:"<div class='grip2'></div>"
-        });
+        range.addClass("highlight");
       }
     }
 
@@ -203,8 +211,19 @@
       let id = test["@id"].substr(1);
       let status = drag("td", { title: titleText, class: structure.str }, showTest, "application/json").text(structure.chr);
       let attrs = structure.offset.reduce((acc, o) => { return acc[o]; }, test);
+      let octicon = $("<a>", { href: test["@id"] }).append(OCTICON_USE).on("click", function (evt) {
+        evt.preventDefault();
+        $(".highlight").removeClass("highlight");
+        let fragment = $(this).attr("href").substr(1);
+        if (!evt.shiftKey) {
+          location.hash = fragment;
+        } else {
+          location.hash = location.hash + "--" + fragment;
+        }
+        highlight(location.hash);
+      });
       let name = drag("td", { title: test.comment }, showTest, "application/json").append(
-        $("<a>", { href: test["@id"] }).append(OCTICON_USE),
+        octicon,
         " ",
         id
       );
