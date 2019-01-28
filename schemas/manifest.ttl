@@ -436,10 +436,19 @@
         <#1dot3Extends>
         <#1dot3ExtendsLN>
         <#Extends-sAB>
+        <#ExtendsRepeatedP>
 
         # abstract
         <#1dotAbstractShapeCode1>
         <#1dotAbstract>
+        <#ANDAbstract>
+        <#AND3G>
+
+        # abstract extends
+        <#ExtendAND3G>
+        <#Extend3G>
+        <#ExtendANDExtend3GAND3G>
+        <#vitals-RESTRICTS>
     ) .
 
 <#0> a sht:RepresentationTest ;
@@ -3877,6 +3886,15 @@
     sx:ttl <Extends-sAB.ttl> ;
     .
 
+<#ExtendsRepeatedP> a sht:RepresentationTest ;
+    mf:name "ExtendsRepeatedP" ;
+    mf:status mf:Proposed ;
+    sht:train sht:Extends ;
+    sx:shex <ExtendsRepeatedP.shex> ;
+    sx:json <ExtendsRepeatedP.json> ;
+    sx:ttl <ExtendsRepeatedP.ttl> ;
+    .
+
 # } extends
 
 # abstract {
@@ -3897,7 +3915,65 @@
     sx:ttl <1dotAbstract.ttl> ;
     .
 
+<#ANDAbstract> a sht:RepresentationTest ;
+    mf:name "ANDAbstract" ;
+    mf:status mf:Proposed ;
+    sht:train sht:Extends ;
+    sx:shex <ANDAbstract.shex> ;
+    sx:json <ANDAbstract.json> ;
+    sx:ttl <ANDAbstract.ttl> ;
+    .
+
+<#AND3G> a sht:RepresentationTest ;
+    mf:name "AND3G" ;
+    mf:status mf:Proposed ;
+    sht:train sht:Extends ;
+    sx:shex <AND3G.shex> ;
+    sx:json <AND3G.json> ;
+    sx:ttl <AND3G.ttl> ;
+    .
+
 # } abstract
+
+# abstract extends {
+
+<#ExtendAND3G> a sht:RepresentationTest ;
+    mf:name "ExtendAND3G" ;
+    mf:status mf:Proposed ;
+    sht:train sht:Extends ;
+    sx:shex <ExtendAND3G.shex> ;
+    sx:json <ExtendAND3G.json> ;
+    sx:ttl <ExtendAND3G.ttl> ;
+    .
+
+<#Extend3G> a sht:RepresentationTest ;
+    mf:name "Extend3G" ;
+    mf:status mf:Proposed ;
+    sht:train sht:Extends ;
+    sx:shex <Extend3G.shex> ;
+    sx:json <Extend3G.json> ;
+    sx:ttl <Extend3G.ttl> ;
+    .
+
+<#ExtendANDExtend3GAND3G> a sht:RepresentationTest ;
+    mf:name "ExtendANDExtend3GAND3G" ;
+    mf:status mf:Proposed ;
+    sht:train sht:Extends ;
+    sx:shex <ExtendANDExtend3GAND3G.shex> ;
+    sx:json <ExtendANDExtend3GAND3G.json> ;
+    sx:ttl <ExtendANDExtend3GAND3G.ttl> ;
+    .
+
+<#vitals-RESTRICTS> a sht:RepresentationTest ;
+    mf:name "vitals-RESTRICTS" ;
+    mf:status mf:Proposed ;
+    sht:train sht:Extends ;
+    sx:shex <vitals-RESTRICTS.shex> ;
+    sx:json <vitals-RESTRICTS.json> ;
+    sx:ttl <vitals-RESTRICTS.ttl> ;
+    .
+
+# } abstract extends
 
 # regexp template:
 

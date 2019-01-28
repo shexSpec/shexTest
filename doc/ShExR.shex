@@ -48,7 +48,7 @@ start=@<Schema>
 
 <Shape> CLOSED {
   a [sx:Shape] ;
-  sx:extends @<IriList1Plus>? ;
+  sx:extends @<shapeDeclOrExprList1Plus>? ;
   sx:closed [true false]? ;
   sx:extra IRI* ;
   sx:expression @<tripleExpression>? ;

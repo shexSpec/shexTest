@@ -3834,6 +3834,15 @@
           "ttl": "Extends-sAB.ttl"
         },
         {
+          "@id": "#ExtendsRepeatedP",
+          "@type": "sht:RepresentationTest",
+          "name": "ExtendsRepeatedP",
+          "status": "mf:Proposed",
+          "shex": "ExtendsRepeatedP.shex",
+          "json": "ExtendsRepeatedP.json",
+          "ttl": "ExtendsRepeatedP.ttl"
+        },
+        {
           "@id": "#1dotAbstractShapeCode1",
           "@type": "sht:RepresentationTest",
           "name": "1dotAbstractShapeCode1",
@@ -3850,6 +3859,60 @@
           "shex": "1dotAbstract.shex",
           "json": "1dotAbstract.json",
           "ttl": "1dotAbstract.ttl"
+        },
+        {
+          "@id": "#ANDAbstract",
+          "@type": "sht:RepresentationTest",
+          "name": "ANDAbstract",
+          "status": "mf:Proposed",
+          "shex": "ANDAbstract.shex",
+          "json": "ANDAbstract.json",
+          "ttl": "ANDAbstract.ttl"
+        },
+        {
+          "@id": "#AND3G",
+          "@type": "sht:RepresentationTest",
+          "name": "AND3G",
+          "status": "mf:Proposed",
+          "shex": "AND3G.shex",
+          "json": "AND3G.json",
+          "ttl": "AND3G.ttl"
+        },
+        {
+          "@id": "#ExtendAND3G",
+          "@type": "sht:RepresentationTest",
+          "name": "ExtendAND3G",
+          "status": "mf:Proposed",
+          "shex": "ExtendAND3G.shex",
+          "json": "ExtendAND3G.json",
+          "ttl": "ExtendAND3G.ttl"
+        },
+        {
+          "@id": "#Extend3G",
+          "@type": "sht:RepresentationTest",
+          "name": "Extend3G",
+          "status": "mf:Proposed",
+          "shex": "Extend3G.shex",
+          "json": "Extend3G.json",
+          "ttl": "Extend3G.ttl"
+        },
+        {
+          "@id": "#ExtendANDExtend3GAND3G",
+          "@type": "sht:RepresentationTest",
+          "name": "ExtendANDExtend3GAND3G",
+          "status": "mf:Proposed",
+          "shex": "ExtendANDExtend3GAND3G.shex",
+          "json": "ExtendANDExtend3GAND3G.json",
+          "ttl": "ExtendANDExtend3GAND3G.ttl"
+        },
+        {
+          "@id": "#vitals-RESTRICTS",
+          "@type": "sht:RepresentationTest",
+          "name": "vitals-RESTRICTS",
+          "status": "mf:Proposed",
+          "shex": "vitals-RESTRICTS.shex",
+          "json": "vitals-RESTRICTS.json",
+          "ttl": "vitals-RESTRICTS.ttl"
         }
       ]
     }
