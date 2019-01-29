@@ -19243,6 +19243,924 @@
           ],
           "comment": "<Issue> C { ... @<Person> ... @<Employee> } ABS <Person> <User> EXT @<Person> ABS <Rep> <Employee> EXT @<Person> EXT @<Rep> on { <Issue1> ... <User2> ... <Thompson.J> ... } ",
           "status": "mf:proposed"
+        },
+        {
+          "@id": "#ExtendsRepeatedP-pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/ExtendsRepeatedP.shex",
+            "shape": "http://a.example/#C",
+            "data": "sP123q3.ttl",
+            "focus": "http://a.example/s"
+          },
+          "extensionResults": [],
+          "name": "ExtendsRepeatedP-pass",
+          "trait": [
+            "Extends",
+            "Exhaustive"
+          ],
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#ExtendsRepeatedP-t1",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/ExtendsRepeatedP.shex",
+            "shape": "http://a.example/#C",
+            "data": "sP123q99.ttl",
+            "focus": "http://a.example/s"
+          },
+          "extensionResults": [],
+          "name": "ExtendsRepeatedP-t1",
+          "trait": [
+            "Extends",
+            "Exhaustive"
+          ],
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#ANDAbstract-t2",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/ANDAbstract.shex",
+            "shape": "http://a.example/B",
+            "data": "sAB.ttl",
+            "focus": "http://a.example/sABxxxxxxxxx"
+          },
+          "extensionResults": [],
+          "name": "ANDAbstract-t2",
+          "trait": [
+            "Extends",
+            "Exhaustive"
+          ],
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#ANDAbstract-t3",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/ANDAbstract.shex",
+            "shape": "http://a.example/B",
+            "data": "sAB.ttl",
+            "focus": "http://a.example/sAxxxxxxxxxx"
+          },
+          "extensionResults": [],
+          "name": "ANDAbstract-t3",
+          "trait": [
+            "Extends",
+            "Exhaustive"
+          ],
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#ANDAbstract-t4",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/ANDAbstract.shex",
+            "shape": "http://a.example/B",
+            "data": "sAB.ttl",
+            "focus": "http://a.example/sxBxxxxxxxxx"
+          },
+          "extensionResults": [],
+          "name": "ANDAbstract-t4",
+          "trait": [
+            "Extends",
+            "Exhaustive"
+          ],
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#AND3G-t5",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/AND3G.shex",
+            "shape": "http://a.example/D",
+            "data": "sABCD.ttl",
+            "focus": "http://a.example/sABCDxxxxxxx"
+          },
+          "extensionResults": [],
+          "name": "AND3G-t5",
+          "trait": [
+            "Extends",
+            "Exhaustive"
+          ],
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#AND3G-t6",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/AND3G.shex",
+            "shape": "http://a.example/D",
+            "data": "sABCD.ttl",
+            "focus": "http://a.example/sAxxxxxxxxxx"
+          },
+          "extensionResults": [],
+          "name": "AND3G-t6",
+          "trait": [
+            "Extends",
+            "Exhaustive"
+          ],
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#AND3G-t7",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/AND3G.shex",
+            "shape": "http://a.example/D",
+            "data": "sABCD.ttl",
+            "focus": "http://a.example/sxxCxxxxxxxx"
+          },
+          "extensionResults": [],
+          "name": "AND3G-t7",
+          "trait": [
+            "Extends",
+            "Exhaustive"
+          ],
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#ExtendAND3G-t8",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/ExtendAND3G.shex",
+            "shape": "http://a.example/E",
+            "data": "sABCDE.ttl",
+            "focus": "http://a.example/sABCDExxxxxx"
+          },
+          "extensionResults": [],
+          "name": "ExtendAND3G-t8",
+          "trait": [
+            "Extends",
+            "Exhaustive"
+          ],
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#ExtendAND3G-t9",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/ExtendAND3G.shex",
+            "shape": "http://a.example/E",
+            "data": "sABCDE.ttl",
+            "focus": "http://a.example/sABCDExxxxx1"
+          },
+          "extensionResults": [],
+          "name": "ExtendAND3G-t9",
+          "trait": [
+            "Extends",
+            "Exhaustive"
+          ],
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#ExtendAND3G-t10",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/ExtendAND3G.shex",
+            "shape": "http://a.example/E",
+            "data": "sABCDE.ttl",
+            "focus": "http://a.example/sABCDExxxxx3"
+          },
+          "extensionResults": [],
+          "name": "ExtendAND3G-t10",
+          "trait": [
+            "Extends",
+            "Exhaustive"
+          ],
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#ExtendAND3G-t11",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/ExtendAND3G.shex",
+            "shape": "http://a.example/E",
+            "data": "sABCDE.ttl",
+            "focus": "http://a.example/sxBCDExxxxxx"
+          },
+          "extensionResults": [],
+          "name": "ExtendAND3G-t11",
+          "trait": [
+            "Extends",
+            "Exhaustive"
+          ],
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#ExtendAND3G-t12",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/ExtendAND3G.shex",
+            "shape": "http://a.example/E",
+            "data": "sABCDE.ttl",
+            "focus": "http://a.example/sABxDExxxxxx"
+          },
+          "extensionResults": [],
+          "name": "ExtendAND3G-t12",
+          "trait": [
+            "Extends",
+            "Exhaustive"
+          ],
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#ExtendAND3G-t13",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/ExtendAND3G.shex",
+            "shape": "http://a.example/E",
+            "data": "sABCDE.ttl",
+            "focus": "http://a.example/sABCxExxxxxx"
+          },
+          "extensionResults": [],
+          "name": "ExtendAND3G-t13",
+          "trait": [
+            "Extends",
+            "Exhaustive"
+          ],
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#ExtendAND3G-t14",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/ExtendAND3G.shex",
+            "shape": "http://a.example/E",
+            "data": "sABCDE.ttl",
+            "focus": "http://a.example/sABCDxxxxxxx"
+          },
+          "extensionResults": [],
+          "name": "ExtendAND3G-t14",
+          "trait": [
+            "Extends",
+            "Exhaustive"
+          ],
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#Extend3G-t15",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/Extend3G.shex",
+            "shape": "http://a.example/G",
+            "data": "sABCDEFG.ttl",
+            "focus": "http://a.example/sABCDEFGxxxx"
+          },
+          "extensionResults": [],
+          "name": "Extend3G-t15",
+          "trait": [
+            "Extends",
+            "Exhaustive"
+          ],
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#Extend3G-t16",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/Extend3G.shex",
+            "shape": "http://a.example/G",
+            "data": "sABCDEFG.ttl",
+            "focus": "http://a.example/sABCDEFGxxx1"
+          },
+          "extensionResults": [],
+          "name": "Extend3G-t16",
+          "trait": [
+            "Extends",
+            "Exhaustive"
+          ],
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#Extend3G-t17",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/Extend3G.shex",
+            "shape": "http://a.example/G",
+            "data": "sABCDEFG.ttl",
+            "focus": "http://a.example/sABCDEFGxxx3"
+          },
+          "extensionResults": [],
+          "name": "Extend3G-t17",
+          "trait": [
+            "Extends",
+            "Exhaustive"
+          ],
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#Extend3G-t18",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/Extend3G.shex",
+            "shape": "http://a.example/G",
+            "data": "sABCDEFG.ttl",
+            "focus": "http://a.example/sxBCDEFGxxxx"
+          },
+          "extensionResults": [],
+          "name": "Extend3G-t18",
+          "trait": [
+            "Extends",
+            "Exhaustive"
+          ],
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#Extend3G-t19",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/Extend3G.shex",
+            "shape": "http://a.example/G",
+            "data": "sABCDEFG.ttl",
+            "focus": "http://a.example/sABxDEFGxxxx"
+          },
+          "extensionResults": [],
+          "name": "Extend3G-t19",
+          "trait": [
+            "Extends",
+            "Exhaustive"
+          ],
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#Extend3G-t20",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/Extend3G.shex",
+            "shape": "http://a.example/G",
+            "data": "sABCDEFG.ttl",
+            "focus": "http://a.example/sABCxEFGxxxx"
+          },
+          "extensionResults": [],
+          "name": "Extend3G-t20",
+          "trait": [
+            "Extends",
+            "Exhaustive"
+          ],
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#Extend3G-t21",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/Extend3G.shex",
+            "shape": "http://a.example/G",
+            "data": "sABCDEFG.ttl",
+            "focus": "http://a.example/sABCDxFGxxxx"
+          },
+          "extensionResults": [],
+          "name": "Extend3G-t21",
+          "trait": [
+            "Extends",
+            "Exhaustive"
+          ],
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#ExtendANDExtend3GAND3G-t22",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/ExtendANDExtend3GAND3G.shex",
+            "shape": "http://a.example/J",
+            "data": "sABCDEFGHIJ.ttl",
+            "focus": "http://a.example/sABCDEFGHIJx"
+          },
+          "extensionResults": [],
+          "name": "ExtendANDExtend3GAND3G-t22",
+          "trait": [
+            "Extends",
+            "Exhaustive"
+          ],
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#ExtendANDExtend3GAND3G-t23",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/ExtendANDExtend3GAND3G.shex",
+            "shape": "http://a.example/A",
+            "data": "sABCDEFGHIJ.ttl",
+            "focus": "http://a.example/sABCDEFGHIJx"
+          },
+          "extensionResults": [],
+          "name": "ExtendANDExtend3GAND3G-t23",
+          "trait": [
+            "Extends",
+            "Exhaustive"
+          ],
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#ExtendANDExtend3GAND3G-t24",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/ExtendANDExtend3GAND3G.shex",
+            "shape": "http://a.example/J",
+            "data": "sABCDEFGHIJ.ttl",
+            "focus": "http://a.example/sxBCDEFGHIJx"
+          },
+          "extensionResults": [],
+          "name": "ExtendANDExtend3GAND3G-t24",
+          "trait": [
+            "Extends",
+            "Exhaustive"
+          ],
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#ExtendANDExtend3GAND3G-t25",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/ExtendANDExtend3GAND3G.shex",
+            "shape": "http://a.example/J",
+            "data": "sABCDEFGHIJ.ttl",
+            "focus": "http://a.example/sABCDEFxHIJx"
+          },
+          "extensionResults": [],
+          "name": "ExtendANDExtend3GAND3G-t25",
+          "trait": [
+            "Extends",
+            "Exhaustive"
+          ],
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#ExtendANDExtend3GAND3G-t26",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/ExtendANDExtend3GAND3G.shex",
+            "shape": "http://a.example/J",
+            "data": "sABCDEFGHIJ.ttl",
+            "focus": "http://a.example/sABCDEFGxIJx"
+          },
+          "extensionResults": [],
+          "name": "ExtendANDExtend3GAND3G-t26",
+          "trait": [
+            "Extends",
+            "Exhaustive"
+          ],
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#ExtendANDExtend3GAND3G-t27",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/ExtendANDExtend3GAND3G.shex",
+            "shape": "http://a.example/J",
+            "data": "sABCDEFGHIJ.ttl",
+            "focus": "http://a.example/sABCDEFGHxJx"
+          },
+          "extensionResults": [],
+          "name": "ExtendANDExtend3GAND3G-t27",
+          "trait": [
+            "Extends",
+            "Exhaustive"
+          ],
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#ExtendANDExtend3GAND3G-t28",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/ExtendANDExtend3GAND3G.shex",
+            "shape": "http://a.example/J",
+            "data": "sABCDEFGHIJ.ttl",
+            "focus": "http://a.example/sABCDEFGHIxx"
+          },
+          "extensionResults": [],
+          "name": "ExtendANDExtend3GAND3G-t28",
+          "trait": [
+            "Extends",
+            "Exhaustive"
+          ],
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#ExtendANDExtend3GAND3G-t29",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/ExtendANDExtend3GAND3G.shex",
+            "shape": "http://a.example/J",
+            "data": "sABCDEFGHIJ.ttl",
+            "focus": "http://a.example/sABCDEFGHIJ0"
+          },
+          "extensionResults": [],
+          "name": "ExtendANDExtend3GAND3G-t29",
+          "trait": [
+            "Extends",
+            "Exhaustive"
+          ],
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#ExtendANDExtend3GAND3G-t30",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/ExtendANDExtend3GAND3G.shex",
+            "shape": "http://a.example/J",
+            "data": "sABCDEFGHIJ.ttl",
+            "focus": "http://a.example/sABCDEFGHIJ1"
+          },
+          "extensionResults": [],
+          "name": "ExtendANDExtend3GAND3G-t30",
+          "trait": [
+            "Extends",
+            "Exhaustive"
+          ],
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#ExtendANDExtend3GAND3G-t31",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/ExtendANDExtend3GAND3G.shex",
+            "shape": "http://a.example/J",
+            "data": "sABCDEFGHIJ.ttl",
+            "focus": "http://a.example/sABCDEFGHIJ2"
+          },
+          "extensionResults": [],
+          "name": "ExtendANDExtend3GAND3G-t31",
+          "trait": [
+            "Extends",
+            "Exhaustive"
+          ],
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#ExtendANDExtend3GAND3G-t32",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/ExtendANDExtend3GAND3G.shex",
+            "shape": "http://a.example/J",
+            "data": "sABCDEFGHIJ.ttl",
+            "focus": "http://a.example/sABCDEFGHIJ3"
+          },
+          "extensionResults": [],
+          "name": "ExtendANDExtend3GAND3G-t32",
+          "trait": [
+            "Extends",
+            "Exhaustive"
+          ],
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#ExtendANDExtend3GAND3G-t33",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/ExtendANDExtend3GAND3G.shex",
+            "shape": "http://a.example/J",
+            "data": "sABCDEFGHIJ.ttl",
+            "focus": "http://a.example/sABCDEFGHIJ5"
+          },
+          "extensionResults": [],
+          "name": "ExtendANDExtend3GAND3G-t33",
+          "trait": [
+            "Extends",
+            "Exhaustive"
+          ],
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#ExtendANDExtend3GAND3G-t34",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/ExtendANDExtend3GAND3G.shex",
+            "shape": "http://a.example/J",
+            "data": "sABCDEFGHIJ.ttl",
+            "focus": "http://a.example/sABCDEFGHIJ6"
+          },
+          "extensionResults": [],
+          "name": "ExtendANDExtend3GAND3G-t34",
+          "trait": [
+            "Extends",
+            "Exhaustive"
+          ],
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#ExtendANDExtend3GAND3G-t35",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/ExtendANDExtend3GAND3G.shex",
+            "shape": "http://a.example/J",
+            "data": "sABCDEFGHIJ.ttl",
+            "focus": "http://a.example/sABCDEFGHIJ7"
+          },
+          "extensionResults": [],
+          "name": "ExtendANDExtend3GAND3G-t35",
+          "trait": [
+            "Extends",
+            "Exhaustive"
+          ],
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#vitals-RESTRICTS-t36",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/vitals-RESTRICTS.shex",
+            "shape": "http://a.example/#Observation",
+            "data": "vitals.ttl",
+            "focus": "http://a.example/#lie"
+          },
+          "extensionResults": [],
+          "name": "vitals-RESTRICTS-t36",
+          "trait": [
+            "Extends",
+            "Exhaustive"
+          ],
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#vitals-RESTRICTS-t37",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/vitals-RESTRICTS.shex",
+            "shape": "http://a.example/#Vital",
+            "data": "vitals.ttl",
+            "focus": "http://a.example/#lie"
+          },
+          "extensionResults": [],
+          "name": "vitals-RESTRICTS-t37",
+          "trait": [
+            "Extends",
+            "Exhaustive"
+          ],
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#vitals-RESTRICTS-t38",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/vitals-RESTRICTS.shex",
+            "shape": "http://a.example/#BP",
+            "data": "vitals.ttl",
+            "focus": "http://a.example/#lie"
+          },
+          "extensionResults": [],
+          "name": "vitals-RESTRICTS-t38",
+          "trait": [
+            "Extends",
+            "Exhaustive"
+          ],
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#vitals-RESTRICTS-t39",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/vitals-RESTRICTS.shex",
+            "shape": "http://a.example/#PostureVital",
+            "data": "vitals.ttl",
+            "focus": "http://a.example/#lie"
+          },
+          "extensionResults": [],
+          "name": "vitals-RESTRICTS-t39",
+          "trait": [
+            "Extends",
+            "Exhaustive"
+          ],
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#vitals-RESTRICTS-t40",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/vitals-RESTRICTS.shex",
+            "shape": "http://a.example/#ReclinedVital",
+            "data": "vitals.ttl",
+            "focus": "http://a.example/#lie"
+          },
+          "extensionResults": [],
+          "name": "vitals-RESTRICTS-t40",
+          "trait": [
+            "Extends",
+            "Exhaustive"
+          ],
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#vitals-RESTRICTS-t41",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/vitals-RESTRICTS.shex",
+            "shape": "http://a.example/#PostureBP",
+            "data": "vitals.ttl",
+            "focus": "http://a.example/#lie"
+          },
+          "extensionResults": [],
+          "name": "vitals-RESTRICTS-t41",
+          "trait": [
+            "Extends",
+            "Exhaustive"
+          ],
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#vitals-RESTRICTS-t42",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/vitals-RESTRICTS.shex",
+            "shape": "http://a.example/#ReclinedBP",
+            "data": "vitals.ttl",
+            "focus": "http://a.example/#lie"
+          },
+          "extensionResults": [],
+          "name": "vitals-RESTRICTS-t42",
+          "trait": [
+            "Extends",
+            "Exhaustive"
+          ],
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#vitals-RESTRICTS-t43",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/vitals-RESTRICTS.shex",
+            "shape": "http://a.example/#Posture",
+            "data": "vitals.ttl",
+            "focus": "http://a.example/#lie"
+          },
+          "extensionResults": [],
+          "name": "vitals-RESTRICTS-t43",
+          "trait": [
+            "Extends",
+            "Exhaustive"
+          ],
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#vitals-RESTRICTS-t44",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/vitals-RESTRICTS.shex",
+            "shape": "http://a.example/#Reclined",
+            "data": "vitals.ttl",
+            "focus": "http://a.example/#lie"
+          },
+          "extensionResults": [],
+          "name": "vitals-RESTRICTS-t44",
+          "trait": [
+            "Extends",
+            "Exhaustive"
+          ],
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#vitals-RESTRICTS-t45",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/vitals-RESTRICTS.shex",
+            "shape": "http://a.example/#Observation",
+            "data": "vitals.ttl",
+            "focus": "http://a.example/#sit"
+          },
+          "extensionResults": [],
+          "name": "vitals-RESTRICTS-t45",
+          "trait": [
+            "Extends",
+            "Exhaustive"
+          ],
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#vitals-RESTRICTS-t46",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/vitals-RESTRICTS.shex",
+            "shape": "http://a.example/#Vital",
+            "data": "vitals.ttl",
+            "focus": "http://a.example/#sit"
+          },
+          "extensionResults": [],
+          "name": "vitals-RESTRICTS-t46",
+          "trait": [
+            "Extends",
+            "Exhaustive"
+          ],
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#vitals-RESTRICTS-t47",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/vitals-RESTRICTS.shex",
+            "shape": "http://a.example/#BP",
+            "data": "vitals.ttl",
+            "focus": "http://a.example/#sit"
+          },
+          "extensionResults": [],
+          "name": "vitals-RESTRICTS-t47",
+          "trait": [
+            "Extends",
+            "Exhaustive"
+          ],
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#vitals-RESTRICTS-t48",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/vitals-RESTRICTS.shex",
+            "shape": "http://a.example/#PostureVital",
+            "data": "vitals.ttl",
+            "focus": "http://a.example/#sit"
+          },
+          "extensionResults": [],
+          "name": "vitals-RESTRICTS-t48",
+          "trait": [
+            "Extends",
+            "Exhaustive"
+          ],
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#vitals-RESTRICTS-t49",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/vitals-RESTRICTS.shex",
+            "shape": "http://a.example/#ReclinedVital",
+            "data": "vitals.ttl",
+            "focus": "http://a.example/#sit"
+          },
+          "extensionResults": [],
+          "name": "vitals-RESTRICTS-t49",
+          "trait": [
+            "Extends",
+            "Exhaustive"
+          ],
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#vitals-RESTRICTS-t50",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/vitals-RESTRICTS.shex",
+            "shape": "http://a.example/#PostureBP",
+            "data": "vitals.ttl",
+            "focus": "http://a.example/#sit"
+          },
+          "extensionResults": [],
+          "name": "vitals-RESTRICTS-t50",
+          "trait": [
+            "Extends",
+            "Exhaustive"
+          ],
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#vitals-RESTRICTS-t51",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/vitals-RESTRICTS.shex",
+            "shape": "http://a.example/#ReclinedBP",
+            "data": "vitals.ttl",
+            "focus": "http://a.example/#sit"
+          },
+          "extensionResults": [],
+          "name": "vitals-RESTRICTS-t51",
+          "trait": [
+            "Extends",
+            "Exhaustive"
+          ],
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#vitals-RESTRICTS-t52",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/vitals-RESTRICTS.shex",
+            "shape": "http://a.example/#Posture",
+            "data": "vitals.ttl",
+            "focus": "http://a.example/#sit"
+          },
+          "extensionResults": [],
+          "name": "vitals-RESTRICTS-t52",
+          "trait": [
+            "Extends",
+            "Exhaustive"
+          ],
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#vitals-RESTRICTS-t53",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/vitals-RESTRICTS.shex",
+            "shape": "http://a.example/#Reclined",
+            "data": "vitals.ttl",
+            "focus": "http://a.example/#sit"
+          },
+          "extensionResults": [],
+          "name": "vitals-RESTRICTS-t53",
+          "trait": [
+            "Extends",
+            "Exhaustive"
+          ],
+          "status": "mf:proposed"
         }
       ]
     }
