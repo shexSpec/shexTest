@@ -1283,20 +1283,20 @@
         <#extends-abstract-multi-empty_pass>
 
         <#ExtendsRepeatedP-pass>
-        <#ExtendsRepeatedP-t1>
-        <#ANDAbstract-t2>
-        <#ANDAbstract-t3>
-        <#ANDAbstract-t4>
-        <#AND3G-t5>
-        <#AND3G-t6>
-        <#AND3G-t7>
-        <#ExtendAND3G-t8>
-        <#ExtendAND3G-t9>
-        <#ExtendAND3G-t10>
-        <#ExtendAND3G-t11>
-        <#ExtendAND3G-t12>
-        <#ExtendAND3G-t13>
-        <#ExtendAND3G-t14>
+        <#ExtendsRepeatedP-fail_vs>
+        <#ANDAbstract-pass>
+        <#ANDAbstract-fail_G1pattern>
+        <#ANDAbstract-fail_pattern>
+        <#AND3G-pass>
+        <#AND3G-fail_G2pattern>
+        <#AND3G-fail_G1Bpattern>
+        <#ExtendAND3G-pass>
+        <#ExtendAND3G-fail_EXTG1>
+        <#ExtendAND3G-fail_ExtraP>
+        <#ExtendAND3G-fail_G3pattern>
+        <#ExtendAND3G-fail_EXTG1ANDG1>
+        <#ExtendAND3G-fail_EXTG1pattern>
+        <#ExtendAND3G-fail_G0>
         <#Extend3G-t15>
         <#Extend3G-t16>
         <#Extend3G-t17>
@@ -16343,7 +16343,7 @@
 <#ExtendsRepeatedP-pass> a sht:ValidationTest ;
     mf:name "ExtendsRepeatedP-pass" ;
     sht:trait sht:Extends , sht:Exhaustive ;
-    sht:comment "@@ExtendsRepeatedP-0" ;
+    sht:comment "<A> { :p{2}; :q[3] } <B> @<A>AND{ :p+; :q+ } <C> EXT @<B> { :p } on { :s :p 1,2,3; :q 3 }" ;
     mf:status mf:proposed ;
     mf:action [
         sht:schema <../schemas/ExtendsRepeatedP.shex> ;
@@ -16353,10 +16353,10 @@
     ] ;
     .
 
-<#ExtendsRepeatedP-t1> a sht:ValidationFailure ;
-    mf:name "ExtendsRepeatedP-t1" ;
-    sht:trait sht:Extends , sht:Exhaustive ;
-    sht:comment "@@ExtendsRepeatedP-1" ;
+<#ExtendsRepeatedP-fail_vs> a sht:ValidationFailure ;
+    mf:name "ExtendsRepeatedP-fail_vs" ;
+    sht:trait sht:Extends ;
+    sht:comment "<A> { :p{2}; :q[3] } <B> @<A>AND{ :p+; :q+ } <C> EXT @<B> { :p } on { :s :p 1,2,3; :q 99 }" ;
     mf:status mf:proposed ;
     mf:action [
         sht:schema <../schemas/ExtendsRepeatedP.shex> ;
@@ -16366,10 +16366,10 @@
     ] ;
     .
 
-<#ANDAbstract-t2> a sht:ValidationTest ;
-    mf:name "ANDAbstract-t2" ;
-    sht:trait sht:Extends , sht:Exhaustive ;
-    sht:comment "@@ANDAbstract-2" ;
+<#ANDAbstract-pass> a sht:ValidationTest ;
+    mf:name "ANDAbstract-pass" ;
+    sht:trait sht:Extends ;
+    sht:comment "ABSTRACT <A> /sA/ AND {:p} <B> @<A> AND /s B/ {:p} on { <sABxxxxxxxxx> <p> 0 }" ;
     mf:status mf:proposed ;
     mf:action [
         sht:schema <../schemas/ANDAbstract.shex> ;
@@ -16379,10 +16379,10 @@
     ] ;
     .
 
-<#ANDAbstract-t3> a sht:ValidationFailure ;
-    mf:name "ANDAbstract-t3" ;
-    sht:trait sht:Extends , sht:Exhaustive ;
-    sht:comment "@@ANDAbstract-3" ;
+<#ANDAbstract-fail_G1pattern> a sht:ValidationFailure ;
+    mf:name "ANDAbstract-fail_G1pattern" ;
+    sht:trait sht:Extends ;
+    sht:comment "ABSTRACT <A> /sA/ AND {:p} <B> @<A> AND /s B/ {:p} on { <sAxxxxxxxxxx> <p> 0 }" ;
     mf:status mf:proposed ;
     mf:action [
         sht:schema <../schemas/ANDAbstract.shex> ;
@@ -16392,10 +16392,10 @@
     ] ;
     .
 
-<#ANDAbstract-t4> a sht:ValidationFailure ;
-    mf:name "ANDAbstract-t4" ;
-    sht:trait sht:Extends , sht:Exhaustive ;
-    sht:comment "@@ANDAbstract-4" ;
+<#ANDAbstract-fail_pattern> a sht:ValidationFailure ;
+    mf:name "ANDAbstract-fail_pattern" ;
+    sht:trait sht:Extends ;
+    sht:comment "ABSTRACT <A> /sA/ AND {:p} <B> @<A> AND /s B/ {:p} on { <sxBxxxxxxxxx> <p> 0 }" ;
     mf:status mf:proposed ;
     mf:action [
         sht:schema <../schemas/ANDAbstract.shex> ;
@@ -16405,10 +16405,10 @@
     ] ;
     .
 
-<#AND3G-t5> a sht:ValidationTest ;
-    mf:name "AND3G-t5" ;
-    sht:trait sht:Extends , sht:Exhaustive ;
-    sht:comment "@@AND3G-5" ;
+<#AND3G-pass> a sht:ValidationTest ;
+    mf:name "AND3G-pass" ;
+    sht:trait sht:Extends ;
+    sht:comment "ABS <A> ABS <B> @<A> <C> <D> @<B> AND @<A> on { <sABCDxxxxxxx> <p> 0 }" ;
     mf:status mf:proposed ;
     mf:action [
         sht:schema <../schemas/AND3G.shex> ;
@@ -16418,36 +16418,36 @@
     ] ;
     .
 
-<#AND3G-t6> a sht:ValidationFailure ;
-    mf:name "AND3G-t6" ;
-    sht:trait sht:Extends , sht:Exhaustive ;
-    sht:comment "@@AND3G-6" ;
+<#AND3G-fail_G2pattern> a sht:ValidationFailure ;
+    mf:name "AND3G-fail_G2pattern" ;
+    sht:trait sht:Extends ;
+    sht:comment "ABS <A> ABS <B> @<A> <C> <D> @<B> AND @<A> on { <sAxxxxxxxxxx> <p> 0 }" ;
     mf:status mf:proposed ;
     mf:action [
         sht:schema <../schemas/AND3G.shex> ;
         sht:shape <http://a.example/D> ;
         sht:data <sABCD.ttl> ;
-        sht:focus <http://a.example/sAxxxxxxxxxx> ;
+        sht:focus <http://a.example/sxBCDxxxxxxx> ;
     ] ;
     .
 
-<#AND3G-t7> a sht:ValidationFailure ;
-    mf:name "AND3G-t7" ;
-    sht:trait sht:Extends , sht:Exhaustive ;
-    sht:comment "@@AND3G-7" ;
+<#AND3G-fail_G1Bpattern> a sht:ValidationFailure ;
+    mf:name "AND3G-fail_G1Bpattern" ;
+    sht:trait sht:Extends ;
+    sht:comment "ABS <A> ABS <B> @<A> <C> <D> @<B> AND @<A> on { <sxxCxxxxxxxx> <p> 0 }" ;
     mf:status mf:proposed ;
     mf:action [
         sht:schema <../schemas/AND3G.shex> ;
         sht:shape <http://a.example/D> ;
         sht:data <sABCD.ttl> ;
-        sht:focus <http://a.example/sxxCxxxxxxxx> ;
+        sht:focus <http://a.example/sABxDxxxxxxx> ;
     ] ;
     .
 
-<#ExtendAND3G-t8> a sht:ValidationTest ;
-    mf:name "ExtendAND3G-t8" ;
+<#ExtendAND3G-pass> a sht:ValidationTest ;
+    mf:name "ExtendAND3G-pass" ;
     sht:trait sht:Extends , sht:Exhaustive ;
-    sht:comment "@@ExtendAND3G-8" ;
+    sht:comment "<E> EXTENDS @<D> {:p [2]} on { <sABCDExxxxxx> <p> 0, 2 }" ;
     mf:status mf:proposed ;
     mf:action [
         sht:schema <../schemas/ExtendAND3G.shex> ;
@@ -16457,10 +16457,10 @@
     ] ;
     .
 
-<#ExtendAND3G-t9> a sht:ValidationFailure ;
-    mf:name "ExtendAND3G-t9" ;
-    sht:trait sht:Extends , sht:Exhaustive ;
-    sht:comment "@@ExtendAND3G-9" ;
+<#ExtendAND3G-fail_EXTG1> a sht:ValidationFailure ;
+    mf:name "ExtendAND3G-fail_EXTG1" ;
+    sht:trait sht:Extends ;
+    sht:comment "<E> EXTENDS @<D> {:p [2]} on { <sABCDExxxxxx> <p> 2 }" ;
     mf:status mf:proposed ;
     mf:action [
         sht:schema <../schemas/ExtendAND3G.shex> ;
@@ -16470,10 +16470,10 @@
     ] ;
     .
 
-<#ExtendAND3G-t10> a sht:ValidationFailure ;
-    mf:name "ExtendAND3G-t10" ;
-    sht:trait sht:Extends , sht:Exhaustive ;
-    sht:comment "@@ExtendAND3G-10" ;
+<#ExtendAND3G-fail_ExtraP> a sht:ValidationFailure ;
+    mf:name "ExtendAND3G-fail_ExtraP" ;
+    sht:trait sht:Extends ;
+    sht:comment "<E> EXTENDS @<D> {:p [2]} on { <sABCDExxxxxx> <p> 0, 2, 3 }" ;
     mf:status mf:proposed ;
     mf:action [
         sht:schema <../schemas/ExtendAND3G.shex> ;
@@ -16483,10 +16483,10 @@
     ] ;
     .
 
-<#ExtendAND3G-t11> a sht:ValidationFailure ;
-    mf:name "ExtendAND3G-t11" ;
-    sht:trait sht:Extends , sht:Exhaustive ;
-    sht:comment "@@ExtendAND3G-11" ;
+<#ExtendAND3G-fail_G3pattern> a sht:ValidationFailure ;
+    mf:name "ExtendAND3G-fail_G3pattern" ;
+    sht:trait sht:Extends ;
+    sht:comment "<E> EXTENDS @<D> {:p [2]} on { <sxBCDExxxxxx> <p> 0, 2 }" ;
     mf:status mf:proposed ;
     mf:action [
         sht:schema <../schemas/ExtendAND3G.shex> ;
@@ -16496,10 +16496,10 @@
     ] ;
     .
 
-<#ExtendAND3G-t12> a sht:ValidationFailure ;
-    mf:name "ExtendAND3G-t12" ;
-    sht:trait sht:Extends , sht:Exhaustive ;
-    sht:comment "@@ExtendAND3G-12" ;
+<#ExtendAND3G-fail_EXTG1ANDG1> a sht:ValidationFailure ;
+    mf:name "ExtendAND3G-fail_EXTG1ANDG1" ;
+    sht:trait sht:Extends ;
+    sht:comment "<E> EXTENDS @<D> {:p [2]} on { <sABxDExxxxxx> <p> 0, 2 }" ;
     mf:status mf:proposed ;
     mf:action [
         sht:schema <../schemas/ExtendAND3G.shex> ;
@@ -16509,10 +16509,10 @@
     ] ;
     .
 
-<#ExtendAND3G-t13> a sht:ValidationFailure ;
-    mf:name "ExtendAND3G-t13" ;
-    sht:trait sht:Extends , sht:Exhaustive ;
-    sht:comment "@@ExtendAND3G-13" ;
+<#ExtendAND3G-fail_EXTG1pattern> a sht:ValidationFailure ;
+    mf:name "ExtendAND3G-fail_EXTG1pattern" ;
+    sht:trait sht:Extends ;
+    sht:comment "<E> EXTENDS @<D> {:p [2]} on { <sABCxExxxxxx> <p> 0, 2 }" ;
     mf:status mf:proposed ;
     mf:action [
         sht:schema <../schemas/ExtendAND3G.shex> ;
@@ -16522,10 +16522,10 @@
     ] ;
     .
 
-<#ExtendAND3G-t14> a sht:ValidationFailure ;
-    mf:name "ExtendAND3G-t14" ;
-    sht:trait sht:Extends , sht:Exhaustive ;
-    sht:comment "@@ExtendAND3G-14" ;
+<#ExtendAND3G-fail_G0> a sht:ValidationFailure ;
+    mf:name "ExtendAND3G-fail_G0" ;
+    sht:trait sht:Extends ;
+    sht:comment "<E> EXTENDS @<D> {:p [2]} on { <sABCDxxxxxxx> <p> 0, 2 }" ;
     mf:status mf:proposed ;
     mf:action [
         sht:schema <../schemas/ExtendAND3G.shex> ;
@@ -16550,7 +16550,7 @@
 
 <#Extend3G-t16> a sht:ValidationFailure ;
     mf:name "Extend3G-t16" ;
-    sht:trait sht:Extends , sht:Exhaustive ;
+    sht:trait sht:Extends ;
     sht:comment "@@Extend3G-16" ;
     mf:status mf:proposed ;
     mf:action [
@@ -16563,7 +16563,7 @@
 
 <#Extend3G-t17> a sht:ValidationFailure ;
     mf:name "Extend3G-t17" ;
-    sht:trait sht:Extends , sht:Exhaustive ;
+    sht:trait sht:Extends ;
     sht:comment "@@Extend3G-17" ;
     mf:status mf:proposed ;
     mf:action [
@@ -16576,7 +16576,7 @@
 
 <#Extend3G-t18> a sht:ValidationFailure ;
     mf:name "Extend3G-t18" ;
-    sht:trait sht:Extends , sht:Exhaustive ;
+    sht:trait sht:Extends ;
     sht:comment "@@Extend3G-18" ;
     mf:status mf:proposed ;
     mf:action [
@@ -16589,7 +16589,7 @@
 
 <#Extend3G-t19> a sht:ValidationFailure ;
     mf:name "Extend3G-t19" ;
-    sht:trait sht:Extends , sht:Exhaustive ;
+    sht:trait sht:Extends ;
     sht:comment "@@Extend3G-19" ;
     mf:status mf:proposed ;
     mf:action [
@@ -16602,7 +16602,7 @@
 
 <#Extend3G-t20> a sht:ValidationFailure ;
     mf:name "Extend3G-t20" ;
-    sht:trait sht:Extends , sht:Exhaustive ;
+    sht:trait sht:Extends ;
     sht:comment "@@Extend3G-20" ;
     mf:status mf:proposed ;
     mf:action [
@@ -16615,7 +16615,7 @@
 
 <#Extend3G-t21> a sht:ValidationFailure ;
     mf:name "Extend3G-t21" ;
-    sht:trait sht:Extends , sht:Exhaustive ;
+    sht:trait sht:Extends ;
     sht:comment "@@Extend3G-21" ;
     mf:status mf:proposed ;
     mf:action [
@@ -16641,7 +16641,7 @@
 
 <#ExtendANDExtend3GAND3G-t23> a sht:ValidationFailure ;
     mf:name "ExtendANDExtend3GAND3G-t23" ;
-    sht:trait sht:Extends , sht:Exhaustive ;
+    sht:trait sht:Extends ;
     sht:comment "@@ExtendANDExtend3GAND3G-23" ;
     mf:status mf:proposed ;
     mf:action [
@@ -16654,7 +16654,7 @@
 
 <#ExtendANDExtend3GAND3G-t24> a sht:ValidationFailure ;
     mf:name "ExtendANDExtend3GAND3G-t24" ;
-    sht:trait sht:Extends , sht:Exhaustive ;
+    sht:trait sht:Extends ;
     sht:comment "@@ExtendANDExtend3GAND3G-24" ;
     mf:status mf:proposed ;
     mf:action [
@@ -16667,7 +16667,7 @@
 
 <#ExtendANDExtend3GAND3G-t25> a sht:ValidationFailure ;
     mf:name "ExtendANDExtend3GAND3G-t25" ;
-    sht:trait sht:Extends , sht:Exhaustive ;
+    sht:trait sht:Extends ;
     sht:comment "@@ExtendANDExtend3GAND3G-25" ;
     mf:status mf:proposed ;
     mf:action [
@@ -16680,7 +16680,7 @@
 
 <#ExtendANDExtend3GAND3G-t26> a sht:ValidationFailure ;
     mf:name "ExtendANDExtend3GAND3G-t26" ;
-    sht:trait sht:Extends , sht:Exhaustive ;
+    sht:trait sht:Extends ;
     sht:comment "@@ExtendANDExtend3GAND3G-26" ;
     mf:status mf:proposed ;
     mf:action [
@@ -16693,7 +16693,7 @@
 
 <#ExtendANDExtend3GAND3G-t27> a sht:ValidationFailure ;
     mf:name "ExtendANDExtend3GAND3G-t27" ;
-    sht:trait sht:Extends , sht:Exhaustive ;
+    sht:trait sht:Extends ;
     sht:comment "@@ExtendANDExtend3GAND3G-27" ;
     mf:status mf:proposed ;
     mf:action [
@@ -16706,7 +16706,7 @@
 
 <#ExtendANDExtend3GAND3G-t28> a sht:ValidationFailure ;
     mf:name "ExtendANDExtend3GAND3G-t28" ;
-    sht:trait sht:Extends , sht:Exhaustive ;
+    sht:trait sht:Extends ;
     sht:comment "@@ExtendANDExtend3GAND3G-28" ;
     mf:status mf:proposed ;
     mf:action [
@@ -16719,7 +16719,7 @@
 
 <#ExtendANDExtend3GAND3G-t29> a sht:ValidationFailure ;
     mf:name "ExtendANDExtend3GAND3G-t29" ;
-    sht:trait sht:Extends , sht:Exhaustive ;
+    sht:trait sht:Extends ;
     sht:comment "@@ExtendANDExtend3GAND3G-29" ;
     mf:status mf:proposed ;
     mf:action [
@@ -16732,7 +16732,7 @@
 
 <#ExtendANDExtend3GAND3G-t30> a sht:ValidationFailure ;
     mf:name "ExtendANDExtend3GAND3G-t30" ;
-    sht:trait sht:Extends , sht:Exhaustive ;
+    sht:trait sht:Extends ;
     sht:comment "@@ExtendANDExtend3GAND3G-30" ;
     mf:status mf:proposed ;
     mf:action [
@@ -16745,7 +16745,7 @@
 
 <#ExtendANDExtend3GAND3G-t31> a sht:ValidationFailure ;
     mf:name "ExtendANDExtend3GAND3G-t31" ;
-    sht:trait sht:Extends , sht:Exhaustive ;
+    sht:trait sht:Extends ;
     sht:comment "@@ExtendANDExtend3GAND3G-31" ;
     mf:status mf:proposed ;
     mf:action [
@@ -16758,7 +16758,7 @@
 
 <#ExtendANDExtend3GAND3G-t32> a sht:ValidationFailure ;
     mf:name "ExtendANDExtend3GAND3G-t32" ;
-    sht:trait sht:Extends , sht:Exhaustive ;
+    sht:trait sht:Extends ;
     sht:comment "@@ExtendANDExtend3GAND3G-32" ;
     mf:status mf:proposed ;
     mf:action [
@@ -16784,7 +16784,7 @@
 
 <#ExtendANDExtend3GAND3G-t34> a sht:ValidationFailure ;
     mf:name "ExtendANDExtend3GAND3G-t34" ;
-    sht:trait sht:Extends , sht:Exhaustive ;
+    sht:trait sht:Extends ;
     sht:comment "@@ExtendANDExtend3GAND3G-34" ;
     mf:status mf:proposed ;
     mf:action [
@@ -16797,7 +16797,7 @@
 
 <#ExtendANDExtend3GAND3G-t35> a sht:ValidationFailure ;
     mf:name "ExtendANDExtend3GAND3G-t35" ;
-    sht:trait sht:Extends , sht:Exhaustive ;
+    sht:trait sht:Extends ;
     sht:comment "@@ExtendANDExtend3GAND3G-35" ;
     mf:status mf:proposed ;
     mf:action [
@@ -16810,7 +16810,7 @@
 
 <#vitals-RESTRICTS-t36> a sht:ValidationTest ;
     mf:name "vitals-RESTRICTS-t36" ;
-    sht:trait sht:Extends , sht:Exhaustive ;
+    sht:trait sht:Extends ;
     sht:comment "@@vitals-RESTRICTS-36" ;
     mf:status mf:proposed ;
     mf:action [

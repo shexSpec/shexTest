@@ -19262,7 +19262,7 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#ExtendsRepeatedP-t1",
+          "@id": "#ExtendsRepeatedP-fail_vs",
           "@type": "sht:ValidationFailure",
           "action": {
             "schema": "../schemas/ExtendsRepeatedP.shex",
@@ -19271,15 +19271,14 @@
             "focus": "http://a.example/s"
           },
           "extensionResults": [],
-          "name": "ExtendsRepeatedP-t1",
+          "name": "ExtendsRepeatedP-fail_vs",
           "trait": [
-            "Extends",
-            "Exhaustive"
+            "Extends"
           ],
           "status": "mf:proposed"
         },
         {
-          "@id": "#ANDAbstract-t2",
+          "@id": "#ANDAbstract-pass",
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/ANDAbstract.shex",
@@ -19288,15 +19287,14 @@
             "focus": "http://a.example/sABxxxxxxxxx"
           },
           "extensionResults": [],
-          "name": "ANDAbstract-t2",
+          "name": "ANDAbstract-pass",
           "trait": [
-            "Extends",
-            "Exhaustive"
+            "Extends"
           ],
           "status": "mf:proposed"
         },
         {
-          "@id": "#ANDAbstract-t3",
+          "@id": "#ANDAbstract-fail_G1pattern",
           "@type": "sht:ValidationFailure",
           "action": {
             "schema": "../schemas/ANDAbstract.shex",
@@ -19305,15 +19303,14 @@
             "focus": "http://a.example/sAxxxxxxxxxx"
           },
           "extensionResults": [],
-          "name": "ANDAbstract-t3",
+          "name": "ANDAbstract-fail_G1pattern",
           "trait": [
-            "Extends",
-            "Exhaustive"
+            "Extends"
           ],
           "status": "mf:proposed"
         },
         {
-          "@id": "#ANDAbstract-t4",
+          "@id": "#ANDAbstract-fail_pattern",
           "@type": "sht:ValidationFailure",
           "action": {
             "schema": "../schemas/ANDAbstract.shex",
@@ -19322,15 +19319,14 @@
             "focus": "http://a.example/sxBxxxxxxxxx"
           },
           "extensionResults": [],
-          "name": "ANDAbstract-t4",
+          "name": "ANDAbstract-fail_pattern",
           "trait": [
-            "Extends",
-            "Exhaustive"
+            "Extends"
           ],
           "status": "mf:proposed"
         },
         {
-          "@id": "#AND3G-t5",
+          "@id": "#AND3G-pass",
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/AND3G.shex",
@@ -19339,49 +19335,46 @@
             "focus": "http://a.example/sABCDxxxxxxx"
           },
           "extensionResults": [],
-          "name": "AND3G-t5",
+          "name": "AND3G-pass",
           "trait": [
-            "Extends",
-            "Exhaustive"
+            "Extends"
           ],
           "status": "mf:proposed"
         },
         {
-          "@id": "#AND3G-t6",
+          "@id": "#AND3G-fail_G2pattern",
           "@type": "sht:ValidationFailure",
           "action": {
             "schema": "../schemas/AND3G.shex",
             "shape": "http://a.example/D",
             "data": "sABCD.ttl",
-            "focus": "http://a.example/sAxxxxxxxxxx"
+            "focus": "http://a.example/sxBCDxxxxxxx"
           },
           "extensionResults": [],
-          "name": "AND3G-t6",
+          "name": "AND3G-fail_G2pattern",
           "trait": [
-            "Extends",
-            "Exhaustive"
+            "Extends"
           ],
           "status": "mf:proposed"
         },
         {
-          "@id": "#AND3G-t7",
+          "@id": "#AND3G-fail_G1Bpattern",
           "@type": "sht:ValidationFailure",
           "action": {
             "schema": "../schemas/AND3G.shex",
             "shape": "http://a.example/D",
             "data": "sABCD.ttl",
-            "focus": "http://a.example/sxxCxxxxxxxx"
+            "focus": "http://a.example/sABxDxxxxxxx"
           },
           "extensionResults": [],
-          "name": "AND3G-t7",
+          "name": "AND3G-fail_G1Bpattern",
           "trait": [
-            "Extends",
-            "Exhaustive"
+            "Extends"
           ],
           "status": "mf:proposed"
         },
         {
-          "@id": "#ExtendAND3G-t8",
+          "@id": "#ExtendAND3G-pass",
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/ExtendAND3G.shex",
@@ -19390,7 +19383,7 @@
             "focus": "http://a.example/sABCDExxxxxx"
           },
           "extensionResults": [],
-          "name": "ExtendAND3G-t8",
+          "name": "ExtendAND3G-pass",
           "trait": [
             "Extends",
             "Exhaustive"
@@ -19398,7 +19391,7 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#ExtendAND3G-t9",
+          "@id": "#ExtendAND3G-fail_EXTG1",
           "@type": "sht:ValidationFailure",
           "action": {
             "schema": "../schemas/ExtendAND3G.shex",
@@ -19407,15 +19400,14 @@
             "focus": "http://a.example/sABCDExxxxx1"
           },
           "extensionResults": [],
-          "name": "ExtendAND3G-t9",
+          "name": "ExtendAND3G-fail_EXTG1",
           "trait": [
-            "Extends",
-            "Exhaustive"
+            "Extends"
           ],
           "status": "mf:proposed"
         },
         {
-          "@id": "#ExtendAND3G-t10",
+          "@id": "#ExtendAND3G-fail_ExtraP",
           "@type": "sht:ValidationFailure",
           "action": {
             "schema": "../schemas/ExtendAND3G.shex",
@@ -19424,15 +19416,14 @@
             "focus": "http://a.example/sABCDExxxxx3"
           },
           "extensionResults": [],
-          "name": "ExtendAND3G-t10",
+          "name": "ExtendAND3G-fail_ExtraP",
           "trait": [
-            "Extends",
-            "Exhaustive"
+            "Extends"
           ],
           "status": "mf:proposed"
         },
         {
-          "@id": "#ExtendAND3G-t11",
+          "@id": "#ExtendAND3G-fail_G3pattern",
           "@type": "sht:ValidationFailure",
           "action": {
             "schema": "../schemas/ExtendAND3G.shex",
@@ -19441,15 +19432,14 @@
             "focus": "http://a.example/sxBCDExxxxxx"
           },
           "extensionResults": [],
-          "name": "ExtendAND3G-t11",
+          "name": "ExtendAND3G-fail_G3pattern",
           "trait": [
-            "Extends",
-            "Exhaustive"
+            "Extends"
           ],
           "status": "mf:proposed"
         },
         {
-          "@id": "#ExtendAND3G-t12",
+          "@id": "#ExtendAND3G-fail_EXTG1ANDG1",
           "@type": "sht:ValidationFailure",
           "action": {
             "schema": "../schemas/ExtendAND3G.shex",
@@ -19458,15 +19448,14 @@
             "focus": "http://a.example/sABxDExxxxxx"
           },
           "extensionResults": [],
-          "name": "ExtendAND3G-t12",
+          "name": "ExtendAND3G-fail_EXTG1ANDG1",
           "trait": [
-            "Extends",
-            "Exhaustive"
+            "Extends"
           ],
           "status": "mf:proposed"
         },
         {
-          "@id": "#ExtendAND3G-t13",
+          "@id": "#ExtendAND3G-fail_EXTG1pattern",
           "@type": "sht:ValidationFailure",
           "action": {
             "schema": "../schemas/ExtendAND3G.shex",
@@ -19475,15 +19464,14 @@
             "focus": "http://a.example/sABCxExxxxxx"
           },
           "extensionResults": [],
-          "name": "ExtendAND3G-t13",
+          "name": "ExtendAND3G-fail_EXTG1pattern",
           "trait": [
-            "Extends",
-            "Exhaustive"
+            "Extends"
           ],
           "status": "mf:proposed"
         },
         {
-          "@id": "#ExtendAND3G-t14",
+          "@id": "#ExtendAND3G-fail_G0",
           "@type": "sht:ValidationFailure",
           "action": {
             "schema": "../schemas/ExtendAND3G.shex",
@@ -19492,10 +19480,9 @@
             "focus": "http://a.example/sABCDxxxxxxx"
           },
           "extensionResults": [],
-          "name": "ExtendAND3G-t14",
+          "name": "ExtendAND3G-fail_G0",
           "trait": [
-            "Extends",
-            "Exhaustive"
+            "Extends"
           ],
           "status": "mf:proposed"
         },
@@ -19528,8 +19515,7 @@
           "extensionResults": [],
           "name": "Extend3G-t16",
           "trait": [
-            "Extends",
-            "Exhaustive"
+            "Extends"
           ],
           "status": "mf:proposed"
         },
@@ -19545,8 +19531,7 @@
           "extensionResults": [],
           "name": "Extend3G-t17",
           "trait": [
-            "Extends",
-            "Exhaustive"
+            "Extends"
           ],
           "status": "mf:proposed"
         },
@@ -19562,8 +19547,7 @@
           "extensionResults": [],
           "name": "Extend3G-t18",
           "trait": [
-            "Extends",
-            "Exhaustive"
+            "Extends"
           ],
           "status": "mf:proposed"
         },
@@ -19579,8 +19563,7 @@
           "extensionResults": [],
           "name": "Extend3G-t19",
           "trait": [
-            "Extends",
-            "Exhaustive"
+            "Extends"
           ],
           "status": "mf:proposed"
         },
@@ -19596,8 +19579,7 @@
           "extensionResults": [],
           "name": "Extend3G-t20",
           "trait": [
-            "Extends",
-            "Exhaustive"
+            "Extends"
           ],
           "status": "mf:proposed"
         },
@@ -19613,8 +19595,7 @@
           "extensionResults": [],
           "name": "Extend3G-t21",
           "trait": [
-            "Extends",
-            "Exhaustive"
+            "Extends"
           ],
           "status": "mf:proposed"
         },
@@ -19647,8 +19628,7 @@
           "extensionResults": [],
           "name": "ExtendANDExtend3GAND3G-t23",
           "trait": [
-            "Extends",
-            "Exhaustive"
+            "Extends"
           ],
           "status": "mf:proposed"
         },
@@ -19664,8 +19644,7 @@
           "extensionResults": [],
           "name": "ExtendANDExtend3GAND3G-t24",
           "trait": [
-            "Extends",
-            "Exhaustive"
+            "Extends"
           ],
           "status": "mf:proposed"
         },
@@ -19681,8 +19660,7 @@
           "extensionResults": [],
           "name": "ExtendANDExtend3GAND3G-t25",
           "trait": [
-            "Extends",
-            "Exhaustive"
+            "Extends"
           ],
           "status": "mf:proposed"
         },
@@ -19698,8 +19676,7 @@
           "extensionResults": [],
           "name": "ExtendANDExtend3GAND3G-t26",
           "trait": [
-            "Extends",
-            "Exhaustive"
+            "Extends"
           ],
           "status": "mf:proposed"
         },
@@ -19715,8 +19692,7 @@
           "extensionResults": [],
           "name": "ExtendANDExtend3GAND3G-t27",
           "trait": [
-            "Extends",
-            "Exhaustive"
+            "Extends"
           ],
           "status": "mf:proposed"
         },
@@ -19732,8 +19708,7 @@
           "extensionResults": [],
           "name": "ExtendANDExtend3GAND3G-t28",
           "trait": [
-            "Extends",
-            "Exhaustive"
+            "Extends"
           ],
           "status": "mf:proposed"
         },
@@ -19749,8 +19724,7 @@
           "extensionResults": [],
           "name": "ExtendANDExtend3GAND3G-t29",
           "trait": [
-            "Extends",
-            "Exhaustive"
+            "Extends"
           ],
           "status": "mf:proposed"
         },
@@ -19766,8 +19740,7 @@
           "extensionResults": [],
           "name": "ExtendANDExtend3GAND3G-t30",
           "trait": [
-            "Extends",
-            "Exhaustive"
+            "Extends"
           ],
           "status": "mf:proposed"
         },
@@ -19783,8 +19756,7 @@
           "extensionResults": [],
           "name": "ExtendANDExtend3GAND3G-t31",
           "trait": [
-            "Extends",
-            "Exhaustive"
+            "Extends"
           ],
           "status": "mf:proposed"
         },
@@ -19800,8 +19772,7 @@
           "extensionResults": [],
           "name": "ExtendANDExtend3GAND3G-t32",
           "trait": [
-            "Extends",
-            "Exhaustive"
+            "Extends"
           ],
           "status": "mf:proposed"
         },
@@ -19834,8 +19805,7 @@
           "extensionResults": [],
           "name": "ExtendANDExtend3GAND3G-t34",
           "trait": [
-            "Extends",
-            "Exhaustive"
+            "Extends"
           ],
           "status": "mf:proposed"
         },
@@ -19851,8 +19821,7 @@
           "extensionResults": [],
           "name": "ExtendANDExtend3GAND3G-t35",
           "trait": [
-            "Extends",
-            "Exhaustive"
+            "Extends"
           ],
           "status": "mf:proposed"
         },
@@ -19868,8 +19837,7 @@
           "extensionResults": [],
           "name": "vitals-RESTRICTS-t36",
           "trait": [
-            "Extends",
-            "Exhaustive"
+            "Extends"
           ],
           "status": "mf:proposed"
         },
