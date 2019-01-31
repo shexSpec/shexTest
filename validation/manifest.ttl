@@ -1297,14 +1297,14 @@
         <#ExtendAND3G-fail_EXTG1ANDG1>
         <#ExtendAND3G-fail_EXTG1pattern>
         <#ExtendAND3G-fail_G0>
-        <#Extend3G-t15>
+        <#Extend3G-pass>
         <#Extend3G-t16>
         <#Extend3G-t17>
         <#Extend3G-t18>
         <#Extend3G-t19>
         <#Extend3G-t20>
         <#Extend3G-t21>
-        <#ExtendANDExtend3GAND3G-t22>
+        <#ExtendANDExtend3GAND3G-pass>
         <#ExtendANDExtend3GAND3G-t23>
         <#ExtendANDExtend3GAND3G-t24>
         <#ExtendANDExtend3GAND3G-t25>
@@ -1318,24 +1318,24 @@
         <#ExtendANDExtend3GAND3G-t33>
         <#ExtendANDExtend3GAND3G-t34>
         <#ExtendANDExtend3GAND3G-t35>
-        <#vitals-RESTRICTS-t36>
-        <#vitals-RESTRICTS-t37>
-        <#vitals-RESTRICTS-t38>
-        <#vitals-RESTRICTS-t39>
-        <#vitals-RESTRICTS-t40>
-        <#vitals-RESTRICTS-t41>
-        <#vitals-RESTRICTS-t42>
-        <#vitals-RESTRICTS-t43>
-        <#vitals-RESTRICTS-t44>
-        <#vitals-RESTRICTS-t45>
-        <#vitals-RESTRICTS-t46>
-        <#vitals-RESTRICTS-t47>
-        <#vitals-RESTRICTS-t48>
-        <#vitals-RESTRICTS-t49>
-        <#vitals-RESTRICTS-t50>
-        <#vitals-RESTRICTS-t51>
-        <#vitals-RESTRICTS-t52>
-        <#vitals-RESTRICTS-t53>
+        <#vitals-RESTRICTS-pass_lie-Observation>
+        <#vitals-RESTRICTS-pass_lie-Vital>
+        <#vitals-RESTRICTS-pass_lie-BP>
+        <#vitals-RESTRICTS-pass_lie-PostureVital>
+        <#vitals-RESTRICTS-pass_lie-ReclinedVital>
+        <#vitals-RESTRICTS-pass_lie-PostureBP>
+        <#vitals-RESTRICTS-pass_lie-ReclinedBP>
+        <#vitals-RESTRICTS-pass_lie-Posture>
+        <#vitals-RESTRICTS-pass_lie-Reclined>
+        <#vitals-RESTRICTS-pass_sit-Observation>
+        <#vitals-RESTRICTS-pass_sit-Vital>
+        <#vitals-RESTRICTS-pass_sit-BP>
+        <#vitals-RESTRICTS-pass_sit-PostureVital>
+        <#vitals-RESTRICTS-fail_sit-ReclinedVital>
+        <#vitals-RESTRICTS-pass_sit-PostureBP>
+        <#vitals-RESTRICTS-fail_sit-ReclinedBP>
+        <#vitals-RESTRICTS-pass_sit-Posture>
+        <#vitals-RESTRICTS-fail_sit-Reclined>
     ) .
 
 # definitions
@@ -16535,8 +16535,8 @@
     ] ;
     .
 
-<#Extend3G-t15> a sht:ValidationTest ;
-    mf:name "Extend3G-t15" ;
+<#Extend3G-pass> a sht:ValidationTest ;
+    mf:name "Extend3G-pass" ;
     sht:trait sht:Extends , sht:Exhaustive ;
     sht:comment "@@Extend3G-15" ;
     mf:status mf:proposed ;
@@ -16626,8 +16626,8 @@
     ] ;
     .
 
-<#ExtendANDExtend3GAND3G-t22> a sht:ValidationTest ;
-    mf:name "ExtendANDExtend3GAND3G-t22" ;
+<#ExtendANDExtend3GAND3G-pass> a sht:ValidationTest ;
+    mf:name "ExtendANDExtend3GAND3G-pass" ;
     sht:trait sht:Extends , sht:Exhaustive ;
     sht:comment "@@ExtendANDExtend3GAND3G-22" ;
     mf:status mf:proposed ;
@@ -16808,8 +16808,8 @@
     ] ;
     .
 
-<#vitals-RESTRICTS-t36> a sht:ValidationTest ;
-    mf:name "vitals-RESTRICTS-t36" ;
+<#vitals-RESTRICTS-pass_lie-Observation> a sht:ValidationTest ;
+    mf:name "vitals-RESTRICTS-pass_lie-Observation" ;
     sht:trait sht:Extends ;
     sht:comment "@@vitals-RESTRICTS-36" ;
     mf:status mf:proposed ;
@@ -16821,8 +16821,8 @@
     ] ;
     .
 
-<#vitals-RESTRICTS-t37> a sht:ValidationTest ;
-    mf:name "vitals-RESTRICTS-t37" ;
+<#vitals-RESTRICTS-pass_lie-Vital> a sht:ValidationTest ;
+    mf:name "vitals-RESTRICTS-pass_lie-Vital" ;
     sht:trait sht:Extends , sht:Exhaustive ;
     sht:comment "@@vitals-RESTRICTS-37" ;
     mf:status mf:proposed ;
@@ -16834,8 +16834,8 @@
     ] ;
     .
 
-<#vitals-RESTRICTS-t38> a sht:ValidationTest ;
-    mf:name "vitals-RESTRICTS-t38" ;
+<#vitals-RESTRICTS-pass_lie-BP> a sht:ValidationTest ;
+    mf:name "vitals-RESTRICTS-pass_lie-BP" ;
     sht:trait sht:Extends , sht:Exhaustive ;
     sht:comment "@@vitals-RESTRICTS-38" ;
     mf:status mf:proposed ;
@@ -16847,8 +16847,8 @@
     ] ;
     .
 
-<#vitals-RESTRICTS-t39> a sht:ValidationTest ;
-    mf:name "vitals-RESTRICTS-t39" ;
+<#vitals-RESTRICTS-pass_lie-PostureVital> a sht:ValidationTest ;
+    mf:name "vitals-RESTRICTS-pass_lie-PostureVital" ;
     sht:trait sht:Extends , sht:Exhaustive ;
     sht:comment "@@vitals-RESTRICTS-39" ;
     mf:status mf:proposed ;
@@ -16860,8 +16860,8 @@
     ] ;
     .
 
-<#vitals-RESTRICTS-t40> a sht:ValidationTest ;
-    mf:name "vitals-RESTRICTS-t40" ;
+<#vitals-RESTRICTS-pass_lie-ReclinedVital> a sht:ValidationTest ;
+    mf:name "vitals-RESTRICTS-pass_lie-ReclinedVital" ;
     sht:trait sht:Extends , sht:Exhaustive ;
     sht:comment "@@vitals-RESTRICTS-40" ;
     mf:status mf:proposed ;
@@ -16873,8 +16873,8 @@
     ] ;
     .
 
-<#vitals-RESTRICTS-t41> a sht:ValidationTest ;
-    mf:name "vitals-RESTRICTS-t41" ;
+<#vitals-RESTRICTS-pass_lie-PostureBP> a sht:ValidationTest ;
+    mf:name "vitals-RESTRICTS-pass_lie-PostureBP" ;
     sht:trait sht:Extends , sht:Exhaustive ;
     sht:comment "@@vitals-RESTRICTS-41" ;
     mf:status mf:proposed ;
@@ -16886,8 +16886,8 @@
     ] ;
     .
 
-<#vitals-RESTRICTS-t42> a sht:ValidationTest ;
-    mf:name "vitals-RESTRICTS-t42" ;
+<#vitals-RESTRICTS-pass_lie-ReclinedBP> a sht:ValidationTest ;
+    mf:name "vitals-RESTRICTS-pass_lie-ReclinedBP" ;
     sht:trait sht:Extends , sht:Exhaustive ;
     sht:comment "@@vitals-RESTRICTS-42" ;
     mf:status mf:proposed ;
@@ -16899,8 +16899,8 @@
     ] ;
     .
 
-<#vitals-RESTRICTS-t43> a sht:ValidationTest ;
-    mf:name "vitals-RESTRICTS-t43" ;
+<#vitals-RESTRICTS-pass_lie-Posture> a sht:ValidationTest ;
+    mf:name "vitals-RESTRICTS-pass_lie-Posture" ;
     sht:trait sht:Extends , sht:Exhaustive ;
     sht:comment "@@vitals-RESTRICTS-43" ;
     mf:status mf:proposed ;
@@ -16912,8 +16912,8 @@
     ] ;
     .
 
-<#vitals-RESTRICTS-t44> a sht:ValidationTest ;
-    mf:name "vitals-RESTRICTS-t44" ;
+<#vitals-RESTRICTS-pass_lie-Reclined> a sht:ValidationTest ;
+    mf:name "vitals-RESTRICTS-pass_lie-Reclined" ;
     sht:trait sht:Extends , sht:Exhaustive ;
     sht:comment "@@vitals-RESTRICTS-44" ;
     mf:status mf:proposed ;
@@ -16925,8 +16925,8 @@
     ] ;
     .
 
-<#vitals-RESTRICTS-t45> a sht:ValidationTest ;
-    mf:name "vitals-RESTRICTS-t45" ;
+<#vitals-RESTRICTS-pass_sit-Observation> a sht:ValidationTest ;
+    mf:name "vitals-RESTRICTS-pass_sit-Observation" ;
     sht:trait sht:Extends , sht:Exhaustive ;
     sht:comment "@@vitals-RESTRICTS-45" ;
     mf:status mf:proposed ;
@@ -16938,8 +16938,8 @@
     ] ;
     .
 
-<#vitals-RESTRICTS-t46> a sht:ValidationTest ;
-    mf:name "vitals-RESTRICTS-t46" ;
+<#vitals-RESTRICTS-pass_sit-Vital> a sht:ValidationTest ;
+    mf:name "vitals-RESTRICTS-pass_sit-Vital" ;
     sht:trait sht:Extends , sht:Exhaustive ;
     sht:comment "@@vitals-RESTRICTS-46" ;
     mf:status mf:proposed ;
@@ -16951,8 +16951,8 @@
     ] ;
     .
 
-<#vitals-RESTRICTS-t47> a sht:ValidationTest ;
-    mf:name "vitals-RESTRICTS-t47" ;
+<#vitals-RESTRICTS-pass_sit-BP> a sht:ValidationTest ;
+    mf:name "vitals-RESTRICTS-pass_sit-BP" ;
     sht:trait sht:Extends , sht:Exhaustive ;
     sht:comment "@@vitals-RESTRICTS-47" ;
     mf:status mf:proposed ;
@@ -16964,8 +16964,8 @@
     ] ;
     .
 
-<#vitals-RESTRICTS-t48> a sht:ValidationTest ;
-    mf:name "vitals-RESTRICTS-t48" ;
+<#vitals-RESTRICTS-pass_sit-PostureVital> a sht:ValidationTest ;
+    mf:name "vitals-RESTRICTS-pass_sit-PostureVital" ;
     sht:trait sht:Extends , sht:Exhaustive ;
     sht:comment "@@vitals-RESTRICTS-48" ;
     mf:status mf:proposed ;
@@ -16977,8 +16977,8 @@
     ] ;
     .
 
-<#vitals-RESTRICTS-t49> a sht:ValidationFailure ;
-    mf:name "vitals-RESTRICTS-t49" ;
+<#vitals-RESTRICTS-fail_sit-ReclinedVital> a sht:ValidationFailure ;
+    mf:name "vitals-RESTRICTS-fail_sit-ReclinedVital" ;
     sht:trait sht:Extends , sht:Exhaustive ;
     sht:comment "@@vitals-RESTRICTS-49" ;
     mf:status mf:proposed ;
@@ -16990,8 +16990,8 @@
     ] ;
     .
 
-<#vitals-RESTRICTS-t50> a sht:ValidationTest ;
-    mf:name "vitals-RESTRICTS-t50" ;
+<#vitals-RESTRICTS-pass_sit-PostureBP> a sht:ValidationTest ;
+    mf:name "vitals-RESTRICTS-pass_sit-PostureBP" ;
     sht:trait sht:Extends , sht:Exhaustive ;
     sht:comment "@@vitals-RESTRICTS-50" ;
     mf:status mf:proposed ;
@@ -17003,8 +17003,8 @@
     ] ;
     .
 
-<#vitals-RESTRICTS-t51> a sht:ValidationFailure ;
-    mf:name "vitals-RESTRICTS-t51" ;
+<#vitals-RESTRICTS-fail_sit-ReclinedBP> a sht:ValidationFailure ;
+    mf:name "vitals-RESTRICTS-fail_sit-ReclinedBP" ;
     sht:trait sht:Extends , sht:Exhaustive ;
     sht:comment "@@vitals-RESTRICTS-51" ;
     mf:status mf:proposed ;
@@ -17016,8 +17016,8 @@
     ] ;
     .
 
-<#vitals-RESTRICTS-t52> a sht:ValidationTest ;
-    mf:name "vitals-RESTRICTS-t52" ;
+<#vitals-RESTRICTS-pass_sit-Posture> a sht:ValidationTest ;
+    mf:name "vitals-RESTRICTS-pass_sit-Posture" ;
     sht:trait sht:Extends , sht:Exhaustive ;
     sht:comment "@@vitals-RESTRICTS-52" ;
     mf:status mf:proposed ;
@@ -17029,8 +17029,8 @@
     ] ;
     .
 
-<#vitals-RESTRICTS-t53> a sht:ValidationFailure ;
-    mf:name "vitals-RESTRICTS-t53" ;
+<#vitals-RESTRICTS-fail_sit-Reclined> a sht:ValidationFailure ;
+    mf:name "vitals-RESTRICTS-fail_sit-Reclined" ;
     sht:trait sht:Extends , sht:Exhaustive ;
     sht:comment "@@vitals-RESTRICTS-53" ;
     mf:status mf:proposed ;

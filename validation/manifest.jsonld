@@ -19487,7 +19487,7 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#Extend3G-t15",
+          "@id": "#Extend3G-pass",
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/Extend3G.shex",
@@ -19496,7 +19496,7 @@
             "focus": "http://a.example/sABCDEFGxxxx"
           },
           "extensionResults": [],
-          "name": "Extend3G-t15",
+          "name": "Extend3G-pass",
           "trait": [
             "Extends",
             "Exhaustive"
@@ -19600,7 +19600,7 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#ExtendANDExtend3GAND3G-t22",
+          "@id": "#ExtendANDExtend3GAND3G-pass",
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/ExtendANDExtend3GAND3G.shex",
@@ -19609,7 +19609,7 @@
             "focus": "http://a.example/sABCDEFGHIJx"
           },
           "extensionResults": [],
-          "name": "ExtendANDExtend3GAND3G-t22",
+          "name": "ExtendANDExtend3GAND3G-pass",
           "trait": [
             "Extends",
             "Exhaustive"
@@ -19826,7 +19826,7 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#vitals-RESTRICTS-t36",
+          "@id": "#vitals-RESTRICTS-pass_lie-Observation",
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/vitals-RESTRICTS.shex",
@@ -19835,14 +19835,14 @@
             "focus": "http://a.example/#lie"
           },
           "extensionResults": [],
-          "name": "vitals-RESTRICTS-t36",
+          "name": "vitals-RESTRICTS-pass_lie-Observation",
           "trait": [
             "Extends"
           ],
           "status": "mf:proposed"
         },
         {
-          "@id": "#vitals-RESTRICTS-t37",
+          "@id": "#vitals-RESTRICTS-pass_lie-Vital",
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/vitals-RESTRICTS.shex",
@@ -19851,7 +19851,7 @@
             "focus": "http://a.example/#lie"
           },
           "extensionResults": [],
-          "name": "vitals-RESTRICTS-t37",
+          "name": "vitals-RESTRICTS-pass_lie-Vital",
           "trait": [
             "Extends",
             "Exhaustive"
@@ -19859,7 +19859,7 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#vitals-RESTRICTS-t38",
+          "@id": "#vitals-RESTRICTS-pass_lie-BP",
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/vitals-RESTRICTS.shex",
@@ -19868,7 +19868,7 @@
             "focus": "http://a.example/#lie"
           },
           "extensionResults": [],
-          "name": "vitals-RESTRICTS-t38",
+          "name": "vitals-RESTRICTS-pass_lie-BP",
           "trait": [
             "Extends",
             "Exhaustive"
@@ -19876,7 +19876,7 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#vitals-RESTRICTS-t39",
+          "@id": "#vitals-RESTRICTS-pass_lie-PostureVital",
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/vitals-RESTRICTS.shex",
@@ -19885,7 +19885,7 @@
             "focus": "http://a.example/#lie"
           },
           "extensionResults": [],
-          "name": "vitals-RESTRICTS-t39",
+          "name": "vitals-RESTRICTS-pass_lie-PostureVital",
           "trait": [
             "Extends",
             "Exhaustive"
@@ -19893,7 +19893,7 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#vitals-RESTRICTS-t40",
+          "@id": "#vitals-RESTRICTS-pass_lie-ReclinedVital",
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/vitals-RESTRICTS.shex",
@@ -19902,7 +19902,7 @@
             "focus": "http://a.example/#lie"
           },
           "extensionResults": [],
-          "name": "vitals-RESTRICTS-t40",
+          "name": "vitals-RESTRICTS-pass_lie-ReclinedVital",
           "trait": [
             "Extends",
             "Exhaustive"
@@ -19910,7 +19910,7 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#vitals-RESTRICTS-t41",
+          "@id": "#vitals-RESTRICTS-pass_lie-PostureBP",
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/vitals-RESTRICTS.shex",
@@ -19919,7 +19919,7 @@
             "focus": "http://a.example/#lie"
           },
           "extensionResults": [],
-          "name": "vitals-RESTRICTS-t41",
+          "name": "vitals-RESTRICTS-pass_lie-PostureBP",
           "trait": [
             "Extends",
             "Exhaustive"
@@ -19927,7 +19927,7 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#vitals-RESTRICTS-t42",
+          "@id": "#vitals-RESTRICTS-pass_lie-ReclinedBP",
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/vitals-RESTRICTS.shex",
@@ -19936,7 +19936,7 @@
             "focus": "http://a.example/#lie"
           },
           "extensionResults": [],
-          "name": "vitals-RESTRICTS-t42",
+          "name": "vitals-RESTRICTS-pass_lie-ReclinedBP",
           "trait": [
             "Extends",
             "Exhaustive"
@@ -19944,7 +19944,7 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#vitals-RESTRICTS-t43",
+          "@id": "#vitals-RESTRICTS-pass_lie-Posture",
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/vitals-RESTRICTS.shex",
@@ -19953,7 +19953,7 @@
             "focus": "http://a.example/#lie"
           },
           "extensionResults": [],
-          "name": "vitals-RESTRICTS-t43",
+          "name": "vitals-RESTRICTS-pass_lie-Posture",
           "trait": [
             "Extends",
             "Exhaustive"
@@ -19961,7 +19961,7 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#vitals-RESTRICTS-t44",
+          "@id": "#vitals-RESTRICTS-pass_lie-Reclined",
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/vitals-RESTRICTS.shex",
@@ -19970,7 +19970,7 @@
             "focus": "http://a.example/#lie"
           },
           "extensionResults": [],
-          "name": "vitals-RESTRICTS-t44",
+          "name": "vitals-RESTRICTS-pass_lie-Reclined",
           "trait": [
             "Extends",
             "Exhaustive"
@@ -19978,7 +19978,7 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#vitals-RESTRICTS-t45",
+          "@id": "#vitals-RESTRICTS-pass_sit-Observation",
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/vitals-RESTRICTS.shex",
@@ -19987,7 +19987,7 @@
             "focus": "http://a.example/#sit"
           },
           "extensionResults": [],
-          "name": "vitals-RESTRICTS-t45",
+          "name": "vitals-RESTRICTS-pass_sit-Observation",
           "trait": [
             "Extends",
             "Exhaustive"
@@ -19995,7 +19995,7 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#vitals-RESTRICTS-t46",
+          "@id": "#vitals-RESTRICTS-pass_sit-Vital",
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/vitals-RESTRICTS.shex",
@@ -20004,7 +20004,7 @@
             "focus": "http://a.example/#sit"
           },
           "extensionResults": [],
-          "name": "vitals-RESTRICTS-t46",
+          "name": "vitals-RESTRICTS-pass_sit-Vital",
           "trait": [
             "Extends",
             "Exhaustive"
@@ -20012,7 +20012,7 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#vitals-RESTRICTS-t47",
+          "@id": "#vitals-RESTRICTS-pass_sit-BP",
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/vitals-RESTRICTS.shex",
@@ -20021,7 +20021,7 @@
             "focus": "http://a.example/#sit"
           },
           "extensionResults": [],
-          "name": "vitals-RESTRICTS-t47",
+          "name": "vitals-RESTRICTS-pass_sit-BP",
           "trait": [
             "Extends",
             "Exhaustive"
@@ -20029,7 +20029,7 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#vitals-RESTRICTS-t48",
+          "@id": "#vitals-RESTRICTS-pass_sit-PostureVital",
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/vitals-RESTRICTS.shex",
@@ -20038,7 +20038,7 @@
             "focus": "http://a.example/#sit"
           },
           "extensionResults": [],
-          "name": "vitals-RESTRICTS-t48",
+          "name": "vitals-RESTRICTS-pass_sit-PostureVital",
           "trait": [
             "Extends",
             "Exhaustive"
@@ -20046,7 +20046,7 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#vitals-RESTRICTS-t49",
+          "@id": "#vitals-RESTRICTS-fail_sit-ReclinedVital",
           "@type": "sht:ValidationFailure",
           "action": {
             "schema": "../schemas/vitals-RESTRICTS.shex",
@@ -20055,7 +20055,7 @@
             "focus": "http://a.example/#sit"
           },
           "extensionResults": [],
-          "name": "vitals-RESTRICTS-t49",
+          "name": "vitals-RESTRICTS-fail_sit-ReclinedVital",
           "trait": [
             "Extends",
             "Exhaustive"
@@ -20063,7 +20063,7 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#vitals-RESTRICTS-t50",
+          "@id": "#vitals-RESTRICTS-pass_sit-PostureBP",
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/vitals-RESTRICTS.shex",
@@ -20072,7 +20072,7 @@
             "focus": "http://a.example/#sit"
           },
           "extensionResults": [],
-          "name": "vitals-RESTRICTS-t50",
+          "name": "vitals-RESTRICTS-pass_sit-PostureBP",
           "trait": [
             "Extends",
             "Exhaustive"
@@ -20080,7 +20080,7 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#vitals-RESTRICTS-t51",
+          "@id": "#vitals-RESTRICTS-fail_sit-ReclinedBP",
           "@type": "sht:ValidationFailure",
           "action": {
             "schema": "../schemas/vitals-RESTRICTS.shex",
@@ -20089,7 +20089,7 @@
             "focus": "http://a.example/#sit"
           },
           "extensionResults": [],
-          "name": "vitals-RESTRICTS-t51",
+          "name": "vitals-RESTRICTS-fail_sit-ReclinedBP",
           "trait": [
             "Extends",
             "Exhaustive"
@@ -20097,7 +20097,7 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#vitals-RESTRICTS-t52",
+          "@id": "#vitals-RESTRICTS-pass_sit-Posture",
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/vitals-RESTRICTS.shex",
@@ -20106,7 +20106,7 @@
             "focus": "http://a.example/#sit"
           },
           "extensionResults": [],
-          "name": "vitals-RESTRICTS-t52",
+          "name": "vitals-RESTRICTS-pass_sit-Posture",
           "trait": [
             "Extends",
             "Exhaustive"
@@ -20114,7 +20114,7 @@
           "status": "mf:proposed"
         },
         {
-          "@id": "#vitals-RESTRICTS-t53",
+          "@id": "#vitals-RESTRICTS-fail_sit-Reclined",
           "@type": "sht:ValidationFailure",
           "action": {
             "schema": "../schemas/vitals-RESTRICTS.shex",
@@ -20123,7 +20123,7 @@
             "focus": "http://a.example/#sit"
           },
           "extensionResults": [],
-          "name": "vitals-RESTRICTS-t53",
+          "name": "vitals-RESTRICTS-fail_sit-Reclined",
           "trait": [
             "Extends",
             "Exhaustive"
