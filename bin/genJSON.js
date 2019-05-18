@@ -232,9 +232,9 @@ function genText () {
   }
   if (!errors) {
     if (OUTFILE) {
-      fs.writeFileSync(OUTFILE, JSON.stringify(ret, null, "  "));
+      fs.writeFileSync(OUTFILE, JSON.stringify(ret, null, "  ") + "\n");
     } else {
-      console.log(JSON.stringify(ret, null, "  "));
+      console.log(JSON.stringify(ret, null, "  ") + "\n");
     }
     process.exit(0);
   } else {
