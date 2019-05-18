@@ -1,9 +1,13 @@
 (function () {
+  const MANIFEST_FILE = "manifest.jsonld";
+  const PROGRESS_CHUNK_COUNT = 100;
+  const OCTICON_USE = "<svg viewBox='0 0 16 16' style='height: .8em;' aria-hidden='true'><use xlink:href='#octicon'/></svg>"; // doesn't render when composed in pieces.
+
   if (location.search.substr(1) === "toy") { // some examples from validation/manifest.jsonld
     renderManifest(aFewTests(), "validation/");
   } else {
     $.ajaxSetup({ mimeType: "text/plain" }); // for persistent FF bug.
-    $.getJSON(location.search.substr(1) + "/manifest.jsonld").then(data => {
+    $.getJSON(location.search.substr(1) + '/' + MANIFEST_FILE).then(data => {
       renderManifest(data["@graph"][0].entries, location.search.substr(1) + "/");
     }).fail(e => {
       $("table thead").append(
@@ -80,16 +84,74 @@
   /* progressively render the tests, adjusting relative URLs by relPrepend.
    */
   function renderManifest (tests, relPrepend) {
+    let toAdd = [];
+    let startTime = new Date();
     let testNo = 0;
+    let chunkSize = Math.max(Math.floor(tests.length / PROGRESS_CHUNK_COUNT), 1);
+    $("#tests").colResizable({ disable: true });
     // assumes at least one test entry
+    let progressbar = $( "#progressbar" ),
+      progressLabel = $( ".progress-label" );
+
+    progressbar.progressbar({
+      value: false,
+      max: tests.length,
+      change: function() {
+        progressLabel.text( progressbar.progressbar( "value" ) + "/" + tests.length );
+      }
+    });
+
     queue();
 
     function queue () {
       renderTest(tests[testNo]);
-      if (++testNo < tests.length)
+      if (++testNo < tests.length) {
+        if (testNo % chunkSize === 0) {
+          progressbar.progressbar( "value", testNo+1 );
+        }
         setTimeout(queue, 0);
-      else
-        $("#tests").colResizable({ fixed:false, liveDrag:true, gripInnerHtml:"<div class='grip2'></div>"});
+      } else {
+        // done loading tests
+        progressbar.progressbar( "value", testNo+1 );
+        progressLabel.empty().append(
+          "Loaded " + tests.length + " tests from ",
+          $("<a>", {href: relPrepend + MANIFEST_FILE}).text(relPrepend + MANIFEST_FILE),
+          " in ",
+          (new Date() - startTime)/1000,
+          " seconds."
+        );
+
+        setTimeout(() => {
+          $("table tbody").append(toAdd);
+          var h = new URL(location).hash;
+          if (h)
+            highlight(h);
+          $("#tests").colResizable({
+            fixed:false,
+            liveDrag:true,
+            gripInnerHtml:"<div class='grip2'></div>"
+          });
+        }, 0);
+      }
+    }
+
+    function highlight (h) {
+      let [top, bottom] = h.substr(1).split(/--/);
+      let topElt = document.getElementById(top);
+      if (topElt) {
+        topElt.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+        let range = $(topElt);
+        if (bottom) {
+          let botElt = document.getElementById(bottom);
+          if (botElt) {
+            range = range.add(range.nextUntil(botElt)).add(botElt);
+          }
+        }
+        range.addClass("highlight");
+      }
     }
 
     function renderTest (test) {
@@ -146,11 +208,27 @@
       }
 
       let titleText = "#" + (testNo+1) + " " + structure.str;
+      let id = test["@id"].substr(1);
       let status = drag("td", { title: titleText, class: structure.str }, showTest, "application/json").text(structure.chr);
       let attrs = structure.offset.reduce((acc, o) => { return acc[o]; }, test);
-      let name = drag("td", { title: test.comment }, showTest, "application/json").text(test["@id"]);
-      $("table tbody").append(
-        $("<tr/>").append(
+      let octicon = $("<a>", { href: test["@id"] }).append(OCTICON_USE).on("click", function (evt) {
+        evt.preventDefault();
+        $(".highlight").removeClass("highlight");
+        let fragment = $(this).attr("href").substr(1);
+        if (!evt.shiftKey) {
+          location.hash = fragment;
+        } else {
+          location.hash = location.hash + "--" + fragment;
+        }
+        highlight(location.hash);
+      });
+      let name = drag("td", { title: test.comment }, showTest, "application/json").append(
+        octicon,
+        " ",
+        id
+      );
+      toAdd = toAdd.concat(
+        $("<tr/>", {id: id}).append(
           status, name,
           // $("<td/>").append(shexc), $("<td/>").append(data), shapemap
           structure.fields.map(h => {
@@ -160,7 +238,7 @@
 
       if (testNo === tests.length-1) {
         // Table footer with column titles.
-        $("table tbody").append(
+        toAdd = toAdd.concat(
           drag("tr", { }, x => JSON.stringify(tests, null, 2), "application/json").append(
             $("<th/>"),
             $("<th/>").text(tests.length + " tests"),
@@ -207,17 +285,25 @@
       }
 
       function title (target, url) {
-        $.ajax({
-          url: url,
-          dataType: 'text',
-          type: 'GET',
-          async: true
-        }).then(function (data) {
-          target.attr("title", data.length > 0 ? data : "-- empty file --");
-        }).fail(function (jqXHR, status, errorThrown) {
-          target.addClass("error");
-          target.attr("title", url + " " + status + ": " + errorThrown);
-        });
+        // localStorage shaves ~1.5s off the load time.
+        if (typeof(Storage) !== "undefined" && url in localStorage) {
+          target.attr("title", localStorage[url].length > 0 ? localStorage[url] : "-- empty file --");
+        } else {
+          $.ajax({
+            url: url,
+            dataType: 'text',
+            type: 'GET',
+            async: true
+          }).then(function (data) {
+            if (typeof(Storage) !== "undefined") {
+              localStorage[url] = data;
+            }
+            target.attr("title", data.length > 0 ? data : "-- empty file --");
+          }).fail(function (jqXHR, status, errorThrown) {
+            target.addClass("error");
+            target.attr("title", url + " " + status + ": " + errorThrown);
+          });
+        }
         return target;
       }
 
