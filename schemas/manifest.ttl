@@ -71,6 +71,7 @@
         <#1val1STRING_LITERAL1_with_ECHAR_escapes>
         <#1val1STRING_LITERAL1_with_ascii_boundaries>
         <#1val1STRING_LITERAL1_with_UTF8_boundaries>
+        <#1val2STRING_LITERAL1>
         <#1val1STRING_LITERAL2>
         <#1val1STRING_LITERAL2_with_LANGTAG>
         <#1val1STRING_LITERAL2_with_subtag>
@@ -968,6 +969,14 @@
     sx:shex <1val1STRING_LITERAL1_with_UTF8_boundaries.shex> ;
     sx:json <1val1STRING_LITERAL1_with_UTF8_boundaries.json> ;
     sx:ttl <1val1STRING_LITERAL1_with_UTF8_boundaries.ttl> ;
+    .
+
+<#1val2STRING_LITERAL1> a sht:RepresentationTest ;
+    mf:name "1val2STRING_LITERAL1" ;
+    mf:status mf:Approved ;
+    sx:shex <1val2STRING_LITERAL1.shex> ;
+    sx:json <1val2STRING_LITERAL1.json> ;
+    sx:ttl <1val2STRING_LITERAL1.ttl> ;
     .
 
 <#1val1STRING_LITERAL2> a sht:RepresentationTest ;

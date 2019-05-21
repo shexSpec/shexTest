@@ -70,7 +70,6 @@
     <#STRING_LITERAL2-ending-APOSTROPHE>
     <#STRING_LITERAL2-illegal-UCHAR1-value>
     <#STRING_LITERAL2-with-LANGTAG-and-datatype>
-    <#STRING_LITERAL_LONG1-ending-APOSTROPHE>
     <#STRING_LITERAL_LONG1-ending-APOSTROPHE4>
     <#STRING_LITERAL_LONG2-ending-APOSTROPHE3>
     <#STRING_LITERAL_LONG2-ending-QUOTATION_MARK4>
@@ -107,6 +106,7 @@
     <#1val1languageStemMinusliteral3>
     <#1val1literalStemMinusiri3>
     <#1val1literalStemMinuslanguage3>
+    <#INTEGER-in-shape-expression>
   ) .
 
 <#1decimalMininclusiveroman-numeral> a sht:NegativeSyntax ;
@@ -481,12 +481,6 @@
   sx:shex <STRING_LITERAL2-with-LANGTAG-and-datatype.shex> ;
   .
 
-<#STRING_LITERAL_LONG1-ending-APOSTROPHE> a sht:NegativeSyntax ;
-  mf:name "STRING_LITERAL_LONG1-ending-APOSTROPHE" ;
-  mf:status mf:Approved ;
-  sx:shex <STRING_LITERAL_LONG1-ending-APOSTROPHE.shex> ;
-  .
-
 <#STRING_LITERAL_LONG1-ending-APOSTROPHE4> a sht:NegativeSyntax ;
   mf:name "STRING_LITERAL_LONG1-ending-APOSTROPHE4" ;
   mf:status mf:Approved ;
@@ -701,5 +695,11 @@
   mf:name "1val1literalStemMinuslanguage3" ;
   mf:status mf:Approved ;
   sx:shex <1val1literalStemMinuslanguage3.shex> ;
+  .
+
+<#INTEGER-in-shape-expression> a sht:NegativeSyntax ;
+  mf:name "INTEGER-in-shape-expression" ;
+  mf:status mf:Approved ;
+  sx:shex <INTEGER-in-shape-expression.shex> ;
   .
 

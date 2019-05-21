@@ -446,13 +446,6 @@
           "shex": "STRING_LITERAL2-with-LANGTAG-and-datatype.shex"
         },
         {
-          "@id": "#STRING_LITERAL_LONG1-ending-APOSTROPHE",
-          "@type": "sht:NegativeSyntax",
-          "name": "STRING_LITERAL_LONG1-ending-APOSTROPHE",
-          "status": "mf:Approved",
-          "shex": "STRING_LITERAL_LONG1-ending-APOSTROPHE.shex"
-        },
-        {
           "@id": "#STRING_LITERAL_LONG1-ending-APOSTROPHE4",
           "@type": "sht:NegativeSyntax",
           "name": "STRING_LITERAL_LONG1-ending-APOSTROPHE4",
@@ -703,8 +696,16 @@
           "name": "1val1literalStemMinuslanguage3",
           "status": "mf:Approved",
           "shex": "1val1literalStemMinuslanguage3.shex"
+        },
+        {
+          "@id": "#INTEGER-in-shape-expression",
+          "@type": "sht:NegativeSyntax",
+          "name": "INTEGER-in-shape-expression",
+          "status": "mf:Approved",
+          "shex": "INTEGER-in-shape-expression.shex"
         }
       ]
     }
   ]
 }
+
