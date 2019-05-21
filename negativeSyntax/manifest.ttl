@@ -1,3 +1,12 @@
+# For the best user feedback, errors should include a location. The startRow,
+# startColumn, endRow and endColumn should bracket this location. They are
+# calculated by taking the 1-based column and row before any whitespace before
+# the offending token and the column and row after the offending token and any
+# whitespace.
+#
+# These ranges are negotiable. Feel free to write a github issue making a case
+# for expanding or contracting them.
+
 @base <https://raw.githubusercontent.com/shexSpec/shexTest/master/negativeSyntax/manifest> .
 @prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
@@ -595,6 +604,12 @@
   sx:shex <predicate-true.shex> ;
   .
 
+<#prefix-none> a sht:NegativeSyntax ;
+  mf:name "prefix-none" ;
+  mf:status mf:Approved ;
+  sx:shex <prefix-none.shex> ;
+  .
+
 <#prefix-missing> a sht:NegativeSyntax ;
   mf:name "prefix-missing" ;
   mf:status mf:Approved ;
@@ -617,12 +632,6 @@
   mf:name "prefix-no-uri" ;
   mf:status mf:Approved ;
   sx:shex <prefix-no-uri.shex> ;
-  .
-
-<#prefix-none> a sht:NegativeSyntax ;
-  mf:name "prefix-none" ;
-  mf:status mf:Approved ;
-  sx:shex <prefix-none.shex> ;
   .
 
 <#shapename-a> a sht:NegativeSyntax ;
