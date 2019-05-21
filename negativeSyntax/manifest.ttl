@@ -90,7 +90,7 @@
     <#base-uri-dot>
     <#bnodedot>
     <#capitol-A>
-    <#group-no-COMMA-separators>
+    <#group-no-SEMICOLON-separators>
     <#groupShapeConstr-trailing-OR>
     <#literal-0x123>
     <#open1dotcloseAnnot3>
@@ -115,7 +115,7 @@
     <#1val1languageStemMinusliteral3>
     <#1val1literalStemMinusiri3>
     <#1val1literalStemMinuslanguage3>
-    <#integer-in-shape-expression>
+    <#INTEGER-in-shape-expression>
   ) .
 
 <#1decimalMininclusiveroman-numeral> a sht:NegativeSyntax ;
@@ -848,10 +848,10 @@
   mf:endColumn 6 ;
   .
 
-<#group-no-COMMA-separators> a sht:NegativeSyntax ;
-  mf:name "group-no-COMMA-separators" ;
+<#group-no-SEMICOLON-separators> a sht:NegativeSyntax ;
+  mf:name "group-no-SEMICOLON-separators" ;
   mf:status mf:Approved ;
-  sx:shex <group-no-COMMA-separators.shex> ;
+  sx:shex <group-no-SEMICOLON-separators.shex> ;
   mf:startRow 3 ;
   mf:startColumn 27 ;
   mf:endRow 4 ;
@@ -1098,10 +1098,10 @@
   mf:endColumn 27 ;
   .
 
-<#integer-in-shape-expression> a sht:NegativeSyntax ;
-  mf:name "integer-in-shape-expression" ;
+<#INTEGER-in-shape-expression> a sht:NegativeSyntax ;
+  mf:name "INTEGER-in-shape-expression" ;
   mf:status mf:Approved ;
-  sx:shex <integer-in-shape-expression.shex> ;
+  sx:shex <INTEGER-in-shape-expression.shex> ;
   mf:startRow 2 ;
   mf:startColumn 25 ;
   mf:endRow 2 ;

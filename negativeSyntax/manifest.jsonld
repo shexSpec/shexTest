@@ -815,11 +815,11 @@
           "endColumn": 6
         },
         {
-          "@id": "#group-no-COMMA-separators",
+          "@id": "#group-no-SEMICOLON-separators",
           "@type": "sht:NegativeSyntax",
-          "name": "group-no-COMMA-separators",
+          "name": "group-no-SEMICOLON-separators",
           "status": "mf:Approved",
-          "shex": "group-no-COMMA-separators.shex",
+          "shex": "group-no-SEMICOLON-separators.shex",
           "startRow": 3,
           "startColumn": 27,
           "endRow": 4,
@@ -1090,11 +1090,11 @@
           "endColumn": 27
         },
         {
-          "@id": "#integer-in-shape-expression",
+          "@id": "#INTEGER-in-shape-expression",
           "@type": "sht:NegativeSyntax",
-          "name": "integer-in-shape-expression",
+          "name": "INTEGER-in-shape-expression",
           "status": "mf:Approved",
-          "shex": "integer-in-shape-expression.shex",
+          "shex": "INTEGER-in-shape-expression.shex",
           "startRow": 2,
           "startColumn": 25,
           "endRow": 2,
