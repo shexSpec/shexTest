@@ -570,6 +570,15 @@
           "ttl": "1val1STRING_LITERAL1_with_UTF8_boundaries.ttl"
         },
         {
+          "@id": "#1val2STRING_LITERAL1",
+          "@type": "sht:RepresentationTest",
+          "name": "1val2STRING_LITERAL1",
+          "status": "mf:Approved",
+          "shex": "1val2STRING_LITERAL1.shex",
+          "json": "1val2STRING_LITERAL1.json",
+          "ttl": "1val2STRING_LITERAL1.ttl"
+        },
+        {
           "@id": "#1val1STRING_LITERAL2",
           "@type": "sht:RepresentationTest",
           "name": "1val1STRING_LITERAL2",
