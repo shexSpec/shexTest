@@ -71,6 +71,7 @@
         <#1val1STRING_LITERAL1_with_ECHAR_escapes>
         <#1val1STRING_LITERAL1_with_ascii_boundaries>
         <#1val1STRING_LITERAL1_with_UTF8_boundaries>
+        <#1val2STRING_LITERAL1>
         <#1val1STRING_LITERAL2>
         <#1val1STRING_LITERAL2_with_LANGTAG>
         <#1val1STRING_LITERAL2_with_subtag>
@@ -410,6 +411,8 @@
         <#2RefS1-Icirc>
 #         <#2RefS1>
         <#2RefS2-IS1>
+        <#start2RefS2-IstartS1>
+        <#start2RefS1-IstartS2>
         <#2RefS2-Icirc>
         <#2RefS2>
         <#3circRefS1-IS2-IS3-IS3>
@@ -981,6 +984,14 @@
     sx:shex <1val1STRING_LITERAL1_with_UTF8_boundaries.shex> ;
     sx:json <1val1STRING_LITERAL1_with_UTF8_boundaries.json> ;
     sx:ttl <1val1STRING_LITERAL1_with_UTF8_boundaries.ttl> ;
+    .
+
+<#1val2STRING_LITERAL1> a sht:RepresentationTest ;
+    mf:name "1val2STRING_LITERAL1" ;
+    mf:status mf:Approved ;
+    sx:shex <1val2STRING_LITERAL1.shex> ;
+    sx:json <1val2STRING_LITERAL1.json> ;
+    sx:ttl <1val2STRING_LITERAL1.ttl> ;
     .
 
 <#1val1STRING_LITERAL2> a sht:RepresentationTest ;
@@ -3669,10 +3680,28 @@
     sx:ttl <2RefS2-IS1.ttl> ;
     .
 
+<#start2RefS2-IstartS1> a sht:RepresentationTest ;
+    mf:name "start2RefS2-IstartS1" ;
+    mf:status mf:Approved ;
+    sht:trait sht:Import ;
+    sx:shex <start2RefS2-IstartS1.shex> ;
+    sx:json <start2RefS2-IstartS1.json> ;
+    sx:ttl <start2RefS2-IstartS1.ttl> ;
+    .
+
+<#start2RefS1-IstartS2> a sht:RepresentationTest ;
+    mf:name "start2RefS1-IstartS2" ;
+    mf:status mf:Approved ;
+    sht:trait sht:Import ;
+    sx:shex <start2RefS1-IstartS2.shex> ;
+    sx:json <start2RefS1-IstartS2.json> ;
+    sx:ttl <start2RefS1-IstartS2.ttl> ;
+    .
+
 <#2RefS2-Icirc> a sht:RepresentationTest ;
     mf:name "2RefS2-Icirc" ;
     mf:status mf:Approved ;
-    sht:trait sht:Import ;
+    sht:trait sht:Import, sht:start ;
     sx:shex <2RefS2-Icirc.shex> ;
     sx:json <2RefS2-Icirc.json> ;
     sx:ttl <2RefS2-Icirc.ttl> ;

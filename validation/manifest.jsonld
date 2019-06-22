@@ -18958,6 +18958,42 @@
           "result": "3circRefPlus1_pass-open.val"
         },
         {
+          "@id": "#start2RefS1-IstartS2",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/start2RefS1-IstartS2.shex",
+            "data": "In1_Ip1_In2.In2_Ip2_LX.ttl",
+            "focus": "http://a.example/n1"
+          },
+          "extensionResults": [],
+          "name": "start2RefS1-IstartS2",
+          "trait": [
+            "Start",
+            "Import"
+          ],
+          "comment": "I2 start=@<S1> <S1> { <p1> @<S2> } | <S2> { <p2> . } on { <s1> <p1> <n2> . <n2> <p2> \"X\" }",
+          "status": "mf:Proposed",
+          "result": "In2_Ip2_In1@In1_Ip1_LX.val"
+        },
+        {
+          "@id": "#start2RefS2-IstartS1",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/start2RefS2-IstartS1.shex",
+            "data": "In1_Ip2_In2.In2_Ip1_LX.ttl",
+            "focus": "http://a.example/n1"
+          },
+          "extensionResults": [],
+          "name": "start2RefS2-IstartS1",
+          "trait": [
+            "Start",
+            "Import"
+          ],
+          "comment": "I2 start=@<S2> <S2> { <p2> @<S1> } | <S1> { <p1> . } on { <s1> <p2> <n2> . <n2> <p1> \"X\" }",
+          "status": "mf:Proposed",
+          "result": "In2_Ip2_In1@In1_Ip1_LX.val"
+        },
+        {
           "@id": "#1valExprRef-IV1_fail-lit-short",
           "@type": "sht:ValidationFailure",
           "action": {
