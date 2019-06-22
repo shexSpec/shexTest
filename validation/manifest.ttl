@@ -1261,6 +1261,10 @@
         <#3circRefS1-Icirc>
         <#3circRefS1-IS2-IS3-IS3>
 
+### start shape reference
+        <#start2RefS1-IstartS2>
+        <#start2RefS2-IstartS1>
+
 ###  value reference
         <#1valExprRef-IV1_fail-lit-short>
         <#1valExprRef-IV1_pass-lit-equal>
@@ -16103,6 +16107,38 @@
     .
 
 ### } shape reference
+### start shape reference {
+
+<#start2RefS1-IstartS2> a sht:ValidationTest ;
+    mf:name "start2RefS1-IstartS2" ;
+    sht:trait sht:Import, sht:Start ;
+    rdfs:comment "I2 start=@<S1> <S1> { <p1> @<S2> } | <S2> { <p2> . } on { <s1> <p1> <n2> . <n2> <p2> \"X\" }" ;
+    mf:status mf:Proposed ;
+    mf:action [
+      sht:schema <../schemas/start2RefS1-IstartS2.shex> ;
+      # sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip1_In2.In2_Ip2_LX.ttl> ;
+      sht:focus <http://a.example/n1>
+    ] ;
+    mf:result <In2_Ip2_In1@In1_Ip1_LX.val>
+    .
+
+<#start2RefS2-IstartS1> a sht:ValidationTest ;
+    mf:name "start2RefS2-IstartS1" ;
+    sht:trait sht:Import, sht:Start ;
+    rdfs:comment "I2 start=@<S2> <S2> { <p2> @<S1> } | <S1> { <p1> . } on { <s1> <p2> <n2> . <n2> <p1> \"X\" }" ;
+    mf:status mf:Proposed ;
+    mf:action [
+      sht:schema <../schemas/start2RefS2-IstartS1.shex> ;
+      # sht:shape <http://a.example/S2> ;
+      sht:data <In1_Ip2_In2.In2_Ip1_LX.ttl> ;
+      sht:focus <http://a.example/n1>
+    ] ;
+    mf:result <In2_Ip2_In1@In1_Ip1_LX.val>
+    .
+
+
+### } start shape reference
 ### value reference {
 
 <#1valExprRef-IV1_fail-lit-short> a sht:ValidationFailure ;
