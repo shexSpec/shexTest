@@ -41,3 +41,17 @@ th { text-align: left; }
 tr:nth-child(even) {background: #efe}
 tr:nth-child(odd) {background: #fff}
 th:nth-child(1), td:nth-child(1) { text-indent: 0; width: 1em; }
+
+.ui-progressbar {
+    position: relative;
+}
+.progress-label {
+    position: absolute;
+    left: .5em;
+    top: 20%;
+    font-weight: bold;
+    text-shadow: 1px 1px 0 #fff;
+    padding-left: 3em;
+}
+
+tr.highlight { background-color: #ffc; }
