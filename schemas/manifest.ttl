@@ -71,6 +71,7 @@
         <#1val1STRING_LITERAL1_with_ECHAR_escapes>
         <#1val1STRING_LITERAL1_with_ascii_boundaries>
         <#1val1STRING_LITERAL1_with_UTF8_boundaries>
+        <#1val2STRING_LITERAL1>
         <#1val1STRING_LITERAL2>
         <#1val1STRING_LITERAL2_with_LANGTAG>
         <#1val1STRING_LITERAL2_with_subtag>
@@ -229,8 +230,8 @@
         <#2dotSemis>
         <#open2dotclose>
         <#open2dotsemisclose>
-        <#3groupdot>
-        <#open3groupdotclose>
+        <#3Eachdot>
+        <#open3Eachdotclose>
         <#1dotOne1dot>
     <#openopen1dotOr1dotclose>
         <#1dotSemiOne1dotSemi>
@@ -281,7 +282,7 @@
         <#open3Onedotclosecard2>
         <#open3Onedotclosecard23>
         <#open4Onedotclosecard23>
-        <#open3groupdotclosecard23>
+        <#open3Eachdotclosecard23>
         <#1val1vShapeANDRef3>
         <#1dotClosed>
         <#1val1IRIREFExtra1>
@@ -292,9 +293,9 @@
         <#1val1IRIREFExtra1p2>
         <#1val1IRIREFExtra1One>
         <#1dotExtra1>
-        <#3groupdotExtra3>
-        <#3groupdot3Extra>
-        <#3groupdotExtra3NLex>
+        <#3EachdotExtra3>
+        <#3Eachdot3Extra>
+        <#3EachdotExtra3NLex>
         <#startRefIRIREF>
         <#startRefbnode>
         <#startInline>
@@ -313,7 +314,7 @@
         <#1dotShapePlusAnnotIRIREF>
         <#1dotShapeAnnotAIRIREF>
         <#1dotShapeAnnotSTRING_LITERAL1>
-        <#open3groupdotcloseAnnot3>
+        <#open3EachdotcloseAnnot3>
         <#1dotCode1>
     <#open1dotcloseCode1>
         <#1dotNoCode1>
@@ -325,7 +326,7 @@
         <#1dotCodeWithEscapes1>
         <#1dotShapeCode1>
         <#1dotShapeNoCode1>
-        <#open3groupdotcloseCode1>
+        <#open3EachdotcloseCode1>
         <#startCode1>
         <#startNoCode1>
         <#startCode1fail>
@@ -333,7 +334,7 @@
         <#startCode1startReffail>
         <#startCode3>
         <#startCode3fail>
-        <#open3groupdotclosecard23Annot3Code2>
+        <#open3Eachdotclosecard23Annot3Code2>
         <#0focusIRI>
         <#0focusBNODE>
         <#1focusIRI_dot>
@@ -369,7 +370,7 @@
         <#focusdatatype>
         <#1dotPlusAnnotIRIREF>
         <#1dotAnnotAIRIREF>
-        <#FocusIRI2groupBnodeNested2groupIRIRef>
+        <#FocusIRI2EachBnodeNested2EachIRIRef>
         <#1bnodeRefORRefMinlength>
         <#1dotShapeAND1dot3X>
         <#openopen1dotSemiOne1dotSemiclose1dotSemicloseSemi>
@@ -399,6 +400,8 @@
         <#1dotAND1dotAND1dot>
         <#open1dotAND1dotcloseAND1dot>
         <#1dotANDopen1dotAND1dotclose>
+        <#2Eachdot>
+        <#open2Eachdotclosecard25c1dot>
 
         # cycles
         <#CycleNoNegation_pass>
@@ -415,6 +418,8 @@
         <#2RefS1-Icirc>
 #         <#2RefS1>
         <#2RefS2-IS1>
+        <#start2RefS2-IstartS1>
+        <#start2RefS1-IstartS2>
         <#2RefS2-Icirc>
         <#2RefS2>
         <#3circRefS1-IS2-IS3-IS3>
@@ -966,6 +971,14 @@
     sx:shex <1val1STRING_LITERAL1_with_UTF8_boundaries.shex> ;
     sx:json <1val1STRING_LITERAL1_with_UTF8_boundaries.json> ;
     sx:ttl <1val1STRING_LITERAL1_with_UTF8_boundaries.ttl> ;
+    .
+
+<#1val2STRING_LITERAL1> a sht:RepresentationTest ;
+    mf:name "1val2STRING_LITERAL1" ;
+    mf:status mf:Approved ;
+    sx:shex <1val2STRING_LITERAL1.shex> ;
+    sx:json <1val2STRING_LITERAL1.json> ;
+    sx:ttl <1val2STRING_LITERAL1.ttl> ;
     .
 
 <#1val1STRING_LITERAL2> a sht:RepresentationTest ;
@@ -2267,21 +2280,21 @@
     sx:ttl <open2dotsemisclose.ttl> ;
     .
 
-<#3groupdot> a sht:RepresentationTest ;
-    mf:name "3groupdot" ;
+<#3Eachdot> a sht:RepresentationTest ;
+    mf:name "3Eachdot" ;
     mf:status mf:Approved ;
-    sx:shex <3groupdot.shex> ;
-    sx:json <3groupdot.json> ;
-    sx:ttl <3groupdot.ttl> ;
+    sx:shex <3Eachdot.shex> ;
+    sx:json <3Eachdot.json> ;
+    sx:ttl <3Eachdot.ttl> ;
     .
 
-<#open3groupdotclose> a sht:RepresentationTest ;
-    mf:name "open3groupdotclose" ;
+<#open3Eachdotclose> a sht:RepresentationTest ;
+    mf:name "open3Eachdotclose" ;
     mf:status mf:Approved ;
-    mf:sameSemanticsAs <#3groupdot> ;
-    sx:shex <open3groupdotclose.shex> ;
-    sx:json <open3groupdotclose.json> ;
-    sx:ttl <open3groupdotclose.ttl> ;
+    mf:sameSemanticsAs <#3Eachdot> ;
+    sx:shex <open3Eachdotclose.shex> ;
+    sx:json <open3Eachdotclose.json> ;
+    sx:ttl <open3Eachdotclose.ttl> ;
     .
 
 <#1dotOne1dot> a sht:RepresentationTest ;
@@ -2756,12 +2769,12 @@
     sx:ttl <open4Onedotclosecard23.ttl> ;
     .
 
-<#open3groupdotclosecard23> a sht:RepresentationTest ;
-    mf:name "open3groupdotclosecard23" ;
+<#open3Eachdotclosecard23> a sht:RepresentationTest ;
+    mf:name "open3Eachdotclosecard23" ;
     mf:status mf:Approved ;
-    sx:shex <open3groupdotclosecard23.shex> ;
-    sx:json <open3groupdotclosecard23.json> ;
-    sx:ttl <open3groupdotclosecard23.ttl> ;
+    sx:shex <open3Eachdotclosecard23.shex> ;
+    sx:json <open3Eachdotclosecard23.json> ;
+    sx:ttl <open3Eachdotclosecard23.ttl> ;
     .
 
 <#1val1vShapeANDRef3> a sht:RepresentationTest ;
@@ -2780,12 +2793,12 @@
     sx:ttl <1dotClosed.ttl> ;
     .
 
-<#FocusIRI2groupBnodeNested2groupIRIRef> a sht:RepresentationTest ;
-    mf:name "FocusIRI2groupBnodeNested2groupIRIRef" ;
+<#FocusIRI2EachBnodeNested2EachIRIRef> a sht:RepresentationTest ;
+    mf:name "FocusIRI2EachBnodeNested2EachIRIRef" ;
     mf:status mf:Approved ;
-    sx:shex <FocusIRI2groupBnodeNested2groupIRIRef.shex> ;
-    sx:json <FocusIRI2groupBnodeNested2groupIRIRef.json> ;
-    sx:ttl <FocusIRI2groupBnodeNested2groupIRIRef.ttl> ;
+    sx:shex <FocusIRI2EachBnodeNested2EachIRIRef.shex> ;
+    sx:json <FocusIRI2EachBnodeNested2EachIRIRef.json> ;
+    sx:ttl <FocusIRI2EachBnodeNested2EachIRIRef.ttl> ;
     .
 
 <#1val1IRIREFExtra1> a sht:RepresentationTest ;
@@ -2852,28 +2865,28 @@
     sx:ttl <1dotExtra1.ttl> ;
     .
 
-<#3groupdotExtra3> a sht:RepresentationTest ;
-    mf:name "3groupdotExtra3" ;
+<#3EachdotExtra3> a sht:RepresentationTest ;
+    mf:name "3EachdotExtra3" ;
     mf:status mf:Approved ;
-    sx:shex <3groupdotExtra3.shex> ;
-    sx:json <3groupdotExtra3.json> ;
-    sx:ttl <3groupdotExtra3.ttl> ;
+    sx:shex <3EachdotExtra3.shex> ;
+    sx:json <3EachdotExtra3.json> ;
+    sx:ttl <3EachdotExtra3.ttl> ;
     .
 
-<#3groupdot3Extra> a sht:RepresentationTest ;
-    mf:name "3groupdot3Extra" ;
+<#3Eachdot3Extra> a sht:RepresentationTest ;
+    mf:name "3Eachdot3Extra" ;
     mf:status mf:Approved ;
-    sx:shex <3groupdot3Extra.shex> ;
-    sx:json <3groupdot3Extra.json> ;
-    sx:ttl <3groupdot3Extra.ttl> ;
+    sx:shex <3Eachdot3Extra.shex> ;
+    sx:json <3Eachdot3Extra.json> ;
+    sx:ttl <3Eachdot3Extra.ttl> ;
     .
 
-<#3groupdotExtra3NLex> a sht:RepresentationTest ;
-    mf:name "3groupdotExtra3NLex" ;
+<#3EachdotExtra3NLex> a sht:RepresentationTest ;
+    mf:name "3EachdotExtra3NLex" ;
     mf:status mf:Approved ;
-    sx:shex <3groupdotExtra3NLex.shex> ;
-    sx:json <3groupdotExtra3NLex.json> ;
-    sx:ttl <3groupdotExtra3NLex.ttl> ;
+    sx:shex <3EachdotExtra3NLex.shex> ;
+    sx:json <3EachdotExtra3NLex.json> ;
+    sx:ttl <3EachdotExtra3NLex.ttl> ;
     .
 
 <#startRefIRIREF> a sht:RepresentationTest ;
@@ -3036,12 +3049,12 @@
     sx:ttl <1dotShapeAnnotSTRING_LITERAL1.ttl> ;
     .
 
-<#open3groupdotcloseAnnot3> a sht:RepresentationTest ;
-    mf:name "open3groupdotcloseAnnot3" ;
+<#open3EachdotcloseAnnot3> a sht:RepresentationTest ;
+    mf:name "open3EachdotcloseAnnot3" ;
     mf:status mf:Approved ;
-    sx:shex <open3groupdotcloseAnnot3.shex> ;
-    sx:json <open3groupdotcloseAnnot3.json> ;
-    sx:ttl <open3groupdotcloseAnnot3.ttl> ;
+    sx:shex <open3EachdotcloseAnnot3.shex> ;
+    sx:json <open3EachdotcloseAnnot3.json> ;
+    sx:ttl <open3EachdotcloseAnnot3.ttl> ;
     .
 
 <#1dotCode1> a sht:RepresentationTest ;
@@ -3132,12 +3145,12 @@
     sx:ttl <1dotShapeNoCode1.ttl> ;
     .
 
-<#open3groupdotcloseCode1> a sht:RepresentationTest ;
-    mf:name "open3groupdotcloseCode1" ;
+<#open3EachdotcloseCode1> a sht:RepresentationTest ;
+    mf:name "open3EachdotcloseCode1" ;
     mf:status mf:Approved ;
-    sx:shex <open3groupdotcloseCode1.shex> ;
-    sx:json <open3groupdotcloseCode1.json> ;
-    sx:ttl <open3groupdotcloseCode1.ttl> ;
+    sx:shex <open3EachdotcloseCode1.shex> ;
+    sx:json <open3EachdotcloseCode1.json> ;
+    sx:ttl <open3EachdotcloseCode1.ttl> ;
     .
 
 <#startCode1> a sht:RepresentationTest ;
@@ -3196,12 +3209,12 @@
     sx:ttl <startCode3fail.ttl> ;
     .
 
-<#open3groupdotclosecard23Annot3Code2> a sht:RepresentationTest ;
-    mf:name "open3groupdotclosecard23Annot3Code2" ;
+<#open3Eachdotclosecard23Annot3Code2> a sht:RepresentationTest ;
+    mf:name "open3Eachdotclosecard23Annot3Code2" ;
     mf:status mf:Approved ;
-    sx:shex <open3groupdotclosecard23Annot3Code2.shex> ;
-    sx:json <open3groupdotclosecard23Annot3Code2.json> ;
-    sx:ttl <open3groupdotclosecard23Annot3Code2.ttl> ;
+    sx:shex <open3Eachdotclosecard23Annot3Code2.shex> ;
+    sx:json <open3Eachdotclosecard23Annot3Code2.json> ;
+    sx:ttl <open3Eachdotclosecard23Annot3Code2.ttl> ;
     .
 
 <#0focusIRI> a sht:RepresentationTest ;
@@ -3581,6 +3594,22 @@
     sx:ttl <1dotANDopen1dotAND1dotclose.ttl> ;
     .
 
+<#2Eachdot> a sht:RepresentationTest ;
+    mf:name "2Eachdot" ;
+    mf:status mf:Approved ;
+    sx:shex <2Eachdot.shex> ;
+    sx:json <2Eachdot.json> ;
+    sx:ttl <2Eachdot.ttl> ;
+    .
+
+<#open2Eachdotclosecard25c1dot> a sht:RepresentationTest ;
+    mf:name "open2Eachdotclosecard25c1dot" ;
+    mf:status mf:Approved ;
+    sx:shex <open2Eachdotclosecard25c1dot.shex> ;
+    sx:json <open2Eachdotclosecard25c1dot.json> ;
+    sx:ttl <open2Eachdotclosecard25c1dot.ttl> ;
+    .
+
 # cycles {
 
 <#CycleNoNegation_pass> a sht:RepresentationTest ;
@@ -3695,10 +3724,28 @@
     sx:ttl <2RefS2-IS1.ttl> ;
     .
 
+<#start2RefS2-IstartS1> a sht:RepresentationTest ;
+    mf:name "start2RefS2-IstartS1" ;
+    mf:status mf:Approved ;
+    sht:trait sht:Import ;
+    sx:shex <start2RefS2-IstartS1.shex> ;
+    sx:json <start2RefS2-IstartS1.json> ;
+    sx:ttl <start2RefS2-IstartS1.ttl> ;
+    .
+
+<#start2RefS1-IstartS2> a sht:RepresentationTest ;
+    mf:name "start2RefS1-IstartS2" ;
+    mf:status mf:Approved ;
+    sht:trait sht:Import ;
+    sx:shex <start2RefS1-IstartS2.shex> ;
+    sx:json <start2RefS1-IstartS2.json> ;
+    sx:ttl <start2RefS1-IstartS2.ttl> ;
+    .
+
 <#2RefS2-Icirc> a sht:RepresentationTest ;
     mf:name "2RefS2-Icirc" ;
     mf:status mf:Approved ;
-    sht:trait sht:Import ;
+    sht:trait sht:Import, sht:start ;
     sx:shex <2RefS2-Icirc.shex> ;
     sx:json <2RefS2-Icirc.json> ;
     sx:ttl <2RefS2-Icirc.ttl> ;
