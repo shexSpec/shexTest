@@ -1,6 +1,6 @@
 {
   "name": "shex-test",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Shape Expressions library tests.",
   "scripts": {
     "dist": "for d in schemas/ negativeSyntax/ negativeStructure/ validation/; do (cd $d && make); done",
