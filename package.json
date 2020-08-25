@@ -29,6 +29,9 @@
     "validation",
     "ASTs"
   ],
+  "np": {
+    "branch": "extends"
+  },
   "scripts": {
     "dist": "for d in schemas/ negativeSyntax/ negativeStructure/ validation/; do (cd $d && make); done",
     "test": "echo no tests for tests"
