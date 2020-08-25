@@ -3,7 +3,8 @@
   "version": "2.0.2",
   "description": "Shape Expressions library tests.",
   "scripts": {
-    "test": "make test"
+    "dist": "for d in schemas/ negativeSyntax/ negativeStructure/ validation/; do (cd $d && make); done",
+    "test": "echo no tests for tests"
   },
   "author": {
     "name": "Eric Prud'hommeaux",
@@ -35,10 +36,6 @@
   ],
   "np": {
     "branch": "extends"
-  },
-  "scripts": {
-    "dist": "for d in schemas/ negativeSyntax/ negativeStructure/ validation/; do (cd $d && make); done",
-    "test": "echo no tests for tests"
   },
   "repository": {
     "type": "git",
