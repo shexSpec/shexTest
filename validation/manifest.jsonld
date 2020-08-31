@@ -814,6 +814,98 @@
           "status": "mf:Approved"
         },
         {
+          "@id": "#1datatypelangString_passLAtfr-x-privuse1",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1datatypelangString.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_LAtfr-x-privuse1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1datatypelangString_passLAtfr-x-privuse1",
+          "trait": [
+            "Stem",
+            "ValueSet"
+          ],
+          "comment": "<S> { <p1> rdf:langString } on { <s1> <p1> 'septante'@fr-x-privuse1 }",
+          "status": "mf:Proposed"
+        },
+        {
+          "@id": "#1datatypelangString_failLAtfr-x-privuse1x",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1datatypelangString.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_LAtfr-x-privuse1x.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1datatypelangString_failLAtfr-x-privuse1x",
+          "trait": [
+            "Stem",
+            "ValueSet"
+          ],
+          "comment": "<S> { <p1> rdf:langString } on { <s1> <p1> 'septante'@fr-x-privuse1x }",
+          "status": "mf:Proposed"
+        },
+        {
+          "@id": "#1datatypelangString_failLAtfr-be-x-privuse1x",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1datatypelangString.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_LAtfr-be-x-privuse1x.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1datatypelangString_failLAtfr-be-x-privuse1x",
+          "trait": [
+            "Stem",
+            "ValueSet"
+          ],
+          "comment": "<S> { <p1> rdf:langString } on { <s1> <p1> 'septante'@fr-be-x-privuse1x }",
+          "status": "mf:Proposed"
+        },
+        {
+          "@id": "#1datatypelangString_passLAtfr-bexxxxxx",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1datatypelangString.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_LAtfr-bexxxxxx.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1datatypelangString_passLAtfr-bexxxxxx",
+          "trait": [
+            "UnregisteredLanguageTag",
+            "Stem",
+            "ValueSet"
+          ],
+          "comment": "<S> { <p1> rdf:langString } on { <s1> <p1> 'septante'@fr-bexxxxxx }",
+          "status": "mf:Proposed"
+        },
+        {
+          "@id": "#1datatypelangString_failLAtfr-bexxxxxxx",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1datatypelangString.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_LAtfr-bexxxxxxx.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1datatypelangString_failLAtfr-bexxxxxxx",
+          "trait": [
+            "UnregisteredLanguageTag",
+            "Stem",
+            "ValueSet"
+          ],
+          "comment": "<S> { <p1> rdf:langString } on { <s1> <p1> 'septante'@fr-bexxxxxxx }",
+          "status": "mf:Proposed"
+        },
+        {
           "@id": "#integer-n1_pass",
           "@type": "sht:ValidationTest",
           "action": {
@@ -12467,21 +12559,21 @@
           "status": "mf:Approved"
         },
         {
-          "@id": "#1val1emptylanguageStemMinuslanguage3_passLAtfr-be-fbcl",
+          "@id": "#1val1emptylanguageStemMinuslanguage3_passLAtfr-be-x-privuse",
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/1val1emptylanguageStemMinuslanguage3.shex",
             "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_LAtfr-be-fbcl.ttl",
+            "data": "Is1_Ip1_LAtfr-be-x-privuse.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1val1emptylanguageStemMinuslanguage3_passLAtfr-be-fbcl",
+          "name": "1val1emptylanguageStemMinuslanguage3_passLAtfr-be-x-privuse",
           "trait": [
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> [@~-@fr-be-@fr-cd-@fr-ch] } on { <s1> <p1> 'septante'@fr-be-fbcl }",
+          "comment": "<S> { <p1> [@~-@fr-be-@fr-cd-@fr-ch] } on { <s1> <p1> 'septante'@fr-be-x-privuse }",
           "status": "mf:Approved"
         },
         {
@@ -12521,21 +12613,21 @@
           "status": "mf:Approved"
         },
         {
-          "@id": "#1val1emptylanguageStemMinuslanguageStem3_LAtfr-be-fbcl",
+          "@id": "#1val1emptylanguageStemMinuslanguageStem3_LAtfr-be-x-privuse",
           "@type": "sht:ValidationFailure",
           "action": {
             "schema": "../schemas/1val1emptylanguageStemMinuslanguageStem3.shex",
             "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_LAtfr-be-fbcl.ttl",
+            "data": "Is1_Ip1_LAtfr-be-x-privuse.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1val1emptylanguageStemMinuslanguageStem3_LAtfr-be-fbcl",
+          "name": "1val1emptylanguageStemMinuslanguageStem3_LAtfr-be-x-privuse",
           "trait": [
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> [@~-@fr-be~-@fr-cd~-@fr-ch~] } on { <s1> <p1> 'septante'@fr-be-fbcl }",
+          "comment": "<S> { <p1> [@~-@fr-be~-@fr-cd~-@fr-ch~] } on { <s1> <p1> 'septante'@fr-be-x-privuse }",
           "status": "mf:Approved"
         },
         {
@@ -12611,21 +12703,21 @@
           "status": "mf:Approved"
         },
         {
-          "@id": "#1val1languageStem_passLAtfr-be-fbcl",
+          "@id": "#1val1languageStem_passLAtfr-be-x-privuse",
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/1val1languageStem.shex",
             "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_LAtfr-be-fbcl.ttl",
+            "data": "Is1_Ip1_LAtfr-be-x-privuse.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1val1languageStem_passLAtfr-be-fbcl",
+          "name": "1val1languageStem_passLAtfr-be-x-privuse",
           "trait": [
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> [@fr~] } on { <s1> <p1> 'septante'@fr-be-fbcl }",
+          "comment": "<S> { <p1> [@fr~] } on { <s1> <p1> 'septante'@fr-be-x-privuse }",
           "status": "mf:Approved"
         },
         {
@@ -12791,21 +12883,21 @@
           "status": "mf:Approved"
         },
         {
-          "@id": "#1val1languageStemMinuslanguage3_passLAtfr-be-fbcl",
+          "@id": "#1val1languageStemMinuslanguage3_passLAtfr-be-x-privuse",
           "@type": "sht:ValidationTest",
           "action": {
             "schema": "../schemas/1val1languageStemMinuslanguage3.shex",
             "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_LAtfr-be-fbcl.ttl",
+            "data": "Is1_Ip1_LAtfr-be-x-privuse.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1val1languageStemMinuslanguage3_passLAtfr-be-fbcl",
+          "name": "1val1languageStemMinuslanguage3_passLAtfr-be-x-privuse",
           "trait": [
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> [@fr~-@fr-be-@fr-cd-@fr-ch] } on { <s1> <p1> 'septante'@fr-be-fbcl }",
+          "comment": "<S> { <p1> [@fr~-@fr-be-@fr-cd-@fr-ch] } on { <s1> <p1> 'septante'@fr-be-x-privuse }",
           "status": "mf:Approved"
         },
         {
@@ -12935,22 +13027,114 @@
           "status": "mf:Approved"
         },
         {
-          "@id": "#1val1languageStemMinuslanguageStem3_LAtfr-be-fbcl",
+          "@id": "#1val1languageStemMinuslanguageStem3_LAtfr-be-x-privuse",
           "@type": "sht:ValidationFailure",
           "action": {
             "schema": "../schemas/1val1languageStemMinuslanguageStem3.shex",
             "shape": "http://a.example/S1",
-            "data": "Is1_Ip1_LAtfr-be-fbcl.ttl",
+            "data": "Is1_Ip1_LAtfr-be-x-privuse.ttl",
             "focus": "http://a.example/s1"
           },
           "extensionResults": [],
-          "name": "1val1languageStemMinuslanguageStem3_LAtfr-be-fbcl",
+          "name": "1val1languageStemMinuslanguageStem3_LAtfr-be-x-privuse",
           "trait": [
             "Stem",
             "ValueSet"
           ],
-          "comment": "<S> { <p1> [@fr~-@fr-be~-@fr-cd~-@fr-ch~] } on { <s1> <p1> 'septante'@fr-be-fbcl }",
+          "comment": "<S> { <p1> [@fr~-@fr-be~-@fr-cd~-@fr-ch~] } on { <s1> <p1> 'septante'@fr-be-x-privuse }",
           "status": "mf:Approved"
+        },
+        {
+          "@id": "#1val1languageStem_passLAtfr-x-privuse1",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1val1languageStem.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_LAtfr-x-privuse1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1languageStem_passLAtfr-x-privuse1",
+          "trait": [
+            "Stem",
+            "ValueSet"
+          ],
+          "comment": "<S> { <p1> [@fr~] } on { <s1> <p1> 'septante'@fr-x-privuse1 }",
+          "status": "mf:Proposed"
+        },
+        {
+          "@id": "#1val1languageStem_failLAtfr-x-privuse1x",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1val1languageStem.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_LAtfr-x-privuse1x.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1languageStem_failLAtfr-x-privuse1x",
+          "trait": [
+            "Stem",
+            "ValueSet"
+          ],
+          "comment": "<S> { <p1> [@fr~] } on { <s1> <p1> 'septante'@fr-x-privuse1x }",
+          "status": "mf:Proposed"
+        },
+        {
+          "@id": "#1val1languageStem_failLAtfr-be-x-privuse1x",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1val1languageStem.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_LAtfr-be-x-privuse1x.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1languageStem_failLAtfr-be-x-privuse1x",
+          "trait": [
+            "Stem",
+            "ValueSet"
+          ],
+          "comment": "<S> { <p1> [@fr~] } on { <s1> <p1> 'septante'@fr-be-x-privuse1x }",
+          "status": "mf:Proposed"
+        },
+        {
+          "@id": "#1val1languageStem_passLAtfr-bexxxxxx",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1val1languageStem.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_LAtfr-bexxxxxx.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1languageStem_passLAtfr-bexxxxxx",
+          "trait": [
+            "UnregisteredLanguageTag",
+            "Stem",
+            "ValueSet"
+          ],
+          "comment": "<S> { <p1> [@fr~] } on { <s1> <p1> 'septante'@fr-bexxxxxx }",
+          "status": "mf:Proposed"
+        },
+        {
+          "@id": "#1val1languageStem_failLAtfr-bexxxxxxx",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1val1languageStem.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_LAtfr-bexxxxxxx.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1languageStem_failLAtfr-bexxxxxxx",
+          "trait": [
+            "UnregisteredLanguageTag",
+            "Stem",
+            "ValueSet"
+          ],
+          "comment": "<S> { <p1> [@fr~] } on { <s1> <p1> 'septante'@fr-bexxxxxxx }",
+          "status": "mf:Proposed"
         },
         {
           "@id": "#1dotOne2dot_pass_p1",

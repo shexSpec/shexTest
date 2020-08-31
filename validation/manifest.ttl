@@ -94,6 +94,13 @@
         <#1datatype_pass>
         <#1datatypelangString_pass>
 
+### langtag lexical form
+        <#1datatypelangString_passLAtfr-x-privuse1>
+        <#1datatypelangString_failLAtfr-x-privuse1x>
+        <#1datatypelangString_failLAtfr-be-x-privuse1x>
+        <#1datatypelangString_passLAtfr-bexxxxxx>
+        <#1datatypelangString_failLAtfr-bexxxxxxx>
+
 ### lexical form
         <#integer-n1_pass>
         <#integer-0_pass>
@@ -817,15 +824,15 @@
         <#1val1emptylanguageStem_fail-integer>
         <#1val1emptylanguageStemMinuslanguage3_passLAtfr>
         <#1val1emptylanguageStemMinuslanguage3_failLAtfr-be>
-        <#1val1emptylanguageStemMinuslanguage3_passLAtfr-be-fbcl>
+        <#1val1emptylanguageStemMinuslanguage3_passLAtfr-be-x-privuse>
         <#1val1emptylanguageStemMinuslanguageStem3_LAtfr>
         <#1val1emptylanguageStemMinuslanguageStem3_failLAtfr-be>
-        <#1val1emptylanguageStemMinuslanguageStem3_LAtfr-be-fbcl>
+        <#1val1emptylanguageStemMinuslanguageStem3_LAtfr-be-x-privuse>
         <#1val1emptylanguageStemMinuslanguageStem3_LAtfrc>
         <#1val1languageStem_passLAtfr>
         <#1val1languageStem_failLAtfrc>
         <#1val1languageStem_passLAtfr-be>
-        <#1val1languageStem_passLAtfr-be-fbcl>
+        <#1val1languageStem_passLAtfr-be-x-privuse>
         <#1val1languageStem_fail>
         <#1val1literallanguageStem_failLAtfr>
         <#1val1languageStemMinuslanguage3_passLAtfr>
@@ -835,7 +842,7 @@
         <#1val1literallanguageStemMinusliterallanguage3_failLAtfr-BE>
         <#1val1languageStemMinuslanguage3_failLAtfr-cd>
         <#1val1languageStemMinuslanguage3_failLAtfr-ch>
-        <#1val1languageStemMinuslanguage3_passLAtfr-be-fbcl>
+        <#1val1languageStemMinuslanguage3_passLAtfr-be-x-privuse>
         <#1val1languageStemMinuslanguageStem3_passLAtfr>
         <#1val1languageStemMinuslanguageStem3_LAtfrc>
         <#1val1languageStemMinuslanguageStem3_passLAtfr-FR>
@@ -843,7 +850,14 @@
         <#1val1languageStemMinuslanguageStem3_LAtfr-cd>
         <#1val1languageStemMinuslanguageStem3_LAtfr-ch>
         <#1val1languageStemMinuslanguageStem3_passLAtfr-bel>
-        <#1val1languageStemMinuslanguageStem3_LAtfr-be-fbcl>
+        <#1val1languageStemMinuslanguageStem3_LAtfr-be-x-privuse>
+
+### langtag lexical form
+        <#1val1languageStem_passLAtfr-x-privuse1>
+        <#1val1languageStem_failLAtfr-x-privuse1x>
+        <#1val1languageStem_failLAtfr-be-x-privuse1x>
+        <#1val1languageStem_passLAtfr-bexxxxxx>
+        <#1val1languageStem_failLAtfr-bexxxxxxx>
 
 ## triple expressions
 ###   AND tripleExpr
@@ -1900,6 +1914,74 @@
       sht:focus <http://a.example/s1>
     ]
     .
+
+###   langtag lexical form {
+<#1datatypelangString_passLAtfr-x-privuse1> a sht:ValidationTest ;
+    mf:name "1datatypelangString_passLAtfr-x-privuse1" ;
+    sht:trait sht:ValueSet , sht:Stem ;
+    rdfs:comment "<S> { <p1> rdf:langString } on { <s1> <p1> 'septante'@fr-x-privuse1 }" ;
+    mf:status mf:Proposed ;
+    mf:action [
+      sht:schema <../schemas/1datatypelangString.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LAtfr-x-privuse1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1datatypelangString_failLAtfr-x-privuse1x> a sht:ValidationFailure ;
+    mf:name "1datatypelangString_failLAtfr-x-privuse1x" ;
+    sht:trait sht:ValueSet , sht:Stem ;
+    rdfs:comment "<S> { <p1> rdf:langString } on { <s1> <p1> 'septante'@fr-x-privuse1x }" ;
+    mf:status mf:Proposed ;
+    mf:action [
+      sht:schema <../schemas/1datatypelangString.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LAtfr-x-privuse1x.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1datatypelangString_failLAtfr-be-x-privuse1x> a sht:ValidationFailure ;
+    mf:name "1datatypelangString_failLAtfr-be-x-privuse1x" ;
+    sht:trait sht:ValueSet , sht:Stem ;
+    rdfs:comment "<S> { <p1> rdf:langString } on { <s1> <p1> 'septante'@fr-be-x-privuse1x }" ;
+    mf:status mf:Proposed ;
+    mf:action [
+      sht:schema <../schemas/1datatypelangString.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LAtfr-be-x-privuse1x.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1datatypelangString_passLAtfr-bexxxxxx> a sht:ValidationTest ;
+    mf:name "1datatypelangString_passLAtfr-bexxxxxx" ;
+    sht:trait sht:ValueSet , sht:Stem , sht:UnregisteredLanguageTag ;
+    rdfs:comment "<S> { <p1> rdf:langString } on { <s1> <p1> 'septante'@fr-bexxxxxx }" ;
+    mf:status mf:Proposed ;
+    mf:action [
+      sht:schema <../schemas/1datatypelangString.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LAtfr-bexxxxxx.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1datatypelangString_failLAtfr-bexxxxxxx> a sht:ValidationFailure ;
+    mf:name "1datatypelangString_failLAtfr-bexxxxxxx" ;
+    sht:trait sht:ValueSet , sht:Stem , sht:UnregisteredLanguageTag ;
+    rdfs:comment "<S> { <p1> rdf:langString } on { <s1> <p1> 'septante'@fr-bexxxxxxx }" ;
+    mf:status mf:Proposed ;
+    mf:action [
+      sht:schema <../schemas/1datatypelangString.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LAtfr-bexxxxxxx.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+### } langtag lexical form
 ###   lexical form {
 
 ####    integer            -1 0 1 +1 | "" -1.0 +1.0 1E0
@@ -11138,15 +11220,15 @@
     ] ;
     .
 
-<#1val1emptylanguageStemMinuslanguage3_passLAtfr-be-fbcl> a sht:ValidationTest ;
-    mf:name "1val1emptylanguageStemMinuslanguage3_passLAtfr-be-fbcl" ;
+<#1val1emptylanguageStemMinuslanguage3_passLAtfr-be-x-privuse> a sht:ValidationTest ;
+    mf:name "1val1emptylanguageStemMinuslanguage3_passLAtfr-be-x-privuse" ;
     sht:trait sht:ValueSet , sht:Stem ;
-    rdfs:comment "<S> { <p1> [@~-@fr-be-@fr-cd-@fr-ch] } on { <s1> <p1> 'septante'@fr-be-fbcl }" ;
+    rdfs:comment "<S> { <p1> [@~-@fr-be-@fr-cd-@fr-ch] } on { <s1> <p1> 'septante'@fr-be-x-privuse }" ;
     mf:status mf:Approved ;
     mf:action [
       sht:schema <../schemas/1val1emptylanguageStemMinuslanguage3.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_LAtfr-be-fbcl.ttl> ;
+      sht:data <Is1_Ip1_LAtfr-be-x-privuse.ttl> ;
       sht:focus <http://a.example/s1>
     ]
     .
@@ -11190,15 +11272,15 @@
     ]
     .
 
-<#1val1emptylanguageStemMinuslanguageStem3_LAtfr-be-fbcl> a sht:ValidationFailure ;
-    mf:name "1val1emptylanguageStemMinuslanguageStem3_LAtfr-be-fbcl" ;
+<#1val1emptylanguageStemMinuslanguageStem3_LAtfr-be-x-privuse> a sht:ValidationFailure ;
+    mf:name "1val1emptylanguageStemMinuslanguageStem3_LAtfr-be-x-privuse" ;
     sht:trait sht:ValueSet , sht:Stem ;
-    rdfs:comment "<S> { <p1> [@~-@fr-be~-@fr-cd~-@fr-ch~] } on { <s1> <p1> 'septante'@fr-be-fbcl }" ;
+    rdfs:comment "<S> { <p1> [@~-@fr-be~-@fr-cd~-@fr-ch~] } on { <s1> <p1> 'septante'@fr-be-x-privuse }" ;
     mf:status mf:Approved ;
     mf:action [
       sht:schema <../schemas/1val1emptylanguageStemMinuslanguageStem3.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_LAtfr-be-fbcl.ttl> ;
+      sht:data <Is1_Ip1_LAtfr-be-x-privuse.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
     .
@@ -11242,15 +11324,15 @@
     ]
     .
 
-<#1val1languageStem_passLAtfr-be-fbcl> a sht:ValidationTest ;
-    mf:name "1val1languageStem_passLAtfr-be-fbcl" ;
+<#1val1languageStem_passLAtfr-be-x-privuse> a sht:ValidationTest ;
+    mf:name "1val1languageStem_passLAtfr-be-x-privuse" ;
     sht:trait sht:ValueSet , sht:Stem ;
-    rdfs:comment "<S> { <p1> [@fr~] } on { <s1> <p1> 'septante'@fr-be-fbcl }" ;
+    rdfs:comment "<S> { <p1> [@fr~] } on { <s1> <p1> 'septante'@fr-be-x-privuse }" ;
     mf:status mf:Approved ;
     mf:action [
       sht:schema <../schemas/1val1languageStem.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_LAtfr-be-fbcl.ttl> ;
+      sht:data <Is1_Ip1_LAtfr-be-x-privuse.ttl> ;
       sht:focus <http://a.example/s1>
     ]
     .
@@ -11372,15 +11454,15 @@
     ] ;
     .
 
-<#1val1languageStemMinuslanguage3_passLAtfr-be-fbcl> a sht:ValidationTest ;
-    mf:name "1val1languageStemMinuslanguage3_passLAtfr-be-fbcl" ;
+<#1val1languageStemMinuslanguage3_passLAtfr-be-x-privuse> a sht:ValidationTest ;
+    mf:name "1val1languageStemMinuslanguage3_passLAtfr-be-x-privuse" ;
     sht:trait sht:ValueSet , sht:Stem ;
-    rdfs:comment "<S> { <p1> [@fr~-@fr-be-@fr-cd-@fr-ch] } on { <s1> <p1> 'septante'@fr-be-fbcl }" ;
+    rdfs:comment "<S> { <p1> [@fr~-@fr-be-@fr-cd-@fr-ch] } on { <s1> <p1> 'septante'@fr-be-x-privuse }" ;
     mf:status mf:Approved ;
     mf:action [
       sht:schema <../schemas/1val1languageStemMinuslanguage3.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_LAtfr-be-fbcl.ttl> ;
+      sht:data <Is1_Ip1_LAtfr-be-x-privuse.ttl> ;
       sht:focus <http://a.example/s1>
     ]
     .
@@ -11476,19 +11558,86 @@
     ] ;
     .
 
-<#1val1languageStemMinuslanguageStem3_LAtfr-be-fbcl> a sht:ValidationFailure ;
-    mf:name "1val1languageStemMinuslanguageStem3_LAtfr-be-fbcl" ;
+<#1val1languageStemMinuslanguageStem3_LAtfr-be-x-privuse> a sht:ValidationFailure ;
+    mf:name "1val1languageStemMinuslanguageStem3_LAtfr-be-x-privuse" ;
     sht:trait sht:ValueSet , sht:Stem ;
-    rdfs:comment "<S> { <p1> [@fr~-@fr-be~-@fr-cd~-@fr-ch~] } on { <s1> <p1> 'septante'@fr-be-fbcl }" ;
+    rdfs:comment "<S> { <p1> [@fr~-@fr-be~-@fr-cd~-@fr-ch~] } on { <s1> <p1> 'septante'@fr-be-x-privuse }" ;
     mf:status mf:Approved ;
     mf:action [
       sht:schema <../schemas/1val1languageStemMinuslanguageStem3.shex> ;
       sht:shape <http://a.example/S1> ;
-      sht:data <Is1_Ip1_LAtfr-be-fbcl.ttl> ;
+      sht:data <Is1_Ip1_LAtfr-be-x-privuse.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
     .
 
+###   langtag lexical form {
+<#1val1languageStem_passLAtfr-x-privuse1> a sht:ValidationTest ;
+    mf:name "1val1languageStem_passLAtfr-x-privuse1" ;
+    sht:trait sht:ValueSet , sht:Stem ;
+    rdfs:comment "<S> { <p1> [@fr~] } on { <s1> <p1> 'septante'@fr-x-privuse1 }" ;
+    mf:status mf:Proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1languageStem.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LAtfr-x-privuse1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1val1languageStem_failLAtfr-x-privuse1x> a sht:ValidationFailure ;
+    mf:name "1val1languageStem_failLAtfr-x-privuse1x" ;
+    sht:trait sht:ValueSet , sht:Stem ;
+    rdfs:comment "<S> { <p1> [@fr~] } on { <s1> <p1> 'septante'@fr-x-privuse1x }" ;
+    mf:status mf:Proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1languageStem.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LAtfr-x-privuse1x.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1val1languageStem_failLAtfr-be-x-privuse1x> a sht:ValidationFailure ;
+    mf:name "1val1languageStem_failLAtfr-be-x-privuse1x" ;
+    sht:trait sht:ValueSet , sht:Stem ;
+    rdfs:comment "<S> { <p1> [@fr~] } on { <s1> <p1> 'septante'@fr-be-x-privuse1x }" ;
+    mf:status mf:Proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1languageStem.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LAtfr-be-x-privuse1x.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1val1languageStem_passLAtfr-bexxxxxx> a sht:ValidationTest ;
+    mf:name "1val1languageStem_passLAtfr-bexxxxxx" ;
+    sht:trait sht:ValueSet , sht:Stem , sht:UnregisteredLanguageTag ;
+    rdfs:comment "<S> { <p1> [@fr~] } on { <s1> <p1> 'septante'@fr-bexxxxxx }" ;
+    mf:status mf:Proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1languageStem.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LAtfr-bexxxxxx.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1val1languageStem_failLAtfr-bexxxxxxx> a sht:ValidationFailure ;
+    mf:name "1val1languageStem_failLAtfr-bexxxxxxx" ;
+    sht:trait sht:ValueSet , sht:Stem , sht:UnregisteredLanguageTag ;
+    rdfs:comment "<S> { <p1> [@fr~] } on { <s1> <p1> 'septante'@fr-bexxxxxxx }" ;
+    mf:status mf:Proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1languageStem.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_LAtfr-bexxxxxxx.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+### } langtag lexical form
 ## } value sets
 ## triple expressions {
 ###   AND tripleExpr {
