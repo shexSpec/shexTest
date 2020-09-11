@@ -1225,15 +1225,15 @@
 ## manual schemas
         <#false-lead-excluding-value-shape>
         <#nPlus1>
-        <#nPlus1-greedy_fail>
+        # <#nPlus1-greedy_fail>
         <#nPlus1-greedy-rewrite>
         <#skipped>
         <#open2Eachdotclosecard25c1dot>
         <#2Eachdot>
         <#PstarT>
-        <#PstarT-greedy>
+        # <#PstarT-greedy>
         <#PTstar>
-        <#PTstar-greedy-fail>
+        # <#PTstar-greedy-fail>
         <#PTstar-greedy-rewrite>
         <#PstarTstar>
         <#P2T2>
@@ -13458,7 +13458,7 @@
 
 <#open3Onedotclosecard23_pass-p1p2p3> a sht:ValidationTest ;
     mf:name "open3Onedotclosecard23_pass-p1p2p3" ;
-    sht:trait sht:EachOf , sht:RepeatedOneOf , sht:Greedy ;
+    sht:trait sht:EachOf , sht:RepeatedOneOf ;
     rdfs:comment "<S1> { ( <p1> .| <p2> .| <p3> . ){2,3} } / { <s> <p1> \"p1-0\"; <p2> \"p2-0\"; <p3> \"p3-0\" }" ;
     mf:status mf:Approved ;
     mf:action [
@@ -15799,18 +15799,18 @@
     ]
     .
 
-<#nPlus1-greedy_fail> a sht:ValidationFailure ;
-    mf:name "nPlus1-greedy_fail" ;
-    sht:trait sht:EachOf , sht:Greedy ;
-    rdfs:comment "<S> { :a .*; (:a .+ | :a .); :a . } / { <x> :a 1, 3 } Greedy" ;
-    mf:status mf:Approved ;
-    mf:action [
-      sht:schema <../validation/nPlus1.shex> ;
-      sht:shape <http://a.example.org/S> ;
-      sht:data <nPlus1.ttl> ;
-      sht:focus <x>
-    ]
-    .
+# <#nPlus1-greedy_fail> a sht:ValidationFailure ;
+#     mf:name "nPlus1-greedy_fail" ;
+#     sht:trait sht:EachOf , sht:Greedy ;
+#     rdfs:comment "<S> { :a .*; (:a .+ | :a .); :a . } / { <x> :a 1, 3 } Greedy" ;
+#     mf:status mf:Approved ;
+#     mf:action [
+#       sht:schema <../validation/nPlus1.shex> ;
+#       sht:shape <http://a.example.org/S> ;
+#       sht:data <nPlus1.ttl> ;
+#       sht:focus <x>
+#     ]
+#     .
 
 <#nPlus1-greedy-rewrite> a sht:ValidationTest ;
     mf:name "nPlus1-greedy-rewrite" ;
@@ -15877,18 +15877,18 @@
     ]
     .
 
-<#PstarT-greedy> a sht:ValidationTest ;
-    mf:name "PstarT-greedy" ;
-    sht:trait sht:EachOf , sht:Greedy ;
-    rdfs:comment "<S1> {:a @<P>*; :a @<T>} / { <n> :a <pt1>,  <pt2>,  <p>,  <t> } Greedy" ;
-    mf:status mf:Approved ;
-    mf:action [
-      sht:schema <../validation/Pstar.shex> ;
-      sht:shape <http://a.example/base/S1> ;
-      sht:data <Pstar.ttl> ;
-      sht:focus <http://a.example/base/n>
-    ]
-    .
+# <#PstarT-greedy> a sht:ValidationTest ;
+#     mf:name "PstarT-greedy" ;
+#     sht:trait sht:EachOf , sht:Greedy ;
+#     rdfs:comment "<S1> {:a @<P>*; :a @<T>} / { <n> :a <pt1>,  <pt2>,  <p>,  <t> } Greedy" ;
+#     mf:status mf:Approved ;
+#     mf:action [
+#       sht:schema <../validation/Pstar.shex> ;
+#       sht:shape <http://a.example/base/S1> ;
+#       sht:data <Pstar.ttl> ;
+#       sht:focus <http://a.example/base/n>
+#     ]
+#     .
 
 <#PTstar> a sht:ValidationTest ;
     mf:name "PTstar" ;
@@ -15903,22 +15903,22 @@
     ]
     .
 
-<#PTstar-greedy-fail> a sht:ValidationFailure ;
-    mf:name "PTstar-greedy-fail" ;
-    sht:trait sht:EachOf , sht:Greedy ;
-    rdfs:comment "<S2> {:a @<P>; :a @<T>*} / { <n> :a <pt1>,  <pt2>,  <p>,  <t> } Greedy" ;
-    mf:status mf:Approved ;
-    mf:action [
-      sht:schema <../validation/Pstar.shex> ;
-      sht:shape <http://a.example/base/S2> ;
-      sht:data <Pstar.ttl> ;
-      sht:focus <http://a.example/base/n>
-    ]
-    .
+# <#PTstar-greedy-fail> a sht:ValidationFailure ;
+#     mf:name "PTstar-greedy-fail" ;
+#     sht:trait sht:EachOf , sht:Greedy ;
+#     rdfs:comment "<S2> {:a @<P>; :a @<T>*} / { <n> :a <pt1>,  <pt2>,  <p>,  <t> } Greedy" ;
+#     mf:status mf:Approved ;
+#     mf:action [
+#       sht:schema <../validation/Pstar.shex> ;
+#       sht:shape <http://a.example/base/S2> ;
+#       sht:data <Pstar.ttl> ;
+#       sht:focus <http://a.example/base/n>
+#     ]
+#     .
 
 <#PTstar-greedy-rewrite> a sht:ValidationTest ;
     mf:name "PTstar-greedy-rewrite" ;
-    sht:trait sht:EachOf , sht:Greedy ;
+    sht:trait sht:EachOf ;
     rdfs:comment "<S2> {:a @<T>*; :a @<P>} / { <n> :a <pt1>,  <pt2>,  <p>,  <t> }" ;
     mf:status mf:Approved ;
     mf:action [
