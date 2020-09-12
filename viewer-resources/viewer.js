@@ -72,7 +72,12 @@
       data.val(xfer.getData(xfer.types[0]));
     }
   }).on("dragstart", (evt) => {
-    evt.originalEvent.dataTransfer.setData(type.val(), data.val());
+    const t = type.val()
+    let v = data.val()
+    if (t === "text/uri-list")
+      v = v.split(/\n/).filter(s => !!s).map(s => s + "\r\n").join("");
+    console.log(v)
+    evt.originalEvent.dataTransfer.setData(t, v);
   });
   type.on('mousedown', function(e) {
     e.stopPropagation();
