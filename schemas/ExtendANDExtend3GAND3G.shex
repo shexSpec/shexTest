@@ -28,7 +28,8 @@ ABSTRACT <H> @<G> AND /s.......H...$/
          <I>          /s........I..$/
                   AND
                       { <q> [          5        ] }
-         <J> @<H> AND /s.........J.$/
+         <J>          EXTENDS @<H> {}
+                  AND /s.........J.$/
                   AND EXTENDS @<I>
                       { <q> [            6      ] }
 
