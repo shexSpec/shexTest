@@ -28,7 +28,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     sx:abstract true ;
     sx:shapeExpr [ a sx:ShapeAnd ;
         sx:shapeExprs (
-            <http://a.example/A>
+            [ a sx:Shape ; sx:extends ( <http://a.example/A> ) ]
             [ a sx:NodeConstraint ;
                 sx:pattern "s.B.........$"
             ]
@@ -66,7 +66,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     sx:abstract true ;
     sx:shapeExpr [ a sx:ShapeAnd ;
         sx:shapeExprs (
-            <http://a.example/B>
+             [ a sx:Shape ; sx:extends ( <http://a.example/B> ) ]
             <http://a.example/C>
             [ a sx:NodeConstraint ;
                 sx:pattern "s...D.......$"
@@ -141,7 +141,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     sx:abstract true ;
     sx:shapeExpr [ a sx:ShapeAnd ;
         sx:shapeExprs (
-            <http://a.example/G>
+            [ a sx:Shape ; sx:extends ( <http://a.example/G> ) ]
             [ a sx:NodeConstraint ;
                 sx:pattern "s.......H...$"
             ]
