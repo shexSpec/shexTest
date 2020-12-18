@@ -2,6 +2,16 @@
   "type": "Schema",
   "shapes": [
     {
+      "type": "Shape",
+      "id": "http://a.example/S1",
+      "closed": true,
+      "expression": {
+        "type": "TripleConstraint",
+        "predicate": "http://a.example/p1",
+        "valueExpr": "http://a.example/List0PlusIri"
+      }
+    },
+    {
       "type": "ShapeOr",
       "id": "http://a.example/List0PlusIri",
       "shapeExprs": [
@@ -34,16 +44,6 @@
           }
         }
       ]
-    },
-    {
-      "type": "Shape",
-      "id": "http://a.example/S1",
-      "closed": true,
-      "expression": {
-        "type": "TripleConstraint",
-        "predicate": "http://a.example/p1",
-        "valueExpr": "http://a.example/List0PlusIri"
-      }
     }
   ],
   "@context": "http://www.w3.org/ns/shex.jsonld"
