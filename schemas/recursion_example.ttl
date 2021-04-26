@@ -10,7 +10,6 @@
      <http://www.w3.org/ns/shex#valueExpr> <http://schema.example/IssueShape>
    ] .
 
- [
+[]
      a <http://www.w3.org/ns/shex#Schema>;
-     <http://www.w3.org/ns/shex#shapes> <http://schema.example/IssueShape>
- ] .
+     <http://www.w3.org/ns/shex#shapes> (<http://schema.example/IssueShape>) .

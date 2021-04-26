@@ -2,7 +2,7 @@ BASE <http://all.example/>
 PREFIX sx: <http://www.w3.org/ns/shex#>
 
 [] a sx:Schema ;
-  sx:shapes <S1>, <S2> .
+  sx:shapes (<S1> <S2>) .
 
 <S1> a sx:Shape ;
   sx:expression <S2e> .
