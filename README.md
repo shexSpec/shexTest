@@ -28,7 +28,7 @@ These tests should raise errors when parsed, noting the rule about nested `Value
 
 ### `validation`
 
-* Validation tests in a manifest (Turtle - `manifest.ttl`, [ShExJ][http://shex.io/shex-primer/ShExJ) - `manifest.json`).
+* Validation tests in a manifest (Turtle - `manifest.ttl`, [ShExJ][http://shex.io/shex-semantics/#shexj) ([obselete primer](http://shex.io/shex-primer-20170327/ShExJ)) - `manifest.json`).
 * Input data in Turtle (`.ttl`).
 * Validation returns a [ShapeMap](https://shexspec.github.io/shape-map/) capturing which node/shape pairs conform. The expected conformance or non-conformance is captured in the test format as a `ValidationTest` or `ValidationFailure`. 
 
