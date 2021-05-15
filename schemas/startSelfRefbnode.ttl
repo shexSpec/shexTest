@@ -4,7 +4,7 @@ PREFIX sx:  <http://www.w3.org/ns/shex#>
 
 [] a sx:Schema ;
   sx:start _:S1 ;
-  sx:shapes _:S1 .
+  sx:shapes (_:S1) .
 
 _:S1 a sx:Shape ;
   sx:expression
