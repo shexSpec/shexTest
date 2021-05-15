@@ -4,7 +4,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 [] a sx:Schema ;
     sx:start _:S1 ;
-    sx:shapes _:S1 .
+    sx:shapes (_:S1) .
 
 
 _:S1 a sx:Shape ;
