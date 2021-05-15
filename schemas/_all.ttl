@@ -16,15 +16,15 @@ PREFIX a: <http://all.example/>
     sx:code " START2 ";
     sx:name <http://all.example/act2>
   ]);
-  sx:shapes
-    <http://all.example/IRI>,
-    <http://all.example/S1>,
-    <http://all.example/S2>,
-    <http://all.example/S3>,
-    <http://all.example/S5>,
-    <http://all.example/vs1>,
-    _:a·̀ͯ‿.⁀,
-    _:AZazÀÖØöø˿ͰͽͿ῿‌‍⁰↏Ⰰ⿯、퟿豈﷏ﷰ�𐀀󯿽 .
+  sx:shapes (
+    <http://all.example/IRI>
+    <http://all.example/S1>
+    <http://all.example/S2>
+    <http://all.example/S3>
+    <http://all.example/S5>
+    <http://all.example/vs1>
+    _:a·̀ͯ‿.⁀
+    _:AZazÀÖØöø˿ͰͽͿ῿‌‍⁰↏Ⰰ⿯、퟿豈﷏ﷰ�𐀀󯿽) .
 
 <http://all.example/IRI> a sx:NodeConstraint ; sx:nodeKind sx:iri .
 
