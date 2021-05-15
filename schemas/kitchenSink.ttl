@@ -16,12 +16,12 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schem#>
     [ a sx:SemAct ; sx:name ex:foo ; sx:code " initializer for ignored extension " ]
   ) ;
   sx:start <S1> ;
-  sx:shapes
-      <S1> ,
-      UserShape: ,
-      :EmployeeShape ,
-      _:IDshape ,
-      ex:FooID .
+  sx:shapes (
+      <S1> 
+      UserShape: 
+      :EmployeeShape 
+      _:IDshape 
+      ex:FooID) .
 
 <S1> a sx:Shape ;
   sx:expression [ a sx:EachOf ; sx:expressions (
