@@ -480,6 +480,24 @@
           "ttl": "1val1LANGTAG.ttl"
         },
         {
+          "@id": "#1val1LANGTAG_U_L",
+          "@type": "sht:RepresentationTest",
+          "name": "1val1LANGTAG_U_L",
+          "status": "mf:proposed",
+          "shex": "1val1LANGTAG_U_L.shex",
+          "json": "1val1LANGTAG_U_L.json",
+          "ttl": "1val1LANGTAG.ttl"
+        },
+        {
+          "@id": "#1val1LANGTAG_L_U",
+          "@type": "sht:RepresentationTest",
+          "name": "1val1LANGTAG_L_U",
+          "status": "mf:proposed",
+          "shex": "1val1LANGTAG_L_U.shex",
+          "json": "1val1LANGTAG_L_U.json",
+          "ttl": "1val1LANGTAG.ttl"
+        },
+        {
           "@id": "#1val1IRIREFDatatype",
           "@type": "sht:RepresentationTest",
           "name": "1val1IRIREFDatatype",
@@ -1918,6 +1936,15 @@
           "shex": "1val1languageStemMinuslanguageStem3.shex",
           "json": "1val1languageStemMinuslanguageStem3.json",
           "ttl": "1val1languageStemMinuslanguageStem3.ttl"
+        },
+        {
+          "@id": "#1val1languageStemMinuslanguageStemU3",
+          "@type": "sht:RepresentationTest",
+          "name": "1val1languageStemMinuslanguageStemU3",
+          "status": "mf:proposed",
+          "shex": "1val1languageStemMinuslanguageStemU3.shex",
+          "json": "1val1languageStemMinuslanguageStemU3.json",
+          "ttl": "1val1languageStemMinuslanguageStemU3.ttl"
         },
         {
           "@id": "#1val1literal",
