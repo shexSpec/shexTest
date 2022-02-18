@@ -16500,6 +16500,23 @@
           "status": "mf:Approved"
         },
         {
+          "@id": "#2val1refvsAnnot_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/2val1refvsAnnot.shex",
+            "shape": "http://a.example/S",
+            "data": "In1_Ip1_L1.In1_Ip2_L2.ttl",
+            "focus": "http://a.example/n1"
+          },
+          "extensionResults": [],
+          "name": "2val1refvsAnnot_pass",
+          "trait": [
+            "Annotation"
+          ],
+          "comment": "<S> { <p1> [1 5] <annot1> 3; <p2> @<NC> <annot1> 4 } <NC> [2 6] <annot1> 5 on { <s1> <p1> <o1> }",
+          "status": "mf:Approved"
+        },
+        {
           "@id": "#1dotCode1_pass",
           "@type": "sht:ValidationTest",
           "action": {
@@ -16895,6 +16912,36 @@
             "SemanticAction"
           ],
           "comment": "%<Test>{print('startAct 1')%} %<Test>{ fail('startAct 2') %} %<Test>{print('startAct 3')%} <S> { <p1> . } on { <s1> <p1> <o1> }",
+          "status": "mf:Approved"
+        },
+        {
+          "@id": "#2val1refvsCode_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/2val1refvsCode.shex",
+            "shape": "http://a.example/S",
+            "data": "In1_Ip1_L1.In1_Ip2_L2.ttl",
+            "focus": "http://a.example/n1"
+          },
+          "extensionResults": [
+            {
+              "extension": "http://shex.io/extensions/Test/",
+              "prints": "\"2\"^^http://www.w3.org/2001/XMLSchema#integer"
+            },
+            {
+              "extension": "http://shex.io/extensions/Test/",
+              "prints": "\"1\"^^http://www.w3.org/2001/XMLSchema#integer"
+            },
+            {
+              "extension": "http://shex.io/extensions/Test/",
+              "prints": "\"2\"^^http://www.w3.org/2001/XMLSchema#integer"
+            }
+          ],
+          "name": "2val1refvsCode_pass",
+          "trait": [
+            "SemanticAction"
+          ],
+          "comment": "<S> { <p1> [1 5] %<Test>{ print(o) %}; <p2> @<NC> %<Test>{ print(o) %} } <NC> [2 6] %<Test>{ print(s) %} on { <s1> <p1> <o1> }",
           "status": "mf:Approved"
         },
         {
