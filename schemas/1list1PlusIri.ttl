@@ -33,6 +33,7 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
   ] .
 
 [] a sx:Schema ;
-  sx:shapes
-    <http://a.example/S1> ,
-    <http://a.example/List1PlusIri> .
+  sx:shapes (
+    <http://a.example/S1> 
+    <http://a.example/List1PlusIri>
+  ) .

@@ -2,7 +2,7 @@ PREFIX ex: <http://schema.example/>
 PREFIX sx: <http://www.w3.org/ns/shex#>
 
 [] a sx:Schema ;
-    sx:shapes ex:IssueShape .
+    sx:shapes (ex:IssueShape) .
 
 ex:IssueShape a sx:Shape ;
     sx:expression [ a sx:TripleConstraint ;

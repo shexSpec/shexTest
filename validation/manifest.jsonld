@@ -19467,6 +19467,7 @@
             "Extends",
             "Exhaustive"
           ],
+          "comment": "<A> { :p{2}; :q[3] } <B> @<A>AND{ :p+; :q+ } <C> EXT @<B> { :p } on { :s :p 1,2,3; :q 3 }",
           "status": "mf:proposed"
         },
         {
@@ -19483,6 +19484,7 @@
           "trait": [
             "Extends"
           ],
+          "comment": "<A> { :p{2}; :q[3] } <B> @<A>AND{ :p+; :q+ } <C> EXT @<B> { :p } on { :s :p 1,2,3; :q 99 }",
           "status": "mf:proposed"
         },
         {
@@ -19499,6 +19501,7 @@
           "trait": [
             "Extends"
           ],
+          "comment": "ABSTRACT <A> /sA/ AND {:p} <B> @<A> AND /s B/ {:p} on { <sABxxxxxxxxx> <p> 0 }",
           "status": "mf:proposed"
         },
         {
@@ -19515,6 +19518,7 @@
           "trait": [
             "Extends"
           ],
+          "comment": "ABSTRACT <A> /sA/ AND {:p} <B> @<A> AND /s B/ {:p} on { <sAxxxxxxxxxx> <p> 0 }",
           "status": "mf:proposed"
         },
         {
@@ -19531,6 +19535,7 @@
           "trait": [
             "Extends"
           ],
+          "comment": "ABSTRACT <A> /sA/ AND {:p} <B> @<A> AND /s B/ {:p} on { <sxBxxxxxxxxx> <p> 0 }",
           "status": "mf:proposed"
         },
         {
@@ -19547,6 +19552,7 @@
           "trait": [
             "Extends"
           ],
+          "comment": "ABS <A> ABS <B> @<A> <C> <D> @<B> AND @<A> on { <sABCDxxxxxxx> <p> 0 }",
           "status": "mf:proposed"
         },
         {
@@ -19563,6 +19569,7 @@
           "trait": [
             "Extends"
           ],
+          "comment": "ABS <A> ABS <B> @<A> <C> <D> @<B> AND @<A> on { <sAxxxxxxxxxx> <p> 0 }",
           "status": "mf:proposed"
         },
         {
@@ -19579,6 +19586,7 @@
           "trait": [
             "Extends"
           ],
+          "comment": "ABS <A> ABS <B> @<A> <C> <D> @<B> AND @<A> on { <sxxCxxxxxxxx> <p> 0 }",
           "status": "mf:proposed"
         },
         {
@@ -19596,6 +19604,7 @@
             "Extends",
             "Exhaustive"
           ],
+          "comment": "<E> EXTENDS @<D> {:p [2]} on { <sABCDExxxxxx> <p> 0, 2 }",
           "status": "mf:proposed"
         },
         {
@@ -19612,6 +19621,7 @@
           "trait": [
             "Extends"
           ],
+          "comment": "<E> EXTENDS @<D> {:p [2]} on { <sABCDExxxxxx> <p> 2 }",
           "status": "mf:proposed"
         },
         {
@@ -19628,6 +19638,7 @@
           "trait": [
             "Extends"
           ],
+          "comment": "<E> EXTENDS @<D> {:p [2]} on { <sABCDExxxxxx> <p> 0, 2, 3 }",
           "status": "mf:proposed"
         },
         {
@@ -19644,6 +19655,7 @@
           "trait": [
             "Extends"
           ],
+          "comment": "<E> EXTENDS @<D> {:p [2]} on { <sxBCDExxxxxx> <p> 0, 2 }",
           "status": "mf:proposed"
         },
         {
@@ -19660,6 +19672,7 @@
           "trait": [
             "Extends"
           ],
+          "comment": "<E> EXTENDS @<D> {:p [2]} on { <sABxDExxxxxx> <p> 0, 2 }",
           "status": "mf:proposed"
         },
         {
@@ -19676,6 +19689,7 @@
           "trait": [
             "Extends"
           ],
+          "comment": "<E> EXTENDS @<D> {:p [2]} on { <sABCxExxxxxx> <p> 0, 2 }",
           "status": "mf:proposed"
         },
         {
@@ -19692,6 +19706,7 @@
           "trait": [
             "Extends"
           ],
+          "comment": "<E> EXTENDS @<D> {:p [2]} on { <sABCDxxxxxxx> <p> 0, 2 }",
           "status": "mf:proposed"
         },
         {
@@ -19709,6 +19724,7 @@
             "Extends",
             "Exhaustive"
           ],
+          "comment": "@@Extend3G-15",
           "status": "mf:proposed"
         },
         {
@@ -19725,6 +19741,7 @@
           "trait": [
             "Extends"
           ],
+          "comment": "@@Extend3G-16",
           "status": "mf:proposed"
         },
         {
@@ -19741,6 +19758,7 @@
           "trait": [
             "Extends"
           ],
+          "comment": "@@Extend3G-17",
           "status": "mf:proposed"
         },
         {
@@ -19757,6 +19775,7 @@
           "trait": [
             "Extends"
           ],
+          "comment": "@@Extend3G-18",
           "status": "mf:proposed"
         },
         {
@@ -19773,6 +19792,7 @@
           "trait": [
             "Extends"
           ],
+          "comment": "@@Extend3G-19",
           "status": "mf:proposed"
         },
         {
@@ -19789,6 +19809,7 @@
           "trait": [
             "Extends"
           ],
+          "comment": "@@Extend3G-20",
           "status": "mf:proposed"
         },
         {
@@ -19805,6 +19826,7 @@
           "trait": [
             "Extends"
           ],
+          "comment": "@@Extend3G-21",
           "status": "mf:proposed"
         },
         {
@@ -19822,6 +19844,7 @@
             "Extends",
             "Exhaustive"
           ],
+          "comment": "@@ExtendANDExtend3GAND3G-22",
           "status": "mf:proposed"
         },
         {
@@ -19838,6 +19861,7 @@
           "trait": [
             "Extends"
           ],
+          "comment": "@@ExtendANDExtend3GAND3G-23",
           "status": "mf:proposed"
         },
         {
@@ -19854,6 +19878,7 @@
           "trait": [
             "Extends"
           ],
+          "comment": "@@ExtendANDExtend3GAND3G-24",
           "status": "mf:proposed"
         },
         {
@@ -19870,6 +19895,7 @@
           "trait": [
             "Extends"
           ],
+          "comment": "@@ExtendANDExtend3GAND3G-25",
           "status": "mf:proposed"
         },
         {
@@ -19886,6 +19912,7 @@
           "trait": [
             "Extends"
           ],
+          "comment": "@@ExtendANDExtend3GAND3G-26",
           "status": "mf:proposed"
         },
         {
@@ -19902,6 +19929,7 @@
           "trait": [
             "Extends"
           ],
+          "comment": "@@ExtendANDExtend3GAND3G-27",
           "status": "mf:proposed"
         },
         {
@@ -19918,6 +19946,7 @@
           "trait": [
             "Extends"
           ],
+          "comment": "@@ExtendANDExtend3GAND3G-28",
           "status": "mf:proposed"
         },
         {
@@ -19934,6 +19963,7 @@
           "trait": [
             "Extends"
           ],
+          "comment": "@@ExtendANDExtend3GAND3G-29",
           "status": "mf:proposed"
         },
         {
@@ -19950,6 +19980,7 @@
           "trait": [
             "Extends"
           ],
+          "comment": "@@ExtendANDExtend3GAND3G-30",
           "status": "mf:proposed"
         },
         {
@@ -19966,6 +19997,7 @@
           "trait": [
             "Extends"
           ],
+          "comment": "@@ExtendANDExtend3GAND3G-31",
           "status": "mf:proposed"
         },
         {
@@ -19982,6 +20014,7 @@
           "trait": [
             "Extends"
           ],
+          "comment": "@@ExtendANDExtend3GAND3G-32",
           "status": "mf:proposed"
         },
         {
@@ -19999,6 +20032,7 @@
             "Extends",
             "Exhaustive"
           ],
+          "comment": "@@ExtendANDExtend3GAND3G-33",
           "status": "mf:proposed"
         },
         {
@@ -20015,6 +20049,7 @@
           "trait": [
             "Extends"
           ],
+          "comment": "@@ExtendANDExtend3GAND3G-34",
           "status": "mf:proposed"
         },
         {
@@ -20031,6 +20066,7 @@
           "trait": [
             "Extends"
           ],
+          "comment": "@@ExtendANDExtend3GAND3G-35",
           "status": "mf:proposed"
         },
         {
@@ -20047,6 +20083,7 @@
           "trait": [
             "Extends"
           ],
+          "comment": "@@vitals-RESTRICTS-36",
           "status": "mf:proposed"
         },
         {
@@ -20064,6 +20101,7 @@
             "Extends",
             "Exhaustive"
           ],
+          "comment": "@@vitals-RESTRICTS-37",
           "status": "mf:proposed"
         },
         {
@@ -20081,6 +20119,7 @@
             "Extends",
             "Exhaustive"
           ],
+          "comment": "@@vitals-RESTRICTS-38",
           "status": "mf:proposed"
         },
         {
@@ -20098,6 +20137,7 @@
             "Extends",
             "Exhaustive"
           ],
+          "comment": "@@vitals-RESTRICTS-39",
           "status": "mf:proposed"
         },
         {
@@ -20115,6 +20155,7 @@
             "Extends",
             "Exhaustive"
           ],
+          "comment": "@@vitals-RESTRICTS-40",
           "status": "mf:proposed"
         },
         {
@@ -20132,6 +20173,7 @@
             "Extends",
             "Exhaustive"
           ],
+          "comment": "@@vitals-RESTRICTS-41",
           "status": "mf:proposed"
         },
         {
@@ -20149,6 +20191,7 @@
             "Extends",
             "Exhaustive"
           ],
+          "comment": "@@vitals-RESTRICTS-42",
           "status": "mf:proposed"
         },
         {
@@ -20166,6 +20209,7 @@
             "Extends",
             "Exhaustive"
           ],
+          "comment": "@@vitals-RESTRICTS-43",
           "status": "mf:proposed"
         },
         {
@@ -20183,6 +20227,7 @@
             "Extends",
             "Exhaustive"
           ],
+          "comment": "@@vitals-RESTRICTS-44",
           "status": "mf:proposed"
         },
         {
@@ -20200,6 +20245,7 @@
             "Extends",
             "Exhaustive"
           ],
+          "comment": "@@vitals-RESTRICTS-45",
           "status": "mf:proposed"
         },
         {
@@ -20217,6 +20263,7 @@
             "Extends",
             "Exhaustive"
           ],
+          "comment": "@@vitals-RESTRICTS-46",
           "status": "mf:proposed"
         },
         {
@@ -20234,6 +20281,7 @@
             "Extends",
             "Exhaustive"
           ],
+          "comment": "@@vitals-RESTRICTS-47",
           "status": "mf:proposed"
         },
         {
@@ -20251,6 +20299,7 @@
             "Extends",
             "Exhaustive"
           ],
+          "comment": "@@vitals-RESTRICTS-48",
           "status": "mf:proposed"
         },
         {
@@ -20268,6 +20317,7 @@
             "Extends",
             "Exhaustive"
           ],
+          "comment": "@@vitals-RESTRICTS-49",
           "status": "mf:proposed"
         },
         {
@@ -20285,6 +20335,7 @@
             "Extends",
             "Exhaustive"
           ],
+          "comment": "@@vitals-RESTRICTS-50",
           "status": "mf:proposed"
         },
         {
@@ -20302,6 +20353,7 @@
             "Extends",
             "Exhaustive"
           ],
+          "comment": "@@vitals-RESTRICTS-51",
           "status": "mf:proposed"
         },
         {
@@ -20319,6 +20371,7 @@
             "Extends",
             "Exhaustive"
           ],
+          "comment": "@@vitals-RESTRICTS-52",
           "status": "mf:proposed"
         },
         {
@@ -20336,9 +20389,11 @@
             "Extends",
             "Exhaustive"
           ],
+          "comment": "@@vitals-RESTRICTS-53",
           "status": "mf:proposed"
         }
       ]
     }
   ]
 }
+

@@ -2,7 +2,7 @@ PREFIX sx: <http://www.w3.org/ns/shex#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 [] a sx:Schema ;
-    sx:shapes <http://a.example/#Observation>, <http://a.example/#Vital>, <http://a.example/#PostureVital>, <http://a.example/#ReclinedVital>, <http://a.example/#BP>, <http://a.example/#PostureBP>, <http://a.example/#ReclinedBP>, <http://a.example/#Pulse>, <http://a.example/#PosturePulse>, <http://a.example/#ReclinedPulse>, <http://a.example/#Posture>, <http://a.example/#Reclined> .
+    sx:shapes (<http://a.example/#Observation> <http://a.example/#Vital> <http://a.example/#PostureVital> <http://a.example/#ReclinedVital> <http://a.example/#BP> <http://a.example/#PostureBP> <http://a.example/#ReclinedBP> <http://a.example/#Pulse> <http://a.example/#PosturePulse> <http://a.example/#ReclinedPulse> <http://a.example/#Posture> <http://a.example/#Reclined>) .
 
 <http://a.example/#Observation> a sx:Shape ;
 sx:expression [ a sx:EachOf;
