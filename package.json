@@ -1,6 +1,6 @@
 {
   "name": "shex-test",
-  "version": "2.0.3",
+  "version": "2.1.1",
   "description": "Shape Expressions library tests.",
   "scripts": {
     "dist": "for d in schemas/ negativeSyntax/ negativeStructure/ validation/; do (cd $d && make); done",
@@ -27,6 +27,7 @@
     "n3": "^0.4.5",
     "xlsx": "^0.8.0"
   },
+  "postpublish" : "PACKAGE_VERSION=$(cat package.json | grep \\\"version\\\" | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]') && git tag v$PACKAGE_VERSION && git push --tags",
   "file": [
     "schemas",
     "negativeSyntax",

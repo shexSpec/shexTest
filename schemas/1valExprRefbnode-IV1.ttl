@@ -4,8 +4,8 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 [] a sx:Schema ;
     sx:imports (<1valExprRefbnode-vc1>) ;
-    sx:shapes
-        <http://a.example/S1> .
+    sx:shapes (
+        <http://a.example/S1>) .
 
 <http://a.example/S1> a sx:Shape ;
     sx:expression [ a sx:TripleConstraint ;

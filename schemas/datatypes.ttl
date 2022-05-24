@@ -2,26 +2,26 @@ PREFIX sx: <http://www.w3.org/ns/shex#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 [] a sx:Schema ;
-  sx:shapes
-    <http://a.example/S-integer> ,
-    <http://a.example/S-decimal> ,
-    <http://a.example/S-float> ,
-    <http://a.example/S-double> ,
-    <http://a.example/S-string> ,
-    <http://a.example/S-boolean> ,
-    <http://a.example/S-dateTime> ,
-    <http://a.example/S-nonPositiveInteger> ,
-    <http://a.example/S-negativeInteger> ,
-    <http://a.example/S-long> ,
-    <http://a.example/S-int> ,
-    <http://a.example/S-short> ,
-    <http://a.example/S-byte> ,
-    <http://a.example/S-nonNegativeInteger> ,
-    <http://a.example/S-unsignedLong> ,
-    <http://a.example/S-unsignedInt> ,
-    <http://a.example/S-unsignedShort> ,
-    <http://a.example/S-unsignedByte> ,
-    <http://a.example/S-positiveInteger> .
+  sx:shapes (
+    <http://a.example/S-integer> 
+    <http://a.example/S-decimal> 
+    <http://a.example/S-float> 
+    <http://a.example/S-double> 
+    <http://a.example/S-string> 
+    <http://a.example/S-boolean> 
+    <http://a.example/S-dateTime> 
+    <http://a.example/S-nonPositiveInteger> 
+    <http://a.example/S-negativeInteger> 
+    <http://a.example/S-long> 
+    <http://a.example/S-int> 
+    <http://a.example/S-short> 
+    <http://a.example/S-byte> 
+    <http://a.example/S-nonNegativeInteger> 
+    <http://a.example/S-unsignedLong> 
+    <http://a.example/S-unsignedInt> 
+    <http://a.example/S-unsignedShort> 
+    <http://a.example/S-unsignedByte> 
+    <http://a.example/S-positiveInteger>) .
 
 <http://a.example/S-integer> a sx:Shape ;
   sx:expression [ a sx:TripleConstraint ;
