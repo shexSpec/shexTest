@@ -29,12 +29,11 @@ labeledShape            { type:"Shape"          id:shapeExprLabel closed:BOOL? e
 labeledShapeExternal    { type:"ShapeExternal"  id:shapeExprLabel  }
 
 # Shape Expressions
-shapeExpr        = ShapeOr | ShapeAnd | ShapeNot | NodeConstraint | Shape | ShapeExternal;
+shapeExpr        = ShapeOr | ShapeAnd | ShapeNot | NodeConstraint | Shape;
 shapeExprOrRef   = shapeExpr | shapeExprRef;
 ShapeOr          { shapeExprs:[shapeExprOrRef{2,}] }
 ShapeAnd         { shapeExprs:[shapeExprOrRef{2,}] }
 ShapeNot         { shapeExpr:shapeExprOrRef }
-ShapeExternal    {  }
 shapeExprRef     = shapeExprLabel ;
 shapeExprLabel   = IRIREF | BNODE ;
 NodeConstraint   { nodeKind:("iri"|"bnode"|"nonliteral"|"literal")? datatype:IRIREF? xsFacet* values:[valueSetValue+]? }
