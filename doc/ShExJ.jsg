@@ -25,7 +25,7 @@ labeledShapeOr          { type:"ShapeOr"        id:shapeExprLabel shapeExprs:[sh
 labeledShapeAnd         { type:"ShapeAnd"       id:shapeExprLabel shapeExprs:[shapeExprOrRef{2,}] }
 labeledShapeNot         { type:"ShapeNot"       id:shapeExprLabel shapeExpr:shapeExprOrRef }
 labeledNodeConstraint   { type:"NodeConstraint" id:shapeExprLabel nodeKind:("iri"|"bnode"|"nonliteral"|"literal")? datatype:IRIREF? xsFacet* values:[valueSetValue+]? }
-labeledShape            { type:"Shape"          id:shapeExprLabel closed:BOOL? extends:[shapeExprOrRef+]? extra:[IRIREF+]? expression:tripleExpr? semActs:[SemAct+]? annotations:[Annotation+]? }
+labeledShape            { type:"Shape"          id:shapeExprLabel closed:BOOL? extends:[shapeExprOrRef+]? extra:[IRIREF+]? expression:tripleExprOrRef? semActs:[SemAct+]? annotations:[Annotation+]? }
 labeledShapeExternal    { type:"ShapeExternal"  id:shapeExprLabel  }
 
 # Shape Expressions
@@ -59,12 +59,13 @@ LanguageStem     { stem:(LANGTAG | EMPTY) }
 LanguageStemRange{ stem:(LANGTAG | EMPTY | Wildcard) exclusions:[LANGTAG | LanguageStem+] }
 Wildcard         {  }
 
-Shape            { abstract:BOOL? closed:BOOL? extends:[shapeExprOrRef+]? extra:[IRIREF+]? expression:tripleExpr? semActs:[SemAct+]? annotations:[Annotation+]? }
+Shape            { abstract:BOOL? closed:BOOL? extends:[shapeExprOrRef+]? extra:[IRIREF+]? expression:tripleExprOrRef? semActs:[SemAct+]? annotations:[Annotation+]? }
 
 # Triple Expressions
-tripleExpr       = EachOf | OneOf | TripleConstraint | tripleExprRef ;
-EachOf           { id:tripleExprLabel? expressions:[tripleExpr{2,}] min:INTEGER? max:INTEGER? semActs:[SemAct+]? annotations:[Annotation+]? }
-OneOf            { id:tripleExprLabel? expressions:[tripleExpr{2,}] min:INTEGER? max:INTEGER? semActs:[SemAct+]? annotations:[Annotation+]? }
+tripleExpr       = EachOf | OneOf | TripleConstraint ;
+tripleExprOrRef  = tripleExpr | tripleExprRef ;
+EachOf           { id:tripleExprLabel? expressions:[tripleExprOrRef{2,}] min:INTEGER? max:INTEGER? semActs:[SemAct+]? annotations:[Annotation+]? }
+OneOf            { id:tripleExprLabel? expressions:[tripleExprOrRef{2,}] min:INTEGER? max:INTEGER? semActs:[SemAct+]? annotations:[Annotation+]? }
 TripleConstraint { id:tripleExprLabel? inverse:BOOL? predicate:IRIREF valueExpr:shapeExprOrRef? min:INTEGER? max:INTEGER? semActs:[SemAct+]? annotations:[Annotation+]? }
 tripleExprRef    = tripleExprLabel ;
 tripleExprLabel  = IRIREF | BNODE ;
