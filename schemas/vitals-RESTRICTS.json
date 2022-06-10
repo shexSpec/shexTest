@@ -2,8 +2,9 @@
   "@context": "http://www.w3.org/ns/shex.jsonld",
   "type": "Schema",
   "shapes": [
-    {
-      "id": "http://a.example/#Observation",
+    { "type": "ShapeDecl",
+    "id": "http://a.example/#Observation",
+    "shapeExpr": {
       "type": "Shape",
       "expression": {
         "type": "EachOf",
@@ -38,7 +39,7 @@
           }
         ]
       }
-    },
+    } },
     {
       "id": "http://a.example/#Vital",
       "type": "ShapeDecl",
@@ -87,8 +88,9 @@
         ]
       }
     },
-    {
-      "id": "http://a.example/#BP",
+    { "type": "ShapeDecl",
+    "id": "http://a.example/#BP",
+    "shapeExpr": {
       "type": "ShapeAnd",
       "shapeExprs": [
         {
@@ -144,25 +146,28 @@
           }
         }
       ]
-    },
-    {
-      "id": "http://a.example/#PostureBP",
+    } },
+    { "type": "ShapeDecl",
+    "id": "http://a.example/#PostureBP",
+    "shapeExpr": {
       "type": "Shape",
       "extends": [
         "http://a.example/#BP",
         "http://a.example/#PostureVital"
       ]
-    },
-    {
-      "id": "http://a.example/#ReclinedBP",
+    } },
+    { "type": "ShapeDecl",
+    "id": "http://a.example/#ReclinedBP",
+    "shapeExpr": {
       "type": "Shape",
       "extends": [
         "http://a.example/#BP",
         "http://a.example/#ReclinedVital"
       ]
-    },
-    {
-      "id": "http://a.example/#Pulse",
+    } },
+    { "type": "ShapeDecl",
+    "id": "http://a.example/#Pulse",
+    "shapeExpr": {
       "type": "ShapeAnd",
       "shapeExprs": [
         {
@@ -187,25 +192,28 @@
           }
         }
       ]
-    },
-    {
-      "id": "http://a.example/#PosturePulse",
+    } },
+    { "type": "ShapeDecl",
+    "id": "http://a.example/#PosturePulse",
+    "shapeExpr": {
       "type": "Shape",
       "extends": [
         "http://a.example/#Pulse",
         "http://a.example/#PostureVital"
       ]
-    },
-    {
-      "id": "http://a.example/#ReclinedPulse",
+    } },
+    { "type": "ShapeDecl",
+    "id": "http://a.example/#ReclinedPulse",
+    "shapeExpr": {
       "type": "Shape",
       "extends": [
         "http://a.example/#Pulse",
         "http://a.example/#ReclinedVital"
       ]
-    },
-    {
-      "id": "http://a.example/#Posture",
+    } },
+    { "type": "ShapeDecl",
+    "id": "http://a.example/#Posture",
+    "shapeExpr": {
       "type": "Shape",
       "expression": {
         "type": "TripleConstraint",
@@ -226,9 +234,10 @@
           }
         }
       }
-    },
-    {
-      "id": "http://a.example/#Reclined",
+    } },
+    { "type": "ShapeDecl",
+    "id": "http://a.example/#Reclined",
+    "shapeExpr": {
       "type": "ShapeAnd",
       "shapeExprs": [
         "http://a.example/#Posture",
@@ -272,6 +281,6 @@
           }
         }
       ]
-    }
+    } }
   ]
 }

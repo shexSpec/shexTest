@@ -8,27 +8,19 @@
 #   {TERMINAL->PROPTYPE} - a map from TERMINAL to PROPTYPE.
 #   (PROPTYPE1 | PROPTYPE2...) - any of PROPTYPEn.
 
-.TYPE type - ObjectLiteral labeledShapeDecl labeledShapeOr labeledShapeAnd labeledShapeNot labeledNodeConstraint labeledShape labeledShapeExternal
+.TYPE type - ObjectLiteral
 
 ; # All objects have a type property corresponding to the production name, e.g. "Schema"
 
 Schema           {
   "@context":"http://www.w3.org/ns/shex.jsonld"?
   imports:[IRIREF+]?
-  startActs:[SemAct+]? start:shapeExprOrRef? shapes:[labeledShapeExpr+]?
+  startActs:[SemAct+]? start:shapeExprOrRef? shapes:[ShapeDecl|ShapeExternal+]?
  }
+ShapeDecl        { id:shapeExprLabel abstract:BOOL? specializes:[IRIREF+]? shapeExpr:shapeExpr }
+ShapeExternal    { id:shapeExprLabel }
 
-# labeled Shape Expressions
-labeledShapeExpr        = labeledShapeDecl | labeledShapeOr | labeledShapeAnd | labeledShapeNot | labeledNodeConstraint | labeledShape | labeledShapeExternal;
-labeledShapeDecl        { type:"ShapeDecl"      id:shapeExprLabel abstract:BOOL? specializes:[IRIREF+]? shapeExpr:shapeExpr }
-labeledShapeOr          { type:"ShapeOr"        id:shapeExprLabel shapeExprs:[shapeExprOrRef{2,}] }
-labeledShapeAnd         { type:"ShapeAnd"       id:shapeExprLabel shapeExprs:[shapeExprOrRef{2,}] }
-labeledShapeNot         { type:"ShapeNot"       id:shapeExprLabel shapeExpr:shapeExprOrRef }
-labeledNodeConstraint   { type:"NodeConstraint" id:shapeExprLabel nodeKind:("iri"|"bnode"|"nonliteral"|"literal")? datatype:IRIREF? xsFacet* values:[valueSetValue+]? }
-labeledShape            { type:"Shape"          id:shapeExprLabel closed:BOOL? extends:[shapeExprOrRef+]? extra:[IRIREF+]? expression:tripleExprOrRef? semActs:[SemAct+]? annotations:[Annotation+]? }
-labeledShapeExternal    { type:"ShapeExternal"  id:shapeExprLabel  }
-
-# Shape Expressions
+// Shape Expressions
 shapeExpr        = ShapeOr | ShapeAnd | ShapeNot | NodeConstraint | Shape;
 shapeExprOrRef   = shapeExpr | shapeExprRef;
 ShapeOr          { shapeExprs:[shapeExprOrRef{2,}] }
