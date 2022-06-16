@@ -444,6 +444,11 @@
         <#1list0PlusDot>
         <#1list0PlusIri>
         <#1list1PlusIri>
+
+        # negation
+        <#1inversenegateddot>
+        <#1negateddot>
+        <#1negatedinversedot>
     ) .
 
 <#0> a sht:RepresentationTest ;
@@ -3966,6 +3971,37 @@
     .
 
 # } lists
+
+# negation {
+
+<#1inversenegateddot> a sht:RepresentationTest ;
+    mf:name "1inversenegateddot" ;
+    mf:status mf:Proposed ;
+    sht:trait sht:Import ;
+    sx:shex <1inversenegateddot.shex> ;
+    sx:json <1inversenegateddot.json> ;
+    sx:ttl <1inversenegateddot.ttl> ;
+    .
+
+<#1negateddot> a sht:RepresentationTest ;
+    mf:name "1negateddot" ;
+    mf:status mf:Proposed ;
+    sht:trait sht:Import ;
+    sx:shex <1negateddot.shex> ;
+    sx:json <1negateddot.json> ;
+    sx:ttl <1negateddot.ttl> ;
+    .
+
+<#1negatedinversedot> a sht:RepresentationTest ;
+    mf:name "1negatedinversedot" ;
+    mf:status mf:Proposed ;
+    sht:trait sht:Import ;
+    sx:shex <1negatedinversedot.shex> ;
+    sx:json <1negatedinversedot.json> ;
+    sx:ttl <1negatedinversedot.ttl> ;
+    .
+
+# } negation
 
 # regexp template:
 

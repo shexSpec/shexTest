@@ -3872,6 +3872,42 @@
           "shex": "1list1PlusIri.shex",
           "json": "1list1PlusIri.json",
           "ttl": "1list1PlusIri.ttl"
+        },
+        {
+          "@id": "#1inversenegateddot",
+          "@type": "sht:RepresentationTest",
+          "name": "1inversenegateddot",
+          "trait": [
+            "Import"
+          ],
+          "status": "mf:Proposed",
+          "shex": "1inversenegateddot.shex",
+          "json": "1inversenegateddot.json",
+          "ttl": "1inversenegateddot.ttl"
+        },
+        {
+          "@id": "#1negateddot",
+          "@type": "sht:RepresentationTest",
+          "name": "1negateddot",
+          "trait": [
+            "Import"
+          ],
+          "status": "mf:Proposed",
+          "shex": "1negateddot.shex",
+          "json": "1negateddot.json",
+          "ttl": "1negateddot.ttl"
+        },
+        {
+          "@id": "#1negatedinversedot",
+          "@type": "sht:RepresentationTest",
+          "name": "1negatedinversedot",
+          "trait": [
+            "Import"
+          ],
+          "status": "mf:Proposed",
+          "shex": "1negatedinversedot.shex",
+          "json": "1negatedinversedot.json",
+          "ttl": "1negatedinversedot.ttl"
         }
       ]
     }
