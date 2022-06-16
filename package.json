@@ -1,6 +1,6 @@
 {
   "name": "shex-test",
-  "version": "2.0.2",
+  "version": "2.1.0",
   "description": "Shape Expressions library tests.",
   "author": {
     "name": "Eric Prud'hommeaux",
@@ -22,6 +22,7 @@
     "n3": "^0.4.5",
     "xlsx": "^0.8.0"
   },
+  "postpublish" : "PACKAGE_VERSION=$(cat package.json | grep \\\"version\\\" | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]') && git tag v$PACKAGE_VERSION && git push --tags",
   "file": [
     "schemas",
     "negativeSyntax",
