@@ -44,7 +44,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
       [ a sx:TripleConstraint ; sx:predicate sx:start ; sx:min 0 ; sx:max 1 ;
         sx:valueExpr <shapeExpr> ]
       [ a sx:TripleConstraint ; sx:predicate sx:shapes ; sx:min 0 ; sx:max -1 ;
-        sx:valueExpr <shapeExpr> ] ) ] .
+        sx:valueExpr <shapeExprList1Plus> ] ) ] .
 
 <shapeExpr> a sx:ShapeOr ;
   sx:shapeExprs ( <ShapeOr> <ShapeAnd> <ShapeNot> <NodeConstraint> <Shape> <ShapeExternal> ) .
