@@ -17,7 +17,7 @@ start=@<#Schema>
 
 <#ShapeDecl> CLOSED {
   a [sx:ShapeDecl] ;
-  sx:abstract [true false]? ;
+  sx:abstract [true false] ? ;
   sx:shapeExpr @<#shapeExpr>
 }
 
