@@ -15,13 +15,12 @@
 Schema           {
   "@context":"http://www.w3.org/ns/shex.jsonld"?
   imports:[IRIREF+]?
-  startActs:[SemAct+]? start:shapeExprOrRef? shapes:[ShapeDecl|ShapeExternal+]?
+  startActs:[SemAct+]? start:shapeExprOrRef? shapes:[ShapeDecl+]?
  }
 ShapeDecl        { id:shapeExprLabel abstract:BOOL? specializes:[IRIREF+]? shapeExpr:shapeExpr }
-ShapeExternal    { id:shapeExprLabel }
 
 // Shape Expressions
-shapeExpr        = ShapeOr | ShapeAnd | ShapeNot | NodeConstraint | Shape;
+shapeExpr        = ShapeOr | ShapeAnd | ShapeNot | NodeConstraint | Shape | ShapeExternal;
 shapeExprOrRef   = shapeExpr | shapeExprRef;
 ShapeOr          { shapeExprs:[shapeExprOrRef{2,}] }
 ShapeAnd         { shapeExprs:[shapeExprOrRef{2,}] }
@@ -29,6 +28,7 @@ ShapeNot         { shapeExpr:shapeExprOrRef }
 shapeExprRef     = shapeExprLabel ;
 shapeExprLabel   = IRIREF | BNODE ;
 NodeConstraint   { nodeKind:("iri"|"bnode"|"nonliteral"|"literal")? datatype:IRIREF? xsFacet* values:[valueSetValue+]? }
+ShapeExternal    { }
 
 # XML Schema facets
 xsFacet          = stringFacet | numericFacet ;
