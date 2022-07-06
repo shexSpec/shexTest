@@ -135,8 +135,9 @@
         ]
       }
     },
-    {
-      "id": "http://a.example/C",
+    { "type": "ShapeDecl",
+    "id": "http://a.example/C",
+    "shapeExpr": {
       "type": "ShapeAnd",
       "shapeExprs": [
         {
@@ -194,7 +195,7 @@
           }
         }
       ]
-    },
+    } },
     {
       "id": "http://a.example/D",
       "type": "ShapeDecl",
@@ -294,8 +295,9 @@
         ]
       }
     },
-    {
-      "id": "http://a.example/F",
+    { "type": "ShapeDecl",
+    "id": "http://a.example/F",
+    "shapeExpr": {
       "type": "ShapeAnd",
       "shapeExprs": [
         {
@@ -319,7 +321,7 @@
           }
         }
       ]
-    },
+    } },
     {
       "id": "http://a.example/G",
       "type": "ShapeDecl",
@@ -415,8 +417,9 @@
         ]
       }
     },
-    {
-      "id": "http://a.example/I",
+    { "type": "ShapeDecl",
+    "id": "http://a.example/I",
+    "shapeExpr": {
       "type": "ShapeAnd",
       "shapeExprs": [
         {
@@ -440,9 +443,10 @@
           }
         }
       ]
-    },
-    {
-      "id": "http://a.example/J",
+    } },
+    { "type": "ShapeDecl",
+    "id": "http://a.example/J",
+    "shapeExpr": {
       "type": "ShapeAnd",
       "shapeExprs": [
         { "type": "Shape", "extends": ["http://a.example/H"] },
@@ -470,6 +474,6 @@
           }
         }
       ]
-    }
+    } }
   ]
 }

@@ -4,11 +4,11 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 [] a sx:Schema ; sx:shapes (<http://a.example/S>) .
 
-<http://a.example/S> a sx:Shape ;
+<http://a.example/S> a sx:ShapeDecl ; sx:shapeExpr [ a sx:Shape ;
   sx:expression
     [ a sx:EachOf ;
       sx:expressions (
         [ a sx:TripleConstraint ; sx:predicate <http://a.example/a> ]
         [ a sx:TripleConstraint ; sx:predicate <http://a.example/b> ]
       ) ;
-    ] .
+    ] ] .

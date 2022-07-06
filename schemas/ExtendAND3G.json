@@ -135,8 +135,9 @@
         ]
       }
     },
-    {
-      "id": "http://a.example/C",
+    { "type": "ShapeDecl",
+    "id": "http://a.example/C",
+    "shapeExpr": {
       "type": "ShapeAnd",
       "shapeExprs": [
         {
@@ -194,7 +195,7 @@
           }
         }
       ]
-    },
+    } },
     {
       "id": "http://a.example/D",
       "type": "ShapeDecl",
@@ -261,8 +262,9 @@
         ]
       }
     },
-    {
-      "id": "http://a.example/E",
+    { "type": "ShapeDecl",
+    "id": "http://a.example/E",
+    "shapeExpr": {
       "type": "ShapeAnd",
       "shapeExprs": [
         {
@@ -289,6 +291,6 @@
           }
         }
       ]
-    }
+    } }
   ]
 }
