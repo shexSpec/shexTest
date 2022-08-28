@@ -6,15 +6,15 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     sx:shapes (<http://a.example/S1>
         <http://a.example/S2>) .
 
-<http://a.example/S1> a sx:Shape ;
+<http://a.example/S1> a sx:ShapeDecl ; sx:shapeExpr [ a sx:Shape ;
     sx:expression [ a sx:TripleConstraint ;
             sx:predicate <http://a.example/p1> ;
             sx:valueExpr [ a sx:ShapeAnd ;
                     sx:shapeExprs ( [ a sx:NodeConstraint ;
                                 sx:length 19 ;
-                                sx:nodeKind sx:iri ] <http://a.example/S2> ) ] ] .
+                                sx:nodeKind sx:iri ] <http://a.example/S2> ) ] ] ] .
 
-<http://a.example/S2> a sx:Shape ;
+<http://a.example/S2> a sx:ShapeDecl ; sx:shapeExpr [ a sx:Shape ;
     sx:expression [ a sx:TripleConstraint ;
-            sx:predicate <http://a.example/p2> ] .
+            sx:predicate <http://a.example/p2> ] ] .
 

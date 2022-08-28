@@ -1298,6 +1298,70 @@
         <#node_kind_example>
         <#dependent_shape>
         <#recursion_example>
+
+## Extends
+        <#extends-abstract-multi-empty_fail-Ref2ExtraP>
+        <#extends-abstract-multi-empty_fail-Ref1ExtraP>
+        <#extends-abstract-multi-empty_fail-ReferrerExtraP>
+        <#extends-abstract-multi-empty_fail-Ref1ExtraOR>
+        <#extends-abstract-multi-empty_fail-missingRef2>
+        <#extends-abstract-multi-empty_pass-missingOptRef1>
+        <#extends-abstract-multi-empty_pass>
+
+        <#ExtendsRepeatedP-pass>
+        <#ExtendsRepeatedP-fail_vs>
+        <#ANDAbstract-pass>
+        <#ANDAbstract-fail_G1pattern>
+        <#ANDAbstract-fail_pattern>
+        <#AND3G-pass>
+        <#AND3G-fail_G2pattern>
+        <#AND3G-fail_G1Bpattern>
+        <#ExtendAND3G-pass>
+        <#ExtendAND3G-fail_EXTG1>
+        <#ExtendAND3G-fail_ExtraP>
+        <#ExtendAND3G-fail_G3pattern>
+        <#ExtendAND3G-fail_EXTG1ANDG1>
+        <#ExtendAND3G-fail_EXTG1pattern>
+        <#ExtendAND3G-fail_G0>
+        <#Extend3G-pass>
+        <#Extend3G-t16>
+        <#Extend3G-t17>
+        <#Extend3G-t18>
+        <#Extend3G-t19>
+        <#Extend3G-t20>
+        <#Extend3G-t21>
+        <#ExtendANDExtend3GAND3G-pass>
+        <#ExtendANDExtend3GAND3G-t23>
+        <#ExtendANDExtend3GAND3G-t24>
+        <#ExtendANDExtend3GAND3G-t25>
+        <#ExtendANDExtend3GAND3G-t26>
+        <#ExtendANDExtend3GAND3G-t27>
+        <#ExtendANDExtend3GAND3G-t28>
+        <#ExtendANDExtend3GAND3G-t29>
+        <#ExtendANDExtend3GAND3G-t30>
+        <#ExtendANDExtend3GAND3G-t31>
+        <#ExtendANDExtend3GAND3G-t32>
+        <#ExtendANDExtend3GAND3G-t33>
+        <#ExtendANDExtend3GAND3G-t34>
+        <#ExtendANDExtend3GAND3G-t35>
+        <#vitals-RESTRICTS-pass_lie-Observation>
+        <#vitals-RESTRICTS-pass_lie-Vital>
+        <#vitals-RESTRICTS-pass_lie-BP>
+        <#vitals-RESTRICTS-pass_lie-PostureVital>
+        <#vitals-RESTRICTS-pass_lie-ReclinedVital>
+        <#vitals-RESTRICTS-pass_lie-PostureBP>
+        <#vitals-RESTRICTS-pass_lie-ReclinedBP>
+        <#vitals-RESTRICTS-pass_lie-Posture>
+        <#vitals-RESTRICTS-pass_lie-Reclined>
+        <#vitals-RESTRICTS-pass_sit-Observation>
+        <#vitals-RESTRICTS-pass_sit-Vital>
+        <#vitals-RESTRICTS-pass_sit-BP>
+        <#vitals-RESTRICTS-pass_sit-PostureVital>
+        <#vitals-RESTRICTS-fail_sit-ReclinedVital>
+        <#vitals-RESTRICTS-pass_sit-PostureBP>
+        <#vitals-RESTRICTS-fail_sit-ReclinedBP>
+        <#vitals-RESTRICTS-pass_sit-Posture>
+        <#vitals-RESTRICTS-fail_sit-Reclined>
     ) .
 
 # definitions
@@ -16463,7 +16527,7 @@
 <#recursion_example> a sht:ValidationTest ; # recursion_example
     mf:name "recursion_example" ;
     sht:trait sht:ShapeMap , sht:RecursiveData ;
-    rdfs:comment "<S1> {<p1> @<S1>*}} on { <s1> <p1> <s2> . <s2> <p1> <s3> . <s3> <p1> <s1> }" ;
+    rdfs:comment "<S1> {<p1> @<S1>*} on { <s1> <p1> <s2> . <s2> <p1> <s3> . <s3> <p1> <s1> }" ;
     mf:status mf:Proposed ;
     mf:action [
       sht:schema <../schemas/recursion_example.shex> ;
@@ -16474,6 +16538,805 @@
     .
 
 ## } ShapeMaps
+## Extends {
+
+<#extends-abstract-multi-empty_pass> a sht:ValidationTest ;
+    mf:name "extends-abstract-multi-empty_pass" ;
+    sht:trait sht:Extends , sht:Abstract , sht:MultiExtends , sht:Closed ;
+    rdfs:comment "<Issue> C { ... @<Person> ... @<Employee> } ABS <Person> <User> EXT @<Person> ABS <Rep> <Employee> EXT @<Person> EXT @<Rep> on { <Issue1> ... <User2> ... <Thompson.J> ... } " ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/extends-abstract-multi-empty.shex> ;
+      sht:shape <http://a.example/IssueShape> ;
+      sht:data <extends-abstract-multi-empty_pass.ttl> ;
+      sht:focus <http://a.example/Issue1>
+    ] ;
+    .
+
+<#extends-abstract-multi-empty_pass-missingOptRef1> a sht:ValidationTest ;
+    mf:name "extends-abstract-multi-empty_pass-missingOptRef1" ;
+    sht:trait sht:Extends , sht:Abstract , sht:MultiExtends , sht:Closed ;
+    rdfs:comment "<Issue> C { ... @<Person> ... @<Employee> } ABS <Person> <User> EXT @<Person> ABS <Rep> <Employee> EXT @<Person> EXT @<Rep> on { <Issue1> ... - @<Employee> <User2> ... <Thompson.J> ... } " ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/extends-abstract-multi-empty.shex> ;
+      sht:shape <http://a.example/IssueShape> ;
+      sht:data <extends-abstract-multi-empty_no-employee.ttl> ;
+      sht:focus <http://a.example/Issue1>
+    ] ;
+    .
+
+<#extends-abstract-multi-empty_fail-missingRef2> a sht:ValidationFailure ;
+    mf:name "extends-abstract-multi-empty_fail-missingRef2" ;
+    sht:trait sht:Extends , sht:Abstract , sht:MultiExtends , sht:Closed ;
+    rdfs:comment "<Issue> C { ... @<Person> ... @<Employee> } ABS <Person> <User> EXT @<Person> ABS <Rep> <Employee> EXT @<Person> EXT @<Rep> on { <Issue1> ... - @<Person> <User2> ... <Thompson.J> ... } " ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/extends-abstract-multi-empty.shex> ;
+      sht:shape <http://a.example/IssueShape> ;
+      sht:data <extends-abstract-multi-empty_no-person.ttl> ;
+      sht:focus <http://a.example/Issue1>
+    ] ;
+    .
+
+<#extends-abstract-multi-empty_fail-Ref1ExtraOR> a sht:ValidationFailure ;
+    mf:name "extends-abstract-multi-empty_fail-Ref1ExtraOR" ;
+    sht:trait sht:Extends , sht:Abstract , sht:MultiExtends , sht:Closed ;
+    rdfs:comment "<Issue> C { ... @<Person> ... @<Employee> } ABS <Person> <User> EXT @<Person> ABS <Rep> <Employee> EXT @<Person> EXT @<Rep> on { <Issue1> ... - @<Person> <User2> f:name; f:givenName; f:familyName. <Thompson.J> ... } " ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/extends-abstract-multi-empty.shex> ;
+      sht:shape <http://a.example/IssueShape> ;
+      sht:data <extends-abstract-multi-empty_extraOR.ttl> ;
+      sht:focus <http://a.example/Issue1>
+    ] ;
+    .
+
+<#extends-abstract-multi-empty_fail-ReferrerExtraP> a sht:ValidationFailure ;
+    mf:name "extends-abstract-multi-empty_fail-ReferrerExtraP" ;
+    sht:trait sht:Extends , sht:Abstract , sht:MultiExtends , sht:Closed ;
+    rdfs:comment "<Issue> C { ... @<Person> ... @<Employee> } ABS <Person> <User> EXT @<Person> ABS <Rep> <Employee> EXT @<Person> EXT @<Rep> on { <Issue1> ... - @<Person> <User2> f:name; f:givenName; f:familyName. <Thompson.J> ... } " ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/extends-abstract-multi-empty.shex> ;
+      sht:shape <http://a.example/IssueShape> ;
+      sht:data <extends-abstract-multi-empty_issue-extraP.ttl> ;
+      sht:focus <http://a.example/Issue1>
+    ] ;
+    .
+
+<#extends-abstract-multi-empty_fail-Ref1ExtraP> a sht:ValidationFailure ;
+    mf:name "extends-abstract-multi-empty_fail-Ref1ExtraP" ;
+    sht:trait sht:Extends , sht:Abstract , sht:MultiExtends , sht:Closed ;
+    rdfs:comment "<Issue> C { ... @<Person> ... @<Employee> } ABS <Person> <User> EXT @<Person> ABS <Rep> <Employee> EXT @<Person> EXT @<Rep> on { <Issue1> ... - @<Person> <User2> f:name; f:givenName; f:familyName. <Thompson.J> ... } " ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/extends-abstract-multi-empty.shex> ;
+      sht:shape <http://a.example/IssueShape> ;
+      sht:data <extends-abstract-multi-empty_user-extraP.ttl> ;
+      sht:focus <http://a.example/Issue1>
+    ] ;
+    .
+
+<#extends-abstract-multi-empty_fail-Ref2ExtraP> a sht:ValidationFailure ;
+    mf:name "extends-abstract-multi-empty_fail-Ref2ExtraP" ;
+    sht:trait sht:Extends , sht:Abstract , sht:MultiExtends , sht:Closed ;
+    rdfs:comment "<Issue> C { ... @<Person> ... @<Employee> } ABS <Person> <User> EXT @<Person> ABS <Rep> <Employee> EXT @<Person> EXT @<Rep> on { <Issue1> ... - @<Person> <User2> f:name; f:givenName; f:familyName. <Thompson.J> ... } " ;
+    mf:status mf:proposed ;
+    mf:action [
+      sht:schema <../schemas/extends-abstract-multi-empty.shex> ;
+      sht:shape <http://a.example/IssueShape> ;
+      sht:data <extends-abstract-multi-empty_employee-extraP.ttl> ;
+      sht:focus <http://a.example/Issue1>
+    ] ;
+    .
+
+<#ExtendsRepeatedP-pass> a sht:ValidationTest ;
+    mf:name "ExtendsRepeatedP-pass" ;
+    sht:trait sht:Extends , sht:Exhaustive ;
+    rdfs:comment "<A> { :p{2}; :q[3] } <B> @<A>AND{ :p+; :q+ } <C> EXT @<B> { :p } on { :s :p 1,2,3; :q 3 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/ExtendsRepeatedP.shex> ;
+        sht:shape <http://a.example/#C> ;
+        sht:data <sP123q3.ttl> ;
+        sht:focus <http://a.example/s> ;
+    ] ;
+    .
+
+<#ExtendsRepeatedP-fail_vs> a sht:ValidationFailure ;
+    mf:name "ExtendsRepeatedP-fail_vs" ;
+    sht:trait sht:Extends ;
+    rdfs:comment "<A> { :p{2}; :q[3] } <B> @<A>AND{ :p+; :q+ } <C> EXT @<B> { :p } on { :s :p 1,2,3; :q 99 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/ExtendsRepeatedP.shex> ;
+        sht:shape <http://a.example/#C> ;
+        sht:data <sP123q99.ttl> ;
+        sht:focus <http://a.example/s> ;
+    ] ;
+    .
+
+<#ANDAbstract-pass> a sht:ValidationTest ;
+    mf:name "ANDAbstract-pass" ;
+    sht:trait sht:Extends ;
+    rdfs:comment "ABSTRACT <A> /sA/ AND {:p} <B> @<A> AND /s B/ {:p} on { <sABxxxxxxxxx> <p> 0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/ANDAbstract.shex> ;
+        sht:shape <http://a.example/B> ;
+        sht:data <sAB.ttl> ;
+        sht:focus <http://a.example/sABxxxxxxxxx> ;
+    ] ;
+    .
+
+<#ANDAbstract-fail_G1pattern> a sht:ValidationFailure ;
+    mf:name "ANDAbstract-fail_G1pattern" ;
+    sht:trait sht:Extends ;
+    rdfs:comment "ABSTRACT <A> /sA/ AND {:p} <B> @<A> AND /s B/ {:p} on { <sAxxxxxxxxxx> <p> 0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/ANDAbstract.shex> ;
+        sht:shape <http://a.example/B> ;
+        sht:data <sAB.ttl> ;
+        sht:focus <http://a.example/sAxxxxxxxxxx> ;
+    ] ;
+    .
+
+<#ANDAbstract-fail_pattern> a sht:ValidationFailure ;
+    mf:name "ANDAbstract-fail_pattern" ;
+    sht:trait sht:Extends ;
+    rdfs:comment "ABSTRACT <A> /sA/ AND {:p} <B> @<A> AND /s B/ {:p} on { <sxBxxxxxxxxx> <p> 0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/ANDAbstract.shex> ;
+        sht:shape <http://a.example/B> ;
+        sht:data <sAB.ttl> ;
+        sht:focus <http://a.example/sxBxxxxxxxxx> ;
+    ] ;
+    .
+
+<#AND3G-pass> a sht:ValidationTest ;
+    mf:name "AND3G-pass" ;
+    sht:trait sht:Extends ;
+    rdfs:comment "ABS <A> ABS <B> @<A> <C> <D> @<B> AND @<A> on { <sABCDxxxxxxx> <p> 0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/AND3G.shex> ;
+        sht:shape <http://a.example/D> ;
+        sht:data <sABCD.ttl> ;
+        sht:focus <http://a.example/sABCDxxxxxxx> ;
+    ] ;
+    .
+
+<#AND3G-fail_G2pattern> a sht:ValidationFailure ;
+    mf:name "AND3G-fail_G2pattern" ;
+    sht:trait sht:Extends ;
+    rdfs:comment "ABS <A> ABS <B> @<A> <C> <D> @<B> AND @<A> on { <sAxxxxxxxxxx> <p> 0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/AND3G.shex> ;
+        sht:shape <http://a.example/D> ;
+        sht:data <sABCD.ttl> ;
+        sht:focus <http://a.example/sxBCDxxxxxxx> ;
+    ] ;
+    .
+
+<#AND3G-fail_G1Bpattern> a sht:ValidationFailure ;
+    mf:name "AND3G-fail_G1Bpattern" ;
+    sht:trait sht:Extends ;
+    rdfs:comment "ABS <A> ABS <B> @<A> <C> <D> @<B> AND @<A> on { <sxxCxxxxxxxx> <p> 0 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/AND3G.shex> ;
+        sht:shape <http://a.example/D> ;
+        sht:data <sABCD.ttl> ;
+        sht:focus <http://a.example/sABxDxxxxxxx> ;
+    ] ;
+    .
+
+<#ExtendAND3G-pass> a sht:ValidationTest ;
+    mf:name "ExtendAND3G-pass" ;
+    sht:trait sht:Extends , sht:Exhaustive ;
+    rdfs:comment "<E> EXTENDS @<D> {:p [2]} on { <sABCDExxxxxx> <p> 0, 2 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/ExtendAND3G.shex> ;
+        sht:shape <http://a.example/E> ;
+        sht:data <sABCDE.ttl> ;
+        sht:focus <http://a.example/sABCDExxxxxx> ;
+    ] ;
+    .
+
+<#ExtendAND3G-fail_EXTG1> a sht:ValidationFailure ;
+    mf:name "ExtendAND3G-fail_EXTG1" ;
+    sht:trait sht:Extends ;
+    rdfs:comment "<E> EXTENDS @<D> {:p [2]} on { <sABCDExxxxxx> <p> 2 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/ExtendAND3G.shex> ;
+        sht:shape <http://a.example/E> ;
+        sht:data <sABCDE.ttl> ;
+        sht:focus <http://a.example/sABCDExxxxx1> ;
+    ] ;
+    .
+
+<#ExtendAND3G-fail_ExtraP> a sht:ValidationFailure ;
+    mf:name "ExtendAND3G-fail_ExtraP" ;
+    sht:trait sht:Extends ;
+    rdfs:comment "<E> EXTENDS @<D> {:p [2]} on { <sABCDExxxxxx> <p> 0, 2, 3 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/ExtendAND3G.shex> ;
+        sht:shape <http://a.example/E> ;
+        sht:data <sABCDE.ttl> ;
+        sht:focus <http://a.example/sABCDExxxxx3> ;
+    ] ;
+    .
+
+<#ExtendAND3G-fail_G3pattern> a sht:ValidationFailure ;
+    mf:name "ExtendAND3G-fail_G3pattern" ;
+    sht:trait sht:Extends ;
+    rdfs:comment "<E> EXTENDS @<D> {:p [2]} on { <sxBCDExxxxxx> <p> 0, 2 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/ExtendAND3G.shex> ;
+        sht:shape <http://a.example/E> ;
+        sht:data <sABCDE.ttl> ;
+        sht:focus <http://a.example/sxBCDExxxxxx> ;
+    ] ;
+    .
+
+<#ExtendAND3G-fail_EXTG1ANDG1> a sht:ValidationFailure ;
+    mf:name "ExtendAND3G-fail_EXTG1ANDG1" ;
+    sht:trait sht:Extends ;
+    rdfs:comment "<E> EXTENDS @<D> {:p [2]} on { <sABxDExxxxxx> <p> 0, 2 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/ExtendAND3G.shex> ;
+        sht:shape <http://a.example/E> ;
+        sht:data <sABCDE.ttl> ;
+        sht:focus <http://a.example/sABxDExxxxxx> ;
+    ] ;
+    .
+
+<#ExtendAND3G-fail_EXTG1pattern> a sht:ValidationFailure ;
+    mf:name "ExtendAND3G-fail_EXTG1pattern" ;
+    sht:trait sht:Extends ;
+    rdfs:comment "<E> EXTENDS @<D> {:p [2]} on { <sABCxExxxxxx> <p> 0, 2 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/ExtendAND3G.shex> ;
+        sht:shape <http://a.example/E> ;
+        sht:data <sABCDE.ttl> ;
+        sht:focus <http://a.example/sABCxExxxxxx> ;
+    ] ;
+    .
+
+<#ExtendAND3G-fail_G0> a sht:ValidationFailure ;
+    mf:name "ExtendAND3G-fail_G0" ;
+    sht:trait sht:Extends ;
+    rdfs:comment "<E> EXTENDS @<D> {:p [2]} on { <sABCDxxxxxxx> <p> 0, 2 }" ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/ExtendAND3G.shex> ;
+        sht:shape <http://a.example/E> ;
+        sht:data <sABCDE.ttl> ;
+        sht:focus <http://a.example/sABCDxxxxxxx> ;
+    ] ;
+    .
+
+<#Extend3G-pass> a sht:ValidationTest ;
+    mf:name "Extend3G-pass" ;
+    sht:trait sht:Extends , sht:Exhaustive ;
+    rdfs:comment "@@Extend3G-15" ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/Extend3G.shex> ;
+        sht:shape <http://a.example/G> ;
+        sht:data <sABCDEFG.ttl> ;
+        sht:focus <http://a.example/sABCDEFGxxxx> ;
+    ] ;
+    .
+
+<#Extend3G-t16> a sht:ValidationFailure ;
+    mf:name "Extend3G-t16" ;
+    sht:trait sht:Extends ;
+    rdfs:comment "@@Extend3G-16" ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/Extend3G.shex> ;
+        sht:shape <http://a.example/G> ;
+        sht:data <sABCDEFG.ttl> ;
+        sht:focus <http://a.example/sABCDEFGxxx1> ;
+    ] ;
+    .
+
+<#Extend3G-t17> a sht:ValidationFailure ;
+    mf:name "Extend3G-t17" ;
+    sht:trait sht:Extends ;
+    rdfs:comment "@@Extend3G-17" ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/Extend3G.shex> ;
+        sht:shape <http://a.example/G> ;
+        sht:data <sABCDEFG.ttl> ;
+        sht:focus <http://a.example/sABCDEFGxxx3> ;
+    ] ;
+    .
+
+<#Extend3G-t18> a sht:ValidationFailure ;
+    mf:name "Extend3G-t18" ;
+    sht:trait sht:Extends ;
+    rdfs:comment "@@Extend3G-18" ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/Extend3G.shex> ;
+        sht:shape <http://a.example/G> ;
+        sht:data <sABCDEFG.ttl> ;
+        sht:focus <http://a.example/sxBCDEFGxxxx> ;
+    ] ;
+    .
+
+<#Extend3G-t19> a sht:ValidationFailure ;
+    mf:name "Extend3G-t19" ;
+    sht:trait sht:Extends ;
+    rdfs:comment "@@Extend3G-19" ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/Extend3G.shex> ;
+        sht:shape <http://a.example/G> ;
+        sht:data <sABCDEFG.ttl> ;
+        sht:focus <http://a.example/sABxDEFGxxxx> ;
+    ] ;
+    .
+
+<#Extend3G-t20> a sht:ValidationFailure ;
+    mf:name "Extend3G-t20" ;
+    sht:trait sht:Extends ;
+    rdfs:comment "@@Extend3G-20" ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/Extend3G.shex> ;
+        sht:shape <http://a.example/G> ;
+        sht:data <sABCDEFG.ttl> ;
+        sht:focus <http://a.example/sABCxEFGxxxx> ;
+    ] ;
+    .
+
+<#Extend3G-t21> a sht:ValidationFailure ;
+    mf:name "Extend3G-t21" ;
+    sht:trait sht:Extends ;
+    rdfs:comment "@@Extend3G-21" ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/Extend3G.shex> ;
+        sht:shape <http://a.example/G> ;
+        sht:data <sABCDEFG.ttl> ;
+        sht:focus <http://a.example/sABCDxFGxxxx> ;
+    ] ;
+    .
+
+<#ExtendANDExtend3GAND3G-pass> a sht:ValidationTest ;
+    mf:name "ExtendANDExtend3GAND3G-pass" ;
+    sht:trait sht:Extends , sht:Exhaustive ;
+    rdfs:comment "@@ExtendANDExtend3GAND3G-22" ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/ExtendANDExtend3GAND3G.shex> ;
+        sht:shape <http://a.example/J> ;
+        sht:data <sABCDEFGHIJ.ttl> ;
+        sht:focus <http://a.example/sABCDEFGHIJx> ;
+    ] ;
+    .
+
+<#ExtendANDExtend3GAND3G-t23> a sht:ValidationTest ;
+    mf:name "ExtendANDExtend3GAND3G-t23" ;
+    sht:trait sht:Extends ;
+    rdfs:comment "@@ExtendANDExtend3GAND3G-23" ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/ExtendANDExtend3GAND3G.shex> ;
+        sht:shape <http://a.example/A> ;
+        sht:data <sABCDEFGHIJ.ttl> ;
+        sht:focus <http://a.example/sABCDEFGHIJx> ;
+    ] ;
+    .
+
+<#ExtendANDExtend3GAND3G-t24> a sht:ValidationFailure ;
+    mf:name "ExtendANDExtend3GAND3G-t24" ;
+    sht:trait sht:Extends ;
+    rdfs:comment "@@ExtendANDExtend3GAND3G-24" ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/ExtendANDExtend3GAND3G.shex> ;
+        sht:shape <http://a.example/J> ;
+        sht:data <sABCDEFGHIJ.ttl> ;
+        sht:focus <http://a.example/sxBCDEFGHIJx> ;
+    ] ;
+    .
+
+<#ExtendANDExtend3GAND3G-t25> a sht:ValidationFailure ;
+    mf:name "ExtendANDExtend3GAND3G-t25" ;
+    sht:trait sht:Extends ;
+    rdfs:comment "@@ExtendANDExtend3GAND3G-25" ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/ExtendANDExtend3GAND3G.shex> ;
+        sht:shape <http://a.example/J> ;
+        sht:data <sABCDEFGHIJ.ttl> ;
+        sht:focus <http://a.example/sABCDEFxHIJx> ;
+    ] ;
+    .
+
+<#ExtendANDExtend3GAND3G-t26> a sht:ValidationFailure ;
+    mf:name "ExtendANDExtend3GAND3G-t26" ;
+    sht:trait sht:Extends ;
+    rdfs:comment "@@ExtendANDExtend3GAND3G-26" ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/ExtendANDExtend3GAND3G.shex> ;
+        sht:shape <http://a.example/J> ;
+        sht:data <sABCDEFGHIJ.ttl> ;
+        sht:focus <http://a.example/sABCDEFGxIJx> ;
+    ] ;
+    .
+
+<#ExtendANDExtend3GAND3G-t27> a sht:ValidationFailure ;
+    mf:name "ExtendANDExtend3GAND3G-t27" ;
+    sht:trait sht:Extends ;
+    rdfs:comment "@@ExtendANDExtend3GAND3G-27" ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/ExtendANDExtend3GAND3G.shex> ;
+        sht:shape <http://a.example/J> ;
+        sht:data <sABCDEFGHIJ.ttl> ;
+        sht:focus <http://a.example/sABCDEFGHxJx> ;
+    ] ;
+    .
+
+<#ExtendANDExtend3GAND3G-t28> a sht:ValidationFailure ;
+    mf:name "ExtendANDExtend3GAND3G-t28" ;
+    sht:trait sht:Extends ;
+    rdfs:comment "@@ExtendANDExtend3GAND3G-28" ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/ExtendANDExtend3GAND3G.shex> ;
+        sht:shape <http://a.example/J> ;
+        sht:data <sABCDEFGHIJ.ttl> ;
+        sht:focus <http://a.example/sABCDEFGHIxx> ;
+    ] ;
+    .
+
+<#ExtendANDExtend3GAND3G-t29> a sht:ValidationFailure ;
+    mf:name "ExtendANDExtend3GAND3G-t29" ;
+    sht:trait sht:Extends ;
+    rdfs:comment "@@ExtendANDExtend3GAND3G-29" ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/ExtendANDExtend3GAND3G.shex> ;
+        sht:shape <http://a.example/J> ;
+        sht:data <sABCDEFGHIJ.ttl> ;
+        sht:focus <http://a.example/sABCDEFGHIJ0> ;
+    ] ;
+    .
+
+<#ExtendANDExtend3GAND3G-t30> a sht:ValidationFailure ;
+    mf:name "ExtendANDExtend3GAND3G-t30" ;
+    sht:trait sht:Extends ;
+    rdfs:comment "@@ExtendANDExtend3GAND3G-30" ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/ExtendANDExtend3GAND3G.shex> ;
+        sht:shape <http://a.example/J> ;
+        sht:data <sABCDEFGHIJ.ttl> ;
+        sht:focus <http://a.example/sABCDEFGHIJ1> ;
+    ] ;
+    .
+
+<#ExtendANDExtend3GAND3G-t31> a sht:ValidationFailure ;
+    mf:name "ExtendANDExtend3GAND3G-t31" ;
+    sht:trait sht:Extends ;
+    rdfs:comment "@@ExtendANDExtend3GAND3G-31" ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/ExtendANDExtend3GAND3G.shex> ;
+        sht:shape <http://a.example/J> ;
+        sht:data <sABCDEFGHIJ.ttl> ;
+        sht:focus <http://a.example/sABCDEFGHIJ2> ;
+    ] ;
+    .
+
+<#ExtendANDExtend3GAND3G-t32> a sht:ValidationFailure ;
+    mf:name "ExtendANDExtend3GAND3G-t32" ;
+    sht:trait sht:Extends ;
+    rdfs:comment "@@ExtendANDExtend3GAND3G-32" ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/ExtendANDExtend3GAND3G.shex> ;
+        sht:shape <http://a.example/J> ;
+        sht:data <sABCDEFGHIJ.ttl> ;
+        sht:focus <http://a.example/sABCDEFGHIJ3> ;
+    ] ;
+    .
+
+<#ExtendANDExtend3GAND3G-t33> a sht:ValidationTest ;
+    mf:name "ExtendANDExtend3GAND3G-t33" ;
+    sht:trait sht:Extends , sht:Exhaustive ;
+    rdfs:comment "@@ExtendANDExtend3GAND3G-33" ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/ExtendANDExtend3GAND3G.shex> ;
+        sht:shape <http://a.example/J> ;
+        sht:data <sABCDEFGHIJ.ttl> ;
+        sht:focus <http://a.example/sABCDEFGHIJ5> ;
+    ] ;
+    .
+
+<#ExtendANDExtend3GAND3G-t34> a sht:ValidationFailure ;
+    mf:name "ExtendANDExtend3GAND3G-t34" ;
+    sht:trait sht:Extends ;
+    rdfs:comment "@@ExtendANDExtend3GAND3G-34" ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/ExtendANDExtend3GAND3G.shex> ;
+        sht:shape <http://a.example/J> ;
+        sht:data <sABCDEFGHIJ.ttl> ;
+        sht:focus <http://a.example/sABCDEFGHIJ6> ;
+    ] ;
+    .
+
+<#ExtendANDExtend3GAND3G-t35> a sht:ValidationFailure ;
+    mf:name "ExtendANDExtend3GAND3G-t35" ;
+    sht:trait sht:Extends ;
+    rdfs:comment "@@ExtendANDExtend3GAND3G-35" ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/ExtendANDExtend3GAND3G.shex> ;
+        sht:shape <http://a.example/J> ;
+        sht:data <sABCDEFGHIJ.ttl> ;
+        sht:focus <http://a.example/sABCDEFGHIJ7> ;
+    ] ;
+    .
+
+<#vitals-RESTRICTS-pass_lie-Observation> a sht:ValidationTest ;
+    mf:name "vitals-RESTRICTS-pass_lie-Observation" ;
+    sht:trait sht:Extends ;
+    rdfs:comment "@@vitals-RESTRICTS-36" ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/vitals-RESTRICTS.shex> ;
+        sht:shape <http://a.example/#Observation> ;
+        sht:data <vitals.ttl> ;
+        sht:focus <http://a.example/#lie> ;
+    ] ;
+    .
+
+<#vitals-RESTRICTS-pass_lie-Vital> a sht:ValidationTest ;
+    mf:name "vitals-RESTRICTS-pass_lie-Vital" ;
+    sht:trait sht:Extends , sht:Exhaustive ;
+    rdfs:comment "@@vitals-RESTRICTS-37" ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/vitals-RESTRICTS.shex> ;
+        sht:shape <http://a.example/#Vital> ;
+        sht:data <vitals.ttl> ;
+        sht:focus <http://a.example/#lie> ;
+    ] ;
+    .
+
+<#vitals-RESTRICTS-pass_lie-BP> a sht:ValidationTest ;
+    mf:name "vitals-RESTRICTS-pass_lie-BP" ;
+    sht:trait sht:Extends , sht:Exhaustive ;
+    rdfs:comment "@@vitals-RESTRICTS-38" ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/vitals-RESTRICTS.shex> ;
+        sht:shape <http://a.example/#BP> ;
+        sht:data <vitals.ttl> ;
+        sht:focus <http://a.example/#lie> ;
+    ] ;
+    .
+
+<#vitals-RESTRICTS-pass_lie-PostureVital> a sht:ValidationTest ;
+    mf:name "vitals-RESTRICTS-pass_lie-PostureVital" ;
+    sht:trait sht:Extends , sht:Exhaustive ;
+    rdfs:comment "@@vitals-RESTRICTS-39" ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/vitals-RESTRICTS.shex> ;
+        sht:shape <http://a.example/#PostureVital> ;
+        sht:data <vitals.ttl> ;
+        sht:focus <http://a.example/#lie> ;
+    ] ;
+    .
+
+<#vitals-RESTRICTS-pass_lie-ReclinedVital> a sht:ValidationTest ;
+    mf:name "vitals-RESTRICTS-pass_lie-ReclinedVital" ;
+    sht:trait sht:Extends , sht:Exhaustive ;
+    rdfs:comment "@@vitals-RESTRICTS-40" ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/vitals-RESTRICTS.shex> ;
+        sht:shape <http://a.example/#ReclinedVital> ;
+        sht:data <vitals.ttl> ;
+        sht:focus <http://a.example/#lie> ;
+    ] ;
+    .
+
+<#vitals-RESTRICTS-pass_lie-PostureBP> a sht:ValidationTest ;
+    mf:name "vitals-RESTRICTS-pass_lie-PostureBP" ;
+    sht:trait sht:Extends , sht:Exhaustive ;
+    rdfs:comment "@@vitals-RESTRICTS-41" ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/vitals-RESTRICTS.shex> ;
+        sht:shape <http://a.example/#PostureBP> ;
+        sht:data <vitals.ttl> ;
+        sht:focus <http://a.example/#lie> ;
+    ] ;
+    .
+
+<#vitals-RESTRICTS-pass_lie-ReclinedBP> a sht:ValidationTest ;
+    mf:name "vitals-RESTRICTS-pass_lie-ReclinedBP" ;
+    sht:trait sht:Extends , sht:Exhaustive ;
+    rdfs:comment "@@vitals-RESTRICTS-42" ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/vitals-RESTRICTS.shex> ;
+        sht:shape <http://a.example/#ReclinedBP> ;
+        sht:data <vitals.ttl> ;
+        sht:focus <http://a.example/#lie> ;
+    ] ;
+    .
+
+<#vitals-RESTRICTS-pass_lie-Posture> a sht:ValidationTest ;
+    mf:name "vitals-RESTRICTS-pass_lie-Posture" ;
+    sht:trait sht:Extends , sht:Exhaustive ;
+    rdfs:comment "@@vitals-RESTRICTS-43" ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/vitals-RESTRICTS.shex> ;
+        sht:shape <http://a.example/#Posture> ;
+        sht:data <vitals.ttl> ;
+        sht:focus <http://a.example/#lie> ;
+    ] ;
+    .
+
+<#vitals-RESTRICTS-pass_lie-Reclined> a sht:ValidationTest ;
+    mf:name "vitals-RESTRICTS-pass_lie-Reclined" ;
+    sht:trait sht:Extends , sht:Exhaustive ;
+    rdfs:comment "@@vitals-RESTRICTS-44" ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/vitals-RESTRICTS.shex> ;
+        sht:shape <http://a.example/#Reclined> ;
+        sht:data <vitals.ttl> ;
+        sht:focus <http://a.example/#lie> ;
+    ] ;
+    .
+
+<#vitals-RESTRICTS-pass_sit-Observation> a sht:ValidationTest ;
+    mf:name "vitals-RESTRICTS-pass_sit-Observation" ;
+    sht:trait sht:Extends , sht:Exhaustive ;
+    rdfs:comment "@@vitals-RESTRICTS-45" ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/vitals-RESTRICTS.shex> ;
+        sht:shape <http://a.example/#Observation> ;
+        sht:data <vitals.ttl> ;
+        sht:focus <http://a.example/#sit> ;
+    ] ;
+    .
+
+<#vitals-RESTRICTS-pass_sit-Vital> a sht:ValidationTest ;
+    mf:name "vitals-RESTRICTS-pass_sit-Vital" ;
+    sht:trait sht:Extends , sht:Exhaustive ;
+    rdfs:comment "@@vitals-RESTRICTS-46" ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/vitals-RESTRICTS.shex> ;
+        sht:shape <http://a.example/#Vital> ;
+        sht:data <vitals.ttl> ;
+        sht:focus <http://a.example/#sit> ;
+    ] ;
+    .
+
+<#vitals-RESTRICTS-pass_sit-BP> a sht:ValidationTest ;
+    mf:name "vitals-RESTRICTS-pass_sit-BP" ;
+    sht:trait sht:Extends , sht:Exhaustive ;
+    rdfs:comment "@@vitals-RESTRICTS-47" ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/vitals-RESTRICTS.shex> ;
+        sht:shape <http://a.example/#BP> ;
+        sht:data <vitals.ttl> ;
+        sht:focus <http://a.example/#sit> ;
+    ] ;
+    .
+
+<#vitals-RESTRICTS-pass_sit-PostureVital> a sht:ValidationTest ;
+    mf:name "vitals-RESTRICTS-pass_sit-PostureVital" ;
+    sht:trait sht:Extends , sht:Exhaustive ;
+    rdfs:comment "@@vitals-RESTRICTS-48" ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/vitals-RESTRICTS.shex> ;
+        sht:shape <http://a.example/#PostureVital> ;
+        sht:data <vitals.ttl> ;
+        sht:focus <http://a.example/#sit> ;
+    ] ;
+    .
+
+<#vitals-RESTRICTS-fail_sit-ReclinedVital> a sht:ValidationFailure ;
+    mf:name "vitals-RESTRICTS-fail_sit-ReclinedVital" ;
+    sht:trait sht:Extends , sht:Exhaustive ;
+    rdfs:comment "@@vitals-RESTRICTS-49" ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/vitals-RESTRICTS.shex> ;
+        sht:shape <http://a.example/#ReclinedVital> ;
+        sht:data <vitals.ttl> ;
+        sht:focus <http://a.example/#sit> ;
+    ] ;
+    .
+
+<#vitals-RESTRICTS-pass_sit-PostureBP> a sht:ValidationTest ;
+    mf:name "vitals-RESTRICTS-pass_sit-PostureBP" ;
+    sht:trait sht:Extends , sht:Exhaustive ;
+    rdfs:comment "@@vitals-RESTRICTS-50" ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/vitals-RESTRICTS.shex> ;
+        sht:shape <http://a.example/#PostureBP> ;
+        sht:data <vitals.ttl> ;
+        sht:focus <http://a.example/#sit> ;
+    ] ;
+    .
+
+<#vitals-RESTRICTS-fail_sit-ReclinedBP> a sht:ValidationFailure ;
+    mf:name "vitals-RESTRICTS-fail_sit-ReclinedBP" ;
+    sht:trait sht:Extends , sht:Exhaustive ;
+    rdfs:comment "@@vitals-RESTRICTS-51" ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/vitals-RESTRICTS.shex> ;
+        sht:shape <http://a.example/#ReclinedBP> ;
+        sht:data <vitals.ttl> ;
+        sht:focus <http://a.example/#sit> ;
+    ] ;
+    .
+
+<#vitals-RESTRICTS-pass_sit-Posture> a sht:ValidationTest ;
+    mf:name "vitals-RESTRICTS-pass_sit-Posture" ;
+    sht:trait sht:Extends , sht:Exhaustive ;
+    rdfs:comment "@@vitals-RESTRICTS-52" ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/vitals-RESTRICTS.shex> ;
+        sht:shape <http://a.example/#Posture> ;
+        sht:data <vitals.ttl> ;
+        sht:focus <http://a.example/#sit> ;
+    ] ;
+    .
+
+<#vitals-RESTRICTS-fail_sit-Reclined> a sht:ValidationFailure ;
+    mf:name "vitals-RESTRICTS-fail_sit-Reclined" ;
+    sht:trait sht:Extends , sht:Exhaustive ;
+    rdfs:comment "@@vitals-RESTRICTS-53" ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/vitals-RESTRICTS.shex> ;
+        sht:shape <http://a.example/#Reclined> ;
+        sht:data <vitals.ttl> ;
+        sht:focus <http://a.example/#sit> ;
+    ] ;
+    .
+
+## } Extends
+## Abstract {
+
+## } Abstract
 # deferred {
 ## error reporting {
 <#1dot_fail-empty-err> a sht:ValidationFailure ;

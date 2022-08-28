@@ -116,6 +116,7 @@
     <#1val1literalStemMinusiri3>
     <#1val1literalStemMinuslanguage3>
     <#INTEGER-in-shape-expression>
+    <#1dotExtends3>
   ) .
 
 <#1decimalMininclusiveroman-numeral> a sht:NegativeSyntax ;
@@ -1106,5 +1107,11 @@
   mf:startColumn 25 ;
   mf:endRow 2 ;
   mf:endColumn 28 ;
+  .
+
+<#1dotExtends3> a sht:NegativeSyntax ;
+  mf:name "1dotExtends3" ;
+  mf:status mf:proposed ;
+  sx:shex <1dotExtends3.shex> ;
   .
 
