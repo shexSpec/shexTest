@@ -17,16 +17,16 @@ Schema           {
   imports:[IRIREF+]?
   startActs:[SemAct+]? start:shapeExprOrRef? shapes:[ShapeDecl+]?
  }
-ShapeDecl        { id:shapeExprLabel abstract:BOOL? specializes:[IRIREF+]? shapeExpr:shapeExpr }
+ShapeDecl        { id:shapeDeclLabel abstract:BOOL? restricts:[shapeExprOrRef+]? shapeExpr:shapeExpr }
 
 // Shape Expressions
 shapeExpr        = ShapeOr | ShapeAnd | ShapeNot | NodeConstraint | Shape | ShapeExternal;
-shapeExprOrRef   = shapeExpr | shapeExprRef;
+shapeExprOrRef   = shapeExpr | shapeDeclRef;
 ShapeOr          { shapeExprs:[shapeExprOrRef{2,}] }
 ShapeAnd         { shapeExprs:[shapeExprOrRef{2,}] }
 ShapeNot         { shapeExpr:shapeExprOrRef }
-shapeExprRef     = shapeExprLabel ;
-shapeExprLabel   = IRIREF | BNODE ;
+shapeDeclRef     = shapeDeclLabel ;
+shapeDeclLabel   = IRIREF | BNODE ;
 NodeConstraint   { nodeKind:("iri"|"bnode"|"nonliteral"|"literal")? datatype:IRIREF? xsFacet* values:[valueSetValue+]? }
 ShapeExternal    { }
 

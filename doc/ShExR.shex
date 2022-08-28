@@ -43,7 +43,9 @@ start=@<#Schema>
   sx:nodeKind [sx:iri sx:bnode sx:literal sx:nonliteral] ? ;
   sx:datatype IRI ? ;
   &<#xsFacets>  ;
-  sx:values @<#valueSetValueList1Plus> ?
+  sx:values @<#valueSetValueList1Plus> ? ;
+  sx:semActs @<#SemActList1Plus> ? ;
+  sx:annotation @<#AnnotationList1Plus> ?
 }
 
 <#Shape> CLOSED {
