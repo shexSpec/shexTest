@@ -6,14 +6,14 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     sx:shapes (<http://a.example/S1>
         <http://a.example/S2>) .
 
-<http://a.example/S1> a sx:Shape ;
+<http://a.example/S1> a sx:ShapeDecl ; sx:shapeExpr [ a sx:Shape ;
   sx:expression
     [ a sx:EachOf ; sx:expressions (
       <http://a.example/S2e>
-      [ a sx:TripleConstraint ; sx:predicate <http://a.example/p1> ] ) ] .
+      [ a sx:TripleConstraint ; sx:predicate <http://a.example/p1> ] ) ] ] .
 
-<http://a.example/S2> a sx:Shape ;
-  sx:expression <http://a.example/S2e> .
+<http://a.example/S2> a sx:ShapeDecl ; sx:shapeExpr [ a sx:Shape ;
+  sx:expression <http://a.example/S2e> ] .
 
 <http://a.example/S2e> a sx:TripleConstraint ;
   sx:predicate <http://a.example/p2> .
