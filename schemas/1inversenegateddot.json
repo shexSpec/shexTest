@@ -3,12 +3,15 @@
   "shapes":[
     {
       "id": "http://a.example/S1",
-      "type": "Shape",
-      "expression": {
-        "type": "TripleConstraint",
-        "inverse": true,
-        "negated": true,
-        "predicate": "http://a.example/p1"
+      "type": "ShapeDecl",
+      "shapeExpr": {
+        "type": "Shape",
+        "expression": {
+          "type": "TripleConstraint",
+          "inverse": true,
+          "negated": true,
+          "predicate": "http://a.example/p1"
+        }
       }
     }
   ]
