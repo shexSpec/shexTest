@@ -4,42 +4,48 @@ PREFIX shex: <http://www.w3.org/ns/shex#>
   shex:shapes ( <http://a.example/S> <http://a.example/NC> ) .
 
 <http://a.example/S>
-  a shex:Shape ;
-  shex:expression [
-    a shex:EachOf ;
-    shex:expressions (
-     [
-       a shex:TripleConstraint ;
-       shex:annotation ( [
-           a shex:Annotation ;
-           shex:predicate <http://a.example/annot1> ;
-           shex:object 3
-       ] ) ;
-       shex:predicate <http://a.example/p1> ;
-       shex:valueExpr [
-         a shex:NodeConstraint ;
-         shex:values ( 1 5 )
+  a shex:ShapeDecl ;
+    shex:shapeExpr [
+    a shex:Shape ;
+    shex:expression [
+      a shex:EachOf ;
+      shex:expressions (
+       [
+         a shex:TripleConstraint ;
+         shex:annotation ( [
+             a shex:Annotation ;
+             shex:predicate <http://a.example/annot1> ;
+             shex:object 3
+         ] ) ;
+         shex:predicate <http://a.example/p1> ;
+         shex:valueExpr [
+           a shex:NodeConstraint ;
+           shex:values ( 1 5 )
+         ]
        ]
-     ]
-     [
-       a shex:TripleConstraint ;
-       shex:annotation ( [
-           a shex:Annotation ;
-           shex:predicate <http://a.example/annot1> ;
-           shex:object 4
-       ] ) ;
-       shex:predicate <http://a.example/p2> ;
-       shex:valueExpr <http://a.example/NC>
-     ]
-   )
+       [
+         a shex:TripleConstraint ;
+         shex:annotation ( [
+             a shex:Annotation ;
+             shex:predicate <http://a.example/annot1> ;
+             shex:object 4
+         ] ) ;
+         shex:predicate <http://a.example/p2> ;
+         shex:valueExpr <http://a.example/NC>
+       ]
+     )
+    ]
   ] .
 
 <http://a.example/NC>
-  a <http://www.w3.org/ns/shex#NodeConstraint> ;
-  shex:annotation ( [
-      a shex:Annotation ;
-      shex:predicate <http://a.example/annot1> ;
-      shex:object 7
-  ] ) ;
-  shex:values ( 2 6 ) .
+  a shex:ShapeDecl ;
+  shex:shapeExpr [
+    a shex:NodeConstraint ;
+    shex:annotation ( [
+        a shex:Annotation ;
+        shex:predicate <http://a.example/annot1> ;
+        shex:object 7
+    ] ) ;
+    shex:values ( 2 6 )
+  ] .
 

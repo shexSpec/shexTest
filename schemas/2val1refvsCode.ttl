@@ -4,42 +4,48 @@ PREFIX sx: <http://www.w3.org/ns/shex#>
   sx:shapes ( <http://a.example/S> <http://a.example/NC> ) .
 
 <http://a.example/S>
-  a sx:Shape ;
-  sx:expression [
-    a sx:EachOf ;
-    sx:expressions (
-     [
-       a sx:TripleConstraint ;
-       sx:semActs ( [
-         a sx:SemAct;
-         sx:code " print(o) ";
-         sx:name <http://shex.io/extensions/Test/>
-       ] ) ;
-       sx:predicate <http://a.example/p1> ;
-       sx:valueExpr [
-         a sx:NodeConstraint ;
-         sx:values ( 1 5 )
+  a sx:ShapeDecl ;
+  sx:shapeExpr [
+    a sx:Shape ;
+    sx:expression [
+      a sx:EachOf ;
+      sx:expressions (
+       [
+         a sx:TripleConstraint ;
+         sx:semActs ( [
+           a sx:SemAct;
+           sx:code " print(o) ";
+           sx:name <http://shex.io/extensions/Test/>
+         ] ) ;
+         sx:predicate <http://a.example/p1> ;
+         sx:valueExpr [
+           a sx:NodeConstraint ;
+           sx:values ( 1 5 )
+         ]
        ]
-     ]
-     [
-       a sx:TripleConstraint ;
-       sx:semActs ( [
-         a sx:SemAct;
-         sx:code " print(o) ";
-         sx:name <http://shex.io/extensions/Test/>
-       ] ) ;
-       sx:predicate <http://a.example/p2> ;
-       sx:valueExpr <http://a.example/NC>
-     ]
-   )
+       [
+         a sx:TripleConstraint ;
+         sx:semActs ( [
+           a sx:SemAct;
+           sx:code " print(o) ";
+           sx:name <http://shex.io/extensions/Test/>
+         ] ) ;
+         sx:predicate <http://a.example/p2> ;
+         sx:valueExpr <http://a.example/NC>
+       ]
+     )
+    ]
   ] .
 
 <http://a.example/NC>
-  a <http://www.w3.org/ns/shex#NodeConstraint> ;
-  sx:semActs ( [
-    a sx:SemAct;
-    sx:code " print(n) ";
-    sx:name <http://shex.io/extensions/Test/>
-  ] ) ;
-  sx:values ( 2 6 ) .
+  a sx:ShapeDecl ;
+  sx:shapeExpr [
+    a sx:NodeConstraint ;
+    sx:semActs ( [
+      a sx:SemAct;
+      sx:code " print(n) ";
+      sx:name <http://shex.io/extensions/Test/>
+    ] ) ;
+    sx:values ( 2 6 )
+  ] .
 

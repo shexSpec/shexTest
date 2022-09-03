@@ -2,67 +2,73 @@
   "type": "Schema",
   "shapes": [
     {
-      "type": "Shape",
       "id": "http://a.example/S",
-      "expression": {
-        "type": "EachOf",
-        "expressions": [
-          {
-            "type": "TripleConstraint",
-            "predicate": "http://a.example/p1",
-            "valueExpr": {
-              "type": "NodeConstraint",
-              "values": [
-                { "value": "1", "type": "http://www.w3.org/2001/XMLSchema#integer" },
-                { "value": "5", "type": "http://www.w3.org/2001/XMLSchema#integer" }
+      "type": "ShapeDecl",
+      "shapeExpr": {
+        "type": "Shape",
+        "expression": {
+          "type": "EachOf",
+          "expressions": [
+            {
+              "type": "TripleConstraint",
+              "predicate": "http://a.example/p1",
+              "valueExpr": {
+                "type": "NodeConstraint",
+                "values": [
+                  { "value": "1", "type": "http://www.w3.org/2001/XMLSchema#integer" },
+                  { "value": "5", "type": "http://www.w3.org/2001/XMLSchema#integer" }
+                ]
+              },
+              "annotations": [
+                {
+                  "type": "Annotation",
+                  "predicate": "http://a.example/annot1",
+                  "object": {
+                    "value": "3",
+                    "type": "http://www.w3.org/2001/XMLSchema#integer"
+                  }
+                }
               ]
             },
-            "annotations": [
-              {
-                "type": "Annotation",
-                "predicate": "http://a.example/annot1",
-                "object": {
-                  "value": "3",
-                  "type": "http://www.w3.org/2001/XMLSchema#integer"
+            {
+              "type": "TripleConstraint",
+              "predicate": "http://a.example/p2",
+              "valueExpr": "http://a.example/NC",
+              "annotations": [
+                {
+                  "type": "Annotation",
+                  "predicate": "http://a.example/annot1",
+                  "object": {
+                    "value": "4",
+                    "type": "http://www.w3.org/2001/XMLSchema#integer"
+                  }
                 }
-              }
-            ]
-          },
-          {
-            "type": "TripleConstraint",
-            "predicate": "http://a.example/p2",
-            "valueExpr": "http://a.example/NC",
-            "annotations": [
-              {
-                "type": "Annotation",
-                "predicate": "http://a.example/annot1",
-                "object": {
-                  "value": "4",
-                  "type": "http://www.w3.org/2001/XMLSchema#integer"
-                }
-              }
-            ]
-          }
-        ]
+              ]
+            }
+          ]
+        }
       }
     },
     {
-      "type": "NodeConstraint",
       "id": "http://a.example/NC",
-      "values": [
-        { "value": "2", "type": "http://www.w3.org/2001/XMLSchema#integer" },
-        { "value": "6", "type": "http://www.w3.org/2001/XMLSchema#integer" }
-      ],
-      "annotations": [
-        {
-          "type": "Annotation",
-          "predicate": "http://a.example/annot1",
-          "object": {
-            "value": "7",
-            "type": "http://www.w3.org/2001/XMLSchema#integer"
+      "type": "ShapeDecl",
+        "shapeExpr": {
+        "type": "NodeConstraint",
+        "values": [
+          { "value": "2", "type": "http://www.w3.org/2001/XMLSchema#integer" },
+          { "value": "6", "type": "http://www.w3.org/2001/XMLSchema#integer" }
+        ],
+        "annotations": [
+          {
+            "type": "Annotation",
+            "predicate": "http://a.example/annot1",
+            "object": {
+              "value": "7",
+              "type": "http://www.w3.org/2001/XMLSchema#integer"
+            }
           }
-        }
-      ]
+        ]
+      }
     }
   ],
   "@context": "http://www.w3.org/ns/shex.jsonld"

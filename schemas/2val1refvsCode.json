@@ -2,58 +2,64 @@
   "type": "Schema",
   "shapes": [
     {
-      "type": "Shape",
       "id": "http://a.example/S",
-      "expression": {
-        "type": "EachOf",
-        "expressions": [
-          {
-            "type": "TripleConstraint",
-            "predicate": "http://a.example/p1",
-            "valueExpr": {
-              "type": "NodeConstraint",
-              "values": [
-                { "value": "1", "type": "http://www.w3.org/2001/XMLSchema#integer" },
-                { "value": "5", "type": "http://www.w3.org/2001/XMLSchema#integer" }
+      "type": "ShapeDecl",
+      "shapeExpr": {
+        "type": "Shape",
+        "expression": {
+          "type": "EachOf",
+          "expressions": [
+            {
+              "type": "TripleConstraint",
+              "predicate": "http://a.example/p1",
+              "valueExpr": {
+                "type": "NodeConstraint",
+                "values": [
+                  { "value": "1", "type": "http://www.w3.org/2001/XMLSchema#integer" },
+                  { "value": "5", "type": "http://www.w3.org/2001/XMLSchema#integer" }
+                ]
+              },
+              "semActs": [
+                {
+                  "type": "SemAct",
+                  "name": "http://shex.io/extensions/Test/",
+                  "code": " print(o) "
+                }
               ]
             },
-            "semActs": [
-              {
-                "type": "SemAct",
-                "name": "http://shex.io/extensions/Test/",
-                "code": " print(o) "
-              }
-            ]
-          },
-          {
-            "type": "TripleConstraint",
-            "predicate": "http://a.example/p2",
-            "valueExpr": "http://a.example/NC",
-            "semActs": [
-              {
-                "type": "SemAct",
-                "name": "http://shex.io/extensions/Test/",
-                "code": " print(o) "
-              }
-            ]
-          }
-        ]
+            {
+              "type": "TripleConstraint",
+              "predicate": "http://a.example/p2",
+              "valueExpr": "http://a.example/NC",
+              "semActs": [
+                {
+                  "type": "SemAct",
+                  "name": "http://shex.io/extensions/Test/",
+                  "code": " print(o) "
+                }
+              ]
+            }
+          ]
+        }
       }
     },
     {
-      "type": "NodeConstraint",
       "id": "http://a.example/NC",
-      "values": [
-        { "value": "2", "type": "http://www.w3.org/2001/XMLSchema#integer" },
-        { "value": "6", "type": "http://www.w3.org/2001/XMLSchema#integer" }
-      ],
-      "semActs": [
-        {
-          "type": "SemAct",
-          "name": "http://shex.io/extensions/Test/",
-          "code": " print(n) "
-        }
-      ]
+      "type": "ShapeDecl",
+      "shapeExpr": {
+        "type": "NodeConstraint",
+        "values": [
+          { "value": "2", "type": "http://www.w3.org/2001/XMLSchema#integer" },
+          { "value": "6", "type": "http://www.w3.org/2001/XMLSchema#integer" }
+        ],
+        "semActs": [
+          {
+            "type": "SemAct",
+            "name": "http://shex.io/extensions/Test/",
+            "code": " print(n) "
+          }
+        ]
+      }
     }
   ],
   "@context": "http://www.w3.org/ns/shex.jsonld"
