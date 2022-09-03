@@ -4,18 +4,21 @@
   "shapes": [
     {
       "id": "http://a.example/S1",
-      "type": "Shape",
-      "expression": {
-        "type": "TripleConstraint",
-        "predicate": "http://a.example/p1",
-        "valueExpr": {
-          "type": "NodeConstraint",
-          "values": [
-            {
-              "value": "ab",
-              "language": "en-FR"
-            }
-          ]
+      "type": "ShapeDecl",
+      "shapeExpr": {
+        "type": "Shape",
+        "expression": {
+          "type": "TripleConstraint",
+          "predicate": "http://a.example/p1",
+          "valueExpr": {
+            "type": "NodeConstraint",
+            "values": [
+              {
+                "value": "ab",
+                "language": "en-FR"
+              }
+            ]
+          }
         }
       }
     }
