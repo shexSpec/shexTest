@@ -42,7 +42,7 @@ start=@<#Schema>
   a [sx:NodeConstraint] ;
   sx:nodeKind [sx:iri sx:bnode sx:literal sx:nonliteral] ? ;
   sx:datatype IRI ? ;
-  &<#xsFacets>  ;
+  &<#xsFacets> ;
   sx:values @<#valueSetValueList1Plus> ? ;
   sx:semActs @<#SemActList1Plus> ? ;
   sx:annotation @<#AnnotationList1Plus> ?
