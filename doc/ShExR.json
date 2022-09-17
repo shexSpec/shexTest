@@ -628,37 +628,6 @@
       }
     },
     {
-      "id": "http://www.w3.org/ns/shex#Language",
-      "type": "ShapeDecl",
-      "shapeExpr": {
-        "type": "Shape",
-        "expression": {
-          "type": "EachOf",
-          "expressions": [
-            {
-              "type": "TripleConstraint",
-              "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-              "valueExpr": {
-                "type": "NodeConstraint",
-                "values": [
-                  "http://www.w3.org/ns/shex#Language"
-                ]
-              }
-            },
-            {
-              "type": "TripleConstraint",
-              "predicate": "http://www.w3.org/ns/shex#languageTag",
-              "valueExpr": {
-                "type": "NodeConstraint",
-                "datatype": "http://www.w3.org/2001/XMLSchema#string"
-              }
-            }
-          ]
-        },
-        "closed": true
-      }
-    },
-    {
       "id": "http://www.w3.org/ns/shex#IriStem",
       "type": "ShapeDecl",
       "shapeExpr": {
@@ -805,6 +774,37 @@
       }
     },
     {
+      "id": "http://www.w3.org/ns/shex#Language",
+      "type": "ShapeDecl",
+      "shapeExpr": {
+        "type": "Shape",
+        "expression": {
+          "type": "EachOf",
+          "expressions": [
+            {
+              "type": "TripleConstraint",
+              "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+              "valueExpr": {
+                "type": "NodeConstraint",
+                "values": [
+                  "http://www.w3.org/ns/shex#Language"
+                ]
+              }
+            },
+            {
+              "type": "TripleConstraint",
+              "predicate": "http://www.w3.org/ns/shex#languageTag",
+              "valueExpr": {
+                "type": "NodeConstraint",
+                "datatype": "http://www.w3.org/2001/XMLSchema#string"
+              }
+            }
+          ]
+        },
+        "closed": true
+      }
+    },
+    {
       "id": "http://www.w3.org/ns/shex#LanguageStem",
       "type": "ShapeDecl",
       "shapeExpr": {
@@ -910,14 +910,19 @@
       "shapeExpr": {
         "type": "ShapeOr",
         "shapeExprs": [
+          "http://www.w3.org/ns/shex#NotYetResolvedInclusion",
           "http://www.w3.org/ns/shex#TripleConstraint",
           "http://www.w3.org/ns/shex#OneOf",
-          "http://www.w3.org/ns/shex#EachOf",
-          {
-            "type": "Shape",
-            "closed": true
-          }
+          "http://www.w3.org/ns/shex#EachOf"
         ]
+      }
+    },
+    {
+      "id": "http://www.w3.org/ns/shex#NotYetResolvedInclusion",
+      "type": "ShapeDecl",
+      "shapeExpr": {
+        "type": "Shape",
+        "closed": true
       }
     },
     {
@@ -1045,63 +1050,6 @@
       }
     },
     {
-      "id": "http://www.w3.org/ns/shex#tripleExpressionList2Plus",
-      "type": "ShapeDecl",
-      "shapeExpr": {
-        "type": "Shape",
-        "expression": {
-          "type": "EachOf",
-          "expressions": [
-            {
-              "type": "TripleConstraint",
-              "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
-              "valueExpr": "http://www.w3.org/ns/shex#tripleExpression"
-            },
-            {
-              "type": "TripleConstraint",
-              "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest",
-              "valueExpr": "http://www.w3.org/ns/shex#tripleExpressionList1Plus"
-            }
-          ]
-        },
-        "closed": true
-      }
-    },
-    {
-      "id": "http://www.w3.org/ns/shex#tripleExpressionList1Plus",
-      "type": "ShapeDecl",
-      "shapeExpr": {
-        "type": "Shape",
-        "expression": {
-          "type": "EachOf",
-          "expressions": [
-            {
-              "type": "TripleConstraint",
-              "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
-              "valueExpr": "http://www.w3.org/ns/shex#tripleExpression"
-            },
-            {
-              "type": "TripleConstraint",
-              "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest",
-              "valueExpr": {
-                "type": "ShapeOr",
-                "shapeExprs": [
-                  {
-                    "type": "NodeConstraint",
-                    "values": [
-                      "http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"
-                    ]
-                  },
-                  "http://www.w3.org/ns/shex#tripleExpressionList1Plus"
-                ]
-              }
-            }
-          ]
-        },
-        "closed": true
-      }
-    },
-    {
       "id": "http://www.w3.org/ns/shex#TripleConstraint",
       "type": "ShapeDecl",
       "shapeExpr": {
@@ -1205,6 +1153,63 @@
               "valueExpr": "http://www.w3.org/ns/shex#AnnotationList1Plus",
               "min": 0,
               "max": 1
+            }
+          ]
+        },
+        "closed": true
+      }
+    },
+    {
+      "id": "http://www.w3.org/ns/shex#tripleExpressionList2Plus",
+      "type": "ShapeDecl",
+      "shapeExpr": {
+        "type": "Shape",
+        "expression": {
+          "type": "EachOf",
+          "expressions": [
+            {
+              "type": "TripleConstraint",
+              "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
+              "valueExpr": "http://www.w3.org/ns/shex#tripleExpression"
+            },
+            {
+              "type": "TripleConstraint",
+              "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest",
+              "valueExpr": "http://www.w3.org/ns/shex#tripleExpressionList1Plus"
+            }
+          ]
+        },
+        "closed": true
+      }
+    },
+    {
+      "id": "http://www.w3.org/ns/shex#tripleExpressionList1Plus",
+      "type": "ShapeDecl",
+      "shapeExpr": {
+        "type": "Shape",
+        "expression": {
+          "type": "EachOf",
+          "expressions": [
+            {
+              "type": "TripleConstraint",
+              "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
+              "valueExpr": "http://www.w3.org/ns/shex#tripleExpression"
+            },
+            {
+              "type": "TripleConstraint",
+              "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest",
+              "valueExpr": {
+                "type": "ShapeOr",
+                "shapeExprs": [
+                  {
+                    "type": "NodeConstraint",
+                    "values": [
+                      "http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"
+                    ]
+                  },
+                  "http://www.w3.org/ns/shex#tripleExpressionList1Plus"
+                ]
+              }
             }
           ]
         },

@@ -457,6 +457,9 @@
         <#Extend3G>
         <#ExtendANDExtend3GAND3G>
         <#vitals-RESTRICTS>
+
+        # meta
+        <#ShExR>
     ) .
 
 <#0> a sht:RepresentationTest ;
@@ -4061,6 +4064,18 @@
     .
 
 # } abstract extends
+
+# meta {
+
+<#ShExR> a sht:RepresentationTest ;
+    mf:name "ShExR" ;
+    mf:status mf:Proposed ;
+    sx:shex <../doc/ShExR.shex> ;
+    sx:json <../doc/ShExR.json> ;
+    sx:ttl  <../doc/ShExR.ttl> ;
+    .
+
+# } meta
 
 # regexp template:
 

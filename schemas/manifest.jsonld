@@ -3637,8 +3637,8 @@
           "@type": "sht:RepresentationTest",
           "name": "2RefS2-Icirc",
           "trait": [
-            "Start",
-            "Import"
+            "Import",
+            "Start"
           ],
           "status": "mf:Approved",
           "shex": "2RefS2-Icirc.shex",
@@ -4041,6 +4041,15 @@
           "shex": "vitals-RESTRICTS.shex",
           "json": "vitals-RESTRICTS.json",
           "ttl": "vitals-RESTRICTS.ttl"
+        },
+        {
+          "@id": "#ShExR",
+          "@type": "sht:RepresentationTest",
+          "name": "ShExR",
+          "status": "mf:Proposed",
+          "shex": "../doc/ShExR.shex",
+          "json": "../doc/ShExR.json",
+          "ttl": "../doc/ShExR.ttl"
         }
       ]
     }
