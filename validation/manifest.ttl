@@ -1082,6 +1082,7 @@
         <#1dotShapePlusAnnotIRIREF_pass>
         <#1dotShapeAnnotAIRIREF_pass>
         <#1dotShapeAnnotSTRING_LITERAL1_pass>
+        <#2val1refvsAnnot_pass>
 
 ## semantic actions
         <#1dotCode1_pass>
@@ -1101,6 +1102,7 @@
         <#startCode1startReffail_abort>
         <#startCode3_pass>
         <#startCode3fail_abort>
+        <#2val1refvsCode_pass>
 
 ## annotations + semantic actions
         <#open3Eachdotclosecard23Annot3Code2-p1p2p3X3>
@@ -14276,6 +14278,19 @@
     ]
     .
 
+<#2val1refvsAnnot_pass> a sht:ValidationTest ;
+    mf:name "2val1refvsAnnot_pass" ;
+    sht:trait sht:Annotation ;
+    rdfs:comment "<S> { <p1> [1 5] <annot1> 3; <p2> @<NC> <annot1> 4 } <NC> [2 6] <annot1> 5 on { <s1> <p1> <o1> }" ;
+    mf:status mf:Approved ;
+    mf:action [
+      sht:schema <../schemas/2val1refvsAnnot.shex> ;
+      sht:shape <http://a.example/S> ;
+      sht:data <In1_Ip1_L1.In1_Ip2_L2.ttl> ;
+      sht:focus <http://a.example/n1>
+    ]
+    .
+
  # !../schemas/open3EachdotcloseAnnot3.shex
 
 ## } annotations
@@ -14618,6 +14633,33 @@
       sht:data <Is1_Ip1_Io1.ttl> ;
       sht:focus <http://a.example/s1>
     ]
+    .
+
+<#2val1refvsCode_pass> a sht:ValidationTest ;
+    mf:name "2val1refvsCode_pass" ;
+    sht:trait sht:SemanticAction ;
+    rdfs:comment "<S> { <p1> [1 5] %<Test>{ print(o) %}; <p2> @<NC> %<Test>{ print(o) %} } <NC> [2 6] %<Test>{ print(s) %} on { <s1> <p1> <o1> }" ;
+    mf:status mf:Approved ;
+    mf:action [
+      sht:schema <../schemas/2val1refvsCode.shex> ;
+      sht:shape <http://a.example/S> ;
+      sht:data <In1_Ip1_L1.In1_Ip2_L2.ttl> ;
+      sht:focus <http://a.example/n1>
+    ] ;
+    mf:extensionResults (
+      [
+        mf:extension <http://shex.io/extensions/Test/> ;
+        mf:prints "\"2\"^^http://www.w3.org/2001/XMLSchema#integer"
+      ]
+      [
+        mf:extension <http://shex.io/extensions/Test/> ;
+        mf:prints "\"1\"^^http://www.w3.org/2001/XMLSchema#integer"
+      ]
+      [
+        mf:extension <http://shex.io/extensions/Test/> ;
+        mf:prints "\"2\"^^http://www.w3.org/2001/XMLSchema#integer"
+      ]
+    )
     .
 
 ## } semantic actions

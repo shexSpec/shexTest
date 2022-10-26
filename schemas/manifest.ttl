@@ -314,6 +314,7 @@
         <#1dotShapePlusAnnotIRIREF>
         <#1dotShapeAnnotAIRIREF>
         <#1dotShapeAnnotSTRING_LITERAL1>
+        <#2val1refvsAnnot>
         <#open3EachdotcloseAnnot3>
         <#1dotCode1>
     <#open1dotcloseCode1>
@@ -334,6 +335,7 @@
         <#startCode1startReffail>
         <#startCode3>
         <#startCode3fail>
+        <#2val1refvsCode>
         <#open3Eachdotclosecard23Annot3Code2>
         <#0focusIRI>
         <#0focusBNODE>
@@ -3068,6 +3070,14 @@
     sx:ttl <1dotShapeAnnotSTRING_LITERAL1.ttl> ;
     .
 
+<#2val1refvsAnnot> a sht:RepresentationTest ;
+    mf:name "2val1refvsAnnot" ;
+    mf:status mf:Approved ;
+    sx:shex <2val1refvsAnnot.shex> ;
+    sx:json <2val1refvsAnnot.json> ;
+    sx:ttl <2val1refvsAnnot.ttl> ;
+    .
+
 <#open3EachdotcloseAnnot3> a sht:RepresentationTest ;
     mf:name "open3EachdotcloseAnnot3" ;
     mf:status mf:Approved ;
@@ -3226,6 +3236,14 @@
     sx:shex <startCode3fail.shex> ;
     sx:json <startCode3fail.json> ;
     sx:ttl <startCode3fail.ttl> ;
+    .
+
+<#2val1refvsCode> a sht:RepresentationTest ;
+    mf:name "2val1refvsCode" ;
+    mf:status mf:Approved ;
+    sx:shex <2val1refvsCode.shex> ;
+    sx:json <2val1refvsCode.json> ;
+    sx:ttl <2val1refvsCode.ttl> ;
     .
 
 <#open3Eachdotclosecard23Annot3Code2> a sht:RepresentationTest ;
