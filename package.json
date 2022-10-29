@@ -3,7 +3,7 @@
   "version": "2.2.0-alpha.1",
   "description": "Shape Expressions library tests.",
   "scripts": {
-    "dist": "for d in schemas/ negativeSyntax/ negativeStructure/ validation/; do (cd $d && make); done",
+    "dist": "for d in schemas/ negativeSyntax/ negativeStructure/ validation/; do (cd $d && echo -n $d ':' && make); done",
     "test": "npm run test-shexj-jsg && npm run test-shexv-val && npm run test-shexv-err && npm run test-ts",
     "test-ts": "rm -rf _ts && mkdir -p _ts/schemas && for f in $(ls schemas/*.json | egrep -v '(coverage|representationTests).json'); do sh bin/makeTsTests.sh _ts $f; done && tsc --noEmit _ts/schemas/*.ts && rm -r _ts",
     "test-shexj-jsg": "ls schemas/*.json | egrep -v '(coverage|representationTests).json' | xargs json-grammar doc/ShExJ.jsg",

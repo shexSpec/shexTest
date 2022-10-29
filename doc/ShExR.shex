@@ -12,7 +12,6 @@ start=@<#Schema>
   sx:shapes @<#ShapeDeclList1Plus> ?
 }
 
-# <#shapeDeclOrExpr> is a shortcut for always requriing a ShapeDecl
 <#shapeDeclOrExpr> @<#ShapeDecl> OR @<#shapeExpr>
 
 <#ShapeDecl> CLOSED {
@@ -74,7 +73,6 @@ start=@<#Schema>
   sx:object @<#objectValue>
 }
 
-# <#xsFacet> @<#stringFacet> OR @<#numericFacet>
 <#facet_holder> { # hold labeled productions
   $<#xsFacets> ( &<#stringFacet> | &<#numericFacet> ) * ;
   $<#stringFacet> (
@@ -98,30 +96,40 @@ start=@<#Schema>
                                OR @<#LiteralStem> OR @<#LiteralStemRange>
                 OR @<#Language> OR @<#LanguageStem> OR @<#LanguageStemRange>
 <#objectValue> IRI OR LITERAL # rdf:langString breaks on Annotation.object
-<#Language> CLOSED { a [sx:Language] ; sx:languageTag xsd:string }
+
 <#IriStem> CLOSED { a [sx:IriStem] ; sx:stem xsd:string }
 <#IriStemRange> CLOSED {
   a [sx:IriStemRange] ;
   sx:stem xsd:string OR @<#Wildcard> ;
   sx:exclusion @<#IriStemExclusionList1Plus>
 }
+
 <#LiteralStem> CLOSED { a [sx:LiteralStem] ; sx:stem xsd:string }
 <#LiteralStemRange> CLOSED {
   a [sx:LiteralStemRange] ;
   sx:stem xsd:string OR @<#Wildcard> ;
   sx:exclusion @<#LiteralStemExclusionList1Plus>
 }
+
+<#Language> CLOSED { a [sx:Language] ; sx:languageTag xsd:string }
 <#LanguageStem> CLOSED { a [sx:LanguageStem] ; sx:stem xsd:string }
 <#LanguageStemRange> CLOSED {
   a [sx:LanguageStemRange] ;
   sx:stem xsd:string OR @<#Wildcard> ;
   sx:exclusion @<#LanguageStemExclusionList1Plus>
 }
+
 <#Wildcard> BNODE CLOSED {
   a [sx:Wildcard]
 }
 
-<#tripleExpression> @<#TripleConstraint> OR @<#OneOf> OR @<#EachOf> OR CLOSED {  }
+<#tripleExpression>
+     @<#NotYetResolvedInclusion>
+  OR @<#TripleConstraint>
+  OR @<#OneOf>
+  OR @<#EachOf>
+
+<#NotYetResolvedInclusion> CLOSED {} # will have 1 incoming, 0 outgoing arcs
 
 <#OneOf> CLOSED {
   a [sx:OneOf] ;
@@ -141,15 +149,6 @@ start=@<#Schema>
   sx:annotation @<#AnnotationList1Plus> ?
 }
 
-<#tripleExpressionList2Plus> CLOSED {
-  rdf:first @<#tripleExpression> ;
-  rdf:rest @<#tripleExpressionList1Plus>
-}
-<#tripleExpressionList1Plus> CLOSED {
-  rdf:first @<#tripleExpression> ;
-  rdf:rest  [rdf:nil] OR @<#tripleExpressionList1Plus>
-}
-
 <#TripleConstraint> CLOSED {
   a [sx:TripleConstraint] ;
   sx:inverse [true false] ? ;
@@ -160,6 +159,17 @@ start=@<#Schema>
   sx:valueExpr @<#shapeDeclOrExpr> ? ;
   sx:semActs @<#SemActList1Plus> ? ;
   sx:annotation @<#AnnotationList1Plus> ?
+}
+
+# RDF Lists
+
+<#tripleExpressionList2Plus> CLOSED {
+  rdf:first @<#tripleExpression> ;
+  rdf:rest @<#tripleExpressionList1Plus>
+}
+<#tripleExpressionList1Plus> CLOSED {
+  rdf:first @<#tripleExpression> ;
+  rdf:rest  [rdf:nil] OR @<#tripleExpressionList1Plus>
 }
 
 <#IriList1Plus> CLOSED {
