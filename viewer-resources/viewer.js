@@ -215,11 +215,11 @@
       }
 
       let titleText = "#" + (testNo+1) + " " + structure.str;
-      let id = test["@id"];
+      let id = test["@id"].replace(/#/, '_');
       test["@id"] = new URL(id, manifestUrl).href;
       let status = drag("td", { title: titleText, class: structure.str }, showTest, "application/json").text(structure.chr);
       let attrs = structure.offset.reduce((acc, o) => { return acc[o]; }, test);
-      let octicon = $("<a>", { href: id }).append(OCTICON_USE).on("click", function (evt) {
+      let octicon = $("<a>", { href: '#' + id }).append(OCTICON_USE).on("click", function (evt) {
         evt.preventDefault();
         $(".highlight").removeClass("highlight");
         let fragment = $(this).attr("href").substr(1);
