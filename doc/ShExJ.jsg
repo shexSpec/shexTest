@@ -8,16 +8,22 @@
 #   {TERMINAL->PROPTYPE} - a map from TERMINAL to PROPTYPE.
 #   (PROPTYPE1 | PROPTYPE2...) - any of PROPTYPEn.
 
-.TYPE type - ObjectLiteral
-
-; # All objects have a type property corresponding to the production name, e.g. "Schema"
+# All objects have a type property corresponding to the production name, e.g. "Schema"
+.TYPE type - ObjectLiteral;
 
 Schema           {
-  "@context":"http://www.w3.org/ns/shex.jsonld"?
-  imports:[IRIREF+]?
-  startActs:[SemAct+]? start:shapeExprOrRef? shapes:[ShapeDecl+]?
- }
-ShapeDecl        { id:shapeDeclLabel abstract:BOOL? restricts:[shapeExprOrRef+]? shapeExpr:shapeExpr }
+  "@context":"http://www.w3.org/ns/shex.jsonld" ?
+  imports:[IRIREF+] ?
+  startActs:[SemAct+] ?
+  start:shapeExprOrRef ?
+  shapes:[ShapeDecl+] ?
+}
+ShapeDecl        {
+  id:shapeDeclLabel
+  abstract:BOOL ?
+  restricts:[shapeExprOrRef+] ?
+  shapeExpr:shapeExpr
+}
 
 // Shape Expressions
 shapeExpr        = ShapeOr | ShapeAnd | ShapeNot | NodeConstraint | Shape | ShapeExternal;
@@ -27,7 +33,12 @@ ShapeAnd         { shapeExprs:[shapeExprOrRef{2,}] }
 ShapeNot         { shapeExpr:shapeExprOrRef }
 shapeDeclRef     = shapeDeclLabel ;
 shapeDeclLabel   = IRIREF | BNODE ;
-NodeConstraint   { nodeKind:("iri"|"bnode"|"nonliteral"|"literal")? datatype:IRIREF? xsFacet* values:[valueSetValue+]? }
+NodeConstraint   {
+  nodeKind:("iri"|"bnode"|"nonliteral"|"literal") ?
+  datatype:IRIREF ?
+  xsFacet *
+  values:[valueSetValue+] ?
+}
 ShapeExternal    { }
 
 # XML Schema facets
@@ -39,7 +50,8 @@ numericFacet     = (mininclusive|minexclusive|maxinclusive|maxexclusive):numeric
 numericLiteral   = INTEGER | DECIMAL | DOUBLE ;
 
 # Value Sets
-valueSetValue    = objectValue | IriStem | IriStemRange | LiteralStem | LiteralStemRange | Language | LanguageStem | LanguageStemRange ;
+valueSetValue    = objectValue | IriStem | IriStemRange | LiteralStem
+                 | LiteralStemRange | Language | LanguageStem | LanguageStemRange ;
 objectValue      = IRIREF | ObjectLiteral ;
 ObjectLiteral    { value:STRING language:STRING? type:STRING? }
 IriStem          { stem:IRIREF } # IriStemRange with exclusions
@@ -51,14 +63,45 @@ LanguageStem     { stem:(LANGTAG | EMPTY) }
 LanguageStemRange{ stem:(LANGTAG | EMPTY | Wildcard) exclusions:[LANGTAG | LanguageStem+] }
 Wildcard         {  }
 
-Shape            { abstract:BOOL? closed:BOOL? extends:[shapeExprOrRef+]? extra:[IRIREF+]? expression:tripleExprOrRef? semActs:[SemAct+]? annotations:[Annotation+]? }
+Shape            {
+  abstract:BOOL ?
+  closed:BOOL ?
+  extends:[shapeExprOrRef+] ?
+  extra:[IRIREF+] ?
+  expression:tripleExprOrRef ?
+  semActs:[SemAct+] ?
+  annotations:[Annotation+] ?
+}
 
 # Triple Expressions
 tripleExpr       = EachOf | OneOf | TripleConstraint ;
 tripleExprOrRef  = tripleExpr | tripleExprRef ;
-EachOf           { id:tripleExprLabel? expressions:[tripleExprOrRef{2,}] min:INTEGER? max:INTEGER? semActs:[SemAct+]? annotations:[Annotation+]? }
-OneOf            { id:tripleExprLabel? expressions:[tripleExprOrRef{2,}] min:INTEGER? max:INTEGER? semActs:[SemAct+]? annotations:[Annotation+]? }
-TripleConstraint { id:tripleExprLabel? inverse:BOOL? predicate:IRIREF valueExpr:shapeExprOrRef? min:INTEGER? max:INTEGER? semActs:[SemAct+]? annotations:[Annotation+]? }
+EachOf           {
+  id:tripleExprLabel ?
+  expressions:[tripleExprOrRef{2,}]
+  min:INTEGER ?
+  max:INTEGER ?
+  semActs:[SemAct+] ?
+  annotations:[Annotation+] ?
+}
+OneOf            {
+  id:tripleExprLabel ?
+  expressions:[tripleExprOrRef{2,}]
+  min:INTEGER ?
+  max:INTEGER ?
+  semActs:[SemAct+] ?
+  annotations:[Annotation+] ?
+}
+TripleConstraint {
+  id:tripleExprLabel ?
+  inverse:BOOL ?
+  predicate:IRIREF
+  valueExpr:shapeExprOrRef ?
+  min:INTEGER ?
+  max:INTEGER ?
+  semActs:[SemAct+] ?
+  annotations:[Annotation+] ?
+}
 tripleExprRef    = tripleExprLabel ;
 tripleExprLabel  = IRIREF | BNODE ;
 
