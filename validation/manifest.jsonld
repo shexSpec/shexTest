@@ -3565,8 +3565,7 @@
             "Import"
           ],
           "comment": "<S1> { <p1> ., <p2> @<S2>? } <S2> { <p3> @<S3> } <S3> { <p4> @<S1> } on { <n1> <p1> \"X\" ; <p2> <n2> . <n2> <p3> <n3> . <n3> <p4> <n5> . <n5> <p1> \"X\" }",
-          "status": "mf:Approved",
-          "result": "3circRefPlus1_pass-open.val"
+          "status": "mf:Approved"
         },
         {
           "@id": "#3circRefPlus1_pass-open",
@@ -18703,8 +18702,7 @@
             "Import"
           ],
           "comment": "I2 <S1> { <p1> @<S2> } | <S2> { <p2> . } on { <s1> <p1> <n2> . <n2> <p2> \"X\" }",
-          "status": "mf:Approved",
-          "result": "In2_Ip2_In1@In1_Ip1_LX.val"
+          "status": "mf:Approved"
         },
         {
           "@id": "#2RefS1-IS2_fail-p2",
@@ -18738,8 +18736,7 @@
             "Import"
           ],
           "comment": "I2 <S2> { <p2> . } | <S1> { <p1> @<S2> }  on { <s1> <p1> <n2> . <n2> <p2> \"X\" }",
-          "status": "mf:Approved",
-          "result": "In2_Ip2_In1@In1_Ip1_LX.val"
+          "status": "mf:Approved"
         },
         {
           "@id": "#2RefS1-Icirc",
@@ -18756,8 +18753,7 @@
             "Import"
           ],
           "comment": "I2 <S1> { <p1> @<S2> } | I1 <S2> { <p2> . } on { <s1> <p1> <n2> . <n2> <p2> \"X\" }",
-          "status": "mf:Approved",
-          "result": "In2_Ip2_In1@In1_Ip1_LX.val"
+          "status": "mf:Approved"
         },
         {
           "@id": "#2RefS1-Icirc_fail-p2",
@@ -18791,8 +18787,7 @@
             "Import"
           ],
           "comment": "I23 <S1> { <p1> .; <p2> @<S2>? } | <S2> { <p3> @<S3> } <S3> { <p4> @<S1> } on { <n1> <p1> \"X\" ; <p2> <n2> . <n2> <p3> <n3> . <n3> <p4> <n5> . <n5> <p1> \"X\" }",
-          "status": "mf:Approved",
-          "result": "3circRefPlus1_pass-open.val"
+          "status": "mf:Approved"
         },
         {
           "@id": "#3circRefS1-IS23_pass-p1",
@@ -18826,8 +18821,7 @@
             "Import"
           ],
           "comment": "I2 <S1> { <p1> .; <p2> @<S2>? } | I3 <S2> { <p3> @<S3> } | <S3> { <p4> @<S1> } on { <n1> <p1> \"X\" ; <p2> <n2> . <n2> <p3> <n3> . <n3> <p4> <n5> . <n5> <p1> \"X\" }",
-          "status": "mf:Approved",
-          "result": "3circRefPlus1_pass-open.val"
+          "status": "mf:Approved"
         },
         {
           "@id": "#3circRefS3-IS12",
@@ -18844,8 +18838,7 @@
             "Import"
           ],
           "comment": "I2 <S3> { <p4> @<S1> } | <S1> { <p1> .; <p2> @<S2>? } <S2> { <p3> @<S3> } on { <n1> <p1> \"X\" ; <p2> <n2> . <n2> <p3> <n3> . <n3> <p4> <n5> . <n5> <p1> \"X\" }",
-          "status": "mf:Approved",
-          "result": "3circRefPlus1_pass-open.val"
+          "status": "mf:Approved"
         },
         {
           "@id": "#3circRefS123-Icirc",
@@ -18862,8 +18855,7 @@
             "Import"
           ],
           "comment": "I1 <S1> { <p1> .; <p2> @<S2>? } <S2> { <p3> @<S3> } <S3> { <p4> @<S1> } on { <n1> <p1> \"X\" ; <p2> <n2> . <n2> <p3> <n3> . <n3> <p4> <n5> . <n5> <p1> \"X\" }",
-          "status": "mf:Approved",
-          "result": "3circRefPlus1_pass-open.val"
+          "status": "mf:Approved"
         },
         {
           "@id": "#3circRefS1-Icirc",
@@ -18880,8 +18872,7 @@
             "Import"
           ],
           "comment": "I2 <S1> { <p1> .; <p2> @<S2>? } | I3 <S2> { <p3> @<S3> } | I1 <S3> { <p4> @<S1> } on { <n1> <p1> \"X\" ; <p2> <n2> . <n2> <p3> <n3> . <n3> <p4> <n5> . <n5> <p1> \"X\" }",
-          "status": "mf:Approved",
-          "result": "3circRefPlus1_pass-open.val"
+          "status": "mf:Approved"
         },
         {
           "@id": "#3circRefS1-IS2-IS3-IS3",
@@ -18898,8 +18889,7 @@
             "Import"
           ],
           "comment": "I2 I3 <S1> { <p1> .; <p2> @<S2>? } | I3 <S2> { <p3> @<S3> } | <S3> { <p4> @<S1> } on { <n1> <p1> \"X\" ; <p2> <n2> . <n2> <p3> <n3> . <n3> <p4> <n5> . <n5> <p1> \"X\" }",
-          "status": "mf:Approved",
-          "result": "3circRefPlus1_pass-open.val"
+          "status": "mf:Approved"
         },
         {
           "@id": "#start2RefS1-IstartS2",
@@ -18916,8 +18906,7 @@
             "Start"
           ],
           "comment": "I2 start=@<S1> <S1> { <p1> @<S2> } | <S2> { <p2> . } on { <s1> <p1> <n2> . <n2> <p2> \"X\" }",
-          "status": "mf:Proposed",
-          "result": "In2_Ip2_In1@In1_Ip1_LX.val"
+          "status": "mf:Proposed"
         },
         {
           "@id": "#start2RefS2-IstartS1",
@@ -18934,8 +18923,7 @@
             "Start"
           ],
           "comment": "I2 start=@<S2> <S2> { <p2> @<S1> } | <S1> { <p1> . } on { <s1> <p2> <n2> . <n2> <p1> \"X\" }",
-          "status": "mf:Proposed",
-          "result": "In2_Ip2_In1@In1_Ip1_LX.val"
+          "status": "mf:Proposed"
         },
         {
           "@id": "#1valExprRef-IV1_fail-lit-short",
