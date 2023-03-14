@@ -4148,8 +4148,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <3circRefPlus1_pass-open.ttl> ;
       sht:focus <http://a.example/n1>
-    ] ;
-    mf:result <3circRefPlus1_pass-open.val>
+    ]
     .
 
 <#3circRefPlus1_pass-open> a sht:ValidationTest ;
@@ -16064,8 +16063,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <In1_Ip1_In2.In2_Ip2_LX.ttl> ;
       sht:focus <http://a.example/n1>
-    ] ;
-    mf:result <In2_Ip2_In1@In1_Ip1_LX.val>
+    ]
     .
 
 <#2RefS1-IS2_fail-p2> a sht:ValidationFailure ;
@@ -16091,8 +16089,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <In1_Ip1_In2.In2_Ip2_LX.ttl> ;
       sht:focus <http://a.example/n1>
-    ] ;
-    mf:result <In2_Ip2_In1@In1_Ip1_LX.val>
+    ]
     .
 
 <#2RefS1-Icirc> a sht:ValidationTest ;
@@ -16105,8 +16102,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <In1_Ip1_In2.In2_Ip2_LX.ttl> ;
       sht:focus <http://a.example/n1>
-    ] ;
-    mf:result <In2_Ip2_In1@In1_Ip1_LX.val>
+    ]
     .
 
 <#2RefS1-Icirc_fail-p2> a sht:ValidationFailure ;
@@ -16132,8 +16128,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <3circRefPlus1_pass-open.ttl> ;
       sht:focus <http://a.example/n1>
-    ] ;
-    mf:result <3circRefPlus1_pass-open.val>
+    ]
     .
 
 <#3circRefS1-IS23_pass-p1> a sht:ValidationTest ;
@@ -16159,8 +16154,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <3circRefPlus1_pass-open.ttl> ;
       sht:focus <http://a.example/n1>
-    ] ;
-    mf:result <3circRefPlus1_pass-open.val>
+    ]
     .
 
 <#3circRefS3-IS12> a sht:ValidationTest ;
@@ -16173,8 +16167,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <3circRefPlus1_pass-open.ttl> ;
       sht:focus <http://a.example/n1>
-    ] ;
-    mf:result <3circRefPlus1_pass-open.val>
+    ]
     .
 
 <#3circRefS123-Icirc> a sht:ValidationTest ;
@@ -16187,8 +16180,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <3circRefPlus1_pass-open.ttl> ;
       sht:focus <http://a.example/n1>
-    ] ;
-    mf:result <3circRefPlus1_pass-open.val>
+    ]
     .
 
 <#3circRefS1-Icirc> a sht:ValidationTest ;
@@ -16201,8 +16193,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <3circRefPlus1_pass-open.ttl> ;
       sht:focus <http://a.example/n1>
-    ] ;
-    mf:result <3circRefPlus1_pass-open.val>
+    ]
     .
 
 <#3circRefS1-IS2-IS3-IS3> a sht:ValidationTest ;
@@ -16215,8 +16206,7 @@
       sht:shape <http://a.example/S1> ;
       sht:data <3circRefPlus1_pass-open.ttl> ;
       sht:focus <http://a.example/n1>
-    ] ;
-    mf:result <3circRefPlus1_pass-open.val>
+    ]
     .
 
 ### } shape reference
@@ -16232,8 +16222,7 @@
       # sht:shape <http://a.example/S1> ;
       sht:data <In1_Ip1_In2.In2_Ip2_LX.ttl> ;
       sht:focus <http://a.example/n1>
-    ] ;
-    mf:result <In2_Ip2_In1@In1_Ip1_LX.val>
+    ]
     .
 
 <#start2RefS2-IstartS1> a sht:ValidationTest ;
@@ -16246,8 +16235,7 @@
       # sht:shape <http://a.example/S2> ;
       sht:data <In1_Ip2_In2.In2_Ip1_LX.ttl> ;
       sht:focus <http://a.example/n1>
-    ] ;
-    mf:result <In2_Ip2_In1@In1_Ip1_LX.val>
+    ]
     .
 
 
