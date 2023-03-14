@@ -8,9 +8,9 @@
 #   {TERMINAL->PROPTYPE} - a map from TERMINAL to PROPTYPE.
 #   (PROPTYPE1|PROPTYPE2...) - any of PROPTYPEn.
 
-.TYPE type - ObjectLiteral labeledShapeOr labeledShapeAnd labeledShapeNot labeledNodeConstraint labeledShape labeledShapeExternal; # All objects have a type property corresponding to the production name, e.g. "ShapeTest"
+.TYPE type - ObjectLiteral; # ObjectLiterals use type to specify lexical datatype
 
-shapeExprTest    = ShapeOrResults | ShapeAndResults | ShapeNotResults | ShapeTest | NodeTest | SolutionList | Failure | FailureList ;
+shapeExprTest    = ShapeOrResults | ShapeAndResults | ShapeNotResults | ShapeTest | NodeTest | SolutionList | Failure | FailureList | AbstractShapeFailure ;
 ShapeOrResults   { solution:shapeExprTest }
 ShapeAndResults  { solutions:[shapeExprTest+] }
 ShapeNotResults  { solution:Failure }
@@ -30,6 +30,7 @@ OneOfSolution    { expressions:[tripleExprSolutions+] }
 TripleConstraintSolutions { predicate:IRI valueExpr:shapeExpr? min:INTEGER? max:INTEGER? solutions:[TestedTriple] annotations:[Annotation+]? semActs:[SemAct+]? }
 TestedTriple     { subject:(IRI|BNODE) predicate:IRI object:(IRI|BNODE|ObjectLiteral) referenced:(shapeExprTest|Recursion)? }
 Recursion        { node:(IRI|BNODE) shape:(IRI|BNODE) }
+AbstractShapeFailure { shape:(IRI|BNODE) errors:[error] }
 
 # Shape Expressions
 shapeExpr        = ShapeOr | ShapeAnd | ShapeNot | NodeConstraint | Shape | ShapeRef | ShapeExternal;
