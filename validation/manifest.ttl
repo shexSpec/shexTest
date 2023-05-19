@@ -1613,7 +1613,7 @@
 
 <#bnode1dot_fail-missing> a sht:ValidationFailure ;
     mf:name "bnode1dot_fail-missing" ;
-    sht:trait sht:BNodeShapeLabel , sht:TriplePattern ;
+    sht:trait sht:BNodeShapeLabel , sht:RefBNodeShapeLabel , sht:TriplePattern ;
     rdfs:comment "_:S { <p1> . } on { <s1> <p2> <o1> }" ;
     mf:status mf:Approved ;
     mf:action [
@@ -1626,7 +1626,7 @@
 
 <#bnode1dot_pass-others_lexicallyEarlier> a sht:ValidationTest ;
     mf:name "bnode1dot_pass-others_lexicallyEarlier" ;
-    sht:trait sht:BNodeShapeLabel , sht:TriplePattern ;
+    sht:trait sht:BNodeShapeLabel , sht:RefBNodeShapeLabel , sht:TriplePattern ;
     rdfs:comment "_:S1 { <p1> . } on { <s1> <p0> <o0>; <p1> <o1> }" ;
     mf:status mf:Approved ;
     mf:action [
@@ -15240,7 +15240,7 @@
 
 <#1focusMaxLength-dot_pass-bnode-short> a sht:ValidationTest ;
     mf:name "1focusMaxLength-dot_pass-bnode-short" ;
-    sht:trait sht:FocusConstraint , sht:LengthFacet , sht:LexicalBNode , sht:LexicalBNode ;
+    sht:trait sht:FocusConstraint , sht:LengthFacet , sht:LexicalBNode ;
     rdfs:comment "<S1> MAXLENGTH 19 { <p1> . } on { _:abcd <p1> <o1> }" ;
     mf:status mf:Approved ;
     mf:action [
@@ -15253,7 +15253,7 @@
 
 <#1focusMaxLength-dot_pass-bnode-equal> a sht:ValidationTest ;
     mf:name "1focusMaxLength-dot_pass-bnode-equal" ;
-    sht:trait sht:FocusConstraint , sht:LengthFacet , sht:LexicalBNode , sht:LexicalBNode ;
+    sht:trait sht:FocusConstraint , sht:LengthFacet , sht:LexicalBNode ;
     rdfs:comment "<S1> MAXLENGTH 19 { <p1> . } on { _:abcdefghijklmnopqrs <p1> <o1> }" ;
     mf:status mf:Approved ;
     mf:action [
@@ -16147,7 +16147,7 @@
 
 <#start2RefS1-IstartS2> a sht:ValidationTest ;
     mf:name "start2RefS1-IstartS2" ;
-    sht:trait sht:Import, sht:Start ;
+    sht:trait sht:Import , sht:Start ;
     rdfs:comment "I2 start=@<S1> <S1> { <p1> @<S2> } | <S2> { <p2> . } on { <s1> <p1> <n2> . <n2> <p2> \"X\" }" ;
     mf:status mf:Proposed ;
     mf:action [
@@ -16160,7 +16160,7 @@
 
 <#start2RefS2-IstartS1> a sht:ValidationTest ;
     mf:name "start2RefS2-IstartS1" ;
-    sht:trait sht:Import, sht:Start ;
+    sht:trait sht:Import , sht:Start ;
     rdfs:comment "I2 start=@<S2> <S2> { <p2> @<S1> } | <S1> { <p1> . } on { <s1> <p2> <n2> . <n2> <p1> \"X\" }" ;
     mf:status mf:Proposed ;
     mf:action [
@@ -16203,7 +16203,7 @@
 
 <#1valExprRefbnode-IV1_fail-lit-short> a sht:ValidationFailure ;
     mf:name "1valExprRefbnode-IV1_fail-lit-short" ;
-    sht:trait sht:ValueReference , sht:LengthFacet , sht:Import ;
+    sht:trait sht:BNodeShapeLabel , sht:CrossFileBNodeShapeLabel , sht:ValueReference , sht:LengthFacet , sht:Import ;
     rdfs:comment "_:vc1 = LITERAL MINLENGTH 5 <S1> { <p1> _:vc1 } on { <s1> <p1> \"abcd\" }" ;
     mf:status mf:Approved ;
     mf:action [
@@ -16216,7 +16216,7 @@
 
 <#1valExprRefbnode-IV1_pass-lit-equal> a sht:ValidationTest ;
     mf:name "1valExprRefbnode-IV1_pass-lit-equal" ;
-    sht:trait sht:ValueReference , sht:LengthFacet , sht:Import ;
+    sht:trait sht:BNodeShapeLabel , sht:CrossFileBNodeShapeLabel , sht:ValueReference , sht:LengthFacet , sht:Import ;
     rdfs:comment "_:vc1 = LITERAL MINLENGTH 5 <S1> { <p1> _:vc1 } on { <s1> <p1> \"abcde\" }" ;
     mf:status mf:Approved ;
     mf:action [
