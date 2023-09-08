@@ -1,0 +1,25 @@
+BASE <http://a.example/>
+
+<pass-bottom> <p>
+  "G0A", "G0-0A", "G0-1A", "BOTTOMA" .
+
+<no-G0> <p>
+  "G0-0A", "G0-1A", "BOTTOMA" .
+
+<no-G0-0> <p>
+  "G0A", "G0-1A", "BOTTOMA" .
+
+<no-G0-1> <p>
+  "G0A", "G0-0A", "BOTTOMA" .
+
+<no_BOTTOM> <p>
+  "G0A", "G0-0A", "G0-1A" .
+
+<two-G0s> <p>
+  "G0A", "G0B", "G0-0A", "G0-1A", "BOTTOMA" .
+
+<two-G0-0s> <p>
+  "G0A", "G0-0A", "G0-0B", "G0-1A", "BOTTOMA" .
+
+<two-BOTTOMS> <p>
+  "G0A", "G0-0A", "G0-1A", "BOTTOMA", "BOTTOMB" .

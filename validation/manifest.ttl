@@ -1356,6 +1356,24 @@
         <#vitals-RESTRICTS-fail_sit-ReclinedBP>
         <#vitals-RESTRICTS-pass_sit-Posture>
         <#vitals-RESTRICTS-fail_sit-Reclined>
+
+###  ExtendsDiamond
+        <#extends-closed-diamond_pass-bottom>
+        <#extends-closed-diamond_fail-no-G0>
+        <#extends-closed-diamond_fail-no-G0-0>
+        <#extends-closed-diamond_fail-no-G0-1>
+        <#extends-closed-diamond_fail-no_BOTTOM>
+        <#extends-closed-diamond_fail-two-G0s>
+        <#extends-closed-diamond_fail-two-G0-0s>
+        <#extends-closed-diamond_fail-two-BOTTOMS>
+        <#extends-closed-3diamond-split_pass-bottom>
+        <#extends-closed-3diamond-split_fail-no-G0-0>
+        <#extends-closed-3diamond-split_fail-no-G0-0-0>
+        <#extends-closed-3diamond-split_fail-no-G0_0-0>
+        <#extends-closed-3diamond-split_fail-no_BOTTOM>
+        <#extends-closed-3diamond-split_fail-two-G0s>
+        <#extends-closed-3diamond-split_fail-two-G0-0s>
+        <#extends-closed-3diamond-split_fail-two-BOTTOMS>
     ) .
 
 # definitions
@@ -17254,6 +17272,234 @@
     ] ;
     .
 
+### Diamond {
+
+# <pass-bottom>@<BOTTOM>,
+# <no-G0>@!<BOTTOM>,
+# <no-G0-0>@!<BOTTOM>,
+# <no-G0-1>@!<BOTTOM>,
+# <no_BOTTOM>@!<BOTTOM>,
+# <two-G0s>@!<BOTTOM>,
+# <two-G0-0s>@!<BOTTOM>,
+# <two-BOTTOMS>@!<BOTTOM>
+<#extends-closed-diamond_pass-bottom> a sht:ValidationTest ;
+    mf:name "extends-closed-diamond_pass-bottom" ;
+    sht:trait sht:Extends ;
+    rdfs:comment '<pass-bottom> <p> "G0A", "G0-0A", "G0-0-0A", "G0_0-0A", "BOTTOMA" \\ <BOTTOM> E @<G0_0-0> E @<G0-0-0> E @<G0-0> E @<G0>' ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/extends-closed-3diamond-split.shex> ;
+        sht:shape <http://a.example/BOTTOM> ;
+        sht:data <extends-closed-3diamond-split.ttl> ;
+        sht:focus <http://a.example/pass-bottom> ;
+    ] ;
+    .
+
+<#extends-closed-diamond_fail-no-G0> a sht:ValidationFailure ;
+    mf:name "extends-closed-diamond_fail-no-G0" ;
+    sht:trait sht:Extends, sht:ExtendsDiamond ;
+    rdfs:comment '<pass-bottom> <p> "<no-G0> <p> "G0-0A", "G0-1A", "BOTTOMA" . \\ <BOTTOM> E @<G0-0> E @<G0-1> E @<G0>' ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/extends-closed-diamond.shex> ;
+        sht:shape <http://a.example/BOTTOM> ;
+        sht:data <extends-closed-diamond.ttl> ;
+        sht:focus <http://a.example/no-G0> ;
+    ] ;
+    .
+
+<#extends-closed-diamond_fail-no-G0-0> a sht:ValidationFailure ;
+    mf:name "extends-closed-diamond_fail-no-G0-0" ;
+    sht:trait sht:Extends, sht:ExtendsDiamond ;
+    rdfs:comment '<pass-bottom> <p> "<no-G0-0> <p> "G0A", "G0-1A", "BOTTOMA" . \\ <BOTTOM> E @<G0-0> E @<G0-1> E @<G0>' ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/extends-closed-diamond.shex> ;
+        sht:shape <http://a.example/BOTTOM> ;
+        sht:data <extends-closed-diamond.ttl> ;
+        sht:focus <http://a.example/no-G0-0> ;
+    ] ;
+    .
+
+<#extends-closed-diamond_fail-no-G0-1> a sht:ValidationFailure ;
+    mf:name "extends-closed-diamond_fail-no-G0-1" ;
+    sht:trait sht:Extends, sht:ExtendsDiamond ;
+    rdfs:comment '<pass-bottom> <p> "<no-G0-1> <p> "G0A", "G0-0A", "BOTTOMA" . \\ <BOTTOM> E @<G0-0> E @<G0-1> E @<G0>' ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/extends-closed-diamond.shex> ;
+        sht:shape <http://a.example/BOTTOM> ;
+        sht:data <extends-closed-diamond.ttl> ;
+        sht:focus <http://a.example/no-G0-1> ;
+    ] ;
+    .
+
+<#extends-closed-diamond_fail-no_BOTTOM> a sht:ValidationFailure ;
+    mf:name "extends-closed-diamond_fail-no_BOTTOM" ;
+    sht:trait sht:Extends, sht:ExtendsDiamond ;
+    rdfs:comment '<pass-bottom> <p> "<no_BOTTOM> <p> "G0A", "G0-0A", "G0-1A" . \\ <BOTTOM> E @<G0-0> E @<G0-1> E @<G0>' ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/extends-closed-diamond.shex> ;
+        sht:shape <http://a.example/BOTTOM> ;
+        sht:data <extends-closed-diamond.ttl> ;
+        sht:focus <http://a.example/no_BOTTOM> ;
+    ] ;
+    .
+
+<#extends-closed-diamond_fail-two-G0s> a sht:ValidationFailure ;
+    mf:name "extends-closed-diamond_fail-two-G0s" ;
+    sht:trait sht:Extends, sht:ExtendsDiamond ;
+    rdfs:comment '<pass-bottom> <p> "<two-G0s> <p> "G0A", "G0B", "G0-0A", "G0-1A", "BOTTOMA" . \\ <BOTTOM> E @<G0-0> E @<G0-1> E @<G0>' ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/extends-closed-diamond.shex> ;
+        sht:shape <http://a.example/BOTTOM> ;
+        sht:data <extends-closed-diamond.ttl> ;
+        sht:focus <http://a.example/two-G0s> ;
+    ] ;
+    .
+
+<#extends-closed-diamond_fail-two-G0-0s> a sht:ValidationFailure ;
+    mf:name "extends-closed-diamond_fail-two-G0-0s" ;
+    sht:trait sht:Extends, sht:ExtendsDiamond ;
+    rdfs:comment '<pass-bottom> <p> "<two-G0-0s> <p> "G0A", "G0-0A", "G0-0B", "G0-1A", "BOTTOMA" . \\ <BOTTOM> E @<G0-0> E @<G0-1> E @<G0>' ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/extends-closed-diamond.shex> ;
+        sht:shape <http://a.example/BOTTOM> ;
+        sht:data <extends-closed-diamond.ttl> ;
+        sht:focus <http://a.example/two-G0-0s> ;
+    ] ;
+    .
+
+<#extends-closed-diamond_fail-two-BOTTOMS> a sht:ValidationFailure ;
+    mf:name "extends-closed-diamond_fail-two-BOTTOMS" ;
+    sht:trait sht:Extends, sht:ExtendsDiamond ;
+    rdfs:comment '<pass-bottom> <p> "<two-BOTTOMS> <p> "G0A", "G0-0A", "G0-1A", "BOTTOMA", "BOTTOMB" . \\ <BOTTOM> E @<G0-0> E @<G0-1> E @<G0>' ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/extends-closed-diamond.shex> ;
+        sht:shape <http://a.example/BOTTOM> ;
+        sht:data <extends-closed-diamond.ttl> ;
+        sht:focus <http://a.example/two-BOTTOMS> ;
+    ] ;
+    .
+
+# <pass-bottom>@<BOTTOM>,
+# <no-G0>@!<BOTTOM>,
+# <no-G0-0>@!<BOTTOM>,
+# <no-G0-0-0>@!<BOTTOM>,
+# <no-G0_0-0>@!<BOTTOM>,
+# <no_BOTTOM>@!<BOTTOM>,
+# <two-G0s>@!<BOTTOM>,
+# <two-G0-0s>@!<BOTTOM>,
+# <two-BOTTOMS>@!<BOTTOM>
+<#extends-closed-3diamond-split_pass-bottom> a sht:ValidationTest ;
+    mf:name "extends-closed-3diamond-split_pass-bottom" ;
+    sht:trait sht:Extends ;
+    rdfs:comment '<pass-bottom> <p> "G0A", "G0-0A", "G0-0-0A", "G0_0-0A", "BOTTOMA" \\ <BOTTOM> E @<G0_0-0> E @<G0-0-0> E @<G0-0> E @<G0>' ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/extends-closed-3diamond-split.shex> ;
+        sht:shape <http://a.example/BOTTOM> ;
+        sht:data <extends-closed-3diamond-split.ttl> ;
+        sht:focus <http://a.example/pass-bottom> ;
+    ] ;
+    .
+
+<#extends-closed-3diamond-split_fail-no-G0-0> a sht:ValidationFailure ;
+    mf:name "extends-closed-3diamond-split_fail-no-G0-0" ;
+    sht:trait sht:Extends, sht:ExtendsDiamond ;
+    rdfs:comment '<pass-bottom> <p> "<no-G0-0> <p> "G0A", "G0-0-0A", "G0_0-0A", "BOTTOMA" . \\ <BOTTOM> E @<G0_0-0> E @<G0-0-0> E @<G0-0> E @<G0>' ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/extends-closed-3diamond-split.shex> ;
+        sht:shape <http://a.example/BOTTOM> ;
+        sht:data <extends-closed-3diamond-split.ttl> ;
+        sht:focus <http://a.example/no-G0-0> ;
+    ] ;
+    .
+
+<#extends-closed-3diamond-split_fail-no-G0-0-0> a sht:ValidationFailure ;
+    mf:name "extends-closed-3diamond-split_fail-no-G0-0-0" ;
+    sht:trait sht:Extends, sht:ExtendsDiamond ;
+    rdfs:comment '<pass-bottom> <p> "<no-G0-0-0> <p> "G0A", "G0-0A", "G0_0-0A", "BOTTOMA" . \\ <BOTTOM> E @<G0_0-0> E @<G0-0-0> E @<G0-0> E @<G0>' ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/extends-closed-3diamond-split.shex> ;
+        sht:shape <http://a.example/BOTTOM> ;
+        sht:data <extends-closed-3diamond-split.ttl> ;
+        sht:focus <http://a.example/no-G0-0-0> ;
+    ] ;
+    .
+
+<#extends-closed-3diamond-split_fail-no-G0_0-0> a sht:ValidationFailure ;
+    mf:name "extends-closed-3diamond-split_fail-no-G0_0-0" ;
+    sht:trait sht:Extends, sht:ExtendsDiamond ;
+    rdfs:comment '<pass-bottom> <p> "<no-G0_0-0> <p> "G0A", "G0-0A", "G0-0-0A", "BOTTOMA" . \\ <BOTTOM> E @<G0_0-0> E @<G0-0-0> E @<G0-0> E @<G0>' ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/extends-closed-3diamond-split.shex> ;
+        sht:shape <http://a.example/BOTTOM> ;
+        sht:data <extends-closed-3diamond-split.ttl> ;
+        sht:focus <http://a.example/no-G0_0-0> ;
+    ] ;
+    .
+
+<#extends-closed-3diamond-split_fail-no_BOTTOM> a sht:ValidationFailure ;
+    mf:name "extends-closed-3diamond-split_fail-no_BOTTOM" ;
+    sht:trait sht:Extends, sht:ExtendsDiamond ;
+    rdfs:comment '<pass-bottom> <p> "<no_BOTTOM> <p> "G0A", "G0-0A", "G0-0-0A", "G0_0-0A" . \\ <BOTTOM> E @<G0_0-0> E @<G0-0-0> E @<G0-0> E @<G0>' ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/extends-closed-3diamond-split.shex> ;
+        sht:shape <http://a.example/BOTTOM> ;
+        sht:data <extends-closed-3diamond-split.ttl> ;
+        sht:focus <http://a.example/no_BOTTOM> ;
+    ] ;
+    .
+
+<#extends-closed-3diamond-split_fail-two-G0s> a sht:ValidationFailure ;
+    mf:name "extends-closed-3diamond-split_fail-two-G0s" ;
+    sht:trait sht:Extends, sht:ExtendsDiamond ;
+    rdfs:comment '<pass-bottom> <p> "<two-G0s> <p> "G0A", "G0B", "G0-0A", "G0-0-0A", "G0_0-0A", "BOTTOMA" . \\ <BOTTOM> E @<G0_0-0> E @<G0-0-0> E @<G0-0> E @<G0>' ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/extends-closed-3diamond-split.shex> ;
+        sht:shape <http://a.example/BOTTOM> ;
+        sht:data <extends-closed-3diamond-split.ttl> ;
+        sht:focus <http://a.example/two-G0s> ;
+    ] ;
+    .
+
+<#extends-closed-3diamond-split_fail-two-G0-0s> a sht:ValidationFailure ;
+    mf:name "extends-closed-3diamond-split_fail-two-G0-0s" ;
+    sht:trait sht:Extends, sht:ExtendsDiamond ;
+    rdfs:comment '<pass-bottom> <p> "<two-G0-0s> <p> "G0A", "G0-0A", "G0-0B", "G0-0-0A", "G0_0-0A", "BOTTOMA" . \\ <BOTTOM> E @<G0_0-0> E @<G0-0-0> E @<G0-0> E @<G0>' ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/extends-closed-3diamond-split.shex> ;
+        sht:shape <http://a.example/BOTTOM> ;
+        sht:data <extends-closed-3diamond-split.ttl> ;
+        sht:focus <http://a.example/two-G0-0s> ;
+    ] ;
+    .
+
+<#extends-closed-3diamond-split_fail-two-BOTTOMS> a sht:ValidationFailure ;
+    mf:name "extends-closed-3diamond-split_fail-two-BOTTOMS" ;
+    sht:trait sht:Extends, sht:ExtendsDiamond ;
+    rdfs:comment '<pass-bottom> <p> "<two-BOTTOMS> <p> "G0A", "G0-0A", "G0-0-0A", "G0_0-0A", "BOTTOMA", "BOTTOMB" . \\ <BOTTOM> E @<G0_0-0> E @<G0-0-0> E @<G0-0> E @<G0>' ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/extends-closed-3diamond-split.shex> ;
+        sht:shape <http://a.example/BOTTOM> ;
+        sht:data <extends-closed-3diamond-split.ttl> ;
+        sht:focus <http://a.example/two-BOTTOMS> ;
+    ] ;
+    .
+
+### } Diamond
 ## } Extends
 ## Abstract {
 
