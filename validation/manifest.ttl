@@ -14420,7 +14420,7 @@
     mf:extensionResults (
       [
         mf:extension <http://shex.io/extensions/Test/> ;
-        mf:prints "\"%{\\\\%}\""
+        mf:prints "%{\\\\%}"
       ]
     )
     .
@@ -14439,7 +14439,7 @@
     mf:extensionResults (
       [
         mf:extension <http://shex.io/extensions/Test/> ;
-        mf:prints "\"shape action\""
+        mf:prints "shape action"
       ]
     )
     .
@@ -14459,7 +14459,7 @@
     mf:extensionResults (
       [
         mf:extension <http://shex.io/extensions/Test/> ;
-        mf:prints "\"shape action\""
+        mf:prints "shape action"
       ]
     )
     .
@@ -14478,7 +14478,7 @@
     mf:extensionResults (
       [
         mf:extension <http://shex.io/extensions/Test/> ;
-        mf:prints "\"group semAct\""
+        mf:prints "group semAct"
       ]
     )
     .
@@ -14497,7 +14497,7 @@
     mf:extensionResults (
       [
         mf:extension <http://shex.io/extensions/Test/> ;
-        mf:prints "\"startAct\""
+        mf:prints "startAct"
       ]
     )
     .
@@ -14517,7 +14517,7 @@
     mf:extensionResults (
       [
         mf:extension <http://shex.io/extensions/Test/> ;
-        mf:prints "\"startAct\""
+        mf:prints "startAct"
       ]
     )
     .
@@ -14536,7 +14536,7 @@
     mf:extensionResults (
       [
         mf:extension <http://shex.io/extensions/Test/> ;
-        mf:prints "\"startAct\""
+        mf:prints "startAct"
       ]
     )
     .
@@ -14555,7 +14555,7 @@
     mf:extensionResults (
       [
         mf:extension <http://shex.io/extensions/Test/> ;
-        mf:prints "\"startAct\""
+        mf:prints "startAct"
       ]
     )
     .
@@ -14574,7 +14574,7 @@
     mf:extensionResults (
       [
         mf:extension <http://shex.io/extensions/Test/> ;
-        mf:prints "\"startAct\""
+        mf:prints "startAct"
       ]
     )
     .
@@ -14593,15 +14593,15 @@
     mf:extensionResults (
       [
         mf:extension <http://shex.io/extensions/Test/> ;
-        mf:prints "\"startAct 1\""
+        mf:prints "startAct 1"
       ]
       [
         mf:extension <http://shex.io/extensions/Test/> ;
-        mf:prints "\"startAct 2\""
+        mf:prints "startAct 2"
       ]
       [
         mf:extension <http://shex.io/extensions/Test/> ;
-        mf:prints "\"startAct 3\""
+        mf:prints "startAct 3"
       ]
     )
     .
@@ -14635,11 +14635,11 @@
     mf:extensionResults (
       [
         mf:extension <http://shex.io/extensions/Test/> ;
-        mf:prints "\"group semAct 1\""
+        mf:prints "group semAct 1"
       ]
       [
         mf:extension <http://shex.io/extensions/Test/> ;
-        mf:prints "\"group semAct 2\""
+        mf:prints "group semAct 2"
       ]
     )
     .
