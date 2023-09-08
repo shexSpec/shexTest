@@ -20385,6 +20385,292 @@
           ],
           "comment": "@@vitals-RESTRICTS-53",
           "status": "mf:proposed"
+        },
+        {
+          "@id": "#extends-closed-diamond_pass-bottom",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/extends-closed-3diamond-split.shex",
+            "shape": "http://a.example/BOTTOM",
+            "data": "extends-closed-3diamond-split.ttl",
+            "focus": "http://a.example/pass-bottom"
+          },
+          "extensionResults": [],
+          "name": "extends-closed-diamond_pass-bottom",
+          "trait": [
+            "Extends"
+          ],
+          "comment": "<pass-bottom> <p> \"G0A\", \"G0-0A\", \"G0-0-0A\", \"G0_0-0A\", \"BOTTOMA\" \\ <BOTTOM> E @<G0_0-0> E @<G0-0-0> E @<G0-0> E @<G0>",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#extends-closed-diamond_fail-no-G0",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/extends-closed-diamond.shex",
+            "shape": "http://a.example/BOTTOM",
+            "data": "extends-closed-diamond.ttl",
+            "focus": "http://a.example/no-G0"
+          },
+          "extensionResults": [],
+          "name": "extends-closed-diamond_fail-no-G0",
+          "trait": [
+            "Extends",
+            "ExtendsDiamond"
+          ],
+          "comment": "<pass-bottom> <p> \"<no-G0> <p> \"G0-0A\", \"G0-1A\", \"BOTTOMA\" . \\ <BOTTOM> E @<G0-0> E @<G0-1> E @<G0>",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#extends-closed-diamond_fail-no-G0-0",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/extends-closed-diamond.shex",
+            "shape": "http://a.example/BOTTOM",
+            "data": "extends-closed-diamond.ttl",
+            "focus": "http://a.example/no-G0-0"
+          },
+          "extensionResults": [],
+          "name": "extends-closed-diamond_fail-no-G0-0",
+          "trait": [
+            "Extends",
+            "ExtendsDiamond"
+          ],
+          "comment": "<pass-bottom> <p> \"<no-G0-0> <p> \"G0A\", \"G0-1A\", \"BOTTOMA\" . \\ <BOTTOM> E @<G0-0> E @<G0-1> E @<G0>",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#extends-closed-diamond_fail-no-G0-1",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/extends-closed-diamond.shex",
+            "shape": "http://a.example/BOTTOM",
+            "data": "extends-closed-diamond.ttl",
+            "focus": "http://a.example/no-G0-1"
+          },
+          "extensionResults": [],
+          "name": "extends-closed-diamond_fail-no-G0-1",
+          "trait": [
+            "Extends",
+            "ExtendsDiamond"
+          ],
+          "comment": "<pass-bottom> <p> \"<no-G0-1> <p> \"G0A\", \"G0-0A\", \"BOTTOMA\" . \\ <BOTTOM> E @<G0-0> E @<G0-1> E @<G0>",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#extends-closed-diamond_fail-no_BOTTOM",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/extends-closed-diamond.shex",
+            "shape": "http://a.example/BOTTOM",
+            "data": "extends-closed-diamond.ttl",
+            "focus": "http://a.example/no_BOTTOM"
+          },
+          "extensionResults": [],
+          "name": "extends-closed-diamond_fail-no_BOTTOM",
+          "trait": [
+            "Extends",
+            "ExtendsDiamond"
+          ],
+          "comment": "<pass-bottom> <p> \"<no_BOTTOM> <p> \"G0A\", \"G0-0A\", \"G0-1A\" . \\ <BOTTOM> E @<G0-0> E @<G0-1> E @<G0>",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#extends-closed-diamond_fail-two-G0s",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/extends-closed-diamond.shex",
+            "shape": "http://a.example/BOTTOM",
+            "data": "extends-closed-diamond.ttl",
+            "focus": "http://a.example/two-G0s"
+          },
+          "extensionResults": [],
+          "name": "extends-closed-diamond_fail-two-G0s",
+          "trait": [
+            "Extends",
+            "ExtendsDiamond"
+          ],
+          "comment": "<pass-bottom> <p> \"<two-G0s> <p> \"G0A\", \"G0B\", \"G0-0A\", \"G0-1A\", \"BOTTOMA\" . \\ <BOTTOM> E @<G0-0> E @<G0-1> E @<G0>",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#extends-closed-diamond_fail-two-G0-0s",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/extends-closed-diamond.shex",
+            "shape": "http://a.example/BOTTOM",
+            "data": "extends-closed-diamond.ttl",
+            "focus": "http://a.example/two-G0-0s"
+          },
+          "extensionResults": [],
+          "name": "extends-closed-diamond_fail-two-G0-0s",
+          "trait": [
+            "Extends",
+            "ExtendsDiamond"
+          ],
+          "comment": "<pass-bottom> <p> \"<two-G0-0s> <p> \"G0A\", \"G0-0A\", \"G0-0B\", \"G0-1A\", \"BOTTOMA\" . \\ <BOTTOM> E @<G0-0> E @<G0-1> E @<G0>",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#extends-closed-diamond_fail-two-BOTTOMS",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/extends-closed-diamond.shex",
+            "shape": "http://a.example/BOTTOM",
+            "data": "extends-closed-diamond.ttl",
+            "focus": "http://a.example/two-BOTTOMS"
+          },
+          "extensionResults": [],
+          "name": "extends-closed-diamond_fail-two-BOTTOMS",
+          "trait": [
+            "Extends",
+            "ExtendsDiamond"
+          ],
+          "comment": "<pass-bottom> <p> \"<two-BOTTOMS> <p> \"G0A\", \"G0-0A\", \"G0-1A\", \"BOTTOMA\", \"BOTTOMB\" . \\ <BOTTOM> E @<G0-0> E @<G0-1> E @<G0>",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#extends-closed-3diamond-split_pass-bottom",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/extends-closed-3diamond-split.shex",
+            "shape": "http://a.example/BOTTOM",
+            "data": "extends-closed-3diamond-split.ttl",
+            "focus": "http://a.example/pass-bottom"
+          },
+          "extensionResults": [],
+          "name": "extends-closed-3diamond-split_pass-bottom",
+          "trait": [
+            "Extends"
+          ],
+          "comment": "<pass-bottom> <p> \"G0A\", \"G0-0A\", \"G0-0-0A\", \"G0_0-0A\", \"BOTTOMA\" \\ <BOTTOM> E @<G0_0-0> E @<G0-0-0> E @<G0-0> E @<G0>",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#extends-closed-3diamond-split_fail-no-G0-0",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/extends-closed-3diamond-split.shex",
+            "shape": "http://a.example/BOTTOM",
+            "data": "extends-closed-3diamond-split.ttl",
+            "focus": "http://a.example/no-G0-0"
+          },
+          "extensionResults": [],
+          "name": "extends-closed-3diamond-split_fail-no-G0-0",
+          "trait": [
+            "Extends",
+            "ExtendsDiamond"
+          ],
+          "comment": "<pass-bottom> <p> \"<no-G0-0> <p> \"G0A\", \"G0-0-0A\", \"G0_0-0A\", \"BOTTOMA\" . \\ <BOTTOM> E @<G0_0-0> E @<G0-0-0> E @<G0-0> E @<G0>",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#extends-closed-3diamond-split_fail-no-G0-0-0",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/extends-closed-3diamond-split.shex",
+            "shape": "http://a.example/BOTTOM",
+            "data": "extends-closed-3diamond-split.ttl",
+            "focus": "http://a.example/no-G0-0-0"
+          },
+          "extensionResults": [],
+          "name": "extends-closed-3diamond-split_fail-no-G0-0-0",
+          "trait": [
+            "Extends",
+            "ExtendsDiamond"
+          ],
+          "comment": "<pass-bottom> <p> \"<no-G0-0-0> <p> \"G0A\", \"G0-0A\", \"G0_0-0A\", \"BOTTOMA\" . \\ <BOTTOM> E @<G0_0-0> E @<G0-0-0> E @<G0-0> E @<G0>",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#extends-closed-3diamond-split_fail-no-G0_0-0",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/extends-closed-3diamond-split.shex",
+            "shape": "http://a.example/BOTTOM",
+            "data": "extends-closed-3diamond-split.ttl",
+            "focus": "http://a.example/no-G0_0-0"
+          },
+          "extensionResults": [],
+          "name": "extends-closed-3diamond-split_fail-no-G0_0-0",
+          "trait": [
+            "Extends",
+            "ExtendsDiamond"
+          ],
+          "comment": "<pass-bottom> <p> \"<no-G0_0-0> <p> \"G0A\", \"G0-0A\", \"G0-0-0A\", \"BOTTOMA\" . \\ <BOTTOM> E @<G0_0-0> E @<G0-0-0> E @<G0-0> E @<G0>",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#extends-closed-3diamond-split_fail-no_BOTTOM",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/extends-closed-3diamond-split.shex",
+            "shape": "http://a.example/BOTTOM",
+            "data": "extends-closed-3diamond-split.ttl",
+            "focus": "http://a.example/no_BOTTOM"
+          },
+          "extensionResults": [],
+          "name": "extends-closed-3diamond-split_fail-no_BOTTOM",
+          "trait": [
+            "Extends",
+            "ExtendsDiamond"
+          ],
+          "comment": "<pass-bottom> <p> \"<no_BOTTOM> <p> \"G0A\", \"G0-0A\", \"G0-0-0A\", \"G0_0-0A\" . \\ <BOTTOM> E @<G0_0-0> E @<G0-0-0> E @<G0-0> E @<G0>",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#extends-closed-3diamond-split_fail-two-G0s",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/extends-closed-3diamond-split.shex",
+            "shape": "http://a.example/BOTTOM",
+            "data": "extends-closed-3diamond-split.ttl",
+            "focus": "http://a.example/two-G0s"
+          },
+          "extensionResults": [],
+          "name": "extends-closed-3diamond-split_fail-two-G0s",
+          "trait": [
+            "Extends",
+            "ExtendsDiamond"
+          ],
+          "comment": "<pass-bottom> <p> \"<two-G0s> <p> \"G0A\", \"G0B\", \"G0-0A\", \"G0-0-0A\", \"G0_0-0A\", \"BOTTOMA\" . \\ <BOTTOM> E @<G0_0-0> E @<G0-0-0> E @<G0-0> E @<G0>",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#extends-closed-3diamond-split_fail-two-G0-0s",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/extends-closed-3diamond-split.shex",
+            "shape": "http://a.example/BOTTOM",
+            "data": "extends-closed-3diamond-split.ttl",
+            "focus": "http://a.example/two-G0-0s"
+          },
+          "extensionResults": [],
+          "name": "extends-closed-3diamond-split_fail-two-G0-0s",
+          "trait": [
+            "Extends",
+            "ExtendsDiamond"
+          ],
+          "comment": "<pass-bottom> <p> \"<two-G0-0s> <p> \"G0A\", \"G0-0A\", \"G0-0B\", \"G0-0-0A\", \"G0_0-0A\", \"BOTTOMA\" . \\ <BOTTOM> E @<G0_0-0> E @<G0-0-0> E @<G0-0> E @<G0>",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#extends-closed-3diamond-split_fail-two-BOTTOMS",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/extends-closed-3diamond-split.shex",
+            "shape": "http://a.example/BOTTOM",
+            "data": "extends-closed-3diamond-split.ttl",
+            "focus": "http://a.example/two-BOTTOMS"
+          },
+          "extensionResults": [],
+          "name": "extends-closed-3diamond-split_fail-two-BOTTOMS",
+          "trait": [
+            "Extends",
+            "ExtendsDiamond"
+          ],
+          "comment": "<pass-bottom> <p> \"<two-BOTTOMS> <p> \"G0A\", \"G0-0A\", \"G0-0-0A\", \"G0_0-0A\", \"BOTTOMA\", \"BOTTOMB\" . \\ <BOTTOM> E @<G0_0-0> E @<G0-0-0> E @<G0-0> E @<G0>",
+          "status": "mf:proposed"
         }
       ]
     }
