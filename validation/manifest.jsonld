@@ -20390,9 +20390,9 @@
           "@id": "#extends-closed-diamond_pass-bottom",
           "@type": "sht:ValidationTest",
           "action": {
-            "schema": "../schemas/extends-closed-3diamond-split.shex",
+            "schema": "../schemas/extends-closed-diamond.shex",
             "shape": "http://a.example/BOTTOM",
-            "data": "extends-closed-3diamond-split.ttl",
+            "data": "extends-closed-diamond.ttl",
             "focus": "http://a.example/pass-bottom"
           },
           "extensionResults": [],

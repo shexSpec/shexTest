@@ -17272,7 +17272,7 @@
     ] ;
     .
 
-### Diamond {
+### ExtendsDiamond {
 
 # <pass-bottom>@<BOTTOM>,
 # <no-G0>@!<BOTTOM>,
@@ -17288,9 +17288,9 @@
     rdfs:comment '<pass-bottom> <p> "G0A", "G0-0A", "G0-0-0A", "G0_0-0A", "BOTTOMA" \\ <BOTTOM> E @<G0_0-0> E @<G0-0-0> E @<G0-0> E @<G0>' ;
     mf:status mf:proposed ;
     mf:action [
-        sht:schema <../schemas/extends-closed-3diamond-split.shex> ;
+        sht:schema <../schemas/extends-closed-diamond.shex> ;
         sht:shape <http://a.example/BOTTOM> ;
-        sht:data <extends-closed-3diamond-split.ttl> ;
+        sht:data <extends-closed-diamond.ttl> ;
         sht:focus <http://a.example/pass-bottom> ;
     ] ;
     .
@@ -17499,7 +17499,7 @@
     ] ;
     .
 
-### } Diamond
+### } ExtendsDiamond
 ## } Extends
 ## Abstract {
 
