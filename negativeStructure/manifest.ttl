@@ -136,9 +136,9 @@
   mf:comment ":S ( (NOT @:T) AND (NOT @:U) ) :T { :a @:S } :U { :b . }" ;
   mf:status mf:Approved ;
   sx:shex <TwoNegation.shex> ;
-  mf:startRow 7 ;
+  mf:startRow 8 ;
   mf:startColumn 6 ;
-  mf:endRow 8 ;
+  mf:endRow 9 ;
   mf:endColumn 2 ;
   .
 
@@ -148,9 +148,9 @@
   mf:comment ":S ( (NOT @:T) AND @:U ) :T { :a NOT @:S } :U { :b @:S }" ;
   mf:status mf:Proposed ;
   sx:shex <TwoNegation2.shex> ;
-  mf:startRow 7 ;
+  mf:startRow 8 ;
   mf:startColumn 6 ;
-  mf:endRow 8 ;
+  mf:endRow 9 ;
   mf:endColumn 2 ;
   .
 

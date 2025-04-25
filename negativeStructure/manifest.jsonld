@@ -92,6 +92,9 @@
           "@id": "#Cycle1Negation1",
           "@type": "sht:NegativeStructure",
           "name": "Cycle1Negation1",
+          "trait": [
+            "FailedStratifiedNegation"
+          ],
           "status": "mf:Approved",
           "shex": "Cycle1Negation1.shex",
           "startRow": 6,
@@ -103,6 +106,9 @@
           "@id": "#Cycle1Negation2",
           "@type": "sht:NegativeStructure",
           "name": "Cycle1Negation2",
+          "trait": [
+            "FailedStratifiedNegation"
+          ],
           "status": "mf:Approved",
           "shex": "Cycle1Negation2.shex",
           "startRow": 6,
@@ -114,6 +120,9 @@
           "@id": "#Cycle1Negation3",
           "@type": "sht:NegativeStructure",
           "name": "Cycle1Negation3",
+          "trait": [
+            "FailedStratifiedNegation"
+          ],
           "status": "mf:Approved",
           "shex": "Cycle1Negation3.shex",
           "startRow": 6,
@@ -125,28 +134,37 @@
           "@id": "#TwoNegation",
           "@type": "sht:NegativeStructure",
           "name": "TwoNegation",
+          "trait": [
+            "FailedStratifiedNegation"
+          ],
           "status": "mf:Approved",
           "shex": "TwoNegation.shex",
-          "startRow": 7,
+          "startRow": 8,
           "startColumn": 6,
-          "endRow": 8,
+          "endRow": 9,
           "endColumn": 2
         },
         {
           "@id": "#TwoNegation2",
           "@type": "sht:NegativeStructure",
           "name": "TwoNegation2",
+          "trait": [
+            "FailedStratifiedNegation"
+          ],
           "status": "mf:Proposed",
           "shex": "TwoNegation2.shex",
-          "startRow": 7,
+          "startRow": 8,
           "startColumn": 6,
-          "endRow": 8,
+          "endRow": 9,
           "endColumn": 2
         },
         {
           "@id": "#Cycle2Negation",
           "@type": "sht:NegativeStructure",
           "name": "Cycle2Negation",
+          "trait": [
+            "FailedStratifiedNegation"
+          ],
           "status": "mf:Approved",
           "shex": "Cycle2Negation.shex",
           "startRow": 5,
@@ -158,6 +176,9 @@
           "@id": "#Cycle2Extra",
           "@type": "sht:NegativeStructure",
           "name": "Cycle2Extra",
+          "trait": [
+            "FailedStratifiedNegation"
+          ],
           "status": "mf:Approved",
           "shex": "Cycle2Extra.shex",
           "startRow": 5,
