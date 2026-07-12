@@ -1,0 +1,120 @@
+{
+  "type": "Schema",
+  "shapes": [
+    {
+      "id": "http://a.example/G0",
+      "type": "ShapeDecl",
+      "shapeExpr": {
+        "type": "Shape",
+        "expression": {
+          "type": "TripleConstraint",
+          "predicate": "http://a.example/p",
+          "valueExpr": {
+            "type": "NodeConstraint",
+            "values": [
+              {
+                "value": "G0A"
+              },
+              {
+                "value": "G0B"
+              },
+              {
+                "value": "G0C"
+              }
+            ]
+          }
+        },
+        "closed": true
+      }
+    },
+    {
+      "id": "http://a.example/G0-0",
+      "type": "ShapeDecl",
+      "shapeExpr": {
+        "type": "Shape",
+        "expression": {
+          "type": "TripleConstraint",
+          "predicate": "http://a.example/p",
+          "valueExpr": {
+            "type": "NodeConstraint",
+            "values": [
+              {
+                "value": "G0-0A"
+              },
+              {
+                "value": "G0-0B"
+              },
+              {
+                "value": "G0-0C"
+              }
+            ]
+          }
+        },
+        "extends": [
+          "http://a.example/G0"
+        ],
+        "closed": true
+      }
+    },
+    {
+      "id": "http://a.example/G0-1",
+      "type": "ShapeDecl",
+      "shapeExpr": {
+        "type": "Shape",
+        "expression": {
+          "type": "TripleConstraint",
+          "predicate": "http://a.example/p",
+          "valueExpr": {
+            "type": "NodeConstraint",
+            "values": [
+              {
+                "value": "G0-1A"
+              },
+              {
+                "value": "G0-1B"
+              },
+              {
+                "value": "G0-1C"
+              }
+            ]
+          }
+        },
+        "extends": [
+          "http://a.example/G0"
+        ],
+        "closed": true
+      }
+    },
+    {
+      "id": "http://a.example/BOTTOM",
+      "type": "ShapeDecl",
+      "shapeExpr": {
+        "type": "Shape",
+        "expression": {
+          "type": "TripleConstraint",
+          "predicate": "http://a.example/p",
+          "valueExpr": {
+            "type": "NodeConstraint",
+            "values": [
+              {
+                "value": "BOTTOMA"
+              },
+              {
+                "value": "BOTTOMB"
+              },
+              {
+                "value": "BOTTOMC"
+              }
+            ]
+          }
+        },
+        "extends": [
+          "http://a.example/G0-0",
+          "http://a.example/G0-1"
+        ],
+        "closed": true
+      }
+    }
+  ],
+  "@context": "http://www.w3.org/ns/shex.jsonld"
+}

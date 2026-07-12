@@ -1,0 +1,134 @@
+{
+  "type": "Schema",
+  "shapes": [
+    {
+      "id": "http://a.example/IssueShape",
+      "type": "ShapeDecl",
+      "shapeExpr": {
+        "type": "Shape",
+        "expression": {
+          "type": "EachOf",
+          "expressions": [
+            {
+              "type": "TripleConstraint",
+              "predicate": "http://ex.example/#reportedBy",
+              "valueExpr": "http://a.example/PersonShape"
+            },
+            {
+              "type": "TripleConstraint",
+              "predicate": "http://ex.example/#reproducedBy",
+              "valueExpr": "http://a.example/EmployeeShape",
+              "min": 0,
+              "max": 1
+            }
+          ]
+        },
+        "closed": true
+      }
+    },
+    {
+      "id": "http://a.example/PersonShape",
+      "type": "ShapeDecl",
+      "abstract": true,
+      "shapeExpr": {
+        "type": "Shape",
+        "expression": {
+          "type": "EachOf",
+          "expressions": [
+            {
+              "type": "OneOf",
+              "expressions": [
+                {
+                  "type": "TripleConstraint",
+                  "predicate": "http://xmlns.com/foaf/name",
+                  "valueExpr": {
+                    "type": "NodeConstraint",
+                    "datatype": "http://www.w3.org/2001/XMLSchema#string"
+                  }
+                },
+                {
+                  "type": "EachOf",
+                  "expressions": [
+                    {
+                      "type": "TripleConstraint",
+                      "predicate": "http://xmlns.com/foaf/givenName",
+                      "valueExpr": {
+                        "type": "NodeConstraint",
+                        "datatype": "http://www.w3.org/2001/XMLSchema#string"
+                      },
+                      "min": 1,
+                      "max": -1
+                    },
+                    {
+                      "type": "TripleConstraint",
+                      "predicate": "http://xmlns.com/foaf/familyName",
+                      "valueExpr": {
+                        "type": "NodeConstraint",
+                        "datatype": "http://www.w3.org/2001/XMLSchema#string"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "TripleConstraint",
+              "predicate": "http://xmlns.com/foaf/mbox",
+              "valueExpr": {
+                "type": "NodeConstraint",
+                "nodeKind": "iri"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "http://a.example/UserShape",
+      "type": "ShapeDecl",
+      "shapeExpr": {
+        "type": "Shape",
+        "expression": {
+          "type": "TripleConstraint",
+          "predicate": "http://ex.example/#representative",
+          "valueExpr": "http://a.example/EmployeeShape"
+        },
+        "extends": [
+          "http://a.example/PersonShape"
+        ],
+        "closed": true
+      }
+    },
+    {
+      "id": "http://a.example/RepShape",
+      "type": "ShapeDecl",
+      "abstract": true,
+      "shapeExpr": {
+        "type": "Shape",
+        "expression": {
+          "type": "TripleConstraint",
+          "predicate": "http://xmlns.com/foaf/phone",
+          "valueExpr": {
+            "type": "NodeConstraint",
+            "nodeKind": "iri"
+          },
+          "min": 1,
+          "max": -1
+        }
+      }
+    },
+    {
+      "id": "http://a.example/EmployeeShape",
+      "type": "ShapeDecl",
+      "shapeExpr": {
+        "type": "Shape",
+        "extends": [
+          "http://a.example/PersonShape",
+          "http://a.example/RepShape"
+        ],
+        "closed": true
+      }
+    }
+  ],
+  "@context": "http://www.w3.org/ns/shex.jsonld"
+}

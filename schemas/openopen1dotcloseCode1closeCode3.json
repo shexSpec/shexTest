@@ -1,0 +1,34 @@
+{
+  "type": "Schema",
+  "shapes": [
+    {
+      "id": "http://a.example/S1",
+      "type": "ShapeDecl",
+      "shapeExpr": {
+        "type": "Shape",
+        "expression": {
+          "type": "TripleConstraint",
+          "predicate": "http://a.example/p1",
+          "semActs": [
+            {
+              "type": "SemAct",
+              "name": "http://shex.io/extensions/Test/",
+              "code": " print(s) "
+            },
+            {
+              "type": "SemAct",
+              "name": "http://shex.io/extensions/Test/",
+              "code": " print(p) "
+            },
+            {
+              "type": "SemAct",
+              "name": "http://shex.io/extensions/Test/",
+              "code": " print(o) "
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "@context": "http://www.w3.org/ns/shex.jsonld"
+}
