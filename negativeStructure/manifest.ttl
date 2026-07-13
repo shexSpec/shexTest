@@ -22,6 +22,7 @@
     <#TwoNegation2>
     <#Cycle2Negation>
     <#Cycle2Extra>
+    <#Cycle2ExtendsNegation>
 ) .
 
 <#1MissingRef> a sht:NegativeStructure ;
@@ -176,5 +177,15 @@
   mf:startColumn 6 ;
   mf:endRow 6 ;
   mf:endColumn 2 ;
+  .
+
+<#Cycle2ExtendsNegation> a sht:NegativeStructure ;
+  mf:name "Cycle2ExtendsNegation" ;
+  mf:status mf:Proposed ;
+  sx:shex <Cycle2ExtendsNegation.shex> ;
+  mf:startRow 5 ;
+  mf:startColumn 8 ;
+  mf:endRow 5 ;
+  mf:endColumn 11 ;
   .
 

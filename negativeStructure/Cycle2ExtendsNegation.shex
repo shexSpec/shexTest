@@ -1,0 +1,5 @@
+# Negated circular reference to :S via EXTENDS.
+PREFIX :       <http://example.org/>
+
+:S EXTENDS @:T {}
+:T NOT @:S
