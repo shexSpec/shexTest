@@ -3633,6 +3633,30 @@
           "ttl": "start2RefS1-IstartS2.ttl"
         },
         {
+          "@id": "#start2RefS2",
+          "@type": "sht:RepresentationTest",
+          "name": "start2RefS2",
+          "trait": [
+            "Import"
+          ],
+          "status": "mf:Approved",
+          "shex": "start2RefS2.shex",
+          "json": "start2RefS2.json",
+          "ttl": "start2RefS2.ttl"
+        },
+        {
+          "@id": "#start2RefS1",
+          "@type": "sht:RepresentationTest",
+          "name": "start2RefS1",
+          "trait": [
+            "Import"
+          ],
+          "status": "mf:Approved",
+          "shex": "start2RefS1.shex",
+          "json": "start2RefS1.json",
+          "ttl": "start2RefS1.ttl"
+        },
+        {
           "@id": "#2RefS2-Icirc",
           "@type": "sht:RepresentationTest",
           "name": "2RefS2-Icirc",

@@ -18,9 +18,10 @@ ShExTests: ShExJTests ShExVTests
 
 ShExJTests: doc/ShExJ.jsg
 	(ls schemas/*.json | grep -vE '(coverage|representationTests)\.json' | xargs \
-	 `npm bin`/json-grammar doc/ShExJ.jsg)
+	 npx json-grammar doc/ShExJ.jsg)
 
+# validation/*.val never existed in this repo (only *.err); the historical
+# npm-bin bug masked that this line has always been dead
 ShExVTests: doc/ShExV.jsg
-	`npm bin`/json-grammar doc/ShExV.jsg validation/*.val
-	`npm bin`/json-grammar doc/ShExV.jsg validation/*.err
+	npx json-grammar doc/ShExV.jsg validation/*.err
 

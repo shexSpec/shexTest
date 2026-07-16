@@ -1,0 +1,64 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      # manifest.jsonld is a generated artifact of manifest.ttl (via
+      # bin/genJSON.js); catch anyone who hand-edited one without the
+      # other, or forgot to regenerate before committing.
+      #
+      # negativeStructure is deliberately excluded: its manifest.ttl
+      # already has a Cycle2ExtendsNegation entry that manifest.jsonld
+      # doesn't -- regenerating would activate a real, currently-failing
+      # test downstream (shex.js doesn't yet reject EXTENDS-cycle +
+      # negation schemas). That's a parser/validator gap to fix in an
+      # implementation, not something this check should paper over or
+      # block CI on; re-include this dir once that's resolved.
+      - name: manifest.jsonld matches manifest.ttl
+        run: |
+          for d in schemas validation negativeSyntax; do
+            (cd "$d" && ../bin/genJSON.js manifest.ttl > manifest.jsonld)
+          done
+          git diff --exit-code -- 'schemas/manifest.jsonld' 'validation/manifest.jsonld' 'negativeSyntax/manifest.jsonld' || {
+            echo "::error::manifest.jsonld is stale -- run '(cd DIR && ../bin/genJSON.js manifest.ttl > manifest.jsonld)' for the listed dir(s) and commit the result"
+            exit 1
+          }
+
+      # every schemas/*.shex IMPORT target must have its own manifest
+      # entry, or nothing ever round-trip-tests its json/ttl siblings
+      # against the shex (see start2RefS2's p1-vs-p2 drift).
+      - run: npm run test-schema-imports
+
+      - run: npm run test-shexj-jsg
+      - run: npm run test-shexv-val
+      - run: npm run test-shexv-err
+
+      # informational only: flags schemas referenced by validation tests
+      # (via EXTENDS, not IMPORT) that lack their own manifest entry.
+      # Currently reports 3 pre-existing gaps that need real ShExR (.ttl)
+      # content authored, not just a manifest entry -- not blocking CI
+      # until that content exists.
+      - name: schemas referenced by validation tests but not in schemas/manifest (informational)
+        run: node missing.js
+
+      # test-ts is currently broken independent of this workflow: it
+      # shells out to bin/makeTsTests.sh, which has never existed in this
+      # repo's history, and calls a bare `tsc` with no typescript
+      # devDependency. Left out of CI until someone restores or replaces
+      # it; see https://github.com/shexSpec/shexTest (or the PR that
+      # introduced this workflow) for context.

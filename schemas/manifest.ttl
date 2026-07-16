@@ -413,6 +413,8 @@
         <#2RefS2-IS1>
         <#start2RefS2-IstartS1>
         <#start2RefS1-IstartS2>
+        <#start2RefS2>
+        <#start2RefS1>
         <#2RefS2-Icirc>
         <#2RefS2>
         <#3circRefS1-IS2-IS3-IS3>
@@ -3702,6 +3704,24 @@
     sx:shex <start2RefS1-IstartS2.shex> ;
     sx:json <start2RefS1-IstartS2.json> ;
     sx:ttl <start2RefS1-IstartS2.ttl> ;
+    .
+
+<#start2RefS2> a sht:RepresentationTest ;
+    mf:name "start2RefS2" ;
+    mf:status mf:Approved ;
+    sht:trait sht:Import ;
+    sx:shex <start2RefS2.shex> ;
+    sx:json <start2RefS2.json> ;
+    sx:ttl <start2RefS2.ttl> ;
+    .
+
+<#start2RefS1> a sht:RepresentationTest ;
+    mf:name "start2RefS1" ;
+    mf:status mf:Approved ;
+    sht:trait sht:Import ;
+    sx:shex <start2RefS1.shex> ;
+    sx:json <start2RefS1.json> ;
+    sx:ttl <start2RefS1.ttl> ;
     .
 
 <#2RefS2-Icirc> a sht:RepresentationTest ;
