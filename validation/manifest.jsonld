@@ -16660,7 +16660,7 @@
           "extensionResults": [
             {
               "extension": "http://shex.io/extensions/Test/",
-              "prints": "%{\\\\%}"
+              "prints": "%{\\%}"
             }
           ],
           "name": "1dotCodeWithEscapes1_pass",
@@ -16668,6 +16668,28 @@
             "SemanticAction"
           ],
           "comment": "<S> { <p1> . %<Test>{ print\\u0028\\u0022\\%{\\\\\\\\\\%}\\u0022\\u0029 %} } on { <s1> <p1> <o1> }",
+          "status": "mf:Approved"
+        },
+        {
+          "@id": "#1dotCode1_with_backslash_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1dotCode1.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_L_with_backslash.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [
+            {
+              "extension": "http://shex.io/extensions/Test/",
+              "prints": "a\\b"
+            }
+          ],
+          "name": "1dotCode1_with_backslash_pass",
+          "trait": [
+            "SemanticAction"
+          ],
+          "comment": "<S> { <p1> . %<Test>{ print(o) %} } on { <s1> <p1> 'a\\\\b' } — the object's value holds one backslash, calibrating that prints are unescaped literals",
           "status": "mf:Approved"
         },
         {
