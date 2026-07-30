@@ -11197,6 +11197,7 @@
           "extensionResults": [],
           "name": "1bnodePattern_fail-bnode-short",
           "trait": [
+            "LexicalBNode",
             "PaternFacet"
           ],
           "comment": "<S1> { <p1> BNODE PATTERN \"bc\" } on { <s1> <p1> _:a }",
@@ -11352,6 +11353,7 @@
           "extensionResults": [],
           "name": "1nonliteralPattern_fail-bnode-short",
           "trait": [
+            "LexicalBNode",
             "PaternFacet"
           ],
           "comment": "<S1> { <p1> NONLITERAL PATTERN \"bc$\" } on { <s1> <p1> _:a }",
