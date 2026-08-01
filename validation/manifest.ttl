@@ -1091,6 +1091,7 @@
         <#1dotNoCode3_pass>
         <#1dotCode3fail_abort>
         <#1dotCodeWithEscapes1_pass>
+        <#1dotCode1_with_backslash_pass>
         <#1dotShapeCode1_pass>
         <#1dotShapeNoCode1_pass>
         <#open3EachdotcloseCode1-p1p2p3>
@@ -10297,7 +10298,7 @@
 
 <#1bnodePattern_fail-bnode-short> a sht:ValidationFailure ;
     mf:name "1bnodePattern_fail-bnode-short" ;
-    sht:trait sht:PaternFacet ;
+    sht:trait sht:PaternFacet , sht:LexicalBNode ;
     rdfs:comment "<S1> { <p1> BNODE PATTERN \"bc\" } on { <s1> <p1> _:a }" ;
     mf:status mf:Approved ;
     mf:action [
@@ -10414,7 +10415,7 @@
 
 <#1nonliteralPattern_fail-bnode-short> a sht:ValidationFailure ;
     mf:name "1nonliteralPattern_fail-bnode-short" ;
-    sht:trait sht:PaternFacet ;
+    sht:trait sht:PaternFacet , sht:LexicalBNode ;
     rdfs:comment "<S1> { <p1> NONLITERAL PATTERN \"bc$\" } on { <s1> <p1> _:a }" ;
     mf:status mf:Approved ;
     mf:action [
@@ -14438,7 +14439,26 @@
     mf:extensionResults (
       [
         mf:extension <http://shex.io/extensions/Test/> ;
-        mf:prints "%{\\\\%}"
+        mf:prints "%{\\%}"
+      ]
+    )
+    .
+
+<#1dotCode1_with_backslash_pass> a sht:ValidationTest ;
+    mf:name "1dotCode1_with_backslash_pass" ;
+    sht:trait sht:SemanticAction ;
+    rdfs:comment "<S> { <p1> . %<Test>{ print(o) %} } on { <s1> <p1> 'a\\\\b' } — the object's value holds one backslash, calibrating that prints are unescaped literals" ;
+    mf:status mf:Approved ;
+    mf:action [
+      sht:schema <../schemas/1dotCode1.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_L_with_backslash.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    mf:extensionResults (
+      [
+        mf:extension <http://shex.io/extensions/Test/> ;
+        mf:prints "a\\b"
       ]
     )
     .
