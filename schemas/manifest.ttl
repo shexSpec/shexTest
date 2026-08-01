@@ -449,6 +449,8 @@
         <#1dot3ExtendsLN>
         <#Extends-sAB>
         <#ExtendsRepeatedP>
+        <#extends-closed-or-each-each>
+        <#extends-open-or-each-each>
 
         # abstract
         <#1dotAbstractShapeCode1>
@@ -4020,6 +4022,25 @@
     sx:json <ExtendsRepeatedP.json> ;
     sx:ttl <ExtendsRepeatedP.ttl> ;
     .
+
+<#extends-closed-or-each-each> a sht:RepresentationTest ;
+    mf:name "extends-closed-or-each-each" ;
+    mf:status mf:Proposed ;
+    sht:trait sht:Extends ;
+    sx:shex <extends-closed-or-each-each.shex> ;
+    sx:json <extends-closed-or-each-each.json> ;
+    sx:ttl <extends-closed-or-each-each.ttl> ;
+    .
+
+<#extends-open-or-each-each> a sht:RepresentationTest ;
+    mf:name "extends-open-or-each-each" ;
+    mf:status mf:Proposed ;
+    sht:trait sht:Extends ;
+    sx:shex <extends-open-or-each-each.shex> ;
+    sx:json <extends-open-or-each-each.json> ;
+    sx:ttl <extends-open-or-each-each.ttl> ;
+    .
+
 
 # } extends
 

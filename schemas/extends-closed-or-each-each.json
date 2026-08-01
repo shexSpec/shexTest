@@ -1,0 +1,58 @@
+{
+  "type": "Schema",
+  "shapes": [
+    {
+      "id": "http://a.example/sh#Base",
+      "type": "ShapeDecl",
+      "shapeExpr": {
+        "type": "ShapeOr",
+        "shapeExprs": [
+          {
+            "type": "Shape",
+            "expression": {
+              "type": "EachOf",
+              "expressions": [
+                {
+                  "type": "TripleConstraint",
+                  "predicate": "http://a.example/ns#p"
+                },
+                {
+                  "type": "TripleConstraint",
+                  "predicate": "http://a.example/ns#q"
+                }
+              ]
+            }
+          },
+          {
+            "type": "Shape",
+            "expression": {
+              "type": "EachOf",
+              "expressions": [
+                {
+                  "type": "TripleConstraint",
+                  "predicate": "http://a.example/ns#p"
+                },
+                {
+                  "type": "TripleConstraint",
+                  "predicate": "http://a.example/ns#r"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "http://a.example/sh#Child",
+      "type": "ShapeDecl",
+      "shapeExpr": {
+        "type": "Shape",
+        "extends": [
+          "http://a.example/sh#Base"
+        ],
+        "closed": true
+      }
+    }
+  ],
+  "@context": "http://www.w3.org/ns/shex.jsonld"
+}

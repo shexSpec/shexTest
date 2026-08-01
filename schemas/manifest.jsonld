@@ -3989,6 +3989,30 @@
           "ttl": "ExtendsRepeatedP.ttl"
         },
         {
+          "@id": "#extends-closed-or-each-each",
+          "@type": "sht:RepresentationTest",
+          "name": "extends-closed-or-each-each",
+          "trait": [
+            "Extends"
+          ],
+          "status": "mf:Proposed",
+          "shex": "extends-closed-or-each-each.shex",
+          "json": "extends-closed-or-each-each.json",
+          "ttl": "extends-closed-or-each-each.ttl"
+        },
+        {
+          "@id": "#extends-open-or-each-each",
+          "@type": "sht:RepresentationTest",
+          "name": "extends-open-or-each-each",
+          "trait": [
+            "Extends"
+          ],
+          "status": "mf:Proposed",
+          "shex": "extends-open-or-each-each.shex",
+          "json": "extends-open-or-each-each.json",
+          "ttl": "extends-open-or-each-each.ttl"
+        },
+        {
           "@id": "#1dotAbstractShapeCode1",
           "@type": "sht:RepresentationTest",
           "name": "1dotAbstractShapeCode1",

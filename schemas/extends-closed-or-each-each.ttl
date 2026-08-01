@@ -1,0 +1,38 @@
+@prefix sx: <http://www.w3.org/ns/shex#> .
+
+[] a sx:Schema ;
+  sx:shapes (<http://a.example/sh#Base> <http://a.example/sh#Child>) .
+
+<http://a.example/sh#Base> a sx:ShapeDecl ;
+  sx:shapeExpr [
+    a sx:ShapeOr ;
+    sx:shapeExprs (
+      [
+        a sx:Shape ;
+        sx:expression [
+          a sx:EachOf ;
+          sx:expressions (
+            [ a sx:TripleConstraint ; sx:predicate <http://a.example/ns#p> ]
+            [ a sx:TripleConstraint ; sx:predicate <http://a.example/ns#q> ]
+          )
+        ]
+      ]
+      [
+        a sx:Shape ;
+        sx:expression [
+          a sx:EachOf ;
+          sx:expressions (
+            [ a sx:TripleConstraint ; sx:predicate <http://a.example/ns#p> ]
+            [ a sx:TripleConstraint ; sx:predicate <http://a.example/ns#r> ]
+          )
+        ]
+      ]
+    )
+  ] .
+
+<http://a.example/sh#Child> a sx:ShapeDecl ;
+  sx:shapeExpr [
+    a sx:Shape ;
+    sx:closed true ;
+    sx:extends (<http://a.example/sh#Base>)
+  ] .

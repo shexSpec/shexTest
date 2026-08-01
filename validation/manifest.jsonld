@@ -20742,6 +20742,74 @@
           ],
           "comment": "<pass-bottom> <p> \"<two-BOTTOMS> <p> \"G0A\", \"G0-0A\", \"G0-0-0A\", \"G0_0-0A\", \"BOTTOMA\", \"BOTTOMB\" . \\ <BOTTOM> E @<G0_0-0> E @<G0-0-0> E @<G0-0> E @<G0>",
           "status": "mf:proposed"
+        },
+        {
+          "@id": "#extends-closed-or-each-each_pass-each-1",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/extends-closed-or-each-each.shex",
+            "shape": "http://a.example/sh#Child",
+            "data": "or-each-each_instance.ttl",
+            "focus": "http://a.example/inst#each-1"
+          },
+          "extensionResults": [],
+          "name": "extends-closed-or-each-each_pass-each-1",
+          "trait": [
+            "Extends"
+          ],
+          "comment": "<pass-each-1> <p> 0 ; <q> 1 . \\ <Base> { <p> . ; <q> . } OR { <p> . ; <r> . } <Child> E C @<Base> { }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#extends-closed-or-each-each_pass-each-2",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/extends-closed-or-each-each.shex",
+            "shape": "http://a.example/sh#Child",
+            "data": "or-each-each_instance.ttl",
+            "focus": "http://a.example/inst#each-2"
+          },
+          "extensionResults": [],
+          "name": "extends-closed-or-each-each_pass-each-2",
+          "trait": [
+            "Extends"
+          ],
+          "comment": "<pass-each-1> <p> 0 ; <r> 2 . \\ <Base> { <p> . ; <q> . } OR { <p> . ; <r> . } <Child> E C @<Base> { }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#extends-closed-or-each-each_fail-cross-each",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/extends-closed-or-each-each.shex",
+            "shape": "http://a.example/sh#Child",
+            "data": "or-each-each_instance.ttl",
+            "focus": "http://a.example/inst#each-1-2"
+          },
+          "extensionResults": [],
+          "name": "extends-closed-or-each-each_fail-cross-each",
+          "trait": [
+            "Extends"
+          ],
+          "comment": "<pass-each-1> <p> 0 ; <q> 1 ; <r> 2 . \\ <Base> { <p> . ; <q> . } OR { <p> . ; <r> . } <Child> E C @<Base> { }",
+          "status": "mf:proposed"
+        },
+        {
+          "@id": "#extends-open-or-each-each_pass-cross-each",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/extends-open-or-each-each.shex",
+            "shape": "http://a.example/sh#Child",
+            "data": "or-each-each_instance.ttl",
+            "focus": "http://a.example/inst#each-1-2"
+          },
+          "extensionResults": [],
+          "name": "extends-open-or-each-each_fail-cross-each",
+          "trait": [
+            "Extends"
+          ],
+          "comment": "<pass-each-1> <p> 0 ; <q> 1 ; <r> 2 . \\ <Base> { <p> . ; <q> . } OR { <p> . ; <r> . } <Child> E @<Base> { }",
+          "status": "mf:proposed"
         }
       ]
     }

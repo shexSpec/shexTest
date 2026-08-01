@@ -1,0 +1,7 @@
+<http://a.example/sh#Base>
+  { <http://a.example/ns#p> . ; <http://a.example/ns#q> . }
+    OR
+  { <http://a.example/ns#p> . ; <http://a.example/ns#r> . }
+
+<http://a.example/sh#Child> EXTENDS @<http://a.example/sh#Base>
+  {  }

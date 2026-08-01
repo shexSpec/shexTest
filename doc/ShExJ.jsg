@@ -38,6 +38,8 @@ NodeConstraint   {
   datatype:IRIREF ?
   xsFacet *
   values:[valueSetValue+] ?
+  semActs:[SemAct+] ?
+  annotations:[Annotation+] ?
 }
 ShapeExternal    { }
 

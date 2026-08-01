@@ -1377,6 +1377,12 @@
         <#extends-closed-3diamond-split_fail-two-G0s>
         <#extends-closed-3diamond-split_fail-two-G0-0s>
         <#extends-closed-3diamond-split_fail-two-BOTTOMS>
+
+###  ExtendsClosed
+        <#extends-closed-or-each-each_pass-each-1>
+        <#extends-closed-or-each-each_pass-each-2>
+        <#extends-closed-or-each-each_fail-cross-each>
+        <#extends-open-or-each-each_pass-cross-each>
     ) .
 
 # definitions
@@ -17562,6 +17568,60 @@
     .
 
 ### } ExtendsDiamond
+### ExtendsClosed {
+<#extends-closed-or-each-each_pass-each-1> a sht:ValidationTest ;
+    mf:name "extends-closed-or-each-each_pass-each-1" ;
+    sht:trait sht:Extends ;
+    rdfs:comment '<pass-each-1> <p> 0 ; <q> 1 . \\ <Base> { <p> . ; <q> . } OR { <p> . ; <r> . } <Child> E C @<Base> { }' ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/extends-closed-or-each-each.shex> ;
+        sht:shape <http://a.example/sh#Child> ;
+        sht:data <or-each-each_instance.ttl> ;
+        sht:focus <http://a.example/inst#each-1> ;
+    ] ;
+    .
+
+<#extends-closed-or-each-each_pass-each-2> a sht:ValidationTest ;
+    mf:name "extends-closed-or-each-each_pass-each-2" ;
+    sht:trait sht:Extends ;
+    rdfs:comment '<pass-each-1> <p> 0 ; <r> 2 . \\ <Base> { <p> . ; <q> . } OR { <p> . ; <r> . } <Child> E C @<Base> { }' ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/extends-closed-or-each-each.shex> ;
+        sht:shape <http://a.example/sh#Child> ;
+        sht:data <or-each-each_instance.ttl> ;
+        sht:focus <http://a.example/inst#each-2> ;
+    ] ;
+    .
+
+<#extends-closed-or-each-each_fail-cross-each> a sht:ValidationFailure ;
+    mf:name "extends-closed-or-each-each_fail-cross-each" ;
+    sht:trait sht:Extends ;
+    rdfs:comment '<pass-each-1> <p> 0 ; <q> 1 ; <r> 2 . \\ <Base> { <p> . ; <q> . } OR { <p> . ; <r> . } <Child> E C @<Base> { }' ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/extends-closed-or-each-each.shex> ;
+        sht:shape <http://a.example/sh#Child> ;
+        sht:data <or-each-each_instance.ttl> ;
+        sht:focus <http://a.example/inst#each-1-2> ;
+    ] ;
+    .
+
+<#extends-open-or-each-each_pass-cross-each> a sht:ValidationTest ;
+    mf:name "extends-open-or-each-each_fail-cross-each" ;
+    sht:trait sht:Extends ;
+    rdfs:comment '<pass-each-1> <p> 0 ; <q> 1 ; <r> 2 . \\ <Base> { <p> . ; <q> . } OR { <p> . ; <r> . } <Child> E @<Base> { }' ;
+    mf:status mf:proposed ;
+    mf:action [
+        sht:schema <../schemas/extends-open-or-each-each.shex> ;
+        sht:shape <http://a.example/sh#Child> ;
+        sht:data <or-each-each_instance.ttl> ;
+        sht:focus <http://a.example/inst#each-1-2> ;
+    ] ;
+    .
+
+### } ExtendsClosed
 ## } Extends
 ## Abstract {
 
