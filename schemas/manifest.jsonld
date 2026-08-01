@@ -2757,6 +2757,15 @@
           "ttl": "1dotShapeAnnotSTRING_LITERAL1.ttl"
         },
         {
+          "@id": "#2val1refvsAnnot",
+          "@type": "sht:RepresentationTest",
+          "name": "2val1refvsAnnot",
+          "status": "mf:Approved",
+          "shex": "2val1refvsAnnot.shex",
+          "json": "2val1refvsAnnot.json",
+          "ttl": "2val1refvsAnnot.ttl"
+        },
+        {
           "@id": "#open3EachdotcloseAnnot3",
           "@type": "sht:RepresentationTest",
           "name": "open3EachdotcloseAnnot3",
@@ -2935,6 +2944,15 @@
           "shex": "startCode3fail.shex",
           "json": "startCode3fail.json",
           "ttl": "startCode3fail.ttl"
+        },
+        {
+          "@id": "#2val1refvsCode",
+          "@type": "sht:RepresentationTest",
+          "name": "2val1refvsCode",
+          "status": "mf:Approved",
+          "shex": "2val1refvsCode.shex",
+          "json": "2val1refvsCode.json",
+          "ttl": "2val1refvsCode.ttl"
         },
         {
           "@id": "#open3Eachdotclosecard23Annot3Code2",
