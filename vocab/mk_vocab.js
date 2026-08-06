@@ -607,11 +607,11 @@ var respecConfig = {
 // The vocabulary has derived copies that this script does NOT generate,
 // because they are hand-maintained and richer than anything the CSV can
 // express (../doc/ShExR.shex and its ../doc/ShExR.ttl serialization, mirrored
-// into shex.js as packages/shex-webapp/doc/ShExRSchema.js). They drift: as of
-// 2026-08 ShExR.shex used sx:ShapeDecl, sx:abstract, sx:imports and
-// sx:negated, none of which existed in the published vocabulary. This
-// compares the term sets so the gap shows up as a test failure rather than
-// as a surprise years later.
+// into shex.js as packages/shex-webapp/doc/ShExRSchema.js). They drift in both
+// directions: ShExR ran years ahead of the vocabulary with sx:ShapeDecl,
+// sx:abstract and sx:imports, and still carries sx:negated, which the language
+// dropped in 2016 (see README.md). Comparing the term sets makes that show up
+// as a failure rather than as a surprise years later.
 function check(vocab) {
   const defined = new Set([
     ...Object.keys(vocab.classes),
@@ -634,7 +634,9 @@ function check(vocab) {
   if (missing.length) {
     console.error(`\ndoc/ShExR.shex uses ${missing.length} term(s) absent from vocab.csv:`);
     missing.forEach(t => console.error(`  sx:${t}`));
-    console.error('\nAdd them to vocab.csv and regenerate, or correct ShExR.shex.');
+    console.error('\nEither correct ShExR.shex, or add them to vocab.csv and regenerate.');
+    console.error('See README.md -- sx:negated is expected here, and wants removing');
+    console.error('from ShExR rather than adding to a published W3C namespace.');
     return 1;
   }
   console.log('doc/ShExR.shex uses no terms absent from vocab.csv');

@@ -18,7 +18,6 @@ PREFIX sht:     <http://www.w3.org/ns/shacl/test-suite#>
                                      <1dotLNexComment.shex> sht:sameAbstractSyntaxAs                             <1dot.shex> .
                                        <1dotLNdefault.shex> sht:sameAbstractSyntaxAs                             <1dot.shex> .
                                        <1dotNSdefault.shex> sht:sameAbstractSyntaxAs                             <1dot.shex> .
-                                  <1inversenegateddot.shex> sht:sameAbstractSyntaxAs               <1negatedinversedot.shex> .
                                           <2dotCommas.shex> sht:sameAbstractSyntaxAs                       <2dotCommas.shex> .
                                        <open2dotclose.shex> sht:sameAbstractSyntaxAs                       <2dotCommas.shex> .
                                  <open2dotcommasclose.shex> sht:sameAbstractSyntaxAs                       <2dotCommas.shex> .

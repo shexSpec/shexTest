@@ -34,6 +34,7 @@
     "SemAct": "shex:SemAct",
     "Shape": "shex:Shape",
     "ShapeAnd": "shex:ShapeAnd",
+    "ShapeDecl": "shex:ShapeDecl",
     "ShapeExternal": "shex:ShapeExternal",
     "ShapeMap": "shex:ShapeMap",
     "ShapeNot": "shex:ShapeNot",
@@ -42,6 +43,10 @@
     "StemRange": "shex:StemRange",
     "TripleConstraint": "shex:TripleConstraint",
     "Wildcard": "shex:Wildcard",
+    "abstract": {
+      "@id": "shex:abstract",
+      "@type": "xsd:boolean"
+    },
     "closed": {
       "@id": "shex:closed",
       "@type": "xsd:boolean"
@@ -78,6 +83,11 @@
     "fractiondigits": {
       "@id": "shex:fractiondigits",
       "@type": "xsd:integer"
+    },
+    "imports": {
+      "@id": "shex:imports",
+      "@type": "@id",
+      "@container": "@list"
     },
     "inverse": {
       "@id": "shex:inverse",
