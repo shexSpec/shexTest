@@ -194,8 +194,6 @@ _:g70362516465780 <http://www.w3.org/ns/shex#datatype> <http://www.w3.org/2001/X
 _:g70362516465780 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shex#NodeConstraint> .
 _:g70362516091380 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:g70362516781740 .
 _:g70362516091380 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:g70362516104760 .
-_:g70362524157680 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shex#NodeConstraint> .
-_:g70362524157680 <http://www.w3.org/ns/shex#values> _:g70362517221460 .
 _:g70362525490080 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.w3.org/ns/objectValue> .
 _:g70362525490080 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:g70362525501220 .
 _:g70362516042440 <http://www.w3.org/ns/shex#datatype> <http://www.w3.org/2001/XMLSchema#integer> .
@@ -233,8 +231,6 @@ _:g70362525176300 <http://www.w3.org/ns/shex#values> _:g70362525212500 .
 _:g70362525224580 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shex#TripleConstraint> .
 _:g70362525224580 <http://www.w3.org/ns/shex#predicate> <http://www.w3.org/ns/shex#name> .
 _:g70362525224580 <http://www.w3.org/ns/shex#valueExpr> _:g70362516023600 .
-_:g70362525649080 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:g70362524256100 .
-_:g70362525649080 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:g70362525652120 .
 _:g70362525392800 <http://www.w3.org/ns/shex#expressions> _:g70362525204680 .
 _:g70362525392800 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shex#EachOf> .
 _:g70362525145140 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.w3.org/ns/SemActList1Plus> .
@@ -550,8 +546,6 @@ _:g70362525090000 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:g70362525
 _:g70362525090000 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:g70362525093080 .
 _:g70362516906180 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:g70362507328620 .
 _:g70362516906180 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:g70362524106940 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "false"^^<http://www.w3.org/2001/XMLSchema#boolean> .
-_:g70362524106940 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
 _:g70362524130660 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shex#TripleConstraint> .
 _:g70362524130660 <http://www.w3.org/ns/shex#predicate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> .
 _:g70362524130660 <http://www.w3.org/ns/shex#valueExpr> <http://www.w3.org/ns/valueSetValue> .
@@ -588,11 +582,6 @@ _:g70362524370300 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:g70362524
 _:g70362524370300 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:g70362524372900 .
 _:g70362525669720 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:g70362515944160 .
 _:g70362525669720 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:g70362507327280 .
-_:g70362524256100 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shex#TripleConstraint> .
-_:g70362524256100 <http://www.w3.org/ns/shex#min> "0"^^<http://www.w3.org/2001/XMLSchema#integer> .
-_:g70362524256100 <http://www.w3.org/ns/shex#max> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
-_:g70362524256100 <http://www.w3.org/ns/shex#predicate> <http://www.w3.org/ns/shex#negated> .
-_:g70362524256100 <http://www.w3.org/ns/shex#valueExpr> _:g70362524157680 .
 _:g70362524799520 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.w3.org/ns/tripleExpressionList1Plus> .
 _:g70362524799520 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
 _:g70362511585560 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.w3.org/ns/stringFacet> .
@@ -750,11 +739,9 @@ _:g70362525538740 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:g703625255
 _:g70362516651500 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/shex#NodeConstraint> .
 _:g70362516651500 <http://www.w3.org/ns/shex#values> _:g70362516547860 .
 _:g70362525637840 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:g70362524456040 .
-_:g70362525637840 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:g70362525649080 .
+_:g70362525637840 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:g70362525652120 .
 _:g70362516614820 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:g70362516861800 .
 _:g70362516614820 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:g70362516627940 .
-_:g70362517221460 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> .
-_:g70362517221460 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:g70362524106940 .
 _:g70362524617380 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:g70362525124120 .
 _:g70362524617380 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:g70362524620120 .
 _:g70362525601720 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.w3.org/ns/shex#Annotation> .

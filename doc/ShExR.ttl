@@ -343,8 +343,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         sx:valueExpr [ a sx:NodeConstraint ; sx:values ( sx:TripleConstraint ) ] ]
       [ a sx:TripleConstraint ; sx:predicate sx:inverse ; sx:min 0 ; sx:max 1 ;
         sx:valueExpr [ a sx:NodeConstraint ; sx:values ( true false ) ] ]
-      [ a sx:TripleConstraint ; sx:predicate sx:negated ; sx:min 0 ; sx:max 1 ;
-        sx:valueExpr [ a sx:NodeConstraint ; sx:values ( true false ) ] ]
       [ a sx:TripleConstraint ; sx:predicate sx:min ; sx:min 0 ; sx:max 1 ;
         sx:valueExpr [ a sx:NodeConstraint ; sx:datatype xsd:integer ] ]
       [ a sx:TripleConstraint ; sx:predicate sx:max ; sx:min 0 ; sx:max 1 ;

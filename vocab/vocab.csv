@@ -36,8 +36,8 @@ object,rdf:Property,object,,Annotation,rdfs:Resource,,,1:1,0:N,,The object of an
 pattern,rdf:Property,pattern,stringFacet,NodeConstraint,xsd:string,,,0:1,,,A regular expression used for matching a value.
 predicate,rdf:Property,predicate,,"Annotation,TripleConstraint",rdfs:Resource,,,1:1,0:N,,The predicate of a TripleConstraint or Annotation.
 semActs,rdf:Property,semantic action,,"EachOf,OneOf,TripleConstraint",SemAct,,@list,0:N,1:N,,Semantic Actions on this TripleExpression.
-shapes,rdf:Property,shapes,,Schema,ShapeExpression,,@list,0:1,1:1,,Shapes in this Schema.
-shapeExpr,rdf:Property,shape expression,,ShapeNot,ShapeExpression,,,1:1,0:N,,Shape Expression referenced by this shape.
+shapes,rdf:Property,shapes,,Schema,ShapeDecl,,@list,0:1,1:1,,Shape declarations in this Schema.
+shapeExpr,rdf:Property,shape expression,,"ShapeNot,ShapeDecl",ShapeExpression,,,1:1,0:N,,Shape Expression referenced by this shape or shape declaration.
 shapeExprs,rdf:Property,shape expressions,shapeExpr,"ShapeAnd,ShapeOr",ShapeExpression,,@list,1:N,0:N,,A list of 2 or more Shape Expressions referenced by this shape.
 start,rdf:Property,start,,Schema,ShapeExpression,,,0:1,0:1,,A ShapeExpression matched against the focus node prior to any other mapped expressions.
 startActs,rdf:Property,start actions,,Schema,SemAct,,@list,0:N,,,Semantic Actions run on the Schema.
@@ -87,3 +87,6 @@ shape,rdf:Property,shape,,QueryMap,ShapeExpression,,,1:1,0:N,,"A ShEx shape expr
 status,rdf:Property,status,,ShapeMap,xsd:string,,,0:1,,,"The validation status of a node/shape association: ""conformant"" or ""nonconformant"". Defaults to ""conformant""."
 FOCUS,rdfs:Resource,FOCUS,,,,,,,,,"In a triple pattern used as a node selector, indicates the position (subject or object) of the nodes to be selected. A triple pattern has exactly one focus selector."
 _,rdfs:Resource,wildcard,,,,,,,,,"In a triple pattern used as a node selector, a wildcard indicating that the position (subject or object) may hold any value."
+ShapeDecl,rdfs:Class,Shape Declaration,,,,,,,,,"Associates a shape expression with a label, and optionally declares it abstract. The shapes in a Schema are ShapeDecls."
+abstract,rdf:Property,abstract,,ShapeDecl,xsd:boolean,,,0:1,,,"Declares a ShapeDecl abstract, meaning that every reference to it must also identify at least one non-abstract shape."
+imports,rdf:Property,imports,,Schema,rdfs:Resource,,@list,0:N,,,"Schemas imported by this Schema; their shape and triple expression labels are also in scope here."

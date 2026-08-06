@@ -71,15 +71,33 @@ match.
 ## Drift check
 
 `npm run vocab-check` reports terms that `../doc/ShExR.shex` uses but
-`vocab.csv` does not define.
+`vocab.csv` does not define. It is part of `npm test`, and it passes.
 
-**It currently fails**, which is why it is not part of `npm test` yet. ShExR
-uses four terms that have never existed in the published vocabulary:
+It was written because ShExR had drifted from the published vocabulary in both
+directions. `sx:ShapeDecl`, `sx:abstract` and `sx:imports` had arrived with the
+ShEx 2.1 `EXTENDS`/`abstract` work and were never published; they are now in
+`vocab.csv`. `sx:negated` pointed the other way and has been **deleted from
+ShExR** rather than added to the vocabulary:
 
-    sx:ShapeDecl  sx:abstract  sx:imports  sx:negated
+`negated` was the ShEx 2.0 draft's `!` operator on TripleConstraint. It was
+removed from the language in November 2016 (shexTest `224c610` "- negated",
+spec `d3f882d` "- negation") over the semantics problem in shexSpec/shex#11,
+and replaced by `{0,0}` cardinality and `ShapeNot`. Seven weeks later
+`fe51e15` ("~ aligned with ShExJ.jsg") copied it back into `doc/ShExR.shex`
+from the grammar, which had not yet been cleaned up; `e01f012`
+("TripleConstraint -= negated:BOOL") dropped it from `doc/ShExJ.jsg` in 2020
+but left `ShExR.shex` alone, so the RDF rendering kept a term the JSON
+rendering had deleted. It was never in the published namespace, never in the
+spec, and the ShExC parser has no `!` rule, so nothing could produce it.
 
-They arrived with the ShEx 2.1 `EXTENDS`/`abstract` work and were never added
-to www.w3.org/ns/shex. Adding them changes a published W3C namespace, so it is
-a deliberate decision, not a mechanical fix — hence a failing check rather than
-a silent one. Once the four terms are in `vocab.csv` and the regenerated files
-are merged into w3c/ns, fold `vocab-check` into the `test` script.
+## Known stale files
+
+`doc/ShExR.ntriples` was last regenerated in 2017 (`7a7da0d`). It predates
+`ShapeDecl`, `abstract`, `imports` and `extends`, and holds 800 triples against
+`doc/ShExR.ttl`'s 1354 — it is a snapshot, not a current serialization, and
+nothing regenerates it. `vocab-check` only reads `doc/ShExR.shex`, so it does
+not police this. Either regenerate it from `doc/ShExR.ttl` or delete it.
+
+`doc/ShExJ.jsg` has `restricts` on ShapeDecl; neither `doc/ShExR.shex` nor
+`vocab.csv` defines it. Extending the check to read the JSG too would catch
+that class of gap.
