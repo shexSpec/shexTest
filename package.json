@@ -9,7 +9,9 @@
     "test-shexj-jsg": "ls schemas/*.json | egrep -v '(coverage|representationTests).json' | xargs json-grammar doc/ShExJ.jsg",
     "test-shexv-val": "ls validation/*.val | xargs json-grammar doc/ShExV.jsg",
     "test-shexv-err": "ls validation/*.err | xargs json-grammar doc/ShExV.jsg",
-    "test-schema-imports": "bin/checkSchemaImports.js schemas"
+    "test-schema-imports": "bin/checkSchemaImports.js schemas",
+    "vocab": "node vocab/mk_vocab.js",
+    "vocab-check": "node vocab/mk_vocab.js --check"
   },
   "author": {
     "name": "Eric Prud'hommeaux",
