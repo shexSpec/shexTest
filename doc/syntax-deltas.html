@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ShExC / ShExJ / ShExR deltas</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1a1a1a; --bg:#fff; --muted:#5a5a5a;
+          --rule:#d8d8d8; --code-bg:#f5f5f4; --accent:#8a4b08; --yes:#186a3b; --no:#922b21; }
+  @media (prefers-color-scheme: dark) {
+    :root { --fg:#e6e6e6; --bg:#16181a; --muted:#a0a0a0; --rule:#33383d;
+            --code-bg:#212528; --accent:#e0a458; --yes:#6dc48b; --no:#e88b82; }
+  }
+  body { max-width: 46rem; margin: 0 auto; padding: 2rem 1.2rem 5rem;
+         font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+         color: var(--fg); background: var(--bg); }
+  h1 { font-size: 1.7rem; line-height: 1.25; margin: 0 0 .3rem; }
+  h2 { font-size: 1.22rem; margin: 2.6rem 0 .6rem; padding-top: .9rem; border-top: 1px solid var(--rule); }
+  h3 { font-size: 1rem; margin: 1.6rem 0 .4rem; }
+  .sub { color: var(--muted); margin: 0 0 2rem; }
+  code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .875em; }
+  pre { background: var(--code-bg); padding: .7rem .9rem; border-radius: 5px;
+        overflow-x: auto; border: 1px solid var(--rule); }
+  code:not(pre code) { background: var(--code-bg); padding: .1em .3em; border-radius: 3px; }
+  a { color: var(--accent); }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+  th, td { text-align: left; padding: .45rem .6rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  th { font-size: .8rem; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); font-weight: 600; }
+  .y { color: var(--yes); font-weight: 600; }
+  .n { color: var(--no); font-weight: 600; }
+  .scroll { overflow-x: auto; }
+  blockquote { margin: 1rem 0; padding: .1rem 0 .1rem 1rem; border-left: 3px solid var(--rule); color: var(--muted); }
+  footer { margin-top: 3.5rem; padding-top: 1rem; border-top: 1px solid var(--rule);
+           color: var(--muted); font-size: .875rem; }
+</style>
+</head>
+<body>
+
+<h1>Where ShExC, ShExJ and ShExR disagree</h1>
+<p class="sub">Deltas between the three renderings of a ShEx schema, with the
+evidence for each. Written up because the abstract syntax they are all supposed
+to share is not quite the same in each.</p>
+
+<p>ShEx schemas exist in three syntaxes, and each has its own grammar:</p>
+
+<table>
+  <tr>
+    <th>Syntax</th><th>Grammar</th><th>Kind</th>
+  </tr>
+  <tr>
+    <td>ShExC</td>
+    <td><a href="http://shex.io/shex-semantics/#shexc">ShEx Semantics §&nbsp;Language</a></td>
+    <td>EBNF over a compact text syntax</td>
+  </tr>
+  <tr>
+    <td>ShExJ</td>
+    <td><a href="https://github.com/shexSpec/shexTest/blob/main/doc/ShExJ.jsg"><code>doc/ShExJ.jsg</code></a></td>
+    <td>JSON Schema Grammar over a JSON tree</td>
+  </tr>
+  <tr>
+    <td>ShExR</td>
+    <td><a href="https://github.com/shexSpec/shexTest/blob/main/doc/ShExR.shex"><code>doc/ShExR.shex</code></a></td>
+    <td>a ShEx schema over an RDF graph</td>
+  </tr>
+</table>
+
+<p>ShExJ is the pivot: ShExC parses to it, and ShExJ plus
+<a href="https://github.com/shexSpec/shexTest/blob/main/doc/ShExJ-context.jsonld"><code>doc/ShExJ-context.jsonld</code></a>
+<em>is</em> ShExR — which is how
+<a href="https://github.com/shexSpec/shexTest/blob/main/bin/mkShExR.js"><code>bin/mkShExR.js</code></a>
+derives <code>ShExR.ttl</code> and <code>ShExR.ntriples</code>. So a delta between ShExC and
+ShExR is a place where that round trip is not total.</p>
+
+<h2>1. ShExR lets <code>start</code> be a ShapeDecl; nothing else does</h2>
+
+<p>The three grammars say:</p>
+
+<div class="scroll">
+<pre><a href="http://shex.io/shex-semantics/#prod-start">start</a> ::= "start" '=' <a href="http://shex.io/shex-semantics/#prod-inlineShapeExpression">inlineShapeExpression</a>          <em>ShExC</em>
+
+<a href="https://github.com/shexSpec/shexTest/blob/main/doc/ShExJ.jsg#L18">start:shapeExprOrRef ?</a>                             <em>ShExJ</em>
+<a href="https://github.com/shexSpec/shexTest/blob/main/doc/ShExJ.jsg#L30">shapeExprOrRef = shapeExpr | shapeDeclRef ;</a>
+<a href="https://github.com/shexSpec/shexTest/blob/main/doc/ShExJ.jsg#L29">shapeExpr      = ShapeOr | ShapeAnd | ShapeNot
+               | NodeConstraint | Shape | ShapeExternal ;</a>
+
+<a href="https://github.com/shexSpec/shexTest/blob/main/doc/ShExR.shex#L11">sx:start @&lt;#shapeDeclOrExpr&gt; ? ;</a>                    <em>ShExR</em>
+<a href="https://github.com/shexSpec/shexTest/blob/main/doc/ShExR.shex#L15">&lt;#shapeDeclOrExpr&gt; @&lt;#ShapeDecl&gt; OR @&lt;#shapeExpr&gt;</a></pre>
+</div>
+
+<p>Since ShEx 2.1 moved <code>id</code> onto <code>ShapeDecl</code>, a ShExJ
+<code>shapeExpr</code> cannot itself <em>be</em> a ShapeDecl. ShExR's
+<code>shapeDeclOrExpr</code> says it can. Running the same four <code>start</code>
+forms through all three grammars:</p>
+
+<table>
+  <tr><th><code>start</code> is…</th><th>ShExC</th><th>ShExJ.jsg</th><th>ShExR.shex</th></tr>
+  <tr><td>a reference — <code>start = @&lt;S&gt;</code></td>
+      <td class="y">✓</td><td class="y">accepted</td><td class="y">accepted</td></tr>
+  <tr><td>an inline shapeExpr — <code>start = { }</code></td>
+      <td class="y">✓</td><td class="y">accepted</td><td class="y">accepted</td></tr>
+  <tr><td>an anonymous <code>ShapeDecl</code></td>
+      <td class="n">no production</td><td class="n">rejected</td><td class="n">accepted</td></tr>
+  <tr><td>an anonymous <strong>abstract</strong> <code>ShapeDecl</code></td>
+      <td class="n">no production</td><td class="n">rejected</td><td class="n">accepted</td></tr>
+</table>
+
+<h3>Why ShExR has to be this way</h3>
+
+<p>RDF cannot distinguish reference from containment. In ShExJ a reference is a
+bare <em>string</em>:</p>
+
+<pre>{ "type": "Schema", "start": "http://ex/S",
+  "shapes": [ { "type": "ShapeDecl", "id": "http://ex/S", "shapeExpr": {…} } ] }</pre>
+
+<p>structurally unlike an inline object. In RDF there is no such distinction —
+the arc <em>is</em> the thing:</p>
+
+<pre>&lt;http://ex/sch&gt; a sx:Schema ; sx:start &lt;http://ex/S&gt; ; sx:shapes ( &lt;http://ex/S&gt; ) .
+&lt;http://ex/S&gt;   a sx:ShapeDecl ; sx:shapeExpr [ a sx:Shape ] .</pre>
+
+<p>So ShExR <em>must</em> let <code>sx:start</code> reach a ShapeDecl, or it could
+not encode <code>start = @&lt;S&gt;</code> at all. The cost is that it also admits an
+anonymous inline ShapeDecl, which no ShExC document can write and ShExJ's own
+grammar rejects.</p>
+
+<p>The obvious tightening does not work either. You might add <code>AND IRI</code>
+to the ShapeDecl branch, forcing references to be IRIs — but
+<a href="https://github.com/shexSpec/shexTest/blob/main/doc/ShExJ.jsg#L35"><code>shapeDeclLabel = IRIREF | BNODE</code></a>,
+so blank-node-labelled ShapeDecls are legal, and a reference to one is a
+blank-node arc, indistinguishable from inlining it. The ambiguity is
+irreducible unless ShExJ drops <code>BNODE</code> from <code>shapeDeclLabel</code>.</p>
+
+<h3>Not confined to <code>start</code></h3>
+
+<p>The same <code>shapeDeclOrExpr</code> sits under every slot where ShExJ writes
+<code>shapeExprOrRef</code>:</p>
+
+<table>
+  <tr><th>ShExR</th><th>ShExJ</th></tr>
+  <tr><td><a href="https://github.com/shexSpec/shexTest/blob/main/doc/ShExR.shex#L11"><code>sx:start</code></a></td>
+      <td><a href="https://github.com/shexSpec/shexTest/blob/main/doc/ShExJ.jsg#L18"><code>Schema.start</code></a></td></tr>
+  <tr><td><a href="https://github.com/shexSpec/shexTest/blob/main/doc/ShExR.shex#L27"><code>sx:shapeExprs</code></a> (ShapeOr, ShapeAnd)</td>
+      <td><a href="https://github.com/shexSpec/shexTest/blob/main/doc/ShExJ.jsg#L31-L32"><code>shapeExprs</code></a></td></tr>
+  <tr><td><a href="https://github.com/shexSpec/shexTest/blob/main/doc/ShExR.shex#L37"><code>sx:shapeExpr</code></a> (ShapeNot)</td>
+      <td><a href="https://github.com/shexSpec/shexTest/blob/main/doc/ShExJ.jsg#L33"><code>ShapeNot.shapeExpr</code></a></td></tr>
+  <tr><td><a href="https://github.com/shexSpec/shexTest/blob/main/doc/ShExR.shex#L52"><code>sx:extends</code></a></td>
+      <td><a href="https://github.com/shexSpec/shexTest/blob/main/doc/ShExJ.jsg#L71"><code>Shape.extends</code></a></td></tr>
+  <tr><td><a href="https://github.com/shexSpec/shexTest/blob/main/doc/ShExR.shex#L158"><code>sx:valueExpr</code></a></td>
+      <td><a href="https://github.com/shexSpec/shexTest/blob/main/doc/ShExJ.jsg#L101"><code>TripleConstraint.valueExpr</code></a></td></tr>
+</table>
+
+<p><code>start</code> is just where it is easiest to see.</p>
+
+<h2>2. An abstract <code>start</code> slips past the abstract-shape requirement</h2>
+
+<p>ShExR accepts <code>sx:start [ a sx:ShapeDecl ; sx:abstract true ; … ]</code>. The
+specification's abstract-shape requirement is worded over shapeExprRefs:</p>
+
+<blockquote>Every shapeExprRef <em>referer</em> MUST identify at least one
+non-abstract shape.</blockquote>
+
+<p>An <em>inline</em> abstract ShapeDecl at <code>start</code> is not a ref, so the
+requirement's wording does not reach it — leaving a start shape that nothing
+can satisfy. This is the one delta with semantic teeth rather than just
+surplus expressivity.</p>
+
+<h2>3. <code>inlineShapeExpression</code> restricts <code>start</code> only in ShExC</h2>
+
+<p>ShExC's <code>start</code> takes an <em>inline</em> shape expression. Comparing the
+inline and general forms, the only difference is the tail:</p>
+
+<div class="scroll">
+<pre><a href="http://shex.io/shex-semantics/#prod-shapeDefinition">shapeDefinition</a>       ::= (includeSet | extraPropertySet | "CLOSED")* '{' tripleExpression? '}' <strong>annotation* semanticActions</strong>
+<a href="http://shex.io/shex-semantics/#prod-inlineShapeDefinition">inlineShapeDefinition</a> ::= (includeSet | extraPropertySet | "CLOSED")* '{' tripleExpression? '}'</pre>
+</div>
+
+<p>So an inline shape definition may not carry
+<a href="http://shex.io/shex-semantics/#prod-annotation">annotations</a> or
+<a href="http://shex.io/shex-semantics/#prod-semanticActions">semantic actions</a>,
+and per the grammar this is ill-formed:</p>
+
+<pre>start = { &lt;p&gt; . } %&lt;a&gt;%          <em># annotation/semAct on an inlineShapeDefinition</em></pre>
+
+<p>while parenthesising reaches the general production through
+<a href="http://shex.io/shex-semantics/#prod-inlineShapeAtom"><code>inlineShapeAtom</code></a>'s
+<code>'(' shapeExpression ')'</code> branch:</p>
+
+<pre>start = ( { &lt;p&gt; . } %&lt;a&gt;% )      <em># well-formed</em></pre>
+
+<p>Neither ShExJ nor ShExR has any such restriction — <code>sx:start</code> reaches
+<code>&lt;#Shape&gt;</code>, which permits <code>sx:semActs</code> and
+<code>sx:annotation</code> unconditionally. The restriction is purely syntactic
+and has no counterpart in the abstract syntax, so it is an obligation on
+<em>writers</em>: a ShExJ→ShExC serialiser must parenthesise a <code>start</code>
+carrying annotations or semantic actions, or it emits invalid ShExC.</p>
+
+<h3>Implementation note</h3>
+
+<p><a href="https://github.com/shexSpec/shex.js">shex.js</a> accepts the bare form
+above and attaches <code>semActs</code> to the start Shape, so its parser is more
+permissive than the published grammar here. That is an implementation/grammar
+divergence rather than a syntax/syntax one, but it means the bare form
+round-trips in practice and so is likely to appear in the wild.</p>
+
+<h2>Reproducing</h2>
+
+<p>ShExC and ShExJ, from a <a href="https://github.com/shexSpec/shex.js">shex.js</a> checkout:</p>
+
+<pre>node -e "const p=require('./packages/shex-parser');
+  console.log(JSON.stringify(p.construct('http://ex/',{}).parse('&lt;S&gt; {} start = @&lt;S&gt;').start))"
+<em># "http://ex/S"  -- a shapeDeclRef, not an object</em>
+
+npx json-grammar doc/ShExJ.jsg start-shapedecl.json
+<em># rejects { "type":"Schema", "start":{ "type":"ShapeDecl", … } }</em></pre>
+
+<p>ShExR, validating a candidate graph against <code>doc/ShExR.shex</code>:</p>
+
+<pre>const shexr = ShExParser.construct('http://www.w3.org/ns/shex',{},{index:true})
+                        .parse(fs.readFileSync('doc/ShExR.shex','utf8'));
+new ShExValidator(shexr, rdfjsDB(graph), {})
+  .validateShapeMap([{node:'http://ex/sch', shape:'http://www.w3.org/ns/shex#Schema'}]);</pre>
+
+<pre>PREFIX sx: &lt;http://www.w3.org/ns/shex#&gt;
+&lt;http://ex/sch&gt; a sx:Schema ;
+  sx:start [ a sx:ShapeDecl ; sx:abstract true ; sx:shapeExpr [ a sx:Shape ] ] .
+<em># conformant -- though no ShExC or ShExJ document can denote this</em></pre>
+
+<h2>Open question</h2>
+
+<p>What <code>ShExUtil.ShExRtoShExJ</code> does with an anonymous ShapeDecl at
+<code>start</code> is not established here: the loader failed earlier
+(<code>Cannot read properties of undefined (reading 'validator')</code>) before
+reaching the conversion. If it emits <code>start: {type: "ShapeDecl", …}</code>,
+that is a ShExJ document its own grammar rejects, which would turn this from a
+specification gap into a reachable bug.</p>
+
+<footer>
+Lives in <a href="https://github.com/shexSpec/shexTest">shexSpec/shexTest</a>
+beside the two grammars it compares. The ShExC productions link into
+<a href="http://shex.io/shex-semantics/">ShEx Semantics</a>; productions are
+quoted inline so this note stands on its own if line numbers drift.
+</footer>
+
+</body>
+</html>
