@@ -48,6 +48,26 @@ jobs:
       - run: npm run test-shexv-val
       - run: npm run test-shexv-err
 
+      # doc/ShExR.shex is the hand-maintained source; doc/ShExR.{json,ttl,
+      # ntriples} are the same schema in other syntaxes and had all drifted
+      # from it (ShExR.ntriples by nine years -- it predated ShapeDecl,
+      # abstract, imports and extends entirely, and still carried the
+      # sx:negated the language dropped in 2016).
+      #
+      # bin/mkShExR.js regenerates the two RDF renderings via ShExJ and
+      # doc/ShExJ-context.jsonld, so this also exercises the context, which is
+      # itself generated from vocab/vocab.csv. ShExR.json is compared as an AST
+      # rather than regenerated, so its hand formatting survives.
+      - name: doc/ShExR.{json,ttl,ntriples} match doc/ShExR.shex
+        run: |
+          npm run shexr-check || {
+            echo "::error::ShExR renderings are stale -- run 'npm run shexr' and commit the result"
+            exit 1
+          }
+
+      # the published ShEx vocabulary must define every term ShExR uses
+      - run: npm run vocab-check
+
       # informational only: flags schemas referenced by validation tests
       # (via EXTENDS, not IMPORT) that lack their own manifest entry.
       # Currently reports 3 pre-existing gaps that need real ShExR (.ttl)
