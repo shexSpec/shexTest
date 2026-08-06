@@ -29,11 +29,13 @@
     "LiteralStemRange": "shex:LiteralStemRange",
     "NodeConstraint": "shex:NodeConstraint",
     "OneOf": "shex:OneOf",
+    "QueryMap": "shex:QueryMap",
     "Schema": "shex:Schema",
     "SemAct": "shex:SemAct",
     "Shape": "shex:Shape",
     "ShapeAnd": "shex:ShapeAnd",
     "ShapeExternal": "shex:ShapeExternal",
+    "ShapeMap": "shex:ShapeMap",
     "ShapeNot": "shex:ShapeNot",
     "ShapeOr": "shex:ShapeOr",
     "Stem": "shex:Stem",
@@ -60,6 +62,10 @@
       "@id": "shex:expressions",
       "@type": "@id",
       "@container": "@list"
+    },
+    "extends": {
+      "@id": "shex:extends",
+      "@type": "@id"
     },
     "extra": {
       "@id": "shex:extra",
@@ -121,6 +127,10 @@
       "@id": "shex:name",
       "@type": "@id"
     },
+    "node": {
+      "@id": "shex:node",
+      "@type": "@id"
+    },
     "nodeKind": {
       "@id": "shex:nodeKind",
       "@type": "@vocab"
@@ -141,6 +151,10 @@
       "@id": "shex:semActs",
       "@type": "@id",
       "@container": "@list"
+    },
+    "shape": {
+      "@id": "shex:shape",
+      "@type": "@id"
     },
     "shapeExpr": {
       "@id": "shex:shapeExpr",
@@ -165,6 +179,10 @@
       "@type": "@id",
       "@container": "@list"
     },
+    "status": {
+      "@id": "shex:status",
+      "@language": null
+    },
     "stem": {
       "@id": "shex:stem",
       "@type": "xsd:string"
@@ -182,6 +200,8 @@
       "@type": "@id",
       "@container": "@list"
     },
+    "FOCUS": "shex:FOCUS",
+    "_": "shex:_",
     "bnode": "shex:bnode",
     "iri": "shex:iri",
     "literal": "shex:literal",
