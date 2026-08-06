@@ -431,7 +431,7 @@ var respecConfig = {
     shortName:        "shexns",
     publishDate:      "${ont['dc:date']}",
     thisVersion:      "https://www.w3.org/ns/shex",
-    edDraftURI:       "https://shexspec.github.io/shexTest/vocab/shex.html",
+    edDraftURI:       "https://github.com/shexSpec/shexTest/tree/main/vocab",
     // lcEnd: "3000-01-01",
     // crEnd: "3000-01-01",
     testSuiteURI:     "https://shexspec.github.io/shexTest/",
