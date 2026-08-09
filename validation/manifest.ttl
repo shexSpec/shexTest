@@ -9066,7 +9066,7 @@
 
 <#1iriRefLength1_fail-bnode-equal> a sht:ValidationFailure ;
     mf:name "1iriRefLength1_fail-bnode-equal" ;
-    sht:trait sht:LengthFacet ;
+    sht:trait sht:LengthFacet , sht:LexicalBNode ;
     rdfs:comment "<S1> { <p1> IRI @<S2> LENGTH 19 } <S2> { <p2> . } on { <s1> <p1> _:abcde }" ;
     mf:status mf:Approved ;
     mf:action [
@@ -9640,7 +9640,7 @@
 
 <#1literalPattern_pass-lit-match> a sht:ValidationTest ;
     mf:name "1literalPattern_pass-lit-match" ;
-    sht:trait sht:PaternFacet ;
+    sht:trait sht:PatternFacet ;
     rdfs:comment "<S1> { <p1> LITERAL PATTERN \"bc\" } on { <s1> <p1> \"bc\" }" ;
     mf:status mf:Approved ;
     mf:action [
@@ -9653,7 +9653,7 @@
 
 <#1literalPattern_fail-lit-short> a sht:ValidationFailure ;
     mf:name "1literalPattern_fail-lit-short" ;
-    sht:trait sht:PaternFacet ;
+    sht:trait sht:PatternFacet ;
     rdfs:comment "<S1> { <p1> LITERAL PATTERN \"bc\" } on { <s1> <p1> \"a\" }" ;
     mf:status mf:Approved ;
     mf:action [
@@ -9666,7 +9666,7 @@
 
 <#1literalPattern_fail-ab> a sht:ValidationFailure ;
     mf:name "1literalPattern_fail-ab" ;
-    sht:trait sht:PaternFacet ;
+    sht:trait sht:PatternFacet ;
     rdfs:comment "<S1> { <p1> LITERAL PATTERN \"bc\" } on { <s1> <p1> \"ab\" }" ;
     mf:status mf:Approved ;
     mf:action [
@@ -9679,7 +9679,7 @@
 
 <#1literalPattern_fail-cd> a sht:ValidationFailure ;
     mf:name "1literalPattern_fail-cd" ;
-    sht:trait sht:PaternFacet ;
+    sht:trait sht:PatternFacet ;
     rdfs:comment "<S1> { <p1> LITERAL PATTERN \"bc\" } on { <s1> <p1> \"cd\" }" ;
     mf:status mf:Approved ;
     mf:action [
@@ -9692,7 +9692,7 @@
 
 <#1literalPatterni_pass-lit-match> a sht:ValidationTest ;
     mf:name "1literalPatterni_pass-lit-match" ;
-    sht:trait sht:PaternFacet ;
+    sht:trait sht:PatternFacet ;
     rdfs:comment "<S1> { <p1> LITERAL /bc/i } on { <s1> <p1> \"bc\" }" ;
     mf:status mf:Approved ;
     mf:action [
@@ -9705,7 +9705,7 @@
 
 <#1literalPatterni_pass-lit-BC> a sht:ValidationTest ;
     mf:name "1literalPatterni_pass-lit-BC" ;
-    sht:trait sht:PaternFacet ;
+    sht:trait sht:PatternFacet ;
     rdfs:comment "<S1> { <p1> LITERAL /bc/i } on { <s1> <p1> \"BC\" }" ;
     mf:status mf:Approved ;
     mf:action [
@@ -9718,7 +9718,7 @@
 
 <#1literalPatterni_pass-lit-blowercaseC> a sht:ValidationTest ;
     mf:name "1literalPatterni_pass-lit-blowercaseC" ;
-    sht:trait sht:PaternFacet ;
+    sht:trait sht:PatternFacet ;
     rdfs:comment "<S1> { <p1> LITERAL /bc/i } on { <s1> <p1> \"bC\" }" ;
     mf:status mf:Approved ;
     mf:action [
@@ -9731,7 +9731,7 @@
 
 <#1literalPattern_pass-lit-into> a sht:ValidationTest ;
     mf:name "1literalPattern_pass-lit-into" ;
-    sht:trait sht:PaternFacet ;
+    sht:trait sht:PatternFacet ;
     rdfs:comment "<S1> { <p1> LITERAL PATTERN \"bc\" } on { <s1> <p1> \"abc\" }" ;
     mf:status mf:Approved ;
     mf:action [
@@ -9744,7 +9744,7 @@
 
 <#1literalPattern19_fail-iri-match> a sht:ValidationFailure ;
     mf:name "1literalPattern19_fail-iri-match" ;
-    sht:trait sht:PaternFacet ;
+    sht:trait sht:PatternFacet ;
     rdfs:comment "<S1> { <p1> LITERAL PATTERN \"http://a.example/o1\" } on { <s1> <p1> <o1> }" ;
     mf:status mf:Approved ;
     mf:action [
@@ -9757,7 +9757,7 @@
 
 <#1literalPattern_fail-bnode-match> a sht:ValidationFailure ;
     mf:name "1literalPattern_fail-bnode-match" ;
-    sht:trait sht:PaternFacet ;
+    sht:trait sht:PatternFacet , sht:LexicalBNode ;
     rdfs:comment "<S1> { <p1> LITERAL PATTERN \"bc\" } on { <s1> <p1> _:ab }" ;
     mf:status mf:Approved ;
     mf:action [
@@ -9771,7 +9771,7 @@
 
 <#1literalStartPattern_pass-bc> a sht:ValidationTest ;
     mf:name "1literalStartPattern_pass-bc" ;
-    sht:trait sht:PaternFacet ;
+    sht:trait sht:PatternFacet ;
     rdfs:comment "<S1> { <p1> LITERAL PATTERN \"^bc\" } on { <s1> <p1> \"bc\" }" ;
     mf:status mf:Approved ;
     mf:action [
@@ -9784,7 +9784,7 @@
 
 <#1literalStartPattern_fail-CarrotbcDollar> a sht:ValidationFailure ;
     mf:name "1literalStartPattern_fail-CarrotbcDollar" ;
-    sht:trait sht:PaternFacet ;
+    sht:trait sht:PatternFacet ;
     rdfs:comment "<S1> { <p1> LITERAL PATTERN \"^bc\" } on { <s1> <p1> \"^bc$\" }" ;
     mf:status mf:Approved ;
     mf:action [
@@ -9797,7 +9797,7 @@
 
 <#1literalPatternEnd_pass-bc> a sht:ValidationTest ;
     mf:name "1literalPatternEnd_pass-bc" ;
-    sht:trait sht:PaternFacet ;
+    sht:trait sht:PatternFacet ;
     rdfs:comment "<S1> { <p1> LITERAL PATTERN \"bc$\" } on { <s1> <p1> \"bc\" }" ;
     mf:status mf:Approved ;
     mf:action [
@@ -9810,7 +9810,7 @@
 
 <#1literalPatternEnd_pass-CarrotbcDollar> a sht:ValidationFailure ;
     mf:name "1literalPatternEnd_pass-CarrotbcDollar" ;
-    sht:trait sht:PaternFacet ;
+    sht:trait sht:PatternFacet ;
     rdfs:comment "<S1> { <p1> LITERAL PATTERN \"bc$\" } on { <s1> <p1> \"^bc$\" }" ;
     mf:status mf:Approved ;
     mf:action [
@@ -9823,7 +9823,7 @@
 
 <#1literalPattern_pass-bcDollar> a sht:ValidationTest ;
     mf:name "1literalPattern_pass-bcDollar" ;
-    sht:trait sht:PaternFacet ;
+    sht:trait sht:PatternFacet ;
     rdfs:comment "<S1> { <p1> LITERAL PATTERN \"bc\" } on { <s1> <p1> \"bc$\" }" ;
     mf:status mf:Approved ;
     mf:action [
@@ -9836,7 +9836,7 @@
 
 <#1literalStarPatternEnd_pass-bc> a sht:ValidationTest ;
     mf:name "1literalStarPatternEnd_pass-bc" ;
-    sht:trait sht:PaternFacet ;
+    sht:trait sht:PatternFacet ;
     rdfs:comment "<S1> { <p1> LITERAL PATTERN \"^bc$\" } on { <s1> <p1> \"bc\" }" ;
     mf:status mf:Approved ;
     mf:action [
@@ -9849,7 +9849,7 @@
 
 <#1literalPattern_pass-CarrotbcDollar> a sht:ValidationTest ;
     mf:name "1literalPattern_pass-CarrotbcDollar" ;
-    sht:trait sht:PaternFacet ;
+    sht:trait sht:PatternFacet ;
     rdfs:comment "<S1> { <p1> LITERAL PATTERN \"bc\" } on { <s1> <p1> \"^bc$\" }" ;
     mf:status mf:Approved ;
     mf:action [
@@ -10137,7 +10137,7 @@
 
 <#1literalPatternEnd_fail-litEnd> a sht:ValidationFailure ;
     mf:name "1literalPatternEnd_fail-litEnd" ;
-    sht:trait sht:PaternFacet ;
+    sht:trait sht:PatternFacet ;
     rdfs:comment "<S1> { <p1> LITERAL PATTERN \"bc$\" } on { <s1> <p1> \"bc$\" }" ;
     mf:status mf:Approved ;
     mf:action [
@@ -10150,7 +10150,7 @@
 
 <#1literalPatternDollar_pass-litDollar-match> a sht:ValidationTest ;
     mf:name "1literalPatternDollar_pass-litDollar-match" ;
-    sht:trait sht:PaternFacet ;
+    sht:trait sht:PatternFacet ;
     rdfs:comment "<S1> { <p1> LITERAL PATTERN \"bc\\$\" } on { <s1> <p1> \"bc$\" }" ;
     mf:status mf:Approved ;
     mf:action [
@@ -10163,7 +10163,7 @@
 
 <#1literalPattern_pass-StartlitEnd-match> a sht:ValidationFailure ;
     mf:name "1literalPattern_pass-StartlitEnd-match" ;
-    sht:trait sht:PaternFacet ;
+    sht:trait sht:PatternFacet ;
     rdfs:comment "<S1> { <p1> LITERAL PATTERN \"^bc$\" } on { <s1> <p1> \"^bc$\" }" ;
     mf:status mf:Approved ;
     mf:action [
@@ -10176,7 +10176,7 @@
 
 <#1literalStartPatternEnd_CarrotbcDollar> a sht:ValidationFailure ;
     mf:name "1literalStartPatternEnd_CarrotbcDollar" ;
-    sht:trait sht:PaternFacet ;
+    sht:trait sht:PatternFacet ;
     rdfs:comment "<S1> { <p1> LITERAL PATTERN \"^bc$\" } on { <s1> <p1> \"^bc$\" }" ;
     mf:status mf:Approved ;
     mf:action [
@@ -10189,7 +10189,7 @@
 
 <#1literalCarrotPatternDollar_pass-bc> a sht:ValidationFailure ;
     mf:name "1literalCarrotPatternDollar_pass-bc" ;
-    sht:trait sht:PaternFacet ;
+    sht:trait sht:PatternFacet ;
     rdfs:comment "<S1> { <p1> LITERAL PATTERN \"\\^bc\\$\" } on { <s1> <p1> \"bc\" }" ;
     mf:status mf:Approved ;
     mf:action [
@@ -10202,7 +10202,7 @@
 
 <#1literalCarrotPatternDollar_pass-CarrotbcDollar> a sht:ValidationTest ;
     mf:name "1literalCarrotPatternDollar_pass-CarrotbcDollar" ;
-    sht:trait sht:PaternFacet ;
+    sht:trait sht:PatternFacet ;
     rdfs:comment "<S1> { <p1> LITERAL PATTERN \"\\^bc\\$\" } on { <s1> <p1> \"^bc$\" }" ;
     mf:status mf:Approved ;
     mf:action [
@@ -10215,7 +10215,7 @@
 
 <#1literalPatternabEnd_fail-bnode-match> a sht:ValidationFailure ;
     mf:name "1literalPatternabEnd_fail-bnode-match" ;
-    sht:trait sht:PaternFacet , sht:LexicalBNode ;
+    sht:trait sht:PatternFacet , sht:LexicalBNode ;
     rdfs:comment "<S1> { <p1> LITERAL PATTERN \"bc$\" } on { <s1> <p1> _:bc }" ;
     mf:status mf:Approved ;
     mf:action [
@@ -10228,7 +10228,7 @@
 
 <#1iriPattern_pass-iri-match> a sht:ValidationTest ;
     mf:name "1iriPattern_pass-iri-match" ;
-    sht:trait sht:PaternFacet ;
+    sht:trait sht:PatternFacet ;
     rdfs:comment "<S1> { <p1> IRI PATTERN \"http://a.example/o1\" } on { <s1> <p1> <o1> }" ;
     mf:status mf:Approved ;
     mf:action [
@@ -10241,7 +10241,7 @@
 
 <#1iriPattern_fail-iri-short> a sht:ValidationFailure ;
     mf:name "1iriPattern_fail-iri-short" ;
-    sht:trait sht:PaternFacet ;
+    sht:trait sht:PatternFacet ;
     rdfs:comment "<S1> { <p1> IRI PATTERN \"http://a.example/o1\" } on { <s1> <p1> <o> }" ;
     mf:status mf:Approved ;
     mf:action [
@@ -10254,7 +10254,7 @@
 
 <#1iriPattern_fail-iri-long> a sht:ValidationFailure ;
     mf:name "1iriPattern_fail-iri-long" ;
-    sht:trait sht:PaternFacet ;
+    sht:trait sht:PatternFacet ;
     rdfs:comment "<S1> { <p1> IRI PATTERN \"http://a.example/o1\" } on { <s1> <p1> <o1a> }" ;
     mf:status mf:Approved ;
     mf:action [
@@ -10267,7 +10267,7 @@
 
 <#1iriPattern_fail-lit-match> a sht:ValidationFailure ;
     mf:name "1iriPattern_fail-lit-match" ;
-    sht:trait sht:PaternFacet ;
+    sht:trait sht:PatternFacet ;
     rdfs:comment "<S1> { <p1> IRI PATTERN \"http://a.example/o1\" } on { <s1> <p1> \"o1\" }" ;
     mf:status mf:Approved ;
     mf:action [
@@ -10280,7 +10280,7 @@
 
 <#1iriPattern_fail-bnode-match> a sht:ValidationFailure ;
     mf:name "1iriPattern_fail-bnode-match" ;
-    sht:trait sht:PaternFacet ;
+    sht:trait sht:PatternFacet , sht:LexicalBNode ;
     rdfs:comment "<S1> { <p1> IRI PATTERN \"^bc$\" } on { <s1> <p1> _:bc }" ;
     mf:status mf:Approved ;
     mf:action [
@@ -10293,7 +10293,7 @@
 
 <#1bnodePattern_pass-bnode-match> a sht:ValidationTest ;
     mf:name "1bnodePattern_pass-bnode-match" ;
-    sht:trait sht:PaternFacet , sht:LexicalBNode ;
+    sht:trait sht:PatternFacet , sht:LexicalBNode ;
     rdfs:comment "<S1> { <p1> BNODE PATTERN \"bc\" } on { <s1> <p1> _:bc }" ;
     mf:status mf:Approved ;
     mf:action [
@@ -10306,7 +10306,7 @@
 
 <#1bnodePattern_fail-bnode-short> a sht:ValidationFailure ;
     mf:name "1bnodePattern_fail-bnode-short" ;
-    sht:trait sht:PaternFacet , sht:LexicalBNode ;
+    sht:trait sht:PatternFacet , sht:LexicalBNode ;
     rdfs:comment "<S1> { <p1> BNODE PATTERN \"bc\" } on { <s1> <p1> _:a }" ;
     mf:status mf:Approved ;
     mf:action [
@@ -10319,7 +10319,7 @@
 
 <#1bnodePattern_fail-bnode-long> a sht:ValidationTest ;
     mf:name "1bnodePattern_fail-bnode-long" ;
-    sht:trait sht:PaternFacet , sht:LexicalBNode ;
+    sht:trait sht:PatternFacet , sht:LexicalBNode ;
     rdfs:comment "<S1> { <p1> BNODE PATTERN \"bc\" } on { <s1> <p1> _:abc }" ;
     mf:status mf:Approved ;
     mf:action [
@@ -10332,7 +10332,7 @@
 
 <#1bnodePattern_fail-lit-match> a sht:ValidationFailure ;
     mf:name "1bnodePattern_fail-lit-match" ;
-    sht:trait sht:PaternFacet ;
+    sht:trait sht:PatternFacet ;
     rdfs:comment "<S1> { <p1> BNODE PATTERN \"bc\" } on { <s1> <p1> \"ab\" }" ;
     mf:status mf:Approved ;
     mf:action [
@@ -10345,7 +10345,7 @@
 
 <#1bnodePattern_fail-iri-match> a sht:ValidationFailure ; # try one against relative name
     mf:name "1bnodePattern_fail-iri-match" ;
-    sht:trait sht:PaternFacet ;
+    sht:trait sht:PatternFacet ;
     rdfs:comment "<S1> { <p1> BNODE PATTERN \"bc\" } on { BASE <http://a.example/> <s1> <p1> <bc> }" ;
     mf:status mf:Approved ;
     mf:action [
@@ -10358,7 +10358,7 @@
 
 <#1nonliteralPattern_pass-iri-match> a sht:ValidationTest ;
     mf:name "1nonliteralPattern_pass-iri-match" ;
-    sht:trait sht:PaternFacet ;
+    sht:trait sht:PatternFacet ;
     rdfs:comment "<S1> { <p1> NONLITERAL PATTERN \"bc$\" } on { <s1> <p1> <bc> }" ;
     mf:status mf:Approved ;
     mf:action [
@@ -10371,7 +10371,7 @@
 
 <#1nonliteralPattern_fail-iri-short> a sht:ValidationFailure ;
     mf:name "1nonliteralPattern_fail-iri-short" ;
-    sht:trait sht:PaternFacet ;
+    sht:trait sht:PatternFacet ;
     rdfs:comment "<S1> { <p1> NONLITERAL PATTERN \"bc$\" } on { <s1> <p1> <a> }" ;
     mf:status mf:Approved ;
     mf:action [
@@ -10384,7 +10384,7 @@
 
 <#1nonliteralPattern_pass-iri-long> a sht:ValidationTest ;
     mf:name "1nonliteralPattern_pass-iri-long" ;
-    sht:trait sht:PaternFacet ;
+    sht:trait sht:PatternFacet ;
     rdfs:comment "<S1> { <p1> NONLITERAL PATTERN \"bc$\" } on { <s1> <p1> <abc> }" ;
     mf:status mf:Approved ;
     mf:action [
@@ -10397,7 +10397,7 @@
 
 <#1nonliteralPattern_fail-lit-match> a sht:ValidationFailure ;
     mf:name "1nonliteralPattern_fail-lit-match" ;
-    sht:trait sht:PaternFacet ;
+    sht:trait sht:PatternFacet ;
     rdfs:comment "<S1> { <p1> NONLITERAL PATTERN \"bc$\" } on { <s1> <p1> \"ab\" }" ;
     mf:status mf:Approved ;
     mf:action [
@@ -10410,7 +10410,7 @@
 
 <#1nonliteralPattern_pass-bnode-match> a sht:ValidationTest ;
     mf:name "1nonliteralPattern_pass-bnode-match" ;
-    sht:trait sht:PaternFacet , sht:LexicalBNode ;
+    sht:trait sht:PatternFacet , sht:LexicalBNode ;
     rdfs:comment "<S1> { <p1> NONLITERAL PATTERN \"bc$\" } on { <s1> <p1> _:bc }" ;
     mf:status mf:Approved ;
     mf:action [
@@ -10423,7 +10423,7 @@
 
 <#1nonliteralPattern_fail-bnode-short> a sht:ValidationFailure ;
     mf:name "1nonliteralPattern_fail-bnode-short" ;
-    sht:trait sht:PaternFacet , sht:LexicalBNode ;
+    sht:trait sht:PatternFacet , sht:LexicalBNode ;
     rdfs:comment "<S1> { <p1> NONLITERAL PATTERN \"bc$\" } on { <s1> <p1> _:a }" ;
     mf:status mf:Approved ;
     mf:action [
@@ -10436,7 +10436,7 @@
 
 <#1nonliteralPattern_pass-bnode-long> a sht:ValidationTest ;
     mf:name "1nonliteralPattern_pass-bnode-long" ;
-    sht:trait sht:PaternFacet , sht:LexicalBNode ;
+    sht:trait sht:PatternFacet , sht:LexicalBNode ;
     rdfs:comment "<S1> { <p1> NONLITERAL PATTERN \"bc$\" } on { <s1> <p1> _:abc }" ;
     mf:status mf:Approved ;
     mf:action [
@@ -14866,7 +14866,7 @@
 
 <#1focusBNODE_dot_fail-iriFocusLabel-equal> a sht:ValidationFailure ;
     mf:name "1focusBNODE_dot_fail-iriFocusLabel-equal" ;
-    sht:trait sht:FocusConstraint , sht:LexicalBNode ;
+    sht:trait sht:FocusConstraint ;
     rdfs:comment "<S> BNODE { <p1> . } on <s> in { <s1> <p1> <o1> }" ;
     mf:status mf:Approved ;
     mf:action [
@@ -15273,7 +15273,7 @@
 
 <#1focusMinLength-dot_pass-bnode-long> a sht:ValidationTest ;
     mf:name "1focusMinLength-dot_pass-bnode-long" ;
-    sht:trait sht:FocusConstraint , sht:LengthFacet , sht:ToldBNode ;
+    sht:trait sht:FocusConstraint , sht:LengthFacet , sht:LexicalBNode , sht:ToldBNode ;
     rdfs:comment "<S1> MINLENGTH 19 { <p1> . } on { _:abcdefghijklmnopqrst <p1> <o1> }" ;
     mf:status mf:Approved ;
     mf:action [
@@ -15326,7 +15326,7 @@
 
 <#1focusMaxLength-dot_pass-bnode-short> a sht:ValidationTest ;
     mf:name "1focusMaxLength-dot_pass-bnode-short" ;
-    sht:trait sht:FocusConstraint , sht:LengthFacet , sht:LexicalBNode ;
+    sht:trait sht:FocusConstraint , sht:LengthFacet , sht:LexicalBNode , sht:ToldBNode ;
     rdfs:comment "<S1> MAXLENGTH 19 { <p1> . } on { _:abcd <p1> <o1> }" ;
     mf:status mf:Approved ;
     mf:action [
@@ -15339,7 +15339,7 @@
 
 <#1focusMaxLength-dot_pass-bnode-equal> a sht:ValidationTest ;
     mf:name "1focusMaxLength-dot_pass-bnode-equal" ;
-    sht:trait sht:FocusConstraint , sht:LengthFacet , sht:LexicalBNode ;
+    sht:trait sht:FocusConstraint , sht:LengthFacet , sht:LexicalBNode , sht:ToldBNode ;
     rdfs:comment "<S1> MAXLENGTH 19 { <p1> . } on { _:abcdefghijklmnopqrs <p1> <o1> }" ;
     mf:status mf:Approved ;
     mf:action [
@@ -15352,7 +15352,7 @@
 
 <#1focusMaxLength-dot_fail-bnode-long> a sht:ValidationFailure ;
     mf:name "1focusMaxLength-dot_fail-bnode-long" ;
-    sht:trait sht:FocusConstraint , sht:LexicalBNode , sht:LengthFacet ;
+    sht:trait sht:FocusConstraint , sht:LexicalBNode , sht:LengthFacet , sht:ToldBNode ;
     rdfs:comment "<S1> MAXLENGTH 19 { <p1> . } on { _:abcdefghijklmnopqrst <p1> <o1> }" ;
     mf:status mf:Approved ;
     mf:action [
@@ -15367,7 +15367,7 @@
 ####    pattern {
 <#1focusPattern-dot_fail-iri-match> a sht:ValidationFailure ;
     mf:name "1focusPattern-dot_fail-iri-match" ;
-    sht:trait sht:PaternFacet ;
+    sht:trait sht:PatternFacet ;
     rdfs:comment "<S1> PATTERN '^http://a.example/s1$' { <p1> } on { <s2> <p1> <o> }" ;
     mf:status mf:Approved ;
     mf:action [
@@ -15379,7 +15379,7 @@
 
 <#1focusPattern-dot_fail-iri-short> a sht:ValidationFailure ;
     mf:name "1focusPattern-dot_fail-iri-short" ;
-    sht:trait sht:PaternFacet ;
+    sht:trait sht:PatternFacet ;
     rdfs:comment "<S1> PATTERN '^http://a.example/s1$' { <p1> } on { <s> <p1> <o1> }" ;
     mf:status mf:Approved ;
     mf:action [
@@ -15391,7 +15391,7 @@
 
 <#1focusPattern-dot_pass-iri-match> a sht:ValidationTest ;
     mf:name "1focusPattern-dot_pass-iri-match" ;
-    sht:trait sht:PaternFacet ;
+    sht:trait sht:PatternFacet ;
     rdfs:comment "<S1> PATTERN 'http://a.example/s1' { <p1> } on { <s1> <p1> <o1> }" ;
     mf:status mf:Approved ;
     mf:action [
@@ -15404,7 +15404,7 @@
 
 <#1focusPattern-dot_fail-iri-long> a sht:ValidationFailure ;
     mf:name "1focusPattern-dot_fail-iri-long" ;
-    sht:trait sht:PaternFacet ;
+    sht:trait sht:PatternFacet ;
     rdfs:comment "<S1> PATTERN '^http://a.example/s1$' { <p1> } on { <s1a> <p1> <o1> }" ;
     mf:status mf:Approved ;
     mf:action [
@@ -15416,7 +15416,7 @@
 
 <#1focusPatternB-dot_fail-iri-match> a sht:ValidationFailure ;
     mf:name "1focusPatternB-dot_fail-iri-match" ;
-    sht:trait sht:PaternFacet ;
+    sht:trait sht:PatternFacet ;
     rdfs:comment "<S1> PATTERN 'abcdefghijklmnopqrs' { <p1> } on { <s2> <p1> <o> }" ;
     mf:status mf:Approved ;
     mf:action [
@@ -15428,7 +15428,7 @@
 
 <#1focusPatternB-dot_fail-bnode-short> a sht:ValidationFailure ;
     mf:name "1focusPatternB-dot_fail-bnode-short" ;
-    sht:trait sht:PaternFacet , sht:LexicalBNode , sht:ToldBNode ;
+    sht:trait sht:PatternFacet , sht:LexicalBNode , sht:ToldBNode ;
     rdfs:comment "<S1> PATTERN 'abcdefghijklmnopqrs' { <p1> } on { _:abcd <p1> <o1> }" ;
     mf:status mf:Approved ;
     mf:action [
@@ -15440,7 +15440,7 @@
 
 <#1focusPatternB-dot_pass-bnode-match> a sht:ValidationTest ;
     mf:name "1focusPatternB-dot_pass-bnode-match" ;
-    sht:trait sht:PaternFacet , sht:LexicalBNode , sht:ToldBNode ;
+    sht:trait sht:PatternFacet , sht:LexicalBNode , sht:ToldBNode ;
     rdfs:comment "<S1> PATTERN 'abcdefghijklmnopqrs' { <p1> } on { _:abcdefghijklmnopqrs <p1> <o1> }" ;
     mf:status mf:Approved ;
     mf:action [
@@ -15453,7 +15453,7 @@
 
 <#1focusPatternB-dot_pass-bnode-long> a sht:ValidationTest ;
     mf:name "1focusPatternB-dot_pass-bnode-long" ;
-    sht:trait sht:PaternFacet , sht:LexicalBNode , sht:ToldBNode ;
+    sht:trait sht:PatternFacet , sht:LexicalBNode , sht:ToldBNode ;
     rdfs:comment "<S1> PATTERN 'abcdefghijklmnopqrs' { <p1> } on { _:abcdefghijklmnopqrst <p1> <o1> }" ;
     mf:status mf:Approved ;
     mf:action [
@@ -15522,7 +15522,7 @@
 
 <#1focusBNODELength_dot_fail-iriFocusLabel-equal> a sht:ValidationFailure ;
     mf:name "1focusBNODELength_dot_fail-iriFocusLabel-equal" ;
-    sht:trait sht:LexicalBNode , sht:LengthFacet ;
+    sht:trait sht:LengthFacet ;
     rdfs:comment "<S> BNODE LENGTH 19 { <p1> . } on <s> in { <s1> <p1> <o1> }" ;
     mf:status mf:Approved ;
     mf:action [
