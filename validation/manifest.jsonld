@@ -10325,7 +10325,7 @@
           "extensionResults": [],
           "name": "1literalPattern_pass-lit-match",
           "trait": [
-            "PaternFacet"
+            "PatternFacet"
           ],
           "comment": "<S1> { <p1> LITERAL PATTERN \"bc\" } on { <s1> <p1> \"bc\" }",
           "status": "mf:Approved"
@@ -10342,7 +10342,7 @@
           "extensionResults": [],
           "name": "1literalPattern_fail-lit-short",
           "trait": [
-            "PaternFacet"
+            "PatternFacet"
           ],
           "comment": "<S1> { <p1> LITERAL PATTERN \"bc\" } on { <s1> <p1> \"a\" }",
           "status": "mf:Approved"
@@ -10359,7 +10359,7 @@
           "extensionResults": [],
           "name": "1literalPattern_fail-ab",
           "trait": [
-            "PaternFacet"
+            "PatternFacet"
           ],
           "comment": "<S1> { <p1> LITERAL PATTERN \"bc\" } on { <s1> <p1> \"ab\" }",
           "status": "mf:Approved"
@@ -10376,7 +10376,7 @@
           "extensionResults": [],
           "name": "1literalPattern_fail-cd",
           "trait": [
-            "PaternFacet"
+            "PatternFacet"
           ],
           "comment": "<S1> { <p1> LITERAL PATTERN \"bc\" } on { <s1> <p1> \"cd\" }",
           "status": "mf:Approved"
@@ -10393,7 +10393,7 @@
           "extensionResults": [],
           "name": "1literalPatterni_pass-lit-match",
           "trait": [
-            "PaternFacet"
+            "PatternFacet"
           ],
           "comment": "<S1> { <p1> LITERAL /bc/i } on { <s1> <p1> \"bc\" }",
           "status": "mf:Approved"
@@ -10410,7 +10410,7 @@
           "extensionResults": [],
           "name": "1literalPatterni_pass-lit-BC",
           "trait": [
-            "PaternFacet"
+            "PatternFacet"
           ],
           "comment": "<S1> { <p1> LITERAL /bc/i } on { <s1> <p1> \"BC\" }",
           "status": "mf:Approved"
@@ -10427,7 +10427,7 @@
           "extensionResults": [],
           "name": "1literalPatterni_pass-lit-blowercaseC",
           "trait": [
-            "PaternFacet"
+            "PatternFacet"
           ],
           "comment": "<S1> { <p1> LITERAL /bc/i } on { <s1> <p1> \"bC\" }",
           "status": "mf:Approved"
@@ -10444,7 +10444,7 @@
           "extensionResults": [],
           "name": "1literalPattern_pass-lit-into",
           "trait": [
-            "PaternFacet"
+            "PatternFacet"
           ],
           "comment": "<S1> { <p1> LITERAL PATTERN \"bc\" } on { <s1> <p1> \"abc\" }",
           "status": "mf:Approved"
@@ -10461,7 +10461,7 @@
           "extensionResults": [],
           "name": "1literalPattern19_fail-iri-match",
           "trait": [
-            "PaternFacet"
+            "PatternFacet"
           ],
           "comment": "<S1> { <p1> LITERAL PATTERN \"http://a.example/o1\" } on { <s1> <p1> <o1> }",
           "status": "mf:Approved"
@@ -10478,7 +10478,7 @@
           "extensionResults": [],
           "name": "1literalPattern_fail-bnode-match",
           "trait": [
-            "PaternFacet"
+            "PatternFacet"
           ],
           "comment": "<S1> { <p1> LITERAL PATTERN \"bc\" } on { <s1> <p1> _:ab }",
           "status": "mf:Approved"
@@ -10819,7 +10819,7 @@
           "extensionResults": [],
           "name": "1literalPatternEnd_fail-litEnd",
           "trait": [
-            "PaternFacet"
+            "PatternFacet"
           ],
           "comment": "<S1> { <p1> LITERAL PATTERN \"bc$\" } on { <s1> <p1> \"bc$\" }",
           "status": "mf:Approved"
@@ -10836,7 +10836,7 @@
           "extensionResults": [],
           "name": "1literalPatternDollar_pass-litDollar-match",
           "trait": [
-            "PaternFacet"
+            "PatternFacet"
           ],
           "comment": "<S1> { <p1> LITERAL PATTERN \"bc\\$\" } on { <s1> <p1> \"bc$\" }",
           "status": "mf:Approved"
@@ -10853,7 +10853,7 @@
           "extensionResults": [],
           "name": "1literalPattern_pass-StartlitEnd-match",
           "trait": [
-            "PaternFacet"
+            "PatternFacet"
           ],
           "comment": "<S1> { <p1> LITERAL PATTERN \"^bc$\" } on { <s1> <p1> \"^bc$\" }",
           "status": "mf:Approved"
@@ -10870,7 +10870,7 @@
           "extensionResults": [],
           "name": "1literalStartPatternEnd_CarrotbcDollar",
           "trait": [
-            "PaternFacet"
+            "PatternFacet"
           ],
           "comment": "<S1> { <p1> LITERAL PATTERN \"^bc$\" } on { <s1> <p1> \"^bc$\" }",
           "status": "mf:Approved"
@@ -10887,7 +10887,7 @@
           "extensionResults": [],
           "name": "1literalCarrotPatternDollar_pass-bc",
           "trait": [
-            "PaternFacet"
+            "PatternFacet"
           ],
           "comment": "<S1> { <p1> LITERAL PATTERN \"\\^bc\\$\" } on { <s1> <p1> \"bc\" }",
           "status": "mf:Approved"
@@ -10904,7 +10904,7 @@
           "extensionResults": [],
           "name": "1literalCarrotPatternDollar_pass-CarrotbcDollar",
           "trait": [
-            "PaternFacet"
+            "PatternFacet"
           ],
           "comment": "<S1> { <p1> LITERAL PATTERN \"\\^bc\\$\" } on { <s1> <p1> \"^bc$\" }",
           "status": "mf:Approved"
@@ -10922,7 +10922,7 @@
           "name": "1literalPatternabEnd_fail-bnode-match",
           "trait": [
             "LexicalBNode",
-            "PaternFacet"
+            "PatternFacet"
           ],
           "comment": "<S1> { <p1> LITERAL PATTERN \"bc$\" } on { <s1> <p1> _:bc }",
           "status": "mf:Approved"
@@ -10939,7 +10939,7 @@
           "extensionResults": [],
           "name": "1literalStartPattern_pass-bc",
           "trait": [
-            "PaternFacet"
+            "PatternFacet"
           ],
           "comment": "<S1> { <p1> LITERAL PATTERN \"^bc\" } on { <s1> <p1> \"bc\" }",
           "status": "mf:Approved"
@@ -10956,7 +10956,7 @@
           "extensionResults": [],
           "name": "1literalStartPattern_fail-CarrotbcDollar",
           "trait": [
-            "PaternFacet"
+            "PatternFacet"
           ],
           "comment": "<S1> { <p1> LITERAL PATTERN \"^bc\" } on { <s1> <p1> \"^bc$\" }",
           "status": "mf:Approved"
@@ -10973,7 +10973,7 @@
           "extensionResults": [],
           "name": "1literalPatternEnd_pass-bc",
           "trait": [
-            "PaternFacet"
+            "PatternFacet"
           ],
           "comment": "<S1> { <p1> LITERAL PATTERN \"bc$\" } on { <s1> <p1> \"bc\" }",
           "status": "mf:Approved"
@@ -10990,7 +10990,7 @@
           "extensionResults": [],
           "name": "1literalPatternEnd_pass-CarrotbcDollar",
           "trait": [
-            "PaternFacet"
+            "PatternFacet"
           ],
           "comment": "<S1> { <p1> LITERAL PATTERN \"bc$\" } on { <s1> <p1> \"^bc$\" }",
           "status": "mf:Approved"
@@ -11007,7 +11007,7 @@
           "extensionResults": [],
           "name": "1literalPattern_pass-bcDollar",
           "trait": [
-            "PaternFacet"
+            "PatternFacet"
           ],
           "comment": "<S1> { <p1> LITERAL PATTERN \"bc\" } on { <s1> <p1> \"bc$\" }",
           "status": "mf:Approved"
@@ -11024,7 +11024,7 @@
           "extensionResults": [],
           "name": "1literalStarPatternEnd_pass-bc",
           "trait": [
-            "PaternFacet"
+            "PatternFacet"
           ],
           "comment": "<S1> { <p1> LITERAL PATTERN \"^bc$\" } on { <s1> <p1> \"bc\" }",
           "status": "mf:Approved"
@@ -11041,7 +11041,7 @@
           "extensionResults": [],
           "name": "1literalPattern_pass-CarrotbcDollar",
           "trait": [
-            "PaternFacet"
+            "PatternFacet"
           ],
           "comment": "<S1> { <p1> LITERAL PATTERN \"bc\" } on { <s1> <p1> \"^bc$\" }",
           "status": "mf:Approved"
@@ -11094,7 +11094,7 @@
           "extensionResults": [],
           "name": "1iriPattern_pass-iri-match",
           "trait": [
-            "PaternFacet"
+            "PatternFacet"
           ],
           "comment": "<S1> { <p1> IRI PATTERN \"http://a.example/o1\" } on { <s1> <p1> <o1> }",
           "status": "mf:Approved"
@@ -11111,7 +11111,7 @@
           "extensionResults": [],
           "name": "1iriPattern_fail-iri-short",
           "trait": [
-            "PaternFacet"
+            "PatternFacet"
           ],
           "comment": "<S1> { <p1> IRI PATTERN \"http://a.example/o1\" } on { <s1> <p1> <o> }",
           "status": "mf:Approved"
@@ -11128,7 +11128,7 @@
           "extensionResults": [],
           "name": "1iriPattern_fail-iri-long",
           "trait": [
-            "PaternFacet"
+            "PatternFacet"
           ],
           "comment": "<S1> { <p1> IRI PATTERN \"http://a.example/o1\" } on { <s1> <p1> <o1a> }",
           "status": "mf:Approved"
@@ -11145,7 +11145,7 @@
           "extensionResults": [],
           "name": "1iriPattern_fail-lit-match",
           "trait": [
-            "PaternFacet"
+            "PatternFacet"
           ],
           "comment": "<S1> { <p1> IRI PATTERN \"http://a.example/o1\" } on { <s1> <p1> \"o1\" }",
           "status": "mf:Approved"
@@ -11162,7 +11162,7 @@
           "extensionResults": [],
           "name": "1iriPattern_fail-bnode-match",
           "trait": [
-            "PaternFacet"
+            "PatternFacet"
           ],
           "comment": "<S1> { <p1> IRI PATTERN \"^bc$\" } on { <s1> <p1> _:bc }",
           "status": "mf:Approved"
@@ -11180,7 +11180,7 @@
           "name": "1bnodePattern_pass-bnode-match",
           "trait": [
             "LexicalBNode",
-            "PaternFacet"
+            "PatternFacet"
           ],
           "comment": "<S1> { <p1> BNODE PATTERN \"bc\" } on { <s1> <p1> _:bc }",
           "status": "mf:Approved"
@@ -11198,7 +11198,7 @@
           "name": "1bnodePattern_fail-bnode-short",
           "trait": [
             "LexicalBNode",
-            "PaternFacet"
+            "PatternFacet"
           ],
           "comment": "<S1> { <p1> BNODE PATTERN \"bc\" } on { <s1> <p1> _:a }",
           "status": "mf:Approved"
@@ -11216,7 +11216,7 @@
           "name": "1bnodePattern_fail-bnode-long",
           "trait": [
             "LexicalBNode",
-            "PaternFacet"
+            "PatternFacet"
           ],
           "comment": "<S1> { <p1> BNODE PATTERN \"bc\" } on { <s1> <p1> _:abc }",
           "status": "mf:Approved"
@@ -11233,7 +11233,7 @@
           "extensionResults": [],
           "name": "1bnodePattern_fail-lit-match",
           "trait": [
-            "PaternFacet"
+            "PatternFacet"
           ],
           "comment": "<S1> { <p1> BNODE PATTERN \"bc\" } on { <s1> <p1> \"ab\" }",
           "status": "mf:Approved"
@@ -11250,7 +11250,7 @@
           "extensionResults": [],
           "name": "1bnodePattern_fail-iri-match",
           "trait": [
-            "PaternFacet"
+            "PatternFacet"
           ],
           "comment": "<S1> { <p1> BNODE PATTERN \"bc\" } on { BASE <http://a.example/> <s1> <p1> <bc> }",
           "status": "mf:Approved"
@@ -11267,7 +11267,7 @@
           "extensionResults": [],
           "name": "1nonliteralPattern_pass-iri-match",
           "trait": [
-            "PaternFacet"
+            "PatternFacet"
           ],
           "comment": "<S1> { <p1> NONLITERAL PATTERN \"bc$\" } on { <s1> <p1> <bc> }",
           "status": "mf:Approved"
@@ -11284,7 +11284,7 @@
           "extensionResults": [],
           "name": "1nonliteralPattern_fail-iri-short",
           "trait": [
-            "PaternFacet"
+            "PatternFacet"
           ],
           "comment": "<S1> { <p1> NONLITERAL PATTERN \"bc$\" } on { <s1> <p1> <a> }",
           "status": "mf:Approved"
@@ -11301,7 +11301,7 @@
           "extensionResults": [],
           "name": "1nonliteralPattern_pass-iri-long",
           "trait": [
-            "PaternFacet"
+            "PatternFacet"
           ],
           "comment": "<S1> { <p1> NONLITERAL PATTERN \"bc$\" } on { <s1> <p1> <abc> }",
           "status": "mf:Approved"
@@ -11318,7 +11318,7 @@
           "extensionResults": [],
           "name": "1nonliteralPattern_fail-lit-match",
           "trait": [
-            "PaternFacet"
+            "PatternFacet"
           ],
           "comment": "<S1> { <p1> NONLITERAL PATTERN \"bc$\" } on { <s1> <p1> \"ab\" }",
           "status": "mf:Approved"
@@ -11336,7 +11336,7 @@
           "name": "1nonliteralPattern_pass-bnode-match",
           "trait": [
             "LexicalBNode",
-            "PaternFacet"
+            "PatternFacet"
           ],
           "comment": "<S1> { <p1> NONLITERAL PATTERN \"bc$\" } on { <s1> <p1> _:bc }",
           "status": "mf:Approved"
@@ -11354,7 +11354,7 @@
           "name": "1nonliteralPattern_fail-bnode-short",
           "trait": [
             "LexicalBNode",
-            "PaternFacet"
+            "PatternFacet"
           ],
           "comment": "<S1> { <p1> NONLITERAL PATTERN \"bc$\" } on { <s1> <p1> _:a }",
           "status": "mf:Approved"
@@ -11372,7 +11372,7 @@
           "name": "1nonliteralPattern_pass-bnode-long",
           "trait": [
             "LexicalBNode",
-            "PaternFacet"
+            "PatternFacet"
           ],
           "comment": "<S1> { <p1> NONLITERAL PATTERN \"bc$\" } on { <s1> <p1> _:abc }",
           "status": "mf:Approved"
@@ -17868,7 +17868,7 @@
           "extensionResults": [],
           "name": "1focusPattern-dot_fail-iri-match",
           "trait": [
-            "PaternFacet"
+            "PatternFacet"
           ],
           "comment": "<S1> PATTERN '^http://a.example/s1$' { <p1> } on { <s2> <p1> <o> }",
           "status": "mf:Approved"
@@ -17885,7 +17885,7 @@
           "extensionResults": [],
           "name": "1focusPattern-dot_fail-iri-short",
           "trait": [
-            "PaternFacet"
+            "PatternFacet"
           ],
           "comment": "<S1> PATTERN '^http://a.example/s1$' { <p1> } on { <s> <p1> <o1> }",
           "status": "mf:Approved"
@@ -17902,7 +17902,7 @@
           "extensionResults": [],
           "name": "1focusPattern-dot_pass-iri-match",
           "trait": [
-            "PaternFacet"
+            "PatternFacet"
           ],
           "comment": "<S1> PATTERN 'http://a.example/s1' { <p1> } on { <s1> <p1> <o1> }",
           "status": "mf:Approved"
@@ -17919,7 +17919,7 @@
           "extensionResults": [],
           "name": "1focusPattern-dot_fail-iri-long",
           "trait": [
-            "PaternFacet"
+            "PatternFacet"
           ],
           "comment": "<S1> PATTERN '^http://a.example/s1$' { <p1> } on { <s1a> <p1> <o1> }",
           "status": "mf:Approved"
@@ -17936,7 +17936,7 @@
           "extensionResults": [],
           "name": "1focusPatternB-dot_fail-iri-match",
           "trait": [
-            "PaternFacet"
+            "PatternFacet"
           ],
           "comment": "<S1> PATTERN 'abcdefghijklmnopqrs' { <p1> } on { <s2> <p1> <o> }",
           "status": "mf:Approved"
@@ -17954,7 +17954,7 @@
           "name": "1focusPatternB-dot_fail-bnode-short",
           "trait": [
             "LexicalBNode",
-            "PaternFacet",
+            "PatternFacet",
             "ToldBNode"
           ],
           "comment": "<S1> PATTERN 'abcdefghijklmnopqrs' { <p1> } on { _:abcd <p1> <o1> }",
@@ -17973,7 +17973,7 @@
           "name": "1focusPatternB-dot_pass-bnode-match",
           "trait": [
             "LexicalBNode",
-            "PaternFacet",
+            "PatternFacet",
             "ToldBNode"
           ],
           "comment": "<S1> PATTERN 'abcdefghijklmnopqrs' { <p1> } on { _:abcdefghijklmnopqrs <p1> <o1> }",
@@ -17992,7 +17992,7 @@
           "name": "1focusPatternB-dot_pass-bnode-long",
           "trait": [
             "LexicalBNode",
-            "PaternFacet",
+            "PatternFacet",
             "ToldBNode"
           ],
           "comment": "<S1> PATTERN 'abcdefghijklmnopqrs' { <p1> } on { _:abcdefghijklmnopqrst <p1> <o1> }",
