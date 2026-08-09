@@ -9576,7 +9576,8 @@
           "extensionResults": [],
           "name": "1iriRefLength1_fail-bnode-equal",
           "trait": [
-            "LengthFacet"
+            "LengthFacet",
+            "LexicalBNode"
           ],
           "comment": "<S1> { <p1> IRI @<S2> LENGTH 19 } <S2> { <p2> . } on { <s1> <p1> _:abcde }",
           "status": "mf:Approved"
@@ -10478,6 +10479,7 @@
           "extensionResults": [],
           "name": "1literalPattern_fail-bnode-match",
           "trait": [
+            "LexicalBNode",
             "PatternFacet"
           ],
           "comment": "<S1> { <p1> LITERAL PATTERN \"bc\" } on { <s1> <p1> _:ab }",
@@ -11162,6 +11164,7 @@
           "extensionResults": [],
           "name": "1iriPattern_fail-bnode-match",
           "trait": [
+            "LexicalBNode",
             "PatternFacet"
           ],
           "comment": "<S1> { <p1> IRI PATTERN \"^bc$\" } on { <s1> <p1> _:bc }",
@@ -17185,8 +17188,7 @@
           "extensionResults": [],
           "name": "1focusBNODE_dot_fail-iriFocusLabel-equal",
           "trait": [
-            "FocusConstraint",
-            "LexicalBNode"
+            "FocusConstraint"
           ],
           "comment": "<S> BNODE { <p1> . } on <s> in { <s1> <p1> <o1> }",
           "status": "mf:Approved"
@@ -17740,6 +17742,7 @@
           "trait": [
             "FocusConstraint",
             "LengthFacet",
+            "LexicalBNode",
             "ToldBNode"
           ],
           "comment": "<S1> MINLENGTH 19 { <p1> . } on { _:abcdefghijklmnopqrst <p1> <o1> }",
@@ -17813,7 +17816,8 @@
           "trait": [
             "FocusConstraint",
             "LengthFacet",
-            "LexicalBNode"
+            "LexicalBNode",
+            "ToldBNode"
           ],
           "comment": "<S1> MAXLENGTH 19 { <p1> . } on { _:abcd <p1> <o1> }",
           "status": "mf:Approved"
@@ -17832,7 +17836,8 @@
           "trait": [
             "FocusConstraint",
             "LengthFacet",
-            "LexicalBNode"
+            "LexicalBNode",
+            "ToldBNode"
           ],
           "comment": "<S1> MAXLENGTH 19 { <p1> . } on { _:abcdefghijklmnopqrs <p1> <o1> }",
           "status": "mf:Approved"
@@ -17851,7 +17856,8 @@
           "trait": [
             "FocusConstraint",
             "LengthFacet",
-            "LexicalBNode"
+            "LexicalBNode",
+            "ToldBNode"
           ],
           "comment": "<S1> MAXLENGTH 19 { <p1> . } on { _:abcdefghijklmnopqrst <p1> <o1> }",
           "status": "mf:Approved"
@@ -18084,8 +18090,7 @@
           "extensionResults": [],
           "name": "1focusBNODELength_dot_fail-iriFocusLabel-equal",
           "trait": [
-            "LengthFacet",
-            "LexicalBNode"
+            "LengthFacet"
           ],
           "comment": "<S> BNODE LENGTH 19 { <p1> . } on <s> in { <s1> <p1> <o1> }",
           "status": "mf:Approved"
