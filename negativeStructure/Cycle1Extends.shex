@@ -1,0 +1,5 @@
+# A shape that EXTENDS itself.  The extension hierarchy graph MUST be
+# acyclic (Acyclic Extension Requirement).
+PREFIX :       <http://example.org/>
+
+:S EXTENDS @:S { :p . }

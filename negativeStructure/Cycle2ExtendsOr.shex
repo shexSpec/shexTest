@@ -1,0 +1,16 @@
+# A cycle in the extension hierarchy closed through a disjunction: :S
+# EXTENDS :Any, and :Any is a choice that names :S.  Neither EXTENDS names
+# a shape that EXTENDS it, so the cycle is only visible by following the
+# reference out of the choice.
+#
+# This is the shape of a real schema: FHIR's <Resource> is a choice over
+# every resource type, and each of those EXTENDS <DomainResource>, which
+# EXTENDS <Resource>.
+#
+# The extension hierarchy graph MUST be acyclic (Acyclic Extension
+# Requirement).
+PREFIX :       <http://example.org/>
+
+:Any @:S OR @:T
+:S EXTENDS @:Any { :p . }
+:T EXTENDS @:Any { :q . }

@@ -196,6 +196,39 @@
           "startColumn": 8,
           "endRow": 5,
           "endColumn": 11
+        },
+        {
+          "@id": "#Cycle1Extends",
+          "@type": "sht:NegativeStructure",
+          "name": "Cycle1Extends",
+          "status": "mf:Proposed",
+          "shex": "Cycle1Extends.shex",
+          "startRow": 5,
+          "startColumn": 12,
+          "endRow": 5,
+          "endColumn": 15
+        },
+        {
+          "@id": "#Cycle2Extends",
+          "@type": "sht:NegativeStructure",
+          "name": "Cycle2Extends",
+          "status": "mf:Proposed",
+          "shex": "Cycle2Extends.shex",
+          "startRow": 6,
+          "startColumn": 12,
+          "endRow": 6,
+          "endColumn": 15
+        },
+        {
+          "@id": "#Cycle2ExtendsOr",
+          "@type": "sht:NegativeStructure",
+          "name": "Cycle2ExtendsOr",
+          "status": "mf:Proposed",
+          "shex": "Cycle2ExtendsOr.shex",
+          "startRow": 15,
+          "startColumn": 12,
+          "endRow": 15,
+          "endColumn": 17
         }
       ]
     }

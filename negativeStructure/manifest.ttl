@@ -23,6 +23,9 @@
     <#Cycle2Negation>
     <#Cycle2Extra>
     <#Cycle2ExtendsNegation>
+    <#Cycle1Extends>
+    <#Cycle2Extends>
+    <#Cycle2ExtendsOr>
 ) .
 
 <#1MissingRef> a sht:NegativeStructure ;
@@ -189,3 +192,32 @@
   mf:endColumn 11 ;
   .
 
+<#Cycle1Extends> a sht:NegativeStructure ;
+  mf:name "Cycle1Extends" ;
+  mf:status mf:Proposed ;
+  sx:shex <Cycle1Extends.shex> ;
+  mf:startRow 5 ;
+  mf:startColumn 12 ;
+  mf:endRow 5 ;
+  mf:endColumn 15 ;
+  .
+
+<#Cycle2Extends> a sht:NegativeStructure ;
+  mf:name "Cycle2Extends" ;
+  mf:status mf:Proposed ;
+  sx:shex <Cycle2Extends.shex> ;
+  mf:startRow 6 ;
+  mf:startColumn 12 ;
+  mf:endRow 6 ;
+  mf:endColumn 15 ;
+  .
+
+<#Cycle2ExtendsOr> a sht:NegativeStructure ;
+  mf:name "Cycle2ExtendsOr" ;
+  mf:status mf:Proposed ;
+  sx:shex <Cycle2ExtendsOr.shex> ;
+  mf:startRow 15 ;
+  mf:startColumn 12 ;
+  mf:endRow 15 ;
+  mf:endColumn 17 ;
+  .

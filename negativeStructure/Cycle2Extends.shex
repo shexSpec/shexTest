@@ -1,0 +1,6 @@
+# Two shapes that EXTEND each other.  The extension hierarchy graph MUST
+# be acyclic (Acyclic Extension Requirement).
+PREFIX :       <http://example.org/>
+
+:S EXTENDS @:T { :p . }
+:T EXTENDS @:S { :q . }
