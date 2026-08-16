@@ -15326,7 +15326,7 @@
 
 <#1focusMaxLength-dot_pass-bnode-short> a sht:ValidationTest ;
     mf:name "1focusMaxLength-dot_pass-bnode-short" ;
-    sht:trait sht:FocusConstraint , sht:LengthFacet , sht:LexicalBNode ;
+    sht:trait sht:FocusConstraint , sht:LengthFacet , sht:LexicalBNode , sht:ToldBNode ;
     rdfs:comment "<S1> MAXLENGTH 19 { <p1> . } on { _:abcd <p1> <o1> }" ;
     mf:status mf:Approved ;
     mf:action [
@@ -15339,7 +15339,7 @@
 
 <#1focusMaxLength-dot_pass-bnode-equal> a sht:ValidationTest ;
     mf:name "1focusMaxLength-dot_pass-bnode-equal" ;
-    sht:trait sht:FocusConstraint , sht:LengthFacet , sht:LexicalBNode ;
+    sht:trait sht:FocusConstraint , sht:LengthFacet , sht:LexicalBNode , sht:ToldBNode ;
     rdfs:comment "<S1> MAXLENGTH 19 { <p1> . } on { _:abcdefghijklmnopqrs <p1> <o1> }" ;
     mf:status mf:Approved ;
     mf:action [
@@ -15352,7 +15352,7 @@
 
 <#1focusMaxLength-dot_fail-bnode-long> a sht:ValidationFailure ;
     mf:name "1focusMaxLength-dot_fail-bnode-long" ;
-    sht:trait sht:FocusConstraint , sht:LexicalBNode , sht:LengthFacet ;
+    sht:trait sht:FocusConstraint , sht:LexicalBNode , sht:ToldBNode , sht:LengthFacet ;
     rdfs:comment "<S1> MAXLENGTH 19 { <p1> . } on { _:abcdefghijklmnopqrst <p1> <o1> }" ;
     mf:status mf:Approved ;
     mf:action [

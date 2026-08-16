@@ -17813,7 +17813,8 @@
           "trait": [
             "FocusConstraint",
             "LengthFacet",
-            "LexicalBNode"
+            "LexicalBNode",
+            "ToldBNode"
           ],
           "comment": "<S1> MAXLENGTH 19 { <p1> . } on { _:abcd <p1> <o1> }",
           "status": "mf:Approved"
@@ -17832,7 +17833,8 @@
           "trait": [
             "FocusConstraint",
             "LengthFacet",
-            "LexicalBNode"
+            "LexicalBNode",
+            "ToldBNode"
           ],
           "comment": "<S1> MAXLENGTH 19 { <p1> . } on { _:abcdefghijklmnopqrs <p1> <o1> }",
           "status": "mf:Approved"
@@ -17851,7 +17853,8 @@
           "trait": [
             "FocusConstraint",
             "LengthFacet",
-            "LexicalBNode"
+            "LexicalBNode",
+            "ToldBNode"
           ],
           "comment": "<S1> MAXLENGTH 19 { <p1> . } on { _:abcdefghijklmnopqrst <p1> <o1> }",
           "status": "mf:Approved"
