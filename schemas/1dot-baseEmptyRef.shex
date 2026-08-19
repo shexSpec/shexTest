@@ -1,0 +1,6 @@
+# source: 1dot-base.shex
+# RFC3986 5.4.1: an empty relative reference denotes the base IRI itself.
+
+BASE <http://a.example/dir1/dir2/doc>
+
+<> { <p1> . }

@@ -1,0 +1,7 @@
+# source: 1dot-base.shex
+# RFC3986 5.4.1: a relative reference that is only a query string keeps the
+# base's path and replaces its query.
+
+BASE <http://a.example/dir1/dir2/doc?a=b>
+
+<?c=d> { <p1> . }

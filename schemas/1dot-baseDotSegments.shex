@@ -1,0 +1,13 @@
+# source: 1dot-base.shex
+# RFC3986 5.2.4: remove_dot_segments on a relative reference's path.
+# "./p1" and "s/./p2" drop the "." segment; "s/t/../p3" and "../p4" drop the
+# segment before the "..".
+
+BASE <http://a.example/dir1/dir2/doc>
+
+<./S1> {
+  <./p1> . ;
+  <s/./p2> . ;
+  <s/t/../p3> . ;
+  <../p4> .
+}

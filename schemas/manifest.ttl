@@ -13,6 +13,10 @@
         <#1dot>
     <#open1dotclose>
         <#1dot-base>
+        <#1dot-baseEmptyRef>
+        <#1dot-baseQueryRef>
+        <#1dot-baseDotSegments>
+        <#1dot-baseDotSegmentsTrailing>
         <#1dotSemi>
         <#1dotLNex>
         <#1dotNS2>
@@ -57,6 +61,7 @@
         <#1val1IRIREF>
         <#1IRI_with_all_punctuationdot>
         <#1IRI_with_UCHAR.1dot>
+        <#1IRI_with_UCHAR8.1dot>
         <#1val1INTEGER>
         <#1val1DOUBLE>
         <#1val1DOUBLElowercase>
@@ -500,6 +505,38 @@
     sx:ttl <1dot-base.ttl> ;
     .
 
+<#1dot-baseEmptyRef> a sht:RepresentationTest ;
+    mf:name "1dot-baseEmptyRef" ;
+    mf:status mf:Proposed ;
+    sx:shex <1dot-baseEmptyRef.shex> ;
+    sx:json <1dot-baseEmptyRef.json> ;
+    sx:ttl <1dot-baseEmptyRef.ttl> ;
+    .
+
+<#1dot-baseQueryRef> a sht:RepresentationTest ;
+    mf:name "1dot-baseQueryRef" ;
+    mf:status mf:Proposed ;
+    sx:shex <1dot-baseQueryRef.shex> ;
+    sx:json <1dot-baseQueryRef.json> ;
+    sx:ttl <1dot-baseQueryRef.ttl> ;
+    .
+
+<#1dot-baseDotSegments> a sht:RepresentationTest ;
+    mf:name "1dot-baseDotSegments" ;
+    mf:status mf:Proposed ;
+    sx:shex <1dot-baseDotSegments.shex> ;
+    sx:json <1dot-baseDotSegments.json> ;
+    sx:ttl <1dot-baseDotSegments.ttl> ;
+    .
+
+<#1dot-baseDotSegmentsTrailing> a sht:RepresentationTest ;
+    mf:name "1dot-baseDotSegmentsTrailing" ;
+    mf:status mf:Proposed ;
+    sx:shex <1dot-baseDotSegmentsTrailing.shex> ;
+    sx:json <1dot-baseDotSegmentsTrailing.json> ;
+    sx:ttl <1dot-baseDotSegmentsTrailing.ttl> ;
+    .
+
 <#1dotSemi> a sht:RepresentationTest ;
     mf:name "1dotSemi" ;
     mf:status mf:Approved ;
@@ -868,6 +905,14 @@
     sx:shex <1IRI_with_all_punctuationdot.shex> ;
     sx:json <1IRI_with_all_punctuationdot.json> ;
     sx:ttl <1IRI_with_all_punctuationdot.ttl> ;
+    .
+
+<#1IRI_with_UCHAR8.1dot> a sht:RepresentationTest ;
+    mf:name "1IRI_with_UCHAR8.1dot" ;
+    mf:status mf:Proposed ;
+    sx:shex <1IRI_with_UCHAR8.1dot.shex> ;
+    sx:json <1IRI_with_UCHAR8.1dot.json> ;
+    sx:ttl <1IRI_with_UCHAR8.1dot.ttl> ;
     .
 
 <#1IRI_with_UCHAR.1dot> a sht:RepresentationTest ;

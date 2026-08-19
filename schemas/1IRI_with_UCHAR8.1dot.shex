@@ -1,0 +1,7 @@
+# source: 1IRI_with_UCHAR.1dot.shex
+# An 8-digit UCHAR names a character outside the BMP.  A writer has to give
+# it back as \U0001d400, not as the surrogate pair JavaScript stores it in.
+
+<http://a.example/S1> {
+   <http://a.example/p\U0001D400> .
+}

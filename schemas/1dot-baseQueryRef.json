@@ -1,0 +1,15 @@
+{
+  "@context": "http://www.w3.org/ns/shex.jsonld",
+  "type": "Schema",
+  "shapes": [
+    { "type": "ShapeDecl",
+    "id": "http://a.example/dir1/dir2/doc?c=d",
+    "shapeExpr": {
+      "type": "Shape",
+      "expression": {
+        "type": "TripleConstraint",
+        "predicate": "http://a.example/dir1/dir2/p1"
+      }
+    } }
+  ]
+}

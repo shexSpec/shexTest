@@ -48,6 +48,42 @@
           "ttl": "1dot-base.ttl"
         },
         {
+          "@id": "#1dot-baseEmptyRef",
+          "@type": "sht:RepresentationTest",
+          "name": "1dot-baseEmptyRef",
+          "status": "mf:Proposed",
+          "shex": "1dot-baseEmptyRef.shex",
+          "json": "1dot-baseEmptyRef.json",
+          "ttl": "1dot-baseEmptyRef.ttl"
+        },
+        {
+          "@id": "#1dot-baseQueryRef",
+          "@type": "sht:RepresentationTest",
+          "name": "1dot-baseQueryRef",
+          "status": "mf:Proposed",
+          "shex": "1dot-baseQueryRef.shex",
+          "json": "1dot-baseQueryRef.json",
+          "ttl": "1dot-baseQueryRef.ttl"
+        },
+        {
+          "@id": "#1dot-baseDotSegments",
+          "@type": "sht:RepresentationTest",
+          "name": "1dot-baseDotSegments",
+          "status": "mf:Proposed",
+          "shex": "1dot-baseDotSegments.shex",
+          "json": "1dot-baseDotSegments.json",
+          "ttl": "1dot-baseDotSegments.ttl"
+        },
+        {
+          "@id": "#1dot-baseDotSegmentsTrailing",
+          "@type": "sht:RepresentationTest",
+          "name": "1dot-baseDotSegmentsTrailing",
+          "status": "mf:Proposed",
+          "shex": "1dot-baseDotSegmentsTrailing.shex",
+          "json": "1dot-baseDotSegmentsTrailing.json",
+          "ttl": "1dot-baseDotSegmentsTrailing.ttl"
+        },
+        {
           "@id": "#1dotSemi",
           "@type": "sht:RepresentationTest",
           "name": "1dotSemi",
@@ -442,6 +478,15 @@
           "shex": "1IRI_with_UCHAR.1dot.shex",
           "json": "1IRI_with_UCHAR.1dot.json",
           "ttl": "1IRI_with_UCHAR.1dot.ttl"
+        },
+        {
+          "@id": "#1IRI_with_UCHAR8.1dot",
+          "@type": "sht:RepresentationTest",
+          "name": "1IRI_with_UCHAR8.1dot",
+          "status": "mf:Proposed",
+          "shex": "1IRI_with_UCHAR8.1dot.shex",
+          "json": "1IRI_with_UCHAR8.1dot.json",
+          "ttl": "1IRI_with_UCHAR8.1dot.ttl"
         },
         {
           "@id": "#1val1INTEGER",

@@ -1,0 +1,32 @@
+{
+  "@context": "http://www.w3.org/ns/shex.jsonld",
+  "type": "Schema",
+  "shapes": [
+    { "type": "ShapeDecl",
+    "id": "http://a.example/dir1/dir2/S1",
+    "shapeExpr": {
+      "type": "Shape",
+      "expression": {
+        "type": "EachOf",
+        "expressions": [
+          {
+            "type": "TripleConstraint",
+            "predicate": "http://a.example/dir1/dir2/p1"
+          },
+          {
+            "type": "TripleConstraint",
+            "predicate": "http://a.example/dir1/dir2/s/p2"
+          },
+          {
+            "type": "TripleConstraint",
+            "predicate": "http://a.example/dir1/dir2/s/p3"
+          },
+          {
+            "type": "TripleConstraint",
+            "predicate": "http://a.example/dir1/p4"
+          }
+        ]
+      }
+    } }
+  ]
+}
