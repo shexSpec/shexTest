@@ -291,6 +291,7 @@
 ####     lexical form
         <#1val1STRING_LITERAL1_pass>
         <#1val1STRING_LITERAL1_fail>
+        <#1val1STRING_LITERAL1_fail-Iv>
         <#1val1STRING_LITERAL1_with_all_controls_pass>
         <#1val1STRING_LITERAL1_with_all_controls_fail>
         <#1val1STRING_LITERAL1_with_all_punctuation_pass>
@@ -783,6 +784,7 @@
         <#1val1iriStemMinusiri3_v2>
         <#1val1iriStemMinusiri3_v3>
         <#1val1iriStemMinusiri3_passIv1a>
+        <#1val1iriStemMinusiri3_fail-Ia>
         <#1val1iriStemMinusiriStem3_passIv>
         <#1val1iriStemMinusiriStem3_passIv4>
         <#1val1iriStemMinusiriStem3_v1>
@@ -811,6 +813,7 @@
         <#1val1literalStemMinusliteralStem3_v1a>
         <#1val1language_passLAtfr>
         <#1val1language_failLAtfr-be>
+        <#1val1language_fail-Iv>
         <#1val1emptylanguageStem_passLAtfr>
         <#1val1emptylanguageStem_fail-literal>
         <#1val1emptylanguageStem_fail-empty>
@@ -827,6 +830,7 @@
         <#1val1languageStem_passLAtfr-be>
         <#1val1languageStem_passLAtfr-be-fbcl>
         <#1val1languageStem_fail>
+        <#1val1languageStem_fail-Iv>
         <#1val1literallanguageStem_failLAtfr>
         <#1val1languageStemMinuslanguage3_passLAtfr>
         <#1val1languageStemMinuslanguage3_passLAtfr-FR>
@@ -836,6 +840,7 @@
         <#1val1languageStemMinuslanguage3_failLAtfr-cd>
         <#1val1languageStemMinuslanguage3_failLAtfr-ch>
         <#1val1languageStemMinuslanguage3_passLAtfr-be-fbcl>
+        <#1val1languageStemMinuslanguage3_fail-Iv>
         <#1val1languageStemMinuslanguageStem3_passLAtfr>
         <#1val1languageStemMinuslanguageStem3_LAtfrc>
         <#1val1languageStemMinuslanguageStem3_passLAtfr-FR>
@@ -1310,6 +1315,7 @@
         <#ANDAbstract-pass>
         <#ANDAbstract-fail_G1pattern>
         <#ANDAbstract-fail_pattern>
+        <#1dotAbstract_fail-abstract>
         <#AND3G-pass>
         <#AND3G-fail_G2pattern>
         <#AND3G-fail_G1Bpattern>
@@ -4413,6 +4419,19 @@
       sht:schema <../schemas/1val1STRING_LITERAL1.shex> ;
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_LSTRING_LITERAL1999.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
+<#1val1STRING_LITERAL1_fail-Iv> a sht:ValidationFailure ;
+    mf:name "1val1STRING_LITERAL1_fail-Iv" ;
+    sht:trait sht:ValueSet ;
+    rdfs:comment "<S> { <p1> ['STRING_LITERAL1'] } on { <s1> <p1> <v> }" ;
+    mf:status mf:Proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1STRING_LITERAL1.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Iv.ttl> ;
       sht:focus <http://a.example/s1>
     ] ;
     .
@@ -10802,6 +10821,19 @@
     ]
     .
 
+<#1val1iriStemMinusiri3_fail-Ia> a sht:ValidationFailure ;
+    mf:name "1val1iriStemMinusiri3_fail-Ia" ;
+    sht:trait sht:ValueSet , sht:Stem ;
+    rdfs:comment "<S> { <p1> [<v>~-<v1>-<v2>-<v3>] } on { <s1> <p1> <a> } -- outside the stem, not merely excluded" ;
+    mf:status mf:Proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1iriStemMinusiri3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Ia.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
 <#1val1iriStemMinusiriStem3_passIv> a sht:ValidationTest ;
     mf:name "1val1iriStemMinusiriStem3_passIv" ;
     sht:trait sht:ValueSet , sht:Stem ;
@@ -11166,6 +11198,19 @@
     ]
     .
 
+<#1val1language_fail-Iv> a sht:ValidationFailure ;
+    mf:name "1val1language_fail-Iv" ;
+    sht:trait sht:ValueSet ;
+    rdfs:comment "<S> { <p1> [@fr] } on { <s1> <p1> <v> } -- an IRI, where the set holds only literals" ;
+    mf:status mf:Proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1language.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Iv.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
 <#1val1emptylanguageStem_passLAtfr> a sht:ValidationTest ;
     mf:name "1val1emptylanguageStem_passLAtfr" ;
     sht:trait sht:ValueSet , sht:Stem ;
@@ -11374,6 +11419,19 @@
     ] ;
     .
 
+<#1val1languageStem_fail-Iv> a sht:ValidationFailure ;
+    mf:name "1val1languageStem_fail-Iv" ;
+    sht:trait sht:ValueSet , sht:Stem ;
+    rdfs:comment "<S> { <p1> [@fr~] } on { <s1> <p1> <v> } -- an IRI has no language to stem" ;
+    mf:status mf:Proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1languageStem.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Iv.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
+    .
+
 <#1val1literallanguageStem_failLAtfr> a sht:ValidationFailure ;
     mf:name "1val1literallanguageStem_failLAtfr" ;
     sht:trait sht:ValueSet , sht:Stem ;
@@ -11489,6 +11547,19 @@
       sht:data <Is1_Ip1_LAtfr-be-fbcl.ttl> ;
       sht:focus <http://a.example/s1>
     ]
+    .
+
+<#1val1languageStemMinuslanguage3_fail-Iv> a sht:ValidationFailure ;
+    mf:name "1val1languageStemMinuslanguage3_fail-Iv" ;
+    sht:trait sht:ValueSet , sht:Stem ;
+    rdfs:comment "<S> { <p1> [@fr~-@fr-be-@fr-cd-@fr-ch] } on { <s1> <p1> <v> } -- an IRI has no language to stem" ;
+    mf:status mf:Proposed ;
+    mf:action [
+      sht:schema <../schemas/1val1languageStemMinuslanguage3.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Iv.ttl> ;
+      sht:focus <http://a.example/s1>
+    ] ;
     .
 
 <#1val1languageStemMinuslanguageStem3_passLAtfr> a sht:ValidationTest ;
@@ -16700,6 +16771,19 @@
         sht:shape <http://a.example/B> ;
         sht:data <sAB.ttl> ;
         sht:focus <http://a.example/sxBxxxxxxxxx> ;
+    ] ;
+    .
+
+<#1dotAbstract_fail-abstract> a sht:ValidationFailure ;
+    mf:name "1dotAbstract_fail-abstract" ;
+    sht:trait sht:Extends ;
+    rdfs:comment "ABSTRACT <S1> { <p1> . } on { <s1> <p1> <o1> } -- nothing extends <S1>, so no node can satisfy it" ;
+    mf:status mf:Proposed ;
+    mf:action [
+      sht:schema <../schemas/1dotAbstract.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1.ttl> ;
+      sht:focus <http://a.example/s1>
     ] ;
     .
 

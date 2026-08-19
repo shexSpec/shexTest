@@ -3883,6 +3883,23 @@
           "status": "mf:Approved"
         },
         {
+          "@id": "#1val1STRING_LITERAL1_fail-Iv",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1val1STRING_LITERAL1.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1STRING_LITERAL1_fail-Iv",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S> { <p1> ['STRING_LITERAL1'] } on { <s1> <p1> <v> }",
+          "status": "mf:Proposed"
+        },
+        {
           "@id": "#1val1STRING_LITERAL1_with_all_controls_pass",
           "@type": "sht:ValidationTest",
           "action": {
@@ -11862,6 +11879,24 @@
           "status": "mf:Approved"
         },
         {
+          "@id": "#1val1iriStemMinusiri3_fail-Ia",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1val1iriStemMinusiri3.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Ia.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1iriStemMinusiri3_fail-Ia",
+          "trait": [
+            "Stem",
+            "ValueSet"
+          ],
+          "comment": "<S> { <p1> [<v>~-<v1>-<v2>-<v3>] } on { <s1> <p1> <a> } -- outside the stem, not merely excluded",
+          "status": "mf:Proposed"
+        },
+        {
           "@id": "#1val1iriStemMinusiriStem3_passIv",
           "@type": "sht:ValidationTest",
           "action": {
@@ -12362,6 +12397,23 @@
           "status": "mf:Approved"
         },
         {
+          "@id": "#1val1language_fail-Iv",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1val1language.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1language_fail-Iv",
+          "trait": [
+            "ValueSet"
+          ],
+          "comment": "<S> { <p1> [@fr] } on { <s1> <p1> <v> } -- an IRI, where the set holds only literals",
+          "status": "mf:Proposed"
+        },
+        {
           "@id": "#1val1emptylanguageStem_passLAtfr",
           "@type": "sht:ValidationTest",
           "action": {
@@ -12650,6 +12702,24 @@
           "status": "mf:Approved"
         },
         {
+          "@id": "#1val1languageStem_fail-Iv",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1val1languageStem.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1languageStem_fail-Iv",
+          "trait": [
+            "Stem",
+            "ValueSet"
+          ],
+          "comment": "<S> { <p1> [@fr~] } on { <s1> <p1> <v> } -- an IRI has no language to stem",
+          "status": "mf:Proposed"
+        },
+        {
           "@id": "#1val1literallanguageStem_failLAtfr",
           "@type": "sht:ValidationFailure",
           "action": {
@@ -12810,6 +12880,24 @@
           ],
           "comment": "<S> { <p1> [@fr~-@fr-be-@fr-cd-@fr-ch] } on { <s1> <p1> 'septante'@fr-be-fbcl }",
           "status": "mf:Approved"
+        },
+        {
+          "@id": "#1val1languageStemMinuslanguage3_fail-Iv",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1val1languageStemMinuslanguage3.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Iv.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1val1languageStemMinuslanguage3_fail-Iv",
+          "trait": [
+            "Stem",
+            "ValueSet"
+          ],
+          "comment": "<S> { <p1> [@fr~-@fr-be-@fr-cd-@fr-ch] } on { <s1> <p1> <v> } -- an IRI has no language to stem",
+          "status": "mf:Proposed"
         },
         {
           "@id": "#1val1languageStemMinuslanguageStem3_passLAtfr",
@@ -19605,6 +19693,23 @@
           ],
           "comment": "ABSTRACT <A> /sA/ AND {:p} <B> @<A> AND /s B/ {:p} on { <sxBxxxxxxxxx> <p> 0 }",
           "status": "mf:proposed"
+        },
+        {
+          "@id": "#1dotAbstract_fail-abstract",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1dotAbstract.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1dotAbstract_fail-abstract",
+          "trait": [
+            "Extends"
+          ],
+          "comment": "ABSTRACT <S1> { <p1> . } on { <s1> <p1> <o1> } -- nothing extends <S1>, so no node can satisfy it",
+          "status": "mf:Proposed"
         },
         {
           "@id": "#AND3G-pass",
