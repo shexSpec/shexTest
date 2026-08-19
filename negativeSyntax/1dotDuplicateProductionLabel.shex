@@ -1,0 +1,8 @@
+# A triple expression label may be declared only once.
+<http://a.example/S1> {
+  $<http://a.example/T1> <http://a.example/p1> .
+}
+
+<http://a.example/S2> {
+  $<http://a.example/T1> <http://a.example/p2> .
+}

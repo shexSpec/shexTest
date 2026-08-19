@@ -18,8 +18,12 @@
     rdfs:comment "ShEx negative syntax tests" ;
     mf:entries (
     <#1decimalMininclusiveroman-numeral>
+    <#1ProductionShapeCollision>
+    <#1ShapeProductionCollision>
     <#1dotAnnot_AIRIREF>
     <#1dotUnlabeledCode1>
+    <#1dotDuplicateShapeLabel>
+    <#1dotDuplicateProductionLabel>
     <#1doubleMininclusiveroman-numeral>
     <#1floatMininclusiveroman-numeral>
     <#1integerMininclusiveroman-numeral>
@@ -99,10 +103,11 @@
     <#predicate-literal>
     <#predicate-true>
     <#prefix-missing>
+    <#prefix-missing-1>
+    <#prefix-missing-2>
     <#prefix-no-COLON>
     <#prefix-no-PNAME_NS>
     <#prefix-no-uri>
-    <#prefix-none>
     <#shapename-a>
     <#shapename-literal>
     <#shapename-true>
@@ -129,6 +134,26 @@
   mf:endColumn 1 ;
   .
 
+<#1ProductionShapeCollision> a sht:NegativeSyntax ;
+  mf:name "1ProductionShapeCollision" ;
+  mf:status mf:Proposed ;
+  sx:shex <1ProductionShapeCollision.shex> ;
+  mf:startRow 8 ;
+  mf:startColumn 3 ;
+  mf:endRow 9 ;
+  mf:endColumn 2 ;
+  .
+
+<#1ShapeProductionCollision> a sht:NegativeSyntax ;
+  mf:name "1ShapeProductionCollision" ;
+  mf:status mf:Proposed ;
+  sx:shex <1ShapeProductionCollision.shex> ;
+  mf:startRow 3 ;
+  mf:startColumn 3 ;
+  mf:endRow 6 ;
+  mf:endColumn 22 ; # 1st token after closing curly brace
+  .
+
 <#1dotAnnot_AIRIREF> a sht:NegativeSyntax ;
   mf:name "1dotAnnot_AIRIREF" ;
   mf:status mf:Approved ;
@@ -137,6 +162,27 @@
   mf:startColumn 31 ;
   mf:endRow 4 ;
   mf:endColumn 1 ;
+  .
+
+<#1dotDuplicateShapeLabel> a sht:NegativeSyntax ;
+  mf:name "1dotDuplicateShapeLabel" ;
+  mf:status mf:Proposed ;
+  sx:shex <1dotDuplicateShapeLabel.shex> ;
+  # shex.js notices at the end of the schema, not at the second declaration.
+  mf:startRow 6 ;
+  mf:startColumn 1 ;
+  mf:endRow 9 ;
+  mf:endColumn 1 ;
+  .
+
+<#1dotDuplicateProductionLabel> a sht:NegativeSyntax ;
+  mf:name "1dotDuplicateProductionLabel" ;
+  mf:status mf:Proposed ;
+  sx:shex <1dotDuplicateProductionLabel.shex> ;
+  mf:startRow 7 ;
+  mf:startColumn 3 ;
+  mf:endRow 8 ;
+  mf:endColumn 2 ;
   .
 
 <#1dotUnlabeledCode1> a sht:NegativeSyntax ;
@@ -929,16 +975,6 @@
   mf:endColumn 9 ;
   .
 
-<#prefix-none> a sht:NegativeSyntax ;
-  mf:name "prefix-none" ;
-  mf:status mf:Approved ;
-  sx:shex <prefix-none.shex> ;
-  mf:startRow 4 ;
-  mf:startColumn 32 ;
-  mf:endRow 5 ;
-  mf:endColumn 10 ;
-  .
-
 <#prefix-missing> a sht:NegativeSyntax ;
   mf:name "prefix-missing" ;
   mf:status mf:Approved ;
@@ -947,6 +983,23 @@
   mf:startColumn 16 ;
   mf:endRow 7 ;
   mf:endColumn 10 ;
+  .
+
+<#prefix-missing-1> a sht:NegativeSyntax ;
+  mf:name "prefix-missing-1" ;
+  mf:status mf:Approved ;
+  sx:shex <prefix-missing-1.shex> ;
+  mf:startRow 4 ;
+  mf:startColumn 32 ;
+  mf:endRow 5 ;
+  mf:endColumn 10 ;
+  .
+
+<#prefix-missing-2> a sht:NegativeSyntax ;
+  mf:name "prefix-missing-2" ;
+  mf:status mf:Proposed ;
+  sx:shex <prefix-missing-2.shex> ;
+  # no start/end: the error names both prefixes, so it has no one location.
   .
 
 <#prefix-no-COLON> a sht:NegativeSyntax ;

@@ -1,0 +1,8 @@
+# The same, for a triple expression label: there is nowhere on an Inclusion
+# to write an id.
+<http://all.example/S1> {
+  $<http://all.example/S1e> ( &<http://all.example/S2e> )
+}
+<http://all.example/S2> {
+  $<http://all.example/S2e> <http://all.example/p1> .
+}

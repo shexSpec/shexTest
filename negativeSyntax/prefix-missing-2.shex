@@ -1,0 +1,10 @@
+# Two missing prefixes.  A parser that recovers from the first has to report
+# both, not just the one it stopped on.
+# source: prefix-missing.shex (which has one)
+PREFIX rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+<http://a.example/IssueShape> {
+   rdf:type . ;
+   ex:p1 . ;
+   ex2:p2 .
+}

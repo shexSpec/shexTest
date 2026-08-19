@@ -23,6 +23,28 @@
           "endColumn": 1
         },
         {
+          "@id": "#1ProductionShapeCollision",
+          "@type": "sht:NegativeSyntax",
+          "name": "1ProductionShapeCollision",
+          "status": "mf:Proposed",
+          "shex": "1ProductionShapeCollision.shex",
+          "startRow": 8,
+          "startColumn": 3,
+          "endRow": 9,
+          "endColumn": 2
+        },
+        {
+          "@id": "#1ShapeProductionCollision",
+          "@type": "sht:NegativeSyntax",
+          "name": "1ShapeProductionCollision",
+          "status": "mf:Proposed",
+          "shex": "1ShapeProductionCollision.shex",
+          "startRow": 3,
+          "startColumn": 3,
+          "endRow": 6,
+          "endColumn": 22
+        },
+        {
           "@id": "#1dotAnnot_AIRIREF",
           "@type": "sht:NegativeSyntax",
           "name": "1dotAnnot_AIRIREF",
@@ -43,6 +65,28 @@
           "startColumn": 6,
           "endRow": 4,
           "endColumn": 1
+        },
+        {
+          "@id": "#1dotDuplicateShapeLabel",
+          "@type": "sht:NegativeSyntax",
+          "name": "1dotDuplicateShapeLabel",
+          "status": "mf:Proposed",
+          "shex": "1dotDuplicateShapeLabel.shex",
+          "startRow": 6,
+          "startColumn": 1,
+          "endRow": 9,
+          "endColumn": 1
+        },
+        {
+          "@id": "#1dotDuplicateProductionLabel",
+          "@type": "sht:NegativeSyntax",
+          "name": "1dotDuplicateProductionLabel",
+          "status": "mf:Proposed",
+          "shex": "1dotDuplicateProductionLabel.shex",
+          "startRow": 7,
+          "startColumn": 3,
+          "endRow": 8,
+          "endColumn": 2
         },
         {
           "@id": "#1doubleMininclusiveroman-numeral",
@@ -914,6 +958,24 @@
           "endColumn": 10
         },
         {
+          "@id": "#prefix-missing-1",
+          "@type": "sht:NegativeSyntax",
+          "name": "prefix-missing-1",
+          "status": "mf:Approved",
+          "shex": "prefix-missing-1.shex",
+          "startRow": 4,
+          "startColumn": 32,
+          "endRow": 5,
+          "endColumn": 10
+        },
+        {
+          "@id": "#prefix-missing-2",
+          "@type": "sht:NegativeSyntax",
+          "name": "prefix-missing-2",
+          "status": "mf:Proposed",
+          "shex": "prefix-missing-2.shex"
+        },
+        {
           "@id": "#prefix-no-COLON",
           "@type": "sht:NegativeSyntax",
           "name": "prefix-no-COLON",
@@ -945,17 +1007,6 @@
           "startColumn": 11,
           "endRow": 4,
           "endColumn": 1
-        },
-        {
-          "@id": "#prefix-none",
-          "@type": "sht:NegativeSyntax",
-          "name": "prefix-none",
-          "status": "mf:Approved",
-          "shex": "prefix-none.shex",
-          "startRow": 4,
-          "startColumn": 32,
-          "endRow": 5,
-          "endColumn": 10
         },
         {
           "@id": "#shapename-a",

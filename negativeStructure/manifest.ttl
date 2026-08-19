@@ -14,7 +14,8 @@
     <#includeExpressionNotFound>
     <#includeSimpleShape>
     <#includeNonSimpleShape>
-    <#1ShapeProductionCollision>
+    <#includeWithCardinality>
+    <#includeWithLabel>
     <#Cycle1Negation1>
     <#Cycle1Negation2>
     <#Cycle1Negation3>
@@ -88,14 +89,24 @@
   mf:endColumn 3 ;
   .
 
-<#1ShapeProductionCollision> a sht:NegativeStructure ;
-  mf:name "1ShapeProductionCollision" ;
+<#includeWithCardinality> a sht:NegativeStructure ;
+  mf:name "includeWithCardinality" ;
   mf:status mf:Proposed ;
-  sx:shex <1ShapeProductionCollision.shex> ;
-  mf:startRow 3 ;
+  sx:shex <includeWithCardinality.shex> ;
+  mf:startRow 6 ;
   mf:startColumn 3 ;
-  mf:endRow 6 ;
-  mf:endColumn 22 ; # 1st token after closing curly brace
+  mf:endRow 7 ;
+  mf:endColumn 2 ;
+  .
+
+<#includeWithLabel> a sht:NegativeStructure ;
+  mf:name "includeWithLabel" ;
+  mf:status mf:Proposed ;
+  sx:shex <includeWithLabel.shex> ;
+  mf:startRow 4 ;
+  mf:startColumn 3 ;
+  mf:endRow 5 ;
+  mf:endColumn 2 ;
   .
 
 <#Cycle1Negation1> a sht:NegativeStructure ;

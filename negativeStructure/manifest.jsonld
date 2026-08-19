@@ -78,15 +78,26 @@
           "endColumn": 3
         },
         {
-          "@id": "#1ShapeProductionCollision",
+          "@id": "#includeWithCardinality",
           "@type": "sht:NegativeStructure",
-          "name": "1ShapeProductionCollision",
+          "name": "includeWithCardinality",
           "status": "mf:Proposed",
-          "shex": "1ShapeProductionCollision.shex",
-          "startRow": 3,
+          "shex": "includeWithCardinality.shex",
+          "startRow": 6,
           "startColumn": 3,
-          "endRow": 6,
-          "endColumn": 22
+          "endRow": 7,
+          "endColumn": 2
+        },
+        {
+          "@id": "#includeWithLabel",
+          "@type": "sht:NegativeStructure",
+          "name": "includeWithLabel",
+          "status": "mf:Proposed",
+          "shex": "includeWithLabel.shex",
+          "startRow": 4,
+          "startColumn": 3,
+          "endRow": 5,
+          "endColumn": 2
         },
         {
           "@id": "#Cycle1Negation1",

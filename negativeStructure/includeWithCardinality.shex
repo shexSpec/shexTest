@@ -1,0 +1,10 @@
+# An Inclusion is a bare label in ShExJ, and there is nowhere else to put
+# one: EachOf and OneOf both want two or more expressions, so a group whose
+# only content is an Inclusion is not a triple expression that could carry a
+# cardinality.
+<http://all.example/S1> {
+  ( &<http://all.example/S2e> )+
+}
+<http://all.example/S2> {
+  $<http://all.example/S2e> <http://all.example/p1> .
+}

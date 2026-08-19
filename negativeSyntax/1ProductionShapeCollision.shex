@@ -1,0 +1,9 @@
+# <http://a.example/S1> can't be a triple expr label once it's been used as a
+# shape expr label.  1ShapeProductionCollision has the two the other way round.
+<http://a.example/S1> {
+  <http://a.example/p1> .
+}
+
+<http://a.example/S2> {
+  $<http://a.example/S1> <http://a.example/p2> .
+}
