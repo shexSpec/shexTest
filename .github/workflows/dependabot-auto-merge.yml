@@ -1,0 +1,22 @@
+# Turns on GitHub's auto-merge for Dependabot PRs. GitHub then merges each PR only
+# after the required "test" check (the CI workflow's job, see ci.yml) passes.
+name: Dependabot auto-merge
+
+on: pull_request_target
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  auto-merge:
+    if: github.event.pull_request.user.login == 'dependabot[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      # Note: deliberately does NOT check out the PR branch, so no dependency code
+      # runs in a job that holds a write token.
+      - name: Enable auto-merge
+        run: gh pr merge --auto --squash "$PR_URL"
+        env:
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
