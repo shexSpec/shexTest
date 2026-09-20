@@ -16,8 +16,18 @@ Schema           {
   imports:[IRIREF+] ?
   startActs:[SemAct+] ?
   start:shapeExprOrRef ?
+  templates:[TemplateDecl+] ?  # STRAWMAN templates (shex.js doc/templates.md)
   shapes:[ShapeDecl+] ?
 }
+
+TemplateDecl     {
+  id:shapeDeclLabel
+  params:[Param+]
+  shapeExpr:shapeExpr
+}
+Param            { name:STRING  kind:("iri") ?  extends:shapeDeclLabel ? }
+TemplateApp      { template:shapeDeclLabel  args:[shapeExprOrRef+] }
+ParamRef         { name:STRING }
 ShapeDecl        {
   id:shapeDeclLabel
   abstract:BOOL ?
@@ -27,7 +37,7 @@ ShapeDecl        {
 
 // Shape Expressions
 shapeExpr        = ShapeOr | ShapeAnd | ShapeNot | NodeConstraint | Shape | ShapeExternal;
-shapeExprOrRef   = shapeExpr | shapeDeclRef;
+shapeExprOrRef   = shapeExpr | shapeDeclRef | TemplateApp | ParamRef; # last two: STRAWMAN templates
 ShapeOr          { shapeExprs:[shapeExprOrRef{2,}] }
 ShapeAnd         { shapeExprs:[shapeExprOrRef{2,}] }
 ShapeNot         { shapeExpr:shapeExprOrRef }
@@ -97,7 +107,7 @@ OneOf            {
 TripleConstraint {
   id:tripleExprLabel ?
   inverse:BOOL ?
-  predicate:IRIREF
+  predicate:(IRIREF | ParamRef) # ParamRef: STRAWMAN templates, template bodies only
   valueExpr:shapeExprOrRef ?
   min:INTEGER ?
   max:INTEGER ?
