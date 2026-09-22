@@ -1,0 +1,96 @@
+{
+  "@context": "http://www.w3.org/ns/shex.jsonld",
+  "type": "Schema",
+  "shapes": [
+    {
+      "id": "http://a.example/S",
+      "type": "ShapeDecl",
+      "shapeExpr": {
+        "type": "Shape",
+        "expression": {
+          "type": "EachOf",
+          "expressions": [
+            {
+              "type": "TripleConstraint",
+              "inverse": true,
+              "predicate": "http://a.example/p1",
+              "valueExpr": "http://a.example/A"
+            },
+            {
+              "type": "TripleConstraint",
+              "inverse": true,
+              "predicate": "http://a.example/p1",
+              "valueExpr": "http://a.example/B"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "http://a.example/A",
+      "type": "ShapeDecl",
+      "shapeExpr": {
+        "type": "Shape",
+        "expression": {
+          "type": "EachOf",
+          "expressions": [
+            {
+              "type": "TripleConstraint",
+              "predicate": "http://a.example/p1",
+              "valueExpr": {
+                "type": "NodeConstraint",
+                "nodeKind": "iri"
+              }
+            },
+            {
+              "type": "TripleConstraint",
+              "predicate": "http://a.example/p2",
+              "valueExpr": {
+                "type": "NodeConstraint",
+                "values": [
+                  {
+                    "value": "A"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "closed": true
+      }
+    },
+    {
+      "id": "http://a.example/B",
+      "type": "ShapeDecl",
+      "shapeExpr": {
+        "type": "Shape",
+        "expression": {
+          "type": "EachOf",
+          "expressions": [
+            {
+              "type": "TripleConstraint",
+              "predicate": "http://a.example/p1",
+              "valueExpr": {
+                "type": "NodeConstraint",
+                "nodeKind": "iri"
+              }
+            },
+            {
+              "type": "TripleConstraint",
+              "predicate": "http://a.example/p2",
+              "valueExpr": {
+                "type": "NodeConstraint",
+                "values": [
+                  {
+                    "value": "B"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "closed": true
+      }
+    }
+  ]
+}

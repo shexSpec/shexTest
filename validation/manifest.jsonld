@@ -459,6 +459,600 @@
           "status": "mf:Approved"
         },
         {
+          "@id": "#1inversedotIRI_fail-Bnode",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1inversedotIRI.shex",
+            "shape": "http://a.example/S1",
+            "data": "Babcd_Ip1_Io1.ttl",
+            "focus": "http://a.example/o1"
+          },
+          "extensionResults": [],
+          "name": "1inversedotIRI_fail-Bnode",
+          "trait": [
+            "Inverse",
+            "TriplePattern"
+          ],
+          "comment": "<S> { ^<p1> IRI } on { _:abcd <p1> <o1> }",
+          "status": "mf:Approved"
+        },
+        {
+          "@id": "#1inversedotIRI_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1inversedotIRI.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/o1"
+          },
+          "extensionResults": [],
+          "name": "1inversedotIRI_pass",
+          "trait": [
+            "Inverse",
+            "TriplePattern"
+          ],
+          "comment": "<S> { ^<p1> IRI } on { <s1> <p1> <o1> }",
+          "status": "mf:Approved"
+        },
+        {
+          "@id": "#1inversedotBNODE_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1inversedotBNODE.shex",
+            "shape": "http://a.example/S1",
+            "data": "Babcd_Ip1_Io1.ttl",
+            "focus": "http://a.example/o1"
+          },
+          "extensionResults": [],
+          "name": "1inversedotBNODE_pass",
+          "trait": [
+            "Inverse",
+            "TriplePattern"
+          ],
+          "comment": "<S> { ^<p1> BNODE } on { _:abcd <p1> <o1> }",
+          "status": "mf:Approved"
+        },
+        {
+          "@id": "#1inversedotBNODE_fail-Iri",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1inversedotBNODE.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/o1"
+          },
+          "extensionResults": [],
+          "name": "1inversedotBNODE_fail-Iri",
+          "trait": [
+            "Inverse",
+            "TriplePattern"
+          ],
+          "comment": "<S> { ^<p1> BNODE } on { <s1> <p1> <o1> }",
+          "status": "mf:Approved"
+        },
+        {
+          "@id": "#1inversedotRef1_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1inversedotRef1.shex",
+            "shape": "http://a.example/S1",
+            "data": "In1_Ip1_In2.ttl",
+            "focus": "http://a.example/n2"
+          },
+          "extensionResults": [],
+          "name": "1inversedotRef1_pass",
+          "trait": [
+            "Inverse",
+            "TriplePattern",
+            "ValueReference"
+          ],
+          "comment": "<S1> { ^<p1> @<S2> } <S2> { <p1> . } on { <n1> <p1> <n2> }",
+          "status": "mf:Approved"
+        },
+        {
+          "@id": "#1inversedotRef1_fail",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1inversedotRef1.shex",
+            "shape": "http://a.example/S1",
+            "data": "In1_Ip1_In2a.In2a_Ip1_In2a.ttl",
+            "focus": "http://a.example/n2a"
+          },
+          "extensionResults": [],
+          "name": "1inversedotRef1_fail",
+          "trait": [
+            "Inverse",
+            "TriplePattern",
+            "ValueReference"
+          ],
+          "comment": "<S1> { ^<p1> @<S2> } <S2> { <p1> . } on { <n1> <p1> <n2a>. <n2a> <p1> <n2a> } (two incoming <p1> for a {1,1} inverse)",
+          "status": "mf:Approved"
+        },
+        {
+          "@id": "#1inversedotCard2_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1inversedotCard2.shex",
+            "shape": "http://a.example/S1",
+            "data": "In1_Ip1_In2a.In2a_Ip1_In2a.ttl",
+            "focus": "http://a.example/n2a"
+          },
+          "extensionResults": [],
+          "name": "1inversedotCard2_pass",
+          "trait": [
+            "Inverse",
+            "NonDotCardinality",
+            "TriplePattern"
+          ],
+          "comment": "<S> { ^<p1> .{2} } on { <n1> <p1> <n2a>. <n2a> <p1> <n2a> }",
+          "status": "mf:Approved"
+        },
+        {
+          "@id": "#1inversedotCard2_fail",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1inversedotCard2.shex",
+            "shape": "http://a.example/S1",
+            "data": "In1_Ip1_In2.ttl",
+            "focus": "http://a.example/n2"
+          },
+          "extensionResults": [],
+          "name": "1inversedotCard2_fail",
+          "trait": [
+            "Inverse",
+            "NonDotCardinality",
+            "TriplePattern"
+          ],
+          "comment": "<S1> { ^<p1> .{2} } on { <n1> <p1> <n2> } (only one incoming <p1>, needs two)",
+          "status": "mf:Approved"
+        },
+        {
+          "@id": "#1inversedotValueSet_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1inversedotValueSet.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/o1"
+          },
+          "extensionResults": [],
+          "name": "1inversedotValueSet_pass",
+          "trait": [
+            "Inverse",
+            "TriplePattern"
+          ],
+          "comment": "<S1> { ^<p1> [<s1>] } on { <s1> <p1> <o1> }",
+          "status": "mf:Approved"
+        },
+        {
+          "@id": "#1inversedotValueSet_fail-Bnode",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1inversedotValueSet.shex",
+            "shape": "http://a.example/S1",
+            "data": "Babcd_Ip1_Io1.ttl",
+            "focus": "http://a.example/o1"
+          },
+          "extensionResults": [],
+          "name": "1inversedotValueSet_fail-Bnode",
+          "trait": [
+            "Inverse",
+            "TriplePattern"
+          ],
+          "comment": "<S1> { ^<p1> [<s1>] } on { _:abcd <p1> <o1> } (the incoming subject is a bnode, not <s1>)",
+          "status": "mf:Approved"
+        },
+        {
+          "@id": "#1inversedotValueSet_fail-Iri",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1inversedotValueSet.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is_Ip1_Io1.ttl",
+            "focus": "http://a.example/o1"
+          },
+          "extensionResults": [],
+          "name": "1inversedotValueSet_fail-Iri",
+          "trait": [
+            "Inverse",
+            "TriplePattern"
+          ],
+          "comment": "<S1> { ^<p1> [<s1>] } on { <s> <p1> <o1> } (the incoming subject <s> is not <s1>)",
+          "status": "mf:Approved"
+        },
+        {
+          "@id": "#1inversedotLITERAL_fail",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1inversedotLITERAL.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/o1"
+          },
+          "extensionResults": [],
+          "name": "1inversedotLITERAL_fail",
+          "trait": [
+            "Inverse",
+            "TriplePattern"
+          ],
+          "comment": "<S> { ^<p1> LITERAL } on { <s1> <p1> <o1> } (a subject is never a literal)",
+          "status": "mf:Approved"
+        },
+        {
+          "@id": "#inverseBnodeCoref_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/inverseBnodeCoref.shex",
+            "shape": "http://a.example/S",
+            "data": "Is1_Ip1_Bd;Ip2_Bd.Bd_Ip3_Lx.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "inverseBnodeCoref_pass",
+          "trait": [
+            "BNodeCoreference",
+            "Inverse",
+            "TriplePattern",
+            "ValueReference"
+          ],
+          "comment": "one bnode reached by two predicates is the same node | <S>{ <p1> @<D>; <p2> @<D> } <D>{ ^<p1> IRI; ^<p2> IRI; <p3> [\"x\"] } on <s1> <p1> _:d ; <p2> _:d . _:d <p3> \"x\" .",
+          "status": "mf:Approved"
+        },
+        {
+          "@id": "#inverseBnodeCoref_fail-noP2",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/inverseBnodeCoref.shex",
+            "shape": "http://a.example/S",
+            "data": "Is1_Ip1_Bd.Bd_Ip3_Lx.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "inverseBnodeCoref_fail-noP2",
+          "trait": [
+            "BNodeCoreference",
+            "Inverse",
+            "TriplePattern",
+            "ValueReference"
+          ],
+          "comment": "<S>{ <p1> @<D>; <p2> @<D> } <D>{ ^<p1> IRI; ^<p2> IRI; <p3> [\"x\"] } on <s1> <p1> _:d . _:d <p3> \"x\" (missing <s1> <p2> _:d)",
+          "status": "mf:Approved"
+        },
+        {
+          "@id": "#inverseBnodeCoref_fail-noX",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/inverseBnodeCoref.shex",
+            "shape": "http://a.example/S",
+            "data": "Is1_Ip1_Bd;Ip2_Bd.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "inverseBnodeCoref_fail-noX",
+          "trait": [
+            "BNodeCoreference",
+            "Inverse",
+            "TriplePattern",
+            "ValueReference"
+          ],
+          "comment": "<S>{ <p1> @<D>; <p2> @<D> } <D>{ ^<p1> IRI; ^<p2> IRI; <p3> [\"x\"] } on <s1> <p1> _:d ; <p2> _:d (missing _:d <p3> \"x\")",
+          "status": "mf:Approved"
+        },
+        {
+          "@id": "#inverseClosedDiscrim_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/inverseClosedDiscrim.shex",
+            "shape": "http://a.example/S",
+            "data": "Bin1_Ip1_Is1;Ip2_LA.Bin2_Ip1_Is1;Ip2_LB.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "inverseClosedDiscrim_pass",
+          "trait": [
+            "BNodeCoreference",
+            "Closed",
+            "Inverse",
+            "TriplePattern",
+            "ValueReference"
+          ],
+          "comment": "inverse repeated to two CLOSED shapes told apart by a value set | :S { ^:p1 @:A ; ^:p1 @:B } :A C { :p1 IRI ; :p2 [\"A\"] } :B C { :p1 IRI ; :p2 [\"B\"] } on { _:in1 <p1> <s1> ; <p2> \"A\" . _:in2 <p1> <s1> ; <p2> \"B\" }",
+          "status": "mf:Approved"
+        },
+        {
+          "@id": "#inverseClosedDiscrim_fail",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/inverseClosedDiscrim.shex",
+            "shape": "http://a.example/S",
+            "data": "Bin1_Ip1_Is1;Ip2_LA.Bin2_Ip1_Is1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "inverseClosedDiscrim_fail",
+          "trait": [
+            "BNodeCoreference",
+            "Closed",
+            "Inverse",
+            "TriplePattern",
+            "ValueReference"
+          ],
+          "comment": ":S { ^:p1 @:A ; ^:p1 @:B } :A CLOSED { :p1 IRI ; :p2 [\"A\"] } :B CLOSED { :p1 IRI ; :p2 [\"B\"] } on { _:in1 <p1> <s1> ; <p2> \"A\" . _:in2 <p1> <s1> } (_:in2 has no <p2>, satisfies neither closed shape)",
+          "status": "mf:Approved"
+        },
+        {
+          "@id": "#1dotExtendsInverse_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1dotExtendsInverse.shex",
+            "shape": "http://a.example/A",
+            "data": "Is1_Ip1_Io1.In0_Ip2_Is1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1dotExtendsInverse_pass",
+          "trait": [
+            "Extends",
+            "Inverse",
+            "TriplePattern"
+          ],
+          "comment": "<B>{ <p1> . } <A> EXTENDS @<B> { ^<p2> . } on { <s1> <p1> <o1>. <n0> <p2> <s1> }",
+          "status": "mf:Approved"
+        },
+        {
+          "@id": "#1dotExtendsInverse_fail",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1dotExtendsInverse.shex",
+            "shape": "http://a.example/A",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1dotExtendsInverse_fail",
+          "trait": [
+            "Extends",
+            "Inverse",
+            "TriplePattern"
+          ],
+          "comment": "<B>{ <p1> . } <A> EXTENDS @<B> { ^<p2> . } on { <s1> <p1> <o1> } (no incoming <p2>)",
+          "status": "mf:Approved"
+        },
+        {
+          "@id": "#1dotInverseExtends_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1dotInverseExtends.shex",
+            "shape": "http://a.example/A",
+            "data": "Io1_Ip1_Is1.In0_Ip2_Is1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1dotInverseExtends_pass",
+          "trait": [
+            "Extends",
+            "Inverse",
+            "TriplePattern"
+          ],
+          "comment": "<B>{ ^<p2> . } <A> EXTENDS @<B> { ^<p1> . } on { <o1> <p1> <s1>. <n0> <p2> <s1> } (<s1> has both an incoming <p1> and an incoming <p2>; the parent's inverse arc must be matched)",
+          "status": "mf:Approved"
+        },
+        {
+          "@id": "#1dotInverseExtends_fail",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1dotInverseExtends.shex",
+            "shape": "http://a.example/A",
+            "data": "Is1_Ip1_Io1.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1dotInverseExtends_fail",
+          "trait": [
+            "Extends",
+            "Inverse",
+            "TriplePattern"
+          ],
+          "comment": "<B>{ ^<p2> . } <A> EXTENDS @<B> { ^<p1> . } on { <s1> <p1> <o1> } (<s1> has no incoming <p1> or <p2>)",
+          "status": "mf:Approved"
+        },
+        {
+          "@id": "#1dot2SameExtends_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1dot2SameExtends.shex",
+            "shape": "http://a.example/A",
+            "data": "Is1_Ip1_Io1;Ip2_Io2.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1dot2SameExtends_pass",
+          "trait": [
+            "Extends",
+            "MultiExtends"
+          ],
+          "comment": "naming the same parent twice: <B>{ <p2> . } <A> EXTENDS @<B> EXTENDS @<B> { <p1> . } on { <s1> <p1> <o1>; <p2> <o2> }",
+          "status": "mf:Approved"
+        },
+        {
+          "@id": "#2intersectP1ValueSet_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/2intersectP1ValueSet.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_La,Lb.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "2intersectP1ValueSet_pass",
+          "trait": [
+            "RepeatedPredicate",
+            "TriplePattern"
+          ],
+          "comment": "two constraints on one predicate need assignment: <S1>{ <p1> [\"a\" \"b\" \"c\"]; <p1> [\"b\" \"c\"] } on { <s1> <p1> \"a\",\"b\" }",
+          "status": "mf:Approved"
+        },
+        {
+          "@id": "#2intersectP1ValueSet_fail",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/2intersectP1ValueSet.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_La.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "2intersectP1ValueSet_fail",
+          "trait": [
+            "RepeatedPredicate",
+            "TriplePattern"
+          ],
+          "comment": "<S1>{ <p1> [\"a\" \"b\" \"c\"]; <p1> [\"b\" \"c\"] } on { <s1> <p1> \"a\" } (one arc cannot satisfy both constraints)",
+          "status": "mf:Approved"
+        },
+        {
+          "@id": "#2intersectP1ValueSet_fail-Ld",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/2intersectP1ValueSet.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_La,Ld.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "2intersectP1ValueSet_fail-Ld",
+          "trait": [
+            "RepeatedPredicate",
+            "TriplePattern"
+          ],
+          "comment": "<S1>{ <p1> [\"a\" \"b\" \"c\"]; <p1> [\"b\" \"c\"] } on { <s1> <p1> \"a\",\"d\" } (\"d\" is in neither value set)",
+          "status": "mf:Approved"
+        },
+        {
+          "@id": "#RecursionContingent_fail",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/RecursionContingent.shex",
+            "shape": "http://a.example/D",
+            "data": "recursionContingentData.ttl",
+            "focus": "http://a.example/d"
+          },
+          "extensionResults": [],
+          "name": "RecursionContingent_fail",
+          "trait": [
+            "NonDotCardinality",
+            "RecursiveData",
+            "ValueReference"
+          ],
+          "comment": "a recursion-contingent pass must not be reused after its assumption fails (#14): <d> is nonconformant because <a> lacks :preda so @:A truly fails",
+          "status": "mf:Approved"
+        },
+        {
+          "@id": "#RecursionContingent_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/RecursionContingent.shex",
+            "shape": "http://a.example/D",
+            "data": "recursionContingentDataPass.ttl",
+            "focus": "http://a.example/d"
+          },
+          "extensionResults": [],
+          "name": "RecursionContingent_pass",
+          "trait": [
+            "NonDotCardinality",
+            "RecursiveData",
+            "ValueReference"
+          ],
+          "comment": "the contingent recursion conforms when <a> genuinely satisfies @:A (it has :preda), so the assumption made while recursing holds",
+          "status": "mf:Approved"
+        },
+        {
+          "@id": "#1datatypePattern_fail",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1datatypePattern.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_La.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1datatypePattern_fail",
+          "trait": [
+            "Datatype"
+          ],
+          "comment": "datatype and pattern on one constraint: <S1>{ <p1> xsd:string /^ab/ } on { <s1> <p1> \"a\" }",
+          "status": "mf:Approved"
+        },
+        {
+          "@id": "#1datatypePattern_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1datatypePattern.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Labc.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1datatypePattern_pass",
+          "trait": [
+            "Datatype"
+          ],
+          "comment": "<S1>{ <p1> xsd:string /^ab/ } on { <s1> <p1> \"abc\" } (a string matching the pattern)",
+          "status": "mf:Approved"
+        },
+        {
+          "@id": "#1NOTvsCard2_fail",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1NOTvsCard2.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1,Io2.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOTvsCard2_fail",
+          "trait": [
+            "NonDotCardinality"
+          ],
+          "comment": "negation with a cardinality: <S1>{ <p1> NOT [<o1>] {2} } on { <s1> <p1> <o1>,<o2> } has only one non-<o1>",
+          "status": "mf:Approved"
+        },
+        {
+          "@id": "#1NOTvsCard2_fail-3arcs",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas/1NOTvsCard2.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1,Io2,Io3.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOTvsCard2_fail-3arcs",
+          "trait": [
+            "NonDotCardinality"
+          ],
+          "comment": "<S1>{ <p1> NOT [<o1>] {2} } on { <s1> <p1> <o1>,<o2>,<o3> } (<o2>,<o3> match NOT [<o1>] {2} but the <o1> arc is unmatched and the shape is not EXTRA)",
+          "status": "mf:Approved"
+        },
+        {
+          "@id": "#1NOTvsCard2Extra_pass",
+          "@type": "sht:ValidationTest",
+          "action": {
+            "schema": "../schemas/1NOTvsCard2Extra.shex",
+            "shape": "http://a.example/S1",
+            "data": "Is1_Ip1_Io1,Io2,Io3.ttl",
+            "focus": "http://a.example/s1"
+          },
+          "extensionResults": [],
+          "name": "1NOTvsCard2Extra_pass",
+          "trait": [
+            "Extra",
+            "NonDotCardinality"
+          ],
+          "comment": "<S1> EXTRA <p1> { <p1> NOT [<o1>] {2} } on { <s1> <p1> <o1>,<o2>,<o3> } (<o2>,<o3> match NOT [<o1>] {2}; the <o1> arc is permitted by EXTRA)",
+          "status": "mf:Approved"
+        },
+        {
           "@id": "#1Adot_pass",
           "@type": "sht:ValidationTest",
           "action": {

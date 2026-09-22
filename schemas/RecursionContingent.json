@@ -1,0 +1,115 @@
+{
+  "@context": "http://www.w3.org/ns/shex.jsonld",
+  "type": "Schema",
+  "shapes": [
+    {
+      "id": "http://a.example/D",
+      "type": "ShapeDecl",
+      "shapeExpr": {
+        "type": "Shape",
+        "expression": {
+          "type": "EachOf",
+          "expressions": [
+            {
+              "type": "TripleConstraint",
+              "predicate": "http://a.example/predd",
+              "valueExpr": {
+                "type": "NodeConstraint",
+                "datatype": "http://www.w3.org/2001/XMLSchema#string"
+              }
+            },
+            {
+              "type": "OneOf",
+              "expressions": [
+                {
+                  "type": "TripleConstraint",
+                  "predicate": "http://a.example/test",
+                  "valueExpr": "http://a.example/A",
+                  "min": 0,
+                  "max": -1
+                },
+                {
+                  "type": "TripleConstraint",
+                  "predicate": "http://a.example/test",
+                  "valueExpr": "http://a.example/E",
+                  "min": 0,
+                  "max": -1
+                }
+              ]
+            },
+            {
+              "type": "TripleConstraint",
+              "predicate": "http://a.example/test2",
+              "valueExpr": "http://a.example/C"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "http://a.example/E",
+      "type": "ShapeDecl",
+      "shapeExpr": {
+        "type": "Shape",
+        "expression": {
+          "type": "TripleConstraint",
+          "predicate": "http://a.example/prede",
+          "valueExpr": {
+            "type": "NodeConstraint",
+            "datatype": "http://www.w3.org/2001/XMLSchema#string"
+          }
+        }
+      }
+    },
+    {
+      "id": "http://a.example/A",
+      "type": "ShapeDecl",
+      "shapeExpr": {
+        "type": "Shape",
+        "expression": {
+          "type": "EachOf",
+          "expressions": [
+            {
+              "type": "TripleConstraint",
+              "predicate": "http://a.example/subject",
+              "valueExpr": "http://a.example/C"
+            },
+            {
+              "type": "TripleConstraint",
+              "predicate": "http://a.example/preda",
+              "valueExpr": {
+                "type": "NodeConstraint",
+                "datatype": "http://www.w3.org/2001/XMLSchema#string"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "http://a.example/C",
+      "type": "ShapeDecl",
+      "shapeExpr": {
+        "type": "Shape",
+        "expression": {
+          "type": "EachOf",
+          "expressions": [
+            {
+              "type": "TripleConstraint",
+              "predicate": "http://a.example/subject",
+              "valueExpr": "http://a.example/A"
+            },
+            {
+              "type": "TripleConstraint",
+              "predicate": "http://a.example/predc",
+              "valueExpr": {
+                "type": "NodeConstraint",
+                "datatype": "http://www.w3.org/2001/XMLSchema#string"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+PREFIX : <http://a.example/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+:D { :predd xsd:string ; ( :test @:A* | :test @:E* ) ; :test2 @:C }
+:E { :prede xsd:string }
+:A { :subject @:C ; :preda xsd:string }
+:C { :subject @:A ; :predc xsd:string }

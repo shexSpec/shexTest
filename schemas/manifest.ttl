@@ -29,6 +29,22 @@
         <#1dotLNex-HYPHEN_MINUS>
         <#bnode1dot>
         <#1inversedot>
+        <#1inversedotIRI>
+        <#1inversedotBNODE>
+        <#1inversedotRef1>
+        <#1inversedotCard2>
+        <#1inversedotValueSet>
+        <#1inversedotLITERAL>
+        <#inverseBnodeCoref>
+        <#inverseClosedDiscrim>
+        <#1dotExtendsInverse>
+        <#1dotInverseExtends>
+        <#1dot2SameExtends>
+        <#2intersectP1ValueSet>
+        <#RecursionContingent>
+        <#1datatypePattern>
+        <#1NOTvsCard2>
+        <#1NOTvsCard2Extra>
         <#1Adot>
         <#1iri>
         <#1bnode>
@@ -631,6 +647,134 @@
     sx:shex <1inversedot.shex> ;
     sx:json <1inversedot.json> ;
     sx:ttl <1inversedot.ttl> ;
+    .
+
+<#1inversedotIRI> a sht:RepresentationTest ;
+    mf:name "1inversedotIRI" ;
+    mf:status mf:Approved ;
+    sx:shex <1inversedotIRI.shex> ;
+    sx:json <1inversedotIRI.json> ;
+    sx:ttl <1inversedotIRI.ttl> ;
+    .
+
+<#1inversedotBNODE> a sht:RepresentationTest ;
+    mf:name "1inversedotBNODE" ;
+    mf:status mf:Approved ;
+    sx:shex <1inversedotBNODE.shex> ;
+    sx:json <1inversedotBNODE.json> ;
+    sx:ttl <1inversedotBNODE.ttl> ;
+    .
+
+<#1inversedotRef1> a sht:RepresentationTest ;
+    mf:name "1inversedotRef1" ;
+    mf:status mf:Approved ;
+    sx:shex <1inversedotRef1.shex> ;
+    sx:json <1inversedotRef1.json> ;
+    sx:ttl <1inversedotRef1.ttl> ;
+    .
+
+<#1inversedotCard2> a sht:RepresentationTest ;
+    mf:name "1inversedotCard2" ;
+    mf:status mf:Approved ;
+    sx:shex <1inversedotCard2.shex> ;
+    sx:json <1inversedotCard2.json> ;
+    sx:ttl <1inversedotCard2.ttl> ;
+    .
+
+<#1inversedotValueSet> a sht:RepresentationTest ;
+    mf:name "1inversedotValueSet" ;
+    mf:status mf:Approved ;
+    sx:shex <1inversedotValueSet.shex> ;
+    sx:json <1inversedotValueSet.json> ;
+    sx:ttl <1inversedotValueSet.ttl> ;
+    .
+
+<#1inversedotLITERAL> a sht:RepresentationTest ;
+    mf:name "1inversedotLITERAL" ;
+    mf:status mf:Approved ;
+    sx:shex <1inversedotLITERAL.shex> ;
+    sx:json <1inversedotLITERAL.json> ;
+    sx:ttl <1inversedotLITERAL.ttl> ;
+    .
+
+<#inverseBnodeCoref> a sht:RepresentationTest ;
+    mf:name "inverseBnodeCoref" ;
+    mf:status mf:Approved ;
+    sx:shex <inverseBnodeCoref.shex> ;
+    sx:json <inverseBnodeCoref.json> ;
+    sx:ttl <inverseBnodeCoref.ttl> ;
+    .
+
+<#inverseClosedDiscrim> a sht:RepresentationTest ;
+    mf:name "inverseClosedDiscrim" ;
+    mf:status mf:Approved ;
+    sx:shex <inverseClosedDiscrim.shex> ;
+    sx:json <inverseClosedDiscrim.json> ;
+    sx:ttl <inverseClosedDiscrim.ttl> ;
+    .
+
+<#1dotExtendsInverse> a sht:RepresentationTest ;
+    mf:name "1dotExtendsInverse" ;
+    mf:status mf:Approved ;
+    sx:shex <1dotExtendsInverse.shex> ;
+    sx:json <1dotExtendsInverse.json> ;
+    sx:ttl <1dotExtendsInverse.ttl> ;
+    .
+
+<#1dotInverseExtends> a sht:RepresentationTest ;
+    mf:name "1dotInverseExtends" ;
+    mf:status mf:Approved ;
+    sx:shex <1dotInverseExtends.shex> ;
+    sx:json <1dotInverseExtends.json> ;
+    sx:ttl <1dotInverseExtends.ttl> ;
+    .
+
+<#1dot2SameExtends> a sht:RepresentationTest ;
+    mf:name "1dot2SameExtends" ;
+    mf:status mf:Approved ;
+    sx:shex <1dot2SameExtends.shex> ;
+    sx:json <1dot2SameExtends.json> ;
+    sx:ttl <1dot2SameExtends.ttl> ;
+    .
+
+<#2intersectP1ValueSet> a sht:RepresentationTest ;
+    mf:name "2intersectP1ValueSet" ;
+    mf:status mf:Approved ;
+    sx:shex <2intersectP1ValueSet.shex> ;
+    sx:json <2intersectP1ValueSet.json> ;
+    sx:ttl <2intersectP1ValueSet.ttl> ;
+    .
+
+<#RecursionContingent> a sht:RepresentationTest ;
+    mf:name "RecursionContingent" ;
+    mf:status mf:Approved ;
+    sx:shex <RecursionContingent.shex> ;
+    sx:json <RecursionContingent.json> ;
+    sx:ttl <RecursionContingent.ttl> ;
+    .
+
+<#1datatypePattern> a sht:RepresentationTest ;
+    mf:name "1datatypePattern" ;
+    mf:status mf:Approved ;
+    sx:shex <1datatypePattern.shex> ;
+    sx:json <1datatypePattern.json> ;
+    sx:ttl <1datatypePattern.ttl> ;
+    .
+
+<#1NOTvsCard2> a sht:RepresentationTest ;
+    mf:name "1NOTvsCard2" ;
+    mf:status mf:Approved ;
+    sx:shex <1NOTvsCard2.shex> ;
+    sx:json <1NOTvsCard2.json> ;
+    sx:ttl <1NOTvsCard2.ttl> ;
+    .
+
+<#1NOTvsCard2Extra> a sht:RepresentationTest ;
+    mf:name "1NOTvsCard2Extra" ;
+    mf:status mf:Approved ;
+    sx:shex <1NOTvsCard2Extra.shex> ;
+    sx:json <1NOTvsCard2Extra.json> ;
+    sx:ttl <1NOTvsCard2Extra.ttl> ;
     .
 
 <#1Adot> a sht:RepresentationTest ;
