@@ -59,6 +59,8 @@
     <#open1dotclosecardOpt>
         <#1cardPlus>
         <#1cardStar>
+        <#1card0>
+        <#1card1>
         <#1literalPlus>
         <#1dotRef1>
         <#1dotRefLNex1>
@@ -327,6 +329,8 @@
         <#2EachInclude1-after>
         <#2OneInclude1>
         <#2OneInclude1-after>
+        <#openEachInclude1dotclosecardPlusc1IRI>
+        <#openOneInclude1dotclosecardPlusc1IRI>
         <#1dotAnnotIRIREF>
         <#1dotAnnotSTRING_LITERAL1>
         <#1dotAnnot3>
@@ -349,6 +353,9 @@
         <#1dotShapeCode1>
         <#1dotShapeNoCode1>
         <#open3EachdotcloseCode1>
+        <#1dotShapeCode1fail>
+        <#open3EachdotcloseCode1fail>
+        <#open2OnedotcloseCode1fail>
         <#startCode1>
         <#startNoCode1>
         <#startCode1fail>
@@ -417,7 +424,21 @@
         <#open1dotAND1dotcloseAND1dot>
         <#1dotANDopen1dotAND1dotclose>
         <#2Eachdot>
+        <#8dot5a2b1c>
         <#open2Eachdotclosecard25c1dot>
+        <#open2Eachdotclosecard0c1dot>
+        <#open2EachdotclosecardStar>
+        <#open2EachdotclosecardOpt>
+        <#open2Eachdotclosecard02>
+        <#open2OnedotclosecardStar>
+        <#open1dot1cardPlusclosecard2>
+        <#open1cardPlus1dotclosecard2>
+        <#open1card21dotclosecardStar>
+        <#open1card121cardOptclosecardStar>
+        <#open1dot1cardOptclosecard12>
+        <#openopen2Eachdotclosecard0c1dotclosecardStarc1dot>
+        <#openopen2EachdotclosecardOptc1dotclosecardStarc1dot>
+        <#open2OnecardStarclosecardStar>
 
         # cycles
         <#CycleNoNegation_pass>
@@ -472,6 +493,9 @@
         <#ExtendsRepeatedP>
         <#extends-closed-or-each-each>
         <#extends-open-or-each-each>
+        <#1dotExtendsBnode>
+        <#extends-abstract-closed-diamond>
+        <#extends-abstract-or>
 
         # abstract
         <#1dotAbstractShapeCode1>
@@ -903,6 +927,22 @@
     sx:shex <1cardStar.shex> ;
     sx:json <1cardStar.json> ;
     sx:ttl <1cardStar.ttl> ;
+    .
+
+<#1card0> a sht:RepresentationTest ;
+    mf:name "1card0" ;
+    mf:status mf:Approved ;
+    sx:shex <1card0.shex> ;
+    sx:json <1card0.json> ;
+    sx:ttl <1card0.ttl> ;
+    .
+
+<#1card1> a sht:RepresentationTest ;
+    mf:name "1card1" ;
+    mf:status mf:Approved ;
+    sx:shex <1card1.shex> ;
+    sx:json <1card1.json> ;
+    sx:ttl <1card1.ttl> ;
     .
 
 <#1literalPlus> a sht:RepresentationTest ;
@@ -3183,6 +3223,22 @@
     sx:ttl <2OneInclude1-after.ttl> ;
     .
 
+<#openEachInclude1dotclosecardPlusc1IRI> a sht:RepresentationTest ;
+    mf:name "openEachInclude1dotclosecardPlusc1IRI" ;
+    mf:status mf:Approved ;
+    sx:shex <openEachInclude1dotclosecardPlusc1IRI.shex> ;
+    sx:json <openEachInclude1dotclosecardPlusc1IRI.json> ;
+    sx:ttl <openEachInclude1dotclosecardPlusc1IRI.ttl> ;
+    .
+
+<#openOneInclude1dotclosecardPlusc1IRI> a sht:RepresentationTest ;
+    mf:name "openOneInclude1dotclosecardPlusc1IRI" ;
+    mf:status mf:Approved ;
+    sx:shex <openOneInclude1dotclosecardPlusc1IRI.shex> ;
+    sx:json <openOneInclude1dotclosecardPlusc1IRI.json> ;
+    sx:ttl <openOneInclude1dotclosecardPlusc1IRI.ttl> ;
+    .
+
 <#1dotAnnotIRIREF> a sht:RepresentationTest ;
     mf:name "1dotAnnotIRIREF" ;
     mf:status mf:Approved ;
@@ -3373,6 +3429,30 @@
     sx:shex <open3EachdotcloseCode1.shex> ;
     sx:json <open3EachdotcloseCode1.json> ;
     sx:ttl <open3EachdotcloseCode1.ttl> ;
+    .
+
+<#1dotShapeCode1fail> a sht:RepresentationTest ;
+    mf:name "1dotShapeCode1fail" ;
+    mf:status mf:Approved ;
+    sx:shex <1dotShapeCode1fail.shex> ;
+    sx:json <1dotShapeCode1fail.json> ;
+    sx:ttl <1dotShapeCode1fail.ttl> ;
+    .
+
+<#open3EachdotcloseCode1fail> a sht:RepresentationTest ;
+    mf:name "open3EachdotcloseCode1fail" ;
+    mf:status mf:Approved ;
+    sx:shex <open3EachdotcloseCode1fail.shex> ;
+    sx:json <open3EachdotcloseCode1fail.json> ;
+    sx:ttl <open3EachdotcloseCode1fail.ttl> ;
+    .
+
+<#open2OnedotcloseCode1fail> a sht:RepresentationTest ;
+    mf:name "open2OnedotcloseCode1fail" ;
+    mf:status mf:Approved ;
+    sx:shex <open2OnedotcloseCode1fail.shex> ;
+    sx:json <open2OnedotcloseCode1fail.json> ;
+    sx:ttl <open2OnedotcloseCode1fail.ttl> ;
     .
 
 <#startCode1> a sht:RepresentationTest ;
@@ -3775,12 +3855,124 @@
     sx:ttl <2Eachdot.ttl> ;
     .
 
+<#8dot5a2b1c> a sht:RepresentationTest ;
+    mf:name "8dot5a2b1c" ;
+    mf:status mf:Approved ;
+    sx:shex <8dot5a2b1c.shex> ;
+    sx:json <8dot5a2b1c.json> ;
+    sx:ttl <8dot5a2b1c.ttl> ;
+    .
+
 <#open2Eachdotclosecard25c1dot> a sht:RepresentationTest ;
     mf:name "open2Eachdotclosecard25c1dot" ;
     mf:status mf:Approved ;
     sx:shex <open2Eachdotclosecard25c1dot.shex> ;
     sx:json <open2Eachdotclosecard25c1dot.json> ;
     sx:ttl <open2Eachdotclosecard25c1dot.ttl> ;
+    .
+
+<#open2Eachdotclosecard0c1dot> a sht:RepresentationTest ;
+    mf:name "open2Eachdotclosecard0c1dot" ;
+    mf:status mf:Approved ;
+    sx:shex <open2Eachdotclosecard0c1dot.shex> ;
+    sx:json <open2Eachdotclosecard0c1dot.json> ;
+    sx:ttl <open2Eachdotclosecard0c1dot.ttl> ;
+    .
+
+<#open2EachdotclosecardStar> a sht:RepresentationTest ;
+    mf:name "open2EachdotclosecardStar" ;
+    mf:status mf:Approved ;
+    sx:shex <open2EachdotclosecardStar.shex> ;
+    sx:json <open2EachdotclosecardStar.json> ;
+    sx:ttl <open2EachdotclosecardStar.ttl> ;
+    .
+
+<#open2EachdotclosecardOpt> a sht:RepresentationTest ;
+    mf:name "open2EachdotclosecardOpt" ;
+    mf:status mf:Approved ;
+    sx:shex <open2EachdotclosecardOpt.shex> ;
+    sx:json <open2EachdotclosecardOpt.json> ;
+    sx:ttl <open2EachdotclosecardOpt.ttl> ;
+    .
+
+<#open2Eachdotclosecard02> a sht:RepresentationTest ;
+    mf:name "open2Eachdotclosecard02" ;
+    mf:status mf:Approved ;
+    sx:shex <open2Eachdotclosecard02.shex> ;
+    sx:json <open2Eachdotclosecard02.json> ;
+    sx:ttl <open2Eachdotclosecard02.ttl> ;
+    .
+
+<#open2OnedotclosecardStar> a sht:RepresentationTest ;
+    mf:name "open2OnedotclosecardStar" ;
+    mf:status mf:Approved ;
+    sx:shex <open2OnedotclosecardStar.shex> ;
+    sx:json <open2OnedotclosecardStar.json> ;
+    sx:ttl <open2OnedotclosecardStar.ttl> ;
+    .
+
+<#open1dot1cardPlusclosecard2> a sht:RepresentationTest ;
+    mf:name "open1dot1cardPlusclosecard2" ;
+    mf:status mf:Approved ;
+    sx:shex <open1dot1cardPlusclosecard2.shex> ;
+    sx:json <open1dot1cardPlusclosecard2.json> ;
+    sx:ttl <open1dot1cardPlusclosecard2.ttl> ;
+    .
+
+<#open1cardPlus1dotclosecard2> a sht:RepresentationTest ;
+    mf:name "open1cardPlus1dotclosecard2" ;
+    mf:status mf:Approved ;
+    sx:shex <open1cardPlus1dotclosecard2.shex> ;
+    sx:json <open1cardPlus1dotclosecard2.json> ;
+    sx:ttl <open1cardPlus1dotclosecard2.ttl> ;
+    .
+
+<#open1card21dotclosecardStar> a sht:RepresentationTest ;
+    mf:name "open1card21dotclosecardStar" ;
+    mf:status mf:Approved ;
+    sx:shex <open1card21dotclosecardStar.shex> ;
+    sx:json <open1card21dotclosecardStar.json> ;
+    sx:ttl <open1card21dotclosecardStar.ttl> ;
+    .
+
+<#open1card121cardOptclosecardStar> a sht:RepresentationTest ;
+    mf:name "open1card121cardOptclosecardStar" ;
+    mf:status mf:Approved ;
+    sx:shex <open1card121cardOptclosecardStar.shex> ;
+    sx:json <open1card121cardOptclosecardStar.json> ;
+    sx:ttl <open1card121cardOptclosecardStar.ttl> ;
+    .
+
+<#open1dot1cardOptclosecard12> a sht:RepresentationTest ;
+    mf:name "open1dot1cardOptclosecard12" ;
+    mf:status mf:Approved ;
+    sx:shex <open1dot1cardOptclosecard12.shex> ;
+    sx:json <open1dot1cardOptclosecard12.json> ;
+    sx:ttl <open1dot1cardOptclosecard12.ttl> ;
+    .
+
+<#openopen2Eachdotclosecard0c1dotclosecardStarc1dot> a sht:RepresentationTest ;
+    mf:name "openopen2Eachdotclosecard0c1dotclosecardStarc1dot" ;
+    mf:status mf:Approved ;
+    sx:shex <openopen2Eachdotclosecard0c1dotclosecardStarc1dot.shex> ;
+    sx:json <openopen2Eachdotclosecard0c1dotclosecardStarc1dot.json> ;
+    sx:ttl <openopen2Eachdotclosecard0c1dotclosecardStarc1dot.ttl> ;
+    .
+
+<#openopen2EachdotclosecardOptc1dotclosecardStarc1dot> a sht:RepresentationTest ;
+    mf:name "openopen2EachdotclosecardOptc1dotclosecardStarc1dot" ;
+    mf:status mf:Approved ;
+    sx:shex <openopen2EachdotclosecardOptc1dotclosecardStarc1dot.shex> ;
+    sx:json <openopen2EachdotclosecardOptc1dotclosecardStarc1dot.json> ;
+    sx:ttl <openopen2EachdotclosecardOptc1dotclosecardStarc1dot.ttl> ;
+    .
+
+<#open2OnecardStarclosecardStar> a sht:RepresentationTest ;
+    mf:name "open2OnecardStarclosecardStar" ;
+    mf:status mf:Approved ;
+    sx:shex <open2OnecardStarclosecardStar.shex> ;
+    sx:json <open2OnecardStarclosecardStar.json> ;
+    sx:ttl <open2OnecardStarclosecardStar.ttl> ;
     .
 
 # cycles {
@@ -4228,6 +4420,30 @@
     sx:shex <extends-open-or-each-each.shex> ;
     sx:json <extends-open-or-each-each.json> ;
     sx:ttl <extends-open-or-each-each.ttl> ;
+    .
+
+<#1dotExtendsBnode> a sht:RepresentationTest ;
+    mf:name "1dotExtendsBnode" ;
+    mf:status mf:Approved ;
+    sx:shex <1dotExtendsBnode.shex> ;
+    sx:json <1dotExtendsBnode.json> ;
+    sx:ttl <1dotExtendsBnode.ttl> ;
+    .
+
+<#extends-abstract-closed-diamond> a sht:RepresentationTest ;
+    mf:name "extends-abstract-closed-diamond" ;
+    mf:status mf:Approved ;
+    sx:shex <extends-abstract-closed-diamond.shex> ;
+    sx:json <extends-abstract-closed-diamond.json> ;
+    sx:ttl <extends-abstract-closed-diamond.ttl> ;
+    .
+
+<#extends-abstract-or> a sht:RepresentationTest ;
+    mf:name "extends-abstract-or" ;
+    mf:status mf:Approved ;
+    sx:shex <extends-abstract-or.shex> ;
+    sx:json <extends-abstract-or.json> ;
+    sx:ttl <extends-abstract-or.ttl> ;
     .
 
 

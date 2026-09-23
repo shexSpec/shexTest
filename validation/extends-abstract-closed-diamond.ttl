@@ -1,0 +1,13 @@
+BASE <http://a.example/>
+
+<via-G0-0> <p> "G0A", "G0-0A" .
+
+<via-G0-1> <p> "G0A", "G0-1A" .
+
+<via-BOTTOM> <p> "G0A", "G0-0A", "G0-1A", "BOTTOMA" .
+
+<only-G0> <p> "G0A" .
+
+<no-G0> <p> "G0-0A", "G0-1A", "BOTTOMA" .
+
+<no-BOTTOM> <p> "G0A", "G0-0A", "G0-1A" .
