@@ -18363,7 +18363,7 @@
           "trait": [
             "Annotation"
           ],
-          "comment": "<S> { <p1> [1 5] <annot1> 3; <p2> @<NC> <annot1> 4 } <NC> [2 6] <annot1> 5 on { <s1> <p1> <o1> }",
+          "comment": "<S> { <p1> [1 5] <annot1> 3; <p2> @<NC> <annot1> 4 } <NC> [2 6] <annot1> 7 on { <s1> <p1> <o1> }",
           "status": "mf:Approved"
         },
         {
@@ -18866,7 +18866,7 @@
           "trait": [
             "SemanticAction"
           ],
-          "comment": "<S> { <p1> [1 5] %<Test>{ print(o) %}; <p2> @<NC> %<Test>{ print(o) %} } <NC> [2 6] %<Test>{ print(s) %} on { <s1> <p1> <o1> }",
+          "comment": "<S> { <p1> [1 5] %<Test>{ print(o) %}; <p2> @<NC> %<Test>{ print(o) %} } <NC> [2 6] %<Test>{ print(n) %} on { <s1> <p1> <o1> }",
           "status": "mf:Approved"
         },
         {
