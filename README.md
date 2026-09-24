@@ -60,3 +60,10 @@ which yields the files which include this pattern:
     schemas/3circularRef1.json
     schemas/kitchenSink.json
 
+### `validation-contrib` and `schemas-contrib`
+
+* Validation tests that are useful across implementations but are **not attributable to the ShEx specification**: error-repair recipes (`sht:Repair`) and feasibility localization / structured error reporting (`sht:Feasibility`).
+* Same manifest layout as `validation` (`manifest.ttl`, `manifest.jsonld`) and the same `.ttl` data convention; the schemas live in `schemas-contrib/` as ShExC only (no ShExJ/ShExR trio, no representation tests).
+* Entries carry only `ValidationTest`/`ValidationFailure` plus traits. There are no reference results, so a validator can be checked for logic-conformance here but not result-conformance, and a conformant implementation is not required to run them at all.
+
+

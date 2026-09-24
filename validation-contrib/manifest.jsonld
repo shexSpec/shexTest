@@ -1,0 +1,157 @@
+{
+  "@context": [
+    {
+      "@base": "https://raw.githubusercontent.com/shexSpec/shexTest/master/validation-contrib/manifest"
+    },
+    "../context.jsonld"
+  ],
+  "@graph": [
+    {
+      "@id": "",
+      "@type": "mf:Manifest",
+      "rdfs:comment": "ShEx validation tests useful to many implementations but not attributable to the specification",
+      "entries": [
+        {
+          "@id": "#repairCard_fail",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas-contrib/repairCard.shex",
+            "shape": "http://a.example/S1",
+            "data": "Ix_Ip1_Io1.ttl",
+            "focus": "http://a.example/x"
+          },
+          "extensionResults": [],
+          "name": "repairCard_fail",
+          "trait": [
+            "NonDotCardinality",
+            "Repair"
+          ],
+          "comment": "repair a cardinality shortfall: <S1>{ <p1> .{2} } on { <x> <p1> <o1> } is one <p1> short",
+          "status": "mf:Approved"
+        },
+        {
+          "@id": "#repairChoice_fail",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas-contrib/repairChoice.shex",
+            "shape": "http://a.example/S1",
+            "data": "Ix_Ip9_Io9.ttl",
+            "focus": "http://a.example/x"
+          },
+          "extensionResults": [],
+          "name": "repairChoice_fail",
+          "trait": [
+            "Repair"
+          ],
+          "comment": "repair offers the choice the language offers: <S1>{ <p1> . | <p2> . } with neither present",
+          "status": "mf:Approved"
+        },
+        {
+          "@id": "#repairClosed_fail",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas-contrib/repairClosed.shex",
+            "shape": "http://a.example/S1",
+            "data": "Ix_Ip1_Io1;Ip2_Io2.ttl",
+            "focus": "http://a.example/x"
+          },
+          "extensionResults": [],
+          "name": "repairClosed_fail",
+          "trait": [
+            "Closed",
+            "Repair"
+          ],
+          "comment": "repair a closed shape's extra arc: <S1> CLOSED { <p1> . } on { <x> <p1> <o1>; <p2> <o2> } must drop <p2>",
+          "status": "mf:Approved"
+        },
+        {
+          "@id": "#repairMissingArc_fail",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas-contrib/repairMissingArc.shex",
+            "shape": "http://a.example/S1",
+            "data": "Ix_Ip1_Io1.ttl",
+            "focus": "http://a.example/x"
+          },
+          "extensionResults": [],
+          "name": "repairMissingArc_fail",
+          "trait": [
+            "Repair"
+          ],
+          "comment": "repair a missing property: <S1>{ <p1> . ; <p2> . } on { <x> <p1> <o1> } needs a <p2>",
+          "status": "mf:Approved"
+        },
+        {
+          "@id": "#feasHomeless_fail",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas-contrib/feasHomeless.shex",
+            "shape": "http://a.example/S1",
+            "data": "Ix_Ip3_Io.ttl",
+            "focus": "http://a.example/x"
+          },
+          "extensionResults": [],
+          "name": "feasHomeless_fail",
+          "trait": [
+            "Feasibility"
+          ],
+          "comment": "a homeless triple and a missing property: <S1>{ <p1> . ; ( <p2> . ; <p3> . )? } on { <x> <p3> <o> }",
+          "status": "mf:Approved"
+        },
+        {
+          "@id": "#feasDatatype_fail",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas-contrib/feasDatatype.shex",
+            "shape": "http://a.example/S1",
+            "data": "Ix_Ip1_Labc.ttl",
+            "focus": "http://a.example/x"
+          },
+          "extensionResults": [],
+          "name": "feasDatatype_fail",
+          "trait": [
+            "Datatype",
+            "Feasibility"
+          ],
+          "comment": "a datatype mismatch reported as one: <S1>{ <p1> xsd:integer } on { <x> <p1> \"abc\" }",
+          "status": "mf:Approved"
+        },
+        {
+          "@id": "#feasNodeKind_fail",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas-contrib/feasNodeKind.shex",
+            "shape": "http://a.example/S1",
+            "data": "Ix_Ip1_Llit.ttl",
+            "focus": "http://a.example/x"
+          },
+          "extensionResults": [],
+          "name": "feasNodeKind_fail",
+          "trait": [
+            "Feasibility"
+          ],
+          "comment": "a node-kind mismatch reported as one: <S1>{ <p1> IRI } on { <x> <p1> \"lit\" }",
+          "status": "mf:Approved"
+        },
+        {
+          "@id": "#feasPattern_fail",
+          "@type": "sht:ValidationFailure",
+          "action": {
+            "schema": "../schemas-contrib/feasPattern.shex",
+            "shape": "http://a.example/S1",
+            "data": "Ix_Ip1_Lxy.ttl",
+            "focus": "http://a.example/x"
+          },
+          "extensionResults": [],
+          "name": "feasPattern_fail",
+          "trait": [
+            "Feasibility"
+          ],
+          "comment": "a pattern mismatch reported as one: <S1>{ <p1> /^ab/ } on { <x> <p1> \"xy\" }",
+          "status": "mf:Approved"
+        }
+      ]
+    }
+  ]
+}
+

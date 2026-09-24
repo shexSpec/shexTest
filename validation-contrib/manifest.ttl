@@ -1,0 +1,137 @@
+# -*- mode: n3 -*-
+# ShEx validation tests that are useful across implementations but are NOT
+# attributable to the ShEx specification -- error-repair recipes and feasibility
+# localization (implementation tooling). A conformant implementation is not
+# required to agree on these; they carry only pass/fail + traits (no
+# reference-result .val).
+
+@base <https://raw.githubusercontent.com/shexSpec/shexTest/master/validation-contrib/manifest> .
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix mf:     <http://www.w3.org/2001/sw/DataAccess/tests/test-manifest#> .
+@prefix sht:    <http://www.w3.org/ns/shacl/test-suite#> .
+
+<> a mf:Manifest ;
+    rdfs:comment "ShEx validation tests useful to many implementations but not attributable to the specification" ;
+    mf:entries
+    (
+## error-repair recipes (repair suggestions are tooling, not conformance)
+        <#repairCard_fail>
+        <#repairChoice_fail>
+        <#repairClosed_fail>
+        <#repairMissingArc_fail>
+## feasibility localization (structured error reporting)
+        <#feasHomeless_fail>
+        <#feasDatatype_fail>
+        <#feasNodeKind_fail>
+        <#feasPattern_fail>
+    )
+    .
+
+# ==== error-repair recipes (from ShEx.js Repairs-test.js) ====
+
+<#repairCard_fail> a sht:ValidationFailure ;
+    mf:name "repairCard_fail" ;
+    sht:trait sht:Repair , sht:NonDotCardinality ;
+    rdfs:comment "repair a cardinality shortfall: <S1>{ <p1> .{2} } on { <x> <p1> <o1> } is one <p1> short" ;
+    mf:status mf:Approved ;
+    mf:action [
+      sht:schema <../schemas-contrib/repairCard.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Ix_Ip1_Io1.ttl> ;
+      sht:focus <http://a.example/x>
+    ]
+    .
+
+<#repairChoice_fail> a sht:ValidationFailure ;
+    mf:name "repairChoice_fail" ;
+    sht:trait sht:Repair ;
+    rdfs:comment "repair offers the choice the language offers: <S1>{ <p1> . | <p2> . } with neither present" ;
+    mf:status mf:Approved ;
+    mf:action [
+      sht:schema <../schemas-contrib/repairChoice.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Ix_Ip9_Io9.ttl> ;
+      sht:focus <http://a.example/x>
+    ]
+    .
+
+<#repairClosed_fail> a sht:ValidationFailure ;
+    mf:name "repairClosed_fail" ;
+    sht:trait sht:Repair , sht:Closed ;
+    rdfs:comment "repair a closed shape's extra arc: <S1> CLOSED { <p1> . } on { <x> <p1> <o1>; <p2> <o2> } must drop <p2>" ;
+    mf:status mf:Approved ;
+    mf:action [
+      sht:schema <../schemas-contrib/repairClosed.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Ix_Ip1_Io1;Ip2_Io2.ttl> ;
+      sht:focus <http://a.example/x>
+    ]
+    .
+
+<#repairMissingArc_fail> a sht:ValidationFailure ;
+    mf:name "repairMissingArc_fail" ;
+    sht:trait sht:Repair ;
+    rdfs:comment "repair a missing property: <S1>{ <p1> . ; <p2> . } on { <x> <p1> <o1> } needs a <p2>" ;
+    mf:status mf:Approved ;
+    mf:action [
+      sht:schema <../schemas-contrib/repairMissingArc.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Ix_Ip1_Io1.ttl> ;
+      sht:focus <http://a.example/x>
+    ]
+    .
+
+# ==== feasibility localization / structured errors (from ShEx.js Feasibility-test.js) ====
+
+<#feasHomeless_fail> a sht:ValidationFailure ;
+    mf:name "feasHomeless_fail" ;
+    sht:trait sht:Feasibility ;
+    rdfs:comment "a homeless triple and a missing property: <S1>{ <p1> . ; ( <p2> . ; <p3> . )? } on { <x> <p3> <o> }" ;
+    mf:status mf:Approved ;
+    mf:action [
+      sht:schema <../schemas-contrib/feasHomeless.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Ix_Ip3_Io.ttl> ;
+      sht:focus <http://a.example/x>
+    ]
+    .
+
+<#feasDatatype_fail> a sht:ValidationFailure ;
+    mf:name "feasDatatype_fail" ;
+    sht:trait sht:Feasibility , sht:Datatype ;
+    rdfs:comment "a datatype mismatch reported as one: <S1>{ <p1> xsd:integer } on { <x> <p1> \"abc\" }" ;
+    mf:status mf:Approved ;
+    mf:action [
+      sht:schema <../schemas-contrib/feasDatatype.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Ix_Ip1_Labc.ttl> ;
+      sht:focus <http://a.example/x>
+    ]
+    .
+
+<#feasNodeKind_fail> a sht:ValidationFailure ;
+    mf:name "feasNodeKind_fail" ;
+    sht:trait sht:Feasibility ;
+    rdfs:comment "a node-kind mismatch reported as one: <S1>{ <p1> IRI } on { <x> <p1> \"lit\" }" ;
+    mf:status mf:Approved ;
+    mf:action [
+      sht:schema <../schemas-contrib/feasNodeKind.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Ix_Ip1_Llit.ttl> ;
+      sht:focus <http://a.example/x>
+    ]
+    .
+
+<#feasPattern_fail> a sht:ValidationFailure ;
+    mf:name "feasPattern_fail" ;
+    sht:trait sht:Feasibility ;
+    rdfs:comment "a pattern mismatch reported as one: <S1>{ <p1> /^ab/ } on { <x> <p1> \"xy\" }" ;
+    mf:status mf:Approved ;
+    mf:action [
+      sht:schema <../schemas-contrib/feasPattern.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Ix_Ip1_Lxy.ttl> ;
+      sht:focus <http://a.example/x>
+    ]
+    .
