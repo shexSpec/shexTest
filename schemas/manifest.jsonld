@@ -462,6 +462,24 @@
           "ttl": "1cardStar.ttl"
         },
         {
+          "@id": "#1card0",
+          "@type": "sht:RepresentationTest",
+          "name": "1card0",
+          "status": "mf:Approved",
+          "shex": "1card0.shex",
+          "json": "1card0.json",
+          "ttl": "1card0.ttl"
+        },
+        {
+          "@id": "#1card1",
+          "@type": "sht:RepresentationTest",
+          "name": "1card1",
+          "status": "mf:Approved",
+          "shex": "1card1.shex",
+          "json": "1card1.json",
+          "ttl": "1card1.ttl"
+        },
+        {
           "@id": "#1literalPlus",
           "@type": "sht:RepresentationTest",
           "name": "1literalPlus",
@@ -2874,6 +2892,24 @@
           "ttl": "2OneInclude1-after.ttl"
         },
         {
+          "@id": "#openEachInclude1dotclosecardPlusc1IRI",
+          "@type": "sht:RepresentationTest",
+          "name": "openEachInclude1dotclosecardPlusc1IRI",
+          "status": "mf:Approved",
+          "shex": "openEachInclude1dotclosecardPlusc1IRI.shex",
+          "json": "openEachInclude1dotclosecardPlusc1IRI.json",
+          "ttl": "openEachInclude1dotclosecardPlusc1IRI.ttl"
+        },
+        {
+          "@id": "#openOneInclude1dotclosecardPlusc1IRI",
+          "@type": "sht:RepresentationTest",
+          "name": "openOneInclude1dotclosecardPlusc1IRI",
+          "status": "mf:Approved",
+          "shex": "openOneInclude1dotclosecardPlusc1IRI.shex",
+          "json": "openOneInclude1dotclosecardPlusc1IRI.json",
+          "ttl": "openOneInclude1dotclosecardPlusc1IRI.ttl"
+        },
+        {
           "@id": "#1dotAnnotIRIREF",
           "@type": "sht:RepresentationTest",
           "name": "1dotAnnotIRIREF",
@@ -3070,6 +3106,33 @@
           "shex": "open3EachdotcloseCode1.shex",
           "json": "open3EachdotcloseCode1.json",
           "ttl": "open3EachdotcloseCode1.ttl"
+        },
+        {
+          "@id": "#1dotShapeCode1fail",
+          "@type": "sht:RepresentationTest",
+          "name": "1dotShapeCode1fail",
+          "status": "mf:Approved",
+          "shex": "1dotShapeCode1fail.shex",
+          "json": "1dotShapeCode1fail.json",
+          "ttl": "1dotShapeCode1fail.ttl"
+        },
+        {
+          "@id": "#open3EachdotcloseCode1fail",
+          "@type": "sht:RepresentationTest",
+          "name": "open3EachdotcloseCode1fail",
+          "status": "mf:Approved",
+          "shex": "open3EachdotcloseCode1fail.shex",
+          "json": "open3EachdotcloseCode1fail.json",
+          "ttl": "open3EachdotcloseCode1fail.ttl"
+        },
+        {
+          "@id": "#open2OnedotcloseCode1fail",
+          "@type": "sht:RepresentationTest",
+          "name": "open2OnedotcloseCode1fail",
+          "status": "mf:Approved",
+          "shex": "open2OnedotcloseCode1fail.shex",
+          "json": "open2OnedotcloseCode1fail.json",
+          "ttl": "open2OnedotcloseCode1fail.ttl"
         },
         {
           "@id": "#startCode1",
@@ -3675,6 +3738,15 @@
           "ttl": "2Eachdot.ttl"
         },
         {
+          "@id": "#8dot5a2b1c",
+          "@type": "sht:RepresentationTest",
+          "name": "8dot5a2b1c",
+          "status": "mf:Approved",
+          "shex": "8dot5a2b1c.shex",
+          "json": "8dot5a2b1c.json",
+          "ttl": "8dot5a2b1c.ttl"
+        },
+        {
           "@id": "#open2Eachdotclosecard25c1dot",
           "@type": "sht:RepresentationTest",
           "name": "open2Eachdotclosecard25c1dot",
@@ -3682,6 +3754,123 @@
           "shex": "open2Eachdotclosecard25c1dot.shex",
           "json": "open2Eachdotclosecard25c1dot.json",
           "ttl": "open2Eachdotclosecard25c1dot.ttl"
+        },
+        {
+          "@id": "#open2Eachdotclosecard0c1dot",
+          "@type": "sht:RepresentationTest",
+          "name": "open2Eachdotclosecard0c1dot",
+          "status": "mf:Approved",
+          "shex": "open2Eachdotclosecard0c1dot.shex",
+          "json": "open2Eachdotclosecard0c1dot.json",
+          "ttl": "open2Eachdotclosecard0c1dot.ttl"
+        },
+        {
+          "@id": "#open2EachdotclosecardStar",
+          "@type": "sht:RepresentationTest",
+          "name": "open2EachdotclosecardStar",
+          "status": "mf:Approved",
+          "shex": "open2EachdotclosecardStar.shex",
+          "json": "open2EachdotclosecardStar.json",
+          "ttl": "open2EachdotclosecardStar.ttl"
+        },
+        {
+          "@id": "#open2EachdotclosecardOpt",
+          "@type": "sht:RepresentationTest",
+          "name": "open2EachdotclosecardOpt",
+          "status": "mf:Approved",
+          "shex": "open2EachdotclosecardOpt.shex",
+          "json": "open2EachdotclosecardOpt.json",
+          "ttl": "open2EachdotclosecardOpt.ttl"
+        },
+        {
+          "@id": "#open2Eachdotclosecard02",
+          "@type": "sht:RepresentationTest",
+          "name": "open2Eachdotclosecard02",
+          "status": "mf:Approved",
+          "shex": "open2Eachdotclosecard02.shex",
+          "json": "open2Eachdotclosecard02.json",
+          "ttl": "open2Eachdotclosecard02.ttl"
+        },
+        {
+          "@id": "#open2OnedotclosecardStar",
+          "@type": "sht:RepresentationTest",
+          "name": "open2OnedotclosecardStar",
+          "status": "mf:Approved",
+          "shex": "open2OnedotclosecardStar.shex",
+          "json": "open2OnedotclosecardStar.json",
+          "ttl": "open2OnedotclosecardStar.ttl"
+        },
+        {
+          "@id": "#open1dot1cardPlusclosecard2",
+          "@type": "sht:RepresentationTest",
+          "name": "open1dot1cardPlusclosecard2",
+          "status": "mf:Approved",
+          "shex": "open1dot1cardPlusclosecard2.shex",
+          "json": "open1dot1cardPlusclosecard2.json",
+          "ttl": "open1dot1cardPlusclosecard2.ttl"
+        },
+        {
+          "@id": "#open1cardPlus1dotclosecard2",
+          "@type": "sht:RepresentationTest",
+          "name": "open1cardPlus1dotclosecard2",
+          "status": "mf:Approved",
+          "shex": "open1cardPlus1dotclosecard2.shex",
+          "json": "open1cardPlus1dotclosecard2.json",
+          "ttl": "open1cardPlus1dotclosecard2.ttl"
+        },
+        {
+          "@id": "#open1card21dotclosecardStar",
+          "@type": "sht:RepresentationTest",
+          "name": "open1card21dotclosecardStar",
+          "status": "mf:Approved",
+          "shex": "open1card21dotclosecardStar.shex",
+          "json": "open1card21dotclosecardStar.json",
+          "ttl": "open1card21dotclosecardStar.ttl"
+        },
+        {
+          "@id": "#open1card121cardOptclosecardStar",
+          "@type": "sht:RepresentationTest",
+          "name": "open1card121cardOptclosecardStar",
+          "status": "mf:Approved",
+          "shex": "open1card121cardOptclosecardStar.shex",
+          "json": "open1card121cardOptclosecardStar.json",
+          "ttl": "open1card121cardOptclosecardStar.ttl"
+        },
+        {
+          "@id": "#open1dot1cardOptclosecard12",
+          "@type": "sht:RepresentationTest",
+          "name": "open1dot1cardOptclosecard12",
+          "status": "mf:Approved",
+          "shex": "open1dot1cardOptclosecard12.shex",
+          "json": "open1dot1cardOptclosecard12.json",
+          "ttl": "open1dot1cardOptclosecard12.ttl"
+        },
+        {
+          "@id": "#openopen2Eachdotclosecard0c1dotclosecardStarc1dot",
+          "@type": "sht:RepresentationTest",
+          "name": "openopen2Eachdotclosecard0c1dotclosecardStarc1dot",
+          "status": "mf:Approved",
+          "shex": "openopen2Eachdotclosecard0c1dotclosecardStarc1dot.shex",
+          "json": "openopen2Eachdotclosecard0c1dotclosecardStarc1dot.json",
+          "ttl": "openopen2Eachdotclosecard0c1dotclosecardStarc1dot.ttl"
+        },
+        {
+          "@id": "#openopen2EachdotclosecardOptc1dotclosecardStarc1dot",
+          "@type": "sht:RepresentationTest",
+          "name": "openopen2EachdotclosecardOptc1dotclosecardStarc1dot",
+          "status": "mf:Approved",
+          "shex": "openopen2EachdotclosecardOptc1dotclosecardStarc1dot.shex",
+          "json": "openopen2EachdotclosecardOptc1dotclosecardStarc1dot.json",
+          "ttl": "openopen2EachdotclosecardOptc1dotclosecardStarc1dot.ttl"
+        },
+        {
+          "@id": "#open2OnecardStarclosecardStar",
+          "@type": "sht:RepresentationTest",
+          "name": "open2OnecardStarclosecardStar",
+          "status": "mf:Approved",
+          "shex": "open2OnecardStarclosecardStar.shex",
+          "json": "open2OnecardStarclosecardStar.json",
+          "ttl": "open2OnecardStarclosecardStar.ttl"
         },
         {
           "@id": "#CycleNoNegation_pass",
@@ -4200,6 +4389,33 @@
           "shex": "extends-open-or-each-each.shex",
           "json": "extends-open-or-each-each.json",
           "ttl": "extends-open-or-each-each.ttl"
+        },
+        {
+          "@id": "#1dotExtendsBnode",
+          "@type": "sht:RepresentationTest",
+          "name": "1dotExtendsBnode",
+          "status": "mf:Approved",
+          "shex": "1dotExtendsBnode.shex",
+          "json": "1dotExtendsBnode.json",
+          "ttl": "1dotExtendsBnode.ttl"
+        },
+        {
+          "@id": "#extends-abstract-closed-diamond",
+          "@type": "sht:RepresentationTest",
+          "name": "extends-abstract-closed-diamond",
+          "status": "mf:Approved",
+          "shex": "extends-abstract-closed-diamond.shex",
+          "json": "extends-abstract-closed-diamond.json",
+          "ttl": "extends-abstract-closed-diamond.ttl"
+        },
+        {
+          "@id": "#extends-abstract-or",
+          "@type": "sht:RepresentationTest",
+          "name": "extends-abstract-or",
+          "status": "mf:Approved",
+          "shex": "extends-abstract-or.shex",
+          "json": "extends-abstract-or.json",
+          "ttl": "extends-abstract-or.ttl"
         },
         {
           "@id": "#1dotAbstractShapeCode1",

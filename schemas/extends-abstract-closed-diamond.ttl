@@ -1,0 +1,38 @@
+PREFIX ex: <http://a.example>
+PREFIX sx: <http://www.w3.org/ns/shex#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+[] a sx:Schema ;
+    sx:shapes ( <http://a.example/G0> <http://a.example/G0-0> <http://a.example/G0-1> <http://a.example/BOTTOM> ) .
+
+<http://a.example/G0> a sx:ShapeDecl ; sx:abstract true ; sx:shapeExpr [ a sx:Shape ;
+    sx:expression [ a sx:TripleConstraint ;
+      sx:predicate <http://a.example/p> ;
+      sx:valueExpr [ a sx:NodeConstraint ;
+        sx:values ( "G0A" "G0B" "G0C" ) ] ] ;
+    sx:closed true ] .
+
+<http://a.example/G0-0> a sx:ShapeDecl ; sx:shapeExpr [ a sx:Shape ;
+    sx:expression [ a sx:TripleConstraint ;
+      sx:predicate <http://a.example/p> ;
+      sx:valueExpr [ a sx:NodeConstraint ;
+        sx:values ( "G0-0A" "G0-0B" "G0-0C" ) ] ] ;
+    sx:extends ( <http://a.example/G0> ) ;
+    sx:closed true ] .
+
+<http://a.example/G0-1> a sx:ShapeDecl ; sx:shapeExpr [ a sx:Shape ;
+    sx:expression [ a sx:TripleConstraint ;
+      sx:predicate <http://a.example/p> ;
+      sx:valueExpr [ a sx:NodeConstraint ;
+        sx:values ( "G0-1A" "G0-1B" "G0-1C" ) ] ] ;
+    sx:extends ( <http://a.example/G0> ) ;
+    sx:closed true ] .
+
+<http://a.example/BOTTOM> a sx:ShapeDecl ; sx:shapeExpr [ a sx:Shape ;
+    sx:expression [ a sx:TripleConstraint ;
+      sx:predicate <http://a.example/p> ;
+      sx:valueExpr [ a sx:NodeConstraint ;
+        sx:values ( "BOTTOMA" "BOTTOMB" "BOTTOMC" ) ] ] ;
+    sx:extends ( <http://a.example/G0-0> <http://a.example/G0-1> ) ;
+    sx:closed true ] .
+

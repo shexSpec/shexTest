@@ -1,0 +1,7 @@
+BASE <http://a.example/>
+
+ABSTRACT <A> { <p1> . }
+
+<X> { <p3> . }
+
+<D> @<X> OR EXTENDS @<A> { <p2> . }

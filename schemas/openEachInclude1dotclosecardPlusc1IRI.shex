@@ -1,0 +1,7 @@
+BASE <http://a.example/>
+PREFIX : <http://a.example/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+<T> { $<t> ( :b .; :c . ) }
+
+<S> { ( &<t>; :d . )+; :a IRI }
