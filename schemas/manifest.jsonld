@@ -192,6 +192,150 @@
           "ttl": "1inversedot.ttl"
         },
         {
+          "@id": "#1inversedotIRI",
+          "@type": "sht:RepresentationTest",
+          "name": "1inversedotIRI",
+          "status": "mf:Approved",
+          "shex": "1inversedotIRI.shex",
+          "json": "1inversedotIRI.json",
+          "ttl": "1inversedotIRI.ttl"
+        },
+        {
+          "@id": "#1inversedotBNODE",
+          "@type": "sht:RepresentationTest",
+          "name": "1inversedotBNODE",
+          "status": "mf:Approved",
+          "shex": "1inversedotBNODE.shex",
+          "json": "1inversedotBNODE.json",
+          "ttl": "1inversedotBNODE.ttl"
+        },
+        {
+          "@id": "#1inversedotRef1",
+          "@type": "sht:RepresentationTest",
+          "name": "1inversedotRef1",
+          "status": "mf:Approved",
+          "shex": "1inversedotRef1.shex",
+          "json": "1inversedotRef1.json",
+          "ttl": "1inversedotRef1.ttl"
+        },
+        {
+          "@id": "#1inversedotCard2",
+          "@type": "sht:RepresentationTest",
+          "name": "1inversedotCard2",
+          "status": "mf:Approved",
+          "shex": "1inversedotCard2.shex",
+          "json": "1inversedotCard2.json",
+          "ttl": "1inversedotCard2.ttl"
+        },
+        {
+          "@id": "#1inversedotValueSet",
+          "@type": "sht:RepresentationTest",
+          "name": "1inversedotValueSet",
+          "status": "mf:Approved",
+          "shex": "1inversedotValueSet.shex",
+          "json": "1inversedotValueSet.json",
+          "ttl": "1inversedotValueSet.ttl"
+        },
+        {
+          "@id": "#1inversedotLITERAL",
+          "@type": "sht:RepresentationTest",
+          "name": "1inversedotLITERAL",
+          "status": "mf:Approved",
+          "shex": "1inversedotLITERAL.shex",
+          "json": "1inversedotLITERAL.json",
+          "ttl": "1inversedotLITERAL.ttl"
+        },
+        {
+          "@id": "#inverseBnodeCoref",
+          "@type": "sht:RepresentationTest",
+          "name": "inverseBnodeCoref",
+          "status": "mf:Approved",
+          "shex": "inverseBnodeCoref.shex",
+          "json": "inverseBnodeCoref.json",
+          "ttl": "inverseBnodeCoref.ttl"
+        },
+        {
+          "@id": "#inverseClosedDiscrim",
+          "@type": "sht:RepresentationTest",
+          "name": "inverseClosedDiscrim",
+          "status": "mf:Approved",
+          "shex": "inverseClosedDiscrim.shex",
+          "json": "inverseClosedDiscrim.json",
+          "ttl": "inverseClosedDiscrim.ttl"
+        },
+        {
+          "@id": "#1dotExtendsInverse",
+          "@type": "sht:RepresentationTest",
+          "name": "1dotExtendsInverse",
+          "status": "mf:Approved",
+          "shex": "1dotExtendsInverse.shex",
+          "json": "1dotExtendsInverse.json",
+          "ttl": "1dotExtendsInverse.ttl"
+        },
+        {
+          "@id": "#1dotInverseExtends",
+          "@type": "sht:RepresentationTest",
+          "name": "1dotInverseExtends",
+          "status": "mf:Approved",
+          "shex": "1dotInverseExtends.shex",
+          "json": "1dotInverseExtends.json",
+          "ttl": "1dotInverseExtends.ttl"
+        },
+        {
+          "@id": "#1dot2SameExtends",
+          "@type": "sht:RepresentationTest",
+          "name": "1dot2SameExtends",
+          "status": "mf:Approved",
+          "shex": "1dot2SameExtends.shex",
+          "json": "1dot2SameExtends.json",
+          "ttl": "1dot2SameExtends.ttl"
+        },
+        {
+          "@id": "#2intersectP1ValueSet",
+          "@type": "sht:RepresentationTest",
+          "name": "2intersectP1ValueSet",
+          "status": "mf:Approved",
+          "shex": "2intersectP1ValueSet.shex",
+          "json": "2intersectP1ValueSet.json",
+          "ttl": "2intersectP1ValueSet.ttl"
+        },
+        {
+          "@id": "#RecursionContingent",
+          "@type": "sht:RepresentationTest",
+          "name": "RecursionContingent",
+          "status": "mf:Approved",
+          "shex": "RecursionContingent.shex",
+          "json": "RecursionContingent.json",
+          "ttl": "RecursionContingent.ttl"
+        },
+        {
+          "@id": "#1datatypePattern",
+          "@type": "sht:RepresentationTest",
+          "name": "1datatypePattern",
+          "status": "mf:Approved",
+          "shex": "1datatypePattern.shex",
+          "json": "1datatypePattern.json",
+          "ttl": "1datatypePattern.ttl"
+        },
+        {
+          "@id": "#1NOTvsCard2",
+          "@type": "sht:RepresentationTest",
+          "name": "1NOTvsCard2",
+          "status": "mf:Approved",
+          "shex": "1NOTvsCard2.shex",
+          "json": "1NOTvsCard2.json",
+          "ttl": "1NOTvsCard2.ttl"
+        },
+        {
+          "@id": "#1NOTvsCard2Extra",
+          "@type": "sht:RepresentationTest",
+          "name": "1NOTvsCard2Extra",
+          "status": "mf:Approved",
+          "shex": "1NOTvsCard2Extra.shex",
+          "json": "1NOTvsCard2Extra.json",
+          "ttl": "1NOTvsCard2Extra.ttl"
+        },
+        {
           "@id": "#1Adot",
           "@type": "sht:RepresentationTest",
           "name": "1Adot",

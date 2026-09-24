@@ -1,0 +1,48 @@
+PREFIX sx: <http://www.w3.org/ns/shex#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+[] a sx:Schema ;
+    sx:shapes ( <http://a.example/D> <http://a.example/E> <http://a.example/A> <http://a.example/C> ) .
+
+<http://a.example/D> a sx:ShapeDecl ; sx:shapeExpr [ a sx:Shape ;
+    sx:expression [ a sx:EachOf ;
+      sx:expressions ( [ a sx:TripleConstraint ;
+        sx:predicate <http://a.example/predd> ;
+        sx:valueExpr [ a sx:NodeConstraint ;
+          sx:datatype <http://www.w3.org/2001/XMLSchema#string> ] ] [ a sx:OneOf ;
+        sx:expressions ( [ a sx:TripleConstraint ;
+          sx:predicate <http://a.example/test> ;
+          sx:valueExpr <http://a.example/A> ;
+          sx:min 0 ;
+          sx:max -1 ] [ a sx:TripleConstraint ;
+          sx:predicate <http://a.example/test> ;
+          sx:valueExpr <http://a.example/E> ;
+          sx:min 0 ;
+          sx:max -1 ] ) ] [ a sx:TripleConstraint ;
+        sx:predicate <http://a.example/test2> ;
+        sx:valueExpr <http://a.example/C> ] ) ] ] .
+
+<http://a.example/E> a sx:ShapeDecl ; sx:shapeExpr [ a sx:Shape ;
+    sx:expression [ a sx:TripleConstraint ;
+      sx:predicate <http://a.example/prede> ;
+      sx:valueExpr [ a sx:NodeConstraint ;
+        sx:datatype <http://www.w3.org/2001/XMLSchema#string> ] ] ] .
+
+<http://a.example/A> a sx:ShapeDecl ; sx:shapeExpr [ a sx:Shape ;
+    sx:expression [ a sx:EachOf ;
+      sx:expressions ( [ a sx:TripleConstraint ;
+        sx:predicate <http://a.example/subject> ;
+        sx:valueExpr <http://a.example/C> ] [ a sx:TripleConstraint ;
+        sx:predicate <http://a.example/preda> ;
+        sx:valueExpr [ a sx:NodeConstraint ;
+          sx:datatype <http://www.w3.org/2001/XMLSchema#string> ] ] ) ] ] .
+
+<http://a.example/C> a sx:ShapeDecl ; sx:shapeExpr [ a sx:Shape ;
+    sx:expression [ a sx:EachOf ;
+      sx:expressions ( [ a sx:TripleConstraint ;
+        sx:predicate <http://a.example/subject> ;
+        sx:valueExpr <http://a.example/A> ] [ a sx:TripleConstraint ;
+        sx:predicate <http://a.example/predc> ;
+        sx:valueExpr [ a sx:NodeConstraint ;
+          sx:datatype <http://www.w3.org/2001/XMLSchema#string> ] ] ) ] ] .
+

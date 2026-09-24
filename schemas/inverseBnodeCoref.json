@@ -1,0 +1,70 @@
+{
+  "@context": "http://www.w3.org/ns/shex.jsonld",
+  "type": "Schema",
+  "shapes": [
+    {
+      "id": "http://a.example/S",
+      "type": "ShapeDecl",
+      "shapeExpr": {
+        "type": "Shape",
+        "expression": {
+          "type": "EachOf",
+          "expressions": [
+            {
+              "type": "TripleConstraint",
+              "predicate": "http://a.example/p1",
+              "valueExpr": "http://a.example/D"
+            },
+            {
+              "type": "TripleConstraint",
+              "predicate": "http://a.example/p2",
+              "valueExpr": "http://a.example/D"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "http://a.example/D",
+      "type": "ShapeDecl",
+      "shapeExpr": {
+        "type": "Shape",
+        "expression": {
+          "type": "EachOf",
+          "expressions": [
+            {
+              "type": "TripleConstraint",
+              "inverse": true,
+              "predicate": "http://a.example/p1",
+              "valueExpr": {
+                "type": "NodeConstraint",
+                "nodeKind": "iri"
+              }
+            },
+            {
+              "type": "TripleConstraint",
+              "inverse": true,
+              "predicate": "http://a.example/p2",
+              "valueExpr": {
+                "type": "NodeConstraint",
+                "nodeKind": "iri"
+              }
+            },
+            {
+              "type": "TripleConstraint",
+              "predicate": "http://a.example/p3",
+              "valueExpr": {
+                "type": "NodeConstraint",
+                "values": [
+                  {
+                    "value": "x"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

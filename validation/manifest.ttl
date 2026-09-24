@@ -68,6 +68,38 @@
         <#1inversedot_pass-noOthers>
         <#1inversedot_pass-over_lexicallyEarlier>
         <#1inversedot_pass-over_lexicallyLater>
+        <#1inversedotIRI_fail-Bnode>
+        <#1inversedotIRI_pass>
+        <#1inversedotBNODE_pass>
+        <#1inversedotBNODE_fail-Iri>
+        <#1inversedotRef1_pass>
+        <#1inversedotRef1_fail>
+        <#1inversedotCard2_pass>
+        <#1inversedotCard2_fail>
+        <#1inversedotValueSet_pass>
+        <#1inversedotValueSet_fail-Bnode>
+        <#1inversedotValueSet_fail-Iri>
+        <#1inversedotLITERAL_fail>
+        <#inverseBnodeCoref_pass>
+        <#inverseBnodeCoref_fail-noP2>
+        <#inverseBnodeCoref_fail-noX>
+        <#inverseClosedDiscrim_pass>
+        <#inverseClosedDiscrim_fail>
+        <#1dotExtendsInverse_pass>
+        <#1dotExtendsInverse_fail>
+        <#1dotInverseExtends_pass>
+        <#1dotInverseExtends_fail>
+        <#1dot2SameExtends_pass>
+        <#2intersectP1ValueSet_pass>
+        <#2intersectP1ValueSet_fail>
+        <#2intersectP1ValueSet_fail-Ld>
+        <#RecursionContingent_fail>
+        <#RecursionContingent_pass>
+        <#1datatypePattern_fail>
+        <#1datatypePattern_pass>
+        <#1NOTvsCard2_fail>
+        <#1NOTvsCard2_fail-3arcs>
+        <#1NOTvsCard2Extra_pass>
         <#1Adot_pass>
 
 ## node kind
@@ -1732,6 +1764,422 @@
       sht:shape <http://a.example/S1> ;
       sht:data <Is1_Ip1_Io1;Ip2_Io2.ttl> ;
       sht:focus <http://a.example/o1>
+    ]
+    .
+
+<#1inversedotIRI_fail-Bnode> a sht:ValidationFailure ;
+    mf:name "1inversedotIRI_fail-Bnode" ;
+    sht:trait sht:TriplePattern , sht:Inverse ;
+    rdfs:comment "<S> { ^<p1> IRI } on { _:abcd <p1> <o1> }" ;
+    mf:status mf:Approved ;
+    mf:action [
+      sht:schema <../schemas/1inversedotIRI.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Babcd_Ip1_Io1.ttl> ;
+      sht:focus <http://a.example/o1>
+    ]
+    .
+
+<#1inversedotIRI_pass> a sht:ValidationTest ;
+    mf:name "1inversedotIRI_pass" ;
+    sht:trait sht:TriplePattern , sht:Inverse ;
+    rdfs:comment "<S> { ^<p1> IRI } on { <s1> <p1> <o1> }" ;
+    mf:status mf:Approved ;
+    mf:action [
+      sht:schema <../schemas/1inversedotIRI.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1.ttl> ;
+      sht:focus <http://a.example/o1>
+    ]
+    .
+
+<#1inversedotBNODE_pass> a sht:ValidationTest ;
+    mf:name "1inversedotBNODE_pass" ;
+    sht:trait sht:TriplePattern , sht:Inverse ;
+    rdfs:comment "<S> { ^<p1> BNODE } on { _:abcd <p1> <o1> }" ;
+    mf:status mf:Approved ;
+    mf:action [
+      sht:schema <../schemas/1inversedotBNODE.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Babcd_Ip1_Io1.ttl> ;
+      sht:focus <http://a.example/o1>
+    ]
+    .
+
+<#1inversedotBNODE_fail-Iri> a sht:ValidationFailure ;
+    mf:name "1inversedotBNODE_fail-Iri" ;
+    sht:trait sht:TriplePattern , sht:Inverse ;
+    rdfs:comment "<S> { ^<p1> BNODE } on { <s1> <p1> <o1> }" ;
+    mf:status mf:Approved ;
+    mf:action [
+      sht:schema <../schemas/1inversedotBNODE.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1.ttl> ;
+      sht:focus <http://a.example/o1>
+    ]
+    .
+
+<#1inversedotRef1_pass> a sht:ValidationTest ;
+    mf:name "1inversedotRef1_pass" ;
+    sht:trait sht:TriplePattern , sht:Inverse , sht:ValueReference ;
+    rdfs:comment "<S1> { ^<p1> @<S2> } <S2> { <p1> . } on { <n1> <p1> <n2> }" ;
+    mf:status mf:Approved ;
+    mf:action [
+      sht:schema <../schemas/1inversedotRef1.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip1_In2.ttl> ;
+      sht:focus <http://a.example/n2>
+    ]
+    .
+
+<#1inversedotCard2_pass> a sht:ValidationTest ;
+    mf:name "1inversedotCard2_pass" ;
+    sht:trait sht:TriplePattern , sht:Inverse , sht:NonDotCardinality ;
+    rdfs:comment "<S> { ^<p1> .{2} } on { <n1> <p1> <n2a>. <n2a> <p1> <n2a> }" ;
+    mf:status mf:Approved ;
+    mf:action [
+      sht:schema <../schemas/1inversedotCard2.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip1_In2a.In2a_Ip1_In2a.ttl> ;
+      sht:focus <http://a.example/n2a>
+    ]
+    .
+
+<#1inversedotValueSet_pass> a sht:ValidationTest ;
+    mf:name "1inversedotValueSet_pass" ;
+    sht:trait sht:TriplePattern , sht:Inverse ;
+    rdfs:comment "<S1> { ^<p1> [<s1>] } on { <s1> <p1> <o1> }" ;
+    mf:status mf:Approved ;
+    mf:action [
+      sht:schema <../schemas/1inversedotValueSet.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1.ttl> ;
+      sht:focus <http://a.example/o1>
+    ]
+    .
+
+<#1inversedotLITERAL_fail> a sht:ValidationFailure ;
+    mf:name "1inversedotLITERAL_fail" ;
+    sht:trait sht:TriplePattern , sht:Inverse ;
+    rdfs:comment "<S> { ^<p1> LITERAL } on { <s1> <p1> <o1> } (a subject is never a literal)" ;
+    mf:status mf:Approved ;
+    mf:action [
+      sht:schema <../schemas/1inversedotLITERAL.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1.ttl> ;
+      sht:focus <http://a.example/o1>
+    ]
+    .
+
+<#inverseBnodeCoref_pass> a sht:ValidationTest ;
+    mf:name "inverseBnodeCoref_pass" ;
+    sht:trait sht:TriplePattern , sht:Inverse , sht:ValueReference , sht:BNodeCoreference ;
+    rdfs:comment "one bnode reached by two predicates is the same node | <S>{ <p1> @<D>; <p2> @<D> } <D>{ ^<p1> IRI; ^<p2> IRI; <p3> [\"x\"] } on <s1> <p1> _:d ; <p2> _:d . _:d <p3> \"x\" ." ;
+    mf:status mf:Approved ;
+    mf:action [
+      sht:schema <../schemas/inverseBnodeCoref.shex> ;
+      sht:shape <http://a.example/S> ;
+      sht:data <Is1_Ip1_Bd;Ip2_Bd.Bd_Ip3_Lx.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#inverseClosedDiscrim_pass> a sht:ValidationTest ;
+    mf:name "inverseClosedDiscrim_pass" ;
+    sht:trait sht:TriplePattern , sht:Inverse , sht:ValueReference , sht:Closed , sht:BNodeCoreference ;
+    rdfs:comment "inverse repeated to two CLOSED shapes told apart by a value set | :S { ^:p1 @:A ; ^:p1 @:B } :A C { :p1 IRI ; :p2 [\"A\"] } :B C { :p1 IRI ; :p2 [\"B\"] } on { _:in1 <p1> <s1> ; <p2> \"A\" . _:in2 <p1> <s1> ; <p2> \"B\" }" ;
+    mf:status mf:Approved ;
+    mf:action [
+      sht:schema <../schemas/inverseClosedDiscrim.shex> ;
+      sht:shape <http://a.example/S> ;
+      sht:data <Bin1_Ip1_Is1;Ip2_LA.Bin2_Ip1_Is1;Ip2_LB.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1dotExtendsInverse_pass> a sht:ValidationTest ;
+    mf:name "1dotExtendsInverse_pass" ;
+    sht:trait sht:TriplePattern , sht:Inverse , sht:Extends ;
+    rdfs:comment "<B>{ <p1> . } <A> EXTENDS @<B> { ^<p2> . } on { <s1> <p1> <o1>. <n0> <p2> <s1> }" ;
+    mf:status mf:Approved ;
+    mf:action [
+      sht:schema <../schemas/1dotExtendsInverse.shex> ;
+      sht:shape <http://a.example/A> ;
+      sht:data <Is1_Ip1_Io1.In0_Ip2_Is1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1dot2SameExtends_pass> a sht:ValidationTest ;
+    mf:name "1dot2SameExtends_pass" ;
+    sht:trait sht:Extends , sht:MultiExtends ;
+    rdfs:comment "naming the same parent twice: <B>{ <p2> . } <A> EXTENDS @<B> EXTENDS @<B> { <p1> . } on { <s1> <p1> <o1>; <p2> <o2> }" ;
+    mf:status mf:Approved ;
+    mf:action [
+      sht:schema <../schemas/1dot2SameExtends.shex> ;
+      sht:shape <http://a.example/A> ;
+      sht:data <Is1_Ip1_Io1;Ip2_Io2.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#2intersectP1ValueSet_pass> a sht:ValidationTest ;
+    mf:name "2intersectP1ValueSet_pass" ;
+    sht:trait sht:TriplePattern , sht:RepeatedPredicate ;
+    rdfs:comment "two constraints on one predicate need assignment: <S1>{ <p1> [\"a\" \"b\" \"c\"]; <p1> [\"b\" \"c\"] } on { <s1> <p1> \"a\",\"b\" }" ;
+    mf:status mf:Approved ;
+    mf:action [
+      sht:schema <../schemas/2intersectP1ValueSet.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_La,Lb.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#RecursionContingent_fail> a sht:ValidationFailure ;
+    mf:name "RecursionContingent_fail" ;
+    sht:trait sht:ValueReference , sht:RecursiveData , sht:NonDotCardinality ;
+    rdfs:comment "a recursion-contingent pass must not be reused after its assumption fails (#14): <d> is nonconformant because <a> lacks :preda so @:A truly fails" ;
+    mf:status mf:Approved ;
+    mf:action [
+      sht:schema <../schemas/RecursionContingent.shex> ;
+      sht:shape <http://a.example/D> ;
+      sht:data <recursionContingentData.ttl> ;
+      sht:focus <http://a.example/d>
+    ]
+    .
+
+<#1datatypePattern_fail> a sht:ValidationFailure ;
+    mf:name "1datatypePattern_fail" ;
+    sht:trait sht:Datatype ;
+    rdfs:comment "datatype and pattern on one constraint: <S1>{ <p1> xsd:string /^ab/ } on { <s1> <p1> \"a\" }" ;
+    mf:status mf:Approved ;
+    mf:action [
+      sht:schema <../schemas/1datatypePattern.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_La.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1NOTvsCard2_fail> a sht:ValidationFailure ;
+    mf:name "1NOTvsCard2_fail" ;
+    sht:trait sht:NonDotCardinality ;
+    rdfs:comment "negation with a cardinality: <S1>{ <p1> NOT [<o1>] {2} } on { <s1> <p1> <o1>,<o2> } has only one non-<o1>" ;
+    mf:status mf:Approved ;
+    mf:action [
+      sht:schema <../schemas/1NOTvsCard2.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1,Io2.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1inversedotRef1_fail> a sht:ValidationFailure ;
+    mf:name "1inversedotRef1_fail" ;
+    sht:trait sht:TriplePattern , sht:Inverse , sht:ValueReference ;
+    rdfs:comment "<S1> { ^<p1> @<S2> } <S2> { <p1> . } on { <n1> <p1> <n2a>. <n2a> <p1> <n2a> } (two incoming <p1> for a {1,1} inverse)" ;
+    mf:status mf:Approved ;
+    mf:action [
+      sht:schema <../schemas/1inversedotRef1.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip1_In2a.In2a_Ip1_In2a.ttl> ;
+      sht:focus <http://a.example/n2a>
+    ]
+    .
+
+<#1inversedotCard2_fail> a sht:ValidationFailure ;
+    mf:name "1inversedotCard2_fail" ;
+    sht:trait sht:TriplePattern , sht:Inverse , sht:NonDotCardinality ;
+    rdfs:comment "<S1> { ^<p1> .{2} } on { <n1> <p1> <n2> } (only one incoming <p1>, needs two)" ;
+    mf:status mf:Approved ;
+    mf:action [
+      sht:schema <../schemas/1inversedotCard2.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <In1_Ip1_In2.ttl> ;
+      sht:focus <http://a.example/n2>
+    ]
+    .
+
+<#1inversedotValueSet_fail-Bnode> a sht:ValidationFailure ;
+    mf:name "1inversedotValueSet_fail-Bnode" ;
+    sht:trait sht:TriplePattern , sht:Inverse ;
+    rdfs:comment "<S1> { ^<p1> [<s1>] } on { _:abcd <p1> <o1> } (the incoming subject is a bnode, not <s1>)" ;
+    mf:status mf:Approved ;
+    mf:action [
+      sht:schema <../schemas/1inversedotValueSet.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Babcd_Ip1_Io1.ttl> ;
+      sht:focus <http://a.example/o1>
+    ]
+    .
+
+<#1inversedotValueSet_fail-Iri> a sht:ValidationFailure ;
+    mf:name "1inversedotValueSet_fail-Iri" ;
+    sht:trait sht:TriplePattern , sht:Inverse ;
+    rdfs:comment "<S1> { ^<p1> [<s1>] } on { <s> <p1> <o1> } (the incoming subject <s> is not <s1>)" ;
+    mf:status mf:Approved ;
+    mf:action [
+      sht:schema <../schemas/1inversedotValueSet.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is_Ip1_Io1.ttl> ;
+      sht:focus <http://a.example/o1>
+    ]
+    .
+
+<#inverseBnodeCoref_fail-noP2> a sht:ValidationFailure ;
+    mf:name "inverseBnodeCoref_fail-noP2" ;
+    sht:trait sht:TriplePattern , sht:Inverse , sht:ValueReference , sht:BNodeCoreference ;
+    rdfs:comment "<S>{ <p1> @<D>; <p2> @<D> } <D>{ ^<p1> IRI; ^<p2> IRI; <p3> [\"x\"] } on <s1> <p1> _:d . _:d <p3> \"x\" (missing <s1> <p2> _:d)" ;
+    mf:status mf:Approved ;
+    mf:action [
+      sht:schema <../schemas/inverseBnodeCoref.shex> ;
+      sht:shape <http://a.example/S> ;
+      sht:data <Is1_Ip1_Bd.Bd_Ip3_Lx.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#inverseBnodeCoref_fail-noX> a sht:ValidationFailure ;
+    mf:name "inverseBnodeCoref_fail-noX" ;
+    sht:trait sht:TriplePattern , sht:Inverse , sht:ValueReference , sht:BNodeCoreference ;
+    rdfs:comment "<S>{ <p1> @<D>; <p2> @<D> } <D>{ ^<p1> IRI; ^<p2> IRI; <p3> [\"x\"] } on <s1> <p1> _:d ; <p2> _:d (missing _:d <p3> \"x\")" ;
+    mf:status mf:Approved ;
+    mf:action [
+      sht:schema <../schemas/inverseBnodeCoref.shex> ;
+      sht:shape <http://a.example/S> ;
+      sht:data <Is1_Ip1_Bd;Ip2_Bd.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#inverseClosedDiscrim_fail> a sht:ValidationFailure ;
+    mf:name "inverseClosedDiscrim_fail" ;
+    sht:trait sht:TriplePattern , sht:Inverse , sht:ValueReference , sht:Closed , sht:BNodeCoreference ;
+    rdfs:comment ":S { ^:p1 @:A ; ^:p1 @:B } :A CLOSED { :p1 IRI ; :p2 [\"A\"] } :B CLOSED { :p1 IRI ; :p2 [\"B\"] } on { _:in1 <p1> <s1> ; <p2> \"A\" . _:in2 <p1> <s1> } (_:in2 has no <p2>, satisfies neither closed shape)" ;
+    mf:status mf:Approved ;
+    mf:action [
+      sht:schema <../schemas/inverseClosedDiscrim.shex> ;
+      sht:shape <http://a.example/S> ;
+      sht:data <Bin1_Ip1_Is1;Ip2_LA.Bin2_Ip1_Is1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1dotExtendsInverse_fail> a sht:ValidationFailure ;
+    mf:name "1dotExtendsInverse_fail" ;
+    sht:trait sht:TriplePattern , sht:Inverse , sht:Extends ;
+    rdfs:comment "<B>{ <p1> . } <A> EXTENDS @<B> { ^<p2> . } on { <s1> <p1> <o1> } (no incoming <p2>)" ;
+    mf:status mf:Approved ;
+    mf:action [
+      sht:schema <../schemas/1dotExtendsInverse.shex> ;
+      sht:shape <http://a.example/A> ;
+      sht:data <Is1_Ip1_Io1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1dotInverseExtends_pass> a sht:ValidationTest ;
+    mf:name "1dotInverseExtends_pass" ;
+    sht:trait sht:TriplePattern , sht:Inverse , sht:Extends ;
+    rdfs:comment "<B>{ ^<p2> . } <A> EXTENDS @<B> { ^<p1> . } on { <o1> <p1> <s1>. <n0> <p2> <s1> } (<s1> has both an incoming <p1> and an incoming <p2>; the parent's inverse arc must be matched)" ;
+    mf:status mf:Approved ;
+    mf:action [
+      sht:schema <../schemas/1dotInverseExtends.shex> ;
+      sht:shape <http://a.example/A> ;
+      sht:data <Io1_Ip1_Is1.In0_Ip2_Is1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1dotInverseExtends_fail> a sht:ValidationFailure ;
+    mf:name "1dotInverseExtends_fail" ;
+    sht:trait sht:TriplePattern , sht:Inverse , sht:Extends ;
+    rdfs:comment "<B>{ ^<p2> . } <A> EXTENDS @<B> { ^<p1> . } on { <s1> <p1> <o1> } (<s1> has no incoming <p1> or <p2>)" ;
+    mf:status mf:Approved ;
+    mf:action [
+      sht:schema <../schemas/1dotInverseExtends.shex> ;
+      sht:shape <http://a.example/A> ;
+      sht:data <Is1_Ip1_Io1.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#2intersectP1ValueSet_fail> a sht:ValidationFailure ;
+    mf:name "2intersectP1ValueSet_fail" ;
+    sht:trait sht:TriplePattern , sht:RepeatedPredicate ;
+    rdfs:comment "<S1>{ <p1> [\"a\" \"b\" \"c\"]; <p1> [\"b\" \"c\"] } on { <s1> <p1> \"a\" } (one arc cannot satisfy both constraints)" ;
+    mf:status mf:Approved ;
+    mf:action [
+      sht:schema <../schemas/2intersectP1ValueSet.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_La.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#2intersectP1ValueSet_fail-Ld> a sht:ValidationFailure ;
+    mf:name "2intersectP1ValueSet_fail-Ld" ;
+    sht:trait sht:TriplePattern , sht:RepeatedPredicate ;
+    rdfs:comment "<S1>{ <p1> [\"a\" \"b\" \"c\"]; <p1> [\"b\" \"c\"] } on { <s1> <p1> \"a\",\"d\" } (\"d\" is in neither value set)" ;
+    mf:status mf:Approved ;
+    mf:action [
+      sht:schema <../schemas/2intersectP1ValueSet.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_La,Ld.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1NOTvsCard2_fail-3arcs> a sht:ValidationFailure ;
+    mf:name "1NOTvsCard2_fail-3arcs" ;
+    sht:trait sht:NonDotCardinality ;
+    rdfs:comment "<S1>{ <p1> NOT [<o1>] {2} } on { <s1> <p1> <o1>,<o2>,<o3> } (<o2>,<o3> match NOT [<o1>] {2} but the <o1> arc is unmatched and the shape is not EXTRA)" ;
+    mf:status mf:Approved ;
+    mf:action [
+      sht:schema <../schemas/1NOTvsCard2.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1,Io2,Io3.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#RecursionContingent_pass> a sht:ValidationTest ;
+    mf:name "RecursionContingent_pass" ;
+    sht:trait sht:ValueReference , sht:RecursiveData , sht:NonDotCardinality ;
+    rdfs:comment "the contingent recursion conforms when <a> genuinely satisfies @:A (it has :preda), so the assumption made while recursing holds" ;
+    mf:status mf:Approved ;
+    mf:action [
+      sht:schema <../schemas/RecursionContingent.shex> ;
+      sht:shape <http://a.example/D> ;
+      sht:data <recursionContingentDataPass.ttl> ;
+      sht:focus <http://a.example/d>
+    ]
+    .
+
+<#1datatypePattern_pass> a sht:ValidationTest ;
+    mf:name "1datatypePattern_pass" ;
+    sht:trait sht:Datatype ;
+    rdfs:comment "<S1>{ <p1> xsd:string /^ab/ } on { <s1> <p1> \"abc\" } (a string matching the pattern)" ;
+    mf:status mf:Approved ;
+    mf:action [
+      sht:schema <../schemas/1datatypePattern.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Labc.ttl> ;
+      sht:focus <http://a.example/s1>
+    ]
+    .
+
+<#1NOTvsCard2Extra_pass> a sht:ValidationTest ;
+    mf:name "1NOTvsCard2Extra_pass" ;
+    sht:trait sht:NonDotCardinality , sht:Extra ;
+    rdfs:comment "<S1> EXTRA <p1> { <p1> NOT [<o1>] {2} } on { <s1> <p1> <o1>,<o2>,<o3> } (<o2>,<o3> match NOT [<o1>] {2}; the <o1> arc is permitted by EXTRA)" ;
+    mf:status mf:Approved ;
+    mf:action [
+      sht:schema <../schemas/1NOTvsCard2Extra.shex> ;
+      sht:shape <http://a.example/S1> ;
+      sht:data <Is1_Ip1_Io1,Io2,Io3.ttl> ;
+      sht:focus <http://a.example/s1>
     ]
     .
 
