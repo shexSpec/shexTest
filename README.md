@@ -66,4 +66,20 @@ which yields the files which include this pattern:
 * Same manifest layout as `validation` (`manifest.ttl`, `manifest.jsonld`) and the same `.ttl` data convention; the schemas live in `schemas-contrib/` as ShExC only (no ShExJ/ShExR trio, no representation tests).
 * Entries carry only `ValidationTest`/`ValidationFailure` plus traits. There are no reference results, so a validator can be checked for logic-conformance here but not result-conformance, and a conformant implementation is not required to run them at all.
 
+## `doc`
 
+Grammars for the three renderings of a ShEx schema, and the pieces that relate
+them:
+
+* [`ShExJ.jsg`](doc/ShExJ.jsg) — ShExJ, as a JSON Schema Grammar.
+* [`ShExR.shex`](doc/ShExR.shex) — ShExR: the ShEx schema that RDF renderings of
+  ShEx schemas are validated against. Hand-maintained, and the source for
+  `ShExR.ttl` and `ShExR.ntriples`, which [`bin/mkShExR.js`](bin/mkShExR.js)
+  derives and `npm test` keeps in sync.
+* [`ShExJ-context.jsonld`](doc/ShExJ-context.jsonld) — the JSON-LD context that
+  turns ShExJ into ShExR. Generated from [`vocab/vocab.csv`](vocab/), which is
+  also the source of <https://www.w3.org/ns/shex>.
+* [`syntax-deltas.html`](doc/syntax-deltas.html) — where ShExC, ShExJ and ShExR
+  disagree about what a schema may say, with the evidence for each. Notably,
+  ShExR admits a `ShapeDecl` as `start` where neither of the others can express
+  one.
