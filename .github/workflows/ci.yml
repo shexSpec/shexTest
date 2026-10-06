@@ -44,6 +44,15 @@ jobs:
       # against the shex (see start2RefS2's p1-vs-p2 drift).
       - run: npm run test-schema-imports
 
+      # a test's id (<#1dot_pass>) and its mf:name ("1dot_pass") must be the
+      # same string, in both serializations and in every manifest dir.
+      # Harnesses select and report tests by either one, and a test that was
+      # copied with only one of the two edited is otherwise a valid manifest
+      # (see extends-open-or-each-each_pass-cross-each, named ..._fail-...).
+      # This also covers negativeStructure and validation-contrib, which the
+      # regeneration check above leaves out.
+      - run: npm run test-manifest-names
+
       - run: npm run test-shexj-jsg
       - run: npm run test-shexv-val
       - run: npm run test-shexv-err
