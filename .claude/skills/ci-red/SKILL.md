@@ -43,6 +43,7 @@ is the script that failed.
 |---|---|---|---|
 | CI step 2 | `manifest.jsonld` is generated from `manifest.ttl` | `manifest.jsonld is stale` | `(cd DIR && ../bin/genJSON.js manifest.ttl > manifest.jsonld)` and commit |
 | `test-shexj-jsg` | every `schemas/*.json` conforms to `doc/ShExJ.jsg` | `errors: [ Error: Testing "shapes": …` | the schema or the grammar is wrong; see the `changing-the-grammar` skill |
+| `test-shexj-types` | every `schemas/*.json` type-checks against the installed `@types/shexj`, except those listed as ahead of it | `schemas/X.json:N: not accepted by @types/shexj V` or a line about `AHEAD` | the `shexj-types` skill has a table of these messages |
 | `test-shexv-val`, `test-shexv-err` | `validation/*.{val,err}` conform to `doc/ShExV.jsg` | same shape of error | fix the result file or the grammar |
 | `test-schema-imports` | every `schemas/*.shex` IMPORT target has its own manifest entry | a name under `MISSING manifest entry` or `BROKEN reference` | add the entry to `schemas/manifest.ttl`, regenerate |
 | `test-manifest-names` | a test's id and its `mf:name` are the same string, in both serializations, in all five manifest dirs | `validation/manifest.ttl: #x is named "y"` | see the `manifests` skill |
@@ -52,8 +53,9 @@ is the script that failed.
 Each script's header comment gives the incident that motivated it. Read it
 before explaining a failure; it is usually the "why" the user is asking for.
 
-Type-checking the schemas against `@types/shexj`, and Dependabot PRs for that
-package, are covered by the `shexj-types` skill.
+`test-shexj-types` is the one check that can go red because of a release
+elsewhere rather than a change here. The `shexj-types` skill explains it and
+its Dependabot PRs.
 
 ## Output that looks like a failure and is not
 
@@ -78,15 +80,18 @@ imply more than it proves.
   `Cycle2ExtendsNegation`; that is out of date. On 2026-10-06 both directories
   regenerated to identical files, so the exclusion could be lifted.
   `test-manifest-names` does cover both for ids, order and names.
-- **Nothing tests that a grammar rejects anything.** All fixtures are positive.
-  A production that is too permissive passes every check.
+- **Almost nothing tests that a grammar rejects anything.** The fixtures are
+  positive, apart from three must-reject documents for the TypeScript types in
+  `bin/checkShExJTypes.js`. A JSG production that is too permissive passes
+  every check.
 
 ## Dependabot PR open and unmerged
 
 The auto-merge workflow only *enables* auto-merge; GitHub merges once `test`
 passes. So an old open Dependabot PR means `test` failed on it. Read the failed
-step as above. Dependabot checks npm weekly, so a bump can also simply not have
-been proposed yet.
+step as above; for `@types/shexj` it usually means the new release does not
+contain a change this repo is waiting for (the `shexj-types` skill). Dependabot
+checks npm weekly, so a bump can also simply not have been proposed yet.
 
 ## Before saying "this is green"
 
@@ -110,5 +115,6 @@ CI runs Node 20 on Ubuntu. Say so if you only ran it elsewhere.
 `test-ts` step that called `bin/makeTsTests.sh`, a script that was never
 committed. When CI arrived (0f45c51, 2026-07-16) it ran the other steps one by
 one to avoid it, and three later commits extended `test` without noticing it
-could not pass. That is why CI now calls `npm test` and nothing else. The
-details are in `shexj-types/references/history.md`.
+could not pass. That is why CI now calls `npm test` and nothing else, and
+`test-shexj-types` is what `test-ts` was meant to be. The details are in
+`shexj-types/references/history.md`.

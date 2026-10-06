@@ -43,6 +43,10 @@ jobs:
       # locally, so that CI and `npm t` cannot drift apart. Each check's
       # rationale is at the top of its script; in brief:
       #   test-shexj-jsg       schemas/*.json conform to doc/ShExJ.jsg
+      #   test-shexj-types     schemas/*.json type-check against @types/shexj;
+      #                        those listed as ahead of the types must fail
+      #                        until a newer release is installed, then pass
+      #                        (bin/checkShExJTypes.js)
       #   test-shexv-val/-err  validation/*.{val,err} conform to doc/ShExV.jsg
       #   test-schema-imports  every schemas/*.shex IMPORT target has its own
       #                        manifest entry (bin/checkSchemaImports.js)

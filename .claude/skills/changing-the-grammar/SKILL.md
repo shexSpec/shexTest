@@ -28,7 +28,7 @@ nothing here tests that a grammar *rejects* something.
 | Vocabulary | `vocab/vocab.csv` | by hand; the source of <https://www.w3.org/ns/shex> | `vocab-check` |
 | JSON-LD context | `doc/ShExJ-context.jsonld` | derived: `npm run vocab` | used by `mkShExR.js`, so `shexr-check` exercises it |
 | Validation results | `doc/ShExV.jsg` | by hand | `test-shexv-err` |
-| TypeScript types | `@types/shexj`, in DefinitelyTyped | by hand, in another repo | see the `shexj-types` skill |
+| TypeScript types | `@types/shexj`, in DefinitelyTyped | by hand, in another repo | `test-shexj-types`; see the `shexj-types` skill |
 | ShExC | the specification, not this repo | - | implementations |
 | Known disagreements | `doc/syntax-deltas.html` | by hand | nobody |
 
@@ -66,8 +66,9 @@ ShExJ lists are ShExR `…List1Plus` shapes; a ShExJ `X ?` is a ShExR `?`.
    Keep probes out of the repo (a scratch directory).
 5. `npm test`.
 6. If the change adds something to ShExJ, the published TypeScript types will
-   not know it yet. The `shexj-types` skill says what to do, and why CI stays
-   green meanwhile.
+   not know it yet and `test-shexj-types` fails, printing lines to paste into
+   the `AHEAD` table in `bin/checkShExJTypes.js`. The `shexj-types` skill has
+   the whole procedure.
 7. If the three syntaxes now disagree on purpose, or a recorded disagreement
    went away, update `doc/syntax-deltas.html`.
 

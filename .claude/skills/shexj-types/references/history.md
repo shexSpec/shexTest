@@ -40,7 +40,9 @@ in, from the day it was written.
   `test` in front of the broken step.
 - `2a1310d` and `5866f25` (2026-08-06) appended `vocab-check` and `shexr-check`
   the same way. `7f5c8a9` (2026-10-06) did it again with `test-manifest-names`.
-- 2026-10-06: `test-ts` removed, CI changed to call `npm test`.
+- 2026-10-06: `test-ts` removed, CI changed to call `npm test`, and
+  `bin/checkShExJTypes.js` added as `test-shexj-types` to do what `test-ts` was
+  meant to.
 
 ## What the script was for (inference)
 
