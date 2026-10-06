@@ -39,43 +39,22 @@ jobs:
             exit 1
           }
 
-      # every schemas/*.shex IMPORT target must have its own manifest
-      # entry, or nothing ever round-trip-tests its json/ttl siblings
-      # against the shex (see start2RefS2's p1-vs-p2 drift).
-      - run: npm run test-schema-imports
-
-      # a test's id (<#1dot_pass>) and its mf:name ("1dot_pass") must be the
-      # same string, in both serializations and in every manifest dir.
-      # Harnesses select and report tests by either one, and a test that was
-      # copied with only one of the two edited is otherwise a valid manifest
-      # (see extends-open-or-each-each_pass-cross-each, named ..._fail-...).
-      # This also covers negativeStructure and validation-contrib, which the
-      # regeneration check above leaves out.
-      - run: npm run test-manifest-names
-
-      - run: npm run test-shexj-jsg
-      - run: npm run test-shexv-val
-      - run: npm run test-shexv-err
-
-      # doc/ShExR.shex is the hand-maintained source; doc/ShExR.{json,ttl,
-      # ntriples} are the same schema in other syntaxes and had all drifted
-      # from it (ShExR.ntriples by nine years -- it predated ShapeDecl,
-      # abstract, imports and extends entirely, and still carried the
-      # sx:negated the language dropped in 2016).
-      #
-      # bin/mkShExR.js regenerates the two RDF renderings via ShExJ and
-      # doc/ShExJ-context.jsonld, so this also exercises the context, which is
-      # itself generated from vocab/vocab.csv. ShExR.json is compared as an AST
-      # rather than regenerated, so its hand formatting survives.
-      - name: doc/ShExR.{json,ttl,ntriples} match doc/ShExR.shex
-        run: |
-          npm run shexr-check || {
-            echo "::error::ShExR renderings are stale -- run 'npm run shexr' and commit the result"
-            exit 1
-          }
-
-      # the published ShEx vocabulary must define every term ShExR uses
-      - run: npm run vocab-check
+      # Everything else is `npm test`, the same command a contributor runs
+      # locally, so that CI and `npm t` cannot drift apart. Each check's
+      # rationale is at the top of its script; in brief:
+      #   test-shexj-jsg       schemas/*.json conform to doc/ShExJ.jsg
+      #   test-shexv-val/-err  validation/*.{val,err} conform to doc/ShExV.jsg
+      #   test-schema-imports  every schemas/*.shex IMPORT target has its own
+      #                        manifest entry (bin/checkSchemaImports.js)
+      #   test-manifest-names  a test's id and its mf:name are the same string,
+      #                        in every manifest dir, including the two the
+      #                        regeneration check above leaves out
+      #                        (bin/checkManifestNames.js)
+      #   vocab-check          the published ShEx vocabulary defines every term
+      #                        ShExR uses (vocab/mk_vocab.js)
+      #   shexr-check          doc/ShExR.{json,ttl,ntriples} match doc/ShExR.shex
+      #                        (bin/mkShExR.js)
+      - run: npm test
 
       # informational only: flags schemas referenced by validation tests
       # (via EXTENDS, not IMPORT) that lack their own manifest entry.
@@ -84,10 +63,3 @@ jobs:
       # until that content exists.
       - name: schemas referenced by validation tests but not in schemas/manifest (informational)
         run: node missing.js
-
-      # test-ts is currently broken independent of this workflow: it
-      # shells out to bin/makeTsTests.sh, which has never existed in this
-      # repo's history, and calls a bare `tsc` with no typescript
-      # devDependency. Left out of CI until someone restores or replaces
-      # it; see https://github.com/shexSpec/shexTest (or the PR that
-      # introduced this workflow) for context.
