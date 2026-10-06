@@ -19120,7 +19120,7 @@
     .
 
 <#extends-open-or-each-each_pass-cross-each> a sht:ValidationTest ;
-    mf:name "extends-open-or-each-each_fail-cross-each" ;
+    mf:name "extends-open-or-each-each_pass-cross-each" ;
     sht:trait sht:Extends ;
     rdfs:comment '<pass-each-1> <p> 0 ; <q> 1 ; <r> 2 . \\ <Base> { <p> . ; <q> . } OR { <p> . ; <r> . } <Child> E @<Base> { }' ;
     mf:status mf:proposed ;
