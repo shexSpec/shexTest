@@ -83,3 +83,51 @@ them:
   disagree about what a schema may say, with the evidence for each. Notably,
   ShExR admits a `ShapeDecl` as `start` where neither of the others can express
   one.
+
+## Manifests: `manifest` and `manifest-ld`
+
+Each suite directory has two manifests -- two resources, each with its representations:
+
+* **`manifest`** is the original structure, the SPARQL WG's test-manifest format: `manifest.ttl`, and `manifest.jsonld`, which `bin/genJSON.js` writes from it. The implementations that run the suite read these, and need not change.
+* **`manifest-ld`** is the same tests in the ShEx manifest vocabulary, the YAML-LD format ShEx implementations use for their own example manifests: `manifest-ld.yaml`, the text to edit, comments and all; `manifest-ld.jsonld`, its JSON, the same JSON-LD document without the comments; and `manifest-ld.ttl`, its RDF graph as Turtle. References stay relative in all three, as the YAML writes them, so each means the same wherever it is served.
+
+Each `manifest-ld.yaml` says what its directory's `manifest.ttl` says, in that format:
+
+``` yaml
+"@context":
+  - https://www.w3.org/ns/shex-manifest.jsonld
+  - https://www.w3.org/ns/shex-test.jsonld
+comment: "ShEx validation tests"
+entries:
+  ## empty {
+  - name: "0_empty"
+    status: conformant
+    trait: [Empty]
+    comment: "<S1> {  } on {  }"
+    approval: Approved
+    schemaURL: ../schemas/0.shex
+    shape: http://a.example/S1
+    dataURL: empty.ttl
+    node: http://a.example/dummy
+```
+
+* Nothing types a test. A validation test is an entry with a `status`, and the status says what `sht:ValidationTest` and `sht:ValidationFailure` said: `conformant` or `nonconformant`. A schema that must be rejected says how (`schemaError: syntax` or `structure`); a representation test names the schema's three serializations (`schemaURL`, `shexjURL`, `shexrURL`).
+* An entry is named (`name`), where the Turtle had both `<#name>` and `mf:name`; its inputs are its own, where the Turtle had an `mf:action` node; `approval` is what `mf:status` was, since `status` is the outcome expected.
+* `node` and `shape` are IRIs. A focus node that is a blank node or a literal is said as a query map instead -- `queryMap: "_:abcd@<http://a.example/S1>"` -- because that is text: read as JSON-LD, a blank node's label would be lost, and the label is the point of those tests.
+* One list replaces the Turtle's two: `entries` holds the tests themselves, in `mf:entries` order, so a test cannot be listed and not defined, or defined and not listed.
+* The vocabulary is the [ShEx manifest vocabulary](https://www.w3.org/ns/shex-manifest) (`entries`, `name`, `schema`/`data`/`queryMap` with their `URL` and `Label` spellings, `comment`, and `node`, `shape`, `status` from the ShEx vocabulary), whose source is [`vocab/manifest-vocab.csv`](vocab/manifest-vocab.csv), plus the [ShEx test vocabulary](https://www.w3.org/ns/shex-test) for what a test says beyond that (`trait`, `approval`, `schemaError` and where, `shexjURL`/`shexrURL`, `sameSemanticsAs`, `resultURL`, `semActsURL`, `shapeExternsURL`, `extensionResults`), whose source is [`vocab/test-vocab.csv`](vocab/test-vocab.csv). Both are W3C namespaces, generated into w3c/ns by `vocab/mk_vocab.js`; `trait` names are plain strings. Read as JSON-LD, a manifest is an RDF graph in those vocabularies. The seven `mf:comment` keys `negativeStructure` carries across from the Turtle are the one exception: that manifest binds `mf:` in its own `@context`.
+
+The scripts, with [`bin/manifest-terms.js`](bin/manifest-terms.js) as the one table of which key is which legacy predicate:
+
+* `bin/ttl2yamlld.js manifest.ttl > manifest-ld.yaml` is the migration: it writes the YAML from the Turtle *heuristically* -- from the token stream, not from a graph -- so the Turtle's comments come across, each where it was.
+* `bin/yaml2ttl.js manifest-ld.yaml > manifest.ttl` writes the legacy Turtle from the YAML, for the implementations that read it. Its graph is the graph of the Turtle the YAML came from, for all five manifests: nothing was lost.
+* `bin/manifest-ld.js` (`npm run manifest-ld`) writes each directory's `manifest-ld.jsonld` and `manifest-ld.ttl` from its `manifest-ld.yaml`, having checked that the Turtle is the graph a JSON-LD processor reads from the YAML; `npm run manifest-ld-check` (in `npm test` and CI) says whether they are up to date.
+* `bin/yaml2jsonld.js manifest-ld.yaml > manifest.jsonld` writes the `manifest.jsonld` that `bin/genJSON.js` writes from the Turtle, byte for byte.
+
+shex.js's `packages/shex-manifest/test/TestSuiteManifest-test.js` checks all of that, and its validation and parser suites read `manifest-ld` wherever a corpus has it. It also checks that these manifests are the format of shex.js's own examples manifests:
+
+* read as JSON-LD, each is a graph in which nothing it says is dropped;
+* `@shexjs/manifest`, the reader for shex.js's examples, reads all five, and what it reads plainly is what a JSON-LD processor reads (`negativeStructure`'s seven `mf:comment` keys, carried across as they were, are the one thing that needs the processor);
+* shex.js's examples runner, which knows nothing of this suite, gets the `status` each validation entry states -- for all 1239 of the 1309 that need only what an example does. The other 70 need an import, a semantic-action extension, a query map in a file, or a literal focus or blank-node shape in a query map.
+
+Two things a reader of the graph should know. An entry is identified by its `name`, not by an IRI, so a reference from one test to another (`sameSemanticsAs: "#1dotRefLNex1"`, 23 of them) names an IRI the YAML's graph says nothing else about; `bin/yaml2ttl.js` gives each entry that IRI, `<#name>`, in the Turtle. And the two contexts are published only once w3c/ns takes them: until then `https://www.w3.org/ns/shex-manifest.jsonld` and `https://www.w3.org/ns/shex-test.jsonld` are found in a w3c/ns checkout (shex.js carries a copy of both).

@@ -8,6 +8,38 @@ This lives here because shexTest already carried two hand-maintained copies of
 this vocabulary — `../doc/ShExJ-context.jsonld` and `../doc/ShExR.shex` — and
 both had drifted from what is published at www.w3.org/ns/shex.
 
+## Three vocabularies
+
+`mk_vocab.js` maintains two more vocabularies the same way, each from its own
+CSV, each written into a w3c/ns checkout with `--nsdir` (as
+`<name>.ttl`, `.jsonld` and `.html`):
+
+* the **ShEx manifest vocabulary**, `http://www.w3.org/ns/shex-manifest#`,
+  from `manifest-vocab.csv` (`--vocab shex-manifest`, or `npm run
+  vocab-manifest -- --nsdir path/to/w3c/ns`): what a manifest of ShEx
+  validations is written in -- `entries`, an entry's `schema`, `data` and
+  `queryMap` with their `...URL` and `...Label` spellings, `name`, `comment`
+  -- with a context that aliases `node`, `shape` and `status` to the ShEx
+  vocabulary's own. The example manifests of implementations (shex.js's
+  `doc/manifest-context.jsonld` adds its own terms) and this suite's
+  `*/manifest-ld.yaml` share it.
+* the **ShEx test vocabulary**, `http://www.w3.org/ns/shex-test#`, from
+  `test-vocab.csv` (`--vocab shex-test`, or `npm run vocab-test -- --nsdir
+  path/to/w3c/ns`): what a conformance test says beyond an entry of the
+  manifest vocabulary -- `trait`, `approval`, `schemaError` and where
+  (`startRow` ... `endColumn`), the schema's other representations
+  (`shexjURL`, `shexrURL`), `sameSemanticsAs`, `resultURL`, `semActsURL`,
+  `shapeExternsURL`, `extensionResults` -- with `seeAlso` and
+  `wasDerivedFrom` aliased to rdfs: and prov:. This suite's
+  `*/manifest-ld.yaml` stack its context on the manifest vocabulary's.
+
+Everything below applies to all three CSVs, except the drift check against
+ShExR, which is about the ShEx vocabulary; `--check --nsdir path/to/w3c/ns`
+says, for any of them and without writing anything, whether the files there
+are what its CSV generates. A generated file's `owl:versionInfo` and
+`dc:date` come from the last commit that touched its CSV, so regenerate
+after committing the CSV, and again if that commit is rewritten.
+
 ## History
 
 Gregg Kellogg (RIP) wrote the original `mk_vocab.rb` plus an erubis

@@ -1,0 +1,34 @@
+id,type,label,subClassOf,domain,range,@type,@container,ForwardMultiplicity,ReverseMultiplicity,term,comment
+,rdfs:seeAlso,,http://shex.io/shex-semantics,,,,,,,,
+,rdfs:seeAlso,,https://www.w3.org/ns/shex-manifest,,,,,,,,
+,rdfs:seeAlso,,https://github.com/shexSpec/shexTest,,,,,,,,
+prov,prefix,,http://www.w3.org/ns/prov#,,,,,,,,
+rdf,prefix,,http://www.w3.org/1999/02/22-rdf-syntax-ns#,,,,,,,,
+rdfs,prefix,,http://www.w3.org/2000/01/rdf-schema#,,,,,,,,
+shexMan,prefix,,http://www.w3.org/ns/shex-manifest#,,,,,,,,
+shexTest,prefix,,http://www.w3.org/ns/shex-test#,,,,,,,,
+xsd,prefix,,http://www.w3.org/2001/XMLSchema#,,,,,,,,
+ExtensionResult,rdfs:Class,Extension Result,,,,,,,,,"One output a test expects of one semantic-action extension."
+trait,rdf:Property,trait,,shexMan:Entry,xsd:string,,,0:N,,,"A feature of ShEx the test exercises, as a plain name (Empty, TriplePattern, Import, SemanticAction, ...), so that an implementation can tell which tests bear on what it supports."
+approval,rdf:Property,approval,,shexMan:Entry,xsd:string,,,0:1,,,"What the community has decided about the test itself: ""Approved"" or ""Proposed""."
+schemaError,rdf:Property,schema error,,shexMan:Entry,xsd:string,,,0:1,,,"How the test's schema must be rejected: ""syntax"", when it does not parse, or ""structure"", when it parses but breaks a structural constraint, such as referring to a shape it does not declare. An entry with neither a schemaError nor a status tests the schema's representations (shexj, shexr)."
+startRow,rdf:Property,start row,,shexMan:Entry,xsd:integer,,,0:1,,,"The 1-based row of the schema's text at which the rejection a negative test expects begins."
+startColumn,rdf:Property,start column,,shexMan:Entry,xsd:integer,,,0:1,,,"The 1-based column at which the expected rejection begins."
+endRow,rdf:Property,end row,,shexMan:Entry,xsd:integer,,,0:1,,,"The 1-based row at which the expected rejection ends."
+endColumn,rdf:Property,end column,,shexMan:Entry,xsd:integer,,,0:1,,,"The 1-based column at which the expected rejection ends."
+shexj,rdf:Property,ShExJ,,shexMan:Entry,,,,0:1,,,"The test's schema in ShExJ, the JSON representation of ShEx. A literal is its text; an IRI (written with the term shexjURL) is the document that holds it."
+shexr,rdf:Property,ShExR,,shexMan:Entry,,,,0:1,,,"The test's schema in ShExR, the RDF representation of ShEx. A literal is its text; an IRI (written with the term shexrURL) is the document that holds it."
+sameSemanticsAs,rdf:Property,same semantics as,,shexMan:Entry,shexMan:Entry,,,0:N,,,"Another test whose schema means what this one's does, however differently it is written."
+result,rdf:Property,result,,shexMan:Entry,,,,0:1,,,"The results the validation must produce, for a test that says more than conformant or nonconformant. A literal is their text; an IRI (written with the term resultURL) is the document that holds them."
+semActs,rdf:Property,semantic actions,,shexMan:Entry,,,,0:1,,,"Code for the semantic actions the test's schema names without code of their own. A literal is its text; an IRI (written with the term semActsURL) is the document that holds it."
+shapeExterns,rdf:Property,shape externs,,shexMan:Entry,,,,0:1,,,"A schema providing the shapes the test's schema declares EXTERNAL. A literal is its text; an IRI (written with the term shapeExternsURL) is the document that holds it."
+extensionResults,rdf:Property,extension results,,shexMan:Entry,ExtensionResult,,@list,0:1,,,"What the test's semantic actions must output, in the order they output it."
+extension,rdf:Property,extension,,ExtensionResult,rdfs:Resource,,,1:1,,,"The semantic-action extension, by its IRI, that produces the output."
+prints,rdf:Property,prints,,ExtensionResult,xsd:string,,,1:1,,,"What the extension outputs."
+resultURL,term,,shexTest:result,,,@id,,,,,The results by reference.
+semActsURL,term,,shexTest:semActs,,,@id,,,,,The semantic-action code by reference.
+shapeExternsURL,term,,shexTest:shapeExterns,,,@id,,,,,The schema of external shapes by reference.
+shexjURL,term,,shexTest:shexj,,,@id,,,,,The ShExJ by reference.
+shexrURL,term,,shexTest:shexr,,,@id,,,,,The ShExR by reference.
+seeAlso,term,,rdfs:seeAlso,,,@id,,,,,"Other tests, or other documents, this one bears on."
+wasDerivedFrom,term,,prov:wasDerivedFrom,,,@id,,,,,What the test was derived from.

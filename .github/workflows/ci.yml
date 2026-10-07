@@ -39,6 +39,18 @@ jobs:
             exit 1
           }
 
+      # manifest-ld.jsonld and manifest-ld.ttl are the other representations
+      # of each directory's manifest-ld.yaml (the manifest in the ShEx
+      # manifest vocabulary), written from it by bin/manifest-ld.js, which
+      # also checks that the Turtle is the graph a JSON-LD processor reads
+      # from the YAML.
+      - name: manifest-ld.{jsonld,ttl} match manifest-ld.yaml
+        run: |
+          npm run manifest-ld-check || {
+            echo "::error::manifest-ld representations are stale -- run 'npm run manifest-ld' and commit the result"
+            exit 1
+          }
+
       # every schemas/*.shex IMPORT target must have its own manifest
       # entry, or nothing ever round-trip-tests its json/ttl siblings
       # against the shex (see start2RefS2's p1-vs-p2 drift).

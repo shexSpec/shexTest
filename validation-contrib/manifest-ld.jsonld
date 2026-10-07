@@ -1,0 +1,116 @@
+{
+  "@context": [
+    "https://www.w3.org/ns/shex-manifest.jsonld",
+    "https://www.w3.org/ns/shex-test.jsonld"
+  ],
+  "comment": "ShEx validation tests useful to many implementations but not attributable to the specification",
+  "entries": [
+    {
+      "name": "repairCard_fail",
+      "status": "nonconformant",
+      "trait": [
+        "Repair",
+        "NonDotCardinality"
+      ],
+      "comment": "repair a cardinality shortfall: <S1>{ <p1> .{2} } on { <x> <p1> <o1> } is one <p1> short",
+      "approval": "Approved",
+      "schemaURL": "../schemas-contrib/repairCard.shex",
+      "shape": "http://a.example/S1",
+      "dataURL": "Ix_Ip1_Io1.ttl",
+      "node": "http://a.example/x"
+    },
+    {
+      "name": "repairChoice_fail",
+      "status": "nonconformant",
+      "trait": [
+        "Repair"
+      ],
+      "comment": "repair offers the choice the language offers: <S1>{ <p1> . | <p2> . } with neither present",
+      "approval": "Approved",
+      "schemaURL": "../schemas-contrib/repairChoice.shex",
+      "shape": "http://a.example/S1",
+      "dataURL": "Ix_Ip9_Io9.ttl",
+      "node": "http://a.example/x"
+    },
+    {
+      "name": "repairClosed_fail",
+      "status": "nonconformant",
+      "trait": [
+        "Repair",
+        "Closed"
+      ],
+      "comment": "repair a closed shape's extra arc: <S1> CLOSED { <p1> . } on { <x> <p1> <o1>; <p2> <o2> } must drop <p2>",
+      "approval": "Approved",
+      "schemaURL": "../schemas-contrib/repairClosed.shex",
+      "shape": "http://a.example/S1",
+      "dataURL": "Ix_Ip1_Io1;Ip2_Io2.ttl",
+      "node": "http://a.example/x"
+    },
+    {
+      "name": "repairMissingArc_fail",
+      "status": "nonconformant",
+      "trait": [
+        "Repair"
+      ],
+      "comment": "repair a missing property: <S1>{ <p1> . ; <p2> . } on { <x> <p1> <o1> } needs a <p2>",
+      "approval": "Approved",
+      "schemaURL": "../schemas-contrib/repairMissingArc.shex",
+      "shape": "http://a.example/S1",
+      "dataURL": "Ix_Ip1_Io1.ttl",
+      "node": "http://a.example/x"
+    },
+    {
+      "name": "feasHomeless_fail",
+      "status": "nonconformant",
+      "trait": [
+        "Feasibility"
+      ],
+      "comment": "a homeless triple and a missing property: <S1>{ <p1> . ; ( <p2> . ; <p3> . )? } on { <x> <p3> <o> }",
+      "approval": "Approved",
+      "schemaURL": "../schemas-contrib/feasHomeless.shex",
+      "shape": "http://a.example/S1",
+      "dataURL": "Ix_Ip3_Io.ttl",
+      "node": "http://a.example/x"
+    },
+    {
+      "name": "feasDatatype_fail",
+      "status": "nonconformant",
+      "trait": [
+        "Feasibility",
+        "Datatype"
+      ],
+      "comment": "a datatype mismatch reported as one: <S1>{ <p1> xsd:integer } on { <x> <p1> \"abc\" }",
+      "approval": "Approved",
+      "schemaURL": "../schemas-contrib/feasDatatype.shex",
+      "shape": "http://a.example/S1",
+      "dataURL": "Ix_Ip1_Labc.ttl",
+      "node": "http://a.example/x"
+    },
+    {
+      "name": "feasNodeKind_fail",
+      "status": "nonconformant",
+      "trait": [
+        "Feasibility"
+      ],
+      "comment": "a node-kind mismatch reported as one: <S1>{ <p1> IRI } on { <x> <p1> \"lit\" }",
+      "approval": "Approved",
+      "schemaURL": "../schemas-contrib/feasNodeKind.shex",
+      "shape": "http://a.example/S1",
+      "dataURL": "Ix_Ip1_Llit.ttl",
+      "node": "http://a.example/x"
+    },
+    {
+      "name": "feasPattern_fail",
+      "status": "nonconformant",
+      "trait": [
+        "Feasibility"
+      ],
+      "comment": "a pattern mismatch reported as one: <S1>{ <p1> /^ab/ } on { <x> <p1> \"xy\" }",
+      "approval": "Approved",
+      "schemaURL": "../schemas-contrib/feasPattern.shex",
+      "shape": "http://a.example/S1",
+      "dataURL": "Ix_Ip1_Lxy.ttl",
+      "node": "http://a.example/x"
+    }
+  ]
+}

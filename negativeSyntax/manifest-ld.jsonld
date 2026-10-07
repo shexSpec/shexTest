@@ -1,0 +1,1051 @@
+{
+  "@context": [
+    "https://www.w3.org/ns/shex-manifest.jsonld",
+    "https://www.w3.org/ns/shex-test.jsonld"
+  ],
+  "comment": "ShEx negative syntax tests",
+  "entries": [
+    {
+      "name": "1decimalMininclusiveroman-numeral",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "1decimalMininclusiveroman-numeral.shex",
+      "startRow": 2,
+      "startColumn": 81,
+      "endRow": 3,
+      "endColumn": 1
+    },
+    {
+      "name": "1ProductionShapeCollision",
+      "schemaError": "syntax",
+      "approval": "Proposed",
+      "schemaURL": "1ProductionShapeCollision.shex",
+      "startRow": 8,
+      "startColumn": 3,
+      "endRow": 9,
+      "endColumn": 2
+    },
+    {
+      "name": "1ShapeProductionCollision",
+      "schemaError": "syntax",
+      "approval": "Proposed",
+      "schemaURL": "1ShapeProductionCollision.shex",
+      "startRow": 3,
+      "startColumn": 3,
+      "endRow": 6,
+      "endColumn": 22
+    },
+    {
+      "name": "1dotAnnot_AIRIREF",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "1dotAnnot_AIRIREF.shex",
+      "startRow": 3,
+      "startColumn": 31,
+      "endRow": 4,
+      "endColumn": 1
+    },
+    {
+      "name": "1dotUnlabeledCode1",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "1dotUnlabeledCode1.shex",
+      "startRow": 3,
+      "startColumn": 6,
+      "endRow": 4,
+      "endColumn": 1
+    },
+    {
+      "name": "1dotDuplicateShapeLabel",
+      "schemaError": "syntax",
+      "approval": "Proposed",
+      "schemaURL": "1dotDuplicateShapeLabel.shex",
+      "startRow": 6,
+      "startColumn": 1,
+      "endRow": 9,
+      "endColumn": 1
+    },
+    {
+      "name": "1dotDuplicateProductionLabel",
+      "schemaError": "syntax",
+      "approval": "Proposed",
+      "schemaURL": "1dotDuplicateProductionLabel.shex",
+      "startRow": 7,
+      "startColumn": 3,
+      "endRow": 8,
+      "endColumn": 2
+    },
+    {
+      "name": "1doubleMininclusiveroman-numeral",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "1doubleMininclusiveroman-numeral.shex",
+      "startRow": 2,
+      "startColumn": 80,
+      "endRow": 3,
+      "endColumn": 1
+    },
+    {
+      "name": "1floatMininclusiveroman-numeral",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "1floatMininclusiveroman-numeral.shex",
+      "startRow": 2,
+      "startColumn": 79,
+      "endRow": 3,
+      "endColumn": 1
+    },
+    {
+      "name": "1integerMininclusiveroman-numeral",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "1integerMininclusiveroman-numeral.shex",
+      "startRow": 2,
+      "startColumn": 81,
+      "endRow": 3,
+      "endColumn": 1
+    },
+    {
+      "name": "1inverseinversedot",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "1inverseinversedot.shex",
+      "startRow": 1,
+      "startColumn": 32,
+      "endRow": 2,
+      "endColumn": 28
+    },
+    {
+      "name": "1iriLength2",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "1iriLength2.shex",
+      "startRow": 2,
+      "startColumn": 39,
+      "endRow": 3,
+      "endColumn": 1
+    },
+    {
+      "name": "1iriMaxexclusive",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "1iriMaxexclusive.shex",
+      "startRow": 2,
+      "startColumn": 29,
+      "endRow": 2,
+      "endColumn": 43
+    },
+    {
+      "name": "1iriMaxinclusive",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "1iriMaxinclusive.shex",
+      "startRow": 2,
+      "startColumn": 29,
+      "endRow": 2,
+      "endColumn": 43
+    },
+    {
+      "name": "1iriMinexclusive",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "1iriMinexclusive.shex",
+      "startRow": 2,
+      "startColumn": 29,
+      "endRow": 2,
+      "endColumn": 43
+    },
+    {
+      "name": "1iriMininclusive",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "1iriMininclusive.shex",
+      "startRow": 2,
+      "startColumn": 29,
+      "endRow": 2,
+      "endColumn": 43
+    },
+    {
+      "name": "1literalFractiondigitsxsd-integer",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "1literalFractiondigitsxsd-integer.shex",
+      "startRow": 2,
+      "startColumn": 48,
+      "endRow": 3,
+      "endColumn": 1
+    },
+    {
+      "name": "1literalLength2",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "1literalLength2.shex",
+      "startRow": 2,
+      "startColumn": 43,
+      "endRow": 3,
+      "endColumn": 1
+    },
+    {
+      "name": "1literalTotaldigitsxsd-integer",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "1literalTotaldigitsxsd-integer.shex",
+      "startRow": 2,
+      "startColumn": 45,
+      "endRow": 3,
+      "endColumn": 1
+    },
+    {
+      "name": "1negatedinversenegateddot",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "1negatedinversenegateddot.shex",
+      "startRow": 1,
+      "startColumn": 32,
+      "endRow": 2,
+      "endColumn": 5
+    },
+    {
+      "name": "1negatednegateddot",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "1negatednegateddot.shex",
+      "startRow": 1,
+      "startColumn": 32,
+      "endRow": 2,
+      "endColumn": 5
+    },
+    {
+      "name": "1datatypeRef1",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "1datatypeRef1.shex",
+      "startRow": 3,
+      "startColumn": 48,
+      "endRow": 4,
+      "endColumn": 1
+    },
+    {
+      "name": "1unknowndatatypeMaxInclusive",
+      "schemaError": "syntax",
+      "approval": "Proposed",
+      "schemaURL": "1unknowndatatypeMaxInclusive.shex",
+      "startRow": 2,
+      "startColumn": 48,
+      "endRow": 3,
+      "endColumn": 1
+    },
+    {
+      "name": "1val1bnode",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "1val1bnode.shex",
+      "startRow": 2,
+      "startColumn": 26,
+      "endRow": 2,
+      "endColumn": 30
+    },
+    {
+      "name": "1val1iriMinusiri1",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "1val1iriMinusiri1.shex",
+      "startRow": 2,
+      "startColumn": 48,
+      "endRow": 2,
+      "endColumn": 51
+    },
+    {
+      "name": "1val1vcrefSTRING_LITERAL1",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "1val1vcrefSTRING_LITERAL1.shex",
+      "startRow": 3,
+      "startColumn": 1,
+      "endRow": 3,
+      "endColumn": 7
+    },
+    {
+      "name": "1valA",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "1valA.shex",
+      "startRow": 2,
+      "startColumn": 27,
+      "endRow": 2,
+      "endColumn": 28
+    },
+    {
+      "name": "DECIMAL-123.abc",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "DECIMAL-123.abc.shex",
+      "startRow": 4,
+      "startColumn": 31,
+      "endRow": 4,
+      "endColumn": 34
+    },
+    {
+      "name": "DOUBLE-123e",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "DOUBLE-123e.shex",
+      "startRow": 4,
+      "startColumn": 26,
+      "endRow": 4,
+      "endColumn": 31
+    },
+    {
+      "name": "INTEGER-+-1",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "INTEGER-+-1.shex",
+      "startRow": 4,
+      "startColumn": 27,
+      "endRow": 4,
+      "endColumn": 28
+    },
+    {
+      "name": "INTEGER-123abc",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "INTEGER-123abc.shex",
+      "startRow": 4,
+      "startColumn": 26,
+      "endRow": 4,
+      "endColumn": 34
+    },
+    {
+      "name": "IRIREF-with-ECHAR",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "IRIREF-with-ECHAR.shex",
+      "startRow": 3,
+      "startColumn": 32,
+      "endRow": 4,
+      "endColumn": 28
+    },
+    {
+      "name": "IRIREF-with-PN_LOCAL_ESC",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "IRIREF-with-PN_LOCAL_ESC.shex",
+      "startRow": 3,
+      "startColumn": 32,
+      "endRow": 4,
+      "endColumn": 29
+    },
+    {
+      "name": "IRIREF-with-SPACE",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "IRIREF-with-SPACE.shex",
+      "startRow": 3,
+      "startColumn": 32,
+      "endRow": 4,
+      "endColumn": 28
+    },
+    {
+      "name": "IRIREF-with-bad-UCHAR.1",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "IRIREF-with-bad-UCHAR.1.shex",
+      "startRow": 3,
+      "startColumn": 32,
+      "endRow": 4,
+      "endColumn": 30
+    },
+    {
+      "name": "IRIREF-with-bad-UCHAR.2",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "IRIREF-with-bad-UCHAR.2.shex",
+      "startRow": 3,
+      "startColumn": 32,
+      "endRow": 4,
+      "endColumn": 35
+    },
+    {
+      "name": "PNAME_NS-dot-at-end-declared",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "PNAME_NS-dot-at-end-declared.shex",
+      "startRow": 4,
+      "startColumn": 7,
+      "endRow": 4,
+      "endColumn": 17
+    },
+    {
+      "name": "PNAME_NS-dot-at-end-undeclared",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "PNAME_NS-dot-at-end-undeclared.shex",
+      "startRow": 6,
+      "startColumn": 16,
+      "endRow": 6,
+      "endColumn": 26
+    },
+    {
+      "name": "PNAME_NS-dot-at-start-declared",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "PNAME_NS-dot-at-start-declared.shex",
+      "startRow": 4,
+      "startColumn": 7,
+      "endRow": 4,
+      "endColumn": 17
+    },
+    {
+      "name": "PNAME_NS-dot-at-start-undeclared",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "PNAME_NS-dot-at-start-undeclared.shex",
+      "startRow": 6,
+      "startColumn": 16,
+      "endRow": 6,
+      "endColumn": 26
+    },
+    {
+      "name": "PN_LOCAL-PERCENT-end",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "PN_LOCAL-PERCENT-end.shex",
+      "startRow": 6,
+      "startColumn": 7,
+      "endRow": 6,
+      "endColumn": 11
+    },
+    {
+      "name": "PN_LOCAL-PERCENT-mid",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "PN_LOCAL-PERCENT-mid.shex",
+      "startRow": 6,
+      "startColumn": 7,
+      "endRow": 6,
+      "endColumn": 12
+    },
+    {
+      "name": "PN_LOCAL-PERCENT-start",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "PN_LOCAL-PERCENT-start.shex",
+      "startRow": 6,
+      "startColumn": 7,
+      "endRow": 6,
+      "endColumn": 11
+    },
+    {
+      "name": "PN_LOCAL-dash-start",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "PN_LOCAL-dash-start.shex",
+      "startRow": 6,
+      "startColumn": 7,
+      "endRow": 6,
+      "endColumn": 11
+    },
+    {
+      "name": "PN_LOCAL-unescaped-TILDE",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "PN_LOCAL-unescaped-TILDE.shex",
+      "startRow": 6,
+      "startColumn": 7,
+      "endRow": 6,
+      "endColumn": 11
+    },
+    {
+      "name": "PN_LOCAL-with-UCHAR.1",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "PN_LOCAL-with-UCHAR.1.shex",
+      "startRow": 6,
+      "startColumn": 7,
+      "endRow": 6,
+      "endColumn": 15
+    },
+    {
+      "name": "1literalPattern-bad-delim",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "1literalPattern-bad-delim.shex",
+      "startRow": 2,
+      "startColumn": 25,
+      "endRow": 3,
+      "endColumn": 1
+    },
+    {
+      "name": "1literalPattern_with_ECHAR_escape_1",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "1literalPattern_with_ECHAR_escape_1.shex",
+      "startRow": 2,
+      "startColumn": 25,
+      "endRow": 3,
+      "endColumn": 1
+    },
+    {
+      "name": "1literalPattern_with_ECHAR_escape_b",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "1literalPattern_with_ECHAR_escape_b.shex",
+      "startRow": 2,
+      "startColumn": 25,
+      "endRow": 3,
+      "endColumn": 1
+    },
+    {
+      "name": "1literalPattern_with_ECHAR_escape_f",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "1literalPattern_with_ECHAR_escape_f.shex",
+      "startRow": 2,
+      "startColumn": 25,
+      "endRow": 3,
+      "endColumn": 1
+    },
+    {
+      "name": "1literalPattern_with_UCHAR_escape_U0000061",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "1literalPattern_with_UCHAR_escape_U0000061.shex",
+      "startRow": 2,
+      "startColumn": 27,
+      "endRow": 2,
+      "endColumn": 39
+    },
+    {
+      "name": "1literalPattern_with_UCHAR_escape_u061",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "1literalPattern_with_UCHAR_escape_u061.shex",
+      "startRow": 2,
+      "startColumn": 27,
+      "endRow": 2,
+      "endColumn": 34
+    },
+    {
+      "name": "1val1STRING_LITERAL1_bad_delim",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "1val1STRING_LITERAL1_bad_delim.shex",
+      "startRow": 2,
+      "startColumn": 27,
+      "endRow": 3,
+      "endColumn": 1
+    },
+    {
+      "name": "1val1STRING_LITERAL1_with_ECHAR_escape_1",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "1val1STRING_LITERAL1_with_ECHAR_escape_1.shex",
+      "startRow": 2,
+      "startColumn": 27,
+      "endRow": 2,
+      "endColumn": 31
+    },
+    {
+      "name": "1val1STRING_LITERAL1_with_ECHAR_escape_a",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "1val1STRING_LITERAL1_with_ECHAR_escape_a.shex",
+      "startRow": 2,
+      "startColumn": 27,
+      "endRow": 2,
+      "endColumn": 31
+    },
+    {
+      "name": "1val1STRING_LITERAL1_with_ECHAR_escape_z",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "1val1STRING_LITERAL1_with_ECHAR_escape_z.shex",
+      "startRow": 2,
+      "startColumn": 27,
+      "endRow": 2,
+      "endColumn": 31
+    },
+    {
+      "name": "1val1STRING_LITERAL1_with_UCHAR_escape_u061",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "1val1STRING_LITERAL1_with_UCHAR_escape_u061.shex",
+      "startRow": 2,
+      "startColumn": 27,
+      "endRow": 2,
+      "endColumn": 34
+    },
+    {
+      "name": "1val1STRING_LITERAL1_with_UCHAR_escape_U0000061",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "1val1STRING_LITERAL1_with_UCHAR_escape_U0000061.shex",
+      "startRow": 2,
+      "startColumn": 27,
+      "endRow": 2,
+      "endColumn": 38
+    },
+    {
+      "name": "STRING_LITERAL1-ending-QUOTATION_MARK",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "STRING_LITERAL1-ending-QUOTATION_MARK.shex",
+      "startRow": 4,
+      "startColumn": 27,
+      "endRow": 5,
+      "endColumn": 1
+    },
+    {
+      "name": "STRING_LITERAL2-bad-ECHAR",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "STRING_LITERAL2-bad-ECHAR.shex",
+      "startRow": 4,
+      "startColumn": 27,
+      "endRow": 4,
+      "endColumn": 33
+    },
+    {
+      "name": "STRING_LITERAL2-bad-LANGTAG",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "STRING_LITERAL2-bad-LANGTAG.shex",
+      "startRow": 4,
+      "startColumn": 27,
+      "endRow": 4,
+      "endColumn": 37
+    },
+    {
+      "name": "STRING_LITERAL2-bad-UCHAR1",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "STRING_LITERAL2-bad-UCHAR1.shex",
+      "startRow": 4,
+      "startColumn": 27,
+      "endRow": 4,
+      "endColumn": 35
+    },
+    {
+      "name": "STRING_LITERAL2-bad-UCHAR2-value",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "STRING_LITERAL2-bad-UCHAR2-value.shex",
+      "startRow": 4,
+      "startColumn": 27,
+      "endRow": 4,
+      "endColumn": 39
+    },
+    {
+      "name": "STRING_LITERAL2-ending-APOSTROPHE",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "STRING_LITERAL2-ending-APOSTROPHE.shex",
+      "startRow": 4,
+      "startColumn": 27,
+      "endRow": 5,
+      "endColumn": 1
+    },
+    {
+      "name": "STRING_LITERAL2-illegal-UCHAR1-value",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "STRING_LITERAL2-illegal-UCHAR1-value.shex",
+      "startRow": 4,
+      "startColumn": 27,
+      "endRow": 4,
+      "endColumn": 39
+    },
+    {
+      "name": "STRING_LITERAL2-with-LANGTAG-and-datatype",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "STRING_LITERAL2-with-LANGTAG-and-datatype.shex",
+      "startRow": 4,
+      "startColumn": 27,
+      "endRow": 4,
+      "endColumn": 60
+    },
+    {
+      "name": "STRING_LITERAL_LONG1-ending-APOSTROPHE4",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "STRING_LITERAL_LONG1-ending-APOSTROPHE4.shex",
+      "startRow": 4,
+      "startColumn": 27,
+      "endRow": 4,
+      "endColumn": 37
+    },
+    {
+      "name": "STRING_LITERAL_LONG2-ending-APOSTROPHE3",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "STRING_LITERAL_LONG2-ending-APOSTROPHE3.shex",
+      "startRow": 4,
+      "startColumn": 27,
+      "endRow": 6,
+      "endColumn": 1
+    },
+    {
+      "name": "STRING_LITERAL_LONG2-ending-QUOTATION_MARK4",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "STRING_LITERAL_LONG2-ending-QUOTATION_MARK4.shex",
+      "startRow": 4,
+      "startColumn": 27,
+      "endRow": 4,
+      "endColumn": 41
+    },
+    {
+      "name": "STRING_LITERAL_LONG2-unterminated",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "STRING_LITERAL_LONG2-unterminated.shex",
+      "startRow": 4,
+      "startColumn": 27,
+      "endRow": 6,
+      "endColumn": 1
+    },
+    {
+      "name": "a",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "a.shex",
+      "startRow": 1,
+      "startColumn": 1,
+      "endRow": 2,
+      "endColumn": 1
+    },
+    {
+      "name": "Dot-Minus-emptylanguageStem",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "Dot-Minus-emptylanguageStem.shex",
+      "startRow": 1,
+      "startColumn": 28,
+      "endRow": 1,
+      "endColumn": 29
+    },
+    {
+      "name": "emptylanguageStem-Minus-emptylanguageStem",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "emptylanguageStem-Minus-emptylanguageStem.shex",
+      "startRow": 1,
+      "startColumn": 29,
+      "endRow": 1,
+      "endColumn": 30
+    },
+    {
+      "name": "base-no-uri",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "base-no-uri.shex",
+      "startRow": 3,
+      "startColumn": 5,
+      "endRow": 4,
+      "endColumn": 1
+    },
+    {
+      "name": "base-uri-dot",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "base-uri-dot.shex",
+      "startRow": 3,
+      "startColumn": 44,
+      "endRow": 4,
+      "endColumn": 1
+    },
+    {
+      "name": "bnodedot",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "bnodedot.shex",
+      "startRow": 2,
+      "startColumn": 1,
+      "endRow": 2,
+      "endColumn": 15
+    },
+    {
+      "name": "capitol-A",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "capitol-A.shex",
+      "startRow": 3,
+      "startColumn": 32,
+      "endRow": 4,
+      "endColumn": 6
+    },
+    {
+      "name": "group-no-SEMICOLON-separators",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "group-no-SEMICOLON-separators.shex",
+      "startRow": 3,
+      "startColumn": 27,
+      "endRow": 4,
+      "endColumn": 27
+    },
+    {
+      "name": "groupShapeConstr-trailing-OR",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "groupShapeConstr-trailing-OR.shex",
+      "startRow": 3,
+      "startColumn": 59,
+      "endRow": 4,
+      "endColumn": 1
+    },
+    {
+      "name": "literal-0x123",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "literal-0x123.shex",
+      "startRow": 4,
+      "startColumn": 27,
+      "endRow": 4,
+      "endColumn": 32
+    },
+    {
+      "name": "open1dotcloseAnnot3",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "open1dotcloseAnnot3.shex",
+      "startRow": 3,
+      "startColumn": 39,
+      "endRow": 4,
+      "endColumn": 37
+    },
+    {
+      "name": "predicate-ANON",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "predicate-ANON.shex",
+      "startRow": 3,
+      "startColumn": 32,
+      "endRow": 4,
+      "endColumn": 5
+    },
+    {
+      "name": "predicate-BLANK_NODE_LABEL",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "predicate-BLANK_NODE_LABEL.shex",
+      "startRow": 3,
+      "startColumn": 32,
+      "endRow": 4,
+      "endColumn": 9
+    },
+    {
+      "name": "predicate-literal",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "predicate-literal.shex",
+      "startRow": 3,
+      "startColumn": 32,
+      "endRow": 4,
+      "endColumn": 9
+    },
+    {
+      "name": "predicate-true",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "predicate-true.shex",
+      "startRow": 3,
+      "startColumn": 32,
+      "endRow": 4,
+      "endColumn": 9
+    },
+    {
+      "name": "prefix-missing",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "prefix-missing.shex",
+      "startRow": 6,
+      "startColumn": 16,
+      "endRow": 7,
+      "endColumn": 10
+    },
+    {
+      "name": "prefix-missing-1",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "prefix-missing-1.shex",
+      "startRow": 4,
+      "startColumn": 32,
+      "endRow": 5,
+      "endColumn": 10
+    },
+    {
+      "name": "prefix-missing-2",
+      "schemaError": "syntax",
+      "approval": "Proposed",
+      "schemaURL": "prefix-missing-2.shex"
+    },
+    {
+      "name": "prefix-no-COLON",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "prefix-no-COLON.shex",
+      "startRow": 3,
+      "startColumn": 7,
+      "endRow": 3,
+      "endColumn": 11
+    },
+    {
+      "name": "prefix-no-PNAME_NS",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "prefix-no-PNAME_NS.shex",
+      "startRow": 3,
+      "startColumn": 7,
+      "endRow": 3,
+      "endColumn": 27
+    },
+    {
+      "name": "prefix-no-uri",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "prefix-no-uri.shex",
+      "startRow": 3,
+      "startColumn": 11,
+      "endRow": 4,
+      "endColumn": 1
+    },
+    {
+      "name": "shapename-a",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "shapename-a.shex",
+      "startRow": 3,
+      "startColumn": 1,
+      "endRow": 3,
+      "endColumn": 3
+    },
+    {
+      "name": "shapename-literal",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "shapename-literal.shex",
+      "startRow": 3,
+      "startColumn": 1,
+      "endRow": 3,
+      "endColumn": 14
+    },
+    {
+      "name": "shapename-true",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "shapename-true.shex",
+      "startRow": 3,
+      "startColumn": 1,
+      "endRow": 3,
+      "endColumn": 6
+    },
+    {
+      "name": "tripleConsraint-no-valueClass",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "tripleConsraint-no-valueClass.shex",
+      "startRow": 4,
+      "startColumn": 25,
+      "endRow": 5,
+      "endColumn": 1
+    },
+    {
+      "name": "tripleConsraint-with-datatype-and-dot",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "tripleConsraint-with-datatype-and-dot.shex",
+      "startRow": 3,
+      "startColumn": 48,
+      "endRow": 4,
+      "endColumn": 1
+    },
+    {
+      "name": "tripleConsraint-with-datatype-and-valueSet",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "tripleConsraint-with-datatype-and-valueSet.shex",
+      "startRow": 3,
+      "startColumn": 48,
+      "endRow": 3,
+      "endColumn": 74
+    },
+    {
+      "name": "tripleConsraint-with-dot-and-datatype",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "tripleConsraint-with-dot-and-datatype.shex",
+      "startRow": 3,
+      "startColumn": 27,
+      "endRow": 3,
+      "endColumn": 50
+    },
+    {
+      "name": "tripleConsraint-with-two-cardinalities",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "tripleConsraint-with-two-cardinalities.shex",
+      "startRow": 3,
+      "startColumn": 29,
+      "endRow": 4,
+      "endColumn": 1
+    },
+    {
+      "name": "1val1iriStemMinusliteral3",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "1val1iriStemMinusliteral3.shex",
+      "startRow": 3,
+      "startColumn": 28,
+      "endRow": 4,
+      "endColumn": 27
+    },
+    {
+      "name": "1val1languageStemMinusliteral3",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "1val1languageStemMinusliteral3.shex",
+      "startRow": 3,
+      "startColumn": 28,
+      "endRow": 4,
+      "endColumn": 27
+    },
+    {
+      "name": "1val1literalStemMinusiri3",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "1val1literalStemMinusiri3.shex",
+      "startRow": 3,
+      "startColumn": 28,
+      "endRow": 4,
+      "endColumn": 27
+    },
+    {
+      "name": "1val1literalStemMinuslanguage3",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "1val1literalStemMinuslanguage3.shex",
+      "startRow": 3,
+      "startColumn": 28,
+      "endRow": 4,
+      "endColumn": 27
+    },
+    {
+      "name": "INTEGER-in-shape-expression",
+      "schemaError": "syntax",
+      "approval": "Approved",
+      "schemaURL": "INTEGER-in-shape-expression.shex",
+      "startRow": 2,
+      "startColumn": 25,
+      "endRow": 2,
+      "endColumn": 28
+    },
+    {
+      "name": "1dotExtends3",
+      "schemaError": "syntax",
+      "approval": "proposed",
+      "schemaURL": "1dotExtends3.shex"
+    }
+  ]
+}
