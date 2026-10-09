@@ -1,13 +1,13 @@
 #!/usr/bin/env node
-/* yaml2jsonld - write the manifest.jsonld that bin/genJSON.js writes
+/* manifest-ld-to-legacy-jsonld - write the manifest.jsonld that bin/genJSON.js writes
  * from the legacy Turtle, from manifest-ld.yaml instead.
  *
- *   cd validation && ../bin/yaml2jsonld.js manifest-ld.yaml > manifest.jsonld
+ *   cd validation && ../bin/manifest-ld-to-legacy-jsonld.js manifest-ld.yaml > manifest.jsonld
  *
  * manifest.jsonld is the legacy manifest as JSON: each test with its @id,
  * its sht: @type and its inputs under `action`.  Consumers that have not
  * moved to manifest-ld read it, so it is still written -- from the YAML,
- * putting back what the YAML does without (bin/manifest-terms.js), in
+ * putting back what the YAML does without (bin/manifest-ld-terms.js), in
  * genJSON's own spelling, byte for byte: each validation test's keys in
  * genJSON's order with an (often empty) extensionResults; traits sorted; a
  * reference within the manifest's directory by its name there, a schema
@@ -20,7 +20,7 @@
  */
 "use strict";
 
-const {typeOf, baseOf, parseAssociation} = require("./manifest-terms.js");
+const {typeOf, baseOf, withShExC, printsToLegacy, parseAssociation} = require("./manifest-ld-terms.js");
 
 const XSD_STRING = "http://www.w3.org/2001/XMLSchema#string";
 
@@ -62,7 +62,7 @@ function project (doc, dirName) {
           set(out, "name", e, "name", asIs);
           set(out, "trait", e, "trait", sorted);
           set(out, "status", e, "approval", status);
-          set(out, "shex", e, "schemaURL");
+          set(out, "shex", e, "shexcURL");
           set(out, "json", e, "shexjURL");
           set(out, "ttl", e, "shexrURL");
           for (const k of ["startRow", "startColumn", "endRow", "endColumn"])
@@ -75,7 +75,7 @@ function project (doc, dirName) {
         set(out, "trait", e, "trait", sorted);
         set(out, "comment", e, "comment", asIs);
         set(out, "status", e, "approval", status);
-        set(out.action, "schema", e, "schemaURL", fromRoot);
+        set(out.action, "schema", e, "schemaURL", v => fromRoot(withShExC(v)));   // the YAML's schemaURL is negotiable: no .shex
         const said = "queryMap" in e ? parseAssociation(e.queryMap) : null;
         if (said === null)
           set(out.action, "shape", e, "shape");
@@ -90,8 +90,8 @@ function project (doc, dirName) {
         set(out.action, "semActs", e, "semActsURL", fromRoot);
         set(out.action, "shapeExterns", e, "shapeExternsURL", fromRoot);
         set(out, "result", e, "resultURL");
-        if ("extensionResults" in e)
-          out.extensionResults = e.extensionResults.map(x => ({extension: x.extension, prints: x.prints}));
+        if ("tst:parms" in e)   // the Test extension's scope, as the legacy results
+          out.extensionResults = printsToLegacy(e["tst:parms"], e.name);
         return out;
       }),
     }],
@@ -103,7 +103,7 @@ module.exports = {project};
 if (require.main === module) {
   const args = process.argv.slice(2);
   if (args.length !== 1 || args[0].startsWith("-")) {
-    console.error("usage: yaml2jsonld.js manifest-ld.yaml > manifest.jsonld");
+    console.error("usage: manifest-ld-to-legacy-jsonld.js manifest-ld.yaml > manifest.jsonld");
     process.exit(1);
   }
   const Path = require("path");

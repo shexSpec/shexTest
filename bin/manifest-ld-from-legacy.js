@@ -1,10 +1,10 @@
 #!/usr/bin/env node
-/* ttl2yamlld - write a suite manifest's YAML-LD from its legacy
+/* manifest-ld-from-legacy - write a suite manifest's YAML-LD from its legacy
  * Turtle, carrying the comments across.  A migration tool: run once per
  * manifest; from then on manifest-ld.yaml is the text people edit, and
- * bin/yaml2ttl.js writes the Turtle from it.
+ * bin/manifest-ld-to-legacy-ttl.js writes the Turtle from it.
  *
- *   bin/ttl2yamlld.js validation/manifest.ttl -o validation/manifest-ld.yaml
+ *   bin/manifest-ld-from-legacy.js validation/manifest.ttl -o validation/manifest-ld.yaml
  *
  * The YAML is not the Turtle transliterated.  It is the manifest in the
  * format implementations use for their own examples -- the ShEx manifest
@@ -27,7 +27,11 @@
  * - the mf:entries collection and the definitions are ONE list, `entries`,
  *   of the tests themselves, in the collection's order.
  * - there is no @base: a reference is relative to the manifest, wherever it
- *   is.  (bin/yaml2ttl.js supplies the suite's conventional base.)
+ *   is.  (bin/manifest-ld-to-legacy-ttl.js supplies the suite's conventional base.)
+ * - what a test's semantic actions must print is the Test extension's to
+ *   say: the manifest binds that extension's scope, as implementations'
+ *   examples bind an extension's, and an entry writes `tst:parms: {prints:
+ *   [...]}` where the Turtle had mf:extensionResults.
  *
  * It is deliberately NOT parse-to-a-graph-and-serialize: a graph has no
  * comments, and the manifests' comments (section markers, TODO lists,
@@ -40,20 +44,20 @@
  * among the definitions before the definition it preceded (a section's
  * closing `## }` marker after the one it followed).
  *
- * bin/manifest-terms.js is the table of which legacy predicate becomes
+ * bin/manifest-ld-terms.js is the table of which legacy predicate becomes
  * which key, shared with the scripts that go the other way.
  */
 "use strict";
 
 const Fs = require("fs");
 const Path = require("path");
-const {PREFIXES, TERMS, TYPES, CONTEXTS, writeAssociation} = require("./manifest-terms.js");
+const {PREFIXES, TERMS, TYPES, CONTEXTS, SCOPES, withoutExtension, printsFromLegacy, writeAssociation} = require("./manifest-ld-terms.js");
 
 // --- arguments ------------------------------------------------------------------
 
 const args = process.argv.slice(2);
 if (args.length === 0 || args.includes("--help") || args.includes("-h")) {
-  console.error("usage: ttl2yamlld.js manifest.ttl [-o manifest-ld.yaml]");
+  console.error("usage: manifest-ld-from-legacy.js manifest.ttl [-o manifest-ld.yaml]");
   process.exit(args.length === 0 ? 1 : 0);
 }
 const optionValue = (flag) => {
@@ -351,6 +355,10 @@ function convert (text) {
       if (o.type !== "iri")
         oops(o, `${row.legacy} wants an IRI`);
       return scalar(o.value, {flow});
+    case "negotiable":
+      if (o.type !== "iri")
+        oops(o, `${row.legacy} wants an IRI`);
+      return scalar(withoutExtension(o.value), {flow});
     case "term":
       if (o.type === "iri")
         return scalar(o.value, {flow});
@@ -389,9 +397,8 @@ function convert (text) {
 
   /** the statements of a test (or of its action node, or of a member of its
    * extensionResults), as the keys of a YAML mapping at `indent`.  `where`
-   * is which rows of the table apply; `sort` whether this is a validation
-   * test or a schema test */
-  const emitStatements = (indent, statements, where, sort, skip) => {
+   * is which rows of the table apply */
+  const emitStatements = (indent, statements, where, skip) => {
     for (const s of statements) {
       if (s.closing) {
         s.closing.forEach(c => emitComment(indent, c));
@@ -409,34 +416,51 @@ function convert (text) {
           oops(s.verb, "mf:action wants one blank node");
         if (trail)
           emit(indent, trail.trim());
-        emitAction(indent, s.objects[0].statements, sort);
+        emitAction(indent, s.objects[0].statements);
         continue;
       }
-      const rows = (byLegacy.get(predicate) || []).filter(r => r.in === where && (!r.only || r.only === sort));
+      const rows = (byLegacy.get(predicate) || []).filter(r => r.in === where);
       if (rows.length !== 1)
         oops(s.verb, `no place in the YAML for ${s.verb.value} ${where === "test" ? "on a test" : "in " + where}`);
       const row = rows[0];
       const key = /^[A-Za-z_][\w.-]*(?::[\w.-]+)?$/.test(row.key) ? row.key : JSON.stringify(row.key);
       if (row.key.includes(":"))
         keyPrefixes.add(row.key.split(":")[0]);   // bound in the @context, below
-      if (row.kind === "list") {
+      if (row.kind === "prints") {
+        // the Test extension's scope: each result node's mf:extension and
+        // mf:prints become one member of its prints
         if (s.objects.length !== 1 || s.objects[0].type !== "list")
           oops(s.verb, `${row.legacy} wants a collection`);
         emit(indent, `${key}:${trail}`);
+        emit(indent + 2, "prints:");
         for (const member of s.objects[0].members) {
-          (member.lead || []).forEach(c => emitComment(indent + 2, c));
+          (member.lead || []).forEach(c => emitComment(indent + 4, c));
           if (member.type !== "node")
             oops(s.verb, `${row.legacy} wants a collection of nodes`);
-          const mark = out.length;
-          emitStatements(indent + 4, member.statements, "ext", sort);
-          // the mapping's first key takes the list item's dash
-          for (let i = mark; i < out.length; ++i)
-            if (out[i] !== "" && !out[i].trimStart().startsWith("#")) {
-              out[i] = " ".repeat(indent + 2) + "- " + out[i].slice(indent + 4);
-              break;
+          const result = {};
+          for (const st of member.statements) {
+            if (st.closing) {
+              st.closing.forEach(c => emitComment(indent + 4, c));
+              continue;
             }
+            (st.lead || []).forEach(c => emitComment(indent + 4, c));
+            const predicate = expand(st.verb);
+            const local = predicate.startsWith(MF) ? predicate.slice(MF.length) : null;
+            if ((local !== "extension" && local !== "prints") || st.objects.length !== 1 || local in result)
+              oops(st.verb, `${row.legacy} wants members of one mf:extension and one mf:prints`);
+            result[local] = local === "extension" ? expand(st.objects[0]) : st.objects[0].value;
+            if (st.trail)
+              emitComment(indent + 4, st.trail);
+          }
+          if (!("extension" in result && "prints" in result))
+            oops(s.verb, `${row.legacy} wants members of one mf:extension and one mf:prints`);
+          const [line] = printsFromLegacy([result]);
+          emit(indent + 4, "- " + (typeof line === "string" ? JSON.stringify(line)
+                                   : `{extension: ${JSON.stringify(line.extension)}, line: ${JSON.stringify(line.line)}}`));
+          if (member.trail)
+            emitComment(indent + 4, member.trail);
         }
-        (s.objects[0].closing || []).forEach(c => emitComment(indent + 2, c));
+        (s.objects[0].closing || []).forEach(c => emitComment(indent + 4, c));
       } else if (row.kind === "names") {
         const names = s.objects.map(o => {
           const iri = expand(o);
@@ -457,12 +481,12 @@ function convert (text) {
   /** an action node's contents, as the entry's own.  A focus and a shape
    * that are IRIs are `node` and `shape`; a blank node or a literal among
    * them cannot be a reference, so the pair is said as a query map */
-  const emitAction = (indent, statements, sort) => {
+  const emitAction = (indent, statements) => {
     const of = (local) => statements.find(s => s.verb && expand(s.verb) === PREFIXES.sht + local);
     const focus = of("focus"), shape = of("shape");
     const isIri = (s) => s.objects.length === 1 && s.objects[0].type === "iri";
     if (!focus || (isIri(focus) && (!shape || isIri(shape)))) {
-      emitStatements(indent, statements, "action", sort);
+      emitStatements(indent, statements, "action");
       return;
     }
     const termOf = (o) => {
@@ -481,7 +505,7 @@ function convert (text) {
     };
     const association = writeAssociation({node: termOf(focus.objects[0]), shape: shape ? termOf(shape.objects[0]) : null});
     let written = false;
-    emitStatements(indent, statements, "action", sort, (s, predicate, trail) => {
+    emitStatements(indent, statements, "action", (s, predicate, trail) => {
       if (s !== focus && s !== shape)
         return false;
       if (!written) {
@@ -588,7 +612,7 @@ function convert (text) {
       emit(2, `- "@id": ${JSON.stringify(id)}`);
       emit(4, `name: ${scalar(name)}`);
     }
-    emitStatements(4, statements, "test", type.sort, (s, predicate, trail) => {
+    emitStatements(4, statements, "test", (s, predicate, trail) => {
       if (predicate === MF + "name") {
         if (trail)
           emit(4, trail.trim());
@@ -629,8 +653,12 @@ function convert (text) {
       oops(def.block.subject, `${id} is defined and not listed in mf:entries`);
   after.forEach(c => emitComment(0, c));
   // a key written as a compact IRI (mf:comment, as the Turtle had it) is a
-  // term of neither vocabulary: the manifest binds its prefix itself
-  out.splice(contextEnd, 0, ...[...keyPrefixes].sort().map(p => `  - ${p}: ${PREFIXES[p]}`));
+  // term of neither vocabulary: the manifest binds its prefix itself.  A
+  // scope's key (tst:parms) binds its prefix and, beside it, the term whose
+  // property-scoped @context is the scope's context
+  out.splice(contextEnd, 0, ...[...keyPrefixes].sort().flatMap(p => p in SCOPES
+    ? [`  - ${p}: ${SCOPES[p].namespace}`, `    ${p}:parms: {"@context": ${SCOPES[p].context}}`]
+    : [`  - ${p}: ${PREFIXES[p]}`]));
   return out.join("\n") + "\n";
 }
 

@@ -1,4 +1,4 @@
-/* manifest-terms - the correspondence between this suite's YAML-LD
+/* manifest-ld-terms - the correspondence between this suite's YAML-LD
  * manifests and the legacy Turtle.
  *
  * The YAML-LD manifests (manifest-ld.yaml in each suite directory) are written
@@ -7,27 +7,42 @@
  * vocabulary (https://www.w3.org/ns/shex-test: what a conformance test
  * says beyond an entry of the first; vocab/test-vocab.csv).  A key written
  * as a compact IRI (mf:comment, carried as the Turtle had it) has its
- * prefix bound in the manifest's own @context.  The legacy manifest.ttl is the
+ * prefix bound in the manifest's own @context; a scope's key (tst:parms,
+ * the Test extension's, SCOPES below) has its prefix and its context bound
+ * there, as implementations' examples bind an extension's.  The legacy
+ * manifest.ttl is the
  * SPARQL WG's test-manifest format: mf:Manifest and mf:entries, each test
  * typed sht:ValidationTest, sht:ValidationFailure, ... with its inputs in
  * an mf:action node.
  *
- * bin/ttl2yamlld.js reads this table left to right (to write the YAML from
- * the Turtle, once, with its comments); bin/yaml2ttl.js and
- * bin/yaml2jsonld.js read it right to left (to write the legacy files from
+ * bin/manifest-ld-from-legacy.js reads this table left to right (to write the YAML from
+ * the Turtle, once, with its comments); bin/manifest-ld-to-legacy-ttl.js and
+ * bin/manifest-ld-to-legacy-jsonld.js read it right to left (to write the legacy files from
  * the YAML, from now on).
  *
  * What a row says: `key` in an entry is `legacy` in the Turtle, on the test
- * itself (`in: "test"`), in its mf:action node (`"action"`), or in a member
- * of its mf:extensionResults list (`"ext"`).  `kind` is how the value is
- * written:
+ * itself (`in: "test"`) or in its mf:action node (`"action"`).  `kind` is
+ * how the value is written:
  *   iri     an IRI reference, as written (relative stays relative)
+ *   negotiable
+ *           a reference to the schema without its representation's
+ *           extension: the Turtle's <../schemas/1dot.shex> is written
+ *           ../schemas/1dot, so that a server can negotiate the
+ *           representation and a reader can ask for the one it wants
+ *           (shex.js tries .shex, .json and .ttl, in that order).  The
+ *           suite's schemas have always been ShExC files, so the legacy
+ *           writers put the .shex back (withoutExtension / withShExC, below)
  *   term    an IRI, a blank node ("_:x"), or a literal ({"@value", "@type"})
  *   names   sht: names without their namespace, as a list
  *   mfname  an mf: name without its namespace
  *   text    a string
  *   number  an integer
- *   list    a collection of nodes, as a list of mappings
+ *   prints  the Test extension's scope, `tst:parms: {prints: [...]}`: each
+ *           member a line one of the extension's print(...) actions emits,
+ *           in order -- a string when the action was dispatched on the
+ *           extension's own IRI, else {extension, line} -- where the
+ *           Turtle has a collection of [mf:extension <iri>; mf:prints "..."]
+ *           (TEST_EXTENSION, SCOPES, printsFromLegacy and printsToLegacy)
  * A validation test's node and shape are IRIs.  A focus node that is a
  * blank node or a literal (or a shape that is a blank node) cannot be: read
  * as JSON-LD, a blank node's label is lost and a literal is not a
@@ -38,9 +53,9 @@
  * Several values of one predicate are a list.  A reference to another test
  * is written as the Turtle wrote it, "#name": an entry is named, and
  * <manifest>#<name> is the IRI the generated Turtle gives it.
- * `only` restricts a row to entries of that sort when a key serves two
- * (schemaURL is an action's sht:schema in a validation test and the test's
- * own sx:shex in a schema test).
+ * A schema test names each representation of its schema outright --
+ * shexcURL, shexjURL, shexrURL -- since the representations are what it
+ * tests; only a validation test's schema is negotiable.
  */
 "use strict";
 
@@ -59,7 +74,7 @@ const TERMS = [
   {key: "comment",          legacy: "rdfs:comment",        in: "test",   kind: "text"},
   {key: "mf:comment",       legacy: "mf:comment",          in: "test",   kind: "text"},
   {key: "approval",         legacy: "mf:status",           in: "test",   kind: "mfname"},
-  {key: "schemaURL",        legacy: "sht:schema",          in: "action", kind: "iri", only: "validation"},
+  {key: "schemaURL",        legacy: "sht:schema",          in: "action", kind: "negotiable"},
   {key: "shape",            legacy: "sht:shape",           in: "action", kind: "term"},
   {key: "dataURL",          legacy: "sht:data",            in: "action", kind: "iri"},
   {key: "node",             legacy: "sht:focus",           in: "action", kind: "term"},
@@ -67,13 +82,11 @@ const TERMS = [
   {key: "semActsURL",       legacy: "sht:semActs",         in: "action", kind: "iri"},
   {key: "shapeExternsURL",  legacy: "sht:shapeExterns",    in: "action", kind: "iri"},
   {key: "resultURL",        legacy: "mf:result",           in: "test",   kind: "iri"},
-  {key: "extensionResults", legacy: "mf:extensionResults", in: "test",   kind: "list"},
-  {key: "extension",        legacy: "mf:extension",        in: "ext",    kind: "iri"},
-  {key: "prints",           legacy: "mf:prints",           in: "ext",    kind: "text"},
+  {key: "tst:parms",        legacy: "mf:extensionResults", in: "test",   kind: "prints"},
   {key: "wasDerivedFrom",   legacy: "prov:wasDerivedFrom", in: "test",   kind: "iri"},
   {key: "seeAlso",          legacy: "rdfs:seeAlso",        in: "test",   kind: "iri"},
   {key: "sameSemanticsAs",  legacy: "mf:sameSemanticsAs",  in: "test",   kind: "iri"},
-  {key: "schemaURL",        legacy: "sx:shex",             in: "test",   kind: "iri", only: "schema"},
+  {key: "shexcURL",         legacy: "sx:shex",             in: "test",   kind: "iri"},
   {key: "shexjURL",         legacy: "sx:json",             in: "test",   kind: "iri"},
   {key: "shexrURL",         legacy: "sx:ttl",              in: "test",   kind: "iri"},
   {key: "startRow",         legacy: "mf:startRow",         in: "test",   kind: "number"},
@@ -108,6 +121,53 @@ const baseOf = (dirName) => `https://raw.githubusercontent.com/shexSpec/shexTest
 /** the YAML's two contexts: the manifest vocabulary, then the test vocabulary */
 const CONTEXTS = ["https://www.w3.org/ns/shex-manifest.jsonld", "https://www.w3.org/ns/shex-test.jsonld"];
 
+/** a validation test's schema is named without its representation's
+ * extension (kind `negotiable`, above).  The suite's schemas have always
+ * been ShExC files: the Turtle's .shex comes off in the YAML... */
+const SHEXC = ".shex";
+function withoutExtension (iri) {
+  if (!iri.endsWith(SHEXC))
+    throw new Error(`a validation test's sht:schema is expected to be a ShExC file, not ${JSON.stringify(iri)}`);
+  return iri.slice(0, -SHEXC.length);
+}
+/** ...and goes back on in the Turtle and in the legacy JSON */
+function withShExC (ref) {
+  if (/\.(?:shex|json|ttl)$/.test(ref))
+    throw new Error(`a validation test's schemaURL names the schema without its representation's extension, not ${JSON.stringify(ref)}`);
+  return ref + SHEXC;
+}
+
+/** the Test extension, http://shex.io/extensions/Test/, whose print(...)
+ * lines the suite's semantic-action tests expect.  What those actions must
+ * print is the extension's to say, so its manifest vocabulary is a scope
+ * the manifest binds, the way implementations' examples bind an
+ * extension's: in the @context, `tst: http://shex.io/extensions/Test/#` and,
+ * beside it, `tst:parms: {"@context": <the scope's context>}`; in an entry,
+ * `tst:parms: {prints: [...]}` where the Turtle has mf:extensionResults */
+const TEST_EXTENSION = "http://shex.io/extensions/Test/";
+const SCOPES = {
+  tst: {namespace: "http://shex.io/extensions/Test/#",
+        context: "https://shexspec.github.io/extensions/Test/manifest-context.jsonld"},
+};
+
+/** the Turtle's results, each {extension, prints}, as the scope's prints:
+ * a line printed by the extension's own IRI is a string; one printed by
+ * another IRI in its namespace (the suite's #a, #b, #c) keeps that IRI */
+function printsFromLegacy (results) {
+  return results.map(r => {
+    if (!r.extension.startsWith(TEST_EXTENSION))
+      throw new Error(`an mf:extension of ${r.extension} has no place in the Test extension's scope`);
+    return r.extension === TEST_EXTENSION ? r.prints : {extension: r.extension, line: r.prints};
+  });
+}
+/** ...and back, from the entry's `tst:parms` mapping */
+function printsToLegacy (parms, where) {
+  if (!parms || Object.keys(parms).join() !== "prints" || !Array.isArray(parms.prints))
+    throw new Error(`${where}: tst:parms wants {prints: [...]}, not ${JSON.stringify(parms).slice(0, 60)}`);
+  return parms.prints.map(p => typeof p === "string" ? {extension: TEST_EXTENSION, prints: p}
+                          : {extension: p.extension, prints: p.line});
+}
+
 /** one ShapeMap association as its node and shape: {node, shape}, each
  * {iri} | {bnode} | {value, datatype?, language?}; shape null for START */
 function parseAssociation (text) {
@@ -134,4 +194,5 @@ function writeAssociation ({node, shape}) {
   return term(node) + "@" + (shape === null ? "START" : term(shape));
 }
 
-module.exports = {PREFIXES, TERMS, TYPES, typeOf, baseOf, CONTEXTS, parseAssociation, writeAssociation};
+module.exports = {PREFIXES, TERMS, TYPES, typeOf, baseOf, CONTEXTS, withoutExtension, withShExC,
+                  TEST_EXTENSION, SCOPES, printsFromLegacy, printsToLegacy, parseAssociation, writeAssociation};

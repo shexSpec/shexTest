@@ -8,7 +8,7 @@ entries:
   - name: "1MissingRef"
     schemaError: structure
     approval: Proposed
-    schemaURL: "1MissingRef.shex"
+    shexcURL: "1MissingRef.shex"
     startRow: 3
     startColumn: 24
     endRow: 4
@@ -17,7 +17,7 @@ entries:
   - name: "1focusMissingRefdot"
     schemaError: structure
     approval: Proposed
-    schemaURL: "1focusMissingRefdot.shex"
+    shexcURL: "1focusMissingRefdot.shex"
     startRow: 2
     startColumn: 22
     endRow: 3
@@ -26,7 +26,7 @@ entries:
   - name: "1focusRefANDSelfdot"
     schemaError: structure
     approval: Proposed
-    schemaURL: "1focusRefANDSelfdot.shex"
+    shexcURL: "1focusRefANDSelfdot.shex"
     startRow: 4
     startColumn: 6
     endRow: 5
@@ -35,7 +35,7 @@ entries:
   - name: includeExpressionNotFound
     schemaError: structure
     approval: Proposed
-    schemaURL: includeExpressionNotFound.shex
+    shexcURL: includeExpressionNotFound.shex
     startRow: 3
     startColumn: 3
     endRow: 4
@@ -44,7 +44,7 @@ entries:
   - name: includeSimpleShape
     schemaError: structure
     approval: Proposed
-    schemaURL: includeSimpleShape.shex
+    shexcURL: includeSimpleShape.shex
     startRow: 3
     startColumn: 3
     endRow: 4
@@ -53,7 +53,7 @@ entries:
   - name: includeNonSimpleShape
     schemaError: structure
     approval: Proposed
-    schemaURL: includeNonSimpleShape.shex
+    shexcURL: includeNonSimpleShape.shex
     startRow: 3
     startColumn: 3
     endRow: 4
@@ -62,7 +62,7 @@ entries:
   - name: includeWithCardinality
     schemaError: structure
     approval: Proposed
-    schemaURL: includeWithCardinality.shex
+    shexcURL: includeWithCardinality.shex
     startRow: 6
     startColumn: 3
     endRow: 7
@@ -71,7 +71,7 @@ entries:
   - name: includeWithLabel
     schemaError: structure
     approval: Proposed
-    schemaURL: includeWithLabel.shex
+    shexcURL: includeWithLabel.shex
     startRow: 4
     startColumn: 3
     endRow: 5
@@ -82,7 +82,7 @@ entries:
     trait: [FailedStratifiedNegation]
     mf:comment: ":S NOT { :a { :b @:S } }"
     approval: Approved
-    schemaURL: Cycle1Negation1.shex
+    shexcURL: Cycle1Negation1.shex
     startRow: 6
     startColumn: 8
     endRow: 7
@@ -93,7 +93,7 @@ entries:
     trait: [FailedStratifiedNegation]
     mf:comment: ":S { :a { :b NOT @:S } }"
     approval: Approved
-    schemaURL: Cycle1Negation2.shex
+    shexcURL: Cycle1Negation2.shex
     startRow: 6
     startColumn: 8
     endRow: 7
@@ -104,7 +104,7 @@ entries:
     trait: [FailedStratifiedNegation]
     mf:comment: ":S { :a NOT { :b @:S } }"
     approval: Approved
-    schemaURL: Cycle1Negation3.shex
+    shexcURL: Cycle1Negation3.shex
     startRow: 6
     startColumn: 8
     endRow: 7
@@ -115,7 +115,7 @@ entries:
     trait: [FailedStratifiedNegation]
     mf:comment: ":S ( (NOT @:T) AND (NOT @:U) ) :T { :a @:S } :U { :b . }"
     approval: Approved
-    schemaURL: TwoNegation.shex
+    shexcURL: TwoNegation.shex
     startRow: 8
     startColumn: 6
     endRow: 9
@@ -126,7 +126,7 @@ entries:
     trait: [FailedStratifiedNegation]
     mf:comment: ":S ( (NOT @:T) AND @:U ) :T { :a NOT @:S } :U { :b @:S }"
     approval: Proposed
-    schemaURL: TwoNegation2.shex
+    shexcURL: TwoNegation2.shex
     startRow: 8
     startColumn: 6
     endRow: 9
@@ -137,7 +137,7 @@ entries:
     trait: [FailedStratifiedNegation]
     mf:comment: ":S NOT { :a @:S }"
     approval: Approved
-    schemaURL: Cycle2Negation.shex
+    shexcURL: Cycle2Negation.shex
     startRow: 5
     startColumn: 6
     endRow: 6
@@ -148,7 +148,7 @@ entries:
     trait: [FailedStratifiedNegation]
     mf:comment: ":S EXTRA :a { :a @:S }"
     approval: Approved
-    schemaURL: Cycle2Extra.shex
+    shexcURL: Cycle2Extra.shex
     startRow: 5
     startColumn: 6
     endRow: 6
@@ -157,7 +157,7 @@ entries:
   - name: Cycle2ExtendsNegation
     schemaError: structure
     approval: Proposed
-    schemaURL: Cycle2ExtendsNegation.shex
+    shexcURL: Cycle2ExtendsNegation.shex
     startRow: 5
     startColumn: 8
     endRow: 5
@@ -166,7 +166,7 @@ entries:
   - name: Cycle1Extends
     schemaError: structure
     approval: Proposed
-    schemaURL: Cycle1Extends.shex
+    shexcURL: Cycle1Extends.shex
     startRow: 5
     startColumn: 12
     endRow: 5
@@ -175,7 +175,7 @@ entries:
   - name: Cycle2Extends
     schemaError: structure
     approval: Proposed
-    schemaURL: Cycle2Extends.shex
+    shexcURL: Cycle2Extends.shex
     startRow: 6
     startColumn: 12
     endRow: 6
@@ -184,7 +184,7 @@ entries:
   - name: Cycle2ExtendsOr
     schemaError: structure
     approval: Proposed
-    schemaURL: Cycle2ExtendsOr.shex
+    shexcURL: Cycle2ExtendsOr.shex
     startRow: 15
     startColumn: 12
     endRow: 15

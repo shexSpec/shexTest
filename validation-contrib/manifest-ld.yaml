@@ -18,7 +18,7 @@ entries:
     trait: [Repair, NonDotCardinality]
     comment: "repair a cardinality shortfall: <S1>{ <p1> .{2} } on { <x> <p1> <o1> } is one <p1> short"
     approval: Approved
-    schemaURL: ../schemas-contrib/repairCard.shex
+    schemaURL: ../schemas-contrib/repairCard
     shape: http://a.example/S1
     dataURL: Ix_Ip1_Io1.ttl
     node: http://a.example/x
@@ -28,7 +28,7 @@ entries:
     trait: [Repair]
     comment: "repair offers the choice the language offers: <S1>{ <p1> . | <p2> . } with neither present"
     approval: Approved
-    schemaURL: ../schemas-contrib/repairChoice.shex
+    schemaURL: ../schemas-contrib/repairChoice
     shape: http://a.example/S1
     dataURL: Ix_Ip9_Io9.ttl
     node: http://a.example/x
@@ -38,7 +38,7 @@ entries:
     trait: [Repair, Closed]
     comment: "repair a closed shape's extra arc: <S1> CLOSED { <p1> . } on { <x> <p1> <o1>; <p2> <o2> } must drop <p2>"
     approval: Approved
-    schemaURL: ../schemas-contrib/repairClosed.shex
+    schemaURL: ../schemas-contrib/repairClosed
     shape: http://a.example/S1
     dataURL: Ix_Ip1_Io1;Ip2_Io2.ttl
     node: http://a.example/x
@@ -48,7 +48,7 @@ entries:
     trait: [Repair]
     comment: "repair a missing property: <S1>{ <p1> . ; <p2> . } on { <x> <p1> <o1> } needs a <p2>"
     approval: Approved
-    schemaURL: ../schemas-contrib/repairMissingArc.shex
+    schemaURL: ../schemas-contrib/repairMissingArc
     shape: http://a.example/S1
     dataURL: Ix_Ip1_Io1.ttl
     node: http://a.example/x
@@ -60,7 +60,7 @@ entries:
     trait: [Feasibility]
     comment: "a homeless triple and a missing property: <S1>{ <p1> . ; ( <p2> . ; <p3> . )? } on { <x> <p3> <o> }"
     approval: Approved
-    schemaURL: ../schemas-contrib/feasHomeless.shex
+    schemaURL: ../schemas-contrib/feasHomeless
     shape: http://a.example/S1
     dataURL: Ix_Ip3_Io.ttl
     node: http://a.example/x
@@ -70,7 +70,7 @@ entries:
     trait: [Feasibility, Datatype]
     comment: "a datatype mismatch reported as one: <S1>{ <p1> xsd:integer } on { <x> <p1> \"abc\" }"
     approval: Approved
-    schemaURL: ../schemas-contrib/feasDatatype.shex
+    schemaURL: ../schemas-contrib/feasDatatype
     shape: http://a.example/S1
     dataURL: Ix_Ip1_Labc.ttl
     node: http://a.example/x
@@ -80,7 +80,7 @@ entries:
     trait: [Feasibility]
     comment: "a node-kind mismatch reported as one: <S1>{ <p1> IRI } on { <x> <p1> \"lit\" }"
     approval: Approved
-    schemaURL: ../schemas-contrib/feasNodeKind.shex
+    schemaURL: ../schemas-contrib/feasNodeKind
     shape: http://a.example/S1
     dataURL: Ix_Ip1_Llit.ttl
     node: http://a.example/x
@@ -90,7 +90,7 @@ entries:
     trait: [Feasibility]
     comment: "a pattern mismatch reported as one: <S1>{ <p1> /^ab/ } on { <x> <p1> \"xy\" }"
     approval: Approved
-    schemaURL: ../schemas-contrib/feasPattern.shex
+    schemaURL: ../schemas-contrib/feasPattern
     shape: http://a.example/S1
     dataURL: Ix_Ip1_Lxy.ttl
     node: http://a.example/x

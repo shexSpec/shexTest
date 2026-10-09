@@ -1,14 +1,14 @@
 #!/usr/bin/env node
-/* yaml2ttl - write a suite manifest's legacy Turtle from its YAML-LD.
+/* manifest-ld-to-legacy-ttl - write a suite manifest's legacy Turtle from its YAML-LD.
  *
- *   cd validation && ../bin/yaml2ttl.js manifest-ld.yaml > manifest.ttl
+ *   cd validation && ../bin/manifest-ld-to-legacy-ttl.js manifest-ld.yaml > manifest.ttl
  *
  * manifest-ld.yaml is the text people edit: the manifest in the ShEx manifest
  * vocabulary, the format implementations use for their own examples.  The
  * Turtle -- the SPARQL WG's test-manifest format, with sht: types and an
  * mf:action node per test -- is what implementations of the suite have
  * always read, so it is still written, from the YAML, by putting back what
- * the YAML does without (bin/manifest-terms.js is the table):
+ * the YAML does without (bin/manifest-ld-terms.js is the table):
  *
  * - the type a test's `status` (or `schemaError`, or neither) stands for;
  * - <#name> and mf:name, both from `name`;
@@ -19,14 +19,14 @@
  *
  * That this loses nothing is checked, not assumed: the graph of the Turtle
  * written here is the graph of the Turtle the YAML was converted from
- * (shex.js, packages/shex-manifest/test/TestSuiteManifest-test.js).
+ * (bin/manifest-ld-legacy-check.js, in `npm test`).
  *
  * As a module, `toTurtle(doc, dirName)` takes the parsed YAML and the name
  * of the suite directory it is in.
  */
 "use strict";
 
-const {PREFIXES, TERMS, typeOf, baseOf, parseAssociation} = require("./manifest-terms.js");
+const {PREFIXES, TERMS, typeOf, baseOf, withShExC, printsToLegacy, parseAssociation} = require("./manifest-ld-terms.js");
 
 const string = (s) => '"' + String(s).replace(/[\\"\n\r\t]/g, c => ({"\\": "\\\\", '"': '\\"', "\n": "\\n", "\r": "\\r", "\t": "\\t"})[c]) + '"';
 const iri = (v) => `<${v}>`;
@@ -39,6 +39,7 @@ const term = (t) => "iri" in t ? iri(t.iri) : "bnode" in t ? t.bnode
 function object (value, row) {
   switch (row.kind) {
   case "iri":    return asArray(value).map(iri).join(", ");
+  case "negotiable": return asArray(value).map(v => iri(withShExC(v))).join(", ");
   case "term":   return asArray(value).map(iri).join(", ");
   case "names":  return asArray(value).map(n => "sht:" + n).join(" , ");
   case "mfname": return "mf:" + value;
@@ -82,21 +83,15 @@ function toTurtle (doc, dirName) {
         action.push(`      sht:focus ${term(node)}`);
         continue;
       }
-      const rows = TERMS.filter(r => r.key === key && r.in !== "ext" && (!r.only || r.only === type.sort));
+      const rows = TERMS.filter(r => r.key === key);
       if (rows.length !== 1)
         throw new Error(`${entry.name}: no legacy predicate for "${key}"`);
       const row = rows[0];
       used.add(row.legacy.split(":")[0]);
-      if (row.kind === "list") {
-        const members = value.map(member => {
-          const inner = Object.entries(member).map(([k, v]) => {
-            const r = TERMS.find(r => r.key === k && r.in === "ext");
-            if (!r)
-              throw new Error(`${entry.name}: no legacy predicate for "${k}" in ${key}`);
-            return `        ${r.legacy} ${object(v, r)}`;
-          });
-          return "      [\n" + inner.join(" ;\n") + "\n      ]";
-        });
+      if (row.kind === "prints") {
+        // the Test extension's scope, as the Turtle's collection of results
+        const members = printsToLegacy(value, entry.name).map(m =>
+          `      [\n        mf:extension ${iri(m.extension)} ;\n        mf:prints ${string(m.prints)}\n      ]`);
         lines.push(`${row.legacy} (\n${members.join("\n")}\n    )`);
       } else if (row.in === "action") {
         if (actionAt === -1) {
@@ -118,7 +113,7 @@ function toTurtle (doc, dirName) {
     if (used.has(prefix))
       out.push(`@prefix ${prefix}: ${iri(PREFIXES[prefix])} .`);
   out.push("");
-  out.push("# GENERATED from manifest-ld.yaml by bin/yaml2ttl.js; edit that, not this.");
+  out.push("# GENERATED from manifest-ld.yaml by bin/manifest-ld-to-legacy-ttl.js; edit that, not this.");
   out.push("");
   out.push("<> a mf:Manifest ;");
   if ("comment" in doc)
@@ -136,7 +131,7 @@ module.exports = {toTurtle};
 if (require.main === module) {
   const args = process.argv.slice(2);
   if (args.length !== 1 || args[0].startsWith("-")) {
-    console.error("usage: yaml2ttl.js manifest-ld.yaml > manifest.ttl");
+    console.error("usage: manifest-ld-to-legacy-ttl.js manifest-ld.yaml > manifest.ttl");
     process.exit(1);
   }
   const Path = require("path");

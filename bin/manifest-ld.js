@@ -18,7 +18,7 @@
  *                       the order the YAML gives it
  *
  * (`manifest`, the original structure, is manifest.ttl and manifest.jsonld:
- * bin/genJSON.js, bin/yaml2ttl.js and bin/yaml2jsonld.js write those.)
+ * bin/genJSON.js, bin/manifest-ld-to-legacy-ttl.js and bin/manifest-ld-to-legacy-jsonld.js write those.)
  *
  * All three leave references as the YAML wrote them, relative, so each means
  * the same wherever it is served.  The Turtle is written from the YAML
@@ -27,7 +27,10 @@
  * and https://www.w3.org/ns/shex-test.jsonld -- and before anything is
  * written it is checked to be the graph a JSON-LD processor reads from the
  * YAML (the same tree; the processor in safe mode, so a key no context
- * defines is an error rather than dropped).
+ * defines is an error rather than dropped).  A scope a manifest binds for
+ * an extension (validation's `tst:parms`, the Test extension's) is read
+ * from a sibling shexSpec/extensions checkout, or fetched from where it is
+ * published.
  */
 "use strict";
 
@@ -51,9 +54,42 @@ const CONTEXTS = Object.fromEntries(Object.entries({
   process.execPath, [Path.join(ROOT, "vocab", "mk_vocab.js"), "--vocab", vocab, "--format", "context"],
   {encoding: "utf8"}))]));
 
-/** what a manifest's @context defines: each term's IRI, @type and
- * @container, and the prefixes (a term whose IRI ends in a gen-delim) */
-function contextOf (contextList, where) {
+/** the scope contexts a manifest binds (`p:parms: {"@context": url}` in its
+ * @context), by URL: an extension's, published beside its spec at
+ * https://shexspec.github.io/extensions/<X>/manifest-context.jsonld.  Read
+ * from a sibling shexSpec/extensions checkout when there is one (ahead of
+ * publication, or offline), else fetched */
+async function loadScopes (contextList) {
+  const scopes = {};
+  for (const c of asArray(contextList)) {
+    if (c === null || typeof c !== "object")
+      continue;
+    for (const def of Object.values(c)) {
+      const url = def !== null && typeof def === "object" && typeof def["@context"] === "string" ? def["@context"] : null;
+      if (url === null || url in scopes)
+        continue;
+      const published = /^https:\/\/shexspec\.github\.io\/extensions\/([^/]+)\/manifest-context\.jsonld$/.exec(url);
+      const checkout = published && Path.join(ROOT, "..", "extensions", published[1], "manifest-context.jsonld");
+      if (checkout && Fs.existsSync(checkout)) {
+        scopes[url] = JSON.parse(Fs.readFileSync(checkout, "utf8"));
+      } else {
+        const response = await fetch(url);
+        if (!response.ok)
+          throw Error(`${url}: ${response.status} ${response.statusText}`);
+        scopes[url] = await response.json();
+      }
+    }
+  }
+  return scopes;
+}
+
+/** what a manifest's @context defines: each term's IRI, @type, @container
+ * and property-scoped @context, and the prefixes (a term whose IRI ends in
+ * a gen-delim).  `term(key, local)` looks `key` up among `local`, the terms
+ * in force: the manifest's, or inside a scope's key (`tst:parms`) that
+ * scope's over them (`within(def, local)`), the outer names staying
+ * visible inside, as in any lexical scope */
+function contextOf (contextList, where, scopes) {
   const defs = {};
   for (const c of asArray(contextList)) {
     const ctx = typeof c === "string" ? (CONTEXTS[c] || {})["@context"] : c;
@@ -69,37 +105,45 @@ function contextOf (contextList, where) {
     const i = s.indexOf(":");
     return i > 0 && s.slice(0, i) in prefixes ? prefixes[s.slice(0, i)] + s.slice(i + 1) : s;
   };
-  const term = (key) => {
-    const d = defs[key];
+  const term = (key, local = defs) => {
+    const d = local[key];
     if (d === undefined)
       return key.includes(":") && key.slice(0, key.indexOf(":")) in prefixes ? {iri: expand(key)} : null;
     if (typeof d === "string")
       return {iri: expand(d)};
     return {iri: expand(d["@id"] || key), type: d["@type"] && d["@type"].startsWith("@") ? d["@type"] : d["@type"] && expand(d["@type"]),
-            container: d["@container"]};
+            container: d["@container"], scope: d["@context"]};
   };
-  return {term, prefixes};
+  const within = (def, local = defs) => {
+    if (def.scope === undefined)
+      return local;
+    const ctx = typeof def.scope === "string" ? (scopes[def.scope] || {})["@context"] : def.scope["@context"] || def.scope;
+    if (!ctx)
+      throw Error(`${where}: a scope context this script did not load: ${JSON.stringify(def.scope)}`);
+    return Object.assign({}, local, ctx);
+  };
+  return {term, within, prefixes};
 }
 
 /** the YAML's document as Turtle */
-function toTurtle (doc, where) {
-  const {term, prefixes} = contextOf(doc["@context"], where);
+function toTurtle (doc, where, scopes) {
+  const {term, within, prefixes} = contextOf(doc["@context"], where, scopes);
 
   // the predicates the document uses, so the Turtle declares just their prefixes
   const predicates = new Set();
-  const scan = (v) => {
+  const scan = (v, local) => {
     if (Array.isArray(v))
-      return v.forEach(scan);
+      return v.forEach(member => scan(member, local));
     if (v === null || typeof v !== "object")
       return;
     for (const [key, value] of Object.entries(v)) {
       if (key === "@context" || key === "@id")
         continue;
-      const def = term(key);
+      const def = term(key, local);
       if (def === null)
         throw Error(`${where}: "${key}" is defined by no context`);
       predicates.add(def.iri);
-      scan(value);
+      scan(value, within(def, local));
     }
   };
   scan(doc);
@@ -109,9 +153,9 @@ function toTurtle (doc, where) {
   const writer = new N3.Writer({prefixes: Object.fromEntries(used)});
   const named = [];                                 // statements of entries that have an @id, written last
 
-  const object = (def, v) => {
+  const object = (def, v, local) => {
     if (v !== null && typeof v === "object")
-      return node(v);
+      return node(v, local);
     if (typeof v === "string")
       return def.type === "@id" ? namedNode(v) : def.type ? literal(v, namedNode(def.type)) : literal(v);
     if (typeof v === "number")
@@ -120,23 +164,24 @@ function toTurtle (doc, where) {
       return literal(String(v), namedNode(XSD + "boolean"));
     throw Error(`${where}: no RDF for ${JSON.stringify(v)}`);
   };
-  const properties = (obj) => {
+  const properties = (obj, local) => {
     const out = [];
     for (const [key, value] of Object.entries(obj)) {
       if (key === "@id")
         continue;
-      const def = term(key);
-      const objects = def.container === "@list" ? [writer.list(asArray(value).map(v => object(def, v)))]
-            : asArray(value).map(v => object(def, v));
+      const def = term(key, local);
+      const inner = within(def, local);
+      const objects = def.container === "@list" ? [writer.list(asArray(value).map(v => object(def, v, inner)))]
+            : asArray(value).map(v => object(def, v, inner));
       objects.forEach(o => out.push({predicate: namedNode(def.iri), object: o}));
     }
     return out;
   };
-  const node = (obj) => {
+  const node = (obj, local) => {
     if (typeof obj["@id"] !== "string")
-      return writer.blank(properties(obj));
+      return writer.blank(properties(obj, local));
     const subject = namedNode(obj["@id"]);
-    named.push(...properties(obj).map(p => [subject, p.predicate, p.object]));
+    named.push(...properties(obj, local).map(p => [subject, p.predicate, p.object]));
     return subject;
   };
 
@@ -144,7 +189,7 @@ function toTurtle (doc, where) {
   const top = Object.assign({}, doc);
   delete top["@context"];
   delete top.entries;
-  writer.addQuad(writer.blank(properties(top)), namedNode(term("entries").iri), writer.list(doc.entries.map(node)));
+  writer.addQuad(writer.blank(properties(top)), namedNode(term("entries").iri), writer.list(doc.entries.map(e => node(e))));
   named.forEach(([s, p, o]) => writer.addQuad(s, p, o));
   let text;
   writer.end((e, r) => { if (e) throw e; text = r; });
@@ -205,12 +250,13 @@ function treeOf (quads) {
 }
 
 /** the graph a JSON-LD processor reads from the YAML, and the Turtle's, are one */
-async function sameGraph (doc, turtle, dir) {
+async function sameGraph (doc, turtle, dir, scopes) {
   const base = `http://manifest-ld.invalid/${dir}/manifest-ld`;
   const documentLoader = async (url) => {
-    if (!(url in CONTEXTS))
+    const document = CONTEXTS[url] || scopes[url];
+    if (document === undefined)
       throw Error(`${dir}: a context this script does not know: ${url}`);
-    return {contextUrl: null, documentUrl: url, document: CONTEXTS[url]};
+    return {contextUrl: null, documentUrl: url, document};
   };
   // a graph is a set: a value written twice (validation's seeAlso does) is one triple
   const distinct = (quads) => [...new Map(quads.map(q => [JSON.stringify([q.subject.termType, q.subject.value,
@@ -239,8 +285,9 @@ async function main () {
     const yamlFile = Path.join(ROOT, name, "manifest-ld.yaml");
     const doc = Yaml.load(Fs.readFileSync(yamlFile, "utf8"));
     const json = JSON.stringify(doc, null, 2) + "\n";
-    const turtle = toTurtle(doc, name);
-    const triples = await sameGraph(doc, turtle, name);
+    const scopes = await loadScopes(doc["@context"]);
+    const turtle = toTurtle(doc, name, scopes);
+    const triples = await sameGraph(doc, turtle, name, scopes);
     for (const [file, text] of [["manifest-ld.jsonld", json], ["manifest-ld.ttl", turtle]]) {
       const target = Path.join(ROOT, name, file);
       const current = Fs.existsSync(target) ? Fs.readFileSync(target, "utf8") : null;

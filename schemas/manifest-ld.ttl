@@ -7,2860 +7,2860 @@
 [ rdfs:comment "ShEx representation tests" ] shexMan:entries ([
   shexMan:name "0";
   shexTest:approval "Approved";
-  shexMan:schema <0.shex>;
+  shexTest:shexc <0.shex>;
   shexTest:shexj <0.json>;
   shexTest:shexr <0.ttl>
 ] [
   shexMan:name "1dot";
   shexTest:approval "Approved";
-  shexMan:schema <1dot.shex>;
+  shexTest:shexc <1dot.shex>;
   shexTest:shexj <1dot.json>;
   shexTest:shexr <1dot.ttl>
 ] [
   shexMan:name "open1dotclose";
   shexTest:approval "Approved";
-  shexMan:schema <open1dotclose.shex>;
+  shexTest:shexc <open1dotclose.shex>;
   shexTest:shexj <1dot.json>;
   shexTest:shexr <1dot.ttl>
 ] [
   shexMan:name "1dot-base";
   shexTest:approval "Approved";
-  shexMan:schema <1dot-base.shex>;
+  shexTest:shexc <1dot-base.shex>;
   shexTest:shexj <1dot-base.json>;
   shexTest:shexr <1dot-base.ttl>
 ] [
   shexMan:name "1dot-baseEmptyRef";
   shexTest:approval "Proposed";
-  shexMan:schema <1dot-baseEmptyRef.shex>;
+  shexTest:shexc <1dot-baseEmptyRef.shex>;
   shexTest:shexj <1dot-baseEmptyRef.json>;
   shexTest:shexr <1dot-baseEmptyRef.ttl>
 ] [
   shexMan:name "1dot-baseQueryRef";
   shexTest:approval "Proposed";
-  shexMan:schema <1dot-baseQueryRef.shex>;
+  shexTest:shexc <1dot-baseQueryRef.shex>;
   shexTest:shexj <1dot-baseQueryRef.json>;
   shexTest:shexr <1dot-baseQueryRef.ttl>
 ] [
   shexMan:name "1dot-baseDotSegments";
   shexTest:approval "Proposed";
-  shexMan:schema <1dot-baseDotSegments.shex>;
+  shexTest:shexc <1dot-baseDotSegments.shex>;
   shexTest:shexj <1dot-baseDotSegments.json>;
   shexTest:shexr <1dot-baseDotSegments.ttl>
 ] [
   shexMan:name "1dot-baseDotSegmentsTrailing";
   shexTest:approval "Proposed";
-  shexMan:schema <1dot-baseDotSegmentsTrailing.shex>;
+  shexTest:shexc <1dot-baseDotSegmentsTrailing.shex>;
   shexTest:shexj <1dot-baseDotSegmentsTrailing.json>;
   shexTest:shexr <1dot-baseDotSegmentsTrailing.ttl>
 ] [
   shexMan:name "1dotSemi";
   shexTest:approval "Approved";
-  shexMan:schema <1dotSemi.shex>;
+  shexTest:shexc <1dotSemi.shex>;
   shexTest:shexj <1dotSemi.json>;
   shexTest:shexr <1dotSemi.ttl>
 ] [
   shexMan:name "1dotLNex";
   shexTest:approval "Approved";
-  shexMan:schema <1dotLNex.shex>;
+  shexTest:shexc <1dotLNex.shex>;
   shexTest:shexj <1dotLNex.json>;
   shexTest:shexr <1dotLNex.ttl>
 ] [
   shexMan:name "1dotNS2";
   shexTest:approval "Approved";
-  shexMan:schema <1dotNS2.shex>;
+  shexTest:shexc <1dotNS2.shex>;
   shexTest:shexj <1dotNS2.json>;
   shexTest:shexr <1dotNS2.ttl>
 ] [
   shexMan:name "1dotNS2SingleComment";
   shexTest:approval "Approved";
-  shexMan:schema <1dotNS2SingleComment.shex>;
+  shexTest:shexc <1dotNS2SingleComment.shex>;
   shexTest:shexj <1dotNS2SingleComment.json>;
   shexTest:shexr <1dotNS2SingleComment.ttl>
 ] [
   shexMan:name "1dotLNexSingleComment";
   shexTest:approval "Approved";
-  shexMan:schema <1dotLNexSingleComment.shex>;
+  shexTest:shexc <1dotLNexSingleComment.shex>;
   shexTest:shexj <1dotLNexSingleComment.json>;
   shexTest:shexr <1dotLNexSingleComment.ttl>
 ] [
   shexMan:name "1dotNS2MultiComment";
   shexTest:approval "Approved";
-  shexMan:schema <1dotNS2MultiComment.shex>;
+  shexTest:shexc <1dotNS2MultiComment.shex>;
   shexTest:shexj <1dotNS2MultiComment.json>;
   shexTest:shexr <1dotNS2MultiComment.ttl>
 ] [
   shexMan:name "1dotLNexMultiComment";
   shexTest:approval "Approved";
-  shexMan:schema <1dotLNexMultiComment.shex>;
+  shexTest:shexc <1dotLNexMultiComment.shex>;
   shexTest:shexj <1dotLNexMultiComment.json>;
   shexTest:shexr <1dotLNexMultiComment.ttl>
 ] [
   shexMan:name "1dotLNdefault";
   shexTest:approval "Approved";
-  shexMan:schema <1dotLNdefault.shex>;
+  shexTest:shexc <1dotLNdefault.shex>;
   shexTest:shexj <1dotLNdefault.json>;
   shexTest:shexr <1dotLNdefault.ttl>
 ] [
   shexMan:name "1dotNSdefault";
   shexTest:approval "Approved";
-  shexMan:schema <1dotNSdefault.shex>;
+  shexTest:shexc <1dotNSdefault.shex>;
   shexTest:shexj <1dotNSdefault.json>;
   shexTest:shexr <1dotNSdefault.ttl>
 ] [
   shexMan:name "1dotLNex-HYPHEN_MINUS";
   shexTest:approval "Approved";
-  shexMan:schema <1dotLNex-HYPHEN_MINUS.shex>;
+  shexTest:shexc <1dotLNex-HYPHEN_MINUS.shex>;
   shexTest:shexj <1dotLNex-HYPHEN_MINUS.json>;
   shexTest:shexr <1dotLNex-HYPHEN_MINUS.ttl>
 ] [
   shexMan:name "bnode1dot";
   shexTest:approval "Approved";
-  shexMan:schema <bnode1dot.shex>;
+  shexTest:shexc <bnode1dot.shex>;
   shexTest:shexj <bnode1dot.json>;
   shexTest:shexr <bnode1dot.ttl>
 ] [
   shexMan:name "1inversedot";
   shexTest:approval "Approved";
-  shexMan:schema <1inversedot.shex>;
+  shexTest:shexc <1inversedot.shex>;
   shexTest:shexj <1inversedot.json>;
   shexTest:shexr <1inversedot.ttl>
 ] [
   shexMan:name "1inversedotIRI";
   shexTest:approval "Approved";
-  shexMan:schema <1inversedotIRI.shex>;
+  shexTest:shexc <1inversedotIRI.shex>;
   shexTest:shexj <1inversedotIRI.json>;
   shexTest:shexr <1inversedotIRI.ttl>
 ] [
   shexMan:name "1inversedotBNODE";
   shexTest:approval "Approved";
-  shexMan:schema <1inversedotBNODE.shex>;
+  shexTest:shexc <1inversedotBNODE.shex>;
   shexTest:shexj <1inversedotBNODE.json>;
   shexTest:shexr <1inversedotBNODE.ttl>
 ] [
   shexMan:name "1inversedotRef1";
   shexTest:approval "Approved";
-  shexMan:schema <1inversedotRef1.shex>;
+  shexTest:shexc <1inversedotRef1.shex>;
   shexTest:shexj <1inversedotRef1.json>;
   shexTest:shexr <1inversedotRef1.ttl>
 ] [
   shexMan:name "1inversedotCard2";
   shexTest:approval "Approved";
-  shexMan:schema <1inversedotCard2.shex>;
+  shexTest:shexc <1inversedotCard2.shex>;
   shexTest:shexj <1inversedotCard2.json>;
   shexTest:shexr <1inversedotCard2.ttl>
 ] [
   shexMan:name "1inversedotValueSet";
   shexTest:approval "Approved";
-  shexMan:schema <1inversedotValueSet.shex>;
+  shexTest:shexc <1inversedotValueSet.shex>;
   shexTest:shexj <1inversedotValueSet.json>;
   shexTest:shexr <1inversedotValueSet.ttl>
 ] [
   shexMan:name "1inversedotLITERAL";
   shexTest:approval "Approved";
-  shexMan:schema <1inversedotLITERAL.shex>;
+  shexTest:shexc <1inversedotLITERAL.shex>;
   shexTest:shexj <1inversedotLITERAL.json>;
   shexTest:shexr <1inversedotLITERAL.ttl>
 ] [
   shexMan:name "inverseBnodeCoref";
   shexTest:approval "Approved";
-  shexMan:schema <inverseBnodeCoref.shex>;
+  shexTest:shexc <inverseBnodeCoref.shex>;
   shexTest:shexj <inverseBnodeCoref.json>;
   shexTest:shexr <inverseBnodeCoref.ttl>
 ] [
   shexMan:name "inverseClosedDiscrim";
   shexTest:approval "Approved";
-  shexMan:schema <inverseClosedDiscrim.shex>;
+  shexTest:shexc <inverseClosedDiscrim.shex>;
   shexTest:shexj <inverseClosedDiscrim.json>;
   shexTest:shexr <inverseClosedDiscrim.ttl>
 ] [
   shexMan:name "1dotExtendsInverse";
   shexTest:approval "Approved";
-  shexMan:schema <1dotExtendsInverse.shex>;
+  shexTest:shexc <1dotExtendsInverse.shex>;
   shexTest:shexj <1dotExtendsInverse.json>;
   shexTest:shexr <1dotExtendsInverse.ttl>
 ] [
   shexMan:name "1dotInverseExtends";
   shexTest:approval "Approved";
-  shexMan:schema <1dotInverseExtends.shex>;
+  shexTest:shexc <1dotInverseExtends.shex>;
   shexTest:shexj <1dotInverseExtends.json>;
   shexTest:shexr <1dotInverseExtends.ttl>
 ] [
   shexMan:name "1dot2SameExtends";
   shexTest:approval "Approved";
-  shexMan:schema <1dot2SameExtends.shex>;
+  shexTest:shexc <1dot2SameExtends.shex>;
   shexTest:shexj <1dot2SameExtends.json>;
   shexTest:shexr <1dot2SameExtends.ttl>
 ] [
   shexMan:name "2intersectP1ValueSet";
   shexTest:approval "Approved";
-  shexMan:schema <2intersectP1ValueSet.shex>;
+  shexTest:shexc <2intersectP1ValueSet.shex>;
   shexTest:shexj <2intersectP1ValueSet.json>;
   shexTest:shexr <2intersectP1ValueSet.ttl>
 ] [
   shexMan:name "RecursionContingent";
   shexTest:approval "Approved";
-  shexMan:schema <RecursionContingent.shex>;
+  shexTest:shexc <RecursionContingent.shex>;
   shexTest:shexj <RecursionContingent.json>;
   shexTest:shexr <RecursionContingent.ttl>
 ] [
   shexMan:name "1datatypePattern";
   shexTest:approval "Approved";
-  shexMan:schema <1datatypePattern.shex>;
+  shexTest:shexc <1datatypePattern.shex>;
   shexTest:shexj <1datatypePattern.json>;
   shexTest:shexr <1datatypePattern.ttl>
 ] [
   shexMan:name "1NOTvsCard2";
   shexTest:approval "Approved";
-  shexMan:schema <1NOTvsCard2.shex>;
+  shexTest:shexc <1NOTvsCard2.shex>;
   shexTest:shexj <1NOTvsCard2.json>;
   shexTest:shexr <1NOTvsCard2.ttl>
 ] [
   shexMan:name "1NOTvsCard2Extra";
   shexTest:approval "Approved";
-  shexMan:schema <1NOTvsCard2Extra.shex>;
+  shexTest:shexc <1NOTvsCard2Extra.shex>;
   shexTest:shexj <1NOTvsCard2Extra.json>;
   shexTest:shexr <1NOTvsCard2Extra.ttl>
 ] [
   shexMan:name "1Adot";
   shexTest:approval "Approved";
-  shexMan:schema <1Adot.shex>;
+  shexTest:shexc <1Adot.shex>;
   shexTest:shexj <1Adot.json>;
   shexTest:shexr <1Adot.ttl>
 ] [
   shexMan:name "1iri";
   shexTest:approval "Approved";
-  shexMan:schema <1iri.shex>;
+  shexTest:shexc <1iri.shex>;
   shexTest:shexj <1iri.json>;
   shexTest:shexr <1iri.ttl>
 ] [
   shexMan:name "1bnode";
   shexTest:approval "Approved";
-  shexMan:schema <1bnode.shex>;
+  shexTest:shexc <1bnode.shex>;
   shexTest:shexj <1bnode.json>;
   shexTest:shexr <1bnode.ttl>
 ] [
   shexMan:name "1literal";
   shexTest:approval "Approved";
-  shexMan:schema <1literal.shex>;
+  shexTest:shexc <1literal.shex>;
   shexTest:shexj <1literal.json>;
   shexTest:shexr <1literal.ttl>
 ] [
   shexMan:name "1nonliteral";
   shexTest:approval "Approved";
-  shexMan:schema <1nonliteral.shex>;
+  shexTest:shexc <1nonliteral.shex>;
   shexTest:shexj <1nonliteral.json>;
   shexTest:shexr <1nonliteral.ttl>
 ] [
   shexMan:name "1datatype";
   shexTest:approval "Approved";
-  shexMan:schema <1datatype.shex>;
+  shexTest:shexc <1datatype.shex>;
   shexTest:shexj <1datatype.json>;
   shexTest:shexr <1datatype.ttl>
 ] [
   shexMan:name "1datatypelangString";
   shexTest:approval "Approved";
-  shexMan:schema <1datatypelangString.shex>;
+  shexTest:shexc <1datatypelangString.shex>;
   shexTest:shexj <1datatypelangString.json>;
   shexTest:shexr <1datatypelangString.ttl>
 ] [
   shexMan:name "1card2";
   shexTest:approval "Approved";
-  shexMan:schema <1card2.shex>;
+  shexTest:shexc <1card2.shex>;
   shexTest:shexj <1card2.json>;
   shexTest:shexr <1card2.ttl>
 ] [
   shexMan:name "1card25";
   shexTest:approval "Approved";
-  shexMan:schema <1card25.shex>;
+  shexTest:shexc <1card25.shex>;
   shexTest:shexj <1card25.json>;
   shexTest:shexr <1card25.ttl>
 ] [
   shexMan:name "1card2Star";
   shexTest:approval "Approved";
-  shexMan:schema <1card2Star.shex>;
+  shexTest:shexc <1card2Star.shex>;
   shexTest:shexj <1card2Star.json>;
   shexTest:shexr <1card2Star.ttl>
 ] [
   shexMan:name "1cardOpt";
   shexTest:approval "Approved";
-  shexMan:schema <1cardOpt.shex>;
+  shexTest:shexc <1cardOpt.shex>;
   shexTest:shexj <1cardOpt.json>;
   shexTest:shexr <1cardOpt.ttl>
 ] [
   shexMan:name "open1dotclosecardOpt";
   shexTest:approval "Approved";
-  shexMan:schema <open1dotclosecardOpt.shex>;
+  shexTest:shexc <open1dotclosecardOpt.shex>;
   shexTest:shexj <1cardOpt.json>;
   shexTest:shexr <1cardOpt.ttl>
 ] [
   shexMan:name "1cardPlus";
   shexTest:approval "Approved";
-  shexMan:schema <1cardPlus.shex>;
+  shexTest:shexc <1cardPlus.shex>;
   shexTest:shexj <1cardPlus.json>;
   shexTest:shexr <1cardPlus.ttl>
 ] [
   shexMan:name "1cardStar";
   shexTest:approval "Approved";
-  shexMan:schema <1cardStar.shex>;
+  shexTest:shexc <1cardStar.shex>;
   shexTest:shexj <1cardStar.json>;
   shexTest:shexr <1cardStar.ttl>
 ] [
   shexMan:name "1card0";
   shexTest:approval "Approved";
-  shexMan:schema <1card0.shex>;
+  shexTest:shexc <1card0.shex>;
   shexTest:shexj <1card0.json>;
   shexTest:shexr <1card0.ttl>
 ] [
   shexMan:name "1card1";
   shexTest:approval "Approved";
-  shexMan:schema <1card1.shex>;
+  shexTest:shexc <1card1.shex>;
   shexTest:shexj <1card1.json>;
   shexTest:shexr <1card1.ttl>
 ] [
   shexMan:name "1literalPlus";
   shexTest:approval "Approved";
-  shexMan:schema <1literalPlus.shex>;
+  shexTest:shexc <1literalPlus.shex>;
   shexTest:shexj <1literalPlus.json>;
   shexTest:shexr <1literalPlus.ttl>
 ] [
   shexMan:name "1dotRef1";
   shexTest:approval "Approved";
-  shexMan:schema <1dotRef1.shex>;
+  shexTest:shexc <1dotRef1.shex>;
   shexTest:shexj <1dotRef1.json>;
   shexTest:shexr <1dotRef1.ttl>
 ] [
   shexMan:name "1dotRefLNex1";
   shexTest:approval "Approved";
-  shexMan:schema <1dotRefLNex1.shex>;
+  shexTest:shexc <1dotRefLNex1.shex>;
   shexTest:shexj <1dotRefLNex1.json>;
   shexTest:shexr <1dotRefLNex1.ttl>
 ] [
   shexMan:name "1dotRefSpaceLNex1";
   shexTest:approval "Approved";
   shexTest:sameSemanticsAs <#1dotRefLNex1>;
-  shexMan:schema <1dotRefSpaceLNex1.shex>;
+  shexTest:shexc <1dotRefSpaceLNex1.shex>;
   shexTest:shexj <1dotRefSpaceLNex1.json>;
   shexTest:shexr <1dotRefSpaceLNex1.ttl>
 ] [
   shexMan:name "1dotRefNS1";
   shexTest:approval "Approved";
-  shexMan:schema <1dotRefNS1.shex>;
+  shexTest:shexc <1dotRefNS1.shex>;
   shexTest:shexj <1dotRefNS1.json>;
   shexTest:shexr <1dotRefNS1.ttl>
 ] [
   shexMan:name "1dotRefSpaceNS1";
   shexTest:approval "Approved";
   shexTest:sameSemanticsAs <#1dotRefNS1>;
-  shexMan:schema <1dotRefSpaceNS1.shex>;
+  shexTest:shexc <1dotRefSpaceNS1.shex>;
   shexTest:shexj <1dotRefSpaceNS1.json>;
   shexTest:shexr <1dotRefSpaceNS1.ttl>
 ] [
   shexMan:name "1refbnode1";
   shexTest:approval "Approved";
-  shexMan:schema <1refbnode1.shex>;
+  shexTest:shexc <1refbnode1.shex>;
   shexTest:shexj <1refbnode1.json>;
   shexTest:shexr <1refbnode1.ttl>
 ] [
   shexMan:name "1refbnode_with_leading_digit1";
   shexTest:approval "Approved";
-  shexMan:schema <1refbnode_with_leading_digit1.shex>;
+  shexTest:shexc <1refbnode_with_leading_digit1.shex>;
   shexTest:shexj <1refbnode_with_leading_digit1.json>;
   shexTest:shexr <1refbnode_with_leading_digit1.ttl>
 ] [
   shexMan:name "1refbnode_with_leading_underscore1";
   shexTest:approval "Approved";
-  shexMan:schema <1refbnode_with_leading_underscore1.shex>;
+  shexTest:shexc <1refbnode_with_leading_underscore1.shex>;
   shexTest:shexj <1refbnode_with_leading_underscore1.json>;
   shexTest:shexr <1refbnode_with_leading_underscore1.ttl>
 ] [
   shexMan:name "1refbnode_with_spanning_PN_CHARS1";
   shexTest:approval "Approved";
-  shexMan:schema <1refbnode_with_spanning_PN_CHARS1.shex>;
+  shexTest:shexc <1refbnode_with_spanning_PN_CHARS1.shex>;
   shexTest:shexj <1refbnode_with_spanning_PN_CHARS1.json>;
   shexTest:shexr <1refbnode_with_spanning_PN_CHARS1.ttl>
 ] [
   shexMan:name "1refbnode_with_spanning_PN_CHARS_BASE1";
   shexTest:approval "Approved";
-  shexMan:schema <1refbnode_with_spanning_PN_CHARS_BASE1.shex>;
+  shexTest:shexc <1refbnode_with_spanning_PN_CHARS_BASE1.shex>;
   shexTest:shexj <1refbnode_with_spanning_PN_CHARS_BASE1.json>;
   shexTest:shexr <1refbnode_with_spanning_PN_CHARS_BASE1.ttl>
 ] [
   shexMan:name "3circRefPlus1";
   shexTest:approval "Approved";
-  shexMan:schema <3circRefPlus1.shex>;
+  shexTest:shexc <3circRefPlus1.shex>;
   shexTest:shexj <3circRefPlus1.json>;
   shexTest:shexr <3circRefPlus1.ttl>
 ] [
   shexMan:name "1iriRef1";
   shexTest:approval "Approved";
-  shexMan:schema <1iriRef1.shex>;
+  shexTest:shexc <1iriRef1.shex>;
   shexTest:shexj <1iriRef1.json>;
   shexTest:shexr <1iriRef1.ttl>
 ] [
   shexMan:name "1bnodeRef1";
   shexTest:approval "Approved";
-  shexMan:schema <1bnodeRef1.shex>;
+  shexTest:shexc <1bnodeRef1.shex>;
   shexTest:shexj <1bnodeRef1.json>;
   shexTest:shexr <1bnodeRef1.ttl>
 ] [
   shexMan:name "1dotInline1";
   shexTest:approval "Approved";
-  shexMan:schema <1dotInline1.shex>;
+  shexTest:shexc <1dotInline1.shex>;
   shexTest:shexj <1dotInline1.json>;
   shexTest:shexr <1dotInline1.ttl>
 ] [
   shexMan:name "1val1IRIREF";
   shexTest:approval "Approved";
-  shexMan:schema <1val1IRIREF.shex>;
+  shexTest:shexc <1val1IRIREF.shex>;
   shexTest:shexj <1val1IRIREF.json>;
   shexTest:shexr <1val1IRIREF.ttl>
 ] [
   shexMan:name "1IRI_with_all_punctuationdot";
   shexTest:approval "Approved";
-  shexMan:schema <1IRI_with_all_punctuationdot.shex>;
+  shexTest:shexc <1IRI_with_all_punctuationdot.shex>;
   shexTest:shexj <1IRI_with_all_punctuationdot.json>;
   shexTest:shexr <1IRI_with_all_punctuationdot.ttl>
 ] [
   shexMan:name "1IRI_with_UCHAR.1dot";
   shexTest:approval "Approved";
-  shexMan:schema <1IRI_with_UCHAR.1dot.shex>;
+  shexTest:shexc <1IRI_with_UCHAR.1dot.shex>;
   shexTest:shexj <1IRI_with_UCHAR.1dot.json>;
   shexTest:shexr <1IRI_with_UCHAR.1dot.ttl>
 ] [
   shexMan:name "1IRI_with_UCHAR8.1dot";
   shexTest:approval "Proposed";
-  shexMan:schema <1IRI_with_UCHAR8.1dot.shex>;
+  shexTest:shexc <1IRI_with_UCHAR8.1dot.shex>;
   shexTest:shexj <1IRI_with_UCHAR8.1dot.json>;
   shexTest:shexr <1IRI_with_UCHAR8.1dot.ttl>
 ] [
   shexMan:name "1val1INTEGER";
   shexTest:approval "Approved";
-  shexMan:schema <1val1INTEGER.shex>;
+  shexTest:shexc <1val1INTEGER.shex>;
   shexTest:shexj <1val1INTEGER.json>;
   shexTest:shexr <1val1INTEGER.ttl>
 ] [
   shexMan:name "1val1DOUBLE";
   shexTest:approval "Approved";
-  shexMan:schema <1val1DOUBLE.shex>;
+  shexTest:shexc <1val1DOUBLE.shex>;
   shexTest:shexj <1val1DOUBLE.json>;
   shexTest:shexr <1val1DOUBLE.ttl>
 ] [
   shexMan:name "1val1DOUBLElowercase";
   shexTest:approval "Approved";
-  shexMan:schema <1val1DOUBLElowercase.shex>;
+  shexTest:shexc <1val1DOUBLElowercase.shex>;
   shexTest:shexj <1val1DOUBLElowercase.json>;
   shexTest:shexr <1val1DOUBLElowercase.ttl>
 ] [
   shexMan:name "1val1LANGTAG";
   shexTest:approval "Approved";
-  shexMan:schema <1val1LANGTAG.shex>;
+  shexTest:shexc <1val1LANGTAG.shex>;
   shexTest:shexj <1val1LANGTAG.json>;
   shexTest:shexr <1val1LANGTAG.ttl>
 ] [
   shexMan:name "1val1IRIREFDatatype";
   shexTest:approval "Approved";
-  shexMan:schema <1val1IRIREFDatatype.shex>;
+  shexTest:shexc <1val1IRIREFDatatype.shex>;
   shexTest:shexj <1val1IRIREFDatatype.json>;
   shexTest:shexr <1val1IRIREFDatatype.ttl>
 ] [
   shexMan:name "1val1true";
   shexTest:approval "Approved";
-  shexMan:schema <1val1true.shex>;
+  shexTest:shexc <1val1true.shex>;
   shexTest:shexj <1val1true.json>;
   shexTest:shexr <1val1true.ttl>
 ] [
   shexMan:name "1val1false";
   shexTest:approval "Approved";
-  shexMan:schema <1val1false.shex>;
+  shexTest:shexc <1val1false.shex>;
   shexTest:shexj <1val1false.json>;
   shexTest:shexr <1val1false.ttl>
 ] [
   shexMan:name "1val1LNDatatype";
   shexTest:approval "Approved";
-  shexMan:schema <1val1LNDatatype.shex>;
+  shexTest:shexc <1val1LNDatatype.shex>;
   shexTest:shexj <1val1LNDatatype.json>;
   shexTest:shexr <1val1LNDatatype.ttl>
 ] [
   shexMan:name "1val1STRING_LITERAL1";
   shexTest:approval "Approved";
-  shexMan:schema <1val1STRING_LITERAL1.shex>;
+  shexTest:shexc <1val1STRING_LITERAL1.shex>;
   shexTest:shexj <1val1STRING_LITERAL1.json>;
   shexTest:shexr <1val1STRING_LITERAL1.ttl>
 ] [
   shexMan:name "1val1STRING_LITERAL1_with_all_controls";
   shexTest:approval "Approved";
-  shexMan:schema <1val1STRING_LITERAL1_with_all_controls.shex>;
+  shexTest:shexc <1val1STRING_LITERAL1_with_all_controls.shex>;
   shexTest:shexj <1val1STRING_LITERAL1_with_all_controls.json>;
   shexTest:shexr <1val1STRING_LITERAL1_with_all_controls.ttl>
 ] [
   shexMan:name "1val1STRING_LITERAL1_with_all_punctuation";
   shexTest:approval "Approved";
-  shexMan:schema <1val1STRING_LITERAL1_with_all_punctuation.shex>;
+  shexTest:shexc <1val1STRING_LITERAL1_with_all_punctuation.shex>;
   shexTest:shexj <1val1STRING_LITERAL1_with_all_punctuation.json>;
   shexTest:shexr <1val1STRING_LITERAL1_with_all_punctuation.ttl>
 ] [
   shexMan:name "1val1STRING_LITERAL1_with_ECHAR_escapes";
   shexTest:approval "Approved";
-  shexMan:schema <1val1STRING_LITERAL1_with_ECHAR_escapes.shex>;
+  shexTest:shexc <1val1STRING_LITERAL1_with_ECHAR_escapes.shex>;
   shexTest:shexj <1val1STRING_LITERAL1_with_ECHAR_escapes.json>;
   shexTest:shexr <1val1STRING_LITERAL1_with_ECHAR_escapes.ttl>
 ] [
   shexMan:name "1val1STRING_LITERAL1_with_ascii_boundaries";
   shexTest:approval "Approved";
-  shexMan:schema <1val1STRING_LITERAL1_with_ascii_boundaries.shex>;
+  shexTest:shexc <1val1STRING_LITERAL1_with_ascii_boundaries.shex>;
   shexTest:shexj <1val1STRING_LITERAL1_with_ascii_boundaries.json>;
   shexTest:shexr <1val1STRING_LITERAL1_with_ascii_boundaries.ttl>
 ] [
   shexMan:name "1val1STRING_LITERAL1_with_UTF8_boundaries";
   shexTest:approval "Approved";
-  shexMan:schema <1val1STRING_LITERAL1_with_UTF8_boundaries.shex>;
+  shexTest:shexc <1val1STRING_LITERAL1_with_UTF8_boundaries.shex>;
   shexTest:shexj <1val1STRING_LITERAL1_with_UTF8_boundaries.json>;
   shexTest:shexr <1val1STRING_LITERAL1_with_UTF8_boundaries.ttl>
 ] [
   shexMan:name "1val2STRING_LITERAL1";
   shexTest:approval "Approved";
-  shexMan:schema <1val2STRING_LITERAL1.shex>;
+  shexTest:shexc <1val2STRING_LITERAL1.shex>;
   shexTest:shexj <1val2STRING_LITERAL1.json>;
   shexTest:shexr <1val2STRING_LITERAL1.ttl>
 ] [
   shexMan:name "1val1STRING_LITERAL2";
   shexTest:approval "Approved";
-  shexMan:schema <1val1STRING_LITERAL2.shex>;
+  shexTest:shexc <1val1STRING_LITERAL2.shex>;
   shexTest:shexj <1val1STRING_LITERAL2.json>;
   shexTest:shexr <1val1STRING_LITERAL2.ttl>
 ] [
   shexMan:name "1val1STRING_LITERAL2_with_LANGTAG";
   shexTest:approval "Approved";
-  shexMan:schema <1val1STRING_LITERAL2_with_LANGTAG.shex>;
+  shexTest:shexc <1val1STRING_LITERAL2_with_LANGTAG.shex>;
   shexTest:shexj <1val1STRING_LITERAL2_with_LANGTAG.json>;
   shexTest:shexr <1val1STRING_LITERAL2_with_LANGTAG.ttl>
 ] [
   shexMan:name "1val1STRING_LITERAL2_with_subtag";
   shexTest:approval "Approved";
-  shexMan:schema <1val1STRING_LITERAL2_with_subtag.shex>;
+  shexTest:shexc <1val1STRING_LITERAL2_with_subtag.shex>;
   shexTest:shexj <1val1STRING_LITERAL2_with_subtag.json>;
   shexTest:shexr <1val1STRING_LITERAL2_with_subtag.ttl>
 ] [
   shexMan:name "1val1STRING_LITERAL_LONG1";
   shexTest:approval "Approved";
-  shexMan:schema <1val1STRING_LITERAL_LONG1.shex>;
+  shexTest:shexc <1val1STRING_LITERAL_LONG1.shex>;
   shexTest:shexj <1val1STRING_LITERAL_LONG1.json>;
   shexTest:shexr <1val1STRING_LITERAL_LONG1.ttl>
 ] [
   shexMan:name "1val1STRING_LITERAL_LONG2";
   shexTest:approval "Approved";
-  shexMan:schema <1val1STRING_LITERAL_LONG2.shex>;
+  shexTest:shexc <1val1STRING_LITERAL_LONG2.shex>;
   shexTest:shexj <1val1STRING_LITERAL_LONG2.json>;
   shexTest:shexr <1val1STRING_LITERAL_LONG2.ttl>
 ] [
   shexMan:name "1val1STRING_LITERAL_LONG2_with_LANGTAG";
   shexTest:approval "Approved";
-  shexMan:schema <1val1STRING_LITERAL_LONG2_with_LANGTAG.shex>;
+  shexTest:shexc <1val1STRING_LITERAL_LONG2_with_LANGTAG.shex>;
   shexTest:shexj <1val1STRING_LITERAL_LONG2_with_LANGTAG.json>;
   shexTest:shexr <1val1STRING_LITERAL_LONG2_with_LANGTAG.ttl>
 ] [
   shexMan:name "1val1STRING_LITERAL_LONG2_with_subtag";
   shexTest:approval "Approved";
-  shexMan:schema <1val1STRING_LITERAL_LONG2_with_subtag.shex>;
+  shexTest:shexc <1val1STRING_LITERAL_LONG2_with_subtag.shex>;
   shexTest:shexj <1val1STRING_LITERAL_LONG2_with_subtag.json>;
   shexTest:shexr <1val1STRING_LITERAL_LONG2_with_subtag.ttl>
 ] [
   shexMan:name "1datatypeLength";
   shexTest:approval "Approved";
-  shexMan:schema <1datatypeLength.shex>;
+  shexTest:shexc <1datatypeLength.shex>;
   shexTest:shexj <1datatypeLength.json>;
   shexTest:shexr <1datatypeLength.ttl>
 ] [
   shexMan:name "1literalFractiondigits5";
   shexTest:approval "Approved";
-  shexMan:schema <1literalFractiondigits5.shex>;
+  shexTest:shexc <1literalFractiondigits5.shex>;
   shexTest:shexj <1literalFractiondigits5.json>;
   shexTest:shexr <1literalFractiondigits5.ttl>
 ] [
   shexMan:name "1literalFractiondigits4";
   shexTest:approval "Approved";
-  shexMan:schema <1literalFractiondigits4.shex>;
+  shexTest:shexc <1literalFractiondigits4.shex>;
   shexTest:shexj <1literalFractiondigits4.json>;
   shexTest:shexr <1literalFractiondigits4.ttl>
 ] [
   shexMan:name "1literalTotaldigits5";
   shexTest:approval "Approved";
-  shexMan:schema <1literalTotaldigits5.shex>;
+  shexTest:shexc <1literalTotaldigits5.shex>;
   shexTest:shexj <1literalTotaldigits5.json>;
   shexTest:shexr <1literalTotaldigits5.ttl>
 ] [
   shexMan:name "1literalTotaldigits6";
   shexTest:approval "Approved";
-  shexMan:schema <1literalTotaldigits6.shex>;
+  shexTest:shexc <1literalTotaldigits6.shex>;
   shexTest:shexj <1literalTotaldigits6.json>;
   shexTest:shexr <1literalTotaldigits6.ttl>
 ] [
   shexMan:name "1literalTotaldigits2";
   shexTest:approval "Approved";
-  shexMan:schema <1literalTotaldigits2.shex>;
+  shexTest:shexc <1literalTotaldigits2.shex>;
   shexTest:shexj <1literalTotaldigits2.json>;
   shexTest:shexr <1literalTotaldigits2.ttl>
 ] [
   shexMan:name "1floatMininclusiveINTEGER";
   shexTest:approval "Approved";
-  shexMan:schema <1floatMininclusiveINTEGER.shex>;
+  shexTest:shexc <1floatMininclusiveINTEGER.shex>;
   shexTest:shexj <1floatMininclusiveINTEGER.json>;
   shexTest:shexr <1floatMininclusiveINTEGER.ttl>
 ] [
   shexMan:name "1integerMininclusiveINTEGER";
   shexTest:approval "Approved";
-  shexMan:schema <1integerMininclusiveINTEGER.shex>;
+  shexTest:shexc <1integerMininclusiveINTEGER.shex>;
   shexTest:shexj <1integerMininclusiveINTEGER.json>;
   shexTest:shexr <1integerMininclusiveINTEGER.ttl>
 ] [
   shexMan:name "1floatMininclusiveINTEGERLead";
   shexTest:approval "Approved";
-  shexMan:schema <1floatMininclusiveINTEGERLead.shex>;
+  shexTest:shexc <1floatMininclusiveINTEGERLead.shex>;
   shexTest:shexj <1floatMininclusiveINTEGERLead.json>;
   shexTest:shexr <1floatMininclusiveINTEGERLead.ttl>
 ] [
   shexMan:name "1integerMininclusiveINTEGERLead";
   shexTest:approval "Approved";
-  shexMan:schema <1integerMininclusiveINTEGERLead.shex>;
+  shexTest:shexc <1integerMininclusiveINTEGERLead.shex>;
   shexTest:shexj <1integerMininclusiveINTEGERLead.json>;
   shexTest:shexr <1integerMininclusiveINTEGERLead.ttl>
 ] [
   shexMan:name "1integerMininclusiveDECIMAL";
   shexTest:approval "Approved";
-  shexMan:schema <1integerMininclusiveDECIMAL.shex>;
+  shexTest:shexc <1integerMininclusiveDECIMAL.shex>;
   shexTest:shexj <1integerMininclusiveDECIMAL.json>;
   shexTest:shexr <1integerMininclusiveDECIMAL.ttl>
 ] [
   shexMan:name "1integerMininclusiveDECIMALLeadTrail";
   shexTest:approval "Approved";
-  shexMan:schema <1integerMininclusiveDECIMALLeadTrail.shex>;
+  shexTest:shexc <1integerMininclusiveDECIMALLeadTrail.shex>;
   shexTest:shexj <1integerMininclusiveDECIMALLeadTrail.json>;
   shexTest:shexr <1integerMininclusiveDECIMALLeadTrail.ttl>
 ] [
   shexMan:name "1integerMininclusiveDECIMALint";
   shexTest:approval "Approved";
-  shexMan:schema <1integerMininclusiveDECIMALint.shex>;
+  shexTest:shexc <1integerMininclusiveDECIMALint.shex>;
   shexTest:shexj <1integerMininclusiveDECIMALint.json>;
   shexTest:shexr <1integerMininclusiveDECIMALint.ttl>
 ] [
   shexMan:name "1integerMininclusiveDECIMALintLeadTrail";
   shexTest:approval "Approved";
-  shexMan:schema <1integerMininclusiveDECIMALintLeadTrail.shex>;
+  shexTest:shexc <1integerMininclusiveDECIMALintLeadTrail.shex>;
   shexTest:shexj <1integerMininclusiveDECIMALintLeadTrail.json>;
   shexTest:shexr <1integerMininclusiveDECIMALintLeadTrail.ttl>
 ] [
   shexMan:name "1integerMininclusiveDOUBLE";
   shexTest:approval "Approved";
-  shexMan:schema <1integerMininclusiveDOUBLE.shex>;
+  shexTest:shexc <1integerMininclusiveDOUBLE.shex>;
   shexTest:shexj <1integerMininclusiveDOUBLE.json>;
   shexTest:shexr <1integerMininclusiveDOUBLE.ttl>
 ] [
   shexMan:name "1integerMininclusiveDOUBLELeadTrail";
   shexTest:approval "Approved";
-  shexMan:schema <1integerMininclusiveDOUBLELeadTrail.shex>;
+  shexTest:shexc <1integerMininclusiveDOUBLELeadTrail.shex>;
   shexTest:shexj <1integerMininclusiveDOUBLELeadTrail.json>;
   shexTest:shexr <1integerMininclusiveDOUBLELeadTrail.ttl>
 ] [
   shexMan:name "1integerMininclusiveDOUBLEint";
   shexTest:approval "Approved";
-  shexMan:schema <1integerMininclusiveDOUBLEint.shex>;
+  shexTest:shexc <1integerMininclusiveDOUBLEint.shex>;
   shexTest:shexj <1integerMininclusiveDOUBLEint.json>;
   shexTest:shexr <1integerMininclusiveDOUBLEint.ttl>
 ] [
   shexMan:name "1integerMininclusiveDOUBLEintLeadTrail";
   shexTest:approval "Approved";
-  shexMan:schema <1integerMininclusiveDOUBLEintLeadTrail.shex>;
+  shexTest:shexc <1integerMininclusiveDOUBLEintLeadTrail.shex>;
   shexTest:shexj <1integerMininclusiveDOUBLEintLeadTrail.json>;
   shexTest:shexr <1integerMininclusiveDOUBLEintLeadTrail.ttl>
 ] [
   shexMan:name "1decimalMininclusiveINTEGER";
   shexTest:approval "Approved";
-  shexMan:schema <1decimalMininclusiveINTEGER.shex>;
+  shexTest:shexc <1decimalMininclusiveINTEGER.shex>;
   shexTest:shexj <1decimalMininclusiveINTEGER.json>;
   shexTest:shexr <1decimalMininclusiveINTEGER.ttl>
 ] [
   shexMan:name "1decimalMininclusiveINTEGERLead";
   shexTest:approval "Approved";
-  shexMan:schema <1decimalMininclusiveINTEGERLead.shex>;
+  shexTest:shexc <1decimalMininclusiveINTEGERLead.shex>;
   shexTest:shexj <1decimalMininclusiveINTEGERLead.json>;
   shexTest:shexr <1decimalMininclusiveINTEGERLead.ttl>
 ] [
   shexMan:name "1decimalMininclusiveDECIMAL";
   shexTest:approval "Approved";
-  shexMan:schema <1decimalMininclusiveDECIMAL.shex>;
+  shexTest:shexc <1decimalMininclusiveDECIMAL.shex>;
   shexTest:shexj <1decimalMininclusiveDECIMAL.json>;
   shexTest:shexr <1decimalMininclusiveDECIMAL.ttl>
 ] [
   shexMan:name "1decimalMininclusiveDECIMALLeadTrail";
   shexTest:approval "Approved";
-  shexMan:schema <1decimalMininclusiveDECIMALLeadTrail.shex>;
+  shexTest:shexc <1decimalMininclusiveDECIMALLeadTrail.shex>;
   shexTest:shexj <1decimalMininclusiveDECIMALLeadTrail.json>;
   shexTest:shexr <1decimalMininclusiveDECIMALLeadTrail.ttl>
 ] [
   shexMan:name "1decimalMininclusiveDECIMALintLeadTrail";
   shexTest:approval "Approved";
-  shexMan:schema <1decimalMininclusiveDECIMALintLeadTrail.shex>;
+  shexTest:shexc <1decimalMininclusiveDECIMALintLeadTrail.shex>;
   shexTest:shexj <1decimalMininclusiveDECIMALintLeadTrail.json>;
   shexTest:shexr <1decimalMininclusiveDECIMALintLeadTrail.ttl>
 ] [
   shexMan:name "1decimalMininclusiveDOUBLE";
   shexTest:approval "Approved";
-  shexMan:schema <1decimalMininclusiveDOUBLE.shex>;
+  shexTest:shexc <1decimalMininclusiveDOUBLE.shex>;
   shexTest:shexj <1decimalMininclusiveDOUBLE.json>;
   shexTest:shexr <1decimalMininclusiveDOUBLE.ttl>
 ] [
   shexMan:name "1decimalMininclusiveDOUBLELeadTrail";
   shexTest:approval "Approved";
-  shexMan:schema <1decimalMininclusiveDOUBLELeadTrail.shex>;
+  shexTest:shexc <1decimalMininclusiveDOUBLELeadTrail.shex>;
   shexTest:shexj <1decimalMininclusiveDOUBLELeadTrail.json>;
   shexTest:shexr <1decimalMininclusiveDOUBLELeadTrail.ttl>
 ] [
   shexMan:name "1decimalMininclusiveDOUBLEintLeadTrail";
   shexTest:approval "Approved";
-  shexMan:schema <1decimalMininclusiveDOUBLEintLeadTrail.shex>;
+  shexTest:shexc <1decimalMininclusiveDOUBLEintLeadTrail.shex>;
   shexTest:shexj <1decimalMininclusiveDOUBLEintLeadTrail.json>;
   shexTest:shexr <1decimalMininclusiveDOUBLEintLeadTrail.ttl>
 ] [
   shexMan:name "1floatMininclusiveDECIMAL";
   shexTest:approval "Approved";
-  shexMan:schema <1floatMininclusiveDECIMAL.shex>;
+  shexTest:shexc <1floatMininclusiveDECIMAL.shex>;
   shexTest:shexj <1floatMininclusiveDECIMAL.json>;
   shexTest:shexr <1floatMininclusiveDECIMAL.ttl>
 ] [
   shexMan:name "1floatMininclusiveDECIMALLeadTrail";
   shexTest:approval "Approved";
-  shexMan:schema <1floatMininclusiveDECIMALLeadTrail.shex>;
+  shexTest:shexc <1floatMininclusiveDECIMALLeadTrail.shex>;
   shexTest:shexj <1floatMininclusiveDECIMALLeadTrail.json>;
   shexTest:shexr <1floatMininclusiveDECIMALLeadTrail.ttl>
 ] [
   shexMan:name "1floatMininclusiveDECIMALintLeadTrail";
   shexTest:approval "Approved";
-  shexMan:schema <1floatMininclusiveDECIMALintLeadTrail.shex>;
+  shexTest:shexc <1floatMininclusiveDECIMALintLeadTrail.shex>;
   shexTest:shexj <1floatMininclusiveDECIMALintLeadTrail.json>;
   shexTest:shexr <1floatMininclusiveDECIMALintLeadTrail.ttl>
 ] [
   shexMan:name "1floatMininclusiveDOUBLE";
   shexTest:approval "Approved";
-  shexMan:schema <1floatMininclusiveDOUBLE.shex>;
+  shexTest:shexc <1floatMininclusiveDOUBLE.shex>;
   shexTest:shexj <1floatMininclusiveDOUBLE.json>;
   shexTest:shexr <1floatMininclusiveDOUBLE.ttl>
 ] [
   shexMan:name "1floatMininclusiveDOUBLELeadTrail";
   shexTest:approval "Approved";
-  shexMan:schema <1floatMininclusiveDOUBLELeadTrail.shex>;
+  shexTest:shexc <1floatMininclusiveDOUBLELeadTrail.shex>;
   shexTest:shexj <1floatMininclusiveDOUBLELeadTrail.json>;
   shexTest:shexr <1floatMininclusiveDOUBLELeadTrail.ttl>
 ] [
   shexMan:name "1floatMininclusiveDOUBLEintLeadTrail";
   shexTest:approval "Approved";
-  shexMan:schema <1floatMininclusiveDOUBLEintLeadTrail.shex>;
+  shexTest:shexc <1floatMininclusiveDOUBLEintLeadTrail.shex>;
   shexTest:shexj <1floatMininclusiveDOUBLEintLeadTrail.json>;
   shexTest:shexr <1floatMininclusiveDOUBLEintLeadTrail.ttl>
 ] [
   shexMan:name "1doubleMininclusiveINTEGERLead";
   shexTest:approval "Approved";
-  shexMan:schema <1doubleMininclusiveINTEGERLead.shex>;
+  shexTest:shexc <1doubleMininclusiveINTEGERLead.shex>;
   shexTest:shexj <1doubleMininclusiveINTEGERLead.json>;
   shexTest:shexr <1doubleMininclusiveINTEGERLead.ttl>
 ] [
   shexMan:name "1doubleMininclusiveDECIMAL";
   shexTest:approval "Approved";
-  shexMan:schema <1doubleMininclusiveDECIMAL.shex>;
+  shexTest:shexc <1doubleMininclusiveDECIMAL.shex>;
   shexTest:shexj <1doubleMininclusiveDECIMAL.json>;
   shexTest:shexr <1doubleMininclusiveDECIMAL.ttl>
 ] [
   shexMan:name "1doubleMininclusiveDECIMALLeadTrail";
   shexTest:approval "Approved";
-  shexMan:schema <1doubleMininclusiveDECIMALLeadTrail.shex>;
+  shexTest:shexc <1doubleMininclusiveDECIMALLeadTrail.shex>;
   shexTest:shexj <1doubleMininclusiveDECIMALLeadTrail.json>;
   shexTest:shexr <1doubleMininclusiveDECIMALLeadTrail.ttl>
 ] [
   shexMan:name "1doubleMininclusiveDECIMALintLeadTrail";
   shexTest:approval "Approved";
-  shexMan:schema <1doubleMininclusiveDECIMALintLeadTrail.shex>;
+  shexTest:shexc <1doubleMininclusiveDECIMALintLeadTrail.shex>;
   shexTest:shexj <1doubleMininclusiveDECIMALintLeadTrail.json>;
   shexTest:shexr <1doubleMininclusiveDECIMALintLeadTrail.ttl>
 ] [
   shexMan:name "1doubleMininclusiveDOUBLE";
   shexTest:approval "Approved";
-  shexMan:schema <1doubleMininclusiveDOUBLE.shex>;
+  shexTest:shexc <1doubleMininclusiveDOUBLE.shex>;
   shexTest:shexj <1doubleMininclusiveDOUBLE.json>;
   shexTest:shexr <1doubleMininclusiveDOUBLE.ttl>
 ] [
   shexMan:name "1doubleMininclusiveDOUBLELeadTrail";
   shexTest:approval "Approved";
-  shexMan:schema <1doubleMininclusiveDOUBLELeadTrail.shex>;
+  shexTest:shexc <1doubleMininclusiveDOUBLELeadTrail.shex>;
   shexTest:shexj <1doubleMininclusiveDOUBLELeadTrail.json>;
   shexTest:shexr <1doubleMininclusiveDOUBLELeadTrail.ttl>
 ] [
   shexMan:name "1doubleMininclusiveDOUBLEintLeadTrail";
   shexTest:approval "Approved";
-  shexMan:schema <1doubleMininclusiveDOUBLEintLeadTrail.shex>;
+  shexTest:shexc <1doubleMininclusiveDOUBLEintLeadTrail.shex>;
   shexTest:shexj <1doubleMininclusiveDOUBLEintLeadTrail.json>;
   shexTest:shexr <1doubleMininclusiveDOUBLEintLeadTrail.ttl>
 ] [
   shexMan:name "1integerMinexclusiveINTEGER";
   shexTest:approval "Approved";
-  shexMan:schema <1integerMinexclusiveINTEGER.shex>;
+  shexTest:shexc <1integerMinexclusiveINTEGER.shex>;
   shexTest:shexj <1integerMinexclusiveINTEGER.json>;
   shexTest:shexr <1integerMinexclusiveINTEGER.ttl>
 ] [
   shexMan:name "1integerMinexclusiveDECIMALint";
   shexTest:approval "Approved";
-  shexMan:schema <1integerMinexclusiveDECIMALint.shex>;
+  shexTest:shexc <1integerMinexclusiveDECIMALint.shex>;
   shexTest:shexj <1integerMinexclusiveDECIMALint.json>;
   shexTest:shexr <1integerMinexclusiveDECIMALint.ttl>
 ] [
   shexMan:name "1integerMinexclusiveDOUBLEint";
   shexTest:approval "Approved";
-  shexMan:schema <1integerMinexclusiveDOUBLEint.shex>;
+  shexTest:shexc <1integerMinexclusiveDOUBLEint.shex>;
   shexTest:shexj <1integerMinexclusiveDOUBLEint.json>;
   shexTest:shexr <1integerMinexclusiveDOUBLEint.ttl>
 ] [
   shexMan:name "1decimalMinexclusiveINTEGER";
   shexTest:approval "Approved";
-  shexMan:schema <1decimalMinexclusiveINTEGER.shex>;
+  shexTest:shexc <1decimalMinexclusiveINTEGER.shex>;
   shexTest:shexj <1decimalMinexclusiveINTEGER.json>;
   shexTest:shexr <1decimalMinexclusiveINTEGER.ttl>
 ] [
   shexMan:name "1decimalMinexclusiveDECIMAL";
   shexTest:approval "Approved";
-  shexMan:schema <1decimalMinexclusiveDECIMAL.shex>;
+  shexTest:shexc <1decimalMinexclusiveDECIMAL.shex>;
   shexTest:shexj <1decimalMinexclusiveDECIMAL.json>;
   shexTest:shexr <1decimalMinexclusiveDECIMAL.ttl>
 ] [
   shexMan:name "1decimalMinexclusiveDOUBLE";
   shexTest:approval "Approved";
-  shexMan:schema <1decimalMinexclusiveDOUBLE.shex>;
+  shexTest:shexc <1decimalMinexclusiveDOUBLE.shex>;
   shexTest:shexj <1decimalMinexclusiveDOUBLE.json>;
   shexTest:shexr <1decimalMinexclusiveDOUBLE.ttl>
 ] [
   shexMan:name "1floatMinexclusiveINTEGER";
   shexTest:approval "Approved";
-  shexMan:schema <1floatMinexclusiveINTEGER.shex>;
+  shexTest:shexc <1floatMinexclusiveINTEGER.shex>;
   shexTest:shexj <1floatMinexclusiveINTEGER.json>;
   shexTest:shexr <1floatMinexclusiveINTEGER.ttl>
 ] [
   shexMan:name "1floatMinexclusiveDECIMAL";
   shexTest:approval "Approved";
-  shexMan:schema <1floatMinexclusiveDECIMAL.shex>;
+  shexTest:shexc <1floatMinexclusiveDECIMAL.shex>;
   shexTest:shexj <1floatMinexclusiveDECIMAL.json>;
   shexTest:shexr <1floatMinexclusiveDECIMAL.ttl>
 ] [
   shexMan:name "1floatMinexclusiveDOUBLE";
   shexTest:approval "Approved";
-  shexMan:schema <1floatMinexclusiveDOUBLE.shex>;
+  shexTest:shexc <1floatMinexclusiveDOUBLE.shex>;
   shexTest:shexj <1floatMinexclusiveDOUBLE.json>;
   shexTest:shexr <1floatMinexclusiveDOUBLE.ttl>
 ] [
   shexMan:name "1doubleMinexclusiveINTEGER";
   shexTest:approval "Approved";
-  shexMan:schema <1doubleMinexclusiveINTEGER.shex>;
+  shexTest:shexc <1doubleMinexclusiveINTEGER.shex>;
   shexTest:shexj <1doubleMinexclusiveINTEGER.json>;
   shexTest:shexr <1doubleMinexclusiveINTEGER.ttl>
 ] [
   shexMan:name "1doubleMinexclusiveDECIMAL";
   shexTest:approval "Approved";
-  shexMan:schema <1doubleMinexclusiveDECIMAL.shex>;
+  shexTest:shexc <1doubleMinexclusiveDECIMAL.shex>;
   shexTest:shexj <1doubleMinexclusiveDECIMAL.json>;
   shexTest:shexr <1doubleMinexclusiveDECIMAL.ttl>
 ] [
   shexMan:name "1doubleMinexclusiveDOUBLE";
   shexTest:approval "Approved";
-  shexMan:schema <1doubleMinexclusiveDOUBLE.shex>;
+  shexTest:shexc <1doubleMinexclusiveDOUBLE.shex>;
   shexTest:shexj <1doubleMinexclusiveDOUBLE.json>;
   shexTest:shexr <1doubleMinexclusiveDOUBLE.ttl>
 ] [
   shexMan:name "1integerMaxinclusiveINTEGER";
   shexTest:approval "Approved";
-  shexMan:schema <1integerMaxinclusiveINTEGER.shex>;
+  shexTest:shexc <1integerMaxinclusiveINTEGER.shex>;
   shexTest:shexj <1integerMaxinclusiveINTEGER.json>;
   shexTest:shexr <1integerMaxinclusiveINTEGER.ttl>
 ] [
   shexMan:name "1integerMaxinclusiveDECIMALint";
   shexTest:approval "Approved";
-  shexMan:schema <1integerMaxinclusiveDECIMALint.shex>;
+  shexTest:shexc <1integerMaxinclusiveDECIMALint.shex>;
   shexTest:shexj <1integerMaxinclusiveDECIMALint.json>;
   shexTest:shexr <1integerMaxinclusiveDECIMALint.ttl>
 ] [
   shexMan:name "1integerMaxinclusiveDOUBLEint";
   shexTest:approval "Approved";
-  shexMan:schema <1integerMaxinclusiveDOUBLEint.shex>;
+  shexTest:shexc <1integerMaxinclusiveDOUBLEint.shex>;
   shexTest:shexj <1integerMaxinclusiveDOUBLEint.json>;
   shexTest:shexr <1integerMaxinclusiveDOUBLEint.ttl>
 ] [
   shexMan:name "1decimalMaxinclusiveINTEGER";
   shexTest:approval "Approved";
-  shexMan:schema <1decimalMaxinclusiveINTEGER.shex>;
+  shexTest:shexc <1decimalMaxinclusiveINTEGER.shex>;
   shexTest:shexj <1decimalMaxinclusiveINTEGER.json>;
   shexTest:shexr <1decimalMaxinclusiveINTEGER.ttl>
 ] [
   shexMan:name "1decimalMaxinclusiveDECIMAL";
   shexTest:approval "Approved";
-  shexMan:schema <1decimalMaxinclusiveDECIMAL.shex>;
+  shexTest:shexc <1decimalMaxinclusiveDECIMAL.shex>;
   shexTest:shexj <1decimalMaxinclusiveDECIMAL.json>;
   shexTest:shexr <1decimalMaxinclusiveDECIMAL.ttl>
 ] [
   shexMan:name "1decimalMaxinclusiveDOUBLE";
   shexTest:approval "Approved";
-  shexMan:schema <1decimalMaxinclusiveDOUBLE.shex>;
+  shexTest:shexc <1decimalMaxinclusiveDOUBLE.shex>;
   shexTest:shexj <1decimalMaxinclusiveDOUBLE.json>;
   shexTest:shexr <1decimalMaxinclusiveDOUBLE.ttl>
 ] [
   shexMan:name "1floatMaxinclusiveINTEGER";
   shexTest:approval "Approved";
-  shexMan:schema <1floatMaxinclusiveINTEGER.shex>;
+  shexTest:shexc <1floatMaxinclusiveINTEGER.shex>;
   shexTest:shexj <1floatMaxinclusiveINTEGER.json>;
   shexTest:shexr <1floatMaxinclusiveINTEGER.ttl>
 ] [
   shexMan:name "1floatMaxinclusiveDECIMAL";
   shexTest:approval "Approved";
-  shexMan:schema <1floatMaxinclusiveDECIMAL.shex>;
+  shexTest:shexc <1floatMaxinclusiveDECIMAL.shex>;
   shexTest:shexj <1floatMaxinclusiveDECIMAL.json>;
   shexTest:shexr <1floatMaxinclusiveDECIMAL.ttl>
 ] [
   shexMan:name "1floatMaxinclusiveDOUBLE";
   shexTest:approval "Approved";
-  shexMan:schema <1floatMaxinclusiveDOUBLE.shex>;
+  shexTest:shexc <1floatMaxinclusiveDOUBLE.shex>;
   shexTest:shexj <1floatMaxinclusiveDOUBLE.json>;
   shexTest:shexr <1floatMaxinclusiveDOUBLE.ttl>
 ] [
   shexMan:name "1doubleMaxinclusiveINTEGER";
   shexTest:approval "Approved";
-  shexMan:schema <1doubleMaxinclusiveINTEGER.shex>;
+  shexTest:shexc <1doubleMaxinclusiveINTEGER.shex>;
   shexTest:shexj <1doubleMaxinclusiveINTEGER.json>;
   shexTest:shexr <1doubleMaxinclusiveINTEGER.ttl>
 ] [
   shexMan:name "1doubleMaxinclusiveDECIMAL";
   shexTest:approval "Approved";
-  shexMan:schema <1doubleMaxinclusiveDECIMAL.shex>;
+  shexTest:shexc <1doubleMaxinclusiveDECIMAL.shex>;
   shexTest:shexj <1doubleMaxinclusiveDECIMAL.json>;
   shexTest:shexr <1doubleMaxinclusiveDECIMAL.ttl>
 ] [
   shexMan:name "1doubleMaxinclusiveDOUBLE";
   shexTest:approval "Approved";
-  shexMan:schema <1doubleMaxinclusiveDOUBLE.shex>;
+  shexTest:shexc <1doubleMaxinclusiveDOUBLE.shex>;
   shexTest:shexj <1doubleMaxinclusiveDOUBLE.json>;
   shexTest:shexr <1doubleMaxinclusiveDOUBLE.ttl>
 ] [
   shexMan:name "1integerMaxexclusiveINTEGER";
   shexTest:approval "Approved";
-  shexMan:schema <1integerMaxexclusiveINTEGER.shex>;
+  shexTest:shexc <1integerMaxexclusiveINTEGER.shex>;
   shexTest:shexj <1integerMaxexclusiveINTEGER.json>;
   shexTest:shexr <1integerMaxexclusiveINTEGER.ttl>
 ] [
   shexMan:name "1integerMaxexclusiveDECIMALint";
   shexTest:approval "Approved";
-  shexMan:schema <1integerMaxexclusiveDECIMALint.shex>;
+  shexTest:shexc <1integerMaxexclusiveDECIMALint.shex>;
   shexTest:shexj <1integerMaxexclusiveDECIMALint.json>;
   shexTest:shexr <1integerMaxexclusiveDECIMALint.ttl>
 ] [
   shexMan:name "1integerMaxexclusiveDOUBLEint";
   shexTest:approval "Approved";
-  shexMan:schema <1integerMaxexclusiveDOUBLEint.shex>;
+  shexTest:shexc <1integerMaxexclusiveDOUBLEint.shex>;
   shexTest:shexj <1integerMaxexclusiveDOUBLEint.json>;
   shexTest:shexr <1integerMaxexclusiveDOUBLEint.ttl>
 ] [
   shexMan:name "1decimalMaxexclusiveINTEGER";
   shexTest:approval "Approved";
-  shexMan:schema <1decimalMaxexclusiveINTEGER.shex>;
+  shexTest:shexc <1decimalMaxexclusiveINTEGER.shex>;
   shexTest:shexj <1decimalMaxexclusiveINTEGER.json>;
   shexTest:shexr <1decimalMaxexclusiveINTEGER.ttl>
 ] [
   shexMan:name "1decimalMaxexclusiveDECIMAL";
   shexTest:approval "Approved";
-  shexMan:schema <1decimalMaxexclusiveDECIMAL.shex>;
+  shexTest:shexc <1decimalMaxexclusiveDECIMAL.shex>;
   shexTest:shexj <1decimalMaxexclusiveDECIMAL.json>;
   shexTest:shexr <1decimalMaxexclusiveDECIMAL.ttl>
 ] [
   shexMan:name "1decimalMaxexclusiveDOUBLE";
   shexTest:approval "Approved";
-  shexMan:schema <1decimalMaxexclusiveDOUBLE.shex>;
+  shexTest:shexc <1decimalMaxexclusiveDOUBLE.shex>;
   shexTest:shexj <1decimalMaxexclusiveDOUBLE.json>;
   shexTest:shexr <1decimalMaxexclusiveDOUBLE.ttl>
 ] [
   shexMan:name "1decimalMaxexclusivexsd-byte";
   shexTest:approval "Approved";
-  shexMan:schema <1decimalMaxexclusivexsd-byte.shex>;
+  shexTest:shexc <1decimalMaxexclusivexsd-byte.shex>;
   shexTest:shexj <1decimalMaxexclusivexsd-byte.json>;
   shexTest:shexr <1decimalMaxexclusivexsd-byte.ttl>
 ] [
   shexMan:name "1floatMaxexclusiveINTEGER";
   shexTest:approval "Approved";
-  shexMan:schema <1floatMaxexclusiveINTEGER.shex>;
+  shexTest:shexc <1floatMaxexclusiveINTEGER.shex>;
   shexTest:shexj <1floatMaxexclusiveINTEGER.json>;
   shexTest:shexr <1floatMaxexclusiveINTEGER.ttl>
 ] [
   shexMan:name "1floatMaxexclusiveDECIMAL";
   shexTest:approval "Approved";
-  shexMan:schema <1floatMaxexclusiveDECIMAL.shex>;
+  shexTest:shexc <1floatMaxexclusiveDECIMAL.shex>;
   shexTest:shexj <1floatMaxexclusiveDECIMAL.json>;
   shexTest:shexr <1floatMaxexclusiveDECIMAL.ttl>
 ] [
   shexMan:name "1floatMaxexclusiveDOUBLE";
   shexTest:approval "Approved";
-  shexMan:schema <1floatMaxexclusiveDOUBLE.shex>;
+  shexTest:shexc <1floatMaxexclusiveDOUBLE.shex>;
   shexTest:shexj <1floatMaxexclusiveDOUBLE.json>;
   shexTest:shexr <1floatMaxexclusiveDOUBLE.ttl>
 ] [
   shexMan:name "1doubleMaxexclusiveINTEGER";
   shexTest:approval "Approved";
-  shexMan:schema <1doubleMaxexclusiveINTEGER.shex>;
+  shexTest:shexc <1doubleMaxexclusiveINTEGER.shex>;
   shexTest:shexj <1doubleMaxexclusiveINTEGER.json>;
   shexTest:shexr <1doubleMaxexclusiveINTEGER.ttl>
 ] [
   shexMan:name "1doubleMaxexclusiveINTEGERLead";
   shexTest:approval "Approved";
-  shexMan:schema <1doubleMaxexclusiveINTEGERLead.shex>;
+  shexTest:shexc <1doubleMaxexclusiveINTEGERLead.shex>;
   shexTest:shexj <1doubleMaxexclusiveINTEGERLead.json>;
   shexTest:shexr <1doubleMaxexclusiveINTEGERLead.ttl>
 ] [
   shexMan:name "1doubleMaxexclusiveDECIMAL";
   shexTest:approval "Approved";
-  shexMan:schema <1doubleMaxexclusiveDECIMAL.shex>;
+  shexTest:shexc <1doubleMaxexclusiveDECIMAL.shex>;
   shexTest:shexj <1doubleMaxexclusiveDECIMAL.json>;
   shexTest:shexr <1doubleMaxexclusiveDECIMAL.ttl>
 ] [
   shexMan:name "1doubleMaxexclusiveDECIMALLeadTrail";
   shexTest:approval "Approved";
-  shexMan:schema <1doubleMaxexclusiveDECIMALLeadTrail.shex>;
+  shexTest:shexc <1doubleMaxexclusiveDECIMALLeadTrail.shex>;
   shexTest:shexj <1doubleMaxexclusiveDECIMALLeadTrail.json>;
   shexTest:shexr <1doubleMaxexclusiveDECIMALLeadTrail.ttl>
 ] [
   shexMan:name "1doubleMaxexclusiveDECIMALint";
   shexTest:approval "Approved";
-  shexMan:schema <1doubleMaxexclusiveDECIMALint.shex>;
+  shexTest:shexc <1doubleMaxexclusiveDECIMALint.shex>;
   shexTest:shexj <1doubleMaxexclusiveDECIMALint.json>;
   shexTest:shexr <1doubleMaxexclusiveDECIMALint.ttl>
 ] [
   shexMan:name "1doubleMaxexclusiveDECIMALintLeadTrail";
   shexTest:approval "Approved";
-  shexMan:schema <1doubleMaxexclusiveDECIMALintLeadTrail.shex>;
+  shexTest:shexc <1doubleMaxexclusiveDECIMALintLeadTrail.shex>;
   shexTest:shexj <1doubleMaxexclusiveDECIMALintLeadTrail.json>;
   shexTest:shexr <1doubleMaxexclusiveDECIMALintLeadTrail.ttl>
 ] [
   shexMan:name "1doubleMaxexclusiveDOUBLE";
   shexTest:approval "Approved";
-  shexMan:schema <1doubleMaxexclusiveDOUBLE.shex>;
+  shexTest:shexc <1doubleMaxexclusiveDOUBLE.shex>;
   shexTest:shexj <1doubleMaxexclusiveDOUBLE.json>;
   shexTest:shexr <1doubleMaxexclusiveDOUBLE.ttl>
 ] [
   shexMan:name "1doubleMaxexclusiveDOUBLELeadTrail";
   shexTest:approval "Approved";
-  shexMan:schema <1doubleMaxexclusiveDOUBLELeadTrail.shex>;
+  shexTest:shexc <1doubleMaxexclusiveDOUBLELeadTrail.shex>;
   shexTest:shexj <1doubleMaxexclusiveDOUBLELeadTrail.json>;
   shexTest:shexr <1doubleMaxexclusiveDOUBLELeadTrail.ttl>
 ] [
   shexMan:name "1doubleMaxexclusiveDOUBLEint";
   shexTest:approval "Approved";
-  shexMan:schema <1doubleMaxexclusiveDOUBLEint.shex>;
+  shexTest:shexc <1doubleMaxexclusiveDOUBLEint.shex>;
   shexTest:shexj <1doubleMaxexclusiveDOUBLEint.json>;
   shexTest:shexr <1doubleMaxexclusiveDOUBLEint.ttl>
 ] [
   shexMan:name "1doubleMaxexclusiveDOUBLEintLeadTrail";
   shexTest:approval "Approved";
-  shexMan:schema <1doubleMaxexclusiveDOUBLEintLeadTrail.shex>;
+  shexTest:shexc <1doubleMaxexclusiveDOUBLEintLeadTrail.shex>;
   shexTest:shexj <1doubleMaxexclusiveDOUBLEintLeadTrail.json>;
   shexTest:shexr <1doubleMaxexclusiveDOUBLEintLeadTrail.ttl>
 ] [
   shexMan:name "1Length";
   shexTest:approval "Approved";
-  shexMan:schema <1Length.shex>;
+  shexTest:shexc <1Length.shex>;
   shexTest:shexj <1Length.json>;
   shexTest:shexr <1Length.ttl>
 ] [
   shexMan:name "1literalLength";
   shexTest:approval "Approved";
-  shexMan:schema <1literalLength.shex>;
+  shexTest:shexc <1literalLength.shex>;
   shexTest:shexj <1literalLength.json>;
   shexTest:shexr <1literalLength.ttl>
 ] [
   shexMan:name "1literalLength19";
   shexTest:approval "Approved";
-  shexMan:schema <1literalLength19.shex>;
+  shexTest:shexc <1literalLength19.shex>;
   shexTest:shexj <1literalLength19.json>;
   shexTest:shexr <1literalLength19.ttl>
 ] [
   shexMan:name "1iriLength";
   shexTest:approval "Approved";
-  shexMan:schema <1iriLength.shex>;
+  shexTest:shexc <1iriLength.shex>;
   shexTest:shexj <1iriLength.json>;
   shexTest:shexr <1iriLength.ttl>
 ] [
   shexMan:name "1iriRefLength1";
   shexTest:approval "Approved";
-  shexMan:schema <1iriRefLength1.shex>;
+  shexTest:shexc <1iriRefLength1.shex>;
   shexTest:shexj <1iriRefLength1.json>;
   shexTest:shexr <1iriRefLength1.ttl>
 ] [
   shexMan:name "1bnodeLength";
   shexTest:approval "Approved";
-  shexMan:schema <1bnodeLength.shex>;
+  shexTest:shexc <1bnodeLength.shex>;
   shexTest:shexj <1bnodeLength.json>;
   shexTest:shexr <1bnodeLength.ttl>
 ] [
   shexMan:name "1nonliteralLength";
   shexTest:approval "Approved";
-  shexMan:schema <1nonliteralLength.shex>;
+  shexTest:shexc <1nonliteralLength.shex>;
   shexTest:shexj <1nonliteralLength.json>;
   shexTest:shexr <1nonliteralLength.ttl>
 ] [
   shexMan:name "1literalMinlength";
   shexTest:approval "Approved";
-  shexMan:schema <1literalMinlength.shex>;
+  shexTest:shexc <1literalMinlength.shex>;
   shexTest:shexj <1literalMinlength.json>;
   shexTest:shexr <1literalMinlength.ttl>
 ] [
   shexMan:name "1iriMinlength";
   shexTest:approval "Approved";
-  shexMan:schema <1iriMinlength.shex>;
+  shexTest:shexc <1iriMinlength.shex>;
   shexTest:shexj <1iriMinlength.json>;
   shexTest:shexr <1iriMinlength.ttl>
 ] [
   shexMan:name "1bnodeMinlength";
   shexTest:approval "Approved";
-  shexMan:schema <1bnodeMinlength.shex>;
+  shexTest:shexc <1bnodeMinlength.shex>;
   shexTest:shexj <1bnodeMinlength.json>;
   shexTest:shexr <1bnodeMinlength.ttl>
 ] [
   shexMan:name "1nonliteralMinlength";
   shexTest:approval "Approved";
-  shexMan:schema <1nonliteralMinlength.shex>;
+  shexTest:shexc <1nonliteralMinlength.shex>;
   shexTest:shexj <1nonliteralMinlength.json>;
   shexTest:shexr <1nonliteralMinlength.ttl>
 ] [
   shexMan:name "1literalMaxlength";
   shexTest:approval "Approved";
-  shexMan:schema <1literalMaxlength.shex>;
+  shexTest:shexc <1literalMaxlength.shex>;
   shexTest:shexj <1literalMaxlength.json>;
   shexTest:shexr <1literalMaxlength.ttl>
 ] [
   shexMan:name "1iriMaxlength";
   shexTest:approval "Approved";
-  shexMan:schema <1iriMaxlength.shex>;
+  shexTest:shexc <1iriMaxlength.shex>;
   shexTest:shexj <1iriMaxlength.json>;
   shexTest:shexr <1iriMaxlength.ttl>
 ] [
   shexMan:name "1bnodeMaxlength";
   shexTest:approval "Approved";
-  shexMan:schema <1bnodeMaxlength.shex>;
+  shexTest:shexc <1bnodeMaxlength.shex>;
   shexTest:shexj <1bnodeMaxlength.json>;
   shexTest:shexr <1bnodeMaxlength.ttl>
 ] [
   shexMan:name "1nonliteralMaxlength";
   shexTest:approval "Approved";
-  shexMan:schema <1nonliteralMaxlength.shex>;
+  shexTest:shexc <1nonliteralMaxlength.shex>;
   shexTest:shexj <1nonliteralMaxlength.json>;
   shexTest:shexr <1nonliteralMaxlength.ttl>
 ] [
   shexMan:name "1literalPattern";
   shexTest:approval "Approved";
-  shexMan:schema <1literalPattern.shex>;
+  shexTest:shexc <1literalPattern.shex>;
   shexTest:shexj <1literalPattern.json>;
   shexTest:shexr <1literalPattern.ttl>
 ] [
   shexMan:name "1literalPattern_with_all_meta";
   shexTest:approval "Approved";
-  shexMan:schema <1literalPattern_with_all_meta.shex>;
+  shexTest:shexc <1literalPattern_with_all_meta.shex>;
   shexTest:shexj <1literalPattern_with_all_meta.json>;
   shexTest:shexr <1literalPattern_with_all_meta.ttl>
 ] [
   shexMan:name "1literalPattern_with_all_controls";
   shexTest:approval "Approved";
-  shexMan:schema <1literalPattern_with_all_controls.shex>;
+  shexTest:shexc <1literalPattern_with_all_controls.shex>;
   shexTest:shexj <1literalPattern_with_all_controls.json>;
   shexTest:shexr <1literalPattern_with_all_controls.ttl>
 ] [
   shexMan:name "1literalPattern_with_all_punctuation";
   shexTest:approval "Approved";
-  shexMan:schema <1literalPattern_with_all_punctuation.shex>;
+  shexTest:shexc <1literalPattern_with_all_punctuation.shex>;
   shexTest:shexj <1literalPattern_with_all_punctuation.json>;
   shexTest:shexr <1literalPattern_with_all_punctuation.ttl>
 ] [
   shexMan:name "1literalPattern_with_ascii_boundaries";
   shexTest:approval "Approved";
-  shexMan:schema <1literalPattern_with_ascii_boundaries.shex>;
+  shexTest:shexc <1literalPattern_with_ascii_boundaries.shex>;
   shexTest:shexj <1literalPattern_with_ascii_boundaries.json>;
   shexTest:shexr <1literalPattern_with_ascii_boundaries.ttl>
 ] [
   shexMan:name "1literalPattern_with_UTF8_boundaries";
   shexTest:approval "Approved";
-  shexMan:schema <1literalPattern_with_UTF8_boundaries.shex>;
+  shexTest:shexc <1literalPattern_with_UTF8_boundaries.shex>;
   shexTest:shexj <1literalPattern_with_UTF8_boundaries.json>;
   shexTest:shexr <1literalPattern_with_UTF8_boundaries.ttl>
 ] [
   shexMan:name "1literalPattern_with_REGEXP_escapes";
   shexTest:approval "Approved";
-  shexMan:schema <1literalPattern_with_REGEXP_escapes.shex>;
+  shexTest:shexc <1literalPattern_with_REGEXP_escapes.shex>;
   shexTest:shexj <1literalPattern_with_REGEXP_escapes.json>;
   shexTest:shexr <1literalPattern_with_REGEXP_escapes.ttl>
 ] [
   shexMan:name "1literalPattern_with_REGEXP_escapes_bare";
   shexTest:approval "Approved";
-  shexMan:schema <1literalPattern_with_REGEXP_escapes_bare.shex>;
+  shexTest:shexc <1literalPattern_with_REGEXP_escapes_bare.shex>;
   shexTest:shexj <1literalPattern_with_REGEXP_escapes_bare.json>;
   shexTest:shexr <1literalPattern_with_REGEXP_escapes_bare.ttl>
 ] [
   shexMan:name "1literalPattern_with_REGEXP_escapes_escaped";
   shexTest:approval "Approved";
-  shexMan:schema <1literalPattern_with_REGEXP_escapes_escaped.shex>;
+  shexTest:shexc <1literalPattern_with_REGEXP_escapes_escaped.shex>;
   shexTest:shexj <1literalPattern_with_REGEXP_escapes_escaped.json>;
   shexTest:shexr <1literalPattern_with_REGEXP_escapes_escaped.ttl>
 ] [
   shexMan:name "1literalPatterni";
   shexTest:approval "Approved";
-  shexMan:schema <1literalPatterni.shex>;
+  shexTest:shexc <1literalPatterni.shex>;
   shexTest:shexj <1literalPatterni.json>;
   shexTest:shexr <1literalPatterni.ttl>
 ] [
   shexMan:name "1literalPattern19";
   shexTest:approval "Approved";
-  shexMan:schema <1literalPattern19.shex>;
+  shexTest:shexc <1literalPattern19.shex>;
   shexTest:shexj <1literalPattern19.json>;
   shexTest:shexr <1literalPattern19.ttl>
 ] [
   shexMan:name "1literalStartPattern";
   shexTest:approval "Approved";
-  shexMan:schema <1literalStartPattern.shex>;
+  shexTest:shexc <1literalStartPattern.shex>;
   shexTest:shexj <1literalStartPattern.json>;
   shexTest:shexr <1literalStartPattern.ttl>
 ] [
   shexMan:name "1literalPatternEnd";
   shexTest:approval "Approved";
-  shexMan:schema <1literalPatternEnd.shex>;
+  shexTest:shexc <1literalPatternEnd.shex>;
   shexTest:shexj <1literalPatternEnd.json>;
   shexTest:shexr <1literalPatternEnd.ttl>
 ] [
   shexMan:name "1literalStartPatternEnd";
   shexTest:approval "Approved";
-  shexMan:schema <1literalStartPatternEnd.shex>;
+  shexTest:shexc <1literalStartPatternEnd.shex>;
   shexTest:shexj <1literalStartPatternEnd.json>;
   shexTest:shexr <1literalStartPatternEnd.ttl>
 ] [
   shexMan:name "1literalPatternDollar";
   shexTest:approval "Approved";
-  shexMan:schema <1literalPatternDollar.shex>;
+  shexTest:shexc <1literalPatternDollar.shex>;
   shexTest:shexj <1literalPatternDollar.json>;
   shexTest:shexr <1literalPatternDollar.ttl>
 ] [
   shexMan:name "1literalCarrotPatternDollar";
   shexTest:approval "Approved";
-  shexMan:schema <1literalCarrotPatternDollar.shex>;
+  shexTest:shexc <1literalCarrotPatternDollar.shex>;
   shexTest:shexj <1literalCarrotPatternDollar.json>;
   shexTest:shexr <1literalCarrotPatternDollar.ttl>
 ] [
   shexMan:name "1literalPatternabEnd";
   shexTest:approval "Approved";
-  shexMan:schema <1literalPatternabEnd.shex>;
+  shexTest:shexc <1literalPatternabEnd.shex>;
   shexTest:shexj <1literalPatternabEnd.json>;
   shexTest:shexr <1literalPatternabEnd.ttl>
 ] [
   shexMan:name "1iriPattern";
   shexTest:approval "Approved";
-  shexMan:schema <1iriPattern.shex>;
+  shexTest:shexc <1iriPattern.shex>;
   shexTest:shexj <1iriPattern.json>;
   shexTest:shexr <1iriPattern.ttl>
 ] [
   shexMan:name "1iriPatternbc";
   shexTest:approval "Approved";
-  shexMan:schema <1iriPatternbc.shex>;
+  shexTest:shexc <1iriPatternbc.shex>;
   shexTest:shexj <1iriPatternbc.json>;
   shexTest:shexr <1iriPatternbc.ttl>
 ] [
   shexMan:name "1bnodePattern";
   shexTest:approval "Approved";
-  shexMan:schema <1bnodePattern.shex>;
+  shexTest:shexc <1bnodePattern.shex>;
   shexTest:shexj <1bnodePattern.json>;
   shexTest:shexr <1bnodePattern.ttl>
 ] [
   shexMan:name "1nonliteralPattern";
   shexTest:approval "Approved";
-  shexMan:schema <1nonliteralPattern.shex>;
+  shexTest:shexc <1nonliteralPattern.shex>;
   shexTest:shexj <1nonliteralPattern.json>;
   shexTest:shexr <1nonliteralPattern.ttl>
 ] [
   shexMan:name "1val1dotMinusiri3";
   shexTest:approval "Approved";
-  shexMan:schema <1val1dotMinusiri3.shex>;
+  shexTest:shexc <1val1dotMinusiri3.shex>;
   shexTest:shexj <1val1dotMinusiri3.json>;
   shexTest:shexr <1val1dotMinusiri3.ttl>
 ] [
   shexMan:name "1val1refvsMinusiri3";
   shexTest:approval "Approved";
-  shexMan:schema <1val1refvsMinusiri3.shex>;
+  shexTest:shexc <1val1refvsMinusiri3.shex>;
   shexTest:shexj <1val1refvsMinusiri3.json>;
   shexTest:shexr <1val1refvsMinusiri3.ttl>
 ] [
   shexMan:name "1val1dotMinusiriStem3";
   shexTest:approval "Approved";
-  shexMan:schema <1val1dotMinusiriStem3.shex>;
+  shexTest:shexc <1val1dotMinusiriStem3.shex>;
   shexTest:shexj <1val1dotMinusiriStem3.json>;
   shexTest:shexr <1val1dotMinusiriStem3.ttl>
 ] [
   shexMan:name "1val1iri";
   shexTest:approval "Approved";
-  shexMan:schema <1val1iri.shex>;
+  shexTest:shexc <1val1iri.shex>;
   shexTest:shexj <1val1iri.json>;
   shexTest:shexr <1val1iri.ttl>
 ] [
   shexMan:name "1val1iriStem";
   shexTest:approval "Approved";
-  shexMan:schema <1val1iriStem.shex>;
+  shexTest:shexc <1val1iriStem.shex>;
   shexTest:shexj <1val1iriStem.json>;
   shexTest:shexr <1val1iriStem.ttl>
 ] [
   shexMan:name "1val1iriStemMinusiri3";
   shexTest:approval "Approved";
-  shexMan:schema <1val1iriStemMinusiri3.shex>;
+  shexTest:shexc <1val1iriStemMinusiri3.shex>;
   shexTest:shexj <1val1iriStemMinusiri3.json>;
   shexTest:shexr <1val1iriStemMinusiri3.ttl>
 ] [
   shexMan:name "1val1iriStemMinusiriStem3";
   shexTest:approval "Approved";
-  shexMan:schema <1val1iriStemMinusiriStem3.shex>;
+  shexTest:shexc <1val1iriStemMinusiriStem3.shex>;
   shexTest:shexj <1val1iriStemMinusiriStem3.json>;
   shexTest:shexr <1val1iriStemMinusiriStem3.ttl>
 ] [
   shexMan:name "1val1dotMinusliteral3";
   shexTest:approval "Approved";
-  shexMan:schema <1val1dotMinusliteral3.shex>;
+  shexTest:shexc <1val1dotMinusliteral3.shex>;
   shexTest:shexj <1val1dotMinusliteral3.json>;
   shexTest:shexr <1val1dotMinusliteral3.ttl>
 ] [
   shexMan:name "1val1dotMinusliteralStem3";
   shexTest:approval "Approved";
-  shexMan:schema <1val1dotMinusliteralStem3.shex>;
+  shexTest:shexc <1val1dotMinusliteralStem3.shex>;
   shexTest:shexj <1val1dotMinusliteralStem3.json>;
   shexTest:shexr <1val1dotMinusliteralStem3.ttl>
 ] [
   shexMan:name "1val1literalStem";
   shexTest:approval "Approved";
-  shexMan:schema <1val1literalStem.shex>;
+  shexTest:shexc <1val1literalStem.shex>;
   shexTest:shexj <1val1literalStem.json>;
   shexTest:shexr <1val1literalStem.ttl>
 ] [
   shexMan:name "1val1literalStemMinusliteral3";
   shexTest:approval "Approved";
-  shexMan:schema <1val1literalStemMinusliteral3.shex>;
+  shexTest:shexc <1val1literalStemMinusliteral3.shex>;
   shexTest:shexj <1val1literalStemMinusliteral3.json>;
   shexTest:shexr <1val1literalStemMinusliteral3.ttl>
 ] [
   shexMan:name "1val1literalStemMinusliteralStem3";
   shexTest:approval "Approved";
-  shexMan:schema <1val1literalStemMinusliteralStem3.shex>;
+  shexTest:shexc <1val1literalStemMinusliteralStem3.shex>;
   shexTest:shexj <1val1literalStemMinusliteralStem3.json>;
   shexTest:shexr <1val1literalStemMinusliteralStem3.ttl>
 ] [
   shexMan:name "1val1literaliriStem";
   shexTest:approval "Approved";
-  shexMan:schema <1val1literaliriStem.shex>;
+  shexTest:shexc <1val1literaliriStem.shex>;
   shexTest:shexj <1val1literaliriStem.json>;
   shexTest:shexr <1val1literaliriStem.ttl>
 ] [
   shexMan:name "1val1literaliriStemMinusliteraliri3";
   shexTest:approval "Approved";
-  shexMan:schema <1val1literaliriStemMinusliteraliri3.shex>;
+  shexTest:shexc <1val1literaliriStemMinusliteraliri3.shex>;
   shexTest:shexj <1val1literaliriStemMinusliteraliri3.json>;
   shexTest:shexr <1val1literaliriStemMinusliteraliri3.ttl>
 ] [
   shexMan:name "1val1dotMinuslanguage3";
   shexTest:approval "Approved";
-  shexMan:schema <1val1dotMinuslanguage3.shex>;
+  shexTest:shexc <1val1dotMinuslanguage3.shex>;
   shexTest:shexj <1val1dotMinuslanguage3.json>;
   shexTest:shexr <1val1dotMinuslanguage3.ttl>
 ] [
   shexMan:name "1val1dotMinuslanguageStem3";
   shexTest:approval "Approved";
-  shexMan:schema <1val1dotMinuslanguageStem3.shex>;
+  shexTest:shexc <1val1dotMinuslanguageStem3.shex>;
   shexTest:shexj <1val1dotMinuslanguageStem3.json>;
   shexTest:shexr <1val1dotMinuslanguageStem3.ttl>
 ] [
   shexMan:name "1val1language";
   shexTest:approval "Approved";
-  shexMan:schema <1val1language.shex>;
+  shexTest:shexc <1val1language.shex>;
   shexTest:shexj <1val1language.json>;
   shexTest:shexr <1val1language.ttl>
 ] [
   shexMan:name "1val1emptylanguageStem";
   shexTest:approval "Approved";
-  shexMan:schema <1val1emptylanguageStem.shex>;
+  shexTest:shexc <1val1emptylanguageStem.shex>;
   shexTest:shexj <1val1emptylanguageStem.json>;
   shexTest:shexr <1val1emptylanguageStem.ttl>
 ] [
   shexMan:name "1val1emptylanguageStemMinuslanguage3";
   shexTest:approval "Approved";
-  shexMan:schema <1val1emptylanguageStemMinuslanguage3.shex>;
+  shexTest:shexc <1val1emptylanguageStemMinuslanguage3.shex>;
   shexTest:shexj <1val1emptylanguageStemMinuslanguage3.json>;
   shexTest:shexr <1val1emptylanguageStemMinuslanguage3.ttl>
 ] [
   shexMan:name "1val1emptylanguageStemMinuslanguageStem3";
   shexTest:approval "Approved";
-  shexMan:schema <1val1emptylanguageStemMinuslanguageStem3.shex>;
+  shexTest:shexc <1val1emptylanguageStemMinuslanguageStem3.shex>;
   shexTest:shexj <1val1emptylanguageStemMinuslanguageStem3.json>;
   shexTest:shexr <1val1emptylanguageStemMinuslanguageStem3.ttl>
 ] [
   shexMan:name "1val1languageStem";
   shexTest:approval "Approved";
-  shexMan:schema <1val1languageStem.shex>;
+  shexTest:shexc <1val1languageStem.shex>;
   shexTest:shexj <1val1languageStem.json>;
   shexTest:shexr <1val1languageStem.ttl>
 ] [
   shexMan:name "1val1languageStemMinuslanguage3";
   shexTest:approval "Approved";
-  shexMan:schema <1val1languageStemMinuslanguage3.shex>;
+  shexTest:shexc <1val1languageStemMinuslanguage3.shex>;
   shexTest:shexj <1val1languageStemMinuslanguage3.json>;
   shexTest:shexr <1val1languageStemMinuslanguage3.ttl>
 ] [
   shexMan:name "1val1languageStemMinuslanguageStem3";
   shexTest:approval "Approved";
-  shexMan:schema <1val1languageStemMinuslanguageStem3.shex>;
+  shexTest:shexc <1val1languageStemMinuslanguageStem3.shex>;
   shexTest:shexj <1val1languageStemMinuslanguageStem3.json>;
   shexTest:shexr <1val1languageStemMinuslanguageStem3.ttl>
 ] [
   shexMan:name "1val1literal";
   shexTest:approval "Approved";
-  shexMan:schema <1val1literal.shex>;
+  shexTest:shexc <1val1literal.shex>;
   shexTest:shexj <1val1literal.json>;
   shexTest:shexr <1val1literal.ttl>
 ] [
   shexMan:name "1val1literallanguageStem";
   shexTest:approval "Approved";
-  shexMan:schema <1val1literallanguageStem.shex>;
+  shexTest:shexc <1val1literallanguageStem.shex>;
   shexTest:shexj <1val1literallanguageStem.json>;
   shexTest:shexr <1val1literallanguageStem.ttl>
 ] [
   shexMan:name "1val1literallanguageStemMinusliterallanguage3";
   shexTest:approval "Approved";
-  shexMan:schema <1val1literallanguageStemMinusliterallanguage3.shex>;
+  shexTest:shexc <1val1literallanguageStemMinusliterallanguage3.shex>;
   shexTest:shexj <1val1literallanguageStemMinusliterallanguage3.json>;
   shexTest:shexr <1val1literallanguageStemMinusliterallanguage3.ttl>
 ] [
   shexMan:name "1val1literalAtlanguageStem";
   shexTest:approval "Approved";
-  shexMan:schema <1val1literalAtlanguageStem.shex>;
+  shexTest:shexc <1val1literalAtlanguageStem.shex>;
   shexTest:shexj <1val1literalAtlanguageStem.json>;
   shexTest:shexr <1val1literalAtlanguageStem.ttl>
 ] [
   shexMan:name "1val1literalAtlanguageStemMinusliteralAtlanguage3";
   shexTest:approval "Approved";
-  shexMan:schema <1val1literalAtlanguageStemMinusliteralAtlanguage3.shex>;
+  shexTest:shexc <1val1literalAtlanguageStemMinusliteralAtlanguage3.shex>;
   shexTest:shexj <1val1literalAtlanguageStemMinusliteralAtlanguage3.json>;
   shexTest:shexr <1val1literalAtlanguageStemMinusliteralAtlanguage3.ttl>
 ] [
   shexMan:name "2dot";
   shexTest:approval "Approved";
-  shexMan:schema <2dot.shex>;
+  shexTest:shexc <2dot.shex>;
   shexTest:shexj <2dot.json>;
   shexTest:shexr <2dot.ttl>
 ] [
   shexMan:name "2dotSemis";
   shexTest:approval "Approved";
   shexTest:sameSemanticsAs <#2dotSemis>;
-  shexMan:schema <2dotSemis.shex>;
+  shexTest:shexc <2dotSemis.shex>;
   shexTest:shexj <2dotSemis.json>;
   shexTest:shexr <2dotSemis.ttl>
 ] [
   shexMan:name "open2dotclose";
   shexTest:approval "Approved";
   shexTest:sameSemanticsAs <#2dotSemis>;
-  shexMan:schema <open2dotclose.shex>;
+  shexTest:shexc <open2dotclose.shex>;
   shexTest:shexj <open2dotclose.json>;
   shexTest:shexr <open2dotclose.ttl>
 ] [
   shexMan:name "open2dotsemisclose";
   shexTest:approval "Approved";
   shexTest:sameSemanticsAs <#2dotSemis>;
-  shexMan:schema <open2dotsemisclose.shex>;
+  shexTest:shexc <open2dotsemisclose.shex>;
   shexTest:shexj <open2dotsemisclose.json>;
   shexTest:shexr <open2dotsemisclose.ttl>
 ] [
   shexMan:name "3Eachdot";
   shexTest:approval "Approved";
-  shexMan:schema <3Eachdot.shex>;
+  shexTest:shexc <3Eachdot.shex>;
   shexTest:shexj <3Eachdot.json>;
   shexTest:shexr <3Eachdot.ttl>
 ] [
   shexMan:name "open3Eachdotclose";
   shexTest:approval "Approved";
   shexTest:sameSemanticsAs <#3Eachdot>;
-  shexMan:schema <open3Eachdotclose.shex>;
+  shexTest:shexc <open3Eachdotclose.shex>;
   shexTest:shexj <open3Eachdotclose.json>;
   shexTest:shexr <open3Eachdotclose.ttl>
 ] [
   shexMan:name "1dotOne1dot";
   shexTest:approval "Approved";
-  shexMan:schema <1dotOne1dot.shex>;
+  shexTest:shexc <1dotOne1dot.shex>;
   shexTest:shexj <1dotOne1dot.json>;
   shexTest:shexr <1dotOne1dot.ttl>
 ] [
   shexMan:name "openopen1dotOr1dotclose";
   shexTest:approval "Approved";
-  shexMan:schema <openopen1dotOr1dotclose.shex>;
+  shexTest:shexc <openopen1dotOr1dotclose.shex>;
   shexTest:shexj <1dotOne1dot.json>;
   shexTest:shexr <1dotOne1dot.ttl>
 ] [
   shexMan:name "1dotSemiOne1dotSemi";
   shexTest:approval "Approved";
-  shexMan:schema <1dotSemiOne1dotSemi.shex>;
+  shexTest:shexc <1dotSemiOne1dotSemi.shex>;
   shexTest:shexj <1dotSemiOne1dotSemi.json>;
   shexTest:shexr <1dotSemiOne1dotSemi.ttl>
 ] [
   shexMan:name "open1dotOne1dotclose";
   shexTest:approval "Approved";
   shexTest:sameSemanticsAs <#1dotSemiOne1dotSemi>;
-  shexMan:schema <open1dotOne1dotclose.shex>;
+  shexTest:shexc <open1dotOne1dotclose.shex>;
   shexTest:shexj <open1dotOne1dotclose.json>;
   shexTest:shexr <open1dotOne1dotclose.ttl>
 ] [
   shexMan:name "open1dotSemiOne1dotSemicloseSemi";
   shexTest:approval "Approved";
   shexTest:sameSemanticsAs <#1dotSemiOne1dotSemi>;
-  shexMan:schema <open1dotSemiOne1dotSemicloseSemi.shex>;
+  shexTest:shexc <open1dotSemiOne1dotSemicloseSemi.shex>;
   shexTest:shexj <open1dotSemiOne1dotSemicloseSemi.json>;
   shexTest:shexr <open1dotSemiOne1dotSemicloseSemi.ttl>
 ] [
   shexMan:name "2dotOne1dot";
   shexTest:approval "Approved";
-  shexMan:schema <2dotOne1dot.shex>;
+  shexTest:shexc <2dotOne1dot.shex>;
   shexTest:shexj <2dotOne1dot.json>;
   shexTest:shexr <2dotOne1dot.ttl>
 ] [
   shexMan:name "2dotSemiOne1dotSemi";
   shexTest:approval "Approved";
   shexTest:sameSemanticsAs <#2dotOne1dot>;
-  shexMan:schema <2dotSemiOne1dotSemi.shex>;
+  shexTest:shexc <2dotSemiOne1dotSemi.shex>;
   shexTest:shexj <2dotSemiOne1dotSemi.json>;
   shexTest:shexr <2dotSemiOne1dotSemi.ttl>
 ] [
   shexMan:name "open2dotOne1dotclose";
   shexTest:approval "Approved";
   shexTest:sameSemanticsAs <#2dotOne1dot>;
-  shexMan:schema <open2dotOne1dotclose.shex>;
+  shexTest:shexc <open2dotOne1dotclose.shex>;
   shexTest:shexj <open2dotOne1dotclose.json>;
   shexTest:shexr <open2dotOne1dotclose.ttl>
 ] [
   shexMan:name "open2dotSemisOne1dotSemiclose";
   shexTest:approval "Approved";
   shexTest:sameSemanticsAs <#2dotOne1dot>;
-  shexMan:schema <open2dotSemisOne1dotSemiclose.shex>;
+  shexTest:shexc <open2dotSemisOne1dotSemiclose.shex>;
   shexTest:shexj <open2dotSemisOne1dotSemiclose.json>;
   shexTest:shexr <open2dotSemisOne1dotSemiclose.ttl>
 ] [
   shexMan:name "openopen2dotcloseOne1dotclose";
   shexTest:approval "Approved";
   shexTest:sameSemanticsAs <#2dotOne1dot>;
-  shexMan:schema <openopen2dotcloseOne1dotclose.shex>;
+  shexTest:shexc <openopen2dotcloseOne1dotclose.shex>;
   shexTest:shexj <openopen2dotcloseOne1dotclose.json>;
   shexTest:shexr <openopen2dotcloseOne1dotclose.ttl>
 ] [
   shexMan:name "openopen2dotSemiscloseOne1dotSemiclose";
   shexTest:approval "Approved";
   shexTest:sameSemanticsAs <#2dotOne1dot>;
-  shexMan:schema <openopen2dotSemiscloseOne1dotSemiclose.shex>;
+  shexTest:shexc <openopen2dotSemiscloseOne1dotSemiclose.shex>;
   shexTest:shexj <openopen2dotSemiscloseOne1dotSemiclose.json>;
   shexTest:shexr <openopen2dotSemiscloseOne1dotSemiclose.ttl>
 ] [
   shexMan:name "open1dotopen1dotOne1dotcloseclose";
   shexTest:approval "Approved";
-  shexMan:schema <open1dotopen1dotOne1dotcloseclose.shex>;
+  shexTest:shexc <open1dotopen1dotOne1dotcloseclose.shex>;
   shexTest:shexj <open1dotopen1dotOne1dotcloseclose.json>;
   shexTest:shexr <open1dotopen1dotOne1dotcloseclose.ttl>
 ] [
   shexMan:name "open1dotopen1dotSemiOne1dotSemicloseSemicloseSemi";
   shexTest:approval "Approved";
   shexTest:sameSemanticsAs <#open1dotopen1dotOne1dotcloseclose>;
-  shexMan:schema <open1dotopen1dotSemiOne1dotSemicloseSemicloseSemi.shex>;
+  shexTest:shexc <open1dotopen1dotSemiOne1dotSemicloseSemicloseSemi.shex>;
   shexTest:shexj <open1dotopen1dotSemiOne1dotSemicloseSemicloseSemi.json>;
   shexTest:shexr <open1dotopen1dotSemiOne1dotSemicloseSemicloseSemi.ttl>
 ] [
   shexMan:name "1dotOne2dot";
   shexTest:approval "Approved";
-  shexMan:schema <1dotOne2dot.shex>;
+  shexTest:shexc <1dotOne2dot.shex>;
   shexTest:shexj <1dotOne2dot.json>;
   shexTest:shexr <1dotOne2dot.ttl>
 ] [
   shexMan:name "open1dotOneopen2dotcloseclose";
   shexTest:approval "Approved";
-  shexMan:schema <open1dotOneopen2dotcloseclose.shex>;
+  shexTest:shexc <open1dotOneopen2dotcloseclose.shex>;
   shexTest:shexj <open1dotOneopen2dotcloseclose.json>;
   shexTest:shexr <open1dotOneopen2dotcloseclose.ttl>
 ] [
   shexMan:name "openopen1dotOne1dotclose1dotclose";
   shexTest:approval "Approved";
-  shexMan:schema <openopen1dotOne1dotclose1dotclose.shex>;
+  shexTest:shexc <openopen1dotOne1dotclose1dotclose.shex>;
   shexTest:shexj <openopen1dotOne1dotclose1dotclose.json>;
   shexTest:shexr <openopen1dotOne1dotclose1dotclose.ttl>
 ] [
   shexMan:name "1val1vExprRefIRIREF1";
   shexTest:approval "Approved";
-  shexMan:schema <1val1vExprRefIRIREF1.shex>;
+  shexTest:shexc <1val1vExprRefIRIREF1.shex>;
   shexTest:shexj <1val1vExprRefIRIREF1.json>;
   shexTest:shexr <1val1vExprRefIRIREF1.ttl>
 ] [
   shexMan:name "1val1vExprRefbnode1";
   shexTest:approval "Approved";
-  shexMan:schema <1val1vExprRefbnode1.shex>;
+  shexTest:shexc <1val1vExprRefbnode1.shex>;
   shexTest:shexj <1val1vExprRefbnode1.json>;
   shexTest:shexr <1val1vExprRefbnode1.ttl>
 ] [
   shexMan:name "1dotRefAND3";
   shexTest:approval "Approved";
-  shexMan:schema <1dotRefAND3.shex>;
+  shexTest:shexc <1dotRefAND3.shex>;
   shexTest:shexj <1dotRefAND3.json>;
   shexTest:shexr <1dotRefAND3.ttl>
 ] [
   shexMan:name "1val1vExpr1AND1AND1Ref3";
   shexTest:approval "Approved";
-  shexMan:schema <1val1vExpr1AND1AND1Ref3.shex>;
+  shexTest:shexc <1val1vExpr1AND1AND1Ref3.shex>;
   shexTest:shexj <1val1vExpr1AND1AND1Ref3.json>;
   shexTest:shexr <1val1vExpr1AND1AND1Ref3.ttl>
 ] [
   shexMan:name "1val1vExprRefAND3";
   shexTest:approval "Approved";
-  shexMan:schema <1val1vExprRefAND3.shex>;
+  shexTest:shexc <1val1vExprRefAND3.shex>;
   shexTest:shexj <1val1vExprRefAND3.json>;
   shexTest:shexr <1val1vExprRefAND3.ttl>
 ] [
   shexMan:name "1val1vExprAND3";
   shexTest:approval "Approved";
-  shexMan:schema <1val1vExprAND3.shex>;
+  shexTest:shexc <1val1vExprAND3.shex>;
   shexTest:shexj <1val1vExprAND3.json>;
   shexTest:shexr <1val1vExprAND3.ttl>
 ] [
   shexMan:name "1dotRefOR3";
   shexTest:approval "Approved";
-  shexMan:schema <1dotRefOR3.shex>;
+  shexTest:shexc <1dotRefOR3.shex>;
   shexTest:shexj <1dotRefOR3.json>;
   shexTest:shexr <1dotRefOR3.ttl>
 ] [
   shexMan:name "1val1vExpr1OR1OR1Ref3";
   shexTest:approval "Approved";
-  shexMan:schema <1val1vExpr1OR1OR1Ref3.shex>;
+  shexTest:shexc <1val1vExpr1OR1OR1Ref3.shex>;
   shexTest:shexj <1val1vExpr1OR1OR1Ref3.json>;
   shexTest:shexr <1val1vExpr1OR1OR1Ref3.ttl>
 ] [
   shexMan:name "1val1vExprRefOR3";
   shexTest:approval "Approved";
-  shexMan:schema <1val1vExprRefOR3.shex>;
+  shexTest:shexc <1val1vExprRefOR3.shex>;
   shexTest:shexj <1val1vExprRefOR3.json>;
   shexTest:shexr <1val1vExprRefOR3.ttl>
 ] [
   shexMan:name "1val1vExprOR3";
   shexTest:approval "Approved";
-  shexMan:schema <1val1vExprOR3.shex>;
+  shexTest:shexc <1val1vExprOR3.shex>;
   shexTest:shexj <1val1vExprOR3.json>;
   shexTest:shexr <1val1vExprOR3.ttl>
 ] [
   shexMan:name "1NOTIRI";
   shexTest:approval "Approved";
-  shexMan:schema <1NOTIRI.shex>;
+  shexTest:shexc <1NOTIRI.shex>;
   shexTest:shexj <1NOTIRI.json>;
   shexTest:shexr <1NOTIRI.ttl>
 ] [
   shexMan:name "1NOTNOTIRI";
   shexTest:approval "Approved";
-  shexMan:schema <1NOTNOTIRI.shex>;
+  shexTest:shexc <1NOTNOTIRI.shex>;
   shexTest:shexj <1NOTNOTIRI.json>;
   shexTest:shexr <1NOTNOTIRI.ttl>
 ] [
   shexMan:name "1NOTvs";
   shexTest:approval "Approved";
-  shexMan:schema <1NOTvs.shex>;
+  shexTest:shexc <1NOTvs.shex>;
   shexTest:shexj <1NOTvs.json>;
   shexTest:shexr <1NOTvs.ttl>
 ] [
   shexMan:name "1NOTNOTvs";
   shexTest:approval "Approved";
-  shexMan:schema <1NOTNOTvs.shex>;
+  shexTest:shexc <1NOTNOTvs.shex>;
   shexTest:shexj <1NOTNOTvs.json>;
   shexTest:shexr <1NOTNOTvs.ttl>
 ] [
   shexMan:name "1NOTdot";
   shexTest:approval "Approved";
-  shexMan:schema <1NOTdot.shex>;
+  shexTest:shexc <1NOTdot.shex>;
   shexTest:shexj <1NOTdot.json>;
   shexTest:shexr <1NOTdot.ttl>
 ] [
   shexMan:name "1NOTNOTdot";
   shexTest:approval "Approved";
-  shexMan:schema <1NOTNOTdot.shex>;
+  shexTest:shexc <1NOTNOTdot.shex>;
   shexTest:shexj <1NOTNOTdot.json>;
   shexTest:shexr <1NOTNOTdot.ttl>
 ] [
   shexMan:name "1_NOTliteral_ANDvs";
   shexTest:approval "Approved";
-  shexMan:schema <1_NOTliteral_ANDvs.shex>;
+  shexTest:shexc <1_NOTliteral_ANDvs.shex>;
   shexTest:shexj <1_NOTliteral_ANDvs.json>;
   shexTest:shexr <1_NOTliteral_ANDvs.ttl>
 ] [
   shexMan:name "1NOT_literalANDvs_";
   shexTest:approval "Approved";
-  shexMan:schema <1NOT_literalANDvs_.shex>;
+  shexTest:shexc <1NOT_literalANDvs_.shex>;
   shexTest:shexj <1NOT_literalANDvs_.json>;
   shexTest:shexr <1NOT_literalANDvs_.ttl>
 ] [
   shexMan:name "1NOTliteralANDvs";
   shexTest:approval "Approved";
-  shexMan:schema <1NOTliteralANDvs.shex>;
+  shexTest:shexc <1NOTliteralANDvs.shex>;
   shexTest:shexj <1NOTliteralANDvs.json>;
   shexTest:shexr <1NOTliteralANDvs.ttl>
 ] [
   shexMan:name "1_NOTvs_ANDvs";
   shexTest:approval "Approved";
-  shexMan:schema <1_NOTvs_ANDvs.shex>;
+  shexTest:shexc <1_NOTvs_ANDvs.shex>;
   shexTest:shexj <1_NOTvs_ANDvs.json>;
   shexTest:shexr <1_NOTvs_ANDvs.ttl>
 ] [
   shexMan:name "1NOT_vsANDvs_";
   shexTest:approval "Approved";
-  shexMan:schema <1NOT_vsANDvs_.shex>;
+  shexTest:shexc <1NOT_vsANDvs_.shex>;
   shexTest:shexj <1NOT_vsANDvs_.json>;
   shexTest:shexr <1NOT_vsANDvs_.ttl>
 ] [
   shexMan:name "1NOTvsANDvs";
   shexTest:approval "Approved";
-  shexMan:schema <1NOTvsANDvs.shex>;
+  shexTest:shexc <1NOTvsANDvs.shex>;
   shexTest:shexj <1NOTvsANDvs.json>;
   shexTest:shexr <1NOTvsANDvs.ttl>
 ] [
   shexMan:name "1_NOTliteral_ORvs";
   shexTest:approval "Approved";
-  shexMan:schema <1_NOTliteral_ORvs.shex>;
+  shexTest:shexc <1_NOTliteral_ORvs.shex>;
   shexTest:shexj <1_NOTliteral_ORvs.json>;
   shexTest:shexr <1_NOTliteral_ORvs.ttl>
 ] [
   shexMan:name "1NOT_literalORvs_";
   shexTest:approval "Approved";
-  shexMan:schema <1NOT_literalORvs_.shex>;
+  shexTest:shexc <1NOT_literalORvs_.shex>;
   shexTest:shexj <1NOT_literalORvs_.json>;
   shexTest:shexr <1NOT_literalORvs_.ttl>
 ] [
   shexMan:name "1NOTliteralORvs";
   shexTest:approval "Approved";
-  shexMan:schema <1NOTliteralORvs.shex>;
+  shexTest:shexc <1NOTliteralORvs.shex>;
   shexTest:shexj <1NOTliteralORvs.json>;
   shexTest:shexr <1NOTliteralORvs.ttl>
 ] [
   shexMan:name "1_NOTvs_ORvs";
   shexTest:approval "Approved";
-  shexMan:schema <1_NOTvs_ORvs.shex>;
+  shexTest:shexc <1_NOTvs_ORvs.shex>;
   shexTest:shexj <1_NOTvs_ORvs.json>;
   shexTest:shexr <1_NOTvs_ORvs.ttl>
 ] [
   shexMan:name "1NOT_vsORvs_";
   shexTest:approval "Approved";
-  shexMan:schema <1NOT_vsORvs_.shex>;
+  shexTest:shexc <1NOT_vsORvs_.shex>;
   shexTest:shexj <1NOT_vsORvs_.json>;
   shexTest:shexr <1NOT_vsORvs_.ttl>
 ] [
   shexMan:name "1NOTvsORvs";
   shexTest:approval "Approved";
-  shexMan:schema <1NOTvsORvs.shex>;
+  shexTest:shexc <1NOTvsORvs.shex>;
   shexTest:shexj <1NOTvsORvs.json>;
   shexTest:shexr <1NOTvsORvs.ttl>
 ] [
   shexMan:name "NOT1NOTvs";
   shexTest:approval "Approved";
-  shexMan:schema <NOT1NOTvs.shex>;
+  shexTest:shexc <NOT1NOTvs.shex>;
   shexTest:shexj <NOT1NOTvs.json>;
   shexTest:shexr <NOT1NOTvs.ttl>
 ] [
   shexMan:name "1val1vExpr1AND1OR1Ref3";
   shexTest:approval "Approved";
-  shexMan:schema <1val1vExpr1AND1OR1Ref3.shex>;
+  shexTest:shexc <1val1vExpr1AND1OR1Ref3.shex>;
   shexTest:shexj <1val1vExpr1AND1OR1Ref3.json>;
   shexTest:shexr <1val1vExpr1AND1OR1Ref3.ttl>
 ] [
   shexMan:name "1val1vExpr1OR1AND1Ref3";
   shexTest:approval "Approved";
-  shexMan:schema <1val1vExpr1OR1AND1Ref3.shex>;
+  shexTest:shexc <1val1vExpr1OR1AND1Ref3.shex>;
   shexTest:shexj <1val1vExpr1OR1AND1Ref3.json>;
   shexTest:shexr <1val1vExpr1OR1AND1Ref3.ttl>
 ] [
   shexMan:name "open3Onedotclosecard2";
   shexTest:approval "Approved";
-  shexMan:schema <open3Onedotclosecard2.shex>;
+  shexTest:shexc <open3Onedotclosecard2.shex>;
   shexTest:shexj <open3Onedotclosecard2.json>;
   shexTest:shexr <open3Onedotclosecard2.ttl>
 ] [
   shexMan:name "open3Onedotclosecard23";
   shexTest:approval "Approved";
-  shexMan:schema <open3Onedotclosecard23.shex>;
+  shexTest:shexc <open3Onedotclosecard23.shex>;
   shexTest:shexj <open3Onedotclosecard23.json>;
   shexTest:shexr <open3Onedotclosecard23.ttl>
 ] [
   shexMan:name "open4Onedotclosecard23";
   shexTest:approval "Approved";
-  shexMan:schema <open4Onedotclosecard23.shex>;
+  shexTest:shexc <open4Onedotclosecard23.shex>;
   shexTest:shexj <open4Onedotclosecard23.json>;
   shexTest:shexr <open4Onedotclosecard23.ttl>
 ] [
   shexMan:name "open3Eachdotclosecard23";
   shexTest:approval "Approved";
-  shexMan:schema <open3Eachdotclosecard23.shex>;
+  shexTest:shexc <open3Eachdotclosecard23.shex>;
   shexTest:shexj <open3Eachdotclosecard23.json>;
   shexTest:shexr <open3Eachdotclosecard23.ttl>
 ] [
   shexMan:name "1val1vShapeANDRef3";
   shexTest:approval "Approved";
-  shexMan:schema <1val1vShapeANDRef3.shex>;
+  shexTest:shexc <1val1vShapeANDRef3.shex>;
   shexTest:shexj <1val1vShapeANDRef3.json>;
   shexTest:shexr <1val1vShapeANDRef3.ttl>
 ] [
   shexMan:name "1dotClosed";
   shexTest:approval "Approved";
-  shexMan:schema <1dotClosed.shex>;
+  shexTest:shexc <1dotClosed.shex>;
   shexTest:shexj <1dotClosed.json>;
   shexTest:shexr <1dotClosed.ttl>
 ] [
   shexMan:name "1val1IRIREFExtra1";
   shexTest:approval "Approved";
-  shexMan:schema <1val1IRIREFExtra1.shex>;
+  shexTest:shexc <1val1IRIREFExtra1.shex>;
   shexTest:shexj <1val1IRIREFExtra1.json>;
   shexTest:shexr <1val1IRIREFExtra1.ttl>
 ] [
   shexMan:name "1val1IRIREFExtra1Closed";
   shexTest:approval "Approved";
-  shexMan:schema <1val1IRIREFExtra1Closed.shex>;
+  shexTest:shexc <1val1IRIREFExtra1Closed.shex>;
   shexTest:shexj <1val1IRIREFExtra1Closed.json>;
   shexTest:shexr <1val1IRIREFExtra1Closed.ttl>
 ] [
   shexMan:name "1val1IRIREFClosedExtra1";
   shexTest:approval "Approved";
-  shexMan:schema <1val1IRIREFClosedExtra1.shex>;
+  shexTest:shexc <1val1IRIREFClosedExtra1.shex>;
   shexTest:shexj <1val1IRIREFClosedExtra1.json>;
   shexTest:shexr <1val1IRIREFClosedExtra1.ttl>
 ] [
   shexMan:name "1val2IRIREFExtra1";
   shexTest:approval "Approved";
-  shexMan:schema <1val2IRIREFExtra1.shex>;
+  shexTest:shexc <1val2IRIREFExtra1.shex>;
   shexTest:shexj <1val2IRIREFExtra1.json>;
   shexTest:shexr <1val2IRIREFExtra1.ttl>
 ] [
   shexMan:name "1val2IRIREFPlusExtra1";
   shexTest:approval "Approved";
-  shexMan:schema <1val2IRIREFPlusExtra1.shex>;
+  shexTest:shexc <1val2IRIREFPlusExtra1.shex>;
   shexTest:shexj <1val2IRIREFPlusExtra1.json>;
   shexTest:shexr <1val2IRIREFPlusExtra1.ttl>
 ] [
   shexMan:name "1val1IRIREFExtra1p2";
   shexTest:approval "Approved";
-  shexMan:schema <1val1IRIREFExtra1p2.shex>;
+  shexTest:shexc <1val1IRIREFExtra1p2.shex>;
   shexTest:shexj <1val1IRIREFExtra1p2.json>;
   shexTest:shexr <1val1IRIREFExtra1p2.ttl>
 ] [
   shexMan:name "1val1IRIREFExtra1One";
   shexTest:approval "Approved";
-  shexMan:schema <1val1IRIREFExtra1One.shex>;
+  shexTest:shexc <1val1IRIREFExtra1One.shex>;
   shexTest:shexj <1val1IRIREFExtra1One.json>;
   shexTest:shexr <1val1IRIREFExtra1One.ttl>
 ] [
   shexMan:name "1dotExtra1";
   shexTest:approval "Approved";
-  shexMan:schema <1dotExtra1.shex>;
+  shexTest:shexc <1dotExtra1.shex>;
   shexTest:shexj <1dotExtra1.json>;
   shexTest:shexr <1dotExtra1.ttl>
 ] [
   shexMan:name "3EachdotExtra3";
   shexTest:approval "Approved";
-  shexMan:schema <3EachdotExtra3.shex>;
+  shexTest:shexc <3EachdotExtra3.shex>;
   shexTest:shexj <3EachdotExtra3.json>;
   shexTest:shexr <3EachdotExtra3.ttl>
 ] [
   shexMan:name "3Eachdot3Extra";
   shexTest:approval "Approved";
-  shexMan:schema <3Eachdot3Extra.shex>;
+  shexTest:shexc <3Eachdot3Extra.shex>;
   shexTest:shexj <3Eachdot3Extra.json>;
   shexTest:shexr <3Eachdot3Extra.ttl>
 ] [
   shexMan:name "3EachdotExtra3NLex";
   shexTest:approval "Approved";
-  shexMan:schema <3EachdotExtra3NLex.shex>;
+  shexTest:shexc <3EachdotExtra3NLex.shex>;
   shexTest:shexj <3EachdotExtra3NLex.json>;
   shexTest:shexr <3EachdotExtra3NLex.ttl>
 ] [
   shexMan:name "startRefIRIREF";
   shexTest:approval "Approved";
-  shexMan:schema <startRefIRIREF.shex>;
+  shexTest:shexc <startRefIRIREF.shex>;
   shexTest:shexj <startRefIRIREF.json>;
   shexTest:shexr <startRefIRIREF.ttl>
 ] [
   shexMan:name "startRefbnode";
   shexTest:approval "Approved";
-  shexMan:schema <startRefbnode.shex>;
+  shexTest:shexc <startRefbnode.shex>;
   shexTest:shexj <startRefbnode.json>;
   shexTest:shexr <startRefbnode.ttl>
 ] [
   shexMan:name "startInline";
   shexTest:approval "Approved";
-  shexMan:schema <startInline.shex>;
+  shexTest:shexc <startInline.shex>;
   shexTest:shexj <startInline.json>;
   shexTest:shexr <startInline.ttl>
 ] [
   shexMan:name "startEqualSpaceInline";
   shexTest:approval "Approved";
-  shexMan:schema <startEqualSpaceInline.shex>;
+  shexTest:shexc <startEqualSpaceInline.shex>;
   shexTest:shexj <startEqualSpaceInline.json>;
   shexTest:shexr <startEqualSpaceInline.ttl>
 ] [
   shexMan:name "startSpaceEqualInline";
   shexTest:approval "Approved";
-  shexMan:schema <startSpaceEqualInline.shex>;
+  shexTest:shexc <startSpaceEqualInline.shex>;
   shexTest:shexj <startSpaceEqualInline.json>;
   shexTest:shexr <startSpaceEqualInline.ttl>
 ] [
   shexMan:name "1IRIInline0";
   shexTest:approval "Approved";
-  shexMan:schema <1IRIInline0.shex>;
+  shexTest:shexc <1IRIInline0.shex>;
   shexTest:shexj <1IRIInline0.json>;
   shexTest:shexr <1IRIInline0.ttl>
 ] [
   shexMan:name "2EachInclude1";
   shexTest:approval "Approved";
-  shexMan:schema <2EachInclude1.shex>;
+  shexTest:shexc <2EachInclude1.shex>;
   shexTest:shexj <2EachInclude1.json>;
   shexTest:shexr <2EachInclude1.ttl>
 ] [
   shexMan:name "2EachInclude1-after";
   shexTest:approval "Approved";
-  shexMan:schema <2EachInclude1-after.shex>;
+  shexTest:shexc <2EachInclude1-after.shex>;
   shexTest:shexj <2EachInclude1-after.json>;
   shexTest:shexr <2EachInclude1-after.ttl>
 ] [
   shexMan:name "2OneInclude1";
   shexTest:approval "Approved";
-  shexMan:schema <2OneInclude1.shex>;
+  shexTest:shexc <2OneInclude1.shex>;
   shexTest:shexj <2OneInclude1.json>;
   shexTest:shexr <2OneInclude1.ttl>
 ] [
   shexMan:name "2OneInclude1-after";
   shexTest:approval "Approved";
-  shexMan:schema <2OneInclude1-after.shex>;
+  shexTest:shexc <2OneInclude1-after.shex>;
   shexTest:shexj <2OneInclude1-after.json>;
   shexTest:shexr <2OneInclude1-after.ttl>
 ] [
   shexMan:name "openEachInclude1dotclosecardPlusc1IRI";
   shexTest:approval "Approved";
-  shexMan:schema <openEachInclude1dotclosecardPlusc1IRI.shex>;
+  shexTest:shexc <openEachInclude1dotclosecardPlusc1IRI.shex>;
   shexTest:shexj <openEachInclude1dotclosecardPlusc1IRI.json>;
   shexTest:shexr <openEachInclude1dotclosecardPlusc1IRI.ttl>
 ] [
   shexMan:name "openOneInclude1dotclosecardPlusc1IRI";
   shexTest:approval "Approved";
-  shexMan:schema <openOneInclude1dotclosecardPlusc1IRI.shex>;
+  shexTest:shexc <openOneInclude1dotclosecardPlusc1IRI.shex>;
   shexTest:shexj <openOneInclude1dotclosecardPlusc1IRI.json>;
   shexTest:shexr <openOneInclude1dotclosecardPlusc1IRI.ttl>
 ] [
   shexMan:name "1dotAnnotIRIREF";
   shexTest:approval "Approved";
-  shexMan:schema <1dotAnnotIRIREF.shex>;
+  shexTest:shexc <1dotAnnotIRIREF.shex>;
   shexTest:shexj <1dotAnnotIRIREF.json>;
   shexTest:shexr <1dotAnnotIRIREF.ttl>
 ] [
   shexMan:name "1dotAnnotSTRING_LITERAL1";
   shexTest:approval "Approved";
-  shexMan:schema <1dotAnnotSTRING_LITERAL1.shex>;
+  shexTest:shexc <1dotAnnotSTRING_LITERAL1.shex>;
   shexTest:shexj <1dotAnnotSTRING_LITERAL1.json>;
   shexTest:shexr <1dotAnnotSTRING_LITERAL1.ttl>
 ] [
   shexMan:name "1dotAnnot3";
   shexTest:approval "Approved";
-  shexMan:schema <1dotAnnot3.shex>;
+  shexTest:shexc <1dotAnnot3.shex>;
   shexTest:shexj <1dotAnnot3.json>;
   shexTest:shexr <1dotAnnot3.ttl>
 ] [
   shexMan:name "1inversedotAnnot3";
   shexTest:approval "Approved";
-  shexMan:schema <1inversedotAnnot3.shex>;
+  shexTest:shexc <1inversedotAnnot3.shex>;
   shexTest:shexj <1inversedotAnnot3.json>;
   shexTest:shexr <1inversedotAnnot3.ttl>
 ] [
   shexMan:name "1dotShapeAnnotIRIREF";
   shexTest:approval "Approved";
-  shexMan:schema <1dotShapeAnnotIRIREF.shex>;
+  shexTest:shexc <1dotShapeAnnotIRIREF.shex>;
   shexTest:shexj <1dotShapeAnnotIRIREF.json>;
   shexTest:shexr <1dotShapeAnnotIRIREF.ttl>
 ] [
   shexMan:name "1dotShapePlusAnnotIRIREF";
   shexTest:approval "Approved";
-  shexMan:schema <1dotShapePlusAnnotIRIREF.shex>;
+  shexTest:shexc <1dotShapePlusAnnotIRIREF.shex>;
   shexTest:shexj <1dotShapePlusAnnotIRIREF.json>;
   shexTest:shexr <1dotShapePlusAnnotIRIREF.ttl>
 ] [
   shexMan:name "1dotShapeAnnotAIRIREF";
   shexTest:approval "Approved";
-  shexMan:schema <1dotShapeAnnotAIRIREF.shex>;
+  shexTest:shexc <1dotShapeAnnotAIRIREF.shex>;
   shexTest:shexj <1dotShapeAnnotAIRIREF.json>;
   shexTest:shexr <1dotShapeAnnotAIRIREF.ttl>
 ] [
   shexMan:name "1dotShapeAnnotSTRING_LITERAL1";
   shexTest:approval "Approved";
-  shexMan:schema <1dotShapeAnnotSTRING_LITERAL1.shex>;
+  shexTest:shexc <1dotShapeAnnotSTRING_LITERAL1.shex>;
   shexTest:shexj <1dotShapeAnnotSTRING_LITERAL1.json>;
   shexTest:shexr <1dotShapeAnnotSTRING_LITERAL1.ttl>
 ] [
   shexMan:name "2val1refvsAnnot";
   shexTest:approval "Approved";
-  shexMan:schema <2val1refvsAnnot.shex>;
+  shexTest:shexc <2val1refvsAnnot.shex>;
   shexTest:shexj <2val1refvsAnnot.json>;
   shexTest:shexr <2val1refvsAnnot.ttl>
 ] [
   shexMan:name "open3EachdotcloseAnnot3";
   shexTest:approval "Approved";
-  shexMan:schema <open3EachdotcloseAnnot3.shex>;
+  shexTest:shexc <open3EachdotcloseAnnot3.shex>;
   shexTest:shexj <open3EachdotcloseAnnot3.json>;
   shexTest:shexr <open3EachdotcloseAnnot3.ttl>
 ] [
   shexMan:name "1dotCode1";
   shexTest:approval "Approved";
-  shexMan:schema <1dotCode1.shex>;
+  shexTest:shexc <1dotCode1.shex>;
   shexTest:shexj <1dotCode1.json>;
   shexTest:shexr <1dotCode1.ttl>
 ] [
   shexMan:name "open1dotcloseCode1";
   shexTest:approval "Approved";
-  shexMan:schema <open1dotcloseCode1.shex>;
+  shexTest:shexc <open1dotcloseCode1.shex>;
   shexTest:shexj <1dotCode1.json>;
   shexTest:shexr <1dotCode1.ttl>
 ] [
   shexMan:name "1dotNoCode1";
   shexTest:approval "Approved";
-  shexMan:schema <1dotNoCode1.shex>;
+  shexTest:shexc <1dotNoCode1.shex>;
   shexTest:shexj <1dotNoCode1.json>;
   shexTest:shexr <1dotNoCode1.ttl>
 ] [
   shexMan:name "1inversedotCode1";
   shexTest:approval "Approved";
-  shexMan:schema <1inversedotCode1.shex>;
+  shexTest:shexc <1inversedotCode1.shex>;
   shexTest:shexj <1inversedotCode1.json>;
   shexTest:shexr <1inversedotCode1.ttl>
 ] [
   shexMan:name "1dotCode3";
   shexTest:approval "Approved";
-  shexMan:schema <1dotCode3.shex>;
+  shexTest:shexc <1dotCode3.shex>;
   shexTest:shexj <1dotCode3.json>;
   shexTest:shexr <1dotCode3.ttl>
 ] [
   shexMan:name "openopen1dotcloseCode1closeCode3";
   shexTest:approval "Approved";
-  shexMan:schema <openopen1dotcloseCode1closeCode3.shex>;
+  shexTest:shexc <openopen1dotcloseCode1closeCode3.shex>;
   shexTest:shexj <1dotCode3.json>;
   shexTest:shexr <1dotCode3.ttl>
 ] [
   shexMan:name "1dotNoCode3";
   shexTest:approval "Approved";
-  shexMan:schema <1dotNoCode3.shex>;
+  shexTest:shexc <1dotNoCode3.shex>;
   shexTest:shexj <1dotNoCode3.json>;
   shexTest:shexr <1dotNoCode3.ttl>
 ] [
   shexMan:name "1dotCode3fail";
   shexTest:approval "Approved";
-  shexMan:schema <1dotCode3fail.shex>;
+  shexTest:shexc <1dotCode3fail.shex>;
   shexTest:shexj <1dotCode3fail.json>;
   shexTest:shexr <1dotCode3fail.ttl>
 ] [
   shexMan:name "1dotCodeWithEscapes1";
   shexTest:approval "Approved";
-  shexMan:schema <1dotCodeWithEscapes1.shex>;
+  shexTest:shexc <1dotCodeWithEscapes1.shex>;
   shexTest:shexj <1dotCodeWithEscapes1.json>;
   shexTest:shexr <1dotCodeWithEscapes1.ttl>
 ] [
   shexMan:name "1dotShapeCode1";
   shexTest:approval "Approved";
-  shexMan:schema <1dotShapeCode1.shex>;
+  shexTest:shexc <1dotShapeCode1.shex>;
   shexTest:shexj <1dotShapeCode1.json>;
   shexTest:shexr <1dotShapeCode1.ttl>
 ] [
   shexMan:name "1dotShapeNoCode1";
   shexTest:approval "Approved";
-  shexMan:schema <1dotShapeNoCode1.shex>;
+  shexTest:shexc <1dotShapeNoCode1.shex>;
   shexTest:shexj <1dotShapeNoCode1.json>;
   shexTest:shexr <1dotShapeNoCode1.ttl>
 ] [
   shexMan:name "open3EachdotcloseCode1";
   shexTest:approval "Approved";
-  shexMan:schema <open3EachdotcloseCode1.shex>;
+  shexTest:shexc <open3EachdotcloseCode1.shex>;
   shexTest:shexj <open3EachdotcloseCode1.json>;
   shexTest:shexr <open3EachdotcloseCode1.ttl>
 ] [
   shexMan:name "1dotShapeCode1fail";
   shexTest:approval "Approved";
-  shexMan:schema <1dotShapeCode1fail.shex>;
+  shexTest:shexc <1dotShapeCode1fail.shex>;
   shexTest:shexj <1dotShapeCode1fail.json>;
   shexTest:shexr <1dotShapeCode1fail.ttl>
 ] [
   shexMan:name "open3EachdotcloseCode1fail";
   shexTest:approval "Approved";
-  shexMan:schema <open3EachdotcloseCode1fail.shex>;
+  shexTest:shexc <open3EachdotcloseCode1fail.shex>;
   shexTest:shexj <open3EachdotcloseCode1fail.json>;
   shexTest:shexr <open3EachdotcloseCode1fail.ttl>
 ] [
   shexMan:name "open2OnedotcloseCode1fail";
   shexTest:approval "Approved";
-  shexMan:schema <open2OnedotcloseCode1fail.shex>;
+  shexTest:shexc <open2OnedotcloseCode1fail.shex>;
   shexTest:shexj <open2OnedotcloseCode1fail.json>;
   shexTest:shexr <open2OnedotcloseCode1fail.ttl>
 ] [
   shexMan:name "startCode1";
   shexTest:approval "Approved";
-  shexMan:schema <startCode1.shex>;
+  shexTest:shexc <startCode1.shex>;
   shexTest:shexj <startCode1.json>;
   shexTest:shexr <startCode1.ttl>
 ] [
   shexMan:name "startNoCode1";
   shexTest:approval "Approved";
-  shexMan:schema <startNoCode1.shex>;
+  shexTest:shexc <startNoCode1.shex>;
   shexTest:shexj <startNoCode1.json>;
   shexTest:shexr <startNoCode1.ttl>
 ] [
   shexMan:name "startCode1fail";
   shexTest:approval "Approved";
-  shexMan:schema <startCode1fail.shex>;
+  shexTest:shexc <startCode1fail.shex>;
   shexTest:shexj <startCode1fail.json>;
   shexTest:shexr <startCode1fail.ttl>
 ] [
   shexMan:name "startCode1startRef";
   shexTest:approval "Approved";
-  shexMan:schema <startCode1startRef.shex>;
+  shexTest:shexc <startCode1startRef.shex>;
   shexTest:shexj <startCode1startRef.json>;
   shexTest:shexr <startCode1startRef.ttl>
 ] [
   shexMan:name "startCode1startReffail";
   shexTest:approval "Approved";
-  shexMan:schema <startCode1startReffail.shex>;
+  shexTest:shexc <startCode1startReffail.shex>;
   shexTest:shexj <startCode1startReffail.json>;
   shexTest:shexr <startCode1startReffail.ttl>
 ] [
   shexMan:name "startCode3";
   shexTest:approval "Approved";
-  shexMan:schema <startCode3.shex>;
+  shexTest:shexc <startCode3.shex>;
   shexTest:shexj <startCode3.json>;
   shexTest:shexr <startCode3.ttl>
 ] [
   shexMan:name "startCode3fail";
   shexTest:approval "Approved";
-  shexMan:schema <startCode3fail.shex>;
+  shexTest:shexc <startCode3fail.shex>;
   shexTest:shexj <startCode3fail.json>;
   shexTest:shexr <startCode3fail.ttl>
 ] [
   shexMan:name "2val1refvsCode";
   shexTest:approval "Approved";
-  shexMan:schema <2val1refvsCode.shex>;
+  shexTest:shexc <2val1refvsCode.shex>;
   shexTest:shexj <2val1refvsCode.json>;
   shexTest:shexr <2val1refvsCode.ttl>
 ] [
   shexMan:name "open3Eachdotclosecard23Annot3Code2";
   shexTest:approval "Approved";
-  shexMan:schema <open3Eachdotclosecard23Annot3Code2.shex>;
+  shexTest:shexc <open3Eachdotclosecard23Annot3Code2.shex>;
   shexTest:shexj <open3Eachdotclosecard23Annot3Code2.json>;
   shexTest:shexr <open3Eachdotclosecard23Annot3Code2.ttl>
 ] [
   shexMan:name "0focusIRI";
   shexTest:approval "Approved";
-  shexMan:schema <0focusIRI.shex>;
+  shexTest:shexc <0focusIRI.shex>;
   shexTest:shexj <0focusIRI.json>;
   shexTest:shexr <0focusIRI.ttl>
 ] [
   shexMan:name "0focusBNODE";
   shexTest:approval "Approved";
-  shexMan:schema <0focusBNODE.shex>;
+  shexTest:shexc <0focusBNODE.shex>;
   shexTest:shexj <0focusBNODE.json>;
   shexTest:shexr <0focusBNODE.ttl>
 ] [
   shexMan:name "1focusIRI_dot";
   shexTest:approval "Approved";
-  shexMan:schema <1focusIRI_dot.shex>;
+  shexTest:shexc <1focusIRI_dot.shex>;
   shexTest:shexj <1focusIRI_dot.json>;
   shexTest:shexr <1focusIRI_dot.ttl>
 ] [
   shexMan:name "1focusBNODE_dot";
   shexTest:approval "Approved";
-  shexMan:schema <1focusBNODE_dot.shex>;
+  shexTest:shexc <1focusBNODE_dot.shex>;
   shexTest:shexj <1focusBNODE_dot.json>;
   shexTest:shexr <1focusBNODE_dot.ttl>
 ] [
   shexMan:name "1focusnonLiteral-dot";
   shexTest:approval "Approved";
-  shexMan:schema <1focusnonLiteral-dot.shex>;
+  shexTest:shexc <1focusnonLiteral-dot.shex>;
   shexTest:shexj <1focusnonLiteral-dot.json>;
   shexTest:shexr <1focusnonLiteral-dot.ttl>
 ] [
   shexMan:name "focusNOTRefOR1dot";
   shexTest:approval "Proposed";
-  shexMan:schema <focusNOTRefOR1dot.shex>;
+  shexTest:shexc <focusNOTRefOR1dot.shex>;
   shexTest:shexj <focusNOTRefOR1dot.json>;
   shexTest:shexr <focusNOTRefOR1dot.ttl>
 ] [
   shexMan:name "1focusLength-dot";
   shexTest:approval "Approved";
-  shexMan:schema <1focusLength-dot.shex>;
+  shexTest:shexc <1focusLength-dot.shex>;
   shexTest:shexj <1focusLength-dot.json>;
   shexTest:shexr <1focusLength-dot.ttl>
 ] [
   shexMan:name "1focusMinLength-dot";
   shexTest:approval "Approved";
-  shexMan:schema <1focusMinLength-dot.shex>;
+  shexTest:shexc <1focusMinLength-dot.shex>;
   shexTest:shexj <1focusMinLength-dot.json>;
   shexTest:shexr <1focusMinLength-dot.ttl>
 ] [
   shexMan:name "1focusMaxLength-dot";
   shexTest:approval "Approved";
-  shexMan:schema <1focusMaxLength-dot.shex>;
+  shexTest:shexc <1focusMaxLength-dot.shex>;
   shexTest:shexj <1focusMaxLength-dot.json>;
   shexTest:shexr <1focusMaxLength-dot.ttl>
 ] [
   shexMan:name "1focusPattern-dot";
   shexTest:approval "Approved";
-  shexMan:schema <1focusPattern-dot.shex>;
+  shexTest:shexc <1focusPattern-dot.shex>;
   shexTest:shexj <1focusPattern-dot.json>;
   shexTest:shexr <1focusPattern-dot.ttl>
 ] [
   shexMan:name "1focusPatternB-dot";
   shexTest:approval "Approved";
-  shexMan:schema <1focusPatternB-dot.shex>;
+  shexTest:shexc <1focusPatternB-dot.shex>;
   shexTest:shexj <1focusPatternB-dot.json>;
   shexTest:shexr <1focusPatternB-dot.ttl>
 ] [
   shexMan:name "1focusIRILength_dot";
   shexTest:approval "Approved";
-  shexMan:schema <1focusIRILength_dot.shex>;
+  shexTest:shexc <1focusIRILength_dot.shex>;
   shexTest:shexj <1focusIRILength_dot.json>;
   shexTest:shexr <1focusIRILength_dot.ttl>
 ] [
   shexMan:name "1focusBNODELength_dot";
   shexTest:approval "Approved";
-  shexMan:schema <1focusBNODELength_dot.shex>;
+  shexTest:shexc <1focusBNODELength_dot.shex>;
   shexTest:shexj <1focusBNODELength_dot.json>;
   shexTest:shexr <1focusBNODELength_dot.ttl>
 ] [
   shexMan:name "1focusnonLiteralLength-dot";
   shexTest:approval "Approved";
-  shexMan:schema <1focusnonLiteralLength-dot.shex>;
+  shexTest:shexc <1focusnonLiteralLength-dot.shex>;
   shexTest:shexj <1focusnonLiteralLength-dot.json>;
   shexTest:shexr <1focusnonLiteralLength-dot.ttl>
 ] [
   shexMan:name "NOT1dotOR2dot";
   shexTest:approval "Approved";
-  shexMan:schema <NOT1dotOR2dot.shex>;
+  shexTest:shexc <NOT1dotOR2dot.shex>;
   shexTest:shexj <NOT1dotOR2dot.json>;
   shexTest:shexr <NOT1dotOR2dot.ttl>
 ] [
   shexMan:name "NOT1dotOR2dotX3";
   shexTest:approval "Approved";
-  shexMan:schema <NOT1dotOR2dotX3.shex>;
+  shexTest:shexc <NOT1dotOR2dotX3.shex>;
   shexTest:shexj <NOT1dotOR2dotX3.json>;
   shexTest:shexr <NOT1dotOR2dotX3.ttl>
 ] [
   shexMan:name "NOT1dotOR2dotX3AND1";
   shexTest:approval "Approved";
-  shexMan:schema <NOT1dotOR2dotX3AND1.shex>;
+  shexTest:shexc <NOT1dotOR2dotX3AND1.shex>;
   shexTest:shexj <NOT1dotOR2dotX3AND1.json>;
   shexTest:shexr <NOT1dotOR2dotX3AND1.ttl>
 ] [
   shexMan:name "1NOTRefOR1dot";
   shexTest:approval "Proposed";
-  shexMan:schema <1NOTRefOR1dot.shex>;
+  shexTest:shexc <1NOTRefOR1dot.shex>;
   shexTest:shexj <1NOTRefOR1dot.json>;
   shexTest:shexr <1NOTRefOR1dot.ttl>
 ] [
   shexMan:name "shapeExtern";
   shexTest:approval "Approved";
-  shexMan:schema <shapeExtern.shex>;
+  shexTest:shexc <shapeExtern.shex>;
   shexTest:shexj <shapeExtern.json>;
   shexTest:shexr <shapeExtern.ttl>
 ] [
   shexMan:name "shapeExternRef";
   shexTest:approval "Approved";
-  shexMan:schema <shapeExternRef.shex>;
+  shexTest:shexc <shapeExternRef.shex>;
   shexTest:shexj <shapeExternRef.json>;
   shexTest:shexr <shapeExternRef.ttl>
 ] [
   shexMan:name "focusvsORdatatype";
   shexTest:approval "Approved";
-  shexMan:schema <focusvsORdatatype.shex>;
+  shexTest:shexc <focusvsORdatatype.shex>;
   shexTest:shexj <focusvsORdatatype.json>;
   shexTest:shexr <focusvsORdatatype.ttl>
 ] [
   shexMan:name "focusvsANDIRI";
   shexTest:approval "Approved";
-  shexMan:schema <focusvsANDIRI.shex>;
+  shexTest:shexc <focusvsANDIRI.shex>;
   shexTest:shexj <focusvsANDIRI.json>;
   shexTest:shexr <focusvsANDIRI.ttl>
 ] [
   shexMan:name "focusvsANDdatatype";
   shexTest:approval "Approved";
-  shexMan:schema <focusvsANDdatatype.shex>;
+  shexTest:shexc <focusvsANDdatatype.shex>;
   shexTest:shexj <focusvsANDdatatype.json>;
   shexTest:shexr <focusvsANDdatatype.ttl>
 ] [
   shexMan:name "focusvs";
   shexTest:approval "Approved";
-  shexMan:schema <focusvs.shex>;
+  shexTest:shexc <focusvs.shex>;
   shexTest:shexj <focusvs.json>;
   shexTest:shexr <focusvs.ttl>
 ] [
   shexMan:name "focusdatatype";
   shexTest:approval "Approved";
-  shexMan:schema <focusdatatype.shex>;
+  shexTest:shexc <focusdatatype.shex>;
   shexTest:shexj <focusdatatype.json>;
   shexTest:shexr <focusdatatype.ttl>
 ] [
   shexMan:name "1dotPlusAnnotIRIREF";
   shexTest:approval "Approved";
-  shexMan:schema <1dotPlusAnnotIRIREF.shex>;
+  shexTest:shexc <1dotPlusAnnotIRIREF.shex>;
   shexTest:shexj <1dotPlusAnnotIRIREF.json>;
   shexTest:shexr <1dotPlusAnnotIRIREF.ttl>
 ] [
   shexMan:name "1dotAnnotAIRIREF";
   shexTest:approval "Approved";
-  shexMan:schema <1dotAnnotAIRIREF.shex>;
+  shexTest:shexc <1dotAnnotAIRIREF.shex>;
   shexTest:shexj <1dotAnnotAIRIREF.json>;
   shexTest:shexr <1dotAnnotAIRIREF.ttl>
 ] [
   shexMan:name "FocusIRI2EachBnodeNested2EachIRIRef";
   shexTest:approval "Approved";
-  shexMan:schema <FocusIRI2EachBnodeNested2EachIRIRef.shex>;
+  shexTest:shexc <FocusIRI2EachBnodeNested2EachIRIRef.shex>;
   shexTest:shexj <FocusIRI2EachBnodeNested2EachIRIRef.json>;
   shexTest:shexr <FocusIRI2EachBnodeNested2EachIRIRef.ttl>
 ] [
   shexMan:name "1bnodeRefORRefMinlength";
   shexTest:approval "Approved";
-  shexMan:schema <1bnodeRefORRefMinlength.shex>;
+  shexTest:shexc <1bnodeRefORRefMinlength.shex>;
   shexTest:shexj <1bnodeRefORRefMinlength.json>;
   shexTest:shexr <1bnodeRefORRefMinlength.ttl>
 ] [
   shexMan:name "1dotShapeAND1dot3X";
   shexTest:approval "Approved";
-  shexMan:schema <1dotShapeAND1dot3X.shex>;
+  shexTest:shexc <1dotShapeAND1dot3X.shex>;
   shexTest:shexj <1dotShapeAND1dot3X.json>;
   shexTest:shexr <1dotShapeAND1dot3X.ttl>
 ] [
   shexMan:name "openopen1dotSemiOne1dotSemiclose1dotSemicloseSemi";
   shexTest:approval "Approved";
   shexTest:sameSemanticsAs <#openopen1dotSemiOne1dotSemiclose1dotSemicloseSemi>;
-  shexMan:schema <openopen1dotSemiOne1dotSemiclose1dotSemicloseSemi.shex>;
+  shexTest:shexc <openopen1dotSemiOne1dotSemiclose1dotSemicloseSemi.shex>;
   shexTest:shexj <openopen1dotSemiOne1dotSemiclose1dotSemicloseSemi.json>;
   shexTest:shexr <openopen1dotSemiOne1dotSemiclose1dotSemicloseSemi.ttl>
 ] [
   shexMan:name "open1dotOne2dotclose";
   shexTest:approval "Approved";
   shexTest:sameSemanticsAs <#1dotOne2dot>;
-  shexMan:schema <open1dotOne2dotclose.shex>;
+  shexTest:shexc <open1dotOne2dotclose.shex>;
   shexTest:shexj <open1dotOne2dotclose.json>;
   shexTest:shexr <open1dotOne2dotclose.ttl>
 ] [
   shexMan:name "open1dotSemiOneopen2dotSemiscloseclose";
   shexTest:approval "Approved";
   shexTest:sameSemanticsAs <#1dotOne2dot>;
-  shexMan:schema <open1dotSemiOneopen2dotSemiscloseclose.shex>;
+  shexTest:shexc <open1dotSemiOneopen2dotSemiscloseclose.shex>;
   shexTest:shexj <open1dotSemiOneopen2dotSemiscloseclose.json>;
   shexTest:shexr <open1dotSemiOneopen2dotSemiscloseclose.ttl>
 ] [
   shexMan:name "open1dotSemiOne2dotsemisclose";
   shexTest:approval "Approved";
   shexTest:sameSemanticsAs <#1dotOne2dot>;
-  shexMan:schema <open1dotSemiOne2dotsemisclose.shex>;
+  shexTest:shexc <open1dotSemiOne2dotsemisclose.shex>;
   shexTest:shexj <open1dotSemiOne2dotsemisclose.json>;
   shexTest:shexr <open1dotSemiOne2dotsemisclose.ttl>
 ] [
   shexMan:name "1dotSemiOne2dotSemis";
   shexTest:approval "Approved";
   shexTest:sameSemanticsAs <#1dotOne2dot>;
-  shexMan:schema <1dotSemiOne2dotSemis.shex>;
+  shexTest:shexc <1dotSemiOne2dotSemis.shex>;
   shexTest:shexj <1dotSemiOne2dotSemis.json>;
   shexTest:shexr <1dotSemiOne2dotSemis.ttl>
 ] [
   shexMan:name "1literalMaxinclusiveINTEGER";
   shexTest:approval "Approved";
-  shexMan:schema <1literalMaxinclusiveINTEGER.shex>;
+  shexTest:shexc <1literalMaxinclusiveINTEGER.shex>;
   shexTest:shexj <1literalMaxinclusiveINTEGER.json>;
   shexTest:shexr <1literalMaxinclusiveINTEGER.ttl>
 ] [
   shexMan:name "1literalMaxexclusiveINTEGER";
   shexTest:approval "Approved";
-  shexMan:schema <1literalMaxexclusiveINTEGER.shex>;
+  shexTest:shexc <1literalMaxexclusiveINTEGER.shex>;
   shexTest:shexj <1literalMaxexclusiveINTEGER.json>;
   shexTest:shexr <1literalMaxexclusiveINTEGER.ttl>
 ] [
   shexMan:name "1literalMininclusiveINTEGER";
   shexTest:approval "Approved";
-  shexMan:schema <1literalMininclusiveINTEGER.shex>;
+  shexTest:shexc <1literalMininclusiveINTEGER.shex>;
   shexTest:shexj <1literalMininclusiveINTEGER.json>;
   shexTest:shexr <1literalMininclusiveINTEGER.ttl>
 ] [
   shexMan:name "1literalMinexclusiveINTEGER";
   shexTest:approval "Approved";
-  shexMan:schema <1literalMinexclusiveINTEGER.shex>;
+  shexTest:shexc <1literalMinexclusiveINTEGER.shex>;
   shexTest:shexj <1literalMinexclusiveINTEGER.json>;
   shexTest:shexr <1literalMinexclusiveINTEGER.ttl>
 ] [
   shexMan:name "1val1DECIMAL";
   shexTest:approval "Approved";
-  shexMan:schema <1val1DECIMAL.shex>;
+  shexTest:shexc <1val1DECIMAL.shex>;
   shexTest:shexj <1val1DECIMAL.json>;
   shexTest:shexr <1val1DECIMAL.ttl>
 ] [
   shexMan:name "1datatypeRef1";
   shexTest:approval "Approved";
-  shexMan:schema <1datatypeRef1.shex>;
+  shexTest:shexc <1datatypeRef1.shex>;
   shexTest:shexj <1datatypeRef1.json>;
   shexTest:shexr <1datatypeRef1.ttl>
 ] [
   shexMan:name "1card2blank";
   shexTest:approval "Approved";
-  shexMan:schema <1card2blank.shex>;
+  shexTest:shexc <1card2blank.shex>;
   shexTest:shexj <1card2blank.json>;
   shexTest:shexr <1card2blank.ttl>
 ] [
   shexMan:name "1focusnonLiteralLength-nonLiteralLength";
   shexTest:approval "Approved";
-  shexMan:schema <1focusnonLiteralLength-nonLiteralLength.shex>;
+  shexTest:shexc <1focusnonLiteralLength-nonLiteralLength.shex>;
   shexTest:shexj <1focusnonLiteralLength-nonLiteralLength.json>;
   shexTest:shexr <1focusnonLiteralLength-nonLiteralLength.ttl>
 ] [
   shexMan:name "1Include1";
   shexTest:approval "Approved";
-  shexMan:schema <1Include1.shex>;
+  shexTest:shexc <1Include1.shex>;
   shexTest:shexj <1Include1.json>;
   shexTest:shexr <1Include1.ttl>
 ] [
   shexMan:name "1Include1-after";
   shexTest:approval "Approved";
-  shexMan:schema <1Include1-after.shex>;
+  shexTest:shexc <1Include1-after.shex>;
   shexTest:shexj <1Include1-after.json>;
   shexTest:shexr <1Include1-after.ttl>
 ] [
   shexMan:name "startSelfRefIRIREF";
   shexTest:approval "Approved";
-  shexMan:schema <startSelfRefIRIREF.shex>;
+  shexTest:shexc <startSelfRefIRIREF.shex>;
   shexTest:shexj <startSelfRefIRIREF.json>;
   shexTest:shexr <startSelfRefIRIREF.ttl>
 ] [
   shexMan:name "startSelfRefbnode";
   shexTest:approval "Approved";
-  shexMan:schema <startSelfRefbnode.shex>;
+  shexTest:shexc <startSelfRefbnode.shex>;
   shexTest:shexj <startSelfRefbnode.json>;
   shexTest:shexr <startSelfRefbnode.ttl>
 ] [
   shexMan:name "datatypes";
   shexTest:approval "Approved";
-  shexMan:schema <datatypes.shex>;
+  shexTest:shexc <datatypes.shex>;
   shexTest:shexj <datatypes.json>;
   shexTest:shexr <datatypes.ttl>
 ] [
   shexMan:name "_all";
   shexTest:approval "Approved";
-  shexMan:schema <_all.shex>;
+  shexTest:shexc <_all.shex>;
   shexTest:shexj <_all.json>;
   shexTest:shexr <_all.ttl>
 ] [
   shexMan:name "kitchenSink";
   shexTest:approval "Approved";
-  shexMan:schema <kitchenSink.shex>;
+  shexTest:shexc <kitchenSink.shex>;
   shexTest:shexj <kitchenSink.json>;
   shexTest:shexr <kitchenSink.ttl>
 ] [
   shexMan:name "node_kind_example";
   shexTest:approval "Approved";
-  shexMan:schema <node_kind_example.shex>;
+  shexTest:shexc <node_kind_example.shex>;
   shexTest:shexj <node_kind_example.json>;
   shexTest:shexr <node_kind_example.ttl>
 ] [
   shexMan:name "dependent_shape";
   shexTest:approval "Approved";
-  shexMan:schema <dependent_shape.shex>;
+  shexTest:shexc <dependent_shape.shex>;
   shexTest:shexj <dependent_shape.json>;
   shexTest:shexr <dependent_shape.ttl>
 ] [
   shexMan:name "recursion_example";
   shexTest:approval "Approved";
-  shexMan:schema <recursion_example.shex>;
+  shexTest:shexc <recursion_example.shex>;
   shexTest:shexj <recursion_example.json>;
   shexTest:shexr <recursion_example.ttl>
 ] [
   shexMan:name "focusbnode0ORfocusPattern0";
   shexTest:approval "Approved";
-  shexMan:schema <focusbnode0ORfocusPattern0.shex>;
+  shexTest:shexc <focusbnode0ORfocusPattern0.shex>;
   shexTest:shexj <focusbnode0ORfocusPattern0.json>;
   shexTest:shexr <focusbnode0ORfocusPattern0.ttl>
 ] [
   shexMan:name "1dotAND1dotAND1dot";
   shexTest:approval "Approved";
-  shexMan:schema <1dotAND1dotAND1dot.shex>;
+  shexTest:shexc <1dotAND1dotAND1dot.shex>;
   shexTest:shexj <1dotAND1dotAND1dot.json>;
   shexTest:shexr <1dotAND1dotAND1dot.ttl>
 ] [
   shexMan:name "open1dotAND1dotcloseAND1dot";
   shexTest:approval "Approved";
-  shexMan:schema <open1dotAND1dotcloseAND1dot.shex>;
+  shexTest:shexc <open1dotAND1dotcloseAND1dot.shex>;
   shexTest:shexj <open1dotAND1dotcloseAND1dot.json>;
   shexTest:shexr <open1dotAND1dotcloseAND1dot.ttl>
 ] [
   shexMan:name "1dotANDopen1dotAND1dotclose";
   shexTest:approval "Approved";
-  shexMan:schema <1dotANDopen1dotAND1dotclose.shex>;
+  shexTest:shexc <1dotANDopen1dotAND1dotclose.shex>;
   shexTest:shexj <1dotANDopen1dotAND1dotclose.json>;
   shexTest:shexr <1dotANDopen1dotAND1dotclose.ttl>
 ] [
   shexMan:name "2Eachdot";
   shexTest:approval "Approved";
-  shexMan:schema <2Eachdot.shex>;
+  shexTest:shexc <2Eachdot.shex>;
   shexTest:shexj <2Eachdot.json>;
   shexTest:shexr <2Eachdot.ttl>
 ] [
   shexMan:name "8dot5a2b1c";
   shexTest:approval "Approved";
-  shexMan:schema <8dot5a2b1c.shex>;
+  shexTest:shexc <8dot5a2b1c.shex>;
   shexTest:shexj <8dot5a2b1c.json>;
   shexTest:shexr <8dot5a2b1c.ttl>
 ] [
   shexMan:name "open2Eachdotclosecard25c1dot";
   shexTest:approval "Approved";
-  shexMan:schema <open2Eachdotclosecard25c1dot.shex>;
+  shexTest:shexc <open2Eachdotclosecard25c1dot.shex>;
   shexTest:shexj <open2Eachdotclosecard25c1dot.json>;
   shexTest:shexr <open2Eachdotclosecard25c1dot.ttl>
 ] [
   shexMan:name "open2Eachdotclosecard0c1dot";
   shexTest:approval "Approved";
-  shexMan:schema <open2Eachdotclosecard0c1dot.shex>;
+  shexTest:shexc <open2Eachdotclosecard0c1dot.shex>;
   shexTest:shexj <open2Eachdotclosecard0c1dot.json>;
   shexTest:shexr <open2Eachdotclosecard0c1dot.ttl>
 ] [
   shexMan:name "open2EachdotclosecardStar";
   shexTest:approval "Approved";
-  shexMan:schema <open2EachdotclosecardStar.shex>;
+  shexTest:shexc <open2EachdotclosecardStar.shex>;
   shexTest:shexj <open2EachdotclosecardStar.json>;
   shexTest:shexr <open2EachdotclosecardStar.ttl>
 ] [
   shexMan:name "open2EachdotclosecardOpt";
   shexTest:approval "Approved";
-  shexMan:schema <open2EachdotclosecardOpt.shex>;
+  shexTest:shexc <open2EachdotclosecardOpt.shex>;
   shexTest:shexj <open2EachdotclosecardOpt.json>;
   shexTest:shexr <open2EachdotclosecardOpt.ttl>
 ] [
   shexMan:name "open2Eachdotclosecard02";
   shexTest:approval "Approved";
-  shexMan:schema <open2Eachdotclosecard02.shex>;
+  shexTest:shexc <open2Eachdotclosecard02.shex>;
   shexTest:shexj <open2Eachdotclosecard02.json>;
   shexTest:shexr <open2Eachdotclosecard02.ttl>
 ] [
   shexMan:name "open2OnedotclosecardStar";
   shexTest:approval "Approved";
-  shexMan:schema <open2OnedotclosecardStar.shex>;
+  shexTest:shexc <open2OnedotclosecardStar.shex>;
   shexTest:shexj <open2OnedotclosecardStar.json>;
   shexTest:shexr <open2OnedotclosecardStar.ttl>
 ] [
   shexMan:name "open1dot1cardPlusclosecard2";
   shexTest:approval "Approved";
-  shexMan:schema <open1dot1cardPlusclosecard2.shex>;
+  shexTest:shexc <open1dot1cardPlusclosecard2.shex>;
   shexTest:shexj <open1dot1cardPlusclosecard2.json>;
   shexTest:shexr <open1dot1cardPlusclosecard2.ttl>
 ] [
   shexMan:name "open1cardPlus1dotclosecard2";
   shexTest:approval "Approved";
-  shexMan:schema <open1cardPlus1dotclosecard2.shex>;
+  shexTest:shexc <open1cardPlus1dotclosecard2.shex>;
   shexTest:shexj <open1cardPlus1dotclosecard2.json>;
   shexTest:shexr <open1cardPlus1dotclosecard2.ttl>
 ] [
   shexMan:name "open1card21dotclosecardStar";
   shexTest:approval "Approved";
-  shexMan:schema <open1card21dotclosecardStar.shex>;
+  shexTest:shexc <open1card21dotclosecardStar.shex>;
   shexTest:shexj <open1card21dotclosecardStar.json>;
   shexTest:shexr <open1card21dotclosecardStar.ttl>
 ] [
   shexMan:name "open1card121cardOptclosecardStar";
   shexTest:approval "Approved";
-  shexMan:schema <open1card121cardOptclosecardStar.shex>;
+  shexTest:shexc <open1card121cardOptclosecardStar.shex>;
   shexTest:shexj <open1card121cardOptclosecardStar.json>;
   shexTest:shexr <open1card121cardOptclosecardStar.ttl>
 ] [
   shexMan:name "open1dot1cardOptclosecard12";
   shexTest:approval "Approved";
-  shexMan:schema <open1dot1cardOptclosecard12.shex>;
+  shexTest:shexc <open1dot1cardOptclosecard12.shex>;
   shexTest:shexj <open1dot1cardOptclosecard12.json>;
   shexTest:shexr <open1dot1cardOptclosecard12.ttl>
 ] [
   shexMan:name "openopen2Eachdotclosecard0c1dotclosecardStarc1dot";
   shexTest:approval "Approved";
-  shexMan:schema <openopen2Eachdotclosecard0c1dotclosecardStarc1dot.shex>;
+  shexTest:shexc <openopen2Eachdotclosecard0c1dotclosecardStarc1dot.shex>;
   shexTest:shexj <openopen2Eachdotclosecard0c1dotclosecardStarc1dot.json>;
   shexTest:shexr <openopen2Eachdotclosecard0c1dotclosecardStarc1dot.ttl>
 ] [
   shexMan:name "openopen2EachdotclosecardOptc1dotclosecardStarc1dot";
   shexTest:approval "Approved";
-  shexMan:schema <openopen2EachdotclosecardOptc1dotclosecardStarc1dot.shex>;
+  shexTest:shexc <openopen2EachdotclosecardOptc1dotclosecardStarc1dot.shex>;
   shexTest:shexj <openopen2EachdotclosecardOptc1dotclosecardStarc1dot.json>;
   shexTest:shexr <openopen2EachdotclosecardOptc1dotclosecardStarc1dot.ttl>
 ] [
   shexMan:name "open2OnecardStarclosecardStar";
   shexTest:approval "Approved";
-  shexMan:schema <open2OnecardStarclosecardStar.shex>;
+  shexTest:shexc <open2OnecardStarclosecardStar.shex>;
   shexTest:shexj <open2OnecardStarclosecardStar.json>;
   shexTest:shexr <open2OnecardStarclosecardStar.ttl>
 ] [
   shexMan:name "CycleNoNegation_pass";
   shexTest:approval "Approved";
   shexTest:trait "Cycle";
-  shexMan:schema <CycleNoNegation.shex>;
+  shexTest:shexc <CycleNoNegation.shex>;
   shexTest:shexj <CycleNoNegation.json>;
   shexTest:shexr <CycleNoNegation.ttl>
 ] [
   shexMan:name "NoNegation_pass";
   shexTest:approval "Approved";
   shexTest:trait "Cycle";
-  shexMan:schema <NoNegation.shex>;
+  shexTest:shexc <NoNegation.shex>;
   shexTest:shexj <NoNegation.json>;
   shexTest:shexr <NoNegation.ttl>
 ] [
   shexMan:name "NoNegation2_pass";
   shexTest:approval "Approved";
   shexTest:trait "Cycle";
-  shexMan:schema <NoNegation2.shex>;
+  shexTest:shexc <NoNegation2.shex>;
   shexTest:shexj <NoNegation2.json>;
   shexTest:shexr <NoNegation2.ttl>
 ] [
   shexMan:name "OneNegation_pass";
   shexTest:approval "Approved";
   shexTest:trait "Cycle";
-  shexMan:schema <OneNegation.shex>;
+  shexTest:shexc <OneNegation.shex>;
   shexTest:shexj <OneNegation.json>;
   shexTest:shexr <OneNegation.ttl>
 ] [
   shexMan:name "TwoNegation_pass";
   shexTest:approval "Approved";
   shexTest:trait "Cycle";
-  shexMan:schema <TwoNegation.shex>;
+  shexTest:shexc <TwoNegation.shex>;
   shexTest:shexj <TwoNegation.json>;
   shexTest:shexr <TwoNegation.ttl>
 ] [
   shexMan:name "Cycle2NoNegation_pass";
   shexTest:approval "Approved";
   shexTest:trait "Cycle";
-  shexMan:schema <Cycle2NoNegation.shex>;
+  shexTest:shexc <Cycle2NoNegation.shex>;
   shexTest:shexj <Cycle2NoNegation.json>;
   shexTest:shexr <Cycle2NoNegation.ttl>
 ] [
   shexMan:name "Cycle2Extra_pass";
   shexTest:approval "Approved";
   shexTest:trait "Cycle";
-  shexMan:schema <Cycle2Extra.shex>;
+  shexTest:shexc <Cycle2Extra.shex>;
   shexTest:shexj <Cycle2Extra.json>;
   shexTest:shexr <Cycle2Extra.ttl>
 ] [
   shexMan:name "1dotIMPORT1dot";
   shexTest:approval "Approved";
   shexTest:trait "Import";
-  shexMan:schema <1dotIMPORT1dot.shex>;
+  shexTest:shexc <1dotIMPORT1dot.shex>;
   shexTest:shexj <1dotIMPORT1dot.json>;
   shexTest:shexr <1dotIMPORT1dot.ttl>
 ] [
   shexMan:name "2RefS1-IS2";
   shexTest:approval "Approved";
   shexTest:trait "Import";
-  shexMan:schema <2RefS1-IS2.shex>;
+  shexTest:shexc <2RefS1-IS2.shex>;
   shexTest:shexj <2RefS1-IS2.json>;
   shexTest:shexr <2RefS1-IS2.ttl>
 ] [
   shexMan:name "2RefS1-Icirc";
   shexTest:approval "Approved";
   shexTest:trait "Import";
-  shexMan:schema <2RefS1-Icirc.shex>;
+  shexTest:shexc <2RefS1-Icirc.shex>;
   shexTest:shexj <2RefS1-Icirc.json>;
   shexTest:shexr <2RefS1-Icirc.ttl>
 ] [
   shexMan:name "2RefS2-IS1";
   shexTest:approval "Approved";
   shexTest:trait "Import";
-  shexMan:schema <2RefS2-IS1.shex>;
+  shexTest:shexc <2RefS2-IS1.shex>;
   shexTest:shexj <2RefS2-IS1.json>;
   shexTest:shexr <2RefS2-IS1.ttl>
 ] [
   shexMan:name "start2RefS2-IstartS1";
   shexTest:approval "Approved";
   shexTest:trait "Import";
-  shexMan:schema <start2RefS2-IstartS1.shex>;
+  shexTest:shexc <start2RefS2-IstartS1.shex>;
   shexTest:shexj <start2RefS2-IstartS1.json>;
   shexTest:shexr <start2RefS2-IstartS1.ttl>
 ] [
   shexMan:name "start2RefS1-IstartS2";
   shexTest:approval "Approved";
   shexTest:trait "Import";
-  shexMan:schema <start2RefS1-IstartS2.shex>;
+  shexTest:shexc <start2RefS1-IstartS2.shex>;
   shexTest:shexj <start2RefS1-IstartS2.json>;
   shexTest:shexr <start2RefS1-IstartS2.ttl>
 ] [
   shexMan:name "start2RefS2";
   shexTest:approval "Approved";
   shexTest:trait "Import";
-  shexMan:schema <start2RefS2.shex>;
+  shexTest:shexc <start2RefS2.shex>;
   shexTest:shexj <start2RefS2.json>;
   shexTest:shexr <start2RefS2.ttl>
 ] [
   shexMan:name "start2RefS1";
   shexTest:approval "Approved";
   shexTest:trait "Import";
-  shexMan:schema <start2RefS1.shex>;
+  shexTest:shexc <start2RefS1.shex>;
   shexTest:shexj <start2RefS1.json>;
   shexTest:shexr <start2RefS1.ttl>
 ] [
   shexMan:name "2RefS2-Icirc";
   shexTest:approval "Approved";
   shexTest:trait "Import", "Start";
-  shexMan:schema <2RefS2-Icirc.shex>;
+  shexTest:shexc <2RefS2-Icirc.shex>;
   shexTest:shexj <2RefS2-Icirc.json>;
   shexTest:shexr <2RefS2-Icirc.ttl>
 ] [
   shexMan:name "2RefS2";
   shexTest:approval "Approved";
   shexTest:trait "Import";
-  shexMan:schema <2RefS2.shex>;
+  shexTest:shexc <2RefS2.shex>;
   shexTest:shexj <2RefS2.json>;
   shexTest:shexr <2RefS2.ttl>
 ] [
   shexMan:name "3circRefS1-IS2-IS3-IS3";
   shexTest:approval "Approved";
   shexTest:trait "Import";
-  shexMan:schema <3circRefS1-IS2-IS3-IS3.shex>;
+  shexTest:shexc <3circRefS1-IS2-IS3-IS3.shex>;
   shexTest:shexj <3circRefS1-IS2-IS3-IS3.json>;
   shexTest:shexr <3circRefS1-IS2-IS3-IS3.ttl>
 ] [
   shexMan:name "3circRefS1-IS2-IS3";
   shexTest:approval "Approved";
   shexTest:trait "Import";
-  shexMan:schema <3circRefS1-IS2-IS3.shex>;
+  shexTest:shexc <3circRefS1-IS2-IS3.shex>;
   shexTest:shexj <3circRefS1-IS2-IS3.json>;
   shexTest:shexr <3circRefS1-IS2-IS3.ttl>
 ] [
   shexMan:name "3circRefS1-IS23";
   shexTest:approval "Approved";
   shexTest:trait "Import";
-  shexMan:schema <3circRefS1-IS23.shex>;
+  shexTest:shexc <3circRefS1-IS23.shex>;
   shexTest:shexj <3circRefS1-IS23.json>;
   shexTest:shexr <3circRefS1-IS23.ttl>
 ] [
   shexMan:name "3circRefS1-Icirc";
   shexTest:approval "Approved";
   shexTest:trait "Import";
-  shexMan:schema <3circRefS1-Icirc.shex>;
+  shexTest:shexc <3circRefS1-Icirc.shex>;
   shexTest:shexj <3circRefS1-Icirc.json>;
   shexTest:shexr <3circRefS1-Icirc.ttl>
 ] [
   shexMan:name "3circRefS123-Icirc";
   shexTest:approval "Approved";
   shexTest:trait "Import";
-  shexMan:schema <3circRefS123-Icirc.shex>;
+  shexTest:shexc <3circRefS123-Icirc.shex>;
   shexTest:shexj <3circRefS123-Icirc.json>;
   shexTest:shexr <3circRefS123-Icirc.ttl>
 ] [
   shexMan:name "3circRefS123";
   shexTest:approval "Approved";
   shexTest:trait "Import";
-  shexMan:schema <3circRefS123.shex>;
+  shexTest:shexc <3circRefS123.shex>;
   shexTest:shexj <3circRefS123.json>;
   shexTest:shexr <3circRefS123.ttl>
 ] [
   shexMan:name "3circRefS2-Icirc";
   shexTest:approval "Approved";
   shexTest:trait "Import";
-  shexMan:schema <3circRefS2-Icirc.shex>;
+  shexTest:shexc <3circRefS2-Icirc.shex>;
   shexTest:shexj <3circRefS2-Icirc.json>;
   shexTest:shexr <3circRefS2-Icirc.ttl>
 ] [
   shexMan:name "3circRefS3-IS12";
   shexTest:approval "Approved";
   shexTest:trait "Import";
-  shexMan:schema <3circRefS3-IS12.shex>;
+  shexTest:shexc <3circRefS3-IS12.shex>;
   shexTest:shexj <3circRefS3-IS12.json>;
   shexTest:shexr <3circRefS3-IS12.ttl>
 ] [
   shexMan:name "3circRefS3-Icirc";
   shexTest:approval "Approved";
   shexTest:trait "Import";
-  shexMan:schema <3circRefS3-Icirc.shex>;
+  shexTest:shexc <3circRefS3-Icirc.shex>;
   shexTest:shexj <3circRefS3-Icirc.json>;
   shexTest:shexr <3circRefS3-Icirc.ttl>
 ] [
   shexMan:name "2EachInclude1-S2";
   shexTest:approval "Approved";
   shexTest:trait "Import";
-  shexMan:schema <2EachInclude1-S2.shex>;
+  shexTest:shexc <2EachInclude1-S2.shex>;
   shexTest:shexj <2EachInclude1-S2.json>;
   shexTest:shexr <2EachInclude1-S2.ttl>
 ] [
   shexMan:name "2EachInclude1-IS2";
   shexTest:approval "Approved";
   shexTest:trait "Import";
-  shexMan:schema <2EachInclude1-IS2.shex>;
+  shexTest:shexc <2EachInclude1-IS2.shex>;
   shexTest:shexj <2EachInclude1-IS2.json>;
   shexTest:shexr <2EachInclude1-IS2.ttl>
 ] [
   shexMan:name "1valExprRefbnode-vc1";
   shexTest:approval "Approved";
   shexTest:trait "Import";
-  shexMan:schema <1valExprRefbnode-vc1.shex>;
+  shexTest:shexc <1valExprRefbnode-vc1.shex>;
   shexTest:shexj <1valExprRefbnode-vc1.json>;
   shexTest:shexr <1valExprRefbnode-vc1.ttl>
 ] [
   shexMan:name "1valExprRefbnode-IV1";
   shexTest:approval "Approved";
   shexTest:trait "Import";
-  shexMan:schema <1valExprRefbnode-IV1.shex>;
+  shexTest:shexc <1valExprRefbnode-IV1.shex>;
   shexTest:shexj <1valExprRefbnode-IV1.json>;
   shexTest:shexr <1valExprRefbnode-IV1.ttl>
 ] [
   shexMan:name "1valExprRef-vc1";
   shexTest:approval "Approved";
   shexTest:trait "Import";
-  shexMan:schema <1valExprRef-vc1.shex>;
+  shexTest:shexc <1valExprRef-vc1.shex>;
   shexTest:shexj <1valExprRef-vc1.json>;
   shexTest:shexr <1valExprRef-vc1.ttl>
 ] [
   shexMan:name "1valExprRef-IV1";
   shexTest:approval "Approved";
   shexTest:trait "Import";
-  shexMan:schema <1valExprRef-IV1.shex>;
+  shexTest:shexc <1valExprRef-IV1.shex>;
   shexTest:shexj <1valExprRef-IV1.json>;
   shexTest:shexr <1valExprRef-IV1.ttl>
 ] [
   shexMan:name "1list0PlusDot";
   shexTest:approval "Proposed";
   shexTest:trait "Import";
-  shexMan:schema <1list0PlusDot.shex>;
+  shexTest:shexc <1list0PlusDot.shex>;
   shexTest:shexj <1list0PlusDot.json>;
   shexTest:shexr <1list0PlusDot.ttl>
 ] [
   shexMan:name "1list0PlusIri";
   shexTest:approval "Proposed";
   shexTest:trait "Import";
-  shexMan:schema <1list0PlusIri.shex>;
+  shexTest:shexc <1list0PlusIri.shex>;
   shexTest:shexj <1list0PlusIri.json>;
   shexTest:shexr <1list0PlusIri.ttl>
 ] [
   shexMan:name "1list1PlusIri";
   shexTest:approval "Proposed";
   shexTest:trait "Import";
-  shexMan:schema <1list1PlusIri.shex>;
+  shexTest:shexc <1list1PlusIri.shex>;
   shexTest:shexj <1list1PlusIri.json>;
   shexTest:shexr <1list1PlusIri.ttl>
 ] [
   shexMan:name "0Extends1";
   shexTest:approval "Proposed";
   shexTest:trait "Extends";
-  shexMan:schema <0Extends1.shex>;
+  shexTest:shexc <0Extends1.shex>;
   shexTest:shexj <0Extends1.json>;
   shexTest:shexr <0Extends1.ttl>
 ] [
   shexMan:name "1dotExtends1";
   shexTest:approval "Proposed";
   shexTest:trait "Extends";
-  shexMan:schema <1dotExtends1.shex>;
+  shexTest:shexc <1dotExtends1.shex>;
   shexTest:shexj <1dotExtends1.json>;
   shexTest:shexr <1dotExtends1.ttl>
 ] [
   shexMan:name "1dot3Extends";
   shexTest:approval "Proposed";
   shexTest:trait "Extends";
-  shexMan:schema <1dot3Extends.shex>;
+  shexTest:shexc <1dot3Extends.shex>;
   shexTest:shexj <1dot3Extends.json>;
   shexTest:shexr <1dot3Extends.ttl>
 ] [
@@ -2868,115 +2868,115 @@
   shexTest:approval "Proposed";
   shexTest:trait "Extends";
   shexTest:sameSemanticsAs <#1dot3Extends>;
-  shexMan:schema <1dot3ExtendsLN.shex>;
+  shexTest:shexc <1dot3ExtendsLN.shex>;
   shexTest:shexj <1dot3Extends.json>;
   shexTest:shexr <1dot3Extends.ttl>
 ] [
   shexMan:name "Extends-sAB";
   shexTest:approval "Proposed";
   shexTest:trait "Extends", "Import";
-  shexMan:schema <Extends-sAB.shex>;
+  shexTest:shexc <Extends-sAB.shex>;
   shexTest:shexj <Extends-sAB.json>;
   shexTest:shexr <Extends-sAB.ttl>
 ] [
   shexMan:name "ExtendsRepeatedP";
   shexTest:approval "Proposed";
   shexTest:trait "Extends";
-  shexMan:schema <ExtendsRepeatedP.shex>;
+  shexTest:shexc <ExtendsRepeatedP.shex>;
   shexTest:shexj <ExtendsRepeatedP.json>;
   shexTest:shexr <ExtendsRepeatedP.ttl>
 ] [
   shexMan:name "extends-closed-or-each-each";
   shexTest:approval "Proposed";
   shexTest:trait "Extends";
-  shexMan:schema <extends-closed-or-each-each.shex>;
+  shexTest:shexc <extends-closed-or-each-each.shex>;
   shexTest:shexj <extends-closed-or-each-each.json>;
   shexTest:shexr <extends-closed-or-each-each.ttl>
 ] [
   shexMan:name "extends-open-or-each-each";
   shexTest:approval "Proposed";
   shexTest:trait "Extends";
-  shexMan:schema <extends-open-or-each-each.shex>;
+  shexTest:shexc <extends-open-or-each-each.shex>;
   shexTest:shexj <extends-open-or-each-each.json>;
   shexTest:shexr <extends-open-or-each-each.ttl>
 ] [
   shexMan:name "1dotExtendsBnode";
   shexTest:approval "Approved";
-  shexMan:schema <1dotExtendsBnode.shex>;
+  shexTest:shexc <1dotExtendsBnode.shex>;
   shexTest:shexj <1dotExtendsBnode.json>;
   shexTest:shexr <1dotExtendsBnode.ttl>
 ] [
   shexMan:name "extends-abstract-closed-diamond";
   shexTest:approval "Approved";
-  shexMan:schema <extends-abstract-closed-diamond.shex>;
+  shexTest:shexc <extends-abstract-closed-diamond.shex>;
   shexTest:shexj <extends-abstract-closed-diamond.json>;
   shexTest:shexr <extends-abstract-closed-diamond.ttl>
 ] [
   shexMan:name "extends-abstract-or";
   shexTest:approval "Approved";
-  shexMan:schema <extends-abstract-or.shex>;
+  shexTest:shexc <extends-abstract-or.shex>;
   shexTest:shexj <extends-abstract-or.json>;
   shexTest:shexr <extends-abstract-or.ttl>
 ] [
   shexMan:name "1dotAbstractShapeCode1";
   shexTest:approval "Proposed";
   shexTest:trait "Extends";
-  shexMan:schema <1dotAbstractShapeCode1.shex>;
+  shexTest:shexc <1dotAbstractShapeCode1.shex>;
   shexTest:shexj <1dotAbstractShapeCode1.json>;
   shexTest:shexr <1dotAbstractShapeCode1.ttl>
 ] [
   shexMan:name "1dotAbstract";
   shexTest:approval "Proposed";
   shexTest:trait "Extends";
-  shexMan:schema <1dotAbstract.shex>;
+  shexTest:shexc <1dotAbstract.shex>;
   shexTest:shexj <1dotAbstract.json>;
   shexTest:shexr <1dotAbstract.ttl>
 ] [
   shexMan:name "ANDAbstract";
   shexTest:approval "Proposed";
   shexTest:trait "Extends";
-  shexMan:schema <ANDAbstract.shex>;
+  shexTest:shexc <ANDAbstract.shex>;
   shexTest:shexj <ANDAbstract.json>;
   shexTest:shexr <ANDAbstract.ttl>
 ] [
   shexMan:name "AND3G";
   shexTest:approval "Proposed";
   shexTest:trait "Extends";
-  shexMan:schema <AND3G.shex>;
+  shexTest:shexc <AND3G.shex>;
   shexTest:shexj <AND3G.json>;
   shexTest:shexr <AND3G.ttl>
 ] [
   shexMan:name "ExtendAND3G";
   shexTest:approval "Proposed";
   shexTest:trait "Extends";
-  shexMan:schema <ExtendAND3G.shex>;
+  shexTest:shexc <ExtendAND3G.shex>;
   shexTest:shexj <ExtendAND3G.json>;
   shexTest:shexr <ExtendAND3G.ttl>
 ] [
   shexMan:name "Extend3G";
   shexTest:approval "Proposed";
   shexTest:trait "Extends";
-  shexMan:schema <Extend3G.shex>;
+  shexTest:shexc <Extend3G.shex>;
   shexTest:shexj <Extend3G.json>;
   shexTest:shexr <Extend3G.ttl>
 ] [
   shexMan:name "ExtendANDExtend3GAND3G";
   shexTest:approval "Proposed";
   shexTest:trait "Extends";
-  shexMan:schema <ExtendANDExtend3GAND3G.shex>;
+  shexTest:shexc <ExtendANDExtend3GAND3G.shex>;
   shexTest:shexj <ExtendANDExtend3GAND3G.json>;
   shexTest:shexr <ExtendANDExtend3GAND3G.ttl>
 ] [
   shexMan:name "vitals-RESTRICTS";
   shexTest:approval "Proposed";
   shexTest:trait "Extends";
-  shexMan:schema <vitals-RESTRICTS.shex>;
+  shexTest:shexc <vitals-RESTRICTS.shex>;
   shexTest:shexj <vitals-RESTRICTS.json>;
   shexTest:shexr <vitals-RESTRICTS.ttl>
 ] [
   shexMan:name "ShExR";
   shexTest:approval "Proposed";
-  shexMan:schema <../doc/ShExR.shex>;
+  shexTest:shexc <../doc/ShExR.shex>;
   shexTest:shexj <../doc/ShExR.json>;
   shexTest:shexr <../doc/ShExR.ttl>
 ]).

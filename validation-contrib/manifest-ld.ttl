@@ -11,7 +11,7 @@
   shexTest:trait "Repair", "NonDotCardinality";
   rdfs:comment "repair a cardinality shortfall: <S1>{ <p1> .{2} } on { <x> <p1> <o1> } is one <p1> short";
   shexTest:approval "Approved";
-  shexMan:schema <../schemas-contrib/repairCard.shex>;
+  shexMan:schema <../schemas-contrib/repairCard>;
   shex:shape <http://a.example/S1>;
   shexMan:data <Ix_Ip1_Io1.ttl>;
   shex:node <http://a.example/x>
@@ -21,7 +21,7 @@
   shexTest:trait "Repair";
   rdfs:comment "repair offers the choice the language offers: <S1>{ <p1> . | <p2> . } with neither present";
   shexTest:approval "Approved";
-  shexMan:schema <../schemas-contrib/repairChoice.shex>;
+  shexMan:schema <../schemas-contrib/repairChoice>;
   shex:shape <http://a.example/S1>;
   shexMan:data <Ix_Ip9_Io9.ttl>;
   shex:node <http://a.example/x>
@@ -31,7 +31,7 @@
   shexTest:trait "Repair", "Closed";
   rdfs:comment "repair a closed shape's extra arc: <S1> CLOSED { <p1> . } on { <x> <p1> <o1>; <p2> <o2> } must drop <p2>";
   shexTest:approval "Approved";
-  shexMan:schema <../schemas-contrib/repairClosed.shex>;
+  shexMan:schema <../schemas-contrib/repairClosed>;
   shex:shape <http://a.example/S1>;
   shexMan:data <Ix_Ip1_Io1;Ip2_Io2.ttl>;
   shex:node <http://a.example/x>
@@ -41,7 +41,7 @@
   shexTest:trait "Repair";
   rdfs:comment "repair a missing property: <S1>{ <p1> . ; <p2> . } on { <x> <p1> <o1> } needs a <p2>";
   shexTest:approval "Approved";
-  shexMan:schema <../schemas-contrib/repairMissingArc.shex>;
+  shexMan:schema <../schemas-contrib/repairMissingArc>;
   shex:shape <http://a.example/S1>;
   shexMan:data <Ix_Ip1_Io1.ttl>;
   shex:node <http://a.example/x>
@@ -51,7 +51,7 @@
   shexTest:trait "Feasibility";
   rdfs:comment "a homeless triple and a missing property: <S1>{ <p1> . ; ( <p2> . ; <p3> . )? } on { <x> <p3> <o> }";
   shexTest:approval "Approved";
-  shexMan:schema <../schemas-contrib/feasHomeless.shex>;
+  shexMan:schema <../schemas-contrib/feasHomeless>;
   shex:shape <http://a.example/S1>;
   shexMan:data <Ix_Ip3_Io.ttl>;
   shex:node <http://a.example/x>
@@ -61,7 +61,7 @@
   shexTest:trait "Feasibility", "Datatype";
   rdfs:comment "a datatype mismatch reported as one: <S1>{ <p1> xsd:integer } on { <x> <p1> \"abc\" }";
   shexTest:approval "Approved";
-  shexMan:schema <../schemas-contrib/feasDatatype.shex>;
+  shexMan:schema <../schemas-contrib/feasDatatype>;
   shex:shape <http://a.example/S1>;
   shexMan:data <Ix_Ip1_Labc.ttl>;
   shex:node <http://a.example/x>
@@ -71,7 +71,7 @@
   shexTest:trait "Feasibility";
   rdfs:comment "a node-kind mismatch reported as one: <S1>{ <p1> IRI } on { <x> <p1> \"lit\" }";
   shexTest:approval "Approved";
-  shexMan:schema <../schemas-contrib/feasNodeKind.shex>;
+  shexMan:schema <../schemas-contrib/feasNodeKind>;
   shex:shape <http://a.example/S1>;
   shexMan:data <Ix_Ip1_Llit.ttl>;
   shex:node <http://a.example/x>
@@ -81,7 +81,7 @@
   shexTest:trait "Feasibility";
   rdfs:comment "a pattern mismatch reported as one: <S1>{ <p1> /^ab/ } on { <x> <p1> \"xy\" }";
   shexTest:approval "Approved";
-  shexMan:schema <../schemas-contrib/feasPattern.shex>;
+  shexMan:schema <../schemas-contrib/feasPattern>;
   shex:shape <http://a.example/S1>;
   shexMan:data <Ix_Ip1_Lxy.ttl>;
   shex:node <http://a.example/x>

@@ -16,7 +16,7 @@ entries:
   - name: "1decimalMininclusiveroman-numeral"
     schemaError: syntax
     approval: Approved
-    schemaURL: "1decimalMininclusiveroman-numeral.shex"
+    shexcURL: "1decimalMininclusiveroman-numeral.shex"
     startRow: 2
     startColumn: 81
     endRow: 3
@@ -25,7 +25,7 @@ entries:
   - name: "1ProductionShapeCollision"
     schemaError: syntax
     approval: Proposed
-    schemaURL: "1ProductionShapeCollision.shex"
+    shexcURL: "1ProductionShapeCollision.shex"
     startRow: 8
     startColumn: 3
     endRow: 9
@@ -34,7 +34,7 @@ entries:
   - name: "1ShapeProductionCollision"
     schemaError: syntax
     approval: Proposed
-    schemaURL: "1ShapeProductionCollision.shex"
+    shexcURL: "1ShapeProductionCollision.shex"
     startRow: 3
     startColumn: 3
     endRow: 6
@@ -43,7 +43,7 @@ entries:
   - name: "1dotAnnot_AIRIREF"
     schemaError: syntax
     approval: Approved
-    schemaURL: "1dotAnnot_AIRIREF.shex"
+    shexcURL: "1dotAnnot_AIRIREF.shex"
     startRow: 3
     startColumn: 31
     endRow: 4
@@ -52,7 +52,7 @@ entries:
   - name: "1dotUnlabeledCode1"
     schemaError: syntax
     approval: Approved
-    schemaURL: "1dotUnlabeledCode1.shex"
+    shexcURL: "1dotUnlabeledCode1.shex"
     startRow: 3
     startColumn: 6
     endRow: 4
@@ -61,7 +61,7 @@ entries:
   - name: "1dotDuplicateShapeLabel"
     schemaError: syntax
     approval: Proposed
-    schemaURL: "1dotDuplicateShapeLabel.shex"
+    shexcURL: "1dotDuplicateShapeLabel.shex"
     # shex.js notices at the end of the schema, not at the second declaration.
     startRow: 6
     startColumn: 1
@@ -71,7 +71,7 @@ entries:
   - name: "1dotDuplicateProductionLabel"
     schemaError: syntax
     approval: Proposed
-    schemaURL: "1dotDuplicateProductionLabel.shex"
+    shexcURL: "1dotDuplicateProductionLabel.shex"
     startRow: 7
     startColumn: 3
     endRow: 8
@@ -80,7 +80,7 @@ entries:
   - name: "1doubleMininclusiveroman-numeral"
     schemaError: syntax
     approval: Approved
-    schemaURL: "1doubleMininclusiveroman-numeral.shex"
+    shexcURL: "1doubleMininclusiveroman-numeral.shex"
     startRow: 2
     startColumn: 80
     endRow: 3
@@ -89,7 +89,7 @@ entries:
   - name: "1floatMininclusiveroman-numeral"
     schemaError: syntax
     approval: Approved
-    schemaURL: "1floatMininclusiveroman-numeral.shex"
+    shexcURL: "1floatMininclusiveroman-numeral.shex"
     startRow: 2
     startColumn: 79
     endRow: 3
@@ -98,7 +98,7 @@ entries:
   - name: "1integerMininclusiveroman-numeral"
     schemaError: syntax
     approval: Approved
-    schemaURL: "1integerMininclusiveroman-numeral.shex"
+    shexcURL: "1integerMininclusiveroman-numeral.shex"
     startRow: 2
     startColumn: 81
     endRow: 3
@@ -107,7 +107,7 @@ entries:
   - name: "1inverseinversedot"
     schemaError: syntax
     approval: Approved
-    schemaURL: "1inverseinversedot.shex"
+    shexcURL: "1inverseinversedot.shex"
     startRow: 1
     startColumn: 32
     endRow: 2
@@ -116,7 +116,7 @@ entries:
   - name: "1iriLength2"
     schemaError: syntax
     approval: Approved
-    schemaURL: "1iriLength2.shex"
+    shexcURL: "1iriLength2.shex"
     startRow: 2
     startColumn: 39
     endRow: 3
@@ -125,7 +125,7 @@ entries:
   - name: "1iriMaxexclusive"
     schemaError: syntax
     approval: Approved
-    schemaURL: "1iriMaxexclusive.shex"
+    shexcURL: "1iriMaxexclusive.shex"
     startRow: 2
     startColumn: 29
     endRow: 2
@@ -134,7 +134,7 @@ entries:
   - name: "1iriMaxinclusive"
     schemaError: syntax
     approval: Approved
-    schemaURL: "1iriMaxinclusive.shex"
+    shexcURL: "1iriMaxinclusive.shex"
     startRow: 2
     startColumn: 29
     endRow: 2
@@ -143,7 +143,7 @@ entries:
   - name: "1iriMinexclusive"
     schemaError: syntax
     approval: Approved
-    schemaURL: "1iriMinexclusive.shex"
+    shexcURL: "1iriMinexclusive.shex"
     startRow: 2
     startColumn: 29
     endRow: 2
@@ -152,7 +152,7 @@ entries:
   - name: "1iriMininclusive"
     schemaError: syntax
     approval: Approved
-    schemaURL: "1iriMininclusive.shex"
+    shexcURL: "1iriMininclusive.shex"
     startRow: 2
     startColumn: 29
     endRow: 2
@@ -161,7 +161,7 @@ entries:
   - name: "1literalFractiondigitsxsd-integer"
     schemaError: syntax
     approval: Approved
-    schemaURL: "1literalFractiondigitsxsd-integer.shex"
+    shexcURL: "1literalFractiondigitsxsd-integer.shex"
     startRow: 2
     startColumn: 48
     endRow: 3
@@ -170,7 +170,7 @@ entries:
   - name: "1literalLength2"
     schemaError: syntax
     approval: Approved
-    schemaURL: "1literalLength2.shex"
+    shexcURL: "1literalLength2.shex"
     startRow: 2
     startColumn: 43
     endRow: 3
@@ -179,7 +179,7 @@ entries:
   - name: "1literalTotaldigitsxsd-integer"
     schemaError: syntax
     approval: Approved
-    schemaURL: "1literalTotaldigitsxsd-integer.shex"
+    shexcURL: "1literalTotaldigitsxsd-integer.shex"
     startRow: 2
     startColumn: 45
     endRow: 3
@@ -188,7 +188,7 @@ entries:
   - name: "1negatedinversenegateddot"
     schemaError: syntax
     approval: Approved
-    schemaURL: "1negatedinversenegateddot.shex"
+    shexcURL: "1negatedinversenegateddot.shex"
     startRow: 1
     startColumn: 32
     endRow: 2
@@ -197,7 +197,7 @@ entries:
   - name: "1negatednegateddot"
     schemaError: syntax
     approval: Approved
-    schemaURL: "1negatednegateddot.shex"
+    shexcURL: "1negatednegateddot.shex"
     startRow: 1
     startColumn: 32
     endRow: 2
@@ -206,7 +206,7 @@ entries:
   - name: "1datatypeRef1"
     schemaError: syntax
     approval: Approved
-    schemaURL: "1datatypeRef1.shex"
+    shexcURL: "1datatypeRef1.shex"
     startRow: 3
     startColumn: 48
     endRow: 4
@@ -215,7 +215,7 @@ entries:
   - name: "1unknowndatatypeMaxInclusive"
     schemaError: syntax
     approval: Proposed
-    schemaURL: "1unknowndatatypeMaxInclusive.shex"
+    shexcURL: "1unknowndatatypeMaxInclusive.shex"
     startRow: 2
     startColumn: 48
     endRow: 3
@@ -224,7 +224,7 @@ entries:
   - name: "1val1bnode"
     schemaError: syntax
     approval: Approved
-    schemaURL: "1val1bnode.shex"
+    shexcURL: "1val1bnode.shex"
     startRow: 2
     startColumn: 26
     endRow: 2
@@ -233,7 +233,7 @@ entries:
   - name: "1val1iriMinusiri1"
     schemaError: syntax
     approval: Approved
-    schemaURL: "1val1iriMinusiri1.shex"
+    shexcURL: "1val1iriMinusiri1.shex"
     startRow: 2
     startColumn: 48
     endRow: 2
@@ -242,7 +242,7 @@ entries:
   - name: "1val1vcrefSTRING_LITERAL1"
     schemaError: syntax
     approval: Approved
-    schemaURL: "1val1vcrefSTRING_LITERAL1.shex"
+    shexcURL: "1val1vcrefSTRING_LITERAL1.shex"
     startRow: 3
     startColumn: 1
     endRow: 3
@@ -251,7 +251,7 @@ entries:
   - name: "1valA"
     schemaError: syntax
     approval: Approved
-    schemaURL: "1valA.shex"
+    shexcURL: "1valA.shex"
     startRow: 2
     startColumn: 27
     endRow: 2
@@ -260,7 +260,7 @@ entries:
   - name: DECIMAL-123.abc
     schemaError: syntax
     approval: Approved
-    schemaURL: DECIMAL-123.abc.shex
+    shexcURL: DECIMAL-123.abc.shex
     startRow: 4
     startColumn: 31
     endRow: 4
@@ -269,7 +269,7 @@ entries:
   - name: DOUBLE-123e
     schemaError: syntax
     approval: Approved
-    schemaURL: DOUBLE-123e.shex
+    shexcURL: DOUBLE-123e.shex
     startRow: 4
     startColumn: 26
     endRow: 4
@@ -278,7 +278,7 @@ entries:
   - name: INTEGER-+-1
     schemaError: syntax
     approval: Approved
-    schemaURL: INTEGER-+-1.shex
+    shexcURL: INTEGER-+-1.shex
     startRow: 4
     startColumn: 27
     endRow: 4
@@ -287,7 +287,7 @@ entries:
   - name: INTEGER-123abc
     schemaError: syntax
     approval: Approved
-    schemaURL: INTEGER-123abc.shex
+    shexcURL: INTEGER-123abc.shex
     startRow: 4
     startColumn: 26
     endRow: 4
@@ -296,7 +296,7 @@ entries:
   - name: IRIREF-with-ECHAR
     schemaError: syntax
     approval: Approved
-    schemaURL: IRIREF-with-ECHAR.shex
+    shexcURL: IRIREF-with-ECHAR.shex
     startRow: 3
     startColumn: 32
     endRow: 4
@@ -305,7 +305,7 @@ entries:
   - name: IRIREF-with-PN_LOCAL_ESC
     schemaError: syntax
     approval: Approved
-    schemaURL: IRIREF-with-PN_LOCAL_ESC.shex
+    shexcURL: IRIREF-with-PN_LOCAL_ESC.shex
     startRow: 3
     startColumn: 32
     endRow: 4
@@ -314,7 +314,7 @@ entries:
   - name: IRIREF-with-SPACE
     schemaError: syntax
     approval: Approved
-    schemaURL: IRIREF-with-SPACE.shex
+    shexcURL: IRIREF-with-SPACE.shex
     startRow: 3
     startColumn: 32
     endRow: 4
@@ -323,7 +323,7 @@ entries:
   - name: IRIREF-with-bad-UCHAR.1
     schemaError: syntax
     approval: Approved
-    schemaURL: IRIREF-with-bad-UCHAR.1.shex
+    shexcURL: IRIREF-with-bad-UCHAR.1.shex
     startRow: 3
     startColumn: 32
     endRow: 4
@@ -332,7 +332,7 @@ entries:
   - name: IRIREF-with-bad-UCHAR.2
     schemaError: syntax
     approval: Approved
-    schemaURL: IRIREF-with-bad-UCHAR.2.shex
+    shexcURL: IRIREF-with-bad-UCHAR.2.shex
     startRow: 3
     startColumn: 32
     endRow: 4
@@ -341,7 +341,7 @@ entries:
   - name: PNAME_NS-dot-at-end-declared
     schemaError: syntax
     approval: Approved
-    schemaURL: PNAME_NS-dot-at-end-declared.shex
+    shexcURL: PNAME_NS-dot-at-end-declared.shex
     startRow: 4
     startColumn: 7
     endRow: 4
@@ -350,7 +350,7 @@ entries:
   - name: PNAME_NS-dot-at-end-undeclared
     schemaError: syntax
     approval: Approved
-    schemaURL: PNAME_NS-dot-at-end-undeclared.shex
+    shexcURL: PNAME_NS-dot-at-end-undeclared.shex
     startRow: 6
     startColumn: 16
     endRow: 6
@@ -359,7 +359,7 @@ entries:
   - name: PNAME_NS-dot-at-start-declared
     schemaError: syntax
     approval: Approved
-    schemaURL: PNAME_NS-dot-at-start-declared.shex
+    shexcURL: PNAME_NS-dot-at-start-declared.shex
     startRow: 4
     startColumn: 7
     endRow: 4
@@ -368,7 +368,7 @@ entries:
   - name: PNAME_NS-dot-at-start-undeclared
     schemaError: syntax
     approval: Approved
-    schemaURL: PNAME_NS-dot-at-start-undeclared.shex
+    shexcURL: PNAME_NS-dot-at-start-undeclared.shex
     startRow: 6
     startColumn: 16
     endRow: 6
@@ -377,7 +377,7 @@ entries:
   - name: PN_LOCAL-PERCENT-end
     schemaError: syntax
     approval: Approved
-    schemaURL: PN_LOCAL-PERCENT-end.shex
+    shexcURL: PN_LOCAL-PERCENT-end.shex
     startRow: 6
     startColumn: 7
     endRow: 6
@@ -386,7 +386,7 @@ entries:
   - name: PN_LOCAL-PERCENT-mid
     schemaError: syntax
     approval: Approved
-    schemaURL: PN_LOCAL-PERCENT-mid.shex
+    shexcURL: PN_LOCAL-PERCENT-mid.shex
     startRow: 6
     startColumn: 7
     endRow: 6
@@ -395,7 +395,7 @@ entries:
   - name: PN_LOCAL-PERCENT-start
     schemaError: syntax
     approval: Approved
-    schemaURL: PN_LOCAL-PERCENT-start.shex
+    shexcURL: PN_LOCAL-PERCENT-start.shex
     startRow: 6
     startColumn: 7
     endRow: 6
@@ -404,7 +404,7 @@ entries:
   - name: PN_LOCAL-dash-start
     schemaError: syntax
     approval: Approved
-    schemaURL: PN_LOCAL-dash-start.shex
+    shexcURL: PN_LOCAL-dash-start.shex
     startRow: 6
     startColumn: 7
     endRow: 6
@@ -413,7 +413,7 @@ entries:
   - name: PN_LOCAL-unescaped-TILDE
     schemaError: syntax
     approval: Approved
-    schemaURL: PN_LOCAL-unescaped-TILDE.shex
+    shexcURL: PN_LOCAL-unescaped-TILDE.shex
     startRow: 6
     startColumn: 7
     endRow: 6
@@ -422,7 +422,7 @@ entries:
   - name: PN_LOCAL-with-UCHAR.1
     schemaError: syntax
     approval: Approved
-    schemaURL: PN_LOCAL-with-UCHAR.1.shex
+    shexcURL: PN_LOCAL-with-UCHAR.1.shex
     startRow: 6
     startColumn: 7
     endRow: 6
@@ -431,7 +431,7 @@ entries:
   - name: "1literalPattern-bad-delim"
     schemaError: syntax
     approval: Approved
-    schemaURL: "1literalPattern-bad-delim.shex"
+    shexcURL: "1literalPattern-bad-delim.shex"
     startRow: 2
     startColumn: 25
     endRow: 3
@@ -440,7 +440,7 @@ entries:
   - name: "1literalPattern_with_ECHAR_escape_1"
     schemaError: syntax
     approval: Approved
-    schemaURL: "1literalPattern_with_ECHAR_escape_1.shex"
+    shexcURL: "1literalPattern_with_ECHAR_escape_1.shex"
     startRow: 2
     startColumn: 25
     endRow: 3
@@ -449,7 +449,7 @@ entries:
   - name: "1literalPattern_with_ECHAR_escape_b"
     schemaError: syntax
     approval: Approved
-    schemaURL: "1literalPattern_with_ECHAR_escape_b.shex"
+    shexcURL: "1literalPattern_with_ECHAR_escape_b.shex"
     startRow: 2
     startColumn: 25
     endRow: 3
@@ -458,7 +458,7 @@ entries:
   - name: "1literalPattern_with_ECHAR_escape_f"
     schemaError: syntax
     approval: Approved
-    schemaURL: "1literalPattern_with_ECHAR_escape_f.shex"
+    shexcURL: "1literalPattern_with_ECHAR_escape_f.shex"
     startRow: 2
     startColumn: 25
     endRow: 3
@@ -467,7 +467,7 @@ entries:
   - name: "1literalPattern_with_UCHAR_escape_U0000061"
     schemaError: syntax
     approval: Approved
-    schemaURL: "1literalPattern_with_UCHAR_escape_U0000061.shex"
+    shexcURL: "1literalPattern_with_UCHAR_escape_U0000061.shex"
     startRow: 2
     startColumn: 27
     endRow: 2
@@ -476,7 +476,7 @@ entries:
   - name: "1literalPattern_with_UCHAR_escape_u061"
     schemaError: syntax
     approval: Approved
-    schemaURL: "1literalPattern_with_UCHAR_escape_u061.shex"
+    shexcURL: "1literalPattern_with_UCHAR_escape_u061.shex"
     startRow: 2
     startColumn: 27
     endRow: 2
@@ -485,7 +485,7 @@ entries:
   - name: "1val1STRING_LITERAL1_bad_delim"
     schemaError: syntax
     approval: Approved
-    schemaURL: "1val1STRING_LITERAL1_bad_delim.shex"
+    shexcURL: "1val1STRING_LITERAL1_bad_delim.shex"
     startRow: 2
     startColumn: 27
     endRow: 3
@@ -494,7 +494,7 @@ entries:
   - name: "1val1STRING_LITERAL1_with_ECHAR_escape_1"
     schemaError: syntax
     approval: Approved
-    schemaURL: "1val1STRING_LITERAL1_with_ECHAR_escape_1.shex"
+    shexcURL: "1val1STRING_LITERAL1_with_ECHAR_escape_1.shex"
     startRow: 2
     startColumn: 27
     endRow: 2
@@ -503,7 +503,7 @@ entries:
   - name: "1val1STRING_LITERAL1_with_ECHAR_escape_a"
     schemaError: syntax
     approval: Approved
-    schemaURL: "1val1STRING_LITERAL1_with_ECHAR_escape_a.shex"
+    shexcURL: "1val1STRING_LITERAL1_with_ECHAR_escape_a.shex"
     startRow: 2
     startColumn: 27
     endRow: 2
@@ -512,7 +512,7 @@ entries:
   - name: "1val1STRING_LITERAL1_with_ECHAR_escape_z"
     schemaError: syntax
     approval: Approved
-    schemaURL: "1val1STRING_LITERAL1_with_ECHAR_escape_z.shex"
+    shexcURL: "1val1STRING_LITERAL1_with_ECHAR_escape_z.shex"
     startRow: 2
     startColumn: 27
     endRow: 2
@@ -521,7 +521,7 @@ entries:
   - name: "1val1STRING_LITERAL1_with_UCHAR_escape_u061"
     schemaError: syntax
     approval: Approved
-    schemaURL: "1val1STRING_LITERAL1_with_UCHAR_escape_u061.shex"
+    shexcURL: "1val1STRING_LITERAL1_with_UCHAR_escape_u061.shex"
     startRow: 2
     startColumn: 27
     endRow: 2
@@ -530,7 +530,7 @@ entries:
   - name: "1val1STRING_LITERAL1_with_UCHAR_escape_U0000061"
     schemaError: syntax
     approval: Approved
-    schemaURL: "1val1STRING_LITERAL1_with_UCHAR_escape_U0000061.shex"
+    shexcURL: "1val1STRING_LITERAL1_with_UCHAR_escape_U0000061.shex"
     startRow: 2
     startColumn: 27
     endRow: 2
@@ -539,7 +539,7 @@ entries:
   - name: STRING_LITERAL1-ending-QUOTATION_MARK
     schemaError: syntax
     approval: Approved
-    schemaURL: STRING_LITERAL1-ending-QUOTATION_MARK.shex
+    shexcURL: STRING_LITERAL1-ending-QUOTATION_MARK.shex
     startRow: 4
     startColumn: 27
     endRow: 5
@@ -548,7 +548,7 @@ entries:
   - name: STRING_LITERAL2-bad-ECHAR
     schemaError: syntax
     approval: Approved
-    schemaURL: STRING_LITERAL2-bad-ECHAR.shex
+    shexcURL: STRING_LITERAL2-bad-ECHAR.shex
     startRow: 4
     startColumn: 27
     endRow: 4
@@ -557,7 +557,7 @@ entries:
   - name: STRING_LITERAL2-bad-LANGTAG
     schemaError: syntax
     approval: Approved
-    schemaURL: STRING_LITERAL2-bad-LANGTAG.shex
+    shexcURL: STRING_LITERAL2-bad-LANGTAG.shex
     startRow: 4
     startColumn: 27
     endRow: 4
@@ -566,7 +566,7 @@ entries:
   - name: STRING_LITERAL2-bad-UCHAR1
     schemaError: syntax
     approval: Approved
-    schemaURL: STRING_LITERAL2-bad-UCHAR1.shex
+    shexcURL: STRING_LITERAL2-bad-UCHAR1.shex
     startRow: 4
     startColumn: 27
     endRow: 4
@@ -575,7 +575,7 @@ entries:
   - name: STRING_LITERAL2-bad-UCHAR2-value
     schemaError: syntax
     approval: Approved
-    schemaURL: STRING_LITERAL2-bad-UCHAR2-value.shex
+    shexcURL: STRING_LITERAL2-bad-UCHAR2-value.shex
     startRow: 4
     startColumn: 27
     endRow: 4
@@ -584,7 +584,7 @@ entries:
   - name: STRING_LITERAL2-ending-APOSTROPHE
     schemaError: syntax
     approval: Approved
-    schemaURL: STRING_LITERAL2-ending-APOSTROPHE.shex
+    shexcURL: STRING_LITERAL2-ending-APOSTROPHE.shex
     startRow: 4
     startColumn: 27
     endRow: 5
@@ -593,7 +593,7 @@ entries:
   - name: STRING_LITERAL2-illegal-UCHAR1-value
     schemaError: syntax
     approval: Approved
-    schemaURL: STRING_LITERAL2-illegal-UCHAR1-value.shex
+    shexcURL: STRING_LITERAL2-illegal-UCHAR1-value.shex
     startRow: 4
     startColumn: 27
     endRow: 4
@@ -602,7 +602,7 @@ entries:
   - name: STRING_LITERAL2-with-LANGTAG-and-datatype
     schemaError: syntax
     approval: Approved
-    schemaURL: STRING_LITERAL2-with-LANGTAG-and-datatype.shex
+    shexcURL: STRING_LITERAL2-with-LANGTAG-and-datatype.shex
     startRow: 4
     startColumn: 27
     endRow: 4
@@ -611,7 +611,7 @@ entries:
   - name: STRING_LITERAL_LONG1-ending-APOSTROPHE4
     schemaError: syntax
     approval: Approved
-    schemaURL: STRING_LITERAL_LONG1-ending-APOSTROPHE4.shex
+    shexcURL: STRING_LITERAL_LONG1-ending-APOSTROPHE4.shex
     startRow: 4
     startColumn: 27
     endRow: 4
@@ -620,7 +620,7 @@ entries:
   - name: STRING_LITERAL_LONG2-ending-APOSTROPHE3
     schemaError: syntax
     approval: Approved
-    schemaURL: STRING_LITERAL_LONG2-ending-APOSTROPHE3.shex
+    shexcURL: STRING_LITERAL_LONG2-ending-APOSTROPHE3.shex
     startRow: 4
     startColumn: 27
     endRow: 6
@@ -629,7 +629,7 @@ entries:
   - name: STRING_LITERAL_LONG2-ending-QUOTATION_MARK4
     schemaError: syntax
     approval: Approved
-    schemaURL: STRING_LITERAL_LONG2-ending-QUOTATION_MARK4.shex
+    shexcURL: STRING_LITERAL_LONG2-ending-QUOTATION_MARK4.shex
     startRow: 4
     startColumn: 27
     endRow: 4
@@ -638,7 +638,7 @@ entries:
   - name: STRING_LITERAL_LONG2-unterminated
     schemaError: syntax
     approval: Approved
-    schemaURL: STRING_LITERAL_LONG2-unterminated.shex
+    shexcURL: STRING_LITERAL_LONG2-unterminated.shex
     startRow: 4
     startColumn: 27
     endRow: 6
@@ -647,7 +647,7 @@ entries:
   - name: a
     schemaError: syntax
     approval: Approved
-    schemaURL: a.shex
+    shexcURL: a.shex
     startRow: 1
     startColumn: 1
     endRow: 2
@@ -656,7 +656,7 @@ entries:
   - name: Dot-Minus-emptylanguageStem
     schemaError: syntax
     approval: Approved
-    schemaURL: Dot-Minus-emptylanguageStem.shex
+    shexcURL: Dot-Minus-emptylanguageStem.shex
     startRow: 1
     startColumn: 28
     endRow: 1
@@ -665,7 +665,7 @@ entries:
   - name: emptylanguageStem-Minus-emptylanguageStem
     schemaError: syntax
     approval: Approved
-    schemaURL: emptylanguageStem-Minus-emptylanguageStem.shex
+    shexcURL: emptylanguageStem-Minus-emptylanguageStem.shex
     startRow: 1
     startColumn: 29
     endRow: 1
@@ -674,7 +674,7 @@ entries:
   - name: base-no-uri
     schemaError: syntax
     approval: Approved
-    schemaURL: base-no-uri.shex
+    shexcURL: base-no-uri.shex
     startRow: 3
     startColumn: 5
     endRow: 4
@@ -683,7 +683,7 @@ entries:
   - name: base-uri-dot
     schemaError: syntax
     approval: Approved
-    schemaURL: base-uri-dot.shex
+    shexcURL: base-uri-dot.shex
     startRow: 3
     startColumn: 44
     endRow: 4
@@ -692,7 +692,7 @@ entries:
   - name: bnodedot
     schemaError: syntax
     approval: Approved
-    schemaURL: bnodedot.shex
+    shexcURL: bnodedot.shex
     startRow: 2
     startColumn: 1
     endRow: 2
@@ -701,7 +701,7 @@ entries:
   - name: capitol-A
     schemaError: syntax
     approval: Approved
-    schemaURL: capitol-A.shex
+    shexcURL: capitol-A.shex
     startRow: 3
     startColumn: 32
     endRow: 4
@@ -710,7 +710,7 @@ entries:
   - name: group-no-SEMICOLON-separators
     schemaError: syntax
     approval: Approved
-    schemaURL: group-no-SEMICOLON-separators.shex
+    shexcURL: group-no-SEMICOLON-separators.shex
     startRow: 3
     startColumn: 27
     endRow: 4
@@ -719,7 +719,7 @@ entries:
   - name: groupShapeConstr-trailing-OR
     schemaError: syntax
     approval: Approved
-    schemaURL: groupShapeConstr-trailing-OR.shex
+    shexcURL: groupShapeConstr-trailing-OR.shex
     startRow: 3
     startColumn: 59
     endRow: 4
@@ -728,7 +728,7 @@ entries:
   - name: literal-0x123
     schemaError: syntax
     approval: Approved
-    schemaURL: literal-0x123.shex
+    shexcURL: literal-0x123.shex
     startRow: 4
     startColumn: 27
     endRow: 4
@@ -737,7 +737,7 @@ entries:
   - name: open1dotcloseAnnot3
     schemaError: syntax
     approval: Approved
-    schemaURL: open1dotcloseAnnot3.shex
+    shexcURL: open1dotcloseAnnot3.shex
     startRow: 3
     startColumn: 39
     endRow: 4
@@ -746,7 +746,7 @@ entries:
   - name: predicate-ANON
     schemaError: syntax
     approval: Approved
-    schemaURL: predicate-ANON.shex
+    shexcURL: predicate-ANON.shex
     startRow: 3
     startColumn: 32
     endRow: 4
@@ -755,7 +755,7 @@ entries:
   - name: predicate-BLANK_NODE_LABEL
     schemaError: syntax
     approval: Approved
-    schemaURL: predicate-BLANK_NODE_LABEL.shex
+    shexcURL: predicate-BLANK_NODE_LABEL.shex
     startRow: 3
     startColumn: 32
     endRow: 4
@@ -764,7 +764,7 @@ entries:
   - name: predicate-literal
     schemaError: syntax
     approval: Approved
-    schemaURL: predicate-literal.shex
+    shexcURL: predicate-literal.shex
     startRow: 3
     startColumn: 32
     endRow: 4
@@ -773,7 +773,7 @@ entries:
   - name: predicate-true
     schemaError: syntax
     approval: Approved
-    schemaURL: predicate-true.shex
+    shexcURL: predicate-true.shex
     startRow: 3
     startColumn: 32
     endRow: 4
@@ -782,7 +782,7 @@ entries:
   - name: prefix-missing
     schemaError: syntax
     approval: Approved
-    schemaURL: prefix-missing.shex
+    shexcURL: prefix-missing.shex
     startRow: 6
     startColumn: 16
     endRow: 7
@@ -791,7 +791,7 @@ entries:
   - name: prefix-missing-1
     schemaError: syntax
     approval: Approved
-    schemaURL: prefix-missing-1.shex
+    shexcURL: prefix-missing-1.shex
     startRow: 4
     startColumn: 32
     endRow: 5
@@ -800,12 +800,12 @@ entries:
   - name: prefix-missing-2
     schemaError: syntax
     approval: Proposed
-    schemaURL: prefix-missing-2.shex
+    shexcURL: prefix-missing-2.shex
     # no start/end: the error names both prefixes, so it has no one location.
   - name: prefix-no-COLON
     schemaError: syntax
     approval: Approved
-    schemaURL: prefix-no-COLON.shex
+    shexcURL: prefix-no-COLON.shex
     startRow: 3
     startColumn: 7
     endRow: 3
@@ -814,7 +814,7 @@ entries:
   - name: prefix-no-PNAME_NS
     schemaError: syntax
     approval: Approved
-    schemaURL: prefix-no-PNAME_NS.shex
+    shexcURL: prefix-no-PNAME_NS.shex
     startRow: 3
     startColumn: 7
     endRow: 3
@@ -823,7 +823,7 @@ entries:
   - name: prefix-no-uri
     schemaError: syntax
     approval: Approved
-    schemaURL: prefix-no-uri.shex
+    shexcURL: prefix-no-uri.shex
     startRow: 3
     startColumn: 11
     endRow: 4
@@ -832,7 +832,7 @@ entries:
   - name: shapename-a
     schemaError: syntax
     approval: Approved
-    schemaURL: shapename-a.shex
+    shexcURL: shapename-a.shex
     startRow: 3
     startColumn: 1
     endRow: 3
@@ -841,7 +841,7 @@ entries:
   - name: shapename-literal
     schemaError: syntax
     approval: Approved
-    schemaURL: shapename-literal.shex
+    shexcURL: shapename-literal.shex
     startRow: 3
     startColumn: 1
     endRow: 3
@@ -850,7 +850,7 @@ entries:
   - name: shapename-true
     schemaError: syntax
     approval: Approved
-    schemaURL: shapename-true.shex
+    shexcURL: shapename-true.shex
     startRow: 3
     startColumn: 1
     endRow: 3
@@ -859,7 +859,7 @@ entries:
   - name: tripleConsraint-no-valueClass
     schemaError: syntax
     approval: Approved
-    schemaURL: tripleConsraint-no-valueClass.shex
+    shexcURL: tripleConsraint-no-valueClass.shex
     startRow: 4
     startColumn: 25
     endRow: 5
@@ -868,7 +868,7 @@ entries:
   - name: tripleConsraint-with-datatype-and-dot
     schemaError: syntax
     approval: Approved
-    schemaURL: tripleConsraint-with-datatype-and-dot.shex
+    shexcURL: tripleConsraint-with-datatype-and-dot.shex
     startRow: 3
     startColumn: 48
     endRow: 4
@@ -877,7 +877,7 @@ entries:
   - name: tripleConsraint-with-datatype-and-valueSet
     schemaError: syntax
     approval: Approved
-    schemaURL: tripleConsraint-with-datatype-and-valueSet.shex
+    shexcURL: tripleConsraint-with-datatype-and-valueSet.shex
     startRow: 3
     startColumn: 48
     endRow: 3
@@ -886,7 +886,7 @@ entries:
   - name: tripleConsraint-with-dot-and-datatype
     schemaError: syntax
     approval: Approved
-    schemaURL: tripleConsraint-with-dot-and-datatype.shex
+    shexcURL: tripleConsraint-with-dot-and-datatype.shex
     startRow: 3
     startColumn: 27
     endRow: 3
@@ -895,7 +895,7 @@ entries:
   - name: tripleConsraint-with-two-cardinalities
     schemaError: syntax
     approval: Approved
-    schemaURL: tripleConsraint-with-two-cardinalities.shex
+    shexcURL: tripleConsraint-with-two-cardinalities.shex
     startRow: 3
     startColumn: 29
     endRow: 4
@@ -904,7 +904,7 @@ entries:
   - name: "1val1iriStemMinusliteral3"
     schemaError: syntax
     approval: Approved
-    schemaURL: "1val1iriStemMinusliteral3.shex"
+    shexcURL: "1val1iriStemMinusliteral3.shex"
     startRow: 3
     startColumn: 28
     endRow: 4
@@ -913,7 +913,7 @@ entries:
   - name: "1val1languageStemMinusliteral3"
     schemaError: syntax
     approval: Approved
-    schemaURL: "1val1languageStemMinusliteral3.shex"
+    shexcURL: "1val1languageStemMinusliteral3.shex"
     startRow: 3
     startColumn: 28
     endRow: 4
@@ -922,7 +922,7 @@ entries:
   - name: "1val1literalStemMinusiri3"
     schemaError: syntax
     approval: Approved
-    schemaURL: "1val1literalStemMinusiri3.shex"
+    shexcURL: "1val1literalStemMinusiri3.shex"
     startRow: 3
     startColumn: 28
     endRow: 4
@@ -931,7 +931,7 @@ entries:
   - name: "1val1literalStemMinuslanguage3"
     schemaError: syntax
     approval: Approved
-    schemaURL: "1val1literalStemMinuslanguage3.shex"
+    shexcURL: "1val1literalStemMinuslanguage3.shex"
     startRow: 3
     startColumn: 28
     endRow: 4
@@ -940,7 +940,7 @@ entries:
   - name: INTEGER-in-shape-expression
     schemaError: syntax
     approval: Approved
-    schemaURL: INTEGER-in-shape-expression.shex
+    shexcURL: INTEGER-in-shape-expression.shex
     startRow: 2
     startColumn: 25
     endRow: 2
@@ -949,4 +949,4 @@ entries:
   - name: "1dotExtends3"
     schemaError: syntax
     approval: proposed
-    schemaURL: "1dotExtends3.shex"
+    shexcURL: "1dotExtends3.shex"
