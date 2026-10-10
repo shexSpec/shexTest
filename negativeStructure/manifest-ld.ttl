@@ -1,0 +1,193 @@
+# GENERATED from manifest-ld.yaml by bin/manifest-ld.js; edit that, not this.
+
+@prefix mf: <http://www.w3.org/2001/sw/DataAccess/tests/test-manifest#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix shexMan: <http://www.w3.org/ns/shex-manifest#>.
+@prefix shexTest: <http://www.w3.org/ns/shex-test#>.
+
+[ rdfs:comment "ShEx negative structure tests" ] shexMan:entries ([
+  shexMan:name "1MissingRef";
+  shexTest:schemaError "structure";
+  shexTest:approval "Proposed";
+  shexTest:shexc <1MissingRef.shex>;
+  shexTest:startRow 3;
+  shexTest:startColumn 24;
+  shexTest:endRow 4;
+  shexTest:endColumn 1
+] [
+  shexMan:name "1focusMissingRefdot";
+  shexTest:schemaError "structure";
+  shexTest:approval "Proposed";
+  shexTest:shexc <1focusMissingRefdot.shex>;
+  shexTest:startRow 2;
+  shexTest:startColumn 22;
+  shexTest:endRow 3;
+  shexTest:endColumn 28
+] [
+  shexMan:name "1focusRefANDSelfdot";
+  shexTest:schemaError "structure";
+  shexTest:approval "Proposed";
+  shexTest:shexc <1focusRefANDSelfdot.shex>;
+  shexTest:startRow 4;
+  shexTest:startColumn 6;
+  shexTest:endRow 5;
+  shexTest:endColumn 6
+] [
+  shexMan:name "includeExpressionNotFound";
+  shexTest:schemaError "structure";
+  shexTest:approval "Proposed";
+  shexTest:shexc <includeExpressionNotFound.shex>;
+  shexTest:startRow 3;
+  shexTest:startColumn 3;
+  shexTest:endRow 4;
+  shexTest:endColumn 3
+] [
+  shexMan:name "includeSimpleShape";
+  shexTest:schemaError "structure";
+  shexTest:approval "Proposed";
+  shexTest:shexc <includeSimpleShape.shex>;
+  shexTest:startRow 3;
+  shexTest:startColumn 3;
+  shexTest:endRow 4;
+  shexTest:endColumn 3
+] [
+  shexMan:name "includeNonSimpleShape";
+  shexTest:schemaError "structure";
+  shexTest:approval "Proposed";
+  shexTest:shexc <includeNonSimpleShape.shex>;
+  shexTest:startRow 3;
+  shexTest:startColumn 3;
+  shexTest:endRow 4;
+  shexTest:endColumn 3
+] [
+  shexMan:name "includeWithCardinality";
+  shexTest:schemaError "structure";
+  shexTest:approval "Proposed";
+  shexTest:shexc <includeWithCardinality.shex>;
+  shexTest:startRow 6;
+  shexTest:startColumn 3;
+  shexTest:endRow 7;
+  shexTest:endColumn 2
+] [
+  shexMan:name "includeWithLabel";
+  shexTest:schemaError "structure";
+  shexTest:approval "Proposed";
+  shexTest:shexc <includeWithLabel.shex>;
+  shexTest:startRow 4;
+  shexTest:startColumn 3;
+  shexTest:endRow 5;
+  shexTest:endColumn 2
+] [
+  shexMan:name "Cycle1Negation1";
+  shexTest:schemaError "structure";
+  shexTest:trait "FailedStratifiedNegation";
+  mf:comment ":S NOT { :a { :b @:S } }";
+  shexTest:approval "Approved";
+  shexTest:shexc <Cycle1Negation1.shex>;
+  shexTest:startRow 6;
+  shexTest:startColumn 8;
+  shexTest:endRow 7;
+  shexTest:endColumn 4
+] [
+  shexMan:name "Cycle1Negation2";
+  shexTest:schemaError "structure";
+  shexTest:trait "FailedStratifiedNegation";
+  mf:comment ":S { :a { :b NOT @:S } }";
+  shexTest:approval "Approved";
+  shexTest:shexc <Cycle1Negation2.shex>;
+  shexTest:startRow 6;
+  shexTest:startColumn 8;
+  shexTest:endRow 7;
+  shexTest:endColumn 4
+] [
+  shexMan:name "Cycle1Negation3";
+  shexTest:schemaError "structure";
+  shexTest:trait "FailedStratifiedNegation";
+  mf:comment ":S { :a NOT { :b @:S } }";
+  shexTest:approval "Approved";
+  shexTest:shexc <Cycle1Negation3.shex>;
+  shexTest:startRow 6;
+  shexTest:startColumn 8;
+  shexTest:endRow 7;
+  shexTest:endColumn 4
+] [
+  shexMan:name "TwoNegation";
+  shexTest:schemaError "structure";
+  shexTest:trait "FailedStratifiedNegation";
+  mf:comment ":S ( (NOT @:T) AND (NOT @:U) ) :T { :a @:S } :U { :b . }";
+  shexTest:approval "Approved";
+  shexTest:shexc <TwoNegation.shex>;
+  shexTest:startRow 8;
+  shexTest:startColumn 6;
+  shexTest:endRow 9;
+  shexTest:endColumn 2
+] [
+  shexMan:name "TwoNegation2";
+  shexTest:schemaError "structure";
+  shexTest:trait "FailedStratifiedNegation";
+  mf:comment ":S ( (NOT @:T) AND @:U ) :T { :a NOT @:S } :U { :b @:S }";
+  shexTest:approval "Proposed";
+  shexTest:shexc <TwoNegation2.shex>;
+  shexTest:startRow 8;
+  shexTest:startColumn 6;
+  shexTest:endRow 9;
+  shexTest:endColumn 2
+] [
+  shexMan:name "Cycle2Negation";
+  shexTest:schemaError "structure";
+  shexTest:trait "FailedStratifiedNegation";
+  mf:comment ":S NOT { :a @:S }";
+  shexTest:approval "Approved";
+  shexTest:shexc <Cycle2Negation.shex>;
+  shexTest:startRow 5;
+  shexTest:startColumn 6;
+  shexTest:endRow 6;
+  shexTest:endColumn 2
+] [
+  shexMan:name "Cycle2Extra";
+  shexTest:schemaError "structure";
+  shexTest:trait "FailedStratifiedNegation";
+  mf:comment ":S EXTRA :a { :a @:S }";
+  shexTest:approval "Approved";
+  shexTest:shexc <Cycle2Extra.shex>;
+  shexTest:startRow 5;
+  shexTest:startColumn 6;
+  shexTest:endRow 6;
+  shexTest:endColumn 2
+] [
+  shexMan:name "Cycle2ExtendsNegation";
+  shexTest:schemaError "structure";
+  shexTest:approval "Proposed";
+  shexTest:shexc <Cycle2ExtendsNegation.shex>;
+  shexTest:startRow 5;
+  shexTest:startColumn 8;
+  shexTest:endRow 5;
+  shexTest:endColumn 11
+] [
+  shexMan:name "Cycle1Extends";
+  shexTest:schemaError "structure";
+  shexTest:approval "Proposed";
+  shexTest:shexc <Cycle1Extends.shex>;
+  shexTest:startRow 5;
+  shexTest:startColumn 12;
+  shexTest:endRow 5;
+  shexTest:endColumn 15
+] [
+  shexMan:name "Cycle2Extends";
+  shexTest:schemaError "structure";
+  shexTest:approval "Proposed";
+  shexTest:shexc <Cycle2Extends.shex>;
+  shexTest:startRow 6;
+  shexTest:startColumn 12;
+  shexTest:endRow 6;
+  shexTest:endColumn 15
+] [
+  shexMan:name "Cycle2ExtendsOr";
+  shexTest:schemaError "structure";
+  shexTest:approval "Proposed";
+  shexTest:shexc <Cycle2ExtendsOr.shex>;
+  shexTest:startRow 15;
+  shexTest:startColumn 12;
+  shexTest:endRow 15;
+  shexTest:endColumn 17
+]).

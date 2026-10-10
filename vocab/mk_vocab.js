@@ -21,9 +21,79 @@ const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
 
-const TITLE = 'Shape Expression Vocabulary';
-const DESCRIPTION = 'This document describes the RDFS vocabulary description used in the Shape Expression Language (ShEx) [[shex-semantics]] along with the default JSON-LD Context and shape expression to validate RDF versions of shapes.';
 const COMMIT_BASE = 'https://github.com/shexSpec/shexTest/commit/';
+
+// The vocabularies this script maintains, by the name --vocab selects.  Each
+// is one CSV here and three files in a w3c/ns checkout (<basename>.ttl,
+// .jsonld, .html, published at https://www.w3.org/ns/<basename>).  `prefix`
+// is the vocabulary's own prefix: a CSV id with no colon is in its namespace.
+const VOCABULARIES = {
+  'shex': {
+    prefix: 'shex',
+    csv: 'vocab.csv',
+    basename: 'shex',
+    title: 'Shape Expression Vocabulary',
+    description: 'This document describes the RDFS vocabulary description used in the Shape Expression Language (ShEx) [[shex-semantics]] along with the default JSON-LD Context and shape expression to validate RDF versions of shapes.',
+    shortName: 'shexns',
+    abstract: `and Term definitions used
+        for describing Shape Expressions [[shex-semantics]]. This document provides the RDFS [[RDF-SCHEMA]] vocabulary definition and a description of the JSON-LD context definition for use with
+        defining shape expressions.`,
+    alternateNote: 'which also includes the <code>@context</code> required for metadata descriptions.',
+    otherPrefixes: [],
+  },
+  // What a ShEx manifest -- a list of schema/data/query-map combinations,
+  // each with the outcome expected of validating it -- is written in: the
+  // terms the test suite's manifests and the implementations' example
+  // manifests have in common.
+  'shex-manifest': {
+    prefix: 'shexMan',
+    csv: 'manifest-vocab.csv',
+    basename: 'shex-manifest',
+    title: 'ShEx Manifest Vocabulary',
+    description: 'This document describes the RDFS vocabulary used to write ShEx manifests -- ordered lists of entries, each a schema, some data and a query map, with the outcome expected of validating them [[shex-semantics]] [[shape-map]] -- along with the JSON-LD Context that makes a JSON or YAML manifest an RDF graph. Test suites and the example collections of ShEx implementations write their manifests with it.',
+    shortName: 'shexmanifestns',
+    abstract: `and Term definitions used
+        for writing manifests of Shape Expressions [[shex-semantics]] examples and tests. This document provides the RDFS [[RDF-SCHEMA]] vocabulary definition and a description of the JSON-LD context definition for use with
+        writing manifests in JSON-LD or YAML-LD.`,
+    alternateNote: 'which also includes the <code>@context</code> a JSON-LD or YAML-LD manifest references.',
+    otherPrefixes: ['shex'],
+    extraBiblio: `,
+      "shape-map": {
+        "authors": [
+          "Eric Prud'hommeaux",
+          "Thomas Baker"
+        ],
+        "title": "ShapeMap Structure and Language",
+        "href" : "https://shexspec.github.io/shape-map/",
+        "status" : "CG-DRAFT",
+        "publisher": "W3C"
+      }`,
+  },
+  // What a ShEx conformance test says beyond an entry of the manifest
+  // vocabulary: the features it exercises, whether it is approved, how its
+  // schema must be rejected and where, the schema's other representations,
+  // and what its semantic actions must print.  The suite's manifests stack
+  // it on the manifest vocabulary; implementations' examples need not.
+  'shex-test': {
+    prefix: 'shexTest',
+    csv: 'test-vocab.csv',
+    basename: 'shex-test',
+    title: 'ShEx Test Vocabulary',
+    description: 'This document describes the RDFS vocabulary in which the tests of a ShEx conformance suite say what they say beyond an entry of the ShEx manifest vocabulary [[shex-manifest]] -- the features of ShEx a test exercises, whether it is approved, how its schema must be rejected and where, the schema\'s other representations, and what its semantic actions must output [[shex-semantics]] -- along with the JSON-LD Context that a test manifest stacks on the manifest vocabulary\'s, so that a JSON or YAML test manifest is an RDF graph.',
+    shortName: 'shextestns',
+    abstract: `and Term definitions used
+        for writing the tests of Shape Expressions [[shex-semantics]] implementations. This document provides the RDFS [[RDF-SCHEMA]] vocabulary definition and a description of the JSON-LD context definition for use with
+        writing test manifests in JSON-LD or YAML-LD.`,
+    alternateNote: 'which also includes the <code>@context</code> a JSON-LD or YAML-LD test manifest references, after the ShEx manifest vocabulary\'s.',
+    otherPrefixes: ['shexMan', 'prov'],
+    extraBiblio: `,
+      "shex-manifest": {
+        "title": "ShEx Manifest Vocabulary",
+        "href" : "https://www.w3.org/ns/shex-manifest",
+        "publisher": "W3C"
+      }`,
+  },
+};
 
 // ---------------------------------------------------------------- CSV input
 
@@ -64,6 +134,7 @@ function rubyInspect(row) {
 
 class Vocab {
   constructor(csvPath, opts = {}) {
+    this.config = opts.config || VOCABULARIES.shex;
     const raw = parseCSV(fs.readFileSync(csvPath, 'utf8'));
     const columns = raw.shift().map(c => c);
     this.prefixes = {}; this.terms = {}; this.properties = {};
@@ -101,7 +172,7 @@ class Vocab {
   }
 
   namespaced(term) {
-    return term.includes(':') ? term : `shex:${term}`;
+    return term.includes(':') ? term : `${this.config.prefix}:${term}`;
   }
 
   // ------------------------------------------------------------- JSON-LD
@@ -221,14 +292,14 @@ class Vocab {
     // Use separate rdfs context so as not to polute the ShEx context.
     const ontology = {
       '@context': rdfsContext,
-      '@id': this.prefixes['shex'].subClassOf,
+      '@id': this.prefixes[this.config.prefix].subClassOf,
       '@type': 'owl:Ontology',
       'dc': 'http://purl.org/dc/terms/',
       'owl': 'http://www.w3.org/2002/07/owl#',
       'rdf': 'http://www.w3.org/1999/02/22-rdf-syntax-ns#',
       'rdfs': 'http://www.w3.org/2000/01/rdf-schema#',
-      'dc:title': {en: TITLE},
-      'dc:description': {en: DESCRIPTION},
+      'dc:title': {en: this.config.title},
+      'dc:description': {en: this.config.description},
       'dc:date': this.date,
       'owl:imports': this.imports,
       'owl:versionInfo': this.commit,
@@ -258,6 +329,7 @@ class Vocab {
 
   toTtl() {
     const output = [];
+    const p = this.config.prefix;
 
     const prefixes = Object.assign({
       dc:   {subClassOf: 'http://purl.org/dc/terms/'},
@@ -269,9 +341,9 @@ class Vocab {
       output.push(`@prefix ${id}: <${entry.subClassOf}> .`);
 
     output.push('\n# CSVM Ontology definition');
-    output.push('shex: a owl:Ontology;');
-    output.push(`  dc:title "${TITLE}"@en;`);
-    output.push(`  dc:description """${DESCRIPTION}"""@en;`);
+    output.push(`${p}: a owl:Ontology;`);
+    output.push(`  dc:title "${this.config.title}"@en;`);
+    output.push(`  dc:description """${this.config.description}"""@en;`);
     output.push(`  dc:date "${this.date}"^^xsd:date;`);
     if (this.imports.length)
       output.push(`  owl:imports ${this.imports.map(i => '<' + i + '>').join(', ')};`);
@@ -281,16 +353,16 @@ class Vocab {
 
     output.push('\n# Class definitions');
     for (const [id, entry] of Object.entries(this.classes)) {
-      output.push(`shex:${id} a rdfs:Class;`);
+      output.push(`${p}:${id} a rdfs:Class;`);
       output.push(`  rdfs:label "${entry.label || ''}"@en;`);
       output.push(`  rdfs:comment """${entry.comment || ''}"""@en;`);
       if (entry.subClassOf) output.push(`  rdfs:subClassOf ${this.namespaced(entry.subClassOf)};`);
-      output.push('  rdfs:isDefinedBy shex: .');
+      output.push(`  rdfs:isDefinedBy ${p}: .`);
     }
 
     output.push('\n# Property definitions');
     for (const [id, entry] of Object.entries(this.properties)) {
-      output.push(`shex:${id} a rdf:Property;`);
+      output.push(`${p}:${id} a rdf:Property;`);
       output.push(`  rdfs:label "${entry.label || ''}"@en;`);
       output.push(`  rdfs:comment """${entry.comment || ''}"""@en;`);
       if (entry.subClassOf) output.push(`  rdfs:subPropertyOf ${this.namespaced(entry.subClassOf)};`);
@@ -305,24 +377,24 @@ class Vocab {
       else if (ranges.length > 1)
         output.push(`  rdfs:range [ owl:unionOf (${ranges.map(r => this.namespaced(r)).join(' ')})];`);
 
-      output.push('  rdfs:isDefinedBy shex: .');
+      output.push(`  rdfs:isDefinedBy ${p}: .`);
     }
 
     output.push('\n# Datatype definitions');
     for (const [id, entry] of Object.entries(this.datatypes)) {
-      output.push(`shex:${id} a rdfs:Datatype;`);
+      output.push(`${p}:${id} a rdfs:Datatype;`);
       output.push(`  rdfs:label "${entry.label || ''}"@en;`);
       output.push(`  rdfs:comment """${entry.comment || ''}"""@en;`);
       if (entry.subClassOf) output.push(`  rdfs:subClassOf ${this.namespaced(entry.subClassOf)};`);
-      output.push('  rdfs:isDefinedBy shex: .');
+      output.push(`  rdfs:isDefinedBy ${p}: .`);
     }
 
     output.push('\n# Instance definitions');
     for (const [id, entry] of Object.entries(this.instances)) {
-      output.push(`shex:${id} a ${this.namespaced(entry.type)};`);
+      output.push(`${p}:${id} a ${this.namespaced(entry.type)};`);
       output.push(`  rdfs:label "${entry.label || ''}"@en;`);
       output.push(`  rdfs:comment """${entry.comment || ''}"""@en;`);
-      output.push('  rdfs:isDefinedBy shex: .');
+      output.push(`  rdfs:isDefinedBy ${p}: .`);
     }
 
     return output.join('\n');
@@ -349,8 +421,8 @@ class Vocab {
       output.push(`PREFIX ${id}: <${entry.subClassOf}>`);
 
     output.push('#ShExc definition of ShExJ');
-    output.push(`#${TITLE}`);
-    output.push(`#${DESCRIPTION}`);
+    output.push(`#${this.config.title}`);
+    output.push(`#${this.config.description}`);
     output.push(`#Date: ${this.date}`);
     if (this.imports.length)
       output.push(`#Imports ${this.imports.map(i => '<' + i + '>').join(', ')}`);
@@ -397,13 +469,14 @@ class Vocab {
 
   toHtml() {
     const json = this.buildJsonld();
-    return renderHtml(json['@graph'], json['@context']);
+    return renderHtml(json['@graph'], json['@context'], this.config);
   }
 }
 
-function renderHtml(ont, context) {
+function renderHtml(ont, context, config) {
   const out = [];
   const w = line => out.push(line);
+  const p = config.prefix;
 
   w(`<html lang="en">
   <head>
@@ -425,12 +498,12 @@ var respecConfig = {
         "rawDate": "2016-12-22",
         "status" : "CG-NOTE",
         "publisher": "W3C"
-      }
+      }${config.extraBiblio || ''}
     },
     specStatus:       "base",
-    shortName:        "shexns",
+    shortName:        "${config.shortName}",
     publishDate:      "${ont['dc:date']}",
-    thisVersion:      "https://www.w3.org/ns/shex",
+    thisVersion:      "https://www.w3.org/ns/${config.basename}",
     edDraftURI:       "https://github.com/shexSpec/shexTest/tree/main/vocab",
     // lcEnd: "3000-01-01",
     // crEnd: "3000-01-01",
@@ -450,8 +523,8 @@ var respecConfig = {
     wgPublicList: "public-csv-wg",
     wgPatentURI: "https://www.w3.org/2004/01/pp-impl/68238/status",
     alternateFormats: [
-      {uri: "shex.ttl", label: "Turtle"},
-      {uri: "shex.jsonld", label: "JSON-LD"}
+      {uri: "${config.basename}.ttl", label: "Turtle"},
+      {uri: "${config.basename}.jsonld", label: "JSON-LD"}
     ],
     inlineCSS: true,
     doRDFa: false,
@@ -476,17 +549,15 @@ var respecConfig = {
       .bold {font-weight: bold;}
     </style>
   </head>
-  <body resource="${context['shex']}" typeof="owl:Ontology" prefix="shex: ${context['shex']}">
+  <body resource="${context[p]}" typeof="owl:Ontology" prefix="${p}: ${context[p]}">
     <section id="abstract">
       <p>This document describes the
         <span property="dc:title">${ont['dc:title']['en']}</span>
-        and Term definitions used
-        for describing Shape Expressions [[shex-semantics]]. This document provides the RDFS [[RDF-SCHEMA]] vocabulary definition and a description of the JSON-LD context definition for use with
-        defining shape expressions.</p>
+        ${config.abstract}</p>
       <p>Alternate versions of the vocabulary definition exist in
-        <a rel="alternate" href="shex.ttl">Turtle</a> and
-        <a rel="alternate" href="shex.jsonld">JSON-LD</a>,
-        which also includes the <code>@context</code> required for metadata descriptions.
+        <a rel="alternate" href="${config.basename}.ttl">Turtle</a> and
+        <a rel="alternate" href="${config.basename}.jsonld">JSON-LD</a>,
+        ${config.alternateNote}
         <!--These versions may also be retrieved from <code>FIXME</code> using an appropiate HTTP <em>Accept</em> header.-->
       </p>
       <dl>
@@ -513,16 +584,12 @@ var respecConfig = {
       <h2>Introduction</h2>
       <p property="dc:description">${ont['dc:description']['en']}</p>
       <p>This specification makes use of the following namespaces:</p>
-      <dl class="terms">
-        <dt><code>shex</code>:</dt>
-        <dd><code>http://www.w3.org/ns/shex#</code></dd>
-        <dt><code>rdf</code>:</dt>
-        <dd><code>http://www.w3.org/1999/02/22-rdf-syntax-ns#</code></dd>
-        <dt><code>rdfs</code>:</dt>
-        <dd><code>http://www.w3.org/2000/01/rdf-schema#</code></dd>
-        <dt><code>xsd</code>:</dt>
-        <dd><code>http://www.w3.org/2001/XMLSchema#</code></dd>
-      </dl>
+      <dl class="terms">`);
+  for (const prefix of [p].concat(config.otherPrefixes, ['rdf', 'rdfs', 'xsd'])) {
+    w(`        <dt><code>${prefix}</code>:</dt>`);
+    w(`        <dd><code>${context[prefix]}</code></dd>`);
+  }
+  w(`      </dl>
     </section>`);
 
   for (const sect of [
@@ -533,10 +600,10 @@ var respecConfig = {
   ]) {
     w('    <section>');
     w(`      <h2>${sect.heading}</h2>`);
-    w(`      <p>The following are ${sect.heading.toLowerCase()} in the <code>shex</code> namespace:</p>`);
+    w(`      <p>The following are ${sect.heading.toLowerCase()} in the <code>${p}</code> namespace:</p>`);
     w('      <table class="rdfs-definition">');
     for (const defn of ont[sect.key] || []) {
-      const frag = defn['@id'].slice(5);
+      const frag = defn['@id'].slice(p.length + 1);
       const label = defn['rdfs:label']['en'];
       w(`        <tr id="${frag}">`);
       w(`          <td class="bold">${frag}</td>`);
@@ -544,7 +611,7 @@ var respecConfig = {
       w(`            <em property="rdfs:label">${label}</em>`);
       w(`            <span class="permalink"><a href="#${frag}" aria-label="Permalink for ${label}" title="Permalink for ${label}"><span>§</span></a></span>`);
       w(`            <p property="rdfs:comment">${defn['rdfs:comment']['en']}</p>`);
-      w('            <span property="rdfs:isDefinedBy" resource="shex:"></span>');
+      w(`            <span property="rdfs:isDefinedBy" resource="${p}:"></span>`);
       const props = ['rdfs:subClassOf', 'rdfs:subPropertyOf', 'rdfs:range', 'rdfs:domain'];
       if (props.some(p => p in defn)) {
         w('              <dl class="terms">');
@@ -648,15 +715,21 @@ function check(vocab) {
 const USAGE = `Usage: mk_vocab.js [options]
   -f, --format FMT   emit one format to stdout: jsonld|ttl|html|context|shexc
   -o, --output FILE  write --format output to FILE instead of stdout
-      --nsdir DIR    also regenerate shex.{ttl,jsonld,html} in DIR
+      --vocab NAME   which vocabulary: shex (default), shex-manifest or shex-test
+      --nsdir DIR    also regenerate <vocab>.{ttl,jsonld,html} in DIR
                      (a w3c/ns checkout; they are published at www.w3.org/ns/)
-      --check        report terms used by ../doc/ShExR.shex but not defined here
-      --csv FILE     vocabulary source (default: ./vocab.csv)
+      --check        write nothing; report terms used by ../doc/ShExR.shex but
+                     not defined here (shex only) and, given --nsdir, whether
+                     DIR's <vocab>.{ttl,jsonld,html} are what would be written
+      --csv FILE     vocabulary source (default: ./vocab.csv for shex,
+                     ./manifest-vocab.csv for shex-manifest, ./test-vocab.csv
+                     for shex-test)
       --date DATE    override the dc:date otherwise taken from git log
       --commit URL   override the owl:versionInfo otherwise taken from git log
 
 With no options, regenerates the derived files inside this repo
-(../doc/ShExJ-context.jsonld).`;
+(../doc/ShExJ-context.jsonld; --vocab shex-manifest and shex-test have
+none, so they want --nsdir or --format).`;
 
 function main() {
   const args = process.argv.slice(2);
@@ -669,6 +742,7 @@ function main() {
       case '--date':              opts.date = args[++i]; break;
       case '--commit':            opts.commit = args[++i]; break;
       case '--nsdir':             opts.nsdir = args[++i]; break;
+      case '--vocab':             opts.vocab = args[++i]; break;
       case '--check':             opts.check = true; break;
       case '--help': case '-?':   console.error(USAGE); process.exit(1);
       default:
@@ -677,7 +751,13 @@ function main() {
     }
   }
 
-  const vocab = new Vocab(opts.csv || path.join(__dirname, 'vocab.csv'), opts);
+  const config = VOCABULARIES[opts.vocab || 'shex'];
+  if (!config) {
+    console.error(`Unknown vocabulary: ${opts.vocab} (one of ${Object.keys(VOCABULARIES).join(', ')})\n\n${USAGE}`);
+    process.exit(1);
+  }
+  opts.config = config;
+  const vocab = new Vocab(opts.csv || path.join(__dirname, config.csv), opts);
   const gen = {
     jsonld:  () => vocab.toJsonld(),
     ttl:     () => vocab.toTtl(),
@@ -686,7 +766,29 @@ function main() {
     shexc:   () => vocab.toShexc(),
   };
 
-  if (opts.check) process.exit(check(vocab));
+  if (opts.check) {
+    // the ShExR drift check is about the ShEx vocabulary; what any
+    // vocabulary can be checked against is the files generated from it
+    let status = 0;
+    if (config.basename === 'shex')
+      status = check(vocab);
+    else if (!opts.nsdir) {
+      console.error(`--check --vocab ${opts.vocab} needs --nsdir: this repo has no file derived from ${config.csv} to compare`);
+      process.exit(1);
+    }
+    if (opts.nsdir)
+      for (const format of ['jsonld', 'ttl', 'html']) {
+        const target = path.join(opts.nsdir, `${config.basename}.${format}`);
+        const current = fs.existsSync(target) ? fs.readFileSync(target, 'utf8') : null;
+        if (current === gen[format]() + '\n')
+          console.error(`${target} is up to date`);
+        else {
+          console.error(`${target} ${current === null ? 'is missing' : `is not what ${config.csv} generates`}`);
+          status = 1;
+        }
+      }
+    process.exit(status);
+  }
 
   if (opts.format) {
     if (!gen[opts.format]) {
@@ -704,11 +806,16 @@ function main() {
     console.error(`wrote ${target}`);
   };
 
-  write(path.join(__dirname, '..', 'doc', 'ShExJ-context.jsonld'), gen.context());
+  if (config.basename === 'shex')
+    write(path.join(__dirname, '..', 'doc', 'ShExJ-context.jsonld'), gen.context());
+  else if (!opts.nsdir) {
+    console.error(`--vocab ${opts.vocab} has no derived files in this repo; give --nsdir or --format\n\n${USAGE}`);
+    process.exit(1);
+  }
 
   if (opts.nsdir) {
-    for (const [format, fn] of Object.entries({jsonld: 'shex.jsonld', ttl: 'shex.ttl', html: 'shex.html'}))
-      write(path.join(opts.nsdir, fn), gen[format]());
+    for (const format of ['jsonld', 'ttl', 'html'])
+      write(path.join(opts.nsdir, `${config.basename}.${format}`), gen[format]());
   }
 }
 

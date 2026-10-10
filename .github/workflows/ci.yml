@@ -58,6 +58,12 @@ jobs:
       #                        ShExR uses (vocab/mk_vocab.js)
       #   shexr-check          doc/ShExR.{json,ttl,ntriples} match doc/ShExR.shex
       #                        (bin/mkShExR.js)
+      #   manifest-ld-check    manifest-ld.{jsonld,ttl} are what manifest-ld.yaml
+      #                        says (bin/manifest-ld.js)
+      #   manifest-ld-legacy-check
+      #                        manifest-ld.yaml says what manifest.ttl says, and
+      #                        the legacy files are derivable from it
+      #                        (bin/manifest-ld-legacy-check.js)
       - run: npm test
 
       # informational only: flags schemas referenced by validation tests

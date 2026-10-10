@@ -4,7 +4,7 @@
   "description": "Shape Expressions library tests.",
   "scripts": {
     "dist": "for d in schemas/ negativeSyntax/ negativeStructure/ validation/; do (cd $d && echo -n $d ':' && make); done",
-    "test": "npm run test-shexj-jsg && npm run test-shexj-types && npm run test-shexv-val && npm run test-shexv-err && npm run test-schema-imports && npm run test-manifest-names && npm run vocab-check && npm run shexr-check",
+    "test": "npm run test-shexj-jsg && npm run test-shexj-types && npm run test-shexv-val && npm run test-shexv-err && npm run test-schema-imports && npm run test-manifest-names && npm run vocab-check && npm run shexr-check && npm run manifest-ld-check && npm run manifest-ld-legacy-check",
     "test-shexj-jsg": "ls schemas/*.json | egrep -v '(coverage|representationTests).json' | xargs json-grammar doc/ShExJ.jsg",
     "test-shexj-types": "bin/checkShExJTypes.js",
     "test-shexv-val": "ls validation/*.val | xargs json-grammar doc/ShExV.jsg",
@@ -13,8 +13,13 @@
     "test-manifest-names": "bin/checkManifestNames.js",
     "vocab": "node vocab/mk_vocab.js",
     "vocab-check": "node vocab/mk_vocab.js --check",
+    "vocab-manifest": "node vocab/mk_vocab.js --vocab shex-manifest",
+    "vocab-test": "node vocab/mk_vocab.js --vocab shex-test",
     "shexr": "node bin/mkShExR.js",
-    "shexr-check": "node bin/mkShExR.js --check"
+    "shexr-check": "node bin/mkShExR.js --check",
+    "manifest-ld": "node bin/manifest-ld.js",
+    "manifest-ld-check": "node bin/manifest-ld.js --check",
+    "manifest-ld-legacy-check": "node bin/manifest-ld-legacy-check.js"
   },
   "author": {
     "name": "Eric Prud'hommeaux",
@@ -53,6 +58,7 @@
   "devDependencies": {
     "@shexjs/parser": "^1.0.0-alpha.28",
     "@types/shexj": "^2.1.2",
+    "js-yaml": "^5.4.2",
     "json-grammar": "^0.3.2",
     "jsonld": "^9.0.0",
     "n3": "^2.7.12",
