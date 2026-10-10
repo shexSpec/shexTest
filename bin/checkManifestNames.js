@@ -7,6 +7,8 @@
 //
 // A test is identified twice: by its IRI, <#1dot_pass> in manifest.ttl and
 // "@id": "#1dot_pass" in manifest.jsonld, and by its mf:name, "1dot_pass".
+// (manifest-ld.yaml has only `name: 1dot_pass`; when the two disagree,
+// bin/manifest-ld-from-legacy.js keeps both there as a name and an "@id".)
 // Implementations pick whichever is handy to select, skip and report tests, so
 // when the two disagree, the test one harness calls X is the test another
 // calls Y. Nothing else notices: a copied test with only one of the two edited
@@ -18,6 +20,8 @@
 //   - the mf:entries list and the defined tests are the same set (ttl)
 // and across the two:
 //   - they list the same ids, in the same order, with the same names
+// and in manifest-ld.yaml:
+//   - the same tests, in the same order, each named once, none with an "@id"
 //
 // manifest.jsonld is read as plain JSON, not expanded as JSON-LD, because that
 // is how its consumers read it; the strings have to match as written.
@@ -28,6 +32,7 @@
 const fs = require('fs');
 const path = require('path');
 const N3 = require('n3');
+const yaml = require('js-yaml');
 
 const ROOT = path.join(__dirname, '..');
 const RDF = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#';
@@ -105,6 +110,19 @@ function readJsonld(file, bad) {
   return {base, entries, tests};
 }
 
+// -> {entries: ["#name"]}
+function readYaml(file, bad) {
+  const doc = yaml.load(fs.readFileSync(file, 'utf8'));
+  const entries = [];
+  (doc.entries || []).forEach((e, i) => {
+    if (typeof e.name !== 'string') return bad(`entries[${i}] has no name`);
+    entries.push('#' + e.name);
+    if ('@id' in e) bad(`#${e.name} also has "@id": ${q(e['@id'])}; its id and name differ in manifest.ttl`);
+  });
+  for (const d of dups(entries)) bad(`${d} is named more than once`);
+  return {entries};
+}
+
 // The checks that are the same in either serialization.
 function checkNames({tests}, bad) {
   for (const [key, names] of tests) {
@@ -142,6 +160,11 @@ function checkDir(dir) {
   };
   const ttl = read('manifest.ttl', readTtl);
   const jsonld = read('manifest.jsonld', readJsonld);
+  const ld = (() => {
+    const bad = reporter('manifest-ld.yaml');
+    try { return readYaml(path.join(dir, 'manifest-ld.yaml'), bad); }
+    catch (e) { bad(e.code === 'ENOENT' ? 'missing' : e.message); return null; }
+  })();
 
   if (ttl && jsonld) {
     const bad = reporter('manifest.{ttl,jsonld}');
@@ -165,6 +188,18 @@ function checkDir(dir) {
     }
   }
 
+  if (ttl && ld) {
+    const bad = reporter('manifest-ld.yaml');
+    for (const e of ttl.entries)
+      if (!ld.entries.includes(e)) bad(`${e} is in manifest.ttl but not here`);
+    for (const e of ld.entries)
+      if (!ttl.entries.includes(e)) bad(`${e} is here but not in manifest.ttl`);
+    if (ttl.entries.length === ld.entries.length && ttl.entries.every(e => ld.entries.includes(e))) {
+      const i = ttl.entries.findIndex((e, i) => e !== ld.entries[i]);
+      if (i !== -1) bad(`entries are ordered differently from manifest.ttl, starting at [${i}]: ${ld.entries[i]} vs ${ttl.entries[i]}`);
+    }
+  }
+
   if (!count)
     console.error(`${rel}: ${ttl.entries.length} tests, ids and names agree`);
   return count;
@@ -178,7 +213,8 @@ const dirs = process.argv.length > 2
 const bad = dirs.reduce((sum, dir) => sum + checkDir(dir), 0);
 if (bad) {
   console.error(`\n${bad} problem(s). A test's id and its mf:name must match;`);
-  console.error('fix manifest.ttl, then regenerate manifest.jsonld with');
-  console.error('(cd DIR && ../bin/genJSON.js manifest.ttl > manifest.jsonld).');
+  console.error('fix manifest.ttl, then regenerate the others:');
+  console.error('  (cd DIR && ../bin/genJSON.js manifest.ttl > manifest.jsonld)');
+  console.error('  node bin/manifest-ld-from-legacy.js DIR/manifest.ttl -o DIR/manifest-ld.yaml && npm run manifest-ld');
   process.exit(1);
 }
