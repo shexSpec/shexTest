@@ -1,0 +1,944 @@
+# GENERATED from manifest-ld.yaml by bin/manifest-ld.js; edit that, not this.
+
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix shexMan: <http://www.w3.org/ns/shex-manifest#>.
+@prefix shexTest: <http://www.w3.org/ns/shex-test#>.
+
+[ rdfs:comment "ShEx negative syntax tests" ] shexMan:entries ([
+  shexMan:name "1decimalMininclusiveroman-numeral";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <1decimalMininclusiveroman-numeral.shex>;
+  shexTest:startRow 2;
+  shexTest:startColumn 81;
+  shexTest:endRow 3;
+  shexTest:endColumn 1
+] [
+  shexMan:name "1ProductionShapeCollision";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Proposed";
+  shexTest:shexc <1ProductionShapeCollision.shex>;
+  shexTest:startRow 8;
+  shexTest:startColumn 3;
+  shexTest:endRow 9;
+  shexTest:endColumn 2
+] [
+  shexMan:name "1ShapeProductionCollision";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Proposed";
+  shexTest:shexc <1ShapeProductionCollision.shex>;
+  shexTest:startRow 3;
+  shexTest:startColumn 3;
+  shexTest:endRow 6;
+  shexTest:endColumn 22
+] [
+  shexMan:name "1dotAnnot_AIRIREF";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <1dotAnnot_AIRIREF.shex>;
+  shexTest:startRow 3;
+  shexTest:startColumn 31;
+  shexTest:endRow 4;
+  shexTest:endColumn 1
+] [
+  shexMan:name "1dotUnlabeledCode1";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <1dotUnlabeledCode1.shex>;
+  shexTest:startRow 3;
+  shexTest:startColumn 6;
+  shexTest:endRow 4;
+  shexTest:endColumn 1
+] [
+  shexMan:name "1dotDuplicateShapeLabel";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Proposed";
+  shexTest:shexc <1dotDuplicateShapeLabel.shex>;
+  shexTest:startRow 6;
+  shexTest:startColumn 1;
+  shexTest:endRow 9;
+  shexTest:endColumn 1
+] [
+  shexMan:name "1dotDuplicateProductionLabel";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Proposed";
+  shexTest:shexc <1dotDuplicateProductionLabel.shex>;
+  shexTest:startRow 7;
+  shexTest:startColumn 3;
+  shexTest:endRow 8;
+  shexTest:endColumn 2
+] [
+  shexMan:name "1doubleMininclusiveroman-numeral";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <1doubleMininclusiveroman-numeral.shex>;
+  shexTest:startRow 2;
+  shexTest:startColumn 80;
+  shexTest:endRow 3;
+  shexTest:endColumn 1
+] [
+  shexMan:name "1floatMininclusiveroman-numeral";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <1floatMininclusiveroman-numeral.shex>;
+  shexTest:startRow 2;
+  shexTest:startColumn 79;
+  shexTest:endRow 3;
+  shexTest:endColumn 1
+] [
+  shexMan:name "1integerMininclusiveroman-numeral";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <1integerMininclusiveroman-numeral.shex>;
+  shexTest:startRow 2;
+  shexTest:startColumn 81;
+  shexTest:endRow 3;
+  shexTest:endColumn 1
+] [
+  shexMan:name "1inverseinversedot";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <1inverseinversedot.shex>;
+  shexTest:startRow 1;
+  shexTest:startColumn 32;
+  shexTest:endRow 2;
+  shexTest:endColumn 28
+] [
+  shexMan:name "1iriLength2";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <1iriLength2.shex>;
+  shexTest:startRow 2;
+  shexTest:startColumn 39;
+  shexTest:endRow 3;
+  shexTest:endColumn 1
+] [
+  shexMan:name "1iriMaxexclusive";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <1iriMaxexclusive.shex>;
+  shexTest:startRow 2;
+  shexTest:startColumn 29;
+  shexTest:endRow 2;
+  shexTest:endColumn 43
+] [
+  shexMan:name "1iriMaxinclusive";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <1iriMaxinclusive.shex>;
+  shexTest:startRow 2;
+  shexTest:startColumn 29;
+  shexTest:endRow 2;
+  shexTest:endColumn 43
+] [
+  shexMan:name "1iriMinexclusive";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <1iriMinexclusive.shex>;
+  shexTest:startRow 2;
+  shexTest:startColumn 29;
+  shexTest:endRow 2;
+  shexTest:endColumn 43
+] [
+  shexMan:name "1iriMininclusive";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <1iriMininclusive.shex>;
+  shexTest:startRow 2;
+  shexTest:startColumn 29;
+  shexTest:endRow 2;
+  shexTest:endColumn 43
+] [
+  shexMan:name "1literalFractiondigitsxsd-integer";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <1literalFractiondigitsxsd-integer.shex>;
+  shexTest:startRow 2;
+  shexTest:startColumn 48;
+  shexTest:endRow 3;
+  shexTest:endColumn 1
+] [
+  shexMan:name "1literalLength2";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <1literalLength2.shex>;
+  shexTest:startRow 2;
+  shexTest:startColumn 43;
+  shexTest:endRow 3;
+  shexTest:endColumn 1
+] [
+  shexMan:name "1literalTotaldigitsxsd-integer";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <1literalTotaldigitsxsd-integer.shex>;
+  shexTest:startRow 2;
+  shexTest:startColumn 45;
+  shexTest:endRow 3;
+  shexTest:endColumn 1
+] [
+  shexMan:name "1negatedinversenegateddot";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <1negatedinversenegateddot.shex>;
+  shexTest:startRow 1;
+  shexTest:startColumn 32;
+  shexTest:endRow 2;
+  shexTest:endColumn 5
+] [
+  shexMan:name "1negatednegateddot";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <1negatednegateddot.shex>;
+  shexTest:startRow 1;
+  shexTest:startColumn 32;
+  shexTest:endRow 2;
+  shexTest:endColumn 5
+] [
+  shexMan:name "1datatypeRef1";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <1datatypeRef1.shex>;
+  shexTest:startRow 3;
+  shexTest:startColumn 48;
+  shexTest:endRow 4;
+  shexTest:endColumn 1
+] [
+  shexMan:name "1unknowndatatypeMaxInclusive";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Proposed";
+  shexTest:shexc <1unknowndatatypeMaxInclusive.shex>;
+  shexTest:startRow 2;
+  shexTest:startColumn 48;
+  shexTest:endRow 3;
+  shexTest:endColumn 1
+] [
+  shexMan:name "1val1bnode";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <1val1bnode.shex>;
+  shexTest:startRow 2;
+  shexTest:startColumn 26;
+  shexTest:endRow 2;
+  shexTest:endColumn 30
+] [
+  shexMan:name "1val1iriMinusiri1";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <1val1iriMinusiri1.shex>;
+  shexTest:startRow 2;
+  shexTest:startColumn 48;
+  shexTest:endRow 2;
+  shexTest:endColumn 51
+] [
+  shexMan:name "1val1vcrefSTRING_LITERAL1";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <1val1vcrefSTRING_LITERAL1.shex>;
+  shexTest:startRow 3;
+  shexTest:startColumn 1;
+  shexTest:endRow 3;
+  shexTest:endColumn 7
+] [
+  shexMan:name "1valA";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <1valA.shex>;
+  shexTest:startRow 2;
+  shexTest:startColumn 27;
+  shexTest:endRow 2;
+  shexTest:endColumn 28
+] [
+  shexMan:name "DECIMAL-123.abc";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <DECIMAL-123.abc.shex>;
+  shexTest:startRow 4;
+  shexTest:startColumn 31;
+  shexTest:endRow 4;
+  shexTest:endColumn 34
+] [
+  shexMan:name "DOUBLE-123e";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <DOUBLE-123e.shex>;
+  shexTest:startRow 4;
+  shexTest:startColumn 26;
+  shexTest:endRow 4;
+  shexTest:endColumn 31
+] [
+  shexMan:name "INTEGER-+-1";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <INTEGER-+-1.shex>;
+  shexTest:startRow 4;
+  shexTest:startColumn 27;
+  shexTest:endRow 4;
+  shexTest:endColumn 28
+] [
+  shexMan:name "INTEGER-123abc";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <INTEGER-123abc.shex>;
+  shexTest:startRow 4;
+  shexTest:startColumn 26;
+  shexTest:endRow 4;
+  shexTest:endColumn 34
+] [
+  shexMan:name "IRIREF-with-ECHAR";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <IRIREF-with-ECHAR.shex>;
+  shexTest:startRow 3;
+  shexTest:startColumn 32;
+  shexTest:endRow 4;
+  shexTest:endColumn 28
+] [
+  shexMan:name "IRIREF-with-PN_LOCAL_ESC";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <IRIREF-with-PN_LOCAL_ESC.shex>;
+  shexTest:startRow 3;
+  shexTest:startColumn 32;
+  shexTest:endRow 4;
+  shexTest:endColumn 29
+] [
+  shexMan:name "IRIREF-with-SPACE";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <IRIREF-with-SPACE.shex>;
+  shexTest:startRow 3;
+  shexTest:startColumn 32;
+  shexTest:endRow 4;
+  shexTest:endColumn 28
+] [
+  shexMan:name "IRIREF-with-bad-UCHAR.1";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <IRIREF-with-bad-UCHAR.1.shex>;
+  shexTest:startRow 3;
+  shexTest:startColumn 32;
+  shexTest:endRow 4;
+  shexTest:endColumn 30
+] [
+  shexMan:name "IRIREF-with-bad-UCHAR.2";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <IRIREF-with-bad-UCHAR.2.shex>;
+  shexTest:startRow 3;
+  shexTest:startColumn 32;
+  shexTest:endRow 4;
+  shexTest:endColumn 35
+] [
+  shexMan:name "PNAME_NS-dot-at-end-declared";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <PNAME_NS-dot-at-end-declared.shex>;
+  shexTest:startRow 4;
+  shexTest:startColumn 7;
+  shexTest:endRow 4;
+  shexTest:endColumn 17
+] [
+  shexMan:name "PNAME_NS-dot-at-end-undeclared";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <PNAME_NS-dot-at-end-undeclared.shex>;
+  shexTest:startRow 6;
+  shexTest:startColumn 16;
+  shexTest:endRow 6;
+  shexTest:endColumn 26
+] [
+  shexMan:name "PNAME_NS-dot-at-start-declared";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <PNAME_NS-dot-at-start-declared.shex>;
+  shexTest:startRow 4;
+  shexTest:startColumn 7;
+  shexTest:endRow 4;
+  shexTest:endColumn 17
+] [
+  shexMan:name "PNAME_NS-dot-at-start-undeclared";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <PNAME_NS-dot-at-start-undeclared.shex>;
+  shexTest:startRow 6;
+  shexTest:startColumn 16;
+  shexTest:endRow 6;
+  shexTest:endColumn 26
+] [
+  shexMan:name "PN_LOCAL-PERCENT-end";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <PN_LOCAL-PERCENT-end.shex>;
+  shexTest:startRow 6;
+  shexTest:startColumn 7;
+  shexTest:endRow 6;
+  shexTest:endColumn 11
+] [
+  shexMan:name "PN_LOCAL-PERCENT-mid";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <PN_LOCAL-PERCENT-mid.shex>;
+  shexTest:startRow 6;
+  shexTest:startColumn 7;
+  shexTest:endRow 6;
+  shexTest:endColumn 12
+] [
+  shexMan:name "PN_LOCAL-PERCENT-start";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <PN_LOCAL-PERCENT-start.shex>;
+  shexTest:startRow 6;
+  shexTest:startColumn 7;
+  shexTest:endRow 6;
+  shexTest:endColumn 11
+] [
+  shexMan:name "PN_LOCAL-dash-start";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <PN_LOCAL-dash-start.shex>;
+  shexTest:startRow 6;
+  shexTest:startColumn 7;
+  shexTest:endRow 6;
+  shexTest:endColumn 11
+] [
+  shexMan:name "PN_LOCAL-unescaped-TILDE";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <PN_LOCAL-unescaped-TILDE.shex>;
+  shexTest:startRow 6;
+  shexTest:startColumn 7;
+  shexTest:endRow 6;
+  shexTest:endColumn 11
+] [
+  shexMan:name "PN_LOCAL-with-UCHAR.1";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <PN_LOCAL-with-UCHAR.1.shex>;
+  shexTest:startRow 6;
+  shexTest:startColumn 7;
+  shexTest:endRow 6;
+  shexTest:endColumn 15
+] [
+  shexMan:name "1literalPattern-bad-delim";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <1literalPattern-bad-delim.shex>;
+  shexTest:startRow 2;
+  shexTest:startColumn 25;
+  shexTest:endRow 3;
+  shexTest:endColumn 1
+] [
+  shexMan:name "1literalPattern_with_ECHAR_escape_1";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <1literalPattern_with_ECHAR_escape_1.shex>;
+  shexTest:startRow 2;
+  shexTest:startColumn 25;
+  shexTest:endRow 3;
+  shexTest:endColumn 1
+] [
+  shexMan:name "1literalPattern_with_ECHAR_escape_b";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <1literalPattern_with_ECHAR_escape_b.shex>;
+  shexTest:startRow 2;
+  shexTest:startColumn 25;
+  shexTest:endRow 3;
+  shexTest:endColumn 1
+] [
+  shexMan:name "1literalPattern_with_ECHAR_escape_f";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <1literalPattern_with_ECHAR_escape_f.shex>;
+  shexTest:startRow 2;
+  shexTest:startColumn 25;
+  shexTest:endRow 3;
+  shexTest:endColumn 1
+] [
+  shexMan:name "1literalPattern_with_UCHAR_escape_U0000061";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <1literalPattern_with_UCHAR_escape_U0000061.shex>;
+  shexTest:startRow 2;
+  shexTest:startColumn 27;
+  shexTest:endRow 2;
+  shexTest:endColumn 39
+] [
+  shexMan:name "1literalPattern_with_UCHAR_escape_u061";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <1literalPattern_with_UCHAR_escape_u061.shex>;
+  shexTest:startRow 2;
+  shexTest:startColumn 27;
+  shexTest:endRow 2;
+  shexTest:endColumn 34
+] [
+  shexMan:name "1val1STRING_LITERAL1_bad_delim";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <1val1STRING_LITERAL1_bad_delim.shex>;
+  shexTest:startRow 2;
+  shexTest:startColumn 27;
+  shexTest:endRow 3;
+  shexTest:endColumn 1
+] [
+  shexMan:name "1val1STRING_LITERAL1_with_ECHAR_escape_1";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <1val1STRING_LITERAL1_with_ECHAR_escape_1.shex>;
+  shexTest:startRow 2;
+  shexTest:startColumn 27;
+  shexTest:endRow 2;
+  shexTest:endColumn 31
+] [
+  shexMan:name "1val1STRING_LITERAL1_with_ECHAR_escape_a";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <1val1STRING_LITERAL1_with_ECHAR_escape_a.shex>;
+  shexTest:startRow 2;
+  shexTest:startColumn 27;
+  shexTest:endRow 2;
+  shexTest:endColumn 31
+] [
+  shexMan:name "1val1STRING_LITERAL1_with_ECHAR_escape_z";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <1val1STRING_LITERAL1_with_ECHAR_escape_z.shex>;
+  shexTest:startRow 2;
+  shexTest:startColumn 27;
+  shexTest:endRow 2;
+  shexTest:endColumn 31
+] [
+  shexMan:name "1val1STRING_LITERAL1_with_UCHAR_escape_u061";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <1val1STRING_LITERAL1_with_UCHAR_escape_u061.shex>;
+  shexTest:startRow 2;
+  shexTest:startColumn 27;
+  shexTest:endRow 2;
+  shexTest:endColumn 34
+] [
+  shexMan:name "1val1STRING_LITERAL1_with_UCHAR_escape_U0000061";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <1val1STRING_LITERAL1_with_UCHAR_escape_U0000061.shex>;
+  shexTest:startRow 2;
+  shexTest:startColumn 27;
+  shexTest:endRow 2;
+  shexTest:endColumn 38
+] [
+  shexMan:name "STRING_LITERAL1-ending-QUOTATION_MARK";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <STRING_LITERAL1-ending-QUOTATION_MARK.shex>;
+  shexTest:startRow 4;
+  shexTest:startColumn 27;
+  shexTest:endRow 5;
+  shexTest:endColumn 1
+] [
+  shexMan:name "STRING_LITERAL2-bad-ECHAR";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <STRING_LITERAL2-bad-ECHAR.shex>;
+  shexTest:startRow 4;
+  shexTest:startColumn 27;
+  shexTest:endRow 4;
+  shexTest:endColumn 33
+] [
+  shexMan:name "STRING_LITERAL2-bad-LANGTAG";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <STRING_LITERAL2-bad-LANGTAG.shex>;
+  shexTest:startRow 4;
+  shexTest:startColumn 27;
+  shexTest:endRow 4;
+  shexTest:endColumn 37
+] [
+  shexMan:name "STRING_LITERAL2-bad-UCHAR1";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <STRING_LITERAL2-bad-UCHAR1.shex>;
+  shexTest:startRow 4;
+  shexTest:startColumn 27;
+  shexTest:endRow 4;
+  shexTest:endColumn 35
+] [
+  shexMan:name "STRING_LITERAL2-bad-UCHAR2-value";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <STRING_LITERAL2-bad-UCHAR2-value.shex>;
+  shexTest:startRow 4;
+  shexTest:startColumn 27;
+  shexTest:endRow 4;
+  shexTest:endColumn 39
+] [
+  shexMan:name "STRING_LITERAL2-ending-APOSTROPHE";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <STRING_LITERAL2-ending-APOSTROPHE.shex>;
+  shexTest:startRow 4;
+  shexTest:startColumn 27;
+  shexTest:endRow 5;
+  shexTest:endColumn 1
+] [
+  shexMan:name "STRING_LITERAL2-illegal-UCHAR1-value";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <STRING_LITERAL2-illegal-UCHAR1-value.shex>;
+  shexTest:startRow 4;
+  shexTest:startColumn 27;
+  shexTest:endRow 4;
+  shexTest:endColumn 39
+] [
+  shexMan:name "STRING_LITERAL2-with-LANGTAG-and-datatype";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <STRING_LITERAL2-with-LANGTAG-and-datatype.shex>;
+  shexTest:startRow 4;
+  shexTest:startColumn 27;
+  shexTest:endRow 4;
+  shexTest:endColumn 60
+] [
+  shexMan:name "STRING_LITERAL_LONG1-ending-APOSTROPHE4";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <STRING_LITERAL_LONG1-ending-APOSTROPHE4.shex>;
+  shexTest:startRow 4;
+  shexTest:startColumn 27;
+  shexTest:endRow 4;
+  shexTest:endColumn 37
+] [
+  shexMan:name "STRING_LITERAL_LONG2-ending-APOSTROPHE3";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <STRING_LITERAL_LONG2-ending-APOSTROPHE3.shex>;
+  shexTest:startRow 4;
+  shexTest:startColumn 27;
+  shexTest:endRow 6;
+  shexTest:endColumn 1
+] [
+  shexMan:name "STRING_LITERAL_LONG2-ending-QUOTATION_MARK4";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <STRING_LITERAL_LONG2-ending-QUOTATION_MARK4.shex>;
+  shexTest:startRow 4;
+  shexTest:startColumn 27;
+  shexTest:endRow 4;
+  shexTest:endColumn 41
+] [
+  shexMan:name "STRING_LITERAL_LONG2-unterminated";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <STRING_LITERAL_LONG2-unterminated.shex>;
+  shexTest:startRow 4;
+  shexTest:startColumn 27;
+  shexTest:endRow 6;
+  shexTest:endColumn 1
+] [
+  shexMan:name "a";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <a.shex>;
+  shexTest:startRow 1;
+  shexTest:startColumn 1;
+  shexTest:endRow 2;
+  shexTest:endColumn 1
+] [
+  shexMan:name "Dot-Minus-emptylanguageStem";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <Dot-Minus-emptylanguageStem.shex>;
+  shexTest:startRow 1;
+  shexTest:startColumn 28;
+  shexTest:endRow 1;
+  shexTest:endColumn 29
+] [
+  shexMan:name "emptylanguageStem-Minus-emptylanguageStem";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <emptylanguageStem-Minus-emptylanguageStem.shex>;
+  shexTest:startRow 1;
+  shexTest:startColumn 29;
+  shexTest:endRow 1;
+  shexTest:endColumn 30
+] [
+  shexMan:name "base-no-uri";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <base-no-uri.shex>;
+  shexTest:startRow 3;
+  shexTest:startColumn 5;
+  shexTest:endRow 4;
+  shexTest:endColumn 1
+] [
+  shexMan:name "base-uri-dot";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <base-uri-dot.shex>;
+  shexTest:startRow 3;
+  shexTest:startColumn 44;
+  shexTest:endRow 4;
+  shexTest:endColumn 1
+] [
+  shexMan:name "bnodedot";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <bnodedot.shex>;
+  shexTest:startRow 2;
+  shexTest:startColumn 1;
+  shexTest:endRow 2;
+  shexTest:endColumn 15
+] [
+  shexMan:name "capitol-A";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <capitol-A.shex>;
+  shexTest:startRow 3;
+  shexTest:startColumn 32;
+  shexTest:endRow 4;
+  shexTest:endColumn 6
+] [
+  shexMan:name "group-no-SEMICOLON-separators";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <group-no-SEMICOLON-separators.shex>;
+  shexTest:startRow 3;
+  shexTest:startColumn 27;
+  shexTest:endRow 4;
+  shexTest:endColumn 27
+] [
+  shexMan:name "groupShapeConstr-trailing-OR";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <groupShapeConstr-trailing-OR.shex>;
+  shexTest:startRow 3;
+  shexTest:startColumn 59;
+  shexTest:endRow 4;
+  shexTest:endColumn 1
+] [
+  shexMan:name "literal-0x123";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <literal-0x123.shex>;
+  shexTest:startRow 4;
+  shexTest:startColumn 27;
+  shexTest:endRow 4;
+  shexTest:endColumn 32
+] [
+  shexMan:name "open1dotcloseAnnot3";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <open1dotcloseAnnot3.shex>;
+  shexTest:startRow 3;
+  shexTest:startColumn 39;
+  shexTest:endRow 4;
+  shexTest:endColumn 37
+] [
+  shexMan:name "predicate-ANON";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <predicate-ANON.shex>;
+  shexTest:startRow 3;
+  shexTest:startColumn 32;
+  shexTest:endRow 4;
+  shexTest:endColumn 5
+] [
+  shexMan:name "predicate-BLANK_NODE_LABEL";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <predicate-BLANK_NODE_LABEL.shex>;
+  shexTest:startRow 3;
+  shexTest:startColumn 32;
+  shexTest:endRow 4;
+  shexTest:endColumn 9
+] [
+  shexMan:name "predicate-literal";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <predicate-literal.shex>;
+  shexTest:startRow 3;
+  shexTest:startColumn 32;
+  shexTest:endRow 4;
+  shexTest:endColumn 9
+] [
+  shexMan:name "predicate-true";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <predicate-true.shex>;
+  shexTest:startRow 3;
+  shexTest:startColumn 32;
+  shexTest:endRow 4;
+  shexTest:endColumn 9
+] [
+  shexMan:name "prefix-missing";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <prefix-missing.shex>;
+  shexTest:startRow 6;
+  shexTest:startColumn 16;
+  shexTest:endRow 7;
+  shexTest:endColumn 10
+] [
+  shexMan:name "prefix-missing-1";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <prefix-missing-1.shex>;
+  shexTest:startRow 4;
+  shexTest:startColumn 32;
+  shexTest:endRow 5;
+  shexTest:endColumn 10
+] [
+  shexMan:name "prefix-missing-2";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Proposed";
+  shexTest:shexc <prefix-missing-2.shex>
+] [
+  shexMan:name "prefix-no-COLON";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <prefix-no-COLON.shex>;
+  shexTest:startRow 3;
+  shexTest:startColumn 7;
+  shexTest:endRow 3;
+  shexTest:endColumn 11
+] [
+  shexMan:name "prefix-no-PNAME_NS";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <prefix-no-PNAME_NS.shex>;
+  shexTest:startRow 3;
+  shexTest:startColumn 7;
+  shexTest:endRow 3;
+  shexTest:endColumn 27
+] [
+  shexMan:name "prefix-no-uri";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <prefix-no-uri.shex>;
+  shexTest:startRow 3;
+  shexTest:startColumn 11;
+  shexTest:endRow 4;
+  shexTest:endColumn 1
+] [
+  shexMan:name "shapename-a";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <shapename-a.shex>;
+  shexTest:startRow 3;
+  shexTest:startColumn 1;
+  shexTest:endRow 3;
+  shexTest:endColumn 3
+] [
+  shexMan:name "shapename-literal";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <shapename-literal.shex>;
+  shexTest:startRow 3;
+  shexTest:startColumn 1;
+  shexTest:endRow 3;
+  shexTest:endColumn 14
+] [
+  shexMan:name "shapename-true";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <shapename-true.shex>;
+  shexTest:startRow 3;
+  shexTest:startColumn 1;
+  shexTest:endRow 3;
+  shexTest:endColumn 6
+] [
+  shexMan:name "tripleConsraint-no-valueClass";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <tripleConsraint-no-valueClass.shex>;
+  shexTest:startRow 4;
+  shexTest:startColumn 25;
+  shexTest:endRow 5;
+  shexTest:endColumn 1
+] [
+  shexMan:name "tripleConsraint-with-datatype-and-dot";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <tripleConsraint-with-datatype-and-dot.shex>;
+  shexTest:startRow 3;
+  shexTest:startColumn 48;
+  shexTest:endRow 4;
+  shexTest:endColumn 1
+] [
+  shexMan:name "tripleConsraint-with-datatype-and-valueSet";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <tripleConsraint-with-datatype-and-valueSet.shex>;
+  shexTest:startRow 3;
+  shexTest:startColumn 48;
+  shexTest:endRow 3;
+  shexTest:endColumn 74
+] [
+  shexMan:name "tripleConsraint-with-dot-and-datatype";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <tripleConsraint-with-dot-and-datatype.shex>;
+  shexTest:startRow 3;
+  shexTest:startColumn 27;
+  shexTest:endRow 3;
+  shexTest:endColumn 50
+] [
+  shexMan:name "tripleConsraint-with-two-cardinalities";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <tripleConsraint-with-two-cardinalities.shex>;
+  shexTest:startRow 3;
+  shexTest:startColumn 29;
+  shexTest:endRow 4;
+  shexTest:endColumn 1
+] [
+  shexMan:name "1val1iriStemMinusliteral3";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <1val1iriStemMinusliteral3.shex>;
+  shexTest:startRow 3;
+  shexTest:startColumn 28;
+  shexTest:endRow 4;
+  shexTest:endColumn 27
+] [
+  shexMan:name "1val1languageStemMinusliteral3";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <1val1languageStemMinusliteral3.shex>;
+  shexTest:startRow 3;
+  shexTest:startColumn 28;
+  shexTest:endRow 4;
+  shexTest:endColumn 27
+] [
+  shexMan:name "1val1literalStemMinusiri3";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <1val1literalStemMinusiri3.shex>;
+  shexTest:startRow 3;
+  shexTest:startColumn 28;
+  shexTest:endRow 4;
+  shexTest:endColumn 27
+] [
+  shexMan:name "1val1literalStemMinuslanguage3";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <1val1literalStemMinuslanguage3.shex>;
+  shexTest:startRow 3;
+  shexTest:startColumn 28;
+  shexTest:endRow 4;
+  shexTest:endColumn 27
+] [
+  shexMan:name "INTEGER-in-shape-expression";
+  shexTest:schemaError "syntax";
+  shexTest:approval "Approved";
+  shexTest:shexc <INTEGER-in-shape-expression.shex>;
+  shexTest:startRow 2;
+  shexTest:startColumn 25;
+  shexTest:endRow 2;
+  shexTest:endColumn 28
+] [
+  shexMan:name "1dotExtends3";
+  shexTest:schemaError "syntax";
+  shexTest:approval "proposed";
+  shexTest:shexc <1dotExtends3.shex>
+]).

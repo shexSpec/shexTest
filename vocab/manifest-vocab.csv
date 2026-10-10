@@ -1,0 +1,25 @@
+id,type,label,subClassOf,domain,range,@type,@container,ForwardMultiplicity,ReverseMultiplicity,term,comment
+,rdfs:seeAlso,,http://shex.io/shex-semantics,,,,,,,,
+,rdfs:seeAlso,,https://shexspec.github.io/shape-map/,,,,,,,,
+rdf,prefix,,http://www.w3.org/1999/02/22-rdf-syntax-ns#,,,,,,,,
+rdfs,prefix,,http://www.w3.org/2000/01/rdf-schema#,,,,,,,,
+shex,prefix,,http://www.w3.org/ns/shex#,,,,,,,,
+shexMan,prefix,,http://www.w3.org/ns/shex-manifest#,,,,,,,,
+xsd,prefix,,http://www.w3.org/2001/XMLSchema#,,,,,,,,
+Manifest,rdfs:Class,Manifest,,,,,,,,,"An ordered collection of entries: the examples a ShEx implementation offers, or the tests of a test suite."
+Entry,rdfs:Class,Entry,,,,,,,,,"One validation and the outcome expected of it: a schema, the data to validate, and a query map (or one node and one shape) saying which nodes are validated against which shapes."
+entries,rdf:Property,entries,,Manifest,Entry,,@list,1:1,0:1,,"The entries of a manifest, in order."
+name,rdf:Property,name,,Entry,xsd:string,,,0:1,,,"A name for the entry, unique within its manifest."
+schema,rdf:Property,schema,,Entry,,,,0:1,,,"The entry's schema. A literal is the schema's text; an IRI (written with the term schemaURL) is the document that holds it."
+schemaLabel,rdf:Property,schema label,,Entry,xsd:string,,,0:1,,,"What to call the entry's schema when presenting it to a person. Entries with one schema usually share its label."
+data,rdf:Property,data,,Entry,,,,0:N,,,"The data the entry validates. A literal is the data's text; an IRI (written with the term dataURL) is the document that holds it. Several values are the documents of one graph."
+dataLabel,rdf:Property,data label,,Entry,xsd:string,,,0:1,,,"What to call the entry's data when presenting it to a person."
+queryMap,rdf:Property,query map,,Entry,,,,0:1,,,"The entry's query map, pairing node selectors with shapes. A literal is the map in ShapeMap syntax; an IRI (written with the term queryMapURL) is the document that holds it. An entry with one node and one shape may write them as shex:node and shex:shape instead."
+queryMapLabel,rdf:Property,query map label,,Entry,xsd:string,,,0:1,,,"What to call the entry's query map when presenting it to a person."
+schemaURL,term,,shexMan:schema,,,@id,,,,,The schema by reference.
+dataURL,term,,shexMan:data,,,@id,@set,,,,The data by reference.
+queryMapURL,term,,shexMan:queryMap,,,@id,,,,,The query map by reference.
+comment,term,,rdfs:comment,,,,,,,,What the entry shows or tests.
+node,term,,shex:node,,,@id,,,,,The node an entry validates.
+shape,term,,shex:shape,,,@id,,,,,The shape an entry validates its node against; absent for the schema's start shape.
+status,term,,shex:status,,,,,,,,"The outcome expected: ""conformant"" or ""nonconformant""."
