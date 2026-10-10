@@ -39,53 +39,32 @@ jobs:
             exit 1
           }
 
-      # manifest-ld.jsonld and manifest-ld.ttl are the other representations
-      # of each directory's manifest-ld.yaml (the manifest in the ShEx
-      # manifest vocabulary), written from it by bin/manifest-ld.js, which
-      # also checks that the Turtle is the graph a JSON-LD processor reads
-      # from the YAML.
-      - name: manifest-ld.{jsonld,ttl} match manifest-ld.yaml
-        run: |
-          npm run manifest-ld-check || {
-            echo "::error::manifest-ld representations are stale -- run 'npm run manifest-ld' and commit the result"
-            exit 1
-          }
-
-      # manifest-ld.yaml is written from the hand-written manifest.ttl by
-      # bin/manifest-ld-from-legacy.js, and manifest.ttl's graph and manifest.jsonld are
-      # written back from it by bin/manifest-ld-to-legacy-ttl.js and bin/manifest-ld-to-legacy-jsonld.js:
-      # bin/manifest-ld-legacy-check.js says whether all of that still holds.
-      - name: manifest-ld.yaml says what manifest.ttl says; the legacy files are derivable from it
-        run: npm run manifest-ld-legacy-check
-
-      # every schemas/*.shex IMPORT target must have its own manifest
-      # entry, or nothing ever round-trip-tests its json/ttl siblings
-      # against the shex (see start2RefS2's p1-vs-p2 drift).
-      - run: npm run test-schema-imports
-
-      - run: npm run test-shexj-jsg
-      - run: npm run test-shexv-val
-      - run: npm run test-shexv-err
-
-      # doc/ShExR.shex is the hand-maintained source; doc/ShExR.{json,ttl,
-      # ntriples} are the same schema in other syntaxes and had all drifted
-      # from it (ShExR.ntriples by nine years -- it predated ShapeDecl,
-      # abstract, imports and extends entirely, and still carried the
-      # sx:negated the language dropped in 2016).
-      #
-      # bin/mkShExR.js regenerates the two RDF renderings via ShExJ and
-      # doc/ShExJ-context.jsonld, so this also exercises the context, which is
-      # itself generated from vocab/vocab.csv. ShExR.json is compared as an AST
-      # rather than regenerated, so its hand formatting survives.
-      - name: doc/ShExR.{json,ttl,ntriples} match doc/ShExR.shex
-        run: |
-          npm run shexr-check || {
-            echo "::error::ShExR renderings are stale -- run 'npm run shexr' and commit the result"
-            exit 1
-          }
-
-      # the published ShEx vocabulary must define every term ShExR uses
-      - run: npm run vocab-check
+      # Everything else is `npm test`, the same command a contributor runs
+      # locally, so that CI and `npm t` cannot drift apart. Each check's
+      # rationale is at the top of its script; in brief:
+      #   test-shexj-jsg       schemas/*.json conform to doc/ShExJ.jsg
+      #   test-shexj-types     schemas/*.json type-check against @types/shexj;
+      #                        those listed as ahead of the types must fail
+      #                        until a newer release is installed, then pass
+      #                        (bin/checkShExJTypes.js)
+      #   test-shexv-val/-err  validation/*.{val,err} conform to doc/ShExV.jsg
+      #   test-schema-imports  every schemas/*.shex IMPORT target has its own
+      #                        manifest entry (bin/checkSchemaImports.js)
+      #   test-manifest-names  a test's id and its mf:name are the same string,
+      #                        in every manifest dir, including the two the
+      #                        regeneration check above leaves out
+      #                        (bin/checkManifestNames.js)
+      #   vocab-check          the published ShEx vocabulary defines every term
+      #                        ShExR uses (vocab/mk_vocab.js)
+      #   shexr-check          doc/ShExR.{json,ttl,ntriples} match doc/ShExR.shex
+      #                        (bin/mkShExR.js)
+      #   manifest-ld-check    manifest-ld.{jsonld,ttl} are what manifest-ld.yaml
+      #                        says (bin/manifest-ld.js)
+      #   manifest-ld-legacy-check
+      #                        manifest-ld.yaml says what manifest.ttl says, and
+      #                        the legacy files are derivable from it
+      #                        (bin/manifest-ld-legacy-check.js)
+      - run: npm test
 
       # informational only: flags schemas referenced by validation tests
       # (via EXTENDS, not IMPORT) that lack their own manifest entry.
@@ -94,10 +73,3 @@ jobs:
       # until that content exists.
       - name: schemas referenced by validation tests but not in schemas/manifest (informational)
         run: node missing.js
-
-      # test-ts is currently broken independent of this workflow: it
-      # shells out to bin/makeTsTests.sh, which has never existed in this
-      # repo's history, and calls a bare `tsc` with no typescript
-      # devDependency. Left out of CI until someone restores or replaces
-      # it; see https://github.com/shexSpec/shexTest (or the PR that
-      # introduced this workflow) for context.

@@ -57,7 +57,7 @@ valueSetValue    = objectValue | IriStem | IriStemRange | LiteralStem
 objectValue      = IRIREF | ObjectLiteral ;
 ObjectLiteral    { value:STRING language:STRING? type:STRING? }
 IriStem          { stem:IRIREF } # IriStemRange with exclusions
-IriStemRange     { stem:(IRIREF | Wildcard) exclusions:[IRIREF | IriStem+]? }
+IriStemRange     { stem:(IRIREF | Wildcard) exclusions:[IRIREF | IriStem+] }
 LiteralStem      { stem:STRING } # LiteralStemRange with exclusions
 LiteralStemRange { stem:(STRING | Wildcard) exclusions:[STRING | LiteralStem+] }
 Language         { languageTag: LANGTAG }
@@ -66,7 +66,6 @@ LanguageStemRange{ stem:(LANGTAG | EMPTY | Wildcard) exclusions:[LANGTAG | Langu
 Wildcard         {  }
 
 Shape            {
-  abstract:BOOL ?
   closed:BOOL ?
   extends:[shapeExprOrRef+] ?
   extra:[IRIREF+] ?

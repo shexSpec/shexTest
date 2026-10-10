@@ -13749,9 +13749,7 @@ entries:
     dataURL: or-each-each_instance.ttl
     node: "http://a.example/inst#each-1-2"
 
-  # The Turtle identified this test as <#extends-open-or-each-each_pass-cross-each> and named it "extends-open-or-each-each_fail-cross-each".
-  - "@id": "#extends-open-or-each-each_pass-cross-each"
-    name: extends-open-or-each-each_fail-cross-each
+  - name: extends-open-or-each-each_pass-cross-each
     status: conformant
     trait: [Extends]
     comment: "<pass-each-1> <p> 0 ; <q> 1 ; <r> 2 . \\ <Base> { <p> . ; <q> . } OR { <p> . ; <r> . } <Child> E @<Base> { }"
