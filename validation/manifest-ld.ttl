@@ -13196,7 +13196,17 @@
   shex:shape <http://a.example/sh#Child>;
   shexMan:data <or-each-each_instance.ttl>;
   shex:node <http://a.example/inst#each-1-2>
-] <#extends-open-or-each-each_pass-cross-each> [
+] [
+  shexMan:name "extends-open-or-each-each_pass-cross-each";
+  shex:status "conformant";
+  shexTest:trait "Extends";
+  rdfs:comment "<pass-each-1> <p> 0 ; <q> 1 ; <r> 2 . \\ <Base> { <p> . ; <q> . } OR { <p> . ; <r> . } <Child> E @<Base> { }";
+  shexTest:approval "proposed";
+  shexMan:schema <../schemas/extends-open-or-each-each>;
+  shex:shape <http://a.example/sh#Child>;
+  shexMan:data <or-each-each_instance.ttl>;
+  shex:node <http://a.example/inst#each-1-2>
+] [
   shexMan:name "1dotExtendsBnode_pass";
   shex:status "conformant";
   shexTest:trait "Extends", "BNodeShapeLabel";
@@ -13327,12 +13337,3 @@
   shexMan:data <extends-abstract-or.ttl>;
   shex:node <http://a.example/via-X>
 ]).
-<#extends-open-or-each-each_pass-cross-each> shexMan:name "extends-open-or-each-each_fail-cross-each";
-    shex:status "conformant";
-    shexTest:trait "Extends";
-    rdfs:comment "<pass-each-1> <p> 0 ; <q> 1 ; <r> 2 . \\ <Base> { <p> . ; <q> . } OR { <p> . ; <r> . } <Child> E @<Base> { }";
-    shexTest:approval "proposed";
-    shexMan:schema <../schemas/extends-open-or-each-each>;
-    shex:shape <http://a.example/sh#Child>;
-    shexMan:data <or-each-each_instance.ttl>;
-    shex:node <http://a.example/inst#each-1-2>.
