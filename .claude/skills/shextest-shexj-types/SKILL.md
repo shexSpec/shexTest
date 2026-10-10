@@ -1,5 +1,5 @@
 ---
-name: shexj-types
+name: shextest-shexj-types
 description: Everything about the TypeScript types for ShExJ (`@types/shexj`, maintained in DefinitelyTyped) and how shexTest stays in step with them - what a type check of the schemas can and cannot prove, why a change here has to wait for a release there, the version gate that keeps CI green meanwhile, and how to land a change in DefinitelyTyped. Use this whenever doc/ShExJ.jsg gains or loses something, a schema uses a construct the types lack, a Dependabot PR for @types/shexj is open or red, someone mentions DefinitelyTyped, `tsc`, `test-ts` or makeTsTests.sh, or the user asks why something about types is failing or what they are supposed to do next.
 ---
 
@@ -49,7 +49,7 @@ It cannot see:
 - **What the corpus does not exercise.** Two real disagreements with the JSG
   (`Shape.abstract`, optional `IriStemRange.exclusions`) passed with all 491
   schemas because none used them. They were found by reading the two grammars
-  side by side; see the `changing-the-grammar` skill.
+  side by side; see the `shextest-grammar` skill.
 
 So a green type check is evidence about the types, not about the schemas -
 `test-shexj-jsg` is the stronger test of a schema.

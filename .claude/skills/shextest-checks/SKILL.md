@@ -1,5 +1,5 @@
 ---
-name: adding-a-check
+name: shextest-checks
 description: How to add, change or remove an automated consistency check in shexTest - a bin/ script, an npm `test-*` script, or a step in .github/workflows/ci.yml - and how to prove it works. Use this whenever the user asks to "verify that…", "make it a CI test", "wire it into npm test", or when you find yourself writing a one-off script to check the repo that would be worth keeping. Also use it before editing ci.yml or the `test` script in package.json for any reason.
 ---
 
@@ -32,7 +32,7 @@ on that name.
 ## What a good check looks like here
 
 - **The header comment says why.** State the rule, then the incident that
-  showed it was needed. `ci-red` points people at these headers to explain a
+  showed it was needed. `shextest-ci-red` points people at these headers to explain a
   failure, so a header that only restates the code wastes the one place the
   reason is kept.
 - **Each problem is one line: `path: what is wrong`.** End with how to fix it,
@@ -60,10 +60,17 @@ it done:
 3. For each rule the check claims, make a copy of a small real input
    (`validation-contrib/` is the smallest manifest), break that one rule, and
    confirm the message. Keep the copies in a scratch directory.
-4. Run `npm test` and the CI rehearsal in the `ci-red` skill.
+4. Run `npm test` and the CI rehearsal in the `shextest-ci-red` skill.
 
 Tell the user which of these you did. "Passes" and "passes, and fails on these
 nine broken inputs" are different claims.
+
+## Skills
+
+Project skills live in `.claude/skills/shextest-<topic>/SKILL.md`. The prefix
+matters: the maintainer's skills from sibling repos (shex.js's `shexjs-*`,
+this repo's `shextest-*`) are collected in one place, so a bare name would
+collide or mislead. Date any count or version a skill quotes.
 
 ## Conventions for the commit
 

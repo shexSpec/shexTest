@@ -1,5 +1,5 @@
 ---
-name: repo-history
+name: shextest-history
 description: How to answer "when did this show up", "was there ever a file called…", "who added this and why" or "has this always been broken" for shexTest, using git history plus the two places history leaks out of the repo - npm tarballs and DefinitelyTyped. Use this for any question about the past of a script, check, dependency or grammar rule here, and before concluding that something "never existed".
 ---
 
@@ -70,8 +70,11 @@ survives.
 ## Already established - do not redo
 
 - `test-ts` and `bin/makeTsTests.sh`: see
-  `.claude/skills/shexj-types/references/history.md`.
+  `.claude/skills/shextest-shexj-types/references/history.md`.
 - No `.sh` or `.ts` file has ever been committed on any branch (as of
   2026-10-06).
 - `validation/*.val` files were removed in 8d5b0b3 (2023-03-14); the
   `test-shexv-val` script still globs for them and matches nothing.
+- `manifest-ld.{yaml,jsonld,ttl}` arrived with #91 (merged 2026-10-10),
+  generated from `manifest.ttl`; the `shextest-manifest-ld` skill is its
+  account.

@@ -170,7 +170,7 @@ function main() {
     console.error('bin/checkShExJTypes.js:');
     paste.forEach(p => console.error(p));
   }
-  console.error('See .claude/skills/shexj-types/SKILL.md.');
+  console.error('See .claude/skills/shextest-shexj-types/SKILL.md.');
   return 1;
 }
 

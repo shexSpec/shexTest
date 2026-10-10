@@ -1,5 +1,5 @@
 ---
-name: changing-the-grammar
+name: shextest-grammar
 description: Checklist for changing what a ShEx schema may say in shexTest - editing doc/ShExJ.jsg, doc/ShExR.shex, doc/ShExV.jsg or vocab/vocab.csv, adding or removing a property or production, or adding schemas that use a new language feature. Use this whenever one of those files is edited or reviewed, when someone asks whether the grammars agree, or when a grammar check fails. The same language is written down in six places here and elsewhere, and a change to one that skips the others is the usual source of trouble.
 ---
 
@@ -26,9 +26,10 @@ nothing here tests that a grammar *rejects* something.
 | ShExR renderings | `doc/ShExR.ttl`, `doc/ShExR.ntriples` | derived: `npm run shexr` | `shexr-check` |
 | ShExR as ShExJ | `doc/ShExR.json` | by hand, to keep its formatting | `shexr-check` compares it as an AST |
 | Vocabulary | `vocab/vocab.csv` | by hand; the source of <https://www.w3.org/ns/shex> | `vocab-check` |
+| Manifest vocabularies | `vocab/manifest-vocab.csv`, `vocab/test-vocab.csv` | by hand; describe manifests, not the language (the `shextest-vocabularies` skill) | `manifest-ld-check` |
 | JSON-LD context | `doc/ShExJ-context.jsonld` | derived: `npm run vocab` | used by `mkShExR.js`, so `shexr-check` exercises it |
 | Validation results | `doc/ShExV.jsg` | by hand | `test-shexv-err` |
-| TypeScript types | `@types/shexj`, in DefinitelyTyped | by hand, in another repo | `test-shexj-types`; see the `shexj-types` skill |
+| TypeScript types | `@types/shexj`, in DefinitelyTyped | by hand, in another repo | `test-shexj-types`; see the `shextest-shexj-types` skill |
 | ShExC | the specification, not this repo | - | implementations |
 | Known disagreements | `doc/syntax-deltas.html` | by hand | nobody |
 
@@ -56,7 +57,7 @@ ShExJ lists are ShExR `…List1Plus` shapes; a ShExJ `X ?` is a ShExR `?`.
 2. Regenerate what is derived: `npm run vocab`, then `npm run shexr`. Hand-edit
    `ShExR.json` if `shexr-check` says it no longer matches.
 3. Add schemas that use the feature, in all three renderings, with manifest
-   entries (the `manifests` skill).
+   entries (the `shextest-manifests` skill).
 4. Probe the edges directly. The corpus only shows that valid things are
    accepted, so write the two smallest documents that should now be accepted
    and rejected and run them:
@@ -67,7 +68,7 @@ ShExJ lists are ShExR `…List1Plus` shapes; a ShExJ `X ?` is a ShExR `?`.
 5. `npm test`.
 6. If the change adds something to ShExJ, the published TypeScript types will
    not know it yet and `test-shexj-types` fails, printing lines to paste into
-   the `AHEAD` table in `bin/checkShExJTypes.js`. The `shexj-types` skill has
+   the `AHEAD` table in `bin/checkShExJTypes.js`. The `shextest-shexj-types` skill has
    the whole procedure.
 7. If the three syntaxes now disagree on purpose, or a recorded disagreement
    went away, update `doc/syntax-deltas.html`.
